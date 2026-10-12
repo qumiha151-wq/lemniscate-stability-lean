@@ -1,0 +1,332 @@
+\section{A uniform Bloch estimate and arbitrary covers}\label{app:bloch}
+On $2\pi$-periodic functions with fixed domain $H^4_\per$, define
+\begin{equation}\label{eq:bloch-definition}
+ A_\alpha=e^{-\ii\alpha\zeta}A_0e^{\ii\alpha\zeta},\qquad |\alpha|\le1/2.
+\end{equation}
+This notation means replacement of $D_\zeta$ by $D_\zeta+\ii\alpha$ in the differential expression. The multiplier $e^{\ii\alpha\zeta}$ itself need not be periodic.
+\begin{proposition}[Uniform Bloch bound]\label{prop:bloch}
+For $0<|\alpha|\le1/2$, $\sigma(A_\alpha)\subset\{\Re\lambda\le-\alpha^2/2\}$.
+\end{proposition}
+The proposition controls perturbations that need not repeat on each traversal of a multiple cover. The single-period estimate alone would leave these modes untreated. We first estimate the odd Fourier indices directly. In the even sector, we separate rotation from the stable directions and prove a quadratic bound in the Bloch parameter using polynomial row weights and Bernstein positivity. All estimates include the infinite Fourier tails.
+
+\subsection{Fourier polynomials and Bernstein coefficients}
+By \eqref{eq:q4}, for $k=n+\alpha$ and $l=m+\alpha$,
+\begin{equation}\label{eq:bloch-simple}
+ (A_\alpha)_{nm}=\tfrac{15}{2}r k(7l-k)h_{n-m}
+ -(4r^2k^4+42)\delta_{nm}.
+\end{equation}
+This includes the diagonal entries. Thus $A_\alpha=\sum_{j=0}^4\alpha^jA_j$, where
+\begin{equation}\label{eq:Aj}
+\begin{aligned}
+ (A_0)_{nm}&=\tfrac{15}{2}rn(7m-n)h_{n-m}-(4r^2n^4+42)\delta_{nm},\\
+ (A_1)_{nm}&=r(\tfrac{75}{2}n+\tfrac{105}{2}m)h_{n-m}-16r^2m^3\delta_{nm},\\
+ (A_2)_{nm}&=45rh_{n-m}-24r^2m^2\delta_{nm},\\
+ (A_3)_{nm}&=-16r^2m\delta_{nm},\qquad A_4=-4r^2I.
+\end{aligned}
+\end{equation}
+Even and odd Fourier indices form invariant sectors. They are different from reflection parity. Only the even-index sector contains $e$.
+
+For a polynomial $p(\alpha)=\sum_{j=0}^dp_j\alpha^j$, define its degree-$d$ Bernstein coefficients on $[0,1/2]$ by
+\begin{equation}\label{eq:Bernstein}
+ [p]_{d,k}=\sum_{j=0}^k\frac{\binom{k}{j}}{2^j\binom{d}{j}}p_j,
+ \quad
+ p(\alpha)=\sum_{k=0}^d[p]_{d,k}\binom dk(2\alpha)^k(1-2\alpha)^{d-k}.
+\end{equation}
+The nonnegative basis functions sum to one, so positive coefficients imply positivity on the whole interval. Also
+\begin{equation}\label{eq:Bernstein-product}
+ [pq]_{d+e,k}=\sum_{i+j=k}\frac{\binom di\binom ej}{\binom{d+e}k}
+ [p]_{d,i}[q]_{e,j}.
+\end{equation}
+In particular, replacing the Bernstein coefficients of a real polynomial by their absolute values gives a polynomial majorant for its absolute value.
+
+\subsection{The odd-index sector}\label{subsec:odd-bloch}
+Set $a=1/10$, $E_*=45r_+H$, $z=\bar Q/a$ and $t=\bar Qa$, with the constants of \eqref{eq:constants}. Write $S_\alpha=\Sym A_\alpha$. Its entries are
+\begin{align}
+ (S_\alpha)_{nn}&=-4r^2(n+\alpha)^4+45rh_0(n+\alpha)^2-42,\label{eq:odd-diag}\\
+ (S_\alpha)_{nm}&=rh_{n-m}P_{nm}(\alpha),\quad
+ P_{nm}=45(n+\alpha)(m+\alpha)-\tfrac{15}{4}(n-m)^2\quad(n\ne m).
+ \label{eq:odd-off}
+\end{align}
+Choose positive quadratic weights, with $0\le\alpha\le1/2$:
+\begin{equation}\label{eq:odd-weights}
+\renewcommand{\arraystretch}{1.6}
+\begin{array}{c|c@{\qquad}c|c}
+ n&d_n(\alpha)&n&d_n(\alpha)\\\hline
+ 1&1&-1&1-\frac85\alpha+\frac45\alpha^2\\
+ 3&\frac12-\frac12\alpha+\frac3{25}\alpha^2&-3&\frac12+\frac3{10}\alpha^2\\
+ 5&\frac2{25}-\frac3{25}\alpha+\frac2{25}\alpha^2&-5&\frac2{25}+\frac1{20}\alpha^2
+\end{array}
+\end{equation}
+For odd $|n|\ge7$, set $d_n=(3/25)d_{5\operatorname{sgn}n}a^{(|n|-7)/2}$, where $\operatorname{sgn}n$ is $1$ for $n>0$ and $-1$ for $n<0$. Their degree-two Bernstein coefficients are all positive.
+
+For odd $n\ne m$, define $V_{nm}$ to be $P_{nm}$ if both endpoint values of $P_{nm}$ are nonnegative, and $-P_{nm}$ if both are nonpositive. In the remaining case, if $P_{nm}=p_0+p_1\alpha+p_2\alpha^2$, set $V_{nm}=|p_0|+|p_1|\alpha+|p_2|\alpha^2$. These choices satisfy $|P_{nm}|\le V_{nm}$ throughout the interval: the derivative $45(n+m+2\alpha)$ has constant sign in its interior, since $n+m$ is even.
+
+For $n\in\{-11,-9,\ldots,11\}$, put $v_n=|n|+1/2$ and
+\begin{align}
+ R_n^{\rm o}={}&\frac{3E_*}{250}\sum_{\epsilon=\pm1}a^{(\epsilon n-7)/2}
+ \left[v_n^2T_1(t,L_\epsilon)+2v_nT_2(t,L_\epsilon)
+ +\tfrac13T_3(t,L_\epsilon)\right],\label{eq:odd-row-tail}\\
+ &L_\epsilon=(27-\epsilon n)/2.\nonumber
+\end{align}
+This bounds all columns with $|m|\ge27$. Indeed, $d_m\le(3/250)a^{(|m|-7)/2}$ and, with $j=|m-n|/2$,
+\begin{equation}\label{eq:complex-off-majorant}
+ |(S_\alpha)_{nm}|\le E_*j\bar Q^j
+ (v_n^2+2v_nj+j^2/3).
+\end{equation}
+Define the rational polynomial
+\begin{align}
+ F_n(\alpha)={}&\left[4r_-^2(n+\alpha)^4-45r_+U_0(n+\alpha)^2+41\right]d_n(\alpha)
+ \nonumber\\
+ &-r_+\sum_{\substack{|m|\le25,\ m\ \mathrm{odd}\\m\ne n}}
+ U_{|n-m|/2}V_{nm}(\alpha)d_m(\alpha)-R_n^{\rm o}.
+ \label{eq:odd-F}
+\end{align}
+Using the rational endpoints $U_j$ from \eqref{eq:L-U}, direct substitution in \eqref{eq:Bernstein} gives the uniform finite inequality
+\begin{equation}\label{eq:odd-uniform}
+ \min_{\substack{n=-11,-9,\ldots,11\\0\le k\le6}}[F_n]_{6,k}>\tfrac12,\qquad
+ \min_{n=-11,-9,\ldots,11}\frac{F_n(0)}{d_n(0)}>5.
+\end{equation}
+All denominators are positive. Table~\ref{tab:odd-all} displays all 84 Bernstein bounds and all 12 zero-parameter bounds separately, with the complete coefficient conversion preceding the table. Thus these rows are below $-1$, and below $-6$ at $\alpha=0$.
+
+For the remaining rows put $|n|=2j+1\ge13$ and $v=|n+\alpha|\ge25/2$. Introduce the common tail functions
+\begin{equation}\label{eq:common-tail-moments}
+\begin{aligned}
+ \mathfrak S(v)&=v^2\{\mu_1(z)+\mu_1(t)\}+2v\mu_2(t)+\tfrac13\mu_3(t),\\
+ \mathfrak C&=4\mu_0(t)+8\mu_1(t)+5\mu_2(t)+\mu_3(t).
+\end{aligned}
+\end{equation}
+Direct substitution in \eqref{eq:odd-weights} shows $d_m\le(3/25)d_{5\operatorname{sgn}m}a^{(|m|-7)/2}$ also for $|m|=1,3,5$. Consequently, on the same sign branch the weight ratios are bounded by $a^{-l}$ toward lower and $a^l$ toward higher frequencies. For the former $l\le v/2$ and $|v^2-2vl-l^2/3|\le v^2$. Summing \eqref{eq:odd-off} therefore gives at most $E_*\mathfrak S(v)$.
+
+On the opposite branch the relative weight factor is at most $37/16$, since $d_{-5}\le(37/16)d_5$ and conversely with the same factor; the preceding inequalities include the three exceptional low frequencies. Writing $|m|=2k+1$, the half-distance is $j+1+k\le v+k$, and
+\[
+ (v+k)(2v+k)^2\le v^3(4+8k+5k^2+k^3).
+\]
+The resulting bound is $E_*(37/16)\bar Qz^jv^3\mathfrak C<8v^2$: indeed $(2j+3/2)z^j$ decreases for $j\ge6$ and $E_*(37/16)\bar Q(27/2)z^6\mathfrak C<8$. Thus the row is at most
+\begin{equation}\label{eq:odd-high}
+ \mathcal P_{\rm o}(v)=-4r_-^2v^4+(45r_++8)v^2+E_*\mathfrak S(v).
+\end{equation}
+At $v=25/2$ this is less than $-3112$, and its first two derivatives are negative. Its third derivative is negative for $v>0$, so Lemma~\ref{lem:row} and $H^2$ density give
+\begin{equation}\label{eq:odd-final}
+ S_\alpha\le-I\quad(0\le\alpha\le1/2),\qquad S_0\le-6I
+ \quad\text{on odd Fourier indices}.
+\end{equation}
+
+\subsection{An explicit adjoint approximation}
+From this subsection through the proof of Proposition~\ref{prop:bloch}, the vector constructions and matrix comparisons take place in the even Fourier subspace $\mathscr H_{\rm even}=\overline{\operatorname{span}}\{e^{2\ii n\zeta}:n\in\Z\}\subset L^2$; operator domains are its intersections with $H^4_\per$. The odd subspace has already been treated in \eqref{eq:odd-final}. Because the operator is non-self-adjoint, the neutral spectral projection is determined by both its kernel and its adjoint kernel. The coercivity already proved provides a way to approximate the adjoint vector and bound the approximation error without assuming spectral data.
+In the normalized sine basis set $\mathfrak b_j=2jh_{2j}$ and
+\begin{equation}\label{eq:kernel-norm}
+ \mathfrak n^2=\sum_{j\ge1}\mathfrak b_j^2=\frac{2h_0}{5r},\qquad
+ e_j=\mathfrak b_j/\mathfrak n.
+\end{equation}
+The integral identity follows by integrating $(q^3q_x)'=3q^2/2-5q^6/2$. Proposition~\ref{prop:single-spectrum} supplies a unique real sine-even adjoint vector $\psi$, with $A_0^*\psi=0$ and $\ip\psi e=1$.
+
+Define the trial directly by the 18 positive integers $N_i$ in Table~\ref{tab:trial-integers}:
+\begin{equation}\label{eq:galerkin-trial}
+ t_i=N_i/10^{30}\quad(1\le i\le18),\qquad t_1=1,
+\end{equation}
+and $\Phi=\sum_{i=1}^{18}t_i\sqrt2\sin(2i\zeta)$, $\widetilde\psi=\Phi/\ip\Phi e$.
+The coefficients of $\Phi$ are thus fixed rational numbers; their definition requires no linear system. The positive normalization $\ip\Phi e>999/1000$ is bounded in Table~\ref{tab:input-bounds}. Appendix~\ref{app:arithmetic} gives the residual formula, and Table~\ref{tab:residual-all} displays each of its 40 finite terms and their integer squares. The following integer comparison, including the infinite residual tail, proves
+\begin{equation}\label{eq:adjoint-data}
+ \norm{A_0^*\widetilde\psi}^2<2\cdot10^{-30}<10^{-28}.
+\end{equation}
+
+
+Put $R_*=10^{-14}$ and $v=\psi-\widetilde\psi\perp e$. The sine-even coercivity and \eqref{eq:interpolation}, combined with weights $9/10$ and $1/10$, give
+\[
+ \norm v\le R_*/75,\qquad \norm{D_x^2v}^2\le R_*^2/15.
+\]
+Equation~\eqref{eq:Astar} and interpolation then give $\norm{D_x^4v}<38R_*$, $\norm{D_xv}<R_*$ and $\norm{D_x^3v}<7R_*$. Since $D_\zeta=r^{-1/2}D_x$ and $r>1/2$, in the norm $\norm f_{\mathcal H^4}=\sum_{j=0}^4\norm{D_\zeta^jf}_2$ we obtain
+\begin{equation}\label{eq:adjoint-H4}
+ \norm{\psi-\widetilde\psi}_{\mathcal H^4}<225R_*.
+\end{equation}
+
+\subsection{Exact removal of the neutral factors}
+Near $\alpha=0$, the expected spectral decay is of order $\alpha^2$. Dividing an approximate neutral identity by $\alpha^2$ would amplify its residual and destroy uniformity. We therefore construct the decomposition from the exact vectors $e$ and $\psi$, cancel the neutral factors algebraically, and only then approximate the resulting polynomial coefficients.
+For $(u\otimes v)f=\ip f v u$ and $z=\psi-e\perp e$, define
+\begin{equation}\label{eq:T}
+ \calT=I+e\otimes z,\qquad \calT^{-1}=I-e\otimes z.
+\end{equation}
+These maps preserve $H^4$, and $\calT A_0\calT^{-1}=0\oplus B_e$, where $B_e=P_eA_0|_{e^\perp}$ and $P_e$ is the orthogonal projection onto $e^\perp$. This follows from $A_0e=A_0^*\psi=0$.
+
+Multiply $e$ and $\psi$ by the same constant phase so that their complex Fourier coefficients are real antisymmetric sequences. Let $\avec$ be the unit vector with Fourier coefficients $a_{\star,2}=1/\sqrt2$, $a_{\star,-2}=-1/\sqrt2$ and $a_{\star,n}=0$ otherwise. Choose the common phase so that $\ip e{\avec}>0$. Set
+\begin{equation}\label{eq:householder}
+ u=e+\avec,\qquad d=1+\ip e{\avec}>1,\qquad U=I-\frac{u\otimes u}{d}.
+\end{equation}
+Then $U=U^*=U^{-1}$ and $U\avec=-e$. Let $V$ be the unitary matrix whose columns are, in order, $\avec$, the constant Fourier vector, $(e^{2\ii\zeta}+e^{-2\ii\zeta})/\sqrt2$, and the Fourier vectors with indices $4,-4,6,-6,\ldots$. Write $W=V^*U$, let $P_0$ be the projection onto the first coordinate in this basis and $P=I-P_0$, and set
+\[
+ H_j=\Sym(W\calT A_j\calT^{-1}W^*),\qquad H_\alpha=\sum_{j=0}^4\alpha^jH_j.
+\]
+The kernel identities give $H_0P_0=P_0H_0=0$. Reflection $\calR f(\zeta)=f(-\zeta)$ obeys $\calR A_j\calR=(-1)^jA_j$ and commutes with $\calT$, since $e,\psi$ are odd. Hence
+\begin{equation}\label{eq:exact-zeros}
+ H_0P_0=P_0H_0=0,\qquad
+ P_0H_1P_0=P_0H_3P_0=0,\qquad H_4=-4r^2I.
+\end{equation}
+For $\alpha>0$, set $G_\alpha=(\alpha^{-1}P_0+P)H_\alpha(\alpha^{-1}P_0+P)$. Exact cancellation gives the polynomial blocks
+\begin{equation}\label{eq:G}
+ \begin{aligned}
+ P_0G_\alpha P_0&=P_0H_2P_0-4r^2\alpha^2P_0,\\
+ P_0G_\alpha P&=P_0(H_1+\alpha H_2+\alpha^2H_3)P,\\
+ PG_\alpha P&=P(H_0+\alpha H_1+\alpha^2H_2+\alpha^3H_3-4r^2\alpha^4I)P.
+ \end{aligned}
+\end{equation}
+The other block is the adjoint. This polynomial formula defines $G_0$; approximation is performed only after this exact cancellation.
+
+
+
+\subsection{Finite-rank approximation with an explicit error}
+Let $N=15$. Truncate $e$ to the first $N$ positive sine modes and renormalize it to a unit vector $e_N$. Truncate $\widetilde\psi$ to the same modes and renormalize it to $\psi_N$ with $\ip{\psi_N}{e_N}=1$. Put $z_N=\psi_N-e_N$. Their complex Fourier supports are contained in $|n|\le30$. Define $\calT_N,U_N,W_N$ by the exact formulas above with these vectors. For $j=1,2,3$, set
+\[
+ H_j^N=\Sym(W_N\calT_N A_j\calT_N^{-1}W_N^*),\qquad
+ H_0^N=PW_NS_0W_N^*P.
+\]
+Substitute these coefficients in \eqref{eq:G} to define $G_\alpha^N$. Thus the constant coefficient is a compression of $S_0$; no approximate kernel vector is substituted into an identity that requires an exact one.
+
+The individual summands in Table~\ref{tab:vector-all}, their totals in Table~\ref{tab:vector-totals}, and \eqref{eq:adjoint-H4} give
+\begin{equation}\label{eq:vector-errors}
+\begin{gathered}
+ \norm{e-e_N}_{\mathcal H^4}<2\cdot10^{-12},\qquad
+ \norm{\psi-\psi_N}_{\mathcal H^4}<6\cdot10^{-12},\\
+ \norm e_{\mathcal H^4},\ \norm{e_N}_{\mathcal H^4},\
+ \norm\psi_{\mathcal H^4},\ \norm{\psi_N}_{\mathcal H^4}<1000,
+ \qquad \norm{z_N}<1/20,\quad \norm{\psi-e}<.051.
+\end{gathered}
+\end{equation}
+
+The last bound follows by the triangle inequality from the two vector errors and $\norm{z_N}<1/20$.
+
+\begin{lemma}[Uniform finite-rank comparison]\label{lem:comparison}
+The approximations above satisfy
+\begin{equation}\label{eq:comparison-small}
+ \sup_{0\le\alpha\le1/2}\norm{G_\alpha-G_\alpha^N}_{L^2\to L^2}<\frac1{100}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $\epsilon=10^{-11}$; both errors in \eqref{eq:vector-errors} are smaller.
+For $A=A_j,A_j^*$ or $S_0$, $0\le j\le3$, the differential formulas give
+$\norm{Af}\le400\norm f_{\mathcal H^4}$. Let $\Delta$ denote exact minus approximate quantities. The norm of a rank-one operator $u\otimes v$ is $\norm u\norm v$. Both $u,u_N$ have $L^2$ norm at most $2$, $\mathcal H^4$ norm below $1100$, and $d,d_N\ge1$. Thus $|\Delta(d^{-1})|\le\epsilon$ and the rank-one formula for $U$ gives
+\[
+ \norm{\Delta U}\le8\epsilon,\qquad
+ \norm{A\Delta U},\ \norm{(\Delta U)A}
+ \le(800+440000+880000)\epsilon<1.33\cdot10^6\epsilon.
+\]
+The second bound uses adjoints when $A$ acts on the right.
+The cancellation $Ue=-\avec$ now avoids expanding two successive conjugations:
+\[
+ \mathscr V:=U\calT=U-\avec\otimes z,\qquad
+ \mathscr V^{-1}=U-e\otimes Uz,\qquad
+ \norm{\mathscr V^{\pm1}},\norm{\mathscr V_N^{\pm1}}\le1.1.
+\]
+Since $\norm{\Delta z}_{\mathcal H^4}\le2\epsilon$ and $\norm z,\norm{z_N}<.1$,
+\[
+ \norm{(\Delta\mathscr V)A}<1.34\cdot10^6\epsilon,
+ \quad
+ \norm{A\Delta(\mathscr V^{-1})}
+ <[1.33\cdot10^6+40+320000+800000]\epsilon
+ <2.46\cdot10^6\epsilon.
+\]
+Telescoping $\mathscr VA\mathscr V^{-1}$ therefore bounds each $H_j-H_j^N$ by $4.2\cdot10^6\epsilon$. The constant stable block instead satisfies $\norm{PW S_0W^*P-PW_NS_0W_N^*P}<2.66\cdot10^6\epsilon$. In \eqref{eq:G} the center, off-diagonal and remaining stable coefficient sums are $1,7/4,7/8$; the symmetric off-diagonal block has the norm of its upper-right block. Consequently
+\[
+ \norm{G_\alpha-G_\alpha^N}
+ <[2.66+(1+7/4+7/8)4.2]10^6\epsilon<2\cdot10^7\epsilon<1/100.
+\]
+All differences used here are bounded finite-rank operators, as the displayed rank-one formulas show. Appendix~\ref{app:calculations} expands each of these constants and obtains the sharper intermediate upper bound $17885/10^8$ in \eqref{eq:comparison-numeric-expanded}.
+\end{proof}
+
+\subsection{Polynomial row weights for the even sector}
+Label the coordinates in the order of $V$ by $\mathcal J=\{\mathrm e,0,\mathrm c,\pm4,\pm6,\ldots\}$. Use
+\begin{equation}\label{eq:even-weights}
+\begin{aligned}
+ d_{\mathrm e}&=1,&d_0&=\tfrac34+\tfrac14\alpha^2,&d_{\mathrm c}&=\tfrac95-3\alpha^2,\\
+ d_4&=\tfrac{13}{40}-\tfrac{19}{100}\alpha-\tfrac{17}{100}\alpha^2,
+ &d_{-4}&=\tfrac{13}{40}+\tfrac{19}{100}\alpha-\tfrac{31}{100}\alpha^2,\\
+ d_6&=\tfrac{19}{500}-\tfrac1{40}\alpha-\tfrac1{100}\alpha^2,
+ &d_{-6}&=\tfrac{19}{500}+\tfrac3{100}\alpha-\tfrac{11}{500}\alpha^2.
+\end{aligned}
+\end{equation}
+For even $|n|\ge8$, put $d_n=d_{6\operatorname{sgn}n}a^{(|n|-6)/2}$, with $a=1/10$. The degree-two Bernstein coefficients of all these weights are positive.
+
+Let $\mathcal J_{30}=\{\mathrm e,0,\mathrm c,\pm4,\ldots,\pm30\}$ and write
+\[
+ (G_\alpha^N)_{ij}=\sum_{l=0}^4g_{ij,l}\alpha^l,
+ \qquad \beta_{ij,k}=\sum_{l=0}^k\frac{\binom kl}{2^l\binom4l}g_{ij,l}.
+\]
+For columns in $\mathcal J_{30}$ and for even $32\le|m|\le80$, the entries are specified by the finite matrix formulas in Appendix~\ref{app:arithmetic}. Denote their enclosing rational segments by $[\beta^-_{ij,k},\beta^+_{ij,k}]$ and put $B_{ij,k}=\max(|\beta^-_{ij,k}|,|\beta^+_{ij,k}|)$. Set $D_{i,j}=[d_i]_{2,j}$ and
+\begin{equation}\label{eq:even-row-Bernstein}
+\begin{aligned}
+ C_{i,k}={}&\sum_{p+q=k}\frac{\binom4p\binom2q}{\binom6k}
+ \left[(-\beta^+_{ii,p}-\tfrac35)D_{i,q}
+ -\sum_{\substack{j\in\mathcal J_{30}\\j\ne i}}B_{ij,p}D_{j,q}
+ -\sum_{\substack{32\le|m|\le80\\m\ \mathrm{even}}}B_{im,p}D_{m,q}\right]
+ -R^{\rm e},\\
+ R^{\rm e}={}&\tfrac{12}{5}E_*a^{12}
+ [31^2T_1(t,26)+62T_2(t,26)+T_3(t,26)].
+\end{aligned}
+\end{equation}
+Define $s_i=1$ for $i=\mathrm e,0,\mathrm c$ and $s_n=a^{(|n|-6)/2}$ otherwise. The finite formulas in Appendix~\ref{app:arithmetic} give
+\begin{equation}\label{eq:even-uniform}
+ \min_{\substack{i\in\mathcal J_{30}\\0\le k\le6}}\frac{C_{i,k}}{s_i}>\frac1{100}.
+\end{equation}
+Table~\ref{tab:even-components} displays all 217 comparisons as integer subtractions, including separate diagonal, finite-head and external-column contributions. By \eqref{eq:Bernstein-product}, they prove the row bound $-3/5$ for the 31 indicated rows, with the omitted-column term justified as follows.
+
+Let $|m|>80$ and $l=(|m|-30)/2\ge26$. Each entry coupling a Fourier index $|n|\le30$ to $m$ in $S_0$, $A_1$, $A_1^*$ or $A_2$ is at most
+\[
+ K(l)=E_*l(31+l)^2\bar Q^l.
+\]
+This follows directly from \eqref{eq:Aj}; the function of the half-distance is decreasing, so the minimum distance to the head suffices. Since $\norm{\calT_N},\norm{\calT_N^{-1}}\le1.1$, the transformed column in $G_\alpha^N$ has norm at most $4\sqrt{31}K(l)<24K(l)$. There are two possible signs for $m$, and $d_m\le(1/20)a^{l+12}$. Summing their weighted contributions gives exactly $R^{\rm e}$ in \eqref{eq:even-row-Bernstein}; in particular $R^{\rm e}<3\cdot10^{-66}$. This bound is independent of the row and of $\alpha$.
+
+\subsection{Every remaining even row}
+We now treat all $|n|\ge32$ without truncation. The finite vectors satisfy, for $2\le j\le15$,
+\begin{equation}\label{eq:vector-envelopes}
+ |(e_N)_{\pm2j}|\le\tfrac{13}{1000}a^{j-3},\qquad
+ |(z_N)_{\pm2j}|\le\tfrac7{1000}a^{j-3}.
+\end{equation}
+These complex Fourier coefficient bounds are proved in Appendix~\ref{app:arithmetic}.
+
+The weights obey $\norm d_{\ell^2}<23/10$, and their subvector on $|m|\ge4$ has norm less than $13/25$. The Householder formula therefore gives, for $|m|\ge4$,
+\[
+ \sum_i|(W_N^*)_{mi}|d_i\le d_m+2|(e_N)_m|.
+\]
+Indeed the weighted scalar in the rank-one correction is at most its center component plus $(13/25)\norm{e_N}$, and its denominator is at least one. For $\calT_N^{-1}W_N^*$ this estimate acquires at most $(1/4)|(e_N)_m|$, by Cauchy--Schwarz and $\norm{z_N}<1/10$. For $\calT_N^*W_N^*$ it acquires $|(z_N)_m|$, since $W_Ne_N$ has only its center coordinate. As $d_m\le(1/20)a^{(|m|-6)/2}$, \eqref{eq:vector-envelopes} proves the common bound
+\begin{equation}\label{eq:transform-envelope}
+ \sum_i|L_{mi}|d_i\le\tfrac1{10}a^{(|m|-6)/2},
+ \qquad L=W_N^*,\ \calT_N^{-1}W_N^*,\ \calT_N^*W_N^*.
+\end{equation}
+For $m=0,\pm2$ it follows directly from $\norm L\le1.1$ and $\norm d<23/10$, since the right sides are $100,10,10$. Outside the head the transforms are the identity, and the same estimate holds.
+
+Let $n_*=|n|\ge32$ and $v=n_*+2$. The diagonal in this row is unchanged from \eqref{eq:odd-diag}. In a head--tail entry, $A_3$ has no contribution. The total contribution of the lower coefficients to the scaled row is bounded by the contribution from $S_0$, plus $3/2$ times that from $A_1$ or $A_1^*$, plus $3/4$ times that from $A_2$. For $|m|\le30$, the latter two matrix bounds are $2E_*n_*l\bar Q^l$ and $E_*l\bar Q^l$, respectively. Their additions $3n_*+3/4$ are absorbed by replacing $n_*^2$ with $(n_*+2)^2$ in the off-diagonal bound. In lower same-sign directions one may use $|n_*^2-2n_*l-l^2/3|\le n_*^2$.
+
+Since $d_n\ge(1/50)a^{(n_*-6)/2}$, \eqref{eq:transform-envelope} gives a weight-ratio factor at most $5$. The same-sign sum is therefore at most $5E_*\mathfrak S(v)$, with \eqref{eq:common-tail-moments}. The opposite half-line, including $m=0$, contributes at most $5E_*z^jv^3\mathfrak C$ for $j=n_*/2\ge16$. This is less than $v^2$, since $(2j+2)z^j$ decreases and $5E_*\,34z^{16}\mathfrak C<1$. The entire row is bounded by
+\begin{equation}\label{eq:even-high}
+ \mathcal P_{\rm e}(n_*)=-4r_-^2(n_*-1/2)^4+45r_+(n_*+1/2)^2
+ +5E_*\mathfrak S(n_*+2)+(n_*+2)^2.
+\end{equation}
+
+Direct rational comparison gives
+\[
+ \mathcal P_{\rm e}(32)<-481088,\quad
+ \mathcal P_{\rm e}'(32)<-166483,\quad
+ \mathcal P_{\rm e}''(32)<-21850.
+\]
+Its third derivative is $-96r_-^2(n_*-1/2)<0$. This proves the bound $-3/5$ in every remaining row. Weighted row estimates first apply to finite sequences. All coefficients and finite-rank vectors are smooth, so the forms are continuous on $H^2$ and the estimate extends by density. We have proved
+\[
+ G_\alpha^N\le-\tfrac35I\qquad(0\le\alpha\le1/2).
+\]
+Together with \eqref{eq:comparison-small}, this gives $G_\alpha\le-\tfrac12I$. Undoing the exact congruence yields
+\[
+ H_\alpha\le-\tfrac12(\alpha^2P_0+P)\le-\alpha^2I/2\qquad(0<\alpha\le1/2).
+\]
+The similarities are bounded, invertible and domain-preserving, and the elliptic operator has compact resolvent. Applying this form estimate to each transformed eigenvector bounds its entire spectrum. The odd sector satisfies the stronger estimate \eqref{eq:odd-final}; reflection handles negative $\alpha$. This proves Proposition~\ref{prop:bloch}.
+
+\subsection{The multiple-cover spectrum}
+\begin{corollary}\label{cor:multicover}
+For every $M\ge1$, zero is algebraically simple for $\mathcal A_M$, generated by global rotation. Every other eigenvalue has real part at most $-g_M$, with $g_M$ as in \eqref{eq:certified-gaps}. Its nonzero spectral gap satisfies \eqref{eq:gap-order}.
+\end{corollary}
+\begin{proof}
+Translation by one immersed period is unitary of order $M$ on the long parameter circle and commutes with $\mathcal A_M$. Its eigenspaces give the complete finite Bloch direct sum, with parameters $j/M$ modulo one, $j=0,\ldots,M-1$. Choose representatives in $[-1/2,1/2]$. Nonzero representatives have $|\alpha|\ge1/M$ and satisfy Proposition~\ref{prop:bloch}; the zero sector satisfies Proposition~\ref{prop:single-spectrum}. 
+
+For the upper gap bound, $A_\alpha$ is an analytic family of type (A) with common domain $H^4_\per$. The analytic perturbation theorem for an isolated simple eigenvalue \cite[Chapter~VII, Section~1]{Kato} therefore gives a unique analytic branch $\lambda(\alpha)$ issuing from zero. Reflection satisfies $\calR A_\alpha\calR=A_{-\alpha}$, and complex conjugation also exchanges the two operators for real $\alpha$. Uniqueness makes $\lambda$ real and even. Consequently
+\[
+ \lambda(\alpha)=-D_{\rm ph}\alpha^2+O(\alpha^4),\qquad D_{\rm ph}\ge1/2,
+\]
+where $D_{\rm ph}:=-\lambda''(0)/2$ is the phase-diffusion coefficient, and its lower bound follows from Proposition~\ref{prop:bloch}. For sufficiently large $M$, $\lambda(1/M)$ is a nonzero eigenvalue of $\mathcal A_M$, so $\gap_M\le-\lambda(1/M)\le C/M^2$. The lower bound was proved above.
+\end{proof}

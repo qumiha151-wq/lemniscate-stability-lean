@@ -1,0 +1,683 @@
+\section{Expanded geometric, operator and estimate calculations}\label{app:calculations}
+This appendix gives the intermediate calculations behind the formulas and
+estimates in the body of the paper. Appendix~\ref{app:expanded-data} then
+lists every finite rational comparison. The abstract existence, composition
+and normal-stability theorems remain cited in their published forms.
+
+\subsection{The reference curve, scaling and the normal variation}
+For this paragraph only put $S=\sin u$, $C=\cos u$ and $d=1+S^2$.
+If $N=(-S(3-S^2),1-3S^2)$, quotient differentiation gives
+\[
+ \beta_{{\rm B},u}=N/d^2,\qquad N'=(-3C^3,-6SC),
+ \qquad |N|^2=d^3,\qquad \det(N,N')=3Cd^2.
+\]
+Consequently
+\[
+ |\beta_{{\rm B},u}|=d^{-1/2},\quad
+ \det(\beta_{{\rm B},u},\beta_{{\rm B},uu})=3C/d^2,
+ \quad k=3C/\sqrt d,
+\]
+and the unit normal and the two support components are
+\[
+ \nu=d^{-3/2}(-(1-3S^2),-S(3-S^2)),\quad
+ h=-C^3/d^{3/2},\quad b=-2SC/d^{3/2}.
+\]
+Since $D_s=\sqrt d\,D_u$, one obtains, term by term,
+\[
+ k_s=-6S/d,\quad k_{ss}=-6C^3/d^{3/2}=-2k^3/9,
+ \quad k_s^2=36S^2/d^2=9-k^4/9.
+\]
+These agree with the identities used from \cite[Section~2.2.3]{MW}.
+For the quarter-length calculation,
+\[
+ \int_0^{\pi/2}\frac{du}{\sqrt{1+\sin^2u}}
+ =\int_0^\infty\frac{dv}{\sqrt{1+v^2}\sqrt{1+2v^2}}
+ =\frac1{\sqrt2}\int_0^{\pi/2}
+       \frac{d\theta}{\sqrt{1-\tfrac12\sin^2\theta}},
+\]
+where $v=\tan u=2^{-1/2}\tan\theta$. This verifies the period in
+\eqref{eq:lengths} directly in the chosen parametrization.
+
+Under multiplication of a curve by $\rho>0$,
+$ds\mapsto\rho\,ds$, $k\mapsto\rho^{-1}k$ and
+$F\mapsto\rho^{-3}F$. Differentiating $\gamma=\rho X$ in the
+variables of \eqref{eq:normalization} gives
+\[
+ \gamma_t=\rho^{-3}(cX+X_{\widehat t}),\qquad
+ \ip{X_{\widehat t}}{\nu_X}=-F_X-c\ip X{\nu_X}.
+\]
+Also $F_\beta=(6-27/2)h=-(15/2)h$, so $4c=30$.
+For $\widetilde\gamma=a^{-1}\gamma$, the scaling rule is
+$k_{\widetilde\gamma}=a k_\gamma$ and
+$ds_{\widetilde\gamma}=a^{-1}ds_\gamma$. These factors cancel in
+the total curvature. With $\Delta k=k_{\widetilde\gamma}-k_{\beta_M}(\cdot+\sigma)$,
+\[
+ (2\pi\omega)^2=\left|\int_0^{\ell_M}\Delta k\,ds\right|^2
+ \le\ell_M\int_0^{\ell_M}|\Delta k|^2ds;
+\]
+minimizing over $\sigma$ proves \eqref{eq:turn-lock}.
+
+For $\gamma_\epsilon=\beta+\epsilon f\nu$, differentiating
+$|\partial_s\gamma_\epsilon|$ at zero yields $-kf$.
+Hence $\delta D_s=kfD_s$, $\delta\tau=f_s\nu$ and
+$\delta\nu=-f_s\tau$. Applying $\delta$ to $k=\ip{D_s\tau}\nu$
+gives $\delta k=f_{ss}+k^2f$, while
+$\delta h=f-bf_s$. The two variations of the arclength derivative in
+$D_s^2k$ must both be kept:
+\begin{align}
+ \delta(D_s^2k)
+ &=2kf k_{ss}+(kf)_sk_s+D_s^2(f_{ss}+k^2f)\nonumber\\
+ &=f_{ssss}+k^2f_{ss}+5kk_sf_s
+      +(3k_s^2+4kk_{ss})f.\label{eq:variation-expanded}
+\end{align}
+Adding $\delta(k^3/2)=\tfrac32 k^2f_{ss}+\tfrac32 k^4f$
+and $c\delta h$ proves the full linearization stated in
+Section~\ref{sec:geometry}. In particular,
+\[
+ 5kk_s-cb=(5-5/6)kk_s=\tfrac{25}{6}kk_s,
+\]
+\[
+ 3k_s^2+4kk_{ss}+\tfrac32k^4+c
+ =\tfrac{69}{2}+\tfrac5{18}k^4
+ =\tfrac{69}{2}+\tfrac{45}{2}q^4.
+\]
+The factors $D_s=\sqrt2D_x$ and $k=3q$ now give \eqref{eq:A0}.
+
+For completeness, the symmetry eigenvalues can be computed without
+differentiating an unspecified reparametrization. The normal component of a
+translation by $\epsilon v$ changes $F+c\ip X\nu$ by
+$c\epsilon\ip v\nu$; that of a dilation $X=(1+\epsilon)\beta$
+changes it by
+\[
+ (1+\epsilon)^{-3}F_\beta+c(1+\epsilon)h,
+ \qquad \partial_\epsilon|_0=4ch.
+\]
+The graph velocity is the negative of these variations at zero. Rotation
+leaves the whole equilibrium equation invariant, and its infinitesimal normal
+component is $\ip{\operatorname{rot}\beta}\nu=\ip\beta\tau=b$.
+Tangential components differentiate the identically zero equilibrium equation
+and contribute zero. This proves all three identities in \eqref{eq:modes}.
+
+\subsection{Adjoints, the quadratic form and Fourier matrices}
+Write $D=D_x$. Periodic integration by parts gives
+$(aD)^*=-aD-a_x$ and $(aD^2)^*=aD^2+2a_xD+a_{xx}$ for real $a$.
+Thus
+\[
+ (-45q^2D^2)^*=-45q^2D^2-180qq_xD-45(q^2)_{xx},
+\]
+\[
+ (-75qq_xD)^*=75qq_xD+75(qq_x)_x.
+\]
+Using $(q^2)_{xx}=1-3q^4$ and
+$(qq_x)_x=(1-3q^4)/2$, the extra zero-order term is
+$-\tfrac{15}{2}(1-3q^4)$. Added to the zero-order term of $A_0$
+it is $-42$; the first-order coefficient is $-105qq_x$.
+Averaging gives
+\[
+ S_0=-4D^4-45q^2D^2-90qq_xD-153/4-45q^4/4,
+\]
+which is \eqref{eq:S0} in divergence form. A further integration by parts
+gives \eqref{eq:energy}. To see the interpolation constant explicitly, put
+$X=\|f_{xx}\|_2$ and $Y=\|f\|_2$. Then
+\[
+ \|f_x\|_2^2=-\Re\ip{f_{xx}}f\le XY,
+ \qquad 45XY\le2X^2+\frac{2025}{8}Y^2,
+\]
+so $2025/8-153/4=1719/8$, proving \eqref{eq:interpolation}.
+
+Here is the link from the standard theta identities to the coefficients used
+in the proof. Let $Z(x)$ denote the Jacobi zeta function at parameter $1/2$,
+and let $\mathbb E$ be the complete elliptic integral of the second kind at
+that parameter. The theta logarithmic derivative and zeta identities
+\cite[Sections~20.5(ii), 22.16]{DLMF} give
+\[
+ Z(x)=\frac{2\pi}{K}\sum_{j\ge1}
+       \frac{Q^j}{1-Q^{2j}}\sin(j\pi x/K),\qquad
+ Z_x=\operatorname{dn}^2(x\mid1/2)-\mathbb E/K.
+\]
+Since $q^2=2\operatorname{dn}^2-1$, differentiation of this absolutely
+convergent series gives
+\[
+ q^2=2\mathbb E/K-1+
+       \frac{4\pi^2}{K^2}\sum_{j\ge1}
+       \frac{jQ^j}{1-Q^{2j}}\cos(2j\zeta).
+\]
+Thus $h_{2j}=8rjQ^j/(1-Q^{2j})$. Evaluation at $x=0$ gives the
+formula for $h_0$ without needing an enclosure for $\mathbb E$.
+The standard identity $K=(\pi/2)\theta_3(0,Q)^2$
+\cite[Section~22.2]{DLMF} gives the expression for $r$.
+Finally
+\[
+ (q^2)_{xx}=2q_x^2+2qq_{xx}=1-3q^4.
+\]
+Taking its Fourier coefficient at $n=0$ and at $n\ne0$ proves
+\eqref{eq:q4}, including the factor $r$.
+
+Apply the differential expression of $A_0$ to $e^{\ii m\zeta}$.
+The first-, second- and zero-order nonconstant terms give, at output index $n$,
+\[
+ 45rm^2h_{n-m}+\tfrac{75}{2}rm(n-m)h_{n-m}
+       -\tfrac{15}{2}r(n-m)^2h_{n-m}.
+\]
+Their coefficient simplifies as
+\[
+ 45m^2+\tfrac{75}{2}m(n-m)-\tfrac{15}{2}(n-m)^2
+ =\tfrac{15}{2}n(7m-n).
+\]
+The constant coefficient is $-42$ after the constant part of $q^4$ is
+included. This proves the first line of \eqref{eq:Aj}.
+Replacing $n,m$ by $n+\alpha,m+\alpha$ gives
+\[
+ (n+\alpha)(7m+6\alpha-n)
+ =n(7m-n)+(5n+7m)\alpha+6\alpha^2,
+\]
+\[
+ (m+\alpha)^4=m^4+4m^3\alpha+6m^2\alpha^2
+                    +4m\alpha^3+\alpha^4,
+\]
+and hence every remaining coefficient $A_j$ in that equation.
+Taking the symmetric part gives
+\[
+ \tfrac{15r}{4}\{n(7m-n)+m(7n-m)\}h_{n-m}
+ =r\{45nm-\tfrac{15}{4}(n-m)^2\}h_{n-m}.
+\]
+Adding or subtracting the column at $-m$ produces respectively the cosine
+or sine matrix \eqref{eq:entries}. The normalized constant mode contributes
+the factor $\sqrt2$ in \eqref{eq:zero}.
+
+\subsection{The graph equation with all six coefficients displayed}
+Use $a=a_f$, $g=g_f$, $v=f_s$, $w=f_{ss}$, $z=f_{sss}$ and $y=f_{ssss}$
+only in this subsection. Differentiation of $Z_f=\beta+f\nu$ gives
+\[
+ (Z_f)_s=a\tau+v\nu,\qquad
+ (Z_f)_{ss}=(-k_sf-2kv)\tau+(ka+w)\nu.
+\]
+Therefore
+\[
+ \det((Z_f)_s,(Z_f)_{ss})=ka^2+aw+k_sfv+2kv^2,
+ \quad \nu_f=(-v\tau+a\nu)/g,
+\]
+which proves the curvature and support formulas in \eqref{eq:graph-geometry}.
+The following coefficients depend only on $(s,f,v)$:
+\begin{align}
+ d_0&=-k_sf-kv,& e_0&=-k_{ss}f-2k_sv,\nonumber\\
+ N_0&=ka^2+2kv^2+k_sfv,&J_0&=ad_0,&J_{00}&=d_0^2+ae_0,\nonumber\\
+ N_1&=k_sa^2+2kad_0+3k_sv^2+k_{ss}fv,\nonumber\\
+ N_{00}&=k_{ss}a^2+4k_sad_0+2kd_0^2+2kae_0
+                    +4k_{ss}v^2+k_{sss}fv,\nonumber\\
+ N_{01}&=-2k^2a+9k_sv+k_{ss}f,&N_{03}&=2kv-k_sf.
+ \label{eq:graph-aux-expanded}
+\end{align}
+In particular, writing $N=N_0+aw$ and $J=J_0+vw$, the full derivatives are
+\begin{equation}\label{eq:graph-derivatives-expanded}
+\begin{aligned}
+ g_s&=J/g,&N_s&=N_1+3kvw+az,\\
+ J_s&=J_{00}-akw+w^2+vz,&
+ N_{ss}&=N_{00}+N_{01}w+3kw^2+N_{03}z+ay.
+\end{aligned}
+\end{equation}
+For example, $(\partial_s+v\partial_f)a=d_0$,
+$(\partial_s+v\partial_f)d_0=e_0$, and
+$\partial_vN_0+d_0=3kv$, which explains the cancellation in $N_s$.
+Starting from $k_f=Ng^{-3}$, two differentiations give
+\begin{align*}
+ (k_f)_s&=N_sg^{-3}-3NJg^{-5},\\
+ (k_f)_{ss}&=N_{ss}g^{-3}-6N_sJg^{-5}-3NJ_sg^{-5}+15NJ^2g^{-7},\\
+ D_f^2k_f&=N_{ss}g^{-5}-(7N_sJ+3NJ_s)g^{-7}+18NJ^2g^{-9}.
+\end{align*}
+Thus the complete graph right-hand side is
+\begin{equation}\label{eq:graph-full-expanded}
+ \calF(f)=-\frac{N_{ss}}{ag^4}
+ +\frac{7N_sJ+3NJ_s}{ag^6}
+ -\frac{18NJ^2+N^3/2}{ag^8}-c(h+f)+\frac{cbv}{a}.
+\end{equation}
+Substituting \eqref{eq:graph-derivatives-expanded} and collecting the six
+monomials in \eqref{eq:structure} now gives explicit formulas:
+\begin{align}
+ b_1^{\rm nl}&=10v/g^6,\nonumber\\
+ b_2^{\rm nl}&=-\frac{N_{03}}{ag^4}
+                    +\frac{7aJ_0+3N_0v}{ag^6},\nonumber\\
+ b_3^{\rm nl}&=\frac3{g^6}-\frac{18v^2+a^2/2}{g^8},\nonumber\\
+ b_4^{\rm nl}&=-\frac{3k}{ag^4}
+ +\frac{21kv^2+3N_0-3a^2k}{ag^6}
+ -\frac{18N_0v^2+36aJ_0v+3N_0a^2/2}{ag^8},\nonumber\\
+ b_5^{\rm nl}&=-\frac{N_{01}}{ag^4}
+ +\frac{7N_1v+21kvJ_0+3aJ_{00}-3N_0ak}{ag^6}\nonumber\\
+ &\hspace{12mm}-\frac{36N_0J_0v+18aJ_0^2+3N_0^2a/2}{ag^8},\nonumber\\
+ b_6^{\rm nl}&=-\frac{N_{00}}{ag^4}
+ +\frac{7N_1J_0+3N_0J_{00}}{ag^6}
+ -\frac{18N_0J_0^2+N_0^3/2}{ag^8}-c(h+f)+\frac{cbv}{a}.
+ \label{eq:six-coefficients-expanded}
+\end{align}
+The only $y$ term in \eqref{eq:graph-full-expanded} is $-g^{-4}y$.
+Equations \eqref{eq:graph-aux-expanded}--\eqref{eq:six-coefficients-expanded}
+are finite expressions; no unspecified coefficient extraction remains.
+
+\subsection{Geometric-series moments and every infinite-row reduction}
+For ease of evaluating every tail, the rational moment functions actually
+used in the proof are
+\begin{equation}\label{eq:moments-expanded}
+\begin{aligned}
+ \mu_0(z)&=(1-z)^{-1},&\mu_1(z)&=z(1-z)^{-2},\\
+ \mu_2(z)&=\frac{z(1+z)}{(1-z)^3},&
+ \mu_3(z)&=\frac{z(1+4z+z^2)}{(1-z)^4},\\
+ \mu_4(z)&=\frac{z(1+11z+11z^2+z^3)}{(1-z)^5},\\
+ \mu_5(z)&=\frac{z(1+26z+66z^2+26z^3+z^4)}{(1-z)^6},\\
+ \mu_6(z)&=\frac{z(1+57z+302z^2+302z^3+57z^4+z^5)}{(1-z)^7}.
+\end{aligned}
+\end{equation}
+They follow successively from $\mu_{p+1}=z\mu_p'$.
+For example
+\[
+ T_1=z^L(L\mu_0+\mu_1),\quad
+ T_2=z^L(L^2\mu_0+2L\mu_1+\mu_2),
+\]
+\[
+ T_3=z^L(L^3\mu_0+3L^2\mu_1+3L\mu_2+\mu_3),
+\]
+and $T_6=z^L(L^6\mu_0+6L^5\mu_1+15L^4\mu_2+20L^3\mu_3
++15L^2\mu_4+6L\mu_5+\mu_6)$, with argument $z$ in every $\mu_p$.
+This expands every moment in the residual and high-row estimates into rational
+functions with positive denominators.
+
+For the cosine entry bound, put $l=|j-k|$ and $n=2j$, $m=2k$.
+Adding absolute values in \eqref{eq:entries} and using
+$(j+k)\bar Q^{j+k}\le l\bar Q^l$ gives
+\[
+ |S_{nm}|\le45r_+Hl\bar Q^l
+     \{2nm+(n^2+m^2)/6\}.
+\]
+For $m\le n$, the braces are at most $7n^2/3$. For $m=n+2l$ they
+are $7(n+l)^2/3-5l^2/3$. With $C=105r_+H$ this is
+\eqref{eq:entry-majorant}. For a low row $j$, setting $k=j+l$ in
+the omitted $k\ge20$ part gives exactly
+\[
+ \frac{Cd_3a^{j-3}}{d_j}
+ \sum_{l\ge20-j}(n_j+l)^2l(\bar Qa)^l,
+\]
+which expands to the three terms in \eqref{eq:finite-rational-row}.
+For all higher rows, the lower and upper frequency sums are bounded by
+\[
+ Cn^2\sum_{l\ge1}l(\bar Q/a)^l,
+ \qquad C\sum_{l\ge1}(n+l)^2l(\bar Qa)^l,
+\]
+giving \eqref{eq:tail-P}. Its quartic has the form
+$-4r_-^2n^4+An^2+Bn+D$, with
+\[
+ A=45r_++C\{\mu_1(\bar Q/a)+\mu_1(\bar Qa)\},\quad
+ B=2C\mu_2(\bar Qa),\quad D=C\mu_3(\bar Qa).
+\]
+Its derivatives are $-16r_-^2n^3+2An+B$,
+$-48r_-^2n^2+2A$, and $-96r_-^2n$.
+Table~\ref{tab:scalar-complete} supplies separate rational upper bounds at
+the starting arguments for both choices $a=1/10$ and $a=1$.
+
+For the sine constraint, the normalized Fourier coefficients of $e$ have
+ratio $e_j/e_1=jh_{2j}/h_2$. Hence
+\[
+ \left|\frac{jh_{2j}}{h_2}\right|
+ =j^2Q^{j-1}\frac{1-Q^2}{1-Q^{2j}}\le j^2Q_+^{j-1}.
+\]
+Squaring, summing $j\ge2$ and using \eqref{eq:moments-expanded} proves
+\eqref{eq:rho}. For the coupling tail put $m=2+2l$ in
+\eqref{eq:entry-majorant}; its square is bounded by
+$C^2l^2(l+2)^4\bar Q^{2l}$. Expanding
+$(l+2)^4=l^4+8l^3+24l^2+32l+16$ gives exactly
+\eqref{eq:B}. The two low sine rows use the same upper-frequency sum with
+$l\ge8-n/2$. The scalar table lists each resulting bound separately.
+The final constrained comparison is
+\[
+ \frac{100-126(87/500)}{1+(87/500)^2}>75
+ \quad\Longleftrightarrow\quad19519000>19317675.
+\]
+
+In the odd sector, the six exceptional weight inequalities can be checked
+without a minimum search. The differences between the geometric majorant and
+the actual weights, in order $m=1,-1,3,-3,5,-5$, are
+\[
+ \frac{43}5-\frac{72}5\alpha+\frac{48}5\alpha^2,\quad
+ \frac{43}5+\frac85\alpha+\frac{26}5\alpha^2,\quad
+ \frac{23}{50}-\frac{47}{50}\alpha+\frac{21}{25}\alpha^2,
+\]
+\[
+ \frac{23}{50}+\frac3{10}\alpha^2,\qquad
+ \frac15d_5,\qquad \frac15d_{-5}.
+\]
+The first and third are decreasing on $[0,1/2]$ and their endpoint values
+are $19/5$ and $1/5$; all six are positive. Moreover
+\[
+ d_{-5}-d_5=\frac3{100}\alpha(4-\alpha)\ge0,
+ \quad \frac{37}{16}d_5-d_{-5}
+ =(1-2\alpha)\left(\frac{21}{200}-\frac{27}{400}\alpha\right)\ge0.
+\]
+These give the weight-ratio factor $37/16$ used on the opposite branch.
+For a lower same-sign step $l\le v/2$, put $x=l/v\in[0,1/2]$.
+Then $1-2x-x^2/3\in[-1/12,1]$, so its absolute value is at most one.
+The lower and upper sums are therefore bounded by
+\[
+ E_*v^2\mu_1(z),\qquad
+ E_*\{v^2\mu_1(t)+2v\mu_2(t)+\mu_3(t)/3\}.
+\]
+For the opposite branch,
+$(v+k)(2v+k)^2=4v^3+8v^2k+5vk^2+k^3$
+is at most $v^3(4+8k+5k^2+k^3)$ because $v\ge1$.
+The ratio of successive $(2j+3/2)z^j$ is
+$z(2j+7/2)/(2j+3/2)<1$ for $j\ge6$.
+This proves the uniform bound by its $j=6$ value. The three starting
+derivative bounds for $\mathcal P_{\rm o}$ and that ratio coefficient
+are included in Table~\ref{tab:scalar-complete}.
+
+For the omitted even columns, the majorant
+$K(l)=E_*l(31+l)^2\bar Q^l$ decreases for $l\ge26$, since
+\[
+ \frac{K(l+1)}{K(l)}
+ \le\frac{11}{250}\frac{27}{26}\left(\frac{58}{57}\right)^2<1.
+\]
+The $S_0$ column has norm at most $\sqrt{31}K(l)$, and each
+symmetrized transformed $A_j$ column has norm at most
+$1.1\sqrt{31}K(l)$. In the stable block the coefficient sum is at most
+$1+1.1/2+1.1/4=1.825$; in the center block it is at most
+$1.1+1.1/2=1.65$. Their sum is less than $4$. The two signs of the external
+frequency and its weight at most $a^{l+12}/20$ thus give
+\[
+ 2\cdot24\cdot\frac1{20} E_*a^{12}
+ \sum_{l\ge26}l(31+l)^2t^l
+ =\frac{12}5E_*a^{12}(31^2T_1+62T_2+T_3)=R^{\rm e}.
+\]
+All $T_p$ on this line have arguments $(t,26)$.
+
+To detail the transformed weight estimate, for $|m|\ge4$ the exact center
+column of $W_N^*$ is $-(e_N)_m$. All other nonconstant corrections are
+$-(e_N)_m(e_N)_i/d_N$. Therefore
+\[
+ \sum_i|(W_N^*)_{mi}|d_i
+ \le d_m+|(e_N)_m|
+       \left(1+\frac{\sum_{|i|\ge4}|(e_N)_i|d_i}{d_N}\right)
+ \le d_m+2|(e_N)_m|.
+\]
+The norm bounds on $d$ follow from summing the two geometric squared tails
+with ratio $a^2$: their upper contribution is
+$(\max d_6^2+\max d_{-6}^2)/(1-a^2)$; add the two $\pm4$ terms, and
+then $d_{\mathrm e}^2,d_0^2,d_{\mathrm c}^2$ for the full norm.
+The additional terms in $\calT_N^{-1}W_N^*$ and
+$\calT_N^*W_N^*$ are bounded by
+$(1/4)|(e_N)_m|$ and $|(z_N)_m|$, respectively. The three envelope constants
+are consequently at most
+\[
+ \frac1{20}+2\frac{13}{1000}=0.076,\quad
+ \frac1{20}+\frac94\frac{13}{1000}=0.07925,\quad
+ \frac1{20}+2\frac{13}{1000}+\frac7{1000}=0.083,
+\]
+each less than $1/10$. For $m=0,\pm2$, the estimate follows from
+$1.1(23/10)=2.53<10<100$ as appropriate.
+Dividing this envelope by $d_n\ge a^{(|n|-6)/2}/50$ gives the factor $5$.
+Replacing $n_*^2$ by $(n_*+2)^2$ absorbs $3n_*+3/4$, because
+$4n_*+4>3n_*+3/4$. The opposite-branch ratio has maximum at $j=16$,
+since $z(2j+4)/(2j+2)<1$. This proves \eqref{eq:even-high} from the
+listed geometric moments. Its derivative checks are in the scalar table;
+the negative third derivative then covers every larger row.
+
+\subsection{From a residual to an adjoint error}
+Integration of $(q^3q_x)_x=3q^2/2-5q^6/2$ over a period gives
+$\langle q^6\rangle=3\langle q^2\rangle/5$, where brackets here denote
+the normalized integral. Consequently
+\[
+ \|qq_x\|_2^2=\tfrac12\langle q^2-q^6\rangle=h_0/5,
+ \quad \|(q^2)_\zeta\|_2^2=4h_0/(5r)
+       =2\sum_{j\ge1}(2jh_{2j})^2.
+\]
+This proves \eqref{eq:kernel-norm} with its normalization factor.
+
+Let $r_*=A_0^*\widetilde\psi$ and $v=\psi-\widetilde\psi$.
+Both normalized vectors pair to one with $e$, so $v\perp e$, and
+$A_0^*v=-r_*$. Coercivity gives
+$75\|v\|^2\le\|r_*\|\|v\|$, hence $\|v\|\le R_*/75$.
+Taking $9/10$ of the coercive estimate and $1/10$ of
+\eqref{eq:interpolation} gives the more informative inequality
+\[
+ \frac15\|v_{xx}\|^2+\frac{3681}{80}\|v\|^2
+ \le\|r_*\|\|v\|\le R_*^2/75.
+\]
+Thus $\|v_{xx}\|\le R_*/\sqrt{15}$, and integration by parts yields
+$\|v_x\|^2\le\|v\|\|v_{xx}\|<R_*^2$. The equation for $A_0^*$ gives
+\[
+ 4\|v_{xxxx}\|
+ \le R_*+45\|v_{xx}\|+105\|v_x\|+42\|v\|
+ <119R_*<152R_*.
+\]
+In particular $\|v_{xxxx}\|<38R_*$, and
+$\|v_{xxx}\|^2\le\|v_{xx}\|\|v_{xxxx}\|
+ <38R_*^2/\sqrt{15}<49R_*^2$.
+Since $r>1/2$, the five terms in the $\mathcal H^4$ norm are at most
+\[
+ R_*\{1/75+\sqrt2+2/\sqrt{15}+14\sqrt2+152\}<225R_*.
+\]
+This supplies each step of \eqref{eq:adjoint-H4}.
+
+The tail in the residual has a direct coefficient estimate. In
+$A^s_{2i,2j}$ with $j>40$, $i\le18$, put $l_-=j-i$ and $l_+=j+i$.
+Since $l\bar Q^l$ decreases for $l\ge1$,
+\[
+ h_{2l_\pm}\le H(j-i)\bar Q^{j-i}
+ \le Hj\bar Q^{j-18},
+\]
+and $30i\{|7j-i|+|7j+i|\}\le420j^2<480j^2$.
+This gives the majorant in Appendix~\ref{app:arithmetic}; squaring and
+summing produces its $\bar Q^{-36}T_6(\bar Q^2,41)$ term.
+For the kernel-vector truncation,
+\[
+ |e_i|\le\frac{16r_+}{(1-\bar Q^2)\mathfrak n_-}i^2\bar Q^i,
+ \quad
+ \sum_{i\ge16}|e_i|\sum_{k=0}^4(2i)^k
+ \le\frac{16r_+}{(1-\bar Q^2)\mathfrak n_-}
+       \sum_{k=0}^42^kT_{k+2}(\bar Q,16).
+\]
+On retained modes the error is $(t_e^{-1}-1)e_i$.
+The analogous retained-mode error for $p_i$ is $(t_p^{-1}-1)p_i$;
+the discarded modes are exactly $16,17,18$, and the remaining adjoint error
+is bounded by $225R_*$. These are precisely the separate terms of
+\eqref{eq:eta-e} and \eqref{eq:eta-p}, all tabulated in
+Table~\ref{tab:vector-totals}.
+
+\subsection{Exact center cancellation and every finite-rank constant}
+Let $z=\psi-e$. Because $\ip e z=0$, $(e\otimes z)^2=0$, proving the
+inverse in \eqref{eq:T}. If $w\perp e$, then
+\[
+ \calT A_0\calT^{-1}w=A_0w+e\ip{A_0w}z
+ =A_0w-e\ip{A_0w}e=P_eA_0w.
+\]
+Here $\ip{A_0w}\psi=0$ was used. The image of $e$ is zero.
+For $u=e+\avec$, $\|u\|^2=2d$, and hence
+\[
+ (I-u\otimes u/d)^2=I-2u\otimes u/d
+                       +\|u\|^2u\otimes u/d^2=I.
+\]
+Moreover $U\avec=\avec-u=-e$. This proves the asserted unitary properties.
+Reflection changes each odd-degree $A_j$ to its negative and preserves the
+odd center line, so its center-center scalar is zero for $j=1,3$.
+The center-center powers in $H_\alpha$ are therefore $\alpha^2$ and
+$\alpha^4$, its center-stable powers start at $\alpha$, and its stable
+powers start at one. Multiplication by $\alpha^{-1}$ on each center factor
+gives each block in \eqref{eq:G} with no remainder or negative power.
+
+For explicit operator norms use the $\zeta$-differential expressions. The
+following are coefficient upper bounds at derivative orders $0,1,2,3,4$;
+they use $r<1$, $|q|\le1$ and $|qq_x|\le1$:
+\[
+\begin{array}{c|rrrrr}
+ A_0&57&75&45&0&4\\
+ A_0^*&42&105&45&0&4\\
+ S_0&50&90&45&0&4\\
+ A_1&75&90&0&16&0\\
+ A_1^*&105&90&0&16&0\\
+ A_2=A_2^*&45&0&24&0&0\\
+ A_3=A_3^*&0&16&0&0&0
+\end{array}
+\]
+For instance $A_1=-16\ii r^2D_\zeta^3-90\ii r q^2D_\zeta
+-75\ii\sqrt r qq_x$, and its adjoint replaces $75$ by $105$ in
+the last coefficient. Every row in the table proves the deliberately
+looser common bound $\|Af\|\le400\|f\|_{\mathcal H^4}$.
+
+Write $\epsilon=10^{-11}$. The vector errors give
+$\|\Delta u\|_{\mathcal H^4}<\epsilon$,
+$\|\Delta z\|_{\mathcal H^4}<2\epsilon$ and
+$|\Delta(d^{-1})|\le\epsilon$.
+Expanding the rank-one difference uses exactly three terms:
+\[
+ \frac{u\otimes u}{d}-\frac{u_N\otimes u_N}{d_N}
+ =\frac{\Delta u\otimes u+u_N\otimes\Delta u}{d}
+ +(d^{-1}-d_N^{-1})u_N\otimes u_N.
+\]
+Using $\|u\|,\|u_N\|\le2$ first gives
+$(2+2+4)\epsilon=8\epsilon$ for $\|\Delta U\|$.
+Applying $A$ on either side, and using $\|u\|_{\mathcal H^4},
+\|u_N\|_{\mathcal H^4}<1100$, gives respectively
+\[
+ 400\epsilon\cdot2,\quad400\cdot1100\epsilon,\quad
+ \epsilon\cdot400\cdot1100\cdot2.
+\]
+Their sum is $1320800\epsilon<1330000\epsilon$.
+For $\mathscr V=U-\avec\otimes z$ the extra term costs at most
+$400(2\epsilon)=800\epsilon$, giving $1340000\epsilon$.
+For $\mathscr V^{-1}=U-e\otimes Uz$, expand
+\[
+ \Delta(e\otimes Uz)=\Delta e\otimes Uz
+             +e_N\otimes(\Delta U)z+e_N\otimes U_N\Delta z.
+\]
+After applying $A$ on the left the extra three bounds are
+$40\epsilon$, $320000\epsilon$ and $800000\epsilon$.
+Their sum with $1330000\epsilon$ is less than $2460000\epsilon$.
+Telescoping the conjugation yields
+\[
+ \Delta(\mathscr VA\mathscr V^{-1})
+ =\Delta\mathscr V A\mathscr V^{-1}
+       +\mathscr V_N A\Delta(\mathscr V^{-1}),
+\]
+whose norm is at most $1.1(1340000+2460000)\epsilon
+=4180000\epsilon<4200000\epsilon$.
+The constant stable block costs $2(1330000)\epsilon=2660000\epsilon$.
+Thus the full calculation for \eqref{eq:comparison-small} is
+\begin{equation}\label{eq:comparison-numeric-expanded}
+ \|G_\alpha-G_\alpha^N\|
+ <\left[2660000+\left(1+\frac74+\frac78\right)4200000\right]10^{-11}
+ =\frac{17885}{10^8}<\frac1{100}.
+\end{equation}
+The $7/4$ is $1+\alpha+\alpha^2$ at $\alpha=1/2$;
+the $7/8$ is $\alpha+\alpha^2+\alpha^3$ there. The norm of a symmetric
+off-diagonal block equals that of its upper-right entry, so no extra factor
+two is needed.
+
+\subsection{Bloch direct sums and the second-order phase coefficient}
+On the $2\pi M$ circle, the projections for translation by $2\pi$ are
+\[
+ (P_jf)(\zeta)=\frac1M\sum_{l=0}^{M-1}
+   e^{-2\pi\ii jl/M}f(\zeta+2\pi l),\qquad 0\le j<M.
+\]
+The finite geometric sum shows $P_jP_k=\delta_{jk}P_j$ and
+$\sum_jP_j=I$. In the $j$th range, $f=e^{\ii(j/M)\zeta}g$ with
+$2\pi$-periodic $g$, giving precisely $A_{j/M}$.
+For $M\ge2$, the smallest nonzero representative has absolute value $1/M$.
+This supplies the direct-sum arithmetic in Corollary~\ref{cor:multicover}.
+
+One may also display the coefficient that is only bounded in that corollary.
+Let $\Pi f=\ip f\psi e$ and $\Pi_s=I-\Pi$, and denote the restriction of
+$A_0$ to $\ran\Pi_s$ by $A_s$. Normalize the analytic eigenvector by
+$\ip{u(\alpha)}\psi=1$ and expand $u=e+\alpha u_1+\alpha^2u_2+\cdots$.
+The coefficients at orders one and two give
+\[
+ \lambda_1=\ip{A_1e}\psi=0,\qquad u_1=-A_s^{-1}A_1e,
+ \qquad -D_{\rm ph}=\ip{A_2e+A_1u_1}\psi.
+\]
+The first equality is zero by reflection parity; $A_1e\in\ran\Pi_s$.
+This makes the meaning of the second-order coefficient explicit. No numerical
+value of this inverse or pairing is used: the uniform Bloch inequality
+already proves $D_{\rm ph}\ge1/2$ and hence the required gap order.
+
+\subsection{Nonlinear products, weighted exponents and geometric entry}
+Here subscripts on norms denote Sobolev order. On a fixed small
+$H^{m+1}$ ball, interpolation gives
+$\|f\|_{m+2}\le C\|f\|_{m+1}^{1/2}\|f\|_{m+3}^{1/2}$.
+For $h=f-g$ and $R=1+\|f\|_{m+3}+\|g\|_{m+3}$,
+\begin{align*}
+ \|f_{ss}f_{sss}-g_{ss}g_{sss}\|_m
+ &\le C\{R^{1/2}\|h\|_{m+3}+R\|h\|_{m+2}\},\\
+ \|f_{ss}^3-g_{ss}^3\|_m
+ &\le C(\|f\|_{m+2}^2+\|g\|_{m+2}^2)\|h\|_{m+2}
+ \le CR\|h\|_{m+2}.
+\end{align*}
+The first line follows from
+$f_{ss}h_{sss}+h_{ss}g_{sss}$; the second uses
+$(f_{ss}^2+f_{ss}g_{ss}+g_{ss}^2)h_{ss}$.
+Smooth composition of each coefficient in
+\eqref{eq:six-coefficients-expanded} gives
+$\|b_i^{\rm nl}(f)-b_i^{\rm nl}(g)\|_m\le C\|h\|_{m+1}$.
+Multiplying this by either highest product costs at most
+$CR^{3/2}\|h\|_{m+1}$. The terms with fewer factors cost no more because
+$R\ge1$. This proves every term in \eqref{eq:weighted-products}.
+The three critical exponent calculations are
+\[
+ \tfrac12(\tfrac34-\tfrac14)+\tfrac34-\tfrac14=\tfrac34,
+ \quad 1(\tfrac34-\tfrac14)+\tfrac12-\tfrac14=\tfrac34,
+ \quad \tfrac32(\tfrac34-\tfrac14)+\tfrac14-\tfrac14=\tfrac34.
+\]
+The trace orders are $m+4(3/4-1/2)=m+1$ and
+$m+4(1-1/2)=m+2$. These are the quantities used in the cited weighted theorem.
+
+To expand the geometric $H^2$ estimate, the angle integral gives
+$\|\vartheta\|_\infty\le\sqrt\ell\,d_{\rm curv}$. The second derivative
+of the aligned displacement satisfies
+\[
+ \|w_{ss}\|_2\le(1+\sqrt\ell\,\|k_\beta\|_2)d_{\rm curv}.
+\]
+The zero means of $w$ and $w_s$ give
+$\|w_s\|_2\le\ell\|w_{ss}\|_2/(2\pi)$ and
+$\|w\|_2\le(\ell/(2\pi))^2\|w_{ss}\|_2$. Thus one possible explicit
+constant before conversion to a normal chart is
+\[
+ \|w\|_{H^2}\le
+ \sqrt{1+(\ell/(2\pi))^2+(\ell/(2\pi))^4}
+ (1+\sqrt\ell\,\|k_\beta\|_2)d_{\rm curv}.
+\]
+For $d(s)=\Xi(s,w(s))$, the two chain rules are
+\[
+ d_s=\Xi_s+\Xi_w w_s,\qquad
+ d_{ss}=\Xi_{ss}+2\Xi_{sw}w_s+\Xi_{ww}[w_s,w_s]+\Xi_w w_{ss}.
+\]
+All pure $s$ derivatives of $\Xi(s,0)$ vanish. Bounded derivatives of $\Xi$
+on a fixed small neighborhood therefore give
+\[
+ \|d\|_{H^2}\le C(1+\|w_s\|_\infty)\|w\|_{H^2}
+ \le C\|w\|_{H^2}.
+\]
+Writing $\epsilon(s)=\widetilde\gamma(s)-\beta(u(s))$ and
+$h_{\rm gr}=\ip\epsilon{\nu_\beta(u)}$, the derivatives used for the
+height bound are
+\[
+ (h_{\rm gr})_s=\ip{\epsilon_s}\nu+\ip\epsilon{\nu_s}u_s,
+\]
+\[
+ (h_{\rm gr})_{ss}=\ip{\epsilon_{ss}}\nu
+   +2\ip{\epsilon_s}{\nu_s}u_s
+   +\ip\epsilon{\nu_{ss}}u_s^2+\ip\epsilon{\nu_s}u_{ss},
+\]
+where normals and their derivatives on these two lines are evaluated at $u(s)$.
+They give $\|h_{\rm gr}\|_{H^2}\le C\|w\|_{H^2}$.
+The final composition estimate can be seen explicitly from
+\[
+ f(u(s))=h_{\rm gr}(s),\quad
+ f'(u(s))=\frac{h_{\rm gr}'(s)}{u'(s)},\quad
+ f''(u(s))=\frac{h_{\rm gr}''(s)}{u'(s)^2}
+       -\frac{h_{\rm gr}'(s)u''(s)}{u'(s)^3}.
+\]
+Changing variables $dy=u'(s)ds$ with $1/2<u'<3/2$ and using
+$\|h_{\rm gr}'\|_\infty\le C\|h_{\rm gr}\|_{H^2}$ proves the asserted
+uniform $H^2$ bound. The composition and inverse are legitimate Sobolev maps
+by the cited theorem of \cite{IKT}.
+Finally the time conversion contains no hidden asymptotic equivalence:
+\[
+ e^{-\mu\widehat t}=
+ \exp\left[-\frac\mu{30}\log(1+30t/a^4)\right]
+ =(1+30t/a^4)^{-\mu/30},\qquad
+ t\ge a^4\ \Longrightarrow\ \widehat t\ge\log31/30.
+\]

@@ -1,0 +1,24 @@
+\section{Curvature profiles and geometric convergence}\label{sec:geometric}
+It remains to connect the geometric smallness condition with the graph norm and to recover the physical-time statement. The alignment argument uses the signed curvature as a function of arclength, so it applies to immersed curves and multiple covers without selecting a branch by its position in the plane.
+\begin{lemma}\label{lem:curvature-entry}
+Let $\beta,\widetilde\gamma$ be smooth oriented closed immersions of equal length $\ell$, parametrized by arclength. For a phase $\sigma\in\T_\ell$, suppose $d_{\rm curv}=\norm{k_{\widetilde\gamma}-k_\beta(\cdot+\sigma)}_{L^2(0,\ell)}$ is small. Then after translation, rotation and an orientation-preserving reparametrization, $\widetilde\gamma=\beta+f\nu_\beta$ with $\norm f_{H^2}\le C_\beta d_{\rm curv}$. The smallness threshold and constant are uniform in $\sigma$. This holds for self-intersections and multiple covers.
+\end{lemma}
+\begin{proof}
+Absorb the phase into $\beta$ and align the initial tangents by $R\in SO(2)$. The tangent-angle difference is $\vartheta(s)=\int_0^s(k_{\widetilde\gamma}-k_\beta)\dd\varsigma$, so $\norm\vartheta_\infty\le\sqrt\ell\,d_{\rm curv}$ and $\norm{\nu_{\widetilde\gamma}-R\nu_\beta}_\infty\le\norm\vartheta_\infty$. Choose a translation $p$ making $w=\widetilde\gamma-p-R\beta$ mean zero. Then
+\[
+ w_{ss}=(k_{\widetilde\gamma}-k_\beta)\nu_{\widetilde\gamma}+k_\beta(\nu_{\widetilde\gamma}-R\nu_\beta),
+ \qquad \norm w_{H^2}\le C_\beta d_{\rm curv}.
+\]
+The second-derivative estimate above, followed by the periodic Poincar\'e inequalities for mean-zero $w$, gives the stated $H^2$ bound. Replace $\widetilde\gamma$ by its translated and rotated alignment so that $w=\widetilde\gamma-\beta$. After alignment, solve $\ip{\widetilde\gamma(s)-\beta(s+d)}{\tau_\beta(s+d)}=0$ near $d=0$. Define $\Xi(s,w)$ to be its unique small root $d$, with $\Xi(s,0)=0$. Its $d$ derivative at $w=d=0$ is $-1$, so the parameterwise implicit function theorem gives $d(s)=\Xi(s,w(s))$. Differentiating this smooth composition twice and using the $H^1$ algebra property gives $\norm d_{H^2}\le C\norm w_{H^2}$. Uniqueness of the small root makes $d$ periodic. After reducing the neighborhood, $\norm{d_s}_\infty<1/2$, so $u(s)=s+d(s)$ is an orientation-preserving $H^2$ diffeomorphism. The unreparametrized height $h_{\rm gr}(s)=\ip{\widetilde\gamma(s)-\beta(u(s))}{\nu_\beta(u(s))}$ has the same bound. The graph height over the reference parameter is $f=h_{\rm gr}\circ u^{-1}$. The continuity of composition and inversion in \cite[Theorem~1.2, $s=2,r=0$]{IKT} gives $\norm{h_{\rm gr}\circ u^{-1}}_{H^2}\le C\norm w_{H^2}$. Joint continuity and linearity in $h_{\rm gr}$ give the locally uniform operator bound used here. This branch follows the parameter, so self-intersections cause no ambiguity; compactness makes the constants uniform in phase.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The phase minimum is attained. The lemma gives a graph with $\norm{f_0}_{H^2}\le C_M\sqrt{\KM(\gamma_0)}$, so Proposition~\ref{prop:H2} applies for a small profile threshold. To identify the normalized graph solution with the physical flow, invoke the global smooth geometric existence and uniqueness theorem \cite[Theorem~3.2]{DKS}, in the formulation of \cite[Theorem~1.1]{MW}. The aligned classical solution has a small graph on an initial interval and belongs to \eqref{eq:MR-spaces} with $m=1$; local uniqueness identifies it with the constructed solution. Positive-time smoothing and classical uniqueness then identify their continuations.
+
+Undo \eqref{eq:normalization} and parametrize the limiting graph as $R_\infty\beta_M$. The fixed alignment translation $p_0$ and Proposition~\ref{prop:H2} give
+\[
+ \norm{\rho^{-1}(\gamma\circ\chi_t-p_0)-R_\infty\beta_M}_{C^j}
+ \le C_{M,j,\mu}e^{-\mu\widehat t}\sqrt{\KM(\gamma_0)}.
+\]
+Since $t\ge a^4$ implies $\widehat t\ge\log(31)/30$ and $e^{-\mu\widehat t}=(1+30t/a^4)^{-\mu/30}$, this proves \eqref{eq:main-rate}. Also $p_0/\rho\to0$, proving \eqref{eq:main-convergence}. Length continuity gives $L(t)/\rho(t)\to\ell_M$. Thus the length-normalized flow in the notation of \cite[Theorem~1.2]{MW} satisfies $\eta(\chi_t(\cdot),t)\to\ell_M^{-1}R_\infty\beta_M$ smoothly, a limiting profile of length one.
+\end{proof}

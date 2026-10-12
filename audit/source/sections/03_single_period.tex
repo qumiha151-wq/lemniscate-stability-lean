@@ -1,0 +1,181 @@
+\section{Single-period dissipation and the rotational kernel}\label{app:single}\label{sec:spectrum}
+Use $\zeta=\pi x/(2K)$ and normalized measure $\dd\zeta/(2\pi)$. Thus $D_x=\sqrt rD_\zeta$. On this circle, $\ip f g=(2\pi)^{-1}\int_0^{2\pi}f\overline g\dd\zeta$ and $\widehat f(n)=(2\pi)^{-1}\int_0^{2\pi}f e^{-\ii n\zeta}\dd\zeta$ for $n\in\Z$, where $\ii^2=-1$. All quadratic-form integrals and norms from Section~\ref{sec:geometry} are read with this same normalized measure when used here. Matrix indices refer to this orthonormal Fourier basis; $\delta_{nm}$ is the Kronecker delta. In Fourier formulas, $q$ means the pullback $q(\zeta/\sqrt r)$; a subscript $x$ still means differentiation before this change of variables. Let $e$ be a unit multiple of $qq_x$, and abbreviate $A=A_0$ and $S=S_0$ in this section. The identities in Section~\ref{sec:geometry} give $Ae=0$.
+\begin{lemma}[Explicit Fourier dissipation]\label{lem:coercivity}
+For $f\in H^2_\per$ with $\ip f e=0$,
+\begin{equation}\label{eq:coercivity}
+\ip{Sf}f\le-5\norm f_2^2.
+\end{equation}
+In the even-frequency sine sector, the bound improves to $-75\norm f_2^2$.
+\end{lemma}
+
+
+The dissipation estimate will serve two purposes: it isolates the neutral rotation and controls the error in an explicit adjoint approximation. We prove it using the Fourier coefficients of the reference curvature, separating the few low modes from a uniform estimate for all high modes.
+
+\subsection{Elliptic-function coefficients and scalar bounds}
+Put $Q=e^{-\pi}$. The standard theta expansion gives
+\begin{equation}\label{eq:fourier}
+ q^2=h_0+2\sum_{j\ge1}h_{2j}\cos(2j\zeta),\quad
+ h_{2j}=\frac{8rjQ^j}{1-Q^{2j}},\quad h_0=1-2\sum_{j\ge1}h_{2j},\quad
+ r=\left(1+2\sum_{j\ge1}Q^{j^2}\right)^{-4}.
+\end{equation}
+We set $h_{-n}=h_n$ and $h_n=0$ for odd $n$. These are the Fourier coefficients of $q^2$, not of the geometric support function. Formula \eqref{eq:fourier} follows by differentiating the logarithmic theta expansion for the Jacobi zeta function; see \cite{DLMF}. The preceding differential identity implies
+\begin{equation}\label{eq:q4}
+ \widehat{q^4}(0)=\tfrac13,\qquad
+ \widehat{q^4}(n)=\tfrac13rn^2h_n\quad(n\ne0).
+\end{equation}
+
+Appendix~\ref{app:arithmetic} gives the rational bounds
+\begin{equation}\label{eq:endpoints}
+ Q_-:=\frac{4321}{100000}<Q<\frac{2161}{50000}=:Q_+,
+ \qquad r_-:=\frac{7177}{10000}<r<\frac{3589}{5000}=:r_+.
+\end{equation}
+
+
+For integers $p,L\ge0$ and $0\le z<1$, set
+\begin{equation}\label{eq:moments}
+ \mu_p(z)=(z\partial_z)^p\frac1{1-z},\qquad
+ T_p(z,L)=z^L\sum_{k=0}^p\binom pk L^{p-k}\mu_k(z).
+\end{equation}
+Expansion of $(L+k)^p$ gives $T_p(z,L)=\sum_{j\ge L}j^pz^j$.
+
+For $j\ge1$ define
+\begin{equation}\label{eq:L-U}
+ L_j=\frac{8r_-jQ_-^j}{1-Q_-^{2j}},\quad
+ U_j=\frac{8r_+jQ_+^j}{1-Q_+^{2j}},\quad
+ L_0=1-2\sum_{j=1}^4U_j-\frac{16r_+T_1(Q_+,5)}{1-Q_+^2},\quad
+ U_0=1-2\sum_{j=1}^4L_j.
+\end{equation}
+Then $L_j\le h_{2j}\le U_j$ for $j\ge0$.
+
+\subsection{Dissipation in the even-frequency cosine sector}
+Use the orthonormal basis $1$, $\sqrt2\cos(n\zeta)$, $\sqrt2\sin(n\zeta)$. Reflection and frequency parity give four invariant real sectors. The independent odd-index calculation in Section~\ref{subsec:odd-bloch}, at $\alpha=0$, bounds both odd-frequency sectors by $-6I$. It remains to treat the two even-frequency sectors. For $n,m>0$, let $\varepsilon=1$ for the cosine sector and $\varepsilon=-1$ for the sine sector. The entries of \eqref{eq:S0} simplify to
+\begin{align}
+ S^\varepsilon_{nm}={}&(-4r^2n^4-42)\delta_{nm}
+ +r\left(45nm-\tfrac{15}{4}(n-m)^2\right)h_{n-m}\nonumber\\
+ &-\varepsilon r\left(45nm+\tfrac{15}{4}(n+m)^2\right)h_{n+m}.\label{eq:entries}
+\end{align}
+Write $S^c=S^{+1}$ for the cosine matrix and $S^s=S^{-1}$ for the sine matrix. The exceptional cosine entries are $S_{00}=-42$ and
+\begin{equation}\label{eq:zero}
+ S_{0m}=S_{m0}=-\tfrac{15}{4}\sqrt2\,r m^2h_m\quad(m>0).
+\end{equation}
+
+
+\begin{lemma}[Weighted row inequality]\label{lem:row}
+Suppose $S$ is real symmetric, $d_j>0$, and $\gamma_{\rm row}>0$ is a real constant. If
+\[
+ S_{jj}+\sum_{k\ne j}|S_{jk}|\frac{d_k}{d_j}\le-\gamma_{\rm row}
+\]
+for every row, its quadratic form is at most $-\gamma_{\rm row}\norm f_2^2$ on Fourier polynomials.
+\end{lemma}
+\begin{proof}
+Apply $2|v_jv_k|\le(d_k/d_j)|v_j|^2+(d_j/d_k)|v_k|^2$ to every off-diagonal pair. No boundedness assumption on the diagonal operator with entries $d_j$ is required.
+\end{proof}
+
+Use exact rational segment arithmetic as specified in Appendix~\ref{app:arithmetic}. In \eqref{eq:entries}--\eqref{eq:zero}, replace $r,h_{2j},\sqrt2$ by the enclosing rational segments
+\[
+ [r_-,r_+],\quad[L_j,U_j],\quad[707/500,283/200],
+\]
+respectively; use $[r_-^2,r_+^2]$ for $r^2$. Denote the resulting entry segment by $[s^-_{nm},s^+_{nm}]$, and put
+\[
+ d^+_n=s^+_{nn},\qquad b_{nm}=\max\{|s^-_{nm}|,|s^+_{nm}|\}\quad(n\ne m).
+\]
+
+For the cosine-even sector take $n_j=2j$ and
+\[
+ a=1/10,\qquad d_0=1/9,\quad d_1=1,\quad d_2=11/50,\quad
+ d_j=(29/1000)a^{j-3}\quad(j\ge3).
+\]
+Define
+\begin{equation}\label{eq:constants}
+ \bar Q=\frac{11}{250},\qquad H=\frac{8r_+}{1-\bar Q^2},\qquad C=105r_+H.
+\end{equation}
+Since $h_{2l}\le Hl\bar Q^l$, for $l=|j-k|\ge1$ one has
+\begin{equation}\label{eq:entry-majorant}
+ |S_{n_jn_k}|\le
+ \begin{cases}C n_j^2l\bar Q^l,&k<j,\\
+ C(n_j+l)^2l\bar Q^l,&k>j.
+ \end{cases}
+\end{equation}
+Indeed, for positive $n,m$ the two terms in \eqref{eq:entries} are bounded in sum by
+\[
+ 45r_+Hl\bar Q^l\left(2nm+\frac{n^2+m^2}{6}\right).
+\]
+Here $(j+k)\bar Q^{j+k}\le l\bar Q^l$. If $m\le n$, the bracket is at most $7n^2/3$. If $m=n+2l$, it equals $7(n+l)^2/3-5l^2/3$. Formula \eqref{eq:zero} obeys the same bound, since $15\sqrt2<105$.
+
+For $0\le j\le8$ form the rational expression
+\begin{align}
+ R_j={}&d^+_{n_j}+\sum_{\substack{0\le k<20\\k\ne j}}b_{n_jn_k}\frac{d_k}{d_j}
+ +\frac{Cd_3a^{j-3}}{d_j}\Big[
+ n_j^2T_1(\bar Qa,20-j)\nonumber\\
+ &\hspace{47mm}+2n_jT_2(\bar Qa,20-j)+T_3(\bar Qa,20-j)\Big].\label{eq:finite-rational-row}
+\end{align}
+The last term bounds all $k\ge20$ by \eqref{eq:entry-majorant}. Clearing positive denominators in these explicit rational expressions gives, for every $0\le j\le8$,
+\begin{equation}\label{eq:single-uniform}
+ R_j<-\tfrac{21}{4}.
+\end{equation}
+
+For all remaining rows, note that $d_k\le d_3a^{k-3}$ also for $k<3$. Hence \eqref{eq:entry-majorant}, $0\le q^2\le1$, and $q^4\ge0$ give the common row bound
+\begin{align}
+ P_a(n)={}&-4r_-^2n^4+45r_+n^2\nonumber\\
+ &+C\left[n^2\{\mu_1(\bar Q/a)+\mu_1(\bar Qa)\}
+ +2n\mu_2(\bar Qa)+\mu_3(\bar Qa)\right].\label{eq:tail-P}
+\end{align}
+The elementary rational comparisons
+\[
+ P_{1/10}(18)<-8000,\quad P_{1/10}'(18)<-24925,\quad
+ P_{1/10}''(18)<-6725
+\]
+follow from \eqref{eq:moments}. Since $P_a'''(n)=-96r_-^2n<0$ for $n>0$, every row $j\ge9$ is covered. Lemma~\ref{lem:row} proves $S\le-5I$ in the cosine-even sector.
+
+\subsection{The constrained sine-even sector}
+The coefficients of the rotational vector in $\sqrt2\sin(2j\zeta)$ are proportional to $j h_{2j}$. Write $f=u\sqrt2\sin(2\zeta)+v$, with $v$ supported on frequencies $4,6,\ldots$. Orthogonality to $e$ implies
+\begin{equation}\label{eq:rho}
+ |u|\le\rho\norm v_2,\qquad
+ \rho^2=\sum_{j\ge2}\left(\frac{j h_{2j}}{h_2}\right)^2
+ \le\frac{\mu_4(Q_+^2)-Q_+^2}{Q_+^2}<\left(\frac{87}{500}\right)^2.
+\end{equation}
+Here $(1-Q^2)/(1-Q^{2j})\le1$.
+
+Let $B=(S^s_{2,4},S^s_{2,6},\ldots)$ and let $T$ be the block on $v$. The diagonal formula immediately gives $S^s_{2,2}<-12$. For the coupling, only two entries need to be kept separately:
+\begin{equation}\label{eq:B}
+ \norm B^2\le b_{2,4}^2+b_{2,6}^2+
+ C^2\sum_{k=0}^4\binom4k 2^{4-k}T_{k+2}(\bar Q^2,3)
+ <3916<63^2.
+\end{equation}
+The remainder is $C^2\sum_{l\ge3}l^2(l+2)^4\bar Q^{2l}$ by \eqref{eq:entry-majorant}.
+
+For $n=4,6$ the first two rows of $T$ are bounded by the explicit rational expressions
+\begin{equation}\label{eq:T-low}
+ d_n^++\sum_{\substack{2\le k<8\\2k\ne n}}b_{n,2k}
+ +C\left[n^2T_1(\bar Q,8-n/2)+2nT_2(\bar Q,8-n/2)
+ +T_3(\bar Q,8-n/2)\right],
+\end{equation}
+which are respectively less than $-120$ and $-1560$. For $n\ge8$, use \eqref{eq:tail-P} with unit weights: $P_1(8)<-3308$, $P_1'(8)<0$, and $P_1''(8)<0$. The third-derivative argument again applies. Thus the unit-weight row estimate proves
+\[
+ T\le-100I.
+\]
+It follows from \eqref{eq:rho} and \eqref{eq:B} that
+\begin{align*}
+ \ip{Sf}f
+ &\le-100\norm v^2+2\cdot63\cdot\frac{87}{500}\norm v^2\\
+ &=-\frac{19519}{250}\norm v^2
+ \le-\frac{19519/250}{1+(87/500)^2}\norm f^2
+ \le-75\norm f^2.
+\end{align*}
+The last comparison is the integer inequality $19519000>19317675$ after multiplication by $250000$. This proves the two form estimates of Lemma~\ref{lem:coercivity}. Fourier polynomials in the constrained sector can be corrected in frequency $2$ to retain orthogonality, and converge in $H^2$. The quadratic form is continuous in $H^2$, so the result extends by density. Real and imaginary parts give the complex-valued statement.
+
+\subsection{Simplicity of rotation and the single-period spectrum}
+Orthogonal projection onto $e^\perp$ is sufficient for the following spectral argument, although $A_0$ itself need not preserve that orthogonal complement. This observation avoids identifying the adjoint eigenvector before proving simplicity.
+\begin{proposition}\label{prop:single-spectrum}
+Zero is an algebraically simple eigenvalue of $A_0$, and every other spectral value has real part at most $-5$.
+\end{proposition}
+\begin{proof}
+Write $f=ze+w$ with $w\perp e$. If $Af\in\operatorname{span}\{e\}$, coercivity applied to $\Re\ip{Af}w=\Re\ip{Aw}w$ forces $w=0$. Thus $\ker A=\operatorname{span}\{e\}$ and $\ker A^2=\ker A$. Moreover $A:H^4_\per\to L^2$ is Fredholm of index zero, being a relatively compact perturbation of $-4D_x^4-I$. Hence there is a unique $\psi\in\ker A^*$ with $\ip\psi e=1$: otherwise $e\in\operatorname{ran}A$, contradicting the preceding implication. For $Af=\lambda f$, $\lambda\ne0$, we have $w\ne0$ and
+\[
+ \Re\lambda\norm w^2=\Re\ip{Aw}w\le-5\norm w^2.
+\]
+Compact resolvent completes the spectral assertion. Finally \eqref{eq:energy} and interpolation give
+\begin{equation}\label{eq:interpolation}
+ \Re\ip{Af}f\le-2\norm{D_x^2f}^2+\frac{1719}{8}\norm f^2.
+\end{equation}
+\end{proof}

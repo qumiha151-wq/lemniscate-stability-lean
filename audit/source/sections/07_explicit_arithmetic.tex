@@ -1,0 +1,151 @@
+\section{Explicit scalar data for the adjoint and Bernstein bounds}\label{app:arithmetic}
+This appendix records the scalar enclosures and finite expressions used in the spectral estimates. It completes the low-frequency inequalities in Sections~\ref{app:single} and \ref{app:bloch}; the high frequencies are already controlled there by geometric-series majorants. Every endpoint and matrix entry below is defined by finite rational operations or integer square comparisons, so the estimates are determined by the formulas in the paper.
+
+\subsection{Rational enclosures for the scalar input}
+For an integer $N\ge1$ write
+\[
+ a_N(t)=\sum_{k=0}^{N-1}\frac{(-1)^kt^{2k+1}}{2k+1},\qquad
+ p_-=16a_{24}(1/5)-4a_9(1/239),\quad
+ p_+=16a_{25}(1/5)-4a_8(1/239).
+\]
+The tangent-addition formula gives $\tan(4\arctan(1/5)-\arctan(1/239))=1$, with the angle in $(0,\pi/2)$. Thus $\pi=16\arctan(1/5)-4\arctan(1/239)$, and the alternating-series inequalities give $p_-<\pi<p_+$. In particular $0<p_-<p_+<72$. Let
+\[
+ E_{70}(p)=\sum_{k=0}^{70}\frac{p^k}{k!},\qquad
+ R_{70}(p)=\frac{p^{71}}{71!(1-p/72)},
+\]
+and form the rational segment
+\begin{equation}\label{eq:fine-Q}
+ J_Q=\left[\frac1{E_{70}(p_+)+R_{70}(p_+)},\frac1{E_{70}(p_-)}\right].
+\end{equation}
+The exponential tail has successive ratios at most $p/72$, so $Q\in J_Q$.
+
+Use rational segment arithmetic: add endpoints, subtract in reverse endpoint order, take the extrema of the four endpoint products, and set $[u,v]^{-1}=[1/v,1/u]$ for $0<u\le v$. Treat repeated occurrences independently. For $J=[u,v]$ with $u>0$, enclose square roots by
+\begin{equation}\label{eq:sqrt-envelope}
+ \mathcal R(J)=\left[
+ 10^{-30}\left\lfloor10^{30}\sqrt u\right\rfloor,
+ 10^{-30}\left(1+\left\lfloor10^{30}\sqrt v\right\rfloor\right)\right].
+\end{equation}
+Here $\lfloor x\rfloor$ is the largest integer not exceeding $x$. The endpoints are uniquely specified by integer square comparisons. For a negative segment use $J^{-1}=-(-J)^{-1}$.
+
+With these segment operations set
+\begin{equation}\label{eq:fine-input}
+\begin{aligned}
+ J_\theta&=1+2\sum_{j=1}^{5}J_Q^{j^2}
+ +\left[0,\left(\frac{2J_Q^{36}}{1-J_Q^{13}}\right)_+\right],
+ &J_r&=J_\theta^{-4},\\
+ J_{h_{2j}}&=\frac{8J_rjJ_Q^j}{1-J_Q^{2j}}\quad(j\ge1),
+ &J_{h_0}&=1-2\sum_{j=1}^{40}J_{h_{2j}}
+ -\left[0,\frac{16r_+}{1-\bar Q^2}T_1(\bar Q,41)\right].
+\end{aligned}
+\end{equation}
+First obtain \eqref{eq:endpoints} from $J_Q,J_\theta,J_r$, without using $J_{h_0}$; these inequalities justify the constants in its tail enclosure. Here $(J)_+$ is the upper endpoint, $J_{h_{-n}}=J_{h_n}$, and odd indices vanish. The theta tail has successive ratios at most $Q^{13}$; its enclosure implies \eqref{eq:endpoints} independently of the coarse constants. The $h_0$ tail then uses $h_{2j}\le8r_+j\bar Q^j/(1-\bar Q^2)$. These segments also lie within \eqref{eq:L-U}.
+
+Use \eqref{eq:sqrt-envelope} for every square root, in particular $\mathcal R([2,2])$ for $\sqrt2$ and $\mathcal R(2J_{h_0}/(5J_r))$ for $\mathfrak n$. The normalization bounds are
+\[
+ \mathfrak n>\tfrac12,\qquad
+ \ip\Phi e>\tfrac{999}{1000},\qquad
+ \norm{P_{15}e}>\tfrac{999}{1000},\qquad
+ \ip{P_{15}\widetilde\psi}{e_N}>\tfrac{999}{1000}.
+\]
+Here $P_{15}$ truncates to 15 sine modes. The coefficients in \eqref{eq:galerkin-trial} are the exact rationals listed in Table~\ref{tab:trial-integers}. Substitute them directly in the normalization formulas below, using \eqref{eq:fine-input} and \eqref{eq:sqrt-envelope}. Table~\ref{tab:input-bounds} displays separate rational bounds for all four normalization factors. All reciprocal intervals used in these formulas are positive.
+
+\subsection{Residual and vector bounds}
+Use $t_i$ from \eqref{eq:galerkin-trial}, $b_i=2ih_{2i}$, $\mathfrak n=(2h_0/(5r))^{1/2}$, and
+\[
+ c_\Phi=\sum_{i=1}^{18}t_i b_i/\mathfrak n,\qquad
+ p_i=t_i/c_\Phi,\qquad e_i=b_i/\mathfrak n.
+\]
+For positive even $n,m$ use the explicit sine matrix
+\begin{equation}\label{eq:sine-A}
+ A^s_{nm}=\tfrac{15}{2}rn\left[(7m-n)h_{n-m}+(7m+n)h_{n+m}\right]
+ -(4r^2n^4+42)\delta_{nm}.
+\end{equation}
+Denote by $u_j$ the larger absolute endpoint of the segment enclosing
+\[
+ \sum_{i=1}^{18}A^s_{2i,2j}p_i,
+\]
+and by $p_i^+$ the larger absolute endpoint of $p_i$. The explicit upper bound for the squared residual is
+\begin{equation}\label{eq:residual-finite}
+ \sum_{j=1}^{40}u_j^2+
+ \left(480r_+H\sum_{i=1}^{18}p_i^+\right)^2
+ \bar Q^{-36}T_6(\bar Q^2,41)<2\cdot10^{-30}.
+\end{equation}
+For the tail, \eqref{eq:sine-A} and $j>40$, $i\le18$ give
+\[
+ |(A_0^*)^s_{2j,2i}|\le480r_+Hj^3\bar Q^{j-18}.
+\]
+Indeed $j-i\ge j-18$, $i\le j$, and the polynomial factors in \eqref{eq:sine-A} are bounded by this cubic majorant. Squaring and summing proves the tail term in \eqref{eq:residual-finite}.
+
+Write $\mathfrak n_-$ for the lower endpoint of its enclosing segment. For the truncation errors put
+\[
+ t_e=\left(\sum_{i=1}^{15}e_i^2\right)^{1/2},\quad
+ E_i=e_i/t_e,\quad t_p=\sum_{i=1}^{15}p_iE_i,\quad
+ \Psi_i=p_i/t_p,\quad Z_i=\Psi_i-E_i.
+\]
+These are the sine coefficients of $e_N$, $\psi_N$, and $z_N$, with $N=15$. For a finite sequence $w$ let
+\[
+ L_4(w)=\sum_i |w_i|\sum_{k=0}^4(2i)^k,
+\]
+using upper absolute endpoints when $w$ is enclosed by segments. Define
+\begin{align}
+ \eta_e={}&\frac{16r_+}{(1-\bar Q^2)\mathfrak n_-}
+ \sum_{k=0}^42^kT_{k+2}(\bar Q,16)
+ +|t_e^{-1}-1|_+L_4((e_i)_{i\le15}),\label{eq:eta-e}\\
+ \eta_p={}&\sum_{i=16}^{18}p_i^+\sum_{k=0}^4(2i)^k
+ +|t_p^{-1}-1|_+L_4((p_i)_{i\le15})+225\cdot10^{-14}.
+ \label{eq:eta-p}
+\end{align}
+The symbol $|\cdot|_+$ denotes the upper absolute endpoint. The comparisons needed in the proof, with comfortable margins, are
+\begin{equation}\label{eq:vector-scalar-checks}
+\begin{gathered}
+ \eta_e<2\cdot10^{-12},\qquad \eta_p<6\cdot10^{-12},\\
+ L_4(E)+\eta_e<200,
+ \qquad L_4(\Psi)+\eta_p<200,
+ \qquad\sum_{i=1}^{15}|Z_i|_+^2<\tfrac1{400},\\
+ \max_{2\le i\le15}\frac{|E_i|_+}{\sqrt2_-\,a^{i-3}}<\tfrac{13}{1000},
+ \qquad
+ \max_{2\le i\le15}\frac{|Z_i|_+}{\sqrt2_-\,a^{i-3}}<\tfrac7{1000}.
+\end{gathered}
+\end{equation}
+Here $\sqrt2_-$ is the positive lower endpoint of \eqref{eq:sqrt-envelope}. These rational comparisons use \eqref{eq:fine-Q}--\eqref{eq:fine-input}, \eqref{eq:galerkin-trial} and \eqref{eq:moments}; normalization errors are included. Tables~\ref{tab:vector-all} and \ref{tab:vector-totals} display all finite summands, separate error terms and final bounds. Table~\ref{tab:residual-all} similarly expands \eqref{eq:residual-finite} into an integer sum of squares.
+
+\subsection{Finite formulas for the even Bernstein bound}
+For the matrices in \eqref{eq:even-row-Bernstein}, let
+\[
+ \mathcal I=\{-30,-28,\ldots,30\},\qquad
+ e_n=\begin{cases}\operatorname{sgn}(n)E_{|n|/2}/\sqrt2,&n\ne0,\\0,&n=0,\end{cases}
+\]
+and define $p_n$ from $\Psi$ by the same formula. In this subsection $e_n,p_n$ are coefficients of the \emph{finite} vectors. Set $z_n=p_n-e_n$, $a_2=1/\sqrt2$, $a_{-2}=-1/\sqrt2$, with other $a_n=0$, and
+\[
+ u_n=e_n+a_n,\qquad d=1+\sum_{n\in\mathcal I}e_na_n.
+\]
+The rows of the $31\times31$ matrix $W$ are labelled by $\mathcal J_{30}$, and its columns by $\mathcal I$:
+\begin{equation}\label{eq:W-finite}
+\begin{aligned}
+ W_{\mathrm e,n}&=-e_n,&W_{0,n}&=\delta_{0,n},&
+ W_{\mathrm c,n}&=(\delta_{2,n}+\delta_{-2,n})/\sqrt2,\\
+ W_{j,n}&=\delta_{jn}-u_ju_n/d\qquad(j=\pm4,\ldots,\pm30).
+\end{aligned}
+\end{equation}
+Define $L$ by replacing the center row of $W$ with $-p_n$, and define $R$ by
+\begin{equation}\label{eq:LR-finite}
+ R_{n,j}=W_{j,n}-e_n\sum_{m\in\mathcal I}W_{j,m}z_m.
+\end{equation}
+The sum in the center column is exactly zero, since $\ip{z_N}{e_N}=0$. Thus $L=W_N\calT_N$ and $R=\calT_N^{-1}W_N^*$ in the stated bases.
+
+Let $S_{nm}=((A_0)_{nm}+(A_0)_{mn})/2$, using \eqref{eq:Aj}. The finite head of $H_0^N$ is $WSW^{\mathsf T}$ with its center row and column set to zero. For $j=1,2,3$ its corresponding head is
+\[
+ H_j^N=\tfrac12\left(LA_jR+(LA_jR)^{\mathsf T}\right).
+\]
+Reflection makes the center diagonal of $H_1^N,H_3^N$ exactly zero. Apply the block formula \eqref{eq:G} to these matrices to obtain $g_{ij,l}$ for $i,j\in\mathcal J_{30}$.
+
+For an external even column $32\le|m|\le80$, set
+\begin{align}
+ b_{0,i}(m)&=\sum_{n\in\mathcal I}W_{i,n}S_{nm},\qquad b_{0,\mathrm e}(m)=0,\label{eq:external-b}\\
+ b_{j,i}(m)&=\tfrac12\sum_{n\in\mathcal I}
+ \left[L_{i,n}(A_j)_{nm}+R_{n,i}(A_j)_{mn}\right],\qquad j=1,2.
+ \nonumber
+\end{align}
+Then the external entry is $b_{0,i}+\alpha b_{1,i}+\alpha^2b_{2,i}$ for a stable row $i$, and $b_{1,\mathrm e}+\alpha b_{2,\mathrm e}$ for the center row. The $A_3$ and $A_4$ entries between the head and tail vanish. These are exactly the coefficient polynomials used in \eqref{eq:even-row-Bernstein}.
+
+Enclose these coefficients using \eqref{eq:fine-Q}--\eqref{eq:sqrt-envelope} and form $\beta_{ij,k}$ by \eqref{eq:Bernstein}. This specifies every rational number in \eqref{eq:even-row-Bernstein}; clearing positive denominators proves \eqref{eq:even-uniform}. Together with the infinite-tail estimates, the argument covers the full parameter interval and Hilbert space.

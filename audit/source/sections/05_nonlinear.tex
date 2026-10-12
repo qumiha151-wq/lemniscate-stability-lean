@@ -1,0 +1,85 @@
+\section{Nonlinear stability by weighted regularization}\label{sec:nonlinear}
+The spectral estimates imply nonlinear convergence once the graph equation is placed in the appropriate parabolic spaces. The geometric hypothesis supplies $H^2$ data, whereas the normal-stability theorem will be applied in $H^3$. We bridge these spaces by weighted local regularization, and check only the hypotheses needed for the two cited theorems.
+
+Fix $M$ and write $A=\mathcal A_M$. All spaces in this section are real and periodic on $\T_{\ell_M}$. The graph equation has the structure
+\begin{equation}\label{eq:structure}
+ \begin{aligned}
+ \calF(f)={}&-g_f^{-4}f_{ssss}+b_1^{\rm nl}f_{ss}f_{sss}+b_2^{\rm nl}f_{sss}
+              +b_3^{\rm nl}f_{ss}^3+b_4^{\rm nl}f_{ss}^2+b_5^{\rm nl}f_{ss}+b_6^{\rm nl},
+ \end{aligned}
+\end{equation}
+The coefficients $b_i^{\rm nl}=b_i^{\rm nl}(s,f,f_s)$ are defined as follows. Temporarily regard $f,v,w,z,y$ as independent scalar variables representing $f,f_s,f_{ss},f_{sss},f_{ssss}$ and put
+\[
+ \mathscr D=\partial_s+v\partial_f+w\partial_v+z\partial_w+y\partial_z,
+ \qquad k_f=\frac{ka_f^2+2kv^2+a_fw+k_sfv}{g_f^3}.
+\]
+Here $a_f,g_f,h_f$ are the functions in \eqref{eq:graph-geometry}, with $v$ in place of $f_s$. Define
+\[
+ \mathscr P=-\frac{g_f}{a_f}
+ \left(g_f^{-1}\mathscr D(g_f^{-1}\mathscr D k_f)+\tfrac12k_f^3+ch_f\right)
+ +g_f^{-4}y.
+\]
+Since $k_f$ is affine in $w$, the $y$ coefficient cancels and $\mathscr P$ contains precisely the possible monomials $wz,z,w^3,w^2,w,1$. For a monomial $\mathfrak m$, let $[\mathfrak m]\mathscr P$ denote its coefficient as a polynomial in $w,z$. Then
+\[
+ (b_1^{\rm nl},b_2^{\rm nl},b_3^{\rm nl},b_4^{\rm nl},b_5^{\rm nl},b_6^{\rm nl})
+ =([wz]\mathscr P,[z]\mathscr P,[w^3]\mathscr P,[w^2]\mathscr P,[w]\mathscr P,[1]\mathscr P).
+\]
+These definitions are smooth in $(s,f,v)$ wherever $a_f,g_f>0$ and give \eqref{eq:structure} by the chain rule. Equations \eqref{eq:graph-aux-expanded}--\eqref{eq:six-coefficients-expanded} carry out the differentiations and display all six coefficients explicitly.
+
+\subsection{Weighted local theory and smoothing}
+For each integer $m\ge1$, take $X_0=H^m$, $X_1=H^{m+4}$, $p=2$ and time weight $\mu_{\mathrm w}=3/4$. Both complex interpolation at exponent $\theta$ and real interpolation with exponent $\theta$ and second index $2$ give $H^{m+4\theta}$, for $0<\theta<1$. Since $\mu_{\mathrm w}-1/p=1/4$ and $1-1/p=1/2$, the weighted trace is $H^{m+1}$ and the unweighted trace is $H^{m+2}$. At $m=1$, this choice admits precisely the $H^2$ graph data obtained from the curvature profile, and yields $H^3$ regularity at positive time. Set
+\[
+ \mathcal B_0(f)=g_f^{-4}D_s^4,\qquad
+ \mathcal Q(f)=\calF(f)+\mathcal B_0(f)f.
+\]
+We verify \cite[Theorem~1.2]{PSW} on a small $H^{m+1}$ ball. Since $H^m$ is an algebra, $\mathcal B_0$ is smooth into $\mathcal L(X_1,X_0)$. For $h=f-g$ and $R=1+\norm f_{H^{m+3}}+\norm g_{H^{m+3}}$, multiplication and interpolation give
+\begin{equation}\label{eq:weighted-products}
+ \norm{\mathcal Q(f)-\mathcal Q(g)}_{H^m}
+ \le C\big(R^{1/2}\norm h_{H^{m+3}}+R\norm h_{H^{m+2}}
+                 +R^{3/2}\norm h_{H^{m+1}}\big).
+\end{equation}
+Indeed the highest products are bounded by
+$C\norm f_{H^{m+2}}\norm f_{H^{m+3}}$ and $C\norm f_{H^{m+2}}^3$;
+use $\norm f_{H^{m+2}}\le C\norm f_{H^{m+3}}^{1/2}$ on this ball and expand differences. Coefficient differences in $H^m$ are bounded by $C\norm h_{H^{m+1}}$.
+Thus (H2)--(H3) of that theorem hold with
+\[
+ \beta=\tfrac34,\qquad
+ (\rho_j,\beta_j)\in\{(\tfrac12,\tfrac34),(1,\tfrac12),(\tfrac32,\tfrac14)\},
+ \qquad \rho_j(\beta-\tfrac14)+\beta_j-\tfrac14=\tfrac34.
+\]
+For condition (S) in \cite{PSW}, $X_0$ is a Hilbert space and hence a UMD space. The mixed-derivative embedding follows from Plancherel in time and space: if $\xi$ is the temporal Fourier variable and $\lambda_n=2\pi n/\ell_M$ the spatial frequency, then, for $0\le\theta\le1$,
+\[
+ (1+\xi^2)^{1-\theta}(1+\lambda_n^2)^{4\theta}
+ \le(1-\theta)(1+\xi^2)+\theta(1+\lambda_n^2)^4.
+\]
+Multiplication by $(1+\lambda_n^2)^m$ proves the required embedding $H^1(\R;X_0)\cap L^2(\R;X_1)\hookrightarrow H^{1-\theta}(\R;H^{m+4\theta})$. Here $H^r(\R;Y)$ denotes the $Y$-valued Bessel-potential space in time. The operator $\mathcal B_0(0)=D_s^4$ has maximal regularity by its Fourier series; add the same positive multiple of $f$ to both sides to handle its kernel. At a smooth rotation equilibrium $f_*$, the coordinate $y(s)=\int_0^s g_{f_*}(\varsigma)\dd\varsigma$ is a smooth circle diffeomorphism. It conjugates $g_{f_*}^{-4}D_s^4$ to $D_y^4$ plus terms of order at most three. The Fourier resolvent argument in Section~\ref{sec:geometry}, followed by \cite{deSimon}, therefore gives maximal regularity on every $H^m$, after a shift if necessary. The theorem therefore gives unique local solutions and Lipschitz dependence in the following spaces, for a time horizon $T>0$:
+\begin{equation}\label{eq:MR-spaces}
+ \mathbb E_{m,\mu_{\mathrm w}}(0,T)=W^{1,2}_{\mu_{\mathrm w}}(0,T;H^m)\cap L^2_{\mu_{\mathrm w}}(0,T;H^{m+4}),
+ \qquad L^2_{\mu_{\mathrm w}}(Y)=\{u:\widehat t^{1-\mu_{\mathrm w}}u\in L^2((0,T);Y)\}.
+\end{equation}
+For a Banach space $Y$, $W^{1,2}_{\mu_{\mathrm w}}((0,T);Y)=\{u:u,\partial_{\widehat t}u\in L^2_{\mu_{\mathrm w}}(Y)\}$, using distributional time derivatives. The symbol $\sol_\delta$ denotes the solution map at normalized time $\delta>0$. Away from zero the weight is bounded above and below, so the unweighted trace theorem gives a locally Lipschitz map $\sol_\delta:H^{m+1}\to H^{m+2}$. Iterating on positive time intervals and using uniqueness yields, near any small rotation equilibrium,
+\begin{equation}\label{eq:smoothing}
+ \norm{\sol_\delta(u)-\sol_\delta(v)}_{H^3}
+ +\norm{\sol_\delta(u)-\sol_\delta(v)}_{C^j}
+ \le C_{\delta,j}\norm{u-v}_{H^2}.
+\end{equation}
+The neighborhood can depend on $\delta,j$; constants are uniform on a compact small rotation segment. No initial higher Sobolev bound is required.
+
+\subsection{Normal stability}
+For $X_0=H^1$, $X_1=H^5$, $p=2$, the unweighted trace is $H^3$. Write $f_{\widehat t}+\mathcal B(f)f=\mathcal R(f)$ with
+\[
+ \mathcal B(f)=g_f^{-4}D_s^4-(b_1^{\rm nl}f_{ss}+b_2^{\rm nl})D_s^3,\qquad
+ \mathcal R(f)=b_3^{\rm nl}f_{ss}^3+b_4^{\rm nl}f_{ss}^2+b_5^{\rm nl}f_{ss}+b_6^{\rm nl}.
+\]
+The $H^1$ algebra property gives $(\mathcal B,\mathcal R)\in C^\infty(H^3,\mathcal L(H^5,H^1)\times H^1)$ locally. Fourier perturbation and \cite{deSimon} give maximal regularity of $\mathcal B(0)$. The linearization with the sign convention of \cite{PSZ} is $-A$. Elliptic regularity and compact resolvent identify its spectrum and algebraic multiplicities in $H^1$ with those in $L^2$.
+
+Rotating $\beta_M$ and expressing the rotated immersion in the fixed normal chart gives a smooth curve of equilibria tangent to $\ker A$. To check that it exhausts the local equilibrium set, apply the implicit function theorem to $\calF:H^5\to H^1$ on the stable complement given by the spectral projection of $A$. Its derivative is invertible on that complement by the spectral gap. The derivative of the rotation curve at zero is $b=\ip\beta\tau\ne0$, so its center coordinate is a local scalar coordinate. The complement equation determines a unique stable component for each sufficiently small center coordinate; the rotation curve supplies an equilibrium for every such coordinate. Sections~\ref{app:single}--\ref{app:bloch} give a semisimple zero eigenvalue and the stable gap $g_M$. The hypotheses of normal stability in \cite[Theorem~2.1]{PSZ} are therefore satisfied: the equilibrium manifold has the dimension of the kernel, zero is semisimple, and the remaining spectrum is strictly stable. Its proof, in particular estimates (2.11)--(2.12) and (2.27), gives $H^3$ convergence at every rate $0<\mu<g_M$ after shrinking the neighborhood. Apply it at a fixed positive time using \eqref{eq:smoothing}; uniqueness joins the solutions.
+
+\begin{proposition}\label{prop:H2}
+For each fixed $M$, sufficiently small $H^2$ graph data generate a global normalized solution converging to a rotation graph $f_\infty$. For $0<\mu<g_M$, after shrinking the neighborhood,
+\begin{equation}\label{eq:H2-decay}
+ \norm{f(\widehat t)-f_\infty}_{H^2}\le C_{M,\mu}e^{-\mu\widehat t}\norm{f_0}_{H^2}.
+\end{equation}
+For every $\delta>0$ and integer $j\ge0$, the same estimate holds in $C^j$ for $\widehat t\ge\delta$, with constants and neighborhood also depending on $\delta,j$.
+\end{proposition}
+The finite initial interval is controlled by the weighted local bound and the equilibrium limit bound. For the $C^j$ assertion choose the restart before $\delta$ and apply \eqref{eq:smoothing} to $f(\widehat t-\delta/2)$ and $f_\infty$. Qualitative $C^\infty$ convergence follows for a single $H^2$ neighborhood: for each fixed $j$, the convergent trajectory eventually enters its smoothing neighborhood.
