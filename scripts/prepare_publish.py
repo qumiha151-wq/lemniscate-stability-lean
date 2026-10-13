@@ -32,7 +32,8 @@ public = {
                 for m in sorted(modules)]
 }
 (results/'verification.json').write_text(json.dumps(public, indent=2)+'\n', encoding='utf-8')
-files = [root/'README.md', root/'lakefile.toml', root/'lean-toolchain', root/'.gitignore']
+files = [root/'README.md', root/'lakefile.toml', root/'lake-manifest.json',
+         root/'lean-toolchain', root/'.gitignore']
 for pattern in ['Lemniscate*.lean', 'Lemniscate/*.lean', '.github/workflows/*.yml',
                 'scripts/*.py', 'audit/*.md', 'audit/source/original.tex',
                 'audit/source/sections/*.tex', 'audit/recompute/*.py',
