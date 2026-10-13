@@ -11,7 +11,9 @@
 | 9 项余弦低频比较 | `CoarseArithmetic.cosine_rows` | 直接对论文的有理公式做内核计算；须继续证明实际 Fourier 系数落在给定包络 |
 | 区间算术 | `CoarseArithmetic.mul_sound`, `absUpper_sound`, `reciprocalPositive_sound`, `sqrt_enclosure_sound` | 已证明实数的四则、正倒数及平方根包络；整数外舍入还需补齐 |
 | 几何级数尾公式 | `tail1_sound`, `tail2_sound`, `tail3_sound` | 以 `HasSum` 证明收敛性与和的精确有理式；四至六阶矩及实际矩阵项的控制尚待连接 |
-| 正频 Fourier 系数包络 | `CoarseArithmetic.positive_fourier_enclosure` | 已由参数有理界证明所有正整数频率的系数公式包络；仍需证明 Jacobi Fourier 展开、参数超越数界及常数项尾界 |
+| 正频 Fourier 系数包络 | `CoarseArithmetic.positive_fourier_enclosure` | 已由参数有理界证明所有正整数频率的系数公式包络；仍需证明 Jacobi Fourier 展开及参数超越数界 |
+| 常数 Fourier 系数及无限尾项 | `CoarseArithmetic.summable_fourier_tail`, `fourier_tail_bound`, `constant_fourier_enclosure` | 证明整个系数级数收敛、任意正截断点的尾界及前四项加全尾的常数项包络；仍以参数有理界为假设 |
+| 余弦矩阵条目的区间控制 | `CoarseArithmetic.cosine_matrix_enclosure` | 从收敛级数定义系数，逐项证明实矩阵公式被计算使用的区间包围；矩阵与几何微分算子的 Fourier 表示仍需识别 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

@@ -38,3 +38,8 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.CoarseArithmetic.coarse_sqrt_two
 #print axioms Lemniscate.CoarseArithmetic.evenCoefficient_mono
 #print axioms Lemniscate.CoarseArithmetic.positive_fourier_enclosure
+#print axioms Lemniscate.CoarseArithmetic.summable_fourier_tail
+#print axioms Lemniscate.CoarseArithmetic.fourier_tail_bound
+#print axioms Lemniscate.CoarseArithmetic.constant_fourier_enclosure
+#print axioms Lemniscate.CoarseArithmetic.fourier_enclosure
+#print axioms Lemniscate.CoarseArithmetic.cosine_matrix_enclosure

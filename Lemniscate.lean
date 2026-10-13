@@ -14,3 +14,5 @@ import Lemniscate.ComplexRows
 import Lemniscate.GeometricTails
 import Lemniscate.IntervalExtras
 import Lemniscate.FourierEnclosure
+import Lemniscate.FourierSeries
+import Lemniscate.CosineMatrix

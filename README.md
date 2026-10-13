@@ -36,6 +36,8 @@ The work has three distinct layers:
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
 | `Lemniscate.FourierEnclosure` | Monotonicity and rational enclosures for the positive Fourier coefficient formula, conditional on parameter bounds |
+| `Lemniscate.FourierSeries` | Convergence and uniform tail bounds for that series, and the constant coefficient's full rational enclosure |
+| `Lemniscate.CosineMatrix` | Connects the convergent coefficient formulas to the actual rational cosine-entry intervals, conditional on parameter bounds |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
@@ -48,10 +50,12 @@ without machine-specific paths. These records describe only the listed modules.
 
 ## Build
 
-The intended portable build is `lake build`. The dependency version is pinned
-in `lakefile.toml` and `lean-toolchain`; this portable build still needs its final
-end-to-end verification. The local offline build uses the already installed
-matching Mathlib cache:
+The portable build is `lake build`. Lean and all transitive dependencies are
+pinned in `lean-toolchain`, `lakefile.toml` and `lake-manifest.json`.
+The [first successful Linux CI run](https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/38388577006)
+built commit `cda497be4b429fe98bbc5c42d4c03b2f22ba3a93` and passed the axiom
+audit. Each subsequent commit needs its own check. The local offline build
+uses the already installed matching Mathlib cache:
 
 ```text
 python scripts/build_cached.py
