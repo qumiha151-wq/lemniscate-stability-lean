@@ -30,3 +30,11 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.HighFrequency.odd_high_bound
 #print axioms Lemniscate.HighFrequency.even_high_bound
 #print axioms Lemniscate.complex_weighted_row_dissipation
+#print axioms Lemniscate.tail1_sound
+#print axioms Lemniscate.tail2_sound
+#print axioms Lemniscate.tail3_sound
+#print axioms Lemniscate.CoarseArithmetic.reciprocalPositive_sound
+#print axioms Lemniscate.CoarseArithmetic.sqrt_enclosure_sound
+#print axioms Lemniscate.CoarseArithmetic.coarse_sqrt_two
+#print axioms Lemniscate.CoarseArithmetic.evenCoefficient_mono
+#print axioms Lemniscate.CoarseArithmetic.positive_fourier_enclosure

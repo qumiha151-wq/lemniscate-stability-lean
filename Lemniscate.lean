@@ -11,3 +11,6 @@ import Lemniscate.QuarticTail
 import Lemniscate.RotationKernel
 import Lemniscate.WeightedRows
 import Lemniscate.ComplexRows
+import Lemniscate.GeometricTails
+import Lemniscate.IntervalExtras
+import Lemniscate.FourierEnclosure

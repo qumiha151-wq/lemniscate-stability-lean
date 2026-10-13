@@ -9,7 +9,9 @@
 | 第 2 节旋转模 `A(qq_x)=0` | `rotation_kernel` | 对满足 ODE 和第一积分的实际可微函数证明；尚需把这些函数识别为几何 Bernoulli 曲率 |
 | 带权行引理 | `weighted_row_dissipation`, `complex_weighted_row_dissipation` | 任意有限指标集的实或复二次型；须继续证明 Fourier 型表示及 H2 稠密延拓 |
 | 9 项余弦低频比较 | `CoarseArithmetic.cosine_rows` | 直接对论文的有理公式做内核计算；须继续证明实际 Fourier 系数落在给定包络 |
-| 区间算术 | `CoarseArithmetic.mul_sound`, `absUpper_sound` | 已明确解释为实数的区间包含；倒数、平方根和整数外舍入还需补齐 |
+| 区间算术 | `CoarseArithmetic.mul_sound`, `absUpper_sound`, `reciprocalPositive_sound`, `sqrt_enclosure_sound` | 已证明实数的四则、正倒数及平方根包络；整数外舍入还需补齐 |
+| 几何级数尾公式 | `tail1_sound`, `tail2_sound`, `tail3_sound` | 以 `HasSum` 证明收敛性与和的精确有理式；四至六阶矩及实际矩阵项的控制尚待连接 |
+| 正频 Fourier 系数包络 | `CoarseArithmetic.positive_fourier_enclosure` | 已由参数有理界证明所有正整数频率的系数公式包络；仍需证明 Jacobi Fourier 展开、参数超越数界及常数项尾界 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

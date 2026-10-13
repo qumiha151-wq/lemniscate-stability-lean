@@ -29,10 +29,13 @@ The work has three distinct layers:
 | `Lemniscate.NeutralMode` | Explicit-domain Hilbert-space argument for the kernel, exclusion of generalized neutral modes, eigenvalue bound |
 | `Lemniscate.CoarseArithmetic` | Executable rational definitions for the actual coarse Fourier enclosures and cosine rows |
 | `Lemniscate.IntervalSoundness` | Real containment for addition, multiplication, scaling and absolute upper bounds |
+| `Lemniscate.IntervalExtras` | Positive reciprocal and division, certified square-root enclosures, and the actual coarse square-root-of-two bounds |
 | `Lemniscate.OddArithmetic` | All 84 odd-sector Bernstein comparisons and 12 zero-parameter comparisons, computed from rational formulas |
 | `Lemniscate.OddPositivity` | Casts the computed coefficients into real polynomials and proves positivity on the entire parameter interval |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
+| `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
+| `Lemniscate.FourierEnclosure` | Monotonicity and rational enclosures for the positive Fourier coefficient formula, conditional on parameter bounds |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
