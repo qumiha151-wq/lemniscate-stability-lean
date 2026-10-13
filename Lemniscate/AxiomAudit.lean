@@ -52,3 +52,5 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.hasSum_geometric_moment_four
 #print axioms Lemniscate.hasSum_geometric_moment_five
 #print axioms Lemniscate.hasSum_geometric_moment_six
+#print axioms Lemniscate.CoarseArithmetic.sine_constraint_series_bound
+#print axioms Lemniscate.CoarseArithmetic.theta_nome_sine_constraint_bound

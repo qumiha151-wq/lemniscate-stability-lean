@@ -20,3 +20,4 @@ import Lemniscate.NomeBounds
 import Lemniscate.ThetaBounds
 import Lemniscate.ConcreteCoefficients
 import Lemniscate.HigherGeometricMoments
+import Lemniscate.SineConstraint

@@ -42,6 +42,7 @@ The work has three distinct layers:
 | `Lemniscate.NomeBounds` | Proves the coarse interval for exp(-pi) using pi bounds and the exponential series remainder |
 | `Lemniscate.ThetaBounds` | Convergence and interval bounds for the theta series and its negative fourth power |
 | `Lemniscate.ConcreteCoefficients` | Instantiates the coefficient and cosine-entry enclosures at exp(-pi) and the theta parameter |
+| `Lemniscate.SineConstraint` | Convergence and the strict 87/500 bound for the full squared coefficient-ratio series |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
