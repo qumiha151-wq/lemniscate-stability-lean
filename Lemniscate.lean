@@ -16,3 +16,7 @@ import Lemniscate.IntervalExtras
 import Lemniscate.FourierEnclosure
 import Lemniscate.FourierSeries
 import Lemniscate.CosineMatrix
+import Lemniscate.NomeBounds
+import Lemniscate.ThetaBounds
+import Lemniscate.ConcreteCoefficients
+import Lemniscate.HigherGeometricMoments

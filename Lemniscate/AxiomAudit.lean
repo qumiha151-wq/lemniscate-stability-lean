@@ -43,3 +43,12 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.CoarseArithmetic.constant_fourier_enclosure
 #print axioms Lemniscate.CoarseArithmetic.fourier_enclosure
 #print axioms Lemniscate.CoarseArithmetic.cosine_matrix_enclosure
+#print axioms Lemniscate.CoarseArithmetic.coarse_nome_bounds
+#print axioms Lemniscate.CoarseArithmetic.theta_enclosure
+#print axioms Lemniscate.CoarseArithmetic.actual_nome_theta_r_bounds
+#print axioms Lemniscate.CoarseArithmetic.theta_nome_fourier_enclosure
+#print axioms Lemniscate.CoarseArithmetic.theta_nome_cosine_matrix_enclosure
+#print axioms Lemniscate.CoarseArithmetic.theta_nome_fourier_tail_bound
+#print axioms Lemniscate.hasSum_geometric_moment_four
+#print axioms Lemniscate.hasSum_geometric_moment_five
+#print axioms Lemniscate.hasSum_geometric_moment_six
