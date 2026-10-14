@@ -54,3 +54,6 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.hasSum_geometric_moment_six
 #print axioms Lemniscate.CoarseArithmetic.sine_constraint_series_bound
 #print axioms Lemniscate.CoarseArithmetic.theta_nome_sine_constraint_bound
+#print axioms Lemniscate.CoarseArithmetic.sine_tail_norm_bound
+#print axioms Lemniscate.CoarseArithmetic.sine_constraint_first_mode
+#print axioms Lemniscate.CoarseArithmetic.sine_constraint_energy_bound

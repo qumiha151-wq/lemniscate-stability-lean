@@ -43,6 +43,7 @@ The work has three distinct layers:
 | `Lemniscate.ThetaBounds` | Convergence and interval bounds for the theta series and its negative fourth power |
 | `Lemniscate.ConcreteCoefficients` | Instantiates the coefficient and cosine-entry enclosures at exp(-pi) and the theta parameter |
 | `Lemniscate.SineConstraint` | Convergence and the strict 87/500 bound for the full squared coefficient-ratio series |
+| `Lemniscate.SineHilbert` | Constructs the complex l2 tail vector; derives first-mode and mass bounds from orthogonality and the conditional -75 energy estimate |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

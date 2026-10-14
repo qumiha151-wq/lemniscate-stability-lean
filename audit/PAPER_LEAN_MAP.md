@@ -17,7 +17,8 @@
 | `Q=exp(-π)` 的粗有理界 | `CoarseArithmetic.coarse_nome_bounds` | 使用数学库已证明的圆周率界与指数级数余项界；不依赖浮点近似 |
 | theta 级数的粗参数界 | `CoarseArithmetic.theta_enclosure`, `actual_nome_theta_r_bounds` | 控制完整 theta 级数及其负四次方；与 `(π/(2K))²` 的椭圆积分恒等式尚待形式化 |
 | 参数界在矩阵中的实例化 | `CoarseArithmetic.theta_nome_cosine_matrix_enclosure` | 在 `Q=exp(-π)` 和 theta 参数下消除数值参数假设；不能据此宣称已证明矩阵就是原几何算子的表示 |
-| 正弦约束中的 `ρ²<(87/500)²` | `CoarseArithmetic.sine_constraint_series_bound`, `theta_nome_sine_constraint_bound` | 控制全部 `j≥2` 的系数比平方级数并证明收敛；正交约束到首模估计及旋转系数的几何识别仍需形式化 |
+| 正弦约束中的 `ρ²<(87/500)²` | `CoarseArithmetic.sine_constraint_series_bound`, `theta_nome_sine_constraint_bound` | 控制全部 `j≥2` 的系数比平方级数并证明收敛；旋转系数的几何识别仍需形式化 |
+| 正弦正交约束到首模及耗散估计 | `CoarseArithmetic.sine_constraint_first_mode`, `sine_constraint_energy_bound` | 已构造复系数 `ℓ²` 尾向量并应用 Cauchy–Schwarz；`-75` 结论仍假设尾块 `-100` 和耦合 `63` 所给的能量不等式，实际算子的这些界尚待连接 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
