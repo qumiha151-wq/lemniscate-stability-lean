@@ -50,6 +50,9 @@ The work has three distinct layers:
 | `Lemniscate.CosineTail` | Includes the normalized zero mode, proves symmetry and lower-tail bounds, and covers every cosine row |
 | `Lemniscate.WeightedCosineTail` | Proves positivity of the paper's weights and controls the complete weighted tail used in its finite row certificates |
 | `Lemniscate.CosineLowRows` | Connects all nine rational comparisons to convergent infinite weighted rows of the coefficient-defined cosine matrix |
+| `Lemniscate.CosineHighEntries` | Bounds every actual weight ratio toward lower frequencies and the even-frequency cosine diagonal |
+| `Lemniscate.CosineHighRows` | Connects complete high rows to the certified quartic and proves the uniform bound for every even-frequency cosine row |
+| `Lemniscate.CosineFiniteForm` | Proves dissipation of the full coefficient-defined even-frequency cosine matrix for every finite set of complex modes |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

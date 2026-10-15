@@ -71,3 +71,9 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.CoarseArithmetic.cosine_weighted_tail_bound
 #print axioms Lemniscate.CoarseArithmetic.cosine_row_summable_and_bound
 #print axioms Lemniscate.CoarseArithmetic.cosine_low_rows_dissipative
+#print axioms Lemniscate.CoarseArithmetic.cosine_weighted_lower_majorant
+#print axioms Lemniscate.CoarseArithmetic.cosine_diagonal_high_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_high_row_quartic_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_all_rows_dissipative
+#print axioms Lemniscate.CoarseArithmetic.cosine_finite_row_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_finite_form_dissipative

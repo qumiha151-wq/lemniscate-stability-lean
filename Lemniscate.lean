@@ -28,3 +28,6 @@ import Lemniscate.MatrixTailSeries
 import Lemniscate.CosineTail
 import Lemniscate.WeightedCosineTail
 import Lemniscate.CosineLowRows
+import Lemniscate.CosineHighEntries
+import Lemniscate.CosineHighRows
+import Lemniscate.CosineFiniteForm
