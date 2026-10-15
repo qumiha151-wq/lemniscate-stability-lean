@@ -22,3 +22,9 @@ import Lemniscate.ConcreteCoefficients
 import Lemniscate.HigherGeometricMoments
 import Lemniscate.SineConstraint
 import Lemniscate.SineHilbert
+import Lemniscate.CoefficientMajorant
+import Lemniscate.EntryMajorant
+import Lemniscate.MatrixTailSeries
+import Lemniscate.CosineTail
+import Lemniscate.WeightedCosineTail
+import Lemniscate.CosineLowRows

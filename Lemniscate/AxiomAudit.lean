@@ -57,3 +57,17 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.CoarseArithmetic.sine_tail_norm_bound
 #print axioms Lemniscate.CoarseArithmetic.sine_constraint_first_mode
 #print axioms Lemniscate.CoarseArithmetic.sine_constraint_energy_bound
+#print axioms Lemniscate.CoarseArithmetic.theta_nome_coefficient_majorant
+#print axioms Lemniscate.CoarseArithmetic.common_index_coefficient_majorant
+#print axioms Lemniscate.CoarseArithmetic.positive_frequency_upper_tail
+#print axioms Lemniscate.CoarseArithmetic.cosine_upper_tail
+#print axioms Lemniscate.CoarseArithmetic.positive_frequency_tail_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_tail_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_zero_upper_tail
+#print axioms Lemniscate.CoarseArithmetic.cosine_matrix_symmetric
+#print axioms Lemniscate.CoarseArithmetic.cosine_lower_tail
+#print axioms Lemniscate.CoarseArithmetic.cosine_tail_bound_all
+#print axioms Lemniscate.CoarseArithmetic.weight_pos
+#print axioms Lemniscate.CoarseArithmetic.cosine_weighted_tail_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_row_summable_and_bound
+#print axioms Lemniscate.CoarseArithmetic.cosine_low_rows_dissipative
