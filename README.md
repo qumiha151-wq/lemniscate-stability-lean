@@ -53,6 +53,10 @@ The work has three distinct layers:
 | `Lemniscate.CosineHighEntries` | Bounds every actual weight ratio toward lower frequencies and the even-frequency cosine diagonal |
 | `Lemniscate.CosineHighRows` | Connects complete high rows to the certified quartic and proves the uniform bound for every even-frequency cosine row |
 | `Lemniscate.CosineFiniteForm` | Proves dissipation of the full coefficient-defined even-frequency cosine matrix for every finite set of complex modes |
+| `Lemniscate.SobolevEntryBounds` | Controls matrix entries by H2 frequency weights and a summable distance kernel |
+| `Lemniscate.SobolevKernel` | Proves a uniform complete-row bound for that kernel, including both frequency directions and the diagonal |
+| `Lemniscate.SobolevSummability` | Proves absolute convergence of the infinite cosine energy for H2-weighted coefficient sequences |
+| `Lemniscate.SobolevDissipation` | Passes finite-mode dissipation to H2-weighted sequences and checks the actual even-frequency weight convention |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

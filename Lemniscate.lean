@@ -31,3 +31,7 @@ import Lemniscate.CosineLowRows
 import Lemniscate.CosineHighEntries
 import Lemniscate.CosineHighRows
 import Lemniscate.CosineFiniteForm
+import Lemniscate.SobolevEntryBounds
+import Lemniscate.SobolevKernel
+import Lemniscate.SobolevSummability
+import Lemniscate.SobolevDissipation
