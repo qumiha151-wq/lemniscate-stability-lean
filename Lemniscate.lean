@@ -35,3 +35,6 @@ import Lemniscate.SobolevEntryBounds
 import Lemniscate.SobolevKernel
 import Lemniscate.SobolevSummability
 import Lemniscate.SobolevDissipation
+import Lemniscate.EvenCosineFamily
+import Lemniscate.PeriodicCosineSpace
+import Lemniscate.PeriodicCosineCoefficients

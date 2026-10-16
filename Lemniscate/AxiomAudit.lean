@@ -85,3 +85,13 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.CoarseArithmetic.h2_coefficients_iff_even_frequency
 #print axioms Lemniscate.CoarseArithmetic.cosine_energy_tendsto
 #print axioms Lemniscate.CoarseArithmetic.cosine_h2_form_dissipative
+#print axioms Lemniscate.even_cosine_orthonormal
+#print axioms Lemniscate.even_cosine_hasSum
+#print axioms Lemniscate.circle_even_cosine_norm_sq
+#print axioms Lemniscate.circle_even_cosine_mode_coeff
+#print axioms Lemniscate.h2_circle_function_energy_bound
+#print axioms Lemniscate.circle_even_cosine_coeff_hasSum
+#print axioms Lemniscate.circle_even_cosine_coeff_zero
+#print axioms Lemniscate.circle_even_cosine_coeff_pos
+#print axioms Lemniscate.circle_even_cosine_coeff_neg
+#print axioms Lemniscate.circle_even_cosine_coeff_odd

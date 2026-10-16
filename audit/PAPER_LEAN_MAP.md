@@ -27,6 +27,9 @@
 | 偶频余弦矩阵的复二次型耗散 | `CoarseArithmetic.cosine_finite_form_dissipative` | 对任意有限指标集和任意复系数，实际系数矩阵二次型不超过 `-21/4` 倍质量；随后由 `cosine_h2_form_dissipative` 推广到 H² 系数域，几何 Fourier 表示识别仍待完成 |
 | 偶频余弦形式的 H² 系数域收敛 | `CoarseArithmetic.cosine_energy_summable`, `cosine_absolute_tsum_bound` | 从具体矩阵条目界和 H² 加权平方可和性证明整个双级数绝对收敛；收敛不是额外假设 |
 | 偶频余弦形式的无限序列耗散 | `CoarseArithmetic.cosine_h2_form_dissipative`, `h2_coefficients_iff_even_frequency` | 对 H² 加权复系数序列证明完整双级数的 `-21/4` 耗散；权重对应频率 `2j`，仍需与周期 Sobolev 函数及几何算子的 Fourier 表示识别 |
+| 归一化偶频余弦展开与周期 L² 范数 | `even_cosine_orthonormal`, `circle_even_cosine_hasSum`, `circle_even_cosine_norm_sq` | 使用圆周上总质量为 1 的 Haar 测度，将复 ℓ² 系数等距嵌入实际 L² 函数空间；不声称该余弦族张成整个 L² 空间 |
+| 无限展开后的 Fourier 频率与归一化 | `circle_even_cosine_coeff_zero`, `circle_even_cosine_coeff_pos`, `circle_even_cosine_coeff_neg`, `circle_even_cosine_coeff_odd` | 零频系数为 `v 0`；正偶频 `2j` 的系数为 `v j / √2`，负频反射相等，全部奇频为零；系数通过连续线性泛函与收敛的 L² 级数相连 |
+| 系数能量与实际周期函数的质量 | `h2_circle_function_energy_bound` | 对 H² 加权系数构造的圆周函数，系数二次型不超过 `-21/4` 倍 L² 范数平方；尚未识别为几何微分算子的二次型，也尚未证明周期 Sobolev 导数刻画 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
