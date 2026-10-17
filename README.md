@@ -60,6 +60,9 @@ The work has three distinct layers:
 | `Lemniscate.EvenCosineFamily` | Constructs the normalized cosine family from a two-sided orthonormal family and proves that infinite synthesis preserves the Hilbert-space norm |
 | `Lemniscate.PeriodicCosineSpace` | Realizes the coefficient sequences as periodic L2 functions with normalized Haar measure, computes individual mode Fourier coefficients, and bounds coefficient energy by the function's L2 norm |
 | `Lemniscate.PeriodicCosineCoefficients` | Computes the Fourier coefficients of the infinite synthesis: the zero mode, positive even modes, reflection symmetry, and vanishing odd modes |
+| `Lemniscate.CosineSecondCoefficients` | Characterizes the H2 coefficient domain by square summability of both the original sequence and its second-frequency multiplier |
+| `Lemniscate.PeriodicSecondCandidate` | Constructs the angular second-derivative candidate in periodic L2, proves its complete Fourier multiplier identity and symmetry, and proves convergence of the finite graph approximations |
+| `Lemniscate.CosineModeDerivatives` | Identifies concrete representatives of the L2 modes and proves classical first and second derivatives of finite cosine sums, with the circle-coordinate scale explicit |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

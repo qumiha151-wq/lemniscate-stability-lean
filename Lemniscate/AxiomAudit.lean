@@ -95,3 +95,11 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_even_cosine_coeff_pos
 #print axioms Lemniscate.circle_even_cosine_coeff_neg
 #print axioms Lemniscate.circle_even_cosine_coeff_odd
+#print axioms Lemniscate.h2_second_coefficients_summable
+#print axioms Lemniscate.h2_coefficients_iff_second_l2
+#print axioms Lemniscate.h2_circle_angular_second_fourier
+#print axioms Lemniscate.h2_circle_graph_approximation
+#print axioms Lemniscate.h2_circle_angular_second_symmetric
+#print axioms Lemniscate.cosine_mode_value_ae
+#print axioms Lemniscate.hasDerivAt_cosine_partial
+#print axioms Lemniscate.hasDerivAt_cosine_partial_first

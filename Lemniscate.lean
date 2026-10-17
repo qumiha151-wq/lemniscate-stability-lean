@@ -38,3 +38,6 @@ import Lemniscate.SobolevDissipation
 import Lemniscate.EvenCosineFamily
 import Lemniscate.PeriodicCosineSpace
 import Lemniscate.PeriodicCosineCoefficients
+import Lemniscate.CosineSecondCoefficients
+import Lemniscate.PeriodicSecondCandidate
+import Lemniscate.CosineModeDerivatives
