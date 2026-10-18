@@ -66,6 +66,10 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicClassicalFourier` | Proves Fourier differentiation for arbitrary classical periodic functions, including the zero mode and endpoint cancellation |
 | `Lemniscate.PeriodicWeakSecond` | Proves the second-derivative integration-by-parts identity for H2 cosine functions against all periodic C2 tests, with the period scale explicit |
 | `Lemniscate.PeriodicWeakUniqueness` | Proves equivalence between the weak second-derivative test identity and the complete Fourier multiplier identity, and uniqueness in L2 |
+| `Lemniscate.PeriodicWeakFirst` | Defines first weak derivatives using all periodic C1 tests, proves their Fourier characterization and uniqueness, and checks the integration-by-parts sign |
+| `Lemniscate.PeriodicDerivativeChain` | Constructs the first L2 derivative from an L2 weak second derivative and proves equivalence with two successive weak derivatives |
+| `Lemniscate.PeriodicH2Fourier` | Characterizes periodic H2 membership by the full Fourier sequence with the physical frequency weight, for every positive period |
+| `Lemniscate.PeriodicCosineH2` | Identifies the weighted cosine sequence domain with actual periodic H2 membership in both directions and applies the coefficient energy bound on that domain |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

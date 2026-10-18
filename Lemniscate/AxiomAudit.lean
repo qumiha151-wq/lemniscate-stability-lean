@@ -110,3 +110,16 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.h2_circle_second_integration_by_parts
 #print axioms Lemniscate.weak_circle_second_iff_fourier
 #print axioms Lemniscate.weak_circle_second_unique
+#print axioms Lemniscate.circle_complex_multiplier_duality
+#print axioms Lemniscate.weak_circle_deriv_iff_fourier
+#print axioms Lemniscate.weak_circle_deriv_unique
+#print axioms Lemniscate.circle_first_coefficients_summable
+#print axioms Lemniscate.weak_circle_second_iff_deriv_chain
+#print axioms Lemniscate.circle_h2_iff_weak_second
+#print axioms Lemniscate.h2_circle_derivative_chain
+#print axioms Lemniscate.h2_circle_function_mem_h2
+#print axioms Lemniscate.circle_h2_iff_second_coefficients
+#print axioms Lemniscate.circle_h2_iff_weighted_fourier
+#print axioms Lemniscate.circle_cosine_h2_coefficients_of_weak_second
+#print axioms Lemniscate.circle_cosine_mem_h2_iff
+#print axioms Lemniscate.circle_cosine_sobolev_energy_bound

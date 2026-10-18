@@ -26,16 +26,20 @@
 | 偶频余弦高频行与全部行的统一界 | `CoarseArithmetic.cosine_high_row_quartic_bound`, `cosine_all_rows_dissipative` | 将完整高频行连接到已认证四次多项式，再与九个低频行合并；所有行级数收敛且严格小于 `-21/4` |
 | 偶频余弦矩阵的复二次型耗散 | `CoarseArithmetic.cosine_finite_form_dissipative` | 对任意有限指标集和任意复系数，实际系数矩阵二次型不超过 `-21/4` 倍质量；随后由 `cosine_h2_form_dissipative` 推广到 H² 系数域，几何 Fourier 表示识别仍待完成 |
 | 偶频余弦形式的 H² 系数域收敛 | `CoarseArithmetic.cosine_energy_summable`, `cosine_absolute_tsum_bound` | 从具体矩阵条目界和 H² 加权平方可和性证明整个双级数绝对收敛；收敛不是额外假设 |
-| 偶频余弦形式的无限序列耗散 | `CoarseArithmetic.cosine_h2_form_dissipative`, `h2_coefficients_iff_even_frequency` | 对 H² 加权复系数序列证明完整双级数的 `-21/4` 耗散；权重对应频率 `2j`，仍需与周期 Sobolev 函数及几何算子的 Fourier 表示识别 |
+| 偶频余弦形式的无限序列耗散 | `CoarseArithmetic.cosine_h2_form_dissipative`, `h2_coefficients_iff_even_frequency` | 对 H² 加权复系数序列证明完整双级数的 `-21/4` 耗散；权重对应频率 `2j`，周期 Sobolev 域由后续模块识别，几何算子的 Fourier 表示仍待识别 |
 | 归一化偶频余弦展开与周期 L² 范数 | `even_cosine_orthonormal`, `circle_even_cosine_hasSum`, `circle_even_cosine_norm_sq` | 使用圆周上总质量为 1 的 Haar 测度，将复 ℓ² 系数等距嵌入实际 L² 函数空间；不声称该余弦族张成整个 L² 空间 |
 | 无限展开后的 Fourier 频率与归一化 | `circle_even_cosine_coeff_zero`, `circle_even_cosine_coeff_pos`, `circle_even_cosine_coeff_neg`, `circle_even_cosine_coeff_odd` | 零频系数为 `v 0`；正偶频 `2j` 的系数为 `v j / √2`，负频反射相等，全部奇频为零；系数通过连续线性泛函与收敛的 L² 级数相连 |
-| 系数能量与实际周期函数的质量 | `h2_circle_function_energy_bound` | 对 H² 加权系数构造的圆周函数，系数二次型不超过 `-21/4` 倍 L² 范数平方；尚未识别为几何微分算子的二次型，也尚未证明周期 Sobolev 导数刻画 |
+| 系数能量与实际周期函数的质量 | `h2_circle_function_energy_bound` | 对 H² 加权系数构造的圆周函数，系数二次型不超过 `-21/4` 倍 L² 范数平方；后续模块证明周期 Sobolev 导数刻画，尚未识别为几何微分算子的二次型 |
 | H² 系数域与二阶频率乘子 | `h2_coefficients_iff_second_l2` | 双向等价：H² 加权平方可和，当且仅当原系数和 `-(2j)² v_j` 都属于 ℓ²；此处仍为系数域陈述 |
 | 二阶导数候选函数与有限截断 | `h2_circle_angular_second_fourier`, `h2_circle_graph_approximation`, `h2_circle_angular_second_symmetric` | 在实际圆周 L² 中构造候选函数，其全部 Fourier 系数为 `-n²` 乘原系数；函数和候选二阶导数的有限截断同时收敛，且该乘子对称；后续 `PeriodicWeakSecond` 处理其弱导数意义 |
 | 有限 Fourier 和的经典导数 | `cosine_mode_value_ae`, `hasDerivAt_cosine_partial`, `hasDerivAt_cosine_partial_first` | 核对 L² 模的具体函数代表及有限和的一、二阶导数；任意周期 T 保留 `(2π/T)²` 因子，论文角坐标为 T=2π |
 | 任意经典周期函数的 Fourier 求导 | `fourierCoeff_classical_deriv`, `fourierCoeff_classical_second` | 由周期端点消去与微积分基本定理证明所有整数频率的求导公式，包括零频；不假设 Fourier 级数逐点可微 |
-| H² 余弦函数的弱二阶导数 | `h2_circle_second_weak`, `h2_circle_second_integration_by_parts` | 对所有周期 C² 测试函数证明真实 Haar 积分的分部积分关系；二阶导数在 L² 中构造，周期尺度明确；尚非完整的一、二阶 Sobolev 域等价或几何算子识别 |
+| H² 余弦函数的弱二阶导数 | `h2_circle_second_weak`, `h2_circle_second_integration_by_parts` | 对所有周期 C² 测试函数证明真实 Haar 积分的分部积分关系；二阶导数在 L² 中构造，周期尺度明确；一、二阶 Sobolev 域等价由下述后续模块处理 |
 | 弱二阶导数的刻画与唯一性 | `weak_circle_second_iff_fourier`, `weak_circle_second_unique` | 在整个周期 L² 空间中，C² 测试恒等式与全部 Fourier 系数的二阶乘子公式等价，因此满足该弱导数关系的 L² 函数唯一 |
+| 弱一阶导数的刻画与唯一性 | `weak_circle_deriv_iff_fourier`, `weak_circle_deriv_unique` | 对所有周期 C¹ 测试函数定义弱导数，并与全部 Fourier 系数的 `i(2π/T)n` 乘子公式双向对应；核对复内积约定下的负号 |
+| 二阶弱导数与逐次弱求导 | `weak_circle_second_iff_deriv_chain`, `h2_circle_derivative_chain` | 从原函数和弱二阶导数的 L² 性质推出一阶乘子系数属于 ℓ²，构造一阶导数；证明再次弱求导得到给定二阶导数 |
+| 周期 H² 的完整 Fourier 刻画 | `circle_h2_iff_weighted_fourier` | H² 在此明确定义为存在两次逐次 L² 弱导数；在整个周期 L² 空间中，等价于权重 `1+((2π/T)n)²` 乘 Fourier 系数后的平方可和性 |
+| 余弦 Sobolev 域的双向识别 | `circle_cosine_mem_h2_iff`, `circle_cosine_sobolev_energy_bound` | 对任意 ℓ² 余弦系数，合成函数属于上述 H² 当且仅当满足原加权系数条件；因此可由弱导数条件调用 `-21/4` 系数耗散界，仍不等同于几何算子二次型 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

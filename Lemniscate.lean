@@ -44,3 +44,7 @@ import Lemniscate.CosineModeDerivatives
 import Lemniscate.PeriodicClassicalFourier
 import Lemniscate.PeriodicWeakSecond
 import Lemniscate.PeriodicWeakUniqueness
+import Lemniscate.PeriodicWeakFirst
+import Lemniscate.PeriodicDerivativeChain
+import Lemniscate.PeriodicH2Fourier
+import Lemniscate.PeriodicCosineH2
