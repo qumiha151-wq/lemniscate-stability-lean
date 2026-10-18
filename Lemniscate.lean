@@ -48,3 +48,9 @@ import Lemniscate.PeriodicWeakFirst
 import Lemniscate.PeriodicDerivativeChain
 import Lemniscate.PeriodicH2Fourier
 import Lemniscate.PeriodicCosineH2
+import Lemniscate.PeriodicFourierProducts
+import Lemniscate.PeriodicProfileIdentity
+import Lemniscate.PeriodicSymmetricExpression
+import Lemniscate.PeriodicCosineJets
+import Lemniscate.PeriodicCosineMatrix
+import Lemniscate.PeriodicMatrixIdentification

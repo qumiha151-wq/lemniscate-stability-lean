@@ -40,6 +40,11 @@
 | 二阶弱导数与逐次弱求导 | `weak_circle_second_iff_deriv_chain`, `h2_circle_derivative_chain` | 从原函数和弱二阶导数的 L² 性质推出一阶乘子系数属于 ℓ²，构造一阶导数；证明再次弱求导得到给定二阶导数 |
 | 周期 H² 的完整 Fourier 刻画 | `circle_h2_iff_weighted_fourier` | H² 在此明确定义为存在两次逐次 L² 弱导数；在整个周期 L² 空间中，等价于权重 `1+((2π/T)n)²` 乘 Fourier 系数后的平方可和性 |
 | 余弦 Sobolev 域的双向识别 | `circle_cosine_mem_h2_iff`, `circle_cosine_sobolev_energy_bound` | 对任意 ℓ² 余弦系数，合成函数属于上述 H² 当且仅当满足原加权系数条件；因此可由弱导数条件调用 `-21/4` 系数耗散界，仍不等同于几何算子二次型 |
+| 曲率四次幂的 Fourier 恒等式 | `circle_profile_square_second`, `circle_profile_fourth_fourier`, `circle_profile_fourth_mean` | 从显式 ODE 与第一积分推出 `(q²)''=1−3q⁴`，进而得到全部 Fourier 系数与均值 `1/3`；尚未构造并识别具体 Jacobi 曲率 |
+| 四阶微分表达式与双向 Fourier 矩阵 | `circle_symmetric_expression_coordinate`, `paper_symmetric_mode_fourier` | 核对真实坐标导数和乘积求导，推导频率差条目；本模块只处理论文所写微分表达式，不等于完成无界算子的伴随、定义域或全谱识别 |
+| 归一化余弦模的经典求导与算子作用 | `circle_cosine_jet_deriv`, `circle_cosine_jet_zero_l2`, `circle_symmetric_cosine_fourier` | 对所有阶数证明经典导数链，将零阶函数与已有 L² 模等价类对应，并计算四阶表达式的像 |
+| 实际 L² 内积中的余弦矩阵公式 | `circle_cosine_matrix_positive`, `circle_cosine_matrix_zero_zero`, `circle_cosine_matrix_zero_positive`, `circle_cosine_matrix_positive_zero` | 在系数反射对称及经典二阶可微条件下，证明正频率公式、零模对角 `−42` 和两侧 `√2` 例外项；周期尺度为 `(2π/T)²`，与 theta 定义的已认证系数矩阵的识别仍待完成 |
+| 微分表达式矩阵与认证矩阵的条件连接 | `circle_cosine_matrix_eq_coefficients` | 若实际系数 Fourier 序列满足 `fourierCoefficient r Q j` 公式，反射对称且 `(2π/T)²=r`，则对所有 `j,k`，实际 L² 内积条目等于 `cosineMatrixEntry r Q j k`；这些前提尚须对具体 Jacobi 曲率证明 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

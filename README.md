@@ -70,6 +70,12 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicDerivativeChain` | Constructs the first L2 derivative from an L2 weak second derivative and proves equivalence with two successive weak derivatives |
 | `Lemniscate.PeriodicH2Fourier` | Characterizes periodic H2 membership by the full Fourier sequence with the physical frequency weight, for every positive period |
 | `Lemniscate.PeriodicCosineH2` | Identifies the weighted cosine sequence domain with actual periodic H2 membership in both directions and applies the coefficient energy bound on that domain |
+| `Lemniscate.PeriodicFourierProducts` | Proves Fourier coefficient linearity and the exact frequency shift caused by multiplication by a Fourier mode |
+| `Lemniscate.PeriodicProfileIdentity` | Derives the Fourier coefficients of the fourth power of a profile from its ODE and first integral, including its mean; identification of the Jacobi profile remains required |
+| `Lemniscate.PeriodicSymmetricExpression` | Checks the actual fourth-order differential expression in real coordinates and derives its two-sided Fourier matrix under explicit profile hypotheses |
+| `Lemniscate.PeriodicCosineJets` | Constructs all classical derivatives of the normalized cosine modes, identifies their L2 representatives, and computes the expression's action on them |
+| `Lemniscate.PeriodicCosineMatrix` | Proves the positive and exceptional zero-mode L2 matrix formulas for the differential expression, assuming reflection symmetry of the coefficient's Fourier sequence |
+| `Lemniscate.PeriodicMatrixIdentification` | Identifies these actual L2 matrix entries with the matrix used in the arithmetic proofs, conditional on the explicit Fourier coefficient formula and period relation |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
