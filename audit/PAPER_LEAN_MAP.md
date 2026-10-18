@@ -31,8 +31,11 @@
 | 无限展开后的 Fourier 频率与归一化 | `circle_even_cosine_coeff_zero`, `circle_even_cosine_coeff_pos`, `circle_even_cosine_coeff_neg`, `circle_even_cosine_coeff_odd` | 零频系数为 `v 0`；正偶频 `2j` 的系数为 `v j / √2`，负频反射相等，全部奇频为零；系数通过连续线性泛函与收敛的 L² 级数相连 |
 | 系数能量与实际周期函数的质量 | `h2_circle_function_energy_bound` | 对 H² 加权系数构造的圆周函数，系数二次型不超过 `-21/4` 倍 L² 范数平方；尚未识别为几何微分算子的二次型，也尚未证明周期 Sobolev 导数刻画 |
 | H² 系数域与二阶频率乘子 | `h2_coefficients_iff_second_l2` | 双向等价：H² 加权平方可和，当且仅当原系数和 `-(2j)² v_j` 都属于 ℓ²；此处仍为系数域陈述 |
-| 二阶导数候选函数与有限截断 | `h2_circle_angular_second_fourier`, `h2_circle_graph_approximation`, `h2_circle_angular_second_symmetric` | 在实际圆周 L² 中构造候选函数，其全部 Fourier 系数为 `-n²` 乘原系数；函数和候选二阶导数的有限截断同时收敛，且该乘子对称；与弱导数的识别仍待完成 |
-| 有限 Fourier 和的经典导数 | `cosine_mode_value_ae`, `hasDerivAt_cosine_partial`, `hasDerivAt_cosine_partial_first` | 核对 L² 模的具体函数代表及有限和的一、二阶导数；任意周期 T 保留 `(2π/T)²` 因子，论文角坐标为 T=2π；尚需将有限和的分部积分传到极限 |
+| 二阶导数候选函数与有限截断 | `h2_circle_angular_second_fourier`, `h2_circle_graph_approximation`, `h2_circle_angular_second_symmetric` | 在实际圆周 L² 中构造候选函数，其全部 Fourier 系数为 `-n²` 乘原系数；函数和候选二阶导数的有限截断同时收敛，且该乘子对称；后续 `PeriodicWeakSecond` 处理其弱导数意义 |
+| 有限 Fourier 和的经典导数 | `cosine_mode_value_ae`, `hasDerivAt_cosine_partial`, `hasDerivAt_cosine_partial_first` | 核对 L² 模的具体函数代表及有限和的一、二阶导数；任意周期 T 保留 `(2π/T)²` 因子，论文角坐标为 T=2π |
+| 任意经典周期函数的 Fourier 求导 | `fourierCoeff_classical_deriv`, `fourierCoeff_classical_second` | 由周期端点消去与微积分基本定理证明所有整数频率的求导公式，包括零频；不假设 Fourier 级数逐点可微 |
+| H² 余弦函数的弱二阶导数 | `h2_circle_second_weak`, `h2_circle_second_integration_by_parts` | 对所有周期 C² 测试函数证明真实 Haar 积分的分部积分关系；二阶导数在 L² 中构造，周期尺度明确；尚非完整的一、二阶 Sobolev 域等价或几何算子识别 |
+| 弱二阶导数的刻画与唯一性 | `weak_circle_second_iff_fourier`, `weak_circle_second_unique` | 在整个周期 L² 空间中，C² 测试恒等式与全部 Fourier 系数的二阶乘子公式等价，因此满足该弱导数关系的 L² 函数唯一 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

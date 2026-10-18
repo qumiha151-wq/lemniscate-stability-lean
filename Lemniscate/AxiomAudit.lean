@@ -103,3 +103,10 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.cosine_mode_value_ae
 #print axioms Lemniscate.hasDerivAt_cosine_partial
 #print axioms Lemniscate.hasDerivAt_cosine_partial_first
+#print axioms Lemniscate.fourierCoeff_classical_deriv
+#print axioms Lemniscate.fourierCoeff_classical_second
+#print axioms Lemniscate.circle_real_multiplier_duality
+#print axioms Lemniscate.h2_circle_second_weak
+#print axioms Lemniscate.h2_circle_second_integration_by_parts
+#print axioms Lemniscate.weak_circle_second_iff_fourier
+#print axioms Lemniscate.weak_circle_second_unique

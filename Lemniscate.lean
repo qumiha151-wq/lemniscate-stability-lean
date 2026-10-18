@@ -41,3 +41,6 @@ import Lemniscate.PeriodicCosineCoefficients
 import Lemniscate.CosineSecondCoefficients
 import Lemniscate.PeriodicSecondCandidate
 import Lemniscate.CosineModeDerivatives
+import Lemniscate.PeriodicClassicalFourier
+import Lemniscate.PeriodicWeakSecond
+import Lemniscate.PeriodicWeakUniqueness
