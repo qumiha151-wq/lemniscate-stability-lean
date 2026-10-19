@@ -64,3 +64,5 @@ import Lemniscate.PeriodicH2Energy
 import Lemniscate.PeriodicProfileEnergy
 import Lemniscate.PeriodicSkewEnergy
 import Lemniscate.PeriodicLinearEnergy
+import Lemniscate.PeriodicWeakCalculus
+import Lemniscate.PeriodicWeakOperatorEnergy
