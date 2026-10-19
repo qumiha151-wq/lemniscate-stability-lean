@@ -76,6 +76,16 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicCosineJets` | Constructs all classical derivatives of the normalized cosine modes, identifies their L2 representatives, and computes the expression's action on them |
 | `Lemniscate.PeriodicCosineMatrix` | Proves the positive and exceptional zero-mode L2 matrix formulas for the differential expression, assuming reflection symmetry of the coefficient's Fourier sequence |
 | `Lemniscate.PeriodicMatrixIdentification` | Identifies these actual L2 matrix entries with the matrix used in the arithmetic proofs, conditional on the explicit Fourier coefficient formula and period relation |
+| `Lemniscate.PeriodicCosinePolynomials` | Constructs finite cosine polynomials and all their classical derivatives, proves their L2 norm formula, and checks linearity of the differential expression |
+| `Lemniscate.PeriodicFiniteEnergy` | Transfers the certified matrix dissipation to the actual L2 pairing with the differential expression on finite polynomials |
+| `Lemniscate.PeriodicMultiplication` | Constructs bounded multiplication operators on periodic L2, identifies their integral pairings, and proves continuity of the H2 energy |
+| `Lemniscate.PeriodicIntegrationByParts` | Uses periodic integration by parts to identify the classical fourth-order energy with the form involving only two derivatives |
+| `Lemniscate.PeriodicDerivativeGraph` | Controls the first weak derivative by the zeroth and second derivatives and proves its convergence from convergence of those two quantities |
+| `Lemniscate.PeriodicH2Approximation` | Proves simultaneous L2 convergence of finite cosine polynomials and their first two derivatives |
+| `Lemniscate.PeriodicH2Energy` | Identifies the actual weak-derivative energy with the convergent coefficient form and proves cosine-sector H2 dissipation under explicit coefficient hypotheses |
+| `Lemniscate.PeriodicProfileEnergy` | Rewrites that H2 form in the paper's curvature-profile variables and proves its dissipation, retaining the profile ODE, Fourier formula and period relation as hypotheses |
+| `Lemniscate.PeriodicSkewEnergy` | Proves symmetry of multiplication by a real coefficient on L2 and cancellation of the real energy of the classical periodic first-order skew correction |
+| `Lemniscate.PeriodicLinearEnergy` | Splits the paper's linearized differential expression into symmetric and skew parts, identifies its classical real energy, and derives cosine-sector dissipation under the explicit profile and Fourier hypotheses |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

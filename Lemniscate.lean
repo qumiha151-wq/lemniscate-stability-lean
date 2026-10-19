@@ -54,3 +54,13 @@ import Lemniscate.PeriodicSymmetricExpression
 import Lemniscate.PeriodicCosineJets
 import Lemniscate.PeriodicCosineMatrix
 import Lemniscate.PeriodicMatrixIdentification
+import Lemniscate.PeriodicCosinePolynomials
+import Lemniscate.PeriodicFiniteEnergy
+import Lemniscate.PeriodicMultiplication
+import Lemniscate.PeriodicIntegrationByParts
+import Lemniscate.PeriodicDerivativeGraph
+import Lemniscate.PeriodicH2Approximation
+import Lemniscate.PeriodicH2Energy
+import Lemniscate.PeriodicProfileEnergy
+import Lemniscate.PeriodicSkewEnergy
+import Lemniscate.PeriodicLinearEnergy

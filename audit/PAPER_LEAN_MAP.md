@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | 第 2 节线性化常数与 Fourier 系数 | `linearization_zero_order`, `linearization_first_order`, `fourier_coefficient_identity` | 证明代数恒等式；变化公式本身尚未形式化 |
 | 第 2 节旋转模 `A(qq_x)=0` | `rotation_kernel` | 对满足 ODE 和第一积分的实际可微函数证明；尚需把这些函数识别为几何 Bernoulli 曲率 |
-| 带权行引理 | `weighted_row_dissipation`, `complex_weighted_row_dissipation` | 任意有限指标集的实或复二次型；须继续证明 Fourier 型表示及 H2 稠密延拓 |
+| 带权行引理 | `weighted_row_dissipation`, `complex_weighted_row_dissipation` | 任意有限指标集的实或复二次型；余弦扇区的 Fourier 型表示及 H² 延拓见后续条件连接，其他扇区仍待处理 |
 | 9 项余弦低频比较及其完整行意义 | `CoarseArithmetic.cosine_rows`, `cosine_low_rows_dissipative` | 从有理公式的内核计算，连接到系数公式定义的矩阵全行：前 20 项区间估计加全部加权尾项；矩阵与几何算子的识别仍待完成 |
 | 区间算术 | `CoarseArithmetic.mul_sound`, `absUpper_sound`, `reciprocalPositive_sound`, `sqrt_enclosure_sound` | 已证明实数的四则、正倒数及平方根包络；整数外舍入还需补齐 |
 | 几何级数尾公式 | `tail1_sound`, `tail2_sound`, `tail3_sound`, `hasSum_geometric_moment_four`, `hasSum_geometric_moment_five`, `hasSum_geometric_moment_six` | 以 `HasSum` 证明零至六阶矩和前三阶移位尾和的精确有理式；实际矩阵及约束项的控制还需逐项连接 |
@@ -45,6 +45,14 @@
 | 归一化余弦模的经典求导与算子作用 | `circle_cosine_jet_deriv`, `circle_cosine_jet_zero_l2`, `circle_symmetric_cosine_fourier` | 对所有阶数证明经典导数链，将零阶函数与已有 L² 模等价类对应，并计算四阶表达式的像 |
 | 实际 L² 内积中的余弦矩阵公式 | `circle_cosine_matrix_positive`, `circle_cosine_matrix_zero_zero`, `circle_cosine_matrix_zero_positive`, `circle_cosine_matrix_positive_zero` | 在系数反射对称及经典二阶可微条件下，证明正频率公式、零模对角 `−42` 和两侧 `√2` 例外项；周期尺度为 `(2π/T)²`，与 theta 定义的已认证系数矩阵的识别仍待完成 |
 | 微分表达式矩阵与认证矩阵的条件连接 | `circle_cosine_matrix_eq_coefficients` | 若实际系数 Fourier 序列满足 `fourierCoefficient r Q j` 公式，反射对称且 `(2π/T)²=r`，则对所有 `j,k`，实际 L² 内积条目等于 `cosineMatrixEntry r Q j k`；这些前提尚须对具体 Jacobi 曲率证明 |
+| 有限余弦函数的实际能量估计 | `circle_polynomial_energy_eq_matrix`, `circle_polynomial_dissipative` | 对任意有限指标集和复系数，实际微分表达式的 L² 配对等于认证矩阵二次型并满足 `−21/4` 界；保留系数和周期识别条件 |
+| 四阶表达式的 H² 能量形式 | `circle_classical_energy_eq`, `circle_multiply_pairing_integral` | 通过周期分部积分，将四阶项化为二阶导数的 L² 配对；系数乘法为真实有界算子，其配对等于 Haar 积分 |
+| H² 近似中的一阶导数收敛 | `circle_first_derivative_norm_sq_le`, `circle_first_derivative_tendsto` | 证明 `‖f'‖² ≤ ‖f‖²+‖f''‖²`，因此函数及二阶弱导数收敛推出一阶弱导数收敛，不把后者作为额外假设 |
+| 函数、前两阶导数同时近似 | `h2_circle_polynomial_tendsto`, `h2_circle_polynomial_first_tendsto`, `h2_circle_polynomial_second_tendsto` | 对所有 H² 加权余弦序列，有限多项式在三个实际 L² 分量中同时收敛；无需假设四阶导数存在 |
+| 实际弱导数能量与系数形式 | `h2_circle_energy_eq_coefficients`, `circle_cosine_weak_energy_dissipative` | 利用能量连续性和已证明的近似，将实际 H² 形式识别为绝对收敛的系数二次型，并证明任意两次弱导数下的余弦扇区耗散 |
+| 原稿曲率变量下的 H² 耗散 | `circle_h2_energy_profile`, `paper_cosine_weak_energy_dissipative` | 恢复原稿的 `153/4` 与 `45/4` 势能项；定理保留曲率 ODE、第一积分、Fourier 公式、反射对称及周期关系。具体 Jacobi 曲率满足这些条件及全文稳定性定理仍未完成 |
+| 一阶反对称修正的实部消去 | `circle_multiply_l2_symmetric`, `circle_first_order_skew_energy` | 证明实连续系数乘法在 L² 中对称，且经典周期函数满足 `Re ⟨f,h f′+h′f/2⟩=0`；这不是无界算子伴随定义域的定理 |
+| 原稿线性化表达式的实际能量 | `paper_linear_expression_split`, `paper_linear_classical_energy`, `paper_linear_classical_cosine_dissipative` | 核对 `−75qq′D`、`−69/2` 和 `−45q⁴/2` 的系数，用分部积分证明其实部能量等于已有 H² 形式；对属于余弦合成空间的经典函数取得条件耗散，仍待具体曲率识别和算子定义域论证 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
