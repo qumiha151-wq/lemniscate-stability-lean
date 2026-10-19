@@ -88,6 +88,8 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicLinearEnergy` | Splits the paper's linearized differential expression into symmetric and skew parts, identifies its classical real energy, and derives cosine-sector dissipation under the explicit profile and Fourier hypotheses |
 | `Lemniscate.PeriodicWeakCalculus` | Proves integration by parts between L2 weak derivatives, the product rule for real C1 coefficients, and zero real energy of the corresponding first-order skew term |
 | `Lemniscate.PeriodicWeakOperatorEnergy` | Defines the four-weak-derivative domain and proves symmetric and linear-expression energy identities and conditional cosine dissipation on four successive L2 weak derivatives |
+| `Lemniscate.PeriodicH4Domain` | Constructs that H4 domain as a complex submodule of L2, proves uniqueness of all derivative witnesses, and bundles the four derivative maps as linear maps |
+| `Lemniscate.PeriodicH4Operator` | Defines the symmetric and linearized expressions as linear maps from the explicit H4 domain to L2 and proves their energy identity and conditional cosine-sector dissipation |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |

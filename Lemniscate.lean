@@ -66,3 +66,5 @@ import Lemniscate.PeriodicSkewEnergy
 import Lemniscate.PeriodicLinearEnergy
 import Lemniscate.PeriodicWeakCalculus
 import Lemniscate.PeriodicWeakOperatorEnergy
+import Lemniscate.PeriodicH4Domain
+import Lemniscate.PeriodicH4Operator

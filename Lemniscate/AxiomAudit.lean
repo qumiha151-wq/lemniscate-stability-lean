@@ -176,3 +176,11 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_weak_symmetric_energy
 #print axioms Lemniscate.circle_weak_linear_energy
 #print axioms Lemniscate.circle_weak_linear_cosine_dissipative
+#print axioms Lemniscate.circle_h4_jet_unique
+#print axioms Lemniscate.circle_h4_jet_add
+#print axioms Lemniscate.circle_h4_jet_smul
+#print axioms Lemniscate.circle_h4_mem_h2
+#print axioms Lemniscate.circle_h4_operator_apply
+#print axioms Lemniscate.circle_h4_operator_energy
+#print axioms Lemniscate.circle_h4_operator_cosine_dissipative
+#print axioms Lemniscate.circle_classical_mem_h4

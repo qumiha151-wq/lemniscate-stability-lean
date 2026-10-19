@@ -55,6 +55,8 @@
 | 原稿线性化表达式的实际能量 | `paper_linear_expression_split`, `paper_linear_classical_energy`, `paper_linear_classical_cosine_dissipative` | 核对 `−75qq′D`、`−69/2` 和 `−45q⁴/2` 的系数，用分部积分证明其实部能量等于已有 H² 形式；对属于余弦合成空间的经典函数取得条件耗散，仍待具体曲率识别和算子定义域论证 |
 | L² 弱导数之间的分部积分和乘积规则 | `circle_weak_integration_by_parts`, `circle_real_multiply_weak_deriv`, `circle_weak_skew_energy` | 从全部 Fourier 乘子关系推出两组弱导数的分部积分，并对实 C¹ 系数证明弱乘积求导及反对称能量消去 |
 | 四阶弱导数表达式的能量 | `circle_weak_symmetric_energy`, `circle_weak_linear_energy`, `circle_weak_linear_cosine_dissipative` | 用实际 L² 乘法定义四阶表达式，将四次逐次弱导数的实部配对识别为已有 H² 能量；未声称闭性、伴随定义域相等或全谱结论 |
+| 显式 H⁴ 线性定义域 | `circle_h4_jet_unique`, `circle_h4_jet_add`, `circle_h4_jet_smul`, `circleH4Derivative` | 证明四次弱求导的函数构成复线性子空间，各阶导数唯一，故选择弱导数见证得到的映射是线性的 |
+| 定义域上的四阶线性算子 | `circle_h4_operator_apply`, `circle_h4_operator_energy`, `circle_h4_operator_cosine_dissipative` | 真正定义 H⁴ 到 L² 的线性映射并证明实际内积能量与条件耗散；仍未建立闭性、伴随定义域、紧预解算子或具体 Jacobi 系数识别 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
