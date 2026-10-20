@@ -90,9 +90,13 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicWeakOperatorEnergy` | Defines the four-weak-derivative domain and proves symmetric and linear-expression energy identities and conditional cosine dissipation on four successive L2 weak derivatives |
 | `Lemniscate.PeriodicH4Domain` | Constructs that H4 domain as a complex submodule of L2, proves uniqueness of all derivative witnesses, and bundles the four derivative maps as linear maps |
 | `Lemniscate.PeriodicH4Operator` | Defines the symmetric and linearized expressions as linear maps from the explicit H4 domain to L2 and proves their energy identity and conditional cosine-sector dissipation |
-| `Lemniscate.PeriodicFormalAdjoint` | Proves fourth-order, divergence and skew Green identities on H4, checks the formal adjoint expression, and proves the two-operator pairing identity; equality of maximal adjoint domains remains open |
+| `Lemniscate.PeriodicFormalAdjoint` | Proves fourth-order, divergence and skew Green identities on H4, checks the formal adjoint expression, and proves the two-operator pairing identity; maximal-domain identification is proved in the later regularity module |
 | `Lemniscate.PeriodicH4Density` | Shows every Fourier basis mode belongs to H4, proves the domain is dense in L2, and proves that pairing against this domain separates L2 functions |
-| `Lemniscate.PeriodicHilbertAdjoint` | Packages the operator as a Mathlib LinearPMap, proves inclusion of the formal expression in its genuine Hilbert adjoint and agreement on H4, establishes adjoint closedness and density, and proves closability of the original operator; reverse domain inclusion and original-operator closedness remain open |
+| `Lemniscate.PeriodicHilbertAdjoint` | Packages the operator as a Mathlib LinearPMap, proves inclusion of the formal expression in its genuine Hilbert adjoint and agreement on H4, establishes adjoint closedness and density, and proves closability of the original operator |
+| `Lemniscate.PeriodicEllipticBootstrap` | Proves a frequency estimate and gains two L2 weak derivatives from a fourth-order distributional equation with L2 data of order at most two |
+| `Lemniscate.PeriodicAdjointFourier` | Computes the canonical H4 derivatives of every Fourier mode and derives the genuine adjoint's Fourier equation for arbitrary elements of its maximal domain |
+| `Lemniscate.PeriodicAdjointRegularity` | Gains H2 and then H4 regularity, proves that the maximal Hilbert adjoint domain is exactly H4, and identifies the adjoint with the formal expression for real C2 coefficients |
+| `Lemniscate.PeriodicOperatorClosed` | Proves the reverse adjoint identity by the same regularity argument and establishes closedness of the original operator on its stated H4 domain |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
@@ -155,8 +159,9 @@ The following obligations are still required for the original goal:
 - Identify the concrete Jacobi profile and its Fourier/theta parameters in the
   defined periodic operator; extend the completed conditional cosine energy
   connection to every required sector.
-- Establish the operator-theoretic bridge, Bloch decomposition and analytic
-  perturbation argument in Lean.
+- Establish sectoriality and compact resolvent, the Bloch decomposition and
+  analytic perturbation argument in Lean. Closedness and equality of the
+  maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.

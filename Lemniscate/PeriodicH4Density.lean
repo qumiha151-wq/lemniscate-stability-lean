@@ -1,7 +1,8 @@
 import Lemniscate.PeriodicFormalAdjoint
 
 /-! Density of the actual H4 domain in periodic L2 and uniqueness of an
-adjoint image tested on that domain. Maximal-domain regularity remains open. -/
+adjoint image tested on that domain. Maximal-domain regularity is proved
+separately in PeriodicAdjointRegularity. -/
 namespace Lemniscate
 open Complex MeasureTheory
 open scoped ComplexConjugate

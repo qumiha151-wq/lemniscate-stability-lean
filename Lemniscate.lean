@@ -71,3 +71,7 @@ import Lemniscate.PeriodicH4Operator
 import Lemniscate.PeriodicFormalAdjoint
 import Lemniscate.PeriodicH4Density
 import Lemniscate.PeriodicHilbertAdjoint
+import Lemniscate.PeriodicEllipticBootstrap
+import Lemniscate.PeriodicAdjointFourier
+import Lemniscate.PeriodicAdjointRegularity
+import Lemniscate.PeriodicOperatorClosed
