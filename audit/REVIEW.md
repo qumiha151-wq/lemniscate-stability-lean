@@ -282,6 +282,28 @@ $$
 原稿一致。本次对照未发现需要改动论文结论的差异；具体 Jacobi 函数满足
 这些条件、紧预解算子、扇形性及非线性稳定性仍须分别形式化。
 
+## 四阶主项预解算子和紧性的 Lean 回核
+
+令 $\kappa=2\pi/T$。对每个正实数 $\lambda$，
+`PeriodicPrincipalResolvent` 用完整 Fourier Hilbert 基构造符号
+$m_n=(\lambda+4\kappa^4n^4)^{-1}$ 的 L² 乘子 $R_\lambda$。
+证明包括 $\|R_\lambda\|\le\lambda^{-1}$ 和
+$| (i\kappa n)^4m_n |\le1/4$。随后利用
+`PeriodicH4Fourier` 的双向刻画证明每个像都具有四次逐次 L² 弱导数，
+并验证 $(\lambda+4D^4)R_\lambda f=f$ 对任意 L² 数据成立，
+$R_\lambda(\lambda+4D^4)u=u$ 对任意 H⁴ 域元素成立。
+这两侧等式识别了真正的有界逆，而不只是候选系数公式。
+
+`PeriodicCompactMultiplier` 将绝对可和的符号展开为 Fourier 秩一算子的
+级数，证明按算子范数收敛，并由有限和的紧性得到极限紧。
+`PeriodicPrincipalCompact` 用非零整数的四次幂倒数级数控制全部高频，
+零模单独控制为 $\lambda^{-1}$，因此 $R_\lambda$ 是紧 L² 算子。
+
+这里 H⁴ 仍以弱导数定义域表示，没有把它继承的 L² 范数当作 Sobolev
+范数。紧性直接对 L² 上的预解算子证明。原稿第 2 节还要求包含低阶项
+和有限秩修正的完整算子，以及复角域内各阶平滑界；上述正实参数主项
+结论不能替代这些后续步骤。本次对照没有发现需要更改论文最终结论的差异。
+
 ## 已执行的精确复算
 
 - `audit/recompute/audit_refined_all.py`：复算原 Galerkin 定义；9 项余弦、

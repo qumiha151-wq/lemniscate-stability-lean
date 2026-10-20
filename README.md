@@ -97,6 +97,11 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicAdjointFourier` | Computes the canonical H4 derivatives of every Fourier mode and derives the genuine adjoint's Fourier equation for arbitrary elements of its maximal domain |
 | `Lemniscate.PeriodicAdjointRegularity` | Gains H2 and then H4 regularity, proves that the maximal Hilbert adjoint domain is exactly H4, and identifies the adjoint with the formal expression for real C2 coefficients |
 | `Lemniscate.PeriodicOperatorClosed` | Proves the reverse adjoint identity by the same regularity argument and establishes closedness of the original operator on its stated H4 domain |
+| `Lemniscate.PeriodicBoundedMultiplier` | Constructs bounded multipliers on the complete Fourier Hilbert basis of periodic L2 and proves the operator norm bound |
+| `Lemniscate.PeriodicH4Fourier` | Characterizes H4 by square summability of the fourth Fourier multiplier, constructing the intermediate weak derivatives |
+| `Lemniscate.PeriodicPrincipalResolvent` | Constructs the principal resolvent at every positive real parameter, proves its L2 norm bound, range in the actual H4 domain, and both inverse identities for lambda + 4 D^4 |
+| `Lemniscate.PeriodicCompactMultiplier` | Shows that an absolutely summable Fourier symbol gives an operator norm convergent rank-one expansion and a compact L2 operator |
+| `Lemniscate.PeriodicPrincipalCompact` | Proves summability of the principal symbol, including the zero mode, and compactness of the principal resolvent |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
@@ -162,6 +167,8 @@ The following obligations are still required for the original goal:
 - Establish sectoriality and compact resolvent, the Bloch decomposition and
   analytic perturbation argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
+  The principal part now has a compact resolvent for positive real parameters;
+  lower-order perturbations and estimates in complex angular regions remain.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.

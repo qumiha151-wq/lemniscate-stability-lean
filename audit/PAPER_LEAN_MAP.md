@@ -64,6 +64,9 @@
 | 最大伴随域的分布方程与 H² 提升 | `circle_hilbert_adjoint_fourier`, `circle_h2_of_fourth_distribution`, `circle_hilbert_adjoint_mem_h2` | 对任意伴随域元素测试全部 Fourier 模；由四阶主项和至多二阶的 L² 数据推出二阶乘子属于 ℓ²，不预设未知函数的弱导数 |
 | 最大伴随域恰为 H⁴ | `circle_hilbert_adjoint_mem_h4`, `circle_hilbert_adjoint_domain`, `circle_hilbert_adjoint_eq_formal` | 对任意正周期和实 C² 系数，先获 H²，再由弱乘积公式构造第四阶 L² 导数及第三阶导数，证明真正 Hilbert 伴随等于论文给出的形式表达式；具体 Jacobi 曲率仍待识别 |
 | 给定 H⁴ 定义域上的原算子闭性 | `circle_formal_adjoint_adjoint_eq`, `circle_h4_pmap_closed` | 对反向伴随也证明最大域正则性，得到 `B*=A`，再由 Hilbert 伴随的闭性证明原算子闭；未据此声称已有紧预解算子、扇形性或完整谱定理 |
+| H⁴ 的完整 Fourier 刻画 | `circle_h4_iff_fourth_coefficients`, `circle_h4_of_fourth_fourier` | 原函数在 L² 且四阶乘子序列属于 ℓ² 当且仅当具有四次逐次 L² 弱导数；中间三阶导数由证明构造，不作为额外前提 |
+| 四阶主项的正实参数预解算子 | `circle_principal_resolvent_norm_le`, `circle_principal_resolvent_mem_h4`, `circle_principal_resolvent_right_inverse`, `circle_principal_resolvent_left_inverse` | 在任意正周期上，对每个 λ>0 构造 L² 上有界逆，值域包含于实际 H⁴ 域，两侧逆等式都在该域上验证；尚未覆盖复参数角域的全部平滑估计 |
+| 主项预解算子的紧性 | `circle_multiplier_hasSum_rank_one`, `circle_bounded_multiplier_compact`, `circle_principal_resolvent_compact` | 证明秩一展开按算子范数收敛，再以四次幂级数控制主项符号并单独处理零频；这是主项的紧预解算子，完整变系数算子的扰动连接仍待证明 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

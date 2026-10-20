@@ -75,3 +75,8 @@ import Lemniscate.PeriodicEllipticBootstrap
 import Lemniscate.PeriodicAdjointFourier
 import Lemniscate.PeriodicAdjointRegularity
 import Lemniscate.PeriodicOperatorClosed
+import Lemniscate.PeriodicBoundedMultiplier
+import Lemniscate.PeriodicH4Fourier
+import Lemniscate.PeriodicPrincipalResolvent
+import Lemniscate.PeriodicCompactMultiplier
+import Lemniscate.PeriodicPrincipalCompact
