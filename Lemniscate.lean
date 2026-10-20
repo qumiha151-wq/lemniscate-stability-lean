@@ -68,3 +68,6 @@ import Lemniscate.PeriodicWeakCalculus
 import Lemniscate.PeriodicWeakOperatorEnergy
 import Lemniscate.PeriodicH4Domain
 import Lemniscate.PeriodicH4Operator
+import Lemniscate.PeriodicFormalAdjoint
+import Lemniscate.PeriodicH4Density
+import Lemniscate.PeriodicHilbertAdjoint

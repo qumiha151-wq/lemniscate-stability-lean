@@ -57,6 +57,10 @@
 | 四阶弱导数表达式的能量 | `circle_weak_symmetric_energy`, `circle_weak_linear_energy`, `circle_weak_linear_cosine_dissipative` | 用实际 L² 乘法定义四阶表达式，将四次逐次弱导数的实部配对识别为已有 H² 能量；未声称闭性、伴随定义域相等或全谱结论 |
 | 显式 H⁴ 线性定义域 | `circle_h4_jet_unique`, `circle_h4_jet_add`, `circle_h4_jet_smul`, `circleH4Derivative` | 证明四次弱求导的函数构成复线性子空间，各阶导数唯一，故选择弱导数见证得到的映射是线性的 |
 | 定义域上的四阶线性算子 | `circle_h4_operator_apply`, `circle_h4_operator_energy`, `circle_h4_operator_cosine_dissipative` | 真正定义 H⁴ 到 L² 的线性映射并证明实际内积能量与条件耗散；仍未建立闭性、伴随定义域、紧预解算子或具体 Jacobi 系数识别 |
+| H⁴ 域上的形式伴随恒等式 | `circle_h4_symmetric_green`, `circle_weak_skew_green`, `circle_h4_formal_adjoint_green` | 对两个任意 H⁴ 函数证明实际 L² 配对恒等式，形式伴随为 `−4D⁴−45hD²−(105/2)h′D−42`；此结果只给出伴随关系的一侧包含，不能替代最大伴随定义域等于 H⁴ 的正则性证明 |
+| H⁴ 定义域的稠密性 | `circle_fourier_mem_h4`, `circle_h4_domain_dense`, `circle_h4_pairing_separates` | 从经典 Fourier 模的各阶导数证明其属于 H⁴，再由 Fourier Hilbert 基的稠密张成得到整个 H⁴ 域在 L² 中稠密 |
+| Mathlib 中的真正 Hilbert 伴随 | `circle_h4_formal_le_hilbert_adjoint`, `circle_h4_hilbert_adjoint_value`, `circle_h4_hilbert_adjoint_closed` | 将算子接到 Mathlib 的 `LinearPMap.adjoint`，证明形式伴随为其限制，并确认 H⁴ 上的值及伴随的闭性；尚未证明最大伴随域反向包含于 H⁴，也未据此声称原算子闭 |
+| 原算子的可闭性 | `circle_h4_hilbert_adjoint_dense`, `circle_h4_pmap_closable` | 伴随域包含稠密的 H⁴ 域；反向 Green 配对又把原算子嵌入另一个闭伴随算子，从而证明可闭。可闭不等于给定 H⁴ 域上的原算子已经闭 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

@@ -90,6 +90,9 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicWeakOperatorEnergy` | Defines the four-weak-derivative domain and proves symmetric and linear-expression energy identities and conditional cosine dissipation on four successive L2 weak derivatives |
 | `Lemniscate.PeriodicH4Domain` | Constructs that H4 domain as a complex submodule of L2, proves uniqueness of all derivative witnesses, and bundles the four derivative maps as linear maps |
 | `Lemniscate.PeriodicH4Operator` | Defines the symmetric and linearized expressions as linear maps from the explicit H4 domain to L2 and proves their energy identity and conditional cosine-sector dissipation |
+| `Lemniscate.PeriodicFormalAdjoint` | Proves fourth-order, divergence and skew Green identities on H4, checks the formal adjoint expression, and proves the two-operator pairing identity; equality of maximal adjoint domains remains open |
+| `Lemniscate.PeriodicH4Density` | Shows every Fourier basis mode belongs to H4, proves the domain is dense in L2, and proves that pairing against this domain separates L2 functions |
+| `Lemniscate.PeriodicHilbertAdjoint` | Packages the operator as a Mathlib LinearPMap, proves inclusion of the formal expression in its genuine Hilbert adjoint and agreement on H4, establishes adjoint closedness and density, and proves closability of the original operator; reverse domain inclusion and original-operator closedness remain open |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
@@ -149,8 +152,9 @@ The following obligations are still required for the original goal:
 - Complete kernel-checked arithmetic certificates and their soundness proofs,
   including actual Fourier coefficient enclosures, transformed matrices and
   every infinite tail.
-- Define the concrete periodic differential operator and its Sobolev domain;
-  connect finite Fourier estimates to the infinite-dimensional quadratic form.
+- Identify the concrete Jacobi profile and its Fourier/theta parameters in the
+  defined periodic operator; extend the completed conditional cosine energy
+  connection to every required sector.
 - Establish the operator-theoretic bridge, Bloch decomposition and analytic
   perturbation argument in Lean.
 - Formalize the relevant parabolic existence, regularization and normal
