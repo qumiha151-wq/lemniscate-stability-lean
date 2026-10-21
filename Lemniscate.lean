@@ -96,3 +96,14 @@ import Lemniscate.SineSobolevEntries
 import Lemniscate.SineTailSummability
 import Lemniscate.SineH2Dissipation
 import Lemniscate.SineConstrainedForm
+import Lemniscate.EvenSineFamily
+import Lemniscate.PeriodicSineSpace
+import Lemniscate.PeriodicSineCoefficients
+import Lemniscate.PeriodicSineTail
+import Lemniscate.PeriodicSineTailCoefficients
+import Lemniscate.SineSecondCoefficients
+import Lemniscate.PeriodicSineH2
+import Lemniscate.PeriodicSineConstraint
+import Lemniscate.PeriodicSineBlockH2
+import Lemniscate.PeriodicSineRotation
+import Lemniscate.PeriodicSineProfile

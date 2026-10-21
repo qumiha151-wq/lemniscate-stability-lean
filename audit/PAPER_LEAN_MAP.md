@@ -22,6 +22,10 @@
 | 正弦条目及完整耦合行 | `theta_nome_sine_matrix_enclosure`, `sine_coupling_square_sum_bound`, `sine_coupling_norm_bound` | 对实际级数系数证明区间包含；前两个耦合项分别保留，其余项由二至六阶完整几何尾求和控制，证明平方和小于 3916、范数小于 63 |
 | 正弦尾块的全部行与 H² 耗散 | `sine_all_tail_rows_dissipative`, `sine_tail_energy_summable`, `sine_tail_h2_form_dissipative` | 两个低行分别小于 −120、−1560，高行由实际四次多项式统一控制；所有行包含完整尾部，复二次型经绝对收敛延拓到 H² 系数域并满足 −100 界 |
 | 正弦约束块形式的 −75 界 | `sine_h2_block_energy_bound`, `sine_h2_constrained_dissipative` | 块形式由实际首项、完整耦合 ℓ² 内积及完整尾块双级数定义；不再假设 −100 和 63 能量界。尚须识别为周期正弦函数的微分形式及几何旋转正交条件 |
+| 归一化正弦展开与首模分解 | `even_sine_orthonormal`, `circle_even_sine_norm_sq`, `circle_sine_block_inner`, `circle_sine_block_norm_sq` | 在实际周期 L² 中构造无限合成；尾部频率为 2(j+2)，与首模严格正交；未将该族视作整个 L² 的基 |
+| 正弦 Fourier 系数与 H² 域 | `circle_even_sine_coeff_pos`, `circle_sine_mem_h2_iff`, `circle_sine_tail_mem_h2_iff`, `circle_sine_block_mem_h2_iff` | 完整识别全部频率；保留实际周期尺度并构造弱二阶导数，反向用 Fourier 抽样证明系数条件，没有仅证明单向包含 |
+| 系数约束与实际 L² 正交 | `circle_sine_constraint_orthogonal_iff`, `circle_sine_sobolev_constrained_coefficient_energy` | 将已证明的 −75 系数形式界写成实际函数的 L² 质量和正交条件；尚不是微分能量恒等式 |
+| 旋转方向 qq' 的条件识别 | `circle_sine_rotation_derivative`, `circle_sine_profile_rotation_orthogonal_iff`, `paper_sine_sobolev_constrained_coefficient_energy` | 对给定曲率导数及显式 Fourier 条件，证明约束向量与 qq' 相差非零标量；奇频为零单独列为前提。具体 Jacobi 函数满足这些条件仍须证明 |
 | 统一指数系数上界及和、差频率比较 | `CoarseArithmetic.theta_nome_coefficient_majorant`, `common_index_coefficient_majorant` | 对全部正频率证明 `H j qb^j` 上界；用离散单调性把和频率项控制为差频率项 |
 | 非对角矩阵条目尾界 | `CoarseArithmetic.positive_frequency_upper_tail`, `cosine_upper_tail_all`, `cosine_lower_tail` | 正频公式的两种符号均受 `C (2j+l)^2 l qb^l` 控制；余弦零模单独处理其 `√2` 因子，并用矩阵对称性得到下三角界 |
 | 完整上三角尾行的绝对收敛及上界 | `CoarseArithmetic.positive_frequency_tail_bound`, `cosine_tail_bound_all` | 从任意正截断点开始求和，以上述条目界和前三阶几何矩得到精确有理上界；包含余弦零行 |

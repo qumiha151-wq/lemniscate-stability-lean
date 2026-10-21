@@ -55,6 +55,17 @@ The work has three distinct layers:
 | `Lemniscate.SineTailSummability` | Proves absolute convergence of the complete tail-block energy on H2 coefficient sequences |
 | `Lemniscate.SineH2Dissipation` | Passes finite-mode dissipation to the full H2 coefficient tail form, with bound -100 |
 | `Lemniscate.SineConstrainedForm` | Uses the proved tail and coupling bounds to obtain -75 for the coefficient-defined block form under the explicit rotational coefficient constraint; periodic-function and geometric identification remain |
+| `Lemniscate.EvenSineFamily` | Constructs the normalized positive even sine family from a two-sided orthonormal basis and its infinite isometric synthesis |
+| `Lemniscate.PeriodicSineSpace` | Realizes that synthesis in periodic L2 with normalized Haar measure and proves Parseval normalization |
+| `Lemniscate.PeriodicSineCoefficients` | Computes all Fourier coefficients of the infinite synthesis: positive even modes, negative antisymmetry, and vanishing zero and odd modes |
+| `Lemniscate.PeriodicSineTail` | Separates the first mode and the infinite tail, proving their orthogonality and the exact block norm and inner product |
+| `Lemniscate.PeriodicSineTailCoefficients` | Identifies the shifted tail frequencies and the absent first mode |
+| `Lemniscate.SineSecondCoefficients` | Characterizes H2 coefficient sequences by the second derivative multiplier for every positive frequency offset |
+| `Lemniscate.PeriodicSineH2` | Constructs the actual weak second derivatives with the circle scale and proves both directions of the H2 characterization for the full sine family and its tail |
+| `Lemniscate.PeriodicSineConstraint` | Constructs a nonzero periodic L2 constraint vector and identifies its orthogonality with the coefficient constraint |
+| `Lemniscate.PeriodicSineBlockH2` | Identifies the block's exact H2 domain and expresses coefficient-form dissipation using actual L2 mass and orthogonality |
+| `Lemniscate.PeriodicSineRotation` | Identifies the constraint vector, up to a proved nonzero scalar, with the derivative of a profile having the explicit Fourier data, including vanishing odd modes |
+| `Lemniscate.PeriodicSineProfile` | Expresses the constraint as orthogonality to q q' and obtains conditional coefficient-form dissipation for actual H2 sine functions; the differential energy identity is still pending |
 | `Lemniscate.CoefficientMajorant` | Uniform exponential coefficient bound and the comparison between sum and difference frequency indices |
 | `Lemniscate.EntryMajorant` | Uniform off-diagonal entry bounds for both signs in the positive-frequency formula and for nonzero cosine rows |
 | `Lemniscate.MatrixTailSeries` | Absolute convergence and exact rational upper bounds for complete upper tails of those rows |
@@ -179,9 +190,11 @@ The following obligations are still required for the original goal:
   every infinite tail.
 - Identify the concrete Jacobi profile and its Fourier/theta parameters in the
   defined periodic operator; extend the completed conditional cosine energy
-  connection to every required sector. The coefficient-defined sine block now
-  has its complete constrained H2 bound; identifying it and its constraint
-  with the periodic sine functions and geometric rotation mode remains.
+  connection to every required sector. The sine coefficient domain is now
+  identified with actual periodic H2, and its constraint with orthogonality to
+  q q' under explicit profile Fourier hypotheses. The sine coefficient form
+  still needs identification with the differential energy. The concrete
+  Jacobi profile must still be shown to satisfy all Fourier hypotheses.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
