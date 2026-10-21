@@ -80,3 +80,6 @@ import Lemniscate.PeriodicH4Fourier
 import Lemniscate.PeriodicPrincipalResolvent
 import Lemniscate.PeriodicCompactMultiplier
 import Lemniscate.PeriodicPrincipalCompact
+import Lemniscate.PeriodicResolventSmoothing
+import Lemniscate.PeriodicResolventPerturbation
+import Lemniscate.PeriodicFullResolvent

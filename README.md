@@ -102,6 +102,9 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicPrincipalResolvent` | Constructs the principal resolvent at every positive real parameter, proves its L2 norm bound, range in the actual H4 domain, and both inverse identities for lambda + 4 D^4 |
 | `Lemniscate.PeriodicCompactMultiplier` | Shows that an absolutely summable Fourier symbol gives an operator norm convergent rank-one expansion and a compact L2 operator |
 | `Lemniscate.PeriodicPrincipalCompact` | Proves summability of the principal symbol, including the zero mode, and compactness of the principal resolvent |
+| `Lemniscate.PeriodicResolventSmoothing` | Bounds the first and second weak derivatives of the principal resolvent at p squared and identifies them with the H4 derivative witnesses |
+| `Lemniscate.PeriodicResolventPerturbation` | Bounds the complete lower-order perturbation composed with the principal inverse and proves the full shifted-operator factorization on H4 |
+| `Lemniscate.PeriodicFullResolvent` | Constructs a compact bounded two-sided inverse of the full variable-coefficient operator at an explicit positive parameter for every continuous coefficient triple |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
@@ -164,11 +167,13 @@ The following obligations are still required for the original goal:
 - Identify the concrete Jacobi profile and its Fourier/theta parameters in the
   defined periodic operator; extend the completed conditional cosine energy
   connection to every required sector.
-- Establish sectoriality and compact resolvent, the Bloch decomposition and
-  analytic perturbation argument in Lean. Closedness and equality of the
+- Establish sectoriality, the Bloch decomposition and the analytic perturbation
+  argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
-  The principal part now has a compact resolvent for positive real parameters;
-  lower-order perturbations and estimates in complex angular regions remain.
+  A compact bounded inverse of the full variable-coefficient operator is now
+  constructed at an explicit positive parameter, with both inverse identities
+  on H4. Estimates in complex angular regions, the Bloch and finite-rank
+  modifications, and the connection to the entire unbounded-operator spectrum remain.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.
