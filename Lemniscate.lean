@@ -85,3 +85,14 @@ import Lemniscate.PeriodicResolventPerturbation
 import Lemniscate.PeriodicFullResolvent
 import Lemniscate.PeriodicComplexShift
 import Lemniscate.PeriodicFredholmAlternative
+import Lemniscate.SineArithmetic
+import Lemniscate.SineMatrix
+import Lemniscate.GeometricMomentTails
+import Lemniscate.SineCoupling
+import Lemniscate.SineHighEntries
+import Lemniscate.SineRows
+import Lemniscate.SineFiniteForm
+import Lemniscate.SineSobolevEntries
+import Lemniscate.SineTailSummability
+import Lemniscate.SineH2Dissipation
+import Lemniscate.SineConstrainedForm

@@ -18,7 +18,10 @@
 | theta 级数的粗参数界 | `CoarseArithmetic.theta_enclosure`, `actual_nome_theta_r_bounds` | 控制完整 theta 级数及其负四次方；与 `(π/(2K))²` 的椭圆积分恒等式尚待形式化 |
 | 参数界在矩阵中的实例化 | `CoarseArithmetic.theta_nome_cosine_matrix_enclosure` | 在 `Q=exp(-π)` 和 theta 参数下消除数值参数假设；不能据此宣称已证明矩阵就是原几何算子的表示 |
 | 正弦约束中的 `ρ²<(87/500)²` | `CoarseArithmetic.sine_constraint_series_bound`, `theta_nome_sine_constraint_bound` | 控制全部 `j≥2` 的系数比平方级数并证明收敛；旋转系数的几何识别仍需形式化 |
-| 正弦正交约束到首模及耗散估计 | `CoarseArithmetic.sine_constraint_first_mode`, `sine_constraint_energy_bound` | 已构造复系数 `ℓ²` 尾向量并应用 Cauchy–Schwarz；`-75` 结论仍假设尾块 `-100` 和耦合 `63` 所给的能量不等式，实际算子的这些界尚待连接 |
+| 正弦正交约束到首模估计 | `CoarseArithmetic.sine_constraint_first_mode`, `sine_constraint_mass_bound` | 已构造复系数 `ℓ²` 尾向量并应用 Cauchy–Schwarz；这里的正交条件仍以显式系数向量表述，几何旋转向量识别未完成 |
+| 正弦条目及完整耦合行 | `theta_nome_sine_matrix_enclosure`, `sine_coupling_square_sum_bound`, `sine_coupling_norm_bound` | 对实际级数系数证明区间包含；前两个耦合项分别保留，其余项由二至六阶完整几何尾求和控制，证明平方和小于 3916、范数小于 63 |
+| 正弦尾块的全部行与 H² 耗散 | `sine_all_tail_rows_dissipative`, `sine_tail_energy_summable`, `sine_tail_h2_form_dissipative` | 两个低行分别小于 −120、−1560，高行由实际四次多项式统一控制；所有行包含完整尾部，复二次型经绝对收敛延拓到 H² 系数域并满足 −100 界 |
+| 正弦约束块形式的 −75 界 | `sine_h2_block_energy_bound`, `sine_h2_constrained_dissipative` | 块形式由实际首项、完整耦合 ℓ² 内积及完整尾块双级数定义；不再假设 −100 和 63 能量界。尚须识别为周期正弦函数的微分形式及几何旋转正交条件 |
 | 统一指数系数上界及和、差频率比较 | `CoarseArithmetic.theta_nome_coefficient_majorant`, `common_index_coefficient_majorant` | 对全部正频率证明 `H j qb^j` 上界；用离散单调性把和频率项控制为差频率项 |
 | 非对角矩阵条目尾界 | `CoarseArithmetic.positive_frequency_upper_tail`, `cosine_upper_tail_all`, `cosine_lower_tail` | 正频公式的两种符号均受 `C (2j+l)^2 l qb^l` 控制；余弦零模单独处理其 `√2` 因子，并用矩阵对称性得到下三角界 |
 | 完整上三角尾行的绝对收敛及上界 | `CoarseArithmetic.positive_frequency_tail_bound`, `cosine_tail_bound_all` | 从任意正截断点开始求和，以上述条目界和前三阶几何矩得到精确有理上界；包含余弦零行 |

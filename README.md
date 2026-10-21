@@ -44,6 +44,17 @@ The work has three distinct layers:
 | `Lemniscate.ConcreteCoefficients` | Instantiates the coefficient and cosine-entry enclosures at exp(-pi) and the theta parameter |
 | `Lemniscate.SineConstraint` | Convergence and the strict 87/500 bound for the full squared coefficient-ratio series |
 | `Lemniscate.SineHilbert` | Constructs the complex l2 tail vector; derives first-mode and mass bounds from orthogonality and the conditional -75 energy estimate |
+| `Lemniscate.SineArithmetic` | Computes exact certificates for the sine first diagonal, the two low tail-block rows, the coupling square bound, and the positive diagonal correction |
+| `Lemniscate.SineMatrix` | Defines the sine matrix from the actual coefficient formulas, proves interval containment and symmetry, and controls its full upper tails |
+| `Lemniscate.GeometricMomentTails` | Proves the rational geometric moments and arbitrary shifted tails through degree six |
+| `Lemniscate.SineCoupling` | Includes the entire coupling row, proves its square sum below 3916, constructs its l2 vector, and proves the norm bound 63 |
+| `Lemniscate.SineHighEntries` | Controls lower entries and the sine diagonal's positive reflected-frequency term; derives the quartic diagonal bound |
+| `Lemniscate.SineRows` | Combines exact low rows with a uniform high-frequency estimate to prove every complete tail-block row is below -100 |
+| `Lemniscate.SineFiniteForm` | Proves tail-block dissipation for every finite set of complex coefficients |
+| `Lemniscate.SineSobolevEntries` | Controls all sine entries by a summable distance kernel and H2 weights, including the shifted tail indices |
+| `Lemniscate.SineTailSummability` | Proves absolute convergence of the complete tail-block energy on H2 coefficient sequences |
+| `Lemniscate.SineH2Dissipation` | Passes finite-mode dissipation to the full H2 coefficient tail form, with bound -100 |
+| `Lemniscate.SineConstrainedForm` | Uses the proved tail and coupling bounds to obtain -75 for the coefficient-defined block form under the explicit rotational coefficient constraint; periodic-function and geometric identification remain |
 | `Lemniscate.CoefficientMajorant` | Uniform exponential coefficient bound and the comparison between sum and difference frequency indices |
 | `Lemniscate.EntryMajorant` | Uniform off-diagonal entry bounds for both signs in the positive-frequency formula and for nonzero cosine rows |
 | `Lemniscate.MatrixTailSeries` | Absolute convergence and exact rational upper bounds for complete upper tails of those rows |
@@ -168,7 +179,9 @@ The following obligations are still required for the original goal:
   every infinite tail.
 - Identify the concrete Jacobi profile and its Fourier/theta parameters in the
   defined periodic operator; extend the completed conditional cosine energy
-  connection to every required sector.
+  connection to every required sector. The coefficient-defined sine block now
+  has its complete constrained H2 bound; identifying it and its constraint
+  with the periodic sine functions and geometric rotation mode remains.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
