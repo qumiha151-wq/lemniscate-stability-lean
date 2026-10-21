@@ -105,6 +105,8 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicResolventSmoothing` | Bounds the first and second weak derivatives of the principal resolvent at p squared and identifies them with the H4 derivative witnesses |
 | `Lemniscate.PeriodicResolventPerturbation` | Bounds the complete lower-order perturbation composed with the principal inverse and proves the full shifted-operator factorization on H4 |
 | `Lemniscate.PeriodicFullResolvent` | Constructs a compact bounded two-sided inverse of the full variable-coefficient operator at an explicit positive parameter for every continuous coefficient triple |
+| `Lemniscate.PeriodicComplexShift` | Factors every complex shift on the actual H4 domain through the constructed inverse and a compact bounded L2 operator |
+| `Lemniscate.PeriodicFredholmAlternative` | Proves that every complex parameter either has a nonzero H4 eigenvector or a compact bounded two-sided inverse; identifies the unbounded-operator spectrum with its eigenvalues |
 | `Lemniscate.RotationKernel` | The rotation-mode differential identity for functions satisfying the stated ODE and first integral |
 | `Lemniscate.ComplexRows` | The weighted estimate for complex coefficients and Hermitian entry norms |
 | `Lemniscate.PhysicalTime` | The exact logarithmic-time to physical-time decay identity and positive waiting time |
@@ -172,8 +174,9 @@ The following obligations are still required for the original goal:
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
   A compact bounded inverse of the full variable-coefficient operator is now
   constructed at an explicit positive parameter, with both inverse identities
-  on H4. Estimates in complex angular regions, the Bloch and finite-rank
-  modifications, and the connection to the entire unbounded-operator spectrum remain.
+  on H4. The Fredholm alternative connects this to the entire spectrum:
+  every spectral point is an eigenvalue. Estimates in complex angular
+  regions and the Bloch and finite-rank modifications remain.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.

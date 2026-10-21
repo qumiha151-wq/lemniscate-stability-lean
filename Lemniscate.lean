@@ -83,3 +83,5 @@ import Lemniscate.PeriodicPrincipalCompact
 import Lemniscate.PeriodicResolventSmoothing
 import Lemniscate.PeriodicResolventPerturbation
 import Lemniscate.PeriodicFullResolvent
+import Lemniscate.PeriodicComplexShift
+import Lemniscate.PeriodicFredholmAlternative

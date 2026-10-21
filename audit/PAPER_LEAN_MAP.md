@@ -68,7 +68,8 @@
 | 四阶主项的正实参数预解算子 | `circle_principal_resolvent_norm_le`, `circle_principal_resolvent_mem_h4`, `circle_principal_resolvent_right_inverse`, `circle_principal_resolvent_left_inverse` | 在任意正周期上，对每个 λ>0 构造 L² 上有界逆，值域包含于实际 H⁴ 域，两侧逆等式都在该域上验证；尚未覆盖复参数角域的全部平滑估计 |
 | 主项预解算子的紧性 | `circle_multiplier_hasSum_rank_one`, `circle_bounded_multiplier_compact`, `circle_principal_resolvent_compact` | 证明秩一展开按算子范数收敛，再以四次幂级数控制主项符号并单独处理零频；完整变系数算子的连接由下面的扰动构造补齐 |
 | 主项逆的一、二阶弱导数估计 | `circle_principal_first_norm_le`, `circle_principal_second_norm_le`, `circle_principal_first_eq_jet`, `circle_principal_second_eq_jet` | 在 λ=p²、p≥1 时给出 5/(4p)、1/(4p) 的界，并与 H⁴ 输出的真实弱导数对应；这些粗界足以做扰动，不代表论文的全复角域最优幂次界 |
-| 完整变系数算子的紧预解构造 | `circle_lower_resolvent_norm_lt_one`, `circle_full_shift_factorization`, `circle_full_compact_resolvent_exists` | 对任意连续复系数 h,h₁,h₂，在明确正参数构造 L² 上紧有界逆，值域在 H⁴，两侧逆等式均成立；没有预设低阶扰动小，参数由系数范数选择。Bloch 算子、有限秩修正、扇形性和全谱连接仍须证明 |
+| 完整变系数算子的紧预解构造 | `circle_lower_resolvent_norm_lt_one`, `circle_full_shift_factorization`, `circle_full_compact_resolvent_exists` | 对任意连续复系数 h,h₁,h₂，在明确正参数构造 L² 上紧有界逆，值域在 H⁴，两侧逆等式均成立；没有预设低阶扰动小，参数由系数范数选择。全谱连接由下一行补齐，Bloch 算子、有限秩修正和扇形性仍须证明 |
+| 任意复参数的 Fredholm 二择一与全谱 | `circle_complex_shift_factorization`, `circle_complex_shift_alternative`, `circle_spectrum_iff_eigenvector` | 用已构造的紧逆分解任意 z−A，再应用 Mathlib 的紧算子 Fredholm 定理；谱按 H⁴ 域上的 L² 有界双侧逆定义，每个谱点均有非零 H⁴ 特征向量。具体谱隙仍依赖尚未完成的各扇区耗散和 Jacobi 参数识别 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |

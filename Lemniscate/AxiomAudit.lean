@@ -276,3 +276,11 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_full_resolvent_compact
 #print axioms Lemniscate.circle_full_shift_bijective
 #print axioms Lemniscate.circle_full_compact_resolvent_exists
+#print axioms Lemniscate.circle_complex_shift_real
+#print axioms Lemniscate.circle_full_resolvent_h4_left_inverse
+#print axioms Lemniscate.circle_complex_shift_resolvent
+#print axioms Lemniscate.circle_complex_shift_factorization
+#print axioms Lemniscate.circle_resolvent_feedback_compact
+#print axioms Lemniscate.circle_complex_inverse_of_unit
+#print axioms Lemniscate.circle_complex_shift_alternative
+#print axioms Lemniscate.circle_spectrum_iff_eigenvector
