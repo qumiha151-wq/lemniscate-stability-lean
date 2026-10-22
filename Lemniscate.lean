@@ -107,3 +107,13 @@ import Lemniscate.PeriodicSineConstraint
 import Lemniscate.PeriodicSineBlockH2
 import Lemniscate.PeriodicSineRotation
 import Lemniscate.PeriodicSineProfile
+import Lemniscate.PeriodicSineJets
+import Lemniscate.PeriodicSineMatrix
+import Lemniscate.PeriodicSinePolynomials
+import Lemniscate.SineBlockFormLimit
+import Lemniscate.PeriodicSineFiniteEnergy
+import Lemniscate.PeriodicSineApproximation
+import Lemniscate.PeriodicSineEnergy
+import Lemniscate.PeriodicSineProfileEnergy
+import Lemniscate.PeriodicSineOperatorEnergy
+import Lemniscate.PeriodicSineSector

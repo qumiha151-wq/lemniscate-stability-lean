@@ -21,11 +21,16 @@
 | 正弦正交约束到首模估计 | `CoarseArithmetic.sine_constraint_first_mode`, `sine_constraint_mass_bound` | 已构造复系数 `ℓ²` 尾向量并应用 Cauchy–Schwarz；这里的正交条件仍以显式系数向量表述，几何旋转向量识别未完成 |
 | 正弦条目及完整耦合行 | `theta_nome_sine_matrix_enclosure`, `sine_coupling_square_sum_bound`, `sine_coupling_norm_bound` | 对实际级数系数证明区间包含；前两个耦合项分别保留，其余项由二至六阶完整几何尾求和控制，证明平方和小于 3916、范数小于 63 |
 | 正弦尾块的全部行与 H² 耗散 | `sine_all_tail_rows_dissipative`, `sine_tail_energy_summable`, `sine_tail_h2_form_dissipative` | 两个低行分别小于 −120、−1560，高行由实际四次多项式统一控制；所有行包含完整尾部，复二次型经绝对收敛延拓到 H² 系数域并满足 −100 界 |
-| 正弦约束块形式的 −75 界 | `sine_h2_block_energy_bound`, `sine_h2_constrained_dissipative` | 块形式由实际首项、完整耦合 ℓ² 内积及完整尾块双级数定义；不再假设 −100 和 63 能量界。尚须识别为周期正弦函数的微分形式及几何旋转正交条件 |
+| 正弦约束块形式的 −75 界 | `sine_h2_block_energy_bound`, `sine_h2_constrained_dissipative` | 块形式由实际首项、完整耦合 ℓ² 内积及完整尾块双级数定义；不再假设 −100 和 63 能量界。下述模块补齐其微分能量和旋转正交条件的连接，具体 Jacobi 实例化仍待完成 |
 | 归一化正弦展开与首模分解 | `even_sine_orthonormal`, `circle_even_sine_norm_sq`, `circle_sine_block_inner`, `circle_sine_block_norm_sq` | 在实际周期 L² 中构造无限合成；尾部频率为 2(j+2)，与首模严格正交；未将该族视作整个 L² 的基 |
 | 正弦 Fourier 系数与 H² 域 | `circle_even_sine_coeff_pos`, `circle_sine_mem_h2_iff`, `circle_sine_tail_mem_h2_iff`, `circle_sine_block_mem_h2_iff` | 完整识别全部频率；保留实际周期尺度并构造弱二阶导数，反向用 Fourier 抽样证明系数条件，没有仅证明单向包含 |
 | 系数约束与实际 L² 正交 | `circle_sine_constraint_orthogonal_iff`, `circle_sine_sobolev_constrained_coefficient_energy` | 将已证明的 −75 系数形式界写成实际函数的 L² 质量和正交条件；尚不是微分能量恒等式 |
 | 旋转方向 qq' 的条件识别 | `circle_sine_rotation_derivative`, `circle_sine_profile_rotation_orthogonal_iff`, `paper_sine_sobolev_constrained_coefficient_energy` | 对给定曲率导数及显式 Fourier 条件，证明约束向量与 qq' 相差非零标量；奇频为零单独列为前提。具体 Jacobi 函数满足这些条件仍须证明 |
+| 正弦模的实际微分矩阵 | `circle_sine_jet_deriv`, `circle_sine_matrix_pairing`, `circle_sine_matrix_eq_coefficients` | 从经典导数和实际 L² 内积计算所有条目，核对正弦反射项的正号；系数 Fourier 公式及真实周期关系仍为显式前提 |
+| 正弦首模与尾块的有限能量及极限 | `circle_sine_polynomial_h2_energy_eq_coefficients`, `sine_finite_block_form_tendsto` | 两条交叉项与共轭关系、完整耦合级数及尾块双级数均经证明，有限集合不限于固定截断 |
+| 完整正弦 H² 微分能量 | `circle_sine_block_polynomial_first_tendsto`, `circle_sine_weak_energy_eq_coefficients`, `circle_sine_weak_energy_dissipative` | 函数与前两阶实际弱导数同时近似；因此系数形式等于真实微分能量，并得到 −75 约束耗散 |
+| 原稿旋转正交条件下的正弦算子耗散 | `paper_sine_weak_energy_dissipative`, `paper_h4_operator_sine_dissipative` | 对实际 q q' 正交条件恢复曲率势能及 H⁴ 线性化算子上的 −75 界；具体 Jacobi 身份、其他扇区与全文结论仍待完成 |
+| 完整正弦扇区的表示与耗散 | `circle_even_sine_sector_iff_representation`, `paper_h4_operator_even_sine_sector_dissipative` | 从实际 Fourier 系数构造首模和 ℓ² 尾序列，证明反对称且奇频为零的每个函数都被覆盖；算子估计没有附加的“存在系数表示”假设 |
 | 统一指数系数上界及和、差频率比较 | `CoarseArithmetic.theta_nome_coefficient_majorant`, `common_index_coefficient_majorant` | 对全部正频率证明 `H j qb^j` 上界；用离散单调性把和频率项控制为差频率项 |
 | 非对角矩阵条目尾界 | `CoarseArithmetic.positive_frequency_upper_tail`, `cosine_upper_tail_all`, `cosine_lower_tail` | 正频公式的两种符号均受 `C (2j+l)^2 l qb^l` 控制；余弦零模单独处理其 `√2` 因子，并用矩阵对称性得到下三角界 |
 | 完整上三角尾行的绝对收敛及上界 | `CoarseArithmetic.positive_frequency_tail_bound`, `cosine_tail_bound_all` | 从任意正截断点开始求和，以上述条目界和前三阶几何矩得到精确有理上界；包含余弦零行 |
