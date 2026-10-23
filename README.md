@@ -76,6 +76,12 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicSineProfileEnergy` | Restores the paper's curvature potential and the actual q q' orthogonality constraint in the H2 energy bound |
 | `Lemniscate.PeriodicSineOperatorEnergy` | Transfers the -75 bound to the genuine H4 linearized operator, conditionally on the stated profile identities |
 | `Lemniscate.PeriodicSineSector` | Reconstructs every Fourier-defined even sine function from its first mode and l2 tail and proves the operator bound for the entire sector without an assumed representation |
+| `Lemniscate.PeriodicCosineSector` | Reconstructs every Fourier-defined even cosine function, including the separately normalized constant mode, and proves -21/4 dissipation for the entire sector |
+| `Lemniscate.PeriodicReflection` | Constructs Fourier reflection as an actual L2 isometry, proves that it preserves H4, and identifies its action on the weak derivatives |
+| `Lemniscate.PeriodicReflectionOperator` | Proves reflection identities for multiplication on all of L2 and commutation with the actual H4 operator for an even C2 coefficient |
+| `Lemniscate.PeriodicReflectionSplit` | Splits every L2 or H4 function into orthogonal reflection parts, identifies their Fourier sectors, and transfers the rotation constraint to the sine part |
+| `Lemniscate.PeriodicEvenEnergy` | Proves vanishing of operator cross terms and combines the complete cosine and sine bounds into -21/4 dissipation for every even-frequency H4 function orthogonal to rotation, under the explicit profile hypotheses |
+| `Lemniscate.PeriodicRotationDomain` | Constructs all four weak derivatives of q q' from the profile ODE, proves actual H4 membership, and proves that the defined H4 operator annihilates it using the first integral |
 | `Lemniscate.CoefficientMajorant` | Uniform exponential coefficient bound and the comparison between sum and difference frequency indices |
 | `Lemniscate.EntryMajorant` | Uniform off-diagonal entry bounds for both signs in the positive-frequency formula and for nonzero cosine rows |
 | `Lemniscate.MatrixTailSeries` | Absolute convergence and exact rational upper bounds for complete upper tails of those rows |
@@ -204,9 +210,11 @@ The following obligations are still required for the original goal:
   identified with actual periodic H2, and its constraint with orthogonality to
   q q' under explicit profile Fourier hypotheses. The complete sine form is
   identified with the actual H2 differential energy, and its -75 bound is
-  transferred to the H4 operator. The concrete Jacobi profile must still be
-  shown to satisfy all Fourier and period hypotheses, and the other sectors
-  must still be connected to the full spectral estimate.
+  transferred to the H4 operator. Both even-frequency sectors are complete,
+  and their reflection splitting now gives -21/4 dissipation for their entire
+  sum under the rotation constraint. The concrete Jacobi profile must still
+  be shown to satisfy all Fourier and period hypotheses; the odd-frequency
+  and Bloch sectors must still be connected to the full spectral estimate.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.

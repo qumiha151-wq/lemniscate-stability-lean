@@ -117,3 +117,9 @@ import Lemniscate.PeriodicSineEnergy
 import Lemniscate.PeriodicSineProfileEnergy
 import Lemniscate.PeriodicSineOperatorEnergy
 import Lemniscate.PeriodicSineSector
+import Lemniscate.PeriodicCosineSector
+import Lemniscate.PeriodicReflection
+import Lemniscate.PeriodicReflectionOperator
+import Lemniscate.PeriodicReflectionSplit
+import Lemniscate.PeriodicEvenEnergy
+import Lemniscate.PeriodicRotationDomain

@@ -82,10 +82,14 @@
 | 主项逆的一、二阶弱导数估计 | `circle_principal_first_norm_le`, `circle_principal_second_norm_le`, `circle_principal_first_eq_jet`, `circle_principal_second_eq_jet` | 在 λ=p²、p≥1 时给出 5/(4p)、1/(4p) 的界，并与 H⁴ 输出的真实弱导数对应；这些粗界足以做扰动，不代表论文的全复角域最优幂次界 |
 | 完整变系数算子的紧预解构造 | `circle_lower_resolvent_norm_lt_one`, `circle_full_shift_factorization`, `circle_full_compact_resolvent_exists` | 对任意连续复系数 h,h₁,h₂，在明确正参数构造 L² 上紧有界逆，值域在 H⁴，两侧逆等式均成立；没有预设低阶扰动小，参数由系数范数选择。全谱连接由下一行补齐，Bloch 算子、有限秩修正和扇形性仍须证明 |
 | 任意复参数的 Fredholm 二择一与全谱 | `circle_complex_shift_factorization`, `circle_complex_shift_alternative`, `circle_spectrum_iff_eigenvector` | 用已构造的紧逆分解任意 z−A，再应用 Mathlib 的紧算子 Fredholm 定理；谱按 H⁴ 域上的 L² 有界双侧逆定义，每个谱点均有非零 H⁴ 特征向量。具体谱隙仍依赖尚未完成的各扇区耗散和 Jacobi 参数识别 |
+| 余弦偶频扇区的完备性 | `circle_even_cosine_sector_representation`, `circle_h4_operator_even_cosine_sector_dissipative` | 从任意满足反射对称且奇频为零的 L² 函数重建完整 ℓ² 余弦序列，单独处理常数模归一化；条件 −21/4 界覆盖整个扇区，无须另假设合成表示 |
+| 反射与实际 H⁴ 算子的交换 | `circle_reflect_inner`, `circle_reflect_mem_h4`, `circle_h4_operator_reflect_of_even` | 由全部 Fourier 系数构造 L² 等距反射，证明保持 H⁴，各阶导数的符号以及连续系数乘法的反射恒等式；由 h 的反射对称和两次求导推出实际算子交换关系 |
+| 完整偶频空间的正交拆分及耗散 | `circle_h4_operator_reflection_energy_split`, `circle_h4_operator_even_frequencies_dissipative`, `paper_h4_operator_even_frequencies_dissipative` | 任意仅含偶频且与旋转向量正交的 H⁴ 函数分成真实余弦、正弦两部分；交叉内积为零，合并 −21/4 与 −75 得到整个偶频空间的 −21/4 界。仍保留具体曲率 ODE、Fourier 数据及周期关系，不包含奇频/Bloch 扇区或全文定理 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
-| 旋转核与广义核 | `NeutralCoerciveOperator.kernel_is_neutral`, `no_generalized_neutral` | 对显式定义域上的算子，在正交补耗散假设下成立；实际算子耗散尚未连接 |
+| 旋转模属于真实定义域并被算子消去 | `circle_rotation_mem_h4`, `circle_rotation_h4_kernel` | 从曲率 ODE 显式构造 qq′ 的四阶弱导数，将其作为实际 H⁴ 域元素，再由第一积分证明已定义算子的值等于零；不是仅证明形式微分表达式的点态恒等式 |
+| 旋转核与广义核 | `NeutralCoerciveOperator.kernel_is_neutral`, `no_generalized_neutral` | 对显式定义域上的算子，在正交补耗散假设下成立；实际算子在偶频正交补的条件耗散及旋转模消去已证明，仍需奇频估计、具体 Jacobi 识别和最终实例化 |
 | 非零特征值实部界 | `NeutralCoerciveOperator.nonzero_eigenvalue_bound` | 特征值界；全谱结论另需紧预解算子等分析桥梁 |
 | 中性因子精确消去 | `exact_center_cancellation`, `exact_cross_cancellation` | 标量块恒等式；还需证明变换可逆、保持定义域及有限秩范数误差 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
