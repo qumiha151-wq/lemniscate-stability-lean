@@ -1,0 +1,15 @@
+Lemniscate\PeriodicOddMatrix.lean:48:16: warning: This simp argument is unused:
+  Int.cast_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [oddMatrixEntry, ite_true, sub_self, Int.natAbs_zero, Nat.zero_div, add_zero, sub_zero, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Lemniscate\PeriodicOddMatrix.lean:48:31: warning: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [oddMatrixEntry, ite_true, sub_self, Int.natAbs_zero, Nat.zero_div, add_zero, Int.cast_zero,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

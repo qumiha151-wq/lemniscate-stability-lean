@@ -123,3 +123,12 @@ import Lemniscate.PeriodicReflectionOperator
 import Lemniscate.PeriodicReflectionSplit
 import Lemniscate.PeriodicEvenEnergy
 import Lemniscate.PeriodicRotationDomain
+import Lemniscate.OddPolynomialSemantics
+import Lemniscate.OddWeights
+import Lemniscate.OddEntryPolynomials
+import Lemniscate.OddRowSemantics
+import Lemniscate.OddMatrix
+import Lemniscate.OddEntryTails
+import Lemniscate.PeriodicOddMatrix
+import Lemniscate.OddOmittedTails
+import Lemniscate.OddLowRows

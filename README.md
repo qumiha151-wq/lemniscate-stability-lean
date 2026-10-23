@@ -32,6 +32,15 @@ The work has three distinct layers:
 | `Lemniscate.IntervalExtras` | Positive reciprocal and division, certified square-root enclosures, and the actual coarse square-root-of-two bounds |
 | `Lemniscate.OddArithmetic` | All 84 odd-sector Bernstein comparisons and 12 zero-parameter comparisons, computed from rational formulas |
 | `Lemniscate.OddPositivity` | Casts the computed coefficients into real polynomials and proves positivity on the entire parameter interval |
+| `Lemniscate.OddPolynomialSemantics` | Proves the list-polynomial operations agree with real polynomial evaluation and connects the low-row certificates to that evaluation |
+| `Lemniscate.OddWeights` | Positivity of every odd-row weight on the half interval, exact exceptional weights and geometric upper bounds for high weights |
+| `Lemniscate.OddEntryPolynomials` | Proves the endpoint-based absolute-entry polynomials bound the actual coefficient formula throughout the half interval |
+| `Lemniscate.OddRowSemantics` | Identifies each row polynomial with its diagonal, finite head and explicit rational omitted-tail expression |
+| `Lemniscate.OddMatrix` | Symmetry and finite low-row inequalities for the real odd matrix, with the rational omitted-tail expression still explicit |
+| `Lemniscate.OddEntryTails` | Bounds each off-diagonal entry by its actual half-distance and a geometric factor |
+| `Lemniscate.PeriodicOddMatrix` | Identifies the zero-parameter odd matrix with actual periodic Fourier-mode pairings under explicit profile Fourier and period hypotheses |
+| `Lemniscate.OddOmittedTails` | Proves convergence and the stated rational bound for both omitted infinite tails, and combines them with each of the twelve finite low-row estimates |
+| `Lemniscate.OddLowRows` | Reindexes the complete low rows over all integer indices, proves absolute summability, and obtains normalized row bounds below -1 on the half interval and below -6 at zero |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |

@@ -85,7 +85,13 @@
 | 余弦偶频扇区的完备性 | `circle_even_cosine_sector_representation`, `circle_h4_operator_even_cosine_sector_dissipative` | 从任意满足反射对称且奇频为零的 L² 函数重建完整 ℓ² 余弦序列，单独处理常数模归一化；条件 −21/4 界覆盖整个扇区，无须另假设合成表示 |
 | 反射与实际 H⁴ 算子的交换 | `circle_reflect_inner`, `circle_reflect_mem_h4`, `circle_h4_operator_reflect_of_even` | 由全部 Fourier 系数构造 L² 等距反射，证明保持 H⁴，各阶导数的符号以及连续系数乘法的反射恒等式；由 h 的反射对称和两次求导推出实际算子交换关系 |
 | 完整偶频空间的正交拆分及耗散 | `circle_h4_operator_reflection_energy_split`, `circle_h4_operator_even_frequencies_dissipative`, `paper_h4_operator_even_frequencies_dissipative` | 任意仅含偶频且与旋转向量正交的 H⁴ 函数分成真实余弦、正弦两部分；交叉内积为零，合并 −21/4 与 −75 得到整个偶频空间的 −21/4 界。仍保留具体曲率 ODE、Fourier 数据及周期关系，不包含奇频/Bloch 扇区或全文定理 |
-| Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval` | 已连接奇频有理系数与实六次多项式，在整个 `[0,1/2]` 区间得到下界；尚需连接多项式与实际 Fourier 行 |
+| Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval`, `OddArithmetic.odd_low_realEval_positive` | 已连接有理列表运算与真正实多项式求值，在整个 `[0,1/2]` 区间得到下界；与实际有限行及遗漏无穷和的对应关系见下 |
+| 奇频正权重与绝对条目上界 | `OddArithmetic.odd_weight_positive`, `odd_weight_high_upper`, `theta_nome_odd_off_diagonal_bound` | 全参数区间上的权重正性、特殊低频权重和高频几何界；端点分支与逐项绝对值分支都被证明控制实际条目 |
+| 奇频低频行证书的精确含义 | `OddArithmetic.odd_row_realEval_formula`, `odd_low_row_with_omitted_bound`, `odd_zero_row_with_omitted_bound` | 将十二个低行的证书连接到实际矩阵的有限部分加有理表达式 R_n；R_n 的实际无穷尾和含义由下面的模块补齐 |
+| 奇频遗漏条目的几何界 | `OddArithmetic.odd_half_distance_abs`, `odd_matrix_off_tail_bound` | 使用真实整数半频距控制每个非对角项，保持参数 α∈[0,1/2] |
+| 奇频低行的完整遗漏尾和 | `OddArithmetic.odd_omitted_tail_bound`, `odd_actual_omitted_le`, `odd_low_complete_head_tail_bound`, `odd_zero_complete_head_tail_bound` | 两侧 m=±(27+2k) 的无穷加权级数均收敛，和不超过原稿 R_n；与有限部分合并后取得十二个低行的界 |
+| 完整整数索引的奇频低行耗散 | `OddArithmetic.odd_low_full_row_summable`, `odd_low_full_row_sum`, `odd_low_rows_dissipative`, `odd_zero_low_rows_dissipative` | 以频率 2k+1、k∈ℤ 表示全部奇频，证明完整行绝对可和以及分割求和等式；十二个低行归一化后在参数区间小于 −1，在零参数小于 −6。高频行和完整二次型估计仍待证明 |
+| 零参数奇频矩阵的微分表达式含义 | `circle_odd_matrix_entry`, `circle_odd_mode_pairing`, `circle_odd_mode_off_bound` | 在明确 Fourier 数据和周期条件下，将矩阵识别为实际 L² 模配对；这里只处理 α=0，不包含非零参数的 Bloch 算子 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
 | 旋转模属于真实定义域并被算子消去 | `circle_rotation_mem_h4`, `circle_rotation_h4_kernel` | 从曲率 ODE 显式构造 qq′ 的四阶弱导数，将其作为实际 H⁴ 域元素，再由第一积分证明已定义算子的值等于零；不是仅证明形式微分表达式的点态恒等式 |
