@@ -141,3 +141,7 @@ import Lemniscate.OddHighBranchSums
 import Lemniscate.OddHighRows
 import Lemniscate.OddAllRows
 import Lemniscate.OddFiniteForm
+import Lemniscate.OddSobolevEntries
+import Lemniscate.OddSobolevKernel
+import Lemniscate.OddSobolevSummability
+import Lemniscate.OddH2Dissipation

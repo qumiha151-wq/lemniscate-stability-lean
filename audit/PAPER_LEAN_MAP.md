@@ -94,7 +94,9 @@
 | 奇频高行的全部权重比 | `OddArithmetic.odd_signed_weight_envelope`, `odd_same_branch_weight_ratio`, `odd_cross_branch_weight_ratio` | 包含 ±1、±3、±5 例外列，同号比受 a^(k−j) 控制，异号比保留 37/16 因子；不假设权重逆有界 |
 | 奇频高行的两侧无穷和 | `OddArithmetic.odd_same_branch_sum_bound`, `odd_cross_branch_sum_bound`, `odd_cross_constant_certificate` | 证明绝对收敛，按真实移位频率 v 求和；对每个 j≥6 证明异号贡献小于 8v²，常数比较由内核验证 |
 | 奇频全部行与四次多项式 | `OddArithmetic.odd_high_row_quartic_bound`, `odd_high_rows_dissipative`, `odd_all_rows_dissipative`, `odd_zero_all_rows_dissipative` | 完整高频行受原稿四次式控制并小于 −3112；与低频行合并后，全部奇频行在 [0,1/2] 小于 −1，在零参数小于 −6 |
-| 奇频有限复二次型耗散 | `OddArithmetic.odd_finite_form_dissipative`, `odd_zero_finite_form_dissipative` | 对任意有限整数指标集和任意复系数，系数矩阵的实二次型受 −1 或 −6 倍质量控制；无限 H² 形式和非零参数 Bloch 算子识别仍未完成 |
+| 奇频有限复二次型耗散 | `OddArithmetic.odd_finite_form_dissipative`, `odd_zero_finite_form_dissipative` | 对任意有限整数指标集和任意复系数，系数矩阵的实二次型受 −1 或 −6 倍质量控制 |
+| 奇频 H² 能量的绝对收敛 | `OddArithmetic.odd_sobolev_entry_bound`, `odd_sobolev_kernel_row_bound`, `odd_absolute_summable`, `odd_energy_summable` | 实际频率权重为 1+(2i+1)²，完整整数核行和不超过 512；由任意有限双和的统一界证明整个能量双级数绝对收敛 |
+| 奇频无限 H² 系数形式的耗散 | `OddArithmetic.odd_energy_tendsto`, `odd_h2_form_dissipative`, `odd_zero_h2_form_dissipative` | 对每个 H² 加权复序列，在整个 [0,1/2] 上取得 −1 倍质量界，在零参数取得 −6 倍质量界；真实周期/Bloch 微分算子中的形式识别仍未完成 |
 | 零参数奇频矩阵的微分表达式含义 | `circle_odd_matrix_entry`, `circle_odd_mode_pairing`, `circle_odd_mode_off_bound` | 在明确 Fourier 数据和周期条件下，将矩阵识别为实际 L² 模配对；这里只处理 α=0，不包含非零参数的 Bloch 算子 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；余弦、正弦及奇频实际行的连接已在对应模块完成，变换后偶频 Bloch 行仍待连接 |

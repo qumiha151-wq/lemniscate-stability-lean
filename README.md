@@ -49,7 +49,11 @@ The work has three distinct layers:
 | `Lemniscate.OddHighBranchSums` | Proves absolute summability of both complete sign branches; bounds the opposite branch strictly below 8 times the squared shifted frequency |
 | `Lemniscate.OddHighRows` | Reassembles the full integer-indexed row and connects it to the certified quartic, obtaining the high-row bound below -3112 |
 | `Lemniscate.OddAllRows` | Combines the low and high rows for every odd frequency: normalized rows below -1 on the half interval and below -6 at zero |
-| `Lemniscate.OddFiniteForm` | Applies the full row bounds to every finite complex coefficient vector, with gaps 1 and 6; the infinite Sobolev form and nonzero Bloch operator connection remain |
+| `Lemniscate.OddFiniteForm` | Applies the full row bounds to every finite complex coefficient vector, with gaps 1 and 6 |
+| `Lemniscate.OddSobolevEntries` | Uniform bounds for every odd matrix entry by actual H2 frequency weights and a decaying distance kernel |
+| `Lemniscate.OddSobolevKernel` | Convergence of the complete integer distance-kernel row and its uniform bound 512 |
+| `Lemniscate.OddSobolevSummability` | Absolute convergence of the full odd energy double series for every H2-weighted complex sequence, proved from finite sums |
+| `Lemniscate.OddH2Dissipation` | Passes the finite-set estimates to the infinite H2 coefficient form: gap 1 on the half interval and gap 6 at zero; actual periodic/Bloch operator identification remains |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -235,8 +239,9 @@ The following obligations are still required for the original goal:
   and Bloch sectors must still be connected to the full spectral estimate.
   All odd coefficient rows and their finite complex quadratic forms now have
   the stated gaps on the entire half interval, including their infinite row
-  tails. Their extension to the infinite H2 form domain and identification
-  with the nonzero-parameter Bloch differential operator remain.
+  tails. Absolute convergence of the full double series and its extension to
+  the infinite H2 coefficient form are also proved. Identification of that
+  form with the actual periodic and Bloch differential operators remains.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
