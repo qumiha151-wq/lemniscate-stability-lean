@@ -90,10 +90,14 @@
 | 奇频低频行证书的精确含义 | `OddArithmetic.odd_row_realEval_formula`, `odd_low_row_with_omitted_bound`, `odd_zero_row_with_omitted_bound` | 将十二个低行的证书连接到实际矩阵的有限部分加有理表达式 R_n；R_n 的实际无穷尾和含义由下面的模块补齐 |
 | 奇频遗漏条目的几何界 | `OddArithmetic.odd_half_distance_abs`, `odd_matrix_off_tail_bound` | 使用真实整数半频距控制每个非对角项，保持参数 α∈[0,1/2] |
 | 奇频低行的完整遗漏尾和 | `OddArithmetic.odd_omitted_tail_bound`, `odd_actual_omitted_le`, `odd_low_complete_head_tail_bound`, `odd_zero_complete_head_tail_bound` | 两侧 m=±(27+2k) 的无穷加权级数均收敛，和不超过原稿 R_n；与有限部分合并后取得十二个低行的界 |
-| 完整整数索引的奇频低行耗散 | `OddArithmetic.odd_low_full_row_summable`, `odd_low_full_row_sum`, `odd_low_rows_dissipative`, `odd_zero_low_rows_dissipative` | 以频率 2k+1、k∈ℤ 表示全部奇频，证明完整行绝对可和以及分割求和等式；十二个低行归一化后在参数区间小于 −1，在零参数小于 −6。高频行和完整二次型估计仍待证明 |
+| 完整整数索引的奇频低行耗散 | `OddArithmetic.odd_low_full_row_summable`, `odd_low_full_row_sum`, `odd_low_rows_dissipative`, `odd_zero_low_rows_dissipative` | 以频率 2k+1、k∈ℤ 表示全部奇频，证明完整行绝对可和以及分割求和等式；十二个低行归一化后在参数区间小于 −1，在零参数小于 −6 |
+| 奇频高行的全部权重比 | `OddArithmetic.odd_signed_weight_envelope`, `odd_same_branch_weight_ratio`, `odd_cross_branch_weight_ratio` | 包含 ±1、±3、±5 例外列，同号比受 a^(k−j) 控制，异号比保留 37/16 因子；不假设权重逆有界 |
+| 奇频高行的两侧无穷和 | `OddArithmetic.odd_same_branch_sum_bound`, `odd_cross_branch_sum_bound`, `odd_cross_constant_certificate` | 证明绝对收敛，按真实移位频率 v 求和；对每个 j≥6 证明异号贡献小于 8v²，常数比较由内核验证 |
+| 奇频全部行与四次多项式 | `OddArithmetic.odd_high_row_quartic_bound`, `odd_high_rows_dissipative`, `odd_all_rows_dissipative`, `odd_zero_all_rows_dissipative` | 完整高频行受原稿四次式控制并小于 −3112；与低频行合并后，全部奇频行在 [0,1/2] 小于 −1，在零参数小于 −6 |
+| 奇频有限复二次型耗散 | `OddArithmetic.odd_finite_form_dissipative`, `odd_zero_finite_form_dissipative` | 对任意有限整数指标集和任意复系数，系数矩阵的实二次型受 −1 或 −6 倍质量控制；无限 H² 形式和非零参数 Bloch 算子识别仍未完成 |
 | 零参数奇频矩阵的微分表达式含义 | `circle_odd_matrix_entry`, `circle_odd_mode_pairing`, `circle_odd_mode_off_bound` | 在明确 Fourier 数据和周期条件下，将矩阵识别为实际 L² 模配对；这里只处理 α=0，不包含非零参数的 Bloch 算子 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
-| 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；须证明实际 Fourier 行被这些多项式控制 |
+| 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；余弦、正弦及奇频实际行的连接已在对应模块完成，变换后偶频 Bloch 行仍待连接 |
 | 旋转模属于真实定义域并被算子消去 | `circle_rotation_mem_h4`, `circle_rotation_h4_kernel` | 从曲率 ODE 显式构造 qq′ 的四阶弱导数，将其作为实际 H⁴ 域元素，再由第一积分证明已定义算子的值等于零；不是仅证明形式微分表达式的点态恒等式 |
 | 旋转核与广义核 | `NeutralCoerciveOperator.kernel_is_neutral`, `no_generalized_neutral` | 对显式定义域上的算子，在正交补耗散假设下成立；实际算子在偶频正交补的条件耗散及旋转模消去已证明，仍需奇频估计、具体 Jacobi 识别和最终实例化 |
 | 非零特征值实部界 | `NeutralCoerciveOperator.nonzero_eigenvalue_bound` | 特征值界；全谱结论另需紧预解算子等分析桥梁 |

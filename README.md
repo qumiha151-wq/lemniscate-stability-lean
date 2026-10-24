@@ -41,6 +41,15 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicOddMatrix` | Identifies the zero-parameter odd matrix with actual periodic Fourier-mode pairings under explicit profile Fourier and period hypotheses |
 | `Lemniscate.OddOmittedTails` | Proves convergence and the stated rational bound for both omitted infinite tails, and combines them with each of the twelve finite low-row estimates |
 | `Lemniscate.OddLowRows` | Reindexes the complete low rows over all integer indices, proves absolute summability, and obtains normalized row bounds below -1 on the half interval and below -6 at zero |
+| `Lemniscate.OddSignedWeights` | Proves geometric weight envelopes for every signed odd column, including all six exceptional low frequencies, and the same-sign and cross-sign weight ratios |
+| `Lemniscate.OddSignedGeometry` | Computes actual half-distances and shifted frequencies on both sign branches and proves the sharper lower-direction polynomial bound |
+| `Lemniscate.OddSignedEntries` | Bounds lower, upper and opposite-sign high-row entries using the actual shifted frequency |
+| `Lemniscate.OddWeightedEntries` | Combines the entry and weight estimates, keeping the exact geometric factors qb/a, qb*a and qb*(qb/a)^j |
+| `Lemniscate.OddHighMoments` | Exact geometric moment sums, decay for every high index, and the rational certificate for the opposite-sign constant |
+| `Lemniscate.OddHighBranchSums` | Proves absolute summability of both complete sign branches; bounds the opposite branch strictly below 8 times the squared shifted frequency |
+| `Lemniscate.OddHighRows` | Reassembles the full integer-indexed row and connects it to the certified quartic, obtaining the high-row bound below -3112 |
+| `Lemniscate.OddAllRows` | Combines the low and high rows for every odd frequency: normalized rows below -1 on the half interval and below -6 at zero |
+| `Lemniscate.OddFiniteForm` | Applies the full row bounds to every finite complex coefficient vector, with gaps 1 and 6; the infinite Sobolev form and nonzero Bloch operator connection remain |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -224,6 +233,10 @@ The following obligations are still required for the original goal:
   sum under the rotation constraint. The concrete Jacobi profile must still
   be shown to satisfy all Fourier and period hypotheses; the odd-frequency
   and Bloch sectors must still be connected to the full spectral estimate.
+  All odd coefficient rows and their finite complex quadratic forms now have
+  the stated gaps on the entire half interval, including their infinite row
+  tails. Their extension to the infinite H2 form domain and identification
+  with the nonzero-parameter Bloch differential operator remain.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.

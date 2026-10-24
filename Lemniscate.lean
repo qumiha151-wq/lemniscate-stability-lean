@@ -132,3 +132,12 @@ import Lemniscate.OddEntryTails
 import Lemniscate.PeriodicOddMatrix
 import Lemniscate.OddOmittedTails
 import Lemniscate.OddLowRows
+import Lemniscate.OddSignedWeights
+import Lemniscate.OddSignedGeometry
+import Lemniscate.OddSignedEntries
+import Lemniscate.OddWeightedEntries
+import Lemniscate.OddHighMoments
+import Lemniscate.OddHighBranchSums
+import Lemniscate.OddHighRows
+import Lemniscate.OddAllRows
+import Lemniscate.OddFiniteForm
