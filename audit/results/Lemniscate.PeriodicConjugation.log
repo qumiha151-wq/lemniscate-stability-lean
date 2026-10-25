@@ -1,0 +1,10 @@
+Lemniscate\PeriodicConjugation.lean:51:51: warning: This simp argument is unused:
+  map_star
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [RCLike.inner_apply', hf, hg, map_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Lemniscate\PeriodicConjugation.lean:59:2: warning: Unused tactic linter: `change circleConjugate T (circleContinuousL2 T h) x = circleContinuousL2 T h x` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

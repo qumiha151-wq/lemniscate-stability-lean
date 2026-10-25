@@ -67,6 +67,13 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicPerturbedFredholm` | Proves a compact bounded inverse for a bounded L2 perturbation of the H4 operator whenever its kernel is zero |
 | `Lemniscate.NeutralAdjointVector` | Constructs the unique normalized adjoint neutral vector from the two-sided inverse of the rank-one neutral shift |
 | `Lemniscate.PeriodicAdjointNeutral` | Proves existence and uniqueness of the actual H4 adjoint zero vector normalized against the unit rotation, under the explicit profile data |
+| `Lemniscate.PeriodicSymmetryPairing` | Self-adjoint pairing identities for reflection and even-frequency projection, and the corresponding symmetries of the normalized rotation |
+| `Lemniscate.PeriodicAdjointSymmetry` | Derives reflection oddness and vanishing odd Fourier coefficients of the exact adjoint vector from uniqueness |
+| `Lemniscate.PeriodicConjugation` | Pointwise complex conjugation on actual L2, its Fourier and pairing identities, and its compatibility with weak differentiation and real multiplication |
+| `Lemniscate.PeriodicConjugateOperator` | Proves H4 preservation and commutation with the real differential operator, then derives reality from normalized adjoint uniqueness |
+| `Lemniscate.PeriodicAdjointReality` | Constructs the unique real H4 adjoint zero vector in the even sine sector and proves the common-phase Fourier identities |
+| `Lemniscate.NeutralTransform` | Bounded mutually inverse exact neutral transforms, domain preservation, and the orthogonal-compression formula on an explicit operator domain |
+| `Lemniscate.PeriodicNeutralTransform` | Instantiates the exact neutral decomposition on actual periodic H4, including zero neutral row and column; proves reflection commutation |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -268,9 +275,12 @@ The following obligations are still required for the original goal:
   constructed at an explicit positive parameter, with both inverse identities
   on H4. The Fredholm alternative connects this to the entire spectrum:
   every spectral point is an eigenvalue. A rank-one perturbation now constructs
-  the exact normalized adjoint zero vector in H4. Its symmetry properties,
-  quantitative approximation estimates, complex angular resolvent estimates,
-  and the remaining Bloch and finite-rank transformations still need proof.
+  the exact normalized adjoint zero vector in H4. Its reflection parity,
+  even Fourier support and reality are proved, as is the exact bounded neutral
+  transform with its H4 inverse and orthogonal-compression formula.
+  Quantitative approximation estimates, the Householder/basis transformations,
+  complex angular resolvent estimates and the remaining Bloch argument still
+  need proof.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.

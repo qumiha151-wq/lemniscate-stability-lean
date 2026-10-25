@@ -108,8 +108,10 @@
 | 旋转模属于真实定义域并被算子消去 | `circle_rotation_mem_h4`, `circle_rotation_h4_kernel` | 从曲率 ODE 显式构造 qq′ 的四阶弱导数，将其作为实际 H⁴ 域元素，再由第一积分证明已定义算子的值等于零；不是仅证明形式微分表达式的点态恒等式 |
 | 实际单周期旋转核与广义核 | `paper_single_period_kernel`, `paper_single_period_no_generalized_kernel`, `paper_single_period_zero_mem_spectrum` | 已实例化实际算子，证明非零旋转向量张成核、没有非平凡二阶广义核链、零为谱点；具体 Jacobi Fourier 与周期数据仍显式保留 |
 | 实际单周期完整谱界 | `paper_single_period_nonzero_spectral_bound`, `paper_single_period_spectral_gap_five` | 结合实际 H⁴ 算子的 Fredholm 选择定理，对每个非零谱点证明实部不超过 −21/4，因而不超过原稿的 −5；尚未完成具体 Jacobi 实例与任意覆盖 Bloch 结论 |
-| 精确归一化伴随零向量 | `circle_perturbed_inverse_of_kernel`, `NeutralCoerciveOperator.exists_unique_adjoint_neutral_of_inverse`, `paper_single_period_adjoint_vector` | 由 P−A 的真实有界逆构造唯一 ψ，证明其属于 H⁴ 且 A*ψ=0、⟨ψ,e⟩=1；未假定 Galerkin 向量为精确核，具体曲率数据、对称性和定量近似仍待完成 |
-| 中性因子精确消去 | `exact_center_cancellation`, `exact_cross_cancellation` | 标量块恒等式；还需证明变换可逆、保持定义域及有限秩范数误差 |
+| 精确归一化伴随零向量 | `circle_perturbed_inverse_of_kernel`, `NeutralCoerciveOperator.exists_unique_adjoint_neutral_of_inverse`, `paper_single_period_adjoint_vector` | 由 P−A 的真实有界逆构造唯一 ψ，证明其属于 H⁴ 且 A*ψ=0、⟨ψ,e⟩=1；未假定 Galerkin 向量为精确核，具体曲率数据和定量近似仍待完成 |
+| 精确伴随零向量的对称性与实值性 | `paper_single_period_adjoint_vector_sector`, `paper_single_period_adjoint_real_sector`, `circle_real_sine_phase_fourier` | 由唯一性及反射、偶频投影、点态复共轭与实际算子的交换，推出 ψ 为实偶频正弦函数；共同乘 −i 后 Fourier 系数为实反对称序列且归一化内积保持 |
+| 精确中性变换的可逆性与定义域 | `neutral_transform_right_inverse`, `neutral_transform_domain_left_inverse`, `paper_single_period_neutral_decomposition`, `circle_neutral_transform_reflect` | T 和 T⁻¹ 为真实 L² 有界映射，互逆并保持 H⁴；TAT⁻¹ 在该域上等于正交压缩，精确中性行列为零，T 与反射交换；具体 Jacobi 数据仍须实例化 |
+| 中性因子精确消去 | `exact_center_cancellation`, `exact_cross_cancellation` | 标量块恒等式；精确 T 的逆与 H⁴ 保持已连接，Householder/基变换、完整算子多项式及有限秩范数误差仍待证明 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |
 | 非线性正常稳定性 | 尚无完整 Lean 定理 | PSZ、最大正则性、平衡流形及平滑论证均有待形式化 |

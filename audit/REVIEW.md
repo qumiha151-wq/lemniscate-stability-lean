@@ -655,9 +655,35 @@ Pf=⟨e,f⟩e。此前证明的正交补耗散使它的核为零。若 R 是
 伴随定义域等于 H⁴ 的既有定理推出 ψ∈H⁴、A*ψ=0。
 
 因此精确伴随零向量的存在、唯一性和正则性已有条件形式化。
-这里没有把 Galerkin 近似向量当作精确核；具体 Jacobi 数据、
-ψ 的反射/频率/实值性质及定量近似误差仍需继续证明，才能用于
-完整 Bloch 变换。该阶段与原稿的精确核论证相符，未改动原稿。
+这里没有把 Galerkin 近似向量当作精确核；具体 Jacobi 数据和
+定量近似误差仍需继续证明，才能用于完整 Bloch 变换。
+ψ 的对称性与实值性已由下面的证明补齐。
+
+## 精确伴随对称性与中性变换
+
+`PeriodicSymmetryPairing` 与 `PeriodicAdjointSymmetry` 先证明反射和
+偶频投影的内积恒等式以及归一化旋转的对称性，再利用精确伴随
+向量的唯一性，推出反射为负、全部奇频系数为零。该结论覆盖实际
+H⁴ 伴随核，不是从有限维 Galerkin 向量的形状推测而来。
+
+`PeriodicConjugation` 使用 L² 函数的真实点态复共轭，证明其 Fourier
+公式和内积恒等式。`PeriodicConjugateOperator` 证明复共轭保持 H⁴
+并与实系数算子交换。唯一性于是推出精确 ψ 为实值函数。
+`PeriodicAdjointReality` 合并上述结论，并验证同时乘 −i 后的
+Fourier 系数为实反对称序列、归一化配对保持。这补齐原稿
+“unique real sine-even adjoint vector”及共同相位的论证。
+
+`NeutralTransform` 构造真实有界映射 T=I+e⊗(ψ−e) 和
+T⁻¹=I−e⊗(ψ−e)，证明在 L² 和显式线性定义域上的双侧逆。
+从 Ae=0 与 ⟨ψ,Af⟩=0 得到 TAT⁻¹f=Af−⟨e,Af⟩e；单位归一化
+进而使输出与 e 正交，中性向量也被消去。
+`PeriodicNeutralTransform` 将此结论用于实际周期 H⁴ 算子及已构造
+的精确伴随向量，并证明奇反射的 e、ψ 所给出的 T 与反射交换。
+
+Mathlib 的内积线性在第二槽，原稿线性在第一槽；秩一表达式已按
+此约定转换并在 Lean 内核中逐式核对。未发现要求改变原稿结论的
+差异，原稿未改动。具体 Jacobi 数据、正第一 Fourier 系数的相位
+选择、Householder 与基变换、定量逼近及 Bloch 估计尚待完成。
 
 ## 已执行的精确复算
 
