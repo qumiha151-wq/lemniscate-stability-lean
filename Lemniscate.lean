@@ -155,3 +155,6 @@ import Lemniscate.PeriodicFrequencyOperator
 import Lemniscate.PeriodicFullEnergy
 import Lemniscate.NeutralNormalization
 import Lemniscate.PeriodicSingleSpectrum
+import Lemniscate.PeriodicPerturbedFredholm
+import Lemniscate.NeutralAdjointVector
+import Lemniscate.PeriodicAdjointNeutral

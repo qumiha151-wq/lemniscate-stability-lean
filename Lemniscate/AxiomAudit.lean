@@ -717,3 +717,12 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.paper_single_period_nonzero_spectral_bound
 #print axioms Lemniscate.paper_single_period_spectral_gap_five
 #print axioms Lemniscate.paper_single_period_zero_mem_spectrum
+#print axioms Lemniscate.circle_perturbed_feedback_compact
+#print axioms Lemniscate.circle_perturbed_shift_resolvent
+#print axioms Lemniscate.circle_perturbed_shift_factorization
+#print axioms Lemniscate.circle_perturbed_inverse_of_kernel
+#print axioms Lemniscate.NeutralCoerciveOperator.neutral_rank_one_shift_kernel
+#print axioms Lemniscate.NeutralCoerciveOperator.exists_unique_adjoint_neutral_of_inverse
+#print axioms Lemniscate.circle_adjoint_zero_of_pairing
+#print axioms Lemniscate.paper_single_period_adjoint_pairing
+#print axioms Lemniscate.paper_single_period_adjoint_vector

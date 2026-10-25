@@ -1,0 +1,6 @@
+Lemniscate\NeutralAdjointVector.lean:13:0: warning: automatically included section variable(s) unused in theorem `Lemniscate.NeutralCoerciveOperator.neutral_rank_one_shift_kernel`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`

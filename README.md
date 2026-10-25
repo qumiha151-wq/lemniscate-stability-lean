@@ -64,6 +64,9 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicFullEnergy` | Combines all single-period sectors to obtain -21/4 coercivity on the actual rotation-orthogonal H4 complement |
 | `Lemniscate.NeutralNormalization` | Normalizes a proved nonzero neutral vector for the abstract kernel and spectral argument |
 | `Lemniscate.PeriodicSingleSpectrum` | Instantiates the actual single-period operator: its kernel consists of rotation multiples, no nontrivial length-two generalized kernel chain exists, zero is spectral, and every nonzero spectral point has real part at most -21/4 (hence -5), under explicit Jacobi data |
+| `Lemniscate.PeriodicPerturbedFredholm` | Proves a compact bounded inverse for a bounded L2 perturbation of the H4 operator whenever its kernel is zero |
+| `Lemniscate.NeutralAdjointVector` | Constructs the unique normalized adjoint neutral vector from the two-sided inverse of the rank-one neutral shift |
+| `Lemniscate.PeriodicAdjointNeutral` | Proves existence and uniqueness of the actual H4 adjoint zero vector normalized against the unit rotation, under the explicit profile data |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -264,8 +267,10 @@ The following obligations are still required for the original goal:
   A compact bounded inverse of the full variable-coefficient operator is now
   constructed at an explicit positive parameter, with both inverse identities
   on H4. The Fredholm alternative connects this to the entire spectrum:
-  every spectral point is an eigenvalue. Estimates in complex angular
-  regions and the Bloch and finite-rank modifications remain.
+  every spectral point is an eigenvalue. A rank-one perturbation now constructs
+  the exact normalized adjoint zero vector in H4. Its symmetry properties,
+  quantitative approximation estimates, complex angular resolvent estimates,
+  and the remaining Bloch and finite-rank transformations still need proof.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.
