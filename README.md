@@ -74,6 +74,10 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicAdjointReality` | Constructs the unique real H4 adjoint zero vector in the even sine sector and proves the common-phase Fourier identities |
 | `Lemniscate.NeutralTransform` | Bounded mutually inverse exact neutral transforms, domain preservation, and the orthogonal-compression formula on an explicit operator domain |
 | `Lemniscate.PeriodicNeutralTransform` | Instantiates the exact neutral decomposition on actual periodic H4, including zero neutral row and column; proves reflection commutation |
+| `Lemniscate.NeutralHouseholder` | Exact Householder involution, symmetric pairing, inner-product preservation and inverse on an explicit linear domain |
+| `Lemniscate.PeriodicHouseholderAnchor` | Constructs the actual unit H4 anchor at Fourier frequencies ±2 and proves the chosen phase of rotation has strictly positive pairing with it |
+| `Lemniscate.PeriodicHouseholder` | Proves the actual denominator exceeds one, all Householder identities on L2 and H4, preservation of even frequencies and reflection commutation |
+| `Lemniscate.PeriodicCenteredNeutral` | Proves common-phase invariance of the neutral transform, then zero anchor row and column for the combined exact transformed expression and its symmetric pairing |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -278,9 +282,13 @@ The following obligations are still required for the original goal:
   the exact normalized adjoint zero vector in H4. Its reflection parity,
   even Fourier support and reality are proved, as is the exact bounded neutral
   transform with its H4 inverse and orthogonal-compression formula.
-  Quantitative approximation estimates, the Householder/basis transformations,
-  complex angular resolvent estimates and the remaining Bloch argument still
-  need proof.
+  The actual Householder transform now has a proved positive denominator,
+  involution and H4 preservation; its combination with the exact neutral
+  transform has zero anchor row and column, also in the symmetric pairing.
+  Quantitative approximation estimates, complex angular resolvent estimates
+  and the nonzero-parameter Bloch argument still need proof. The remaining
+  argument may use the anchor projection and quadratic forms directly; an
+  explicit copy of the paper's basis-change matrix is not a requirement.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching
   hypotheses; cited papers cannot be inserted as new axioms.

@@ -165,3 +165,7 @@ import Lemniscate.PeriodicConjugateOperator
 import Lemniscate.PeriodicAdjointReality
 import Lemniscate.NeutralTransform
 import Lemniscate.PeriodicNeutralTransform
+import Lemniscate.NeutralHouseholder
+import Lemniscate.PeriodicHouseholderAnchor
+import Lemniscate.PeriodicHouseholder
+import Lemniscate.PeriodicCenteredNeutral

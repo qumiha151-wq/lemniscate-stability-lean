@@ -111,7 +111,9 @@
 | 精确归一化伴随零向量 | `circle_perturbed_inverse_of_kernel`, `NeutralCoerciveOperator.exists_unique_adjoint_neutral_of_inverse`, `paper_single_period_adjoint_vector` | 由 P−A 的真实有界逆构造唯一 ψ，证明其属于 H⁴ 且 A*ψ=0、⟨ψ,e⟩=1；未假定 Galerkin 向量为精确核，具体曲率数据和定量近似仍待完成 |
 | 精确伴随零向量的对称性与实值性 | `paper_single_period_adjoint_vector_sector`, `paper_single_period_adjoint_real_sector`, `circle_real_sine_phase_fourier` | 由唯一性及反射、偶频投影、点态复共轭与实际算子的交换，推出 ψ 为实偶频正弦函数；共同乘 −i 后 Fourier 系数为实反对称序列且归一化内积保持 |
 | 精确中性变换的可逆性与定义域 | `neutral_transform_right_inverse`, `neutral_transform_domain_left_inverse`, `paper_single_period_neutral_decomposition`, `circle_neutral_transform_reflect` | T 和 T⁻¹ 为真实 L² 有界映射，互逆并保持 H⁴；TAT⁻¹ 在该域上等于正交压缩，精确中性行列为零，T 与反射交换；具体 Jacobi 数据仍须实例化 |
-| 中性因子精确消去 | `exact_center_cancellation`, `exact_cross_cancellation` | 标量块恒等式；精确 T 的逆与 H⁴ 保持已连接，Householder/基变换、完整算子多项式及有限秩范数误差仍待证明 |
+| 实际 Householder 变换 | `circle_unit_rotation_phase_anchor`, `paper_rotation_householder_hypotheses`, `paper_householder_involutive`, `paper_householder_h4_involutive` | 首个反对称 Fourier 向量属于 H⁴ 且为单位向量；共同相位 −i 使旋转与它的配对严格为正，故分母大于 1；实际 U 保持内积、以自身为逆并保持 H⁴、偶频空间和反射对称 |
+| 精确变换后的零中性行列 | `circle_neutral_transform_common_phase`, `paper_exact_centered_neutral_exists` | T 在共同相位下不变；实际 UTA T⁻¹U 的锚列和锚行以及其对称配对均精确为零，未使用近似核。后续可直接使用锚正交分解，无须显式构造 V；完整非零参数多项式仍待连接 |
+| 中性因子精确消去 | `exact_center_cancellation`, `exact_cross_cancellation` | 标量块恒等式；精确 T、U 的逆与 H⁴ 保持及零参数中性配对已连接，完整算子多项式及有限秩范数误差仍待证明 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |
 | 非线性正常稳定性 | 尚无完整 Lean 定理 | PSZ、最大正则性、平衡流形及平滑论证均有待形式化 |
