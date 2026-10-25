@@ -53,7 +53,17 @@ The work has three distinct layers:
 | `Lemniscate.OddSobolevEntries` | Uniform bounds for every odd matrix entry by actual H2 frequency weights and a decaying distance kernel |
 | `Lemniscate.OddSobolevKernel` | Convergence of the complete integer distance-kernel row and its uniform bound 512 |
 | `Lemniscate.OddSobolevSummability` | Absolute convergence of the full odd energy double series for every H2-weighted complex sequence, proved from finite sums |
-| `Lemniscate.OddH2Dissipation` | Passes the finite-set estimates to the infinite H2 coefficient form: gap 1 on the half interval and gap 6 at zero; actual periodic/Bloch operator identification remains |
+| `Lemniscate.OddH2Dissipation` | Passes the finite-set estimates to the infinite H2 coefficient form: gap 1 on the half interval and gap 6 at zero |
+| `Lemniscate.PeriodicOddCoefficients` | Complete reconstruction and Parseval identity for the actual odd Fourier sector, and its H2 coefficient regularity |
+| `Lemniscate.PeriodicOddPolynomials` | Identifies the differential energy of every finite odd Fourier polynomial with the zero-parameter matrix form |
+| `Lemniscate.PeriodicOddApproximation` | Simultaneous L2 convergence of finite odd Fourier sums and their first two weak derivatives |
+| `Lemniscate.PeriodicOddEnergy` | Identifies the infinite odd coefficient form with actual periodic H2 energy and transfers the -6 bound |
+| `Lemniscate.PeriodicOddOperatorEnergy` | Proves -6 dissipation for the actual H4 operator on the full odd-frequency sector under explicit profile Fourier and period hypotheses |
+| `Lemniscate.PeriodicFrequencyParts` | Orthogonal even/odd frequency projections on actual L2, with preservation of H4 and commutation with weak derivatives |
+| `Lemniscate.PeriodicFrequencyOperator` | Proves projection/operator commutation and vanishing cross energy terms from the coefficient's vanishing odd Fourier modes |
+| `Lemniscate.PeriodicFullEnergy` | Combines all single-period sectors to obtain -21/4 coercivity on the actual rotation-orthogonal H4 complement |
+| `Lemniscate.NeutralNormalization` | Normalizes a proved nonzero neutral vector for the abstract kernel and spectral argument |
+| `Lemniscate.PeriodicSingleSpectrum` | Instantiates the actual single-period operator: its kernel consists of rotation multiples, no nontrivial length-two generalized kernel chain exists, zero is spectral, and every nonzero spectral point has real part at most -21/4 (hence -5), under explicit Jacobi data |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -235,13 +245,19 @@ The following obligations are still required for the original goal:
   transferred to the H4 operator. Both even-frequency sectors are complete,
   and their reflection splitting now gives -21/4 dissipation for their entire
   sum under the rotation constraint. The concrete Jacobi profile must still
-  be shown to satisfy all Fourier and period hypotheses; the odd-frequency
-  and Bloch sectors must still be connected to the full spectral estimate.
+  be shown to satisfy all Fourier and period hypotheses. The odd-frequency
+  sector now has -6 dissipation for the actual periodic H4 operator. Orthogonal
+  frequency splitting combines it with the even sectors to give -21/4
+  coercivity on the whole rotation-orthogonal H4 complement. The nonzero
+  rotation vector and this coercivity instantiate the neutral-mode argument;
+  the proved Fredholm alternative then gives the single-period full spectral
+  gap, still under the explicit profile Fourier and period hypotheses.
   All odd coefficient rows and their finite complex quadratic forms now have
   the stated gaps on the entire half interval, including their infinite row
   tails. Absolute convergence of the full double series and its extension to
-  the infinite H2 coefficient form are also proved. Identification of that
-  form with the actual periodic and Bloch differential operators remains.
+  the infinite H2 coefficient form are also proved. That form is identified
+  with the actual periodic energy at zero parameter. The nonzero-parameter
+  Bloch operator connection and the transformed even Bloch sector remain.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.

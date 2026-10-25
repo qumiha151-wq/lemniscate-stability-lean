@@ -96,13 +96,18 @@
 | 奇频全部行与四次多项式 | `OddArithmetic.odd_high_row_quartic_bound`, `odd_high_rows_dissipative`, `odd_all_rows_dissipative`, `odd_zero_all_rows_dissipative` | 完整高频行受原稿四次式控制并小于 −3112；与低频行合并后，全部奇频行在 [0,1/2] 小于 −1，在零参数小于 −6 |
 | 奇频有限复二次型耗散 | `OddArithmetic.odd_finite_form_dissipative`, `odd_zero_finite_form_dissipative` | 对任意有限整数指标集和任意复系数，系数矩阵的实二次型受 −1 或 −6 倍质量控制 |
 | 奇频 H² 能量的绝对收敛 | `OddArithmetic.odd_sobolev_entry_bound`, `odd_sobolev_kernel_row_bound`, `odd_absolute_summable`, `odd_energy_summable` | 实际频率权重为 1+(2i+1)²，完整整数核行和不超过 512；由任意有限双和的统一界证明整个能量双级数绝对收敛 |
-| 奇频无限 H² 系数形式的耗散 | `OddArithmetic.odd_energy_tendsto`, `odd_h2_form_dissipative`, `odd_zero_h2_form_dissipative` | 对每个 H² 加权复序列，在整个 [0,1/2] 上取得 −1 倍质量界，在零参数取得 −6 倍质量界；真实周期/Bloch 微分算子中的形式识别仍未完成 |
+| 奇频无限 H² 系数形式的耗散 | `OddArithmetic.odd_energy_tendsto`, `odd_h2_form_dissipative`, `odd_zero_h2_form_dissipative` | 对每个 H² 加权复序列，在整个 [0,1/2] 上取得 −1 倍质量界，在零参数取得 −6 倍质量界 |
+| 实际周期奇频空间的完整性与 H² 系数 | `circle_odd_fourier_hasSum`, `circle_odd_norm_sq`, `circle_odd_h2_coefficients` | 所有正负奇频重建函数并满足 Parseval；实际 H² 推出所需加权平方可和性，周期尺度关系显式保留 |
+| 实际奇频 H² 能量与系数形式一致 | `circle_odd_polynomial_h2_energy_eq_coefficients`, `circle_odd_polynomial_second_tendsto`, `circle_odd_weak_energy_eq_coefficients` | 任意有限 Fourier 和的真实能量等式及函数、两阶导数同时收敛；由此识别整个无限形式 |
+| 实际 H⁴ 算子的奇频耗散 | `circle_h4_operator_odd_dissipative`, `paper_h4_operator_odd_dissipative` | 对真实 H⁴ 域中每个奇频函数取得 −6‖f‖² 界；保留曲率 Fourier 与周期条件，非零参数 Bloch 识别仍待完成 |
+| 实际奇偶频正交分解与算子交换 | `circle_frequency_parts_norm_sq`, `circle_even_frequency_part_mem_h4`, `circle_h4_operator_frequency_energy_split` | 投影保持实际 H⁴ 域并与算子交换，交叉能量消失；要求势函数的奇频系数为零，并从基展开证明乘法交换 |
+| 单周期全空间的旋转正交补耗散 | `paper_h4_operator_rotation_complement_dissipative` | 对任意旋转正交的真实 H⁴ 函数证明 −21/4 界；所有频率均已覆盖，仍保留具体曲率数据和周期条件 |
 | 零参数奇频矩阵的微分表达式含义 | `circle_odd_matrix_entry`, `circle_odd_mode_pairing`, `circle_odd_mode_off_bound` | 在明确 Fourier 数据和周期条件下，将矩阵识别为实际 L² 模配对；这里只处理 α=0，不包含非零参数的 Bloch 算子 |
 | 84 项奇频及 12 项零参数比较 | `OddArithmetic.all_odd_bernstein_comparisons`, `all_odd_zero_comparisons` | 从完整有理公式计算；不能单独代表其无限尾界的分析意义 |
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；余弦、正弦及奇频实际行的连接已在对应模块完成，变换后偶频 Bloch 行仍待连接 |
 | 旋转模属于真实定义域并被算子消去 | `circle_rotation_mem_h4`, `circle_rotation_h4_kernel` | 从曲率 ODE 显式构造 qq′ 的四阶弱导数，将其作为实际 H⁴ 域元素，再由第一积分证明已定义算子的值等于零；不是仅证明形式微分表达式的点态恒等式 |
-| 旋转核与广义核 | `NeutralCoerciveOperator.kernel_is_neutral`, `no_generalized_neutral` | 对显式定义域上的算子，在正交补耗散假设下成立；实际算子在偶频正交补的条件耗散及旋转模消去已证明，仍需奇频估计、具体 Jacobi 识别和最终实例化 |
-| 非零特征值实部界 | `NeutralCoerciveOperator.nonzero_eigenvalue_bound` | 特征值界；全谱结论另需紧预解算子等分析桥梁 |
+| 实际单周期旋转核与广义核 | `paper_single_period_kernel`, `paper_single_period_no_generalized_kernel`, `paper_single_period_zero_mem_spectrum` | 已实例化实际算子，证明非零旋转向量张成核、没有非平凡二阶广义核链、零为谱点；具体 Jacobi Fourier 与周期数据仍显式保留 |
+| 实际单周期完整谱界 | `paper_single_period_nonzero_spectral_bound`, `paper_single_period_spectral_gap_five` | 结合实际 H⁴ 算子的 Fredholm 选择定理，对每个非零谱点证明实部不超过 −21/4，因而不超过原稿的 −5；尚未完成具体 Jacobi 实例与任意覆盖 Bloch 结论 |
 | 中性因子精确消去 | `exact_center_cancellation`, `exact_cross_cancellation` | 标量块恒等式；还需证明变换可逆、保持定义域及有限秩范数误差 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |

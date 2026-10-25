@@ -145,3 +145,13 @@ import Lemniscate.OddSobolevEntries
 import Lemniscate.OddSobolevKernel
 import Lemniscate.OddSobolevSummability
 import Lemniscate.OddH2Dissipation
+import Lemniscate.PeriodicOddCoefficients
+import Lemniscate.PeriodicOddPolynomials
+import Lemniscate.PeriodicOddApproximation
+import Lemniscate.PeriodicOddEnergy
+import Lemniscate.PeriodicOddOperatorEnergy
+import Lemniscate.PeriodicFrequencyParts
+import Lemniscate.PeriodicFrequencyOperator
+import Lemniscate.PeriodicFullEnergy
+import Lemniscate.NeutralNormalization
+import Lemniscate.PeriodicSingleSpectrum
