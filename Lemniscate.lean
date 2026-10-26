@@ -176,3 +176,4 @@ import Lemniscate.PeriodicBlochCenterPolynomial
 import Lemniscate.PeriodicBlochFourier
 import Lemniscate.PeriodicBlochOddFinite
 import Lemniscate.PeriodicBlochOddLimit
+import Lemniscate.PeriodicAdjointResidual

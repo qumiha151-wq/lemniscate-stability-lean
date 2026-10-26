@@ -85,6 +85,7 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicBlochFourier` | Identifies all Fourier entries of the actual Bloch operator and their symmetric odd-frequency pairing with the certified matrix for every real parameter |
 | `Lemniscate.PeriodicBlochOddFinite` | Identifies the actual energy of every finite odd Fourier sum with the certified matrix form and proves its half-interval bound |
 | `Lemniscate.PeriodicBlochOddLimit` | Proves convergence of all four derivatives and the actual Bloch expression, then obtains -1 dissipation for every odd-sector H4 function and every parameter in [0,1/2] |
+| `Lemniscate.PeriodicAdjointResidual` | Bounds the L2 error of any normalized H4 adjoint trial in the even sine sector by one seventy-fifth of its actual adjoint residual norm |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -295,7 +296,8 @@ The following obligations are still required for the original goal:
   involution and H4 preservation; its combination with the exact neutral
   transform has zero anchor row and column, also in the symmetric pairing.
   The actual quartic Bloch polynomial, its reflection parity and exact center
-  and cross-factor cancellations are proved. Quantitative approximation
+  and cross-factor cancellations are proved. The adjoint trial's L2 error is
+  bounded by its residual norm divided by 75. Quantitative H4 approximation
   estimates, complex angular resolvent estimates and uniform negativity of
   the transformed even Bloch sector still need proof. The remaining
   argument may use the anchor projection and quadratic forms directly; an

@@ -117,6 +117,7 @@
 | 精确中性配对及参数因子消去 | `paper_centered_bloch_anchor_pairing`, `paper_centered_bloch_center_scaled`, `paper_centered_bloch_cross_row_scaled`, `paper_centered_bloch_cross_column_scaled` | 锚配对等于精确 ⟨ψ,Aⱼe⟩；中性块恰有二次因子、正交交叉块恰有一次因子。明确在 α≠0 时除法，未把近似核代入；有限秩范数误差和统一负性仍待证明 |
 | 非零参数 Fourier 矩阵 | `circle_bloch_basis_fourier`, `circle_bloch_odd_symmetric_pairing` | 从真实微分表达式计算任意 α∈ℝ 的矩阵；在实际 Fourier 和周期条件下，奇频对称配对等于已认证的参数矩阵 |
 | 非零参数的完整奇频 H⁴ 耗散 | `circle_odd_polynomial_bloch_energy`, `circle_odd_bloch_energy_eq_coefficients`, `paper_h4_bloch_odd_dissipative` | 对每个 α∈[0,1/2]，经四阶导数同时逼近，将实际奇频算子能量识别为无限系数形式，得到 −‖f‖² 界；覆盖整个奇频 H⁴ 域，仍保留曲率 Fourier 和周期条件 |
+| 伴随残差控制 L² 误差 | `circle_adjoint_residual_energy`, `paper_adjoint_trial_l2_error` | 对任意同归一化的偶频正弦 H⁴ 试探向量，真实 Green 恒等式与 −75 耗散给出 ‖ψ−t‖≤‖A*t‖/75；试探残差认证及 H⁴ 提升尚未完成 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |
 | 非线性正常稳定性 | 尚无完整 Lean 定理 | PSZ、最大正则性、平衡流形及平滑论证均有待形式化 |

@@ -860,3 +860,7 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_odd_bloch_energy_eq_coefficients
 #print axioms Lemniscate.circle_h4_bloch_odd_dissipative
 #print axioms Lemniscate.paper_h4_bloch_odd_dissipative
+#print axioms Lemniscate.circle_even_sine_sector_sub
+#print axioms Lemniscate.circle_adjoint_residual_energy
+#print axioms Lemniscate.circle_adjoint_residual_norm_le
+#print axioms Lemniscate.paper_adjoint_trial_l2_error
