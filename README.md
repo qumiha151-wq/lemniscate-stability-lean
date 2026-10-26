@@ -78,6 +78,13 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicHouseholderAnchor` | Constructs the actual unit H4 anchor at Fourier frequencies ±2 and proves the chosen phase of rotation has strictly positive pairing with it |
 | `Lemniscate.PeriodicHouseholder` | Proves the actual denominator exceeds one, all Householder identities on L2 and H4, preservation of even frequencies and reflection commutation |
 | `Lemniscate.PeriodicCenteredNeutral` | Proves common-phase invariance of the neutral transform, then zero anchor row and column for the combined exact transformed expression and its symmetric pairing |
+| `Lemniscate.PeriodicBlochPolynomial` | Defines the actual shifted differential expression on H4 and proves its exact quartic expansion in the Bloch parameter |
+| `Lemniscate.PeriodicBlochParity` | Proves reflection parity of every Bloch coefficient and identifies the fourth coefficient as the scalar -4r² |
+| `Lemniscate.PeriodicBlochCenter` | Identifies transformed anchor coefficients with exact adjoint/rotation pairings and eliminates the odd coefficients by reflection |
+| `Lemniscate.PeriodicBlochCenterPolynomial` | Proves the full transformed polynomial, exact quadratic center cancellation and linear cross cancellation before division by the parameter |
+| `Lemniscate.PeriodicBlochFourier` | Identifies all Fourier entries of the actual Bloch operator and their symmetric odd-frequency pairing with the certified matrix for every real parameter |
+| `Lemniscate.PeriodicBlochOddFinite` | Identifies the actual energy of every finite odd Fourier sum with the certified matrix form and proves its half-interval bound |
+| `Lemniscate.PeriodicBlochOddLimit` | Proves convergence of all four derivatives and the actual Bloch expression, then obtains -1 dissipation for every odd-sector H4 function and every parameter in [0,1/2] |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -270,8 +277,10 @@ The following obligations are still required for the original goal:
   the stated gaps on the entire half interval, including their infinite row
   tails. Absolute convergence of the full double series and its extension to
   the infinite H2 coefficient form are also proved. That form is identified
-  with the actual periodic energy at zero parameter. The nonzero-parameter
-  Bloch operator connection and the transformed even Bloch sector remain.
+  with the actual periodic energy at zero parameter. The actual Bloch matrix
+  is now identified for all real parameters; four-derivative approximation
+  transfers the -1 bound to every odd-sector H4 function for parameters in
+  [0,1/2]. The transformed even Bloch sector remains.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
@@ -285,8 +294,10 @@ The following obligations are still required for the original goal:
   The actual Householder transform now has a proved positive denominator,
   involution and H4 preservation; its combination with the exact neutral
   transform has zero anchor row and column, also in the symmetric pairing.
-  Quantitative approximation estimates, complex angular resolvent estimates
-  and the nonzero-parameter Bloch argument still need proof. The remaining
+  The actual quartic Bloch polynomial, its reflection parity and exact center
+  and cross-factor cancellations are proved. Quantitative approximation
+  estimates, complex angular resolvent estimates and uniform negativity of
+  the transformed even Bloch sector still need proof. The remaining
   argument may use the anchor projection and quadratic forms directly; an
   explicit copy of the paper's basis-change matrix is not a requirement.
 - Formalize the relevant parabolic existence, regularization and normal

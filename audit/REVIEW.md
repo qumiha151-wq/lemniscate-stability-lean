@@ -713,6 +713,30 @@ Mathlib 的内积线性在第二槽，原稿线性在第一槽；秩一表达式
 或独立对称算子的最大定义域作为必经步骤。原稿
 无需因本阶段的比较而改变，最终稳定性结论仍待完整形式化。
 
+## 实际 Bloch 多项式与精确因子消去
+
+`PeriodicBlochPolynomial` 在固定 H⁴ 定义域上用 D+i(2π/T)α 定义
+真实 Bloch 表达式，证明完整四次多项式恒等式。
+`PeriodicBlochParity` 核对每一阶系数的反射奇偶性，并证明最高阶
+为 −4r²I。`PeriodicBlochCenter` 将变换后的锚配对直接识别为
+精确伴随向量与原始系数作用于旋转向量的配对；反射消去奇次项。
+
+`PeriodicBlochCenterPolynomial` 因而得到中性块恰为
+α²b₂−4r²α⁴，锚与正交补的交叉项从一次项起始。除以 α² 或 α
+只在这些精确恒等式之后进行，且明确要求 α≠0。这里使用真实
+H⁴ 精确核和伴随核，没有将 Galerkin 近似当成零向量。
+
+`PeriodicBlochFourier` 进一步计算实际微分算子的全部 Fourier
+条目，并把奇频的对称配对识别为已认证的参数矩阵。
+`PeriodicBlochOddFinite` 由有限 Fourier 和的精确配对取得负性界。
+`PeriodicBlochOddLimit` 证明函数和前四阶导数同时收敛，由实际
+Bloch 表达式的连续性取极限，将完整奇频 H⁴ 能量识别为已证明
+绝对收敛的系数形式。因此对所有 α∈[0,1/2]，奇频空间上有
+Re⟨f,Aαf⟩≤−‖f‖²。这里仍明确保留曲率的 Fourier 和周期条件，
+未将其视为具体 Jacobi 曲率已经验证。
+这些恒等式支持直接使用配对和正交分解的路线，不要求构造 V。
+变换后偶频的统一负性、具体 Jacobi 数据及全文非线性结论仍待证明。
+
 ## 已执行的精确复算
 
 - `audit/recompute/audit_refined_all.py`：复算原 Galerkin 定义；9 项余弦、

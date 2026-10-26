@@ -1,0 +1,20 @@
+Lemniscate\PeriodicBlochPolynomial.lean:56:42: warning: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [circleBlochOperator, circleBlochCoefficient, Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.cons_val, Matrix.tail_cons, LinearMap.add_apply, LinearMap.sub_apply, LinearMap.smul_apply,
+    LinearMap.comp_apply, circleShiftedFirst, circleShiftedSecond, circleShiftedFourth, circle_h4_operator_expanded,
+    map_add, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Lemniscate\PeriodicBlochPolynomial.lean:56:60: warning: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [circleBlochOperator, circleBlochCoefficient, Matrix.cons_val_zero, Matrix.cons_val_one,
+    Matrix.cons_val, Matrix.head_cons, LinearMap.add_apply, LinearMap.sub_apply, LinearMap.smul_apply,
+    LinearMap.comp_apply, circleShiftedFirst, circleShiftedSecond, circleShiftedFourth, circle_h4_operator_expanded,
+    map_add, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
