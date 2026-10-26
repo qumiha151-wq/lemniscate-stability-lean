@@ -177,3 +177,6 @@ import Lemniscate.PeriodicBlochFourier
 import Lemniscate.PeriodicBlochOddFinite
 import Lemniscate.PeriodicBlochOddLimit
 import Lemniscate.PeriodicAdjointResidual
+import Lemniscate.PeriodicProfileBounds
+import Lemniscate.PeriodicAdjointDerivativeBounds
+import Lemniscate.PeriodicAdjointSobolevError

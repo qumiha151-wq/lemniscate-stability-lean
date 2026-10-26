@@ -14,15 +14,6 @@ theorem circle_frequency_factor_norm_fourth (n : ℤ) :
     _ = (‖circleFrequencyFactor T n‖^2)^2 := by ring
     _ = _ := by rw [circle_frequency_factor_norm_sq]; ring
 
-omit [Fact (0 < T)] in
-theorem circle_principal_symbol_coarse_bound (p : ℝ) (hp : 1 ≤ p) (n : ℤ) :
-    ‖circlePrincipalSymbol T (p^2) n‖ ≤ 1/p := by
-  have hp' : 0 < p := lt_of_lt_of_le zero_lt_one hp
-  apply (circle_principal_symbol_bound T (p^2) (sq_pos_of_pos hp') n).trans
-  rw [one_div]
-  apply (inv_le_inv₀ (sq_pos_of_pos hp') hp').mpr
-  nlinarith
-
 theorem circle_principal_second_symbol_bound (p : ℝ) (hp : 0 < p) (n : ℤ) :
     ‖(circleFrequencyFactor T n)^2*circlePrincipalSymbol T (p^2) n‖ ≤ 1/(4*p) := by
   have hd : 0 < p^2+4*(2*Real.pi/T)^4*(n:ℝ)^4 := by positivity
@@ -35,7 +26,11 @@ theorem circle_principal_second_symbol_bound (p : ℝ) (hp : 0 < p) (n : ℤ) :
 theorem circle_principal_first_symbol_bound (p : ℝ) (hp : 1 ≤ p) (n : ℤ) :
     ‖circleFrequencyFactor T n*circlePrincipalSymbol T (p^2) n‖ ≤ 5/(4*p) := by
   have hp' : 0 < p := lt_of_lt_of_le zero_lt_one hp
-  have h₀ := circle_principal_symbol_coarse_bound T p hp n
+  have h₀ := circle_principal_symbol_bound T (p^2) (sq_pos_of_pos hp') n
+  rw [← one_div] at h₀
+  have hscale : 1/p^2 ≤ 1/p := by
+    apply one_div_le_one_div_of_le hp'
+    nlinarith
   have h₂ := circle_principal_second_symbol_bound T p hp' n
   rw [norm_mul, norm_pow] at h₂
   rw [norm_mul]
@@ -77,14 +72,6 @@ theorem circle_principal_first_norm_le (p : ℝ) (hp : 1 ≤ p) :
 theorem circle_principal_second_norm_le (p : ℝ) (hp : 1 ≤ p) :
     ‖circlePrincipalSecond T p hp‖ ≤ 1/(4*p) :=
   circle_bounded_multiplier_norm_le T _ _ _ _
-
-theorem circle_principal_resolvent_coarse_norm_le (p : ℝ) (hp : 1 ≤ p) :
-    ‖circlePrincipalResolvent T (p^2) (by nlinarith)‖ ≤ 1/p := by
-  have hp' : 0 < p := lt_of_lt_of_le zero_lt_one hp
-  apply (circle_principal_resolvent_norm_le T (p^2) (sq_pos_of_pos hp')).trans
-  rw [one_div]
-  apply (inv_le_inv₀ (sq_pos_of_pos hp') hp').mpr
-  nlinarith
 
 theorem circle_principal_first_eq_jet (p : ℝ) (hp : 1 ≤ p) (f : CircleL2 T) :
     circlePrincipalFirst T p hp f =

@@ -89,13 +89,6 @@ theorem paper_single_period_nonzero_spectral_bound (z : ℂ) (hz : z ≠ 0)
   exact (paperSinglePeriodNeutralOperator T q p hq hp he hqreal hpreal hs hc ho hr).nonzero_eigenvalue_bound
     f z hf hz hAf
 
-include hq hp he hqreal hpreal hs hc ho hr in
-theorem paper_single_period_spectral_gap_five (z : ℂ) (hz : z ≠ 0)
-    (hmem : z ∈ circleSpectrum T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4))) :
-    z.re ≤ -5 := by
-  have hb := paper_single_period_nonzero_spectral_bound T q p hq hp he hqreal hpreal hs hc ho hr z hz hmem
-  linarith
-
 include hq hp he hs hc ho in
 theorem paper_single_period_zero_mem_spectrum :
     (0:ℂ) ∈ circleSpectrum T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) := by

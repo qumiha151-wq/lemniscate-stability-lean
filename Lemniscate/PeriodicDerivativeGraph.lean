@@ -22,27 +22,16 @@ theorem weak_circle_deriv_sub (f u g v : CircleL2 T)
   rw [inner_sub_left, inner_sub_left, hf φ φ₁ hφ, hg φ φ₁ hφ]
   ring
 
-theorem circle_first_derivative_norm_sq_le (f u g : CircleL2 T)
-    (hfu : HasWeakCircleDeriv T f u) (hug : HasWeakCircleDeriv T u g) :
-    ‖u‖^2 ≤ ‖f‖^2+‖g‖^2 := by
-  have hf := circle_fourier_square_summable T f
-  have hg := circle_fourier_square_summable T g
-  have hu := circle_fourier_square_summable T u
-  rw [circle_norm_sq_fourier T u, circle_norm_sq_fourier T f, circle_norm_sq_fourier T g,
-    ← hf.tsum_add hg]
-  apply hu.tsum_le_tsum _ (hf.add hg)
-  intro n
-  rw [fourier_of_weak_circle_deriv T f u hfu,
-    fourier_of_weak_circle_second T f g (weak_circle_second_of_deriv_chain T f u g hfu hug),
-    ← circle_frequency_factor_sq]
-  exact norm_first_multiplier_bound _ _
-
-theorem circle_first_derivative_norm_le (f u g : CircleL2 T)
-    (hfu : HasWeakCircleDeriv T f u) (hug : HasWeakCircleDeriv T u g) :
-    ‖u‖ ≤ ‖f‖+‖g‖ := by
-  have h := circle_first_derivative_norm_sq_le T f u g hfu hug
-  nlinarith [norm_nonneg f, norm_nonneg u, norm_nonneg g,
-    mul_nonneg (norm_nonneg f) (norm_nonneg g)]
+theorem circle_weak_derivative_norm_sq_product (f f₁ f₂ : CircleL2 T)
+    (hf : HasWeakCircleDeriv T f f₁) (hf₁ : HasWeakCircleDeriv T f₁ f₂) :
+    ‖f₁‖^2 ≤ ‖f‖*‖f₂‖ := by
+  have he := circle_weak_integration_by_parts T f f₁ f₁ f₂ hf hf₁
+  calc
+    ‖f₁‖^2 = (inner ℂ f₁ f₁).re := norm_sq_eq_re_inner (𝕜 := ℂ) f₁
+    _ = (-inner ℂ f f₂).re := congrArg Complex.re he
+    _ ≤ ‖-inner ℂ f f₂‖ := Complex.re_le_norm _
+    _ = ‖inner ℂ f f₂‖ := norm_neg _
+    _ ≤ ‖f‖*‖f₂‖ := norm_inner_le_norm _ _
 
 theorem circle_first_derivative_tendsto {ι : Type*} {l : Filter ι}
     (F U G : ι → CircleL2 T) (f u g : CircleL2 T)
@@ -51,10 +40,12 @@ theorem circle_first_derivative_tendsto {ι : Type*} {l : Filter ι}
     (hfu : HasWeakCircleDeriv T f u) (hug : HasWeakCircleDeriv T u g)
     (hF : Tendsto F l (𝓝 f)) (hG : Tendsto G l (𝓝 g)) :
     Tendsto U l (𝓝 u) := by
-  have hbound (i : ι) : ‖U i-u‖ ≤ ‖F i-f‖+‖G i-g‖ :=
-    circle_first_derivative_norm_le T (F i-f) (U i-u) (G i-g)
+  have hbound (i : ι) : ‖U i-u‖ ≤ ‖F i-f‖+‖G i-g‖ := by
+    have h := circle_weak_derivative_norm_sq_product T (F i-f) (U i-u) (G i-g)
       (weak_circle_deriv_sub T _ _ _ _ (hFU i) hfu)
       (weak_circle_deriv_sub T _ _ _ _ (hUG i) hug)
+    nlinarith [norm_nonneg (F i-f), norm_nonneg (U i-u), norm_nonneg (G i-g),
+      mul_nonneg (norm_nonneg (F i-f)) (norm_nonneg (G i-g))]
   have hn : Tendsto (fun i => ‖F i-f‖+‖G i-g‖) l (𝓝 0) := by
     simpa only [sub_self, norm_zero, zero_add] using
       ((hF.sub_const f).norm.add (hG.sub_const g).norm)

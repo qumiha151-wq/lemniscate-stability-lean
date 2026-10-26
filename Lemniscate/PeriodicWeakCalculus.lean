@@ -9,17 +9,6 @@ open scoped ComplexConjugate
 
 variable (T : ℝ) [Fact (0 < T)]
 
-theorem circle_weak_integration_by_parts (f f₁ g g₁ : CircleL2 T)
-    (hf : HasWeakCircleDeriv T f f₁) (hg : HasWeakCircleDeriv T g g₁) :
-    inner ℂ f₁ g = -inner ℂ f g₁ := by
-  have hi := circle_complex_multiplier_duality T f f₁ g ((-1:ℂ) • g₁)
-    (circleFrequencyFactor T) (fourier_of_weak_circle_deriv T f f₁ hf) (by
-      intro n
-      rw [circle_fourierCoeff_smul, fourier_of_weak_circle_deriv T g g₁ hg,
-        circle_frequency_factor_conj]
-      ring)
-  simpa only [inner_smul_right, neg_one_mul] using hi
-
 theorem circle_real_multiply_weak_deriv (h h₁ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁)
     (hreal : ∀ x, conj (h x) = h x) (h₁real : ∀ x, conj (h₁ x) = h₁ x)

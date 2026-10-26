@@ -1,13 +1,14 @@
 # 论文与 Lean 对照表（未完成版）
 
-目标是逐条比对实际命题、量词及假设，不能把有限维或条件性结论误当成原论文主定理。
+当前依据是最新的 `audit/source/revised.tex`；每次修订后重新核对相应命题、量词及假设。
+`original.tex` 仅供比较，不能把有限维或条件性结论误当成修订稿主定理。
 下面的名称指代码中的陈述，是否编译成功以当前源文件哈希对应的 build.json 为准。
 
-| 原稿内容 | Lean 陈述 | 目前的对应边界 |
+| 修订稿内容 | Lean 陈述 | 目前的对应边界 |
 | --- | --- | --- |
 | 第 2 节线性化常数与 Fourier 系数 | `linearization_zero_order`, `linearization_first_order`, `fourier_coefficient_identity` | 证明代数恒等式；变化公式本身尚未形式化 |
 | 第 2 节旋转模 `A(qq_x)=0` | `rotation_kernel` | 对满足 ODE 和第一积分的实际可微函数证明；尚需把这些函数识别为几何 Bernoulli 曲率 |
-| 带权行引理 | `weighted_row_dissipation`, `complex_weighted_row_dissipation` | 任意有限指标集的实或复二次型；余弦扇区的 Fourier 型表示及 H² 延拓见后续条件连接，其他扇区仍待处理 |
+| 带权行引理 | `weighted_row_dissipation`, `complex_weighted_row_dissipation` | 任意有限指标集的实或复二次型；余弦子空间的 Fourier 型表示及 H² 延拓见后续条件连接，其他子空间仍待处理 |
 | 9 项余弦低频比较及其完整行意义 | `CoarseArithmetic.cosine_rows`, `cosine_low_rows_dissipative` | 从有理公式的内核计算，连接到系数公式定义的矩阵全行：前 20 项区间估计加全部加权尾项；矩阵与几何算子的识别仍待完成 |
 | 区间算术 | `CoarseArithmetic.mul_sound`, `absUpper_sound`, `reciprocalPositive_sound`, `sqrt_enclosure_sound` | 已证明实数的四则、正倒数及平方根包络；整数外舍入还需补齐 |
 | 几何级数尾公式 | `tail1_sound`, `tail2_sound`, `tail3_sound`, `hasSum_geometric_moment_four`, `hasSum_geometric_moment_five`, `hasSum_geometric_moment_six` | 以 `HasSum` 证明零至六阶矩和前三阶移位尾和的精确有理式；实际矩阵及约束项的控制还需逐项连接 |
@@ -29,8 +30,8 @@
 | 正弦模的实际微分矩阵 | `circle_sine_jet_deriv`, `circle_sine_matrix_pairing`, `circle_sine_matrix_eq_coefficients` | 从经典导数和实际 L² 内积计算所有条目，核对正弦反射项的正号；系数 Fourier 公式及真实周期关系仍为显式前提 |
 | 正弦首模与尾块的有限能量及极限 | `circle_sine_polynomial_h2_energy_eq_coefficients`, `sine_finite_block_form_tendsto` | 两条交叉项与共轭关系、完整耦合级数及尾块双级数均经证明，有限集合不限于固定截断 |
 | 完整正弦 H² 微分能量 | `circle_sine_block_polynomial_first_tendsto`, `circle_sine_weak_energy_eq_coefficients`, `circle_sine_weak_energy_dissipative` | 函数与前两阶实际弱导数同时近似；因此系数形式等于真实微分能量，并得到 −75 约束耗散 |
-| 原稿旋转正交条件下的正弦算子耗散 | `paper_sine_weak_energy_dissipative`, `paper_h4_operator_sine_dissipative` | 对实际 q q' 正交条件恢复曲率势能及 H⁴ 线性化算子上的 −75 界；具体 Jacobi 身份、其他扇区与全文结论仍待完成 |
-| 完整正弦扇区的表示与耗散 | `circle_even_sine_sector_iff_representation`, `paper_h4_operator_even_sine_sector_dissipative` | 从实际 Fourier 系数构造首模和 ℓ² 尾序列，证明反对称且奇频为零的每个函数都被覆盖；算子估计没有附加的“存在系数表示”假设 |
+| 原稿旋转正交条件下的正弦算子耗散 | `paper_sine_weak_energy_dissipative`, `paper_h4_operator_sine_dissipative` | 对实际 q q' 正交条件恢复曲率势能及 H⁴ 线性化算子上的 −75 界；具体 Jacobi 身份、其他子空间与全文结论仍待完成 |
+| 完整正弦子空间的表示与耗散 | `circle_even_sine_sector_iff_representation`, `paper_h4_operator_even_sine_sector_dissipative` | 从实际 Fourier 系数构造首模和 ℓ² 尾序列，证明反对称且奇频为零的每个函数都被覆盖；算子估计没有附加的“存在系数表示”假设 |
 | 统一指数系数上界及和、差频率比较 | `CoarseArithmetic.theta_nome_coefficient_majorant`, `common_index_coefficient_majorant` | 对全部正频率证明 `H j qb^j` 上界；用离散单调性把和频率项控制为差频率项 |
 | 非对角矩阵条目尾界 | `CoarseArithmetic.positive_frequency_upper_tail`, `cosine_upper_tail_all`, `cosine_lower_tail` | 正频公式的两种符号均受 `C (2j+l)^2 l qb^l` 控制；余弦零模单独处理其 `√2` 因子，并用矩阵对称性得到下三角界 |
 | 完整上三角尾行的绝对收敛及上界 | `CoarseArithmetic.positive_frequency_tail_bound`, `cosine_tail_bound_all` | 从任意正截断点开始求和，以上述条目界和前三阶几何矩得到精确有理上界；包含余弦零行 |
@@ -59,9 +60,9 @@
 | 微分表达式矩阵与认证矩阵的条件连接 | `circle_cosine_matrix_eq_coefficients` | 若实际系数 Fourier 序列满足 `fourierCoefficient r Q j` 公式，反射对称且 `(2π/T)²=r`，则对所有 `j,k`，实际 L² 内积条目等于 `cosineMatrixEntry r Q j k`；这些前提尚须对具体 Jacobi 曲率证明 |
 | 有限余弦函数的实际能量估计 | `circle_polynomial_energy_eq_matrix`, `circle_polynomial_dissipative` | 对任意有限指标集和复系数，实际微分表达式的 L² 配对等于认证矩阵二次型并满足 `−21/4` 界；保留系数和周期识别条件 |
 | 四阶表达式的 H² 能量形式 | `circle_classical_energy_eq`, `circle_multiply_pairing_integral` | 通过周期分部积分，将四阶项化为二阶导数的 L² 配对；系数乘法为真实有界算子，其配对等于 Haar 积分 |
-| H² 近似中的一阶导数收敛 | `circle_first_derivative_norm_sq_le`, `circle_first_derivative_tendsto` | 证明 `‖f'‖² ≤ ‖f‖²+‖f''‖²`，因此函数及二阶弱导数收敛推出一阶弱导数收敛，不把后者作为额外假设 |
+| H² 近似中的一阶导数收敛 | `circle_weak_derivative_norm_sq_product`, `circle_first_derivative_tendsto` | 证明 `‖f'‖² ≤ ‖f‖·‖f''‖`，因此函数及二阶弱导数收敛推出一阶弱导数收敛，不把后者作为额外假设 |
 | 函数、前两阶导数同时近似 | `h2_circle_polynomial_tendsto`, `h2_circle_polynomial_first_tendsto`, `h2_circle_polynomial_second_tendsto` | 对所有 H² 加权余弦序列，有限多项式在三个实际 L² 分量中同时收敛；无需假设四阶导数存在 |
-| 实际弱导数能量与系数形式 | `h2_circle_energy_eq_coefficients`, `circle_cosine_weak_energy_dissipative` | 利用能量连续性和已证明的近似，将实际 H² 形式识别为绝对收敛的系数二次型，并证明任意两次弱导数下的余弦扇区耗散 |
+| 实际弱导数能量与系数形式 | `h2_circle_energy_eq_coefficients`, `circle_cosine_weak_energy_dissipative` | 利用能量连续性和已证明的近似，将实际 H² 形式识别为绝对收敛的系数二次型，并证明任意两次弱导数下的余弦子空间耗散 |
 | 原稿曲率变量下的 H² 耗散 | `circle_h2_energy_profile`, `paper_cosine_weak_energy_dissipative` | 恢复原稿的 `153/4` 与 `45/4` 势能项；定理保留曲率 ODE、第一积分、Fourier 公式、反射对称及周期关系。具体 Jacobi 曲率满足这些条件及全文稳定性定理仍未完成 |
 | 一阶反对称修正的实部消去 | `circle_multiply_l2_symmetric`, `circle_first_order_skew_energy` | 证明实连续系数乘法在 L² 中对称，且经典周期函数满足 `Re ⟨f,h f′+h′f/2⟩=0`；这不是无界算子伴随定义域的定理 |
 | 原稿线性化表达式的实际能量 | `paper_linear_expression_split`, `paper_linear_classical_energy`, `paper_linear_classical_cosine_dissipative` | 核对 `−75qq′D`、`−69/2` 和 `−45q⁴/2` 的系数，用分部积分证明其实部能量等于已有 H² 形式；对属于余弦合成空间的经典函数取得条件耗散，仍待具体曲率识别和算子定义域论证 |
@@ -81,10 +82,10 @@
 | 主项预解算子的紧性 | `circle_multiplier_hasSum_rank_one`, `circle_bounded_multiplier_compact`, `circle_principal_resolvent_compact` | 证明秩一展开按算子范数收敛，再以四次幂级数控制主项符号并单独处理零频；完整变系数算子的连接由下面的扰动构造补齐 |
 | 主项逆的一、二阶弱导数估计 | `circle_principal_first_norm_le`, `circle_principal_second_norm_le`, `circle_principal_first_eq_jet`, `circle_principal_second_eq_jet` | 在 λ=p²、p≥1 时给出 5/(4p)、1/(4p) 的界，并与 H⁴ 输出的真实弱导数对应；这些粗界足以做扰动，不代表论文的全复角域最优幂次界 |
 | 完整变系数算子的紧预解构造 | `circle_lower_resolvent_norm_lt_one`, `circle_full_shift_factorization`, `circle_full_compact_resolvent_exists` | 对任意连续复系数 h,h₁,h₂，在明确正参数构造 L² 上紧有界逆，值域在 H⁴，两侧逆等式均成立；没有预设低阶扰动小，参数由系数范数选择。全谱连接由下一行补齐，Bloch 算子、有限秩修正和扇形性仍须证明 |
-| 任意复参数的 Fredholm 二择一与全谱 | `circle_complex_shift_factorization`, `circle_complex_shift_alternative`, `circle_spectrum_iff_eigenvector` | 用已构造的紧逆分解任意 z−A，再应用 Mathlib 的紧算子 Fredholm 定理；谱按 H⁴ 域上的 L² 有界双侧逆定义，每个谱点均有非零 H⁴ 特征向量。具体谱隙仍依赖尚未完成的各扇区耗散和 Jacobi 参数识别 |
-| 余弦偶频扇区的完备性 | `circle_even_cosine_sector_representation`, `circle_h4_operator_even_cosine_sector_dissipative` | 从任意满足反射对称且奇频为零的 L² 函数重建完整 ℓ² 余弦序列，单独处理常数模归一化；条件 −21/4 界覆盖整个扇区，无须另假设合成表示 |
+| 任意复参数的 Fredholm 二择一与全谱 | `circle_complex_shift_factorization`, `circle_complex_shift_alternative`, `circle_spectrum_iff_eigenvector` | 用已构造的紧逆分解任意 z−A，再应用 Mathlib 的紧算子 Fredholm 定理；谱按 H⁴ 域上的 L² 有界双侧逆定义，每个谱点均有非零 H⁴ 特征向量。具体谱隙仍依赖尚未完成的各子空间耗散和 Jacobi 参数识别 |
+| 余弦偶频子空间的完备性 | `circle_even_cosine_sector_representation`, `circle_h4_operator_even_cosine_sector_dissipative` | 从任意满足反射对称且奇频为零的 L² 函数重建完整 ℓ² 余弦序列，单独处理常数模归一化；条件 −21/4 界覆盖整个子空间，无须另假设合成表示 |
 | 反射与实际 H⁴ 算子的交换 | `circle_reflect_inner`, `circle_reflect_mem_h4`, `circle_h4_operator_reflect_of_even` | 由全部 Fourier 系数构造 L² 等距反射，证明保持 H⁴，各阶导数的符号以及连续系数乘法的反射恒等式；由 h 的反射对称和两次求导推出实际算子交换关系 |
-| 完整偶频空间的正交拆分及耗散 | `circle_h4_operator_reflection_energy_split`, `circle_h4_operator_even_frequencies_dissipative`, `paper_h4_operator_even_frequencies_dissipative` | 任意仅含偶频且与旋转向量正交的 H⁴ 函数分成真实余弦、正弦两部分；交叉内积为零，合并 −21/4 与 −75 得到整个偶频空间的 −21/4 界。仍保留具体曲率 ODE、Fourier 数据及周期关系，不包含奇频/Bloch 扇区或全文定理 |
+| 完整偶频空间的正交拆分及耗散 | `circle_h4_operator_reflection_energy_split`, `circle_h4_operator_even_frequencies_dissipative`, `paper_h4_operator_even_frequencies_dissipative` | 任意仅含偶频且与旋转向量正交的 H⁴ 函数分成真实余弦、正弦两部分；交叉内积为零，合并 −21/4 与 −75 得到整个偶频空间的 −21/4 界。仍保留具体曲率 ODE、Fourier 数据及周期关系，不包含奇频/Bloch 子空间或全文定理 |
 | Bernstein 展开与正性 | `degree_six_conversion`, `degree_four_conversion`, `odd_rows_positive_on_interval`, `OddArithmetic.odd_low_realEval_positive` | 已连接有理列表运算与真正实多项式求值，在整个 `[0,1/2]` 区间得到下界；与实际有限行及遗漏无穷和的对应关系见下 |
 | 奇频正权重与绝对条目上界 | `OddArithmetic.odd_weight_positive`, `odd_weight_high_upper`, `theta_nome_odd_off_diagonal_bound` | 全参数区间上的权重正性、特殊低频权重和高频几何界；端点分支与逐项绝对值分支都被证明控制实际条目 |
 | 奇频低频行证书的精确含义 | `OddArithmetic.odd_row_realEval_formula`, `odd_low_row_with_omitted_bound`, `odd_zero_row_with_omitted_bound` | 将十二个低行的证书连接到实际矩阵的有限部分加有理表达式 R_n；R_n 的实际无穷尾和含义由下面的模块补齐 |
@@ -107,17 +108,19 @@
 | 高频四次多项式方法 | `HighFrequency.cosine_high_bound`, `sine_high_bound`, `odd_high_bound`, `even_high_bound` | 已实例化四个实际多项式，内核从定义计算起点比较并证明所有阈值外实数上的上界；余弦、正弦及奇频实际行的连接已在对应模块完成，变换后偶频 Bloch 行仍待连接 |
 | 旋转模属于真实定义域并被算子消去 | `circle_rotation_mem_h4`, `circle_rotation_h4_kernel` | 从曲率 ODE 显式构造 qq′ 的四阶弱导数，将其作为实际 H⁴ 域元素，再由第一积分证明已定义算子的值等于零；不是仅证明形式微分表达式的点态恒等式 |
 | 实际单周期旋转核与广义核 | `paper_single_period_kernel`, `paper_single_period_no_generalized_kernel`, `paper_single_period_zero_mem_spectrum` | 已实例化实际算子，证明非零旋转向量张成核、没有非平凡二阶广义核链、零为谱点；具体 Jacobi Fourier 与周期数据仍显式保留 |
-| 实际单周期完整谱界 | `paper_single_period_nonzero_spectral_bound`, `paper_single_period_spectral_gap_five` | 结合实际 H⁴ 算子的 Fredholm 选择定理，对每个非零谱点证明实部不超过 −21/4，因而不超过原稿的 −5；尚未完成具体 Jacobi 实例与任意覆盖 Bloch 结论 |
+| 实际单周期完整谱界 | `paper_single_period_nonzero_spectral_bound` | 结合实际 H⁴ 算子的 Fredholm 选择定理，对每个非零谱点证明实部不超过 −21/4；尚未完成具体 Jacobi 实例与任意覆盖 Bloch 结论 |
 | 精确归一化伴随零向量 | `circle_perturbed_inverse_of_kernel`, `NeutralCoerciveOperator.exists_unique_adjoint_neutral_of_inverse`, `paper_single_period_adjoint_vector` | 由 P−A 的真实有界逆构造唯一 ψ，证明其属于 H⁴ 且 A*ψ=0、⟨ψ,e⟩=1；未假定 Galerkin 向量为精确核，具体曲率数据和定量近似仍待完成 |
 | 精确伴随零向量的对称性与实值性 | `paper_single_period_adjoint_vector_sector`, `paper_single_period_adjoint_real_sector`, `circle_real_sine_phase_fourier` | 由唯一性及反射、偶频投影、点态复共轭与实际算子的交换，推出 ψ 为实偶频正弦函数；共同乘 −i 后 Fourier 系数为实反对称序列且归一化内积保持 |
 | 精确中性变换的可逆性与定义域 | `neutral_transform_right_inverse`, `neutral_transform_domain_left_inverse`, `paper_single_period_neutral_decomposition`, `circle_neutral_transform_reflect` | T 和 T⁻¹ 为真实 L² 有界映射，互逆并保持 H⁴；TAT⁻¹ 在该域上等于正交压缩，精确中性行列为零，T 与反射交换；具体 Jacobi 数据仍须实例化 |
 | 实际 Householder 变换 | `circle_unit_rotation_phase_anchor`, `paper_rotation_householder_hypotheses`, `paper_householder_involutive`, `paper_householder_h4_involutive` | 首个反对称 Fourier 向量属于 H⁴ 且为单位向量；共同相位 −i 使旋转与它的配对严格为正，故分母大于 1；实际 U 保持内积、以自身为逆并保持 H⁴、偶频空间和反射对称 |
-| 精确变换后的零中性行列 | `circle_neutral_transform_common_phase`, `paper_exact_centered_neutral_exists` | T 在共同相位下不变；实际 UTA T⁻¹U 的锚列和锚行以及其对称配对均精确为零，未使用近似核。后续直接使用锚正交分解，无须显式构造 V |
+| 精确变换后的旋转零特征值对应的行列 | `circle_neutral_transform_common_phase`, `paper_exact_centered_neutral_exists` | T 在共同相位下不变；实际 UTA T⁻¹U 的固定 Fourier 基向量对应的列和行以及其对称配对均精确为零，未使用近似核。后续直接使用沿固定 Fourier 基向量的正交分解，无须显式构造 V |
 | 实际 Bloch 四次多项式 | `circle_bloch_polynomial`, `circle_bloch_coefficient_reflect`, `circle_bloch_top_coefficient` | 在固定 H⁴ 域上展开 D+i(2π/T)α，证明每阶反射奇偶性和最高阶 −4r²I |
-| 精确中性配对及参数因子消去 | `paper_centered_bloch_anchor_pairing`, `paper_centered_bloch_center_scaled`, `paper_centered_bloch_cross_row_scaled`, `paper_centered_bloch_cross_column_scaled` | 锚配对等于精确 ⟨ψ,Aⱼe⟩；中性块恰有二次因子、正交交叉块恰有一次因子。明确在 α≠0 时除法，未把近似核代入；有限秩范数误差和统一负性仍待证明 |
+| 精确中性配对及参数因子消去 | `paper_centered_bloch_anchor_pairing`, `paper_centered_bloch_center_scaled`, `paper_centered_bloch_cross_row_scaled`, `paper_centered_bloch_cross_column_scaled` | 与固定 Fourier 基向量的内积等于精确 ⟨ψ,Aⱼe⟩；中性块恰有二次因子、正交交叉块恰有一次因子。明确在 α≠0 时除法，未把近似核代入；有限秩范数误差和统一负性仍待证明 |
 | 非零参数 Fourier 矩阵 | `circle_bloch_basis_fourier`, `circle_bloch_odd_symmetric_pairing` | 从真实微分表达式计算任意 α∈ℝ 的矩阵；在实际 Fourier 和周期条件下，奇频对称配对等于已认证的参数矩阵 |
 | 非零参数的完整奇频 H⁴ 耗散 | `circle_odd_polynomial_bloch_energy`, `circle_odd_bloch_energy_eq_coefficients`, `paper_h4_bloch_odd_dissipative` | 对每个 α∈[0,1/2]，经四阶导数同时逼近，将实际奇频算子能量识别为无限系数形式，得到 −‖f‖² 界；覆盖整个奇频 H⁴ 域，仍保留曲率 Fourier 和周期条件 |
-| 伴随残差控制 L² 误差 | `circle_adjoint_residual_energy`, `paper_adjoint_trial_l2_error` | 对任意同归一化的偶频正弦 H⁴ 试探向量，真实 Green 恒等式与 −75 耗散给出 ‖ψ−t‖≤‖A*t‖/75；试探残差认证及 H⁴ 提升尚未完成 |
+| 伴随残差控制 L² 误差 | `circle_adjoint_residual_energy`, `paper_adjoint_trial_l2_error` | 对任意同归一化的偶频正弦 H⁴ 试探向量，真实 Green 恒等式与 −75 耗散给出 ‖ψ−t‖≤‖A*t‖/75；具体试探残差认证尚未完成 |
+| 真实 Gårding 界与全部弱导数控制 | `paper_h4_operator_garding`, `paper_adjoint_all_derivative_bounds` | 第一积分、实系数乘法的平方配对及弱分部积分给出实际能量界；伴随方程再控制四阶导数 |
+| H⁴ 伴随误差界 | `paper_adjoint_trial_h4_error` | 在角坐标导数和范数中得到 ≤177‖A*t‖；修订稿直接采用该强界及更短证明，最终稳定性结论未改变 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |
 | 非线性正常稳定性 | 尚无完整 Lean 定理 | PSZ、最大正则性、平衡流形及平滑论证均有待形式化 |

@@ -20,6 +20,17 @@ theorem circle_classical_integration_by_parts (f f₁ g g₁ : C(AddCircle T, �
       -inner ℂ (circleContinuousL2 T f) (circleContinuousL2 T g₁) :=
   circle_classical_weak_deriv T f f₁ hf g g₁ hg
 
+theorem circle_weak_integration_by_parts (f f₁ g g₁ : CircleL2 T)
+    (hf : HasWeakCircleDeriv T f f₁) (hg : HasWeakCircleDeriv T g g₁) :
+    inner ℂ f₁ g = -inner ℂ f g₁ := by
+  have hi := circle_complex_multiplier_duality T f f₁ g ((-1:ℂ) • g₁)
+    (circleFrequencyFactor T) (fourier_of_weak_circle_deriv T f f₁ hf) (by
+      intro n
+      rw [circle_fourierCoeff_smul, fourier_of_weak_circle_deriv T g g₁ hg,
+        circle_frequency_factor_conj]
+      ring)
+  simpa only [inner_smul_right, neg_one_mul] using hi
+
 theorem circle_deriv_mul (f f₁ g g₁ : C(AddCircle T, ℂ))
     (hf : HasCircleDeriv T f f₁) (hg : HasCircleDeriv T g g₁) :
     HasCircleDeriv T (f*g) (f₁*g+f*g₁) := by

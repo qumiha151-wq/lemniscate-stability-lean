@@ -35,7 +35,7 @@ public = {
 files = [root/'README.md', root/'lakefile.toml', root/'lake-manifest.json',
          root/'lean-toolchain', root/'.gitignore']
 for pattern in ['Lemniscate*.lean', 'Lemniscate/*.lean', '.github/workflows/*.yml',
-                'scripts/*.py', 'audit/*.md', 'audit/source/original.tex',
+                'scripts/*.py', 'audit/*.md', 'audit/source/original.tex', 'audit/source/revised.tex',
                 'audit/source/sections/*.tex', 'audit/recompute/*.py',
                 'audit/recompute/*.json', 'audit/results/Lemniscate*.log']:
     files += list(root.glob(pattern))

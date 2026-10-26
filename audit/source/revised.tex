@@ -1,0 +1,1150 @@
+% Compile with XeLaTeX twice. No shell escape or network access is needed.
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=27mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{booktabs,array,enumitem,microtype,fancyhdr,titling}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\usepackage{bookmark}
+\hypersetup{pdftitle={Local asymptotic stability of Bernoulli lemniscates under the free elastic flow},pdfsubject={Analytic Fourier and Bernstein proof of lemniscate stability}}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathbb T}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\per}{\mathrm{per}}
+\newcommand{\cn}{\operatorname{cn}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\ran}{\operatorname{Ran}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\calF}{\mathcal F}
+\newcommand{\calN}{\mathcal N}
+\newcommand{\calT}{\mathcal T}
+\newcommand{\calR}{\mathcal R}
+\newcommand{\sol}{\mathscr S}
+\newcommand{\gap}{\operatorname{gap}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\aw}{a_{\mathrm w}}
+\newcommand{\avec}{a_\star}
+\newcommand{\KM}{\mathcal K_M}
+\newcommand{\Eone}{\mathbb E_1}
+\newcommand{\Ezero}{\mathbb E_0}
+\setlist{itemsep=3pt,topsep=5pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\droptitle}{-12mm}
+\allowdisplaybreaks[2]
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Stability of Bernoulli lemniscates}
+\fancyhead[R]{\small Free elastic flow}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\title{\bfseries Local asymptotic stability of Bernoulli lemniscates under the free elastic flow}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-15mm}
+\begin{abstract}
+We establish local asymptotic stability of expanding Bernoulli lemniscates under the planar free elastic flow for every fixed positive covering multiplicity, without symmetry assumptions. The initial deviation is measured by a scale-invariant $L^2$ distance between signed-curvature profiles and controls an $H^2$ normal graph. The normalized linearization has an algebraically simple rotational eigenvalue at zero; its remaining spectral gap is bounded below by $5$ for one cover and by $1/(2M^2)$ for $M\ge2$, with sharp order $M^{-2}$ as $M\to\infty$. A uniform Bloch estimate is proved using explicit Fourier row inequalities, exact cancellation of the neutral factors, Bernstein positivity and analytic bounds on all infinite tails. Weighted parabolic regularization and normal stability then give smooth convergence to a fixed rotated profile, together with algebraic convergence rates in the original time. All scalar data needed for the spectral inequalities are included in the paper.
+\end{abstract}
+\noindent\textbf{Keywords.} Free elastic flow; Bernoulli lemniscate; orbital stability; multiple covers; Bloch spectrum; analytic energy estimates.
+\par\smallskip
+\noindent\textbf{Mathematics Subject Classification (2020).} 53E40, 35K35, 35B35, 35P15.
+
+% Included from sections/01_introduction.tex
+\section{Introduction}\label{sec:intro}
+\subsection{Background and the stability problem}
+The study of elastic curves begins with the Euler--Bernoulli bending energy, whose critical points under a length constraint are the classical elasticae. The geometry of closed elasticae and the variational role of their squared curvature were developed systematically by Langer and Singer \cite{LS84}; their subsequent work on curve straightening connected the variational problem with an evolution toward critical curves \cite{LS85}. These two viewpoints lead naturally to a dynamical question: which geometric profiles attract nearby curves under the gradient flow of bending energy?
+
+For a smooth oriented immersion $\gamma:S^1\to\R^2$, let $\dd s=|\gamma_u|\dd u$ denote arclength measure and $\partial_s=|\gamma_u|^{-1}\partial_u$ the arclength derivative. Write $\tau=\partial_s\gamma$ for the unit tangent and $\nu=\operatorname{rot}\tau$ for the unit normal, where $\operatorname{rot}$ is counterclockwise rotation through $\pi/2$. The curvature vector is $\kappa=\partial_s^2\gamma=k\nu$, and the signed curvature is $k=\ip\kappa\nu$. We take $S^1=\R/(2\pi\Z)$, using a $2\pi$-periodic parameter for \eqref{eq:beta}, and write $L[\gamma]=\int_\gamma\dd s$ for the length. For a vector field $v$ along a curve, $v^\perp=\ip v\nu\nu$ denotes its normal projection. The free elastic flow is
+\begin{equation}\label{eq:flow}
+ (\partial_t\gamma)^\perp=-F_\gamma\nu,
+ \qquad F_\gamma=\partial_{s_\gamma}^2k_\gamma+\tfrac12k_\gamma^3.
+\end{equation}
+It is the $L^2(\dd s)$ gradient flow of $E[\gamma]=\frac12\int_\gamma k^2\dd s$, considered up to orientation-preserving reparametrization. Dziuk, Kuwert and Sch\"atzle proved global existence for smooth closed initial curves \cite[Theorem~3.2]{DKS}; we use the geometric existence and uniqueness statement recorded in \cite[Theorem~1.1]{MW}. Our geometric notation follows \cite[Section~2.1 and Theorem~1.2]{MW}: the absolute turning number is $\omega(\gamma)=\left|(2\pi)^{-1}\int_\gamma k\dd s\right|$. For a time-dependent curve, write $L(t)=L[\gamma(\cdot,t)]$ and $\eta(\cdot,t)=\gamma(\cdot,t)/L(t)$ for the length-normalized flow.
+
+Length constraints and length penalization give a well-developed convergence theory. In particular, Mantegazza and Pozzetta proved smooth convergence for the flow of $E+L$ by a \L{}ojasiewicz--Simon inequality \cite[Theorem~1.2]{MP}. The free problem has a different asymptotic structure: $E[\rho\gamma]=\rho^{-1}E[\gamma]$, and the known closed self-similar solutions expand. Studying an attracting shape therefore requires a normalization that turns an expander into an equilibrium.
+
+Miura and Wheeler established stability of expanding circles, including multiple covers, under a scale-invariant smallness condition on the arclength derivative of curvature \cite[Theorem~1.2]{MW}. They also identified stability of the turning-number-zero Bernoulli lemniscate as an open problem \cite[Section~1.2]{MW}. More recently, Andrews and Wheeler constructed infinitely many geometrically distinct closed homothetic expanders and conjectured that the dynamically stable free-elastic profiles are precisely multiply-covered circles and Bernoulli lemniscates \cite[Theorem~1.1 and Conjecture~1.4]{Jellyfish}. Their work is cited here as a preprint. The result below establishes the lemniscate stability part of that conjectural picture; classification of all stable expanders remains a separate question.
+
+The reference profile is
+\begin{equation}\label{eq:beta}
+ \beta_{\rm B}(u)=\frac{(\cos u,\sin u\cos u)}{1+\sin^2u},\qquad u\in S^1,
+\end{equation}
+It has turning number zero and expands homothetically under \eqref{eq:flow} \cite[Section~2.2.3]{MW}. Its signed curvature changes sign, and its self-intersection must be treated on the parameter circle. Multiple covers introduce a further issue: perturbations can vary from one traversal to the next. A proof restricted to the symmetry of the reference curve would not control these additional modes. Our argument treats the entire spectrum on every fixed covering circle.
+
+\subsection{Geometric formulation and nonlinear stability}
+Write $\T_\ell=\R/(\ell\Z)$, for $\ell>0$, and
+\begin{equation}\label{eq:lengths}
+ K=K(1/2)=\int_0^{\pi/2}(1-\tfrac12\sin^2\theta)^{-1/2}\dd\theta,
+ \qquad \ell_0=4K/\sqrt2,\quad \ell_M=M\ell_0.
+\end{equation}
+The arclength-parametrized $M$-fold cover $\beta_M:\T_{\ell_M}\to\R^2$, starting at $u=0$ and following increasing $u$, has curvature
+\begin{equation}\label{eq:reference-curvature}
+ k_{\beta_M}(s)=3\cn(\sqrt2s\mid1/2).
+\end{equation}
+Here $1/2$ is the elliptic parameter. The covering multiplicity $M$ is distinct from the turning number: $\omega(\beta_M)=0$ for every $M$. For $a=L[\gamma]/\ell_M$, parametrize the length-matched curve $\widetilde\gamma=a^{-1}\gamma$ by arclength and set
+\begin{equation}\label{eq:profile}
+ \KM(\gamma)=\ell_M\min_{\sigma\in\T_{\ell_M}}
+ \int_0^{\ell_M}|k_{\widetilde\gamma}(s)-k_{\beta_M}(s+\sigma)|^2\dd s.
+\end{equation}
+This is invariant under translations, rotations, positive dilations and orientation-preserving reparametrizations. Since $\int_0^{\ell_M}k_{\beta_M}\dd s=0$, Cauchy--Schwarz gives
+\begin{equation}\label{eq:turn-lock}
+ 4\pi^2\omega(\gamma)^2\le\KM(\gamma),
+\end{equation}
+The integer $\omega(\gamma)$ is the absolute degree of the tangent map $\tau:S^1\to S^1$. Thus $\KM(\gamma)<4\pi^2$ forces $\omega(\gamma)=0$.
+
+
+The functional \eqref{eq:profile} compares the full signed-curvature profile after matching length and arclength phase. It does not require an a priori bound on derivatives of the curvature deviation. Lemma~\ref{lem:curvature-entry} shows that its square root controls an $H^2$ normal graph after geometric alignment. This is the initial regularity at which we enter the normalized evolution. We write $SO(2)$ for the orientation-preserving orthogonal linear maps of $\R^2$.
+
+\begin{theorem}[Local stability]\label{thm:main}
+Fix an integer $M\ge1$. There is $\varepsilon_M>0$ such that, for every smooth oriented closed immersion $\gamma_0$ with $\KM(\gamma_0)<\varepsilon_M$, the solution of \eqref{eq:flow} satisfies
+\begin{equation}\label{eq:main-convergence}
+ \rho(t)^{-1}\gamma(\chi_t(\cdot),t)\longrightarrow R_\infty\beta_M
+ \quad\text{in }C^\infty(\T_{\ell_M};\R^2),
+\end{equation}
+where $R_\infty\in SO(2)$ is a fixed planar rotation, $\chi_t:\T_{\ell_M}\to S^1$ are orientation-preserving diffeomorphisms, and
+\begin{equation}\label{eq:rho-intro}
+ a=L[\gamma_0]/\ell_M,\qquad \rho(t)=(a^4+30t)^{1/4}.
+\end{equation}
+A fixed translation $p_0\in\R^2$ can be chosen by aligning the initial curve. For every integer $j\ge0$ and every $0<\mu<g_M$, with
+\begin{equation}\label{eq:certified-gaps}
+ g_1=5,\qquad g_M=1/(2M^2)\quad(M\ge2),
+\end{equation}
+there are $\varepsilon_{M,j,\mu},C_{M,j,\mu}>0$ such that $\KM(\gamma_0)<\varepsilon_{M,j,\mu}$ implies
+\begin{equation}\label{eq:main-rate}
+ \left\|\frac{\gamma\circ\chi_t-p_0}{\rho(t)}-R_\infty\beta_M\right\|_{C^j}
+ \le C_{M,j,\mu}\left(1+\frac{30t}{a^4}\right)^{-\mu/30}
+       \sqrt{\KM(\gamma_0)},\qquad t\ge a^4.
+\end{equation}
+No symmetry is imposed, including between successive covering periods.
+\end{theorem}
+
+The theorem gives convergence to one fixed rotation, rather than only closeness to the rotation orbit. Its smallness hypothesis allows arbitrary smooth oscillations whose curvature-profile deviation is sufficiently small; no additional smallness in a higher Sobolev norm is assumed. The qualitative $C^\infty$ conclusion holds on one initial neighborhood, while the quantitative estimate for a prescribed $C^j$ norm and rate may require a smaller neighborhood. All constants and neighborhoods may depend on the fixed covering number $M$.
+
+The translation $p_0$ in \eqref{eq:main-rate} is determined by the initial alignment. It is necessary even for an exact translated expander, since the profile deviation then vanishes. In the qualitative limit $p_0/\rho(t)\to0$, which explains why \eqref{eq:main-convergence} needs no translation. Exponential decay in the normalized time $\widehat t=\frac1{30}\log(1+30t/a^4)$ becomes the algebraic decay in \eqref{eq:main-rate}. In particular, the physical-time exponent reflects both the expanding scale and the stability of the normalized shape.
+
+\subsection{The spectral result and its meaning}
+Let $\mathcal A_M$ denote the normalized normal-graph linearization on $M$ periods, realized in complex $L^2$ with periodic $H^4$ domain. The second main result is that rotation generates its algebraically simple kernel and that
+\begin{equation}\label{eq:gap-order}
+ \gap_M:=-\sup\{\Re\lambda:\lambda\in\sigma(\mathcal A_M)\setminus\{0\}\}
+ \ge g_M,\qquad \gap_M\asymp M^{-2}\quad(M\to\infty).
+\end{equation}
+Here $\sigma(A)$ denotes the spectrum of a closed operator $A$, $\Re\lambda$ its real part, and $a_M\asymp b_M$ means that their ratio lies between two positive constants for all sufficiently large $M$. The spectrum is discrete, and the upper gap bound has an $M$-independent constant. The lower constants $g_M$ are explicit bounds; the assertion $\gap_M\asymp M^{-2}$ specifies the sharp order in $M$, without claiming an exact leading coefficient.
+
+The degenerating gap has a geometric interpretation. A global rotation is neutral, whereas a slowly varying rotational phase along a long covering circle is damped. Bloch decomposition turns such variations into small parameters $\alpha=j/M$. We prove the uniform bound $\Re\sigma(A_\alpha)\le-\alpha^2/2$ for $0<|\alpha|\le1/2$, and the eigenvalue issuing from rotation has the expansion $\lambda(\alpha)=-D_{\rm ph}\alpha^2+O(\alpha^4)$ with $D_{\rm ph}\ge1/2$. Evaluating this branch at $1/M$ gives the matching upper bound in \eqref{eq:gap-order}. Thus stability holds for every fixed cover, while relaxation in normalized time becomes slower as the number of traversals increases.
+
+\subsection{Proof strategy and organization}
+The normalized linearization is a fourth-order, non-self-adjoint operator. Its Jacobi elliptic coefficients have exponentially decaying Fourier expansions, which allow us to estimate the full operator by explicit row inequalities. Section~\ref{sec:geometry} derives the normalization, geometric symmetry modes and exact graph equation. Section~\ref{app:single} proves dissipation transverse to rotation and establishes the simplicity of the neutral eigenvalue.
+
+Section~\ref{app:bloch} treats all Bloch parameters. The essential step is to remove the rotational factors exactly before approximating the adjoint vector. This keeps the error estimate uniform as $\alpha\to0$. Polynomial row weights and Bernstein positivity then control the whole parameter interval, while geometric-series estimates control every omitted Fourier mode. Appendix~\ref{app:arithmetic} supplies all scalar enclosures and finite rational expressions used in these estimates. The proof assumes neither a numerically computed spectrum nor a simulation of the flow.
+
+The nonlinear argument uses established parabolic results in their published form. In Section~\ref{sec:nonlinear}, we verify the hypotheses of the weighted local theorem of Pr\"uss, Simonett and Wilke \cite[Theorem~1.2]{PSW} to obtain positive-time smoothing from $H^2$. We then apply the normal-stability theorem of Pr\"uss, Simonett and Zacher \cite[Theorem~2.1]{PSZ} at $H^3$ regularity. Section~\ref{sec:geometric} converts curvature-profile closeness into a normal graph and returns to the original geometric flow. These abstract theorems, the global existence theorem and the standard elliptic-function identities are invoked with their hypotheses checked, rather than reproved.
+
+
+% Included from sections/02_geometry.tex
+\section{Normalization and the graph equation}\label{sec:geometry}
+We first choose the normalization so that the reference expander becomes stationary. For a profile satisfying $F_\beta+c\ip\beta{\nu_\beta}=0$, with $c>0$, put $\rho=(a^4+4ct)^{1/4}$. The change
+\begin{equation}\label{eq:normalization}
+ \widehat t=(4c)^{-1}\log(1+4ct/a^4),\qquad X=\rho^{-1}\gamma
+\end{equation}
+gives, since $\rho'=c\rho^{-3}$ and $\widehat t'=\rho^{-4}$,
+\begin{equation}\label{eq:normalized-flow}
+ (\partial_{\widehat t} X)^\perp=-\big(F_X+c\ip X{\nu_X}\big)\nu_X.
+\end{equation}
+For \eqref{eq:beta}, $k^3=-27h$ and $k_{ss}=6h$ by \cite[Section~2.2.3]{MW}, where $h=\ip\beta\nu$; hence $c=15/2$. Writing $b=\ip\beta\tau$, the identities $h_s=-kb$, $k(0)=3$, $k_s(0)=0$ give
+\begin{equation}\label{eq:bernoulli-identities}
+ h=-k^3/27,\quad b=kk_s/9,\quad
+ k_{ss}=-2k^3/9,\quad k_s^2=9-k^4/9.
+\end{equation}
+Set $x=\sqrt2s$ and $q=k/3$. Uniqueness for $q_{xx}=-q^3$, $q(0)=1$, $q_x(0)=0$ identifies $q=\cn(x\mid1/2)$ and proves \eqref{eq:reference-curvature}. To check the length, direct differentiation of \eqref{eq:beta} gives $|\partial_u\beta_{\rm B}|=(1+\sin^2u)^{-1/2}$. On a quarter arc the substitution $v=\tan u$, followed by $v=2^{-1/2}\tan\theta$, gives $\int_0^{\pi/2}(1+\sin^2u)^{-1/2}\dd u=K(1/2)/\sqrt2$, hence \eqref{eq:lengths}. In particular,
+\begin{equation}\label{eq:q-identities}
+ q_{xx}=-q^3,\qquad q_x^2=(1-q^4)/2,\qquad
+ h=-q^3,\qquad b=\sqrt2qq_x.
+\end{equation}
+
+Write $D_s=\partial_s$, and similarly for $x,\zeta$. Here and below a prime on a time-dependent scalar denotes its physical-time derivative. Under a normal variation $\gamma_\epsilon=\beta+\epsilon f\nu$, write $\delta=\partial_\epsilon|_{\epsilon=0}$. The identities
+\[
+ \delta k=f_{ss}+k^2f,\qquad \delta D_s=kfD_s,\qquad \delta h=f-bf_s
+\]
+give $D\calF(0)f=-f_{ssss}-\tfrac52k^2f_{ss}-(5kk_s-cb)f_s-(3k_s^2+4kk_{ss}+\tfrac32k^4+c)f$. Substituting \eqref{eq:bernoulli-identities} and $D_s=\sqrt2D_x$ yields the single-period linearization, its $L^2$ adjoint and symmetric part:
+\begin{align}
+ A_0&=-4D_x^4-45q^2D_x^2-75qq_xD_x-\tfrac{69}{2}-\tfrac{45}{2}q^4,
+ \label{eq:A0}\\
+ A_0^*&=-4D_x^4-45q^2D_x^2-105qq_xD_x-42,\label{eq:Astar}\\
+ S_0=\Sym A_0&=-4D_x^4-45D_x(q^2D_x)-\tfrac{153}{4}-\tfrac{45}{4}q^4.
+ \label{eq:S0}
+\end{align}
+Here $\Sym A_0=(A_0+A_0^*)/2$; the same expression on $M$ periods is $\mathcal A_M$. Differentiating under translations by $v\in\R^2$, dilations and rotations gives
+\begin{equation}\label{eq:modes}
+ A_0\ip v\nu=-c\ip v\nu,\qquad A_0h=-4ch,\qquad A_0b=0.
+\end{equation}
+For an integer $m\ge0$, $H^m_\per(\T_\ell)$ is the Sobolev space of periodic functions with square-integrable weak derivatives through order $m$, with norm squared $\sum_{j=0}^m\norm{D_s^jf}_2^2$; for $m\ge1$ the endpoint traces through order $m-1$ agree. Omitted subscripts $\per$ are understood. Fractional orders use the equivalent Fourier norm. The norm $\norm{f}_{C^j}=\sum_{i=0}^j\sup_s|\partial_s^if|$ is used for functions or vector fields. Spectral inner products are linear in the first argument, with conjugation in the second; unlabelled norms are $L^2$ norms, or Euclidean/$\ell^2$ norms for coefficient vectors. An asterisk denotes the Hilbert adjoint, $I$ the identity, $\ker$ the kernel, $\operatorname{ran}$ the range, and $\mathcal L(X,Y)$ the space of bounded linear maps from $X$ to $Y$. Generic constants may depend on the fixed reference curve and displayed indices; constants assigned an explicit numerical value are used only in their stated scope.
+The quadratic form of $S_0$, extended to $H^2_\per$, is
+\begin{equation}\label{eq:energy}
+ \Re\ip{A_0f}f=-4\norm{f_{xx}}_2^2+45\int q^2|f_x|^2
+       -\int(153/4+45q^4/4)|f|^2.
+\end{equation}
+
+The modes in \eqref{eq:modes} distinguish the geometric symmetries after normalization: translations and dilations decay, while rotations remain neutral. The nonlinear equation must retain this distinction. Use the arclength of $\beta=\beta_M$ and write $Z_f=\beta+f\nu$. Put $a_f=1-kf$, $v=f_s$, $g_f=(a_f^2+v^2)^{1/2}$. Denote the signed curvature of $Z_f$ by $k_f$ and its curvature vector by $\kappa_f=k_f\nu_f$. Direct differentiation gives
+\begin{equation}\label{eq:graph-geometry}
+ \begin{aligned}
+ \nu_f&=(-v\tau+a_f\nu)/g_f,&D_f&=g_f^{-1}D_s,\\
+ k_f&=(ka_f^2+2kv^2+a_ff_{ss}+k_sfv)/g_f^3,&
+ h_f&=(a_f(h+f)-bv)/g_f.
+ \end{aligned}
+\end{equation}
+Since $\ip{\partial_{\widehat t} Z_f}{\nu_f}=(a_f/g_f)f_{\widehat t}$, the exact graph equation is
+\begin{equation}\label{eq:graph-flow}
+ f_{\widehat t}=\calF(f):=-\frac{g_f}{a_f}
+       (D_f^2k_f+\tfrac12k_f^3+ch_f).
+\end{equation}
+The principal term is $-g_f^{-4}f_{ssss}$, $\calF(0)=0$ and $D\calF(0)=\mathcal A_M$. The embedding $H^2\hookrightarrow C^1$ ensures $a_f,g_f>0$ for small $H^2$ norm, so the graph equation is uniformly parabolic in this neighborhood. A graph is defined over the immersed parameter circle; at a self-intersection the two parameter branches remain distinct.
+
+The coordinates $s$, $x=\sqrt2s$ and $\zeta=\pi x/(2K)=\sqrt r\,x$, $r=(\pi/(2K))^2$, have periods $\ell_M$, $4KM$ and $2\pi M$, respectively. Spectral operators have complex $H^4_\per$ domains and forms continuous on $H^2_\per$; nonlinear graphs are real. The Fourier resolvent of $-4r^2D_\zeta^4$ maps $L^2$ to $H^j$, for $0\le j\le4$, with norm $O(|\lambda|^{j/4-1})$ as $|\lambda|\to\infty$ in any closed angular region avoiding its negative spectral ray. Lower-order perturbations therefore preserve sectoriality after a shift, by a resolvent Neumann series. This applies also to Bloch operators and bounded finite-rank corrections. Compactness of $H^4\hookrightarrow L^2$ gives compact resolvent.
+
+
+% Included from sections/03_single_period.tex
+\section{Single-period dissipation and the rotational kernel}\label{app:single}\label{sec:spectrum}
+Use $\zeta=\pi x/(2K)$ and normalized measure $\dd\zeta/(2\pi)$. Thus $D_x=\sqrt rD_\zeta$. On this circle, $\ip f g=(2\pi)^{-1}\int_0^{2\pi}f\overline g\dd\zeta$ and $\widehat f(n)=(2\pi)^{-1}\int_0^{2\pi}f e^{-\ii n\zeta}\dd\zeta$ for $n\in\Z$, where $\ii^2=-1$. All quadratic-form integrals and norms from Section~\ref{sec:geometry} are read with this same normalized measure when used here. Matrix indices refer to this orthonormal Fourier basis; $\delta_{nm}$ is the Kronecker delta. In Fourier formulas, $q$ means the pullback $q(\zeta/\sqrt r)$; a subscript $x$ still means differentiation before this change of variables. Let $e$ be a unit multiple of $qq_x$, and abbreviate $A=A_0$ and $S=S_0$ in this section. The identities in Section~\ref{sec:geometry} give $Ae=0$.
+\begin{lemma}[Explicit Fourier dissipation]\label{lem:coercivity}
+For $f\in H^2_\per$ with $\ip f e=0$,
+\begin{equation}\label{eq:coercivity}
+\ip{Sf}f\le-\tfrac{21}{4}\norm f_2^2.
+\end{equation}
+In the even-frequency sine subspace, the bound improves to $-75\norm f_2^2$.
+\end{lemma}
+
+
+The dissipation estimate will serve two purposes: it isolates the neutral rotation and controls the error in an explicit adjoint approximation. We prove it using the Fourier coefficients of the reference curvature, separating the few low modes from a uniform estimate for all high modes.
+
+\subsection{Elliptic-function coefficients and scalar bounds}
+Put $Q=e^{-\pi}$. The standard theta expansion gives
+\begin{equation}\label{eq:fourier}
+ q^2=h_0+2\sum_{j\ge1}h_{2j}\cos(2j\zeta),\quad
+ h_{2j}=\frac{8rjQ^j}{1-Q^{2j}},\quad h_0=1-2\sum_{j\ge1}h_{2j},\quad
+ r=\left(1+2\sum_{j\ge1}Q^{j^2}\right)^{-4}.
+\end{equation}
+We set $h_{-n}=h_n$ and $h_n=0$ for odd $n$. These are the Fourier coefficients of $q^2$, not of the geometric support function. Formula \eqref{eq:fourier} follows by differentiating the logarithmic theta expansion for the Jacobi zeta function; see \cite{DLMF}. The preceding differential identity implies
+\begin{equation}\label{eq:q4}
+ \widehat{q^4}(0)=\tfrac13,\qquad
+ \widehat{q^4}(n)=\tfrac13rn^2h_n\quad(n\ne0).
+\end{equation}
+
+Appendix~\ref{app:arithmetic} gives the rational bounds
+\begin{equation}\label{eq:endpoints}
+ Q_-:=\frac{4321}{100000}<Q<\frac{2161}{50000}=:Q_+,
+ \qquad r_-:=\frac{7177}{10000}<r<\frac{3589}{5000}=:r_+.
+\end{equation}
+
+
+For integers $p,L\ge0$ and $0\le z<1$, set
+\begin{equation}\label{eq:moments}
+ \mu_p(z)=(z\partial_z)^p\frac1{1-z},\qquad
+ T_p(z,L)=z^L\sum_{k=0}^p\binom pk L^{p-k}\mu_k(z).
+\end{equation}
+Expansion of $(L+k)^p$ gives $T_p(z,L)=\sum_{j\ge L}j^pz^j$.
+
+For $j\ge1$ define
+\begin{equation}\label{eq:L-U}
+ L_j=\frac{8r_-jQ_-^j}{1-Q_-^{2j}},\quad
+ U_j=\frac{8r_+jQ_+^j}{1-Q_+^{2j}},\quad
+ L_0=1-2\sum_{j=1}^4U_j-\frac{16r_+T_1(Q_+,5)}{1-Q_+^2},\quad
+ U_0=1-2\sum_{j=1}^4L_j.
+\end{equation}
+Then $L_j\le h_{2j}\le U_j$ for $j\ge0$.
+
+\subsection{Dissipation in the even-frequency cosine subspace}
+Use the orthonormal basis $1$, $\sqrt2\cos(n\zeta)$, $\sqrt2\sin(n\zeta)$. Reflection and frequency parity give four invariant real subspaces. The independent odd-index calculation in Section~\ref{subsec:odd-bloch}, at $\alpha=0$, bounds both odd-frequency subspaces by $-6I$. It remains to treat the two even-frequency subspaces. For $n,m>0$, let $\varepsilon=1$ for the cosine subspace and $\varepsilon=-1$ for the sine subspace. The entries of \eqref{eq:S0} simplify to
+\begin{align}
+ S^\varepsilon_{nm}={}&(-4r^2n^4-42)\delta_{nm}
+ +r\left(45nm-\tfrac{15}{4}(n-m)^2\right)h_{n-m}\nonumber\\
+ &-\varepsilon r\left(45nm+\tfrac{15}{4}(n+m)^2\right)h_{n+m}.\label{eq:entries}
+\end{align}
+Write $S^c=S^{+1}$ for the cosine matrix and $S^s=S^{-1}$ for the sine matrix. The exceptional cosine entries are $S_{00}=-42$ and
+\begin{equation}\label{eq:zero}
+ S_{0m}=S_{m0}=-\tfrac{15}{4}\sqrt2\,r m^2h_m\quad(m>0).
+\end{equation}
+
+
+\begin{lemma}[Weighted row inequality]\label{lem:row}
+Suppose $S$ is real symmetric, $d_j>0$, and $\gamma_{\rm row}>0$ is a real constant. If
+\[
+ S_{jj}+\sum_{k\ne j}|S_{jk}|\frac{d_k}{d_j}\le-\gamma_{\rm row}
+\]
+for every row, its quadratic form is at most $-\gamma_{\rm row}\norm f_2^2$ on Fourier polynomials.
+\end{lemma}
+\begin{proof}
+Apply $2|v_jv_k|\le(d_k/d_j)|v_j|^2+(d_j/d_k)|v_k|^2$ to every off-diagonal pair. No boundedness assumption on the diagonal operator with entries $d_j$ is required.
+\end{proof}
+
+Use exact rational segment arithmetic as specified in Appendix~\ref{app:arithmetic}. In \eqref{eq:entries}--\eqref{eq:zero}, replace $r,h_{2j},\sqrt2$ by the enclosing rational segments
+\[
+ [r_-,r_+],\quad[L_j,U_j],\quad[707/500,283/200],
+\]
+respectively; use $[r_-^2,r_+^2]$ for $r^2$. Denote the resulting entry segment by $[s^-_{nm},s^+_{nm}]$, and put
+\[
+ d^+_n=s^+_{nn},\qquad b_{nm}=\max\{|s^-_{nm}|,|s^+_{nm}|\}\quad(n\ne m).
+\]
+
+For the cosine-even subspace take $n_j=2j$ and
+\[
+ a=1/10,\qquad d_0=1/9,\quad d_1=1,\quad d_2=11/50,\quad
+ d_j=(29/1000)a^{j-3}\quad(j\ge3).
+\]
+Define
+\begin{equation}\label{eq:constants}
+ \bar Q=\frac{11}{250},\qquad H=\frac{8r_+}{1-\bar Q^2},\qquad C=105r_+H.
+\end{equation}
+Since $h_{2l}\le Hl\bar Q^l$, for $l=|j-k|\ge1$ one has
+\begin{equation}\label{eq:entry-majorant}
+ |S_{n_jn_k}|\le
+ \begin{cases}C n_j^2l\bar Q^l,&k<j,\\
+ C(n_j+l)^2l\bar Q^l,&k>j.
+ \end{cases}
+\end{equation}
+Indeed, for positive $n,m$ the two terms in \eqref{eq:entries} are bounded in sum by
+\[
+ 45r_+Hl\bar Q^l\left(2nm+\frac{n^2+m^2}{6}\right).
+\]
+Here $(j+k)\bar Q^{j+k}\le l\bar Q^l$. If $m\le n$, the bracket is at most $7n^2/3$. If $m=n+2l$, it equals $7(n+l)^2/3-5l^2/3$. Formula \eqref{eq:zero} obeys the same bound, since $15\sqrt2<105$.
+
+For $0\le j\le8$ form the rational expression
+\begin{align}
+ R_j={}&d^+_{n_j}+\sum_{\substack{0\le k<20\\k\ne j}}b_{n_jn_k}\frac{d_k}{d_j}
+ +\frac{Cd_3a^{j-3}}{d_j}\Big[
+ n_j^2T_1(\bar Qa,20-j)\nonumber\\
+ &\hspace{47mm}+2n_jT_2(\bar Qa,20-j)+T_3(\bar Qa,20-j)\Big].\label{eq:finite-rational-row}
+\end{align}
+The last term bounds all $k\ge20$ by \eqref{eq:entry-majorant}. Clearing positive denominators in these explicit rational expressions gives, for every $0\le j\le8$,
+\begin{equation}\label{eq:single-uniform}
+ R_j<-\tfrac{21}{4}.
+\end{equation}
+
+For all remaining rows, note that $d_k\le d_3a^{k-3}$ also for $k<3$. Hence \eqref{eq:entry-majorant}, $0\le q^2\le1$, and $q^4\ge0$ give the common row bound
+\begin{align}
+ P_a(n)={}&-4r_-^2n^4+45r_+n^2\nonumber\\
+ &+C\left[n^2\{\mu_1(\bar Q/a)+\mu_1(\bar Qa)\}
+ +2n\mu_2(\bar Qa)+\mu_3(\bar Qa)\right].\label{eq:tail-P}
+\end{align}
+The elementary rational comparisons
+\[
+ P_{1/10}(18)<-8000,\quad P_{1/10}'(18)<-24925,\quad
+ P_{1/10}''(18)<-6725
+\]
+follow from \eqref{eq:moments}. Since $P_a'''(n)=-96r_-^2n<0$ for $n>0$, every row $j\ge9$ is covered. Lemma~\ref{lem:row} proves $S\le-\tfrac{21}{4}I$ in the cosine-even subspace.
+
+\subsection{The constrained sine-even subspace}
+The coefficients of the rotational vector in $\sqrt2\sin(2j\zeta)$ are proportional to $j h_{2j}$. Write $f=u\sqrt2\sin(2\zeta)+v$, with $v$ supported on frequencies $4,6,\ldots$. Orthogonality to $e$ implies
+\begin{equation}\label{eq:rho}
+ |u|\le\rho\norm v_2,\qquad
+ \rho^2=\sum_{j\ge2}\left(\frac{j h_{2j}}{h_2}\right)^2
+ \le\frac{\mu_4(Q_+^2)-Q_+^2}{Q_+^2}<\left(\frac{87}{500}\right)^2.
+\end{equation}
+Here $(1-Q^2)/(1-Q^{2j})\le1$.
+
+Let $B=(S^s_{2,4},S^s_{2,6},\ldots)$ and let $T$ be the block on $v$. The diagonal formula immediately gives $S^s_{2,2}<-12$. For the coupling, only two entries need to be kept separately:
+\begin{equation}\label{eq:B}
+ \norm B^2\le b_{2,4}^2+b_{2,6}^2+
+ C^2\sum_{k=0}^4\binom4k 2^{4-k}T_{k+2}(\bar Q^2,3)
+ <3916<63^2.
+\end{equation}
+The remainder is $C^2\sum_{l\ge3}l^2(l+2)^4\bar Q^{2l}$ by \eqref{eq:entry-majorant}.
+
+For $n=4,6$ the first two rows of $T$ are bounded by the explicit rational expressions
+\begin{equation}\label{eq:T-low}
+ d_n^++\sum_{\substack{2\le k<8\\2k\ne n}}b_{n,2k}
+ +C\left[n^2T_1(\bar Q,8-n/2)+2nT_2(\bar Q,8-n/2)
+ +T_3(\bar Q,8-n/2)\right],
+\end{equation}
+which are respectively less than $-120$ and $-1560$. For $n\ge8$, use \eqref{eq:tail-P} with unit weights: $P_1(8)<-3308$, $P_1'(8)<0$, and $P_1''(8)<0$. The third-derivative argument again applies. Thus the unit-weight row estimate proves
+\[
+ T\le-100I.
+\]
+It follows from \eqref{eq:rho} and \eqref{eq:B} that
+\begin{align*}
+ \ip{Sf}f
+ &\le-100\norm v^2+2\cdot63\cdot\frac{87}{500}\norm v^2\\
+ &=-\frac{19519}{250}\norm v^2
+ \le-\frac{19519/250}{1+(87/500)^2}\norm f^2
+ \le-75\norm f^2.
+\end{align*}
+The last comparison is the integer inequality $19519000>19317675$ after multiplication by $250000$. This proves the two form estimates of Lemma~\ref{lem:coercivity}. Fourier polynomials in the constrained subspace can be corrected in frequency $2$ to retain orthogonality, and converge in $H^2$. The quadratic form is continuous in $H^2$, so the result extends by density. Real and imaginary parts give the complex-valued statement.
+
+\subsection{Simplicity of rotation and the single-period spectrum}
+Orthogonal projection onto $e^\perp$ is sufficient for the following spectral argument, although $A_0$ itself need not preserve that orthogonal complement. This observation avoids identifying the adjoint eigenvector before proving simplicity.
+\begin{proposition}\label{prop:single-spectrum}
+Zero is an algebraically simple eigenvalue of $A_0$, and every other spectral value has real part at most $-21/4$.
+\end{proposition}
+\begin{proof}
+Write $f=ze+w$ with $w\perp e$. If $Af\in\operatorname{span}\{e\}$, coercivity applied to $\Re\ip{Af}w=\Re\ip{Aw}w$ forces $w=0$. Thus $\ker A=\operatorname{span}\{e\}$ and $\ker A^2=\ker A$. Moreover $A:H^4_\per\to L^2$ is Fredholm of index zero, being a relatively compact perturbation of $-4D_x^4-I$. Hence there is a unique $\psi\in\ker A^*$ with $\ip\psi e=1$: otherwise $e\in\operatorname{ran}A$, contradicting the preceding implication. For $Af=\lambda f$, $\lambda\ne0$, we have $w\ne0$ and
+\[
+ \Re\lambda\norm w^2=\Re\ip{Aw}w\le-\tfrac{21}{4}\norm w^2.
+\]
+Compact resolvent completes the spectral assertion. Finally \eqref{eq:energy} and interpolation give
+\begin{equation}\label{eq:interpolation}
+ \Re\ip{Af}f\le-2\norm{D_x^2f}^2+\frac{1719}{8}\norm f^2.
+\end{equation}
+\end{proof}
+
+
+% Included from sections/04_bloch.tex
+\section{A uniform Bloch estimate and arbitrary covers}\label{app:bloch}
+On $2\pi$-periodic functions with fixed domain $H^4_\per$, define
+\begin{equation}\label{eq:bloch-definition}
+ A_\alpha=e^{-\ii\alpha\zeta}A_0e^{\ii\alpha\zeta},\qquad |\alpha|\le1/2.
+\end{equation}
+This notation means replacement of $D_\zeta$ by $D_\zeta+\ii\alpha$ in the differential expression. The multiplier $e^{\ii\alpha\zeta}$ itself need not be periodic.
+\begin{proposition}[Uniform Bloch bound]\label{prop:bloch}
+For $0<|\alpha|\le1/2$, $\sigma(A_\alpha)\subset\{\Re\lambda\le-\alpha^2/2\}$.
+\end{proposition}
+The proposition controls perturbations that need not repeat on each traversal of a multiple cover. The single-period estimate alone would leave these modes untreated. We first estimate the odd Fourier indices directly. In the even subspace, we separate rotation from the stable directions and prove a quadratic bound in the Bloch parameter using polynomial row weights and Bernstein positivity. All estimates include the infinite Fourier tails.
+
+\subsection{Fourier polynomials and Bernstein coefficients}
+By \eqref{eq:q4}, for $k=n+\alpha$ and $l=m+\alpha$,
+\begin{equation}\label{eq:bloch-simple}
+ (A_\alpha)_{nm}=\tfrac{15}{2}r k(7l-k)h_{n-m}
+ -(4r^2k^4+42)\delta_{nm}.
+\end{equation}
+This includes the diagonal entries. Thus $A_\alpha=\sum_{j=0}^4\alpha^jA_j$, where
+\begin{equation}\label{eq:Aj}
+\begin{aligned}
+ (A_0)_{nm}&=\tfrac{15}{2}rn(7m-n)h_{n-m}-(4r^2n^4+42)\delta_{nm},\\
+ (A_1)_{nm}&=r(\tfrac{75}{2}n+\tfrac{105}{2}m)h_{n-m}-16r^2m^3\delta_{nm},\\
+ (A_2)_{nm}&=45rh_{n-m}-24r^2m^2\delta_{nm},\\
+ (A_3)_{nm}&=-16r^2m\delta_{nm},\qquad A_4=-4r^2I.
+\end{aligned}
+\end{equation}
+Even and odd Fourier indices form invariant subspaces. They are different from reflection parity. Only the even-index subspace contains $e$.
+
+For a polynomial $p(\alpha)=\sum_{j=0}^dp_j\alpha^j$, define its degree-$d$ Bernstein coefficients on $[0,1/2]$ by
+\begin{equation}\label{eq:Bernstein}
+ [p]_{d,k}=\sum_{j=0}^k\frac{\binom{k}{j}}{2^j\binom{d}{j}}p_j,
+ \quad
+ p(\alpha)=\sum_{k=0}^d[p]_{d,k}\binom dk(2\alpha)^k(1-2\alpha)^{d-k}.
+\end{equation}
+The nonnegative basis functions sum to one, so positive coefficients imply positivity on the whole interval. Also
+\begin{equation}\label{eq:Bernstein-product}
+ [pq]_{d+e,k}=\sum_{i+j=k}\frac{\binom di\binom ej}{\binom{d+e}k}
+ [p]_{d,i}[q]_{e,j}.
+\end{equation}
+In particular, replacing the Bernstein coefficients of a real polynomial by their absolute values gives a polynomial majorant for its absolute value.
+
+\subsection{The odd-index subspace}\label{subsec:odd-bloch}
+Set $a=1/10$, $E_*=45r_+H$, $z=\bar Q/a$ and $t=\bar Qa$, with the constants of \eqref{eq:constants}. Write $S_\alpha=\Sym A_\alpha$. Its entries are
+\begin{align}
+ (S_\alpha)_{nn}&=-4r^2(n+\alpha)^4+45rh_0(n+\alpha)^2-42,\label{eq:odd-diag}\\
+ (S_\alpha)_{nm}&=rh_{n-m}P_{nm}(\alpha),\quad
+ P_{nm}=45(n+\alpha)(m+\alpha)-\tfrac{15}{4}(n-m)^2\quad(n\ne m).
+ \label{eq:odd-off}
+\end{align}
+Choose positive quadratic weights, with $0\le\alpha\le1/2$:
+\begin{equation}\label{eq:odd-weights}
+\renewcommand{\arraystretch}{1.6}
+\begin{array}{c|c@{\qquad}c|c}
+ n&d_n(\alpha)&n&d_n(\alpha)\\\hline
+ 1&1&-1&1-\frac85\alpha+\frac45\alpha^2\\
+ 3&\frac12-\frac12\alpha+\frac3{25}\alpha^2&-3&\frac12+\frac3{10}\alpha^2\\
+ 5&\frac2{25}-\frac3{25}\alpha+\frac2{25}\alpha^2&-5&\frac2{25}+\frac1{20}\alpha^2
+\end{array}
+\end{equation}
+For odd $|n|\ge7$, set $d_n=(3/25)d_{5\operatorname{sgn}n}a^{(|n|-7)/2}$, where $\operatorname{sgn}n$ is $1$ for $n>0$ and $-1$ for $n<0$. Their degree-two Bernstein coefficients are all positive.
+
+For odd $n\ne m$, define $V_{nm}$ to be $P_{nm}$ if both endpoint values of $P_{nm}$ are nonnegative, and $-P_{nm}$ if both are nonpositive. In the remaining case, if $P_{nm}=p_0+p_1\alpha+p_2\alpha^2$, set $V_{nm}=|p_0|+|p_1|\alpha+|p_2|\alpha^2$. These choices satisfy $|P_{nm}|\le V_{nm}$ throughout the interval: the derivative $45(n+m+2\alpha)$ has constant sign in its interior, since $n+m$ is even.
+
+For $n\in\{-11,-9,\ldots,11\}$, put $v_n=|n|+1/2$ and
+\begin{align}
+ R_n^{\rm o}={}&\frac{3E_*}{250}\sum_{\epsilon=\pm1}a^{(\epsilon n-7)/2}
+ \left[v_n^2T_1(t,L_\epsilon)+2v_nT_2(t,L_\epsilon)
+ +\tfrac13T_3(t,L_\epsilon)\right],\label{eq:odd-row-tail}\\
+ &L_\epsilon=(27-\epsilon n)/2.\nonumber
+\end{align}
+This bounds all columns with $|m|\ge27$. Indeed, $d_m\le(3/250)a^{(|m|-7)/2}$ and, with $j=|m-n|/2$,
+\begin{equation}\label{eq:complex-off-majorant}
+ |(S_\alpha)_{nm}|\le E_*j\bar Q^j
+ (v_n^2+2v_nj+j^2/3).
+\end{equation}
+Define the rational polynomial
+\begin{align}
+ F_n(\alpha)={}&\left[4r_-^2(n+\alpha)^4-45r_+U_0(n+\alpha)^2+41\right]d_n(\alpha)
+ \nonumber\\
+ &-r_+\sum_{\substack{|m|\le25,\ m\ \mathrm{odd}\\m\ne n}}
+ U_{|n-m|/2}V_{nm}(\alpha)d_m(\alpha)-R_n^{\rm o}.
+ \label{eq:odd-F}
+\end{align}
+Using the rational endpoints $U_j$ from \eqref{eq:L-U}, direct substitution in \eqref{eq:Bernstein} gives the uniform finite inequality
+\begin{equation}\label{eq:odd-uniform}
+ \min_{\substack{n=-11,-9,\ldots,11\\0\le k\le6}}[F_n]_{6,k}>\tfrac12,\qquad
+ \min_{n=-11,-9,\ldots,11}\frac{F_n(0)}{d_n(0)}>5.
+\end{equation}
+All denominators are positive, so this is a finite rational comparison. Thus these rows are below $-1$, and below $-6$ at $\alpha=0$.
+
+For the remaining rows put $|n|=2j+1\ge13$ and $v=|n+\alpha|\ge25/2$. Introduce the common tail functions
+\begin{equation}\label{eq:common-tail-moments}
+\begin{aligned}
+ \mathfrak S(v)&=v^2\{\mu_1(z)+\mu_1(t)\}+2v\mu_2(t)+\tfrac13\mu_3(t),\\
+ \mathfrak C&=4\mu_0(t)+8\mu_1(t)+5\mu_2(t)+\mu_3(t).
+\end{aligned}
+\end{equation}
+Direct substitution in \eqref{eq:odd-weights} shows $d_m\le(3/25)d_{5\operatorname{sgn}m}a^{(|m|-7)/2}$ also for $|m|=1,3,5$. Consequently, on the same sign branch the weight ratios are bounded by $a^{-l}$ toward lower and $a^l$ toward higher frequencies. For the former $l\le v/2$ and $|v^2-2vl-l^2/3|\le v^2$. Summing \eqref{eq:odd-off} therefore gives at most $E_*\mathfrak S(v)$.
+
+On the opposite branch the relative weight factor is at most $37/16$, since $d_{-5}\le(37/16)d_5$ and conversely with the same factor; the preceding inequalities include the three exceptional low frequencies. Writing $|m|=2k+1$, the half-distance is $j+1+k\le v+k$, and
+\[
+ (v+k)(2v+k)^2\le v^3(4+8k+5k^2+k^3).
+\]
+The resulting bound is $E_*(37/16)\bar Qz^jv^3\mathfrak C<8v^2$: indeed $(2j+3/2)z^j$ decreases for $j\ge6$ and $E_*(37/16)\bar Q(27/2)z^6\mathfrak C<8$. Thus the row is at most
+\begin{equation}\label{eq:odd-high}
+ \mathcal P_{\rm o}(v)=-4r_-^2v^4+(45r_++8)v^2+E_*\mathfrak S(v).
+\end{equation}
+At $v=25/2$ this is less than $-3112$, and its first two derivatives are negative. Its third derivative is negative for $v>0$, so Lemma~\ref{lem:row} and $H^2$ density give
+\begin{equation}\label{eq:odd-final}
+ S_\alpha\le-I\quad(0\le\alpha\le1/2),\qquad S_0\le-6I
+ \quad\text{on odd Fourier indices}.
+\end{equation}
+
+\subsection{An explicit adjoint approximation}
+From this subsection through the proof of Proposition~\ref{prop:bloch}, the vector constructions and matrix comparisons take place in the even Fourier subspace $\mathscr H_{\rm even}=\overline{\operatorname{span}}\{e^{2\ii n\zeta}:n\in\Z\}\subset L^2$; operator domains are its intersections with $H^4_\per$. The odd subspace has already been treated in \eqref{eq:odd-final}. Because the operator is non-self-adjoint, the neutral spectral projection is determined by both its kernel and its adjoint kernel. The coercivity already proved provides a way to approximate the adjoint vector and bound the approximation error without assuming spectral data.
+Choose the real sign of $e$ so that its first sine coefficient is positive.
+In the normalized sine basis set $\mathfrak b_j=2jh_{2j}$ and
+\begin{equation}\label{eq:kernel-norm}
+ \mathfrak n^2=\sum_{j\ge1}\mathfrak b_j^2=\frac{2h_0}{5r},\qquad
+ e_j=\mathfrak b_j/\mathfrak n.
+\end{equation}
+The integral identity follows by integrating $(q^3q_x)'=3q^2/2-5q^6/2$. Proposition~\ref{prop:single-spectrum} supplies a unique real sine-even adjoint vector $\psi$, with $A_0^*\psi=0$ and $\ip\psi e=1$.
+
+Choose the fixed rational coefficients
+\begin{equation}\label{eq:adjoint-trial}
+ t_i=N_i/10^{30}\quad(1\le i\le18),\qquad
+ \Phi=\sum_{i=1}^{18}t_i\sqrt2\sin(2i\zeta),\qquad
+ \widetilde\psi=\Phi/\ip\Phi e,
+\end{equation}
+where the integers $N_i$ are given in Table~\ref{tab:adjoint-trial}.
+The normalization bound in Appendix~\ref{app:arithmetic} gives
+$\ip\Phi e>999/1000$, so this defines $\widetilde\psi$.
+Only this normalization and the residual estimate below enter the argument.
+Appendix~\ref{app:arithmetic}, including the infinite residual tail, proves
+\begin{equation}\label{eq:adjoint-data}
+ \norm{A_0^*\widetilde\psi}^2<2\cdot10^{-30}<10^{-28}.
+\end{equation}
+
+
+Put $R_*=10^{-14}$ and $v=\psi-\widetilde\psi\perp e$. Since
+$A_0^*v=-A_0^*\widetilde\psi$, Green's identity, the sine-even coercivity,
+and Cauchy--Schwarz give $\norm v\le R_*/75$.
+The interpolation estimate \eqref{eq:interpolation} now implies directly
+\[
+ 2\norm{D_x^2v}^2
+ \le R_*\norm v+\frac{1719}{8}\norm v^2
+ \le\left(\frac1{75}+\frac{1719}{8\cdot75^2}\right)R_*^2
+ <\frac{2}{15}R_*^2.
+\]
+Thus $\norm{D_x^2v}^2\le R_*^2/15$.
+Weak integration by parts gives
+$\norm{D_xv}^2\le\norm v\norm{D_x^2v}$ and
+$\norm{D_x^3v}^2\le\norm{D_x^2v}\norm{D_x^4v}$.
+In particular $\norm{D_xv},\norm{D_x^2v}\le R_*$.
+The first integral gives $|q|,|q_x|\le1$, so \eqref{eq:Astar} yields
+\[
+ 4\norm{D_x^4v}
+ \le R_*+45\norm{D_x^2v}+105\norm{D_xv}+42\norm v
+ \le\left(1+45+105+\frac{42}{75}\right)R_*<152R_*.
+\]
+Consequently $\norm{D_x^4v}\le38R_*$ and
+$\norm{D_x^3v}\le7R_*$.
+Since $D_\zeta=r^{-1/2}D_x$ and $r>1/2$, the four positive derivative
+weights are bounded by $3/2,2,3,4$, respectively. In the norm
+$\norm f_{\mathcal H^4}=\sum_{j=0}^4\norm{D_\zeta^jf}_2$ this gives
+\begin{equation}\label{eq:adjoint-H4}
+ \norm{\psi-\widetilde\psi}_{\mathcal H^4}
+ \le\left(\frac1{75}+\frac32+2+21+152\right)R_*
+ <177R_*.
+\end{equation}
+
+\subsection{Exact removal of the neutral factors}
+Near $\alpha=0$, the expected spectral decay is of order $\alpha^2$. Dividing an approximate neutral identity by $\alpha^2$ would amplify its residual and destroy uniformity. We therefore construct the decomposition from the exact vectors $e$ and $\psi$, cancel the neutral factors algebraically, and only then approximate the resulting polynomial coefficients.
+For $(u\otimes v)f=\ip f v u$ and $z=\psi-e\perp e$, define
+\begin{equation}\label{eq:T}
+ \calT=I+e\otimes z,\qquad \calT^{-1}=I-e\otimes z.
+\end{equation}
+These maps preserve $H^4$, and $\calT A_0\calT^{-1}=0\oplus B_e$, where $B_e=P_eA_0|_{e^\perp}$ and $P_e$ is the orthogonal projection onto $e^\perp$. This follows from $A_0e=A_0^*\psi=0$.
+
+Multiply $e$ and $\psi$ by the same constant phase so that their complex Fourier coefficients are real antisymmetric sequences. Let $\avec$ be the unit vector with Fourier coefficients $a_{\star,2}=1/\sqrt2$, $a_{\star,-2}=-1/\sqrt2$ and $a_{\star,n}=0$ otherwise. Choose the common phase so that $\ip e{\avec}>0$. Set
+\begin{equation}\label{eq:householder}
+ u=e+\avec,\qquad d=1+\ip e{\avec}>1,\qquad U=I-\frac{u\otimes u}{d}.
+\end{equation}
+Then $U=U^*=U^{-1}$ and $U\avec=-e$. Let $V$ be the unitary matrix whose columns are, in order, $\avec$, the constant Fourier vector, $(e^{2\ii\zeta}+e^{-2\ii\zeta})/\sqrt2$, and the Fourier vectors with indices $4,-4,6,-6,\ldots$. Write $W=V^*U$, let $P_0$ be the projection onto the first coordinate in this basis and $P=I-P_0$, and set
+\[
+ H_j=\Sym(W\calT A_j\calT^{-1}W^*),\qquad H_\alpha=\sum_{j=0}^4\alpha^jH_j.
+\]
+The kernel identities give $H_0P_0=P_0H_0=0$. Reflection $\calR f(\zeta)=f(-\zeta)$ obeys $\calR A_j\calR=(-1)^jA_j$ and commutes with $\calT$, since $e,\psi$ are odd. Hence
+\begin{equation}\label{eq:exact-zeros}
+ H_0P_0=P_0H_0=0,\qquad
+ P_0H_1P_0=P_0H_3P_0=0,\qquad H_4=-4r^2I.
+\end{equation}
+For $\alpha>0$, set $G_\alpha=(\alpha^{-1}P_0+P)H_\alpha(\alpha^{-1}P_0+P)$. Exact cancellation gives the polynomial blocks
+\begin{equation}\label{eq:G}
+ \begin{aligned}
+ P_0G_\alpha P_0&=P_0H_2P_0-4r^2\alpha^2P_0,\\
+ P_0G_\alpha P&=P_0(H_1+\alpha H_2+\alpha^2H_3)P,\\
+ PG_\alpha P&=P(H_0+\alpha H_1+\alpha^2H_2+\alpha^3H_3-4r^2\alpha^4I)P.
+ \end{aligned}
+\end{equation}
+The other block is the adjoint. This polynomial formula defines $G_0$; approximation is performed only after this exact cancellation.
+
+
+
+\subsection{Finite-rank approximation with an explicit error}
+Let $N=15$. Truncate $e$ to the first $N$ positive sine modes and renormalize it to a unit vector $e_N$. Truncate $\widetilde\psi$ to the same modes and renormalize it to $\psi_N$ with $\ip{\psi_N}{e_N}=1$. Put $z_N=\psi_N-e_N$. Their complex Fourier supports are contained in $|n|\le30$. Define $\calT_N,U_N,W_N$ by the exact formulas above with these vectors. For $j=1,2,3$, set
+\[
+ H_j^N=\Sym(W_N\calT_N A_j\calT_N^{-1}W_N^*),\qquad
+ H_0^N=PW_NS_0W_N^*P.
+\]
+Substitute these coefficients in \eqref{eq:G} to define $G_\alpha^N$. Thus the constant coefficient is a compression of $S_0$; no approximate kernel vector is substituted into an identity that requires an exact one.
+
+Appendix~\ref{app:arithmetic} and \eqref{eq:adjoint-H4} give
+\begin{equation}\label{eq:vector-errors}
+\begin{gathered}
+ \norm{e-e_N}_{\mathcal H^4}<2\cdot10^{-12},\qquad
+ \norm{\psi-\psi_N}_{\mathcal H^4}<6\cdot10^{-12},\\
+ \norm e_{\mathcal H^4},\ \norm{e_N}_{\mathcal H^4},\
+ \norm\psi_{\mathcal H^4},\ \norm{\psi_N}_{\mathcal H^4}<1000,
+ \qquad \norm{z_N}<1/20,\quad \norm{\psi-e}<.051.
+\end{gathered}
+\end{equation}
+
+The last bound follows by the triangle inequality from the two vector errors and $\norm{z_N}<1/20$.
+
+\begin{lemma}[Uniform finite-rank comparison]\label{lem:comparison}
+The approximations above satisfy
+\begin{equation}\label{eq:comparison-small}
+ \sup_{0\le\alpha\le1/2}\norm{G_\alpha-G_\alpha^N}_{L^2\to L^2}<\frac1{100}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $\epsilon=10^{-11}$; both errors in \eqref{eq:vector-errors} are smaller.
+For $A=A_j,A_j^*$ or $S_0$, $0\le j\le3$, the differential formulas give
+$\norm{Af}\le400\norm f_{\mathcal H^4}$. Let $\Delta$ denote exact minus approximate quantities. The norm of a rank-one operator $u\otimes v$ is $\norm u\norm v$. Both $u,u_N$ have $L^2$ norm at most $2$, $\mathcal H^4$ norm below $1100$, and $d,d_N\ge1$. Thus $|\Delta(d^{-1})|\le\epsilon$ and the rank-one formula for $U$ gives
+\[
+ \norm{\Delta U}\le8\epsilon,\qquad
+ \norm{A\Delta U},\ \norm{(\Delta U)A}
+ \le(800+440000+880000)\epsilon<1.33\cdot10^6\epsilon.
+\]
+The second bound uses adjoints when $A$ acts on the right.
+The cancellation $Ue=-\avec$ now avoids expanding two successive conjugations:
+\[
+ \mathscr V:=U\calT=U-\avec\otimes z,\qquad
+ \mathscr V^{-1}=U-e\otimes Uz,\qquad
+ \norm{\mathscr V^{\pm1}},\norm{\mathscr V_N^{\pm1}}\le1.1.
+\]
+Since $\norm{\Delta z}_{\mathcal H^4}\le2\epsilon$ and $\norm z,\norm{z_N}<.1$,
+\[
+ \norm{(\Delta\mathscr V)A}<1.34\cdot10^6\epsilon,
+ \quad
+ \norm{A\Delta(\mathscr V^{-1})}
+ <[1.33\cdot10^6+40+320000+800000]\epsilon
+ <2.46\cdot10^6\epsilon.
+\]
+Telescoping $\mathscr VA\mathscr V^{-1}$ therefore bounds each $H_j-H_j^N$ by $4.2\cdot10^6\epsilon$. The constant stable block instead satisfies $\norm{PW S_0W^*P-PW_NS_0W_N^*P}<2.66\cdot10^6\epsilon$. In \eqref{eq:G} the center, off-diagonal and remaining stable coefficient sums are $1,7/4,7/8$; the symmetric off-diagonal block has the norm of its upper-right block. Consequently
+\[
+ \norm{G_\alpha-G_\alpha^N}
+ <[2.66+(1+7/4+7/8)4.2]10^6\epsilon<2\cdot10^7\epsilon<1/100.
+\]
+All differences used here are bounded finite-rank operators, as the displayed rank-one formulas show.
+\end{proof}
+
+\subsection{Polynomial row weights for the even subspace}
+Label the coordinates in the order of $V$ by $\mathcal J=\{\mathrm e,0,\mathrm c,\pm4,\pm6,\ldots\}$. Use
+\begin{equation}\label{eq:even-weights}
+\begin{aligned}
+ d_{\mathrm e}&=1,&d_0&=\tfrac34+\tfrac14\alpha^2,&d_{\mathrm c}&=\tfrac95-3\alpha^2,\\
+ d_4&=\tfrac{13}{40}-\tfrac{19}{100}\alpha-\tfrac{17}{100}\alpha^2,
+ &d_{-4}&=\tfrac{13}{40}+\tfrac{19}{100}\alpha-\tfrac{31}{100}\alpha^2,\\
+ d_6&=\tfrac{19}{500}-\tfrac1{40}\alpha-\tfrac1{100}\alpha^2,
+ &d_{-6}&=\tfrac{19}{500}+\tfrac3{100}\alpha-\tfrac{11}{500}\alpha^2.
+\end{aligned}
+\end{equation}
+For even $|n|\ge8$, put $d_n=d_{6\operatorname{sgn}n}a^{(|n|-6)/2}$, with $a=1/10$. The degree-two Bernstein coefficients of all these weights are positive.
+
+Let $\mathcal J_{30}=\{\mathrm e,0,\mathrm c,\pm4,\ldots,\pm30\}$ and write
+\[
+ (G_\alpha^N)_{ij}=\sum_{l=0}^4g_{ij,l}\alpha^l,
+ \qquad \beta_{ij,k}=\sum_{l=0}^k\frac{\binom kl}{2^l\binom4l}g_{ij,l}.
+\]
+For columns in $\mathcal J_{30}$ and for even $32\le|m|\le80$, the entries are specified by the finite matrix formulas in Appendix~\ref{app:arithmetic}. Denote their enclosing rational segments by $[\beta^-_{ij,k},\beta^+_{ij,k}]$ and put $B_{ij,k}=\max(|\beta^-_{ij,k}|,|\beta^+_{ij,k}|)$. Set $D_{i,j}=[d_i]_{2,j}$ and
+\begin{equation}\label{eq:even-row-Bernstein}
+\begin{aligned}
+ C_{i,k}={}&\sum_{p+q=k}\frac{\binom4p\binom2q}{\binom6k}
+ \left[(-\beta^+_{ii,p}-\tfrac35)D_{i,q}
+ -\sum_{\substack{j\in\mathcal J_{30}\\j\ne i}}B_{ij,p}D_{j,q}
+ -\sum_{\substack{32\le|m|\le80\\m\ \mathrm{even}}}B_{im,p}D_{m,q}\right]
+ -R^{\rm e},\\
+ R^{\rm e}={}&\tfrac{12}{5}E_*a^{12}
+ [31^2T_1(t,26)+62T_2(t,26)+T_3(t,26)].
+\end{aligned}
+\end{equation}
+Define $s_i=1$ for $i=\mathrm e,0,\mathrm c$ and $s_n=a^{(|n|-6)/2}$ otherwise. The finite formulas in Appendix~\ref{app:arithmetic} give
+\begin{equation}\label{eq:even-uniform}
+ \min_{\substack{i\in\mathcal J_{30}\\0\le k\le6}}\frac{C_{i,k}}{s_i}>\frac1{100}.
+\end{equation}
+This is a finite rational inequality with all inputs fixed. By \eqref{eq:Bernstein-product}, it proves the row bound $-3/5$ for the 31 indicated rows, with the omitted-column term justified as follows.
+
+Let $|m|>80$ and $l=(|m|-30)/2\ge26$. Each entry coupling a Fourier index $|n|\le30$ to $m$ in $S_0$, $A_1$, $A_1^*$ or $A_2$ is at most
+\[
+ K(l)=E_*l(31+l)^2\bar Q^l.
+\]
+This follows directly from \eqref{eq:Aj}; the function of the half-distance is decreasing, so the minimum distance to the head suffices. Since $\norm{\calT_N},\norm{\calT_N^{-1}}\le1.1$, the transformed column in $G_\alpha^N$ has norm at most $4\sqrt{31}K(l)<24K(l)$. There are two possible signs for $m$, and $d_m\le(1/20)a^{l+12}$. Summing their weighted contributions gives exactly $R^{\rm e}$ in \eqref{eq:even-row-Bernstein}; in particular $R^{\rm e}<3\cdot10^{-66}$. This bound is independent of the row and of $\alpha$.
+
+\subsection{Every remaining even row}
+We now treat all $|n|\ge32$ without truncation. The finite vectors satisfy, for $2\le j\le15$,
+\begin{equation}\label{eq:vector-envelopes}
+ |(e_N)_{\pm2j}|\le\tfrac{13}{1000}a^{j-3},\qquad
+ |(z_N)_{\pm2j}|\le\tfrac7{1000}a^{j-3}.
+\end{equation}
+These complex Fourier coefficient bounds are proved in Appendix~\ref{app:arithmetic}.
+
+The weights obey $\norm d_{\ell^2}<23/10$, and their subvector on $|m|\ge4$ has norm less than $13/25$. The Householder formula therefore gives, for $|m|\ge4$,
+\[
+ \sum_i|(W_N^*)_{mi}|d_i\le d_m+2|(e_N)_m|.
+\]
+Indeed the weighted scalar in the rank-one correction is at most its center component plus $(13/25)\norm{e_N}$, and its denominator is at least one. For $\calT_N^{-1}W_N^*$ this estimate acquires at most $(1/4)|(e_N)_m|$, by Cauchy--Schwarz and $\norm{z_N}<1/10$. For $\calT_N^*W_N^*$ it acquires $|(z_N)_m|$, since $W_Ne_N$ has only its center coordinate. As $d_m\le(1/20)a^{(|m|-6)/2}$, \eqref{eq:vector-envelopes} proves the common bound
+\begin{equation}\label{eq:transform-envelope}
+ \sum_i|L_{mi}|d_i\le\tfrac1{10}a^{(|m|-6)/2},
+ \qquad L=W_N^*,\ \calT_N^{-1}W_N^*,\ \calT_N^*W_N^*.
+\end{equation}
+For $m=0,\pm2$ it follows directly from $\norm L\le1.1$ and $\norm d<23/10$, since the right sides are $100,10,10$. Outside the head the transforms are the identity, and the same estimate holds.
+
+Let $n_*=|n|\ge32$ and $v=n_*+2$. The diagonal in this row is unchanged from \eqref{eq:odd-diag}. In a head--tail entry, $A_3$ has no contribution. The total contribution of the lower coefficients to the scaled row is bounded by the contribution from $S_0$, plus $3/2$ times that from $A_1$ or $A_1^*$, plus $3/4$ times that from $A_2$. For $|m|\le30$, the latter two matrix bounds are $2E_*n_*l\bar Q^l$ and $E_*l\bar Q^l$, respectively. Their additions $3n_*+3/4$ are absorbed by replacing $n_*^2$ with $(n_*+2)^2$ in the off-diagonal bound. In lower same-sign directions one may use $|n_*^2-2n_*l-l^2/3|\le n_*^2$.
+
+Since $d_n\ge(1/50)a^{(n_*-6)/2}$, \eqref{eq:transform-envelope} gives a weight-ratio factor at most $5$. The same-sign sum is therefore at most $5E_*\mathfrak S(v)$, with \eqref{eq:common-tail-moments}. The opposite half-line, including $m=0$, contributes at most $5E_*z^jv^3\mathfrak C$ for $j=n_*/2\ge16$. This is less than $v^2$, since $(2j+2)z^j$ decreases and $5E_*\,34z^{16}\mathfrak C<1$. The entire row is bounded by
+\begin{equation}\label{eq:even-high}
+ \mathcal P_{\rm e}(n_*)=-4r_-^2(n_*-1/2)^4+45r_+(n_*+1/2)^2
+ +5E_*\mathfrak S(n_*+2)+(n_*+2)^2.
+\end{equation}
+
+Direct rational comparison gives
+\[
+ \mathcal P_{\rm e}(32)<-481088,\quad
+ \mathcal P_{\rm e}'(32)<-166483,\quad
+ \mathcal P_{\rm e}''(32)<-21850.
+\]
+Its third derivative is $-96r_-^2(n_*-1/2)<0$. This proves the bound $-3/5$ in every remaining row. Weighted row estimates first apply to finite sequences. All coefficients and finite-rank vectors are smooth, so the forms are continuous on $H^2$ and the estimate extends by density. We have proved
+\[
+ G_\alpha^N\le-\tfrac35I\qquad(0\le\alpha\le1/2).
+\]
+Together with \eqref{eq:comparison-small}, this gives $G_\alpha\le-\tfrac12I$. Undoing the exact congruence yields
+\[
+ H_\alpha\le-\tfrac12(\alpha^2P_0+P)\le-\alpha^2I/2\qquad(0<\alpha\le1/2).
+\]
+The similarities are bounded, invertible and domain-preserving, and the elliptic operator has compact resolvent. Applying this form estimate to each transformed eigenvector bounds its entire spectrum. The odd subspace satisfies the stronger estimate \eqref{eq:odd-final}; reflection handles negative $\alpha$. This proves Proposition~\ref{prop:bloch}.
+
+\subsection{The multiple-cover spectrum}
+\begin{corollary}\label{cor:multicover}
+For every $M\ge1$, zero is algebraically simple for $\mathcal A_M$, generated by global rotation. Every other eigenvalue has real part at most $-g_M$, with $g_M$ as in \eqref{eq:certified-gaps}. Its nonzero spectral gap satisfies \eqref{eq:gap-order}.
+\end{corollary}
+\begin{proof}
+Translation by one immersed period is unitary of order $M$ on the long parameter circle and commutes with $\mathcal A_M$. Its eigenspaces give the complete finite Bloch direct sum, with parameters $j/M$ modulo one, $j=0,\ldots,M-1$. Choose representatives in $[-1/2,1/2]$. Nonzero representatives have $|\alpha|\ge1/M$ and satisfy Proposition~\ref{prop:bloch}; the subspace with Bloch parameter zero satisfies Proposition~\ref{prop:single-spectrum}.
+
+For the upper gap bound, $A_\alpha$ is an analytic family of type (A) with common domain $H^4_\per$. The analytic perturbation theorem for an isolated simple eigenvalue \cite[Chapter~VII, Section~1]{Kato} therefore gives a unique analytic branch $\lambda(\alpha)$ issuing from zero. Reflection satisfies $\calR A_\alpha\calR=A_{-\alpha}$, and complex conjugation also exchanges the two operators for real $\alpha$. Uniqueness makes $\lambda$ real and even. Consequently
+\[
+ \lambda(\alpha)=-D_{\rm ph}\alpha^2+O(\alpha^4),\qquad D_{\rm ph}\ge1/2,
+\]
+where $D_{\rm ph}:=-\lambda''(0)/2$ is the phase-diffusion coefficient, and its lower bound follows from Proposition~\ref{prop:bloch}. For sufficiently large $M$, $\lambda(1/M)$ is a nonzero eigenvalue of $\mathcal A_M$, so $\gap_M\le-\lambda(1/M)\le C/M^2$. The lower bound was proved above.
+\end{proof}
+
+
+% Included from sections/05_nonlinear.tex
+\section{Nonlinear stability by weighted regularization}\label{sec:nonlinear}
+The spectral estimates imply nonlinear convergence once the graph equation is placed in the appropriate parabolic spaces. The geometric hypothesis supplies $H^2$ data, whereas the normal-stability theorem will be applied in $H^3$. We bridge these spaces by weighted local regularization, and check only the hypotheses needed for the two cited theorems.
+
+Fix $M$ and write $A=\mathcal A_M$. All spaces in this section are real and periodic on $\T_{\ell_M}$. The graph equation has the structure
+\begin{equation}\label{eq:structure}
+ \begin{aligned}
+ \calF(f)={}&-g_f^{-4}f_{ssss}+b_1^{\rm nl}f_{ss}f_{sss}+b_2^{\rm nl}f_{sss}
+              +b_3^{\rm nl}f_{ss}^3+b_4^{\rm nl}f_{ss}^2+b_5^{\rm nl}f_{ss}+b_6^{\rm nl},
+ \end{aligned}
+\end{equation}
+The coefficients $b_i^{\rm nl}=b_i^{\rm nl}(s,f,f_s)$ are defined as follows. Temporarily regard $f,v,w,z,y$ as independent scalar variables representing $f,f_s,f_{ss},f_{sss},f_{ssss}$ and put
+\[
+ \mathscr D=\partial_s+v\partial_f+w\partial_v+z\partial_w+y\partial_z,
+ \qquad k_f=\frac{ka_f^2+2kv^2+a_fw+k_sfv}{g_f^3}.
+\]
+Here $a_f,g_f,h_f$ are the functions in \eqref{eq:graph-geometry}, with $v$ in place of $f_s$. Define
+\[
+ \mathscr P=-\frac{g_f}{a_f}
+ \left(g_f^{-1}\mathscr D(g_f^{-1}\mathscr D k_f)+\tfrac12k_f^3+ch_f\right)
+ +g_f^{-4}y.
+\]
+Since $k_f$ is affine in $w$, the $y$ coefficient cancels and $\mathscr P$ contains precisely the possible monomials $wz,z,w^3,w^2,w,1$. For a monomial $\mathfrak m$, let $[\mathfrak m]\mathscr P$ denote its coefficient as a polynomial in $w,z$. Then
+\[
+ (b_1^{\rm nl},b_2^{\rm nl},b_3^{\rm nl},b_4^{\rm nl},b_5^{\rm nl},b_6^{\rm nl})
+ =([wz]\mathscr P,[z]\mathscr P,[w^3]\mathscr P,[w^2]\mathscr P,[w]\mathscr P,[1]\mathscr P).
+\]
+These definitions are smooth in $(s,f,v)$ wherever $a_f,g_f>0$ and give \eqref{eq:structure} by the chain rule.
+
+\subsection{Weighted local theory and smoothing}
+For each integer $m\ge1$, take $X_0=H^m$, $X_1=H^{m+4}$, $p=2$ and time weight $\mu_{\mathrm w}=3/4$. Both complex interpolation at exponent $\theta$ and real interpolation with exponent $\theta$ and second index $2$ give $H^{m+4\theta}$, for $0<\theta<1$. Since $\mu_{\mathrm w}-1/p=1/4$ and $1-1/p=1/2$, the weighted trace is $H^{m+1}$ and the unweighted trace is $H^{m+2}$. At $m=1$, this choice admits precisely the $H^2$ graph data obtained from the curvature profile, and yields $H^3$ regularity at positive time. Set
+\[
+ \mathcal B_0(f)=g_f^{-4}D_s^4,\qquad
+ \mathcal Q(f)=\calF(f)+\mathcal B_0(f)f.
+\]
+We verify \cite[Theorem~1.2]{PSW} on a small $H^{m+1}$ ball. Since $H^m$ is an algebra, $\mathcal B_0$ is smooth into $\mathcal L(X_1,X_0)$. For $h=f-g$ and $R=1+\norm f_{H^{m+3}}+\norm g_{H^{m+3}}$, multiplication and interpolation give
+\begin{equation}\label{eq:weighted-products}
+ \norm{\mathcal Q(f)-\mathcal Q(g)}_{H^m}
+ \le C\big(R^{1/2}\norm h_{H^{m+3}}+R\norm h_{H^{m+2}}
+                 +R^{3/2}\norm h_{H^{m+1}}\big).
+\end{equation}
+Indeed the highest products are bounded by
+$C\norm f_{H^{m+2}}\norm f_{H^{m+3}}$ and $C\norm f_{H^{m+2}}^3$;
+use $\norm f_{H^{m+2}}\le C\norm f_{H^{m+3}}^{1/2}$ on this ball and expand differences. Coefficient differences in $H^m$ are bounded by $C\norm h_{H^{m+1}}$.
+Thus (H2)--(H3) of that theorem hold with
+\[
+ \beta=\tfrac34,\qquad
+ (\rho_j,\beta_j)\in\{(\tfrac12,\tfrac34),(1,\tfrac12),(\tfrac32,\tfrac14)\},
+ \qquad \rho_j(\beta-\tfrac14)+\beta_j-\tfrac14=\tfrac34.
+\]
+For condition (S) in \cite{PSW}, $X_0$ is a Hilbert space and hence a UMD space. The mixed-derivative embedding follows from Plancherel in time and space: if $\xi$ is the temporal Fourier variable and $\lambda_n=2\pi n/\ell_M$ the spatial frequency, then, for $0\le\theta\le1$,
+\[
+ (1+\xi^2)^{1-\theta}(1+\lambda_n^2)^{4\theta}
+ \le(1-\theta)(1+\xi^2)+\theta(1+\lambda_n^2)^4.
+\]
+Multiplication by $(1+\lambda_n^2)^m$ proves the required embedding $H^1(\R;X_0)\cap L^2(\R;X_1)\hookrightarrow H^{1-\theta}(\R;H^{m+4\theta})$. Here $H^r(\R;Y)$ denotes the $Y$-valued Bessel-potential space in time. The operator $\mathcal B_0(0)=D_s^4$ has maximal regularity by its Fourier series; add the same positive multiple of $f$ to both sides to handle its kernel. At a smooth rotation equilibrium $f_*$, the coordinate $y(s)=\int_0^s g_{f_*}(\varsigma)\dd\varsigma$ is a smooth circle diffeomorphism. It conjugates $g_{f_*}^{-4}D_s^4$ to $D_y^4$ plus terms of order at most three. The Fourier resolvent argument in Section~\ref{sec:geometry}, followed by \cite{deSimon}, therefore gives maximal regularity on every $H^m$, after a shift if necessary. The theorem therefore gives unique local solutions and Lipschitz dependence in the following spaces, for a time horizon $T>0$:
+\begin{equation}\label{eq:MR-spaces}
+ \mathbb E_{m,\mu_{\mathrm w}}(0,T)=W^{1,2}_{\mu_{\mathrm w}}(0,T;H^m)\cap L^2_{\mu_{\mathrm w}}(0,T;H^{m+4}),
+ \qquad L^2_{\mu_{\mathrm w}}(Y)=\{u:\widehat t^{1-\mu_{\mathrm w}}u\in L^2((0,T);Y)\}.
+\end{equation}
+For a Banach space $Y$, $W^{1,2}_{\mu_{\mathrm w}}((0,T);Y)=\{u:u,\partial_{\widehat t}u\in L^2_{\mu_{\mathrm w}}(Y)\}$, using distributional time derivatives. The symbol $\sol_\delta$ denotes the solution map at normalized time $\delta>0$. Away from zero the weight is bounded above and below, so the unweighted trace theorem gives a locally Lipschitz map $\sol_\delta:H^{m+1}\to H^{m+2}$. Iterating on positive time intervals and using uniqueness yields, near any small rotation equilibrium,
+\begin{equation}\label{eq:smoothing}
+ \norm{\sol_\delta(u)-\sol_\delta(v)}_{H^3}
+ +\norm{\sol_\delta(u)-\sol_\delta(v)}_{C^j}
+ \le C_{\delta,j}\norm{u-v}_{H^2}.
+\end{equation}
+The neighborhood can depend on $\delta,j$; constants are uniform on a compact small rotation segment. No initial higher Sobolev bound is required.
+
+\subsection{Normal stability}
+For $X_0=H^1$, $X_1=H^5$, $p=2$, the unweighted trace is $H^3$. Write $f_{\widehat t}+\mathcal B(f)f=\mathcal R(f)$ with
+\[
+ \mathcal B(f)=g_f^{-4}D_s^4-(b_1^{\rm nl}f_{ss}+b_2^{\rm nl})D_s^3,\qquad
+ \mathcal R(f)=b_3^{\rm nl}f_{ss}^3+b_4^{\rm nl}f_{ss}^2+b_5^{\rm nl}f_{ss}+b_6^{\rm nl}.
+\]
+The $H^1$ algebra property gives $(\mathcal B,\mathcal R)\in C^\infty(H^3,\mathcal L(H^5,H^1)\times H^1)$ locally. Fourier perturbation and \cite{deSimon} give maximal regularity of $\mathcal B(0)$. The linearization with the sign convention of \cite{PSZ} is $-A$. Elliptic regularity and compact resolvent identify its spectrum and algebraic multiplicities in $H^1$ with those in $L^2$.
+
+Rotating $\beta_M$ and expressing the rotated immersion in the fixed normal chart gives a smooth curve of equilibria tangent to $\ker A$. To check that it exhausts the local equilibrium set, apply the implicit function theorem to $\calF:H^5\to H^1$ on the stable complement given by the spectral projection of $A$. Its derivative is invertible on that complement by the spectral gap. The derivative of the rotation curve at zero is $b=\ip\beta\tau\ne0$, so its center coordinate is a local scalar coordinate. The complement equation determines a unique stable component for each sufficiently small center coordinate; the rotation curve supplies an equilibrium for every such coordinate. Sections~\ref{app:single}--\ref{app:bloch} give a semisimple zero eigenvalue and the stable gap $g_M$. The hypotheses of normal stability in \cite[Theorem~2.1]{PSZ} are therefore satisfied: the equilibrium manifold has the dimension of the kernel, zero is semisimple, and the remaining spectrum is strictly stable. Its proof, in particular estimates (2.11)--(2.12) and (2.27), gives $H^3$ convergence at every rate $0<\mu<g_M$ after shrinking the neighborhood. Apply it at a fixed positive time using \eqref{eq:smoothing}; uniqueness joins the solutions.
+
+\begin{proposition}\label{prop:H2}
+For each fixed $M$, sufficiently small $H^2$ graph data generate a global normalized solution converging to a rotation graph $f_\infty$. For $0<\mu<g_M$, after shrinking the neighborhood,
+\begin{equation}\label{eq:H2-decay}
+ \norm{f(\widehat t)-f_\infty}_{H^2}\le C_{M,\mu}e^{-\mu\widehat t}\norm{f_0}_{H^2}.
+\end{equation}
+For every $\delta>0$ and integer $j\ge0$, the same estimate holds in $C^j$ for $\widehat t\ge\delta$, with constants and neighborhood also depending on $\delta,j$.
+\end{proposition}
+The finite initial interval is controlled by the weighted local bound and the equilibrium limit bound. For the $C^j$ assertion choose the restart before $\delta$ and apply \eqref{eq:smoothing} to $f(\widehat t-\delta/2)$ and $f_\infty$. Qualitative $C^\infty$ convergence follows for a single $H^2$ neighborhood: for each fixed $j$, the convergent trajectory eventually enters its smoothing neighborhood.
+
+
+% Included from sections/06_geometric.tex
+\section{Curvature profiles and geometric convergence}\label{sec:geometric}
+It remains to connect the geometric smallness condition with the graph norm and to recover the physical-time statement. The alignment argument uses the signed curvature as a function of arclength, so it applies to immersed curves and multiple covers without selecting a branch by its position in the plane.
+\begin{lemma}\label{lem:curvature-entry}
+Let $\beta,\widetilde\gamma$ be smooth oriented closed immersions of equal length $\ell$, parametrized by arclength. For a phase $\sigma\in\T_\ell$, suppose $d_{\rm curv}=\norm{k_{\widetilde\gamma}-k_\beta(\cdot+\sigma)}_{L^2(0,\ell)}$ is small. Then after translation, rotation and an orientation-preserving reparametrization, $\widetilde\gamma=\beta+f\nu_\beta$ with $\norm f_{H^2}\le C_\beta d_{\rm curv}$. The smallness threshold and constant are uniform in $\sigma$. This holds for self-intersections and multiple covers.
+\end{lemma}
+\begin{proof}
+Absorb the phase into $\beta$ and align the initial tangents by $R\in SO(2)$. The tangent-angle difference is $\vartheta(s)=\int_0^s(k_{\widetilde\gamma}-k_\beta)\dd\varsigma$, so $\norm\vartheta_\infty\le\sqrt\ell\,d_{\rm curv}$ and $\norm{\nu_{\widetilde\gamma}-R\nu_\beta}_\infty\le\norm\vartheta_\infty$. Choose a translation $p$ making $w=\widetilde\gamma-p-R\beta$ mean zero. Then
+\[
+ w_{ss}=(k_{\widetilde\gamma}-k_\beta)\nu_{\widetilde\gamma}+k_\beta(\nu_{\widetilde\gamma}-R\nu_\beta),
+ \qquad \norm w_{H^2}\le C_\beta d_{\rm curv}.
+\]
+The second-derivative estimate above, followed by the periodic Poincar\'e inequalities for mean-zero $w$, gives the stated $H^2$ bound. Replace $\widetilde\gamma$ by its translated and rotated alignment so that $w=\widetilde\gamma-\beta$. After alignment, solve $\ip{\widetilde\gamma(s)-\beta(s+d)}{\tau_\beta(s+d)}=0$ near $d=0$. Define $\Xi(s,w)$ to be its unique small root $d$, with $\Xi(s,0)=0$. Its $d$ derivative at $w=d=0$ is $-1$, so the parameterwise implicit function theorem gives $d(s)=\Xi(s,w(s))$. Differentiating this smooth composition twice and using the $H^1$ algebra property gives $\norm d_{H^2}\le C\norm w_{H^2}$. Uniqueness of the small root makes $d$ periodic. After reducing the neighborhood, $\norm{d_s}_\infty<1/2$, so $u(s)=s+d(s)$ is an orientation-preserving $H^2$ diffeomorphism. The unreparametrized height $h_{\rm gr}(s)=\ip{\widetilde\gamma(s)-\beta(u(s))}{\nu_\beta(u(s))}$ has the same bound. The graph height over the reference parameter is $f=h_{\rm gr}\circ u^{-1}$. The continuity of composition and inversion in \cite[Theorem~1.2, $s=2,r=0$]{IKT} gives $\norm{h_{\rm gr}\circ u^{-1}}_{H^2}\le C\norm w_{H^2}$. Joint continuity and linearity in $h_{\rm gr}$ give the locally uniform operator bound used here. This branch follows the parameter, so self-intersections cause no ambiguity; compactness makes the constants uniform in phase.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The phase minimum is attained. The lemma gives a graph with $\norm{f_0}_{H^2}\le C_M\sqrt{\KM(\gamma_0)}$, so Proposition~\ref{prop:H2} applies for a small profile threshold. To identify the normalized graph solution with the physical flow, invoke the global smooth geometric existence and uniqueness theorem \cite[Theorem~3.2]{DKS}, in the formulation of \cite[Theorem~1.1]{MW}. The aligned classical solution has a small graph on an initial interval and belongs to \eqref{eq:MR-spaces} with $m=1$; local uniqueness identifies it with the constructed solution. Positive-time smoothing and classical uniqueness then identify their continuations.
+
+Undo \eqref{eq:normalization} and parametrize the limiting graph as $R_\infty\beta_M$. The fixed alignment translation $p_0$ and Proposition~\ref{prop:H2} give
+\[
+ \norm{\rho^{-1}(\gamma\circ\chi_t-p_0)-R_\infty\beta_M}_{C^j}
+ \le C_{M,j,\mu}e^{-\mu\widehat t}\sqrt{\KM(\gamma_0)}.
+\]
+Since $t\ge a^4$ implies $\widehat t\ge\log(31)/30$ and $e^{-\mu\widehat t}=(1+30t/a^4)^{-\mu/30}$, this proves \eqref{eq:main-rate}. Also $p_0/\rho\to0$, proving \eqref{eq:main-convergence}. Length continuity gives $L(t)/\rho(t)\to\ell_M$. Thus the length-normalized flow in the notation of \cite[Theorem~1.2]{MW} satisfies $\eta(\chi_t(\cdot),t)\to\ell_M^{-1}R_\infty\beta_M$ smoothly, a limiting profile of length one.
+\end{proof}
+
+\appendix
+
+% Included from sections/07_explicit_arithmetic.tex
+\section{Explicit scalar data for the adjoint and Bernstein bounds}\label{app:arithmetic}
+This appendix records the scalar enclosures and finite expressions used in the spectral estimates. It completes the low-frequency inequalities in Sections~\ref{app:single} and \ref{app:bloch}; the high frequencies are already controlled there by geometric-series majorants. Every endpoint and matrix entry below is defined by finite rational operations or integer square comparisons, so the estimates are determined by the formulas in the paper.
+
+\subsection{Rational enclosures for the scalar input}
+For an integer $N\ge1$ write
+\[
+ a_N(t)=\sum_{k=0}^{N-1}\frac{(-1)^kt^{2k+1}}{2k+1},\qquad
+ p_-=16a_{24}(1/5)-4a_9(1/239),\quad
+ p_+=16a_{25}(1/5)-4a_8(1/239).
+\]
+The tangent-addition formula gives $\tan(4\arctan(1/5)-\arctan(1/239))=1$, with the angle in $(0,\pi/2)$. Thus $\pi=16\arctan(1/5)-4\arctan(1/239)$, and the alternating-series inequalities give $p_-<\pi<p_+$. In particular $0<p_-<p_+<72$. Let
+\[
+ E_{70}(p)=\sum_{k=0}^{70}\frac{p^k}{k!},\qquad
+ R_{70}(p)=\frac{p^{71}}{71!(1-p/72)},
+\]
+and form the rational segment
+\begin{equation}\label{eq:fine-Q}
+ J_Q=\left[\frac1{E_{70}(p_+)+R_{70}(p_+)},\frac1{E_{70}(p_-)}\right].
+\end{equation}
+The exponential tail has successive ratios at most $p/72$, so $Q\in J_Q$.
+
+Use rational segment arithmetic: add endpoints, subtract in reverse endpoint order, take the extrema of the four endpoint products, and set $[u,v]^{-1}=[1/v,1/u]$ for $0<u\le v$. Treat repeated occurrences independently. For $J=[u,v]$ with $u>0$, enclose square roots by
+\begin{equation}\label{eq:sqrt-envelope}
+ \mathcal R(J)=\left[
+ 10^{-30}\left\lfloor10^{30}\sqrt u\right\rfloor,
+ 10^{-30}\left(1+\left\lfloor10^{30}\sqrt v\right\rfloor\right)\right].
+\end{equation}
+Here $\lfloor x\rfloor$ is the largest integer not exceeding $x$. The endpoints are uniquely specified by integer square comparisons. For a negative segment use $J^{-1}=-(-J)^{-1}$.
+
+With these segment operations set
+\begin{equation}\label{eq:fine-input}
+\begin{aligned}
+ J_\theta&=1+2\sum_{j=1}^{5}J_Q^{j^2}
+ +\left[0,\left(\frac{2J_Q^{36}}{1-J_Q^{13}}\right)_+\right],
+ &J_r&=J_\theta^{-4},\\
+ J_{h_{2j}}&=\frac{8J_rjJ_Q^j}{1-J_Q^{2j}}\quad(j\ge1),
+ &J_{h_0}&=1-2\sum_{j=1}^{40}J_{h_{2j}}
+ -\left[0,\frac{16r_+}{1-\bar Q^2}T_1(\bar Q,41)\right].
+\end{aligned}
+\end{equation}
+First obtain \eqref{eq:endpoints} from $J_Q,J_\theta,J_r$, without using $J_{h_0}$; these inequalities justify the constants in its tail enclosure. Here $(J)_+$ is the upper endpoint, $J_{h_{-n}}=J_{h_n}$, and odd indices vanish. The theta tail has successive ratios at most $Q^{13}$; its enclosure implies \eqref{eq:endpoints} independently of the coarse constants. The $h_0$ tail then uses $h_{2j}\le8r_+j\bar Q^j/(1-\bar Q^2)$. These segments also lie within \eqref{eq:L-U}.
+
+Use \eqref{eq:sqrt-envelope} for every square root, in particular $\mathcal R([2,2])$ for $\sqrt2$ and $\mathcal R(2J_{h_0}/(5J_r))$ for $\mathfrak n$. The normalization bounds are
+\[
+ \mathfrak n>\tfrac12,\qquad
+ \ip\Phi e>\tfrac{999}{1000},\qquad
+ \norm{P_{15}e}>\tfrac{999}{1000},\qquad
+ \ip{P_{15}\widetilde\psi}{e_N}>\tfrac{999}{1000}.
+\]
+Here $P_{15}$ truncates to 15 sine modes. Substitute the exact rational
+coefficients from Table~\ref{tab:adjoint-trial} into \eqref{eq:adjoint-trial}
+and use \eqref{eq:fine-input} and \eqref{eq:sqrt-envelope} to obtain these bounds.
+All divisions used for normalization have positive enclosing intervals.
+
+\subsection{Residual and vector bounds}
+\begin{table}[htbp]
+\centering\small
+\caption{Integers defining the adjoint trial function.}\label{tab:adjoint-trial}
+\begin{tabular}{rr}
+\toprule $i$ & $N_i$\\\midrule
+1 & 1000000000000000000000000000000\\
+2 & 223736893583674184592308357848\\
+3 & 25484116510325630830715754968\\
+4 & 2190873053796174749234141508\\
+5 & 161421647978782201997701738\\
+6 & 10787439027218763764207084\\
+7 & 673940800112670696939420\\
+8 & 40078659602346258076540\\
+9 & 2295359309194503539129\\
+10 & 127610930585485117011\\
+11 & 6926090559231763880\\
+12 & 368527953125777481\\
+13 & 19284837011823255\\
+14 & 994943639173809\\
+15 & 50707140205575\\
+16 & 2556901815584\\
+17 & 127730370919\\
+18 & 6327142260\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Use $t_i$ from \eqref{eq:adjoint-trial}, $b_i=2ih_{2i}$, $\mathfrak n=(2h_0/(5r))^{1/2}$, and
+\[
+ c_\Phi=\sum_{i=1}^{18}t_i b_i/\mathfrak n,\qquad
+ p_i=t_i/c_\Phi,\qquad e_i=b_i/\mathfrak n.
+\]
+For positive even $n,m$ use the explicit sine matrix
+\begin{equation}\label{eq:sine-A}
+ A^s_{nm}=\tfrac{15}{2}rn\left[(7m-n)h_{n-m}+(7m+n)h_{n+m}\right]
+ -(4r^2n^4+42)\delta_{nm}.
+\end{equation}
+Denote by $u_j$ the larger absolute endpoint of the segment enclosing
+\[
+ \sum_{i=1}^{18}A^s_{2i,2j}p_i,
+\]
+and by $p_i^+$ the larger absolute endpoint of $p_i$. The explicit upper bound for the squared residual is
+\begin{equation}\label{eq:residual-finite}
+ \sum_{j=1}^{40}u_j^2+
+ \left(480r_+H\sum_{i=1}^{18}p_i^+\right)^2
+ \bar Q^{-36}T_6(\bar Q^2,41)<2\cdot10^{-30}.
+\end{equation}
+For the tail, \eqref{eq:sine-A} and $j>40$, $i\le18$ give
+\[
+ |(A_0^*)^s_{2j,2i}|\le480r_+Hj^3\bar Q^{j-18}.
+\]
+Indeed $j-i\ge j-18$, $i\le j$, and the polynomial factors in \eqref{eq:sine-A} are bounded by this cubic majorant. Squaring and summing proves the tail term in \eqref{eq:residual-finite}.
+
+Write $\mathfrak n_-$ for the lower endpoint of its enclosing segment. For the truncation errors put
+\[
+ t_e=\left(\sum_{i=1}^{15}e_i^2\right)^{1/2},\quad
+ E_i=e_i/t_e,\quad t_p=\sum_{i=1}^{15}p_iE_i,\quad
+ \Psi_i=p_i/t_p,\quad Z_i=\Psi_i-E_i.
+\]
+These are the sine coefficients of $e_N$, $\psi_N$, and $z_N$, with $N=15$. For a finite sequence $w$ let
+\[
+ L_4(w)=\sum_i |w_i|\sum_{k=0}^4(2i)^k,
+\]
+using upper absolute endpoints when $w$ is enclosed by segments. Define
+\begin{align}
+ \eta_e={}&\frac{16r_+}{(1-\bar Q^2)\mathfrak n_-}
+ \sum_{k=0}^42^kT_{k+2}(\bar Q,16)
+ +|t_e^{-1}-1|_+L_4((e_i)_{i\le15}),\label{eq:eta-e}\\
+ \eta_p={}&\sum_{i=16}^{18}p_i^+\sum_{k=0}^4(2i)^k
+ +|t_p^{-1}-1|_+L_4((p_i)_{i\le15})+177\cdot10^{-14}.
+ \label{eq:eta-p}
+\end{align}
+The symbol $|\cdot|_+$ denotes the upper absolute endpoint. The comparisons needed in the proof, with comfortable margins, are
+\begin{equation}\label{eq:vector-scalar-checks}
+\begin{gathered}
+ \eta_e<2\cdot10^{-12},\qquad \eta_p<6\cdot10^{-12},\\
+ L_4(E)+\eta_e<200,
+ \qquad L_4(\Psi)+\eta_p<200,
+ \qquad\sum_{i=1}^{15}|Z_i|_+^2<\tfrac1{400},\\
+ \max_{2\le i\le15}\frac{|E_i|_+}{\sqrt2_-\,a^{i-3}}<\tfrac{13}{1000},
+ \qquad
+ \max_{2\le i\le15}\frac{|Z_i|_+}{\sqrt2_-\,a^{i-3}}<\tfrac7{1000}.
+\end{gathered}
+\end{equation}
+Here $\sqrt2_-$ is the positive lower endpoint of \eqref{eq:sqrt-envelope}. These rational comparisons use \eqref{eq:fine-Q}--\eqref{eq:fine-input}, \eqref{eq:adjoint-trial} and \eqref{eq:moments}; normalization errors are included.
+
+\subsection{Finite formulas for the even Bernstein bound}
+For the matrices in \eqref{eq:even-row-Bernstein}, let
+\[
+ \mathcal I=\{-30,-28,\ldots,30\},\qquad
+ e_n=\begin{cases}\operatorname{sgn}(n)E_{|n|/2}/\sqrt2,&n\ne0,\\0,&n=0,\end{cases}
+\]
+and define $p_n$ from $\Psi$ by the same formula. In this subsection $e_n,p_n$ are coefficients of the \emph{finite} vectors. Set $z_n=p_n-e_n$, $a_2=1/\sqrt2$, $a_{-2}=-1/\sqrt2$, with other $a_n=0$, and
+\[
+ u_n=e_n+a_n,\qquad d=1+\sum_{n\in\mathcal I}e_na_n.
+\]
+The rows of the $31\times31$ matrix $W$ are labelled by $\mathcal J_{30}$, and its columns by $\mathcal I$:
+\begin{equation}\label{eq:W-finite}
+\begin{aligned}
+ W_{\mathrm e,n}&=-e_n,&W_{0,n}&=\delta_{0,n},&
+ W_{\mathrm c,n}&=(\delta_{2,n}+\delta_{-2,n})/\sqrt2,\\
+ W_{j,n}&=\delta_{jn}-u_ju_n/d\qquad(j=\pm4,\ldots,\pm30).
+\end{aligned}
+\end{equation}
+Define $L$ by replacing the center row of $W$ with $-p_n$, and define $R$ by
+\begin{equation}\label{eq:LR-finite}
+ R_{n,j}=W_{j,n}-e_n\sum_{m\in\mathcal I}W_{j,m}z_m.
+\end{equation}
+The sum in the center column is exactly zero, since $\ip{z_N}{e_N}=0$. Thus $L=W_N\calT_N$ and $R=\calT_N^{-1}W_N^*$ in the stated bases.
+
+Let $S_{nm}=((A_0)_{nm}+(A_0)_{mn})/2$, using \eqref{eq:Aj}. The finite head of $H_0^N$ is $WSW^{\mathsf T}$ with its center row and column set to zero. For $j=1,2,3$ its corresponding head is
+\[
+ H_j^N=\tfrac12\left(LA_jR+(LA_jR)^{\mathsf T}\right).
+\]
+Reflection makes the center diagonal of $H_1^N,H_3^N$ exactly zero. Apply the block formula \eqref{eq:G} to these matrices to obtain $g_{ij,l}$ for $i,j\in\mathcal J_{30}$.
+
+For an external even column $32\le|m|\le80$, set
+\begin{align}
+ b_{0,i}(m)&=\sum_{n\in\mathcal I}W_{i,n}S_{nm},\qquad b_{0,\mathrm e}(m)=0,\label{eq:external-b}\\
+ b_{j,i}(m)&=\tfrac12\sum_{n\in\mathcal I}
+ \left[L_{i,n}(A_j)_{nm}+R_{n,i}(A_j)_{mn}\right],\qquad j=1,2.
+ \nonumber
+\end{align}
+Then the external entry is $b_{0,i}+\alpha b_{1,i}+\alpha^2b_{2,i}$ for a stable row $i$, and $b_{1,\mathrm e}+\alpha b_{2,\mathrm e}$ for the center row. The $A_3$ and $A_4$ entries between the head and tail vanish. These are exactly the coefficient polynomials used in \eqref{eq:even-row-Bernstein}.
+
+Enclose these coefficients using \eqref{eq:fine-Q}--\eqref{eq:sqrt-envelope} and form $\beta_{ij,k}$ by \eqref{eq:Bernstein}. This specifies every rational number in \eqref{eq:even-row-Bernstein}; clearing positive denominators proves \eqref{eq:even-uniform}. Together with the infinite-tail estimates, the argument covers the full parameter interval and Hilbert space.
+
+
+% Included from references.tex
+\begin{thebibliography}{99}
+\raggedright
+\small
+\bibitem{LS84}
+J.~Langer and D.~A.~Singer,
+The total squared curvature of closed curves,
+\emph{J. Differential Geom.} \textbf{20} (1984), no.~1, 1--22.
+\href{https://doi.org/10.4310/jdg/1214438990}{doi:10.4310/jdg/1214438990}.
+
+\bibitem{LS85}
+J.~Langer and D.~A.~Singer,
+Curve straightening and a minimax argument for closed elastic curves,
+\emph{Topology} \textbf{24} (1985), no.~1, 75--88.
+\href{https://doi.org/10.1016/0040-9383(85)90046-1}{doi:10.1016/0040-9383(85)90046-1}.
+
+\bibitem{DKS}
+G.~Dziuk, E.~Kuwert and R.~Sch\"atzle,
+Evolution of elastic curves in $\R^n$: existence and computation,
+\emph{SIAM J. Math. Anal.} \textbf{33} (2002), no.~5, 1228--1245.
+\href{https://doi.org/10.1137/S0036141001383709}{doi:10.1137/S0036141001383709}.
+
+\bibitem{MW}
+T.~Miura and G.~Wheeler,
+The free elastic flow for closed planar curves,
+\emph{J. Funct. Anal.} \textbf{289} (2025), no.~7, Paper No.~111030.
+\href{https://doi.org/10.1016/j.jfa.2025.111030}{doi:10.1016/j.jfa.2025.111030}.
+Preprint version: \href{https://arxiv.org/abs/2404.12619v3}{arXiv:2404.12619v3}.
+
+\bibitem{MP}
+C.~Mantegazza and M.~Pozzetta,
+The \L{}ojasiewicz--Simon inequality for the elastic flow,
+\emph{Calc. Var. Partial Differential Equations} \textbf{60} (2021), no.~1, Paper No.~56, 17 pp.
+\href{https://doi.org/10.1007/s00526-020-01916-0}{doi:10.1007/s00526-020-01916-0}.
+
+\bibitem{Jellyfish}
+B.~Andrews and G.~Wheeler,
+Jellyfish exist,
+preprint (2026), \href{https://arxiv.org/abs/2601.21227v1}{arXiv:2601.21227v1}.
+
+\bibitem{PSW}
+J.~Pr\"uss, G.~Simonett and M.~Wilke,
+Critical spaces for quasilinear parabolic evolution equations and applications,
+\emph{J. Differential Equations} \textbf{264} (2018), no.~3, 2028--2074.
+\href{https://doi.org/10.1016/j.jde.2017.10.010}{doi:10.1016/j.jde.2017.10.010}.
+
+\bibitem{PSZ}
+J.~Pr\"uss, G.~Simonett and R.~Zacher,
+On convergence of solutions to equilibria for quasilinear parabolic problems,
+\emph{J. Differential Equations} \textbf{246} (2009), 3902--3931.
+\href{https://doi.org/10.1016/j.jde.2008.10.034}{doi:10.1016/j.jde.2008.10.034}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions,
+\href{https://dlmf.nist.gov/20.5.E13}{Section~20.5, equation~20.5.13},
+\href{https://dlmf.nist.gov/22.2}{Section~22.2}, and
+\href{https://dlmf.nist.gov/22.16}{Section~22.16}.
+Conventions: elliptic modulus $1/\sqrt2$ corresponds to the parameter $1/2$ used here.
+Version 1.2.8; accessed 3 October 2026.
+
+\bibitem{Kato}
+T.~Kato,
+\emph{Perturbation Theory for Linear Operators}, second edition,
+Classics in Mathematics, Springer, Berlin, 1995.
+\href{https://doi.org/10.1007/978-3-642-66282-9}{doi:10.1007/978-3-642-66282-9}.
+
+\bibitem{deSimon}
+L.~de Simon,
+Un'applicazione della teoria degli integrali singolari allo studio delle equazioni differenziali lineari astratte del primo ordine,
+\emph{Rend. Sem. Mat. Univ. Padova} \textbf{34} (1964), 205--223.
+\href{https://www.numdam.org/item/RSMUP_1964__34__205_0/}{Original article at Numdam}.
+
+\bibitem{IKT}
+H.~Inci, T.~Kappeler and P.~Topalov,
+On the regularity of the composition of diffeomorphisms,
+\emph{Mem. Amer. Math. Soc.} \textbf{226} (2013), no.~1062, vi+60 pp.
+\href{https://doi.org/10.1090/S0065-9266-2013-00676-4}{doi:10.1090/S0065-9266-2013-00676-4}.
+Author version: \href{https://arxiv.org/abs/1107.0488}{arXiv:1107.0488}.
+\end{thebibliography}
+
+\end{document}

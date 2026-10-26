@@ -9,6 +9,18 @@ stability of Bernoulli lemniscates under the free elastic flow*. Its SHA-256 is
 The matched original standalone TeX has SHA-256
 `8e8e5f3419bd2c8a0be99e16dd4e980aaf4bc4dad247cc8b51018b6eddda7d84`.
 
+**The current formalization target is `audit/source/revised.tex`.** After each
+manuscript revision, theorem statements, hypotheses and proof dependencies are
+checked against that version. The original source is retained for comparison.
+
+The revised manuscript preserves the final theorem, defines the adjoint trial
+function by eighteen fixed rational coefficients instead of a Galerkin linear
+solve, and replaces the adjoint
+H4 residual proof with the shorter argument verified in Lean. It obtains the
+bound 177 times the residual. Intermediate single-period bounds use -21/4
+directly. The original source is preserved; this revision is not a full-paper
+proof certificate.
+
 The work has three distinct layers:
 
 1. Mathematical review of the definitions, proofs, analytic estimates and cited
@@ -30,7 +42,7 @@ The work has three distinct layers:
 | `Lemniscate.CoarseArithmetic` | Executable rational definitions for the actual coarse Fourier enclosures and cosine rows |
 | `Lemniscate.IntervalSoundness` | Real containment for addition, multiplication, scaling and absolute upper bounds |
 | `Lemniscate.IntervalExtras` | Positive reciprocal and division, certified square-root enclosures, and the actual coarse square-root-of-two bounds |
-| `Lemniscate.OddArithmetic` | All 84 odd-sector Bernstein comparisons and 12 zero-parameter comparisons, computed from rational formulas |
+| `Lemniscate.OddArithmetic` | All 84 odd-subspace Bernstein comparisons and 12 zero-parameter comparisons, computed from rational formulas |
 | `Lemniscate.OddPositivity` | Casts the computed coefficients into real polynomials and proves positivity on the entire parameter interval |
 | `Lemniscate.OddPolynomialSemantics` | Proves the list-polynomial operations agree with real polynomial evaluation and connects the low-row certificates to that evaluation |
 | `Lemniscate.OddWeights` | Positivity of every odd-row weight on the half interval, exact exceptional weights and geometric upper bounds for high weights |
@@ -54,16 +66,16 @@ The work has three distinct layers:
 | `Lemniscate.OddSobolevKernel` | Convergence of the complete integer distance-kernel row and its uniform bound 512 |
 | `Lemniscate.OddSobolevSummability` | Absolute convergence of the full odd energy double series for every H2-weighted complex sequence, proved from finite sums |
 | `Lemniscate.OddH2Dissipation` | Passes the finite-set estimates to the infinite H2 coefficient form: gap 1 on the half interval and gap 6 at zero |
-| `Lemniscate.PeriodicOddCoefficients` | Complete reconstruction and Parseval identity for the actual odd Fourier sector, and its H2 coefficient regularity |
+| `Lemniscate.PeriodicOddCoefficients` | Complete reconstruction and Parseval identity for the actual odd Fourier subspace, and its H2 coefficient regularity |
 | `Lemniscate.PeriodicOddPolynomials` | Identifies the differential energy of every finite odd Fourier polynomial with the zero-parameter matrix form |
 | `Lemniscate.PeriodicOddApproximation` | Simultaneous L2 convergence of finite odd Fourier sums and their first two weak derivatives |
 | `Lemniscate.PeriodicOddEnergy` | Identifies the infinite odd coefficient form with actual periodic H2 energy and transfers the -6 bound |
-| `Lemniscate.PeriodicOddOperatorEnergy` | Proves -6 dissipation for the actual H4 operator on the full odd-frequency sector under explicit profile Fourier and period hypotheses |
+| `Lemniscate.PeriodicOddOperatorEnergy` | Proves -6 dissipation for the actual H4 operator on the full odd-frequency subspace under explicit profile Fourier and period hypotheses |
 | `Lemniscate.PeriodicFrequencyParts` | Orthogonal even/odd frequency projections on actual L2, with preservation of H4 and commutation with weak derivatives |
 | `Lemniscate.PeriodicFrequencyOperator` | Proves projection/operator commutation and vanishing cross energy terms from the coefficient's vanishing odd Fourier modes |
-| `Lemniscate.PeriodicFullEnergy` | Combines all single-period sectors to obtain -21/4 coercivity on the actual rotation-orthogonal H4 complement |
+| `Lemniscate.PeriodicFullEnergy` | Combines all single-period subspaces to obtain -21/4 coercivity on the actual rotation-orthogonal H4 complement |
 | `Lemniscate.NeutralNormalization` | Normalizes a proved nonzero neutral vector for the abstract kernel and spectral argument |
-| `Lemniscate.PeriodicSingleSpectrum` | Instantiates the actual single-period operator: its kernel consists of rotation multiples, no nontrivial length-two generalized kernel chain exists, zero is spectral, and every nonzero spectral point has real part at most -21/4 (hence -5), under explicit Jacobi data |
+| `Lemniscate.PeriodicSingleSpectrum` | Instantiates the actual single-period operator: its kernel consists of rotation multiples, no nontrivial length-two generalized kernel chain exists, zero is spectral, and every nonzero spectral point has real part at most -21/4, under explicit Jacobi data |
 | `Lemniscate.PeriodicPerturbedFredholm` | Proves a compact bounded inverse for a bounded L2 perturbation of the H4 operator whenever its kernel is zero |
 | `Lemniscate.NeutralAdjointVector` | Constructs the unique normalized adjoint neutral vector from the two-sided inverse of the rank-one neutral shift |
 | `Lemniscate.PeriodicAdjointNeutral` | Proves existence and uniqueness of the actual H4 adjoint zero vector normalized against the unit rotation, under the explicit profile data |
@@ -71,21 +83,24 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicAdjointSymmetry` | Derives reflection oddness and vanishing odd Fourier coefficients of the exact adjoint vector from uniqueness |
 | `Lemniscate.PeriodicConjugation` | Pointwise complex conjugation on actual L2, its Fourier and pairing identities, and its compatibility with weak differentiation and real multiplication |
 | `Lemniscate.PeriodicConjugateOperator` | Proves H4 preservation and commutation with the real differential operator, then derives reality from normalized adjoint uniqueness |
-| `Lemniscate.PeriodicAdjointReality` | Constructs the unique real H4 adjoint zero vector in the even sine sector and proves the common-phase Fourier identities |
+| `Lemniscate.PeriodicAdjointReality` | Constructs the unique real H4 adjoint zero vector in the even sine subspace and proves the common-phase Fourier identities |
 | `Lemniscate.NeutralTransform` | Bounded mutually inverse exact neutral transforms, domain preservation, and the orthogonal-compression formula on an explicit operator domain |
 | `Lemniscate.PeriodicNeutralTransform` | Instantiates the exact neutral decomposition on actual periodic H4, including zero neutral row and column; proves reflection commutation |
 | `Lemniscate.NeutralHouseholder` | Exact Householder involution, symmetric pairing, inner-product preservation and inverse on an explicit linear domain |
-| `Lemniscate.PeriodicHouseholderAnchor` | Constructs the actual unit H4 anchor at Fourier frequencies ±2 and proves the chosen phase of rotation has strictly positive pairing with it |
+| `Lemniscate.PeriodicHouseholderAnchor` | Constructs the actual unit H4 reference mode at Fourier frequencies ±2 and proves the chosen phase of rotation has strictly positive pairing with it |
 | `Lemniscate.PeriodicHouseholder` | Proves the actual denominator exceeds one, all Householder identities on L2 and H4, preservation of even frequencies and reflection commutation |
-| `Lemniscate.PeriodicCenteredNeutral` | Proves common-phase invariance of the neutral transform, then zero anchor row and column for the combined exact transformed expression and its symmetric pairing |
+| `Lemniscate.PeriodicCenteredNeutral` | Proves common-phase invariance of the neutral transform, then zero row and column corresponding to the fixed Fourier mode for the combined exact transformed expression and its symmetric pairing |
 | `Lemniscate.PeriodicBlochPolynomial` | Defines the actual shifted differential expression on H4 and proves its exact quartic expansion in the Bloch parameter |
 | `Lemniscate.PeriodicBlochParity` | Proves reflection parity of every Bloch coefficient and identifies the fourth coefficient as the scalar -4r² |
-| `Lemniscate.PeriodicBlochCenter` | Identifies transformed anchor coefficients with exact adjoint/rotation pairings and eliminates the odd coefficients by reflection |
+| `Lemniscate.PeriodicBlochCenter` | Identifies transformed coefficients along the fixed Fourier mode with exact adjoint/rotation pairings and eliminates the odd coefficients by reflection |
 | `Lemniscate.PeriodicBlochCenterPolynomial` | Proves the full transformed polynomial, exact quadratic center cancellation and linear cross cancellation before division by the parameter |
 | `Lemniscate.PeriodicBlochFourier` | Identifies all Fourier entries of the actual Bloch operator and their symmetric odd-frequency pairing with the certified matrix for every real parameter |
 | `Lemniscate.PeriodicBlochOddFinite` | Identifies the actual energy of every finite odd Fourier sum with the certified matrix form and proves its half-interval bound |
-| `Lemniscate.PeriodicBlochOddLimit` | Proves convergence of all four derivatives and the actual Bloch expression, then obtains -1 dissipation for every odd-sector H4 function and every parameter in [0,1/2] |
-| `Lemniscate.PeriodicAdjointResidual` | Bounds the L2 error of any normalized H4 adjoint trial in the even sine sector by one seventy-fifth of its actual adjoint residual norm |
+| `Lemniscate.PeriodicBlochOddLimit` | Proves convergence of all four derivatives and the actual Bloch expression, then obtains -1 dissipation for every odd-subspace H4 function and every parameter in [0,1/2] |
+| `Lemniscate.PeriodicAdjointResidual` | Bounds the L2 error of any normalized H4 adjoint trial in the even sine subspace by one seventy-fifth of its actual adjoint residual norm |
+| `Lemniscate.PeriodicProfileBounds` | Derives uniform profile bounds from the first integral, square-multiplier energy identities and the actual H4 Gårding inequality |
+| `Lemniscate.PeriodicAdjointDerivativeBounds` | Uses the actual adjoint differential equation to control the fourth derivative and obtain all four derivative error bounds |
+| `Lemniscate.PeriodicAdjointSobolevError` | Proves the angular H4 trial error is at most 177 times the actual adjoint residual norm |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -129,11 +144,11 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicSineEnergy` | Identifies the full H2 differential energy with the coefficient form and proves constrained -75 dissipation for arbitrary weak derivative witnesses |
 | `Lemniscate.PeriodicSineProfileEnergy` | Restores the paper's curvature potential and the actual q q' orthogonality constraint in the H2 energy bound |
 | `Lemniscate.PeriodicSineOperatorEnergy` | Transfers the -75 bound to the genuine H4 linearized operator, conditionally on the stated profile identities |
-| `Lemniscate.PeriodicSineSector` | Reconstructs every Fourier-defined even sine function from its first mode and l2 tail and proves the operator bound for the entire sector without an assumed representation |
-| `Lemniscate.PeriodicCosineSector` | Reconstructs every Fourier-defined even cosine function, including the separately normalized constant mode, and proves -21/4 dissipation for the entire sector |
+| `Lemniscate.PeriodicSineSector` | Reconstructs every Fourier-defined even sine function from its first mode and l2 tail and proves the operator bound for the entire subspace without an assumed representation |
+| `Lemniscate.PeriodicCosineSector` | Reconstructs every Fourier-defined even cosine function, including the separately normalized constant mode, and proves -21/4 dissipation for the entire subspace |
 | `Lemniscate.PeriodicReflection` | Constructs Fourier reflection as an actual L2 isometry, proves that it preserves H4, and identifies its action on the weak derivatives |
 | `Lemniscate.PeriodicReflectionOperator` | Proves reflection identities for multiplication on all of L2 and commutation with the actual H4 operator for an even C2 coefficient |
-| `Lemniscate.PeriodicReflectionSplit` | Splits every L2 or H4 function into orthogonal reflection parts, identifies their Fourier sectors, and transfers the rotation constraint to the sine part |
+| `Lemniscate.PeriodicReflectionSplit` | Splits every L2 or H4 function into orthogonal reflection parts, identifies their Fourier subspaces, and transfers the rotation constraint to the sine part |
 | `Lemniscate.PeriodicEvenEnergy` | Proves vanishing of operator cross terms and combines the complete cosine and sine bounds into -21/4 dissipation for every even-frequency H4 function orthogonal to rotation, under the explicit profile hypotheses |
 | `Lemniscate.PeriodicRotationDomain` | Constructs all four weak derivatives of q q' from the profile ODE, proves actual H4 membership, and proves that the defined H4 operator annihilates it using the first integral |
 | `Lemniscate.CoefficientMajorant` | Uniform exponential coefficient bound and the comparison between sum and difference frequency indices |
@@ -174,14 +189,14 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicIntegrationByParts` | Uses periodic integration by parts to identify the classical fourth-order energy with the form involving only two derivatives |
 | `Lemniscate.PeriodicDerivativeGraph` | Controls the first weak derivative by the zeroth and second derivatives and proves its convergence from convergence of those two quantities |
 | `Lemniscate.PeriodicH2Approximation` | Proves simultaneous L2 convergence of finite cosine polynomials and their first two derivatives |
-| `Lemniscate.PeriodicH2Energy` | Identifies the actual weak-derivative energy with the convergent coefficient form and proves cosine-sector H2 dissipation under explicit coefficient hypotheses |
+| `Lemniscate.PeriodicH2Energy` | Identifies the actual weak-derivative energy with the convergent coefficient form and proves cosine-subspace H2 dissipation under explicit coefficient hypotheses |
 | `Lemniscate.PeriodicProfileEnergy` | Rewrites that H2 form in the paper's curvature-profile variables and proves its dissipation, retaining the profile ODE, Fourier formula and period relation as hypotheses |
 | `Lemniscate.PeriodicSkewEnergy` | Proves symmetry of multiplication by a real coefficient on L2 and cancellation of the real energy of the classical periodic first-order skew correction |
-| `Lemniscate.PeriodicLinearEnergy` | Splits the paper's linearized differential expression into symmetric and skew parts, identifies its classical real energy, and derives cosine-sector dissipation under the explicit profile and Fourier hypotheses |
+| `Lemniscate.PeriodicLinearEnergy` | Splits the paper's linearized differential expression into symmetric and skew parts, identifies its classical real energy, and derives cosine-subspace dissipation under the explicit profile and Fourier hypotheses |
 | `Lemniscate.PeriodicWeakCalculus` | Proves integration by parts between L2 weak derivatives, the product rule for real C1 coefficients, and zero real energy of the corresponding first-order skew term |
 | `Lemniscate.PeriodicWeakOperatorEnergy` | Defines the four-weak-derivative domain and proves symmetric and linear-expression energy identities and conditional cosine dissipation on four successive L2 weak derivatives |
 | `Lemniscate.PeriodicH4Domain` | Constructs that H4 domain as a complex submodule of L2, proves uniqueness of all derivative witnesses, and bundles the four derivative maps as linear maps |
-| `Lemniscate.PeriodicH4Operator` | Defines the symmetric and linearized expressions as linear maps from the explicit H4 domain to L2 and proves their energy identity and conditional cosine-sector dissipation |
+| `Lemniscate.PeriodicH4Operator` | Defines the symmetric and linearized expressions as linear maps from the explicit H4 domain to L2 and proves their energy identity and conditional cosine-subspace dissipation |
 | `Lemniscate.PeriodicFormalAdjoint` | Proves fourth-order, divergence and skew Green identities on H4, checks the formal adjoint expression, and proves the two-operator pairing identity; maximal-domain identification is proved in the later regularity module |
 | `Lemniscate.PeriodicH4Density` | Shows every Fourier basis mode belongs to H4, proves the domain is dense in L2, and proves that pairing against this domain separates L2 functions |
 | `Lemniscate.PeriodicHilbertAdjoint` | Packages the operator as a Mathlib LinearPMap, proves inclusion of the formal expression in its genuine Hilbert adjoint and agreement on H4, establishes adjoint closedness and density, and proves closability of the original operator |
@@ -244,11 +259,12 @@ library and may be run as follows:
 ```text
 python audit/recompute/audit_refined_all.py
 python audit/recompute/verify_expanded_algebra.py
-python audit/recompute/expand_arithmetic.py
+python audit/recompute/expand_arithmetic.py --output-dir tmp/current-trial-check
 ```
 
-The first checks the original Galerkin trial; the third checks the later fixed
-rational trial and reproduces its expanded appendix. Generated decimal displays
+The first checks the original Galerkin trial; the third checks the fixed rational
+trial in the current revised manuscript and its 177-times-residual error budget.
+Generated decimal displays
 are for reading only; inequality decisions use exact rational arithmetic.
 
 ## Remaining work
@@ -260,16 +276,16 @@ The following obligations are still required for the original goal:
   every infinite tail.
 - Identify the concrete Jacobi profile and its Fourier/theta parameters in the
   defined periodic operator; extend the completed conditional cosine energy
-  connection to every required sector. The sine coefficient domain is now
+  connection to every required subspace. The sine coefficient domain is now
   identified with actual periodic H2, and its constraint with orthogonality to
   q q' under explicit profile Fourier hypotheses. The complete sine form is
   identified with the actual H2 differential energy, and its -75 bound is
-  transferred to the H4 operator. Both even-frequency sectors are complete,
+  transferred to the H4 operator. Both even-frequency subspaces are complete,
   and their reflection splitting now gives -21/4 dissipation for their entire
   sum under the rotation constraint. The concrete Jacobi profile must still
   be shown to satisfy all Fourier and period hypotheses. The odd-frequency
-  sector now has -6 dissipation for the actual periodic H4 operator. Orthogonal
-  frequency splitting combines it with the even sectors to give -21/4
+  subspace now has -6 dissipation for the actual periodic H4 operator. Orthogonal
+  frequency splitting combines it with the even subspaces to give -21/4
   coercivity on the whole rotation-orthogonal H4 complement. The nonzero
   rotation vector and this coercivity instantiate the neutral-mode argument;
   the proved Fredholm alternative then gives the single-period full spectral
@@ -280,8 +296,8 @@ The following obligations are still required for the original goal:
   the infinite H2 coefficient form are also proved. That form is identified
   with the actual periodic energy at zero parameter. The actual Bloch matrix
   is now identified for all real parameters; four-derivative approximation
-  transfers the -1 bound to every odd-sector H4 function for parameters in
-  [0,1/2]. The transformed even Bloch sector remains.
+  transfers the -1 bound to every odd-subspace H4 function for parameters in
+  [0,1/2]. The transformed even Bloch subspace remains.
 - Establish sectoriality, the Bloch decomposition and the analytic perturbation
   argument in Lean. Closedness and equality of the
   maximal adjoint domain with H4 are proved for the stated real C2 coefficients.
@@ -294,13 +310,14 @@ The following obligations are still required for the original goal:
   transform with its H4 inverse and orthogonal-compression formula.
   The actual Householder transform now has a proved positive denominator,
   involution and H4 preservation; its combination with the exact neutral
-  transform has zero anchor row and column, also in the symmetric pairing.
+  transform has zero row and column corresponding to the fixed Fourier mode, also in the symmetric pairing.
   The actual quartic Bloch polynomial, its reflection parity and exact center
   and cross-factor cancellations are proved. The adjoint trial's L2 error is
-  bounded by its residual norm divided by 75. Quantitative H4 approximation
-  estimates, complex angular resolvent estimates and uniform negativity of
-  the transformed even Bloch sector still need proof. The remaining
-  argument may use the anchor projection and quadratic forms directly; an
+  bounded by its residual norm divided by 75, and its angular H4 error by
+  177 times that residual norm. The concrete trial residual certificate,
+  vector truncation estimates, complex angular resolvent estimates and uniform negativity of
+  the transformed even Bloch subspace still need proof. The remaining
+  argument may use the projection onto the fixed Fourier mode and quadratic forms directly; an
   explicit copy of the paper's basis-change matrix is not a requirement.
 - Formalize the relevant parabolic existence, regularization and normal
   stability results, or use already proved Lean theorems with matching

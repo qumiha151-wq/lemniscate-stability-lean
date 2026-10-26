@@ -51,6 +51,11 @@ theorem circle_lower_resolvent_norm_le (h h₁ h₂ : C(AddCircle T, ℂ))
     (p : ℝ) (hp : 1 ≤ p) :
     ‖circleLowerResolvent T h h₁ h₂ p hp‖ ≤ circleLowerBound T h h₁ h₂ / p := by
   have hp' : 0 < p := lt_of_lt_of_le zero_lt_one hp
+  have hr := circle_principal_resolvent_norm_le T (p^2) (sq_pos_of_pos hp')
+  rw [← one_div] at hr
+  have hscale : 1/p^2 ≤ 1/p := by
+    apply one_div_le_one_div_of_le hp'
+    nlinarith
   have hm₂ : ‖(circleMultiplyL2 T h).comp (circlePrincipalSecond T p hp)‖ ≤
       ‖h‖*(1/(4*p)) :=
     circle_multiply_comp_norm_le T h _ _ (circle_principal_second_norm_le T p hp)
@@ -58,9 +63,8 @@ theorem circle_lower_resolvent_norm_le (h h₁ h₂ : C(AddCircle T, ℂ))
       ‖h₁‖*(5/(4*p)) :=
     circle_multiply_comp_norm_le T h₁ _ _ (circle_principal_first_norm_le T p hp)
   have hm₀ : ‖(circleMultiplyL2 T h₂).comp
-      (circlePrincipalResolvent T (p^2) (by nlinarith))‖ ≤ ‖h₂‖*(1/p) :=
-    circle_multiply_comp_norm_le T h₂ _ _ (circle_principal_resolvent_coarse_norm_le T p hp)
-  have hr := circle_principal_resolvent_coarse_norm_le T p hp
+      (circlePrincipalResolvent T (p^2) (by nlinarith))‖ ≤ ‖h₂‖*(1/p^2) :=
+    circle_multiply_comp_norm_le T h₂ _ _ hr
   unfold circleLowerResolvent
   calc
     _ ≤ 45*‖(circleMultiplyL2 T h).comp (circlePrincipalSecond T p hp)‖ +
@@ -74,8 +78,9 @@ theorem circle_lower_resolvent_norm_le (h h₁ h₂ : C(AddCircle T, ℂ))
       exact add_le_add (add_le_add
         (add_le_add (mul_le_mul_of_nonneg_left hm₂ (by norm_num))
           (mul_le_mul_of_nonneg_left hm₁ (by norm_num)))
-        (mul_le_mul_of_nonneg_left hr (by norm_num)))
-        (mul_le_mul_of_nonneg_left hm₀ (by norm_num))
+        (mul_le_mul_of_nonneg_left (hr.trans hscale) (by norm_num)))
+        (mul_le_mul_of_nonneg_left
+          (hm₀.trans (mul_le_mul_of_nonneg_left hscale (norm_nonneg _))) (by norm_num))
     _ = circleLowerBound T h h₁ h₂ / p := by
       unfold circleLowerBound
       field_simp

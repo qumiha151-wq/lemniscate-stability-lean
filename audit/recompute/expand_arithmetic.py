@@ -44,7 +44,7 @@ def trial():
     eta_e_norm=(1/te-1).ab()*ev.h4sum(es[:15])
     eta_p_tail=sum(pt[j-1].ab()*sum((2*j)**k for k in range(5)) for j in range(16,19))
     eta_p_norm=(1/tp-1).ab()*ev.h4sum(pt[:15])
-    eta_p_res=F(225,10**14)
+    eta_p_res=F(177,10**14)
     vals={'residual_head':head,'residual_tail':tail,'residual_sq':head+tail,
       'eta_e_tail':eta_e_tail,'eta_e_norm':eta_e_norm,'eta_e':eta_e_tail+eta_e_norm,
       'eta_p_tail':eta_p_tail,'eta_p_norm':eta_p_norm,'eta_p_res':eta_p_res,
@@ -102,7 +102,7 @@ the exact rational enclosures. It fixes all endpoints in the tables below.
 Products of a scalar polynomial and an interval are evaluated coefficientwise.
 All comparisons reduce to multiplication of positive integer denominators.
 
-The trial vector in \eqref{eq:galerkin-trial} is defined directly by
+The trial vector in \eqref{eq:adjoint-trial} is defined directly by
 $t_i=N_i/10^{30}$, where all $N_i$ are listed in
 Table~\ref{tab:trial-integers}. No linear solve is part of this definition.
 '''
@@ -341,9 +341,14 @@ and $217$ finite comparisons, for a total of $322$. All other comparisons are
 listed in the scalar, residual and vector tables. The analytic treatment of
 the infinitely many remaining rows is independent of these finite tables.
 '''
-(root/'results/recomputed_expanded_arithmetic.tex').write_text(out,encoding='utf-8')
+import argparse
+parser=argparse.ArgumentParser()
+parser.add_argument('--output-dir',type=Path,default=root/'results')
+output_dir=parser.parse_args().output_dir
+output_dir.mkdir(parents=True,exist_ok=True)
+(output_dir/'recomputed_expanded_arithmetic.tex').write_text(out,encoding='utf-8')
 record={'trial':frozen,'even_integer_comparisons':evenrecords,'residual_numerators':resceil,'residual_squares_sum':resnumer,'residual_tail_numerator':tailceil,'scalar_bounds':{k:str(v) for k,v in scalar.items()},'vector_bounds':{k:str(v) for k,v in data['vals'].items()},'counts':{'single':9,'odd':84,'odd_zero':12,'even':217}}
-(root/'results/expanded_arithmetic_data.json').write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
+(output_dir/'expanded_arithmetic_data.json').write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
 print('Created expanded rational tables; all 322 inequalities and vector/residual bounds pass.')
 print('Rational trial coefficients:',frozen['numerators'])
 print('Smallest even integer margin:',min(r['margin'] for r in evenrecords))
