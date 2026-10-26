@@ -101,6 +101,7 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicProfileBounds` | Derives uniform profile bounds from the first integral, square-multiplier energy identities and the actual H4 Gårding inequality |
 | `Lemniscate.PeriodicAdjointDerivativeBounds` | Uses the actual adjoint differential equation to control the fourth derivative and obtain all four derivative error bounds |
 | `Lemniscate.PeriodicAdjointSobolevError` | Proves the angular H4 trial error is at most 177 times the actual adjoint residual norm |
+| `Lemniscate.PeriodicAdjointTrial` | Identifies every Fourier coefficient and the full Parseval sum of a finite trial's actual adjoint residual; proves exact normalization and residual scaling |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |

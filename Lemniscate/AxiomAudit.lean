@@ -876,3 +876,7 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_angular_h4_bound_of_derivatives
 #print axioms Lemniscate.paper_adjoint_h4_bound
 #print axioms Lemniscate.paper_adjoint_trial_h4_error
+#print axioms Lemniscate.circle_adjoint_polynomial_fourier
+#print axioms Lemniscate.circle_adjoint_polynomial_norm_sq
+#print axioms Lemniscate.circle_normalized_trial_pairing
+#print axioms Lemniscate.circle_normalized_trial_adjoint_norm

@@ -180,3 +180,4 @@ import Lemniscate.PeriodicAdjointResidual
 import Lemniscate.PeriodicProfileBounds
 import Lemniscate.PeriodicAdjointDerivativeBounds
 import Lemniscate.PeriodicAdjointSobolevError
+import Lemniscate.PeriodicAdjointTrial

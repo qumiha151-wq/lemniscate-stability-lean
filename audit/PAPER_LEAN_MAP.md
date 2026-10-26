@@ -121,6 +121,7 @@
 | 伴随残差控制 L² 误差 | `circle_adjoint_residual_energy`, `paper_adjoint_trial_l2_error` | 对任意同归一化的偶频正弦 H⁴ 试探向量，真实 Green 恒等式与 −75 耗散给出 ‖ψ−t‖≤‖A*t‖/75；具体试探残差认证尚未完成 |
 | 真实 Gårding 界与全部弱导数控制 | `paper_h4_operator_garding`, `paper_adjoint_all_derivative_bounds` | 第一积分、实系数乘法的平方配对及弱分部积分给出实际能量界；伴随方程再控制四阶导数 |
 | H⁴ 伴随误差界 | `paper_adjoint_trial_h4_error` | 在角坐标导数和范数中得到 ≤177‖A*t‖；修订稿直接采用该强界及更短证明，最终稳定性结论未改变 |
+| 固定有限 Fourier 试探函数的残差 | `circle_adjoint_polynomial_fourier`, `circle_adjoint_polynomial_norm_sq`, `circle_normalized_trial_pairing`, `circle_normalized_trial_adjoint_norm` | 用 Green 恒等式得到实际伴随算子的全部 Fourier 系数，Parseval 等式包含完整无限尾项；归一化仅需非零内积。最新文稿中具体有理系数的残差区间界仍待在 Lean 中认证 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |
 | 非线性正常稳定性 | 尚无完整 Lean 定理 | PSZ、最大正则性、平衡流形及平滑论证均有待形式化 |
