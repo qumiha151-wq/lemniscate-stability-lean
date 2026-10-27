@@ -120,10 +120,12 @@
 | 精确中性配对及参数因子消去 | `paper_centered_bloch_anchor_pairing`, `paper_centered_bloch_center_scaled`, `paper_centered_bloch_cross_row_scaled`, `paper_centered_bloch_cross_column_scaled` | 与固定 Fourier 基向量的内积等于精确 ⟨ψ,Aⱼe⟩；中性块恰有二次因子、正交交叉块恰有一次因子。明确在 α≠0 时除法，未把近似核代入；有限秩范数误差和统一负性仍待证明 |
 | 非零参数 Fourier 矩阵 | `circle_bloch_basis_fourier`, `circle_bloch_odd_symmetric_pairing` | 从真实微分表达式计算任意 α∈ℝ 的矩阵；在实际 Fourier 和周期条件下，奇频对称配对等于已认证的参数矩阵 |
 | 非零参数的完整奇频 H⁴ 耗散 | `circle_odd_polynomial_bloch_energy`, `circle_odd_bloch_energy_eq_coefficients`, `paper_h4_bloch_odd_dissipative` | 对每个 α∈[0,1/2]，经四阶导数同时逼近，将实际奇频算子能量识别为无限系数形式，得到 −‖f‖² 界；覆盖整个奇频 H⁴ 域，仍保留曲率 Fourier 和周期条件 |
-| 伴随残差控制 L² 误差 | `circle_adjoint_residual_energy`, `paper_adjoint_trial_l2_error` | 对任意同归一化的偶频正弦 H⁴ 试探向量，真实 Green 恒等式与 −75 耗散给出 ‖ψ−t‖≤‖A*t‖/75；具体试探残差认证尚未完成 |
+| 伴随残差控制 L² 误差 | `circle_adjoint_residual_energy`, `paper_adjoint_trial_l2_error` | 对任意同归一化的偶频正弦 H⁴ 试探向量，真实 Green 恒等式与 −75 耗散给出 ‖ψ−t‖≤‖A*t‖/75；具体试探残差认证见下列固定有理试探函数定理 |
 | 真实 Gårding 界与全部弱导数控制 | `paper_h4_operator_garding`, `paper_adjoint_all_derivative_bounds` | 第一积分、实系数乘法的平方配对及弱分部积分给出实际能量界；伴随方程再控制四阶导数 |
 | H⁴ 伴随误差界 | `paper_adjoint_trial_h4_error` | 在角坐标导数和范数中得到 ≤177‖A*t‖；修订稿直接采用该强界及更短证明，最终稳定性结论未改变 |
-| 固定有限 Fourier 试探函数的残差 | `circle_adjoint_polynomial_fourier`, `circle_adjoint_polynomial_norm_sq`, `circle_normalized_trial_pairing`, `circle_normalized_trial_adjoint_norm` | 用 Green 恒等式得到实际伴随算子的全部 Fourier 系数，Parseval 等式包含完整无限尾项；归一化仅需非零内积。最新文稿中具体有理系数的残差区间界仍待在 Lean 中认证 |
+| 固定有限 Fourier 试探函数的残差 | `circle_adjoint_polynomial_fourier`, `circle_adjoint_polynomial_norm_sq`, `circle_normalized_trial_pairing`, `circle_normalized_trial_adjoint_norm` | 用 Green 恒等式得到实际伴随算子的全部 Fourier 系数，Parseval 等式包含完整无限尾项；归一化仅需非零内积。具体有理系数的残差区间界已由下列定理补齐 |
+| 固定有理试探函数的完整实际残差 | `circle_adjoint_trial_residual_sq` | 59 个系数区间、40 个有限输出系数及全部无限尾项共同给出实际 A*Φ 的范数平方小于 2×10⁻³⁰；保留曲率 Fourier 公式和周期关系条件 |
+| 实际旋转归一化后的完整残差 | `circle_adjoint_trial_rotation_pairing`, `circle_normalized_adjoint_trial_residual_sq` | 前两项即证明配对大于 1，归一化降低残差；覆盖论文的旋转向量符号及单位复相位。具体 Jacobi 轮廓仍须实例化 |
 | 任意重数谱隙 | `multiple_cover_gap` | 仅有参数下界到平方谱隙的实数推论；Bloch 直和和谱隙阶数尚未形式化 |
 | 加权局部理论 | `weighted_critical_exponents` | 仅验证三个指数等式；不是 PSW 存在唯一性定理 |
 | 非线性正常稳定性 | 尚无完整 Lean 定理 | PSZ、最大正则性、平衡流形及平滑论证均有待形式化 |

@@ -535,11 +535,11 @@ Choose the fixed rational coefficients
 \end{equation}
 where the integers $N_i$ are given in Table~\ref{tab:adjoint-trial}.
 The normalization bound in Appendix~\ref{app:arithmetic} gives
-$\ip\Phi e>999/1000$, so this defines $\widetilde\psi$.
+$\ip\Phi e>1$, so normalization can only decrease the adjoint residual.
 Only this normalization and the residual estimate below enter the argument.
 Appendix~\ref{app:arithmetic}, including the infinite residual tail, proves
 \begin{equation}\label{eq:adjoint-data}
- \norm{A_0^*\widetilde\psi}^2<2\cdot10^{-30}<10^{-28}.
+ \norm{A_0^*\widetilde\psi}^2\le\norm{A_0^*\Phi}^2<2\cdot10^{-30}<10^{-28}.
 \end{equation}
 
 
@@ -953,14 +953,27 @@ $10^{-30}$. This keeps every bound rational and outward.
 Use \eqref{eq:sqrt-envelope} for every square root, in particular $\mathcal R([2,2])$ for $\sqrt2$ and $\mathcal R(2J_{h_0}/(5J_r))$ for $\mathfrak n$. The normalization bounds are
 \[
  \mathfrak n>\tfrac12,\qquad
- \ip\Phi e>\tfrac{999}{1000},\qquad
+ \ip\Phi e>1,\qquad
  \norm{P_{15}e}>\tfrac{999}{1000},\qquad
  \ip{P_{15}\widetilde\psi}{e_N}>\tfrac{999}{1000}.
 \]
 Here $P_{15}$ truncates to 15 sine modes. Substitute the exact rational
 coefficients from Table~\ref{tab:adjoint-trial} into \eqref{eq:adjoint-trial}
 and use \eqref{eq:fine-input} and \eqref{eq:sqrt-envelope} to obtain these bounds.
-All divisions used for normalization have positive enclosing intervals.
+For the trial pairing, a shorter argument uses only the first two coefficients.
+The coarse enclosures give
+\[
+ r>\frac{71}{100},\qquad 0<h_0<\frac{23}{50},\qquad
+ h_2>\frac{31}{125},\qquad h_4>\frac{21}{1000}.
+\]
+Consequently $\mathfrak n<51/100$. Since $t_1=1$, $t_2>1/5$, and every $t_i>0$,
+\[
+ \sum_{i=1}^{18}t_i(2ih_{2i})\ge2h_2+4t_2h_4>
+ \frac{641}{1250}>\frac{51}{100}>\mathfrak n.
+\]
+Thus $\ip\Phi e>1$. The residual estimate can be made directly on the rational
+trial $\Phi$, without interval division by $\ip\Phi e$.
+All divisions used for the remaining normalization bounds have positive enclosing intervals.
 
 \subsection{Residual and vector bounds}
 \begin{table}[htbp]
@@ -1002,12 +1015,12 @@ For positive even $n,m$ use the explicit sine matrix
 \end{equation}
 Denote by $u_j$ the larger absolute endpoint of the segment enclosing
 \[
- \sum_{i=1}^{18}A^s_{2i,2j}p_i,
+ \sum_{i=1}^{18}A^s_{2i,2j}t_i.
 \]
-and by $p_i^+$ the larger absolute endpoint of $p_i$. The explicit upper bound for the squared residual is
+The complete squared residual satisfies
 \begin{equation}\label{eq:residual-finite}
- \sum_{j=1}^{40}u_j^2+
- \left(480r_+H\sum_{i=1}^{18}p_i^+\right)^2
+ \norm{A_0^*\Phi}^2\le\sum_{j=1}^{40}u_j^2+
+ \left(480r_+H\sum_{i=1}^{18}t_i\right)^2
  \bar Q^{-36}T_6(\bar Q^2,41)<2\cdot10^{-30}.
 \end{equation}
 For the tail, \eqref{eq:sine-A} and $j>40$, $i\le18$ give

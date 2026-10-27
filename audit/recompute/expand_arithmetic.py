@@ -34,9 +34,9 @@ def trial():
     norm=ev.sqrt(2*ev.hh0/(5*ev.R))
     es=[2*j*ev.hh(2*j)/norm for j in range(1,19)]
     pair=ev.dot(phi,es); pt=[v/pair for v in phi]
-    rawres=[ev.dot([ev.sine(2*i,2*j) for i in range(1,19)],pt) for j in range(1,41)]
+    rawres=[ev.dot([ev.sine(2*i,2*j) for i in range(1,19)],phi) for j in range(1,41)]
     head=sum((u.ab()**2 for u in rawres),F(0))
-    tail=(480*sp.rhi*sp.H*sum(v.ab() for v in pt))**2*sp.qb**(-36)*sp.tail(sp.qb**2,41,6)
+    tail=(480*sp.rhi*sp.H*sum(v.ab() for v in phi))**2*sp.qb**(-36)*sp.tail(sp.qb**2,41,6)
     te=ev.sqrt(ev.dot(es[:15],es[:15])); e=[v/te for v in es[:15]]
     tp=ev.dot(pt[:15],e); psi=[v/tp for v in pt[:15]]
     z=[p-q for p,q in zip(psi,e)]
@@ -59,7 +59,8 @@ def trial():
     assert vals['e_H4']<200 and vals['psi_H4']<200
     assert vals['zN_sq']<F(1,400)
     assert vals['envelope_e']<F(13,1000) and vals['envelope_z']<F(7,1000)
-    assert all(x.lower()>F(999,1000) for x in (pair,te,tp))
+    assert pair.lower()>1
+    assert all(x.lower()>F(999,1000) for x in (te,tp))
     data.update(norm=norm,pair=pair,te=te,tp=tp,es=es,pt=pt,e=e,psi=psi,z=z,res=rawres,vals=vals)
     return e,psi,{k:float(v) for k,v in vals.items()}
 ev.trial_data=trial
@@ -218,7 +219,7 @@ Put $t_j=0$ for $j>18$. Before normalization, each residual coefficient is
  \big[(7j-i)h_{2|i-j|}+(7j+i)h_{2(i+j)}\big]
  -(64r^2j^4+42)t_j.
 \end{equation}
-Thus $u_j$ bounds $|\mathfrak r_j/c_\Phi|$, not the sum of the absolute values
+Thus $u_j$ bounds $|\mathfrak r_j|$, not the sum of the absolute values
 of its individual summands: the signed sum is formed before taking its
 interval absolute value. The table gives $u_j\le U_j^{\rm res}$ for every
 $1\le j\le40$. Its entries can be substituted directly in the squared sum.
@@ -232,7 +233,7 @@ out+=longtable('rrr',r'Residual bounds $u_j\le m_j10^{-35}$ and their integer sq
 resnumer=sum(x*x for x in resceil)
 tailceil=ceil(data['vals']['residual_tail'],10**70)
 assert F(resnumer+tailceil,10**70)<F(2,10**30)
-out+=r'Consequently the complete residual comparison is the integer inequality'+'\n'+r'\begin{align*}'+'\n'+r' 10^{30}\|A_0^*\widetilde\psi\|^2&\le '+str(resnumer)+r'\\'+'\n'+r' &\quad+'+str(tailceil)+r'\\'+'\n'+r' &='+str(resnumer+tailceil)+r'<2\cdot10^{40}.'+'\n'+r'\end{align*}'+'\n'
+out+=r'Consequently the complete residual comparison is the integer inequality'+'\n'+r'\begin{align*}'+'\n'+r' 10^{70}\|A_0^*\Phi\|^2&\le '+str(resnumer)+r'\\'+'\n'+r' &\quad+'+str(tailceil)+r'\\'+'\n'+r' &='+str(resnumer+tailceil)+r'<2\cdot10^{40}.'+'\n'+r'\end{align*}'+'\n'
 out+=r'''
 This includes the whole $j\ge41$ tail from \eqref{eq:residual-finite}; the
 comparison proves both \eqref{eq:adjoint-data} and \eqref{eq:residual-finite}.
@@ -261,7 +262,7 @@ assert sz<10**12//400
 assert F(se,10**8)+F(2,10**12)<200 and F(spv,10**8)+F(6,10**12)<200
 out+=r'The sums of the printed upper bounds, including their outward rounding, are'+'\n'+r'\['+'\n'
 out+=r'L_4(E)\le\frac{'+str(se)+r'}{10^8},\qquad L_4(\Psi)\le\frac{'+str(spv)+r'}{10^8},\qquad \sum_i|Z_i|^2\le\frac{'+str(sz)+r'}{10^{12}}<\frac1{400}.'+'\n'+r'\]'+'\n'
-out+=r'The last comparison is the integer inequality $'+str(sz)+r'<2500000000$. For the two normalization errors one may use the simpler rational bounds $\eta_e^{\rm norm}<3\cdot10^{-28}$ and $\eta_p^{\rm norm}<7\cdot10^{-28}$. Hence'+'\n'+r'\['+'\n'+r'\eta_e<1.3309802\cdot10^{-12}+3\cdot10^{-28}<2\cdot10^{-12},'+'\n'+r'\]'+'\n'+r'\['+'\n'+r'\eta_p<2.8858093\cdot10^{-12}+7\cdot10^{-28}+2.25\cdot10^{-12}<6\cdot10^{-12}.'+'\n'+r'\]'+'\n'
+out+=r'The last comparison is the integer inequality $'+str(sz)+r'<2500000000$. For the two normalization errors one may use the simpler rational bounds $\eta_e^{\rm norm}<3\cdot10^{-28}$ and $\eta_p^{\rm norm}<7\cdot10^{-28}$. Hence'+'\n'+r'\['+'\n'+r'\eta_e<1.3309802\cdot10^{-12}+3\cdot10^{-28}<2\cdot10^{-12},'+'\n'+r'\]'+'\n'+r'\['+'\n'+r'\eta_p<2.8858093\cdot10^{-12}+7\cdot10^{-28}+1.77\cdot10^{-12}<6\cdot10^{-12}.'+'\n'+r'\]'+'\n'
 out+=r'The discarded-mode contribution in the second inequality has the separate bounds'+'\n'+r'\['+'\n'
 out+=r'\begin{array}{c|ccc}i&16&17&18\\\hline W_i p_i^+\le&'+'&'.join(sci(data['pt'][i-1].ab()*sum((2*i)**k for k in range(5)),digits=7) for i in range(16,19))+r'\end{array}'+'\n'+r'\]'+'\n'
 out+=r'Adding the two error bounds to the displayed $L_4$ sums gives the bounds $200$ in \eqref{eq:vector-scalar-checks}. The last two columns of Table~\ref{tab:vector-all} separately lie below $13/1000$ and $7/1000$, proving both envelope comparisons.'+'\n'
@@ -347,7 +348,7 @@ parser.add_argument('--output-dir',type=Path,default=root/'results')
 output_dir=parser.parse_args().output_dir
 output_dir.mkdir(parents=True,exist_ok=True)
 (output_dir/'recomputed_expanded_arithmetic.tex').write_text(out,encoding='utf-8')
-record={'trial':frozen,'even_integer_comparisons':evenrecords,'residual_numerators':resceil,'residual_squares_sum':resnumer,'residual_tail_numerator':tailceil,'scalar_bounds':{k:str(v) for k,v in scalar.items()},'vector_bounds':{k:str(v) for k,v in data['vals'].items()},'counts':{'single':9,'odd':84,'odd_zero':12,'even':217}}
+record={'residual_scope':'Unnormalized rational trial; normalization decreases the norm because the pairing is greater than one.','trial':frozen,'even_integer_comparisons':evenrecords,'residual_numerators':resceil,'residual_squares_sum':resnumer,'residual_tail_numerator':tailceil,'scalar_bounds':{k:str(v) for k,v in scalar.items()},'vector_bounds':{k:str(v) for k,v in data['vals'].items()},'counts':{'single':9,'odd':84,'odd_zero':12,'even':217}}
 (output_dir/'expanded_arithmetic_data.json').write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
 print('Created expanded rational tables; all 322 inequalities and vector/residual bounds pass.')
 print('Rational trial coefficients:',frozen['numerators'])

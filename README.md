@@ -104,6 +104,15 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicAdjointDerivativeBounds` | Uses the actual adjoint differential equation to control the fourth derivative and obtain all four derivative error bounds |
 | `Lemniscate.PeriodicAdjointSobolevError` | Proves the angular H4 trial error is at most 177 times the actual adjoint residual norm |
 | `Lemniscate.PeriodicAdjointTrial` | Identifies every Fourier coefficient and the full Parseval sum of a finite trial's actual adjoint residual; proves exact normalization and residual scaling |
+| `Lemniscate.FixedAdjointTrial` | The paper's 18 exact rational coefficients and the coarse inequalities used for normalization |
+| `Lemniscate.AdjointTrialPairing` | A two-term proof that the trial pairing is greater than one |
+| `Lemniscate.FineCoefficientData` | Kernel-checked rational enclosures for every coefficient needed in the finite residual |
+| `Lemniscate.RawTrialArithmetic` | Every finite residual comparison and the rational sum-of-squares inequality |
+| `Lemniscate.PeriodicSineAdjointTrial` | The actual adjoint action on a sine polynomial and its complete Parseval identity |
+| `Lemniscate.AdjointResidualEntries` | Identification with the full operator matrix and soundness of the finite residual intervals |
+| `Lemniscate.AdjointResidualTail` | The entire infinite residual tail, controlled by a convergent geometric moment |
+| `Lemniscate.PeriodicFixedTrialResidual` | The actual adjoint residual of the fixed rational trial has squared norm below 2e-30, under the explicit profile Fourier hypotheses |
+| `Lemniscate.PeriodicTrialNormalization` | The actual rotation pairing and the same residual bound after normalization, including either sign and every unit complex phase |
 | `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
 | `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
 | `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
@@ -320,8 +329,8 @@ The following obligations are still required for the original goal:
   The actual quartic Bloch polynomial, its reflection parity and exact center
   and cross-factor cancellations are proved. The adjoint trial's L2 error is
   bounded by its residual norm divided by 75, and its angular H4 error by
-  177 times that residual norm. The concrete trial residual certificate,
-  vector truncation estimates, complex angular resolvent estimates and uniform negativity of
+  177 times that residual norm. The complete concrete residual bound is now proved.
+  Vector truncation estimates, complex angular resolvent estimates and uniform negativity of
   the transformed even Bloch subspace still need proof. The remaining
   argument may use the projection onto the fixed Fourier mode and quadratic forms directly; an
   explicit copy of the paper's basis-change matrix is not a requirement.

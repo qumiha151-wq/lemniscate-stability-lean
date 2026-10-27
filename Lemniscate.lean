@@ -186,3 +186,12 @@ import Lemniscate.PeriodicSineParseval
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.RoundedIntervals
 import Lemniscate.RefinedFourierEnclosure
+import Lemniscate.FixedAdjointTrial
+import Lemniscate.AdjointTrialPairing
+import Lemniscate.FineCoefficientData
+import Lemniscate.RawTrialArithmetic
+import Lemniscate.PeriodicSineAdjointTrial
+import Lemniscate.AdjointResidualEntries
+import Lemniscate.AdjointResidualTail
+import Lemniscate.PeriodicFixedTrialResidual
+import Lemniscate.PeriodicTrialNormalization
