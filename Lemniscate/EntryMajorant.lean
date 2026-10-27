@@ -61,7 +61,7 @@ theorem positive_frequency_upper_tail (ε : ℝ) (j k : ℕ)
   have hs : |fourierCoefficient thetaParameter nome (j+k)| ≤ B :=
     common_index_coefficient_majorant l (j+k) hl hsum
   have hr : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have hB : 0 ≤ B := (abs_nonneg _).trans hd
   have hb := two_coefficient_majorant thetaParameter
     (fourierCoefficient thetaParameter nome (j-k+(k-j)))
@@ -84,7 +84,7 @@ theorem positive_frequency_upper_tail (ε : ℝ) (j k : ℕ)
       mul_le_mul_of_nonneg_left hpoly (mul_nonneg hr hB)
     _ ≤ (rhi:ℝ)*B*(105*(2*(j:ℝ)+(l:ℝ))^2) :=
       mul_le_mul_of_nonneg_right
-        (mul_le_mul_of_nonneg_right actual_nome_theta_r_bounds.2 hB) (by positivity)
+        (mul_le_mul_of_nonneg_right (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hB) (by positivity)
     _ = _ := by simp only [B, l, C, Rat.cast_mul, Rat.cast_ofNat]; ring
 
 theorem cosine_upper_tail (j k : ℕ) (hj : 0 < j) (hjk : j < k) :

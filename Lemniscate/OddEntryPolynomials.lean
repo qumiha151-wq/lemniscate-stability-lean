@@ -147,11 +147,11 @@ theorem theta_nome_odd_off_diagonal_bound (n m : ℤ) (hn : Odd n) (hm : Odd m)
   have hcoef := theta_nome_coefficient_majorant j hj
   have hu := (theta_nome_fourier_enclosure j).2
   have hr : 0 ≤ thetaParameter := (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans
-    actual_nome_theta_r_bounds.1
+    (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have hupper : 0 ≤ (hUpper j : ℝ) := hcoef.1.trans hu
   have hscalar : thetaParameter*fourierCoefficient thetaParameter nome j ≤
       (rhi:ℝ)*(hUpper j:ℝ) :=
-    mul_le_mul actual_nome_theta_r_bounds.2 hu hcoef.1 (by norm_num [rhi])
+    mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hu hcoef.1 (by norm_num [rhi])
   have hv := odd_entry_majorant_sound n m hn hm α hα hα'
   rw [absoluteEntryPolynomial_eq, realEval_scale, Rat.cast_mul]
   rw [abs_mul, abs_mul, abs_of_nonneg hr, abs_of_nonneg hcoef.1]

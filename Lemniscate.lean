@@ -181,3 +181,8 @@ import Lemniscate.PeriodicProfileBounds
 import Lemniscate.PeriodicAdjointDerivativeBounds
 import Lemniscate.PeriodicAdjointSobolevError
 import Lemniscate.PeriodicAdjointTrial
+import Lemniscate.PeriodicRotationNorm
+import Lemniscate.PeriodicSineParseval
+import Lemniscate.PeriodicRotationSineMass
+import Lemniscate.RoundedIntervals
+import Lemniscate.RefinedFourierEnclosure

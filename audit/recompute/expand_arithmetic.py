@@ -12,22 +12,22 @@ import even_analytic_bounds as ev
 sys.stdout.reconfigure(encoding='utf-8')
 root=Path(__file__).resolve().parents[1]
 freeze=Path(__file__).with_name('expanded_rational_trial.json')
-if not freeze.exists():
-    mat=[[ev.sine(2*i,2*j) for i in range(2,19)] for j in range(2,19)]
-    rhs=[-ev.sine(2,2*j) for j in range(2,19)]
-    for k in range(17):
-        assert mat[k][k].upper() < -100
-        for i in range(k+1,17):
-            fac=mat[i][k]/mat[k][k]
-            for j in range(k+1,17): mat[i][j]-=fac*mat[k][j]
-            rhs[i]-=fac*rhs[k]; mat[i][k]=ev.I(0)
-    cs=[ev.I(0)]*17
-    for i in range(16,-1,-1):
-        cs[i]=(rhs[i]-sum((mat[i][j]*cs[j] for j in range(i+1,17)),ev.I(0)))/mat[i][i]
-    raw=[ev.I(1)]+cs
-    nums=[int((x.lower()+x.upper())/2*10**30+F(1,2)) for x in raw]
-    freeze.write_text(json.dumps({'denominator':10**30,'numerators':nums},indent=2),encoding='utf-8')
 frozen=json.loads(freeze.read_text())
+# Scalar input from the current revised manuscript, whose nome bound is proved in Lean.
+ev.DEN=10**30
+ev.SQRT2=ev.sqrt(ev.I(2))
+ev.pi=ev.I(F('3.14159265358979323846'),F('3.14159265358979323847'))
+ev.Q=ev.I(F('0.043213918263772249774'),F('0.043213918263772249775'))
+theta_three=1+2*sum((ev.Q**(j*j) for j in range(1,4)),ev.I(0))
+theta_three+=ev.I(0,(2*ev.Q**16/(1-ev.Q**9)).upper())
+ev.theta=ev.I(F(1086434811213308014574,10**21),F(1086434811213308014577,10**21))
+assert ev.theta.lower()<=theta_three.lower() and theta_three.upper()<=ev.theta.upper()
+ev.R=ev.I(F(717770011046129997816,10**21),F(717770011046129997825,10**21))
+theta_reciprocal=ev.theta**-4
+assert ev.R.lower()<=theta_reciprocal.lower() and theta_reciprocal.upper()<=ev.R.upper()
+ev.hh0=1-sum((16*ev.R*j*ev.Q**j/(1-ev.Q**(2*j)) for j in range(1,41)),ev.I(0))
+ev.hh0-=ev.I(0,16*sp.rhi/(1-sp.qb*sp.qb)*sp.tail(sp.qb,41,1))
+ev.hh.cache_clear()
 phi=[ev.I(F(n,frozen['denominator'])) for n in frozen['numerators']]
 data={}
 def trial():
@@ -93,8 +93,8 @@ toward $+\infty$; none is a floating-point estimate of a spectral value.
 Use the interval operations of Appendix~\ref{app:arithmetic}. For definiteness,
 after each elementary operation one may enlarge $[u,v]$ to
 \[
- [10^{-70}\lfloor10^{70}u\rfloor,
-  -10^{-70}\lfloor-10^{70}v\rfloor].
+ [10^{-30}\lfloor10^{30}u\rfloor,
+  -10^{-30}\lfloor-10^{30}v\rfloor].
 \]
 For square roots use \eqref{eq:sqrt-envelope}. Inverse powers are evaluated by
 reciprocal and multiplication. This convention enlarges, and never narrows,
@@ -232,7 +232,7 @@ out+=longtable('rrr',r'Residual bounds $u_j\le m_j10^{-35}$ and their integer sq
 resnumer=sum(x*x for x in resceil)
 tailceil=ceil(data['vals']['residual_tail'],10**70)
 assert F(resnumer+tailceil,10**70)<F(2,10**30)
-out+=r'Consequently the complete residual comparison is the integer inequality'+'\n'+r'\begin{align*}'+'\n'+r' 10^{70}\|A_0^*\widetilde\psi\|^2&\le '+str(resnumer)+r'\\'+'\n'+r' &\quad+'+str(tailceil)+r'\\'+'\n'+r' &='+str(resnumer+tailceil)+r'<2\cdot10^{40}.'+'\n'+r'\end{align*}'+'\n'
+out+=r'Consequently the complete residual comparison is the integer inequality'+'\n'+r'\begin{align*}'+'\n'+r' 10^{30}\|A_0^*\widetilde\psi\|^2&\le '+str(resnumer)+r'\\'+'\n'+r' &\quad+'+str(tailceil)+r'\\'+'\n'+r' &='+str(resnumer+tailceil)+r'<2\cdot10^{40}.'+'\n'+r'\end{align*}'+'\n'
 out+=r'''
 This includes the whole $j\ge41$ tail from \eqref{eq:residual-finite}; the
 comparison proves both \eqref{eq:adjoint-data} and \eqref{eq:residual-finite}.

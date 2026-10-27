@@ -52,7 +52,7 @@ theorem odd_matrix_diagonal_bound (α : ℝ) (n : ℤ) :
   have hh := theta_nome_fourier_enclosure 0
   have hc : 0 ≤ fourierCoefficient thetaParameter nome 0 :=
     (le_of_lt (show (0:ℝ) < (hLower 0:ℝ) by exact_mod_cast odd_constant_coefficient_lower_pos)).trans hh.1
-  have hr := actual_nome_theta_r_bounds
+  have hr := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper]))
   have hr0 : 0 ≤ (rlo:ℝ) := by norm_num [rlo]
   have hrlow : (rlo:ℝ) ≤ thetaParameter := hr.1
   have hr2 : (rlo:ℝ)^2 ≤ thetaParameter^2 := by nlinarith [hrlow]

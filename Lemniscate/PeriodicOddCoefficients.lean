@@ -58,7 +58,7 @@ theorem circle_odd_h2_coefficients (f : CircleL2 T) (hf : InCircleH2 T f)
     (hr : (2*Real.pi/T)^2 = thetaParameter) :
     HasOddH2Coefficients (fun i : ℤ => fourierCoeff f (2*i+1)) := by
   have htheta : (1/2:ℝ) ≤ thetaParameter := by
-    have hb : (rlo:ℝ) ≤ thetaParameter := actual_nome_theta_r_bounds.1
+    have hb : (rlo:ℝ) ≤ thetaParameter := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
     norm_num [rlo] at hb
     linarith
   have hw (n : ℝ) : 1+n^2 ≤ 2*(1+(2*Real.pi/T*n)^2) := by

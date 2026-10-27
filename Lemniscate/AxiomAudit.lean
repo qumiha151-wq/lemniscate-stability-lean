@@ -43,7 +43,8 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.CoarseArithmetic.constant_fourier_enclosure
 #print axioms Lemniscate.CoarseArithmetic.fourier_enclosure
 #print axioms Lemniscate.CoarseArithmetic.cosine_matrix_enclosure
-#print axioms Lemniscate.CoarseArithmetic.coarse_nome_bounds
+#print axioms Lemniscate.CoarseArithmetic.refined_nome_bounds
+#print axioms Lemniscate.CoarseArithmetic.Contains.mono
 #print axioms Lemniscate.CoarseArithmetic.theta_enclosure
 #print axioms Lemniscate.CoarseArithmetic.actual_nome_theta_r_bounds
 #print axioms Lemniscate.CoarseArithmetic.theta_nome_fourier_enclosure
@@ -880,3 +881,11 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_adjoint_polynomial_norm_sq
 #print axioms Lemniscate.circle_normalized_trial_pairing
 #print axioms Lemniscate.circle_normalized_trial_adjoint_norm
+#print axioms Lemniscate.circle_real_square_mean
+#print axioms Lemniscate.circle_rotation_square_mean
+#print axioms Lemniscate.circle_rotation_norm_sq
+#print axioms Lemniscate.circle_even_sine_parseval
+#print axioms Lemniscate.circle_rotation_sine_mass
+#print axioms Lemniscate.CoarseArithmetic.roundInterval_sound
+#print axioms Lemniscate.CoarseArithmetic.refined_positive_fourier_enclosure
+#print axioms Lemniscate.CoarseArithmetic.refined_constant_fourier_enclosure

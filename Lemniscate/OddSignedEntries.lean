@@ -13,10 +13,10 @@ theorem odd_matrix_off_from_polynomial_bound (n m : ℤ) (hn : Odd n) (hm : Odd 
   have hl : 0 < l := odd_half_distance_pos n m hn hm hne
   have hc := theta_nome_coefficient_majorant l hl
   have hr : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have hp : thetaParameter*fourierCoefficient thetaParameter nome l ≤
       (rhi:ℝ)*((H:ℝ)*((l:ℝ)*(qb:ℝ)^l)) :=
-    mul_le_mul actual_nome_theta_r_bounds.2 hc.2 hc.1 (by norm_num [rhi])
+    mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hc.2 hc.1 (by norm_num [rhi])
   rw [oddMatrixEntry, if_neg hne, abs_mul, abs_mul, abs_of_nonneg hr, abs_of_nonneg hc.1]
   calc
     _ ≤ ((rhi:ℝ)*((H:ℝ)*((l:ℝ)*(qb:ℝ)^l)))*(45*B) :=

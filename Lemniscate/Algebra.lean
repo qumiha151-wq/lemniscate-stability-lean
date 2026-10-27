@@ -48,11 +48,6 @@ theorem constrained_sine_dissipation (energy v2 f2 : ℝ)
     (hf : f2 ≤ (1+(87/500:ℝ)^2)*v2) : energy ≤ -75*f2 := by
   nlinarith
 
-theorem residual_combination (energy second2 mass2 : ℝ)
-    (h1 : energy ≤ -2*second2+(1719/8:ℝ)*mass2)
-    (h2 : energy ≤ -75*mass2) :
-    (1/5:ℝ)*second2+(3681/80:ℝ)*mass2 ≤ -energy := by linarith
-
 theorem exact_center_cancellation (a h2 r : ℝ) (ha : a ≠ 0) :
     (a^2*h2-4*r^2*a^4)/a^2 = h2-4*r^2*a^2 := by
   field_simp

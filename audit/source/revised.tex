@@ -302,7 +302,7 @@ respectively; use $[r_-^2,r_+^2]$ for $r^2$. Denote the resulting entry segment 
  d^+_n=s^+_{nn},\qquad b_{nm}=\max\{|s^-_{nm}|,|s^+_{nm}|\}\quad(n\ne m).
 \]
 
-For the cosine-even subspace take $n_j=2j$ and
+For the even-frequency cosine subspace take $n_j=2j$ and
 \[
  a=1/10,\qquad d_0=1/9,\quad d_1=1,\quad d_2=11/50,\quad
  d_j=(29/1000)a^{j-3}\quad(j\ge3).
@@ -347,9 +347,9 @@ The elementary rational comparisons
  P_{1/10}(18)<-8000,\quad P_{1/10}'(18)<-24925,\quad
  P_{1/10}''(18)<-6725
 \]
-follow from \eqref{eq:moments}. Since $P_a'''(n)=-96r_-^2n<0$ for $n>0$, every row $j\ge9$ is covered. Lemma~\ref{lem:row} proves $S\le-\tfrac{21}{4}I$ in the cosine-even subspace.
+follow from \eqref{eq:moments}. Since $P_a'''(n)=-96r_-^2n<0$ for $n>0$, every row $j\ge9$ is covered. Lemma~\ref{lem:row} proves $S\le-\tfrac{21}{4}I$ in the even-frequency cosine subspace.
 
-\subsection{The constrained sine-even subspace}
+\subsection{The even-frequency sine subspace orthogonal to rotation}
 The coefficients of the rotational vector in $\sqrt2\sin(2j\zeta)$ are proportional to $j h_{2j}$. Write $f=u\sqrt2\sin(2\zeta)+v$, with $v$ supported on frequencies $4,6,\ldots$. Orthogonality to $e$ implies
 \begin{equation}\label{eq:rho}
  |u|\le\rho\norm v_2,\qquad
@@ -525,7 +525,7 @@ In the normalized sine basis set $\mathfrak b_j=2jh_{2j}$ and
  \mathfrak n^2=\sum_{j\ge1}\mathfrak b_j^2=\frac{2h_0}{5r},\qquad
  e_j=\mathfrak b_j/\mathfrak n.
 \end{equation}
-The integral identity follows by integrating $(q^3q_x)'=3q^2/2-5q^6/2$. Proposition~\ref{prop:single-spectrum} supplies a unique real sine-even adjoint vector $\psi$, with $A_0^*\psi=0$ and $\ip\psi e=1$.
+Integrating $(q^3q_x)'=3q^2q_x^2-q^6$ and using $2q^2q_x^2+q^6=q^2$ gives $5\norm{qq_x}_{L^2}^2=h_0$. Parseval's identity then gives \eqref{eq:kernel-norm}. Proposition~\ref{prop:single-spectrum} supplies a unique real adjoint eigenfunction $\psi$ in the even-frequency sine subspace, with $A_0^*\psi=0$ and $\ip\psi e=1$.
 
 Choose the fixed rational coefficients
 \begin{equation}\label{eq:adjoint-trial}
@@ -544,7 +544,7 @@ Appendix~\ref{app:arithmetic}, including the infinite residual tail, proves
 
 
 Put $R_*=10^{-14}$ and $v=\psi-\widetilde\psi\perp e$. Since
-$A_0^*v=-A_0^*\widetilde\psi$, Green's identity, the sine-even coercivity,
+$A_0^*v=-A_0^*\widetilde\psi$, Green's identity, coercivity on the even-frequency sine subspace orthogonal to $e$,
 and Cauchy--Schwarz give $\norm v\le R_*/75$.
 The interpolation estimate \eqref{eq:interpolation} now implies directly
 \[
@@ -888,22 +888,33 @@ Since $t\ge a^4$ implies $\widehat t\ge\log(31)/30$ and $e^{-\mu\widehat t}=(1+3
 This appendix records the scalar enclosures and finite expressions used in the spectral estimates. It completes the low-frequency inequalities in Sections~\ref{app:single} and \ref{app:bloch}; the high frequencies are already controlled there by geometric-series majorants. Every endpoint and matrix entry below is defined by finite rational operations or integer square comparisons, so the estimates are determined by the formulas in the paper.
 
 \subsection{Rational enclosures for the scalar input}
-For an integer $N\ge1$ write
+Use the classical rational bounds $p_-<\pi<p_+$, where
 \[
- a_N(t)=\sum_{k=0}^{N-1}\frac{(-1)^kt^{2k+1}}{2k+1},\qquad
- p_-=16a_{24}(1/5)-4a_9(1/239),\quad
- p_+=16a_{25}(1/5)-4a_8(1/239).
+ p_-={314159265358979323846\over10^{20}},\qquad
+ p_+={314159265358979323847\over10^{20}}.
 \]
-The tangent-addition formula gives $\tan(4\arctan(1/5)-\arctan(1/239))=1$, with the angle in $(0,\pi/2)$. Thus $\pi=16\arctan(1/5)-4\arctan(1/239)$, and the alternating-series inequalities give $p_-<\pi<p_+$. In particular $0<p_-<p_+<72$. Let
+Put $x_\pm=p_\pm/4$ and
 \[
- E_{70}(p)=\sum_{k=0}^{70}\frac{p^k}{k!},\qquad
- R_{70}(p)=\frac{p^{71}}{71!(1-p/72)},
+ E_{26}(x)=\sum_{j=0}^{25}{x^j\over j!},\qquad
+ R_{26}(x)={27x^{26}\over26\cdot26!}.
 \]
-and form the rational segment
+For $0\le x\le1$, the exponential series and its geometric tail bound give
+$E_{26}(x)\le e^x\le E_{26}(x)+R_{26}(x)$.
+Finite rational comparisons yield
+\[
+ {219328005073801545655832\over10^{23}}
+ \le E_{26}(x_-)
+ \le e^{\pi/4}
+ \le E_{26}(x_+)+R_{26}(x_+)
+ \le {219328005073801545656381\over10^{23}}.
+\]
+Taking reciprocal fourth powers gives $Q\in J_Q$, with
 \begin{equation}\label{eq:fine-Q}
- J_Q=\left[\frac1{E_{70}(p_+)+R_{70}(p_+)},\frac1{E_{70}(p_-)}\right].
+ J_Q=\left[
+ {43213918263772249774\over10^{21}},
+ {43213918263772249775\over10^{21}}
+ \right].
 \end{equation}
-The exponential tail has successive ratios at most $p/72$, so $Q\in J_Q$.
 
 Use rational segment arithmetic: add endpoints, subtract in reverse endpoint order, take the extrema of the four endpoint products, and set $[u,v]^{-1}=[1/v,1/u]$ for $0<u\le v$. Treat repeated occurrences independently. For $J=[u,v]$ with $u>0$, enclose square roots by
 \begin{equation}\label{eq:sqrt-envelope}
@@ -913,18 +924,31 @@ Use rational segment arithmetic: add endpoints, subtract in reverse endpoint ord
 \end{equation}
 Here $\lfloor x\rfloor$ is the largest integer not exceeding $x$. The endpoints are uniquely specified by integer square comparisons. For a negative segment use $J^{-1}=-(-J)^{-1}$.
 
-With these segment operations set
+The first three theta terms and a geometric bound for the entire tail give
+\[
+ 1+2\sum_{j=1}^3 Q_-^{j^2}\le\theta_3(0,Q)
+ \le1+2\sum_{j=1}^3 Q_+^{j^2}+\frac{2Q_+^{16}}{1-Q_+^9}.
+\]
+Exact rational comparisons, followed by reciprocal fourth powers, give the
+following outward enclosures. With the segment operations above set
 \begin{equation}\label{eq:fine-input}
 \begin{aligned}
- J_\theta&=1+2\sum_{j=1}^{5}J_Q^{j^2}
- +\left[0,\left(\frac{2J_Q^{36}}{1-J_Q^{13}}\right)_+\right],
- &J_r&=J_\theta^{-4},\\
- J_{h_{2j}}&=\frac{8J_rjJ_Q^j}{1-J_Q^{2j}}\quad(j\ge1),
- &J_{h_0}&=1-2\sum_{j=1}^{40}J_{h_{2j}}
+ J_\theta&=\frac{[1086434811213308014574,1086434811213308014577]}{10^{21}},\\
+ J_r&=\frac{[717770011046129997816,717770011046129997825]}{10^{21}},\\
+ J_{h_{2j}}&=\frac{8J_rjJ_Q^j}{1-J_Q^{2j}}\quad(j\ge1),\\
+ J_{h_0}&=1-2\sum_{j=1}^{40}J_{h_{2j}}
  -\left[0,\frac{16r_+}{1-\bar Q^2}T_1(\bar Q,41)\right].
 \end{aligned}
 \end{equation}
-First obtain \eqref{eq:endpoints} from $J_Q,J_\theta,J_r$, without using $J_{h_0}$; these inequalities justify the constants in its tail enclosure. Here $(J)_+$ is the upper endpoint, $J_{h_{-n}}=J_{h_n}$, and odd indices vanish. The theta tail has successive ratios at most $Q^{13}$; its enclosure implies \eqref{eq:endpoints} independently of the coarse constants. The $h_0$ tail then uses $h_{2j}\le8r_+j\bar Q^j/(1-\bar Q^2)$. These segments also lie within \eqref{eq:L-U}.
+Here $J_\theta^{-4}\subset J_r$. First obtain \eqref{eq:endpoints} from
+$J_Q,J_\theta,J_r$, without using $J_{h_0}$; these inequalities justify the
+constants in its tail enclosure. Negative Fourier indices satisfy
+$J_{h_{-n}}=J_{h_n}$, and odd indices vanish. The theta tail has successive
+ratios at most $Q^9$. The $h_0$ tail uses
+$h_{2j}\le8r_+j\bar Q^j/(1-\bar Q^2)$. These segments also lie within
+\eqref{eq:L-U}. In finite calculations each interval may be enlarged by
+rounding its lower endpoint down and its upper endpoint up to a multiple of
+$10^{-30}$. This keeps every bound rational and outward.
 
 Use \eqref{eq:sqrt-envelope} for every square root, in particular $\mathcal R([2,2])$ for $\sqrt2$ and $\mathcal R(2J_{h_0}/(5J_r))$ for $\mathfrak n$. The normalization bounds are
 \[

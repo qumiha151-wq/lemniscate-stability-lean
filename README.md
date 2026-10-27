@@ -42,6 +42,8 @@ The work has three distinct layers:
 | `Lemniscate.CoarseArithmetic` | Executable rational definitions for the actual coarse Fourier enclosures and cosine rows |
 | `Lemniscate.IntervalSoundness` | Real containment for addition, multiplication, scaling and absolute upper bounds |
 | `Lemniscate.IntervalExtras` | Positive reciprocal and division, certified square-root enclosures, and the actual coarse square-root-of-two bounds |
+| `Lemniscate.RoundedIntervals` | Outward rounding of exact rational intervals preserves real containment |
+| `Lemniscate.RefinedFourierEnclosure` | Fine positive Fourier coefficient intervals and the constant coefficient with its complete infinite tail |
 | `Lemniscate.OddArithmetic` | All 84 odd-subspace Bernstein comparisons and 12 zero-parameter comparisons, computed from rational formulas |
 | `Lemniscate.OddPositivity` | Casts the computed coefficients into real polynomials and proves positivity on the entire parameter interval |
 | `Lemniscate.OddPolynomialSemantics` | Proves the list-polynomial operations agree with real polynomial evaluation and connects the low-row certificates to that evaluation |
@@ -102,6 +104,9 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicAdjointDerivativeBounds` | Uses the actual adjoint differential equation to control the fourth derivative and obtain all four derivative error bounds |
 | `Lemniscate.PeriodicAdjointSobolevError` | Proves the angular H4 trial error is at most 177 times the actual adjoint residual norm |
 | `Lemniscate.PeriodicAdjointTrial` | Identifies every Fourier coefficient and the full Parseval sum of a finite trial's actual adjoint residual; proves exact normalization and residual scaling |
+| `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
+| `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
+| `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
 | `Lemniscate.QuarticTail` | A general quartic estimate for every real argument beyond a cutoff |
 | `Lemniscate.HighFrequency` | Instantiates that estimate with all four actual rational high-frequency quartics |
 | `Lemniscate.GeometricTails` | Convergence and exact sums for the first three geometric moment tails |
@@ -109,7 +114,7 @@ The work has three distinct layers:
 | `Lemniscate.FourierEnclosure` | Monotonicity and rational enclosures for the positive Fourier coefficient formula, conditional on parameter bounds |
 | `Lemniscate.FourierSeries` | Convergence and uniform tail bounds for that series, and the constant coefficient's full rational enclosure |
 | `Lemniscate.CosineMatrix` | Connects the convergent coefficient formulas to the actual rational cosine-entry intervals, conditional on parameter bounds |
-| `Lemniscate.NomeBounds` | Proves the coarse interval for exp(-pi) using pi bounds and the exponential series remainder |
+| `Lemniscate.NomeBounds` | Proves the refined interval of width 10^(-21) for exp(-pi) from the verified twenty-digit pi bounds and 26 exponential-series terms; later estimates use this single enclosure |
 | `Lemniscate.ThetaBounds` | Convergence and interval bounds for the theta series and its negative fourth power |
 | `Lemniscate.ConcreteCoefficients` | Instantiates the coefficient and cosine-entry enclosures at exp(-pi) and the theta parameter |
 | `Lemniscate.SineConstraint` | Convergence and the strict 87/500 bound for the full squared coefficient-ratio series |

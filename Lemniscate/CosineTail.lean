@@ -8,7 +8,7 @@ theorem cosine_zero_upper_tail (k : ℕ) (hk : 0 < k) :
     |cosineMatrixEntry thetaParameter nome 0 k| ≤
       (C:ℝ)*(k:ℝ)^2*(k:ℝ)*(qb:ℝ)^k := by
   have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have hc := theta_nome_coefficient_majorant k hk
   have hc0 : 0 ≤ fourierCoefficient thetaParameter nome k := hc.1
   have hroot : 15*Real.sqrt 2 ≤ (105:ℝ) := by
@@ -26,7 +26,7 @@ theorem cosine_zero_upper_tail (k : ℕ) (hk : 0 < k) :
     _ ≤ 105*((rhi:ℝ)*((H:ℝ)*((k:ℝ)*(qb:ℝ)^k)))*(k:ℝ)^2 :=
       mul_le_mul_of_nonneg_right
         (mul_le_mul hroot
-          (mul_le_mul actual_nome_theta_r_bounds.2 hc.2 hc.1 (by norm_num [rhi]))
+          (mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hc.2 hc.1 (by norm_num [rhi]))
           (mul_nonneg hr0 hc.1) (by norm_num)) (sq_nonneg _)
     _ = _ := by simp only [C, Rat.cast_mul, Rat.cast_ofNat]; ring
 

@@ -35,7 +35,7 @@ theorem sine_matrix_enclosure (r q : ℝ) (j k : ℕ)
 
 theorem theta_nome_sine_matrix_enclosure (j k : ℕ) :
     Contains (sineEntry j k) (sineMatrixEntry thetaParameter nome j k) :=
-  sine_matrix_enclosure _ _ j k actual_nome_theta_r_bounds coarse_nome_bounds
+  sine_matrix_enclosure _ _ j k (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])) (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper]))
 
 theorem sine_matrix_symmetric (r q : ℝ) (j k : ℕ) :
     sineMatrixEntry r q j k = sineMatrixEntry r q k j := by

@@ -14,8 +14,8 @@ theorem sine_tail_mem_l2 :
     Memℓp (fun n : ℕ => (sineRatio thetaParameter nome (n+2) : ℂ)) 2 := by
   apply (memℓp_gen_iff (by norm_num : 0 < (2:ℝ≥0∞).toReal)).mpr
   have hs := (sine_constraint_series_bound thetaParameter nome
-    ((by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le actual_nome_theta_r_bounds.1)
-    coarse_nome_bounds).1
+    ((by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1)
+    (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper]))).1
   simpa [Real.rpow_two, Complex.norm_real, Real.norm_eq_abs, sq_abs] using hs
 
 noncomputable def sineTailVector : SineTailSpace :=

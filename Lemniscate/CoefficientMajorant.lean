@@ -43,7 +43,7 @@ theorem coefficient_qb_majorant (r q : ℝ) (j : ℕ)
 theorem theta_nome_coefficient_majorant (j : ℕ) (hj : 0 < j) :
     0 ≤ fourierCoefficient thetaParameter nome j ∧
     fourierCoefficient thetaParameter nome j ≤ (H:ℝ)*((j:ℝ)*(qb:ℝ)^j) :=
-  coefficient_qb_majorant _ _ j actual_nome_theta_r_bounds coarse_nome_bounds hj
+  coefficient_qb_majorant _ _ j (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])) (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper])) hj
 
 theorem common_index_coefficient_majorant (l m : ℕ) (hl : 0 < l) (hlm : l ≤ m) :
     |fourierCoefficient thetaParameter nome m| ≤ (H:ℝ)*((l:ℝ)*(qb:ℝ)^l) := by

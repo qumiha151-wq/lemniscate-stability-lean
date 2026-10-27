@@ -35,8 +35,8 @@ theorem theta_nome_coefficient_absolute_bound (m : ℕ) :
 theorem theta_times_coefficient_absolute_bound (m : ℕ) :
     |thetaParameter*fourierCoefficient thetaParameter nome m| ≤ 1 := by
   have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
-  have hr1 : thetaParameter ≤ 1 := actual_nome_theta_r_bounds.2.trans (by norm_num [rhi])
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+  have hr1 : thetaParameter ≤ 1 := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2.trans (by norm_num [rhi])
   rw [abs_mul, abs_of_nonneg hr0]
   simpa only [one_mul] using mul_le_mul hr1 (theta_nome_coefficient_absolute_bound m)
     (abs_nonneg _) (by norm_num : (0:ℝ) ≤ 1)
@@ -47,8 +47,8 @@ theorem cosine_diagonal_sobolev_bound (j : ℕ) :
   · subst j
     norm_num [cosineMatrixEntry, frequencyWeight]
   have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
-  have hr1 : thetaParameter ≤ 1 := actual_nome_theta_r_bounds.2.trans (by norm_num [rhi])
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+  have hr1 : thetaParameter ≤ 1 := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2.trans (by norm_num [rhi])
   have hrsq : thetaParameter^2 ≤ 1 := by nlinarith
   have hr4 := mul_le_mul_of_nonneg_right hrsq (by positivity : 0 ≤ (2*(j:ℝ))^4)
   have hr4pos : 0 ≤ thetaParameter^2*(2*(j:ℝ))^4 := by positivity

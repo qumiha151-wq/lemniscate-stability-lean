@@ -12,9 +12,9 @@ variable (T : ℝ) [Fact (0 < T)]
 
 theorem theta_nome_first_sine_coefficient_pos : 0 < evenCoefficient thetaParameter nome 1 := by
   have hr : 0 < thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le actual_nome_theta_r_bounds.1
+    (by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have hq : 0 < nome := Real.exp_pos _
-  have hq1 : nome < 1 := coarse_nome_bounds.2.trans_lt (by norm_num [qhi])
+  have hq1 : nome < 1 := refined_nome_bounds.2.trans_lt (by norm_num [nomeUpper])
   have hd : 0 < 1-nome^2 := sub_pos.mpr (pow_lt_one₀ hq.le hq1 (by decide))
   simpa only [evenCoefficient, Nat.cast_one, mul_one, pow_one] using
     (div_pos (mul_pos (mul_pos (by norm_num : (0:ℝ) < 8) hr) hq) hd)

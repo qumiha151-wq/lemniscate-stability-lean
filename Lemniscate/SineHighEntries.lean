@@ -29,7 +29,7 @@ theorem sine_diagonal_correction_bound (j : ℕ) (hj : 0 < j) :
     have hs := moment_sound 3 (by omega) (qb^2) (by norm_num [qb])
     simpa only [Finset.sum_singleton] using
       sum_le_hasSum ({j}:Finset ℕ) (fun k _ => by positivity) hs
-  have hp := mul_le_mul actual_nome_theta_r_bounds.2 hc.2 hc.1 hr
+  have hp := mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hc.2 hc.1 hr
   have hb := mul_le_mul_of_nonneg_right hp (sq_nonneg (2*(j:ℝ)))
   have hmain : 60*thetaParameter*fourierCoefficient thetaParameter nome (j+j)*(2*(j:ℝ))^2 ≤
       480*(rhi:ℝ)*(H:ℝ)*((j:ℝ)^3*((qb^2:ℚ):ℝ)^j) := by
@@ -50,16 +50,16 @@ theorem sine_diagonal_high_bound (j : ℕ) (hj : 0 < j) :
     sineMatrixEntry thetaParameter nome j j ≤
       -4*(rlo:ℝ)^2*(2*(j:ℝ))^4+45*(rhi:ℝ)*(2*(j:ℝ))^2 := by
   have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have h0 : fourierCoefficient thetaParameter nome 0 ≤ 1 :=
     (theta_nome_fourier_enclosure 0).2.trans (by exact_mod_cast coarse_h0_le_one)
   have hp : thetaParameter*fourierCoefficient thetaParameter nome 0 ≤ (rhi:ℝ) := by
     calc
       _ ≤ thetaParameter*1 := mul_le_mul_of_nonneg_left h0 hr0
       _ = thetaParameter := mul_one _
-      _ ≤ _ := actual_nome_theta_r_bounds.2
+      _ ≤ _ := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2
   have hsq : (rlo:ℝ)^2 ≤ thetaParameter^2 :=
-    pow_le_pow_left₀ (by norm_num [rlo]) actual_nome_theta_r_bounds.1 2
+    pow_le_pow_left₀ (by norm_num [rlo]) (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1 2
   have h4 := mul_le_mul_of_nonneg_right hsq (by positivity : 0 ≤ (2*(j:ℝ))^4)
   have h2 := mul_le_mul_of_nonneg_right hp (sq_nonneg (2*(j:ℝ)))
   have hc := sine_diagonal_correction_bound j hj

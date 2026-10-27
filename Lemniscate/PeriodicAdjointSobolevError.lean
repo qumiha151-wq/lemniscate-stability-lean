@@ -66,7 +66,7 @@ theorem circle_angular_h4_bound_of_derivatives
   have hfreq : 0 < 2*Real.pi/T := by positivity
   have hfreq2 : (1/2:ℝ) ≤ (2*Real.pi/T)^2 := by
     rw [hr]
-    have hb : (rlo:ℝ) ≤ thetaParameter := actual_nome_theta_r_bounds.1
+    have hb : (rlo:ℝ) ≤ thetaParameter := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
     norm_num [rlo] at hb
     linarith
   have hk : 0 ≤ k := by dsimp [k]; positivity

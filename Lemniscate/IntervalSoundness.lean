@@ -7,6 +7,12 @@ namespace Lemniscate.CoarseArithmetic
 
 def Contains (I : Interval) (x : ℝ) : Prop := (I.lo : ℝ) ≤ x ∧ x ≤ (I.hi : ℝ)
 
+theorem Contains.mono {I J : Interval} {x : ℝ} (hx : Contains I x)
+    (hlo : J.lo ≤ I.lo) (hhi : I.hi ≤ J.hi) : Contains J x := by
+  have hl : (J.lo : ℝ) ≤ (I.lo : ℝ) := by exact_mod_cast hlo
+  have hu : (I.hi : ℝ) ≤ (J.hi : ℝ) := by exact_mod_cast hhi
+  exact ⟨hl.trans hx.1, hx.2.trans hu⟩
+
 theorem point_sound (q : ℚ) : Contains (point q) (q : ℝ) := by
   exact ⟨le_rfl, le_rfl⟩
 

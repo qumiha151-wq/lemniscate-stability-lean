@@ -57,8 +57,8 @@ theorem odd_diagonal_sobolev_bound (i : ℤ) (α : ℝ) (hα : 0 ≤ α) (hα' :
     have ht := pow_le_pow_left₀ (sq_nonneg (x+α)) hs 2
     nlinarith
   have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
-  have hr1 : thetaParameter ≤ 1 := actual_nome_theta_r_bounds.2.trans (by norm_num [rhi])
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+  have hr1 : thetaParameter ≤ 1 := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2.trans (by norm_num [rhi])
   have hrsq : thetaParameter^2 ≤ 1 := by nlinarith
   have hr4 := mul_le_mul_of_nonneg_right hrsq (by positivity : 0 ≤ (x+α)^4)
   have hr4pos : 0 ≤ thetaParameter^2*(x+α)^4 := by positivity

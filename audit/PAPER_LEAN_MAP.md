@@ -15,8 +15,9 @@
 | 正频 Fourier 系数包络 | `CoarseArithmetic.positive_fourier_enclosure` | 由参数有理界证明所有正整数频率的系数公式包络；Jacobi Fourier 展开仍需形式化 |
 | 常数 Fourier 系数及无限尾项 | `CoarseArithmetic.summable_fourier_tail`, `fourier_tail_bound`, `constant_fourier_enclosure` | 证明整个系数级数收敛、任意正截断点的尾界及前四项加全尾的常数项包络；仍以参数有理界为假设 |
 | 余弦矩阵条目的区间控制 | `CoarseArithmetic.cosine_matrix_enclosure` | 从收敛级数定义系数，逐项证明实矩阵公式被计算使用的区间包围；矩阵与几何微分算子的 Fourier 表示仍需识别 |
-| `Q=exp(-π)` 的粗有理界 | `CoarseArithmetic.coarse_nome_bounds` | 使用数学库已证明的圆周率界与指数级数余项界；不依赖浮点近似 |
-| theta 级数的粗参数界 | `CoarseArithmetic.theta_enclosure`, `actual_nome_theta_r_bounds` | 控制完整 theta 级数及其负四次方；与 `(π/(2K))²` 的椭圆积分恒等式尚待形式化 |
+| `Q=exp(-π)` 的精确有理区间 | `CoarseArithmetic.refined_nome_bounds`, `CoarseArithmetic.Contains.mono` | 由已证明的圆周率二十位界和 26 项指数级数，得到宽度为 10⁻²¹ 的区间；删除独立的粗界定理，后续统一从这个区间取得所需界 |
+| theta 级数的精确参数界 | `CoarseArithmetic.theta_enclosure`, `actual_nome_theta_r_bounds` | 仅用前三项及完整几何尾项，以分母 10²¹ 的端点控制 theta 级数及其负四次方；旧粗界证明已删除，所需粗常数由区间包含取得；与 `(π/(2K))²` 的椭圆积分恒等式尚待形式化 |
+| 精确 Fourier 系数区间及向外舍入 | `refined_positive_fourier_enclosure`, `refined_constant_fourier_enclosure`, `roundInterval_sound` | 正频系数用单调性；常数项取前 40 项并控制完整无限尾项；向外舍入保留实数包含关系。具体残差的有限比较仍待 Lean 核验 |
 | 参数界在矩阵中的实例化 | `CoarseArithmetic.theta_nome_cosine_matrix_enclosure` | 在 `Q=exp(-π)` 和 theta 参数下消除数值参数假设；不能据此宣称已证明矩阵就是原几何算子的表示 |
 | 正弦约束中的 `ρ²<(87/500)²` | `CoarseArithmetic.sine_constraint_series_bound`, `theta_nome_sine_constraint_bound` | 控制全部 `j≥2` 的系数比平方级数并证明收敛；旋转系数的几何识别仍需形式化 |
 | 正弦正交约束到首模估计 | `CoarseArithmetic.sine_constraint_first_mode`, `sine_constraint_mass_bound` | 已构造复系数 `ℓ²` 尾向量并应用 Cauchy–Schwarz；这里的正交条件仍以显式系数向量表述，几何旋转向量识别未完成 |
@@ -24,6 +25,7 @@
 | 正弦尾块的全部行与 H² 耗散 | `sine_all_tail_rows_dissipative`, `sine_tail_energy_summable`, `sine_tail_h2_form_dissipative` | 两个低行分别小于 −120、−1560，高行由实际四次多项式统一控制；所有行包含完整尾部，复二次型经绝对收敛延拓到 H² 系数域并满足 −100 界 |
 | 正弦约束块形式的 −75 界 | `sine_h2_block_energy_bound`, `sine_h2_constrained_dissipative` | 块形式由实际首项、完整耦合 ℓ² 内积及完整尾块双级数定义；不再假设 −100 和 63 能量界。下述模块补齐其微分能量和旋转正交条件的连接，具体 Jacobi 实例化仍待完成 |
 | 归一化正弦展开与首模分解 | `even_sine_orthonormal`, `circle_even_sine_norm_sq`, `circle_sine_block_inner`, `circle_sine_block_norm_sq` | 在实际周期 L² 中构造无限合成；尾部频率为 2(j+2)，与首模严格正交；未将该族视作整个 L² 的基 |
+| 旋转方向的精确归一化 | `circle_rotation_norm_sq`, `circle_even_sine_parseval`, `circle_rotation_sine_mass` | 由 q′=p、p′=−q³ 和第一积分直接证明 ‖qp‖²=h₀/5；在偶频及反射对称的 Fourier 条件下，Parseval 给出正弦系数平方和 2h₀/(5r)，不使用额外的特殊函数积分公式 |
 | 正弦 Fourier 系数与 H² 域 | `circle_even_sine_coeff_pos`, `circle_sine_mem_h2_iff`, `circle_sine_tail_mem_h2_iff`, `circle_sine_block_mem_h2_iff` | 完整识别全部频率；保留实际周期尺度并构造弱二阶导数，反向用 Fourier 抽样证明系数条件，没有仅证明单向包含 |
 | 系数约束与实际 L² 正交 | `circle_sine_constraint_orthogonal_iff`, `circle_sine_sobolev_constrained_coefficient_energy` | 将已证明的 −75 系数形式界写成实际函数的 L² 质量和正交条件；尚不是微分能量恒等式 |
 | 旋转方向 qq' 的条件识别 | `circle_sine_rotation_derivative`, `circle_sine_profile_rotation_orthogonal_iff`, `paper_sine_sobolev_constrained_coefficient_energy` | 对给定曲率导数及显式 Fourier 条件，证明约束向量与 qq' 相差非零标量；奇频为零单独列为前提。具体 Jacobi 函数满足这些条件仍须证明 |

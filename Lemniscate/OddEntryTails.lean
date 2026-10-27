@@ -79,10 +79,10 @@ theorem odd_matrix_off_tail_bound (n m : ℤ) (hn : Odd n) (hm : Odd m) (hne : n
   have hj : 0 < j := odd_half_distance_pos n m hn hm hne
   have hc := theta_nome_coefficient_majorant j hj
   have hr : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans actual_nome_theta_r_bounds.1
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
   have hs : thetaParameter*fourierCoefficient thetaParameter nome j ≤
       (rhi:ℝ)*((H:ℝ)*((j:ℝ)*(qb:ℝ)^j)) :=
-    mul_le_mul actual_nome_theta_r_bounds.2 hc.2 hc.1 (by norm_num [rhi])
+    mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hc.2 hc.1 (by norm_num [rhi])
   have hb := odd_entry_polynomial_tail_bound n m hn hm α hα hα'
   rw [oddMatrixEntry, if_neg hne, abs_mul, abs_mul, abs_of_nonneg hr, abs_of_nonneg hc.1]
   calc
