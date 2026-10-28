@@ -1046,7 +1046,12 @@ These are the sine coefficients of $e_N$, $\psi_N$, and $z_N$, with $N=15$. For 
 \[
  L_4(w)=\sum_i |w_i|\sum_{k=0}^4(2i)^k,
 \]
-using upper absolute endpoints when $w$ is enclosed by segments. Define
+using upper absolute endpoints when $w$ is enclosed by segments.
+Orthogonality of the two Fourier modes gives
+$\norm{D_\zeta^k(\sqrt2\sin(2i\zeta))}_2=(2i)^k$ for $0\le k\le4$.
+The triangle inequality therefore gives
+$\norm{\sum_i w_i\sqrt2\sin(2i\zeta)}_{\mathcal H^4}\le L_4(w)$.
+Define
 \begin{align}
  \eta_e={}&\frac{16r_+}{(1-\bar Q^2)\mathfrak n_-}
  \sum_{k=0}^42^kT_{k+2}(\bar Q,16)

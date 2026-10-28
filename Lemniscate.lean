@@ -198,3 +198,5 @@ import Lemniscate.PeriodicTrialNormalization
 import Lemniscate.PeriodicTrialSector
 import Lemniscate.PeriodicAngularH4Norm
 import Lemniscate.PeriodicFixedTrialError
+import Lemniscate.PeriodicSineDerivativeNorm
+import Lemniscate.PeriodicSinePolynomialNorm

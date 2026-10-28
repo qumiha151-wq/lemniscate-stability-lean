@@ -919,3 +919,6 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_angular_h4_norm_smul
 #print axioms Lemniscate.circle_angular_h4_norm_add_le
 #print axioms Lemniscate.paper_fixed_adjoint_h4_error_sq
+#print axioms Lemniscate.circle_sine_h4_derivative_norm
+#print axioms Lemniscate.circle_sine_h4_angular_norm
+#print axioms Lemniscate.circle_sine_trial_angular_norm_le

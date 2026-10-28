@@ -117,6 +117,8 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicTrialSector` | The finite trial and its scalar multiples lie in the even-frequency sine subspace |
 | `Lemniscate.PeriodicAngularH4Norm` | Nonnegativity, homogeneity and the triangle inequality for the angular Sobolev sum norm |
 | `Lemniscate.PeriodicFixedTrialError` | The actual normalized fixed trial has squared H4 error below 62658e-30, under the explicit profile hypotheses and the previously established conditions on the exact adjoint eigenfunction |
+| `Lemniscate.PeriodicSineDerivativeNorm` | Exact norms of all four derivatives of the normalized sine modes, proved uniformly using Fourier orthogonality |
+| `Lemniscate.PeriodicSinePolynomialNorm` | The angular H4 norm of a sine polynomial is bounded by the manuscript's weighted coefficient sum L4 |
 | `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
 | `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
 | `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
