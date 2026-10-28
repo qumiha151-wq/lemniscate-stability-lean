@@ -56,6 +56,10 @@ def trial():
       'envelope_z':max(z[j-1].ab()/ev.SQRT2.lower()/F(1,10)**(j-3) for j in range(2,16))}
     assert vals['residual_sq']<F(2,10**30)
     assert vals['eta_e']<F(2,10**12) and vals['eta_p']<F(6,10**12)
+    # Every simplified bound displayed in the generated normalization summary
+    # is checked against the current outward rational computation.
+    assert eta_e_tail<F(13309802,10**19) and eta_p_tail<F(28858093,10**19)
+    assert eta_e_norm<F(5,10**18) and eta_p_norm<F(2,10**17)
     assert vals['e_H4']<200 and vals['psi_H4']<200
     assert vals['zN_sq']<F(1,400)
     assert vals['envelope_e']<F(13,1000) and vals['envelope_z']<F(7,1000)
@@ -262,7 +266,7 @@ assert sz<10**12//400
 assert F(se,10**8)+F(2,10**12)<200 and F(spv,10**8)+F(6,10**12)<200
 out+=r'The sums of the printed upper bounds, including their outward rounding, are'+'\n'+r'\['+'\n'
 out+=r'L_4(E)\le\frac{'+str(se)+r'}{10^8},\qquad L_4(\Psi)\le\frac{'+str(spv)+r'}{10^8},\qquad \sum_i|Z_i|^2\le\frac{'+str(sz)+r'}{10^{12}}<\frac1{400}.'+'\n'+r'\]'+'\n'
-out+=r'The last comparison is the integer inequality $'+str(sz)+r'<2500000000$. For the two normalization errors one may use the simpler rational bounds $\eta_e^{\rm norm}<3\cdot10^{-28}$ and $\eta_p^{\rm norm}<7\cdot10^{-28}$. Hence'+'\n'+r'\['+'\n'+r'\eta_e<1.3309802\cdot10^{-12}+3\cdot10^{-28}<2\cdot10^{-12},'+'\n'+r'\]'+'\n'+r'\['+'\n'+r'\eta_p<2.8858093\cdot10^{-12}+7\cdot10^{-28}+0.27\cdot10^{-12}<6\cdot10^{-12}.'+'\n'+r'\]'+'\n'
+out+=r'The last comparison is the integer inequality $'+str(sz)+r'<2500000000$. For the two normalization errors one may use the simpler rational bounds $\eta_e^{\rm norm}<5\cdot10^{-18}$ and $\eta_p^{\rm norm}<2\cdot10^{-17}$. Hence'+'\n'+r'\['+'\n'+r'\eta_e<1.3309802\cdot10^{-12}+5\cdot10^{-18}<2\cdot10^{-12},'+'\n'+r'\]'+'\n'+r'\['+'\n'+r'\eta_p<2.8858093\cdot10^{-12}+2\cdot10^{-17}+0.27\cdot10^{-12}<6\cdot10^{-12}.'+'\n'+r'\]'+'\n'
 out+=r'The discarded-mode contribution in the second inequality has the separate bounds'+'\n'+r'\['+'\n'
 out+=r'\begin{array}{c|ccc}i&16&17&18\\\hline W_i p_i^+\le&'+'&'.join(sci(data['pt'][i-1].ab()*sum((2*i)**k for k in range(5)),digits=7) for i in range(16,19))+r'\end{array}'+'\n'+r'\]'+'\n'
 out+=r'Adding the two error bounds to the displayed $L_4$ sums gives the bounds $200$ in \eqref{eq:vector-scalar-checks}. The last two columns of Table~\ref{tab:vector-all} separately lie below $13/1000$ and $7/1000$, proving both envelope comparisons.'+'\n'
