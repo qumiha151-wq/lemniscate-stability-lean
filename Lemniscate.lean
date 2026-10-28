@@ -200,3 +200,10 @@ import Lemniscate.PeriodicAngularH4Norm
 import Lemniscate.PeriodicFixedTrialError
 import Lemniscate.PeriodicSineDerivativeNorm
 import Lemniscate.PeriodicSinePolynomialNorm
+import Lemniscate.PeriodicSineDerivativeSeries
+import Lemniscate.PeriodicSineTruncation
+import Lemniscate.RotationCoefficientTails
+import Lemniscate.PeriodicTruncationRescale
+import Lemniscate.PeriodicRotationTruncation
+import Lemniscate.PeriodicFiniteTruncation
+import Lemniscate.PeriodicAdjointTruncation

@@ -855,4 +855,15 @@ Lean 的实际覆盖范围和未完成义务见根目录 README；以编译日�
 `PeriodicSineDerivativeNorm` 统一用 Fourier 正交性证明一至四阶导数范数。
 `PeriodicSinePolynomialNorm` 消去角坐标尺度并用三角不等式证明有限正弦多项式的
 H⁴ 范数不超过文稿的 L₄ 加权系数和。修订稿的截断小节已补入这一简短证明。
-这仅完成截断论证中的有限多项式范数估计，完整无限尾项及归一化误差仍待连接。
+`PeriodicSineDerivativeSeries` 通过 Fourier 系数识别实际弱导数，
+`PeriodicSineTruncation` 将完整遗漏级数控制转为 H⁴ 误差，不省略任何尾项。
+`RotationCoefficientTails` 用已认证的系数界和几何级数矩证明零至四阶加权尾界。
+`PeriodicRotationTruncation` 识别实际单位旋转向量的完整正弦展开，
+对任意截断阶数和任意缩放系数给出截断加归一化误差估计。
+`PeriodicTruncationRescale` 共用一个三角不等式处理两类归一化；
+未另外保留仅适用于不缩放情形的公开弱推论。
+`PeriodicFiniteTruncation` 对任意有限截断和缩放给出统一误差界。
+`PeriodicAdjointTruncation` 识别归一化试探函数的实际系数，合并残差误差、
+第 16—18 个模态以及归一化误差，对应文稿的 ηp 公式。
+向量数值区间比较及其包含关系、具体 Jacobi 轮廓条件仍待完成。
+修订稿已补齐相应的尾级数与归一化论证，最终主定理保持原样。

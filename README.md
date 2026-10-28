@@ -119,6 +119,13 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicFixedTrialError` | The actual normalized fixed trial has squared H4 error below 62658e-30, under the explicit profile hypotheses and the previously established conditions on the exact adjoint eigenfunction |
 | `Lemniscate.PeriodicSineDerivativeNorm` | Exact norms of all four derivatives of the normalized sine modes, proved uniformly using Fourier orthogonality |
 | `Lemniscate.PeriodicSinePolynomialNorm` | The angular H4 norm of a sine polynomial is bounded by the manuscript's weighted coefficient sum L4 |
+| `Lemniscate.PeriodicSineDerivativeSeries` | Absolute sine derivative series equal the actual weak derivatives, with complete L2 tail error bounds |
+| `Lemniscate.PeriodicSineTruncation` | The full angular H4 truncation error is bounded by all omitted weighted coefficients |
+| `Lemniscate.RotationCoefficientTails` | Certified geometric moment bounds for all weighted rotation coefficient tails through order four |
+| `Lemniscate.PeriodicTruncationRescale` | A common rescaling error bound for finite Fourier approximations |
+| `Lemniscate.PeriodicRotationTruncation` | The actual positive-sign unit rotation equals its complete sine series; its H4 truncation and rescaling error is bounded for every truncation order |
+| `Lemniscate.PeriodicFiniteTruncation` | A single bound for dropping any finite number of sine modes and changing normalization |
+| `Lemniscate.PeriodicAdjointTruncation` | The actual adjoint eigenfunction's error relative to the fifteen-mode approximation, including residual, omitted modes and rescaling |
 | `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
 | `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
 | `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
@@ -337,7 +344,10 @@ The following obligations are still required for the original goal:
   bounded by its residual norm divided by 75, and its angular H4 error by
   177 times that residual norm. The complete concrete residual and its resulting
   squared H4 error below 62658e-30 are now proved.
-  Vector truncation estimates, complex angular resolvent estimates and uniform negativity of
+  Complete rotation Fourier tails and their H4 truncation and rescaling estimates
+  are now proved for every truncation order. The adjoint's residual, finite truncation
+  and rescaling errors are also combined. Numerical vector comparisons and their
+  interval soundness, complex angular resolvent estimates and uniform negativity of
   the transformed even Bloch subspace still need proof. The remaining
   argument may use the projection onto the fixed Fourier mode and quadratic forms directly; an
   explicit copy of the paper's basis-change matrix is not a requirement.

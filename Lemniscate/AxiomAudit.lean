@@ -922,3 +922,13 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_sine_h4_derivative_norm
 #print axioms Lemniscate.circle_sine_h4_angular_norm
 #print axioms Lemniscate.circle_sine_trial_angular_norm_le
+#print axioms Lemniscate.circle_sine_derivative_hasSum
+#print axioms Lemniscate.circle_sine_truncation_l2_error
+#print axioms Lemniscate.circle_sine_truncation_derivative_error
+#print axioms Lemniscate.circle_sine_truncation_h4_error
+#print axioms Lemniscate.CoarseArithmetic.rotation_sine_coefficient_tail
+#print axioms Lemniscate.circle_sine_truncation_rescale_error
+#print axioms Lemniscate.circle_positive_rotation_sine_series
+#print axioms Lemniscate.circle_rotation_truncation_h4_error
+#print axioms Lemniscate.circle_finite_sine_truncation_error
+#print axioms Lemniscate.paper_adjoint_truncation_h4_error

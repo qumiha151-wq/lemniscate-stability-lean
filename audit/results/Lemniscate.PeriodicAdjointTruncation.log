@@ -1,0 +1,14 @@
+Lemniscate\PeriodicAdjointTruncation.lean:40:42: warning: This simp argument is unused:
+  Complex.ofReal_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [adjointNormalizedCoefficient, Complex.ofReal_ratCast, div_eq_mul_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Lemniscate\PeriodicAdjointTruncation.lean:40:61: warning: This simp argument is unused:
+  Complex.ofReal_ratCast
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [adjointNormalizedCoefficient, Complex.ofReal_div, div_eq_mul_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
