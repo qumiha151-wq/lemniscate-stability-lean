@@ -28,13 +28,13 @@ theorem circle_real_sine_phase_fourier (f : CircleL2 T)
   simp only [circle_fourierCoeff_smul, map_mul, map_neg, Complex.conj_I, neg_neg]
   linear_combination (-I)*hc
 
-theorem circle_sine_phase_sector (f : CircleL2 T) (hs : InCircleEvenSineSector T f) :
-    InCircleEvenSineSector T ((-I) • f) := by
+theorem circle_even_sine_sector_smul (c : ℂ) (f : CircleL2 T)
+    (hf : InCircleEvenSineSector T f) : InCircleEvenSineSector T (c • f) := by
   constructor
   · intro n
-    rw [circle_fourierCoeff_smul, circle_fourierCoeff_smul, hs.1, mul_neg]
-  · intro i
-    rw [circle_fourierCoeff_smul, hs.2, mul_zero]
+    rw [circle_fourierCoeff_smul,circle_fourierCoeff_smul,hf.1,mul_neg]
+  · intro n
+    rw [circle_fourierCoeff_smul,hf.2,mul_zero]
 
 theorem circle_common_phase_inner (f g : CircleL2 T) :
     inner ℂ ((-I) • f) ((-I) • g) = inner ℂ f g := by

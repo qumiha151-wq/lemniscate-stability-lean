@@ -539,11 +539,11 @@ $\ip\Phi e>1$, so normalization can only decrease the adjoint residual.
 Only this normalization and the residual estimate below enter the argument.
 Appendix~\ref{app:arithmetic}, including the infinite residual tail, proves
 \begin{equation}\label{eq:adjoint-data}
- \norm{A_0^*\widetilde\psi}^2\le\norm{A_0^*\Phi}^2<2\cdot10^{-30}<10^{-28}.
+ \norm{A_0^*\widetilde\psi}^2\le\norm{A_0^*\Phi}^2<2\cdot10^{-30}.
 \end{equation}
 
 
-Put $R_*=10^{-14}$ and $v=\psi-\widetilde\psi\perp e$. Since
+Put $R_*:=\norm{A_0^*\widetilde\psi}$ and $v=\psi-\widetilde\psi\perp e$. Since
 $A_0^*v=-A_0^*\widetilde\psi$, Green's identity, coercivity on the even-frequency sine subspace orthogonal to $e$,
 and Cauchy--Schwarz give $\norm v\le R_*/75$.
 The interpolation estimate \eqref{eq:interpolation} now implies directly
@@ -551,7 +551,7 @@ The interpolation estimate \eqref{eq:interpolation} now implies directly
  2\norm{D_x^2v}^2
  \le R_*\norm v+\frac{1719}{8}\norm v^2
  \le\left(\frac1{75}+\frac{1719}{8\cdot75^2}\right)R_*^2
- <\frac{2}{15}R_*^2.
+ \le\frac{2}{15}R_*^2.
 \]
 Thus $\norm{D_x^2v}^2\le R_*^2/15$.
 Weak integration by parts gives
@@ -562,7 +562,7 @@ The first integral gives $|q|,|q_x|\le1$, so \eqref{eq:Astar} yields
 \[
  4\norm{D_x^4v}
  \le R_*+45\norm{D_x^2v}+105\norm{D_xv}+42\norm v
- \le\left(1+45+105+\frac{42}{75}\right)R_*<152R_*.
+ \le\left(1+45+105+\frac{42}{75}\right)R_*\le152R_*.
 \]
 Consequently $\norm{D_x^4v}\le38R_*$ and
 $\norm{D_x^3v}\le7R_*$.
@@ -572,8 +572,15 @@ $\norm f_{\mathcal H^4}=\sum_{j=0}^4\norm{D_\zeta^jf}_2$ this gives
 \begin{equation}\label{eq:adjoint-H4}
  \norm{\psi-\widetilde\psi}_{\mathcal H^4}
  \le\left(\frac1{75}+\frac32+2+21+152\right)R_*
- <177R_*.
+ \le177R_*.
 \end{equation}
+
+Combining this estimate with \eqref{eq:adjoint-data} gives
+\begin{equation}\label{eq:fixed-adjoint-error}
+ \norm{\psi-\widetilde\psi}_{\mathcal H^4}^2<62658\cdot10^{-30}.
+\end{equation}
+In the truncation formulas below we use the rational error bound
+$27\cdot10^{-14}$, since $62658<270^2$.
 
 \subsection{Exact removal of the neutral factors}
 Near $\alpha=0$, the expected spectral decay is of order $\alpha^2$. Dividing an approximate neutral identity by $\alpha^2$ would amplify its residual and destroy uniformity. We therefore construct the decomposition from the exact vectors $e$ and $\psi$, cancel the neutral factors algebraically, and only then approximate the resulting polynomial coefficients.
@@ -1045,7 +1052,7 @@ using upper absolute endpoints when $w$ is enclosed by segments. Define
  \sum_{k=0}^42^kT_{k+2}(\bar Q,16)
  +|t_e^{-1}-1|_+L_4((e_i)_{i\le15}),\label{eq:eta-e}\\
  \eta_p={}&\sum_{i=16}^{18}p_i^+\sum_{k=0}^4(2i)^k
- +|t_p^{-1}-1|_+L_4((p_i)_{i\le15})+177\cdot10^{-14}.
+ +|t_p^{-1}-1|_+L_4((p_i)_{i\le15})+27\cdot10^{-14}.
  \label{eq:eta-p}
 \end{align}
 The symbol $|\cdot|_+$ denotes the upper absolute endpoint. The comparisons needed in the proof, with comfortable margins, are

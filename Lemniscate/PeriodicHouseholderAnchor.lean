@@ -107,7 +107,7 @@ theorem circle_unit_rotation_phase_anchor (q p : C(AddCircle T, ℂ))
   have hr := circle_unit_rotation_reflect T q p hq hs
   have hsector := circle_even_sine_sector_of_symmetries T (circleUnitRotation T q p) hr
     (circle_even_frequency_part_eq_self T _ (circle_unit_rotation_no_odd T q p hq ho))
-  have hphase := circle_sine_phase_sector T _ hsector
+  have hphase := circle_even_sine_sector_smul T (-I) _ hsector
   have hpair : inner ℂ (circleHouseholderAnchor T) ((-I) • circleUnitRotation T q p) = (c : ℂ) := by
     rw [circle_householder_anchor_pairing, hphase.1,
       circle_unit_rotation_phase_first T q p hq _ hfirst]

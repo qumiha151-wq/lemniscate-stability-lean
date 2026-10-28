@@ -195,3 +195,6 @@ import Lemniscate.AdjointResidualEntries
 import Lemniscate.AdjointResidualTail
 import Lemniscate.PeriodicFixedTrialResidual
 import Lemniscate.PeriodicTrialNormalization
+import Lemniscate.PeriodicTrialSector
+import Lemniscate.PeriodicAngularH4Norm
+import Lemniscate.PeriodicFixedTrialError

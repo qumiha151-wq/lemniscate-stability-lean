@@ -755,7 +755,6 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_adjoint_pairing_real
 #print axioms Lemniscate.circle_unit_rotation_real
 #print axioms Lemniscate.circle_real_sine_phase_fourier
-#print axioms Lemniscate.circle_sine_phase_sector
 #print axioms Lemniscate.circle_common_phase_inner
 #print axioms Lemniscate.paper_single_period_adjoint_real_sector
 #print axioms Lemniscate.neutral_transform_apply
@@ -914,3 +913,9 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_sine_mode_positive_rotation_pairing
 #print axioms Lemniscate.circle_adjoint_trial_rotation_pairing
 #print axioms Lemniscate.circle_normalized_adjoint_trial_residual_sq
+#print axioms Lemniscate.circle_even_sine_sector_smul
+#print axioms Lemniscate.circle_sine_trial_sector
+#print axioms Lemniscate.circle_angular_h4_norm_nonneg
+#print axioms Lemniscate.circle_angular_h4_norm_smul
+#print axioms Lemniscate.circle_angular_h4_norm_add_le
+#print axioms Lemniscate.paper_fixed_adjoint_h4_error_sq

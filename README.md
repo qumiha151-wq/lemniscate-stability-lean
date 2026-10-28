@@ -17,7 +17,8 @@ The revised manuscript preserves the final theorem, defines the adjoint trial
 function by eighteen fixed rational coefficients instead of a Galerkin linear
 solve, and replaces the adjoint
 H4 residual proof with the shorter argument verified in Lean. It obtains the
-bound 177 times the residual. Intermediate single-period bounds use -21/4
+bound 177 times the residual and a certified squared error below 62658e-30
+for the fixed normalized trial. Intermediate single-period bounds use -21/4
 directly. The original source is preserved; this revision is not a full-paper
 proof certificate.
 
@@ -113,6 +114,9 @@ The work has three distinct layers:
 | `Lemniscate.AdjointResidualTail` | The entire infinite residual tail, controlled by a convergent geometric moment |
 | `Lemniscate.PeriodicFixedTrialResidual` | The actual adjoint residual of the fixed rational trial has squared norm below 2e-30, under the explicit profile Fourier hypotheses |
 | `Lemniscate.PeriodicTrialNormalization` | The actual rotation pairing and the same residual bound after normalization, including either sign and every unit complex phase |
+| `Lemniscate.PeriodicTrialSector` | The finite trial and its scalar multiples lie in the even-frequency sine subspace |
+| `Lemniscate.PeriodicAngularH4Norm` | Nonnegativity, homogeneity and the triangle inequality for the angular Sobolev sum norm |
+| `Lemniscate.PeriodicFixedTrialError` | The actual normalized fixed trial has squared H4 error below 62658e-30, under the explicit profile hypotheses and the previously established conditions on the exact adjoint eigenfunction |
 | `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
 | `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
 | `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
@@ -329,7 +333,8 @@ The following obligations are still required for the original goal:
   The actual quartic Bloch polynomial, its reflection parity and exact center
   and cross-factor cancellations are proved. The adjoint trial's L2 error is
   bounded by its residual norm divided by 75, and its angular H4 error by
-  177 times that residual norm. The complete concrete residual bound is now proved.
+  177 times that residual norm. The complete concrete residual and its resulting
+  squared H4 error below 62658e-30 are now proved.
   Vector truncation estimates, complex angular resolvent estimates and uniform negativity of
   the transformed even Bloch subspace still need proof. The remaining
   argument may use the projection onto the fixed Fourier mode and quadratic forms directly; an
