@@ -213,3 +213,4 @@ import Lemniscate.VectorBoundsArithmetic
 import Lemniscate.VectorErrorSoundness
 import Lemniscate.PeriodicApproximationBounds
 import Lemniscate.PeriodicFiniteNormalization
+import Lemniscate.FiniteEnergyCertificate

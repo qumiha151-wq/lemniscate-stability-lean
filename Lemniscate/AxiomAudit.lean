@@ -955,3 +955,7 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.paper_adjoint_approximation_bounds
 #print axioms Lemniscate.circle_real_sine_trial_inner
 #print axioms Lemniscate.circle_finite_normalization_bounds
+#print axioms Lemniscate.real_form_bound_complex
+#print axioms Lemniscate.finite_factor_energy_bound
+#print axioms Lemniscate.finite_tail_energy_bound
+#print axioms Lemniscate.finite_weighted_coupling

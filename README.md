@@ -132,6 +132,7 @@ The work has three distinct layers:
 | `Lemniscate.VectorErrorSoundness` | Real-number bounds for the complete rotation and adjoint error expressions |
 | `Lemniscate.PeriodicApproximationBounds` | Actual H4 errors below 2e-12 and 6e-12, and all four H4 norms below 200, under explicit profile hypotheses |
 | `Lemniscate.PeriodicFiniteNormalization` | Unit norm, exact adjoint pairing, and L2 distance below 1/20 for the finite periodic functions |
+| `Lemniscate.FiniteEnergyCertificate` | A nonnegative matrix factorization with a controlled remainder, complexification, and one weighted Cauchy estimate to absorb the coupling to high frequencies |
 | `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
 | `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
 | `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
