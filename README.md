@@ -126,6 +126,12 @@ The work has three distinct layers:
 | `Lemniscate.PeriodicRotationTruncation` | The actual positive-sign unit rotation equals its complete sine series; its H4 truncation and rescaling error is bounded for every truncation order |
 | `Lemniscate.PeriodicFiniteTruncation` | A single bound for dropping any finite number of sine modes and changing normalization |
 | `Lemniscate.PeriodicAdjointTruncation` | The actual adjoint eigenfunction's error relative to the fifteen-mode approximation, including residual, omitted modes and rescaling |
+| `Lemniscate.VectorIntervalData` | Kernel-checked rational enclosures for all finite normalization steps |
+| `Lemniscate.VectorIntervalSoundness` | Enclosures of the actual real Fourier coefficients, square roots and pairings |
+| `Lemniscate.VectorBoundsArithmetic` | Exact rational comparisons for truncation errors, H4 norms and coefficient envelopes |
+| `Lemniscate.VectorErrorSoundness` | Real-number bounds for the complete rotation and adjoint error expressions |
+| `Lemniscate.PeriodicApproximationBounds` | Actual H4 errors below 2e-12 and 6e-12, and all four H4 norms below 200, under explicit profile hypotheses |
+| `Lemniscate.PeriodicFiniteNormalization` | Unit norm, exact adjoint pairing, and L2 distance below 1/20 for the finite periodic functions |
 | `Lemniscate.PeriodicRotationNorm` | Derives the exact L2 norm of the rotation mode directly from the profile ODE and first integral |
 | `Lemniscate.PeriodicSineParseval` | Parseval on the even-frequency sine subspace, expressed using only positive Fourier frequencies |
 | `Lemniscate.PeriodicRotationSineMass` | Proves the sine coefficient normalization used in the manuscript, from the profile identities and Parseval |
@@ -346,9 +352,12 @@ The following obligations are still required for the original goal:
   squared H4 error below 62658e-30 are now proved.
   Complete rotation Fourier tails and their H4 truncation and rescaling estimates
   are now proved for every truncation order. The adjoint's residual, finite truncation
-  and rescaling errors are also combined. Numerical vector comparisons and their
-  interval soundness, complex angular resolvent estimates and uniform negativity of
-  the transformed even Bloch subspace still need proof. The remaining
+  and rescaling errors are also combined. The numerical vector comparisons and
+  their interval soundness now give the actual H4 errors below 2e-12 and 6e-12,
+  with true and finite H4 norms below 200. The finite periodic functions have
+  exactly the required unit norm and adjoint pairing, and differ in L2 by less
+  than 1/20. Complex angular resolvent estimates, the finite-rank comparison and
+  uniform negativity of the transformed even Bloch subspace still need proof. The remaining
   argument may use the projection onto the fixed Fourier mode and quadratic forms directly; an
   explicit copy of the paper's basis-change matrix is not a requirement.
 - Formalize the relevant parabolic existence, regularization and normal

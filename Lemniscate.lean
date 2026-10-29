@@ -207,3 +207,9 @@ import Lemniscate.PeriodicTruncationRescale
 import Lemniscate.PeriodicRotationTruncation
 import Lemniscate.PeriodicFiniteTruncation
 import Lemniscate.PeriodicAdjointTruncation
+import Lemniscate.VectorIntervalData
+import Lemniscate.VectorIntervalSoundness
+import Lemniscate.VectorBoundsArithmetic
+import Lemniscate.VectorErrorSoundness
+import Lemniscate.PeriodicApproximationBounds
+import Lemniscate.PeriodicFiniteNormalization

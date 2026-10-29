@@ -629,12 +629,17 @@ Appendix~\ref{app:arithmetic} and \eqref{eq:adjoint-H4} give
  \norm{e-e_N}_{\mathcal H^4}<2\cdot10^{-12},\qquad
  \norm{\psi-\psi_N}_{\mathcal H^4}<6\cdot10^{-12},\\
  \norm e_{\mathcal H^4},\ \norm{e_N}_{\mathcal H^4},\
- \norm\psi_{\mathcal H^4},\ \norm{\psi_N}_{\mathcal H^4}<1000,
+ \norm\psi_{\mathcal H^4},\ \norm{\psi_N}_{\mathcal H^4}<200,
  \qquad \norm{z_N}<1/20,\quad \norm{\psi-e}<.051.
 \end{gathered}
 \end{equation}
 
-The last bound follows by the triangle inequality from the two vector errors and $\norm{z_N}<1/20$.
+The $\mathcal H^4$ bounds follow by adding each truncation error to
+the corresponding finite $L_4$ bound in \eqref{eq:vector-scalar-checks}.
+Orthonormality gives $\norm{e_N}=1$, $\ip{\psi_N}{e_N}=1$, and
+$\norm{z_N}^2=\sum_{i=1}^{15}Z_i^2<1/400$.
+The last bound in \eqref{eq:vector-errors} follows by the triangle inequality
+from the two vector errors and the bound for $z_N$.
 
 \begin{lemma}[Uniform finite-rank comparison]\label{lem:comparison}
 The approximations above satisfy
@@ -645,11 +650,11 @@ The approximations above satisfy
 \begin{proof}
 Put $\epsilon=10^{-11}$; both errors in \eqref{eq:vector-errors} are smaller.
 For $A=A_j,A_j^*$ or $S_0$, $0\le j\le3$, the differential formulas give
-$\norm{Af}\le400\norm f_{\mathcal H^4}$. Let $\Delta$ denote exact minus approximate quantities. The norm of a rank-one operator $u\otimes v$ is $\norm u\norm v$. Both $u,u_N$ have $L^2$ norm at most $2$, $\mathcal H^4$ norm below $1100$, and $d,d_N\ge1$. Thus $|\Delta(d^{-1})|\le\epsilon$ and the rank-one formula for $U$ gives
+$\norm{Af}\le400\norm f_{\mathcal H^4}$. Let $\Delta$ denote exact minus approximate quantities. The norm of a rank-one operator $u\otimes v$ is $\norm u\norm v$. Both $u,u_N$ have $L^2$ norm at most $2$ and $\mathcal H^4$ norm below $231$, since $\norm{\avec}_{\mathcal H^4}=1+2+4+8+16=31$; also $d,d_N\ge1$. Thus $|\Delta(d^{-1})|\le\epsilon$ and the rank-one formula for $U$ gives
 \[
  \norm{\Delta U}\le8\epsilon,\qquad
  \norm{A\Delta U},\ \norm{(\Delta U)A}
- \le(800+440000+880000)\epsilon<1.33\cdot10^6\epsilon.
+ \le(800+92400+184800)\epsilon<1.33\cdot10^6\epsilon.
 \]
 The second bound uses adjoints when $A$ acts on the right.
 The cancellation $Ue=-\avec$ now avoids expanding two successive conjugations:
@@ -658,7 +663,7 @@ The cancellation $Ue=-\avec$ now avoids expanding two successive conjugations:
  \mathscr V^{-1}=U-e\otimes Uz,\qquad
  \norm{\mathscr V^{\pm1}},\norm{\mathscr V_N^{\pm1}}\le1.1.
 \]
-Since $\norm{\Delta z}_{\mathcal H^4}\le2\epsilon$ and $\norm z,\norm{z_N}<.1$,
+Using $\norm{\Delta z}_{\mathcal H^4}\le2\epsilon$ and the bounds for $z,z_N$ in \eqref{eq:vector-errors},
 \[
  \norm{(\Delta\mathscr V)A}<1.34\cdot10^6\epsilon,
  \quad
@@ -728,7 +733,7 @@ The weights obey $\norm d_{\ell^2}<23/10$, and their subvector on $|m|\ge4$ has 
 \[
  \sum_i|(W_N^*)_{mi}|d_i\le d_m+2|(e_N)_m|.
 \]
-Indeed the weighted scalar in the rank-one correction is at most its center component plus $(13/25)\norm{e_N}$, and its denominator is at least one. For $\calT_N^{-1}W_N^*$ this estimate acquires at most $(1/4)|(e_N)_m|$, by Cauchy--Schwarz and $\norm{z_N}<1/10$. For $\calT_N^*W_N^*$ it acquires $|(z_N)_m|$, since $W_Ne_N$ has only its center coordinate. As $d_m\le(1/20)a^{(|m|-6)/2}$, \eqref{eq:vector-envelopes} proves the common bound
+Indeed the weighted scalar in the rank-one correction is at most its center component plus $(13/25)\norm{e_N}$, and its denominator is at least one. For $\calT_N^{-1}W_N^*$ this estimate acquires at most $(1/4)|(e_N)_m|$, by Cauchy--Schwarz and $\norm{z_N}<1/20$. For $\calT_N^*W_N^*$ it acquires $|(z_N)_m|$, since $W_Ne_N$ has only its center coordinate. As $d_m\le(1/20)a^{(|m|-6)/2}$, \eqref{eq:vector-envelopes} proves the common bound
 \begin{equation}\label{eq:transform-envelope}
  \sum_i|L_{mi}|d_i\le\tfrac1{10}a^{(|m|-6)/2},
  \qquad L=W_N^*,\ \calT_N^{-1}W_N^*,\ \calT_N^*W_N^*.
