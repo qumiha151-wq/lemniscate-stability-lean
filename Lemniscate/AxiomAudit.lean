@@ -20,7 +20,6 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.OddArithmetic.all_odd_bernstein_comparisons
 #print axioms Lemniscate.OddArithmetic.all_odd_zero_comparisons
 #print axioms Lemniscate.shiftedQuartic_uniform_bound
-#print axioms Lemniscate.rotation_kernel
 #print axioms Lemniscate.weighted_row_dissipation
 #print axioms Lemniscate.physical_decay_identity
 #print axioms Lemniscate.normalizedTime_at_unit_scale
@@ -955,7 +954,3 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.paper_adjoint_approximation_bounds
 #print axioms Lemniscate.circle_real_sine_trial_inner
 #print axioms Lemniscate.circle_finite_normalization_bounds
-#print axioms Lemniscate.real_form_bound_complex
-#print axioms Lemniscate.finite_factor_energy_bound
-#print axioms Lemniscate.finite_tail_energy_bound
-#print axioms Lemniscate.finite_weighted_coupling
