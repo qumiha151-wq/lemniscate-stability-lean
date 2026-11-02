@@ -1135,3 +1135,10 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_cover_multiply
 #print axioms Lemniscate.circle_cover_operator_intertwine
 #print axioms Lemniscate.paper_cover_nonzero_spectral_bound
+#print axioms Lemniscate.paper_cover_kernel_zero_of_zero_component
+#print axioms Lemniscate.paper_cover_no_generalized_kernel
+#print axioms Lemniscate.circle_cover_rotation_component
+#print axioms Lemniscate.paper_cover_kernel
+#print axioms Lemniscate.paper_cover_rotation_ne_zero
+#print axioms Lemniscate.paper_cover_kernel_finrank
+#print axioms Lemniscate.paper_cover_zero_mem_spectrum
