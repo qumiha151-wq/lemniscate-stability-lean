@@ -1142,3 +1142,25 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.paper_cover_rotation_ne_zero
 #print axioms Lemniscate.paper_cover_kernel_finrank
 #print axioms Lemniscate.paper_cover_zero_mem_spectrum
+
+#print axioms Lemniscate.circlePrincipalBlochCoefficient
+#print axioms Lemniscate.circle_principal_bloch_coefficient_apply
+#print axioms Lemniscate.circlePrincipalBlochFamily
+#print axioms Lemniscate.circle_principal_bloch_family_real
+#print axioms Lemniscate.normalizedPencilLinearization
+#print axioms Lemniscate.normalized_pencil_linearization_apply
+#print axioms Lemniscate.normalized_pencil_linearization_bijective
+#print axioms Lemniscate.normalizedPencilLinearizationEquiv
+#print axioms Lemniscate.circlePrincipalDomainMap
+#print axioms Lemniscate.circle_principal_domain_map_apply
+#print axioms Lemniscate.circle_principal_domain_map_bijective
+#print axioms Lemniscate.paper_eigenvalue_linearization_exists
+#print axioms Lemniscate.circle_principal_bloch_family_analytic
+#print axioms Lemniscate.circleNormalizedEigenvalueMap
+#print axioms Lemniscate.circle_normalized_eigenvalue_map_analytic
+#print axioms Lemniscate.circle_normalized_eigenvalue_map_real
+#print axioms Lemniscate.circle_principal_bloch_family_hasDerivAt_zero
+#print axioms Lemniscate.circle_normalized_eigenvalue_map_hasFDerivAt
+#print axioms Lemniscate.circle_normalized_eigenvalue_derivative_equiv
+#print axioms Lemniscate.circle_analytic_eigenpair_exists
+#print axioms Lemniscate.paper_analytic_bloch_eigenpair_exists

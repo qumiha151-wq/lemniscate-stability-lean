@@ -1,3 +1,4 @@
+import Lemniscate.PeriodicProfileAnalyticEigenpair
 import Lemniscate.PeriodicCoverRotation
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
@@ -11,12 +12,14 @@ are -21/4 on one period and -1/(2*M^2) on M >= 2 covers. The rotational kernel
 on a cover is exactly the span of Q*P and has dimension one; there is no
 generalized kernel. Profile identities, Fourier coefficients, and periodic
 extension data remain explicit hypotheses. Compact resolvent and closedness
-on the weak H4 domain are included. The cover arguments use Fourier
+on the weak H4 domain are included. An analytic normalized eigenpair
+issuing from the rotational mode is constructed using the analytic inverse
+function theorem in principal-resolvent coordinates. The cover arguments use Fourier
 components directly and assume no spectral decomposition or spectral bound.
 
 This remains a partial formalization. The full stability theorem has not
 been proved in Lean. Concrete Jacobi-profile and extension identification,
-the analytic phase-diffusion branch, parabolic stability, and geometric
+the real and even phase-diffusion expansion, parabolic stability, and geometric
 convergence remain unproved.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
