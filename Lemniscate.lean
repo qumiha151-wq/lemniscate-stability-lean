@@ -1,19 +1,23 @@
-import Lemniscate.PeriodicBlochCenterPolynomial
-import Lemniscate.PeriodicFiniteNormalization
-import Lemniscate.PeriodicOperatorClosed
+import Lemniscate.PeriodicBlochSpectrumBound
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
 
 /-!
-Current manuscript SHA-256: ba2ac80cbb0b78f19d3ac87068d46e445637d74b0dcf7933d9ce2a000b4bfe81
+Current manuscript SHA-256: 7e13033f5c3d3f0022b6172007ad1aeb54b810b682a5cfacd6880f6a9b4aff98
 
-These imports expose the current partial proof and their transitive dependencies.
-They do not constitute a Lean proof of the manuscript's main stability theorem.
-In particular, the concrete Jacobi data, even Bloch bound, multiple-cover
-decomposition, parabolic stability and geometric convergence remain unproved.
-Conditional operator theorems retain their explicit profile hypotheses.
+The uniform Bloch bound Re z <= -alpha^2/2 for |alpha| <= 1/2 is proved
+for the actual circle differential operators, under the explicit profile
+and Fourier hypotheses in the manuscript. Compact resolvent, closedness
+on the weak H4 domain, and Fourier parity splitting are included. The
+single-period nonzero spectral bound -21/4 is also proved.
 
-RotationKernel was superseded for this paper by circle_rotation_h4_kernel in
-PeriodicRotationDomain. The unused alternative matrix-certificate argument is
-kept outside the current proof until connected to the actual operator.
+This remains a partial formalization. The full stability theorem has not
+been proved in Lean. Concrete Jacobi-profile identification, the finite
+Bloch decomposition on multiple covers, the analytic phase-diffusion
+branch, parabolic stability, and geometric convergence remain unproved.
+
+Checked environment: Lean 4.33.1 and Mathlib revision
+0df444a360eaa60ab8c11dca51a86af692955474.
+Only compiled Lean source is published. Conditional intermediate results
+must not be interpreted as a proof of the full nonlinear theorem.
 -/
