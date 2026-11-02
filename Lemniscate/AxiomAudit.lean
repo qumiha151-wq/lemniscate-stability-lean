@@ -1164,3 +1164,14 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_normalized_eigenvalue_derivative_equiv
 #print axioms Lemniscate.circle_analytic_eigenpair_exists
 #print axioms Lemniscate.paper_analytic_bloch_eigenpair_exists
+
+#print axioms Lemniscate.circle_principal_symbol_neg
+#print axioms Lemniscate.circle_principal_resolvent_reflect
+#print axioms Lemniscate.circle_principal_resolvent_h4_reflect
+#print axioms Lemniscate.circle_principal_shift_reflect
+#print axioms Lemniscate.circle_principal_bloch_coefficient_reflect
+#print axioms Lemniscate.circle_principal_bloch_family_reflect
+#print axioms Lemniscate.circle_principal_normalization_neg_reflect
+#print axioms Lemniscate.circle_principal_bloch_family_neg_reflect
+#print axioms Lemniscate.circle_analytic_eigenvalue_even
+#print axioms Lemniscate.analytic_even_quadratic_bound

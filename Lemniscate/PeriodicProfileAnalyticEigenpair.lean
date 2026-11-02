@@ -1,5 +1,8 @@
 import Lemniscate.PeriodicAnalyticEigenpair
 import Lemniscate.PeriodicEigenvalueCoordinates
+import Lemniscate.PeriodicAnalyticBranchSymmetry
+import Lemniscate.PeriodicAdjointSymmetry
+import Lemniscate.AnalyticEvenQuadratic
 
 /-! The analytic eigenpair for the actual H4-domain Bloch operator.
 The linearized normalized equation is proved invertible; it is not an
@@ -26,6 +29,8 @@ theorem paper_analytic_bloch_eigenpair_exists :
     ∃ ψ : CircleL2 T, ∃ μ : ℂ → ℂ, ∃ g : ℂ → CircleL2 T,
       AnalyticAt ℂ μ 0 ∧ AnalyticAt ℂ g 0 ∧ μ 0 = 0 ∧
       g 0 = circleUnitRotation T q p ∧
+      (∀ᶠ z in 𝓝 (0:ℂ), μ (-z) = μ z) ∧
+      (∃ C : ℝ, 0 < C ∧ ∀ᶠ z in 𝓝 (0:ℂ), ‖μ z‖ ≤ C*‖z‖^2) ∧
       (∀ᶠ z in 𝓝 (0:ℂ), inner ℂ ψ (g z) = 1 ∧ g z ≠ 0) ∧
       (∀ᶠ (α : ℝ) in 𝓝 0, ∃ u : circleH4Domain T,
         (u:CircleL2 T) = g (α:ℂ) ∧
@@ -61,15 +66,41 @@ theorem paper_analytic_bloch_eigenpair_exists :
     have hi := hI a f
     rw [← hRx] at hi
     simpa only [one_pow,R] using hi
-  obtain ⟨μ,f,hμ,hf,hμ0,hf0,hsol,_⟩ := circle_analytic_eigenpair_exists T
+  obtain ⟨μ,f,hμ,hf,hμ0,hf0,hsol,U,hU,hU0,huniq⟩ := circle_analytic_eigenpair_exists T
     (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) 1 (by norm_num) ψ x hx hn' I hI'
+  obtain ⟨φ,hφ,huniqφ⟩ := paper_single_period_adjoint_pairing T q p hq hp he hqreal hpreal hs hc ho hr
+  have hψeq : ψ = φ := huniqφ ψ ⟨hn,hψ⟩
+  have hψuniq (ψ' : CircleL2 T) (hψ' : inner ℂ ψ' (circleUnitRotation T q p) = 1 ∧
+      ∀ u : circleH4Domain T, inner ℂ ψ'
+        (circleH4Operator T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) u) = 0) : ψ' = ψ :=
+    (huniqφ ψ' hψ').trans hψeq.symm
+  have hψR := circle_adjoint_pairing_reflect T (q^2) ((2:ℂ) • (q*p))
+    (1-(3:ℂ) • (q^4)) (circle_profile_square_deriv T q p hq)
+    (circle_profile_square_second T q p hq hp he) hs (circleUnitRotation T q p) ψ
+    (circle_unit_rotation_reflect T q p hq hs) ⟨hn,hψ⟩ hψuniq
+  have hecoe : (e:CircleL2 T) = circleUnitRotation T q p := rfl
+  have heR : circleReflectH4 T e = -e := by
+    apply Subtype.ext
+    change circleReflect T (e:CircleL2 T) = -(e:CircleL2 T)
+    rw [hecoe]
+    exact circle_unit_rotation_reflect T q p hq hs
+  have hxR : -circleReflect T x = x := by
+    have hrx := circle_principal_shift_reflect T 1 e
+    rw [heR,map_neg] at hrx
+    change -x = circleReflect T x at hrx
+    rw [← hrx,neg_neg]
+  have heven := circle_analytic_eigenvalue_even T (q^2) ((2:ℂ) • (q*p))
+    (1-(3:ℂ) • (q^4)) 1 (by norm_num) ψ x μ f hμ hf hμ0 hf0 hsol U hU hU0 huniq
+    (circle_profile_square_deriv T q p hq) (circle_profile_square_second T q p hq hp he)
+    hs hψR hxR
+  have hquad := analytic_even_quadratic_bound μ hμ hμ0 heven
   simp only [one_pow] at hsol
   let g : ℂ → CircleL2 T := fun z => R (f z)
   have hg : AnalyticAt ℂ g 0 := (R.analyticAt (f 0)).comp hf
   have hg0 : g 0 = circleUnitRotation T q p := by
     change R (f 0) = _
     rw [hf0,hRx]
-  refine ⟨ψ,μ,g,hμ,hg,hμ0,hg0,?_,?_⟩
+  refine ⟨ψ,μ,g,hμ,hg,hμ0,hg0,heven,hquad,?_,?_⟩
   · filter_upwards [hsol] with z hz
     exact ⟨hz.2.1,hz.2.2⟩
   · have hreal : Tendsto (fun α : ℝ => (α:ℂ)) (𝓝 0) (𝓝 (0:ℂ)) :=
