@@ -1175,3 +1175,21 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_principal_bloch_family_neg_reflect
 #print axioms Lemniscate.circle_analytic_eigenvalue_even
 #print axioms Lemniscate.analytic_even_quadratic_bound
+
+#print axioms Lemniscate.circleCoverEmbedding
+#print axioms Lemniscate.circle_cover_embedding_fourier_index
+#print axioms Lemniscate.circle_cover_embedding_fourier_zero
+#print axioms Lemniscate.circle_cover_component_embedding
+#print axioms Lemniscate.circle_cover_embedding_injective
+#print axioms Lemniscate.circle_cover_embedding_multiply
+#print axioms Lemniscate.circle_cover_embedding_weak_deriv
+#print axioms Lemniscate.circleCoverEmbeddingJet
+#print axioms Lemniscate.circle_cover_embedding_mem_h4
+#print axioms Lemniscate.circleCoverEmbeddingH4
+#print axioms Lemniscate.circle_cover_embedding_h4_coe
+#print axioms Lemniscate.circle_cover_embedding_h4_jet
+#print axioms Lemniscate.circle_cover_derivative_coefficients
+#print axioms Lemniscate.circle_cover_embedding_operator
+#print axioms Lemniscate.circleSpectralGap
+#print axioms Lemniscate.circle_spectral_gap_bounds
+#print axioms Lemniscate.paper_cover_sharp_gap_bounds
