@@ -2,11 +2,13 @@ import Lemniscate.PeriodicCoverEmbeddingOperator
 import Lemniscate.PeriodicProfileAnalyticEigenpair
 import Lemniscate.PeriodicCoverSpectralBound
 import Lemniscate.PeriodicSpectralGap
+import Lemniscate.PeriodicCoverExtension
 import Mathlib.Analysis.SpecificLimits.Basic
 
 /-! An actual nonzero eigenvalue of each sufficiently large cover lies at
 distance O(M^-2) from zero. The constants are chosen before the covering
-number, long period, and extended coefficients. -/
+number and long period. All coefficients are the natural periodic extensions;
+their derivative, reality and Fourier extension properties are proved. -/
 namespace Lemniscate
 open Complex MeasureTheory CoarseArithmetic Filter
 open scoped ComplexConjugate Topology
@@ -27,13 +29,11 @@ include hq hp he hqreal hpreal hs hc ho hr
 
 theorem paper_cover_sharp_gap_bounds :
     ∃ K : ℝ, 0 < K ∧ ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M →
-      ∀ (S : ℝ) [Fact (0 < S)], S = (M:ℝ)*T →
-      ∀ H H₁ H₂ : C(AddCircle S, ℂ),
-        HasCircleDeriv S H H₁ → HasCircleDeriv S H₁ H₂ →
-        (∀ x, conj (H x) = H x) → (∀ x, conj (H₁ x) = H₁ x) →
-        (∀ x, conj (H₂ x) = H₂ x) →
-        (∀ n : ℤ, fourierCoeff H ((M:ℤ)*n) = fourierCoeff (q^2 : C(AddCircle T, ℂ)) n) →
-        (∀ n : ℤ, ¬(M:ℤ) ∣ n → fourierCoeff H n = 0) →
+      ∀ (S : ℝ) [Fact (0 < S)] (hS : S = (M:ℝ)*T),
+        let E := circlePeriodicExtension T S M hS
+        let H := E (q^2)
+        let H₁ := E ((2:ℂ) • (q*p))
+        let H₂ := E (1-(3:ℂ) • (q^4))
         ∃ w : ℂ, w ∈ circleSpectrum S H H₁ H₂ ∧ w ≠ 0 ∧
           -(K/(M:ℝ)^2) ≤ w.re ∧ w.re ≤ -(1/(2*(M:ℝ)^2)) ∧
           1/(2*(M:ℝ)^2) ≤ circleSpectralGap S H H₁ H₂ ∧
@@ -49,7 +49,11 @@ theorem paper_cover_sharp_gap_bounds :
     (Filter.Eventually.and (tC.eventually hnorm) (tR.eventually heig))
   obtain ⟨N,hN⟩ := eventually_atTop.mp hcombined
   refine ⟨K,hK,max 2 N,le_max_left 2 N,?_⟩
-  intro M hMN S instS hS H H₁ H₂ hD hD₁ Hreal H₁real H₂real hmulti hvanish
+  intro M hMN S instS hS
+  let E := circlePeriodicExtension T S M hS
+  let H := E (q^2)
+  let H₁ := E ((2:ℂ) • (q*p))
+  let H₂ := E (1-(3:ℂ) • (q^4))
   have hM2 : 2 ≤ M := le_trans (le_max_left 2 N) hMN
   have hM : 0 < M := by omega
   have hMr : (0:ℝ) < M := by exact_mod_cast hM
@@ -97,6 +101,21 @@ theorem paper_cover_sharp_gap_bounds :
     intro x
     change conj (1-3*(q x)^4) = 1-3*(q x)^4
     simp only [map_sub,map_mul,map_one,map_ofNat,map_pow,hqreal]
+  have hD : HasCircleDeriv S H H₁ := circle_periodic_extension_deriv T S M hS _ _
+    (circle_profile_square_deriv T q p hq)
+  have hD₁ : HasCircleDeriv S H₁ H₂ := circle_periodic_extension_deriv T S M hS _ _
+    (circle_profile_square_second T q p hq hp he)
+  have Hreal := circle_periodic_extension_real T S M hS _ h0real
+  have H₁real := circle_periodic_extension_real T S M hS _ h1real
+  have H₂real := circle_periodic_extension_real T S M hS _ h2real
+  have hMZ : (M:ℤ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hM)
+  have hmulti (n : ℤ) : fourierCoeff H ((M:ℤ)*n) =
+      fourierCoeff (q^2 : C(AddCircle T, ℂ)) n := by
+    rw [circle_periodic_extension_fourier T S M hM hS]
+    simp [Int.mul_ediv_cancel_left _ hMZ]
+  have hvanish (n : ℤ) (hn : ¬(M:ℤ) ∣ n) : fourierCoeff H n = 0 := by
+    rw [circle_periodic_extension_fourier T S M hM hS]
+    exact if_neg hn
   let v := circleCoverEmbeddingH4 T S M hM hS 1 u
   have hvne : (v:CircleL2 S) ≠ 0 := by
     intro hz
@@ -111,9 +130,11 @@ theorem paper_cover_sharp_gap_bounds :
       hD hD₁ h0real h1real h2real Hreal H₁real H₂real hmulti hvanish 1 u
     simpa only [v,Int.cast_one,hAu',map_smul,circle_cover_embedding_h4_coe] using hlift
   have hwspec := (circle_spectrum_iff_eigenvector S H H₁ H₂ w).mpr ⟨v,hvne,hAv⟩
+  have hM1 : M ≠ 1 := by omega
   have hgap := circle_spectral_gap_bounds S H H₁ H₂ (1/(2*(M:ℝ)^2)) (K/(M:ℝ)^2)
-    (fun z hz hzne => paper_cover_nonzero_spectral_bound T S q p hq hp he hqreal hpreal
-      hs hc ho hr M hM2 hS H H₁ H₂ hD hD₁ hmulti hvanish z hzne hz)
+    (fun z hz hzne => by
+      simpa only [if_neg hM1] using paper_cover_nonzero_spectral_bound T S q p hq hp he hqreal hpreal
+        hs hc ho hr M hM hS H H₁ H₂ hD hD₁ hmulti hvanish z hzne hz)
     w hwspec hwne hlower
   exact ⟨w,hwspec,hwne,hlower,hupper,hgap⟩
 

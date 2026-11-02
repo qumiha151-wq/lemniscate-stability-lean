@@ -2,9 +2,8 @@ import Lemniscate.PeriodicCoverComponents
 import Lemniscate.PeriodicCoverOperator
 import Lemniscate.PeriodicBlochSpectrumBound
 
-/-! The lower spectral gap on every finite cover. Periodic extension is
-specified by the Fourier coefficients of the original coefficient; neither
-a spectral decomposition nor a spectral bound on the cover is assumed. -/
+/-! The nonzero spectral bound on every positive cover, including one period.
+Only Fourier extension data for the original coefficient are assumed. -/
 namespace Lemniscate
 open Complex MeasureTheory CoarseArithmetic
 open scoped ComplexConjugate
@@ -23,41 +22,48 @@ variable (q p : C(AddCircle T, ℂ))
     (hr : (2*Real.pi/T)^2 = thetaParameter)
 include hq hp he hqreal hpreal hs hc ho hr
 
-theorem paper_cover_nonzero_spectral_bound (M : ℕ) (hM : 2 ≤ M) (hS : S = (M:ℝ)*T)
+theorem paper_cover_nonzero_spectral_bound (M : ℕ) (hM : 0 < M) (hS : S = (M:ℝ)*T)
     (H H₁ H₂ : C(AddCircle S, ℂ))
     (hD : HasCircleDeriv S H H₁) (hD₁ : HasCircleDeriv S H₁ H₂)
     (hmulti : ∀ n : ℤ, fourierCoeff H ((M:ℤ)*n) = fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hvanish : ∀ n : ℤ, ¬(M:ℤ) ∣ n → fourierCoeff H n = 0)
     (w : ℂ) (hwne : w ≠ 0) (hw : w ∈ circleSpectrum S H H₁ H₂) :
-    w.re ≤ -(1/(2*(M:ℝ)^2)) := by
-  have hMpos : 0 < M := by omega
+    w.re ≤ if M = 1 then -(21/4:ℝ) else -(1/(2*(M:ℝ)^2)) := by
   obtain ⟨f,hf,hAf⟩ := (circle_spectrum_iff_eigenvector S H H₁ H₂ w).mp hw
-  obtain ⟨j,hj,hC⟩ := circle_cover_nonzero_component T S M hMpos (f:CircleL2 S) hf
-  let g := circleCoverComponentH4 T S M hMpos hS j f
+  obtain ⟨j,hj,hC⟩ := circle_cover_nonzero_component T S M hM (f:CircleL2 S) hf
+  let g := circleCoverComponentH4 T S M hM hS j f
   have hgne : (g:CircleL2 T) ≠ 0 := hC
   have hgeig : circleBlochOperator T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4))
       ((j:ℝ)/(M:ℝ)) g = w • (g:CircleL2 T) := by
-    have h := congrArg (circleCoverComponent T S M hMpos j) hAf
-    rw [circle_cover_operator_intertwine T S M hMpos hS _ _ _ H H₁ H₂
+    have h := congrArg (circleCoverComponent T S M hM j) hAf
+    rw [circle_cover_operator_intertwine T S M hM hS _ _ _ H H₁ H₂
       (circle_profile_square_deriv T q p hq) (circle_profile_square_second T q p hq hp he)
       hD hD₁ hmulti hvanish] at h
     simpa only [g,map_smul,circle_cover_component_h4_coe] using h
-  have hα := circle_cover_parameter_bound M hMpos j hj
+  have hα := circle_cover_parameter_bound M hM j hj
   have hspec := (paper_bloch_spectrum_iff_eigenvector T q p he hqreal hpreal hr
     ((j:ℝ)/(M:ℝ)) hα w).mpr ⟨g,hgne,hgeig⟩
-  have hMr : (0:ℝ) < M := by exact_mod_cast hMpos
+  have hMr : (0:ℝ) < M := by exact_mod_cast hM
   by_cases hj0 : j = 0
   · have hspec₀ : w ∈ circleSpectrum T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) := by
       simpa only [hj0,Int.cast_zero,zero_div,circle_bloch_spectrum_at_zero] using hspec
     have hb := paper_single_period_nonzero_spectral_bound T q p hq hp he hqreal hpreal hs hc ho hr w hwne hspec₀
-    have hMge : (2:ℝ) ≤ M := by exact_mod_cast hM
-    have hgap : 1/(2*(M:ℝ)^2) ≤ (21/4:ℝ) := by
-      apply (div_le_iff₀ (by positivity : 0 < 2*(M:ℝ)^2)).mpr
-      nlinarith only [hMge,sq_nonneg ((M:ℝ)-1)]
-    linarith only [hb,hgap]
+    by_cases hM1 : M = 1
+    · simpa only [if_pos hM1] using hb
+    · rw [if_neg hM1]
+      have hMge : (2:ℝ) ≤ M := by exact_mod_cast (show 2 ≤ M by omega)
+      have hgap : 1/(2*(M:ℝ)^2) ≤ (21/4:ℝ) := by
+        apply (div_le_iff₀ (by positivity : 0 < 2*(M:ℝ)^2)).mpr
+        nlinarith only [hMge,sq_nonneg ((M:ℝ)-1)]
+      linarith only [hb,hgap]
   · have hjabs : (1:ℤ) ≤ |j| := by
       have hpj := abs_pos.mpr hj0
       omega
+    have hM1 : M ≠ 1 := by
+      intro h
+      rw [h,Nat.cast_one] at hj
+      omega
+    rw [if_neg hM1]
     have hdist : 1/(M:ℝ) ≤ |(j:ℝ)/(M:ℝ)| := by
       rw [abs_div,abs_of_pos hMr]
       exact div_le_div_of_nonneg_right (by exact_mod_cast hjabs) hMr.le

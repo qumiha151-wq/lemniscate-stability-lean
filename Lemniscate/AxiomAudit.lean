@@ -1193,3 +1193,12 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circleSpectralGap
 #print axioms Lemniscate.circle_spectral_gap_bounds
 #print axioms Lemniscate.paper_cover_sharp_gap_bounds
+
+#print axioms Lemniscate.circleCoverProjection
+#print axioms Lemniscate.circlePeriodicExtension
+#print axioms Lemniscate.circle_periodic_extension_coe
+#print axioms Lemniscate.circle_periodic_extension_deriv
+#print axioms Lemniscate.circle_periodic_extension_real
+#print axioms Lemniscate.circle_periodic_extension_fourier_mode
+#print axioms Lemniscate.circle_periodic_extension_fourier
+#print axioms Lemniscate.paper_periodic_cover_spectrum

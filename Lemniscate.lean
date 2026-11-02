@@ -1,5 +1,5 @@
 import Lemniscate.PeriodicCoverUpperBound
-import Lemniscate.PeriodicCoverRotation
+import Lemniscate.PeriodicProfileCoverSpectrum
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
 
@@ -10,8 +10,9 @@ For the actual circle differential operators, the uniform Bloch bound
 Re z <= -alpha^2/2 for |alpha| <= 1/2 is proved. The nonzero spectral bounds
 are -21/4 on one period and -1/(2*M^2) on M >= 2 covers. The rotational kernel
 on a cover is exactly the span of Q*P and has dimension one; there is no
-generalized kernel. Profile identities, reality, Fourier coefficients, and periodic
-extension data remain explicit hypotheses. Compact resolvent and closedness
+generalized kernel. The short-period profile identities, reality and Fourier coefficients
+remain explicit hypotheses. Cover coefficients are defined by natural
+pullback; their derivative and Fourier identities are proved. Compact resolvent and closedness
 on the weak H4 domain are included. An analytic normalized eigenpair
 issuing from the rotational mode is constructed using the analytic inverse
 function theorem in principal-resolvent coordinates. Its eigenvalue branch
@@ -23,7 +24,7 @@ For sufficiently large covers the nonzero spectral gap lies between
 spectral point is constructed by lifting the analytic branch at 1/M.
 
 This remains a partial formalization. The full stability theorem has not
-been proved in Lean. Concrete Jacobi-profile and extension identification,
+been proved in Lean. Concrete Jacobi-profile and geometric operator identification,
 parabolic stability and geometric convergence remain unproved.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
