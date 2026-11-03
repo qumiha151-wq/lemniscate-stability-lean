@@ -3,7 +3,7 @@ import Lemniscate.PeriodicProfileCoverSpectrum
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
 import Lemniscate.BernoulliCircleProfile
-import Lemniscate.WeierstrassEquation
+import Lemniscate.PeriodicWeierstrassProfile
 
 /-!
 Current manuscript SHA-256: 6c29dca2e865d17759b91543764d1c89fe7350de0cbafe56f25c55126440f406
@@ -40,6 +40,12 @@ For the remaining Fourier identification, square-lattice Weierstrass
 rotation and half-period identities are proved, together with the
 second-order equation at all points away from the lattice, including
 critical points of the Weierstrass function.
+
+A profile satisfying the curvature ODE and initial data is identified
+with a normalized shifted Weierstrass solution, using ODE uniqueness on
+compact intervals. This identification assumes the explicit scalar
+normalization 2*a^2*P(1/2) = 1. Existence of a positive normalization
+has not yet been proved.
 
 This remains a partial formalization. The full stability theorem has not
 been proved in Lean. The Jacobi/Fourier coefficient and period identities,

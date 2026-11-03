@@ -1223,3 +1223,10 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 
 #print axioms Lemniscate.square_weierstrass_symmetry
 #print axioms Lemniscate.weierstrass_second_order
+
+#print axioms Lemniscate.unitSquarePeriods
+#print axioms Lemniscate.normalizedWeierstrass
+#print axioms Lemniscate.normalizedWeierstrassDerivative
+#print axioms Lemniscate.normalized_weierstrass_data
+#print axioms Lemniscate.quadratic_second_order_unique
+#print axioms Lemniscate.circle_profile_square_weierstrass
