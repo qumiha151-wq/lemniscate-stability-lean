@@ -1234,3 +1234,7 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.integer_inverse_square_sum
 #print axioms Lemniscate.integer_half_shift_difference
 #print axioms Lemniscate.unit_square_normalization_exists
+
+#print axioms Lemniscate.unit_square_midline_regular
+#print axioms Lemniscate.weierstrass_real_line_period_mem
+#print axioms Lemniscate.bernoulli_weierstrass_period

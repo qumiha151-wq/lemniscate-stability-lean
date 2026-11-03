@@ -15,7 +15,7 @@ def unitSquarePeriods : PeriodPair where
     rw [← Complex.coe_basisOneI]
     exact Complex.basisOneI.linearIndependent
 
-private theorem unit_square_midline_regular (a x : ℝ) :
+theorem unit_square_midline_regular (a x : ℝ) :
     (a:ℂ)*(x:ℂ)+I/2 ∉ unitSquarePeriods.lattice := by
   intro h
   obtain ⟨m,n,he⟩ := PeriodPair.mem_lattice.mp h

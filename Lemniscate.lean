@@ -46,10 +46,14 @@ a positive real a satisfying 2*a^2*P(1/2) = 1. The actual Bernoulli curvature
 square is identified with the normalized shifted Weierstrass solution by
 ODE uniqueness, with no scalar-normalization hypothesis. The existing
 circle-profile theorem has been strengthened; its weaker version is removed.
+The actual scaled-arclength period T is proved equal to 2/a. The proof uses
+half-period symmetry, positivity up to the first curvature zero, and the
+double pole to identify horizontal Weierstrass periods with lattice points.
+No period, zero-location or spectral assertion is assumed for the actual curve.
 
 This remains a partial formalization. The full stability theorem has not
-been proved in Lean. The Jacobi/Fourier coefficient and period identities,
-the geometric linearization, parabolic stability and geometric convergence
+been proved in Lean. The remaining Fourier coefficient and frequency-parameter
+identification, geometric linearization, parabolic stability and geometric convergence
 remain unproved.
 
 Checked environment: Lean 4.33.1 and Mathlib revision

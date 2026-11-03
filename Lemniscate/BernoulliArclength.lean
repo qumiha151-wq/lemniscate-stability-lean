@@ -21,16 +21,9 @@ theorem bernoulli_arclength_profile :
   let v : ℝ → ℝ := fun u => Real.sqrt 2*‖bernoulliVelocity u‖
   have hroot (u : ℝ) : 0 < Real.sqrt (1+(Real.sin u)^2) :=
     Real.sqrt_pos.mpr (by nlinarith only [sq_nonneg (Real.sin u)])
-  have hv : Continuous v := by
-    have hr : Continuous (fun u : ℝ => Real.sqrt (1+(Real.sin u)^2)) :=
-      Real.continuous_sqrt.comp (continuous_const.add (Real.continuous_sin.pow 2))
-    have hc : Continuous (fun u : ℝ => Real.sqrt 2/Real.sqrt (1+(Real.sin u)^2)) :=
-      continuous_const.div hr (fun u => ne_of_gt (hroot u))
-    convert! hc using 1
-    funext u
-    dsimp only [v]
-    rw [(bernoulli_curve_geometry u).2.2.1]
-    ring
+  have hvelocity : Continuous bernoulliVelocity :=
+    continuous_iff_continuousAt.mpr (fun u => (bernoulli_curve_geometry u).2.1.continuousAt)
+  have hv : Continuous v := continuous_const.mul hvelocity.norm
   have hv1 (u : ℝ) : 1 ≤ v u := by
     dsimp only [v]
     rw [(bernoulli_curve_geometry u).2.2.1,mul_one_div]

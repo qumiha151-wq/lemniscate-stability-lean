@@ -1,11 +1,12 @@
 import Lemniscate.BernoulliArclength
 import Lemniscate.PeriodicWeierstrassProfile
 import Lemniscate.SquareWeierstrassPositive
+import Lemniscate.BernoulliPeriod
 
 /-! The actual curvature profile on its scaled-arclength circle, including
 its normalized shifted Weierstrass representation. No scalar normalization
-or profile ODE is assumed. Fourier coefficients and the period identification
-remain separate obligations. -/
+or profile ODE is assumed. The actual scaled-arclength period is identified;
+the Fourier coefficients remain a separate obligation. -/
 namespace Lemniscate
 open Complex MeasureTheory
 open scoped ComplexConjugate
@@ -32,6 +33,7 @@ theorem bernoulli_circle_profile_exists :
         (∀ x : ℝ, (planarSignedCurvature bernoulliCurve (e.symm x):ℂ) =
           3*q (x:AddCircle (e (2*Real.pi)))) ∧
         ∃ a : ℝ, 0 < a ∧ 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1 ∧
+          e (2*Real.pi) = 2/a ∧
           (fun x : ℝ => (q (x:AddCircle (e (2*Real.pi))))^2) = normalizedWeierstrass a ∧
           (fun x : ℝ => 2*(q (x:AddCircle (e (2*Real.pi)))*
             p (x:AddCircle (e (2*Real.pi))))) = normalizedWeierstrassDerivative a := by
@@ -85,7 +87,12 @@ theorem bernoulli_circle_profile_exists :
     change (planarSignedCurvature bernoulliCurve (e.symm x):ℂ) = 3*(qR x:ℂ)
     exact_mod_cast (hODE x).2.2.2
   obtain ⟨a,ha,hnorm⟩ := unit_square_normalization_exists
+  have hW := circle_profile_square_weierstrass T q p hqD hpD henergy hq0C hp0C a hnorm
+  have hident (x : ℝ) : (bernoulliProfileQ (e.symm x):ℂ)^2 = normalizedWeierstrass a x := by
+    change (q (x:AddCircle T))^2 = normalizedWeierstrass a x
+    exact congrFun hW.1 x
+  have hperiod := bernoulli_weierstrass_period e he a ha hnorm hident
   exact ⟨e,he,hT,q,p,hqD,hpD,henergy,hqreal,hpreal,hq0C,hp0C,hcurv,a,ha,hnorm,
-    circle_profile_square_weierstrass T q p hqD hpD henergy hq0C hp0C a hnorm⟩
+    hperiod,hW⟩
 
 end Lemniscate
