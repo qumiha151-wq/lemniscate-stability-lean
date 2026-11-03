@@ -14,13 +14,13 @@ theorem sum_interval_sound {ι : Type*} [Fintype ι] (I : ι → Interval) (f : 
   · exact Finset.sum_le_sum (fun i _ => (h i).2)
 
 theorem rotation_norm_data_sound : Contains rotationNormData rotationCoefficientNorm := by
-  have hc : Contains (fineCoefficientData 0) (constantCoefficient thetaParameter nome) := by
+  have hc : Contains (fineCoefficientData 0) (constantCoefficient lemniscateFrequencySquared nome) := by
     simpa [fourierCoefficient] using fine_coefficient_data_sound ⟨0,by decide⟩
-  have hr : Contains ⟨thetaRLower,thetaRUpper⟩ thetaParameter := actual_nome_theta_r_bounds
+  have hr : Contains ⟨frequencyLower,frequencyUpper⟩ lemniscateFrequencySquared := lemniscate_frequency_bounds
   have hx := dividePositive_sound _ _ _ _ vector_interval_certificate.r_pos
     (scale_sound _ _ 2 hc) (scale_sound _ _ 5 hr)
   have hx' : Contains rotationNormSquaredInput
-      (2*constantCoefficient thetaParameter nome/(5*thetaParameter)) := by
+      (2*constantCoefficient lemniscateFrequencySquared nome/(5*lemniscateFrequencySquared)) := by
     simpa only [rotationNormSquaredInput,Rat.cast_ofNat,mul_comm] using hx
   exact sqrt_enclosure_sound _ _ _ _ hx'
     vector_interval_certificate.norm_pos.le vector_interval_certificate.norm_hi_pos.le
@@ -29,7 +29,7 @@ theorem rotation_norm_data_sound : Contains rotationNormData rotationCoefficient
 theorem rotation_coefficient_data_sound (j : Fin 18) :
     Contains (rotationCoefficientData j) (rotationSineCoefficient j.val) := by
   have hc : Contains (fineCoefficientData (j.val+1))
-      (evenCoefficient thetaParameter nome (j.val+1)) := by
+      (evenCoefficient lemniscateFrequencySquared nome (j.val+1)) := by
     simpa only [fourierCoefficient,if_neg (by omega : j.val+1 ≠ 0)] using
       fine_coefficient_data_sound ⟨j.val+1,by omega⟩
   have hx := dividePositive_sound _ _ _ _ vector_interval_certificate.norm_pos

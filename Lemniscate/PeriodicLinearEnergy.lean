@@ -66,8 +66,8 @@ theorem paper_linear_classical_cosine_dissipative
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
     (hf : HasCircleDeriv T f f₁) (hf₁ : HasCircleDeriv T f₁ f₂)
     (hf₂ : HasCircleDeriv T f₂ f₃) (hf₃ : HasCircleDeriv T f₃ f₄)
     (v : CosineSequenceSpace) (hv : circleContinuousL2 T f = circleEvenCosineSynthesis T v) :

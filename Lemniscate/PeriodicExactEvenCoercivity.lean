@@ -16,9 +16,9 @@ theorem paper_exact_reduced_even_coercivity (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
     (ψ : circleH4Domain T)
     (hψnorm : inner ℂ (ψ:CircleL2 T) (circleUnitRotation T q p) = 1)
     (hψzero : circleH4FormalAdjoint T (q^2) ((2:ℂ) • (q*p)) ψ = 0)

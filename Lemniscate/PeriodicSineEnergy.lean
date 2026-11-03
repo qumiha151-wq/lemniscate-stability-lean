@@ -13,8 +13,8 @@ variable (T : ℝ) [Fact (0 < T)]
 theorem circle_sine_block_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (u : ℂ) (v : SineTailSpace)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (u : ℂ) (v : SineTailSpace)
     (hv : HasSineTailH2Coefficients v) :
     circleH2Energy T h h₂ (circleSineBlockFunction T u v) (circleSineBlockFirst T u v hv)
       (circleSineBlockSecond T u v hv) = sineH2BlockForm u v := by
@@ -38,8 +38,8 @@ theorem circle_sine_block_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, �
 theorem circle_sine_weak_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (u : ℂ) (v : SineTailSpace)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (u : ℂ) (v : SineTailSpace)
     (f₁ f₂ : CircleL2 T) (hf : HasWeakCircleDeriv T (circleSineBlockFunction T u v) f₁)
     (hf₁ : HasWeakCircleDeriv T f₁ f₂) :
     circleH2Energy T h h₂ (circleSineBlockFunction T u v) f₁ f₂ = sineH2BlockForm u v := by
@@ -56,8 +56,8 @@ theorem circle_sine_weak_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, �
 theorem circle_sine_weak_energy_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (u : ℂ) (v : SineTailSpace)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (u : ℂ) (v : SineTailSpace)
     (f₁ f₂ : CircleL2 T) (hf : HasWeakCircleDeriv T (circleSineBlockFunction T u v) f₁)
     (hf₁ : HasWeakCircleDeriv T f₁ f₂)
     (horth : inner ℂ (circleSineConstraintVector T) (circleSineBlockFunction T u v) = 0) :

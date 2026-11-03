@@ -11,8 +11,8 @@ variable (T : ℝ) [Fact (0 < T)]
 theorem circle_odd_weak_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f f₁ f₂ : CircleL2 T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f f₁ f₂ : CircleL2 T)
     (hf : InCircleOddSector T f) (hff₁ : HasWeakCircleDeriv T f f₁)
     (hf₁f₂ : HasWeakCircleDeriv T f₁ f₂) :
     circleH2Energy T h h₂ f f₁ f₂ =
@@ -38,8 +38,8 @@ theorem circle_odd_weak_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ
 theorem circle_odd_weak_energy_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f f₁ f₂ : CircleL2 T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f f₁ f₂ : CircleL2 T)
     (hf : InCircleOddSector T f) (hff₁ : HasWeakCircleDeriv T f f₁)
     (hf₁f₂ : HasWeakCircleDeriv T f₁ f₂) :
     circleH2Energy T h h₂ f f₁ f₂ ≤ -6*‖f‖^2 := by

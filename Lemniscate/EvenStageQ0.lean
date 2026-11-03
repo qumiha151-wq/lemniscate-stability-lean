@@ -972,7 +972,7 @@ def evenStageQ0IntegerMatrix (i j : Fin 31) : IntegerInterval :=
   ((evenStageQ0Data.getD i.val #[]).getD j.val ⟨0,0⟩)
 def evenStageQ0Matrix : Matrix (Fin 31) (Fin 31) Interval := integerMatrixInterval evenStageQ0IntegerMatrix
 def evenStageQ0Computed : Matrix (Fin 31) (Fin 31) IntegerInterval := integerMatrixMul (integerMatrixTranspose evenSeedUIntegerMatrix) evenSeedA0IntegerMatrix
-noncomputable def evenStageQ0Real : Matrix (Fin 31) (Fin 31) ℝ := ((Lemniscate.realFiniteHouseholder))ᵀ*(Lemniscate.evenBlochCoefficientMatrix thetaParameter nome 0)
+noncomputable def evenStageQ0Real : Matrix (Fin 31) (Fin 31) ℝ := ((Lemniscate.realFiniteHouseholder))ᵀ*(Lemniscate.evenBlochCoefficientMatrix lemniscateFrequencySquared nome 0)
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
 theorem even_stage_q0_comparison : ∀ i j,

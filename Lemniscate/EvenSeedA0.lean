@@ -8,8 +8,8 @@ theorem even_seed_a0_comparison : ∀ i j,
     Encloses (evenSeedA0Matrix i j) (evenSeedA0Computed i j) := by
   unfold Encloses
   decide +kernel
-theorem even_seed_a0_sound : MatrixContains evenSeedA0Matrix (Lemniscate.evenBlochCoefficientMatrix thetaParameter nome 0) := by
-  have h : MatrixContains evenSeedA0Computed (Lemniscate.evenBlochCoefficientMatrix thetaParameter nome 0) := finite_bloch_coefficient_input_sound 0
+theorem even_seed_a0_sound : MatrixContains evenSeedA0Matrix (Lemniscate.evenBlochCoefficientMatrix lemniscateFrequencySquared nome 0) := by
+  have h : MatrixContains evenSeedA0Computed (Lemniscate.evenBlochCoefficientMatrix lemniscateFrequencySquared nome 0) := finite_bloch_coefficient_input_sound 0
   intro i j
   exact (h i j).mono (even_seed_a0_comparison i j).1 (even_seed_a0_comparison i j).2
 end Lemniscate.CoarseArithmetic

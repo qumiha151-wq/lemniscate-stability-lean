@@ -11,10 +11,10 @@ open Finset
 def rawTrialSineEntry (i j : ℕ) : Interval :=
   let n : ℚ := 2*(i:ℚ)
   let m : ℚ := 2*(j:ℚ)
-  let v := scale (mul ⟨thetaRLower,thetaRUpper⟩
+  let v := scale (mul ⟨frequencyLower,frequencyUpper⟩
     (add (scale (fineCoefficientData (i-j+(j-i))) (7*m-n))
          (scale (fineCoefficientData (i+j)) (7*m+n)))) ((15/2:ℚ)*n)
-  if i = j then add v ⟨-4*thetaRUpper^2*n^4-42,-4*thetaRLower^2*n^4-42⟩ else v
+  if i = j then add v ⟨-4*frequencyUpper^2*n^4-42,-4*frequencyLower^2*n^4-42⟩ else v
 
 def rawTrialResidualInterval (j : Fin 40) : Interval :=
   ⟨∑ i : Fin 18, (scale (rawTrialSineEntry (i.val+1) (j.val+1)) (adjointTrialCoefficient i)).lo,

@@ -14,13 +14,13 @@ noncomputable def h2Mass (v : ℕ → ℂ) : ℝ :=
   ∑' j : ℕ, (frequencyWeight j*‖v j‖)^2
 
 noncomputable def absoluteCosineTerm (v : ℕ → ℂ) (p : ℕ × ℕ) : ℝ :=
-  |cosineMatrixEntry thetaParameter nome p.1 p.2| * ‖v p.1‖*‖v p.2‖
+  |cosineMatrixEntry lemniscateFrequencySquared nome p.1 p.2| * ‖v p.1‖*‖v p.2‖
 
 noncomputable def cosineEnergyTerm (v : ℕ → ℂ) (p : ℕ × ℕ) : ℂ :=
-  conj (v p.1)*(cosineMatrixEntry thetaParameter nome p.1 p.2:ℂ)*v p.2
+  conj (v p.1)*(cosineMatrixEntry lemniscateFrequencySquared nome p.1 p.2:ℂ)*v p.2
 
 theorem cosine_finite_absolute_bound (I : Finset ℕ) (v : ℕ → ℂ) :
-    (∑ i ∈ I, ∑ j ∈ I, |cosineMatrixEntry thetaParameter nome i j| * ‖v i‖*‖v j‖) ≤
+    (∑ i ∈ I, ∑ j ∈ I, |cosineMatrixEntry lemniscateFrequencySquared nome i j| * ‖v i‖*‖v j‖) ≤
       1024*(∑ i ∈ I, (frequencyWeight i*‖v i‖)^2) := by
   have hs := weighted_double_sum_bound I
     (fun i j => cosineKernel (i-j+(j-i))) (fun _ => (1:ℝ))
@@ -65,7 +65,7 @@ theorem cosine_finite_pairs_absolute_bound (E : Finset (ℕ × ℕ)) (v : ℕ �
   calc
     _ ≤ ∑ p ∈ I.product I, absoluteCosineTerm v p :=
       sum_le_sum_of_subset_of_nonneg hsub (fun p _ _ => by unfold absoluteCosineTerm; positivity)
-    _ = ∑ i ∈ I, ∑ j ∈ I, |cosineMatrixEntry thetaParameter nome i j| * ‖v i‖*‖v j‖ := by
+    _ = ∑ i ∈ I, ∑ j ∈ I, |cosineMatrixEntry lemniscateFrequencySquared nome i j| * ‖v i‖*‖v j‖ := by
       simpa only [Finset.product_eq_sprod, absoluteCosineTerm] using
         (Finset.sum_product I I (absoluteCosineTerm v))
     _ ≤ 1024*(∑ i ∈ I, (frequencyWeight i*‖v i‖)^2) := cosine_finite_absolute_bound I v

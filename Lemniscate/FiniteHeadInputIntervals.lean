@@ -59,17 +59,17 @@ theorem finite_anchor_input_sound (i : Fin 31) :
   · simpa only [if_pos hj, Rat.cast_one] using point_sound 1
   · simpa only [if_neg hj, Rat.cast_zero] using point_sound 0
 
-def finitePeriodInput : Interval := ⟨thetaRLower,thetaRUpper⟩
+def finitePeriodInput : Interval := ⟨frequencyLower,frequencyUpper⟩
 
-theorem finite_period_input_sound : Contains finitePeriodInput thetaParameter :=
-  actual_nome_theta_r_bounds
+theorem finite_period_input_sound : Contains finitePeriodInput lemniscateFrequencySquared :=
+  lemniscate_frequency_bounds
 
 def finiteDifferenceInput (i j : Fin 31) : Interval :=
   fineCoefficientData ((evenHeadFrequency i-evenHeadFrequency j).natAbs/2)
 
 theorem finite_difference_input_sound (i j : Fin 31) :
     Contains (finiteDifferenceInput i j)
-      (fourierCoefficient thetaParameter nome ((evenHeadFrequency i-evenHeadFrequency j).natAbs/2)) := by
+      (fourierCoefficient lemniscateFrequencySquared nome ((evenHeadFrequency i-evenHeadFrequency j).natAbs/2)) := by
   have hi := i.isLt
   have hj := j.isLt
   have hindex : (evenHeadFrequency i-evenHeadFrequency j).natAbs/2 < 59 := by

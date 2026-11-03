@@ -13,22 +13,22 @@ variable (T : ℝ) [Fact (0 < T)]
 theorem circle_sine_polynomial_energy_eq_matrix (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (I : Finset ℕ) (u : ℂ) (v : ℕ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (I : Finset ℕ) (u : ℂ) (v : ℕ → ℂ) :
     inner ℂ (circleContinuousL2 T (circleSinePolynomial T I u v 0))
       (circleContinuousL2 T (circleSymmetricSinePolynomial T h h₁ h₂ I u v)) =
         sineFiniteBlockPairing I u v := by
   let P : ℕ → CircleL2 T := circleEvenSineMode T
   let Q : ℕ → CircleL2 T := fun j => circleContinuousL2 T (circleSymmetricSineMode T h h₁ h₂ j)
   have hm (j k : ℕ) : inner ℂ (P j) (Q k) =
-      (sineMatrixEntry thetaParameter nome (j+1) (k+1):ℂ) :=
-    circle_sine_matrix_eq_coefficients T h h₁ h₂ thetaParameter nome hh hh₁ hs hc hr j k
+      (sineMatrixEntry lemniscateFrequencySquared nome (j+1) (k+1):ℂ) :=
+    circle_sine_matrix_eq_coefficients T h h₁ h₂ lemniscateFrequencySquared nome hh hh₁ hs hc hr j k
   have h00 : inner ℂ (u • P 0) (u • Q 0) =
-      conj u*(sineMatrixEntry thetaParameter nome 1 1:ℂ)*u := by
+      conj u*(sineMatrixEntry lemniscateFrequencySquared nome 1 1:ℂ)*u := by
     simp only [inner_smul_left, inner_smul_right, hm, Nat.zero_add]
     ring
   have h01 : inner ℂ (u • P 0) (∑ j ∈ I, v j • Q (j+1)) =
-      ∑ j ∈ I, conj u*(sineMatrixEntry thetaParameter nome 1 (j+2):ℂ)*v j := by
+      ∑ j ∈ I, conj u*(sineMatrixEntry lemniscateFrequencySquared nome 1 (j+2):ℂ)*v j := by
     rw [inner_sum]
     apply Finset.sum_congr rfl
     intro j hj
@@ -36,7 +36,7 @@ theorem circle_sine_polynomial_energy_eq_matrix (h h₁ h₂ : C(AddCircle T, �
       Nat.add_assoc, Nat.reduceAdd]
     ring
   have h10 : inner ℂ (∑ j ∈ I, v j • P (j+1)) (u • Q 0) =
-      ∑ j ∈ I, conj (v j)*(sineMatrixEntry thetaParameter nome (j+2) 1:ℂ)*u := by
+      ∑ j ∈ I, conj (v j)*(sineMatrixEntry lemniscateFrequencySquared nome (j+2) 1:ℂ)*u := by
     rw [sum_inner]
     apply Finset.sum_congr rfl
     intro j hj
@@ -80,8 +80,8 @@ theorem circle_sine_polynomial_h2_energy_eq (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_sine_polynomial_h2_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (I : Finset ℕ) (u : ℂ) (v : ℕ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (I : Finset ℕ) (u : ℂ) (v : ℕ → ℂ) :
     circleH2Energy T h h₂ (circleContinuousL2 T (circleSinePolynomial T I u v 0))
       (circleContinuousL2 T (circleSinePolynomial T I u v 1))
       (circleContinuousL2 T (circleSinePolynomial T I u v 2)) =

@@ -24,11 +24,11 @@ theorem hasSum_entry_majorant (j L : ℕ) :
 theorem positive_frequency_tail_bound (ε : ℝ) (j L : ℕ)
     (hε : |ε| ≤ 1) (hL : 0 < L) :
     Summable (fun a : ℕ =>
-      |positiveFrequencyEntry thetaParameter nome ε j (j+(a+L))|) ∧
-    (∑' a : ℕ, |positiveFrequencyEntry thetaParameter nome ε j (j+(a+L))|) ≤
+      |positiveFrequencyEntry lemniscateFrequencySquared nome ε j (j+(a+L))|) ∧
+    (∑' a : ℕ, |positiveFrequencyEntry lemniscateFrequencySquared nome ε j (j+(a+L))|) ≤
       (entryTailBound j L : ℝ) := by
   have hm (a : ℕ) :
-      |positiveFrequencyEntry thetaParameter nome ε j (j+(a+L))| ≤
+      |positiveFrequencyEntry lemniscateFrequencySquared nome ε j (j+(a+L))| ≤
       (C:ℝ)*(2*(j:ℝ)+((a+L:ℕ):ℝ))^2*((a+L:ℕ):ℝ)*(qb:ℝ)^(a+L) := by
     simpa only [Nat.add_sub_cancel_left] using
       positive_frequency_upper_tail ε j (j+(a+L)) hε (by omega)
@@ -40,11 +40,11 @@ theorem positive_frequency_tail_bound (ε : ℝ) (j L : ℕ)
 
 theorem cosine_tail_bound (j L : ℕ) (hj : 0 < j) (hL : 0 < L) :
     Summable (fun a : ℕ =>
-      |cosineMatrixEntry thetaParameter nome j (j+(a+L))|) ∧
-    (∑' a : ℕ, |cosineMatrixEntry thetaParameter nome j (j+(a+L))|) ≤
+      |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(a+L))|) ∧
+    (∑' a : ℕ, |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(a+L))|) ≤
       (entryTailBound j L : ℝ) := by
   have hm (a : ℕ) :
-      |cosineMatrixEntry thetaParameter nome j (j+(a+L))| ≤
+      |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(a+L))| ≤
       (C:ℝ)*(2*(j:ℝ)+((a+L:ℕ):ℝ))^2*((a+L:ℕ):ℝ)*(qb:ℝ)^(a+L) := by
     simpa only [Nat.add_sub_cancel_left] using
       cosine_upper_tail j (j+(a+L)) hj (by omega)

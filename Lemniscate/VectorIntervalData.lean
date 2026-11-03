@@ -11,7 +11,7 @@ instance (outer inner : Interval) : Decidable (Encloses outer inner) :=
   inferInstanceAs (Decidable (outer.lo ≤ inner.lo ∧ inner.hi ≤ outer.hi))
 
 def rotationNormSquaredInput : Interval :=
-  dividePositive (scale (fineCoefficientData 0) 2) (scale ⟨thetaRLower,thetaRUpper⟩ 5)
+  dividePositive (scale (fineCoefficientData 0) 2) (scale ⟨frequencyLower,frequencyUpper⟩ 5)
 
 def rotationNormData : Interval := ⟨504626504404032009642082915443/10^30,504626504404032009656594975020/10^30⟩
 
@@ -127,7 +127,7 @@ def adjointFinitePairingInput : Interval :=
    ∑ j : Fin 15, (mul (adjointCoefficientData (Fin.castAdd 3 j)) (rotationFiniteData j)).hi⟩
 
 structure VectorIntervalCertificate : Prop where
-  r_pos : 0 < (scale ⟨thetaRLower,thetaRUpper⟩ 5).lo
+  r_pos : 0 < (scale ⟨frequencyLower,frequencyUpper⟩ 5).lo
   norm_pos : 0 < rotationNormData.lo
   norm_hi_pos : 0 < rotationNormData.hi
   norm_lower : rotationNormData.lo^2 ≤ rotationNormSquaredInput.lo

@@ -6,7 +6,7 @@ matrix with the geometric differential operator is not asserted here. -/
 namespace Lemniscate.CoarseArithmetic
 
 noncomputable def cosineOffRow (j k : ℕ) : ℝ :=
-  if k = j then 0 else |cosineMatrixEntry thetaParameter nome j k| *
+  if k = j then 0 else |cosineMatrixEntry lemniscateFrequencySquared nome j k| *
     ((weight k:ℝ)/(weight j:ℝ))
 
 theorem cosine_off_row_enclosure (j k : ℕ) :
@@ -17,7 +17,7 @@ theorem cosine_off_row_enclosure (j k : ℕ) :
   · simp only [cosineOffRow, if_neg h, Rat.cast_mul, Rat.cast_div]
     have hjw : (0:ℝ) < (weight j:ℝ) := by exact_mod_cast weight_pos j
     have hkw : (0:ℝ) < (weight k:ℝ) := by exact_mod_cast weight_pos k
-    have he := absUpper_sound _ _ (theta_nome_cosine_matrix_enclosure j k)
+    have he := absUpper_sound _ _ (frequency_nome_cosine_matrix_enclosure j k)
     calc
       _ ≤ (absUpper (cosineEntry j k):ℝ)*((weight k:ℝ)/(weight j:ℝ)) :=
         mul_le_mul_of_nonneg_right he (le_of_lt (div_pos hkw hjw))
@@ -32,10 +32,10 @@ theorem cosine_head_bound (j : ℕ) :
 
 theorem cosine_row_summable_and_bound (j : ℕ) (hj : j < 20) :
     Summable (cosineOffRow j) ∧
-    cosineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, cosineOffRow j k ≤
+    cosineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, cosineOffRow j k ≤
       (finiteRow j : ℝ) := by
   have heq : (fun n : ℕ => cosineOffRow j (n+20)) =
-      (fun n : ℕ => |cosineMatrixEntry thetaParameter nome j (j+(n+(20-j)))| *
+      (fun n : ℕ => |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(n+(20-j)))| *
         ((weight (j+(n+(20-j))):ℝ)/(weight j:ℝ))) := by
     funext n
     rw [show j+(n+(20-j)) = n+20 by omega]
@@ -44,9 +44,9 @@ theorem cosine_row_summable_and_bound (j : ℕ) (hj : j < 20) :
   rw [← heq] at ht
   have hs : Summable (cosineOffRow j) := (summable_nat_add_iff 20).mp ht.1
   refine ⟨hs, ?_⟩
-  have hd := (theta_nome_cosine_matrix_enclosure j j).2
+  have hd := (frequency_nome_cosine_matrix_enclosure j j).2
   calc
-    _ = cosineMatrixEntry thetaParameter nome j j +
+    _ = cosineMatrixEntry lemniscateFrequencySquared nome j j +
         ((∑ k ∈ Finset.range 20, cosineOffRow j k)+
           ∑' n : ℕ, cosineOffRow j (n+20)) := by
       rw [hs.sum_add_tsum_nat_add 20]
@@ -63,7 +63,7 @@ theorem cosine_row_summable_and_bound (j : ℕ) (hj : j < 20) :
 
 theorem cosine_low_rows_dissipative (j : Fin 9) :
     Summable (cosineOffRow j.val) ∧
-    cosineMatrixEntry thetaParameter nome j.val j.val +
+    cosineMatrixEntry lemniscateFrequencySquared nome j.val j.val +
       ∑' k : ℕ, cosineOffRow j.val k < -(21/4:ℝ) := by
   have h := cosine_row_summable_and_bound j.val (by omega)
   refine ⟨h.1, h.2.trans_lt ?_⟩

@@ -77,12 +77,12 @@ theorem odd_matrix_off_tail_bound (n m : ℤ) (hn : Odd n) (hm : Odd m) (hne : n
   let j := (n-m).natAbs/2
   let v : ℝ := |(n:ℝ)|+1/2
   have hj : 0 < j := odd_half_distance_pos n m hn hm hne
-  have hc := theta_nome_coefficient_majorant j hj
-  have hr : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
-  have hs : thetaParameter*fourierCoefficient thetaParameter nome j ≤
+  have hc := frequency_nome_coefficient_majorant j hj
+  have hr : 0 ≤ lemniscateFrequencySquared :=
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
+  have hs : lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome j ≤
       (rhi:ℝ)*((H:ℝ)*((j:ℝ)*(qb:ℝ)^j)) :=
-    mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hc.2 hc.1 (by norm_num [rhi])
+    mul_le_mul (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).2 hc.2 hc.1 (by norm_num [rhi])
   have hb := odd_entry_polynomial_tail_bound n m hn hm α hα hα'
   rw [oddMatrixEntry, if_neg hne, abs_mul, abs_mul, abs_of_nonneg hr, abs_of_nonneg hc.1]
   calc

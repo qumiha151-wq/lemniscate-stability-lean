@@ -7,9 +7,9 @@ namespace Lemniscate.OddArithmetic
 open Finset CoarseArithmetic
 
 noncomputable def oddMatrixEntry (α : ℝ) (n m : ℤ) : ℝ :=
-  if n = m then -4*thetaParameter^2*((n:ℝ)+α)^4+
-    45*thetaParameter*fourierCoefficient thetaParameter nome 0*((n:ℝ)+α)^2-42
-  else thetaParameter*fourierCoefficient thetaParameter nome ((n-m).natAbs/2)*
+  if n = m then -4*lemniscateFrequencySquared^2*((n:ℝ)+α)^4+
+    45*lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome 0*((n:ℝ)+α)^2-42
+  else lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome ((n-m).natAbs/2)*
     oddEntryPolynomial n m α
 
 noncomputable def oddActualHead (n : ℤ) (α : ℝ) : ℝ :=
@@ -31,7 +31,7 @@ theorem odd_actual_head_le (n : ℤ) (hn : Odd n) (α : ℝ)
   have hb := odd_head_majorizes_coefficients n hn α hα hα'
   have he : oddActualHead n α =
       ∑ m ∈ oddIndices.toFinset, if m = n then 0 else
-        |thetaParameter*fourierCoefficient thetaParameter nome ((n-m).natAbs/2)*
+        |lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome ((n-m).natAbs/2)*
           oddEntryPolynomial n m α| * oddWeight m α := by
     unfold oddActualHead
     apply Finset.sum_congr rfl
@@ -49,14 +49,14 @@ theorem odd_constant_coefficient_lower_pos : (0:ℚ) < hLower 0 := by decide +ke
 theorem odd_matrix_diagonal_bound (α : ℝ) (n : ℤ) :
     oddMatrixEntry α n n ≤
       -4*(rlo:ℝ)^2*((n:ℝ)+α)^4+45*(rhi:ℝ)*(hUpper 0:ℝ)*((n:ℝ)+α)^2-42 := by
-  have hh := theta_nome_fourier_enclosure 0
-  have hc : 0 ≤ fourierCoefficient thetaParameter nome 0 :=
+  have hh := frequency_nome_fourier_enclosure 0
+  have hc : 0 ≤ fourierCoefficient lemniscateFrequencySquared nome 0 :=
     (le_of_lt (show (0:ℝ) < (hLower 0:ℝ) by exact_mod_cast odd_constant_coefficient_lower_pos)).trans hh.1
-  have hr := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper]))
+  have hr := (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper]))
   have hr0 : 0 ≤ (rlo:ℝ) := by norm_num [rlo]
-  have hrlow : (rlo:ℝ) ≤ thetaParameter := hr.1
-  have hr2 : (rlo:ℝ)^2 ≤ thetaParameter^2 := by nlinarith [hrlow]
-  have hp : thetaParameter*fourierCoefficient thetaParameter nome 0 ≤ (rhi:ℝ)*(hUpper 0:ℝ) :=
+  have hrlow : (rlo:ℝ) ≤ lemniscateFrequencySquared := hr.1
+  have hr2 : (rlo:ℝ)^2 ≤ lemniscateFrequencySquared^2 := by nlinarith [hrlow]
+  have hp : lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome 0 ≤ (rhi:ℝ)*(hUpper 0:ℝ) :=
     mul_le_mul hr.2 hh.2 hc (by norm_num [rhi])
   have hb4 := mul_le_mul_of_nonneg_right hr2 (by positivity : 0 ≤ ((n:ℝ)+α)^4)
   have hb2 := mul_le_mul_of_nonneg_right hp (sq_nonneg ((n:ℝ)+α))

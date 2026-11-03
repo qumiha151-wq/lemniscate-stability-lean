@@ -6,18 +6,18 @@ Only already certified coefficient majorants and geometric moments are used. -/
 namespace Lemniscate.CoarseArithmetic
 
 noncomputable def rotationSineCoefficient (j : ℕ) : ℝ :=
-  2*(j+1:ℕ)*evenCoefficient thetaParameter nome (j+1)/rotationCoefficientNorm
+  2*(j+1:ℕ)*evenCoefficient lemniscateFrequencySquared nome (j+1)/rotationCoefficientNorm
 
 private theorem rotation_coefficient_weight_bound (j k : ℕ) :
     |rotationSineCoefficient j| * (2*(j+1:ℕ):ℝ)^k ≤
       (2*(H:ℝ)/rotationCoefficientNorm)*2^k *
         (((j+1:ℕ):ℝ)^(k+2)*(qb:ℝ)^(j+1)) := by
   have hn := rotation_coefficient_norm_bounds.1
-  have hb : 0 ≤ evenCoefficient thetaParameter nome (j+1) ∧
-      evenCoefficient thetaParameter nome (j+1) ≤
+  have hb : 0 ≤ evenCoefficient lemniscateFrequencySquared nome (j+1) ∧
+      evenCoefficient lemniscateFrequencySquared nome (j+1) ≤
         (H:ℝ)*(((j+1:ℕ):ℝ)*(qb:ℝ)^(j+1)) := by
     simpa only [fourierCoefficient,if_neg (by omega : j+1 ≠ 0)] using
-      theta_nome_coefficient_majorant (j+1) (by omega)
+      frequency_nome_coefficient_majorant (j+1) (by omega)
   have hc : 0 ≤ rotationSineCoefficient j := by
     unfold rotationSineCoefficient
     exact div_nonneg (mul_nonneg (by positivity) hb.1) hn.le

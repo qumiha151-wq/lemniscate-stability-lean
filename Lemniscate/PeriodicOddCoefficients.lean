@@ -55,10 +55,10 @@ theorem circle_odd_norm_sq (f : CircleL2 T) (hf : InCircleOddSector T f) :
   exact ((odd_frequency_hasSum_iff _ _ (fun n hn => by rw [hf n hn]; simp)).mpr hs).tsum_eq.symm
 
 theorem circle_odd_h2_coefficients (f : CircleL2 T) (hf : InCircleH2 T f)
-    (hr : (2*Real.pi/T)^2 = thetaParameter) :
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) :
     HasOddH2Coefficients (fun i : ℤ => fourierCoeff f (2*i+1)) := by
-  have htheta : (1/2:ℝ) ≤ thetaParameter := by
-    have hb : (rlo:ℝ) ≤ thetaParameter := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+  have htheta : (1/2:ℝ) ≤ lemniscateFrequencySquared := by
+    have hb : (rlo:ℝ) ≤ lemniscateFrequencySquared := (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
     norm_num [rlo] at hb
     linarith
   have hw (n : ℝ) : 1+n^2 ≤ 2*(1+(2*Real.pi/T*n)^2) := by

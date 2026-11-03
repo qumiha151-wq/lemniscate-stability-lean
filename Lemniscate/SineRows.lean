@@ -8,7 +8,7 @@ namespace Lemniscate.CoarseArithmetic
 open Finset
 
 noncomputable def sineOffRow (j k : ℕ) : ℝ :=
-  if k < 2 ∨ k = j then 0 else |sineMatrixEntry thetaParameter nome j k|
+  if k < 2 ∨ k = j then 0 else |sineMatrixEntry lemniscateFrequencySquared nome j k|
 
 theorem sine_off_row_nonneg (j k : ℕ) : 0 ≤ sineOffRow j k := by
   unfold sineOffRow
@@ -31,13 +31,13 @@ theorem sine_head_bound (j : ℕ) :
   by_cases hk : k+2 = j
   · simp [sineOffRow, hk]
   · simpa [sineOffRow, hk, show ¬k+2 < 2 by omega] using
-      absUpper_sound _ _ (theta_nome_sine_matrix_enclosure j (k+2))
+      absUpper_sound _ _ (frequency_nome_sine_matrix_enclosure j (k+2))
 
 theorem sine_low_row_bound (j : ℕ) (hj : 2 ≤ j) (hj8 : j < 8) :
     Summable (sineOffRow j) ∧
-    sineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, sineOffRow j k ≤ (sineFiniteRow j:ℝ) := by
+    sineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, sineOffRow j k ≤ (sineFiniteRow j:ℝ) := by
   have he : (fun n : ℕ => sineOffRow j (n+8)) =
-      (fun n : ℕ => |sineMatrixEntry thetaParameter nome j (j+(n+(8-j)))|) := by
+      (fun n : ℕ => |sineMatrixEntry lemniscateFrequencySquared nome j (j+(n+(8-j)))|) := by
     funext n
     rw [show j+(n+(8-j)) = n+8 by omega]
     simp only [sineOffRow, if_neg (by omega : ¬(n+8 < 2 ∨ n+8 = j))]
@@ -46,13 +46,13 @@ theorem sine_low_row_bound (j : ℕ) (hj : 2 ≤ j) (hj8 : j < 8) :
   have hs : Summable (sineOffRow j) := (summable_nat_add_iff 8).mp ht.1
   refine ⟨hs, ?_⟩
   calc
-    _ = sineMatrixEntry thetaParameter nome j j +
+    _ = sineMatrixEntry lemniscateFrequencySquared nome j j +
         ((∑ k ∈ range 8, sineOffRow j k)+(∑' n : ℕ, sineOffRow j (n+8))) := by
       rw [hs.sum_add_tsum_nat_add 8]
     _ ≤ ((sineEntry j j).hi:ℝ) +
         ((sumTo 6 (fun k => if k+2 = j then 0 else absUpper (sineEntry j (k+2))):ℝ)+
           (entryTailBound j (8-j):ℝ)) :=
-      add_le_add (theta_nome_sine_matrix_enclosure j j).2 (add_le_add (sine_head_bound j) ht.2)
+      add_le_add (frequency_nome_sine_matrix_enclosure j j).2 (add_le_add (sine_head_bound j) ht.2)
     _ = _ := by
       simp only [sineFiniteRow, entryTailBound, Rat.cast_add, Rat.cast_mul,
         Rat.cast_pow, Rat.cast_natCast, Rat.cast_ofNat]
@@ -97,10 +97,10 @@ theorem sine_lower_sum_bound (j : ℕ) :
 
 theorem sine_high_row_quartic_bound (j : ℕ) (hj : 2 ≤ j) :
     Summable (sineOffRow j) ∧
-    sineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, sineOffRow j k ≤
+    sineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, sineOffRow j k ≤
       HighFrequency.realValue (HighFrequency.singlePeriod 1) (2*(j:ℝ)) := by
   have he : (fun n : ℕ => sineOffRow j (n+(j+1))) =
-      (fun n : ℕ => |sineMatrixEntry thetaParameter nome j (j+(n+1))|) := by
+      (fun n : ℕ => |sineMatrixEntry lemniscateFrequencySquared nome j (j+(n+1))|) := by
     funext n
     rw [show j+(n+1) = n+(j+1) by omega]
     simp only [sineOffRow, if_neg (by omega : ¬(n+(j+1) < 2 ∨ n+(j+1) = j))]
@@ -135,7 +135,7 @@ theorem sine_high_row_quartic_bound (j : ℕ) (hj : 2 ≤ j) :
 
 theorem sine_all_tail_rows_dissipative (j : ℕ) (hj : 2 ≤ j) :
     Summable (sineOffRow j) ∧
-    sineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, sineOffRow j k < -100 := by
+    sineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, sineOffRow j k < -100 := by
   by_cases hsmall : j < 4
   · rcases (show j = 2 ∨ j = 3 by omega) with rfl | rfl
     · have h := sine_low_row_bound 2 (by omega) (by omega)

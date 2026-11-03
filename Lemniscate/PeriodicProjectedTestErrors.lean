@@ -70,7 +70,7 @@ variable (h h₁ h₂ : C(AddCircle T, ℂ))
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (hr : (2*Real.pi/T)^2 ≤ 18/25)
     (hhbound : ‖h‖ ≤ 1) (hh₁bound : ‖h₁‖ ≤ 2) (hh₂bound : ‖h₂‖ ≤ 4)
 include hh hh₁ hreal h₁real h₂real hs hc hr hhbound hh₁bound hh₂bound

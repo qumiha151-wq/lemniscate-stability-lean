@@ -114,8 +114,8 @@ theorem circle_bloch_operator_tendsto {ι : Type*} {l : Filter ι}
 theorem circle_odd_bloch_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
     (f : circleH4Domain T) (hf : InCircleOddSector T (f : CircleL2 T)) :
     (inner ℂ (f : CircleL2 T) (circleBlochOperator T h h₁ h₂ α f)).re =
       oddH2Form α (fun i => fourierCoeff (f : CircleL2 T) (2*i+1)) := by
@@ -139,8 +139,8 @@ theorem circle_odd_bloch_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, �
 theorem circle_h4_bloch_odd_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
     (f : circleH4Domain T) (hf : InCircleOddSector T (f : CircleL2 T)) :
     (inner ℂ (f : CircleL2 T) (circleBlochOperator T h h₁ h₂ α f)).re ≤ -‖(f : CircleL2 T)‖^2 := by
   rw [circle_odd_bloch_energy_eq_coefficients T h h₁ h₂ hh hh₁ hs hc hr α hα hα' f hf,
@@ -153,8 +153,8 @@ theorem paper_h4_bloch_odd_dissipative (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
     (f : circleH4Domain T) (hf : InCircleOddSector T (f : CircleL2 T)) :
     (inner ℂ (f : CircleL2 T)
       (circleBlochOperator T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) α f)).re ≤

@@ -52,10 +52,10 @@ theorem weighted_tail_one (j : ℕ) (hj : 3 ≤ j) :
 
 theorem cosine_high_row_quartic_bound (j : ℕ) (hj : 3 ≤ j) :
     Summable (cosineOffRow j) ∧
-    cosineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, cosineOffRow j k ≤
+    cosineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, cosineOffRow j k ≤
       HighFrequency.realValue (HighFrequency.singlePeriod a) (2*(j:ℝ)) := by
   have heq : (fun n : ℕ => cosineOffRow j (n+(j+1))) =
-      (fun n : ℕ => |cosineMatrixEntry thetaParameter nome j (j+(n+1))| *
+      (fun n : ℕ => |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(n+1))| *
         ((weight (j+(n+1)):ℝ)/(weight j:ℝ))) := by
     funext n
     rw [show j+(n+1) = n+(j+1) by omega]
@@ -85,7 +85,7 @@ theorem cosine_high_row_quartic_bound (j : ℕ) (hj : 3 ≤ j) :
 
 theorem cosine_high_rows_dissipative (j : ℕ) (hj : 9 ≤ j) :
     Summable (cosineOffRow j) ∧
-    cosineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, cosineOffRow j k < -8000 := by
+    cosineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, cosineOffRow j k < -8000 := by
   have h := cosine_high_row_quartic_bound j (by omega)
   refine ⟨h.1, h.2.trans_lt (HighFrequency.cosine_high_bound _ ?_)⟩
   have hj' : (9:ℝ) ≤ (j:ℝ) := by exact_mod_cast hj
@@ -93,7 +93,7 @@ theorem cosine_high_rows_dissipative (j : ℕ) (hj : 9 ≤ j) :
 
 theorem cosine_all_rows_dissipative (j : ℕ) :
     Summable (cosineOffRow j) ∧
-    cosineMatrixEntry thetaParameter nome j j + ∑' k : ℕ, cosineOffRow j k < -(21/4:ℝ) := by
+    cosineMatrixEntry lemniscateFrequencySquared nome j j + ∑' k : ℕ, cosineOffRow j k < -(21/4:ℝ) := by
   by_cases hj : j < 9
   · exact cosine_low_rows_dissipative ⟨j, hj⟩
   · have h := cosine_high_rows_dissipative j (by omega)

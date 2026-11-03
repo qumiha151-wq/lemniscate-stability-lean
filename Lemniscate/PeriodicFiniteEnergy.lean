@@ -48,12 +48,12 @@ theorem circle_polynomial_energy_eq_matrix (h h₁ h₂ : C(AddCircle T, ℂ)) (
 theorem circle_polynomial_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (I : Finset ℕ) (v : ℕ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (I : Finset ℕ) (v : ℕ → ℂ) :
     (inner ℂ (circleContinuousL2 T (circleCosinePolynomial T I v 0))
       (circleContinuousL2 T (circleSymmetricPolynomial T h h₁ h₂ I v))).re ≤
       -(21/4:ℝ)*‖circleContinuousL2 T (circleCosinePolynomial T I v 0)‖^2 := by
-  rw [circle_polynomial_energy_eq_matrix T h h₁ h₂ thetaParameter nome hh hh₁ hs hc hr,
+  rw [circle_polynomial_energy_eq_matrix T h h₁ h₂ lemniscateFrequencySquared nome hh hh₁ hs hc hr,
     circle_cosine_polynomial_norm_sq]
   exact cosine_finite_form_dissipative I v
 

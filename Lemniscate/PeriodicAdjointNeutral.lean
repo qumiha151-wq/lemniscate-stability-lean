@@ -44,9 +44,9 @@ variable (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ i : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*i+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
 
 include hq hp he hqreal hpreal hs hc ho hr in
 theorem paper_single_period_adjoint_pairing :

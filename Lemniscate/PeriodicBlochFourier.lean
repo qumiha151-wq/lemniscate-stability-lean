@@ -99,18 +99,18 @@ theorem circle_bloch_basis_pairing (h h₁ h₂ : C(AddCircle T, ℂ))
 
 theorem circle_bloch_odd_symmetric_entry (h : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ)
     (n m : ℤ) (hn : Odd n) (hm : Odd m) :
     (circleBlochFourierEntry T h α n m+conj (circleBlochFourierEntry T h α m n))/2 =
       (oddMatrixEntry α n m:ℂ) := by
-  have hr4 : (2*Real.pi/T)^4 = thetaParameter^2 := by
+  have hr4 : (2*Real.pi/T)^4 = lemniscateFrequencySquared^2 := by
     calc
       _ = ((2*Real.pi/T)^2)^2 := by ring
       _ = _ := by rw [hr]
   unfold circleBlochFourierEntry
-  rw [hr4, hr, circle_odd_difference_coefficient T h thetaParameter nome hs hc n m hn hm,
-    circle_odd_difference_coefficient T h thetaParameter nome hs hc m n hm hn]
+  rw [hr4, hr, circle_odd_difference_coefficient T h lemniscateFrequencySquared nome hs hc n m hn hm,
+    circle_odd_difference_coefficient T h lemniscateFrequencySquared nome hs hc m n hm hn]
   by_cases he : n = m
   · subst m
     simp only [oddMatrixEntry, ite_true, sub_self, Int.natAbs_zero, Nat.zero_div,
@@ -128,8 +128,8 @@ theorem circle_bloch_odd_symmetric_entry (h : C(AddCircle T, ℂ))
 theorem circle_bloch_odd_symmetric_pairing (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ)
     (n m : ℤ) (hn : Odd n) (hm : Odd m) :
     (inner ℂ (fourierBasis (T := T) n) (circleBlochOperator T h h₁ h₂ α (circleFourierH4 T m))+
       inner ℂ (circleBlochOperator T h h₁ h₂ α (circleFourierH4 T n))

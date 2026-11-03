@@ -11,23 +11,23 @@ open scoped ENNReal
 noncomputable abbrev SineTailSpace := lp (fun _ : ℕ => ℂ) 2
 
 theorem sine_tail_mem_l2 :
-    Memℓp (fun n : ℕ => (sineRatio thetaParameter nome (n+2) : ℂ)) 2 := by
+    Memℓp (fun n : ℕ => (sineRatio lemniscateFrequencySquared nome (n+2) : ℂ)) 2 := by
   apply (memℓp_gen_iff (by norm_num : 0 < (2:ℝ≥0∞).toReal)).mpr
-  have hs := (sine_constraint_series_bound thetaParameter nome
-    ((by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1)
+  have hs := (sine_constraint_series_bound lemniscateFrequencySquared nome
+    ((by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1)
     (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper]))).1
   simpa [Real.rpow_two, Complex.norm_real, Real.norm_eq_abs, sq_abs] using hs
 
 noncomputable def sineTailVector : SineTailSpace :=
-  ⟨fun n => (sineRatio thetaParameter nome (n+2) : ℂ), sine_tail_mem_l2⟩
+  ⟨fun n => (sineRatio lemniscateFrequencySquared nome (n+2) : ℂ), sine_tail_mem_l2⟩
 
 theorem sine_tail_norm_sq : ‖sineTailVector‖^2 =
-    ∑' n : ℕ, (sineRatio thetaParameter nome (n+2))^2 := by
+    ∑' n : ℕ, (sineRatio lemniscateFrequencySquared nome (n+2))^2 := by
   have h := lp.norm_rpow_eq_tsum (by norm_num : 0 < (2:ℝ≥0∞).toReal) sineTailVector
   simpa [Real.rpow_two, Complex.norm_real, Real.norm_eq_abs, sq_abs, sineTailVector] using h
 
 theorem sine_tail_norm_bound : ‖sineTailVector‖ < (87/500:ℝ) := by
-  have hs := theta_nome_sine_constraint_bound
+  have hs := frequency_nome_sine_constraint_bound
   rw [← sine_tail_norm_sq] at hs
   nlinarith [norm_nonneg sineTailVector]
 

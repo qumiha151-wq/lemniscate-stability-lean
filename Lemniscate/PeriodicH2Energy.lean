@@ -12,8 +12,8 @@ variable (T : ℝ) [Fact (0 < T)]
 theorem h2_circle_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (v : ℕ → ℂ) (hv : HasH2Coefficients v) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (v : ℕ → ℂ) (hv : HasH2Coefficients v) :
     circleH2Energy T h h₂ (h2CircleFunction T v hv) (h2CircleFirst T v hv)
       (h2CircleSecond T v hv) = cosineH2Form v := by
   have he := circle_h2_energy_tendsto T h h₂
@@ -32,15 +32,15 @@ theorem h2_circle_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     convert! hc₀ using 1
     funext I
     rw [circle_polynomial_h2_energy_eq T h h₁ h₂ hh,
-      circle_polynomial_energy_eq_matrix T h h₁ h₂ thetaParameter nome hh hh₁ hs hc hr]
+      circle_polynomial_energy_eq_matrix T h h₁ h₂ lemniscateFrequencySquared nome hh hh₁ hs hc hr]
     rfl
   exact tendsto_nhds_unique he hm
 
 theorem h2_circle_energy_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (v : ℕ → ℂ) (hv : HasH2Coefficients v) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (v : ℕ → ℂ) (hv : HasH2Coefficients v) :
     circleH2Energy T h h₂ (h2CircleFunction T v hv) (h2CircleFirst T v hv)
       (h2CircleSecond T v hv) ≤ -(21/4:ℝ)*‖h2CircleFunction T v hv‖^2 := by
   rw [h2_circle_energy_eq_coefficients T h h₁ h₂ hh hh₁ hs hc hr]
@@ -49,8 +49,8 @@ theorem h2_circle_energy_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_cosine_weak_energy_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (v : CosineSequenceSpace) (u g : CircleL2 T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (v : CosineSequenceSpace) (u g : CircleL2 T)
     (hfu : HasWeakCircleDeriv T (circleEvenCosineSynthesis T v) u)
     (hug : HasWeakCircleDeriv T u g) :
     circleH2Energy T h h₂ (circleEvenCosineSynthesis T v) u g ≤

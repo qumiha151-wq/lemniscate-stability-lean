@@ -50,7 +50,7 @@ theorem hasSum_weighted_entry_majorant (j L : ℕ) :
       Rat.cast_ofNat, Rat.cast_natCast]
 
 theorem cosine_weighted_tail_majorant (j L n : ℕ) (hL : 0 < L) (h3 : 3 ≤ j+L) :
-    |cosineMatrixEntry thetaParameter nome j (j+(n+L))| *
+    |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))| *
         ((weight (j+(n+L)):ℝ)/(weight j:ℝ)) ≤
       (C:ℝ)*(tailWeightFactor j:ℝ)*(2*(j:ℝ)+((n+L:ℕ):ℝ))^2*
         ((n+L:ℕ):ℝ)*((qb*a:ℚ):ℝ)^(n+L) := by
@@ -71,11 +71,11 @@ theorem cosine_weighted_tail_majorant (j L n : ℕ) (hL : 0 < L) (h3 : 3 ≤ j+L
     _ = _ := by simp only [Rat.cast_mul, mul_pow]; ring
 
 theorem cosine_weighted_tail_bound (j L : ℕ) (hL : 0 < L) (h3 : 3 ≤ j+L) :
-    Summable (fun n : ℕ => |cosineMatrixEntry thetaParameter nome j (j+(n+L))| *
+    Summable (fun n : ℕ => |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))| *
       ((weight (j+(n+L)):ℝ)/(weight j:ℝ))) ∧
-    (∑' n : ℕ, |cosineMatrixEntry thetaParameter nome j (j+(n+L))| *
+    (∑' n : ℕ, |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))| *
       ((weight (j+(n+L)):ℝ)/(weight j:ℝ))) ≤ (weightedEntryTailBound j L : ℝ) := by
-  have hn (n : ℕ) : 0 ≤ |cosineMatrixEntry thetaParameter nome j (j+(n+L))| *
+  have hn (n : ℕ) : 0 ≤ |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))| *
       ((weight (j+(n+L)):ℝ)/(weight j:ℝ)) := by
     have hjw : (0:ℝ) < (weight j:ℝ) := by exact_mod_cast weight_pos j
     have hkw : (0:ℝ) < (weight (j+(n+L)):ℝ) := by

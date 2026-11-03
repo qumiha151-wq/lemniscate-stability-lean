@@ -42,7 +42,7 @@ theorem circle_bloch_symmetric_entry_square_bound (h h₁ h₂ : C(AddCircle T, 
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (hr : (2*Real.pi/T)^2 ≤ 18/25) (n m : ℤ) (hn : 16 ≤ n.natAbs) (hm : m.natAbs ≤ 15) :
     (∑ j : Fin 3,
       ‖fourierCoeff (circleBlochSymmetricCoefficient T h h₁ h₂ j (circleFourierH4 T (2*m))) (2*n)‖^2 /

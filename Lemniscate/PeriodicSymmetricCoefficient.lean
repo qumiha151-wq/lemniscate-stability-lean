@@ -35,7 +35,7 @@ theorem circle_bloch_symmetric_off_diagonal (h h₁ h₂ : C(AddCircle T, ℂ))
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (CoarseArithmetic.fourierCoefficient CoarseArithmetic.thetaParameter CoarseArithmetic.nome j:ℂ))
+      (CoarseArithmetic.fourierCoefficient CoarseArithmetic.lemniscateFrequencySquared CoarseArithmetic.nome j:ℂ))
     (j : Fin 3) (n m : ℤ) (hnm : n ≠ m) :
     fourierCoeff (circleBlochSymmetricCoefficient T h h₁ h₂ j (circleFourierH4 T (2*m))) (2*n) =
       (evenSymmetricOffScalar ((2*Real.pi/T)^2) j (2*(n:ℝ)) (2*(m:ℝ)):ℂ)*
@@ -46,7 +46,7 @@ theorem circle_bloch_symmetric_off_diagonal (h h₁ h₂ : C(AddCircle T, ℂ))
     rw [show 2*m-2*n = -(2*n-2*m) by ring,hs]
   have hcreal : conj (fourierCoeff h (2*n-2*m)) = fourierCoeff h (2*n-2*m) := by
     rw [show 2*n-2*m = 2*(n-m) by ring,
-      circle_even_integer_coefficient T h CoarseArithmetic.thetaParameter CoarseArithmetic.nome hs hc]
+      circle_even_integer_coefficient T h CoarseArithmetic.lemniscateFrequencySquared CoarseArithmetic.nome hs hc]
     exact Complex.conj_ofReal _
   simp only [circleBlochSymmetricCoefficient,LinearMap.smul_apply,LinearMap.add_apply,
     circle_fourierCoeff_smul,circle_fourierCoeff_add,

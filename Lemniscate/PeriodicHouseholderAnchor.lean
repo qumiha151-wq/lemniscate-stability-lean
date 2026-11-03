@@ -87,21 +87,21 @@ theorem circle_unit_rotation_phase_anchor (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ i : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*i+1) = 0) :
     ∃ c : ℝ, 0 < c ∧
       inner ℂ (circleHouseholderAnchor T) ((-I) • circleUnitRotation T q p) = (c : ℂ) ∧
       inner ℂ ((-I) • circleUnitRotation T q p) (circleHouseholderAnchor T) = (c : ℂ) := by
   let b := circleContinuousL2 T (q*p)
-  let c : ℝ := (1/Real.sqrt 2)*(2*(‖b‖⁻¹*(2*Real.pi/T)*evenCoefficient thetaParameter nome 1))
+  let c : ℝ := (1/Real.sqrt 2)*(2*(‖b‖⁻¹*(2*Real.pi/T)*evenCoefficient lemniscateFrequencySquared nome 1))
   have hn : 0 < ‖b‖ := norm_pos_iff.mpr (circle_profile_rotation_ne_zero T q p hq hs hc ho)
   have hT : 0 < T := Fact.out
-  have hh₂ := theta_nome_first_sine_coefficient_pos
+  have hh₂ := frequency_nome_first_sine_coefficient_pos
   have hcpos : 0 < c := by
     dsimp [c]
     positivity
   have hfirst : fourierCoeff (q^2 : C(AddCircle T, ℂ)) 2 =
-      (evenCoefficient thetaParameter nome 1 : ℂ) := by
+      (evenCoefficient lemniscateFrequencySquared nome 1 : ℂ) := by
     simpa only [Nat.cast_one, mul_one, fourierCoefficient, if_false,
       show ¬(1:ℕ) = 0 by decide] using hc 1
   have hr := circle_unit_rotation_reflect T q p hq hs

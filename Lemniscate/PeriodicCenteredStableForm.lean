@@ -16,9 +16,9 @@ theorem paper_centered_zero_stable_form (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
     (ψ : CircleL2 T)
     (hd : HasCircleNeutralDecomposition T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4))
       (circleUnitRotationH4 T q p hq hp) ψ)

@@ -17,9 +17,9 @@ variable (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
     (ψ : circleH4Domain T)
     (hd : HasCircleNeutralDecomposition T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4))
       (circleUnitRotationH4 T q p hq hp) (ψ:CircleL2 T))
@@ -62,7 +62,7 @@ theorem paper_exact_centered_energy_congruence
   have h4 (v : circleH4Domain T) : A 4 v = ((-4*(2*Real.pi/T)^4:ℝ):ℂ) • (v:CircleL2 T) := by
     change circleCenteredBlochCoefficient T q p hq hp (ψ:CircleL2 T) 4 v = _
     have ht := paper_centered_bloch_top T q p hq hp he hqreal hpreal hs hc ho hr _ hd v
-    have hpow : thetaParameter^2 = (2*Real.pi/T)^4 := by rw [← hr]; ring
+    have hpow : lemniscateFrequencySquared^2 = (2*Real.pi/T)^4 := by rw [← hr]; ring
     simpa only [hpow] using ht
   let P := A 0+(α:ℂ) • A 1+(α:ℂ)^2 • A 2+(α:ℂ)^3 • A 3+(α:ℂ)^4 • A 4
   have hop : P f = circleCenteredBlochOperator T q p hq hp (ψ:CircleL2 T) α f := by

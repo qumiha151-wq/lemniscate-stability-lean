@@ -39,8 +39,8 @@ theorem paper_cosine_weak_energy_dissipative (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (v : CosineSequenceSpace) (u g : CircleL2 T)
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (v : CosineSequenceSpace) (u g : CircleL2 T)
     (hfu : HasWeakCircleDeriv T (circleEvenCosineSynthesis T v) u)
     (hug : HasWeakCircleDeriv T u g) :
     paperH2Energy T q (circleEvenCosineSynthesis T v) u g ≤

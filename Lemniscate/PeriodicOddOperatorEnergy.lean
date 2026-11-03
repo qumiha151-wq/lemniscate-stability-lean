@@ -14,8 +14,8 @@ theorem circle_h4_operator_odd_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hreal : ∀ x, conj (h x) = h x) (h₁real : ∀ x, conj (h₁ x) = h₁ x)
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T)
     (hf : InCircleOddSector T (f : CircleL2 T)) :
     (inner ℂ (f : CircleL2 T) (circleH4Operator T h h₁ h₂ f)).re ≤
       -6*‖(f : CircleL2 T)‖^2 := by
@@ -31,8 +31,8 @@ theorem paper_h4_operator_odd_dissipative (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T)
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T)
     (hf : InCircleOddSector T (f : CircleL2 T)) :
     (inner ℂ (f : CircleL2 T)
       (circleH4Operator T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) f)).re ≤

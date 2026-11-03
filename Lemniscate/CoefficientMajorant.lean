@@ -40,14 +40,14 @@ theorem coefficient_qb_majorant (r q : ℝ) (j : ℕ)
   simpa only [H, Rat.cast_div, Rat.cast_mul, Rat.cast_ofNat,
     Rat.cast_sub, Rat.cast_one, Rat.cast_pow] using hmono.trans hbound
 
-theorem theta_nome_coefficient_majorant (j : ℕ) (hj : 0 < j) :
-    0 ≤ fourierCoefficient thetaParameter nome j ∧
-    fourierCoefficient thetaParameter nome j ≤ (H:ℝ)*((j:ℝ)*(qb:ℝ)^j) :=
-  coefficient_qb_majorant _ _ j (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])) (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper])) hj
+theorem frequency_nome_coefficient_majorant (j : ℕ) (hj : 0 < j) :
+    0 ≤ fourierCoefficient lemniscateFrequencySquared nome j ∧
+    fourierCoefficient lemniscateFrequencySquared nome j ≤ (H:ℝ)*((j:ℝ)*(qb:ℝ)^j) :=
+  coefficient_qb_majorant _ _ j (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])) (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper])) hj
 
 theorem common_index_coefficient_majorant (l m : ℕ) (hl : 0 < l) (hlm : l ≤ m) :
-    |fourierCoefficient thetaParameter nome m| ≤ (H:ℝ)*((l:ℝ)*(qb:ℝ)^l) := by
-  have hm := theta_nome_coefficient_majorant m (hl.trans_le hlm)
+    |fourierCoefficient lemniscateFrequencySquared nome m| ≤ (H:ℝ)*((l:ℝ)*(qb:ℝ)^l) := by
+  have hm := frequency_nome_coefficient_majorant m (hl.trans_le hlm)
   rw [abs_of_nonneg hm.1]
   apply hm.2.trans
   apply mul_le_mul_of_nonneg_left _ (by norm_num [H, rhi, qb])

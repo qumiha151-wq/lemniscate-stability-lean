@@ -33,9 +33,9 @@ theorem sine_matrix_enclosure (r q : ℝ) (j k : ℕ)
       Rat.cast_div, Rat.cast_ofNat, Rat.cast_pow, Rat.cast_add, Rat.cast_sub,
       Rat.cast_natCast] using hnonconstant
 
-theorem theta_nome_sine_matrix_enclosure (j k : ℕ) :
-    Contains (sineEntry j k) (sineMatrixEntry thetaParameter nome j k) :=
-  sine_matrix_enclosure _ _ j k (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])) (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper]))
+theorem frequency_nome_sine_matrix_enclosure (j k : ℕ) :
+    Contains (sineEntry j k) (sineMatrixEntry lemniscateFrequencySquared nome j k) :=
+  sine_matrix_enclosure _ _ j k (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])) (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper]))
 
 theorem sine_matrix_symmetric (r q : ℝ) (j k : ℕ) :
     sineMatrixEntry r q j k = sineMatrixEntry r q k j := by
@@ -51,24 +51,24 @@ theorem sine_off_diagonal (r q : ℝ) (j k : ℕ) (hjk : j ≠ k) :
   ring
 
 theorem sine_upper_tail (j k : ℕ) (hjk : j < k) :
-    |sineMatrixEntry thetaParameter nome j k| ≤
+    |sineMatrixEntry lemniscateFrequencySquared nome j k| ≤
       (C:ℝ)*(2*(j:ℝ)+((k-j:ℕ):ℝ))^2*((k-j:ℕ):ℝ)*(qb:ℝ)^(k-j) := by
   rw [sine_off_diagonal _ _ j k (Nat.ne_of_lt hjk)]
   exact positive_frequency_upper_tail (-1) j k (by norm_num) hjk
 
 theorem sine_tail_bound (j L : ℕ) (hL : 0 < L) :
-    Summable (fun n : ℕ => |sineMatrixEntry thetaParameter nome j (j+(n+L))|) ∧
-    (∑' n : ℕ, |sineMatrixEntry thetaParameter nome j (j+(n+L))|) ≤
+    Summable (fun n : ℕ => |sineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))|) ∧
+    (∑' n : ℕ, |sineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))|) ≤
       (entryTailBound j L:ℝ) := by
-  have he : (fun n : ℕ => |sineMatrixEntry thetaParameter nome j (j+(n+L))|) =
-      (fun n : ℕ => |positiveFrequencyEntry thetaParameter nome (-1) j (j+(n+L))|) := by
+  have he : (fun n : ℕ => |sineMatrixEntry lemniscateFrequencySquared nome j (j+(n+L))|) =
+      (fun n : ℕ => |positiveFrequencyEntry lemniscateFrequencySquared nome (-1) j (j+(n+L))|) := by
     funext n
     rw [sine_off_diagonal _ _ j (j+(n+L)) (by omega)]
   rw [he]
   exact positive_frequency_tail_bound (-1) j L (by norm_num) hL
 
-theorem sine_first_diagonal_bound : sineMatrixEntry thetaParameter nome 1 1 < -12 := by
-  apply (theta_nome_sine_matrix_enclosure 1 1).2.trans_lt
+theorem sine_first_diagonal_bound : sineMatrixEntry lemniscateFrequencySquared nome 1 1 < -12 := by
+  apply (frequency_nome_sine_matrix_enclosure 1 1).2.trans_lt
   exact_mod_cast sine_first_diagonal_certificate
 
 end Lemniscate.CoarseArithmetic

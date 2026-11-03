@@ -17,13 +17,13 @@ noncomputable def sineOperatorEntry (r q : ℝ) (i j : ℕ) : ℝ :=
   if i = j then v+(-4*r^2*n^4-42) else v
 
 noncomputable def rawTrialResidual (j : ℕ) : ℝ :=
-  ∑ i : Fin 18, sineOperatorEntry thetaParameter nome (i.val+1) j*
+  ∑ i : Fin 18, sineOperatorEntry lemniscateFrequencySquared nome (i.val+1) j*
     (adjointTrialCoefficient i:ℝ)
 
 theorem raw_trial_sine_entry_sound (i : Fin 18) (j : Fin 40) :
     Contains (rawTrialSineEntry (i.val+1) (j.val+1))
-      (sineOperatorEntry thetaParameter nome (i.val+1) (j.val+1)) := by
-  have hr : Contains ⟨thetaRLower,thetaRUpper⟩ thetaParameter := actual_nome_theta_r_bounds
+      (sineOperatorEntry lemniscateFrequencySquared nome (i.val+1) (j.val+1)) := by
+  have hr : Contains ⟨frequencyLower,frequencyUpper⟩ lemniscateFrequencySquared := lemniscate_frequency_bounds
   have hdiff : i.val+1-(j.val+1)+(j.val+1-(i.val+1)) < 59 := by omega
   have hsum : i.val+1+(j.val+1) < 59 := by omega
   have hm := scale_sound _ _ (7*(2*((j.val+1:ℕ):ℚ))-2*((i.val+1:ℕ):ℚ))
@@ -33,14 +33,14 @@ theorem raw_trial_sine_entry_sound (i : Fin 18) (j : Fin 40) :
   have hv := scale_sound _ _ ((15/2:ℚ)*(2*((i.val+1:ℕ):ℚ)))
     (mul_sound _ _ _ _ hr (add_sound _ _ _ _ hm hp))
   by_cases he : i.val+1 = j.val+1
-  · have hr0 : 0 ≤ thetaParameter :=
-      (by norm_num [thetaRLower] : (0:ℝ) ≤ (thetaRLower:ℝ)).trans hr.1
-    have hl := pow_le_pow_left₀ (by norm_num [thetaRLower] : (0:ℝ) ≤ (thetaRLower:ℝ)) hr.1 2
+  · have hr0 : 0 ≤ lemniscateFrequencySquared :=
+      (by norm_num [frequencyLower] : (0:ℝ) ≤ (frequencyLower:ℝ)).trans hr.1
+    have hl := pow_le_pow_left₀ (by norm_num [frequencyLower] : (0:ℝ) ≤ (frequencyLower:ℝ)) hr.1 2
     have hu := pow_le_pow_left₀ hr0 hr.2 2
     have hd : Contains
-        ⟨-4*thetaRUpper^2*(2*((i.val+1:ℕ):ℚ))^4-42,
-         -4*thetaRLower^2*(2*((i.val+1:ℕ):ℚ))^4-42⟩
-        (-4*thetaParameter^2*(2*((i.val+1:ℕ):ℝ))^4-42) := by
+        ⟨-4*frequencyUpper^2*(2*((i.val+1:ℕ):ℚ))^4-42,
+         -4*frequencyLower^2*(2*((i.val+1:ℕ):ℚ))^4-42⟩
+        (-4*lemniscateFrequencySquared^2*(2*((i.val+1:ℕ):ℝ))^4-42) := by
       have hl' := mul_le_mul_of_nonneg_right hl
         (by positivity : (0:ℝ) ≤ (2*((i.val+1:ℕ):ℝ))^4)
       have hu' := mul_le_mul_of_nonneg_right hu
@@ -55,12 +55,12 @@ theorem raw_trial_sine_entry_sound (i : Fin 18) (j : Fin 40) :
       Rat.cast_natCast] using hv
 
 theorem raw_trial_residual_head_bound (j : Fin 40) :
-    |∑ i : Fin 18, sineOperatorEntry thetaParameter nome (i.val+1) (j.val+1)*
+    |∑ i : Fin 18, sineOperatorEntry lemniscateFrequencySquared nome (i.val+1) (j.val+1)*
         (adjointTrialCoefficient i:ℝ)| ≤ (rawTrialResidualBound j:ℝ) := by
   have hs (i : Fin 18) := scale_sound _ _ (adjointTrialCoefficient i)
     (raw_trial_sine_entry_sound i j)
   have hh : Contains (rawTrialResidualInterval j)
-      (∑ i : Fin 18, sineOperatorEntry thetaParameter nome (i.val+1) (j.val+1)*
+      (∑ i : Fin 18, sineOperatorEntry lemniscateFrequencySquared nome (i.val+1) (j.val+1)*
         (adjointTrialCoefficient i:ℝ)) := by
     constructor <;> simp only [rawTrialResidualInterval,Rat.cast_sum]
     · exact Finset.sum_le_sum fun i _ => (hs i).1

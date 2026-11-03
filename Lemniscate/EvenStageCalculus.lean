@@ -34,7 +34,7 @@ theorem integer_matrix_rational_scale_sound (q : ℚ)
 
 def evenTopScalarInput : Interval := scale coefficientSquaredPeriodInput (-4)
 
-theorem even_top_scalar_input_sound : Contains evenTopScalarInput (-4*thetaParameter^2) := by
+theorem even_top_scalar_input_sound : Contains evenTopScalarInput (-4*lemniscateFrequencySquared^2) := by
   simpa only [evenTopScalarInput, Rat.cast_neg, Rat.cast_ofNat, mul_comm] using
     scale_sound _ _ (-4) coefficient_squared_period_input_sound
 
@@ -45,7 +45,7 @@ theorem even_top_integer_comparison :
   unfold IntegerEncloses
   decide +kernel
 
-theorem even_top_integer_input_sound : Contains evenTopIntegerData.toInterval (-4*thetaParameter^2) :=
+theorem even_top_integer_input_sound : Contains evenTopIntegerData.toInterval (-4*lemniscateFrequencySquared^2) :=
   (integer_input_sound _ _ even_top_scalar_input_sound).mono
     (integer_encloses_sound _ _ even_top_integer_comparison).1
     (integer_encloses_sound _ _ even_top_integer_comparison).2

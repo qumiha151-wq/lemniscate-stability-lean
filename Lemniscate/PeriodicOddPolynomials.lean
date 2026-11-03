@@ -60,8 +60,8 @@ theorem circle_symmetric_odd_polynomial_sum (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_odd_polynomial_energy_eq_matrix (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (I : Finset ℤ) (v : ℤ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (I : Finset ℤ) (v : ℤ → ℂ) :
     inner ℂ (circleContinuousL2 T (circleOddPolynomial T I v 0))
       (circleContinuousL2 T (circleSymmetricOddPolynomial T h h₁ h₂ I v)) =
         ∑ i ∈ I, ∑ j ∈ I, oddEnergyTerm 0 v (i,j) := by
@@ -98,8 +98,8 @@ theorem circle_odd_polynomial_h2_energy_eq (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_odd_polynomial_h2_energy_eq_coefficients (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (I : Finset ℤ) (v : ℤ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (I : Finset ℤ) (v : ℤ → ℂ) :
     circleH2Energy T h h₂ (circleContinuousL2 T (circleOddPolynomial T I v 0))
       (circleContinuousL2 T (circleOddPolynomial T I v 1))
       (circleContinuousL2 T (circleOddPolynomial T I v 2)) =

@@ -61,7 +61,7 @@ theorem odd_low_row_formula_positive (i : Fin 12) (α : ℝ)
 theorem odd_head_majorizes_coefficients (n : ℤ) (hn : Odd n) (α : ℝ)
     (hα : 0 ≤ α) (hα' : α ≤ 1/2) :
     (∑ m ∈ oddIndices.toFinset, if m = n then 0 else
-      |thetaParameter*fourierCoefficient thetaParameter nome ((n-m).natAbs/2)*
+      |lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome ((n-m).natAbs/2)*
         oddEntryPolynomial n m α| * oddWeight m α) ≤ oddHeadMajorant n α := by
   unfold oddHeadMajorant
   apply Finset.sum_le_sum
@@ -70,7 +70,7 @@ theorem odd_head_majorizes_coefficients (n : ℤ) (hn : Odd n) (α : ℝ)
   · simp [he]
   · simp only [if_neg he]
     exact mul_le_mul_of_nonneg_right
-      (theta_nome_odd_off_diagonal_bound n m hn (odd_indices_odd m hm) (Ne.symm he) α hα hα')
+      (frequency_nome_odd_off_diagonal_bound n m hn (odd_indices_odd m hm) (Ne.symm he) α hα hα')
       (le_of_lt (odd_weight_positive m α hα hα'))
 
 end Lemniscate.OddArithmetic

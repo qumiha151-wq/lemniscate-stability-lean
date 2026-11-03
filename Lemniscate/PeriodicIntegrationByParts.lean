@@ -84,8 +84,8 @@ theorem circle_polynomial_h2_energy_eq (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_polynomial_h2_energy_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (I : Finset ℕ) (v : ℕ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (I : Finset ℕ) (v : ℕ → ℂ) :
     circleH2Energy T h h₂ (circleContinuousL2 T (circleCosinePolynomial T I v 0))
       (circleContinuousL2 T (circleCosinePolynomial T I v 1))
       (circleContinuousL2 T (circleCosinePolynomial T I v 2)) ≤

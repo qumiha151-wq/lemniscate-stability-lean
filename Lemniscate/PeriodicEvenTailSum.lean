@@ -119,7 +119,7 @@ theorem circle_bloch_low_sine_high_square_bound (h h₁ h₂ : C(AddCircle T, �
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (hr : (2*Real.pi/T)^2 ≤ 18/25) (j : Fin 5)
     (v : Fin 10 → ℂ) (hv : ∑ i, ‖v i‖ ≤ 5) :
     (∑' n : ℤ, if Even n ∧ 32 ≤ |(n:ℝ)| then

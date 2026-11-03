@@ -24,9 +24,9 @@ theorem hasSum_sine_coupling_majorant :
   · simp only [sineCouplingTail, Rat.cast_mul, Rat.cast_add, Rat.cast_pow, Rat.cast_ofNat]
 
 theorem sine_coupling_tail_bound :
-    Summable (fun n : ℕ => (sineMatrixEntry thetaParameter nome 1 (n+4))^2) ∧
-    (∑' n : ℕ, (sineMatrixEntry thetaParameter nome 1 (n+4))^2) ≤ (sineCouplingTail:ℝ) := by
-  have hm (n : ℕ) : (sineMatrixEntry thetaParameter nome 1 (n+4))^2 ≤
+    Summable (fun n : ℕ => (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+4))^2) ∧
+    (∑' n : ℕ, (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+4))^2) ≤ (sineCouplingTail:ℝ) := by
+  have hm (n : ℕ) : (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+4))^2 ≤
       (C:ℝ)^2*((n+3:ℕ):ℝ)^2*(((n+3:ℕ):ℝ)+2)^4*(qb:ℝ)^(2*(n+3)) := by
     have hb := sine_upper_tail 1 (n+4) (by omega)
     simp only [show n+4-1 = n+3 by omega, Nat.cast_one, mul_one] at hb
@@ -44,17 +44,17 @@ theorem sine_coupling_tail_bound :
     hs.tsum_le_tsum hm hasSum_sine_coupling_majorant.summable
 
 theorem sine_coupling_square_sum_bound :
-    Summable (fun n : ℕ => (sineMatrixEntry thetaParameter nome 1 (n+2))^2) ∧
-    (∑' n : ℕ, (sineMatrixEntry thetaParameter nome 1 (n+2))^2) < 3916 := by
-  let b (n : ℕ) := (sineMatrixEntry thetaParameter nome 1 (n+2))^2
+    Summable (fun n : ℕ => (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+2))^2) ∧
+    (∑' n : ℕ, (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+2))^2) < 3916 := by
+  let b (n : ℕ) := (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+2))^2
   have ht : Summable (fun n : ℕ => b (n+2)) ∧
       (∑' n : ℕ, b (n+2)) ≤ (sineCouplingTail:ℝ) := by
     simpa only [b, Nat.add_assoc] using sine_coupling_tail_bound
   have hs : Summable b := (summable_nat_add_iff 2).mp ht.1
   have hentry (k : ℕ) :
-      (sineMatrixEntry thetaParameter nome 1 k)^2 ≤ (absUpper (sineEntry 1 k):ℝ)^2 := by
+      (sineMatrixEntry lemniscateFrequencySquared nome 1 k)^2 ≤ (absUpper (sineEntry 1 k):ℝ)^2 := by
     have h := pow_le_pow_left₀ (abs_nonneg _)
-      (absUpper_sound _ _ (theta_nome_sine_matrix_enclosure 1 k)) 2
+      (absUpper_sound _ _ (frequency_nome_sine_matrix_enclosure 1 k)) 2
     simpa only [sq_abs] using h
   refine ⟨hs, ?_⟩
   calc
@@ -68,16 +68,16 @@ theorem sine_coupling_square_sum_bound :
     _ < 3916 := by exact_mod_cast sine_coupling_certificate
 
 theorem sine_coupling_mem_l2 :
-    Memℓp (fun n : ℕ => (sineMatrixEntry thetaParameter nome 1 (n+2):ℂ)) 2 := by
+    Memℓp (fun n : ℕ => (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+2):ℂ)) 2 := by
   apply (memℓp_gen_iff (by norm_num : 0 < (2:ℝ≥0∞).toReal)).mpr
   simpa only [ENNReal.toReal_ofNat, Real.rpow_two, Complex.norm_real,
     Real.norm_eq_abs, sq_abs] using sine_coupling_square_sum_bound.1
 
 noncomputable def sineCouplingVector : SineTailSpace :=
-  ⟨fun n => (sineMatrixEntry thetaParameter nome 1 (n+2):ℂ), sine_coupling_mem_l2⟩
+  ⟨fun n => (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+2):ℂ), sine_coupling_mem_l2⟩
 
 theorem sine_coupling_norm_sq : ‖sineCouplingVector‖^2 =
-    ∑' n : ℕ, (sineMatrixEntry thetaParameter nome 1 (n+2))^2 := by
+    ∑' n : ℕ, (sineMatrixEntry lemniscateFrequencySquared nome 1 (n+2))^2 := by
   have h := lp.norm_rpow_eq_tsum (by norm_num : 0 < (2:ℝ≥0∞).toReal) sineCouplingVector
   simpa [Real.rpow_two, Complex.norm_real, Real.norm_eq_abs, sq_abs, sineCouplingVector] using h
 

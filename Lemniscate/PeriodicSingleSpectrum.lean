@@ -23,12 +23,12 @@ theorem circle_profile_rotation_ne_zero (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ i : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*i+1) = 0) :
     circleContinuousL2 T (q*p) ≠ 0 := by
   have hcp (j : ℕ) (hj : 0 < j) :
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-        (evenCoefficient thetaParameter nome j:ℂ) := by
+        (evenCoefficient lemniscateFrequencySquared nome j:ℂ) := by
     simpa only [fourierCoefficient, if_neg (Nat.ne_of_gt hj)] using hc j
   have hr := circle_sine_rotation_derivative T (q^2) ((2:ℂ) • (q*p))
     (circle_profile_square_deriv T q p hq) hs hcp ho
@@ -47,9 +47,9 @@ variable (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ i : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*i+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
 
 noncomputable def paperSinglePeriodNeutralOperator : NeutralCoerciveOperator (CircleL2 T) :=
   normalizedNeutralCoerciveOperator (circleH4Domain T)

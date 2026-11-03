@@ -9,14 +9,14 @@ open Complex Matrix MeasureTheory CoarseArithmetic
 open scoped ComplexConjugate
 
 theorem actual_even_bernstein_energy (k : Fin 5) (v : Fin 31 → ℂ) :
-    (headPair v (realHeadMatrixCast (realFiniteBlochBernstein thetaParameter nome k) *ᵥ v)).re ≤
+    (headPair v (realHeadMatrixCast (realFiniteBlochBernstein lemniscateFrequencySquared nome k) *ᵥ v)).re ≤
       ∑ i, (-1-(evenFactorPenalty i:ℝ))*‖v i‖^2 := by
   have h := even_factor_certified_energy k _
-    (real_finite_bloch_bernstein_symm thetaParameter nome k)
+    (real_finite_bloch_bernstein_symm lemniscateFrequencySquared nome k)
     (actual_even_bernstein_interval k) v
   have heq : headPair v
-      (realHeadMatrixCast (realFiniteBlochBernstein thetaParameter nome k) *ᵥ v) =
-      ∑ i, ∑ j, conj (v i)*(realFiniteBlochBernstein thetaParameter nome k i j:ℂ)*v j := by
+      (realHeadMatrixCast (realFiniteBlochBernstein lemniscateFrequencySquared nome k) *ᵥ v) =
+      ∑ i, ∑ j, conj (v i)*(realFiniteBlochBernstein lemniscateFrequencySquared nome k i j:ℂ)*v j := by
     simp only [headPair, mulVec, dotProduct, real_head_matrix_cast_apply, Finset.mul_sum, mul_assoc]
   rw [heq]
   exact h
@@ -26,8 +26,8 @@ variable (h h₁ h₂ : C(AddCircle T, ℂ))
 variable (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
 variable (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
 variable (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-  (fourierCoefficient thetaParameter nome j:ℂ))
-variable (hr : (2*Real.pi/T)^2 = thetaParameter)
+  (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+variable (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
 include hh hh₁ hs hc hr
 
 theorem actual_finite_even_head_energy (α : ℝ) (ha : 0 ≤ α) (ha' : α ≤ 1/2)
@@ -37,7 +37,7 @@ theorem actual_finite_even_head_energy (α : ℝ) (ha : 0 ≤ α) (ha' : α ≤ 
   rw [circle_finite_bloch_head_pairing, finite_bloch_head_bernstein]
   apply head_pair_bernstein_upper_bound _ v α _ ha ha'
   intro k
-  rw [← real_finite_bloch_bernstein_cast T h h₁ h₂ thetaParameter nome hh hh₁ hs hc hr]
+  rw [← real_finite_bloch_bernstein_cast T h h₁ h₂ lemniscateFrequencySquared nome hh hh₁ hs hc hr]
   exact actual_even_bernstein_energy k v
 
 end Lemniscate

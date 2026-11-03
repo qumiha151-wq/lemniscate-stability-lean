@@ -19,8 +19,8 @@ variable (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
 
 include hq hp he hqreal hpreal hc hr in
 theorem circle_rotation_coefficient_norm_relation :
@@ -32,10 +32,10 @@ theorem circle_rotation_coefficient_norm_relation :
   have hc0 := hc 0
   norm_num only [Nat.cast_zero,mul_zero,fourierCoefficient,if_pos rfl,ite_true] at hc0
   rw [hc0,Complex.ofReal_re] at hm
-  have hh0 : 0 ≤ constantCoefficient thetaParameter nome := by
+  have hh0 : 0 ≤ constantCoefficient lemniscateFrequencySquared nome := by
     nlinarith only [sq_nonneg ‖circleContinuousL2 T (q*p)‖,hm]
-  have hr0 : 0 < thetaParameter := by rw [← hr]; positivity
-  have harg : 0 ≤ 2*constantCoefficient thetaParameter nome/(5*thetaParameter) :=
+  have hr0 : 0 < lemniscateFrequencySquared := by rw [← hr]; positivity
+  have harg : 0 ≤ 2*constantCoefficient lemniscateFrequencySquared nome/(5*lemniscateFrequencySquared) :=
     div_nonneg (mul_nonneg (by norm_num) hh0) (by positivity)
   have hsq : rotationCoefficientNorm^2*(2*Real.pi/T)^2 =
       2*‖circleContinuousL2 T (q*p)‖^2 := by
@@ -51,7 +51,7 @@ theorem circle_rotation_coefficient_norm_relation :
 include hq hp he hqreal hpreal hs hc hr in
 theorem circle_sine_mode_positive_rotation_pairing (j : ℕ) :
     inner ℂ (circleEvenSineMode T j) (-circleUnitRotation T q p) =
-      ((2*((j+1:ℕ):ℝ)*evenCoefficient thetaParameter nome (j+1)/
+      ((2*((j+1:ℕ):ℝ)*evenCoefficient lemniscateFrequencySquared nome (j+1)/
         rotationCoefficientNorm:ℝ):ℂ) := by
   let N := ‖circleContinuousL2 T (q*p)‖
   have hn := rotation_coefficient_norm_bounds.1
@@ -77,7 +77,7 @@ theorem circle_sine_mode_positive_rotation_pairing (j : ℕ) :
     linear_combination (1/2:ℂ)*h
   calc
     _ = (((2*Real.pi/T)/(Real.sqrt 2*N):ℝ):ℂ)*
-        ((2*((j+1:ℕ):ℝ)*evenCoefficient thetaParameter nome (j+1):ℝ):ℂ) := by
+        ((2*((j+1:ℕ):ℝ)*evenCoefficient lemniscateFrequencySquared nome (j+1):ℝ):ℂ) := by
       change inner ℂ (evenSineFactor •
         (fourierBasis (T := T) (2*((j+1:ℕ):ℤ))-
          fourierBasis (T := T) (-(2*((j+1:ℕ):ℤ)))))

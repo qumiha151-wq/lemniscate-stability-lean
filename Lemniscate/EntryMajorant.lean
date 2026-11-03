@@ -48,24 +48,24 @@ noncomputable def positiveFrequencyEntry (r q ε : ℝ) (j k : ℕ) : ℝ :=
 
 theorem positive_frequency_upper_tail (ε : ℝ) (j k : ℕ)
     (hε : |ε| ≤ 1) (hjk : j < k) :
-    |positiveFrequencyEntry thetaParameter nome ε j k| ≤
+    |positiveFrequencyEntry lemniscateFrequencySquared nome ε j k| ≤
       (C:ℝ)*(2*(j:ℝ)+((k-j:ℕ):ℝ))^2*((k-j:ℕ):ℝ)*(qb:ℝ)^(k-j) := by
   let l := k-j
   let B : ℝ := (H:ℝ)*((l:ℝ)*(qb:ℝ)^l)
   have hl : 0 < l := Nat.sub_pos_of_lt hjk
   have hdiff : j-k+(k-j) = l := by dsimp [l]; omega
   have hsum : l ≤ j+k := by dsimp [l]; omega
-  have hd : |fourierCoefficient thetaParameter nome (j-k+(k-j))| ≤ B := by
+  have hd : |fourierCoefficient lemniscateFrequencySquared nome (j-k+(k-j))| ≤ B := by
     rw [hdiff]
     exact common_index_coefficient_majorant l l hl le_rfl
-  have hs : |fourierCoefficient thetaParameter nome (j+k)| ≤ B :=
+  have hs : |fourierCoefficient lemniscateFrequencySquared nome (j+k)| ≤ B :=
     common_index_coefficient_majorant l (j+k) hl hsum
-  have hr : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+  have hr : 0 ≤ lemniscateFrequencySquared :=
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
   have hB : 0 ≤ B := (abs_nonneg _).trans hd
-  have hb := two_coefficient_majorant thetaParameter
-    (fourierCoefficient thetaParameter nome (j-k+(k-j)))
-    (fourierCoefficient thetaParameter nome (j+k)) ε (2*(j:ℝ)) (2*(k:ℝ)) B
+  have hb := two_coefficient_majorant lemniscateFrequencySquared
+    (fourierCoefficient lemniscateFrequencySquared nome (j-k+(k-j)))
+    (fourierCoefficient lemniscateFrequencySquared nome (j+k)) ε (2*(j:ℝ)) (2*(k:ℝ)) B
     hr (by positivity) (by positivity) hd hs hε
   have hk : (k:ℝ) = (j:ℝ)+(l:ℝ) := by
     dsimp [l]
@@ -76,23 +76,23 @@ theorem positive_frequency_upper_tail (ε : ℝ) (j k : ℕ)
     rw [hk]
     nlinarith [sq_nonneg (l:ℝ)]
   calc
-    _ ≤ 45*thetaParameter*B*
+    _ ≤ 45*lemniscateFrequencySquared*B*
         (2*(2*(j:ℝ))*(2*(k:ℝ))+((2*(j:ℝ))^2+(2*(k:ℝ))^2)/6) := hb
-    _ = thetaParameter*B*(45*
+    _ = lemniscateFrequencySquared*B*(45*
         (2*(2*(j:ℝ))*(2*(k:ℝ))+((2*(j:ℝ))^2+(2*(k:ℝ))^2)/6)) := by ring
-    _ ≤ thetaParameter*B*(105*(2*(j:ℝ)+(l:ℝ))^2) :=
+    _ ≤ lemniscateFrequencySquared*B*(105*(2*(j:ℝ)+(l:ℝ))^2) :=
       mul_le_mul_of_nonneg_left hpoly (mul_nonneg hr hB)
     _ ≤ (rhi:ℝ)*B*(105*(2*(j:ℝ)+(l:ℝ))^2) :=
       mul_le_mul_of_nonneg_right
-        (mul_le_mul_of_nonneg_right (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hB) (by positivity)
+        (mul_le_mul_of_nonneg_right (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).2 hB) (by positivity)
     _ = _ := by simp only [B, l, C, Rat.cast_mul, Rat.cast_ofNat]; ring
 
 theorem cosine_upper_tail (j k : ℕ) (hj : 0 < j) (hjk : j < k) :
-    |cosineMatrixEntry thetaParameter nome j k| ≤
+    |cosineMatrixEntry lemniscateFrequencySquared nome j k| ≤
       (C:ℝ)*(2*(j:ℝ)+((k-j:ℕ):ℝ))^2*((k-j:ℕ):ℝ)*(qb:ℝ)^(k-j) := by
   have hk : k ≠ 0 := Nat.ne_of_gt (hj.trans hjk)
-  have heq : cosineMatrixEntry thetaParameter nome j k =
-      positiveFrequencyEntry thetaParameter nome 1 j k := by
+  have heq : cosineMatrixEntry lemniscateFrequencySquared nome j k =
+      positiveFrequencyEntry lemniscateFrequencySquared nome 1 j k := by
     simp [cosineMatrixEntry, positiveFrequencyEntry, Nat.ne_of_gt hj, hk, Nat.ne_of_lt hjk]
   rw [heq]
   exact positive_frequency_upper_tail 1 j k (by norm_num) hjk

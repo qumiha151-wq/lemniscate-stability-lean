@@ -49,29 +49,29 @@ set_option maxRecDepth 100000 in
 theorem coarse_h0_le_one : hUpper 0 ≤ 1 := by decide +kernel
 
 theorem cosine_diagonal_high_bound (j : ℕ) (hj : 0 < j) :
-    cosineMatrixEntry thetaParameter nome j j ≤
+    cosineMatrixEntry lemniscateFrequencySquared nome j j ≤
       -4*(rlo:ℝ)^2*(2*(j:ℝ))^4+45*(rhi:ℝ)*(2*(j:ℝ))^2 := by
-  have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
-  have h0 : fourierCoefficient thetaParameter nome 0 ≤ 1 :=
-    (theta_nome_fourier_enclosure 0).2.trans (by exact_mod_cast coarse_h0_le_one)
-  have hsum : 0 ≤ fourierCoefficient thetaParameter nome (j+j) :=
-    (theta_nome_coefficient_majorant (j+j) (by omega)).1
-  have hp : thetaParameter*fourierCoefficient thetaParameter nome 0 ≤ (rhi:ℝ) := by
+  have hr0 : 0 ≤ lemniscateFrequencySquared :=
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
+  have h0 : fourierCoefficient lemniscateFrequencySquared nome 0 ≤ 1 :=
+    (frequency_nome_fourier_enclosure 0).2.trans (by exact_mod_cast coarse_h0_le_one)
+  have hsum : 0 ≤ fourierCoefficient lemniscateFrequencySquared nome (j+j) :=
+    (frequency_nome_coefficient_majorant (j+j) (by omega)).1
+  have hp : lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome 0 ≤ (rhi:ℝ) := by
     calc
-      _ ≤ thetaParameter*1 := mul_le_mul_of_nonneg_left h0 hr0
-      _ = thetaParameter := mul_one _
-      _ ≤ _ := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2
-  have hsq : (rlo:ℝ)^2 ≤ thetaParameter^2 :=
-    pow_le_pow_left₀ (by norm_num [rlo]) (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1 2
+      _ ≤ lemniscateFrequencySquared*1 := mul_le_mul_of_nonneg_left h0 hr0
+      _ = lemniscateFrequencySquared := mul_one _
+      _ ≤ _ := (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).2
+  have hsq : (rlo:ℝ)^2 ≤ lemniscateFrequencySquared^2 :=
+    pow_le_pow_left₀ (by norm_num [rlo]) (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1 2
   have h4 := mul_le_mul_of_nonneg_right hsq (by positivity : 0 ≤ (2*(j:ℝ))^4)
   have h2 := mul_le_mul_of_nonneg_right hp (sq_nonneg (2*(j:ℝ)))
-  have hneg : 0 ≤ thetaParameter*fourierCoefficient thetaParameter nome (j+j)*(2*(j:ℝ))^2 :=
+  have hneg : 0 ≤ lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome (j+j)*(2*(j:ℝ))^2 :=
     mul_nonneg (mul_nonneg hr0 hsum) (sq_nonneg _)
-  have he : cosineMatrixEntry thetaParameter nome j j =
-      -4*thetaParameter^2*(2*(j:ℝ))^4-42+
-      45*thetaParameter*fourierCoefficient thetaParameter nome 0*(2*(j:ℝ))^2-
-      60*thetaParameter*fourierCoefficient thetaParameter nome (j+j)*(2*(j:ℝ))^2 := by
+  have he : cosineMatrixEntry lemniscateFrequencySquared nome j j =
+      -4*lemniscateFrequencySquared^2*(2*(j:ℝ))^4-42+
+      45*lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome 0*(2*(j:ℝ))^2-
+      60*lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome (j+j)*(2*(j:ℝ))^2 := by
     simp [cosineMatrixEntry, Nat.ne_of_gt hj]
     ring
   rw [he]

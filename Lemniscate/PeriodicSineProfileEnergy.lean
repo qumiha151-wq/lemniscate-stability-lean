@@ -15,13 +15,13 @@ theorem circle_sine_profile_constraint (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
     (f : CircleL2 T) (horth : inner ℂ (circleContinuousL2 T (q*p)) f = 0) :
     inner ℂ (circleSineConstraintVector T) f = 0 := by
   have hcp (j : ℕ) (hj : 0 < j) :
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-        (evenCoefficient thetaParameter nome j:ℂ) := by
+        (evenCoefficient lemniscateFrequencySquared nome j:ℂ) := by
     simpa only [fourierCoefficient, if_neg (Nat.ne_of_gt hj)] using hc j
   exact (circle_sine_profile_rotation_orthogonal_iff T q p hq hs hcp ho f).mp horth
 
@@ -31,9 +31,9 @@ theorem paper_sine_weak_energy_dissipative (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (u : ℂ) (v : SineTailSpace)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (u : ℂ) (v : SineTailSpace)
     (f₁ f₂ : CircleL2 T) (hf : HasWeakCircleDeriv T (circleSineBlockFunction T u v) f₁)
     (hf₁ : HasWeakCircleDeriv T f₁ f₂)
     (horth : inner ℂ (circleContinuousL2 T (q*p)) (circleSineBlockFunction T u v) = 0) :

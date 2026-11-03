@@ -10,9 +10,9 @@ open scoped ComplexConjugate
 
 variable (T : ℝ) [Fact (0 < T)]
 
-theorem theta_nome_first_sine_coefficient_pos : 0 < evenCoefficient thetaParameter nome 1 := by
-  have hr : 0 < thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+theorem frequency_nome_first_sine_coefficient_pos : 0 < evenCoefficient lemniscateFrequencySquared nome 1 := by
+  have hr : 0 < lemniscateFrequencySquared :=
+    (by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
   have hq : 0 < nome := Real.exp_pos _
   have hq1 : nome < 1 := refined_nome_bounds.2.trans_lt (by norm_num [nomeUpper])
   have hd : 0 < 1-nome^2 := sub_pos.mpr (pow_lt_one₀ hq.le hq1 (by decide))
@@ -28,16 +28,16 @@ theorem circle_sine_constraint_coeff_first :
 
 theorem circle_sine_constraint_coeff_pos (j : ℕ) (hj : 0 < j) :
     fourierCoeff (circleSineConstraintVector T) (2*(j:ℤ)) =
-      (sineRatio thetaParameter nome j:ℂ)*evenSineFactor := by
+      (sineRatio lemniscateFrequencySquared nome j:ℂ)*evenSineFactor := by
   by_cases h1 : j = 1
   · subst j
     simp only [Nat.cast_one, mul_one, circle_sine_constraint_coeff_first, sineRatio]
-    rw [one_mul, div_self (ne_of_gt theta_nome_first_sine_coefficient_pos)]
+    rw [one_mul, div_self (ne_of_gt frequency_nome_first_sine_coefficient_pos)]
     simp
   · have hk : j-2+2 = j := by omega
     conv_lhs => rw [← hk]
     rw [circleSineConstraintVector, circle_sine_block_coeff_pos]
-    change (sineRatio thetaParameter nome (j-2+2):ℂ)*evenSineFactor = _
+    change (sineRatio lemniscateFrequencySquared nome (j-2+2):ℂ)*evenSineFactor = _
     rw [hk]
 
 theorem circle_sine_constraint_coeff_zero : fourierCoeff (circleSineConstraintVector T) 0 = 0 := by
@@ -56,7 +56,7 @@ theorem circle_sine_constraint_coeff_odd (n : ℤ) :
     circle_fourierCoeff_add, circle_even_sine_mode_coeff_odd, circle_sine_tail_coeff_odd, add_zero]
 
 noncomputable def circleSineRotationScale : ℂ :=
-  circleFrequencyFactor T 2*(evenCoefficient thetaParameter nome 1:ℂ)/evenSineFactor
+  circleFrequencyFactor T 2*(evenCoefficient lemniscateFrequencySquared nome 1:ℂ)/evenSineFactor
 
 theorem circle_sine_rotation_scale_ne_zero : circleSineRotationScale T ≠ 0 := by
   apply div_ne_zero _ evenSineFactor_ne_zero
@@ -66,7 +66,7 @@ theorem circle_sine_rotation_scale_ne_zero : circleSineRotationScale T ≠ 0 := 
     apply Complex.ofReal_ne_zero.mpr
     have hT : T ≠ 0 := ne_of_gt (Fact.out : 0 < T)
     exact mul_ne_zero (div_ne_zero (mul_ne_zero (by norm_num) Real.pi_ne_zero) hT) (by norm_num)
-  · exact_mod_cast ne_of_gt theta_nome_first_sine_coefficient_pos
+  · exact_mod_cast ne_of_gt frequency_nome_first_sine_coefficient_pos
 
 theorem circle_sine_fourier_ext (f g : CircleL2 T)
     (hpos : ∀ j : ℕ, fourierCoeff f (2*(j:ℤ)) = fourierCoeff g (2*(j:ℤ)))
@@ -92,7 +92,7 @@ theorem circle_sine_rotation_derivative (h h₁ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, 0 < j → fourierCoeff h (2*(j:ℤ)) =
-      (evenCoefficient thetaParameter nome j:ℂ))
+      (evenCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff h (2*n+1) = 0) :
     circleContinuousL2 T h₁ = circleSineRotationScale T • circleSineConstraintVector T := by
   apply circle_sine_fourier_ext
@@ -109,7 +109,7 @@ theorem circle_sine_rotation_derivative (h h₁ : C(AddCircle T, ℂ))
       unfold circleSineRotationScale sineRatio circleFrequencyFactor
       push_cast
       field_simp [evenSineFactor_ne_zero,
-        Complex.ofReal_ne_zero.mpr (ne_of_gt theta_nome_first_sine_coefficient_pos)]
+        Complex.ofReal_ne_zero.mpr (ne_of_gt frequency_nome_first_sine_coefficient_pos)]
       <;> ring
   · intro n
     simp only [circle_continuous_l2_fourier, fourierCoeff_classical_deriv T h h₁ hh,
@@ -125,7 +125,7 @@ theorem circle_sine_rotation_orthogonal_iff (h h₁ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, 0 < j → fourierCoeff h (2*(j:ℤ)) =
-      (evenCoefficient thetaParameter nome j:ℂ))
+      (evenCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff h (2*n+1) = 0) (f : CircleL2 T) :
     inner ℂ (circleContinuousL2 T h₁) f = 0 ↔
       inner ℂ (circleSineConstraintVector T) f = 0 := by

@@ -138,20 +138,20 @@ theorem odd_half_distance_pos (n m : ℤ) (hn : Odd n) (hm : Odd m) (hne : n ≠
   have hb := neg_le_abs (n-m)
   omega
 
-theorem theta_nome_odd_off_diagonal_bound (n m : ℤ) (hn : Odd n) (hm : Odd m)
+theorem frequency_nome_odd_off_diagonal_bound (n m : ℤ) (hn : Odd n) (hm : Odd m)
     (hne : n ≠ m) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2) :
-    |thetaParameter*fourierCoefficient thetaParameter nome ((n-m).natAbs/2)*
+    |lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome ((n-m).natAbs/2)*
       oddEntryPolynomial n m α| ≤ realEval (absoluteEntryPolynomial n m) α := by
   let j := (n-m).natAbs/2
   have hj : 0 < j := odd_half_distance_pos n m hn hm hne
-  have hcoef := theta_nome_coefficient_majorant j hj
-  have hu := (theta_nome_fourier_enclosure j).2
-  have hr : 0 ≤ thetaParameter := (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans
-    (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+  have hcoef := frequency_nome_coefficient_majorant j hj
+  have hu := (frequency_nome_fourier_enclosure j).2
+  have hr : 0 ≤ lemniscateFrequencySquared := (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans
+    (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
   have hupper : 0 ≤ (hUpper j : ℝ) := hcoef.1.trans hu
-  have hscalar : thetaParameter*fourierCoefficient thetaParameter nome j ≤
+  have hscalar : lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome j ≤
       (rhi:ℝ)*(hUpper j:ℝ) :=
-    mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hu hcoef.1 (by norm_num [rhi])
+    mul_le_mul (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).2 hu hcoef.1 (by norm_num [rhi])
   have hv := odd_entry_majorant_sound n m hn hm α hα hα'
   rw [absoluteEntryPolynomial_eq, realEval_scale, Rat.cast_mul]
   rw [abs_mul, abs_mul, abs_of_nonneg hr, abs_of_nonneg hcoef.1]

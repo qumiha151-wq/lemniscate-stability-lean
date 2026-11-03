@@ -56,8 +56,8 @@ theorem circle_h4_operator_even_frequencies_split_bound (h h₁ h₂ : C(AddCirc
     (hreal : ∀ x, conj (h x) = h x) (h₁real : ∀ x, conj (h₁ x) = h₁ x)
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T)
     (ho : ∀ n : ℤ, fourierCoeff (f : CircleL2 T) (2*n+1) = 0)
     (horth : inner ℂ (circleSineConstraintVector T) (f : CircleL2 T) = 0) :
     (inner ℂ (f : CircleL2 T) (circleH4Operator T h h₁ h₂ f)).re ≤
@@ -79,8 +79,8 @@ theorem circle_h4_operator_even_frequencies_dissipative (h h₁ h₂ : C(AddCirc
     (hreal : ∀ x, conj (h x) = h x) (h₁real : ∀ x, conj (h₁ x) = h₁ x)
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T)
     (ho : ∀ n : ℤ, fourierCoeff (f : CircleL2 T) (2*n+1) = 0)
     (horth : inner ℂ (circleSineConstraintVector T) (f : CircleL2 T) = 0) :
     (inner ℂ (f : CircleL2 T) (circleH4Operator T h h₁ h₂ f)).re ≤
@@ -97,9 +97,9 @@ theorem paper_h4_operator_even_frequencies_dissipative (q p : C(AddCircle T, ℂ
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T)
     (hf : ∀ n : ℤ, fourierCoeff (f : CircleL2 T) (2*n+1) = 0)
     (horth : inner ℂ (circleContinuousL2 T (q*p)) (f : CircleL2 T) = 0) :
     (inner ℂ (f : CircleL2 T)

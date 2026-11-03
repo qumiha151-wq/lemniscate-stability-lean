@@ -80,10 +80,10 @@ theorem sine_constraint_series_bound (r q : ℝ)
   have hc := (Rat.cast_lt (K := ℝ)).mpr sine_rho_rational_bound
   simpa only [Rat.cast_pow, Rat.cast_div, Rat.cast_ofNat] using hc
 
-theorem theta_nome_sine_constraint_bound :
-    (∑' n : ℕ, (sineRatio thetaParameter nome (n+2))^2) < (87/500:ℝ)^2 :=
+theorem frequency_nome_sine_constraint_bound :
+    (∑' n : ℕ, (sineRatio lemniscateFrequencySquared nome (n+2))^2) < (87/500:ℝ)^2 :=
   (sine_constraint_series_bound _ _
-    ((by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1)
+    ((by norm_num [rlo] : (0:ℝ) < (rlo:ℝ)).trans_le (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1)
     (refined_nome_bounds.mono (by norm_num [qlo, nomeLower]) (by norm_num [qhi, nomeUpper]))).2
 
 end Lemniscate.CoarseArithmetic

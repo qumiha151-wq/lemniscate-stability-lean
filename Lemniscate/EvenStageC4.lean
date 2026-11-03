@@ -970,7 +970,7 @@ def evenStageC4IntegerMatrix (i j : Fin 31) : IntegerInterval :=
   ((evenStageC4Data.getD i.val #[]).getD j.val ⟨0,0⟩)
 def evenStageC4Matrix : Matrix (Fin 31) (Fin 31) Interval := integerMatrixInterval evenStageC4IntegerMatrix
 def evenStageC4Computed : Matrix (Fin 31) (Fin 31) IntegerInterval := integerMatrixScale evenTopIntegerData evenStageGram1IntegerMatrix
-noncomputable def evenStageC4Real : Matrix (Fin 31) (Fin 31) ℝ := (-4*thetaParameter^2) • evenStageGram1Real
+noncomputable def evenStageC4Real : Matrix (Fin 31) (Fin 31) ℝ := (-4*lemniscateFrequencySquared^2) • evenStageGram1Real
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
 theorem even_stage_c4_comparison : ∀ i j,

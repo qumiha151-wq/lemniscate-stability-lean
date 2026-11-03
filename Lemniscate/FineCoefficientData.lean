@@ -76,7 +76,7 @@ theorem fine_coefficient_data_comparisons : ∀ j : Fin 59,
         (refinedPositiveInterval j.val).hi ≤ (fineCoefficientData j.val).hi := by decide +kernel
 
 theorem fine_coefficient_data_sound (j : Fin 59) :
-    Contains (fineCoefficientData j.val) (fourierCoefficient thetaParameter nome j.val) := by
+    Contains (fineCoefficientData j.val) (fourierCoefficient lemniscateFrequencySquared nome j.val) := by
   have hd := fine_coefficient_data_comparisons j
   by_cases hj : j.val = 0
   · rw [if_pos hj] at hd

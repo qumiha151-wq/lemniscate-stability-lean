@@ -10,7 +10,7 @@ open Complex
 open scoped ComplexConjugate ENNReal
 
 noncomputable def sineH2BlockForm (u : ℂ) (v : SineTailSpace) : ℝ :=
-  sineMatrixEntry thetaParameter nome 1 1*‖u‖^2+
+  sineMatrixEntry lemniscateFrequencySquared nome 1 1*‖u‖^2+
     2*(conj u*inner ℂ sineCouplingVector v).re+sineTailH2Form v
 
 theorem sine_tail_space_norm_sq (v : SineTailSpace) :
@@ -27,7 +27,7 @@ theorem sine_tail_space_form_dissipative (v : SineTailSpace)
 theorem sine_h2_block_energy_bound (u : ℂ) (v : SineTailSpace)
     (hv : HasSineTailH2Coefficients v) :
     sineH2BlockForm u v ≤ -100*‖v‖^2+2*63*‖u‖*‖v‖ := by
-  have hd : sineMatrixEntry thetaParameter nome 1 1*‖u‖^2 ≤ 0 :=
+  have hd : sineMatrixEntry lemniscateFrequencySquared nome 1 1*‖u‖^2 ≤ 0 :=
     mul_nonpos_of_nonpos_of_nonneg (sine_first_diagonal_bound.le.trans (by norm_num)) (sq_nonneg _)
   have ht := sine_tail_space_form_dissipative v hv
   have hc : (conj u*inner ℂ sineCouplingVector v).re ≤ 63*‖u‖*‖v‖ := by

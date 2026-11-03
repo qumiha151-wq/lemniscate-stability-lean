@@ -1,3 +1,5 @@
+import Lemniscate.WeierstrassFourierRows
+import Lemniscate.WeierstrassFrequencyBounds
 import Lemniscate.WeierstrassZeroRow
 import Lemniscate.WeierstrassProfile
 
@@ -6,34 +8,14 @@ noncomputable section
 namespace Lemniscate
 open Complex
 
-private def integerSquareSum (z : ℂ) : ℂ := ∑' m : ℤ, 1/(z+m)^2
-
-private theorem integerSquareSum_neg (z : ℂ) :
-    integerSquareSum (-z) = integerSquareSum z := by
-  dsimp only [integerSquareSum]
-  conv_lhs => rw [← (Equiv.neg ℤ).tsum_eq (fun m : ℤ => 1/(-z+m)^2)]
-  apply tsum_congr
-  intro m
-  simp only [Equiv.neg_apply,Int.cast_neg]
-  rw [show -z+(-(m:ℂ)) = -(z+m) by ring,neg_sq]
-
-private theorem integerSquareSum_add_one (z : ℂ) :
-    integerSquareSum (z+1) = integerSquareSum z := by
-  dsimp only [integerSquareSum]
-  conv_rhs => rw [← (Equiv.addRight (1:ℤ)).tsum_eq (fun m : ℤ => 1/(z+m)^2)]
-  apply tsum_congr
-  intro m
-  simp only [Equiv.coe_addRight,Int.cast_add,Int.cast_one]
-  ring
-
 private theorem integerSquareSum_half_reflect (z : ℂ) :
-    integerSquareSum (1/2-z) = integerSquareSum (1/2+z) := by
+    weierstrassIntegerRow (1/2-z) = weierstrassIntegerRow (1/2+z) := by
   calc
-    integerSquareSum (1/2-z) = integerSquareSum (-(1/2-z)) :=
-      (integerSquareSum_neg _).symm
-    _ = integerSquareSum ((1/2+z)-1) := by congr 1; ring
-    _ = integerSquareSum (1/2+z) := by
-      simpa only [sub_add_cancel] using (integerSquareSum_add_one ((1/2+z)-1)).symm
+    weierstrassIntegerRow (1/2-z) = weierstrassIntegerRow (-(1/2-z)) :=
+      (weierstrass_integer_row_neg _).symm
+    _ = weierstrassIntegerRow ((1/2+z)-1) := by congr 1; ring
+    _ = weierstrassIntegerRow (1/2+z) := by
+      simpa only [sub_add_cancel] using (weierstrass_integer_row_add_one ((1/2+z)-1)).symm
 
 private def squareHalfSummand (n m : ℤ) : ℂ :=
   1/((1/2:ℂ)-((m:ℂ)+(n:ℂ)*I))^2 - 1/((m:ℂ)+(n:ℂ)*I)^2
@@ -41,52 +23,15 @@ private def squareHalfSummand (n m : ℤ) : ℂ :=
 private theorem square_half_hasSum :
     HasSum (fun p : ℤ×ℤ => squareHalfSummand p.1 p.2)
       (unitSquarePeriods.weierstrassP (1/2)) := by
-  let L := unitSquarePeriods
-  let e : (ℤ×ℤ) ≃ L.lattice :=
-    (Equiv.prodComm ℤ ℤ).trans L.latticeEquivProd.toEquiv.symm
-  have he (p : ℤ×ℤ) : (e p : ℂ) = (p.2:ℂ)+(p.1:ℂ)*I := by
-    change ((L.latticeEquivProd.symm (p.2,p.1)):ℂ) = _
-    rw [L.latticeEquiv_symm_apply]
-    change (p.2:ℂ)*1+(p.1:ℂ)*I = _
-    rw [mul_one]
-  have h := e.hasSum_iff.mpr (L.hasSum_weierstrassP (1/2))
-  convert! h using 1
-  funext p
-  dsimp only [Function.comp_def]
-  rw [he]
-  rfl
+  simpa only [squareHalfSummand,zero_sub,neg_sq,
+    unitSquarePeriods.weierstrassP_zero,sub_zero] using
+      unit_square_weierstrass_difference_hasSum (1/2) 0
 
 private theorem square_half_row (n : ℤ) :
     (∑' m : ℤ, squareHalfSummand n m) =
-      integerSquareSum (1/2-(n:ℂ)*I) - integerSquareSum ((n:ℂ)*I) := by
-  have hsum (z : ℂ) : Summable (fun m : ℤ => 1/(z+m)^2) := by
-    simpa only [Int.cast_one,one_mul,zpow_ofNat,one_div] using
-      EisensteinSeries.linear_right_summable z 1 (k := 2) (by norm_num)
-  have hfirst : (∑' m : ℤ, 1/((1/2:ℂ)-((m:ℂ)+(n:ℂ)*I))^2) =
-      integerSquareSum (1/2-(n:ℂ)*I) := by
-    dsimp only [integerSquareSum]
-    conv_lhs => rw [← (Equiv.neg ℤ).tsum_eq
-      (fun m : ℤ => 1/((1/2:ℂ)-((m:ℂ)+(n:ℂ)*I))^2)]
-    apply tsum_congr
-    intro m
-    simp only [Equiv.neg_apply,Int.cast_neg]
-    ring
-  have hsecond : (∑' m : ℤ, 1/((m:ℂ)+(n:ℂ)*I)^2) =
-      integerSquareSum ((n:ℂ)*I) := by
-    apply tsum_congr
-    intro m
-    rw [add_comm]
-  have hsfirst : Summable (fun m : ℤ => 1/((1/2:ℂ)-((m:ℂ)+(n:ℂ)*I))^2) := by
-    have hs := (hsum (1/2-(n:ℂ)*I)).comp_injective (Equiv.neg ℤ).injective
-    convert! hs using 1
-    ext m
-    simp only [Function.comp_def,Equiv.neg_apply,Int.cast_neg]
-    ring
-  have hssecond : Summable (fun m : ℤ => 1/((m:ℂ)+(n:ℂ)*I)^2) := by
-    simpa only [add_comm] using hsum ((n:ℂ)*I)
-  change (∑' m : ℤ, (1/((1/2:ℂ)-((m:ℂ)+(n:ℂ)*I))^2 -
-    1/((m:ℂ)+(n:ℂ)*I)^2)) = _
-  rw [hsfirst.tsum_sub hssecond,hfirst,hsecond]
+      weierstrassIntegerRow (1/2-(n:ℂ)*I) - weierstrassIntegerRow ((n:ℂ)*I) := by
+  simpa only [squareHalfSummand,zero_sub,neg_sq,weierstrass_integer_row_neg] using
+    weierstrass_difference_row (1/2) 0 n
 
 private theorem square_half_row_neg (n : ℤ) :
     (∑' m : ℤ, squareHalfSummand (-n) m) =
@@ -94,10 +39,7 @@ private theorem square_half_row_neg (n : ℤ) :
   rw [square_half_row,square_half_row]
   simp only [Int.cast_neg,neg_mul]
   rw [sub_neg_eq_add,
-    integerSquareSum_half_reflect,integerSquareSum_neg]
-
-def weierstrassHalfPeriodTerm (q : ℝ) (n : ℕ) : ℝ :=
-  q^(2*(n+1))/(1+q^(2*(n+1)))^2 + q^(2*(n+1))/(1-q^(2*(n+1)))^2
+    integerSquareSum_half_reflect,weierstrass_integer_row_neg]
 
 private theorem square_half_positive_row (n : ℕ) :
     (∑' m : ℤ, squareHalfSummand ((n+1:ℕ):ℤ) m) =
@@ -120,13 +62,12 @@ private theorem square_half_positive_row (n : ℕ) :
     dsimp only [weierstrassHalfPeriodTerm]
     ring
   rw [hvalue] at h
-  change integerSquareSum (1/2+I*(((n+1:ℕ):ℝ):ℂ)) -
-    integerSquareSum (I*(((n+1:ℕ):ℝ):ℂ)) = _ at h
+  change weierstrassIntegerRow (1/2+I*(((n+1:ℕ):ℝ):ℂ)) -
+    weierstrassIntegerRow (I*(((n+1:ℕ):ℝ):ℂ)) = _ at h
   simpa only [Int.cast_natCast,Complex.ofReal_natCast,mul_comm I] using h
 
 theorem unit_square_half_period_series :
-    Summable (weierstrassHalfPeriodTerm (Real.exp (-Real.pi))) ∧
-      unitSquarePeriods.weierstrassP (1/2) =
+    unitSquarePeriods.weierstrassP (1/2) =
         Complex.ofReal ((2*Real.pi^2/3)*
           (1+12*(∑' n : ℕ, weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n))) := by
   let R : ℤ → ℂ := fun n => ∑' m : ℤ, squareHalfSummand n m
@@ -144,16 +85,6 @@ theorem unit_square_half_period_series :
     simpa only [heven] using hsTail
   have hrow (n : ℕ) : R ((n:ℤ)+1) = Complex.ofReal (4*Real.pi^2*t n) := by
     simpa only [Int.natCast_add,Int.natCast_one] using square_half_positive_row n
-  have hsValue : Summable (fun n : ℕ => 4*Real.pi^2*t n) := by
-    convert! (Complex.hasSum_re hsTail.hasSum).summable using 1
-    funext n
-    rw [hrow]
-    rfl
-  have hpi : 4*Real.pi^2 ≠ 0 := by positivity
-  have hsTerm : Summable t := by
-    convert! hsValue.div_const (4*Real.pi^2) using 1
-    funext n
-    field_simp [hpi]
   have hzero : R 0 = Complex.ofReal (2*Real.pi^2/3) := by
     simpa only [R,squareHalfSummand,Int.cast_zero,zero_mul,add_zero] using
       integer_real_half_shift_difference
@@ -173,14 +104,13 @@ theorem unit_square_half_period_series :
       _ = ∑' n : ℕ, Complex.ofReal (4*Real.pi^2*t n) := tsum_congr hrow
       _ = Complex.ofReal (∑' n : ℕ, 4*Real.pi^2*t n) := (Complex.ofReal_tsum _).symm
       _ = _ := by rw [tsum_mul_left]
-  refine ⟨hsTerm,?_⟩
   rw [hsplit,hzero,htailvalue]
   push_cast
   ring
 
 theorem unit_square_normalization_exists :
     ∃ a : ℝ, 0 < a ∧ 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1 := by
-  obtain ⟨_,hvalue⟩ := unit_square_half_period_series
+  have hvalue := unit_square_half_period_series
   let S := ∑' n : ℕ, weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n
   have hS : 0 ≤ S := tsum_nonneg (fun n => by dsimp only [weierstrassHalfPeriodTerm]; positivity)
   let E : ℝ := (2*Real.pi^2/3)*(1+12*S)
@@ -200,7 +130,7 @@ theorem square_weierstrass_frequency_squared (a : ℝ)
     (hnorm : 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1) :
     (Real.pi*a)^2 = 3/(4*(1+12*(∑' n : ℕ,
       weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n))) := by
-  obtain ⟨_,hvalue⟩ := unit_square_half_period_series
+  have hvalue := unit_square_half_period_series
   let S := ∑' n : ℕ, weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n
   have hS : 0 ≤ S := tsum_nonneg (fun n => by dsimp only [weierstrassHalfPeriodTerm]; positivity)
   rw [hvalue] at hnorm

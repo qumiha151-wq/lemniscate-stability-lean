@@ -19,8 +19,8 @@ theorem paper_finite_even_coercivity (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
     (α : ℝ) (hα0 : 0 ≤ α) (hαhalf : α ≤ 1/2)
     (f : circleH4Domain T)
     (hf : ∀ n : ℤ, Odd n → fourierCoeff (f:CircleL2 T) n = 0) :
@@ -52,10 +52,10 @@ theorem paper_finite_even_coercivity (q p : C(AddCircle T, ℂ))
     circle_profile_coefficient_norm_bounds T q p he hqreal hpreal
   have hparam : (7/10:ℝ) ≤ (2*Real.pi/T)^2 ∧ (2*Real.pi/T)^2 ≤ 18/25 := by
     rw [hr]
-    have hb : Contains ⟨thetaRLower,thetaRUpper⟩ thetaParameter := actual_nome_theta_r_bounds
+    have hb : Contains ⟨frequencyLower,frequencyUpper⟩ lemniscateFrequencySquared := lemniscate_frequency_bounds
     refine ⟨?_,?_⟩
-    · exact (by norm_num [thetaRLower] : (7/10:ℝ) ≤ (thetaRLower:ℝ)).trans hb.1
-    · exact hb.2.trans (by norm_num [thetaRUpper])
+    · exact (by norm_num [frequencyLower] : (7/10:ℝ) ≤ (frequencyLower:ℝ)).trans hb.1
+    · exact hb.2.trans (by norm_num [frequencyUpper])
   have hα : |α| ≤ 1/2 := abs_le.mpr ⟨by linarith only [hα0],hαhalf⟩
   have hyhigh : ∀ n : ℤ, |(n:ℝ)| < 32 → fourierCoeff (y:CircleL2 T) n = 0 :=
     circle_even_head_remainder_high T f hf

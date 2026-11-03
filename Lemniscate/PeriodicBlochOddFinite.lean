@@ -22,8 +22,8 @@ theorem circle_odd_polynomial_h4_coe (I : Finset ℤ) (v : ℤ → ℂ) :
 theorem circle_odd_polynomial_h4_symmetric_pairing (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ) (I : Finset ℤ) (v : ℤ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ) (I : Finset ℤ) (v : ℤ → ℂ) :
     (inner ℂ (circleOddPolynomialH4 T I v : CircleL2 T)
         (circleBlochOperator T h h₁ h₂ α (circleOddPolynomialH4 T I v))+
       inner ℂ (circleBlochOperator T h h₁ h₂ α (circleOddPolynomialH4 T I v))
@@ -52,8 +52,8 @@ theorem circle_odd_polynomial_h4_symmetric_pairing (h h₁ h₂ : C(AddCircle T,
 theorem circle_odd_polynomial_bloch_energy (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ) (I : Finset ℤ) (v : ℤ → ℂ) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ) (I : Finset ℤ) (v : ℤ → ℂ) :
     (inner ℂ (circleOddPolynomialH4 T I v : CircleL2 T)
       (circleBlochOperator T h h₁ h₂ α (circleOddPolynomialH4 T I v))).re =
         (∑ i ∈ I, ∑ j ∈ I, oddEnergyTerm α v (i,j)).re := by
@@ -69,8 +69,8 @@ theorem circle_odd_polynomial_bloch_energy (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_odd_polynomial_bloch_dissipative (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (α : ℝ) (hα : 0 ≤ α) (hα' : α ≤ 1/2)
     (I : Finset ℤ) (v : ℤ → ℂ) :
     (inner ℂ (circleOddPolynomialH4 T I v : CircleL2 T)
       (circleBlochOperator T h h₁ h₂ α (circleOddPolynomialH4 T I v))).re ≤

@@ -971,7 +971,7 @@ def evenStageQ3IntegerMatrix (i j : Fin 31) : IntegerInterval :=
   ((evenStageQ3Data.getD i.val #[]).getD j.val ⟨0,0⟩)
 def evenStageQ3Matrix : Matrix (Fin 31) (Fin 31) Interval := integerMatrixInterval evenStageQ3IntegerMatrix
 def evenStageQ3Computed : Matrix (Fin 31) (Fin 31) IntegerInterval := integerMatrixMul evenStageLIntegerMatrix evenSeedA3IntegerMatrix
-noncomputable def evenStageQ3Real : Matrix (Fin 31) (Fin 31) ℝ := evenStageLReal*(Lemniscate.evenBlochCoefficientMatrix thetaParameter nome 3)
+noncomputable def evenStageQ3Real : Matrix (Fin 31) (Fin 31) ℝ := evenStageLReal*(Lemniscate.evenBlochCoefficientMatrix lemniscateFrequencySquared nome 3)
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
 theorem even_stage_q3_comparison : ∀ i j,

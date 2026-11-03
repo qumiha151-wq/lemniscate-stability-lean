@@ -8,10 +8,10 @@ open Finset Complex
 open scoped ComplexConjugate
 
 noncomputable def sineTailOffMatrix (i j : ℕ) : ℂ :=
-  if i = j then 0 else (sineMatrixEntry thetaParameter nome (i+2) (j+2):ℂ)
+  if i = j then 0 else (sineMatrixEntry lemniscateFrequencySquared nome (i+2) (j+2):ℂ)
 
 theorem sine_tail_finite_row_bound (I : Finset ℕ) (i : ℕ) :
-    sineMatrixEntry thetaParameter nome (i+2) (i+2) +
+    sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2) +
       (∑ j ∈ I, sineOffRow (i+2) (j+2)) ≤ -100 := by
   have h := sine_all_tail_rows_dissipative (i+2) (by omega)
   have hs : Summable (fun j : ℕ => sineOffRow (i+2) (j+2)) :=
@@ -38,10 +38,10 @@ theorem sine_tail_off_norm_symmetric (i j : ℕ) :
   by_cases h : i = j
   · subst j; rfl
   · simp only [sineTailOffMatrix, if_neg h, if_neg (Ne.symm h)]
-    rw [sine_matrix_symmetric thetaParameter nome (i+2) (j+2)]
+    rw [sine_matrix_symmetric lemniscateFrequencySquared nome (i+2) (j+2)]
 
 theorem sine_tail_finite_split_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
-    (∑ i ∈ I, sineMatrixEntry thetaParameter nome (i+2) (i+2)*‖v i‖^2) +
+    (∑ i ∈ I, sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2)*‖v i‖^2) +
       (∑ i ∈ I, ∑ j ∈ I, conj (v i)*sineTailOffMatrix i j*v j).re ≤
         -100*(∑ i ∈ I, ‖v i‖^2) := by
   apply complex_weighted_row_dissipation I _ sineTailOffMatrix (fun _ => 1) v 100
@@ -54,17 +54,17 @@ theorem sine_tail_finite_split_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
 
 theorem sine_tail_finite_form_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
     (∑ i ∈ I, ∑ j ∈ I,
-      conj (v i)*(sineMatrixEntry thetaParameter nome (i+2) (j+2):ℂ)*v j).re ≤
+      conj (v i)*(sineMatrixEntry lemniscateFrequencySquared nome (i+2) (j+2):ℂ)*v j).re ≤
         -100*(∑ i ∈ I, ‖v i‖^2) := by
   have hd (i : ℕ) :
-      conj (v i)*(sineMatrixEntry thetaParameter nome (i+2) (i+2):ℂ)*v i =
-      ((sineMatrixEntry thetaParameter nome (i+2) (i+2)*‖v i‖^2:ℝ):ℂ) := by
+      conj (v i)*(sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2):ℂ)*v i =
+      ((sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2)*‖v i‖^2:ℝ):ℂ) := by
     calc
-      _ = (sineMatrixEntry thetaParameter nome (i+2) (i+2):ℂ)*(conj (v i)*v i) := by ring
+      _ = (sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2):ℂ)*(conj (v i)*v i) := by ring
       _ = _ := by rw [Complex.conj_mul']; simp only [Complex.ofReal_mul, Complex.ofReal_pow]
   have he (i j : ℕ) :
-      conj (v i)*(sineMatrixEntry thetaParameter nome (i+2) (j+2):ℂ)*v j =
-      (if j = i then ((sineMatrixEntry thetaParameter nome (i+2) (i+2)*‖v i‖^2:ℝ):ℂ) else 0)+
+      conj (v i)*(sineMatrixEntry lemniscateFrequencySquared nome (i+2) (j+2):ℂ)*v j =
+      (if j = i then ((sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2)*‖v i‖^2:ℝ):ℂ) else 0)+
         conj (v i)*sineTailOffMatrix i j*v j := by
     by_cases h : j = i
     · subst j
@@ -72,8 +72,8 @@ theorem sine_tail_finite_form_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
     · simp [sineTailOffMatrix, h, Ne.symm h]
   have hsplit :
       (∑ i ∈ I, ∑ j ∈ I,
-        conj (v i)*(sineMatrixEntry thetaParameter nome (i+2) (j+2):ℂ)*v j) =
-      (∑ i ∈ I, ((sineMatrixEntry thetaParameter nome (i+2) (i+2)*‖v i‖^2:ℝ):ℂ))+
+        conj (v i)*(sineMatrixEntry lemniscateFrequencySquared nome (i+2) (j+2):ℂ)*v j) =
+      (∑ i ∈ I, ((sineMatrixEntry lemniscateFrequencySquared nome (i+2) (i+2)*‖v i‖^2:ℝ):ℂ))+
       (∑ i ∈ I, ∑ j ∈ I, conj (v i)*sineTailOffMatrix i j*v j) := by
     simp_rw [he, sum_add_distrib]
     congr 1

@@ -12,7 +12,7 @@ theorem circle_sine_profile_rotation_orthogonal_iff (q p : C(AddCircle T, ℂ))
     (hq : HasCircleDeriv T q p)
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) = fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, 0 < j → fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (evenCoefficient thetaParameter nome j:ℂ))
+      (evenCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0) (f : CircleL2 T) :
     inner ℂ (circleContinuousL2 T (q*p)) f = 0 ↔
       inner ℂ (circleSineConstraintVector T) f = 0 := by
@@ -25,7 +25,7 @@ theorem paper_sine_sobolev_constrained_coefficient_energy (q p : C(AddCircle T, 
     (hq : HasCircleDeriv T q p)
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) = fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, 0 < j → fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (evenCoefficient thetaParameter nome j:ℂ))
+      (evenCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*n+1) = 0)
     (u : ℂ) (v : SineTailSpace)
     (hv : InCircleH2 T (circleSineBlockFunction T u v))

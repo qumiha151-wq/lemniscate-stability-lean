@@ -33,15 +33,15 @@ theorem circle_odd_difference_coefficient (h : C(AddCircle T, ℂ)) (r q : ℝ)
 
 theorem circle_odd_matrix_entry (h : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (n m : ℤ) (hn : Odd n) (hm : Odd m) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (n m : ℤ) (hn : Odd n) (hm : Odd m) :
     circleSymmetricFourierEntry T h n m = (oddMatrixEntry 0 n m:ℂ) := by
-  have hr4 : (2*Real.pi/T)^4 = thetaParameter^2 := by
+  have hr4 : (2*Real.pi/T)^4 = lemniscateFrequencySquared^2 := by
     calc
       _ = ((2*Real.pi/T)^2)^2 := by ring
       _ = _ := by rw [hr]
   unfold circleSymmetricFourierEntry
-  rw [hr, hr4, circle_odd_difference_coefficient T h thetaParameter nome hs hc n m hn hm]
+  rw [hr, hr4, circle_odd_difference_coefficient T h lemniscateFrequencySquared nome hs hc n m hn hm]
   by_cases he : n = m
   · subst m
     simp only [oddMatrixEntry, ite_true, sub_self, Int.natAbs_zero, Nat.zero_div,
@@ -55,8 +55,8 @@ theorem circle_odd_matrix_entry (h : C(AddCircle T, ℂ))
 theorem circle_odd_mode_pairing (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (n m : ℤ) (hn : Odd n) (hm : Odd m) :
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (n m : ℤ) (hn : Odd n) (hm : Odd m) :
     inner ℂ (fourierBasis (T := T) n) (circleContinuousL2 T (circleSymmetricMode T h h₁ h₂ m)) =
       (oddMatrixEntry 0 n m:ℂ) := by
   rw [← HilbertBasis.repr_apply_apply, fourierBasis_repr, circle_continuous_l2_fourier,
@@ -66,14 +66,14 @@ theorem circle_odd_mode_pairing (h h₁ h₂ : C(AddCircle T, ℂ))
 theorem circle_odd_mode_off_bound (h h₁ h₂ : C(AddCircle T, ℂ))
     (hh : HasCircleDeriv T h h₁) (hh₁ : HasCircleDeriv T h₁ h₂)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (n m : ℤ)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (n m : ℤ)
     (hn : Odd n) (hm : Odd m) (hne : n ≠ m) :
     ‖inner ℂ (fourierBasis (T := T) n)
       (circleContinuousL2 T (circleSymmetricMode T h h₁ h₂ m))‖ ≤
         realEval (absoluteEntryPolynomial n m) 0 := by
   rw [circle_odd_mode_pairing T h h₁ h₂ hh hh₁ hs hc hr n m hn hm,
     Complex.norm_real, Real.norm_eq_abs, oddMatrixEntry, if_neg hne]
-  exact theta_nome_odd_off_diagonal_bound n m hn hm hne 0 (by norm_num) (by norm_num)
+  exact frequency_nome_odd_off_diagonal_bound n m hn hm hne 0 (by norm_num) (by norm_num)
 
 end Lemniscate

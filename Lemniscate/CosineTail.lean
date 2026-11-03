@@ -5,33 +5,33 @@ entry bounds. Every statement concerns the explicit coefficient-defined matrix. 
 namespace Lemniscate.CoarseArithmetic
 
 theorem cosine_zero_upper_tail (k : ℕ) (hk : 0 < k) :
-    |cosineMatrixEntry thetaParameter nome 0 k| ≤
+    |cosineMatrixEntry lemniscateFrequencySquared nome 0 k| ≤
       (C:ℝ)*(k:ℝ)^2*(k:ℝ)*(qb:ℝ)^k := by
-  have hr0 : 0 ≤ thetaParameter :=
-    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
-  have hc := theta_nome_coefficient_majorant k hk
-  have hc0 : 0 ≤ fourierCoefficient thetaParameter nome k := hc.1
+  have hr0 : 0 ≤ lemniscateFrequencySquared :=
+    (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
+  have hc := frequency_nome_coefficient_majorant k hk
+  have hc0 : 0 ≤ fourierCoefficient lemniscateFrequencySquared nome k := hc.1
   have hroot : 15*Real.sqrt 2 ≤ (105:ℝ) := by
     have h := coarse_sqrt_two.2
     norm_num at h
     linarith
-  have heq : cosineMatrixEntry thetaParameter nome 0 k =
-      -((15*Real.sqrt 2)*(thetaParameter*fourierCoefficient thetaParameter nome k)*
+  have heq : cosineMatrixEntry lemniscateFrequencySquared nome 0 k =
+      -((15*Real.sqrt 2)*(lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome k)*
         (k:ℝ)^2) := by
     simp [cosineMatrixEntry, Nat.ne_of_gt hk]
     ring
   calc
-    _ = (15*Real.sqrt 2)*(thetaParameter*fourierCoefficient thetaParameter nome k)*
+    _ = (15*Real.sqrt 2)*(lemniscateFrequencySquared*fourierCoefficient lemniscateFrequencySquared nome k)*
         (k:ℝ)^2 := by rw [heq, abs_neg, abs_of_nonneg (by positivity)]
     _ ≤ 105*((rhi:ℝ)*((H:ℝ)*((k:ℝ)*(qb:ℝ)^k)))*(k:ℝ)^2 :=
       mul_le_mul_of_nonneg_right
         (mul_le_mul hroot
-          (mul_le_mul (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).2 hc.2 hc.1 (by norm_num [rhi]))
+          (mul_le_mul (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).2 hc.2 hc.1 (by norm_num [rhi]))
           (mul_nonneg hr0 hc.1) (by norm_num)) (sq_nonneg _)
     _ = _ := by simp only [C, Rat.cast_mul, Rat.cast_ofNat]; ring
 
 theorem cosine_upper_tail_all (j k : ℕ) (hjk : j < k) :
-    |cosineMatrixEntry thetaParameter nome j k| ≤
+    |cosineMatrixEntry lemniscateFrequencySquared nome j k| ≤
       (C:ℝ)*(2*(j:ℝ)+((k-j:ℕ):ℝ))^2*((k-j:ℕ):ℝ)*(qb:ℝ)^(k-j) := by
   by_cases hj : j = 0
   · subst j
@@ -44,9 +44,9 @@ theorem cosine_matrix_symmetric (r q : ℝ) (j k : ℕ) :
     simp [cosineMatrixEntry, hj, hk, h, eq_comm, Nat.add_comm] <;> ring_nf <;> simp
 
 theorem cosine_lower_tail (j k : ℕ) (hkj : k < j) :
-    |cosineMatrixEntry thetaParameter nome j k| ≤
+    |cosineMatrixEntry lemniscateFrequencySquared nome j k| ≤
       (C:ℝ)*(2*(j:ℝ))^2*((j-k:ℕ):ℝ)*(qb:ℝ)^(j-k) := by
-  rw [cosine_matrix_symmetric thetaParameter nome j k]
+  rw [cosine_matrix_symmetric lemniscateFrequencySquared nome j k]
   have hsq : (2*(k:ℝ)+((j-k:ℕ):ℝ))^2 ≤ (2*(j:ℝ))^2 := by
     apply pow_le_pow_left₀ (by positivity) _ 2
     rw [Nat.cast_sub hkj.le]
@@ -60,11 +60,11 @@ theorem cosine_lower_tail (j k : ℕ) (hkj : k < j) :
 
 theorem cosine_tail_bound_all (j L : ℕ) (hL : 0 < L) :
     Summable (fun a : ℕ =>
-      |cosineMatrixEntry thetaParameter nome j (j+(a+L))|) ∧
-    (∑' a : ℕ, |cosineMatrixEntry thetaParameter nome j (j+(a+L))|) ≤
+      |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(a+L))|) ∧
+    (∑' a : ℕ, |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(a+L))|) ≤
       (entryTailBound j L : ℝ) := by
   have hm (a : ℕ) :
-      |cosineMatrixEntry thetaParameter nome j (j+(a+L))| ≤
+      |cosineMatrixEntry lemniscateFrequencySquared nome j (j+(a+L))| ≤
       (C:ℝ)*(2*(j:ℝ)+((a+L:ℕ):ℝ))^2*((a+L:ℕ):ℝ)*(qb:ℝ)^(a+L) := by
     simpa only [Nat.add_sub_cancel_left] using
       cosine_upper_tail_all j (j+(a+L)) (by omega)

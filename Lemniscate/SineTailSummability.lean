@@ -10,13 +10,13 @@ noncomputable def sineTailH2Mass (v : ℕ → ℂ) : ℝ :=
   ∑' j : ℕ, (frequencyWeight (j+2)*‖v j‖)^2
 
 noncomputable def absoluteSineTailTerm (v : ℕ → ℂ) (p : ℕ × ℕ) : ℝ :=
-  |sineMatrixEntry thetaParameter nome (p.1+2) (p.2+2)| * ‖v p.1‖*‖v p.2‖
+  |sineMatrixEntry lemniscateFrequencySquared nome (p.1+2) (p.2+2)| * ‖v p.1‖*‖v p.2‖
 
 noncomputable def sineTailEnergyTerm (v : ℕ → ℂ) (p : ℕ × ℕ) : ℂ :=
-  conj (v p.1)*(sineMatrixEntry thetaParameter nome (p.1+2) (p.2+2):ℂ)*v p.2
+  conj (v p.1)*(sineMatrixEntry lemniscateFrequencySquared nome (p.1+2) (p.2+2):ℂ)*v p.2
 
 theorem sine_tail_finite_absolute_bound (I : Finset ℕ) (v : ℕ → ℂ) :
-    (∑ i ∈ I, ∑ j ∈ I, |sineMatrixEntry thetaParameter nome (i+2) (j+2)| * ‖v i‖*‖v j‖) ≤
+    (∑ i ∈ I, ∑ j ∈ I, |sineMatrixEntry lemniscateFrequencySquared nome (i+2) (j+2)| * ‖v i‖*‖v j‖) ≤
       1024*(∑ i ∈ I, (frequencyWeight (i+2)*‖v i‖)^2) := by
   have hs := weighted_double_sum_bound I
     (fun i j => cosineKernel (i-j+(j-i))) (fun _ => (1:ℝ))
@@ -63,7 +63,7 @@ theorem sine_tail_finite_pairs_absolute_bound (E : Finset (ℕ × ℕ)) (v : ℕ
     _ ≤ ∑ p ∈ I.product I, absoluteSineTailTerm v p :=
       sum_le_sum_of_subset_of_nonneg hsub (fun p _ _ => by unfold absoluteSineTailTerm; positivity)
     _ = ∑ i ∈ I, ∑ j ∈ I,
-        |sineMatrixEntry thetaParameter nome (i+2) (j+2)| * ‖v i‖*‖v j‖ := by
+        |sineMatrixEntry lemniscateFrequencySquared nome (i+2) (j+2)| * ‖v i‖*‖v j‖ := by
       simpa only [Finset.product_eq_sprod, absoluteSineTailTerm] using
         (Finset.sum_product I I (absoluteSineTailTerm v))
     _ ≤ 1024*(∑ i ∈ I, (frequencyWeight (i+2)*‖v i‖)^2) := sine_tail_finite_absolute_bound I v

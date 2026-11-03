@@ -83,8 +83,8 @@ theorem circle_h4_operator_even_cosine_sector_dissipative (h h₁ h₂ : C(AddCi
     (hreal : ∀ x, conj (h x) = h x) (h₁real : ∀ x, conj (h₁ x) = h₁ x)
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
-    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T)
+    (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) = (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T)
     (hsector : InCircleEvenCosineSector T (f : CircleL2 T)) :
     (inner ℂ (f : CircleL2 T) (circleH4Operator T h h₁ h₂ f)).re ≤
       -(21/4:ℝ)*‖(f : CircleL2 T)‖^2 := by

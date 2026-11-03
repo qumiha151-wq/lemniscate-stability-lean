@@ -13,7 +13,7 @@ variable (T : ℝ) [Fact (0 < T)]
 theorem circle_even_coefficient_distance_bound (h : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (k j : ℤ) (a : ℕ) (hk : a < k.natAbs) (hj : j.natAbs ≤ a) :
     ‖fourierCoeff h (2*(k-j))‖ ≤
       6*((k.natAbs-a:ℕ):ℝ)*(qb:ℝ)^(k.natAbs-a) := by
@@ -21,7 +21,7 @@ theorem circle_even_coefficient_distance_bound (h : C(AddCircle T, ℂ))
     simpa only [sub_add_cancel] using Int.natAbs_add_le (k-j) j
   have hdiff : k.natAbs-a ≤ (k-j).natAbs := by omega
   have hpos : 0 < k.natAbs-a := by omega
-  rw [circle_even_integer_coefficient T h thetaParameter nome hs hc,
+  rw [circle_even_integer_coefficient T h lemniscateFrequencySquared nome hs hc,
     Complex.norm_real,Real.norm_eq_abs]
   have hH : (H:ℝ) ≤ 6 := by norm_num [H,rhi,qb]
   calc
@@ -78,7 +78,7 @@ theorem circle_bloch_low_sine_high_bound (h h₁ h₂ : C(AddCircle T, ℂ))
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (hr : (2*Real.pi/T)^2 ≤ 18/25) (j : Fin 5) (k : ℤ) (hk : 16 ≤ k.natAbs)
     (v : Fin 10 → ℂ) (hv : ∑ i, ‖v i‖ ≤ 5) :
     ‖fourierCoeff (circleBlochCoefficient T h h₁ h₂ j (circleSineTrialH4 T 10 v)) (2*k)‖ ≤

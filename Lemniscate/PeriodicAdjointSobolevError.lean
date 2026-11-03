@@ -56,7 +56,7 @@ noncomputable def circleAngularH4Norm (f : circleH4Domain T) : ℝ :=
     k^3*‖(circleH4Jet T f).third‖+k^4*‖(circleH4Jet T f).fourth‖
 
 theorem circle_angular_h4_bound_of_derivatives
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T) (R : ℝ) (hR : 0 ≤ R)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T) (R : ℝ) (hR : 0 ≤ R)
     (h0 : ‖(f : CircleL2 T)‖ ≤ R/75)
     (h1 : ‖(circleH4Jet T f).first‖ ≤ R) (h2 : ‖(circleH4Jet T f).second‖ ≤ R)
     (h3 : ‖(circleH4Jet T f).third‖ ≤ 7*R) (h4 : ‖(circleH4Jet T f).fourth‖ ≤ 38*R) :
@@ -66,7 +66,7 @@ theorem circle_angular_h4_bound_of_derivatives
   have hfreq : 0 < 2*Real.pi/T := by positivity
   have hfreq2 : (1/2:ℝ) ≤ (2*Real.pi/T)^2 := by
     rw [hr]
-    have hb : (rlo:ℝ) ≤ thetaParameter := (actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, thetaRLower]) (by norm_num [rhi, thetaRUpper])).1
+    have hb : (rlo:ℝ) ≤ lemniscateFrequencySquared := (lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩) (by norm_num [rlo, frequencyLower]) (by norm_num [rhi, frequencyUpper])).1
     norm_num [rlo] at hb
     linarith
   have hk : 0 ≤ k := by dsimp [k]; positivity
@@ -94,7 +94,7 @@ theorem paper_adjoint_h4_bound (q p : C(AddCircle T, ℂ))
     (hq : HasCircleDeriv T q p) (hp : HasCircleDeriv T p (-(q^3)))
     (he : ∀ x, 2*(p x)^2+(q x)^4 = 1)
     (hqreal : ∀ x, conj (q x) = q x) (hpreal : ∀ x, conj (p x) = p x)
-    (hr : (2*Real.pi/T)^2 = thetaParameter) (f : circleH4Domain T) (R : ℝ) (hR : 0 ≤ R)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) (f : circleH4Domain T) (R : ℝ) (hR : 0 ≤ R)
     (hres : ‖circleH4FormalAdjoint T (q^2) ((2:ℂ) • (q*p)) f‖ ≤ R)
     (hmass : ‖(f : CircleL2 T)‖ ≤ R/75) :
     circleAngularH4Norm T f ≤ 177*R := by
@@ -111,9 +111,9 @@ variable (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ i : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*i+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
 
 include hq hp he hqreal hpreal hs hc ho hr in
 theorem paper_adjoint_trial_h4_error (ψ t : circleH4Domain T)

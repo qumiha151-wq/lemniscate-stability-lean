@@ -9,7 +9,7 @@ open Finset Complex
 open scoped ComplexConjugate
 
 noncomputable def cosineOffMatrix (j k : ℕ) : ℂ :=
-  if j = k then 0 else (cosineMatrixEntry thetaParameter nome j k:ℂ)
+  if j = k then 0 else (cosineMatrixEntry lemniscateFrequencySquared nome j k:ℂ)
 
 theorem cosine_off_row_nonneg (j k : ℕ) : 0 ≤ cosineOffRow j k := by
   have hj : (0:ℝ) < (weight j:ℝ) := by exact_mod_cast weight_pos j
@@ -20,7 +20,7 @@ theorem cosine_off_row_nonneg (j k : ℕ) : 0 ≤ cosineOffRow j k := by
     exact mul_nonneg (abs_nonneg _) (le_of_lt (div_pos hk hj))
 
 theorem cosine_finite_row_bound (I : Finset ℕ) (j : ℕ) :
-    cosineMatrixEntry thetaParameter nome j j + ∑ k ∈ I, cosineOffRow j k ≤ -(21/4:ℝ) := by
+    cosineMatrixEntry lemniscateFrequencySquared nome j j + ∑ k ∈ I, cosineOffRow j k ≤ -(21/4:ℝ) := by
   have h := cosine_all_rows_dissipative j
   have hf := Summable.sum_le_tsum I (fun k _ => cosine_off_row_nonneg j k) h.1
   exact (add_le_add le_rfl hf).trans h.2.le
@@ -38,10 +38,10 @@ theorem cosine_off_norm_symmetric (j k : ℕ) :
   · subst k
     rfl
   · simp only [cosineOffMatrix, if_neg h, if_neg (Ne.symm h)]
-    rw [cosine_matrix_symmetric thetaParameter nome j k]
+    rw [cosine_matrix_symmetric lemniscateFrequencySquared nome j k]
 
 theorem cosine_finite_split_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
-    (∑ i ∈ I, cosineMatrixEntry thetaParameter nome i i*‖v i‖^2) +
+    (∑ i ∈ I, cosineMatrixEntry lemniscateFrequencySquared nome i i*‖v i‖^2) +
       (∑ i ∈ I, ∑ j ∈ I, conj (v i)*cosineOffMatrix i j*v j).re ≤
         -(21/4:ℝ)*(∑ i ∈ I, ‖v i‖^2) := by
   apply complex_weighted_row_dissipation I _ cosineOffMatrix (fun i => (weight i:ℝ)) v (21/4)
@@ -55,23 +55,23 @@ theorem cosine_finite_split_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
 
 theorem cosine_finite_form_dissipative (I : Finset ℕ) (v : ℕ → ℂ) :
     (∑ i ∈ I, ∑ j ∈ I,
-      conj (v i)*(cosineMatrixEntry thetaParameter nome i j:ℂ)*v j).re ≤
+      conj (v i)*(cosineMatrixEntry lemniscateFrequencySquared nome i j:ℂ)*v j).re ≤
         -(21/4:ℝ)*(∑ i ∈ I, ‖v i‖^2) := by
-  have hd (i : ℕ) : conj (v i)*(cosineMatrixEntry thetaParameter nome i i:ℂ)*v i =
-      ((cosineMatrixEntry thetaParameter nome i i*‖v i‖^2:ℝ):ℂ) := by
+  have hd (i : ℕ) : conj (v i)*(cosineMatrixEntry lemniscateFrequencySquared nome i i:ℂ)*v i =
+      ((cosineMatrixEntry lemniscateFrequencySquared nome i i*‖v i‖^2:ℝ):ℂ) := by
     calc
-      _ = (cosineMatrixEntry thetaParameter nome i i:ℂ)*(conj (v i)*v i) := by ring
+      _ = (cosineMatrixEntry lemniscateFrequencySquared nome i i:ℂ)*(conj (v i)*v i) := by ring
       _ = _ := by rw [Complex.conj_mul']; simp only [Complex.ofReal_mul, Complex.ofReal_pow]
-  have he (i j : ℕ) : conj (v i)*(cosineMatrixEntry thetaParameter nome i j:ℂ)*v j =
-      (if j = i then ((cosineMatrixEntry thetaParameter nome i i*‖v i‖^2:ℝ):ℂ) else 0)+
+  have he (i j : ℕ) : conj (v i)*(cosineMatrixEntry lemniscateFrequencySquared nome i j:ℂ)*v j =
+      (if j = i then ((cosineMatrixEntry lemniscateFrequencySquared nome i i*‖v i‖^2:ℝ):ℂ) else 0)+
       conj (v i)*cosineOffMatrix i j*v j := by
     by_cases h : j = i
     · subst j
       simpa only [cosineOffMatrix, if_pos rfl, ite_true, mul_zero, zero_mul, add_zero] using hd i
     · simp [cosineOffMatrix, h, Ne.symm h]
   have hsplit :
-      (∑ i ∈ I, ∑ j ∈ I, conj (v i)*(cosineMatrixEntry thetaParameter nome i j:ℂ)*v j) =
-      (∑ i ∈ I, ((cosineMatrixEntry thetaParameter nome i i*‖v i‖^2:ℝ):ℂ))+
+      (∑ i ∈ I, ∑ j ∈ I, conj (v i)*(cosineMatrixEntry lemniscateFrequencySquared nome i j:ℂ)*v j) =
+      (∑ i ∈ I, ((cosineMatrixEntry lemniscateFrequencySquared nome i i*‖v i‖^2:ℝ):ℂ))+
       (∑ i ∈ I, ∑ j ∈ I, conj (v i)*cosineOffMatrix i j*v j) := by
     simp_rw [he, sum_add_distrib]
     congr 1

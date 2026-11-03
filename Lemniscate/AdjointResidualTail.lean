@@ -7,13 +7,13 @@ namespace Lemniscate.CoarseArithmetic
 open Finset
 
 theorem raw_trial_sine_entry_tail (i : Fin 18) (j : ℕ) (hj : 41 ≤ j) :
-    |sineOperatorEntry thetaParameter nome (i.val+1) j| ≤
+    |sineOperatorEntry lemniscateFrequencySquared nome (i.val+1) j| ≤
       480*(rhi:ℝ)*(H:ℝ)*(j:ℝ)^3*(qb:ℝ)^(j-18) := by
   have hq : 0 ≤ (qb:ℝ) := by norm_num [qb]
   have hH : 0 ≤ (H:ℝ) := by norm_num [H,rhi,qb]
-  have hr : Contains ⟨rlo,rhi⟩ thetaParameter := actual_nome_theta_r_bounds.mono (J := ⟨rlo,rhi⟩)
-    (by norm_num [rlo,thetaRLower]) (by norm_num [rhi,thetaRUpper])
-  have hr0 : 0 ≤ thetaParameter :=
+  have hr : Contains ⟨rlo,rhi⟩ lemniscateFrequencySquared := lemniscate_frequency_bounds.mono (J := ⟨rlo,rhi⟩)
+    (by norm_num [rlo,frequencyLower]) (by norm_num [rhi,frequencyUpper])
+  have hr0 : 0 ≤ lemniscateFrequencySquared :=
     (by norm_num [rlo] : (0:ℝ) ≤ (rlo:ℝ)).trans hr.1
   have hru : 0 ≤ (rhi:ℝ) := hr0.trans hr.2
   have hji : i.val+1 ≤ j := by omega
@@ -24,13 +24,13 @@ theorem raw_trial_sine_entry_tail (i : Fin 18) (j : ℕ) (hj : 41 ≤ j) :
   let C : ℝ := (H:ℝ)*((j:ℝ)*(qb:ℝ)^(j-18))
   have hC : 0 ≤ C := by dsimp only [C]; positivity
   have hcoeff (m : ℕ) (hm : j-18 ≤ m) :
-      0 ≤ fourierCoefficient thetaParameter nome m ∧
-        fourierCoefficient thetaParameter nome m ≤ C := by
+      0 ≤ fourierCoefficient lemniscateFrequencySquared nome m ∧
+        fourierCoefficient lemniscateFrequencySquared nome m ≤ C := by
     have hpos : 0 < j-18 := by omega
-    have hp := (theta_nome_coefficient_majorant m (hpos.trans_le hm)).1
+    have hp := (frequency_nome_coefficient_majorant m (hpos.trans_le hm)).1
     refine ⟨hp, ?_⟩
     calc
-      _ ≤ |fourierCoefficient thetaParameter nome m| := le_abs_self _
+      _ ≤ |fourierCoefficient lemniscateFrequencySquared nome m| := le_abs_self _
       _ ≤ (H:ℝ)*(((j-18:ℕ):ℝ)*(qb:ℝ)^(j-18)) :=
         common_index_coefficient_majorant (j-18) m hpos hm
       _ ≤ C := mul_le_mul_of_nonneg_left
@@ -45,15 +45,15 @@ theorem raw_trial_sine_entry_tail (i : Fin 18) (j : ℕ) (hj : 41 ≤ j) :
   have hprod := add_le_add
     (mul_le_mul hm.2 hmu hm0 hC) (mul_le_mul hp.2 hpu hp0 hC)
   have hs0 : 0 ≤
-      fourierCoefficient thetaParameter nome (i.val+1-j+(j-(i.val+1)))*
+      fourierCoefficient lemniscateFrequencySquared nome (i.val+1-j+(j-(i.val+1)))*
         (7*(2*(j:ℝ))-2*((i.val+1:ℕ):ℝ))+
-      fourierCoefficient thetaParameter nome (i.val+1+j)*
+      fourierCoefficient lemniscateFrequencySquared nome (i.val+1+j)*
         (7*(2*(j:ℝ))+2*((i.val+1:ℕ):ℝ)) :=
     add_nonneg (mul_nonneg hm.1 hm0) (mul_nonneg hp.1 hp0)
   have houter := mul_le_mul hr.2 hprod hs0 hru
   have hfactor : (15/2:ℝ)*(2*((i.val+1:ℕ):ℝ)) ≤ 15*(j:ℝ) := by linarith
   have hfull := mul_le_mul houter hfactor (by positivity) (by positivity)
-  have hn : 0 ≤ sineOperatorEntry thetaParameter nome (i.val+1) j := by
+  have hn : 0 ≤ sineOperatorEntry lemniscateFrequencySquared nome (i.val+1) j := by
     simp only [sineOperatorEntry,if_neg hij]
     exact mul_nonneg (mul_nonneg hr0 hs0) (by positivity)
   rw [abs_of_nonneg hn]

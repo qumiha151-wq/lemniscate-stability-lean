@@ -39,19 +39,19 @@ variable (q p : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (-n) =
       fourierCoeff (q^2 : C(AddCircle T, ℂ)) n)
     (hc : ∀ j : ℕ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (ho : ∀ i : ℤ, fourierCoeff (q^2 : C(AddCircle T, ℂ)) (2*i+1) = 0)
-    (hr : (2*Real.pi/T)^2 = thetaParameter)
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared)
 
 include hq hp he hqreal hpreal hs hc ho hr in
 theorem paper_centered_bloch_top (ψ : CircleL2 T)
     (hd : HasCircleNeutralDecomposition T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4))
       (circleUnitRotationH4 T q p hq hp) ψ) (f : circleH4Domain T) :
     circleCenteredBlochCoefficient T q p hq hp ψ 4 f =
-      ((-4*thetaParameter^2 : ℝ) : ℂ) • (f : CircleL2 T) := by
+      ((-4*lemniscateFrequencySquared^2 : ℝ) : ℂ) • (f : CircleL2 T) := by
   have hright (g : CircleL2 T) := (hd.1 g).1
   rw [circleCenteredBlochCoefficient,
-    circle_bloch_top_coefficient T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) thetaParameter hr,
+    circle_bloch_top_coefficient T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) lemniscateFrequencySquared hr,
     map_smul, map_smul, neutral_transform_inv_domain_coe, hright,
     circle_rotation_householder_h4_coe,
     paper_householder_involutive T q p hq hp he hqreal hpreal hs hc ho hr]
@@ -66,7 +66,7 @@ theorem paper_centered_bloch_center_polynomial (ψ : CircleL2 T)
       (circleCenteredBlochOperator T q p hq hp ψ α (circleHouseholderAnchorH4 T)) =
       (α:ℂ)^2 * inner ℂ (circleHouseholderAnchor T)
         (circleCenteredBlochCoefficient T q p hq hp ψ 2 (circleHouseholderAnchorH4 T))-
-      4*(thetaParameter:ℂ)^2*(α:ℂ)^4 := by
+      4*(lemniscateFrequencySquared:ℂ)^2*(α:ℂ)^4 := by
   have h0 := paper_centered_operator_zero_column T q p hq hp he hqreal hpreal hs hc ho hr ψ hd
   have h1 := paper_centered_bloch_odd_anchor_zero T q p hq hp he hqreal hpreal hs hc ho hr
     ψ hnorm hsector 1 (by decide)
@@ -89,7 +89,7 @@ theorem paper_centered_bloch_center_scaled (ψ : CircleL2 T)
       (circleCenteredBlochOperator T q p hq hp ψ α (circleHouseholderAnchorH4 T)) =
       inner ℂ (circleHouseholderAnchor T)
         (circleCenteredBlochCoefficient T q p hq hp ψ 2 (circleHouseholderAnchorH4 T))-
-      4*(thetaParameter:ℂ)^2*(α:ℂ)^2 := by
+      4*(lemniscateFrequencySquared:ℂ)^2*(α:ℂ)^2 := by
   rw [paper_centered_bloch_center_polynomial T q p hq hp he hqreal hpreal hs hc ho hr
     ψ hnorm hsector hd]
   have ha : (α:ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hα
@@ -171,7 +171,7 @@ theorem paper_exact_bloch_center_cancellation_exists :
           (circleCenteredBlochOperator T q p hq hp (ψ : CircleL2 T) α (circleHouseholderAnchorH4 T)) =
         inner ℂ (circleHouseholderAnchor T)
           (circleCenteredBlochCoefficient T q p hq hp (ψ : CircleL2 T) 2 (circleHouseholderAnchorH4 T))-
-        4*(thetaParameter:ℂ)^2*(α:ℂ)^2 := by
+        4*(lemniscateFrequencySquared:ℂ)^2*(α:ℂ)^2 := by
   obtain ⟨ψ, hnorm, hzero, _, hsector, hd⟩ :=
     paper_single_period_neutral_decomposition T q p hq hp he hqreal hpreal hs hc ho hr
   exact ⟨ψ, hnorm, hzero,

@@ -1,5 +1,5 @@
 import Lemniscate.PeriodicProfileBounds
-import Lemniscate.ThetaBounds
+import Lemniscate.WeierstrassFrequencyBounds
 
 /-! Coarse differential-coefficient bounds from the conserved profile
 identity. These bounds suffice for the form comparison. -/
@@ -25,12 +25,12 @@ theorem circle_profile_coefficient_norm_bounds (q p : C(AddCircle T, ℂ))
     norm_num only [Complex.norm_ofNat,norm_one] at ht
     linarith only [ht,hqpow 4]
 
-theorem paper_frequency_le_one (hr : (2*Real.pi/T)^2 = thetaParameter) :
+theorem paper_frequency_le_one (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) :
     2*Real.pi/T ≤ 1 := by
-  have hb : Contains ⟨thetaRLower,thetaRUpper⟩ thetaParameter := actual_nome_theta_r_bounds
+  have hb : Contains ⟨frequencyLower,frequencyUpper⟩ lemniscateFrequencySquared := lemniscate_frequency_bounds
   have hsq : (2*Real.pi/T)^2 ≤ 18/25 := by
     rw [hr]
-    exact hb.2.trans (by norm_num [thetaRUpper])
+    exact hb.2.trans (by norm_num [frequencyUpper])
   nlinarith only [hsq,sq_nonneg (2*Real.pi/T-1)]
 
 end Lemniscate

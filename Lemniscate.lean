@@ -1,70 +1,52 @@
-import Lemniscate.PeriodicCoverUpperBound
-import Lemniscate.PeriodicProfileCoverSpectrum
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
 import Lemniscate.BernoulliCircleProfile
+import Lemniscate.NormalGraphFlowVariation
+import Lemniscate.BernoulliArclengthFrame
+import Lemniscate.PeriodicSobolevDerivatives
+import Lemniscate.LinearParabolicEnergy
+import Lemniscate.BernoulliFlowLinearization
 
 /-!
-Current manuscript SHA-256: 6c29dca2e865d17759b91543764d1c89fe7350de0cbafe56f25c55126440f406
+Current manuscript SHA-256: bd1b3239f845fce51d6b9a8c1991be0b7d081b7126897d116189749a1bcebb7e
 
-For the actual circle differential operators, the uniform Bloch bound
-Re z <= -alpha^2/2 for |alpha| <= 1/2 is proved. The nonzero spectral bounds
-are -21/4 on one period and -1/(2*M^2) on M >= 2 covers. The rotational kernel
-on a cover is exactly the span of Q*P and has dimension one; there is no
-generalized kernel. The short-period profile identities, reality and Fourier coefficients
-remain explicit hypotheses. Cover coefficients are defined by natural
-pullback; their derivative and Fourier identities are proved. Compact resolvent and closedness
-on the weak H4 domain are included. An analytic normalized eigenpair
-issuing from the rotational mode is constructed using the analytic inverse
-function theorem in principal-resolvent coordinates. Its eigenvalue branch
-is even and obeys a quadratic norm bound near zero, proved using only the
-second-order Taylor remainder. The cover arguments use Fourier
-components directly and assume no spectral decomposition or spectral bound.
-For sufficiently large covers the nonzero spectral gap lies between
-1/(2*M^2) and K/M^2, with a positive K independent of M. A nonzero
-spectral point is constructed by lifting the analytic branch at 1/M.
+The actual Bernoulli lemniscate is constructed from its explicit immersion and
+scaled-arclength integral coordinate. Its curvature profile, ODE, first integral,
+normalization, fundamental period and squared frequency are proved. Its complete
+Fourier data follow from an absolutely convergent lattice-row expansion and
+elementary geometric sums. No profile or Fourier identity is assumed for this
+actual curve.
 
-The explicit Bernoulli parametrization is proved to be a smooth periodic
-immersion satisfying the normalized free-elastic expander equation with
-c = 15/2. Its speed, signed curvature, support functions and the
-profile derivative identities are derived directly, without elliptic identities.
+For every positive cover, the actual weak-H4 differential operator has exactly
+the rotational kernel, no generalized kernel, and nonzero spectral gap at least
+21/4 on one period and 1/(2*M^2) otherwise. For sufficiently large covers the
+gap is also at most K/M^2, with K independent of M. The actual dilation mode
+q^3 has eigenvalue -30. The generic conditional spectral lemmas are retained
+where they are used to prove these actual-curve conclusions.
 
-The actual scaled-arclength coordinate is constructed as an integral
-coordinate with a differentiable global inverse. Its curvature functions
-descend to continuous real-valued functions on the positive-period circle.
-Their ODE, first integral and initial values are proved:
-q' = p, p' = -q^3, 2*p^2 + q^4 = 1, q(0) = 1, p(0) = 0.
+The physical-arclength Frenet frame and curvature derivatives are derived from
+the actual immersion. The normal-graph speed, signed curvature, support and
+elastic force are differentiated geometrically. The actual graph flow has
+principal term -g^(-4)*h_ssss, a rational expression with all square roots
+cancelled, smooth finite-dimensional coefficients, and the
+proved pointwise first variation. Its relation to the normalized linearized
+expression includes the physical-to-scaled-arclength factors.
 
-For the remaining Fourier identification, square-lattice Weierstrass
-rotation and half-period identities are proved, together with the
-second-order equation at all points away from the lattice, including
-critical points of the Weierstrass function.
+Integer-order periodic Sobolev spaces are closed derivative-jet subspaces of a
+finite L2 Hilbert product, with their complete derivative square-sum norm. The
+H1 continuous representative, bounded order-lowering and weak-differentiation
+maps, and the actual classical derivative between the H2 representatives are
+proved, using the weak-to-classical derivative bridge.
+Finite diagonal parabolic systems satisfy an exact energy identity with a
+bound independent of the number of modes.
 
-The real square-lattice half-period value is identified by an explicitly
-convergent positive series, derived from lattice rows and cotangent partial
-fractions. The real row is
-evaluated exactly as 2*pi^2/3 by even/odd splitting of the Basel series;
-this replaces the earlier pairwise estimate. This constructs
-a positive real a satisfying 2*a^2*P(1/2) = 1. The actual Bernoulli curvature
-square is identified with the normalized shifted Weierstrass solution by
-ODE uniqueness, with no scalar-normalization hypothesis. The existing
-circle-profile theorem has been strengthened; its weaker version is removed.
-The actual scaled-arclength period T is proved equal to 2/a. The proof uses
-half-period symmetry, positivity up to the first curvature zero, and the
-double pole to identify horizontal Weierstrass periods with lattice points.
-No period, zero-location or spectral assertion is assumed for the actual curve.
-The actual squared fundamental frequency (2*pi/T)^2 is also identified as
-3/(4*(1+12*sum t_n)), where t_n=q^(2*(n+1))/(1+q^(2*(n+1)))^2
-+q^(2*(n+1))/(1-q^(2*(n+1)))^2 and q=exp(-pi). Its required numerical bounds
-for the spectral argument have not yet been proved from this series.
-
-This remains a partial formalization. The full stability theorem has not
-been proved in Lean. The Fourier coefficients, required bounds for the actual
-frequency, geometric linearization, parabolic stability and geometric convergence
-remain unproved.
+This remains a partial formalization. The full nonlinear stability theorem is
+NOT proved. Sobolev Frechet differentiability of the nonlinear graph map,
+nonlinear wellposedness, smoothing, normal stability, curvature-profile entry
+and full geometric convergence remain proof obligations. Pointwise first
+variation and finite-mode energy estimates do not assert these missing results.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.
-Only compiled Lean source is published. Conditional intermediate results
-must not be interpreted as a proof of the full nonlinear theorem.
+Only compiled Lean source is published.
 -/

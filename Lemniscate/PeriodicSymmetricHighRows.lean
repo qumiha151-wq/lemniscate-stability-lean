@@ -31,7 +31,7 @@ theorem circle_symmetric_high_row_bound (h h₁ h₂ : C(AddCircle T, ℂ))
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (hr : (2*Real.pi/T)^2 ≤ 18/25) (m : ℤ) (hm : m.natAbs ≤ 15) :
     Summable (circleSymmetricHighRow T h h₁ h₂ m) ∧
       (∑' n : ℤ, circleSymmetricHighRow T h h₁ h₂ m n) ≤ (evenCouplingRowUpper m:ℝ) := by
@@ -109,7 +109,7 @@ theorem circle_symmetric_baseline_matrix_bound (h h₁ h₂ : C(AddCircle T, ℂ
     (h₂real : ∀ x, conj (h₂ x) = h₂ x)
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
     (hr : (2*Real.pi/T)^2 ≤ 18/25) :
     (∑ i : Fin 31, ∑' n : ℤ, if Even n ∧ 32 ≤ |(n:ℝ)| then
       ∑ j : Fin 3,

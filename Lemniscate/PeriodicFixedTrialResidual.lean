@@ -39,8 +39,8 @@ theorem circle_adjoint_trial_residual_sq (h h₁ h₂ : C(AddCircle T, ℂ))
     (hs : ∀ n : ℤ, fourierCoeff h (-n) = fourierCoeff h n)
     (ho : ∀ n : ℤ, fourierCoeff h (2*n+1) = 0)
     (hc : ∀ j : ℕ, fourierCoeff h (2*(j:ℤ)) =
-      (fourierCoefficient thetaParameter nome j:ℂ))
-    (hr : (2*Real.pi/T)^2 = thetaParameter) :
+      (fourierCoefficient lemniscateFrequencySquared nome j:ℂ))
+    (hr : (2*Real.pi/T)^2 = lemniscateFrequencySquared) :
     ‖circleH4FormalAdjoint T h h₁ (circleAdjointTrial T)‖^2 < (2:ℝ)/10^30 := by
   rw [circleAdjointTrial,circle_adjoint_sine_trial_norm_sq T h h₁ h₂ hh hh₁
     hreal h₁real h₂real hs ho]
@@ -53,7 +53,7 @@ theorem circle_adjoint_trial_residual_sq (h h₁ h₂ : C(AddCircle T, ℂ))
       Complex.ofReal_sum,Complex.ofReal_mul,Complex.ofReal_ratCast]
     apply Finset.sum_congr rfl
     intro j _
-    rw [← map_sub,circle_sine_operator_entry T h thetaParameter nome hs hc hr
+    rw [← map_sub,circle_sine_operator_entry T h lemniscateFrequencySquared nome hs hc hr
       (j.val+1) (k+1) (by omega) (by omega),Complex.conj_ofReal]
     ring
   simpa only [hcoeff,Complex.norm_real,Real.norm_eq_abs,sq_abs] using
