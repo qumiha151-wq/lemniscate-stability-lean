@@ -3,6 +3,7 @@ import Lemniscate.PeriodicProfileCoverSpectrum
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
 import Lemniscate.BernoulliCircleProfile
+import Lemniscate.WeierstrassEquation
 
 /-!
 Current manuscript SHA-256: 6c29dca2e865d17759b91543764d1c89fe7350de0cbafe56f25c55126440f406
@@ -34,6 +35,11 @@ coordinate with a differentiable global inverse. Its curvature functions
 descend to continuous real-valued functions on the positive-period circle.
 Their ODE, first integral and initial values are proved:
 q' = p, p' = -q^3, 2*p^2 + q^4 = 1, q(0) = 1, p(0) = 0.
+
+For the remaining Fourier identification, square-lattice Weierstrass
+rotation and half-period identities are proved, together with the
+second-order equation at all points away from the lattice, including
+critical points of the Weierstrass function.
 
 This remains a partial formalization. The full stability theorem has not
 been proved in Lean. The Jacobi/Fourier coefficient and period identities,

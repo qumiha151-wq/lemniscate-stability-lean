@@ -1220,3 +1220,6 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.periodicCircleFunction
 #print axioms Lemniscate.periodic_circle_function_coe
 #print axioms Lemniscate.bernoulli_circle_profile_exists
+
+#print axioms Lemniscate.square_weierstrass_symmetry
+#print axioms Lemniscate.weierstrass_second_order
