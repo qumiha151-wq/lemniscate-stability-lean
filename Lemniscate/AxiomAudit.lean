@@ -1214,3 +1214,9 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.bernoulliProfileP
 #print axioms Lemniscate.bernoulli_profile_data
 #print axioms Lemniscate.bernoulli_closed_expander
+
+#print axioms Lemniscate.periodic_integral_coordinate_exists
+#print axioms Lemniscate.bernoulli_arclength_profile
+#print axioms Lemniscate.periodicCircleFunction
+#print axioms Lemniscate.periodic_circle_function_coe
+#print axioms Lemniscate.bernoulli_circle_profile_exists

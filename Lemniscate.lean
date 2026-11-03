@@ -2,7 +2,7 @@ import Lemniscate.PeriodicCoverUpperBound
 import Lemniscate.PeriodicProfileCoverSpectrum
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
-import Lemniscate.BernoulliExpander
+import Lemniscate.BernoulliCircleProfile
 
 /-!
 Current manuscript SHA-256: 6c29dca2e865d17759b91543764d1c89fe7350de0cbafe56f25c55126440f406
@@ -29,8 +29,14 @@ immersion satisfying the normalized free-elastic expander equation with
 c = 15/2. Its speed, signed curvature, support functions and the
 profile derivative identities are derived directly, without elliptic identities.
 
+The actual scaled-arclength coordinate is constructed as an integral
+coordinate with a differentiable global inverse. Its curvature functions
+descend to continuous real-valued functions on the positive-period circle.
+Their ODE, first integral and initial values are proved:
+q' = p, p' = -q^3, 2*p^2 + q^4 = 1, q(0) = 1, p(0) = 0.
+
 This remains a partial formalization. The full stability theorem has not
-been proved in Lean. Identification with the arclength-periodic Jacobi/Fourier profile,
+been proved in Lean. The Jacobi/Fourier coefficient and period identities,
 the geometric linearization, parabolic stability and geometric convergence
 remain unproved.
 
