@@ -1,4 +1,4 @@
-import Lemniscate.WeierstrassRows
+import Lemniscate.WeierstrassZeroRow
 import Lemniscate.WeierstrassProfile
 
 /-! Positivity at the real half-period and existence of the real scaling. -/
@@ -96,81 +96,15 @@ private theorem square_half_row_neg (n : ℤ) :
   rw [sub_neg_eq_add,
     integerSquareSum_half_reflect,integerSquareSum_neg]
 
-private def realHalfSummand (m : ℤ) : ℝ :=
-  1/((1/2:ℝ)-(m:ℝ))^2-1/(m:ℝ)^2
-
-private theorem square_half_zero_cast (m : ℤ) :
-    squareHalfSummand 0 m = (realHalfSummand m : ℂ) := by
-  dsimp only [squareHalfSummand,realHalfSummand]
-  push_cast
-  simp only [zero_mul,add_zero]
-
-private theorem inverse_square_pair_identity (h x : ℝ)
-    (hx : x ≠ 0) (hm : h-x ≠ 0) (hp : h+x ≠ 0) (hq : x^2-h^2 ≠ 0) :
-    1/(h-x)^2+1/(h+x)^2-2/x^2 =
-      2*h^2*(3*x^2-h^2)/(x^2*(x^2-h^2)^2) := by
-  field_simp
-  ring
-
-private theorem real_half_pairs_nonneg (m : ℤ) :
-    0 ≤ realHalfSummand m+realHalfSummand (-m) := by
-  by_cases hm : m = 0
-  · subst m
-    norm_num [realHalfSummand]
-  have hm2 : (1:ℝ) ≤ (m:ℝ)^2 := by
-    have hcases : m ≤ -1 ∨ 1 ≤ m := by omega
-    rcases hcases with h | h
-    · have h' : (m:ℝ) ≤ -1 := by exact_mod_cast h
-      nlinarith [sq_nonneg ((m:ℝ)+1)]
-    · have h' : (1:ℝ) ≤ (m:ℝ) := by exact_mod_cast h
-      nlinarith [sq_nonneg ((m:ℝ)-1)]
-  have hmR : (m:ℝ) ≠ 0 := by exact_mod_cast hm
-  have hmminus : (1/2:ℝ)-(m:ℝ) ≠ 0 := by intro h; nlinarith
-  have hmplus : (1/2:ℝ)+(m:ℝ) ≠ 0 := by intro h; nlinarith
-  have hmq : (m:ℝ)^2-(1/4:ℝ) ≠ 0 := by linarith
-  have hid : realHalfSummand m+realHalfSummand (-m) =
-      2*(1/2:ℝ)^2*(3*(m:ℝ)^2-(1/2:ℝ)^2)/
-        ((m:ℝ)^2*((m:ℝ)^2-(1/2:ℝ)^2)^2) := by
-    dsimp only [realHalfSummand]
-    rw [Int.cast_neg,sub_neg_eq_add,neg_sq]
-    calc
-      _ = 1/((1/2:ℝ)-m)^2+1/((1/2:ℝ)+m)^2-2/(m:ℝ)^2 := by ring
-      _ = 2*(1/2:ℝ)^2*(3*(m:ℝ)^2-(1/2:ℝ)^2)/
-          ((m:ℝ)^2*((m:ℝ)^2-(1/2:ℝ)^2)^2) :=
-        inverse_square_pair_identity (1/2) m hmR hmminus hmplus (by norm_num; exact hmq)
-  rw [hid]
-  exact div_nonneg (mul_nonneg (by positivity) (by nlinarith)) (by positivity)
-
 private theorem square_half_zero_positive :
     (∑' m : ℤ, squareHalfSummand 0 m).im = 0 ∧
-      4 ≤ (∑' m : ℤ, squareHalfSummand 0 m).re := by
-  have hs := square_half_hasSum.summable.prod_factor (0:ℤ)
-  have hg : Summable realHalfSummand := by
-    convert! (Complex.hasSum_re hs.hasSum).summable using 1
-    ext m
-    rw [square_half_zero_cast]
-    rfl
-  have hn : Summable (fun m : ℤ => realHalfSummand (-m)) :=
-    hg.comp_injective (Equiv.neg ℤ).injective
-  have hneg : (∑' m : ℤ, realHalfSummand (-m)) = ∑' m : ℤ, realHalfSummand m := by
-    simpa only [Equiv.neg_apply] using (Equiv.neg ℤ).tsum_eq realHalfSummand
-  have he : (∑' m : ℤ, (realHalfSummand m+realHalfSummand (-m))) =
-      2*(∑' m : ℤ, realHalfSummand m) := by
-    rw [hg.tsum_add hn,hneg]
-    ring
-  have hbound := (hg.add hn).le_tsum (0:ℤ) (fun m _ => real_half_pairs_nonneg m)
-  rw [he] at hbound
-  have hzero : realHalfSummand 0+realHalfSummand (-0) = 8 := by
-    norm_num [realHalfSummand]
-  rw [hzero] at hbound
-  have hrow : (∑' m : ℤ, squareHalfSummand 0 m) =
-      Complex.ofReal (∑' m : ℤ, realHalfSummand m) := by
-    calc
-      _ = ∑' m : ℤ, (realHalfSummand m:ℂ) := tsum_congr square_half_zero_cast
-      _ = _ := (Complex.ofReal_tsum realHalfSummand).symm
-  rw [hrow]
-  exact ⟨rfl,by simpa only [Complex.ofReal_re] using (show
-    4 ≤ ∑' m : ℤ, realHalfSummand m by linarith)⟩
+      0 < (∑' m : ℤ, squareHalfSummand 0 m).re := by
+  have he : (∑' m : ℤ, squareHalfSummand 0 m) =
+      Complex.ofReal (2*Real.pi^2/3) := by
+    simpa only [squareHalfSummand,Int.cast_zero,zero_mul,add_zero] using
+      integer_real_half_shift_difference
+  rw [he]
+  exact ⟨rfl,by change 0 < 2*Real.pi^2/3; positivity⟩
 
 private theorem square_half_positive_row (n : ℤ) (hn : 0 < n) :
     ∃ r : ℝ, 0 ≤ r ∧ (∑' m : ℤ, squareHalfSummand n m) = (r:ℂ) := by
@@ -197,13 +131,13 @@ theorem unit_square_normalization_exists :
       rw [square_half_row_neg n] at he
       rw [he]
       exact ⟨rfl,hr⟩
-    · exact ⟨square_half_zero_positive.1,le_trans (by norm_num) square_half_zero_positive.2⟩
+    · exact ⟨square_half_zero_positive.1,square_half_zero_positive.2.le⟩
     · obtain ⟨r,hr,he⟩ := square_half_positive_row n hn
       rw [he]
       exact ⟨rfl,hr⟩
-  have hbound : 4 ≤ (unitSquarePeriods.weierstrassP (1/2)).re := by
+  have hbound : 0 < (unitSquarePeriods.weierstrassP (1/2)).re := by
     calc
-      4 ≤ (∑' m : ℤ, squareHalfSummand 0 m).re := square_half_zero_positive.2
+      0 < (∑' m : ℤ, squareHalfSummand 0 m).re := square_half_zero_positive.2
       _ ≤ ∑' n : ℤ, (∑' m : ℤ, squareHalfSummand n m).re :=
         hre.summable.le_tsum 0 (fun n _ => (hnonneg n).2)
       _ = _ := hre.tsum_eq
@@ -213,7 +147,7 @@ theorem unit_square_normalization_exists :
       _ = ∑' _ : ℤ, (0:ℝ) := tsum_congr (fun n => (hnonneg n).1)
       _ = 0 := tsum_zero
   let E : ℝ := (unitSquarePeriods.weierstrassP (1/2)).re
-  have hE : 0 < E := by dsimp only [E]; linarith
+  have hE : 0 < E := hbound
   have hreal : unitSquarePeriods.weierstrassP (1/2) = (E:ℂ) := by
     apply Complex.ext
     · rfl

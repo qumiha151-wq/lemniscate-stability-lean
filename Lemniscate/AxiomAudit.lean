@@ -1238,3 +1238,5 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.unit_square_midline_regular
 #print axioms Lemniscate.weierstrass_real_line_period_mem
 #print axioms Lemniscate.bernoulli_weierstrass_period
+
+#print axioms Lemniscate.integer_real_half_shift_difference

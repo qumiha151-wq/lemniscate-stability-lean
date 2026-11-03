@@ -41,7 +41,9 @@ second-order equation at all points away from the lattice, including
 critical points of the Weierstrass function.
 
 The real square-lattice half-period value is proved positive by absolutely
-summable lattice rows and the cotangent partial fractions. This constructs
+summable lattice rows and cotangent partial fractions. The real row is
+evaluated exactly as 2*pi^2/3 by even/odd splitting of the Basel series;
+this replaces the earlier pairwise estimate. This constructs
 a positive real a satisfying 2*a^2*P(1/2) = 1. The actual Bernoulli curvature
 square is identified with the normalized shifted Weierstrass solution by
 ODE uniqueness, with no scalar-normalization hypothesis. The existing
