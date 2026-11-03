@@ -1230,3 +1230,7 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.normalized_weierstrass_data
 #print axioms Lemniscate.quadratic_second_order_unique
 #print axioms Lemniscate.circle_profile_square_weierstrass
+
+#print axioms Lemniscate.integer_inverse_square_sum
+#print axioms Lemniscate.integer_half_shift_difference
+#print axioms Lemniscate.unit_square_normalization_exists

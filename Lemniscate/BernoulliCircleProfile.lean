@@ -1,9 +1,11 @@
 import Lemniscate.BernoulliArclength
-import Lemniscate.PeriodicClassicalFourier
+import Lemniscate.PeriodicWeierstrassProfile
+import Lemniscate.SquareWeierstrassPositive
 
-/-! The actual curvature profile on its scaled-arclength circle. Its ODE,
-first integral, reality and initial values follow from the explicit curve.
-The Jacobi/Fourier coefficient identities are separate remaining obligations. -/
+/-! The actual curvature profile on its scaled-arclength circle, including
+its normalized shifted Weierstrass representation. No scalar normalization
+or profile ODE is assumed. Fourier coefficients and the period identification
+remain separate obligations. -/
 namespace Lemniscate
 open Complex MeasureTheory
 open scoped ComplexConjugate
@@ -27,8 +29,12 @@ theorem bernoulli_circle_profile_exists :
         (∀ x, 2*(p x)^2+(q x)^4 = 1) ∧
         (∀ x, conj (q x) = q x) ∧ (∀ x, conj (p x) = p x) ∧
         q 0 = 1 ∧ p 0 = 0 ∧
-        ∀ x : ℝ, (planarSignedCurvature bernoulliCurve (e.symm x):ℂ) =
-          3*q (x:AddCircle (e (2*Real.pi))) := by
+        (∀ x : ℝ, (planarSignedCurvature bernoulliCurve (e.symm x):ℂ) =
+          3*q (x:AddCircle (e (2*Real.pi)))) ∧
+        ∃ a : ℝ, 0 < a ∧ 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1 ∧
+          (fun x : ℝ => (q (x:AddCircle (e (2*Real.pi))))^2) = normalizedWeierstrass a ∧
+          (fun x : ℝ => 2*(q (x:AddCircle (e (2*Real.pi)))*
+            p (x:AddCircle (e (2*Real.pi))))) = normalizedWeierstrassDerivative a := by
   obtain ⟨e,he,hT,hqper,hpper,hq0,hp0,hODE⟩ := bernoulli_arclength_profile
   let T := e (2*Real.pi)
   let qR : ℝ → ℝ := bernoulliProfileQ ∘ e.symm
@@ -43,32 +49,43 @@ theorem bernoulli_circle_profile_exists :
     (continuous_iff_continuousAt.mpr (fun x => (hODE x).2.1.continuousAt))
   let q := periodicCircleFunction T qC hqCper hqCcont
   let p := periodicCircleFunction T pC hpCper hpCcont
-  refine ⟨e,he,hT,q,p,?_,?_,?_,?_,?_,?_,?_,?_⟩
-  · intro x
+  have hqD : HasCircleDeriv T q p := by
+    intro x
     change HasDerivAt qC (pC x) x
     exact (hODE x).1.ofReal_comp
-  · intro x
+  have hpD : HasCircleDeriv T p (-(q^3)) := by
+    intro x
     change HasDerivAt pC (-((qR x:ℂ)^3)) x
     simpa only [Complex.ofReal_neg,Complex.ofReal_pow] using (hODE x).2.1.ofReal_comp
-  · intro x
+  have henergy : ∀ x, 2*(p x)^2+(q x)^4 = 1 := by
+    intro x
     induction x using QuotientAddGroup.induction_on
     rename_i x
     change 2*(pR x:ℂ)^2+(qR x:ℂ)^4 = 1
     exact_mod_cast (hODE x).2.2.1
-  · intro x
+  have hqreal : ∀ x, conj (q x) = q x := by
+    intro x
     induction x using QuotientAddGroup.induction_on
     rename_i x
     exact Complex.conj_ofReal (qR x)
-  · intro x
+  have hpreal : ∀ x, conj (p x) = p x := by
+    intro x
     induction x using QuotientAddGroup.induction_on
     rename_i x
     exact Complex.conj_ofReal (pR x)
-  · change (qR 0:ℂ) = 1
+  have hq0C : q 0 = 1 := by
+    change (qR 0:ℂ) = 1
     exact_mod_cast hq0
-  · change (pR 0:ℂ) = 0
+  have hp0C : p 0 = 0 := by
+    change (pR 0:ℂ) = 0
     exact_mod_cast hp0
-  · intro x
+  have hcurv : ∀ x : ℝ, (planarSignedCurvature bernoulliCurve (e.symm x):ℂ) =
+      3*q (x:AddCircle T) := by
+    intro x
     change (planarSignedCurvature bernoulliCurve (e.symm x):ℂ) = 3*(qR x:ℂ)
     exact_mod_cast (hODE x).2.2.2
+  obtain ⟨a,ha,hnorm⟩ := unit_square_normalization_exists
+  exact ⟨e,he,hT,q,p,hqD,hpD,henergy,hqreal,hpreal,hq0C,hp0C,hcurv,a,ha,hnorm,
+    circle_profile_square_weierstrass T q p hqD hpD henergy hq0C hp0C a hnorm⟩
 
 end Lemniscate

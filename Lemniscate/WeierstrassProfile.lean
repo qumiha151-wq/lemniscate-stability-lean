@@ -2,7 +2,8 @@ import Lemniscate.WeierstrassEquation
 import Mathlib.Analysis.Complex.RealDeriv
 
 /-! A normalized shifted Weierstrass solution of f''=1-3*f^2. The scalar
-normalization is explicit; its existence is a remaining Fourier-series input. -/
+normalization is explicit; its existence is proved separately in
+SquareWeierstrassPositive.lean. -/
 noncomputable section
 namespace Lemniscate
 open Complex
