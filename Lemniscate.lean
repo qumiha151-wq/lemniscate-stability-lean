@@ -2,6 +2,7 @@ import Lemniscate.PeriodicCoverUpperBound
 import Lemniscate.PeriodicProfileCoverSpectrum
 import Lemniscate.PeriodicRotationSineMass
 import Lemniscate.PhysicalTime
+import Lemniscate.BernoulliExpander
 
 /-!
 Current manuscript SHA-256: 6c29dca2e865d17759b91543764d1c89fe7350de0cbafe56f25c55126440f406
@@ -23,9 +24,15 @@ For sufficiently large covers the nonzero spectral gap lies between
 1/(2*M^2) and K/M^2, with a positive K independent of M. A nonzero
 spectral point is constructed by lifting the analytic branch at 1/M.
 
+The explicit Bernoulli parametrization is proved to be a smooth periodic
+immersion satisfying the normalized free-elastic expander equation with
+c = 15/2. Its speed, signed curvature, support functions and the
+profile derivative identities are derived directly, without elliptic identities.
+
 This remains a partial formalization. The full stability theorem has not
-been proved in Lean. Concrete Jacobi-profile and geometric operator identification,
-parabolic stability and geometric convergence remain unproved.
+been proved in Lean. Identification with the arclength-periodic Jacobi/Fourier profile,
+the geometric linearization, parabolic stability and geometric convergence
+remain unproved.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.

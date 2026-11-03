@@ -1202,3 +1202,15 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_periodic_extension_fourier_mode
 #print axioms Lemniscate.circle_periodic_extension_fourier
 #print axioms Lemniscate.paper_periodic_cover_spectrum
+
+#print axioms Lemniscate.bernoulliCurve
+#print axioms Lemniscate.bernoulliVelocity
+#print axioms Lemniscate.bernoulliAcceleration
+#print axioms Lemniscate.bernoulli_curve_geometry
+#print axioms Lemniscate.arclengthDerivative
+#print axioms Lemniscate.planarSignedCurvature
+#print axioms Lemniscate.planarNormalSupport
+#print axioms Lemniscate.bernoulliProfileQ
+#print axioms Lemniscate.bernoulliProfileP
+#print axioms Lemniscate.bernoulli_profile_data
+#print axioms Lemniscate.bernoulli_closed_expander
