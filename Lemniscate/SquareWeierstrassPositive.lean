@@ -1,7 +1,7 @@
 import Lemniscate.WeierstrassZeroRow
 import Lemniscate.WeierstrassProfile
 
-/-! Positivity at the real half-period and existence of the real scaling. -/
+/-! The exact square-lattice half-period series, real normalization and squared frequency. -/
 noncomputable section
 namespace Lemniscate
 open Complex
@@ -96,62 +96,96 @@ private theorem square_half_row_neg (n : ℤ) :
   rw [sub_neg_eq_add,
     integerSquareSum_half_reflect,integerSquareSum_neg]
 
-private theorem square_half_zero_positive :
-    (∑' m : ℤ, squareHalfSummand 0 m).im = 0 ∧
-      0 < (∑' m : ℤ, squareHalfSummand 0 m).re := by
-  have he : (∑' m : ℤ, squareHalfSummand 0 m) =
-      Complex.ofReal (2*Real.pi^2/3) := by
-    simpa only [squareHalfSummand,Int.cast_zero,zero_mul,add_zero] using
-      integer_real_half_shift_difference
-  rw [he]
-  exact ⟨rfl,by change 0 < 2*Real.pi^2/3; positivity⟩
+def weierstrassHalfPeriodTerm (q : ℝ) (n : ℕ) : ℝ :=
+  q^(2*(n+1))/(1+q^(2*(n+1)))^2 + q^(2*(n+1))/(1-q^(2*(n+1)))^2
 
-private theorem square_half_positive_row (n : ℤ) (hn : 0 < n) :
-    ∃ r : ℝ, 0 ≤ r ∧ (∑' m : ℤ, squareHalfSummand n m) = (r:ℂ) := by
-  let r : ℝ :=
-    4*Real.pi^2*Real.exp (-2*Real.pi*n)/(1+Real.exp (-2*Real.pi*n))^2 +
-      4*Real.pi^2*Real.exp (-2*Real.pi*n)/(1-Real.exp (-2*Real.pi*n))^2
-  refine ⟨r,by dsimp only [r]; positivity,?_⟩
+private theorem square_half_positive_row (n : ℕ) :
+    (∑' m : ℤ, squareHalfSummand ((n+1:ℕ):ℤ) m) =
+      Complex.ofReal (4*Real.pi^2*weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n) := by
   rw [square_half_row,integerSquareSum_half_reflect]
-  have h := integer_half_shift_difference (n:ℝ) (by exact_mod_cast hn)
-  change integerSquareSum (1/2+I*((n:ℝ):ℂ)) -
-    integerSquareSum (I*((n:ℝ):ℂ)) = (r:ℂ) at h
-  simpa only [Complex.ofReal_intCast,mul_comm I] using h
+  have h := integer_half_shift_difference ((n+1:ℕ):ℝ) (by positivity)
+  have hexp : Real.exp (-2*Real.pi*((n+1:ℕ):ℝ)) =
+      Real.exp (-Real.pi)^(2*(n+1)) := by
+    rw [← Real.exp_nat_mul]
+    congr 1
+    push_cast
+    ring
+  have hvalue :
+      4*Real.pi^2*Real.exp (-2*Real.pi*((n+1:ℕ):ℝ))/
+          (1+Real.exp (-2*Real.pi*((n+1:ℕ):ℝ)))^2 +
+        4*Real.pi^2*Real.exp (-2*Real.pi*((n+1:ℕ):ℝ))/
+          (1-Real.exp (-2*Real.pi*((n+1:ℕ):ℝ)))^2 =
+      4*Real.pi^2*weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n := by
+    rw [hexp]
+    dsimp only [weierstrassHalfPeriodTerm]
+    ring
+  rw [hvalue] at h
+  change integerSquareSum (1/2+I*(((n+1:ℕ):ℝ):ℂ)) -
+    integerSquareSum (I*(((n+1:ℕ):ℝ):ℂ)) = _ at h
+  simpa only [Int.cast_natCast,Complex.ofReal_natCast,mul_comm I] using h
+
+theorem unit_square_half_period_series :
+    Summable (weierstrassHalfPeriodTerm (Real.exp (-Real.pi))) ∧
+      unitSquarePeriods.weierstrassP (1/2) =
+        Complex.ofReal ((2*Real.pi^2/3)*
+          (1+12*(∑' n : ℕ, weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n))) := by
+  let R : ℤ → ℂ := fun n => ∑' m : ℤ, squareHalfSummand n m
+  let t := weierstrassHalfPeriodTerm (Real.exp (-Real.pi))
+  have hrows : HasSum R (unitSquarePeriods.weierstrassP (1/2)) :=
+    square_half_hasSum.prod_fiberwise
+      (fun n => (square_half_hasSum.summable.prod_factor n).hasSum)
+  have hsNat : Summable (fun n : ℕ => R (n:ℤ)) :=
+    hrows.summable.comp_injective (fun _ _ h => by exact_mod_cast h)
+  have hsTail : Summable (fun n : ℕ => R ((n:ℤ)+1)) := by
+    simpa only [Int.natCast_add,Int.natCast_one] using
+      (summable_nat_add_iff 1).mpr hsNat
+  have heven (n : ℤ) : R (-n) = R n := square_half_row_neg n
+  have hsNeg : Summable (fun n : ℕ => R (-((n:ℤ)+1))) := by
+    simpa only [heven] using hsTail
+  have hrow (n : ℕ) : R ((n:ℤ)+1) = Complex.ofReal (4*Real.pi^2*t n) := by
+    simpa only [Int.natCast_add,Int.natCast_one] using square_half_positive_row n
+  have hsValue : Summable (fun n : ℕ => 4*Real.pi^2*t n) := by
+    convert! (Complex.hasSum_re hsTail.hasSum).summable using 1
+    funext n
+    rw [hrow]
+    rfl
+  have hpi : 4*Real.pi^2 ≠ 0 := by positivity
+  have hsTerm : Summable t := by
+    convert! hsValue.div_const (4*Real.pi^2) using 1
+    funext n
+    field_simp [hpi]
+  have hzero : R 0 = Complex.ofReal (2*Real.pi^2/3) := by
+    simpa only [R,squareHalfSummand,Int.cast_zero,zero_mul,add_zero] using
+      integer_real_half_shift_difference
+  have hnat : (∑' n : ℕ, R (n:ℤ)) = R 0+(∑' n : ℕ, R ((n:ℤ)+1)) := by
+    simpa only [Int.natCast_zero,Int.natCast_add,Int.natCast_one] using hsNat.tsum_eq_zero_add
+  have hsplit : unitSquarePeriods.weierstrassP (1/2) =
+      R 0+2*(∑' n : ℕ, R ((n:ℤ)+1)) := by
+    calc
+      _ = ∑' n : ℤ, R n := hrows.tsum_eq.symm
+      _ = _ := by
+        rw [tsum_of_nat_of_neg_add_one (f := R) hsNat hsNeg,hnat]
+        simp only [heven]
+        ring
+  have htailvalue : (∑' n : ℕ, R ((n:ℤ)+1)) =
+      Complex.ofReal (4*Real.pi^2*(∑' n : ℕ, t n)) := by
+    calc
+      _ = ∑' n : ℕ, Complex.ofReal (4*Real.pi^2*t n) := tsum_congr hrow
+      _ = Complex.ofReal (∑' n : ℕ, 4*Real.pi^2*t n) := (Complex.ofReal_tsum _).symm
+      _ = _ := by rw [tsum_mul_left]
+  refine ⟨hsTerm,?_⟩
+  rw [hsplit,hzero,htailvalue]
+  push_cast
+  ring
 
 theorem unit_square_normalization_exists :
     ∃ a : ℝ, 0 < a ∧ 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1 := by
-  have hrows := square_half_hasSum.prod_fiberwise
-    (fun n => (square_half_hasSum.summable.prod_factor n).hasSum)
-  have hre := Complex.hasSum_re hrows
-  have him := Complex.hasSum_im hrows
-  have hnonneg (n : ℤ) : (∑' m : ℤ, squareHalfSummand n m).im = 0 ∧
-      0 ≤ (∑' m : ℤ, squareHalfSummand n m).re := by
-    rcases lt_trichotomy n 0 with hn | rfl | hn
-    · obtain ⟨r,hr,he⟩ := square_half_positive_row (-n) (by omega)
-      rw [square_half_row_neg n] at he
-      rw [he]
-      exact ⟨rfl,hr⟩
-    · exact ⟨square_half_zero_positive.1,square_half_zero_positive.2.le⟩
-    · obtain ⟨r,hr,he⟩ := square_half_positive_row n hn
-      rw [he]
-      exact ⟨rfl,hr⟩
-  have hbound : 0 < (unitSquarePeriods.weierstrassP (1/2)).re := by
-    calc
-      0 < (∑' m : ℤ, squareHalfSummand 0 m).re := square_half_zero_positive.2
-      _ ≤ ∑' n : ℤ, (∑' m : ℤ, squareHalfSummand n m).re :=
-        hre.summable.le_tsum 0 (fun n _ => (hnonneg n).2)
-      _ = _ := hre.tsum_eq
-  have himzero : (unitSquarePeriods.weierstrassP (1/2)).im = 0 := by
-    rw [← him.tsum_eq]
-    calc
-      _ = ∑' _ : ℤ, (0:ℝ) := tsum_congr (fun n => (hnonneg n).1)
-      _ = 0 := tsum_zero
-  let E : ℝ := (unitSquarePeriods.weierstrassP (1/2)).re
-  have hE : 0 < E := hbound
-  have hreal : unitSquarePeriods.weierstrassP (1/2) = (E:ℂ) := by
-    apply Complex.ext
-    · rfl
-    · exact himzero
+  obtain ⟨_,hvalue⟩ := unit_square_half_period_series
+  let S := ∑' n : ℕ, weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n
+  have hS : 0 ≤ S := tsum_nonneg (fun n => by dsimp only [weierstrassHalfPeriodTerm]; positivity)
+  let E : ℝ := (2*Real.pi^2/3)*(1+12*S)
+  have hE : 0 < E := by dsimp only [E]; positivity
+  have hreal : unitSquarePeriods.weierstrassP (1/2) = (E:ℂ) := hvalue
   let a := Real.sqrt (1/(2*E))
   have ha : 0 < a := Real.sqrt_pos.mpr (by positivity)
   have ha2 : a^2 = 1/(2*E) := Real.sq_sqrt (by positivity)
@@ -161,5 +195,18 @@ theorem unit_square_normalization_exists :
   refine ⟨a,ha,?_⟩
   rw [hreal]
   exact_mod_cast hR
+
+theorem square_weierstrass_frequency_squared (a : ℝ)
+    (hnorm : 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1) :
+    (Real.pi*a)^2 = 3/(4*(1+12*(∑' n : ℕ,
+      weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n))) := by
+  obtain ⟨_,hvalue⟩ := unit_square_half_period_series
+  let S := ∑' n : ℕ, weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n
+  have hS : 0 ≤ S := tsum_nonneg (fun n => by dsimp only [weierstrassHalfPeriodTerm]; positivity)
+  rw [hvalue] at hnorm
+  have hR : 2*a^2*((2*Real.pi^2/3)*(1+12*S)) = 1 := by exact_mod_cast hnorm
+  have hd : 4*(1+12*S) ≠ 0 := by positivity
+  apply (eq_div_iff hd).mpr
+  linear_combination (3:ℝ)*hR
 
 end Lemniscate

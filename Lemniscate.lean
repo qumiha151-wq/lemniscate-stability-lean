@@ -40,8 +40,9 @@ rotation and half-period identities are proved, together with the
 second-order equation at all points away from the lattice, including
 critical points of the Weierstrass function.
 
-The real square-lattice half-period value is proved positive by absolutely
-summable lattice rows and cotangent partial fractions. The real row is
+The real square-lattice half-period value is identified by an explicitly
+convergent positive series, derived from lattice rows and cotangent partial
+fractions. The real row is
 evaluated exactly as 2*pi^2/3 by even/odd splitting of the Basel series;
 this replaces the earlier pairwise estimate. This constructs
 a positive real a satisfying 2*a^2*P(1/2) = 1. The actual Bernoulli curvature
@@ -52,10 +53,14 @@ The actual scaled-arclength period T is proved equal to 2/a. The proof uses
 half-period symmetry, positivity up to the first curvature zero, and the
 double pole to identify horizontal Weierstrass periods with lattice points.
 No period, zero-location or spectral assertion is assumed for the actual curve.
+The actual squared fundamental frequency (2*pi/T)^2 is also identified as
+3/(4*(1+12*sum t_n)), where t_n=q^(2*(n+1))/(1+q^(2*(n+1)))^2
++q^(2*(n+1))/(1-q^(2*(n+1)))^2 and q=exp(-pi). Its required numerical bounds
+for the spectral argument have not yet been proved from this series.
 
 This remains a partial formalization. The full stability theorem has not
-been proved in Lean. The remaining Fourier coefficient and frequency-parameter
-identification, geometric linearization, parabolic stability and geometric convergence
+been proved in Lean. The Fourier coefficients, required bounds for the actual
+frequency, geometric linearization, parabolic stability and geometric convergence
 remain unproved.
 
 Checked environment: Lean 4.33.1 and Mathlib revision

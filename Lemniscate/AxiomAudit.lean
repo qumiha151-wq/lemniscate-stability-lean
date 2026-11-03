@@ -1240,3 +1240,7 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.bernoulli_weierstrass_period
 
 #print axioms Lemniscate.integer_real_half_shift_difference
+
+#print axioms Lemniscate.weierstrassHalfPeriodTerm
+#print axioms Lemniscate.unit_square_half_period_series
+#print axioms Lemniscate.square_weierstrass_frequency_squared

@@ -5,8 +5,8 @@ import Lemniscate.BernoulliPeriod
 
 /-! The actual curvature profile on its scaled-arclength circle, including
 its normalized shifted Weierstrass representation. No scalar normalization
-or profile ODE is assumed. The actual scaled-arclength period is identified;
-the Fourier coefficients remain a separate obligation. -/
+or profile ODE is assumed. Its actual period and squared fundamental frequency
+are identified by the lattice series; Fourier coefficients remain unproved. -/
 namespace Lemniscate
 open Complex MeasureTheory
 open scoped ComplexConjugate
@@ -34,6 +34,8 @@ theorem bernoulli_circle_profile_exists :
           3*q (x:AddCircle (e (2*Real.pi)))) ∧
         ∃ a : ℝ, 0 < a ∧ 2*(a:ℂ)^2*unitSquarePeriods.weierstrassP (1/2) = 1 ∧
           e (2*Real.pi) = 2/a ∧
+          (2*Real.pi/e (2*Real.pi))^2 = 3/(4*(1+12*(∑' n : ℕ,
+            weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n))) ∧
           (fun x : ℝ => (q (x:AddCircle (e (2*Real.pi))))^2) = normalizedWeierstrass a ∧
           (fun x : ℝ => 2*(q (x:AddCircle (e (2*Real.pi)))*
             p (x:AddCircle (e (2*Real.pi))))) = normalizedWeierstrassDerivative a := by
@@ -92,7 +94,15 @@ theorem bernoulli_circle_profile_exists :
     change (q (x:AddCircle T))^2 = normalizedWeierstrass a x
     exact congrFun hW.1 x
   have hperiod := bernoulli_weierstrass_period e he a ha hnorm hident
+  have hfrequency : (2*Real.pi/T)^2 = 3/(4*(1+12*(∑' n : ℕ,
+      weierstrassHalfPeriodTerm (Real.exp (-Real.pi)) n))) := by
+    have hw : 2*Real.pi/T = Real.pi*a := by
+      dsimp only [T]
+      rw [hperiod]
+      field_simp [ha.ne']
+    rw [hw]
+    exact square_weierstrass_frequency_squared a hnorm
   exact ⟨e,he,hT,q,p,hqD,hpD,henergy,hqreal,hpreal,hq0C,hp0C,hcurv,a,ha,hnorm,
-    hperiod,hW⟩
+    hperiod,hfrequency,hW⟩
 
 end Lemniscate
