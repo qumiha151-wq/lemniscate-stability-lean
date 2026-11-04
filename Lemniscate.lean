@@ -1,3 +1,12 @@
+import Lemniscate.PeriodicParabolicGlobalSolution
+import Lemniscate.BernoulliParabolicGlobalSolution
+import Lemniscate.PeriodicParabolicGlobalUniqueness
+import Lemniscate.PeriodicParabolicInteriorTime
+import Lemniscate.PeriodicNormalGraphH2Entry
+import Lemniscate.NormalGraphPhaseSlice
+import Lemniscate.NormalGraphRotationPhase
+import Lemniscate.NormalGraphTranslation
+import Lemniscate.ParameterDerivativeEstimate
 import Lemniscate.NormalGraphCoefficientAlgebra
 import Lemniscate.NormalGraphJointCoefficientAlgebra
 import Lemniscate.PeriodicParabolicNormalGraphFlow
@@ -144,13 +153,25 @@ The implicit-equation theorem supplies one common parameter neighborhood
 with a C-infinity solution branch and local uniqueness.
 Aligned Frenet curves satisfy direct tangent and position comparison bounds
 in terms of their L1 curvature difference, without a Gronwall exponential.
+Actual overlapping maximal-regularity segments continue the real modulated
+solution globally on every positive cover, retaining the common local norm
+bound and exponential H2 decay at every smaller spectral rate. Finite-interval
+uniqueness also identifies the global segments and global curves.
+Translation-orbit derivatives construct continuous higher Sobolev jets on
+closed positive-time intervals, with bounds in terms of the same derivatives.
+The initial normal projection produces an actual real H2 height controlled
+by the C1 error and the L2 curvature error. A small-rotation variation of the
+same projection and a root comparison estimate are available.
+The spatial normal-graph equation, its rotation field and their unit domains
+commute with translation of the actual Sobolev derivatives and background.
 For nearby smooth unit-speed curves, normal projection constructs a smooth
 periodic normal graph with C1 bounds and a positive-derivative parameter
 change. The reference curve may be immersed.
 
 This remains a partial formalization. The full nonlinear stability theorem is
-NOT proved. Global continuation, smoothing, curvature-profile entry and
-full geometric convergence remain proof obligations.
+NOT proved. Applying the implicit parameter equation to the actual solution,
+curvature-profile phase entry, and classical geometric reconstruction with
+smooth convergence remain proof obligations.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.

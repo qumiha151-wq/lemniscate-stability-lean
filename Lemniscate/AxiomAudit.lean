@@ -1590,3 +1590,18 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.banach_implicit_equation
 #print axioms Lemniscate.algebra_map_ring_inverse
 #print axioms Lemniscate.rational_flow_algebra_map
+
+#print axioms Lemniscate.circleParabolicSegmentTime
+#print axioms Lemniscate.circle_parabolic_global_continuation
+#print axioms Lemniscate.bernoulli_cover_modulated_real_global_solution
+#print axioms Lemniscate.circle_parabolic_global_uniqueness
+#print axioms Lemniscate.circle_parabolic_interior_time
+#print axioms Lemniscate.periodic_normal_graph_h2_entry
+#print axioms Lemniscate.normal_projection_height_comparison
+#print axioms Lemniscate.normal_graph_rotation_phase_derivative
+#print axioms Lemniscate.circleCoefficientTranslation
+#print axioms Lemniscate.circleNormalGraphBackgroundTranslation
+#print axioms Lemniscate.circle_normal_graph_translation
+#print axioms Lemniscate.continuous_linear_map_iterated_deriv
+#print axioms Lemniscate.smooth_parameter_derivative_estimate
+#print axioms Lemniscate.circle_continuous_sobolev_of_translation
