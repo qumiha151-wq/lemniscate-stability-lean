@@ -45,14 +45,14 @@ theorem circle_normal_graph_sobolev_coefficients_smooth
     (fun u : CircleSobolevSpace T 2 =>
       (normalGraphPrincipalCoefficient T K ![L u 0,L u 1,0,0],
         normalGraphLowerCoefficientMap T K c (L u))) 0
-  obtain ⟨_,hzero,hcoeff⟩ := normal_graph_coefficients_smooth T K c
+  obtain ⟨_,hzero,hcoeff⟩ := normal_graph_coefficients_smooth_over C(AddCircle T, ℂ) K c
   have hprincipal : ContDiffAt ℂ (⊤ : WithTop ℕ∞)
       (fun z : Fin 2 → C(AddCircle T, ℂ) => normalGraphPrincipalCoefficient T K (P z)) 0 := by
     have houter : ContDiffAt ℂ (⊤ : WithTop ℕ∞)
         (normalGraphPrincipalCoefficient T K) (P 0) := by
-      simpa only [map_zero] using (hcoeff 0 hzero).fst
+      simpa only [map_zero, normalGraphPrincipalCoefficient] using! (hcoeff 0 hzero).fst
     exact houter.comp 0 P.contDiff.contDiffAt
-  obtain ⟨_,hlowerzero,hlower⟩ := normal_graph_lower_coefficients_smooth T K c
+  obtain ⟨_,hlowerzero,hlower⟩ := normal_graph_lower_coefficients_smooth_over C(AddCircle T, ℂ) K c
   have hjoint : ContDiffAt ℂ (⊤ : WithTop ℕ∞)
       (fun z : Fin 2 → C(AddCircle T, ℂ) =>
         (normalGraphPrincipalCoefficient T K (P z),
@@ -96,11 +96,11 @@ theorem circle_normal_graph_sobolev_coefficient_bounds
     ((contDiffAt_pi.mp hJ.snd) 0).of_le le_top
   obtain ⟨L,s,hs,hLip⟩ := hJone.exists_lipschitzOnWith
   obtain ⟨r,hr,B,hB,hremainder⟩ := exists_local_quadratic_remainder_lipschitz hBtwo
-  obtain ⟨hopen,hzero,_⟩ := normal_graph_lower_coefficients_smooth T K c
+  obtain ⟨hopen,hzero,_⟩ := normal_graph_lower_coefficients_smooth_over C(AddCircle T, ℂ) K c
   have hpre : (circleNormalGraphLowCoordinates T) ⁻¹'
       normalGraphLowerCoefficientDomain T K ∈ 𝓝 (0 : CircleSobolevSpace T 2) := by
     apply (circleNormalGraphLowCoordinates T).continuous.continuousAt.preimage_mem_nhds
-    simpa only [map_zero] using hopen.mem_nhds hzero
+    simpa only [map_zero, normalGraphLowerCoefficientDomain] using hopen.mem_nhds hzero
   obtain ⟨d,hd,hball⟩ := Metric.mem_nhds_iff.mp (inter_mem hs hpre)
   let C : ℝ := max (L:ℝ) B
   have hCL : (L:ℝ) ≤ C := le_max_left _ _

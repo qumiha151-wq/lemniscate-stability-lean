@@ -1,3 +1,10 @@
+import Lemniscate.NormalGraphCoefficientAlgebra
+import Lemniscate.NormalGraphJointCoefficientAlgebra
+import Lemniscate.PeriodicParabolicNormalGraphFlow
+import Lemniscate.PeriodicParabolicRotation
+import Lemniscate.NormalGraphCurvatureEstimate
+import Lemniscate.PeriodicIntegralComposition
+import Lemniscate.BanachImplicitEquation
 import Lemniscate.PeriodicParabolicNonlinearUniqueness
 import Lemniscate.NormalGraphProjection
 import Lemniscate.ComplexPhasePrimitive
@@ -129,6 +136,12 @@ Time-dependent spatial translation preserves the true parabolic primitive,
 with its physical transport velocity, and is continuous in the full norm.
 The modulation angular velocity satisfies the H2-H4 product estimate and
 the algebraic reconstruction identity for the unmodulated equation.
+Shared Banach-algebra coefficient results give joint smoothness of the
+time-dependent graph equation and its external angular-velocity term.
+Curvature identities and periodic change of variables control the normal
+height second derivative and the pulled-back curvature error.
+The implicit-equation theorem supplies one common parameter neighborhood
+with a C-infinity solution branch and local uniqueness.
 Aligned Frenet curves satisfy direct tangent and position comparison bounds
 in terms of their L1 curvature difference, without a Gronwall exponential.
 For nearby smooth unit-speed curves, normal projection constructs a smooth

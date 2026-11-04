@@ -51,12 +51,12 @@ theorem circle_normal_graph_flow_smooth (K : BackgroundJetOver C(AddCircle T, �
       (0 : CircleSobolevSpace T 4) ∈ circleNormalGraphDomain T K ∧
       ∀ f ∈ circleNormalGraphDomain T K,
         ContDiffAt ℂ (⊤ : WithTop ℕ∞) (circleNormalGraphFlow T K c) f := by
-  obtain ⟨hopen,hzero,hcoeff⟩ := normal_graph_coefficients_smooth T K c
+  obtain ⟨hopen,hzero,hcoeff⟩ := normal_graph_coefficients_smooth_over C(AddCircle T, ℂ) K c
   have hdomain : IsOpen (circleNormalGraphDomain T K) :=
     hopen.preimage (circleNormalGraphCoordinates T).continuous
   have hzero' : (0 : CircleSobolevSpace T 4) ∈ circleNormalGraphDomain T K := by
     change circleNormalGraphCoordinates T 0 ∈ normalGraphCoefficientDomain T K
-    simpa only [map_zero] using hzero
+    simpa only [map_zero, normalGraphCoefficientDomain] using hzero
   refine ⟨hdomain,hzero',?_⟩
   intro f hf
   have hc := (hcoeff (circleNormalGraphCoordinates T f) hf).comp f

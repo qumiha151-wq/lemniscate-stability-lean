@@ -1,4 +1,4 @@
-import Lemniscate.NormalGraphLowerPolynomial
+import Lemniscate.NormalGraphCoefficientAlgebra
 import Lemniscate.NormalGraphRationalSmoothness
 import Lemniscate.NormalGraphRationalIdentities
 
@@ -13,73 +13,17 @@ open Complex MeasureTheory
 
 variable (T : ℝ) [Fact (0 < T)]
 
-private def normalGraphLowerSample (u : Fin 2 → C(AddCircle T, ℂ))
-    (v w : C(AddCircle T, ℂ)) : Fin 4 → C(AddCircle T, ℂ) :=
-  ![u 0,u 1,v,w]
-
-private theorem normal_graph_lower_sample_contDiff (v w : C(AddCircle T, ℂ)) :
-    ContDiff ℂ (⊤ : WithTop ℕ∞)
-      (fun u : Fin 2 → C(AddCircle T, ℂ) => normalGraphLowerSample T u v w) := by
-  apply contDiff_pi.mpr
-  intro i
-  fin_cases i <;> simp [normalGraphLowerSample] <;> fun_prop
-
 /-- The unit domain depends only on the height and its first derivative. -/
 def normalGraphLowerCoefficientDomain
     (K : BackgroundJetOver C(AddCircle T, ℂ)) :
     Set (Fin 2 → C(AddCircle T, ℂ)) :=
-  (fun u => normalGraphLowerSample T u 0 0) ⁻¹' normalGraphCoefficientDomain T K
+  normalGraphLowerCoefficientDomainOver C(AddCircle T, ℂ) K
 
 /-- The existing six coefficients, bundled as a map on two height coordinates. -/
 def normalGraphLowerCoefficientMap
     (K : BackgroundJetOver C(AddCircle T, ℂ)) (c : ℝ)
     (u : Fin 2 → C(AddCircle T, ℂ)) : Fin 6 → C(AddCircle T, ℂ) :=
-  normalGraphLowerCoefficients K c (u 0) (u 1)
-
-set_option maxHeartbeats 800000 in
-theorem normal_graph_lower_coefficients_smooth
-    (K : BackgroundJetOver C(AddCircle T, ℂ)) (c : ℝ) :
-    IsOpen (normalGraphLowerCoefficientDomain T K) ∧
-      (0 : Fin 2 → C(AddCircle T, ℂ)) ∈ normalGraphLowerCoefficientDomain T K ∧
-      ∀ u ∈ normalGraphLowerCoefficientDomain T K,
-        ContDiffAt ℂ (⊤ : WithTop ℕ∞) (normalGraphLowerCoefficientMap T K c) u := by
-  obtain ⟨hopen,hzero,hsmooth⟩ := normal_graph_coefficients_smooth T K c
-  have hopen' : IsOpen (normalGraphLowerCoefficientDomain T K) :=
-    hopen.preimage (normal_graph_lower_sample_contDiff T 0 0).continuous
-  have hzero' : (0 : Fin 2 → C(AddCircle T, ℂ)) ∈
-      normalGraphLowerCoefficientDomain T K := by
-    change normalGraphLowerSample T 0 0 0 ∈ normalGraphCoefficientDomain T K
-    have hs : normalGraphLowerSample T (0 : Fin 2 → C(AddCircle T, ℂ)) 0 0 =
-        (0 : Fin 4 → C(AddCircle T, ℂ)) := by
-      funext i
-      fin_cases i <;> rfl
-    rw [hs]
-    exact hzero
-  refine ⟨hopen',hzero',?_⟩
-  intro u hu
-  have hsample (v w : C(AddCircle T, ℂ)) :
-      normalGraphLowerSample T u v w ∈ normalGraphCoefficientDomain T K := by
-    exact hu
-  have hb (v w : C(AddCircle T, ℂ)) :
-      ContDiffAt ℂ (⊤ : WithTop ℕ∞)
-        (fun y : Fin 2 → C(AddCircle T, ℂ) =>
-          normalGraphRationalFlow K c ⟨y 0,y 1,v,w,0⟩) u := by
-    have h := ((hsmooth _ (hsample v w)).snd).comp u
-      (normal_graph_lower_sample_contDiff T v w).contDiffAt
-    simpa only [Function.comp_def,normalGraphLowerOrderCoefficient,
-      normalGraphLowerSample,Matrix.cons_val_zero,Matrix.cons_val,
-      Matrix.head_cons,Matrix.tail_cons] using h
-  have hb₀₀ := hb 0 0
-  have hb₁₀ := hb 1 0
-  have hbm₀ := hb (-1) 0
-  have hb₂₀ := hb 2 0
-  have hb₀₁ := hb 0 1
-  have hb₁₁ := hb 1 1
-  apply contDiffAt_pi.mpr
-  intro i
-  fin_cases i <;> simp [normalGraphLowerCoefficientMap,
-    normalGraphLowerCoefficients,Matrix.cons_val_zero,Matrix.cons_val,
-    Matrix.head_cons,Matrix.tail_cons] <;> fun_prop
+  normalGraphLowerCoefficientMapOver C(AddCircle T, ℂ) K c u
 
 /-- Evaluation of these coefficients uses the unit hypotheses for the whole
 functions A and H in each sample of the original rational flow. -/
@@ -103,7 +47,7 @@ theorem normal_graph_lower_coefficients_apply
     simpa only [ContinuousMap.zero_apply] using
       normal_graph_rational_flow_apply T K c ⟨u 0,u 1,v,w,0⟩ (hA v w) (hH v w) x
   have htwo : (2 : C(AddCircle T, ℂ)) x = (2 : ℂ) := rfl
-  fin_cases i <;> simp [normalGraphLowerCoefficientMap,
+  fin_cases i <;> simp [normalGraphLowerCoefficientMap,normalGraphLowerCoefficientMapOver,normalGraphLowerCoefficientMapOver,
     normalGraphLowerCoefficients,Matrix.cons_val_zero,Matrix.cons_val,
     Matrix.head_cons,Matrix.tail_cons,ContinuousMap.sub_apply,
     ContinuousMap.add_apply,ContinuousMap.mul_apply,ContinuousMap.smul_apply,

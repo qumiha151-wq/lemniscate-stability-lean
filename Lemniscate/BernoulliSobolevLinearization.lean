@@ -25,7 +25,7 @@ def circleBernoulliBackground (q p : C(AddCircle T, ℂ)) :
 private theorem bernoulli_lower_order_zero (q p : C(AddCircle T, ℂ)) :
     normalGraphLowerOrderCoefficient T (circleBernoulliBackground T q p) (15/2) 0 = 0 := by
   ext x
-  simp [normalGraphLowerOrderCoefficient,normalGraphRationalFlow,
+  simp [normalGraphLowerOrderCoefficient,normalGraphLowerOrderCoefficientOver,normalGraphRationalFlow,
     graphCurvatureNumeratorSS,graphCurvatureNumeratorS,graphCurvatureNumerator,
     graphMetricSquaredSS,graphMetricSquaredS,graphMetricSquared,
     graphSupportNumerator,graphAss,graphAs,graphA,circleBernoulliBackground,

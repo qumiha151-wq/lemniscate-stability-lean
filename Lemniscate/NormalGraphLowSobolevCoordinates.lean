@@ -64,7 +64,7 @@ theorem circle_normal_graph_h2_small_domain
     ∃ δ > 0, ∀ f : CircleSobolevSpace T 4,
       ‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖ < δ →
         f ∈ circleNormalGraphDomain T K := by
-  obtain ⟨hopen,hzero,_⟩ := normal_graph_lower_coefficients_smooth T K 0
+  obtain ⟨hopen,hzero,_⟩ := normal_graph_lower_coefficients_smooth_over C(AddCircle T, ℂ) K 0
   have hnhds : normalGraphLowerCoefficientDomain T K ∈
       𝓝 (0 : Fin 2 → C(AddCircle T, ℂ)) := hopen.mem_nhds hzero
   have hpre : (circleNormalGraphLowCoordinates T) ⁻¹'

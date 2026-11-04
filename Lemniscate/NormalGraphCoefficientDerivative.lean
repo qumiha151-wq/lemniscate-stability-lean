@@ -33,7 +33,7 @@ theorem normal_graph_lower_order_hasFDerivAt
     (K : BackgroundJetOver C(AddCircle T, ℂ)) (c : ℝ) :
     HasFDerivAt (normalGraphLowerOrderCoefficient T K c)
       (normalGraphLowerOrderDerivative T K c) 0 := by
-  obtain ⟨hopen,hzero,hsmooth⟩ := normal_graph_coefficients_smooth T K c
+  obtain ⟨hopen,hzero,hsmooth⟩ := normal_graph_coefficients_smooth_over C(AddCircle T, ℂ) K c
   have hdiff : DifferentiableAt ℂ (normalGraphLowerOrderCoefficient T K c) 0 :=
     ((hsmooth 0 hzero).snd).differentiableAt (by simp)
   let D := fderiv ℂ (normalGraphLowerOrderCoefficient T K c) 0
@@ -71,7 +71,7 @@ theorem normal_graph_lower_order_hasFDerivAt
       filter_upwards [hunit] with ε hε
       have h := normal_graph_rational_flow_apply T K c
         ⟨(ε • v) 0,(ε • v) 1,(ε • v) 2,(ε • v) 3,0⟩ hε.1 hε.2 x
-      simpa only [normalGraphLowerOrderCoefficient,Kx,V,Pi.smul_apply,
+      simpa only [normalGraphLowerOrderCoefficient,normalGraphLowerOrderCoefficientOver,Kx,V,Pi.smul_apply,
         ContinuousMap.smul_apply,smul_eq_mul,ContinuousMap.zero_apply,mul_zero] using h
     have hscalar := (normal_graph_complex_rational_flow_hasDerivAt Kx c V).congr_of_eventuallyEq heq
     have hvalue : D v x =

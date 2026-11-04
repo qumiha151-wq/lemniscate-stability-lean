@@ -41,10 +41,10 @@ theorem circle_normal_graph_rotation_normalization
         circleNormalGraphLowCoordinates T h ∈ normalGraphLowerCoefficientDomain T K ∧
         circleNormalGraphRotationFunctional T ψ (circleNormalGraphRotationField T K h) ≠ 0 ∧
         circleNormalGraphRotationFunctional T ψ (circleNormalGraphNormalizedRotation T K ψ h) = 1 := by
-  obtain ⟨hopen,hzero,_⟩ := normal_graph_lower_coefficients_smooth T K 0
+  obtain ⟨hopen,hzero,_⟩ := normal_graph_lower_coefficients_smooth_over C(AddCircle T, ℂ) K 0
   have hu0 : circleNormalGraphLowCoordinates T (0 : CircleSobolevSpace T 2) ∈
       normalGraphLowerCoefficientDomain T K := by
-    simpa only [map_zero] using hzero
+    simpa only [map_zero, normalGraphLowerCoefficientDomain] using hzero
   have hunit : IsUnit (1-K.k*(circleNormalGraphLowCoordinates T
       (0 : CircleSobolevSpace T 2) 0)) := hu0.1
   have h₀ : ContDiff ℂ (⊤ : WithTop ℕ∞)

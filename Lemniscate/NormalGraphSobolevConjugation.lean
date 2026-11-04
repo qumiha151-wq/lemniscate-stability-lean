@@ -75,7 +75,7 @@ theorem circle_normal_graph_flow_conjugation
     simp only [star_neg,star_pow,← Ring.inverse_star]
   have hlower : star (normalGraphLowerOrderCoefficient T K c Z) =
       normalGraphLowerOrderCoefficient T Kstar c Zstar := by
-    simpa only [normalGraphLowerOrderCoefficient,Kstar,Zstar,star_zero] using
+    simpa only [normalGraphLowerOrderCoefficient,normalGraphLowerOrderCoefficientOver,Kstar,Zstar,star_zero] using
       normal_graph_rational_flow_star K c ⟨Z 0,Z 1,Z 2,Z 3,0⟩
   have hfourth : circleConjugate T ((4:ℂ) • circleSobolevCoordinate T 4 4 f) =
       (4:ℂ) • circleSobolevCoordinate T 4 4 fstar := by

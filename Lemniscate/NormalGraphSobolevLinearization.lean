@@ -29,17 +29,17 @@ theorem circle_normal_graph_hasFDerivAt
     fun f => normalGraphPrincipalCoefficient T K (E f)
   let V : CircleSobolevSpace T 4 →L[ℂ] CircleL2 T :=
     (4:ℂ) • circleSobolevCoordinate T 4 4
-  obtain ⟨_,hzero,hcoeff⟩ := normal_graph_coefficients_smooth T K c
+  obtain ⟨_,hzero,hcoeff⟩ := normal_graph_coefficients_smooth_over C(AddCircle T, ℂ) K c
   have hAcont : ContDiffAt ℂ (⊤ : WithTop ℕ∞) A 0 := by
     have haE : ContDiffAt ℂ (⊤ : WithTop ℕ∞)
         (normalGraphPrincipalCoefficient T K) (E (0 : CircleSobolevSpace T 4)) := by
-      simpa only [map_zero] using (hcoeff 0 hzero).fst
+      simpa only [map_zero, normalGraphPrincipalCoefficient] using! (hcoeff 0 hzero).fst
     exact haE.comp 0 E.contDiff.contDiffAt
   let DA := fderiv ℂ A 0
   have hA : HasFDerivAt A DA 0 :=
     (hAcont.differentiableAt (by simp)).hasFDerivAt
   have hA0 : A 0 = -1 := by
-    simp [A,E,normalGraphPrincipalCoefficient,graphMetricSquared,graphA]
+    simp [A,E,normalGraphPrincipalCoefficient,normalGraphPrincipalCoefficientOver,graphMetricSquared,graphA]
   have hprod := (circleCoefficientMultiplyL2 T).hasFDerivAt_of_bilinear hA V.hasFDerivAt
   have hprod' : HasFDerivAt
       (fun f : CircleSobolevSpace T 4 => circleCoefficientMultiplyL2 T (A f) (V f))
