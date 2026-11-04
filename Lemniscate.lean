@@ -1,3 +1,5 @@
+import Lemniscate.BernoulliParabolicLocalSolution
+import Lemniscate.BernoulliParabolicEnergyEstimate
 import Lemniscate.PeriodicParabolicLocalSolution
 import Lemniscate.PeriodicSobolevEnergyNorm
 import Lemniscate.PeriodicParabolicEquation
@@ -75,8 +77,8 @@ The graph equation is a smooth map from the complete H4 space into L2 on an
 open neighborhood controlled by the H2 norm. At the Bernoulli equilibrium its
 Frechet derivative is exactly the differential operator used in the spectral
 proof. On classical real graph data this equation agrees with the actual
-geometric curve flow. Conjugation compatibility is proved; reality preservation
-of evolving solutions still requires uniqueness. Mixed Sobolev product bounds
+geometric curve flow. Conjugation compatibility and uniqueness prove that
+the actual local modulated solution is real for real initial heights. Mixed Sobolev product bounds
 and a local quadratic Taylor remainder estimate are available.
 The nonlinear graph remainder satisfies the mixed H2-H4 two-point bound,
 both before and after actual adjoint-normalized rotation modulation on every
@@ -95,23 +97,26 @@ The infinite-dimensional principal equation is solvable with the same
 maximal-L2 estimate and a proved uniqueness theorem. Its actual inverse and
 the zero-initial-value estimate give a solution isomorphism for bounded
 H2-to-L2 lower-order perturbations on a positive time interval. The nonlinear
-contraction theorem uses the genuine time-L2 Nemytskii map.
+contraction theorem uses the genuine time-L2 Nemytskii map. Small H2 initial
+heights admit actual local modulated solutions on every positive cover.
 The Bochner primitive yields the L2 energy formula without a pointwise time
 derivative assumption. Finite Fourier projection and dominated convergence
 give the H2 energy formula. Weak integration by parts and interpolation
 control the complete H4 norm by the principal elliptic operator. Combining
 the principal energy with the cover metric absorbs the actual nonlinear
 remainder, for every rate below the proved spectral gap on the phase kernel.
+For actual modulated parabolic solutions on each positive cover, a small
+continuous-H2 neighborhood preserves the phase and gives exponential energy
+decay at every smaller positive rate, together with integrated H4 dissipation.
+The combined energy also controls the complete H2 norm.
 All integer Sobolev orders admit the actual Haar-preserving spatial
 translation, its inverse, coordinate compatibility and strong continuity.
 Aligned Frenet curves satisfy direct tangent and position comparison bounds
 in terms of their L1 curvature difference, without a Gronwall exponential.
 
 This remains a partial formalization. The full nonlinear stability theorem is
-NOT proved. The actual nonlinear local equation, global continuation,
-smoothing, curvature-profile entry and full geometric convergence remain
-proof obligations. The contraction framework and the spatial nonlinear
-energy inequality alone do not assert these results.
+NOT proved. Global continuation, smoothing, curvature-profile entry and
+full geometric convergence remain proof obligations.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.

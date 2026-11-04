@@ -1542,3 +1542,5 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_l2_translation_continuous
 #print axioms Lemniscate.circle_sobolev_energy_norm_equivalence
 #print axioms Lemniscate.circle_parabolic_local_solution
+#print axioms Lemniscate.bernoulli_cover_parabolic_energy_estimate
+#print axioms Lemniscate.bernoulli_cover_modulated_real_local_solution
