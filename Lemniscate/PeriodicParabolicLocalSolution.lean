@@ -41,8 +41,9 @@ variable (T : ℝ) [Fact (0 < T)]
 
 set_option maxHeartbeats 800000 in
 /-- A mixed H2-H4 remainder and a genuine second-order bounded
-perturbation give actual local solutions, unique in a parabolic ball
-smaller than any prescribed positive radius. -/
+perturbation give one positive time interval and its linear data inverse.
+On that same interval, actual local solutions are unique in a parabolic
+ball smaller than any prescribed positive radius. -/
 theorem circle_parabolic_local_solution
     (F : CircleSobolevSpace T 4 → CircleL2 T)
     (D : CircleSobolevSpace T 4 →L[ℂ] CircleL2 T)
@@ -59,13 +60,21 @@ theorem circle_parabolic_local_solution
         ((‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖+
             ‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 g)‖)*‖f-g‖+
           (‖f‖+‖g‖)*‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 (f-g))‖))
-    (η : ℝ) (hη : 0 < η) :
-    ∃ τ : ℝ, 0 < τ ∧ τ ≤ 1 ∧ ∃ ε > 0, ∃ r > 0, r < η ∧
-      ∀ u₀ : CircleSobolevSpace T 2, ‖u₀‖ ≤ ε →
-        ∃! U : CircleParabolicSpace T τ,
-          ‖U‖ ≤ r ∧ circleParabolicInitialValue T τ U = u₀ ∧
-            ∀ᵐ t : unitInterval ∂volume,
-              circleParabolicTimeDerivative T τ U t = F (circleParabolicH4 T τ U t) := by
+    :
+    ∃ τ : ℝ, 0 < τ ∧ τ ≤ 1 ∧
+      ∃ e : CircleParabolicSpace T τ ≃L[ℂ]
+          (CircleSobolevSpace T 2 × CircleTimeL2 T),
+        e.toContinuousLinearMap = circleParabolicLowerOrderData T τ B ∧
+        ∀ η : ℝ, 0 < η → ∃ ε > 0, ∃ r > 0, r < η ∧
+          ∀ u₀ : CircleSobolevSpace T 2, ‖u₀‖ ≤ ε →
+            ∃! U : CircleParabolicSpace T τ,
+              ‖U‖ ≤ r ∧ circleParabolicInitialValue T τ U = u₀ ∧
+                ∀ᵐ t : unitInterval ∂volume,
+                  circleParabolicTimeDerivative T τ U t = F (circleParabolicH4 T τ U t) := by
+  refine parameter_witness_transport (circle_parabolic_lower_order_isomorphism T B) ?_
+  intro τ hτ hτ1 e he
+  refine ⟨e,he,?_⟩
+  intro η hη
   let δ : ℝ := min δ₀ η
   have hδ : 0 < δ := lt_min hδ₀ hη
   have hδold : δ ≤ δ₀ := min_le_left _ _
@@ -88,8 +97,6 @@ theorem circle_parabolic_local_solution
     intro f g hf hg
     rw [hNdiff]
     exact htame f g (hf.trans_le hδold) (hg.trans_le hδold)
-  refine parameter_witness_transport (circle_parabolic_lower_order_isomorphism T B) ?_
-  intro τ hτ hτ1 e he
   let A₀ := circleSobolevPrincipalOperator T
   let BT : CircleParabolicSpace T τ →L[ℂ] CircleTimeL2 T :=
     (B.compLpL 2 (volume : Measure unitInterval)).comp (circleParabolicH2Time T τ)

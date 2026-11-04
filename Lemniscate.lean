@@ -1,3 +1,10 @@
+import Lemniscate.PeriodicParabolicNonlinearUniqueness
+import Lemniscate.NormalGraphProjection
+import Lemniscate.ComplexPhasePrimitive
+import Lemniscate.PeriodicParabolicTranslation
+import Lemniscate.PeriodicParabolicRestriction
+import Lemniscate.PeriodicSobolevTranslationRegularity
+import Lemniscate.NormalGraphAngularVelocity
 import Lemniscate.BernoulliParabolicLocalSolution
 import Lemniscate.BernoulliParabolicEnergyEstimate
 import Lemniscate.PeriodicParabolicLocalSolution
@@ -99,6 +106,10 @@ the zero-initial-value estimate give a solution isomorphism for bounded
 H2-to-L2 lower-order perturbations on a positive time interval. The nonlinear
 contraction theorem uses the genuine time-L2 Nemytskii map. Small H2 initial
 heights admit actual local modulated solutions on every positive cover.
+One time interval and its linear data isomorphism support every smaller
+parabolic ball.
+The nonlinear equation is unique among all actual maximal-regularity
+solutions in a common small continuous-H2 neighborhood.
 The Bochner primitive yields the L2 energy formula without a pointwise time
 derivative assumption. Finite Fourier projection and dominated convergence
 give the H2 energy formula. Weak integration by parts and interpolation
@@ -111,8 +122,18 @@ decay at every smaller positive rate, together with integrated H4 dissipation.
 The combined energy also controls the complete H2 norm.
 All integer Sobolev orders admit the actual Haar-preserving spatial
 translation, its inverse, coordinate compatibility and strong continuity.
+Finite differentiability of the L2 translation orbit constructs the full
+weak Sobolev jet. Affine time restriction preserves the actual parabolic
+constraints and equation, including both half intervals at a common duration.
+Time-dependent spatial translation preserves the true parabolic primitive,
+with its physical transport velocity, and is continuous in the full norm.
+The modulation angular velocity satisfies the H2-H4 product estimate and
+the algebraic reconstruction identity for the unmodulated equation.
 Aligned Frenet curves satisfy direct tangent and position comparison bounds
 in terms of their L1 curvature difference, without a Gronwall exponential.
+For nearby smooth unit-speed curves, normal projection constructs a smooth
+periodic normal graph with C1 bounds and a positive-derivative parameter
+change. The reference curve may be immersed.
 
 This remains a partial formalization. The full nonlinear stability theorem is
 NOT proved. Global continuation, smoothing, curvature-profile entry and
