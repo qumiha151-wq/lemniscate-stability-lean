@@ -1,3 +1,23 @@
+import Lemniscate.PeriodicParabolicEquation
+import Lemniscate.BanachDenseSolvability
+import Lemniscate.PeriodicParabolicSolvability
+import Lemniscate.PeriodicParabolicUniqueness
+import Lemniscate.PeriodicParabolicNormedSpace
+import Lemniscate.PeriodicParabolicInverse
+import Lemniscate.PeriodicParabolicLowerOrder
+import Lemniscate.PeriodicParabolicPicard
+import Lemniscate.PeriodicParabolicProducts
+import Lemniscate.PeriodicProfileShiftSmoothness
+import Lemniscate.PeriodicTimeCoefficientAlgebra
+import Lemniscate.NormalGraphModulationConjugation
+import Lemniscate.PeriodicParabolicConjugation
+import Lemniscate.BernoulliCoverModulationData
+import Lemniscate.PeriodicParabolicEnergyIdentity
+import Lemniscate.PeriodicParabolicH2EnergyIdentity
+import Lemniscate.PeriodicSobolevPrincipalEstimate
+import Lemniscate.BernoulliCombinedEnergyEstimate
+import Lemniscate.FrenetComparison
+import Lemniscate.PeriodicSobolevTranslation
 import Lemniscate.NormalGraphRotationGeometry
 import Lemniscate.BernoulliCoverModulation
 import Lemniscate.PeriodicCoverStableEnergy
@@ -69,11 +89,27 @@ Actual finite initial and time-forcing data are dense in H2 x time-L2.
 The pointwise nonlinear tame bound induces a genuine time-L2 Nemytskii map
 and the mixed time estimate; time-continuous H4 values are not assumed.
 
+The infinite-dimensional principal equation is solvable with the same
+maximal-L2 estimate and a proved uniqueness theorem. Its actual inverse and
+the zero-initial-value estimate give a solution isomorphism for bounded
+H2-to-L2 lower-order perturbations on a positive time interval. The nonlinear
+contraction theorem uses the genuine time-L2 Nemytskii map.
+The Bochner primitive yields the L2 energy formula without a pointwise time
+derivative assumption. Finite Fourier projection and dominated convergence
+give the H2 energy formula. Weak integration by parts and interpolation
+control the complete H4 norm by the principal elliptic operator. Combining
+the principal energy with the cover metric absorbs the actual nonlinear
+remainder, for every rate below the proved spectral gap on the phase kernel.
+All integer Sobolev orders admit the actual Haar-preserving spatial
+translation, its inverse, coordinate compatibility and strong continuity.
+Aligned Frenet curves satisfy direct tangent and position comparison bounds
+in terms of their L1 curvature difference, without a Gronwall exponential.
+
 This remains a partial formalization. The full nonlinear stability theorem is
-NOT proved. Infinite-dimensional parabolic solvability, maximal regularity,
-nonlinear wellposedness, smoothing, normal stability, curvature-profile entry
-and full geometric convergence remain proof obligations. The proved Frechet
-linearization and finite-mode energy estimates do not assert these results.
+NOT proved. The actual nonlinear local equation, global continuation,
+smoothing, curvature-profile entry and full geometric convergence remain
+proof obligations. The contraction framework and the spatial nonlinear
+energy inequality alone do not assert these results.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.
