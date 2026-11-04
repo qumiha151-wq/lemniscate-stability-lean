@@ -311,7 +311,8 @@ private theorem translation_fourier_phase (n : ℤ) (a t : ℝ) :
     Complex.ofReal_intCast,Complex.ofReal_ofNat]
   ring
 
-private theorem sobolev_translation_zero (m : ℕ) (f : CircleSobolevSpace T m) :
+/-- Zero spatial translation fixes the complete Sobolev derivative jet. -/
+theorem circle_sobolev_translation_zero (m : ℕ) (f : CircleSobolevSpace T m) :
     circleSobolevTranslation T m (0 : AddCircle T) f = f := by
   apply (circleSobolevTranslation T m (0 : AddCircle T)).injective
   simpa only [zero_add] using circle_sobolev_translation_add T m 0 0 f
@@ -564,7 +565,7 @@ theorem circle_parabolic_translation_components (hτ : τ ≠ 0) (a : ℝ)
   · change circleSobolevTranslation T 2 ((a*(0:ℝ):ℝ) : AddCircle T)
       (circleParabolicCurve T τ U 0) = circleParabolicCurve T τ U 0
     simpa only [mul_zero,AddCircle.coe_zero] using
-      sobolev_translation_zero T 2 (circleParabolicCurve T τ U 0)
+      circle_sobolev_translation_zero T 2 (circleParabolicCurve T τ U 0)
 
 /-- Strong continuity in the translation parameter holds in the full
 parabolic norm, including the true L2-in-time H4 and velocity components. -/

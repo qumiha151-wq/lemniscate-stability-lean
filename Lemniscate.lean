@@ -1,3 +1,6 @@
+import Lemniscate.PeriodicCurvatureProfileEntry
+import Lemniscate.PeriodicImmersionArclength
+import Lemniscate.NormalGraphParabolicAngularVelocity
 import Lemniscate.PeriodicParabolicGlobalSolution
 import Lemniscate.BernoulliParabolicGlobalSolution
 import Lemniscate.PeriodicParabolicGlobalUniqueness
@@ -159,6 +162,12 @@ bound and exponential H2 decay at every smaller spectral rate. Finite-interval
 uniqueness also identifies the global segments and global curves.
 Translation-orbit derivatives construct continuous higher Sobolev jets on
 closed positive-time intervals, with bounds in terms of the same derivatives.
+A general smooth periodic immersion has a genuine smooth arclength order
+isomorphism and smooth inverse, preserving its actual signed curvature.
+Curvature-profile error alone yields a real H2 normal graph with zero adjoint
+phase after a Euclidean motion, without initial C1 or higher-norm smallness.
+The scalar angular velocity of an actual parabolic solution belongs to
+time-L2 and obeys the H2-H4 product estimate; real data give real velocity.
 The initial normal projection produces an actual real H2 height controlled
 by the C1 error and the L2 curvature error. A small-rotation variation of the
 same projection and a root comparison estimate are available.
@@ -170,8 +179,9 @@ change. The reference curve may be immersed.
 
 This remains a partial formalization. The full nonlinear stability theorem is
 NOT proved. Applying the implicit parameter equation to the actual solution,
-curvature-profile phase entry, and classical geometric reconstruction with
-smooth convergence remain proof obligations.
+identifying the scale- and phase-normalized curvature functional with the
+initial graph theorem, and classical geometric reconstruction with smooth
+convergence remain proof obligations.
 
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.

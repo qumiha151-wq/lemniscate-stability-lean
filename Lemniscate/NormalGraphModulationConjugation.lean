@@ -32,10 +32,13 @@ private theorem modulation_low_coordinates_conjugation (h : CircleSobolevSpace T
     circle_sobolev_conjugation_derivative,circle_sobolev_h1_embedding_conjugation,
     star_smul,Complex.star_def,Complex.conj_ofReal]
 
-private theorem modulation_rotation_field_conjugation
+/-- Conjugating the actual background and height conjugates the geometric
+rotation field, without a smallness or unit-domain hypothesis. -/
+theorem modulation_rotation_field_conjugation
     (K : BackgroundJetOver C(AddCircle T, ℂ)) (h : CircleSobolevSpace T 2) :
     circleConjugate T (circleNormalGraphRotationField T K h) =
-      circleNormalGraphRotationField T (modulationBackgroundStar T K)
+      circleNormalGraphRotationField T
+        ⟨star K.k,star K.ks,star K.kss,star K.ksss,star K.eta,star K.b⟩
         (circleSobolevConjugation T 2 h) := by
   have hmul (a b : C(AddCircle T, ℂ)) : star (a*b) = star a*star b :=
     (starRingEnd C(AddCircle T, ℂ)).map_mul a b
@@ -56,7 +59,10 @@ private theorem modulation_normalized_rotation_conjugation
     circleConjugate T (circleNormalGraphNormalizedRotation T K ψ h) =
       circleNormalGraphNormalizedRotation T (modulationBackgroundStar T K)
         (circleConjugate T ψ) (circleSobolevConjugation T 2 h) := by
-  have hG := modulation_rotation_field_conjugation T K h
+  have hG : circleConjugate T (circleNormalGraphRotationField T K h) =
+      circleNormalGraphRotationField T (modulationBackgroundStar T K)
+        (circleSobolevConjugation T 2 h) :=
+    modulation_rotation_field_conjugation T K h
   have hell : circleNormalGraphRotationFunctional T (circleConjugate T ψ)
       (circleNormalGraphRotationField T (modulationBackgroundStar T K)
         (circleSobolevConjugation T 2 h)) =

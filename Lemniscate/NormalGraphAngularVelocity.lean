@@ -1,4 +1,5 @@
 import Lemniscate.NormalGraphModulation
+import Lemniscate.NormalGraphModulationConjugation
 
 /-! The rotation angular velocity required to reconstruct the unmodulated
 normal-graph equation. Its numerator has no linear part, and its denominator
@@ -98,5 +99,44 @@ theorem circle_normal_graph_angular_velocity_bound
       have hc : 2*CN*‖ell‖*M ≤ C := le_add_of_nonneg_right zero_le_one
       simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hc
         (mul_nonneg (norm_nonneg (H f)) (norm_nonneg f))
+
+open scoped ComplexConjugate
+
+/-- A real background, adjoint vector and height give a real angular
+velocity. This also holds when the total quotient has zero denominator. -/
+theorem circle_normal_graph_angular_velocity_real
+    (K : BackgroundJetOver C(AddCircle T, ℂ)) (c : ℝ) (ψ : CircleL2 T)
+    (f : CircleSobolevSpace T 4)
+    (hK : (⟨star K.k,star K.ks,star K.kss,star K.ksss,star K.eta,star K.b⟩ :
+      BackgroundJetOver C(AddCircle T, ℂ)) = K)
+    (hψ : circleConjugate T ψ = ψ) (hf : circleSobolevConjugation T 4 f = f) :
+    conj (circleNormalGraphAngularVelocity T K c ψ f) =
+      circleNormalGraphAngularVelocity T K c ψ f := by
+  let h := circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)
+  have hh : circleSobolevConjugation T 2 h = h := by
+    apply circle_sobolev_value_injective T 2
+    have hv := congrArg (circleSobolevCoordinate T 4 0) hf
+    simpa only [circle_sobolev_conjugation_coordinate] using! hv
+  have hF := (circle_normal_graph_flow_conjugation T K c f).1
+  rw [hK,hf] at hF
+  have hG := modulation_rotation_field_conjugation T K h
+  change circleConjugate T (circleNormalGraphRotationField T K h) =
+    circleNormalGraphRotationField T
+      ⟨star K.k,star K.ks,star K.kss,star K.ksss,star K.eta,star K.b⟩
+      (circleSobolevConjugation T 2 h) at hG
+  rw [hK,hh] at hG
+  have hnum : conj (inner ℂ ψ (circleNormalGraphFlow T K c f)) =
+      inner ℂ ψ (circleNormalGraphFlow T K c f) :=
+    (circle_conjugate_inner T ψ _).symm.trans
+      (congrArg₂ (fun u v : CircleL2 T => inner ℂ u v) hψ hF)
+  have hden : conj (inner ℂ ψ (circleNormalGraphRotationField T K h)) =
+      inner ℂ ψ (circleNormalGraphRotationField T K h) :=
+    (circle_conjugate_inner T ψ _).symm.trans
+      (congrArg₂ (fun u v : CircleL2 T => inner ℂ u v) hψ hG)
+  change conj (inner ℂ ψ (circleNormalGraphFlow T K c f)/
+    inner ℂ ψ (circleNormalGraphRotationField T K h)) = _
+  rw [map_div₀,hnum,hden]
+  rfl
+
 
 end Lemniscate

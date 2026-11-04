@@ -1605,3 +1605,10 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.continuous_linear_map_iterated_deriv
 #print axioms Lemniscate.smooth_parameter_derivative_estimate
 #print axioms Lemniscate.circle_continuous_sobolev_of_translation
+
+#print axioms Lemniscate.periodic_curvature_profile_entry
+#print axioms Lemniscate.periodic_immersion_arclength
+#print axioms Lemniscate.circle_parabolic_normal_graph_angular_velocity
+#print axioms Lemniscate.modulation_rotation_field_conjugation
+#print axioms Lemniscate.circle_normal_graph_angular_velocity_real
+#print axioms Lemniscate.circle_sobolev_translation_zero

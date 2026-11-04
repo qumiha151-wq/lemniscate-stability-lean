@@ -1,5 +1,5 @@
 import Lemniscate.PeriodicParabolicRotation
-import Lemniscate.PeriodicParabolicTranslation
+import Lemniscate.PeriodicSobolevTranslation
 import Lemniscate.NormalGraphRationalIdentities
 
 /-! Spatial covariance used to identify the actual translated solution with
