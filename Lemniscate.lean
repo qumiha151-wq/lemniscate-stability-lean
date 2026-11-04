@@ -1,3 +1,10 @@
+import Lemniscate.NormalGraphRotationGeometry
+import Lemniscate.BernoulliCoverModulation
+import Lemniscate.PeriodicCoverStableEnergy
+import Lemniscate.PeriodicParabolicDataApproximation
+import Lemniscate.PeriodicFiniteFourierExtension
+import Lemniscate.PeriodicFiniteParabolicEstimates
+import Lemniscate.PeriodicTimeNonlinearRemainder
 import Lemniscate.BernoulliClassicalGraphEquation
 import Lemniscate.NormalGraphSobolevConjugation
 import Lemniscate.PeriodicSobolevProductDifferences
@@ -49,8 +56,18 @@ proof. On classical real graph data this equation agrees with the actual
 geometric curve flow. Conjugation compatibility is proved; reality preservation
 of evolving solutions still requires uniqueness. Mixed Sobolev product bounds
 and a local quadratic Taylor remainder estimate are available.
-Finite diagonal parabolic systems satisfy an exact energy identity with a
-bound independent of the number of modes.
+The nonlinear graph remainder satisfies the mixed H2-H4 two-point bound,
+both before and after actual adjoint-normalized rotation modulation on every
+positive cover. The lifted adjoint phase functional, its reality and nonzero
+pairing with the geometric rotation field are proved. The full covered
+operator is dissipative in a bounded L2 metric on that phase kernel, with
+rate 21/4 on one period and 1/(2*M^2) on every other positive cover.
+Finite Fourier solutions belong to a complete parabolic Banach space with
+the true Bochner primitive, H2 initial trace, time-L2 H4 values and physical
+velocity. Their maximal-regularity estimate is independent of the mode count.
+Actual finite initial and time-forcing data are dense in H2 x time-L2.
+The pointwise nonlinear tame bound induces a genuine time-L2 Nemytskii map
+and the mixed time estimate; time-continuous H4 values are not assumed.
 
 This remains a partial formalization. The full nonlinear stability theorem is
 NOT proved. Infinite-dimensional parabolic solvability, maximal regularity,
