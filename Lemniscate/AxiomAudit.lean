@@ -1539,3 +1539,6 @@ sorryAx nor Lean.ofReduceBool may occur in this output. -/
 #print axioms Lemniscate.circle_parabolic_zero_initial_inverse_rhs
 #print axioms Lemniscate.circle_sobolev_translation_coordinate
 #print axioms Lemniscate.circle_sobolev_translation_symm
+#print axioms Lemniscate.circle_l2_translation_continuous
+#print axioms Lemniscate.circle_sobolev_energy_norm_equivalence
+#print axioms Lemniscate.circle_parabolic_local_solution

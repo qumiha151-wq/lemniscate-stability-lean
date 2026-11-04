@@ -1,3 +1,5 @@
+import Lemniscate.PeriodicParabolicLocalSolution
+import Lemniscate.PeriodicSobolevEnergyNorm
 import Lemniscate.PeriodicParabolicEquation
 import Lemniscate.BanachDenseSolvability
 import Lemniscate.PeriodicParabolicSolvability

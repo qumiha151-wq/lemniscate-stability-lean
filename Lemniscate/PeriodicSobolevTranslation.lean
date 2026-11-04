@@ -81,7 +81,7 @@ private theorem circle_l2_translation_weak_deriv (a : AddCircle T) (f g : Circle
     fourier_of_weak_circle_deriv T f g hfg n]
   ring
 
-private theorem circle_l2_translation_continuous (f : CircleL2 T) :
+theorem circle_l2_translation_continuous (f : CircleL2 T) :
     Continuous (fun a : AddCircle T => circleL2Translation T a f) := by
   let C : C(AddCircle T, C(AddCircle T, AddCircle T)) :=
     (⟨fun p : AddCircle T × AddCircle T => p.2+p.1,
