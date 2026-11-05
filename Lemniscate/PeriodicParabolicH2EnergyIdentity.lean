@@ -14,7 +14,7 @@ primitive energy identities pass to the limit by strong Fourier convergence
 and scalar dominated convergence.  No equation or classical time regularity
 is assumed.
 
-Candidate draft; compilation is performed separately by the parent task.
+
 -/
 
 noncomputable section

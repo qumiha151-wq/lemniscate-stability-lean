@@ -64,11 +64,11 @@ theorem circle_normal_graph_flow_polynomial
   have hv : circleContinuousL2 T v = V := by
     simpa only [v,V,circleContinuousL2,map_smul] using!
       congrArg (fun u : CircleL2 T => (2:ℂ) • u)
-        (circle_sobolev_continuous_jet_l2 T f 2)
+        (circle_sobolev_classical_jet_l2 T 3 f 2)
   have hw : circleContinuousL2 T w = W := by
     simpa only [w,W,circleContinuousL2,map_smul] using!
       congrArg (fun u : CircleL2 T => ((2*Real.sqrt 2:ℝ):ℂ) • u)
-        (circle_sobolev_continuous_jet_l2 T f 3)
+        (circle_sobolev_classical_jet_l2 T 3 f 3)
   have hquadratic : B 2*v^2 = (B 2*v)*v := by ring
   have hcubic : B 3*v^3 = (B 3*v^2)*v := by ring
   have hterms : circleContinuousL2 T (normalGraphLowerOrderCoefficient T K c Z) =

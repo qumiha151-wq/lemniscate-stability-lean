@@ -10,7 +10,7 @@ The relative unit tangent has speed equal to the absolute curvature
 difference.  Integrating this speed, and then the tangent difference,
 gives the comparison without a Gronwall estimate.
 
-Candidate draft; compilation is performed separately by the parent task.
+
 -/
 
 noncomputable section

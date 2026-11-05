@@ -34,7 +34,29 @@ theorem circle_normal_graph_coordinates_low (f : CircleSobolevSpace T 4) (j : Fi
     circleNormalGraphCoordinates T f j.castSucc.castSucc =
       circleNormalGraphLowCoordinates T
         (circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)) j := by
-  fin_cases j <;> rfl
+  let f₂ := circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)
+  have h₀ : circleSobolevContinuousJet T f 0 =
+      circleSobolevH1Embedding T (circleSobolevInclusion T 1 f₂) := by
+    apply ContinuousMap.toLp_injective (p := 2) (𝕜 := ℂ) AddCircle.haarAddCircle
+    change circleContinuousL2 T (circleSobolevClassicalJet T 3 f 0) =
+      circleContinuousL2 T (circleSobolevH1Embedding T (circleSobolevInclusion T 1 f₂))
+    rw [circle_sobolev_classical_jet_l2,circle_sobolev_h1_embedding_l2]
+    rfl
+  have h₁ : circleSobolevContinuousJet T f 1 =
+      circleSobolevH1Embedding T (circleSobolevDerivative T 1 f₂) := by
+    apply ContinuousMap.toLp_injective (p := 2) (𝕜 := ℂ) AddCircle.haarAddCircle
+    change circleContinuousL2 T (circleSobolevClassicalJet T 3 f 1) =
+      circleContinuousL2 T (circleSobolevH1Embedding T (circleSobolevDerivative T 1 f₂))
+    rw [circle_sobolev_classical_jet_l2,circle_sobolev_h1_embedding_l2]
+    rfl
+  rw [circle_normal_graph_coordinates,circle_normal_graph_low_coordinates]
+  fin_cases j
+  · change circleSobolevContinuousJet T f 0 =
+      circleSobolevH1Embedding T (circleSobolevInclusion T 1 f₂)
+    exact h₀
+  · change ((Real.sqrt 2:ℝ):ℂ) • circleSobolevContinuousJet T f 1 =
+      ((Real.sqrt 2:ℝ):ℂ) • circleSobolevH1Embedding T (circleSobolevDerivative T 1 f₂)
+    exact congrArg (fun z : C(AddCircle T,ℂ) => ((Real.sqrt 2:ℝ):ℂ) • z) h₁
 
 theorem circle_normal_graph_domain_iff_low
     (K : BackgroundJetOver C(AddCircle T, ℂ)) (f : CircleSobolevSpace T 4) :

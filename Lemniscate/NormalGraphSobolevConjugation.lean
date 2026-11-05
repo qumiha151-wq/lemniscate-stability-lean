@@ -14,22 +14,12 @@ open scoped ComplexConjugate
 
 variable (T : ℝ) [Fact (0 < T)]
 
-private theorem circle_sobolev_continuous_jet_star
-    (f : CircleSobolevSpace T 4) (j : Fin 4) :
-    circleSobolevContinuousJet T (circleSobolevConjugation T 4 f) j =
-      star (circleSobolevContinuousJet T f j) := by
-  apply ContinuousMap.toLp_injective (p := 2) (𝕜 := ℂ) AddCircle.haarAddCircle
-  change circleContinuousL2 T (circleSobolevContinuousJet T (circleSobolevConjugation T 4 f) j) =
-    circleContinuousL2 T (star (circleSobolevContinuousJet T f j))
-  rw [circle_sobolev_continuous_jet_l2,circle_continuous_l2_star,
-    circle_sobolev_conjugation_coordinate,circle_sobolev_continuous_jet_l2]
-
 private theorem circle_normal_graph_coordinates_star (f : CircleSobolevSpace T 4) :
     circleNormalGraphCoordinates T (circleSobolevConjugation T 4 f) =
       fun j => star (circleNormalGraphCoordinates T f j) := by
   funext j
   rw [circle_normal_graph_coordinates,circle_normal_graph_coordinates]
-  fin_cases j <;> simp [circle_sobolev_continuous_jet_star,star_smul,
+  fin_cases j <;> simp [(circle_sobolev_classical_jet_conjugation T 3),star_smul,
     Complex.star_def,Complex.conj_ofReal]
 
 private theorem circle_conjugate_multiply_general

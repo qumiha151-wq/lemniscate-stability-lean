@@ -74,8 +74,8 @@ private theorem continuous_jet_translation (a : AddCircle T)
   apply ContinuousMap.toLp_injective (p := 2) (𝕜 := ℂ) AddCircle.haarAddCircle
   change circleContinuousL2 T (circleSobolevContinuousJet T (circleSobolevTranslation T 4 a f) j) =
     circleContinuousL2 T (circleCoefficientTranslation T a (circleSobolevContinuousJet T f j))
-  rw [circle_sobolev_continuous_jet_l2,continuous_l2_translation,
-    circle_sobolev_continuous_jet_l2]
+  rw [(circle_sobolev_classical_jet_l2 T 3),continuous_l2_translation,
+    (circle_sobolev_classical_jet_l2 T 3)]
   rfl
 
 private theorem graph_coordinates_translation (a : AddCircle T) (f : CircleSobolevSpace T 4) :

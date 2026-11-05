@@ -46,7 +46,8 @@ private theorem phase_periodic_deriv {E : Type*} [NormedAddCommGroup E]
   have heq : (fun u => f (u+T)) = f := funext hp
   simpa only [deriv_comp_add_const] using congrArg (fun F => deriv F s) heq
 
-private theorem phase_inner_real (T : ℝ) [Fact (0<T)]
+/-- The Hermitian pairing of two real circle functions is real. -/
+theorem circle_inner_im_eq_zero_of_real (T : ℝ) [Fact (0<T)]
     (ψ v : CircleL2 T) (hψ : circleConjugate T ψ = ψ)
     (hv : circleConjugate T v = v) : (inner ℂ ψ v).im = 0 := by
   have heq : conj (inner ℂ ψ v) = inner ℂ ψ v := by
@@ -55,7 +56,9 @@ private theorem phase_inner_real (T : ℝ) [Fact (0<T)]
   simp only [Complex.conj_im] at hi
   linarith
 
-private theorem continuous_map_parameter_deriv
+/-- Continuous pointwise velocities give the actual derivative in the
+continuous-function space on a compact spatial domain. -/
+theorem continuous_map_hasDerivAt_of_pointwise
     {X : Type*} [TopologicalSpace X] [CompactSpace X]
     (F G : ℝ → C(X,ℂ)) (a b : ℝ)
     (hG : ContinuousOn G (Ioo a b))
@@ -442,7 +445,7 @@ private theorem phase_family_root
     rw [hGeval θ ht s]
     simpa only [Complex.ofReal_neg] using! hd.ofReal_comp
   have hQd (θ : ℝ) (ht : θ∈D) : HasDerivAt Q (-G θ) θ :=
-    continuous_map_parameter_deriv Q (fun t => -G t) (-2*r) (2*r) hGcont.neg hQpoint θ ht
+    continuous_map_hasDerivAt_of_pointwise Q (fun t => -G t) (-2*r) (2*r) hGcont.neg hQpoint θ ht
   have hGbound (θ : ℝ) (ht : θ∈D) : ‖G θ-b‖≤2*(R+3)*(1+2*K)*ε := by
     apply (ContinuousMap.norm_le _ (by positivity)).mpr
     intro x
@@ -523,7 +526,7 @@ private theorem phase_family_root
     change (inner ℂ ψ (circleSobolevCoordinate T 2 0 (p ⟨θ,hθD⟩).H)).re=0
     rw [← hvQ]
     exact hφzero
-  · exact phase_inner_real T ψ _ hψ hv
+  · exact circle_inner_im_eq_zero_of_real T ψ _ hψ hv
 
 /-- A sufficiently C1-close periodic unit-speed curve can be rotated by
 an angle of the same order as its C1 error so that its actual real H2
@@ -569,7 +572,7 @@ private theorem periodic_normal_graph_phase_exists
   have hqpair : inner ℂ ψ (circleContinuousL2 T b)=(q:ℂ) := by
     apply Complex.ext
     · rfl
-    · simpa only [Complex.ofReal_im] using phase_inner_real T ψ _ hψ hbconj
+    · simpa only [Complex.ofReal_im] using circle_inner_im_eq_zero_of_real T ψ _ hψ hbconj
   have hq : q≠0 := by intro hz; apply hpair; rw [hqpair,hz,Complex.ofReal_zero]
   have hqabs : 0 < |q| := abs_pos.mpr hq
   obtain ⟨d₀,hd₀,C₀,hC₀,hentry⟩ := periodic_normal_graph_h2_entry T β Tβ k ks

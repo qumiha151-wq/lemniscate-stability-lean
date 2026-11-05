@@ -34,7 +34,7 @@ theorem circle_sobolev_h4_second_eq (f : CircleSobolevSpace T 4) :
   change circleContinuousL2 T
       (circleSobolevH3Second T (circleSobolevInclusion T 3 f)) =
     circleContinuousL2 T (circleSobolevContinuousJet T f 2)
-  rw [circle_sobolev_h3_second_l2,circle_sobolev_continuous_jet_l2]
+  rw [circle_sobolev_h3_second_l2,(circle_sobolev_classical_jet_l2 T 3)]
   rfl
 
 theorem circle_sobolev_h3_second_bound :

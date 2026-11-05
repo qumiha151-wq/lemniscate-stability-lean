@@ -49,7 +49,7 @@ private theorem angular_radius_transport
 
 variable (T : ℝ) [Fact (0 < T)]
 
-private theorem angular_velocity_continuous_near_zero
+theorem angular_velocity_continuous_near_zero
     (K : BackgroundJetOver C(AddCircle T, ℂ)) (c : ℝ) (ψ : CircleL2 T)
     (hpair : inner ℂ ψ (circleContinuousL2 T K.b) ≠ 0)
     (δ₀ : ℝ) (hδ₀ : 0 < δ₀)

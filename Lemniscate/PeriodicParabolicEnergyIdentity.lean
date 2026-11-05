@@ -9,7 +9,7 @@ pointwise time derivative.  Lebesgue differentiation supplies its derivative
 almost everywhere.  Absolute continuity of its norm is controlled by the
 scalar primitive of the norm of the velocity.
 
-Candidate draft; compilation is performed separately by the parent task.
+
 -/
 
 noncomputable section

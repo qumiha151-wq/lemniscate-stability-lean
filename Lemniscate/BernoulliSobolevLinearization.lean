@@ -83,11 +83,11 @@ theorem bernoulli_sobolev_flow_linearization
             (a*circleSobolevContinuousJet T f j) =
           circleMultiplyL2 T a (circleSobolevCoordinate T 4 j.castSucc f) := by
       change circleContinuousL2 T (a*circleSobolevContinuousJet T f j) = _
-      rw [← circle_multiply_l2_continuous,circle_sobolev_continuous_jet_l2]
+      rw [← circle_multiply_l2_continuous,(circle_sobolev_classical_jet_l2 T 3)]
     have hbase :
         (ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ)
             (circleSobolevContinuousJet T f 0) = circleSobolevCoordinate T 4 0 f := by
-      exact circle_sobolev_continuous_jet_l2 T f 0
+      exact circle_sobolev_classical_jet_l2 T 3 f 0
     rw [circle_sobolev_operator_profile]
     simp only [circleNormalGraphDerivative,ContinuousLinearMap.add_apply,
       ContinuousLinearMap.smul_apply,ContinuousLinearMap.comp_apply]
