@@ -1,4 +1,3 @@
-import Lemniscate.VectorIntervalSoundness
 import Lemniscate.RoundedIntervals
 import Mathlib.Data.Matrix.Mul
 

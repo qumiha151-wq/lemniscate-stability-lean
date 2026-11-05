@@ -18,7 +18,7 @@ open Complex MeasureTheory
 open scoped ContDiff ComplexConjugate
 
 set_option maxHeartbeats 800000 in
-private theorem actual_bernoulli_reference_geometry (e : ℝ ≃o ℝ)
+theorem actual_bernoulli_reference_geometry (e : ℝ ≃o ℝ)
     (he : ∀ u, e u = ∫ t in (0:ℝ)..u, Real.sqrt 2*‖bernoulliVelocity t‖) :
     let β : ℝ → ℂ := fun x => (Real.sqrt 2:ℂ)*bernoulliCurve (e.symm x)
     let t : ℝ → ℂ := fun x =>

@@ -1,9 +1,10 @@
-import Lemniscate.PeriodicExactFormComparison
-import Lemniscate.PeriodicProfileCoefficientBounds
-import Lemniscate.PeriodicEvenCoercivity
+import Lemniscate.ShortExactPolynomialCoercivity
+import Lemniscate.ShortH4Density
+import Lemniscate.ShortBernsteinForms
 
-/-! Transfer the whole even-sector energy estimate to the exact reduced
-form. Identification with the scaled centered operator is a separate step. -/
+/-! Exact coercivity follows from the new full-frequency Schur estimate,
+the seven-mode vector errors, H4 Fourier approximation, and Bernstein
+positivity. No old finite Bloch certificate is used. -/
 namespace Lemniscate
 open Complex MeasureTheory CoarseArithmetic
 open scoped ComplexConjugate
@@ -26,17 +27,11 @@ theorem paper_exact_reduced_even_coercivity (q p : C(AddCircle T, ℂ))
     (f : circleH4Domain T)
     (hf : ∀ n : ℤ, Odd n → fourierCoeff (f:CircleL2 T) n = 0) :
     (circleExactReducedBlochPairing T q p hq hp ψ α f f).re ≤ -(1/2:ℝ)*‖(f:CircleL2 T)‖^2 := by
-  rcases circle_profile_coefficient_norm_bounds T q p he hqreal hpreal with ⟨hh,hh₁,hh₂⟩
-  have hα : |α| ≤ 1 := abs_le.mpr ⟨by linarith only [hα0],by linarith only [hαhalf]⟩
-  have herror := paper_exact_finite_reduced_form_difference T q p hq hp he hqreal hpreal hs hc ho hr
-    ψ hψnorm hψzero hh hh₁ hh₂ (paper_frequency_le_one T hr) α hα f
-  have hfinite := paper_finite_even_coercivity T q p hq hp he hqreal hpreal hs hc hr α hα0 hαhalf f hf
-  have hre := Complex.re_le_norm (circleExactReducedBlochPairing T q p hq hp ψ α f f-
-    circleFiniteBlochPairing T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) α f f)
-  simp only [Complex.sub_re] at hre
-  change ‖circleExactReducedBlochPairing T q p hq hp ψ α f f-
-    circleFiniteBlochPairing T (q^2) ((2:ℂ) • (q*p)) (1-(3:ℂ) • (q^4)) α f f‖ ≤
-      (1/100:ℝ)*‖(f:CircleL2 T)‖^2 at herror
-  nlinarith only [herror,hfinite,hre,sq_nonneg ‖(f:CircleL2 T)‖]
+  apply circle_reduced_bound_of_bernstein T
+    (circleExactSymmetricCoefficient T q p hq hp ψ) f _ α hα0 hαhalf
+  intro j
+  exact short_exact_bernstein_nonpositive_of_polynomials T q p hq hp ψ j
+    (short_exact_polynomial_bernstein_nonpositive T q p hq hp he hqreal hpreal
+      hs hc ho hr ψ hψnorm hψzero j) f hf
 
 end Lemniscate

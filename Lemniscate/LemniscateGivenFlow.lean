@@ -67,7 +67,8 @@ set_option maxHeartbeats 1200000 in
 /-- A single profile-dependent radius identifies every given smooth
 free elastic flow with the constructed physical normal graph at all
 times. All local charts and the required low-H2 uniqueness are supplied
-by the actual restart theorem, rather than assumed of the given flow. -/
+by the actual restart theorem. The same radius retains the graph-unit
+and phase-denominator conditions needed for time regularity. -/
 theorem lemniscate_given_flow_identification
     (e : ℝ ≃o ℝ)
     (he : ∀ u,e u=∫ t in (0:ℝ)..u,Real.sqrt 2*‖bernoulliVelocity t‖)
@@ -90,7 +91,14 @@ theorem lemniscate_given_flow_identification
     let Q := circlePeriodicExtension T S M hS q
     let P := circlePeriodicExtension T S M hS p
     let Ψ := circleCoverEmbeddingH4 T S M hM hS 0 ψ
-    ∃ η>0,GivenFlowConclusion S e Q P (Ψ:CircleL2 S) η := by
+    ∃ η>0,
+      (∀ f : CircleSobolevSpace S 4,
+        ‖circleSobolevInclusion S 2 (circleSobolevInclusion S 3 f)‖<η →
+          f∈circleNormalGraphDomain S (circleBernoulliBackground S Q P)) ∧
+      (∀ g : CircleSobolevSpace S 2,‖g‖<η →
+        circleNormalGraphRotationFunctional S (Ψ:CircleL2 S)
+          (circleNormalGraphRotationField S (circleBernoulliBackground S Q P) g)≠0) ∧
+      GivenFlowConclusion S e Q P (Ψ:CircleL2 S) η := by
   dsimp only
   let Q := circlePeriodicExtension T S M hS q
   let R := circlePeriodicExtension T S M hS p
@@ -101,7 +109,7 @@ theorem lemniscate_given_flow_identification
     q p hq hqlift M hS (Ψ:CircleL2 S) hdata.2.1
   obtain ⟨η,hη,hRestart⟩ := bernoulli_restart_local_flow_chart T S e he hT q p hq hp hE
     hqlift hplift hqreal hpreal hs hc ho hr ψ hnorm hψzero M hM hS
-  refine ⟨η,hη,?_⟩
+  refine ⟨η,hη,hRestart.1,hRestart.2.1,?_⟩
   intro τ hτ x₀ D h₀ hh₀ hp₀ hvalue a ha p₀ α ρ hρ
   dsimp only
   intro hCoreSmooth hCoreFlow P hP Y hY hYper hFlow hInitial

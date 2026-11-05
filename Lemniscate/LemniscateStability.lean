@@ -2,8 +2,11 @@ import Lemniscate.BernoulliStabilityData
 import Lemniscate.BernoulliPhysicalGraphStability
 import Lemniscate.LemniscateGivenFlow
 import Lemniscate.LemniscateConstructedFlow
-import Lemniscate.LemniscatePhysicalGraphContinuity
+import Lemniscate.LemniscatePhysicalGraphSmoothness
+import Lemniscate.BernoulliBackgroundSmoothness
+import Lemniscate.BernoulliEvolutionJointSmoothness
 import Lemniscate.LemniscateConvergenceTransfer
+import Lemniscate.LemniscateLengthConvergence
 import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
 noncomputable section
@@ -123,7 +126,15 @@ private theorem lemniscate_stability_from_profile
   refine main_radius_transport
     (lemniscate_given_flow_identification T S e he rfl q p hq hp hE hqvalue hpvalue
       hqreal hpreal hs hc ho hr ψ hnorm hψzero M hM hS) ?_
-  intro η hη hGiven
+  intro η hη hPacket
+  have hDomain := hPacket.1
+  have hDen := hPacket.2.1
+  have hGiven := hPacket.2.2
+  have hQ : HasCircleDeriv S Q P := circle_periodic_extension_deriv T S M hS q p hq
+  have hP : HasCircleDeriv S P (-(Q^3)) := by
+    simpa only [Q,map_neg,map_pow] using circle_periodic_extension_deriv T S M hS _ _ hp
+  obtain ⟨hk,hks,hkss,hksss,heta,hb⟩ :=
+    circle_bernoulli_background_smooth S Q P hQ hP
   refine main_graph_data_transport
     (bernoulli_physical_graph_stability T S e he rfl q p hq hp hE hqvalue hpvalue
       hqreal hpreal hs hc ho hr ψ hnorm hψzero M hM hS η hη) ?_
@@ -216,25 +227,29 @@ private theorem lemniscate_stability_from_profile
   have hCoreQual : ∀ j : ℕ,Tendsto (fun t : ℝ => periodicCjNorm j
       (fun s : ℝ => Core t s/(ρ t:ℂ)-Rlim*lemniscateReference e s)) atTop (𝓝 0) :=
     hCoreData.2.2.2.2.1
+  have hCoreBase : ∀ j : ℕ,∃ C>0,∀ t : ℝ,a^4≤t → periodicCjNorm j
+      (fun s : ℝ => (Core t s-p₀)/(ρ t:ℂ)-Rlim*lemniscateReference e s)≤
+        C*(timeBase a t)^(-(g/2)/30) := hCoreData.2.2.2.2.2.1
   have hCoreRate : ∀ (μ : Ioo (0:ℝ) g) (j : ℕ),‖H‖≤εGraphRate μ j →
       ∀ t : ℝ,a^4≤t → periodicCjNorm j
         (fun s : ℝ => (Core t s-p₀)/(ρ t:ℂ)-Rlim*lemniscateReference e s)≤
-          CGraphRate μ j*(timeBase a t)^(-(μ:ℝ)/30)*‖H‖ := hCoreData.2.2.2.2.2
+          CGraphRate μ j*(timeBase a t)^(-(μ:ℝ)/30)*‖H‖  := hCoreData.2.2.2.2.2.2
   have hCoreFlow : IsFreeElasticFlow Core := by
     intro t ht s
     refine Exists.elim (hCorePoint t ht) ?_
     intro V hV
     refine ⟨V s,(hV s).1,(hV s).2.1,?_⟩
     simpa only [planarElasticForce] using! (hV s).2.2.2
-  have hCoreReg (t : ℝ) (ht : 0≤t) (s : ℝ) : deriv (Core t) s≠0 :=
-    (Classical.choose_spec (hCoreFlow t ht s)).2.1
   have hCoreValue (t : ℝ) (_ht : 0≤t) (s : ℝ) : Core t s=p₀+(ρ t:ℂ)*
       (Complex.exp (((α+D.theta (normalizedTime a t)):ℂ)*I)*
         (β s+((circleSobolevH1Embedding S (circleSobolevInclusion S 1
           (D.u (Real.toNNReal (normalizedTime a t)))) ((Real.sqrt 2*s):AddCircle S)).re:ℂ)*ν s)) := rfl
-  have hContinuity := lemniscate_physical_graph_continuity S Q P (Ψ:CircleL2 S)
-    τ hτ η H D a ha α ρ p₀ hρformula β ν hβ hν hβper hνper
-      Core hCoreSpace hCoreReg hCoreValue
+  have hJoint := bernoulli_evolution_joint_smooth S Q P (Ψ:CircleL2 S)
+    τ hτ η H D hk hks hkss hksss heta hb
+      (fun f hf => ⟨hDomain f hf,hDen _ hf⟩)
+  have hCoreSmooth := lemniscate_physical_graph_smoothness S Q P (Ψ:CircleL2 S)
+    τ hτ η H D hJoint.1 hJoint.2 a ha α ρ p₀ hρformula β ν hβ hν hβper hνper
+      Core hCoreValue
   have hCoreInitialExact (s : ℝ) : Core 0 s=γ₀ (e₀ s) := by
     rw [hCoreInitial,hInitialGraph]
     simp only [Complex.real_smul,hRexp]
@@ -262,23 +277,55 @@ private theorem lemniscate_stability_from_profile
           Real.sqrt (lemniscateCurvatureDeviation e M γ₀) := by
         dsimp only [CRate,timeBase]
         ring
+  have hFinalBase : ∀ j : ℕ,∃ C>0,∀ t : ℝ,a^4≤t → periodicCjNorm j
+      (fun s : ℝ => (Core t s-p₀)/(ρ t:ℂ)-Rlim*lemniscateReference e s)≤
+        C*(1+30*t/a^4)^(-lemniscateGap M/60) := by
+    intro j
+    obtain ⟨C,hC,hb⟩ := hCoreBase j
+    refine ⟨C,hC,?_⟩
+    intro t ht
+    have ht₀ : 0≤t := (pow_nonneg ha.le 4).trans ht
+    have hbase : 1≤timeBase a t := by
+      dsimp only [timeBase]
+      have hd : 0≤30*t/a^4 := by positivity
+      linarith only [hd]
+    calc
+      _≤C*(timeBase a t)^(-(g/2)/30) := hb t ht
+      _≤C*(timeBase a t)^(-lemniscateGap M/60) :=
+        mul_le_mul_of_nonneg_left (Real.rpow_le_rpow_of_exponent_le hbase
+          (by linarith only [hgap])) hC.le
+      _=C*(1+30*t/a^4)^(-lemniscateGap M/60) := rfl
   have transfer (Y : ℝ → ℝ → ℂ)
+      (hYspace : ∀ t : ℝ,0≤t → ContDiff ℝ ∞ (Y t) ∧ Function.Periodic (Y t) (2*Real.pi))
       (hY : ∀ t : ℝ,0≤t → OrientedCurveEquivalent (Y t) (Core t) (2*Real.pi) ell) :
       LemniscateConvergence e M γ₀ Y εRate CRate := by
-    apply lemniscate_convergence_of_oriented_equivalence e M γ₀ Y Core εRate CRate
-      a ha haScale ρ hρformula p₀ Rlim hRlim hCoreQual hFinalRate
+    apply lemniscate_convergence_actual_length e he M hM γ₀ Y εRate CRate hYspace
+    refine lemniscate_convergence_of_oriented_equivalence e M γ₀ Y Core εRate CRate
+      a ha haScale ρ hρformula p₀ Rlim hRlim hCoreQual hFinalRate ?_ hFinalBase
     intro t ht
     simpa only [← hellPaper] using! hY t ht
   constructor
-  · refine Exists.elim (lemniscate_constructed_flow Core hCoreFlow ell hCoreSpace
-      hContinuity.1 hContinuity.2.1 hContinuity.2.2 e₀ he₀ he₀i hdeck γ₀ hCoreInitialExact) ?_
+  · refine Exists.elim (lemniscate_constructed_flow Core hCoreFlow ell
+      hCoreSmooth.1 hCoreSmooth.2 e₀ he₀ he₀i hdeck γ₀ hCoreInitialExact) ?_
     intro Y hY
-    exact ⟨Y,hY.2.1,hY.2.2.1,hY.2.2.2.1,hY.2.2.2.2.1,hY.2.2.2.2.2.1,
-      transfer Y hY.2.2.2.2.2.2⟩
+    have hYspace (t : ℝ) (ht : 0≤t) :
+        ContDiff ℝ ∞ (Y t) ∧ Function.Periodic (Y t) (2*Real.pi) := by
+      refine ⟨?_,hY.2.2.2.2.1 t ht⟩
+      apply contDiffOn_univ.mp
+      exact hY.2.2.2.1.comp (contDiffOn_const.prodMk contDiffOn_id)
+        (fun s _ => ⟨ht,Set.mem_univ s⟩)
+    exact ⟨Y,hY.2.1,hY.2.2.1,hY.2.2.2.1,hY.2.2.2.2.1,
+      transfer Y hYspace hY.2.2.2.2.2⟩
   · intro Y hYsmooth hYper hYflow hYinitial
     have hYInitialEq : OrientedCurveEquivalent (Y 0) (Core 0) (2*Real.pi) ell :=
       ⟨e₀,he₀,he₀i,hdeck,fun s => (hYinitial (e₀ s)).trans (hCoreInitialExact s).symm⟩
-    exact transfer Y (hGiven τ hτ H D h₀ hh₀ hp₀ hHvalue a ha p₀ α ρ hρall
+    have hYspace (t : ℝ) (ht : 0≤t) :
+        ContDiff ℝ ∞ (Y t) ∧ Function.Periodic (Y t) (2*Real.pi) := by
+      refine ⟨?_,hYper t ht⟩
+      apply contDiffOn_univ.mp
+      exact hYsmooth.comp (contDiffOn_const.prodMk contDiffOn_id)
+        (fun s _ => ⟨ht,Set.mem_univ s⟩)
+    exact transfer Y hYspace (hGiven τ hτ H D h₀ hh₀ hp₀ hHvalue a ha p₀ α ρ hρall
       hCoreSpace hCoreFlow (2*Real.pi) (by positivity) Y hYsmooth hYper hYflow hYInitialEq)
 
 /-- Local stability of every finite cover of the Bernoulli lemniscate.

@@ -1,9 +1,17 @@
 import Lemniscate.IntervalSoundness
 import Mathlib.Analysis.Real.Sqrt
+import Mathlib.Data.Rat.BigOperators
 
 /-! The positive reciprocal and certified square-root steps used when
 normalizing the adjoint trial. No computed square root is trusted. -/
 namespace Lemniscate.CoarseArithmetic
+
+theorem sum_interval_sound {ι : Type*} [Fintype ι] (I : ι → Interval) (f : ι → ℝ)
+    (h : ∀ i, Contains (I i) (f i)) :
+    Contains ⟨∑ i, (I i).lo, ∑ i, (I i).hi⟩ (∑ i, f i) := by
+  constructor <;> simp only [Rat.cast_sum]
+  · exact Finset.sum_le_sum (fun i _ => (h i).1)
+  · exact Finset.sum_le_sum (fun i _ => (h i).2)
 
 def reciprocalPositive (I : Interval) : Interval := ⟨1/I.hi, 1/I.lo⟩
 def dividePositive (I J : Interval) : Interval := mul I (reciprocalPositive J)

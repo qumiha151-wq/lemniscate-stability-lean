@@ -2,6 +2,7 @@ import Lemniscate.FreeElasticFlow
 import Lemniscate.BernoulliInitialNormalGraph
 import Lemniscate.BernoulliReferenceLength
 import Lemniscate.NormalGraphCjEstimate
+import Lemniscate.ActualLengthNormalization
 
 /-! The precise geometric stability statement. This file defines the
 target of the main proof; defining the statement is not a proof of it.
@@ -46,10 +47,8 @@ def lemniscateCurvatureDeviation (e : ℝ ≃o ℝ) (M : ℕ) (γ : ℝ → ℂ)
 def lemniscateInitialScale (M : ℕ) (γ : ℝ → ℂ) : ℝ :=
   (∫ u in (0:ℝ)..(2*Real.pi),‖deriv γ u‖)/lemniscateLength M
 
-/-- The qualitative and quantitative conclusions use one fixed
-translation, one limiting rotation and one family of parameter changes
-for all spatial orders and rates. -/
-def LemniscateConvergence
+/-- The intermediate scale-normalized packet used by the construction. -/
+def LemniscateScaledConvergence
     (e : ℝ ≃o ℝ) (M : ℕ) (γ₀ : ℝ → ℂ) (Y : ℝ → ℝ → ℂ)
     (εRate CRate : Ioo (0:ℝ) (lemniscateGap M) → ℕ → ℝ) : Prop :=
   let a := lemniscateInitialScale M γ₀
@@ -61,6 +60,9 @@ def LemniscateConvergence
       ∀ s : ℝ,χ t (s+lemniscateLength M)=χ t s+2*Real.pi) ∧
     (∀ j : ℕ,Tendsto (fun t : ℝ => periodicCjNorm j
       (fun s : ℝ => Y t (χ t s)/(ρ t:ℂ)-Rlim*lemniscateReference e s)) atTop (𝓝 0)) ∧
+    (∀ j : ℕ,∃ C>0,∀ t : ℝ,a^4≤t → periodicCjNorm j
+      (fun s : ℝ => (Y t (χ t s)-p₀)/(ρ t:ℂ)-Rlim*lemniscateReference e s)≤
+        C*(1+30*t/a^4)^(-lemniscateGap M/60)) ∧
     ∀ (μ : Ioo (0:ℝ) (lemniscateGap M)) (j : ℕ),
       lemniscateCurvatureDeviation e M γ₀<εRate μ j →
       ∀ t : ℝ,a^4≤t → periodicCjNorm j
@@ -68,10 +70,41 @@ def LemniscateConvergence
           CRate μ j*(1+30*t/a^4)^(-(μ:ℝ)/30)*
             Real.sqrt (lemniscateCurvatureDeviation e M γ₀)
 
+/-- The main convergence packet includes normalization by the actual
+curve length.  All spatial orders, both normalizations and every rate
+use the same translation, limiting rotation and parameter changes. -/
+def LemniscateConvergence
+    (e : ℝ ≃o ℝ) (M : ℕ) (γ₀ : ℝ → ℂ) (Y : ℝ → ℝ → ℂ)
+    (εRate CRate : Ioo (0:ℝ) (lemniscateGap M) → ℕ → ℝ) : Prop :=
+    let a := lemniscateInitialScale M γ₀
+    let ρ : ℝ → ℝ := fun t => (a ^ 4 + 30 * t) ^ (1 / 4 : ℝ)
+    0 < a ∧ ∃ p₀ R : ℂ, ‖R‖ = 1 ∧ ∃ χ : ℝ → (ℝ ≃o ℝ),
+      (∀ t, 0 ≤ t → ContDiff ℝ ∞ (χ t : ℝ → ℝ) ∧
+        ContDiff ℝ ∞ ((χ t).symm : ℝ → ℝ) ∧
+          ∀ s, χ t (s + lemniscateLength M) = χ t s + 2 * Real.pi) ∧
+      (∀ j : ℕ, Tendsto (fun t => periodicCjNorm j
+        (fun s => Y t (χ t s) / (ρ t : ℂ) - R * lemniscateReference e s)) atTop (𝓝 0)) ∧
+      Tendsto (fun t => periodicCurveLength (2 * Real.pi) (Y t) / ρ t)
+        atTop (𝓝 (lemniscateLength M)) ∧
+      (∀ j : ℕ, Tendsto (fun t => periodicCjNorm j
+        (fun s => Y t (χ t s) / (periodicCurveLength (2 * Real.pi) (Y t) : ℂ) -
+          R * lemniscateReference e s / (lemniscateLength M : ℂ))) atTop (𝓝 0)) ∧
+      (∀ j : ℕ,∃ C>0,∀ t : ℝ,a^4≤t → periodicCjNorm j
+        (fun s : ℝ => (Y t (χ t s)-p₀)/(ρ t:ℂ)-R*lemniscateReference e s)≤
+          C*(1+30*t/a^4)^(-lemniscateGap M/60)) ∧
+      ∀ (μ : Ioo (0 : ℝ) (lemniscateGap M)) (j : ℕ),
+        lemniscateCurvatureDeviation e M γ₀ < εRate μ j →
+        ∀ t, a ^ 4 ≤ t → periodicCjNorm j
+          (fun s => (Y t (χ t s) - p₀) / (ρ t : ℂ) - R * lemniscateReference e s) ≤
+            CRate μ j * (1 + 30 * t / a ^ 4) ^ (-(μ : ℝ) / 30) *
+              Real.sqrt (lemniscateCurvatureDeviation e M γ₀)
+
 /-- The full main theorem includes a global solution of the projected
 equation and identifies every given smooth solution with the same initial
-curve. All neighborhoods and rate constants are chosen before that curve.
-Only spatial C-infinity convergence is asserted. -/
+curve. Base and uniform-rate neighborhoods and constants are chosen
+before the initial curve; the all-orders rate constants on the base
+neighborhood may depend on that curve. Only spatial C-infinity
+convergence is asserted. -/
 def LemniscateStabilityStatement (e : ℝ ≃o ℝ) : Prop :=
   ∀ M : ℕ,0<M → ∃ ε>0,
     ∃ εRate CRate : Ioo (0:ℝ) (lemniscateGap M) → ℕ → ℝ,
@@ -81,12 +114,9 @@ def LemniscateStabilityStatement (e : ℝ ≃o ℝ) : Prop :=
       (∀ s : ℝ,deriv γ₀ s≠0) → lemniscateCurvatureDeviation e M γ₀<ε →
       (∃ Y : ℝ → ℝ → ℂ,
         IsFreeElasticFlow Y ∧ (∀ s : ℝ,Y 0 s=γ₀ s) ∧
-        (∀ t : ℝ,0≤t → ContDiff ℝ ∞ (Y t) ∧
-          Function.Periodic (Y t) (2*Real.pi)) ∧
-        ContinuousOn (fun z : ℝ × ℝ => Y z.1 z.2)
+        ContDiffOn ℝ ∞ (fun z : ℝ × ℝ => Y z.1 z.2)
           (Ici (0:ℝ) ×ˢ (univ : Set ℝ)) ∧
-        ContinuousOn (fun z : ℝ × ℝ => deriv (Y z.1) z.2)
-          (Ici (0:ℝ) ×ˢ (univ : Set ℝ)) ∧
+        (∀ t : ℝ,0≤t → Function.Periodic (Y t) (2*Real.pi)) ∧
         LemniscateConvergence e M γ₀ Y εRate CRate) ∧
       ∀ Y : ℝ → ℝ → ℂ,
         ContDiffOn ℝ ∞ (fun z : ℝ × ℝ => Y z.1 z.2)

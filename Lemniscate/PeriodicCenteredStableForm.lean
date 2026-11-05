@@ -1,5 +1,5 @@
 import Lemniscate.PeriodicBlochCenter
-import Lemniscate.PeriodicFiniteProjectionL2
+import Lemniscate.PeriodicFixedProjection
 
 /-! Identify the exact constant coefficient on the stable subspace with
 the Householder pullback of S0, before any approximation is made. -/

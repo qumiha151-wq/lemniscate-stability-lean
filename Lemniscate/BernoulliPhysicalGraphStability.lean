@@ -1,4 +1,5 @@
 import Lemniscate.BernoulliParabolicSmoothStability
+import Lemniscate.PeriodicParabolicShiftDecay
 import Lemniscate.BernoulliParabolicEndpointSmoothing
 import Lemniscate.BernoulliPhysicalNormalGraphFlow
 import Lemniscate.BernoulliReferenceNormalGraph
@@ -28,7 +29,7 @@ structure BernoulliNormalGraphEvolution
   u : C(ℝ≥0,CircleSobolevSpace T 2)
   U : ℕ → CircleParabolicSpace T τ
   w : ∀ n : ℕ, C(Ioi (0:ℝ),CircleSobolevSpace T n)
-  initialLift : C(unitInterval,CircleSobolevSpace T 5)
+  initialLifts : ∀ n : ℕ,C(unitInterval,CircleSobolevSpace T n)
   omega : ℝ → ℝ
   initialOmega : C(unitInterval,ℝ)
   theta : ℝ → ℝ
@@ -44,15 +45,14 @@ structure BernoulliNormalGraphEvolution
   positiveValue : ∀ n (t : Ioi (0:ℝ)), circleSobolevCoordinate T n 0 (w n t)=
     circleSobolevCoordinate T 2 0 (u ⟨(t:ℝ),t.property.le⟩)
   positiveLimit : ∀ n, Tendsto (w n) atTop (𝓝 0)
-  initialValue : ∀ r, circleSobolevInclusion T 2
-    (circleSobolevInclusion T 3 (circleSobolevInclusion T 4 (initialLift r)))=
-      circleParabolicCurve T τ (U 0) r
+  initialValues : ∀ n r,circleSobolevCoordinate T n 0 (initialLifts n r)=
+    circleSobolevCoordinate T 2 0 (circleParabolicCurve T τ (U 0) r)
   omegaContinuous : ContinuousOn omega (Ioi (0:ℝ))
   omegaValue : ∀ t : Ioi (0:ℝ), (omega t:ℂ)=circleNormalGraphAngularVelocity T
     (circleBernoulliBackground T q p) (15/2) ψ (circleSobolevInclusion T 4 (w 5 t))
   initialOmegaValue : ∀ r, (initialOmega r:ℂ)=circleNormalGraphAngularVelocity T
     (circleBernoulliBackground T q p) (15/2) ψ
-      (circleSobolevInclusion T 4 (initialLift r))
+      (circleSobolevInclusion T 4 (initialLifts 5 r))
   omegaZero : omega 0=initialOmega 0
   thetaZero : theta 0=0
   thetaContinuous : Continuous theta
@@ -61,6 +61,22 @@ structure BernoulliNormalGraphEvolution
   thetaTail : ∀ t₀ ν B : ℝ, 0<t₀ → 0<ν → 0≤B →
     (∀ t : ℝ,t₀≤t → |omega t|≤B*Real.exp (-ν*t)) →
     ∀ t : ℝ,t₀≤t → |thetaLimit-theta t|≤(B/ν)*Real.exp (-ν*t)
+
+namespace BernoulliNormalGraphEvolution
+variable {T : ℝ} [Fact (0<T)] {q p : C(AddCircle T,ℂ)} {ψ : CircleL2 T}
+  {τ : ℝ} {hτ : 0<τ} {η : ℝ} {x₀ : CircleSobolevSpace T 2}
+
+def initialLift (D : BernoulliNormalGraphEvolution T q p ψ τ hτ η x₀) :
+    C(unitInterval,CircleSobolevSpace T 5) := D.initialLifts 5
+
+theorem initialValue (D : BernoulliNormalGraphEvolution T q p ψ τ hτ η x₀)
+    (r : unitInterval) : circleSobolevInclusion T 2
+      (circleSobolevInclusion T 3 (circleSobolevInclusion T 4 (D.initialLift r)))=
+        circleParabolicCurve T τ (D.U 0) r := by
+  apply circle_sobolev_value_injective T 2
+  exact D.initialValues 5 r
+
+end BernoulliNormalGraphEvolution
 
 private theorem graph_curve_norm (T : ℝ) [Fact (0<T)]
     (τ : ℝ) (U : CircleParabolicSpace T τ) :
@@ -347,10 +363,12 @@ private theorem graph_evolution_of_small_solutions
         (hrep 0 0).symm
       _=u 0 := by congr 1; apply Subtype.ext; simp [circleParabolicSegmentTime]
       _=x₀ := hu₀
-  refine graph_witness_transport
-    (hEndpoint (U 0) ((hUsmall 0).trans hηE') φ hφsmall hφPDE F hF
-      (hInitialValue.symm ▸ hvalue) 5) ?_
-  intro W₀ hW₀value
+  have hEndpointAll := fun n : ℕ =>
+    hEndpoint (U 0) ((hUsmall 0).trans hηE') φ hφsmall hφPDE F hF
+      (hInitialValue.symm ▸ hvalue) n
+  choose W hW using hEndpointAll
+  let W₀ := W 5
+  have hW₀value := hW 5
   have hW₀ (r : unitInterval) : circleSobolevInclusion T 2
       (circleSobolevInclusion T 3 (circleSobolevInclusion T 4 (W₀ r)))=
         circleParabolicCurve T τ (U 0) r := by
@@ -411,11 +429,11 @@ private theorem graph_evolution_of_small_solutions
     rw [hω₀positive t t.property]
     exact (hωvalue t).trans (congrArg (circleNormalGraphAngularVelocity T K (15/2) ψ) heq)
   refine ⟨{
-    u := u, U := U, w := w, initialLift := W₀, omega := ω₀, initialOmega := Ω₀,
+    u := u, U := U, w := w, initialLifts := W, omega := ω₀, initialOmega := Ω₀,
     theta := θ, thetaLimit := θlim, initial := hu₀,
     segmentSmall := fun m => (hUsmall m).trans hηreq', segments := hrep,
     equation := hPDE, real := hrealU, phase := hphaseU, positiveValue := hw,
-    positiveLimit := hwzero, initialValue := hW₀, omegaContinuous := hω₀cont,
+    positiveLimit := hwzero, initialValues := hW, omegaContinuous := hω₀cont,
     omegaValue := hωfull,
     initialOmegaValue := hΩ₀, omegaZero := by simp only [ω₀,if_pos rfl],
     thetaZero := hθzero, thetaContinuous := hθcont, thetaDerivative := hθwithin,
@@ -492,12 +510,11 @@ private theorem graph_rotation_exp (z : ℂ) :
     Complex.exp (I*z)=Complex.exp (z*I) := congrArg Complex.exp (mul_comm _ _)
 
 set_option maxHeartbeats 1200000 in
-private theorem graph_uniform_convergence_rate
+private theorem graph_rate_of_sobolev_bounds
     (T : ℝ) [Fact (0<T)] (e : ℝ ≃o ℝ)
     (q p : C(AddCircle T,ℂ)) (ψ : CircleL2 T)
-    (τ : ℝ) (hτ : 0<τ) (g ηA ηB δΩ CΩ : ℝ)
-    (hηA : ηB≤ηA) (hδΩ : ηB≤δΩ) (hCΩ : 0<CΩ)
-    (hStable : GraphSmallSolutionProperty T q p ψ τ hτ g ηA)
+    (τ : ℝ) (hτ : 0<τ) (ηB δΩ CΩ : ℝ)
+    (hδΩ : ηB≤δΩ) (hCΩ : 0<CΩ)
     (hΩ : ∀ f : CircleSobolevSpace T 4,
       ‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖<δΩ →
       ‖circleNormalGraphAngularVelocity T (circleBernoulliBackground T q p) (15/2) ψ f‖≤
@@ -508,18 +525,17 @@ private theorem graph_uniform_convergence_rate
       (‖bernoulliVelocity (e.symm x)‖:ℂ))))
     (hνper : Function.Periodic (fun x : ℝ => I*(bernoulliVelocity (e.symm x)/
       (‖bernoulliVelocity (e.symm x)‖:ℂ))) T)
-    (t₀ μ : ℝ) (ht₀ : 0<t₀) (hμ : 0<μ) (hμg : μ<g) (j : ℕ) :
-    ∃ ε>0,∃ C>0,∀ x₀ : CircleSobolevSpace T 2,
+    (t₀ μ : ℝ) (ht₀ : 0<t₀) (hμ : 0<μ) (j : ℕ)
+    (C₂ C₄ Cj : ℝ) (hC₂ : 0<C₂) (hC₄ : 0<C₄) (hCj : 0<Cj) :
+    ∃ C>0,∀ x₀ : CircleSobolevSpace T 2,
       ∀ D : BernoulliNormalGraphEvolution T q p ψ τ hτ ηB x₀,
-      ‖x₀‖≤ε → ∀ α σ : ℝ,t₀≤σ →
+      ∀ X : ℝ,X∈Icc (0:ℝ) 1 →
+      (∀ t : Ioi (0:ℝ),t₀≤(t:ℝ) → ‖D.w 2 t‖^2≤C₂*Real.exp (-2*μ*(t:ℝ))*X^2) →
+      (∀ t : Ioi (0:ℝ),t₀≤(t:ℝ) → ‖D.w 4 t‖^2≤C₄*Real.exp (-2*μ*(t:ℝ))*X^2) →
+      (∀ t : Ioi (0:ℝ),t₀≤(t:ℝ) → ‖D.w (j+1) t‖^2≤Cj*Real.exp (-2*μ*(t:ℝ))*X^2) →
+      ∀ α σ : ℝ,t₀≤σ →
         periodicCjNorm j (graphNormalizedError T e D.u D.theta D.thetaLimit α σ)≤
-          C*Real.exp (-μ*σ)*‖x₀‖ := by
-  refine graph_two_positive_transport (hStable.2 μ hμ hμg 2 t₀ ht₀) ?_
-  intro ε₂ hε₂ C₂ hC₂ hDecay₂
-  refine graph_two_positive_transport (hStable.2 μ hμ hμg 4 t₀ ht₀) ?_
-  intro ε₄ hε₄ C₄ hC₄ hDecay₄
-  refine graph_two_positive_transport (hStable.2 μ hμ hμg (j+1) t₀ ht₀) ?_
-  intro εj hεj Cj hCj hDecayj
+          C*Real.exp (-μ*σ)*X := by
   let BΩ := CΩ*Real.sqrt C₂*Real.sqrt C₄
   let Bθ := BΩ/(2*μ)
   have hBΩ : 0≤BΩ := by dsimp only [BΩ]; positivity
@@ -532,29 +548,9 @@ private theorem graph_uniform_convergence_rate
       hβper hνper (Real.sqrt 2) (Real.sqrt_pos.mpr (by norm_num : (0:ℝ)<2)).ne'
       Cj Bθ hCj hBθ) ?_
   intro C hC hEstimate
-  refine ⟨min 1 (min ε₂ (min ε₄ εj)),
-    lt_min zero_lt_one (lt_min hε₂ (lt_min hε₄ hεj)),C,hC,?_⟩
-  intro x₀ D hsmall
-  let X := ‖x₀‖
-  have hX : X∈Icc (0:ℝ) 1 := ⟨norm_nonneg _,hsmall.trans (min_le_left _ _)⟩
-  have hx₂ : ‖D.u 0‖≤ε₂ := by
-    rw [D.initial]
-    exact hsmall.trans ((min_le_right _ _).trans (min_le_left _ _))
-  have hx₄ : ‖D.u 0‖≤ε₄ := by
-    rw [D.initial]
-    exact hsmall.trans ((min_le_right _ _).trans
-      ((min_le_right _ _).trans (min_le_left _ _)))
-  have hxj : ‖D.u 0‖≤εj := by
-    rw [D.initial]
-    exact hsmall.trans ((min_le_right _ _).trans
-      ((min_le_right _ _).trans (min_le_right _ _)))
-  have hU : ∀ m,‖D.U m‖<ηA := fun m => (D.segmentSmall m).trans_le hηA
-  have hrate₂ := hDecay₂ D.u D.U D.segments hU D.equation (D.real 0) (D.phase 0)
-    hx₂ (D.w 2) (D.positiveValue 2)
-  have hrate₄ := hDecay₄ D.u D.U D.segments hU D.equation (D.real 0) (D.phase 0)
-    hx₄ (D.w 4) (D.positiveValue 4)
-  have hratej := hDecayj D.u D.U D.segments hU D.equation (D.real 0) (D.phase 0)
-    hxj (D.w (j+1)) (D.positiveValue (j+1))
+  refine ⟨C,hC,?_⟩
+  intro x₀ D X hX hrate₂ hrate₄ hratej
+  have hX0 : 0≤X := hX.1
   have hw₂ (t : Ioi (0:ℝ)) : D.w 2 t=D.u ⟨(t:ℝ),t.property.le⟩ :=
     circle_sobolev_value_injective T 2 (D.positiveValue 2 t)
   have hw₄ (t : Ioi (0:ℝ)) : circleSobolevInclusion T 2
@@ -585,12 +581,11 @@ private theorem graph_uniform_convergence_rate
     rw [hw₄] at hΩt
     have hn₂ : ‖D.u ⟨(t:ℝ),t.property.le⟩‖≤Real.sqrt C₂*X*Real.exp (-μ*s) := by
       have hh := hrate₂ t hs
-      rw [hw₂,D.initial] at hh
-      exact graph_rate_norm _ _ _ _ _ (norm_nonneg _) hC₂.le (norm_nonneg _) hh
+      rw [hw₂] at hh
+      exact graph_rate_norm _ _ _ _ _ (norm_nonneg _) hC₂.le hX0 hh
     have hn₄ : ‖D.w 4 t‖≤Real.sqrt C₄*X*Real.exp (-μ*s) := by
       have hh := hrate₄ t hs
-      rw [D.initial] at hh
-      exact graph_rate_norm _ _ _ _ _ (norm_nonneg _) hC₄.le (norm_nonneg _) hh
+      exact graph_rate_norm _ _ _ _ _ (norm_nonneg _) hC₄.le hX0 hh
     have hexp : Real.exp (-μ*s)*Real.exp (-μ*s)=Real.exp (-(2*μ)*s) := by
       rw [← Real.exp_add]
       congr 1
@@ -609,8 +604,7 @@ private theorem graph_uniform_convergence_rate
     (mul_nonneg hBΩ (sq_nonneg X)) hωbound
   intro α σ hσ
   let t : Ioi (0:ℝ) := ⟨σ,ht₀.trans_le hσ⟩
-  have hj : ‖D.w (j+1) t‖^2≤Cj*Real.exp (-2*μ*σ)*X^2 := by
-    simpa only [D.initial,X] using hratej t hσ
+  have hj : ‖D.w (j+1) t‖^2≤Cj*Real.exp (-2*μ*σ)*X^2 := hratej t hσ
   have hθ : |(α+D.theta σ)-(α+D.thetaLimit)|≤Bθ*Real.exp (-2*μ*σ)*X^2 := by
     rw [show (α+D.theta σ)-(α+D.thetaLimit)=D.theta σ-D.thetaLimit by ring,abs_sub_comm]
     have he : Real.exp (-(2*μ)*σ)=Real.exp (-2*μ*σ) := congrArg Real.exp (by ring)
@@ -622,10 +616,145 @@ private theorem graph_uniform_convergence_rate
         (circleSobolevInclusion T 1 (D.u (Real.toNNReal σ)))
           ((Real.sqrt 2*s):AddCircle T)*N (Real.sqrt 2*s))-
       Complex.exp (((α+D.thetaLimit):ℂ)*I)*B (Real.sqrt 2*s))≤
-    C*Real.exp (-μ*σ)*‖x₀‖
+    C*Real.exp (-μ*σ)*X
   simpa only [graph_height_jet T D.u D.w D.positiveValue j t,graph_rotation_exp,
-    B,N,X,Function.comp_def,t,
+    B,N,Function.comp_def,t,
     Real.toNNReal_of_nonneg (ht₀.trans_le hσ).le,Complex.ofReal_add] using! he
+
+set_option maxHeartbeats 1200000 in
+private theorem graph_uniform_convergence_rate
+    (T : ℝ) [Fact (0<T)] (e : ℝ ≃o ℝ)
+    (q p : C(AddCircle T,ℂ)) (ψ : CircleL2 T)
+    (τ : ℝ) (hτ : 0<τ) (g ηA ηB δΩ CΩ : ℝ)
+    (hηA : ηB≤ηA) (hδΩ : ηB≤δΩ) (hCΩ : 0<CΩ)
+    (hStable : GraphSmallSolutionProperty T q p ψ τ hτ g ηA)
+    (hΩ : ∀ f : CircleSobolevSpace T 4,
+      ‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖<δΩ →
+      ‖circleNormalGraphAngularVelocity T (circleBernoulliBackground T q p) (15/2) ψ f‖≤
+        CΩ*‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖*‖f‖)
+    (hβ : ContDiff ℝ ∞ (fun x : ℝ => bernoulliCurve (e.symm x)))
+    (hβper : Function.Periodic (fun x : ℝ => bernoulliCurve (e.symm x)) T)
+    (hν : ContDiff ℝ ∞ (fun x : ℝ => I*(bernoulliVelocity (e.symm x)/
+      (‖bernoulliVelocity (e.symm x)‖:ℂ))))
+    (hνper : Function.Periodic (fun x : ℝ => I*(bernoulliVelocity (e.symm x)/
+      (‖bernoulliVelocity (e.symm x)‖:ℂ))) T)
+    (t₀ μ : ℝ) (ht₀ : 0<t₀) (hμ : 0<μ) (hμg : μ<g) (j : ℕ) :
+    ∃ ε>0,∃ C>0,∀ x₀ : CircleSobolevSpace T 2,
+      ∀ D : BernoulliNormalGraphEvolution T q p ψ τ hτ ηB x₀,
+      ‖x₀‖≤ε → ∀ α σ : ℝ,t₀≤σ →
+        periodicCjNorm j (graphNormalizedError T e D.u D.theta D.thetaLimit α σ)≤
+          C*Real.exp (-μ*σ)*‖x₀‖ := by
+  refine graph_two_positive_transport (hStable.2 μ hμ hμg 2 t₀ ht₀) ?_
+  intro ε₂ hε₂ C₂ hC₂ hDecay₂
+  refine graph_two_positive_transport (hStable.2 μ hμ hμg 4 t₀ ht₀) ?_
+  intro ε₄ hε₄ C₄ hC₄ hDecay₄
+  refine graph_two_positive_transport (hStable.2 μ hμ hμg (j+1) t₀ ht₀) ?_
+  intro εj hεj Cj hCj hDecayj
+  obtain ⟨C,hC,hEstimate⟩ := graph_rate_of_sobolev_bounds T e q p ψ τ hτ ηB δΩ CΩ
+    hδΩ hCΩ hΩ hβ hβper hν hνper t₀ μ ht₀ hμ j C₂ C₄ Cj hC₂ hC₄ hCj
+  refine ⟨min 1 (min ε₂ (min ε₄ εj)),
+    lt_min zero_lt_one (lt_min hε₂ (lt_min hε₄ hεj)),C,hC,?_⟩
+  intro x₀ D hsmall
+  let X := ‖x₀‖
+  have hX : X∈Icc (0:ℝ) 1 := ⟨norm_nonneg _,hsmall.trans (min_le_left _ _)⟩
+  have hx₂ : ‖D.u 0‖≤ε₂ := by
+    rw [D.initial]
+    exact hsmall.trans ((min_le_right _ _).trans (min_le_left _ _))
+  have hx₄ : ‖D.u 0‖≤ε₄ := by
+    rw [D.initial]
+    exact hsmall.trans ((min_le_right _ _).trans
+      ((min_le_right _ _).trans (min_le_left _ _)))
+  have hxj : ‖D.u 0‖≤εj := by
+    rw [D.initial]
+    exact hsmall.trans ((min_le_right _ _).trans
+      ((min_le_right _ _).trans (min_le_right _ _)))
+  have hU : ∀ m,‖D.U m‖<ηA := fun m => (D.segmentSmall m).trans_le hηA
+  have hrate₂ := hDecay₂ D.u D.U D.segments hU D.equation (D.real 0) (D.phase 0)
+    hx₂ (D.w 2) (D.positiveValue 2)
+  have hrate₄ := hDecay₄ D.u D.U D.segments hU D.equation (D.real 0) (D.phase 0)
+    hx₄ (D.w 4) (D.positiveValue 4)
+  have hratej := hDecayj D.u D.U D.segments hU D.equation (D.real 0) (D.phase 0)
+    hxj (D.w (j+1)) (D.positiveValue (j+1))
+  exact hEstimate x₀ D X hX
+    (fun t ht => by simpa only [D.initial,X] using hrate₂ t ht)
+    (fun t ht => by simpa only [D.initial,X] using hrate₄ t ht)
+    (fun t ht => by simpa only [D.initial,X] using hratej t ht)
+
+set_option maxHeartbeats 1200000 in
+private theorem graph_base_convergence_rate
+    (T : ℝ) [Fact (0<T)] (e : ℝ ≃o ℝ)
+    (q p : C(AddCircle T,ℂ)) (ψ : CircleL2 T)
+    (τ : ℝ) (hτ : 0<τ) (g ηA ηB δΩ CΩ : ℝ)
+    (hηA : ηB≤ηA) (hδΩ : ηB≤δΩ) (hCΩ : 0<CΩ)
+    (hStable : GraphSmallSolutionProperty T q p ψ τ hτ g ηA)
+    (hΩ : ∀ f : CircleSobolevSpace T 4,
+      ‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖<δΩ →
+      ‖circleNormalGraphAngularVelocity T (circleBernoulliBackground T q p) (15/2) ψ f‖≤
+        CΩ*‖circleSobolevInclusion T 2 (circleSobolevInclusion T 3 f)‖*‖f‖)
+    (hβ : ContDiff ℝ ∞ (fun x : ℝ => bernoulliCurve (e.symm x)))
+    (hβper : Function.Periodic (fun x : ℝ => bernoulliCurve (e.symm x)) T)
+    (hν : ContDiff ℝ ∞ (fun x : ℝ => I*(bernoulliVelocity (e.symm x)/
+      (‖bernoulliVelocity (e.symm x)‖:ℂ))))
+    (hνper : Function.Periodic (fun x : ℝ => I*(bernoulliVelocity (e.symm x)/
+      (‖bernoulliVelocity (e.symm x)‖:ℂ))) T)
+    (t₀ μ : ℝ) (ht₀ : 0<t₀) (hμ : 0<μ) (hμg : μ<g)
+    (x₀ : CircleSobolevSpace T 2)
+    (D : BernoulliNormalGraphEvolution T q p ψ τ hτ ηB x₀) (j : ℕ) :
+    ∃ C>0,∀ α σ : ℝ,t₀≤σ →
+      periodicCjNorm j (graphNormalizedError T e D.u D.theta D.thetaLimit α σ)≤
+        C*Real.exp (-μ*σ) := by
+  have hw₂ (t : Ioi (0:ℝ)) : D.w 2 t=D.u ⟨(t:ℝ),t.property.le⟩ :=
+    circle_sobolev_value_injective T 2 (D.positiveValue 2 t)
+  have hu : Tendsto D.u atTop (𝓝 0) := by
+    apply Metric.tendsto_atTop.mpr
+    intro ε hε
+    obtain ⟨a,ha⟩ := Metric.tendsto_atTop.mp (D.positiveLimit 2) ε hε
+    refine ⟨⟨(a:ℝ),a.property.le⟩,?_⟩
+    intro t ht
+    have htpos : 0<(t:ℝ) := a.property.trans_le ht
+    have hh := ha ⟨(t:ℝ),htpos⟩ ht
+    rw [hw₂] at hh
+    exact hh
+  have hbound (n : ℕ) : ∃ A>0,∀ t : Ioi (0:ℝ),t₀≤(t:ℝ) →
+      ‖D.w n t‖≤A*Real.exp (-μ*(t:ℝ)) := by
+    obtain ⟨ε,hε,A,hA,hq⟩ := hStable.2 μ hμ hμg n t₀ ht₀
+    apply circle_parabolic_shift_decay
+      (H:=CircleSobolevSpace T 2) (E:=CircleSobolevSpace T n)
+      (Z:=CircleL2 T) (X:=CircleParabolicSpace T τ) τ hτ μ hμ
+      (fun U : CircleParabolicSpace T τ => circleParabolicCurve T τ U)
+      (fun U => ‖U‖<ηA ∧ ∀ᵐ r ∂volume,circleParabolicTimeDerivative T τ U r=
+        circleNormalGraphModulatedFlow T (circleBernoulliBackground T q p) (15/2) ψ
+          (circleParabolicH4 T τ U r))
+      (fun x => circleSobolevConjugation T 2 x=x ∧
+        inner ℂ ψ (circleSobolevCoordinate T 2 0 x)=0)
+      (circleSobolevCoordinate T 2 0) (circleSobolevCoordinate T n 0) t₀ ht₀ ?_
+      D.u D.U D.segments
+      (fun m => ⟨(D.segmentSmall m).trans_le hηA,D.equation m⟩)
+      (fun t => ⟨D.real t,D.phase t⟩) hu (D.w n) (D.positiveValue n)
+    refine ⟨ε,hε,A,hA,?_⟩
+    intro u U hrep hs hp hx v hv t ht
+    exact hq u U hrep (fun m => (hs m).1) (fun m => (hs m).2)
+      hp.1 hp.2 hx v hv t ht
+  obtain ⟨A₂,hA₂,h₂⟩ := hbound 2
+  obtain ⟨A₄,hA₄,h₄⟩ := hbound 4
+  obtain ⟨Aj,hAj,hj⟩ := hbound (j+1)
+  have hsquare (n : ℕ) (A : ℝ) (hA : 0<A)
+      (ha : ∀ t : Ioi (0:ℝ),t₀≤(t:ℝ) → ‖D.w n t‖≤A*Real.exp (-μ*(t:ℝ))) :
+      ∀ t : Ioi (0:ℝ),t₀≤(t:ℝ) →
+        ‖D.w n t‖^2≤A^2*Real.exp (-2*μ*(t:ℝ))*(1:ℝ)^2 := by
+    intro t ht
+    have hh := (sq_le_sq₀ (norm_nonneg _) (by positivity)).mpr (ha t ht)
+    have he : Real.exp (-μ*(t:ℝ))^2=Real.exp (-2*μ*(t:ℝ)) := by
+      rw [pow_two,← Real.exp_add]
+      congr 1
+      ring
+    simpa only [mul_pow,he,one_pow,mul_one] using hh
+  obtain ⟨C,hC,hestimate⟩ := graph_rate_of_sobolev_bounds T e q p ψ τ hτ ηB δΩ CΩ
+    hδΩ hCΩ hΩ hβ hβper hν hνper t₀ μ ht₀ hμ j
+      (A₂^2) (A₄^2) (Aj^2) (sq_pos_of_pos hA₂) (sq_pos_of_pos hA₄) (sq_pos_of_pos hAj)
+  refine ⟨C,hC,?_⟩
+  simpa only [mul_one] using hestimate x₀ D 1 (by norm_num : (1:ℝ)∈Icc (0:ℝ) 1)
+    (hsquare 2 A₂ hA₂ h₂) (hsquare 4 A₄ hA₄ h₄) (hsquare (j+1) Aj hAj hj)
 
 private abbrev GraphRateProperty
     (T : ℝ) [Fact (0<T)] (e : ℝ ≃o ℝ)
@@ -637,6 +766,15 @@ private abbrev GraphRateProperty
     ∀ α σ : ℝ,Real.log 31/30≤σ →
       periodicCjNorm j (graphNormalizedError T e D.u D.theta D.thetaLimit α σ)≤
         CRate μ j*Real.exp (-(μ:ℝ)*σ)*‖x₀‖
+
+private abbrev GraphBaseRateProperty
+    (T : ℝ) [Fact (0<T)] (e : ℝ ≃o ℝ)
+    (q p : C(AddCircle T,ℂ)) (ψ : CircleL2 T)
+    (τ : ℝ) (hτ : 0<τ) (η : ℝ) (x₀ : CircleSobolevSpace T 2) (g : ℝ)
+    (D : BernoulliNormalGraphEvolution T q p ψ τ hτ η x₀) : Prop :=
+  ∀ j : ℕ,∃ C>0,∀ α σ : ℝ,Real.log 31/30≤σ →
+    periodicCjNorm j (graphNormalizedError T e D.u D.theta D.thetaLimit α σ)≤
+      C*Real.exp (-(g/2)*σ)
 
 private abbrev BernoulliPhysicalGraphProperty
     (T : ℝ) [Fact (0<T)] (e : ℝ ≃o ℝ)
@@ -671,6 +809,9 @@ private abbrev BernoulliPhysicalGraphProperty
             (1/2:ℝ)*(planarSignedCurvature (Y t) s)^3:ℝ):ℂ)*n) ∧
       (∀ j : ℕ,Tendsto (fun t : ℝ => periodicCjNorm j
         (fun s : ℝ => Y t s/(ρ t:ℂ)-Rlim*β s)) atTop (𝓝 0)) ∧
+      (∀ j : ℕ,∃ C>0,∀ t : ℝ,a^4≤t → periodicCjNorm j
+        (fun s : ℝ => (Y t s-p₀)/(ρ t:ℂ)-Rlim*β s)≤
+          C*(timeBase a t)^(-(g/2)/30)) ∧
       ∀ μ : Ioo (0:ℝ) g,∀ j : ℕ,‖x₀‖≤εRate μ j →
         ∀ t : ℝ,a^4≤t → periodicCjNorm j
           (fun s : ℝ => (Y t s-p₀)/(ρ t:ℂ)-Rlim*β s)≤
@@ -744,7 +885,8 @@ private theorem graph_evolution_physical_property
       (x:AddCircle T)=(h₀ x:ℂ))
     (g : ℝ) (εRate CRate : Ioo (0:ℝ) g → ℕ → ℝ)
     (D : BernoulliNormalGraphEvolution T q p ψ τ hτ δ x₀)
-    (hRate : GraphRateProperty T e q p ψ τ hτ δ x₀ g εRate CRate D) :
+    (hRate : GraphRateProperty T e q p ψ τ hτ δ x₀ g εRate CRate D)
+    (hBase : GraphBaseRateProperty T e q p ψ τ hτ δ x₀ g D) :
     BernoulliPhysicalGraphProperty T e q p ψ τ hτ δ x₀ h₀ g εRate CRate D := by
   intro a ha p₀ α
   let Θ := fun σ : ℝ => α+D.theta σ
@@ -776,8 +918,22 @@ private theorem graph_evolution_physical_property
     tendsto_const_nhds.add D.thetaConvergence
   have hqual := normal_graph_global_cj_convergence T B N hβ hν hβper hνper D.u D.w
     D.positiveValue D.positiveLimit Θ (α+D.thetaLimit) hΘlim ρ hρlim p₀ a ha
+  have hCenteredError (t : ℝ) (ht₀ : 0≤t) :
+      graphNormalizedError T e D.u D.theta D.thetaLimit α (normalizedTime a t)=
+        fun s : ℝ => (Y t s-p₀)/(ρ t:ℂ)-Complex.exp (((α+D.thetaLimit):ℂ)*I)*β s := by
+    have hρne : (ρ t:ℂ)≠0 := by exact_mod_cast (hρ t ht₀).1.ne'
+    funext s
+    let Z := Complex.exp (((α+D.theta (normalizedTime a t)):ℂ)*I)*
+      (β s+circleSobolevH1Embedding T (circleSobolevInclusion T 1
+        (D.u (Real.toNNReal (normalizedTime a t)))) ((Real.sqrt 2*s):AddCircle T)*ν s)
+    have hz : Z-Complex.exp (((α+D.thetaLimit):ℂ)*I)*β s=
+        (p₀+(ρ t:ℂ)*Z-p₀)/(ρ t:ℂ)-Complex.exp (((α+D.thetaLimit):ℂ)*I)*β s := by
+      rw [(graph_affine_division p₀ (ρ t:ℂ) Z hρne).2]
+    simpa only [Z,graphNormalizedError,Y,Θ,B,N,β,ν,h,normalGraphCurve,Complex.ofReal_add,
+      graph_h1_real T _ (D.real _) ((Real.sqrt 2*s):AddCircle T)] using! hz
+
   dsimp only at hqual
-  refine ⟨ρ,hρ₀,hρ,hρlim,?_,?_,?_,?_,?_,?_⟩
+  refine ⟨ρ,hρ₀,hρ,hρlim,?_,?_,?_,?_,?_,?_,?_⟩
   · simpa only [Complex.ofReal_add] using Complex.norm_exp_ofReal_mul_I (α+D.thetaLimit)
   · intro s
     have hz := hY₀ s
@@ -836,23 +992,20 @@ private theorem graph_evolution_physical_property
       rw [(graph_affine_division p₀ (ρ t:ℂ) Z hρne).1]
     simpa only [Z,Θ,Y,B,N,β,ν,h,normalGraphCurve,Complex.ofReal_add,
       graph_h1_real T _ (D.real _) ((Real.sqrt 2*s):AddCircle T)] using! he
+  · intro j
+    obtain ⟨C,hC,hb⟩ := hBase j
+    refine ⟨C,hC,?_⟩
+    intro t ht
+    have ht₀ : 0≤t := (pow_nonneg ha.le 4).trans ht
+    have he := hb α (normalizedTime a t) (normalizedTime_at_unit_scale a t ha ht)
+    rw [hCenteredError t ht₀,physical_decay_identity a t (g/2) ha ht₀] at he
+    simpa only [Y,Θ,B,N,β,ν,h,normalGraphCurve,Complex.ofReal_add] using! he
   · intro μ j hx t ht
     have ht₀ : 0≤t := (pow_nonneg ha.le 4).trans ht
     have hρne : (ρ t:ℂ)≠0 := by exact_mod_cast (hρ t ht₀).1.ne'
     have he := hRate μ j hx α (normalizedTime a t)
       (normalizedTime_at_unit_scale a t ha ht)
-    have herr : graphNormalizedError T e D.u D.theta D.thetaLimit α (normalizedTime a t)=
-        fun s : ℝ => (Y t s-p₀)/(ρ t:ℂ)-Complex.exp (((α+D.thetaLimit):ℂ)*I)*β s := by
-      funext s
-      let Z := Complex.exp (((α+D.theta (normalizedTime a t)):ℂ)*I)*
-        (β s+circleSobolevH1Embedding T (circleSobolevInclusion T 1
-          (D.u (Real.toNNReal (normalizedTime a t)))) ((Real.sqrt 2*s):AddCircle T)*ν s)
-      have hz : Z-Complex.exp (((α+D.thetaLimit):ℂ)*I)*β s=
-          (p₀+(ρ t:ℂ)*Z-p₀)/(ρ t:ℂ)-Complex.exp (((α+D.thetaLimit):ℂ)*I)*β s := by
-        rw [(graph_affine_division p₀ (ρ t:ℂ) Z hρne).2]
-      simpa only [Z,graphNormalizedError,Y,Θ,B,N,β,ν,h,normalGraphCurve,Complex.ofReal_add,
-        graph_h1_real T _ (D.real _) ((Real.sqrt 2*s):AddCircle T)] using! hz
-    rw [herr,physical_decay_identity a t (μ:ℝ) ha ht₀] at he
+    rw [hCenteredError t ht₀,physical_decay_identity a t (μ:ℝ) ha ht₀] at he
     simpa only [Y,Θ,B,N,β,ν,h,normalGraphCurve,Complex.ofReal_add] using! he
 
 variable (T S : ℝ) [Fact (0<T)] [Fact (0<S)]
@@ -1008,10 +1161,18 @@ theorem bernoulli_physical_graph_stability
   have hRate : GraphRateProperty S e Q P (Ψ:CircleL2 S) τ hτ δ x₀ g εRate CRaw Dδ := by
     intro μ j hx α σ hσ
     exact hRaw μ j x₀ Dlow (hx.trans (min_le_right _ _)) α σ hσ
+  have hBase : GraphBaseRateProperty S e Q P (Ψ:CircleL2 S) τ hτ δ x₀ g Dδ := by
+    intro j
+    obtain ⟨C,hC,hb⟩ := graph_base_convergence_rate S e Q P (Ψ:CircleL2 S) τ hτ
+      g ηA ηB δΩ CΩ (min_le_left _ _)
+      ((min_le_right _ _).trans (min_le_right _ _)) hCΩ hA.2
+      (fun f hf => (hΩ f hf).2) hβ hβper hν hνper (Real.log 31/30) (g/2)
+      ht₀ (half_pos hg) (by linarith only [hg]) x₀ Dlow j
+    exact ⟨C,hC,hb⟩
   refine ⟨D,?_⟩
   have hproperty := graph_evolution_physical_property S e Q P (Ψ:CircleL2 S)
     δ hPhysical hβ hβper hν hνper τ hτ x₀ h₀ hh₀
-    (fun x => by rw [hheight₀]; exact hf₀ x) g εRate CRaw Dδ hRate
+    (fun x => by rw [hheight₀]; exact hf₀ x) g εRate CRaw Dδ hRate hBase
   exact hproperty
 
 end Lemniscate

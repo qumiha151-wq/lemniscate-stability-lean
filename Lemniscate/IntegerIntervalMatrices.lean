@@ -1,4 +1,5 @@
 import Lemniscate.IntegerIntervals
+import Mathlib.Algebra.BigOperators.Field
 
 /-! Real-matrix soundness of the common-denominator integer operations. -/
 namespace Lemniscate.CoarseArithmetic

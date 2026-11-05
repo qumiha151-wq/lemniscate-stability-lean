@@ -6,7 +6,7 @@ namespace Lemniscate
 open Complex MeasureTheory
 open scoped ComplexConjugate
 
-private noncomputable def householderDomainLinear {E : Type*} [NormedAddCommGroup E]
+noncomputable def householderDomainLinear {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℂ E] {D : Submodule ℂ E} (e a : D) : D →ₗ[ℂ] D where
   toFun := neutralHouseholderDomain e a
   map_add' f g := by
@@ -17,7 +17,7 @@ private noncomputable def householderDomainLinear {E : Type*} [NormedAddCommGrou
     apply Subtype.ext
     simp only [neutral_householder_domain_coe,Submodule.coe_smul_of_tower,map_smul]
 
-private noncomputable def neutralInverseDomainLinear {E : Type*} [NormedAddCommGroup E]
+noncomputable def neutralInverseDomainLinear {E : Type*} [NormedAddCommGroup E]
     [InnerProductSpace ℂ E] {D : Submodule ℂ E} (e : D) (ψ : E) : D →ₗ[ℂ] D where
   toFun := neutralTransformInvDomain e ψ
   map_add' f g := by

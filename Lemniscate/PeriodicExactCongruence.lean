@@ -1,6 +1,6 @@
 import Lemniscate.PeriodicReducedCongruence
 import Lemniscate.PeriodicCenteredStableForm
-import Lemniscate.PeriodicExactFormComparison
+import Lemniscate.PeriodicExactReducedForm
 
 /-! Identify the reduced form with the actual centered Bloch energy,
 using exact kernel cancellation before making the finite approximation. -/

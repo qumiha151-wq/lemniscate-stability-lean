@@ -1,5 +1,5 @@
 import Lemniscate.PeriodicCenteredBlochLinear
-import Lemniscate.PeriodicReducedFormComparison
+import Lemniscate.PeriodicReducedForm
 
 /-! Exact congruence after multiplying the center coordinate by alpha.
 There is no division by alpha, so the identity also holds at alpha=0. -/

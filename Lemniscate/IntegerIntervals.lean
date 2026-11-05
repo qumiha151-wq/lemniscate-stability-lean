@@ -5,6 +5,12 @@ integer arithmetic; the soundness proof below relates them to real intervals.
 Products are rounded outwards to twelve decimal places. -/
 namespace Lemniscate.CoarseArithmetic
 
+/-- Rational interval inclusion, independent of any particular certificate. -/
+def Encloses (outer inner : Interval) : Prop := outer.lo ≤ inner.lo ∧ inner.hi ≤ outer.hi
+
+instance (outer inner : Interval) : Decidable (Encloses outer inner) :=
+  inferInstanceAs (Decidable (outer.lo ≤ inner.lo ∧ inner.hi ≤ outer.hi))
+
 structure IntegerInterval where
   lo : ℤ
   hi : ℤ
