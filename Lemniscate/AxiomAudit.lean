@@ -1,7 +1,9 @@
 import Lemniscate
+import Lean.Util.CollectAxioms
 
-/-! Audit the current proof only. Each command below is checked by Lean;
-only the standard foundational axioms are accepted by the build gate. -/
+/-! Audit the current proof only. The final command enforces the axiom
+allow-list inside Lean itself, so the public Lake build needs no external
+audit script. The individual reports also make the dependencies inspectable. -/
 #print axioms Lemniscate.BernoulliNormalGraphEvolution.initialLift
 #print axioms Lemniscate.BernoulliNormalGraphEvolution.initialValue
 #print axioms Lemniscate.CircleBlochInverseIdentities
@@ -3482,3 +3484,19 @@ only the standard foundational axioms are accepted by the build gate. -/
 #print axioms Lemniscate.weighted_row_dissipation
 #print axioms Lemniscate.weighted_young
 #check @Lemniscate.lemniscate_stability
+#print axioms Lemniscate.CoarseArithmetic.short_certificate_summary
+
+open Lean Elab Command in
+run_cmd do
+  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
+  let mut checked : Nat := 0
+  for (name, _) in (← getEnv).constants do
+    if (`Lemniscate).isPrefixOf name then
+      let axioms ← collectAxioms name
+      for axiomName in axioms do
+        unless allowed.contains axiomName do
+          throwError "Axiom audit failed: {name} depends on {axiomName}"
+      checked := checked + 1
+  unless checked > 0 do
+    throwError "Axiom audit failed: no project declarations were checked"
+  logInfo m!"Axiom audit passed for {checked} project declarations: only propext, Classical.choice, Quot.sound."
