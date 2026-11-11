@@ -1,0 +1,129 @@
+RESEARCH NOTE: LIMITS OF THE CURRENT LENGTH-ENERGY ESTIMATES
+11 November 2026. This is not a geometric counterexample or a resolution of
+the unrestricted quarter-power growth problem.
+
+1. A smooth scalar model with faster-than-quarter growth
+
+For u=1+t, t>=0, set
+
+  L(t)=A u^(1/3), E(t)=C u^(-1/6), D(t)=(C/6)u^(-7/6),
+
+where A,C>0. Direct differentiation gives
+
+  E'=-D, L'=(A/3)u^(-2/3),
+  (L')^2=(A^2/9)u^(-4/3), 2ED=(C^2/3)u^(-4/3).
+
+Thus the exact energy-dissipation identity and the Cauchy inequality
+(L')^2<=2ED both hold if A^2<=3C^2. The previously proved restart estimate
+then follows on every time interval, by actual integration or its verified
+scalar mean-value proof.
+
+The virial inequality becomes
+
+  (C/6)u^(-7/6) >= (4pi^2 C^2/A^3)u^(-4/3),
+
+which holds for all u>=1 if A^3>=24pi^2 C. Fenchel's necessary inequality
+EL>=2pi^2 follows if AC>=2pi^2, because EL=AC u^(1/6).
+
+For example A=C=100 satisfies all three constant constraints. To avoid any
+numerical assumption about pi, pi<4 gives 24pi^2<384<10000 and
+2pi^2<32<10000.
+
+The Dziuk-Kuwert-Schaetzle type inequality L'<=C0 E^3 also holds whenever
+C0>=A/(3C^3), because its left/right ratio is
+
+  L'/E^3 = [A/(3C^3)]u^(-1/6).
+
+For any fixed positive constant C0, choosing A=C sufficiently large makes
+all the constant constraints hold, including A/(3C^3)<=C0.
+
+Nevertheless L(t)~t^(1/3), which is not O(t^(1/4)), while E(t)->0,
+L(t)->infinity, and EL(t)->infinity. Thus proving E(t)->0 in addition to
+all the current scalar identities does not suffice to obtain quarter-power
+growth. Any proof needs a genuinely additional estimate, with information
+not encoded by these scalar necessary conditions. The construction does
+NOT show there is a curve realizing these L,E,D histories.
+
+2. New monotone scalar combinations for every geometric solution
+
+Let c=sqrt(2)*pi, B=sqrt(E), R=L^(-1/2). Since E,L>0,
+
+  -B'=D/(2sqrt(E)), |R'|=|L'|/(2 L^(3/2)).
+
+Using (L')^2<=2ED and D>=4pi^2 E^2/L^3,
+
+  |R'|/(-B')
+    <= sqrt(2)*E/(L^(3/2)*sqrt(D)) <= 1/(sqrt(2)*pi)=1/c.
+
+Here D>0 follows from the virial inequality. Consequently
+
+  (B+cR)' <= B'+c|R'| <=0,
+  (B-cR)' <= B'+c|R'| <=0.
+
+Both sqrt(E)+sqrt(2)*pi/sqrt(L) and
+sqrt(E)-sqrt(2)*pi/sqrt(L) are nonincreasing. The latter is nonnegative
+by Fenchel. Integrating the pointwise speed estimate gives
+
+  integral_s^t |(L^(-1/2))'| du
+    <= (sqrt(E(s))-sqrt(E(t)))/(sqrt(2)*pi).
+
+In particular L^(-1/2) has finite total variation on [0,infinity).
+This is a genuine additional consequence, but it is also obeyed by the
+scalar countermodel above, so it cannot alone settle the growth question.
+
+3. A rigorous failure of universal EL monotonicity
+
+The following deduction uses the local Bernoulli-lemniscate stability
+theorem supplied by the user as a hypothesis. It is a human proof, not
+claimed to have been formalized in Lean in this note.
+
+Write U=EL (half Novaga's normalization). For a normal variation f*nu,
+the standard first variation formulae give
+
+  DU[f] = integral (L*F-E*k) f ds.
+
+At the Bernoulli profile beta, F=(5/18)k^3. Indeed the original paper
+gives k^3=-27<beta,nu>, k_ss=6<beta,nu>. Hence
+
+  G := L*F-E*k = k*((5L/18)*k^2-E)
+
+is not identically zero: curvature k has a nonconstant range, so this
+cubic polynomial cannot vanish throughout that range. Let
+
+  gamma_epsilon=beta-epsilon*G*nu.
+
+For sufficiently small positive epsilon this is a smooth immersed closed
+curve, and the differentiability of U gives
+
+  U(gamma_epsilon)=U(beta)-epsilon*integral G^2 ds+O(epsilon^2)<U(beta).
+
+Its curvature-profile distance tends to zero with epsilon, so the supplied
+local stability theorem applies. Smooth normalized convergence, together
+with scaling invariance and continuity of U, gives
+
+  U(gamma_epsilon(t))->U(beta)>U(gamma_epsilon(0)).
+
+Consequently U cannot be nonincreasing along all free elastic flows.
+This argument does not need a Hessian or an assertion about the global
+minimizer of U in the turning-zero class.
+
+Moreover the same construction works around each M-fold lemniscate.
+Both E and L are multiplied by M, so U(beta_M)=M^2 U(beta_1).
+All these curves have turning number zero. Therefore one cannot rescue
+a scalar barrier by asserting that U'<=0 above some finite threshold
+depending only on that turning number: take M large and the perturbation
+small enough that U(0) exceeds the threshold and is below its eventual
+limit. A continuous differentiable scalar function whose derivative is
+nonpositive whenever it is above a threshold cannot rise from such an
+initial value to a higher limit, even if it first drops below the threshold.
+
+This rules out only universal monotonicity / a universal high-energy
+threshold. It does not rule out bounded U along each individual trajectory,
+or a bound depending on finer initial geometric information.
+
+4. Remaining mathematical obstruction
+
+The scalar model makes the exact missing statement visible: one must
+control the accumulation of normalized curvature complexity EL, prove
+some alternative geometry-dependent coercivity, or exhibit an actual
+flow that escapes all bounded-EL regions. None is accomplished here.

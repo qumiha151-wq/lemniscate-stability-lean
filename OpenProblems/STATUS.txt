@@ -1,0 +1,39 @@
+Status at 11 November 2026
+
+These are independent partial formalizations, not solutions of all the
+remaining questions in Miura--Wheeler arXiv:2404.12619v3.
+
+Existing lemniscate stability: the original repository root project.
+LengthGrowth/: scalar dissipation-to-secant theorem and conditional
+  fourth-power bound from a uniform normalized-energy bound. PDE identities and
+  unrestricted quarter-power growth remain outside the formalization.
+Migration/: scalar one-sided homothetic migration criterion. No existence
+  theorem for a one-sided closed free-elastic-flow expander is supplied.
+Soliton classification: no completed formalization or classification here.
+CentroidEscape/: computer-assisted existence proof of a closed expander
+  with nonzero arclength centroid, hence a flow with unbounded centroid.
+  Seven rigorous Arb integrations passed; two analytic/code reviews found
+  no substantive gap. The complete theorem is not yet Lean-formalized:
+  Lean proves the residual/derivative-to-root implication and the reflected
+  ODE's global periodicity/smoothness/unit-tangent bridge. See
+  CentroidEscape/STATUS.txt for the numerical and geometric linkage still missing.
+OpenTranslators/: supplementary complete-open-curve translator estimates
+  derived from the actual ODE. Global continuation and geometric existence
+  are not yet formalized.
+
+Each populated directory is a separate Lake project with its own root
+module and enforced axiom audit. Build it from that directory. No proof
+module imports a different open-problem project.
+
+Literature checked:
+Andrews--Wheeler, Jellyfish exist, arXiv:2601.21227: infinitely many new
+dihedral expanders, not a full classification. One-sided examples are
+reported numerically, not established by the existence theorem.
+Novaga, Non-migration for planar elastic flows, arXiv:2611.07242 (preprint,
+4 November 2026): non-migration under L integral k^2 <= 4 pi^2 + 8/3,
+not for unrestricted initial data.
+
+The accompanying Progress.tex contains the earlier human-readable partial
+estimates; it predates the new centroid certificate. Current per-project
+STATUS.txt files are authoritative for the additional work. Differential-
+geometric arguments in those notes are not claimed to be Lean-verified.

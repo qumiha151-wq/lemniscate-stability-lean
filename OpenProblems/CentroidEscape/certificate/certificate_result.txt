@@ -1,0 +1,70 @@
+COMPUTER-ASSISTED CLOSED-EXPANDER EXISTENCE RESULT
+
+Status: all interval-arithmetic checks passed, 2026-11-11.
+This is a computer-assisted proof when combined with the analytic argument
+in certificate_plan.txt. It is not a full Lean formalization.
+
+There exist real a,b,L in the l-infinity cube of radius 10^(-80) around
+the exact decimal center in certificate_center.json such that the solution
+of
+ x'=u, y'=w, u'=-kw, w'=ku, k'=v,
+ v'=-k^3/2+xw-yu
+with initial data (a,0,0,1,b,0) has y(L)=u(L)=v(L)=0. Numerically,
+ a=1.362881307306465867245404925641193286...,
+ b=3.011733598474208870944970745338232051...,
+ L=7.494977401591491123385377605736523979....
+
+The reflection R(x,y,u,w,k,v)=(x,-y,-u,w,k,-v) is a reversing symmetry.
+Both initial and final states are in Fix R. Reversing and reflecting at L
+gives a smooth 2L-periodic solution; u^2+w^2=1 gives unit-speed immersion.
+The resulting smooth closed curve beta satisfies
+ k_ss+k^3/2=-<beta,nu>, nu=(-w,u).
+
+Let m'=x,m(0)=0. At the exact shooting root, the verified enclosures give
+ m(L)=3.78365096320749419634974942366049493295828418426801828
+      with error less than 2.44e-54,
+ c_beta,x=m(L)/L
+      =0.504824866103541540109480685758874180664870977318606015
+      with error less than 4.41e-55,
+ c_beta,y=0.
+In particular, c_beta,x>0.49.
+
+With rho=(1+4t)^(1/4), the images rho beta are a self-similarly expanding
+free elastic flow. A time-dependent circle reparameterization cancels
+the tangential velocity if the exact vector form of FEF is required.
+The arclength centroid is rho c_beta, and therefore diverges to infinity.
+After constant translation by -c_beta, its initial centroid is zero and
+its later centroid is (rho-1)c_beta.
+
+This answers the existence of a free elastic flow whose arclength center
+of mass diverges to infinity. This particular construction does NOT imply
+migration: a>1.3, x(L)<-0.22, and both symmetry-axis endpoints have y=0,
+so the expansion center belongs to the convex hull of the profile.
+
+CERTIFIED COMPUTATIONAL INEQUALITIES
+The harness validate_certificate.py completed with exit code zero. It
+uses seven Arb evaluations (center and three symmetric difference pairs),
+Taylor order 160, 750 steps per integration, 180 decimal digits.
+
+Weighted global Taylor tail < 1.816799e-120 < budget 1e-118.
+All grid bounds were checked as Arb inequalities, using weights
+(1,1,4,4,16,64,1) and the tube in certificate_plan.txt.
+Raw propagated rounding radii are approximately 1e-172.
+Finite difference step delta=1e-70; uniform shooting Hessian H=1e56.
+The finite-difference derivative error is at most H*delta/2 per entry.
+The exact rational preconditioner has norm < 1.15 and nonzero determinant.
+ ||I-B*Jfd||_infinity < 9.957524e-14,
+ q < 1.168147e-13,
+ ||B*F(p0)||_infinity < 6.74e-118,
+ ||B*F(p0)||_infinity+q*10^(-80) < 1.168147e-93 < 10^(-80).
+The contraction theorem therefore yields an exact shooting zero.
+
+REPRODUCIBILITY AND SCOPE
+validated_certificate.json stores the complete center, all seven endpoint
+balls, rounding radii, grid bounds, interval finite-difference Jacobian,
+preconditioner, contraction/moment bounds, and source SHA-256 hashes.
+validated_certificate.log records the run. certificate_plan.txt supplies
+the separate analytic Taylor-majorant, Gronwall, parameter-bootstrap,
+Hessian, Banach, reflection and geometric-flow arguments.
+The remaining formalization gap is the full ODE/error-bound/geometry
+linkage in Lean. Decimal inequality verification alone does not close it.

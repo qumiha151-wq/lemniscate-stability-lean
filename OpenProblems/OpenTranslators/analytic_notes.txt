@@ -1,0 +1,235 @@
+RESEARCH OBSERVATION: COMPLETE OPEN TRANSLATORS FOR THE FREE ELASTIC FLOW
+Status: human mathematical proof, independently checked at the equation level;
+not Lean-formalized; novelty has not been established. This is not a resolution
+of the closed-curve self-similar classification, length-growth, or migration
+questions in Miura--Wheeler, arXiv:2404.12619v3.
+
+1. Precise class and convention
+
+We allow arbitrary smooth immersions beta: R -> R^2 whose induced metric is
+complete. No properness, embeddedness, bounded curvature, finite bending energy,
+or uniform bounds on spatial derivatives are assumed. We will prove existence in
+this broad class. In particular, the adjective 'nonproper' is NOT asserted:
+properness of the constructed examples is left undecided.
+
+Let tau=(cos(theta),sin(theta)), nu=(-sin(theta),cos(theta)), and k=theta_s.
+The free elastic flow convention is normal velocity -F nu, where
+F=k_ss+k^3/2. We seek a curve translating with V=(1,0), so that
+V dot nu=-sin(theta). Thus the profile equation is F=sin(theta).
+
+PROPOSITION A. For every real initial triple (theta_0,k_0,v_0), there is a
+unique smooth global solution of
+
+  theta'=k,   k'=v,   v'=-k^3/2+sin(theta)                 (A1)
+
+on all of R, with those data at s=0. Defining
+
+  beta(s)=integral from 0 to s of (cos(theta(r)),sin(theta(r))) dr,
+
+gives a complete unit-speed immersed profile satisfying F=sin(theta). After
+an explicit smooth reparametrization, beta+tV gives an eternal pure-normal
+free elastic flow. For example, the initial triple (pi/2,1,0) gives a
+nonstraight profile and nonzero normal velocity at s=0.
+
+Proof of global existence.
+
+The right-hand side of (A1) is smooth on R^3. Local existence, uniqueness, and
+the finite-dimensional ODE continuation theorem therefore apply. On a maximal
+solution interval (a,b) containing 0, introduce
+
+  H(s)=v(s)^2/2+k(s)^4/8 >= 0.
+
+Differentiating, and using (A1), gives the exact cancellation
+
+  H'=v(-k^3/2+sin(theta))+(k^3/2)v=v sin(theta).
+
+Consequently |H'| <= |v| <= sqrt(2H). To avoid dividing by zero, for epsilon>0
+differentiate sqrt(H+epsilon):
+
+  |(sqrt(H+epsilon))'|
+    = |H'|/(2 sqrt(H+epsilon)) <= 1/sqrt(2).
+
+Integration between 0 and s, followed by epsilon -> 0, gives
+
+  sqrt(H(s)) <= sqrt(H(0))+|s|/sqrt(2).                   (A2)
+
+On any bounded interval of s, (A2) uniformly bounds both |v| <= sqrt(2H) and
+|k| <= (8H)^(1/4). The identity theta'=k then also bounds theta on that
+interval. If b were finite, the trajectory (theta,k,v) would stay inside a
+fixed compact subset of R^3 on [0,b). The continuation theorem would extend
+the solution beyond b, a contradiction. Applying the same argument to a
+proves a=-infinity and b=+infinity. Smoothness follows by differentiating
+the smooth ODE. In particular, no global spatial derivative bound is asserted.
+
+Proof of the geometry and completeness.
+
+By definition beta_s=tau and |tau|=1. Thus beta is a smooth immersion, and
+its induced metric is exactly ds^2 on R, which is complete. Also
+tau_s=k nu and nu_s=-k tau, so its signed curvature is k. Equation (A1)
+gives k_ss+k^3/2=sin(theta). Therefore X(t,s)=beta(s)+tV satisfies
+
+  (X_t)^perp=(V dot nu)nu=-sin(theta)nu=-F nu.
+
+This is already the geometric free elastic flow with a tangential component.
+For a pure-normal parametrization, solve
+
+  partial_t phi(t,u)=-cos(theta(phi(t,u))),  phi(0,u)=u.  (A3)
+
+The scalar vector field is smooth, hence locally Lipschitz, and has absolute
+value at most 1. Therefore its solution exists for every real t,u, with
+|phi(t,u)-u| <= |t|. Smooth dependence on initial data holds locally around
+every (t,u), and the variational equation gives
+
+  partial_u phi(t,u)
+   = exp(integral from 0 to t of
+       k(phi(r,u)) sin(theta(phi(r,u))) dr) > 0.
+
+This integral is finite on every finite time interval because phi remains
+in a bounded spatial interval there. For fixed t, the displacement bound
+implies phi(t,u)->+infinity as u->+infinity, and ->-infinity at the other
+end. Thus phi(t,.) is an orientation-preserving smooth diffeomorphism of R.
+Set Y(t,u)=beta(phi(t,u))+tV. Since phi_u>0, its Frenet normal and signed
+curvature are those of beta at phi. Direct differentiation gives
+
+  Y_t=V-(V dot tau)tau=(V dot nu)nu=-F nu.
+
+Each Y(t,.) remains a complete immersion, because it is a reparametrization
+and translation of beta. For (theta_0,k_0,v_0)=(pi/2,1,0), k(0)=1 rules out
+a straight profile; F(0)=1 makes its normal motion nonzero. This completes
+the proof of Proposition A.
+
+2. Bounded-curvature rigidity
+
+PROPOSITION B. Every smooth complete planar translating profile for the free
+elastic flow with a nonzero translation vector and globally bounded curvature
+is a straight line parallel to that vector. No finite-energy assumption is
+needed for this statement.
+
+It suffices to prove this for V=(1,0). A nonzero vector can be brought into
+this form by rotation and dilation of the profile (translation speeds scale
+by the inverse cube of the spatial factor). A complete oriented open curve
+can be parametrized by arclength on R; its tangent has a smooth real angle
+lift theta because R is simply connected. The closed case also follows by
+lifting its periodic arclength parametrization to R.
+
+Proof.
+
+Write v=k_s and suppose |k| <= K on R. The profile equation implies
+|k_ss| <= M := K^3/2+1. Taylor's formula with integral remainder at spacing
+one reads
+
+  k(s+1)-k(s)=k_s(s)+integral_0^1 (1-r) k_ss(s+r) dr.
+
+Hence |v(s)| <= 2K+M/2 for all s. Define the elastic force vector
+
+  P(s)=v(s)nu(s)+(k(s)^2/2)tau(s).
+
+The Frenet equations give
+
+  P_s=(v_s+k^3/2)nu=sin(theta)nu.
+
+Taking the first component gives
+
+  P_1=-v sin(theta)+(k^2/2)cos(theta),
+  P_1'=-sin(theta)^2.                                  (B1)
+
+Since both k and v are bounded, P_1 is bounded. Its monotonicity in (B1)
+shows that it has finite limits at both spatial ends and
+
+  integral_R sin(theta)^2 ds < infinity.                (B2)
+
+The function f=sin(theta) is Lipschitz, since f'=k cos(theta) is bounded.
+A Lipschitz L^2 function on R tends to zero at both ends: otherwise a sequence
+of points where |f|>=delta produces, by the Lipschitz bound, disjoint intervals
+of a fixed positive length on which |f|>=delta/2, contradicting L^2
+integrability. If its Lipschitz constant is zero, the assertion follows
+immediately from L^2 integrability. Therefore sin(theta(s))->0 as s->+/-infinity.
+
+For all sufficiently large positive s, |sin(theta(s))|<1/2. The set of real
+angles satisfying this inequality is the disjoint union of intervals
+(n*pi-pi/6,n*pi+pi/6), n in Z. The continuous image of a connected ray lies
+inside a single such interval. As sin(theta)->0, theta must converge to its
+center n_+*pi. The same argument on a negative ray gives theta->n_-*pi.
+
+We use the following elementary derivative-limit fact: if a C^2 function g
+has a finite limit at +infinity and |g''| <= C, then g'->0. For fixed h>0,
+Taylor's formula gives
+
+  |g'(s)| <= |g(s+h)-g(s)|/h + Ch/2.
+
+Taking limsup as s->+infinity, then h down to zero, proves the claim. Applying
+the assertion to g(-s) covers -infinity as well.
+
+First apply the fact to g=theta: theta has limits, and theta_ss=v is bounded.
+It follows that k=theta_s->0 at both ends. Next apply it to g=k: k has limits
+zero and k_ss is bounded. It follows that v=k_s->0 at both ends. Thus the
+formula for P_1 in (B1) shows P_1->0 at both ends. A nonincreasing function
+with both endpoint limits zero is identically zero. Equation (B1) then gives
+sin(theta)=0 everywhere. By continuity theta is a constant multiple of pi;
+hence k=0 and beta is a straight line parallel to V. QED.
+
+Corollary. Every nontrivial profile produced in Proposition A has unbounded
+curvature on R. In particular, in unit-speed parametrization it is outside
+the class of curves having all positive-order derivatives globally bounded.
+This argument does not decide whether such profiles are proper or embedded.
+
+PROPOSITION C. In the broad complete-immersion class of Proposition A,
+finite total bending energy already forces a straight line. Consequently
+the nontrivial examples of Proposition A have infinite bending energy.
+
+Proof. It suffices to show that I=integral_R k^2 ds<infinity implies bounded
+k, and then apply Proposition B. Suppose some point has |k|=A>=2. Finite
+I supplies one point to its left and one to its right where |k|<A/2.
+On the compact interval between these points, |k| attains an interior
+maximum B>=A. At a maximizer s_0, multiply k by a sign epsilon in {+1,-1}
+so that g=epsilon*k satisfies g(s_0)=B and g'(s_0)=0. Take the connected
+component of {g>B/2} in that compact interval which contains s_0. Both
+endpoints have g=B/2, since the original interval endpoints have |k|<A/2.
+Throughout this component, |k|<=B, and the translator equation gives
+
+  |g''|=|k''| <= B^3/2+1 <= B^3.
+
+Taylor's formula from s_0 therefore gives
+
+  g(s) >= B-(B^3/2)(s-s_0)^2
+
+until either boundary is reached. To drop to B/2 requires
+|s-s_0|>=1/B. Thus the full interval [s_0-1/B,s_0+1/B] has |k|>=B/2,
+and
+
+  I >= (2/B)(B^2/4)=B/2 >= A/2.
+
+Since the original point was arbitrary, |k|<=max(2,2I) everywhere.
+Proposition B now proves the assertion. QED.
+
+3. Verified primary-source context and limits of interpretation
+
+Miura--Rupp, A new energy method for shortening and straightening complete
+curves, Journal fuer die reine und angewandte Mathematik 830 (2026), 1-50:
+https://doi.org/10.1515/crelle-2025-0077
+https://www.degruyterbrill.com/document/doi/10.1515/crelle-2025-0077/html
+
+Section 2 explicitly uses dot-C-infinity for smooth maps with bounded
+positive-order derivatives (definition in Section 3.1). Theorem 2.7 treats
+proper immersed initial curves in that class, with speed bounded below and
+finite bending energy. Corollary 8.2 states rigidity of non-scaling or
+shrinking free-elastic solitons in dot-C-infinity with finite bending energy.
+Section 8 ends by observing that infinite-energy nonstationary non-scaling
+solitons are not known. Proposition A lies outside their bounded-derivative
+class; it therefore does not contradict their theorem. The final broad
+remark does not itself explicitly restate the class, so its intended scope
+must not be silently inferred or claimed resolved.
+
+Miura--Wheeler, arXiv:2404.12619v3, introduction p.2, also mentions unknown
+nontrivial open special solutions, particularly translators. That paragraph
+does not specify properness, energy, or bounded curvature. Proposition A
+answers a very broad literal immersed-complete formulation, but it must not
+be described as settling a more restrictive, unspecified translator question.
+It has no direct consequence for their main CLOSED-curve open problems.
+
+The other primary source checked was Solitons to the Willmore flow,
+https://doi.org/10.1515/ans-2023-0150, Sections 5.1 and 7. Its convention is
+translation by -tV, so its scalar translator equation has the corresponding
+opposite choice of translation vector. Section 7 derives profile ODEs and
+some rigidity statements; Section 5.1 contains numerical graphical examples.
+No claim of novelty for Propositions A or B is made here.

@@ -1,0 +1,23 @@
+Independent project: CentroidEscape
+Command sequence: lean (module), lean (root), lean (AxiomAudit)
+Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+MODULE CentroidEscape/ValidatedRoot
+'CentroidEscape.exists_unique_zero_of_preconditioned_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.exists_zero_of_certificate_budgets' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid root audit passed for 3 declarations.
+EXIT 0
+MODULE CentroidEscape/Reversibility
+'CentroidEscape.doubled_solves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.doubled_unit_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid reflection audit passed for 28 declarations.
+EXIT 0
+MODULE CentroidEscape/PeriodicOrbit
+'CentroidEscape.exists_global_periodic_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid periodic-orbit audit passed for 39 declarations.
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 42 declarations; standard axioms only.
+EXIT 0
+All project modules compiled successfully. No claim of full PDE formalization.

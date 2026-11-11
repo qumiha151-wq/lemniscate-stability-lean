@@ -1,0 +1,16 @@
+Independent project: OpenTranslators
+Command sequence: lean (module), lean (root), lean (AxiomAudit)
+Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+MODULE OpenTranslators/Bounds
+'OpenTranslator.quarticEnergy_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenTranslator.energyRadius_lipschitzOn_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenTranslator.quarticEnergy_bound_on_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenTranslator.state_bounds_on_bounded_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+Translator estimate audit passed for 15 declarations.
+EXIT 0
+MODULE OpenTranslators
+EXIT 0
+MODULE OpenTranslators/AxiomAudit
+Open-translator audit passed: 15 declarations; standard axioms only.
+EXIT 0
+All project modules compiled successfully. No claim of full PDE formalization.

@@ -1,0 +1,40 @@
+CLOSED FREE-ELASTIC EXPANDER WITH ESCAPING ARCLENGTH CENTROID
+
+Result: the computer-assisted proof establishes a smooth immersed closed
+free-elastic flow with arclength centroid tending to infinity. It does not
+establish migration. All seven interval integrations passed, and two
+independent analytic/code reviews completed. This package is NOT an
+end-to-end Lean formalization.
+
+Read centroid_escape_proof.pdf (6 pages) or its LaTeX source for the full
+analytic argument and exact rational shooting center. certificate_result.txt
+summarizes the verified conclusion. validated_certificate.json contains the
+complete interval evidence and SHA-256 hashes of the executed source files.
+
+REPRODUCE THE VALIDATION
+Use Python 3.12+ with python-flint 0.9.0 (the successful run used the Python
+version recorded in validated_certificate.json). For an isolated environment:
+
+  python -m venv .venv
+  .venv\Scripts\python -m pip install python-flint==0.9.0
+  .venv\Scripts\python validate_certificate.py --center certificate_center.json --workers 3 --output rerun_certificate.json
+
+On macOS/Linux use .venv/bin/python instead. The optional work/pydeps path
+in the scripts is a convenience for the original workspace; an ordinary
+installed python-flint package also works. No other third-party Python
+package is required by the final validator. Three workers are optional;
+--workers 1 runs sequentially. Expected runtime is several minutes.
+
+The validator reads certificate_center.json and never changes it. It performs
+7 independent order-160 Taylor integrations, each with 750 steps at 180
+Arb decimal digits. It records failure rather than a passing certificate
+if any required inequality fails. Use a different output filename when
+rerunning so the original evidence remains available.
+
+The formalization gap includes the exact ODE flow, Taylor/Gronwall and
+parameter-bootstrap bounds, fixed-point linkage and geometric reconstruction.
+The separate Lean arithmetic/fixed-point components maintained by the parent
+project should not be described as closing this whole gap.
+
+PDF QA: compiled with TeX Live 2025 without warnings; all six rendered pages
+were visually inspected, including the exact-center appendix.

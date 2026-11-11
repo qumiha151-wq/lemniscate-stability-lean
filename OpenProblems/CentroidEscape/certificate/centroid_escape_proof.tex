@@ -1,0 +1,384 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,hyperref}
+\hypersetup{hidelinks}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\title{A computer-assisted closed free-elastic expander\newline with escaping arclength centroid}
+\author{Computer-assisted proof with two independent reviews}
+\date{11 November 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Status.} All interval computations described below have
+completed successfully. The proof combines these computations with ordinary
+analysis; it is not a full Lean formalization. Two independent analytic/code reviews have completed successfully.
+End-to-end Lean formalization of the ODE, analytic estimates, and geometry
+is not claimed. The complete exact decimal
+center and interval output are in \nolinkurl{certificate_center.json}
+and in \nolinkurl{validated_certificate.json}; the reproducible implementation is
+\nolinkurl{arb_shoot.py} with \nolinkurl{validate_certificate.py}. The latter
+records SHA--256 hashes of the former and of itself.
+
+\begin{theorem}\label{thm:main}
+There is a smooth immersed closed
+free-elastic flow whose arclength centroid diverges to infinity.
+Its initial arclength centroid can be chosen to be zero.
+\end{theorem}
+
+Here the arclength centroid of a closed immersed curve is
+\[
+ c_\gamma=\frac{1}{\mathcal L(\gamma)}\int_\gamma\gamma\,ds.
+\]
+The construction concerns smooth immersions and allows self-intersections.
+It does not establish the migration property.
+
+\section{Polynomial shooting problem and geometry}
+For the state $z=(x,y,u,w,k,v)$ consider the autonomous polynomial system
+\begin{equation}\label{eq:ode}
+ x'=u,\qquad y'=w,\qquad u'=-kw,\qquad w'=ku,\qquad
+ k'=v,\qquad v'=-\frac12 k^3+xw-yu.
+\end{equation}
+For $p=(a,b,L)$, let $z_p$ have initial condition
+\begin{equation}\label{eq:initial}
+ z_p(0)=(a,0,0,1,b,0),
+\end{equation}
+and define, whenever this solution exists up to $L$,
+\begin{equation}\label{eq:shooting}
+ F(p)=(y_p(L),u_p(L),v_p(L)).
+\end{equation}
+We also integrate $m'=x$, $m(0)=0$; this seventh coordinate does not affect
+the first six equations.
+
+\begin{lemma}\label{lem:reflection}
+If $L>0$ and $F(a,b,L)=0$, then the positional part of $z_p$ extends to a
+smooth unit-speed immersed closed curve $\beta$ of period $2L$ satisfying
+\begin{equation}\label{eq:soliton}
+ k_{ss}+\frac12 k^3=-\ip{\beta}{\nu},\qquad
+ \nu=(-w,u).
+\end{equation}
+Its arclength centroid is $(m(L)/L,0)$.
+\end{lemma}
+\begin{proof}
+Writing the six-dimensional right-hand side as $f$, the linear involution
+\[
+ R(x,y,u,w,k,v)=(x,-y,-u,w,k,-v)
+\]
+satisfies $f(Rz)=-Rf(z)$ by direct substitution. Both $z_p(0)$ and
+$z_p(L)$ belong to $\operatorname{Fix}R$. Thus
+$Rz_p(2L-s)$ on $[L,2L]$ solves the same ODE and agrees at $L$ with
+$z_p$. Local uniqueness identifies this reflected solution with the
+smooth continuation at the seam. At $2L$ its value is
+$Rz_p(0)=z_p(0)$, so uniqueness also joins the endpoints smoothly and
+gives a periodic solution for all real $s$.
+
+The identity $(u^2+w^2)'=0$, together with the initial data, gives
+$u^2+w^2=1$. Therefore $\beta=(x,y)$ is a unit-speed immersion,
+$T=(u,w)$ is its tangent, and $T'=k\nu$. The final equation in
+\eqref{eq:ode} is exactly \eqref{eq:soliton}. Reflection gives
+$x(2L-s)=x(s)$ and $y(2L-s)=-y(s)$, hence
+\[
+ \int_0^{2L}\beta(s)\,ds=(2m(L),0).
+\]
+Division by the length $2L$ proves the centroid formula.
+\end{proof}
+
+\begin{lemma}\label{lem:flow}
+If a smooth closed unit-speed curve satisfies \eqref{eq:soliton}, then its
+dilates $\rho(t)\beta$, where $\rho(t)=(1+4t)^{1/4}$, evolve by the
+normal velocity of free elastic flow. A smooth time-dependent
+reparameterization yields a solution of the strict vector equation
+\[
+ \partial_t\gamma=-\left(k_{ss}+\tfrac12k^3\right)\nu.
+\]
+The centroid of this solution is $\rho(t)c_\beta$.
+\end{lemma}
+\begin{proof}
+Under dilation by $\rho$, the scalar $k_{ss}+k^3/2$ is multiplied by
+$\rho^{-3}$. Since $\rho'=\rho^{-3}$, the normal component of
+$\partial_t(\rho\beta)$ equals
+$\rho^{-3}\ip{\beta}{\nu}=-\rho^{-3}(k_{ss}+k^3/2)$.
+For the vector equation let $\psi$ solve on the parameter circle
+\[
+ \partial_t\psi=-\frac{\rho'}{\rho}
+    \ip{\beta(\psi)}{T(\psi)},\qquad \psi(s,0)=s.
+\]
+Its smooth periodic vector field gives a smooth circle diffeomorphism
+for every finite $t\ge0$. In $\gamma(s,t)=\rho(t)\beta(\psi(s,t))$
+the tangential velocity cancels. Centroid is unchanged by
+reparameterization and multiplied by $\rho$ under dilation.
+\end{proof}
+
+\section{Uniform analytic estimates}
+For the augmented seven-dimensional state set
+\[
+ W=(1,1,4,4,16,64,1),\qquad
+ \norm{z}_W=\max_i\frac{|z_i|}{W_i}.
+\]
+All operator norms below are induced by this norm; multilinear operator
+norms use it on every argument. Consider the convex tube
+\begin{equation}\label{eq:tube}
+ |x|\le1.6,\quad |y|\le2.4,\quad |u|,|w|\le1.1,
+ \quad |k|\le3.5,\quad |v|\le6.
+\end{equation}
+There is no restriction on $m$, since the field is independent of $m$.
+Absolute row sums of the polynomial coefficients yield throughout this tube
+\begin{equation}\label{eq:derivatives}
+ \norm{f}_W\le2,\quad \norm{Df}_W\le8,\quad
+ \norm{D^2f}_W\le44,\quad \norm{D^3f}_W\le192.
+\end{equation}
+For explicit verification, the oscillator Jacobian rows are bounded by
+$|k|+4\max(|u|,|w|)\le7.9$, and the final row is bounded by
+\[
+ \frac{|w|+|u|+4|x|+4|y|+24k^2}{64}<8.
+\]
+The $k'=v$ row has norm $4$; the remaining linear rows have norm at most
+$4$. For the Hessian, the oscillator rows have norm $32$, while the
+final row has norm $12|k|+1/4\le42.25$. The sole third derivative is
+the cubic term in $k$, and its weighted norm is $192$.
+The field norm is less than $2$; the largest simple bound needed is
+$|m'|=|x|\le1.6$.
+
+\begin{lemma}\label{lem:taylor}
+At any real center $C$ in \eqref{eq:tube}, the exact solution of the
+augmented ODE starting at $C$ has a convergent Taylor series for
+$|h|<1/12$. Its displacement is at most
+\[
+ w(|h|)=\frac{(1-12|h|)^{-1/2}-1}{3}
+\]
+in weighted norm. If $P_N(h,C)$ is the degree-$N$ Taylor polynomial, then
+\begin{equation}\label{eq:tail}
+ \norm{\Phi_h(C)-P_N(h,C)}_W
+ \le\tau_N(|h|):=\frac{(12|h|)^{N+1}}{3(1-12|h|)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At $C$, the absolute coefficients of the polynomial expansion of
+$f(C+q)$ in the increment are bounded by the scalar polynomial
+\[
+ 2+8q+22q^2+32q^3\ \preceq\ 2(1+3q)^3,
+\]
+where $\preceq$ means coefficientwise domination. These bounds are
+absolute row-sum bounds, so they dominate the convolution recurrence for
+the absolute values of all Taylor coefficients of the solution. The scalar
+majorant $w'=2(1+3w)^3$, $w(0)=0$, has the displayed solution. Induction
+in the coefficient recurrence proves coefficientwise domination. The
+coefficient of $h^n$ in $w$, for $n\ge1$, is
+$12^n\binom{2n}{n}/(3\cdot4^n)\le12^n/3$.
+Thus the vector series converges absolutely for $|h|<1/12$, solves the
+polynomial ODE by termwise differentiation, and agrees with its unique
+local solution. Summing the coefficient majorant from $N+1$ onward proves
+\eqref{eq:tail}. This argument uses the derivatives at $C$ only; it does
+not assume beforehand that the entire local solution remains in the tube.
+\end{proof}
+
+\section{Validated integration and its interpretation}
+Let $p_0$ be the exact decimal rational triple in
+\nolinkurl{certificate_center.json}, approximately
+\[
+ (1.36288130730646586725,\quad
+  3.01173359847420887094,\quad
+  7.49497740159149112339).
+\]
+The finite-difference step is $\delta=10^{-70}$ and the desired fixed-point
+radius is $r=10^{-80}$. Every integration uses $N=160$, $n=750$,
+and $h=L/750<0.01$. The exact, unrounded Taylor iteration is
+$C_{j+1}=P_{160}(h,C_j)$ with the specified exact rational initial state.
+Arb ball operations enclose this entire discrete iteration, including
+the input conversion, coefficient recurrence, and polynomial evaluation.
+No midpoint reset occurs between integration steps. Hence every exact
+$C_j$ belongs to its computed ball, and the final ball already includes
+all propagated arithmetic error.
+
+Every computed grid ball is verified to satisfy the smaller bounds
+\begin{equation}\label{eq:inner}
+ |x|<1.45,\quad |y|<2.26,\quad |u|,|w|<1.001,
+ \quad |k|<3.02,\quad |v|<4.15.
+\end{equation}
+The smallest weighted margin from these bounds to \eqref{eq:tube} is
+$0.02475$. The verified inequalities include
+\begin{equation}\label{eq:globalerror}
+ w(0.01)<0.023,\qquad
+ 750e^{60}\tau_{160}(0.01)
+ <1.816799\cdot10^{-120}<\varepsilon:=10^{-118}.
+\end{equation}
+In particular more than $0.001$ of weighted tube margin remains after
+subtracting both $w(0.01)$ and $\varepsilon$.
+
+Here is the precise comparison with the actual ODE, which is essential:
+by Lemma~\ref{lem:taylor}, each local exact arc $\Phi_s(C_j)$,
+$0\le s\le h$, lies in the outer tube. As long as the actual solution
+also remains in that tube, its difference from this reference arc is
+bounded by the flow Lipschitz factor $e^{8s}$. At grid times the errors
+therefore obey
+\[
+ e_{j+1}\le e^{8h}e_j+\tau_{160}(h),\qquad e_0=0.
+\]
+At grid times and between them this gives a bound at most
+$750e^{60}\tau_{160}(0.01)<\varepsilon$. The spare $0.001$ margin
+prevents a first exit. Standard continuation for a polynomial ODE then
+gives existence throughout $[0,L]$: the first six coordinates stay in a
+compact set, while $m'=x$ bounds the seventh coordinate on this finite
+interval. Thus adding the ball $[-W_i\varepsilon,W_i\varepsilon]$ to
+each raw final state component gives a true ODE enclosure.
+Arithmetic radii must not be multiplied by an additional Gronwall factor,
+because those radii already propagate through all discrete steps.
+
+The exact center also satisfies $0<L_0-\delta-r$ and
+$L_0+\delta+r<7.5$, as verified separately by Arb.
+The same argument supplies the needed uniform neighborhood. On the box
+\[
+ \norm{p-p_0}_\infty\le\delta+r
+\]
+the initial-data perturbation has weighted norm at most $\delta+r$.
+With $E=e^{60}<2\cdot10^{26}$, the change in state on common time
+intervals is at most $E(\delta+r)$. A possible extra endpoint interval
+has length at most $\delta+r$ and costs at most $2(\delta+r)$ in state
+norm. The computations explicitly verify that
+\[
+ (E+2)(\delta+r)+\varepsilon+w(0.01)
+\]
+is less than each weighted inner-to-outer margin, with a remaining margin
+greater than $0.001$. The first-exit argument, including the possible
+short endpoint-time extension, therefore places every intermediate
+parameter trajectory in the same tube. Consequently the derivative bounds
+below hold throughout a convex parameter neighborhood containing all
+finite-difference segments and the fixed-point cube, not merely at the
+seven evaluated parameters.
+
+\section{Derivative estimates and the fixed point}
+The state-flow variational equations and \eqref{eq:derivatives} give, for
+$0\le s\le7.5$ on these trajectories,
+\[
+ \norm{D_z\Phi_s}\le E,\qquad
+ \norm{D_z^2\Phi_s}\le\frac{44}{8}E(E-1)<6E^2.
+\]
+The latter follows by integrating
+$44e^{8(s-t)}e^{16t}$ over $0\le t\le s$.
+For derivatives involving the terminal time,
+\[
+ \norm{\partial_s\Phi_s}\le2,\qquad
+ \norm{\partial_sD_z\Phi_s}\le8E,
+ \qquad \norm{\partial_s^2\Phi_s}\le16.
+\]
+The initial-state map $(a,b)\mapsto(a,0,0,1,b,0,0)$ has operator norm at
+most one from the parameter maximum norm to the weighted state norm.
+Extraction of $(y,u,v)$ has norm at most $64$. Thus on the whole parameter
+neighborhood the shooting Hessian satisfies
+\begin{equation}\label{eq:H}
+ \norm{D^2F}_{\infty\to\infty}
+ \le64(6E^2+16E+16)<H:=10^{56},
+\end{equation}
+where the left is the bilinear operator norm.
+
+For $j=1,2,3$, compute true endpoint enclosures at $p_0\pm\delta e_j$.
+The interval matrix $J_{\rm fd}$ encloses their exact centered difference
+quotients. For each entry, the fundamental theorem of calculus and
+\eqref{eq:H} give
+\begin{equation}\label{eq:FD}
+ \left|(DF(p_0))_{ij}
+ -\frac{F_i(p_0+\delta e_j)-F_i(p_0-\delta e_j)}{2\delta}\right|
+ \le\frac{H\delta}{2}=5\cdot10^{-15}.
+\end{equation}
+The computed intervals already include endpoint evaluation errors;
+these errors are not added a second time.
+
+Use the exact rational matrix whose entries are the following finite decimals:
+\[
+ B=\begin{pmatrix}
+ -.06037342357664187&-.27213682312533344&-.05965645081977437\\
+ .013384830972815771&-.0024448406036154074&.061329210847373104\\
+ -1.0100953172650646&.053420898617877965&-.08577738110346352
+ \end{pmatrix}.
+\]
+It is nonsingular. With $d=\norm{I-BJ_{\rm fd}}_\infty$, all matrices
+in the interval enclosure are understood in this upper-bound calculation.
+On the closed cube $Q=\{p:\norm{p-p_0}_\infty\le r\}$, the map
+$G(p)=p-BF(p)$ has derivative bound
+\begin{equation}\label{eq:q}
+ \norm{DG(p)}_\infty\le
+ q:=d+\norm{B}_\infty(3H\delta/2+Hr).
+\end{equation}
+The factor $3$ converts the entrywise finite-difference error to a matrix
+row-sum bound. The $Hr$ term already uses the bilinear operator norm in
+\eqref{eq:H}, so it needs no additional dimension factor.
+
+\begin{proposition}\label{prop:computation}
+The reproducible Arb computation, using 180 decimal digits, verifies all
+grid, tube, tail, and derivative inequalities specified above, and
+\begin{align*}
+ \norm{B}_\infty&<1.15,\qquad |\det B|>0,\\
+ d&<9.957524\cdot10^{-14},\\
+ q&<1.168147\cdot10^{-13},\\
+ \eta:=\norm{BF(p_0)}_\infty&<6.74\cdot10^{-118},\\
+ \eta+qr&<1.168147\cdot10^{-93}<10^{-80}=r.
+\end{align*}
+All seven integrations passed their grid checks. The raw endpoint
+rounding radii are of order $10^{-172}$, smaller than the explicit
+truncation budget. The computed quantities are enclosed by Arb balls;
+all acceptance comparisons use ball inequalities against rational
+thresholds, not floating-point comparisons.
+\end{proposition}
+
+By \eqref{eq:q} and Proposition~\ref{prop:computation}, $G$ is a strict
+contraction of the complete cube $Q$ into itself. Banach's fixed-point
+theorem gives $p_*\in Q$ with $G(p_*)=p_*$. Nonsingularity of $B$ implies
+$F(p_*)=0$. This proves exact closure, rather than approximate numerical
+closure.
+
+\section{Certified centroid and escape}
+The weighted state change from $p_0$ to $p_*$ at their respective endpoint
+times is at most $(E+2)r$. Including the moment coordinate in the integration
+therefore proves
+\begin{align*}
+ m_{p_*}(L_*)&\in
+ [3.78365096320749419634974942366049493295828418426801828
+       \ \pm\ 2.44\cdot10^{-54}],\\
+ \frac{m_{p_*}(L_*)}{L_*}&\in
+ [0.504824866103541540109480685758874180664870977318606015
+       \ \pm\ 4.41\cdot10^{-55}].
+\end{align*}
+The code directly checks $m_{p_*}(L_*)>3.7$, $0<L_*<7.5$, and
+$m_{p_*}(L_*)/L_*>0.49$. Lemma~\ref{lem:reflection} produces a smooth
+closed expander with nonzero centroid. Lemma~\ref{lem:flow} now gives
+$c_{\gamma(t)}=\rho(t)c_\beta$, which diverges because $\rho(t)\to\infty$.
+Translating the entire flow by the constant vector $-c_\beta$ preserves
+the equation and yields initial centroid zero and later centroid
+$(\rho(t)-1)c_\beta$. Together with the verified computation and analytic estimates above,
+this proves Theorem~\ref{thm:main}.
+
+Finally, the same intervals show $a_*>1.3$ and $x_{p_*}(L_*)<-0.22$.
+Both corresponding profile points have $y=0$. Their connecting segment
+contains the expansion center $0$, so $0$ belongs to the convex hull of
+the profile. This example therefore supplies no half-plane separation
+from the expansion center and no homothetic migration conclusion.
+
+\appendix
+\section{Exact rational center}
+The following finite decimals define the exact rational center $p_0$.
+For each coordinate, concatenate its displayed lines without whitespace.
+This is the same center read by the validated computation.
+\begin{verbatim}
+a0 =
+1.36288130730646586724540492564119328606333202087402037713638055
+2888014387264453369650391025834236861156205915573992900599640530
+66281049604343152049694198272133019826995101310866984
+
+b0 =
+3.01173359847420887094497074533823205110835009467373153380441310
+3791670594510452679593380852864667621400092821914670389887258596
+00926748645647853176928567838285224785930939511967857
+
+L0 =
+7.49497740159149112338537760573652397915893177644288585501917218
+5315246830265113994711601095140425363807428194721693050936666465
+29738270751311706827855707016904769809511819177453755
+
+\end{verbatim}
+
+\end{document}

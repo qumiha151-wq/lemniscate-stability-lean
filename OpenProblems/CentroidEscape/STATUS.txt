@@ -1,0 +1,36 @@
+Closed-expander centroid escape: computer-assisted existence, partial Lean.
+
+The validated Arb shooting certificate, together with the accompanying
+analytic proof, constructs a smooth immersed closed expander with arclength
+centroid x > 0.49 relative to its expansion center. Its homothetic flow has
+unbounded centroid. Two analytic/code reviews found no substantive gap.
+The computation depends on the Python/flint/Arb runtime; the reviews did
+not independently rerun all seven high-order integrations.
+
+Lean currently proves:
+  - residual + uniform derivative bounds imply an actual unique shooting
+    zero by the contraction theorem (zero existence is a conclusion);
+  - exact reversal of the six-coordinate polynomial ODE;
+  - differentiation and gluing of the reflected actual ODE segment;
+  - smoothness on the doubled interval, closure, matching endpoint first
+    derivatives, and preservation of the unit tangent;
+  - global periodic extension, including actual ODE differentiation at all
+    seams, global smoothness and the globally unit tangent.
+
+Missing from the end-to-end Lean theorem:
+  - the validated numerical/ODE estimates discharging the root hypotheses;
+  - the geometric free-elastic-flow and arclength-centroid integral linkage.
+Thus the complete centroid-escape theorem is NOT yet Lean-formalized.
+
+This profile does not prove migration: its convex hull contains the
+expansion center. No classification or unrestricted length conclusion
+is inferred from it. This Lake project imports no other open-problem project.
+
+To rerun the external certificate, install python-flint==0.9.0 in an
+environment accessible to Python, then from the certificate directory run:
+  python validate_certificate.py --center certificate_center.json --workers 3
+The included JSON records source SHA256 hashes, constants and interval
+results. Source hashes identify the original successful run. Supplemental
+parameter_box_check.txt records the enlarged-time-neighborhood check.
+The final ALL ARB CERTIFICATE CHECKS PASSED status is written only after
+every check; a failed run is marked NOT YET VERIFIED.

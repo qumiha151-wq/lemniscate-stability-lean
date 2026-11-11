@@ -1,0 +1,100 @@
+INDEPENDENT AUDIT OF THE ASYMMETRIC EXPANDER CERTIFICATE
+Date: 2026-11-11
+Scope: geometric linkage and Taylor/tube/bootstrap logic. The numerical
+constants received a separate audit. No source file was changed by this audit.
+
+RESULT
+I found no substantive mathematical gap in the stated computer-assisted
+existence argument. The seven successful Arb enclosures plus the analytic
+estimates suffice for a closed immersed expander with nonzero arclength
+centroid. This is not a claim of a Lean formalization. The initial title and
+last paragraph of certificate_plan.txt are stale status descriptions now that
+the successful certificate exists; the mathematical boundary remains clear.
+
+1. EXACT TAYLOR ORBIT VERSUS ODE
+The recurrence in arb_shoot.step computes the degree-N Taylor polynomial
+of the polynomial vector field at its input. Each next coefficient is read
+from values computed before any coordinate receives its next coefficient.
+Arb propagation without midpoint resets encloses the exact unrounded Taylor
+iteration (including the exact rational input represented by decimal strings).
+It does not by itself enclose ODE truncation; the separate inflation does that.
+
+At a numerical grid value C in the inner box, the polynomial vector field
+Taylor coefficients are bounded by the stated scalar majorant. The majorant
+series is convergent for |t|<1/12; coefficient induction gives a convergent
+vector series solving the ODE, hence the unique local solution. This gives
+both the degree-160 tail bound tau and excursion w(.01)<.023, without any
+complex-analytic analyticity-radius assumption.
+
+Let C_j be the exact unrounded Taylor orbit and z(jh) the exact ODE. Local
+flow from C_j stays in the outer tube by the majorant. Up to the first exit
+of z from the outer tube, convexity of the tube and ||Df||<=8 give
+ e_(j+1)<=exp(8h)e_j+tau.
+At intermediate step times, comparison with the local exact flow from C_j
+bounds the discrepancy by exp(8t)e_j. Thus the same global bound
+ 750*exp(60)*tau < 1e-118
+controls the required intermediate comparison. The checked spare margin
+exceeds .001, so a hypothetical first exit contradicts that bound. This
+closes the apparent circularity in using the tube Lipschitz bound. Rounding
+radii are already propagated and must not be multiplied by exp(60) again.
+
+2. UNIFORM PARAMETER BOX AND HESSIAN
+For p=(a,b,L), the map (a,b)->(a,0,0,1,b,0,0) has operator norm <=1 in
+the stated weighted norm. Comparing to the certified center trajectory,
+initial perturbations of sup norm q cause at most exp(60)q deviation up to
+the common endpoint. An extension by at most q in endpoint time causes at
+most 2q further movement before first exit. The same spare margin therefore
+proves all needed nearby trajectories exist and remain in the outer tube.
+Standard smooth dependence of polynomial ODEs then justifies the first and
+second variation equations used for the Hessian bound along those paths.
+The full (a,b,L) Hessian has the two mixed terms accounted for, giving
+6E^2+16E+16 before the output extraction factor 64.
+
+Minor bookkeeping: the prose chooses q=delta+r, while the harness checks
+the endpoint times L0+/-delta and L0+/-r separately. For this stored center,
+0<L0-delta-r and L0+delta+r<7.5 follow immediately from L0=7.4949... .
+One may explicitly postcheck these inequalities, or simply use q=delta,
+since r<delta and that cube already contains all needed parameter segments.
+No expensive integration needs repeating for this bookkeeping detail.
+
+3. FINITE DIFFERENCES AND FIXED POINT
+The central finite-difference error H*delta/2 follows from integration of
+the Hessian bound and needs no third derivative of the flow. The factor 3
+converts the entrywise error to the matrix infinity norm. The subsequent
+variation H*r is already an operator-norm bound on the Jacobian difference.
+The map p-BF(p) is a contraction and a self-map of the closed radius-r cube;
+B nonsingularity turns its fixed point into F=0. The verified q and eta
+have large margins. Decimal B entries define a legitimate exact rational
+preconditioner; they need not be an exact inverse.
+
+4. REFLECTION AND IMMERSION
+R(x,y,u,w,k,v)=(x,-y,-u,w,k,-v) satisfies f(Rz)=-R f(z).
+At initial and terminal points, y=u=v=0, hence R fixes both points.
+Define z(s)=R z(2L-s) on the second half. It solves the same ODE and agrees
+with the first half at L; local uniqueness makes the seam smooth to every
+order. At 2L it returns exactly to its initial state, and the same argument
+produces a smooth periodic solution. The invariant u^2+w^2=1 gives an
+immersed arclength-parametrized closed plane curve. No numerical conclusion
+about the endpoint sign of w is needed for this closure argument.
+
+5. CENTROID AND THE STRICT VECTOR FLOW
+The second half has the same x integral and opposite y integral as the
+first half. Its total length is 2L, hence its centroid is exactly (m(L)/L,0).
+The certified positive moment therefore proves a nonzero centroid.
+With nu=(-w,u), the ODE gives k_ss+k^3/2=-<beta,nu>. For
+rho=(1+4t)^(1/4), rho'=rho^(-3), so rho beta has the required normal speed.
+To remove the tangential velocity, solve the periodic scalar ODE
+ psi_t=-(rho'/rho)*<beta(psi),T(psi)>, psi(s,0)=s.
+Its spatial derivative stays positive, so psi is a circle diffeomorphism
+for every finite t. Then gamma=rho beta o psi solves the strict vector flow.
+Arclength centroid is invariant under this reparameterization and equals
+rho c_beta, which diverges. Constant translation by -c_beta gives initial
+centroid zero and centroid (rho-1)c_beta with the same divergence.
+
+6. SCOPE LIMIT
+The two symmetry-axis positions have opposite x signs, so the expansion
+center lies in the convex hull. This expander cannot yield migration of
+the entire closed curve from one strict half-plane to its opposite. It does
+answer the separate existence question for a centroid diverging to infinity,
+assuming the analytic proof and successful Arb certificate are accepted as
+a computer-assisted mathematical proof.

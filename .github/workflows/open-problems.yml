@@ -1,0 +1,38 @@
+name: Separate open-problem formalizations
+
+on:
+  push:
+    paths:
+      - 'OpenProblems/**'
+      - '.github/workflows/open-problems.yml'
+  pull_request:
+    paths:
+      - 'OpenProblems/**'
+      - '.github/workflows/open-problems.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [LengthGrowth, Migration, CentroidEscape, OpenTranslators]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/${{ matrix.project }}
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - name: Enforced project axiom audit
+        working-directory: OpenProblems/${{ matrix.project }}
+        run: lake env lean ${{ matrix.project }}/AxiomAudit.lean

@@ -1,0 +1,123 @@
+Independent audit of the closed-expander / escaping-centroid certificate
+Reviewer: translator_formal subagent; 2026-11-11
+
+Scope. Read-only review of one_sided/arb_shoot.py,
+one_sided/validate_certificate.py, certificate_plan.txt, certificate_center.json,
+validated_certificate.json, and their logs. No expensive shooting integration
+was rerun. I independently reconstructed the inexpensive rational/Arb checks
+from the stored certificate, with 220 decimal digits. The conclusions below
+depend on the actual stored interval results and the trusted Python/flint/Arb
+runtime; this is NOT an end-to-end Lean certificate or an independent runtime.
+
+Result. No fatal analytic or implementation gap was found. Subject to the
+listed runtime trust and stored interval integrations, the certificate proves
+an exact shooting zero, a smooth closed unit-speed expander with positive
+arclength centroid, and consequently an FEF example with unbounded centroid.
+It does not prove half-plane migration, classify closed solitons, or establish
+that all remaining open problems have been solved.
+
+1. State equation and symmetry
+z=(x,y,u,w,k,v,m),
+z'=(u,w,-kw,ku,v,-k^3/2+xw-yu,x),
+z(0)=(a,0,0,1,b,0,0).
+The shooting map is F(a,b,L)=(y(L),u(L),v(L)).
+For the six geometric coordinates R=(x,-y,-u,w,k,-v), direct expansion gives
+f(Rz)=-R f(z). Both shooting endpoints are fixed by R. Extending the first
+half by R z(2L-s) makes a C^1 solution at L; the polynomial ODE then makes it
+smooth. The endpoint at 2L equals the initial state and all jets agree by
+the same equation, giving a smooth periodic solution. The invariant
+(u^2+w^2)'=0 and initial value 1 give a unit-speed immersion.
+
+2. Weighted analytic constants
+Weights (1,1,4,4,16,64,1), maximum norm. On the outer tube
+(|x|,|y|,|u|,|w|,|k|,|v|)<=(1.6,2.4,1.1,1.1,3.5,6),
+with m unrestricted, the asserted estimates are valid:
+|f|_W<=2, |Df|_W<=8, |D^2 f|_W<=44, |D^3 f|_W<=192.
+The critical first-derivative oscillator row is 3.5+4(1.1)=7.9.
+The critical second derivative row is 12(3.5)+1/4=42.25.
+The cubic third derivative row is 3*16^3/64=192.
+The m equation adds only a row of norm 1 and no higher derivatives.
+
+3. Taylor propagation and bootstrap
+The normalized derivative coefficient bounds give the majorant
+2+8q+22q^2+32q^3 <= 2(1+3q)^3.
+The scalar solution w(t)=((1-12t)^(-1/2)-1)/3 has coefficient bounds
+12^n/3. Thus an order-160 step h<=.01 has tail at most
+tau=(.12)^161/[3(1-.12)], approximately 2.121e-149.
+750 exp(60) tau <1e-118. The code keeps the full Arb interval through
+every step: no midpoint reset in shoot/step. Rounding therefore already
+propagates in the polynomial recurrence; adding the global truncation
+budget once is correct. The midpoint refinement in arb_shoot.main is not
+executed when the validation harness imports the module.
+The recurrence computes all RHS coefficients at order n before assigning
+the order n+1 state coefficients; its in-place polynomial lists are sound.
+The stored inner bounds (1.45,2.26,1.001,1.001,3.02,4.15) have minimal
+weighted margin .02475 to the outer tube. The within-step majorant is
+w(.01)<.022002, leaving more than .0027 before microscopic error budgets.
+This closes the first-exit bootstrap, including between mesh points.
+
+4. Uniform shooting neighborhood and second derivatives
+The radius is r=1e-80 and difference step delta=1e-70.
+The center plus delta+r is less than 7.5. This explicit inequality is
+not currently asserted in the harness, although it holds with margin
+greater than .005; adding it would make the time-budget dependency clear.
+With E=exp(60)<2e26, the weighted perturbation bound
+(E+2)(delta+r) is less than 1e-43, far below the tube slack.
+The flow second variation is bounded by (44/8)E(E-1)<6E^2;
+the mixed time derivatives cost 8E each and the second time derivative
+costs 16. Extraction to the shooting norm costs at most 64, so H=1e56
+is a safe uniform Hessian bound for F in the full parameter box.
+A centered difference needs only a second-derivative bound here:
+entrywise derivative error <=H*delta/2; the max-row-sum matrix error
+has the factor 3 used by the harness.
+
+5. Exact root check
+B is the matrix of exact rational decimals recorded in the certificate,
+not an unchecked floating-point inverse. Its norm is below 2 and its
+determinant is nonzero (approximately .0168358).
+Independent reconstruction from the saved +/- interval outputs gives
+q=1.16814635533589386656107074915e-13 (with negligible interval width),
+eta=||B F(center)|| <=6.74e-118.
+Hence q<1e-8 and eta+q*r<r. The map p -> p-BF(p) is a contraction
+of the closed radius-r max-norm ball into itself. Banach's theorem gives
+a fixed point; invertibility of B gives an exact F zero. Smooth ODE
+dependence and the explicit tube bootstrap supply the required domain.
+
+6. Geometric consequence
+The m integral at the exact root remains above 3.7, while L<7.5.
+The reflected full curve has centroid (m(L)/L,0), so its x centroid is
+greater than .49. The independently recomputed center enclosure is
+0.50482486610354154010948068575887418066487097731861
+with uncertainty below 4e-51, before a still tiny root-variation error.
+With normal nu=(-w,u), the ODE gives k_ss+k^3/2=xw-yu=-<beta,nu>.
+Thus rho(t)=(1+4t)^(1/4) gives the expander; a smooth circle
+reparametrization removes its tangential velocity. Its arclength centroid
+is rho times the centroid of beta. Translating by the fixed initial
+centroid makes c(0)=0 and c(t)=(rho(t)-1)c_beta, unbounded.
+The example is NOT a migration example: both its initial positive-x
+point and its endpoint negative-x point lie on the symmetry axis, so
+the origin belongs to its convex hull.
+
+7. Serialization and provenance checks
+At 220 dps I reconstructed the saved balls, centered differences, B,
+all matrix checks, analytic constants, and positive moment check without
+rerunning shooting. All inequalities passed. python-flint's Arb radius
+constructor was checked on an uncertain radius and encloses its upper
+endpoint; radius rounding is outward. Strict Arb comparisons return
+False on overlapping/uncertain bounds. Decimal .str output reparses as
+an outward enclosure, and the stored raw balls lie inside their saved
+inflated balls.
+Source SHA256 values match the certificate:
+arb_shoot.py
+52dc80e534de960cbe52e5a4b691c04fe58c2a32282bcdda30d2c0ae40c34501
+validate_certificate.py
+01be96de020a042ebb4d1dad1e7e94397e6034001409df8b634b6123c4686793
+certificate_center.json
+8246457978f0e2707f7ce2132d6ba60a4a808535ac927cd170537a9aa014b695
+
+Boundary. This audit is a mathematical/code review plus an inexpensive
+reconstruction, not a second high-precision integration. A full Lean
+claim still requires formally connecting interval arithmetic/Taylor
+enclosures, polynomial ODE existence and smooth dependence, the root,
+periodic closure, geometry, and FEF. Algebraic identities or a conditional
+Banach theorem alone do not constitute that end-to-end formalization.

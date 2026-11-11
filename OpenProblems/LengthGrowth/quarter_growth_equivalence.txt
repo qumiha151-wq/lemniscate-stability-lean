@@ -1,0 +1,83 @@
+EXACT REDUCTION OF THE UNRESTRICTED LENGTH-GROWTH QUESTION
+Human proof; not yet Lean-formalized. 11 November 2026.
+
+Let gamma(t) be any smooth closed planar free elastic flow, and use
+E=(1/2)integral k^2 ds, L=length, D=integral F^2 ds. Assume only the
+already established geometric identities/estimates:
+
+  E'=-D,
+  |L(t)-L(s)|^2 <= (t-s)(E(s)^2-E(t)^2) for 0<=s<=t,
+  D >= 4pi^2 E^2/L^3,
+  EL>=2pi^2.
+
+The following three properties of this individual solution are equivalent:
+
+  (A) sup_{t>=0} E(t)L(t) < infinity;
+  (B) there exists A<infinity with L(t)<=A(1+t)^(1/4) for all t>=0;
+  (C) there exists B<infinity with E(t)<=B(1+t)^(-1/4) for all t>=0.
+
+In particular, the original existence question for growth not O(t^(1/4))
+is exactly equivalent to the existence of a trajectory with unbounded EL.
+Uniform boundedness of EL is not merely a stronger sufficient hypothesis.
+
+Proof (A) implies (B).
+
+This is the existing doubling argument. If EL<=K and L(t)>2L(0), choose
+s with L(s)=L(t)/2. Then L(t)^2/4<=tE(s)^2<=4K^2 t/L(t)^2, hence
+L(t)^4<=16K^2t. Consequently
+
+  L(t)<=max(2L(0),2sqrt(K)t^(1/4))
+       <=max(2L(0),2sqrt(K))(1+t)^(1/4).
+
+Proof (B) implies (C).
+
+Positivity of E follows from Fenchel. Differentiate 1/E and use the
+virial inequality and (B):
+
+  (1/E)'=D/E^2 >=4pi^2/L^3
+                >=(4pi^2/A^3)(1+t)^(-3/4).
+
+Integration gives, with d=16pi^2/A^3 and w=(1+t)^(1/4)>=1,
+
+  1/E(t)>=1/E(0)+d(w-1)>=min(1/E(0),d)*w.
+
+Thus (C) holds with B=max(E(0),A^3/(16pi^2)).
+
+Proof (C) implies (B).
+
+This proof uses no differential upper bound for L and no monotonicity of L.
+For t>=1 choose n>=0 so that r=t/2^n lies in [1,2). For j=1,...,n the
+restart estimate, E>=0, and (C) give
+
+  |L(2^j r)-L(2^(j-1)r)|
+    <= sqrt(2^(j-1)r) E(2^(j-1)r)
+    <= B (2^(j-1)r)^(1/4).
+
+Summing the geometric series,
+
+  L(t)<=L(r)+[B/(2^(1/4)-1)]t^(1/4)
+       <=L(0)+sqrt(2)E(0)+[B/(2^(1/4)-1)]t^(1/4).
+
+The last inequality uses the original restart estimate on [0,r]. On
+[0,1], L(t)<=L(0)+E(0). Therefore (B) holds globally with, for example,
+
+  A=L(0)+sqrt(2)E(0)+B/(2^(1/4)-1).
+
+Finally (B) and (C) imply (A) immediately by multiplying. Since (C)
+implies (B), this closes the equivalence chain.
+
+Two-sided rates.
+
+Under these equivalent conditions, Fenchel EL>=2pi^2 combines with (B)
+to give E(t)>=(2pi^2/A)(1+t)^(-1/4), and combines with (C) to give
+L(t)>=(2pi^2/B)(1+t)^(1/4). Hence both E and L have two-sided quarter
+power rates. In particular there is no third case where length has the
+quarter-power upper bound but normalized energy still diverges.
+
+Limitations.
+
+This proves an equivalence, not that any one of (A)--(C) holds for every
+trajectory. The smooth scalar countermodel in scalar_obstruction.txt
+satisfies all four starting conditions and violates all three properties.
+Therefore a proof of the unrestricted theorem still needs an additional
+geometric estimate or an actual geometric counterexample.
