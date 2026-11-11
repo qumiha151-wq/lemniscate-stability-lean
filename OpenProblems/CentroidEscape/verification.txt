@@ -27,9 +27,17 @@ MODULE CentroidEscape/Reparametrization
 'CentroidEscape.exists_reparametrized_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
 Centroid reparametrization audit passed for 119 declarations.
 EXIT 0
+MODULE CentroidEscape/ValidatedIntegration
+CentroidEscape/ValidatedIntegration.lean:177:32: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+'CentroidEscape.ode_grid_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.integration_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Validated integration audit passed for 15 declarations.
+EXIT 0
 MODULE CentroidEscape
 EXIT 0
 MODULE CentroidEscape/AxiomAudit
-Centroid-escape audit passed: 148 declarations; standard axioms only.
+Centroid-escape audit passed: 163 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.
