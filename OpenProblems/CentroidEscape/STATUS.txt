@@ -16,10 +16,23 @@ Lean currently proves:
     derivatives, and preservation of the unit tangent;
   - global periodic extension, including actual ODE differentiation at all
     seams, global smoothness and the globally unit tangent.
+  - Euclidean Frenet identities, signed curvature and scaled elastic force;
+  - the explicit radius R=(1+4t)^(1/4), R'=R^(-3), and the actual normal
+    free-elastic-flow equation of the expanding immersed periodic curve;
+  - reflection identities for x/y integrals and the moment equation m'=x;
+  - the actual arclength-weighted centroid and its scaling, and divergence
+    from positive exact half-moment data. The theorem
+    exact_half_orbit_yields_centroid_escape assembles these analytic steps.
+  - actual unique global parameter trajectories for the bounded periodic
+    tangential correction field; logarithmic time makes each moving point
+    satisfy the vector FEF equation. Existence is proved, not hypothesized.
 
 Missing from the end-to-end Lean theorem:
-  - the validated numerical/ODE estimates discharging the root hypotheses;
-  - the geometric free-elastic-flow and arclength-centroid integral linkage.
+  - construction of the exact shooting map/half-orbit and validated
+    numerical/ODE estimates discharging the root and moment hypotheses;
+  - smooth dependence of the parameter trajectories on their initial value,
+    the circle diffeomorphism property, and centroid invariance under that
+    reparametrization (the geometric normal flow is already formalized).
 Thus the complete centroid-escape theorem is NOT yet Lean-formalized.
 
 This profile does not prove migration: its convex hull contains the

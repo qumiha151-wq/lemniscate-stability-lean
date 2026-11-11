@@ -1,0 +1,163 @@
+INDEPENDENT ANALYTIC AUDIT OF similarity_reduction.txt
+Date: 2026-11-12
+Reviewer: length_new_approach subagent
+Scope: the mathematical deductions in Sections 2--8. This is not a literature
+priority review, not a Lean verification, and not a classification theorem.
+
+OVERALL RESULT
+
+I found no substantive error in the fixed-center reduction, the signs and
+scalings of its equations, the Gram identities, or the migration time formula.
+The conclusions are valid for smooth closed immersed profiles, with positive
+length, and differentiable similarity parameters representing the immersion
+up to smooth time-dependent reparametrization. They do not eliminate rotating
+profiles or classify periodic orbits. Several wording/coverage details below
+should be made explicit before these working notes are used as a theorem.
+
+1. FORCE, VIRIAL, AND TORQUE IDENTITIES: CHECKED
+
+For N=JT, p=beta.N, q=beta.T, direct differentiation gives
+ p'=-kq, q'=1+kp.
+Hence integral kp=-L and integral kq=0. With
+ S=(k^2/2)T+k_s N,
+ S_s=(k_ss+k^3/2)N=F N.
+Thus integral F N=0. Also
+ (S.beta)_s=Fp+k^2/2,
+ (S.Jbeta)_s=Fq+k_s,
+which give integral Fp=-E and integral Fq=0 with the stated signs. No soliton
+hypothesis is used. A smooth closed immersion has E>0, and these identities
+then force D=integral F^2>0.
+
+2. KERNEL AND FIXED CENTER: CHECKED
+
+The normal similarity generator a beta+bJbeta+c has zero normal component
+only if a=0, by multiplication by k and periodic integration. For b=0, c!=0
+would force the continuous unit tangent to be a fixed one of the two unit
+vectors parallel to c, contradicting closure. For b!=0 the center is
+z=Jc/b, since bJ(beta-z)=bJbeta+c. Orthogonality to N gives
+(beta-z).T=0, hence constant positive radius. Smooth unit-speed immersion on
+this circle has constant orientation and is a multiple cover of it.
+
+In the similarity ansatz gamma=c+r R(theta)beta, normal velocity is
+ R(-theta)c'.N + r' p + r theta' q,
+whereas the scaled elastic force is r^(-3)F. Multiplication by r^3 gives
+exactly the coefficients r^3r', r^4theta', r^3R(-theta)c' stated in (S).
+For a noncircular profile, injectivity makes these coefficients constant.
+The identity D=aE forces a>0. With A=aI+bJ and z=A^(-1)w,
+beta0=beta+z and C=c-rR(theta)z have the correct signs; differentiating gives
+C'=r^(-3)R(theta)(w-Az)=0. The logarithmic angle law and quarter-power radius
+law follow exactly.
+
+For a circle of physical center O(t) and radius R(t), comparison of constant
+and first Fourier modes in the normal equation gives O'=0 and R'=1/(2R^3).
+This also excludes circle translations and shrinking circles. Circular
+rotations are changes of parametrization, so the noncircular injectivity
+argument must not be applied to extract a unique b in that case.
+
+3. GRAM FORMULAE: CHECKED
+
+From F=-ap-bq one obtains aP+bQ0=E and aQ0+bR0=0. Noncircularity implies
+R0>0. Equality in Cauchy--Schwarz would give p=lambda q pointwise and a
+zero normal similarity generator with nonzero dilation coefficient, which
+is impossible by the kernel calculation. Thus Delta>0 and the formulas
+a=E R0/Delta, b=-E Q0/Delta are valid. The note correctly avoids inferring
+Q0=0 from torque balance alone.
+
+4. REFLECTIONS: MAIN CONCLUSION CHECKED; ADD BOTH PARAMETER ORIENTATIONS
+
+Let H(x)=Sx+d be an affine reflection, det S=-1. Reflecting the geometric
+normal-flow equation changes A=aI+bJ to SAS^(-1)=aI-bJ and the center C to
+H(C). If H preserves the immersed profile up to an arclength isometry of
+its parameter circle, the reflected generator is another generator of the
+same profile. Injectivity gives b=-b, hence b=0 and H(C)=C.
+
+The secondary pointwise check in Section 6 treats a parameter reversal only.
+An ambient reflection symmetry of an immersed curve can also preserve the
+orientation of the parameter circle (a figure eight supplies examples).
+This does not invalidate the main proof, which works in both cases, but it
+is worth making the distinction explicit. If h has derivative epsilon=+-1
+and beta(h(s))=S beta(s), for an axis through the center one has
+
+  p(h)=-epsilon p, q(h)=epsilon q, F(h)=-epsilon F.
+
+For epsilon=-1 these are exactly the transformations in the note. For
+epsilon=+1 they are p->-p, q->q, F->-F. Either case yields 2bq=0 on comparing
+the original and reflected soliton equations, so b=0 for a noncircle.
+
+5. HULL CRITERION AND ROTATING MIGRATION TIME: CHECKED, WITH SCOPE
+
+If 0 belongs to conv(beta), the same fixed C belongs to the hull of every
+time slice; strict opposite half-planes therefore cannot contain two slices.
+If 0 is outside the compact hull, strict separation gives 0<m<=beta.e<=M.
+For b=0, the chosen translation C.e=-A, A>r0 M, makes the initial profile
+strictly negative; r>A/m makes it strictly positive. For b!=0, C=0 and
+theta0=0 put the initial profile strictly positive and a rotation by
+sign(b) pi puts it strictly negative, independent of its growing size.
+From theta-theta0=(b/a)log(r/r0), the elapsed time is exactly
+
+  r0^4/(4a) * [exp(4a pi/|b|)-1] > 0.
+
+The iff statement concerns whether SOME translate/placement of the profile
+produces migration. It is not an iff statement about every already placed
+flow: a nonrotating positive-half-plane profile with C=0 does not change
+half-planes. The existing parenthetical qualification in the note expresses
+this correctly and should be retained in any final theorem statement.
+
+The finite rotation symmetry obstruction is correct: uniqueness makes C the
+rotation center, and the average of any finite orbit places C in the hull.
+The final phrase 'trivial Euclidean symmetry' uses two additional elementary
+compactness facts not supplied there: a compact set cannot have a nonzero
+translation or glide-reflection symmetry; an irrational rotation symmetry
+puts its center in the hull as well. For the latter, no classification of the
+profile image is needed: take the orbit of any point, use density on its circle
+and closedness/convexity of the hull, and average antipodal limit points.
+Thus the same no-migration argument covers ALL nontrivial rotation symmetries,
+not only finite ones. This is a short gap in exposition, not a false claim.
+
+6. PROFILE ODE AND RECONSTRUCTION: CHECKED
+
+If beta is scaled by lambda=a^(1/4), its new coefficient is a/lambda^4=1
+and its new rotational coefficient is b/lambda^4=b/a. Thus the stated
+normalization is legitimate and the ratio omega=b/a is invariant.
+
+Given the four-variable ODE and theta'=k, differentiating beta=qT+pN gives
+ beta'=(q'-kp)T+(p'+kq)N=T.
+Consequently this is a unit-speed immersion of curvature k, with actual
+F=v'+k^3/2=-p-omega q. Periodicity of k,v,p,q and an integral of k in 2pi Z
+make T,N and beta periodic with all derivatives. Conversely any closed
+profile has these properties. The system is nonsingular at k=0.
+
+An exact profile constructed this way gives the self-similar normal-flow
+family. If the original FEF is required in the strictly normal vector gauge,
+a smooth time-dependent reparametrization must cancel its tangential speed;
+the compact parameter circle gives that reparametrization on each finite
+time interval. This is a routine but separate link to include when claiming
+an actual PDE solution from an ODE root.
+
+7. TWO WORDING CHANGES RECOMMENDED
+
+(a) The phrase 'images ... can be written' should mean equivalence as immersed
+curves up to a smooth parameter diffeomorphism, not mere equality of sets.
+For self-intersecting images, set equality alone does not in general specify
+the order and multiplicity of traversed arcs. The displayed differentiable
+ansatz is sufficient for every deduction, so formulate the hypothesis using
+that ansatz directly.
+
+(b) 'Reflection shooting with v(0)=0 is inappropriate' should distinguish
+reflection gluing from the scalar condition v(0)=0. Every nonconstant smooth
+periodic curvature has an extremum, so one may ALWAYS choose v(0)=0 as a phase
+condition, including for a putative rotating profile. It is imposed reflection
+symmetry that rules out b!=0, not v(0)=0 itself. Suggested replacement:
+ 'Shooting constrained by reflection symmetry cannot detect a genuinely
+ rotating profile. The condition v(0)=0 alone is still an admissible phase
+ condition; alternatively one may choose the radial extremum q(0)=0.'
+
+CONCLUSION AND LIMITS
+
+The reduction genuinely narrows classification to periodic orbits of a
+polynomial ODE with a total-curvature closure constraint, while retaining
+possible rotating expanders. No deduction reviewed here proves omega=0,
+provides a chiral periodic orbit, or settles unrestricted migration. There is
+no substantive mathematical counterexample to the stated conditional results
+in this audit; the representation hypothesis and the noted wording fixes are
+the material caveats.

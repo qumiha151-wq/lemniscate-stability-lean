@@ -1,0 +1,22 @@
+LENGTH GROWTH: PARTIAL FORMALIZATION AND A REVIEWED GEOMETRIC OBSTRUCTION
+12 November 2026
+
+ScalarDissipation.lean derives a secant estimate from genuine derivative
+hypotheses and proves a conditional fourth-power length bound. The geometric
+PDE identities and the assumed normalized-energy bound are not formalized
+or proved here. This does not solve unrestricted quarter-power growth.
+
+FixedTurningObstruction.txt constructs smooth closed immersed curves in every
+fixed turning-number class with EL arbitrarily large and initially increasing.
+For nonzero turning number the construction and threshold are explicit.
+The same curves have D/E^5 tending to zero. An independent analytic review
+found no substantive gap; its scope is recorded in FixedTurningAudit.txt.
+
+These are initial data varying with an index, not one evolving solution with
+unbounded EL. Thus this obstruction does not answer the long-time question.
+It rules out universal high-EL monotonicity thresholds and a coercivity bound
+depending only on turning number. Dependence on the full initial shape is
+still possible. The construction is NOT Lean-formalized.
+
+check_fixed_turning.py is an optional numerical check of the explicit
+identities; it is not part of the Lean proof or a substitute for the argument.

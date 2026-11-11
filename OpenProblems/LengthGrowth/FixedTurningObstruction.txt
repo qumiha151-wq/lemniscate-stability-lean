@@ -1,0 +1,245 @@
+FIXED-TURNING, CLOSED-CURVE OBSTRUCTION TO NORMALIZED-ENERGY MONOTONICITY
+12 November 2026. Human proof; not yet Lean-formalized.
+
+This note proves a geometric obstruction, not an example of faster-than-quarter
+long-time length growth. It is independent of the supplied lemniscate stability
+theorem and stronger in turning-number scope than the earlier conditional
+obstruction in work/global_length/scalar_obstruction.txt.
+
+THEOREM.
+For every nonzero integer q there is a sequence of smooth closed unit-speed
+immersions gamma_N : R/(2 pi Z) -> R^2, all of turning number q and length 2 pi,
+such that E(gamma_N)L(gamma_N) -> infinity and
+
+  d/dt [E(gamma_N(t)) L(gamma_N(t))] at t=0 > 0,
+
+where gamma_N(t) is their free elastic flow. In particular, for no nonzero fixed
+turning number is there a finite threshold above which EL is nonincreasing for
+every initial curve of that turning number. The construction below works for
+every integer N >= 12 |q|.
+
+CONVENTIONS.
+E = (1/2) integral k^2 ds, F = k_ss + k^3/2, D = integral F^2 ds.
+The free elastic flow has normal velocity -F, E'=-D, L'=integral kF ds.
+Consequently U'= (EL)'= -L D + E integral kF ds.
+
+1. THE PERIODIC WAVE.
+
+Set m=2/3. Distinguish the complete elliptic integrals K_e and E_e from the
+curvature K(s):
+
+  K_e = integral_0^(pi/2) (1-m sin^2 x)^(-1/2) dx,
+  E_e = integral_0^(pi/2) (1-m sin^2 x)^(1/2) dx,
+  omega = 2 K_e/pi >= 1,  lambda = omega^2/3.
+
+With the real Jacobi functions, define
+
+  phi(s) = 2 arcsin(sqrt(m) sn(omega s | m)),
+  K(s)   = phi'(s) = 2 omega sqrt(m) cn(omega s | m).
+
+Because m<1, arcsin is applied strictly inside its smooth real domain. Since
+sn has real period 4 K_e and dn is positive, phi is smooth and 2 pi-periodic.
+The standard differential identities can also be obtained directly from
+sn'=cn dn, cn'=-sn dn, dn'=-m sn cn and sn^2+cn^2=1:
+
+  K'' + K^3/2 = (2m-1) omega^2 K = lambda K,
+  K(s+pi)=-K(s),  max K^2 = (8/3) omega^2.
+
+Write L=2 pi, A2=integral_0^L K^2 ds, A4=integral_0^L K^4 ds.
+All odd moments of K vanish by its half-period antisymmetry. Changing variables
+to the elliptic amplitude gives
+
+  A2/L = 4 omega^2 (E_e/K_e - 1/3),
+  A4 <= (8/3) omega^2 A2.
+
+For completeness the first formula follows from
+integral_0^(4K_e) sn^2 x dx = 4(K_e-E_e)/m and cn^2=1-sn^2.
+
+We need an elementary, entirely non-numerical lower bound for E_e/K_e.
+For x in [0,pi/2], put
+
+  a=1-m sin^2 x, b=1-m cos^2 x, c=sqrt(1-m).
+
+Then ab=1-m+m^2 sin^2 x cos^2 x >= 1-m, and
+
+  (sqrt(a)+sqrt(b))/(1/sqrt(a)+1/sqrt(b)) = sqrt(ab) >= c.
+
+Integrate the resulting inequality and use the change x -> pi/2-x to obtain
+E_e >= c K_e. Hence
+
+  A2/(2L)-lambda
+    = (2 E_e/K_e-1) omega^2
+    >= (2/sqrt(3)-1) omega^2
+    > omega^2/7.
+
+The final strict inequality is exact: 2/sqrt(3)>8/7 follows by squaring from
+49>48. Thus A2>0 and lambda>0.
+
+2. AN EXACTLY CLOSED CURVE OF PRESCRIBED TURNING NUMBER.
+
+Choose integer q != 0 and integer N >=12 |q|. On the real line set
+
+  theta_N(s)=q s+phi(Ns),
+  T_N(s)=(cos(theta_N(s)),sin(theta_N(s))),
+  gamma_N(s)=integral_0^s T_N(r) dr.
+
+Let h=2 pi/N and let R be rotation by angle 2 pi q/N. Periodicity of phi gives
+T_N(s+h)=R T_N(s), while T_N(s+2 pi)=T_N(s). If d=integral_0^h T_N ds, then
+
+  integral_0^(2 pi) T_N ds = (I+R+...+R^(N-1))d = 0.
+
+Indeed R^N=I and R != I because 0<|q|<N. Equivalently, the relevant complex
+geometric series sums to zero. Therefore gamma_N is a smooth closed curve,
+including all endpoint derivatives. It is an immersion of unit speed since
+|T_N|=1. Its signed curvature is
+
+  k_N(s) = theta_N'(s) = q+N K(Ns),
+
+and its turning number is q, since phi is periodic. No embeddedness assertion
+is made or required. Since N is an integer, all integrals of functions of K(Ns)
+over [0,2 pi] equal those of the corresponding function of K(s).
+
+3. EXACT INSTANTANEOUS ENERGY AND DISSIPATION FORMULAE.
+
+At this initial curve,
+
+  E_N = (L q^2 + N^2 A2)/2,
+
+  F_N = lambda N^3 K(Ns) + (3q/2) N^2 K(Ns)^2
+                         + (3q^2/2) N K(Ns) + q^3/2.
+
+Using vanishing odd moments gives the exact polynomial identities
+
+  L'_N = lambda A2 N^4 + 3 q^2 A2 N^2 + L q^4/2,
+
+  D_N = lambda^2 A2 N^6
+      + q^2 (3 lambda A2 + 9 A4/4) N^4
+      + (15/4) q^4 A2 N^2 + L q^6/4,
+
+  U'_N = lambda A2 (A2/2-L lambda) N^6
+       + q^2 [(3/2) A2^2-(5/2)L lambda A2-(9/4)L A4] N^4
+       - 2 q^4 L A2 N^2.
+
+These identities involve the actual differential of the geometric functionals
+at the actual closed initial curve, not independent scalar model histories.
+
+4. A FULLY EXPLICIT POSITIVITY THRESHOLD.
+
+Use A2/(2L)-lambda>omega^2/7 and lambda=omega^2/3 to bound the leading
+coefficient below by L A2 omega^4/21. Drop the nonnegative (3/2)A2^2 term
+and use A4 <= (8/3)omega^2 A2 to bound the next coefficient below by
+
+  -(5/2)L lambda A2-(9/4)L A4 >= -(41/6)L A2 omega^2.
+
+Thus
+
+  U'_N > L A2 N^2 [omega^4 N^4/21
+                   -(41/6) q^2 omega^2 N^2 - 2 q^4].
+
+Set z=omega^2 N^2/q^2. Since omega>=1 and N>=12|q|, z>=144. The bracket is
+
+  q^4 P(z),  P(z)=z^2/21-41z/6-2.
+
+Now P(144)=10/7>0 and P'(z)=2z/21-41/6>0 for z>=144. Therefore U'_N>0.
+Also U_N=L(L q^2+N^2 A2)/2 -> infinity. This proves the theorem.
+
+5. FURTHER EXACT CONSEQUENCE AND LIMITATION.
+
+For each fixed q, D_N/E_N^5 is O(N^(-4)) and hence tends to zero. Thus no
+positive constant depending only on q can give D>=c(q) E^5 for all closed
+immersions of turning number q. This rules out a standard direct coercivity
+route to energy decay with quarter-power rate.
+
+The conclusion U'_N>0 does NOT imply U is unbounded on any one trajectory.
+The index N varies the initial curve; it is not a time parameter. The family
+could have an arbitrarily large but finite excursion followed by quarter-power
+growth for each individual N. In particular, the original long-time length
+question is still unresolved by this construction. An argument using a bound
+depending on the full initial shape, rather than only q or a universal U
+threshold, remains possible.
+
+RESEARCH CONTEXT.
+The geometric evolution identities are those in Miura--Wheeler,
+The free elastic flow for closed planar curves, J. Funct. Anal. 289 (2025),
+111030, https://doi.org/10.1016/j.jfa.2025.111030 ; supplied arXiv v3.
+The new fixed-turning construction and estimates above are deductions in this
+working note; no assertion of publication or full Lean verification is made.
+
+APPENDIX: INCLUDING TURNING NUMBER ZERO WITHOUT A STABILITY HYPOTHESIS.
+
+The same obstruction actually holds for every integer q, including zero, by
+a closure correction. The explicit N>=12|q| threshold above applies only to
+q!=0; the following construction is asymptotic but removes that restriction.
+
+Let beta be ANY smooth closed unit-speed immersion of length L=2pi and turning
+number q. Such a beta exists for q=0 by taking a smooth figure eight and scaling
+and reparametrizing it by arclength. Write its tangent as T0(s)=exp(i theta0(s)),
+with theta0(s+L)=theta0(s)+2pi q. Let
+
+  g(s)=exp(i phi(s)),   r=(1/L)integral_0^L g(s) ds = 2 E_e/K_e-1 >0.
+
+The last equality follows from cos(phi)=1-2m sn^2 and the odd symmetry of
+sin(phi); positivity follows from the elliptic-integral estimate above.
+
+Choose two fixed smooth real periodic functions h1,h2 such that the two real
+vectors integral i T0(s) hj(s) ds are linearly independent. This is possible:
+a nonconstant smooth closed unit-speed planar curve cannot have all its tangent
+directions parallel. Pick two points with nonparallel tangents, and take small
+nonnegative smooth bump functions near them. Their integrals are arbitrarily
+close in direction to the corresponding independent normal vectors.
+
+For alpha=(alpha1,alpha2) in R^2 set
+
+  C_N(alpha) = integral_0^L T0(s) g(Ns) exp(i(alpha1 h1(s)+alpha2 h2(s))) ds.
+
+Here N ranges over positive integers. Periodic averaging gives
+
+  C_N(0) -> r integral T0 ds =0,
+  D C_N(0) -> J,
+
+where J has columns r integral iT0 hj ds and is invertible. These averaging
+limits can be proved without a Fourier series: g-r has a bounded smooth
+periodic primitive G, and integration by parts gives an O(1/N) error for each
+smooth test function. The Hessians of C_N are uniformly bounded independently
+of N and alpha on every fixed real ball, since |T0 g exp(i alpha.h)|=1.
+
+Here is a quantitative justification for exact closure. Choose a small fixed
+ball about alpha=0 so that its radius times a common Hessian bound, multiplied
+by ||J^(-1)||, is at most 1/4. For all sufficiently large N,
+||I-J^(-1) D C_N(0)||<=1/4. Hence the map
+
+  H_N(alpha)=alpha-J^(-1) C_N(alpha)
+
+has Lipschitz constant at most 1/2 on that fixed ball. For large N it preserves
+the closed ball of radius 2||J^(-1) C_N(0)|| about zero, which is contained in
+the fixed ball. Banach's fixed-point theorem gives alpha_N with C_N(alpha_N)=0
+and |alpha_N| <= 2||J^(-1) C_N(0)|| ->0.
+
+Define
+
+  theta_N(s)=theta0(s)+phi(Ns)+alpha_N.h(s),
+  gamma_N(s)=integral_0^s exp(i theta_N(r)) dr.
+
+These are exactly closed smooth unit-speed immersions, with turning number q.
+All derivatives of b_N(s)=theta0'(s)+alpha_N.h'(s) are uniformly bounded, and
+
+  k_N(s)=N K(Ns)+b_N(s),
+  F_N(s)=lambda N^3 K(Ns)+O(N^2),
+
+uniformly in s. Consequently, using periodic averaging (or just integer-period
+integration for the leading terms),
+
+  E_N/N^2 -> A2/2,
+  D_N/N^6 -> lambda^2 A2,
+  L'_N/N^4 -> lambda A2,
+  U'_N/N^6 -> lambda A2(A2/2-L lambda)>0.
+
+Also U_N -> infinity. This establishes the high-EL positive-U' obstruction in
+every turning-number class, including q=0, without assuming any long-time
+stability result. For q=0 no numerical threshold for N is claimed.
+
+As an additional geometric check, gamma_N converges uniformly to r beta after
+the common choice of initial point: integrate the oscillatory mean-zero part
+using the bounded primitive and use alpha_N->0. Thus these examples can lie in
+a fixed bounded region even though EL diverges. They still give no one actual
+trajectory with unbounded EL over time.

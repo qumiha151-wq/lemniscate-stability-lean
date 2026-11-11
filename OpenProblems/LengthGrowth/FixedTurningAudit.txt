@@ -1,0 +1,63 @@
+INDEPENDENT AUDIT OF fixed_turning_growth_obstruction.txt
+Reviewer: classification_new_approach subagent, 2026-11-12.
+This is an analytic audit, not Lean verification or a priority determination.
+
+I checked the elliptic-wave identities, the exact polynomial coefficients,
+the explicit N>=12|q| threshold, and the q=0 closure-correction argument.
+No substantive gap was found in those deductions.
+
+1. For m=2/3, cn''=(2m-1)cn-2m cn^3 gives precisely
+K''+K^3/2=(omega^2/3)K for K=2omega sqrt(m)cn(omega s).
+The derivative of the arcsine expression is K because dn>0 and
+sqrt(1-m sn^2)=dn. The claimed smooth periodic angle is therefore valid.
+Half-period antisymmetry gives all the stated odd-moment cancellations.
+
+2. The paired-integrand proof E_e/K_e>=sqrt(1-m) is correct:
+sqrt(a)+sqrt(b)=sqrt(ab)(1/sqrt(a)+1/sqrt(b)), with
+ab=1-m+m^2 sin^2 cos^2. Hence at m=2/3,
+A2/(2L)-lambda >= (2/sqrt(3)-1)omega^2 > omega^2/7.
+The last strict inequality reduces to 49>48. No decimal estimates enter.
+
+3. Closure for q!=0 follows from the N-fold rotation geometric series.
+The assumption N>=12|q| ensures R!=I and R^N=I, including negative q.
+Since the tangent is smooth, periodic, and unit length, its zero integral
+gives an actual smooth immersed closed curve with the asserted turning q.
+
+4. Expanding F and squaring independently gives the D coefficients
+lambda^2 A2, q^2(3lambda A2+9A4/4), (15/4)q^4 A2, Lq^6/4.
+Multiplication of E and L' and subtraction of LD gives exactly the stated
+U' coefficients; the constant term cancels and the N^2 coefficient is
+-2q^4 L A2. Thus these are genuine geometric initial derivatives.
+The upper bound A4<=(8/3)omega^2 A2 yields the coefficient -41/6.
+The positivity polynomial has P(144)=10/7 and P'>0 on [144,infinity).
+The numerical threshold is therefore rigorous.
+
+5. For q=0 (indeed any q), the base tangent T0 is not confined to one
+unoriented line: continuity and unit speed would then make it constant,
+contradicting closure. The two independent normal-direction bump integrals
+and hence invertible limiting Jacobian therefore exist.
+The mean of exp(i phi) is r=2E_e/K_e-1>0: its imaginary part cancels by
+half-period antisymmetry, and its real part is 1-2m sn^2.
+
+The averaging estimates follow by integrating the bounded periodic
+primitive of g-r against each smooth periodic test function; N integer
+makes the endpoint terms cancel. The Hessian of C_N is uniformly bounded
+because differentiating in alpha only inserts products of fixed hj and
+the complex phase has modulus 1. Thus the fixed-radius derivative bound
+and the shrinking ball of radius 2||J^-1 C_N(0)|| are legitimate. A zero
+residual case merely gives the degenerate singleton ball and alpha_N=0.
+The Banach construction gives exact closure and alpha_N=O(1/N), not just
+approximate closure.
+
+6. Writing b_N=theta0'+alpha_N.h', all its fixed-order derivatives are
+uniformly bounded. Hence k_N=NK(Ns)+b_N and F_N=lambda N^3K(Ns)+O(N^2)
+hold uniformly; the four displayed leading-order integral limits follow.
+They have a strictly positive U'/N^6 limit, so the q=0 extension is sound.
+The uniform position convergence gamma_N -> r beta follows by the same
+bounded-primitive argument, now on variable intervals, plus alpha_N->0.
+
+LIMIT: This constructs different initial curves with arbitrarily high EL
+and positive initial (EL)'. It neither supplies one trajectory with EL
+unbounded in time nor disproves the quarter-power long-time growth rate.
+The note states this distinction correctly. Its D/E^5 limit additionally
+rules out a turning-number-only positive coercivity constant of that form.

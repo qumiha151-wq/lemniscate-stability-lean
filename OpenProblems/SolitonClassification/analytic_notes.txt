@@ -1,0 +1,217 @@
+CLOSED SIMILARITY SOLUTIONS: FIXED-CENTER REDUCTION AND SYMMETRY OBSTRUCTIONS
+Date: 2026-11-12
+Status: analytic deductions, not a classification of all profile solutions.
+No Lean verification or novelty claim is made for this note.
+
+1. CONVENTIONS AND THE ACTUAL REMAINING QUESTION
+
+Let beta: R/LZ -> R^2 be a smooth closed unit-speed immersion. Set
+ T=beta_s, N=JT, T_s=kN, F=k_ss+k^3/2, E=(1/2) integral k^2 ds,
+ p=beta.N, q=beta.T,
+where J is rotation by +pi/2. The free elastic flow has normal speed -F.
+Here self-similarity is allowed to include simultaneous rotations,
+translations, dilations, and tangential reparametrizations. Restricting
+the search from the outset to F=-a p excludes possible rotating expanders.
+
+The result below reduces the general similarity problem to fixed-center
+rotating expanders. It does NOT show that their rotation coefficient is
+zero, nor classify all periodic profiles of the reduced ODE.
+
+2. ELEMENTARY PERIODIC IDENTITIES
+
+Direct differentiation gives p_s=-kq and q_s=1+kp. Therefore
+ integral kp ds=-L, integral kq ds=0, integral kN ds=0.
+The last identity is integral T_s=0.
+
+Define the elastic stress Q=(k^2/2)T+k_s N. Then Q_s=F N. Consequently
+ integral F N ds=0.
+Integrating the derivative of Q.beta gives
+ integral F p ds=-E.
+For rotation, (Q.Jbeta)_s=Fq+k_s, because T.JT=0 and N.JT=1.
+Thus integral Fq ds=0. These formulas hold for EVERY smooth closed
+immersed curve, independently of a soliton equation.
+
+In particular E>0: if E=0, continuity gives k=0, so T is constant and
+beta(s+L)-beta(s)=LT is nonzero. This contradicts closure.
+Likewise F is not identically zero, by integral Fp=-E.
+
+3. KERNEL OF NORMAL SIMILARITY GENERATORS
+
+Suppose that for constants a,b in R and c in R^2,
+                 (a beta+b Jbeta+c).N=0                 (K)
+at every parameter value. Multiply by k and integrate. The identities
+above give -a L=0; hence a=0.
+
+If b=0 and c is nonzero, (K) says T(s) is parallel to c for every s.
+Continuity and |T|=1 force T to equal one fixed unit vector, contradicting
+closure. Thus b=0 implies c=0.
+
+If b is nonzero, put z=Jc/b. Then bJbeta+c=bJ(beta-z), so (K) implies
+ (beta-z).T=0. Hence |beta-z|^2 is constant. The radius is positive since
+beta is an immersion. Therefore beta is a multiply-covered round circle.
+
+Conclusion: for a noncircular closed immersion the linear map
+ (a,b,c) -> [s -> (a beta+b Jbeta+c).N]
+is injective. For a round circle its kernel consists of infinitesimal
+rotations about the circle center. This is a geometric kernel theorem,
+not an assumption of generic nondegeneracy.
+
+4. ALL NONCIRCULAR SIMILARITY FLOWS HAVE A FIXED CENTER
+
+Assume a noncircular closed solution, as an immersion with multiplicity,
+can be written up to a smooth time-dependent parameter diffeomorphism as
+ gamma(s,t)=c(t)+r(t) R(theta(t)) beta(s), r(t)>0,
+with differentiable similarity parameters. A time-dependent
+reparametrization may first be removed, because it only changes the
+tangential velocity. Curvature scales as r^-1, so the normal equation is
+
+ F = -[(r^3 r') beta+(r^4 theta')Jbeta+r^3 R(-theta)c'].N.       (S)
+
+By the injectivity in Section 3, all coefficients on the right are
+independent of time. Write them as a,b,w. Thus
+ r^3 r'=a, r^4 theta'=b, c'=r^-3 R(theta)w,
+ F=-(a beta+b Jbeta+w).N.
+Multiply this last identity by F and integrate using Section 2:
+                 integral F^2 ds=aE.
+Since both integrals are positive, a>0. This proves, in particular,
+nonexistence of closed shrinking, stationary, rigidly translating, and
+rigidly rotating free-elastic solitons.
+
+Let A=aI+bJ. Since det A=a^2+b^2>0, define z=A^-1 w and beta0=beta+z.
+Then F=-(A beta0).N. The physical expansion center
+                 C=c(t)-r(t)R(theta(t))z
+is independent of time, since (rR(theta))'=r^-3 R(theta)A.
+Thus gamma=C+rR(theta)beta0.
+
+For any reference time t0, letting r0=r(t0), theta0=theta(t0),
+ r(t)^4=r0^4+4a(t-t0),
+ theta(t)-theta0=(b/a)log(r(t)/r0).
+The motion is a fixed-center logarithmic spiral expansion. In particular
+every self-similar closed solution has exact quarter-power length growth,
+even if b is nonzero. A counterexample to quarter-power growth cannot be
+a similarity solution of this type.
+
+For a circular profile the same conclusion about the images holds
+directly: comparing the first Fourier modes of the circle's normal
+equation fixes its physical center; its radius R obeys R'=1/(2R^3), so
+R^4=R0^4+2(t-t0). An apparent rotation only reparametrizes a circle.
+
+5. EXACT GRAM FORMULAS FOR THE ROTATION COEFFICIENT
+
+Use the fixed-center profile beta0 and omit its subscript. Put
+ P=integral p^2 ds, Q0=integral pq ds, R0=integral q^2 ds.
+The soliton equation F=-ap-bq and Section 2 yield
+                    aP+bQ0=E,
+                    aQ0+bR0=0.
+For a noncircular profile R0>0: R0=0 would imply q=0 and constant radius.
+Moreover Delta=P R0-Q0^2>0. Equality in Cauchy-Schwarz would give
+p=lambda q pointwise, hence (beta-lambda Jbeta).N=0, contrary to the
+kernel theorem (its dilation coefficient is 1).
+Therefore
+             a=E R0/Delta, b=-E Q0/Delta, b/a=-Q0/R0.
+Thus b=0 is EQUIVALENT to Q0=0 for an actual noncircular soliton.
+Neither closure nor the general Noether identity integral Fq=0 alone
+implies Q0=0. A proof excluding rotating expanders needs another argument.
+
+6. REFLECTION SYMMETRY EXCLUDES GENUINE ROTATION
+
+Suppose a noncircular profile admits an ambient reflection symmetry with
+a smooth arclength reparametrization (the standard symmetry of an immersed
+curve, including multiplicities). Reflecting its soliton equation changes
+b to -b, preserves a, and reflects the fixed center. Pulling the reflected
+curve back to the original parametrization gives a second normal
+similarity generator for the same beta. Uniqueness from Section 3 gives
+b=-b, hence b=0; it also places the fixed center on the reflection axis.
+
+For an axis through the fixed center this can also be checked directly.
+Under the orientation-reversing parameter symmetry one has
+ p -> p, q -> -q, F -> F. Subtracting the two equations gives 2bq=0.
+Noncircularity implies q is not identically zero, so b=0. For a reflection
+whose parameter isometry preserves orientation, the transformations are
+instead p -> -p, q -> q, F -> -F; comparison gives the same 2bq=0.
+
+Consequently every genuinely rotating noncircular closed expander must
+have no reflection symmetry. Symmetry-based fundamental-arc gluing by
+reflections cannot find such a rotating profile.
+
+7. CONVEX-HULL AND MIGRATION CRITERIA, INCLUDING ROTATION
+
+Every fixed-center similarity flow has hull C+rR(theta)conv(beta).
+If 0 lies in conv(beta), then C belongs to every hull. No two time slices
+can then lie in opposite STRICT half-planes of the same fixed line.
+
+Conversely, assume 0 is outside conv(beta). Strict separation supplies a
+unit vector e and 0<m<=beta.e<=M.
+
+For b=0, choose the initial rotation to be zero and translate the expansion
+center so that C.e=-A with A>r0 M. The initial curve lies strictly in the
+negative half-plane, whereas any later r>A/m puts it entirely in the
+positive half-plane. A reflection reverses the requested direction.
+
+For b!=0, take C=0 and theta0=0. Initially every beta.e is positive. When
+the rotation has reached sign(b) pi, the entire curve lies in the negative
+half-plane. The exact positive time increment is
+             (r0^4/(4a)) [exp(4a*pi/|b|)-1].
+Thus the existence of a strict-half-plane rotating expander is itself a
+migration example, without an additional center translation. The
+necessary-and-sufficient hull criterion extends to all the similarity
+motions in Section 4 (with the usual freedom to translate initial data).
+
+There is a useful symmetry obstruction. If a noncircular soliton admits
+a nontrivial finite ambient rotation symmetry, uniqueness of the
+generator forces its fixed center to equal that rotation's center. The
+orbit of any profile point under that rotation has average equal to the
+center, so the center lies in the convex hull. Such a profile cannot
+provide migration by similarity. Therefore a strictly one-sided rotating
+expander must have trivial Euclidean symmetry: reflection is excluded by
+Section 6, and nontrivial finite rotations are excluded by this hull argument.
+For an irrational rotation, the orbit is dense in a circle and its center
+also belongs to the closed convex hull. Finally a compact image cannot
+admit a nonzero translation or a glide-reflection symmetry, since iterating
+either (or squaring a glide reflection) produces an unbounded orbit.
+
+8. A NONSINGULAR REDUCED PROFILE SYSTEM AND CLOSURE
+
+After scaling so a=1, write omega=b/a and use the four support variables.
+The entire profile equation is equivalent to the autonomous polynomial ODE
+ k'=v,
+ v'=-k^3/2-p-omega q,
+ p'=-kq,
+ q'=1+kp.                                                    (ODE)
+It is nonsingular even at inflection points k=0. Given a solution, choose
+theta'=k, T=(cos theta,sin theta), N=JT and reconstruct beta=qT+pN.
+Then beta'=T exactly, and F=-p-omega q.
+
+A periodic ODE orbit of period L whose total curvature satisfies
+integral_0^L k ds in 2pi Z reconstructs a closed smooth immersed profile:
+T,N,p,q are all periodic. Conversely every closed profile yields such an
+ODE orbit. This is an exact reduction to a periodic-orbit problem, NOT a
+solution of that periodic-orbit classification.
+
+Shooting constrained by reflection symmetry cannot detect a genuinely
+rotating profile. The condition v(0)=0 alone remains an admissible phase
+condition: periodic curvature has extrema. Alternatively one can fix a
+radial extremum q(0)=0, leaving k(0),v(0),
+p(0),omega,L unknown. The four periodic endpoint conditions and the
+integer total-curvature condition are five closing equations. No
+interval-certified chiral rotating root has been obtained in this note.
+
+To convert a reconstructed profile into the strict normal-vector PDE
+gauge, a time-dependent parameter diffeomorphism cancels the tangential
+part of the similarity velocity. Its smooth vector field on the compact
+parameter circle gives that diffeomorphism on every finite time interval.
+
+9. LITERATURE AND LIMITS
+
+Primary papers checked 2026-11-12:
+ Miura--Wheeler, arXiv:2404.12619v3, Section 1.2 (the original questions).
+ Andrews--Wheeler, Jellyfish exist, arXiv:2601.21227v1,
+ https://arxiv.org/html/2601.21227v1 : constructs infinitely many
+ homothetic expanders. It does not give all closed similarity profiles.
+ Novaga, Non-migration for planar elastic flows, arXiv:2611.07242v1,
+ https://arxiv.org/html/2611.07242v1 : its quantitative low-energy
+ non-migration theorem does not cover arbitrary initial curves.
+
+The deductions in Sections 3--8 are provided with proofs, but have not
+been established to be new in the literature. They do not eliminate
+omega!=0 or one-sided profiles, and do not settle unrestricted migration.

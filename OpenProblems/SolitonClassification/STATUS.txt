@@ -1,0 +1,18 @@
+SELF-SIMILAR CLASSIFICATION: PARTIAL RESULTS ONLY
+
+SupportODE.lean proves from actual scalar HasDerivAt ODE hypotheses:
+ - the reconstructed planar curve has tangent (cos theta,sin theta);
+ - its coordinate Euclidean speed squared is one;
+ - its signed curvature is exactly the ODE variable k;
+ - its normal and tangent support functions are p and q;
+ - its curvature obeys F=-p-omega q, permitting genuine rotation;
+ - periodic p,q and an integral-multiple-of-2pi angle increment close it.
+
+The module does not assume the conclusion of any existence theorem. It also
+does not prove existence of a periodic ODE orbit, a root for a closing map,
+or a classification of all profiles. The analytic similarity_reduction.txt
+derives further general similarity and symmetry restrictions; those parts
+have received an independent analytic review but are not Lean-formalized.
+
+Namespace: ClosedSimilarity. Independent project: SolitonClassification.
+Toolchain and dependency graph match the other separate projects.

@@ -1,4 +1,4 @@
-Status at 11 November 2026
+Status at 12 November 2026
 
 These are independent partial formalizations, not solutions of all the
 remaining questions in Miura--Wheeler arXiv:2404.12619v3.
@@ -7,16 +7,24 @@ Existing lemniscate stability: the original repository root project.
 LengthGrowth/: scalar dissipation-to-secant theorem and conditional
   fourth-power bound from a uniform normalized-energy bound. PDE identities and
   unrestricted quarter-power growth remain outside the formalization.
+  The reviewed FixedTurningObstruction.txt gives actual closed curves of every
+  fixed turning number with arbitrarily high EL and initially increasing EL,
+  as well as D/E^5 tending to zero. This is a human proof of an obstruction
+  to two proposed methods; it is not a long-time counterexample or a Lean proof.
 Migration/: scalar one-sided homothetic migration criterion. No existence
   theorem for a one-sided closed free-elastic-flow expander is supplied.
-Soliton classification: no completed formalization or classification here.
+SolitonClassification/: independent support-function ODE and actual geometric
+  reconstruction. The reviewed analytic note reduces all noncircular similarity
+  motions to fixed-center spiral expanders, but does not classify their profiles.
+  The reduction note as a whole is not Lean-formalized.
 CentroidEscape/: computer-assisted existence proof of a closed expander
   with nonzero arclength centroid, hence a flow with unbounded centroid.
   Seven rigorous Arb integrations passed; two analytic/code reviews found
   no substantive gap. The complete theorem is not yet Lean-formalized:
   Lean proves the residual/derivative-to-root implication and the reflected
-  ODE's global periodicity/smoothness/unit-tangent bridge. See
-  CentroidEscape/STATUS.txt for the numerical and geometric linkage still missing.
+  ODE's global periodicity/smoothness/unit-tangent bridge, Euclidean geometry,
+  actual normal flow, and the arclength-centroid integral/divergence bridge.
+  See CentroidEscape/STATUS.txt for the numerical and reparametrization gaps.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.

@@ -15,9 +15,21 @@ MODULE CentroidEscape/PeriodicOrbit
 'CentroidEscape.exists_global_periodic_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]
 Centroid periodic-orbit audit passed for 39 declarations.
 EXIT 0
+MODULE CentroidEscape/Geometry
+'CentroidEscape.profile_expander_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.position_unit_speed' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid geometry audit passed for 91 declarations.
+EXIT 0
+MODULE CentroidEscape/Centroid
+EXIT 0
+MODULE CentroidEscape/Reparametrization
+'CentroidEscape.exists_unique_global_scalar_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.exists_reparametrized_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid reparametrization audit passed for 119 declarations.
+EXIT 0
 MODULE CentroidEscape
 EXIT 0
 MODULE CentroidEscape/AxiomAudit
-Centroid-escape audit passed: 42 declarations; standard axioms only.
+Centroid-escape audit passed: 148 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.
