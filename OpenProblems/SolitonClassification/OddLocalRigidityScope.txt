@@ -1,0 +1,52 @@
+FROZEN ODD-DIRECTION LOCAL RIGIDITY -- 12 November 2026
+
+Source: work/classification_new/OddLocalRigidity.lean
+Namespace: ClosedSimilarity.OddLocalRigidity
+Intended independent Lake project: SolitonClassification
+Reproduction: ./work/classification_new/check_odd_local_rigidity.ps1
+Lean4.33.1 direct binary; pinned local Mathlib read-only, dependency paths first.
+
+ACTUAL VERIFICATION
+Final direct compiler EXIT0; no warnings.
+OddLocalRigidity audit passed: 8 declarations; standard axioms only.
+Both principal theorems explicitly print only propext, Classical.choice,
+Quot.sound. The enforced recursive audit rejects any other axiom.
+No sorry/admit/native_decide/custom axiom. No other open-problem imports.
+
+FORMAL CONTENT
+1. The reflected-point difference has norm2*norm(odd coordinate).
+2. A strict derivative bounded below on odd directions yields local
+   quantitative separation of F(e,o) and F(e,-o).
+3. A locally reflection-invariant zero set therefore has no nearby zero
+   with nonzero odd coordinate. Both eventual and positive-radius forms
+   are proved.
+4. On a finite-dimensional odd domain, injectivity of v -> A(0,v)
+   supplies the strictly positive quantitative lower bound internally.
+5. Hence exists_ball_odd_eq_zero_of_injective requires only injectivity
+   on odd directions, not injectivity or surjectivity of the full A.
+6. not_injective_of_accumulating_odd_zeros proves the contrapositive:
+   a convergent sequence of zeros with nonzero odd coordinates forces
+   the limiting odd restriction of the strict derivative to be noninjective.
+
+EXACT SCOPE
+F is a map E x O -> Y between real normed spaces. O is finite-dimensional
+only for the injectivity/rank forms; E and Y need not be finite-dimensional.
+F has an actual strict Frechet derivative A at(e0,0). The zero-set reflection
+hypothesis is local and concerns zeros only; F itself is not assumed odd.
+No global existence or complete-flow hypothesis is introduced.
+
+This formalizes the generic analytic local-rigidity argument behind the
+human shooting-map note. It does NOT yet instantiate F as the actual
+rotating support shooting map, prove its finite-time smooth dependence,
+prove its zero-set reflection via ODE uniqueness in Lean, or certify any
+numerical odd-column rank. It therefore does NOT exclude a concrete
+rotating profile or settle the full classification or migration question.
+
+The proposed strengthening of scalar-curvature reconstruction beyond
+simple inflections has no written addendum in the supplied directory as
+of this check; only the existing simple-inflection note and audit exist.
+No such strengthening is claimed or reviewed here.
+
+Only this new Lean module and its status files were edited. Existing
+classification and all other problem modules remain unchanged. Source
+and check artifacts below are now frozen for root staging.

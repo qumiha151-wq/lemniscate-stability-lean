@@ -1,0 +1,142 @@
+INDEPENDENT SEMANTIC AND EXECUTION AUDIT: COMPLETE CENTROID ESCAPE
+12 November 2026. Reviewer: audit_full_escape subagent.
+
+VERDICT
+The inspected formal result gives an affirmative answer to the first of
+the final two questions in section1.2 of Miura--Wheeler arXiv:2404.12619v3:
+existence of a free elastic flow whose centre of mass diverges to infinity.
+I found no remaining analytical, geometric, numerical or regularity
+hypothesis on the final generated theorem. It is now an actually compiled
+theorem, not only a Boolean-check implication or unverified source file.
+This audit does not establish a publication-priority claim.
+
+AUTHORITATIVE VERSION AND EXECUTION
+Repository: qumiha151-wq/lemniscate-stability-lean
+Commit:9ef471f7e818029931ad20abaa1119a08819b718
+Run:https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43214648337
+Final job:131237733433, Assemble and audit unconditional centroid theorem.
+
+I independently fetched this run's complete77-job list. All77 jobs succeeded.
+The75 distinct shard names exactly equal the five cases center,a_plus,a_minus,
+b_plus,b_minus, each with starts0,50,...,700 and count50. The other two jobs
+are the exact-revision core and final assembly. There is no missing interval
+or case in this actual job set.
+
+The final job log records restoration of all75 shards with
+full_certificate_proved=false, followed by generation explicitly marked
+unverified. It then records152 distinct assembly module successes, with no
+nonzero exit code. All five complete Path modules succeeded. In particular:
+14:18:14.967 UTC: FullCandidate_v1_41fda1193ab84b01_Certificate EXIT=0.
+14:18:18.273 UTC: FullCandidate_v1_41fda1193ab84b01_Audit EXIT=0.
+The fresh audit explicitly prints only propext,Classical.choice,Quot.sound
+for the final theorem and confirms the unconditional centroid statement.
+Only afterward, at14:18:21.957 UTC, does FULL_CERTIFICATE_PROVED=true appear.
+Thus the verdict does not rest on a green job label alone.
+
+EXACT FINAL THEOREM
+CentroidEscape.FullCertificates.FullCandidate_v1_41fda1193ab84b01.Certificate.smooth_FEF_centroid_escape
+
+Its statement has no parameters or hypotheses. It provides a positive L and
+gamma:Real->Real->Plane, where Plane is EuclideanSpace Real (Fin2), with:
+* joint C-infinity smoothness on t>-1/4;
+* spatial2L-periodicity and spatial C-infinity smoothness;
+* strictly positive actual spatial speed for every t>=0 and every parameter;
+* actual time derivative equal to minus the intrinsic elastic force times
+  the actual unit normal, for every t>=0 and every parameter;
+* its arclength-centroid first coordinate tending to positive infinity.
+
+The periodic real-parameter representation is the usual representation of
+a smooth closed immersion on R/(2LZ), equivalently S1 after a fixed parameter
+rescaling. No embeddedness is claimed or needed: the paper starts with smooth
+immersions of S1, and explicitly includes the lemniscate among its examples.
+The first-coordinate divergence is stronger than mere unboundedness and
+implies that the Euclidean centroid escapes every bounded set. The formal
+statement directly encodes this coordinate; it does not define a separately
+named vector-valued centroid object or a quotient-valued S1 map.
+
+MATCH WITH THE PAPER'S PDE AND CENTROID
+SmoothReparam.lean defines arclength differentiation as
+  (norm(deriv gamma))^(-1) times the actual parameter derivative.
+Unit tangent is the arclength derivative of gamma; unit normal is its fixed
+quarter-turn. Signed curvature is the inner product of the arclength
+derivative of that tangent with the normal. The force is defined from these
+actual quantities as the second arclength derivative of curvature plus
+one-half its cube. Thus the final PDE is precisely the paper's free elastic
+flow, not a profile ODE, a rescaled equation or a merely normal-projection
+condition. The reparametrization removes the unwanted tangential velocity.
+
+Centroid.lean defines arclengthMean as integral(x*speed)/integral(speed),
+and curveCentroidX uses the actual speed norm(deriv gamma). It is not an
+unweighted parameter average. IntegralReparam proves invariance under the
+constructed orientation-preserving parameter flow. HigherRegularity proves
+joint smoothness and strict immersion for that actual parametrized flow.
+Time0 lies inside the smoothness domain, giving smooth regular initial data.
+
+WHY THE NUMERICAL PREMISES ARE NOW DISCHARGED
+FiniteShootingPath contains exactly751 finite tables. Its Valid predicate
+requires all750 order60 recurrence checks, every actual Horner endpoint glue,
+every input-tube margin, actual initial-point containment, and the final
+projected endpoint width. Its soundness lemmas derive containment of the
+actual shooting flow and inactivity of clipping throughout the time interval.
+
+Order60SegmentValid.append checks the actual shared coefficient-zero state.
+The complete assembler does not simply add segment counts: its75 adapters
+establish exact mesh and step-time agreement,70 merge modules prove actual
+ball equality and glue, and five Path modules prove actual initial containment
+and equality of terminal balls to CandidateEndpointChecks. Every path has
+length750, and h is exactly L/750 for the common centre time coordinate.
+The four probes use precisely the prescribed plus/minus1e-25 spatial
+parameters. These are five complete paths, not the former five-step trial.
+
+CandidatePathAssembly converts those proved path checks and exact endpoint
+equalities into the concrete FivePathCertificateData.check=true statement.
+The final Certificate then applies the general soundness theorem to its own
+closed data/check definitions. No orbit existence, shooting zero, Jacobian
+bound, positive root moment, or complete path is supplied as an assumption.
+
+FivePathCertificate.lean discharges the actual central-difference Jacobian
+error and actual time-column bound, then applies the proved contraction/root
+bridge with the checked preconditioner, residual and moment margin. The
+nearby exact root's positive moment produces a reflected periodic profile,
+and the previously proved geometric and parameter-flow bridges produce the
+actual smooth normal FEF with escaping arclength centroid. These intermediate
+hypotheses are local proof terms, not arguments of the final theorem.
+
+SOURCE IDENTITY AND BUILD PROVENANCE REVIEW
+I compared the following inspected local files byte-for-byte against their
+GitHub contents at the exact commit above; all seven matched exactly:
+FivePathCertificate.lean, CandidatePathAssembly.lean, SmoothReparam.lean,
+Centroid.lean, HigherRegularity.lean, assemble_full_certificate.py and
+compile_full_assembly.py.
+I also inspected FiniteShootingPath, FiniteTaylorBlock, the weighted-to-actual
+shooting geometry bridge, and the actual field/tangent/Euclidean definitions.
+
+The full compiler validates the complete shard source/report/log/olean and
+dependency provenance, requires the pinned compiler/toolchain and compatible
+core hashes, regenerates the intended assembly and target identities, and
+compiles a fresh final transitive axiom audit. The audit traverses the actual
+unconditional theorem, so a residual sorry or custom mathematical axiom would
+not meet its standard-three-axiom whitelist. Native generation and Python
+coverage checks remain untrusted producers; the compiled literal Lean proofs
+are the mathematical evidence. As usual, this rests on the Lean kernel and
+its normal trusted toolchain, not on a separate independent kernel implementation.
+
+BOUNDARIES: WHAT THIS DOES NOT SOLVE
+1. It does not prove Huisken migration. The statement contains no whole-curve
+   strict half-plane separation at two times. Centroid escape alone cannot
+   supply that property. Numerical convex-hull diagnostics are not needed for
+   this distinction and are not used to strengthen the formal conclusion here.
+2. It does not classify all solitons. It constructs one certified escaping
+   example, not an exhaustive classification of homothetic or rotating profiles.
+3. It does not answer the general length-growth question. This construction
+   comes from a homothetic expander and has the standard quarter-power scale.
+4. It does not certify novelty or publication status. Those require a separate
+   literature assessment.
+5. Durable availability of all generated Lean source and evidence is a separate
+   delivery requirement. At audit time the complete run artifacts exist; root
+   is handling their preservation beyond normal artifact expiration. This does
+   not affect the mathematical meaning of the completed kernel verification.
+
+Recommended status wording: the centroid-divergence existence question is
+formally resolved by this compiled theorem; the other remaining open questions
+are still unresolved. Do not state that the overall user goal is complete.

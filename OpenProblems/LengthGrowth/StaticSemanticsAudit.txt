@@ -1,0 +1,174 @@
+INDEPENDENT SEMANTIC AUDIT OF THE STATIC LENGTHGROWTH FORMALIZATION
+12 November 2026. Review only; no frozen Lean source was changed or rebuilt.
+
+Verdict
+-------
+The final two theorem statements have the intended static geometric meaning.
+Their only geometric input is one actual sufficiently regular closed immersed
+unit-speed planar curve, packaged as ClosedFrenetCurve. No sign restriction on
+curvature, turning-number restriction, embeddedness, convexity, smallness,
+stress nonvanishing, or coercivity conclusion is smuggled into that input.
+All appearances of energy, dissipation, curvature and stress in the final
+proof refer to the SAME record c and its actual derivative data.
+
+The result is a static estimate, not a resolution of the paper's unrestricted
+long-time length question. The missing uniform bound on the actual trajectory's
+total absolute curvature is not supplied by this project. The abstract passage
+from an arbitrary parametrized smooth immersion S1 -> R2 to its arclength lift
+is mathematically standard but is NOT itself a theorem in these 14 modules.
+State the exact formal scope as closed Frenet curves in arclength coordinates.
+
+1. The input really contains a closed curve, not just a formal curvature
+------------------------------------------------------------------------
+ElasticStress.lean, structure ClosedFrenetCurve (lines26-43), contains:
+  a real period L>0; an actual gamma:R->C; functions T,k,k1,k2;
+  periodic gamma,T,k,k1;
+  HasDerivAt gamma T, HasDerivAt T (k*(I*T));
+  HasDerivAt k k1, HasDerivAt k1 k2; Continuous k2; norm(T)=1.
+
+Uniqueness of derivatives ties these fields to the same gamma. T=gamma',
+k1=k', k2=k'', and the unit tangent Frenet equation uniquely fixes signed k.
+They cannot be selected independently to make the desired inequality true.
+Energy and dissipation are not arbitrary record fields. The forces and
+integrals are subsequent DEFINITIONS from these same functions.
+
+The real domain of HasDerivAt makes these real derivatives in the Euclidean
+plane C. Unit speed implies immersion everywhere and makes the parameter
+interval length L equal to the arclength of one parametrized traversal.
+There is no assumption that L is the least period. Repeated coverings and
+self-intersections are admitted, as are rotation index zero and inflections.
+
+Regularity is sufficient: k is C2 by the derivative data and continuity of k2;
+T'=k*I*T and gamma'=T then bootstrap to a C4 arclength curve. A smooth closed
+immersion from the paper, lifted and reparametrized by arclength, supplies
+these data. Periodicity of T,k,k1 is automatic for that smooth periodic lift;
+including it explicitly is not an extra geometric restriction. The project
+does not formalize that reparametrization/construction interface itself.
+
+The periodic POSITION field is essential: tangent_integral_zero is proved
+by FTC from gamma(L)=gamma(0). A periodic curvature/Frenet frame whose
+integrated tangent fails to close does not satisfy this record. Thus there
+is no missing angle-holonomy or position-closing condition in this theorem,
+unlike a statement made solely about periodic scalar support ODE data.
+
+The normal is DEFINED as N=I*T, and N'=-kT is proved. This orientation choice
+does not impose inward convexity. Reversing/reflection conventions changes
+signed quantities consistently; the final even-power/integral bounds are
+unaffected. There is also no chosen expansion center or origin condition.
+
+The input is not vacuous at the mathematical level: gamma(s)=exp(i*s),
+T=i*exp(i*s), k=1, k1=k2=0, L=2*pi meets all listed fields. A Lean constructor
+for this example is not needed by the universal theorem and was not added.
+
+2. The actual quantities match the paper
+---------------------------------------
+ElasticStress.lean defines F=k2+k^3/2, W=(k^2/2)T+k1*N, and V=1/conj(W).
+For W nonzero, V=W/|W|^2, rather than the un-conjugated reciprocal. The proved
+identities are W'=F*N and (|W|^2)'=2*k1*F. Their signs agree with the chosen
+N=I*T and T'=k*N.
+
+StressIntegralEstimates.lean lines16-19 defines actual interval integrals:
+  E=(1/2) integral_0^L k^2,
+  D=integral_0^L F^2,
+  A=integral_0^L |k|,
+  B2=integral_0^L k1^2.
+Continuity and L>0 give genuine finite nonnegative integrals. There is no
+normalized average, different domain, externally assigned scalar energy,
+or motion-dependent surrogate hidden in these names.
+
+This E and F agree with the source paper's introduction (cached paper.txt,
+lines25-35): E=1/2 integral k^2 ds and velocity=-(k_ss+k^3/2)N. Consequently D
+is the squared L2 elastic force and equals energy dissipation WHEN the
+separately required free-elastic-flow evolution/energy identity is available.
+The static Lean theorem itself does not assume or formalize time evolution.
+
+3. Intermediate hypotheses are discharged before the final theorem
+------------------------------------------------------------------
+The proof uses conditional auxiliary lemmas, but their conditions are all
+proved for the same actual c in StressCoercivity.lean:
+
+* Closure + FTC yields A>=1 and E*L>=1/2; hence E>0. The weak bound A>=1
+  deliberately avoids assuming Fenchel's theorem or nonzero signed turning.
+* Periodicity and compactness produce a positive global maximum
+  M=|k(s0)|>0. At that actual maximum k1(s0)=0. Periodic representatives make
+  it a maximum over all R, including if the selected representative is an
+  endpoint of [0,L]. No differentiation of |k| at a zero is used: k^2 is used.
+* Integration by parts/Cauchy--Schwarz prove the actual pointwise and gradient
+  estimates. The pure algebra modules are instantiated with these actual
+  E,D,M,B=sqrt(B2), not with unrelated scalars satisfying assumed targets.
+* Under the contradiction assumption r=sqrt(E*D)/M^3<=1/4096, those estimates
+  give M/E<64, B<=2*sqrt(E)*M, and M^2/4<=|W(s)|<=M^2 for every s.
+* W is therefore nonzero inside this contradiction argument. The functions
+  1/conj(W) and W/|W| use Lean's total division, but every differentiation,
+  inversion or positive-denominator estimate needing nonzero W receives
+  this proved hypothesis. No arbitrary value at W=0 drives the conclusion.
+* The actual derivative of W/|W| has norm k^2*|F|/(2*|W|^2). Integrating it
+  gives a cone of width at most8*sqrt(2)*r, hence the projection lower bound.
+* The actual closure identity is
+    integral (k^2/2)V = - integral k*I*V'.
+  The minus sign is derived from integral T=0 and periodic integration by
+  parts. Both endpoint terms really cancel for this c.
+* The same integral has lower bound E/(2*M^2) and upper bound
+  16*sqrt(2*E*D)/M^4. This gives
+    1<=32*sqrt(2)*r*(M/E)<1,
+  the contradiction. Thus there is no surviving cone, stress-size,
+  force-nonzero, scalar-inequality or trajectory hypothesis in the main result.
+
+4. Constants and final statements
+--------------------------------
+energy_dissipation_controls_curvature(c,s) states exactly
+  2^(-24)*|k(s)|^6 <= E*D
+for every real s. Because an actual global positive peak is constructed,
+this is also the maximum/sup-curvature statement; no essential-sup mismatch
+arises for these continuous periodic functions.
+
+absolute_curvature_coercivity(c) states exactly
+  2^(-18)*E^5/A^6 <= D.
+The arithmetic is consistent: 2E<=M*A implies M^6*A^6>=64E^6; multiply the
+first inequality by A^6 and cancel E>0. A>=1 proves the denominator is
+strictly positive. The constants 16777216=2^24 and262144=2^18 are correct.
+
+The final theorems do not assume total absolute curvature is bounded by a
+universal constant. A is the actual current curve's total absolute curvature,
+which can vary between curves and along a flow. In particular, this is not
+a uniform D>=c*E^5 estimate over arbitrary closed immersions.
+
+5. Relation to the actual open question, and honest scope
+--------------------------------------------------------
+The paper's Section1.2 asks whether there is a single free elastic solution
+with length growth other than O(t^(1/4)); see cached paper.txt lines182-195.
+Its general estimate involves integral_0^t E(tau)^3 d tau. These static Lean
+results give a useful new input to a trajectory argument, but do not supply
+uniform A(t), actual time-dependent energy identities, or a single anomalous
+long-time solution. A sequence of different initial curves is not a counter-
+example to that question, and nothing in these modules constructs one.
+
+For a given smooth flow, each fixed-time curve can mathematically be put into
+this static arclength form. That operation alone gives no bound on A(t) and
+does not justify differentiating a time-dependent choice of arclength record.
+The existing human proof of quarter growth under a separate uniform A(t)
+bound and the dynamic flattening note must remain labeled separately.
+
+6. Formal/project evidence and terminology
+-----------------------------------------
+I read all14 sources and their import/statement chain, including the actual
+interval FTC/Cauchy--Schwarz proofs, while leaving frozen files unchanged.
+Only Mathlib and LengthGrowth modules are imported; there is no import from
+CentroidEscape, SolitonClassification, or another open-problem project.
+No sorry, admit, native_decide, or extra axiom declaration occurs in them.
+
+The final audit loop scans ALL environment declarations whose prefix is
+LengthGrowth and recursively checks their dependencies against
+propext/Classical.choice/Quot.sound. The recorded count173 is a count of
+DECLARATIONS, including definitions, structure-related declarations and
+lemmas; it is not a claim of173 separate main theorems. The published status
+correctly says declarations. The prior successful compilation/axiom audit
+is recorded in STRESS_COERCIVITY_STATUS.txt and the parent verification
+record; this semantic review did not run another expensive Lean build.
+
+Conclusion: no material semantic defect or hidden geometric restriction
+was found. Preserve the distinction between a complete static coercivity
+theorem for ClosedFrenetCurve and the still-open unrestricted dynamic length
+question. A separate formal arclength-construction interface could improve
+interoperability, but is not an unproved premise disguised inside the present
+final theorem and is not a resolution of that dynamic question.

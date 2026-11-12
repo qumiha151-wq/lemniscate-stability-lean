@@ -56,3 +56,14 @@ the countermodel is not a geometric flow. No novelty claim is made for
 flattening. The static coercivity estimates are now Lean-formalized; these
 time-dependent deductions are not. The unrestricted length-growth problem
 remains unresolved because uniform boundedness of A(t) is still missing.
+
+ACTUAL POSITION CURVE INTERFACE
+CurveFromPosition.lean now starts with only a smooth periodic unit-speed
+position gamma and a positive period. Tangent,curvature,its derivatives,
+all Frenet equations and their periodicity are derived internally.
+The two exported actual_position_* coercivity inequalities use actual
+integrals. Caller-supplied Frenet data are no longer needed by this interface.
+The independent combined project audit now covers199 declarations,only
+propext,Classical.choice,Quot.sound. See ActualPositionScope.txt.
+General-speed arclength reparameterization and dynamic A(t) bounds are
+outside this addition; unrestricted length growth remains unresolved.

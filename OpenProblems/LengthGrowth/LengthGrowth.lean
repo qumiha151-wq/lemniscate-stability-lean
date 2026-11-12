@@ -1,3 +1,4 @@
+import LengthGrowth.CurveFromPosition
 import LengthGrowth.ScalarDissipation
 import LengthGrowth.ElasticStress
 import LengthGrowth.AbsoluteCurvatureCoercivity

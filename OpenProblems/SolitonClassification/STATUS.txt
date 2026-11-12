@@ -47,3 +47,16 @@ New independently reviewed analytic notes, not Lean formalizations:
    hyperbolic at every finite rotation parameter and excludes only local
    small periodic orbits near a circle. Large rotating profiles are not excluded.
  - ProjectionAndCircleAudit.txt records the separate analytic review.
+
+FORMAL LOCAL ODD-DIRECTION RIGIDITY
+OddLocalRigidity.lean proves a generic local theorem for actual strict
+Frechet derivatives. If a zero set is locally reflection invariant and
+the derivative restricted to finite-dimensional odd directions is
+injective,nearby zeros have zero odd coordinate. The full derivative may
+have an even kernel. An accumulating sequence of non-even zeros forces
+loss of odd injectivity at its limit. All quantitative bounds are derived
+from odd injectivity in the finite-dimensional form.
+This is not yet an application to a concrete rotating support shooting
+map or a certified numerical rank computation. Full classification remains
+unresolved. See OddLocalRigidityScope.txt for exact assumptions and limits.
+Combined independent project audit:106 declarations,standard three axioms.

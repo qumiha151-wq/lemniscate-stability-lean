@@ -1,157 +1,43 @@
-Closed-expander centroid escape: computer-assisted existence, partial Lean.
+CENTROID ESCAPE: COMPLETE CONCRETE LEAN PROOF
+12 November 2026
 
-The validated Arb shooting certificate, together with the accompanying
-analytic proof, constructs a smooth immersed closed expander with arclength
-centroid x > 0.49 relative to its expansion center. Its homothetic flow has
-unbounded centroid. Two analytic/code reviews found no substantive gap.
-The computation depends on the Python/flint/Arb runtime; the reviews did
-not independently rerun all seven high-order integrations.
+Verified source revision:9ef471f7e818029931ad20abaa1119a08819b718
+Full run43214648337:77 jobs,all successful.
+https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43214648337
 
-Lean currently proves:
-  - residual + uniform derivative bounds imply an actual unique shooting
-    zero by the contraction theorem (zero existence is a conclusion);
-  - exact reversal of the six-coordinate polynomial ODE;
-  - differentiation and gluing of the reflected actual ODE segment;
-  - smoothness on the doubled interval, closure, matching endpoint first
-    derivatives, and preservation of the unit tangent;
-  - global periodic extension, including actual ODE differentiation at all
-    seams, global smoothness and the globally unit tangent.
-  - Euclidean Frenet identities, signed curvature and scaled elastic force;
-  - the explicit radius R=(1+4t)^(1/4), R'=R^(-3), and the actual normal
-    free-elastic-flow equation of the expanding immersed periodic curve;
-  - reflection identities for x/y integrals and the moment equation m'=x;
-  - the actual arclength-weighted centroid and its scaling, and divergence
-    from positive exact half-moment data. The theorem
-    exact_half_orbit_yields_centroid_escape assembles these analytic steps.
-  - actual unique global parameter trajectories for the bounded periodic
-    tangential correction field; logarithmic time makes each moving point
-    satisfy the vector FEF equation. Existence is proved, not hypothesized.
-  - geometric series tail bounds from actual coefficient/HasSum hypotheses;
-    local ODE error comparison by Gronwall and its finite-grid accumulation;
-    the kernel-checked inequality 750*tail*exp(60) < 10^(-118). These are
-    generic integration lemmas, not a verifier of the Arb certificate.
-  - concrete weighted seven-coordinate field bounds (2 and 8), nonexpansive
-    coordinate clipping, and its globally bounded/Lipschitz field; exact
-    finite linear/bilinear/trilinear expansion with bounds 8, 22 and 32;
-  - error propagation from approximate-path differential residuals, without
-    assuming a local exact Taylor series or a true trajectory in the tube;
-  - kernel verification of the 160th-order scalar coefficient table and
-    rational residual budget, its actual finite-polynomial evaluation and
-    derivative, low-coefficient cancellation and uniform residual/excursion
-    bounds throughout the whole step interval;
-  - group law, inverse, strict monotonicity, Lipschitz dependence and a circle
-    homeomorphism for the actual parameter flow; exact invariance of the
-    actual arclength-centroid integral under that parameter change;
-  - positive spatial derivative from the actual variational formula,
-    continuous Jacobian, C1 regularity of both real-line lift and inverse,
-    and everywhere-positive spatial speed of the reparametrized curve.
-  - the actual reparametrized curve's unit normal, signed curvature and its
-    two arclength derivatives, identifying its intrinsic elastic force;
-  - joint C-infinity regularity of the actual parameter flow, smooth inverse,
-    and joint C-infinity of the actual curve for t > -1/4, derived from the
-    ODE and the actual Jacobian formula, including stationary parameters;
-  - exact_half_orbit_yields_smooth_classical_FEF_escape assembles a smooth
-    classical flow and divergent actual centroid from exact shooting data;
-  - construction of the actual vector Taylor coefficients, their majorization,
-    low-order residual cancellation, and a uniform degree-160 polynomial
-    residual bound for the concrete seven-dimensional field;
-  - computable rational-ball arithmetic with proved outward rounding and
-    an expression evaluator whose enclosure theorem covers the actual field.
-  - an executable cached Taylor algorithm using those rational balls, with
-    a proved enclosure of every actual coefficient through order 160 and
-    a Horner endpoint enclosure of the actual canonical Taylor polynomial.
-    The square-series cache avoids a cubic number of arithmetic operations.
-  - existence of an actual solution of the original weighted ODE over each
-    step of length at most .01 from a center with .024 tube margin, together
-    with the canonical polynomial error bound. Tube membership and inactive
-    clipping over that entire step are conclusions, not trajectory premises.
-  - successful finite rational grid checks imply one actual original-field
-    solution on the whole interval, every node's computed enclosure, and
-    uniform .0005 interior margin; no trajectory tube premise is imposed;
-  - a shared-denominator integer backend, sound Taylor endpoint evaluation,
-    and a checker for externally supplied untrusted coefficient data;
-  - variable-order polynomial endpoints and finite coefficient checks for
-    every order at most 160, and actual finite vector-polynomial residual
-    majorization, including the concrete order60 scalar residual;
-  - the actual polynomial field's first and second Frechet derivatives,
-    operator bounds 8 and 44, and derivative Lipschitz bound 44 on the tube;
-  - an actual finite-horizon shooting flow and correctly weighted shooting
-    projection, a proved initial-value neighborhood of original-field
-    trajectories, and a genuine quadratic midpoint finite-difference bound.
-  - construction of the actual initial-state Frechet derivative from dyadic
-    difference-quotient limits. It is a genuine continuous linear map with
-    norm at most exp(8t) and an actual quadratic Taylor-remainder bound.
-  - the actual joint time/initial and three-parameter shooting derivatives,
-    explicit derivative variation, and a genuine open time neighborhood
-    obtained by short continuation past the old checked terminal time;
-  - exact rational metric certificates giving one-sided constant39/20,
-    actual energy/Gronwall comparison, and first-exit tube conclusions;
-  - actual metric second derivative bound3 and flow midpoint defect with
-    exp(2Kt), with no extra exponential from constant-forcing replacement;
-  - improved open shooting domains, actual input/output metric constants,
-    and finite order60 residual arithmetic, including global budget1e-43.
-  - the actual three-parameter shooting Jacobian's improved variation bound
-    6e14 on an open domain of radius greater than1e-13, under the proved
-    reference-interior and finite-horizon conditions;
-  - the actual order60 grid integration bridge: finite coefficient, gluing
-    and margin checks imply a whole original-field trajectory, uniform
-    interior tube containment, and every node's ball inflated by1e-43.
-    The conclusion also holds for the chosen actual shootingFlow.
+Final theorem:
+CentroidEscape.FullCertificates.FullCandidate_v1_41fda1193ab84b01.Certificate.smooth_FEF_centroid_escape
 
-The complete finite-certificate soundness theorem is now proved:
-  - FiniteShootingPath and FivePathCertificate accept five finite751-table
-    paths, rational parameters and a rational preconditioner. The unique
-    proof hypothesis d.check=true implies existence of the smooth periodic
-    immersed classical intrinsic FEF with divergent arclength centroid;
-  - actual central-difference errors, the direct terminal-time column,
-    preconditioner injectivity, rational matrix checks and center-to-root
-    moment transport are discharged internally;
-  - CandidateEndpointChecks proves the finite scalar/matrix conditions on
-    actual proposed endpoint data. True endpoint containment still needs
-    the complete concrete grid checks;
-  - the first10 center steps now have concrete, unconditional kernel proofs:
-    600 Taylor stages,10 Horner endpoints,10 input margins and9 glues.
-    CenterFirstTen.checked proves the actual10-step partial segment. The
-    complete750-step paths and the full five-path instance are still missing.
-  - CenterFirstEleven.checked extends that frozen segment by one further
-    actual step, using the smaller CompactStageAssembly proof constructor.
-    Its660 stages,11 endpoints and10 glues are kernel checked. The current
-    checked-in concrete prefix is11 of3750 required steps, leaving3739 steps
-    and the final assembly incomplete.
-  - the separate reproducible pipeline now checks five further steps11..15,
-    joins them to the prefix, and reimports/audits them on a fresh runner.
-    All three cloud jobs passed at03c83f0f (run43211109332). Thus an actual
-    16-step prefix is checked, leaving3734 steps for the full five-path proof.
-  - CandidatePathAssembly is a verified generic interface from five complete
-    checked paths and their exact endpoints to the candidate check and escape
-    theorem. The default project audit now covers4197 declarations.
-    Tools and a75-shard workflow prepare the remaining full run. Generation,
-    transport and static coverage checks are explicitly not full proofs.
+The theorem has no numerical or analytic proof hypotheses. It proves
+existence of a positive period and a jointly smooth periodic immersed
+classical free elastic flow, satisfying its actual intrinsic normal-velocity
+equation, whose actual arclength-weighted centroid x-coordinate tends to
+positive infinity. This resolves the centroid existence question in paper
+section1.2(1), for closed immersed planar curves.
 
-Missing from the unconditional concrete Lean instance:
-  - the concrete numerical/ODE estimates discharging the shooting root and
-    moment hypotheses. The actual shooting map is constructed and the general
-    checked-grid theorem proves inactive clipping over the whole true orbit;
-    the five required750-step paths have NOT all been kernel-checked.
-    The improved time-column formula removes the two old terminal-time probes;
-  - the final concrete d.check=true proof combining all3750 step recurrences,
-    Horner endpoints and finite gluing/margin conditions. Native five-path
-    generation and exact external diagnostics have passed, but do not prove
-    this premise. The actual proposed endpoint/matrix scalar checks already
-    pass in Lean; they alone do not prove that the balls contain true endpoints.
-Higher spatial and joint smoothness and the intrinsic curvature/PDE interface
-are now proved, conditional only on the explicit exact shooting input.
-Thus the complete centroid-escape theorem is NOT yet Lean-formalized.
+The concrete proof covers all five750-step paths:center,a+,a-,b+,b-.
+All3750 steps,225000 order60 Taylor recurrence stages,actual Horner
+endpoints,tube margins and path boundary links were kernel checked.
+The75 shard jobs compiled5325 modules. The final job verified their source,
+binary,log and dependency hashes,then compiled152 assembly modules:
+75 adapters,70 cross-shard merges,5 paths,the certificate,and the audit.
 
-This profile does not prove migration: its convex hull contains the
-expansion center. No classification or unrestricted length conclusion
-is inferred from it. This Lake project imports no other open-problem project.
+The original numerical premises are now discharged. At14:18 UTC the
+unconditional theorem and its fresh transitive audit passed. It depends
+only on propext,Classical.choice,Quot.sound; no sorry,native_decide,
+additional axiom or unproved certificate premise is used.
 
-To rerun the external certificate, install python-flint==0.9.0 in an
-environment accessible to Python, then from the certificate directory run:
-  python validate_certificate.py --center certificate_center.json --workers 3
-The included JSON records source SHA256 hashes, constants and interval
-results. Source hashes identify the original successful run. Supplemental
-parameter_box_check.txt records the enlarged-time-neighborhood check.
-The final ALL ARB CERTIFICATE CHECKS PASSED status is written only after
-every check; a failed run is marked NOT YET VERIFIED.
+The default core retains a small concrete prefix for economical builds.
+The complete generated proof sources and evidence are preserved under
+VerifiedCertificate/9ef471f7e818029931ad20abaa1119a08819b718 by the archival
+workflow. They are outside the default module glob so full reproduction
+can use bounded parallel shards. See that directory's README and
+archive_summary.json for durable source provenance.
+
+This does not establish migration away from every compact set. The
+profile's convex hull contains the expansion center. Unrestricted length
+growth and complete soliton classification also remain unresolved.
+This independent Lake project imports no other open-problem project.
+
+FullVerification.txt records the completed kernel run. Independent review
+is in FullSemanticAudit.txt. No novelty or publication-priority claim is made.

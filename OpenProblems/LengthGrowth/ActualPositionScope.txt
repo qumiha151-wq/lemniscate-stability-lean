@@ -1,0 +1,46 @@
+FROZEN ACTUAL-POSITION INTERFACE -- 12 November 2026
+
+Source: CurveFromPosition.lean
+Source SHA256: 149569946036658549063C5A36BFA0643670ED12FDF31636353FA4B1125B1993
+Olean SHA256: AEA049ECD40DB4C91C815944ED274C6DDCAD2E0F58378535C36142F0B6437E8B
+
+Actual check: work/length_formal/check_curve_from_position.ps1
+Lean 4.33.1, direct executable; pinned read-only Mathlib dependency paths first.
+EXIT 0, no warnings.
+LengthGrowth actual-position coercivity audit passed for 196 declarations.
+Both exported coercivity theorems use only propext, Classical.choice, Quot.sound.
+
+EXACT INPUT
+gamma : Real -> Complex, a positive real period L, Function.Periodic gamma L,
+ContDiff Real infinity gamma, and norm(deriv gamma s)=1 at every real s.
+No tangent, Frenet equations, curvature fields, force bounds, integral
+identities or coercivity estimate are supplied by the caller.
+
+CONSTRUCTION
+T=deriv gamma and k=Im(conj(T)*deriv T). The derivative of conj(T)*T=1
+forces its real part to vanish, yielding T prime = k*(I*T).
+The first and second curvature fields are actual iterated derivatives.
+Periodicity and all regularity conditions are derived internally.
+
+EXPORTS
+LengthGrowth.closedFrenetCurveOfPosition
+LengthGrowth.actual_position_stress_coercivity
+LengthGrowth.actual_position_absolute_curvature_coercivity
+
+The final statements display actual integrals of k squared/2,
+(k second derivative + k cubed/2) squared, and absolute k.
+They respectively prove 2^(-24)*abs(k(s))^6 <= E*D and
+2^(-18)*E^5/A^6 <= D.
+
+SCOPE
+This constructs the complete geometric record from a genuine smooth
+periodic unit-speed position. Arbitrary-speed immersion to arclength
+reparametrization is not included. Neither uniform-in-time A(t) boundedness
+nor unrestricted quarter-power length growth is proved.
+The fourteen previously frozen LengthGrowth sources were not edited.
+
+REPAIRS FROM THE INTERRUPTED DRAFT
+Removed an unused nonexistent ContDiff.Star import; opened ContDiff notation;
+made the periodic chain-rule function explicit before rewriting;
+used congrArg for the complex decomposition without rewriting its own
+imaginary coefficient; annotated the audit count as Nat.

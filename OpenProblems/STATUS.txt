@@ -1,6 +1,6 @@
 Status at 12 November 2026
 
-These are independent partial formalizations, not solutions of all the
+These independent projects include a complete new centroid solution and partial results for the
 remaining questions in Miura--Wheeler arXiv:2404.12619v3.
 
 Existing lemniscate stability: the original repository root project.
@@ -29,44 +29,13 @@ SolitonClassification/: independent support-function ODE and actual geometric
   curvature are centered circles. Nonconstant profiles must have positive
   and negative curvature excursions exceeding half their RMS curvature.
   Closed reconstruction includes the explicit integer angle condition.
-CentroidEscape/: computer-assisted existence proof of a closed expander
-  with nonzero arclength centroid, hence a flow with unbounded centroid.
-  Seven rigorous Arb integrations passed; two analytic/code reviews found
-  no substantive gap. The complete theorem is not yet Lean-formalized:
-  Lean proves the residual/derivative-to-root implication and the reflected
-  ODE's global periodicity/smoothness/unit-tangent bridge, Euclidean geometry,
-  actual normal flow, and the arclength-centroid integral/divergence bridge.
-  Generic bounded-ODE existence and validated-integration lemmas now establish
-  error propagation and the numerical error budget; their concrete shooting
-  inputs remain to be verified.
-  Concrete weighted field and clipping bounds, scalar finite-polynomial
-  residual bounds, actual parameter-flow inverses, C1 lift/inverse and exact
-  arclength-centroid invariance are also now formalized. Actual vector Taylor
-  construction and uniform residual bounds, outward rational-ball arithmetic,
-  the intrinsic force of the reparametrized curve, and joint C-infinity
-  regularity are now proved. The concrete interval shooting certificate is
-  still incomplete. See CentroidEscape/STATUS.txt for the numerical gaps.
-  A checked-grid-to-actual-ODE theorem, integer certificate checker, variable
-  polynomial order, actual field derivatives and initial-value/midpoint
-  estimates are now formalized. The concrete seven-path certificate is not.
-  Further proved interfaces include actual joint shooting derivatives and
-  open time neighborhoods, whole-tube one-sided metric comparison with
-  constant39/20, actual metric Hessian/midpoint estimates, and the order60
-  vector differential residual. The actual order60 checked-grid integration
-  bridge and actual shooting Jacobian variation bound6e14 are now proved.
-  A final finite five-path certificate soundness theorem now closes the
-  complete analytic/root/geometric chain. Proposed numerical endpoint and
-  matrix scalar checks pass in Lean, and all five native datasets have been
-  generated. The full3750-step kernel certificate is still incomplete;
-  generic soundness and native numerical viability are not its proof.
-  The first10 actual center steps, with600 Taylor stages,10 endpoints and
-  input margins, and9 glues, now pass kernel checks and a combined audit.
-  They form a partial segment, not a finished750-step path or complete flow.
-  A compact proof constructor now extends that prefix to11 actual steps;
-  the separate cloud pipeline then checks and connects steps11..15 and
-  successfully repeats their audit on a fresh runner. The checked16-step
-  prefix leaves3734 steps and the full certificate still missing. A75-shard
-  full verification workflow is included; its generated data are not proofs.
+CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
+  free elastic flow with unbounded arclength centroid. At source9ef471f7,
+  run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,
+  followed by152 assembly modules and the final standard-three-axiom audit.
+  The final existence theorem has no remaining numerical or analytic proof
+  hypotheses. See CentroidEscape/FullVerification.txt and FullSemanticAudit.txt.
+  This resolves the centroid question; it does not imply migration.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.

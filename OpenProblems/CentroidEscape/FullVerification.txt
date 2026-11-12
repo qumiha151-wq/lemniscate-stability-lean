@@ -1,0 +1,45 @@
+COMPLETE KERNEL VERIFICATION -- 12 November 2026
+
+Source9ef471f7e818029931ad20abaa1119a08819b718
+Run43214648337,first attempt,all77 jobs successful.
+Core131170675319;75 disjoint50-step shard jobs;final assembly131237733433.
+All3750 concrete steps were checked. The final job restored all75 shards,
+regenerated the exact assembly,verified all source/olean/log/dependency
+hashes and successful original reports,and compiled all152 assembly modules.
+
+At2026-11-12T14:18:14 UTC the unconditional Certificate module exited0.
+At14:18:18 the fresh Audit module exited0 and reported only:
+propext,Classical.choice,Quot.sound.
+At14:18:21 the final report recorded FULL_CERTIFICATE_PROVED=true.
+
+Theorem:
+CentroidEscape.FullCertificates.FullCandidate_v1_41fda1193ab84b01.Certificate.smooth_FEF_centroid_escape
+
+Final Certificate:3606ms,peak resident5007630336bytes.
+Final Audit:3305ms,peak resident5000822784bytes.
+All152 assembly modules plus final provenance snapshot took about318s.
+The final job including setup,downloads,restore and upload took8m21s.
+The77 artifact ZIPs total460408665bytes. Assembly artifact13951593821:
+SHA25667c499d8e7c7029ec503885615329e03e2a4a33d68d598fcba52f32ecd2aff5b.
+
+https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43214648337
+https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43214648337/job/131237733433
+
+All five independent projects also passed in run43214648094,including the
+4197-declaration centroid core and176-declaration length-growth audit.
+The small trial and artifact-reimport pipeline passed in run43214648076.
+
+The complete run establishes the concrete theorem. Earlier16-step tests,
+native data generation and static source checks were only preparation.
+Archival validation is a separate source-preservation operation: it checks
+the exact successful reports,sources,binaries,logs,dependency links and final
+target before copying sources and evidence. It does not claim a new Lean run.
+
+ACTUAL DURABLE SOURCE ARCHIVE
+Archival workflow43245093066 succeeded. Commit7749e9b5f74a8d7960737bb3c92394a0920ad1c2
+preserves16584 evidence/source files,total259562028bytes,under
+VerifiedCertificate/9ef471f7e818029931ad20abaa1119a08819b718.
+All5477 generated Lean modules are included (5325 shard+152 assembly).
+Full report SHA256915d062ac48a5e5bf6fd214b9b1c040b7db3c893dbccea6d6fe5bd9d18b76f6f.
+Inventory SHA256f77d9669b1cfcc63a6596efbebcd3faf355699de26fff2d41ca8f81627515b65.
+The repository archive is independent of the seven-day Actions retention.

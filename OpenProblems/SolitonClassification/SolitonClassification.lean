@@ -1,3 +1,4 @@
+import SolitonClassification.OddLocalRigidity
 import SolitonClassification.SupportODE
 import SolitonClassification.OneSignCurvature
 import SolitonClassification.SolitonDilation
