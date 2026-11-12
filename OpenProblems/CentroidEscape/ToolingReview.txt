@@ -1,0 +1,120 @@
+INDEPENDENT REVIEW OF COMPACT SHARD GENERATION AND COMPILATION
+2026-11-12. Reviewer: length_migration subagent.
+Production tool files were read only and were not edited by this reviewer.
+
+Reviewed final tool hashes:
+generate_compact_shard.py
+ e936a55509a90d7af57a839c3167235d677730d7cef32580ce205bf87f57f9a3
+compile_shard.py
+ 9954e3ae58136df4475039dcc4900805f092613c24e5ca792a20892f27810ea6
+
+Outcome
+-------
+The reviewed generator preserves the actual finite Taylor-step semantics.
+The compiler issues identified during review have been addressed in the
+final version above. The reproduced stale-success preflight failure now
+correctly writes a failed, shard_kernel_checked=false report.
+
+Generator proof coverage
+------------------------
+Each leaf proves all60 square/next-coefficient recurrence identities with
+decide+kernel. CompactStageAssembly merely combines these proofs; it does
+not replace any arithmetic identity by a premise or a native result.
+Both endpointCorrect (the actual degree60 Horner endpoint) and input and
+endpoint canonical-margin checks are actual kernel computations.
+
+Every internal block glue compares the complete seven-coordinate endpoint
+and next input vector. The segment theorem uses the coefficient0 lemma
+and the actual endpoint theorem. A terminal table with only coefficient0
+is sufficient because no further stage is asserted there.
+
+The shard's local stage0 corresponds to global START. Original JSON step
+numbers are checked against the requested global indices before emission.
+Balanced merges use the left count n and right count m, append at n,
+preserve the left initial vector and right terminal vector, and prove the
+boundary coefficient0 equality from the endpoint/input vector equality.
+Odd carried blocks retain their own count. No off-by-one error was found.
+
+Partial schema: old full status defaults to start0 and mesh_steps750;
+new partial status gives start and number of written steps. The requested
+interval must be covered. In both cases h=L/750 is checked. Note that the
+native partial status.initial field is the GLOBAL starting seed, not the
+state at START. The generator correctly obtains shard first_input from
+records[0].coefficients[0], not from that status.initial field.
+
+No analytic ODE error is inflated or restarted inside shards. The data
+prove a segment of the exact polynomial iteration. The complete path
+assembly must still check its initial point and use the global analytic
+error theorem; a partial segment is not a completed shooting certificate.
+
+Actual generator tests
+----------------------
+review_generator.py generated real-data source shapes at START11 with
+COUNT1,6,11,26. These exercise one-step, short final blocks, odd carries,
+and multiple balanced levels. All resulting source hashes, root counts,
+first/last vectors,60N stage declarations,N endpoints, andN-1 glues match.
+The generated sources contain no sorry, native_decide, extra axiom, or
+unsafe declaration. These are structural generation tests, not new Lean
+kernel runs for the44 generated test steps.
+
+Zero count, out-of-range intervals, missing JSON, wrong step number and
+negative radius all exited nonzero and produced no completed manifest.
+Results: work/certificate_tools_review/generator_review_results.json.
+Existing concrete first-ten Lean builds already exercised the generic
+append theorem and two-block combination. The generator's larger odd-carry
+shapes were inspected structurally here; they were not kernel compiled
+by this reviewer. A low-cost future test can regroup existing checked
+leaves into2+2+1 blocks to exercise this branch without new arithmetic.
+
+Compiler findings and fixes
+--------------------------
+1. Generated dependencies previously could resolve to an earlier LEAN_PATH
+   entry while a different artifact had just been produced in build-root.
+   The final code rejects such shadowing and requires each generated import
+   hash to equal this run's already successful producer result.
+2. A preflight exception previously occurred before clearing an old success
+   report. This was reproduced with an isolated source-hash mismatch:
+   exit1 but an old shard_kernel_checked=true remained. The fixed version
+   atomically clears success before preflight and the top-level exception
+   handler records failed/false. The same negative test now passes.
+3. A fresh compile previously could find a stale named output after exit0.
+   The fixed code compiles to a unique, initially nonexistent temporary
+   olean. Only exit0 plus a new nonempty artifact can replace the official
+   output. The audit also requires its success marker.
+4. On Linux, terminating only the /usr/bin/time wrapper could leave its
+   Lean child running. The final code creates a new session and terminates
+   the process group on abort.
+
+The new resume path reuses a module only when source, direct-import hashes,
+output hash and Lean version agree. Generated dependencies additionally
+must match this run's producer results, including reused producers.
+The final Audit is always freshly compiled, never reused from a JSON bit.
+Nonzero exits, missing dependencies, exceptions, absent/empty artifacts,
+unresolved dependency cycles, and missing audit markers cannot produce
+a final true status in the reviewed control flow.
+
+Preflight regression record:
+work/certificate_tools_review/compile_preflight_review.json.
+Its isolated test report was explicitly left false after testing; no
+synthetic successful certificate was retained.
+
+Observed actual five-step run
+----------------------------
+work/certificate_shards/center_011_005 contains the real global steps11..15.
+Its final report was checked after the author's successful kernel run and
+fixed-compiler resume. Parameters, five leaves and the block reused matching
+verified artifacts; Audit was freshly compiled and its marker was present.
+All8 module exit codes are0. This review independently recomputed the
+manifest SHA256, every source SHA256, every checked-olean SHA256, and every
+log SHA256 against that report; all match. The final compiler hash is the
+reviewed9954e3ae... value above.
+
+Trust/scope boundary
+--------------------
+The compiler builds the reviewed generated Lean propositions; the final
+typed750-step and five-path assembly must still consume the exact segment
+theorems with the correct parameter and boundary checks. A manifest label
+or successful partial-shard report is never a substitute for that assembly.
+Root's independent reimport/hash check of the audited core and shard
+dependencies remains appropriate. This review does not mark the remaining
+uncertified steps, the full root certificate, or all open questions solved.

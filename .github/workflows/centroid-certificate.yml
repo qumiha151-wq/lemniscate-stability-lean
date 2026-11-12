@@ -1,0 +1,118 @@
+name: Centroid certificate pipeline trial
+
+on:
+  push:
+    branches: ['research/remaining-open-problems']
+    paths:
+      - 'OpenProblems/CentroidEscape/tools/**'
+      - 'OpenProblems/CentroidEscape/CentroidEscape/CertificateSeedParameters.lean'
+      - 'OpenProblems/CentroidEscape/CentroidEscape/CompactStageAssembly.lean'
+      - '.github/workflows/centroid-certificate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    name: Build and audit shared centroid proofs
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/CentroidEscape
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - name: Enforce core axiom audit
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env lean CentroidEscape/AxiomAudit.lean
+      - name: Package this revision's checked core
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/core_artifact.py pack .lake/build/lib/lean core.tar.xz --revision "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: centroid-core-${{ github.sha }}
+          path: OpenProblems/CentroidEscape/core.tar.xz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 3
+
+  trial:
+    name: Kernel-check five new concrete steps
+    needs: core
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/CentroidEscape
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - uses: actions/download-artifact@v4
+        with:
+          name: centroid-core-${{ github.sha }}
+          path: OpenProblems/CentroidEscape
+      - name: Restore exact-revision core
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/core_artifact.py unpack .lake/build/lib/lean core.tar.xz --revision "$GITHUB_SHA"
+      - name: Generate untrusted native data
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env lean -M4096 -j1 --run tools/NativeCertificateData.lean center shard/native 11 5
+      - name: Generate literal Lean proof sources
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/generate_compact_shard.py --data-root shard/native --case center --start 11 --count 5 --output-root shard/certificate
+      - name: Kernel-check arithmetic, gluing and final shard audit
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 4096
+      - name: Connect to the previous eleven-step prefix
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env lean -M4096 -j1 tools/CenterFirstSixteen.lean
+      - uses: actions/upload-artifact@v4
+        with:
+          name: centroid-trial-${{ github.sha }}
+          path: OpenProblems/CentroidEscape/shard/certificate
+          if-no-files-found: error
+          compression-level: 9
+          retention-days: 3
+
+  reimport:
+    name: Reimport and audit transferred proofs
+    needs: [core, trial]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/CentroidEscape
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - uses: actions/download-artifact@v4
+        with:
+          name: centroid-core-${{ github.sha }}
+          path: OpenProblems/CentroidEscape
+      - uses: actions/download-artifact@v4
+        with:
+          name: centroid-trial-${{ github.sha }}
+          path: OpenProblems/CentroidEscape/shard/certificate
+      - name: Restore exact-revision core
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/core_artifact.py unpack .lake/build/lib/lean core.tar.xz --revision "$GITHUB_SHA"
+      - name: Verify artifact hashes and rerun the transitive audit
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env python3 tools/reimport_shard.py --manifest shard/certificate/manifest.json --build-root .lake/build/lib/lean --lean lean
+      - name: Recheck the sixteen-step connected statement
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env lean -M4096 -j1 tools/CenterFirstSixteen.lean

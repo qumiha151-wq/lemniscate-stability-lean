@@ -112,7 +112,12 @@ The complete finite-certificate soundness theorem is now proved:
   - the first10 center steps now have concrete, unconditional kernel proofs:
     600 Taylor stages,10 Horner endpoints,10 input margins and9 glues.
     CenterFirstTen.checked proves the actual10-step partial segment. The
-    remaining3740 steps and the full five-path instance are still missing.
+    complete750-step paths and the full five-path instance are still missing.
+  - CenterFirstEleven.checked extends that frozen segment by one further
+    actual step, using the smaller CompactStageAssembly proof constructor.
+    Its660 stages,11 endpoints and10 glues are kernel checked. The current
+    checked-in concrete prefix is11 of3750 required steps, leaving3739 steps
+    and the final assembly incomplete.
 
 Missing from the unconditional concrete Lean instance:
   - the concrete numerical/ODE estimates discharging the shooting root and

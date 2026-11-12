@@ -29,3 +29,27 @@ This family has initially decreasing EL. A finite-energy packing argument
 also rules out directly placing infinitely many fixed-angle cells in one
 smooth initial curve. Neither assertion settles long-time length growth;
 these additional analytic results are not Lean-formalized.
+
+ElasticStress.lean now proves the geometric foundation of a new quantitative
+estimate. It starts from an actual periodic position curve with unit tangent
+and its Frenet/curvature derivatives. It derives the closing integral, the
+elastic-stress derivative, the exact squared stress norm and derivative,
+the derivative and norm of inverse stress, and the closed integration-by-parts
+identity. Inversion explicitly requires nonzero stress; the later quantitative
+contradiction argument must derive that condition rather than assume it.
+The enforced audit covers both FreeElasticScalar and LengthGrowth namespaces.
+The module imports only Mathlib, preserving this independent problem project.
+
+StressCoercivity.txt and StressCoercivityAudit.txt give an independently
+reviewed HUMAN proof of ED>=2^-24 M^6 and D>=2^-18 E^5/A^6, for actual closed
+curves, where E is half the curvature-square integral, D the elastic-force
+square integral, M the maximum absolute curvature, and A total absolute
+curvature. They reduce the individual-flow quarter-growth question exactly
+to uniform boundedness of A. They do not prove that boundedness.
+
+DynamicFlattening.txt and its audit derive an actual higher-order Lyapunov
+quantity, space-time estimates, and uniform curvature flattening. The new
+scalar consequences still permit a countermodel with length exponent1/3;
+the countermodel is not a geometric flow. No novelty claim is made for
+flattening. These quantitative estimates and dynamic deductions are not yet
+Lean-formalized. The unrestricted length-growth problem remains unresolved.

@@ -1,0 +1,171 @@
+INDEPENDENT ANALYTIC REVIEW OF THE ELASTIC-STRESS LENGTH REDUCTION
+2026-11-12. Reviewer: length_migration subagent.
+Reviewed source: work/next_research/length_stress_coercivity.txt.
+No frozen Lean source or proof document was modified by this review.
+
+Verdict
+-------
+The static estimate ED >= 2^-24 M^6 is proved by the argument supplied.
+The derived estimate D >= 2^-18 E^5/A^6 is also correct. I found no
+substantive sign, constant, closing-condition, or hidden length-uniformity
+error. The flow consequences and the example with A'(0)>0 check out.
+This is an independent line-by-line derivation, not a Lean verification,
+and this review does not establish a literature-priority claim.
+
+Two presentation clarifications are recommended:
+(i) State N=JT explicitly, where J is the fixed counterclockwise quarter
+turn. The Frenet equations alone also allow the opposite normal. Formula
+(11) uses the convention N=JT. This convention is always available and
+does not change E,D,M,A or the resulting theorem.
+(ii) In the record-bound proof, use the connected component of {U>K}
+containing the target time, or a last crossing of K. The current phrase
+"an interval after its first crossing" can be made precise this way;
+it is not a mathematical obstruction to the stated bound.
+
+1. Assumptions actually needed
+-----------------------------
+The curve is a genuine smooth periodic regular immersion gamma:R/LZ->R^2,
+parametrized by arclength, with L>0. Thus T,N,k,k_s and the subsequent
+stress variables are periodic. The closing identity is integral T ds=0.
+Embeddedness, nonzero signed turning number, and a sign for curvature are
+not needed. In particular, a turning-zero immersed loop is included.
+Fenchel gives A>=2pi and, by Cauchy--Schwarz, EL>=2pi^2>2. This implies
+E,M,A>0, so every division by these quantities in the argument is valid.
+The argument does not presuppose D>0; it excludes D=0 as part of the proof.
+
+Genuine closure is essential. A nonzero periodic solution of
+k_ss+k^3/2=0 has D=0 and gives a counterexample to the same statement for
+arbitrary periodic curvature data. Its reconstructed Frenet curve is not
+closed. The reviewed proof correctly invokes actual closure at (12),
+rather than treating periodic curvature or periodic support variables as
+sufficient.
+
+2. Curvature and energy ratios
+------------------------------
+Writing B^2=integral k_s^2, periodic integration by parts gives
+  B^2=(1/2)integral k^4-integral kF
+     <= E M^2+sqrt(2ED).
+At a point below the mean of k^2, comparison with its maximum yields
+  M^2 <= 2E/L+2sqrt(2E)B <= E^2+2sqrt(2E)B.
+The second inequality uses EL>=2, not a hidden upper bound for L.
+
+Under r=sqrt(ED)/M^3<=1/4096 and x=M/E, substitution gives exactly
+  x^2 <= 1+2sqrt(2)sqrt(x^2+sqrt(2)r x^3).
+For x>=64, r<=1 and 1+sqrt(2)x<=2x make the right side at most
+  1+4x sqrt(x) <= 1+x^2/2 < x^2.
+Hence x<64, so rx<=1/64. In particular
+  B^2 <= E M^2(1+sqrt(2)rx) <= 4E M^2,
+and B<=2sqrt(E)M as claimed.
+
+3. Stress magnitude and direction
+---------------------------------
+Let a=k^2/2, b=k_s and W=aT+bN, with N=JT. Direct differentiation gives
+  W_s=(kk_s-kk_s)T+(k_ss+k^3/2)N=FN,
+  (|W|^2)_s=2k_sF.
+At a maximum of |k|, k_s=0 since M>0, and |W|^2=M^4/4.
+Integration over an arc of at most one period therefore gives
+  ||W(s)|^2-M^4/4| <= 2B sqrt(D) <= 4rM^4 <= M^4/1024.
+This is stronger than the used bounds M^2/4<=|W|<=M^2. W never vanishes.
+
+For w=|W| and e=W/w,
+  |e_s|=|det(W,W_s)|/w^2=k^2|F|/(2w^2).
+Consequently
+  integral |e_s| <= (8/M^4) integral k^2|F|
+                 <= (8/M^4) M sqrt(2E)sqrt(D)
+                 =8sqrt(2)r <1/2.
+For v=e(s0), |e(s)-v|<1/2, hence e(s).v>=1/2. All estimates use an
+integral over the actual circle. No uncontrolled sqrt(L) enters here.
+
+4. Inversion, algebraic sign, and closing integral
+-------------------------------------------------
+For V=W/w^2,
+  V_s=w^-2(I-2e tensor e)W_s.
+The parenthesized map is an orthogonal reflection, so
+  |V_s|=|F|/w^2 <=16|F|/M^4.
+Since JW=aN-bT,
+  aV-bJV=((a^2+b^2)T)/w^2=T.
+Thus the minus sign in T=(k^2/2)V-k_sJV is correct under N=JT.
+
+Integrating T=0 gives
+  0=integral (k^2/2)V-integral k_sJV
+   =integral (k^2/2)V+integral kJV_s.
+The sign in (12) is therefore also correct. The boundary term vanishes
+because k and V are actual periodic fields and W has no zero.
+
+Projection of the first integral onto v is at least E/(2M^2), using
+v.V=(v.e)/w>=1/(2M^2). The norm of the second integral is at most
+  (16/M^4) integral |kF| <=16sqrt(2ED)/M^4.
+It follows that
+  1 <=32sqrt(2) r x <=32sqrt(2)*(1/4096)*64=sqrt(2)/2<1,
+the required contradiction. In fact the argument gives a strict bound
+ED>2^-24M^6; the recorded non-strict version is valid.
+
+Finally 2E<=MA, so
+  ED >=2^-24(2E/A)^6=2^-18E^6/A^6,
+and division by E>0 proves the stated second estimate.
+
+5. Flow consequences and record-bound crossing
+---------------------------------------------
+For normal velocity -F, ds_t=kF ds and the standard first variations give
+E'=-D, L'=integral kF, and (L')^2<=2ED. Therefore
+  integral_s^t M(u)^6 du <=2^24 integral_s^t E D du
+                         =2^23(E(s)^2-E(t)^2).
+The factor2^23 in the note is correct.
+
+If A<=A0 along the same global smooth flow, then
+  (E^-4)'=4D/E^5 >=2^-16/A0^6.
+Integration gives exactly the recorded energy decay. The restart estimate
+and dyadic sum in the previously reviewed quarter_growth_equivalence.txt
+then give quarter-power length growth. Conversely A^2<=2EL, so bounded EL
+implies bounded A. Combined with the existing individual-flow equivalence
+between bounded EL and quarter-power growth, statement(14) follows.
+
+For U=EL, if U'>0 then LD<E L'<=E sqrt(2ED). Here D>0 follows already
+from U'>0, or from the static bound. Dividing and squaring gives
+  D<2E^3/L^2.
+Combining with the new estimate gives
+  U^2<2^19 A^6,
+hence U<512sqrt(2)A^3<1024A^3 as stated.
+
+A precise proof of (16) is: fix t and put
+K=max(U(0),1024 max_[0,t]A^3). A is continuous, so this maximum exists.
+If U(t)>K, let a be the left endpoint of the connected component of
+{s in [0,t]:U(s)>K} containing t. Then U(a)=K, and U>K on(a,t].
+The mean-value theorem on[a,t] gives c in(a,t) with U'(c)>0, contradicting
+U(c)<1024A(c)^3<=K. This also handles a=0 when U(0)=K.
+
+These deductions concern one actual evolving curve. They do not replace
+an unbounded-in-time construction by a sequence of different initial data.
+
+6. The nonmonotonicity example
+------------------------------
+For simple curvature zeros, differentiating A and using
+k_t=-F_ss-k^2F, ds_t=kF ds cancels the zero-order terms and yields
+  A'=-integral sign(k)F_ss
+    =2 sum_{k(z)=0} sign(k_s(z))F_s(z)
+    =2 sum sign(k_s(z))k_sss(z).
+The sign and factor2 in(17) are correct. Tangential reparametrization does
+not alter this integral identity; the pure-normal convention already used
+by the note suffices.
+
+For K(u)=sin u-(1/9)sin3u and phi'=K, the T-cell geometric-sum argument
+does close the actual unit-speed curve because0<|q|<N. Its curvature is
+k=q+NK(Ns), not merely an assigned periodic curvature lacking closure.
+At a zero, z=sin(Ns) solves the strictly increasing equation
+(2/3)z+(4/9)z^3=-q/N, with |z|<=3/8. Thus there are exactly2N simple zeros.
+The stated derivatives satisfy
+  K'=cos u[(2/3)+(4/3)sin^2u],
+  K'''=2cos u(1-6sin^2u).
+Also k_s=N^2K' and k_sss=N^4K'''. Therefore the sum in(17) is exactly
+  A'=8N^5 sqrt(1-z^2)(1-6z^2)>0.
+The example excludes monotonicity of A, but does not give its divergence
+on one long-time trajectory. The draft correctly preserves that limit.
+
+Remaining open issue
+--------------------
+No step above proves a uniform-in-time bound for A for every free elastic
+flow, nor constructs a flow with unbounded A. Thus the unrestricted
+quarter-growth question remains open in this work. The new result is a
+valid coercive estimate and an exact reduction of the dynamic obstruction.
+The bibliography and novelty statements were outside this mathematical
+review; no independent priority conclusion is drawn here.

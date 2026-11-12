@@ -1,0 +1,54 @@
+INDEPENDENT REVIEW: DYNAMIC LYAPUNOV AND FLATTENING NOTE
+2026-11-12. Reviewer: length_migration subagent.
+Reviewed: work/next_research/length_dynamic_flattening.txt.
+
+Verdict: the stated PDE inequalities and deductions are correct. No
+substantive sign, interpolation, or constant error was found. This is
+analytic review, not Lean verification or a novelty assessment.
+
+The source identity for Y'=d/dt integral k_s^2 was checked against the
+cached original paper, work/paper.txt, Lemma3.1, beginning at line309:
+  Y'=-2Z+5 integral k^2 k_ss^2-(5/3)integral k_s^4
+      -(11/2)integral k^4 k_s^2.
+The normal-gauge commutator and tangent identity in the note also agree
+with that original proof.
+
+Periodic integration by parts gives Y<=sqrt(2EX) and X<=sqrt(YZ).
+Combining these, with the zero cases handled trivially, yields
+  X<=(2E)^(1/3)Z^(2/3),  Y^3<=4E^2 Z.
+These estimates do not have a hidden dependence on length. The Young
+bound a z^(2/3)<=z+4a^3/27 is exact at z=(2a/3)^3. Substituting
+a=5M^2(2E)^(1/3) gives the coefficient1000/27, as claimed.
+
+Thus Y'<=-Z+(1000/27)EM^6 minus the two displayed nonnegative terms.
+The stress estimate gives EM^6<=2^24 E^2D, while (E^3)'=-3E^2D.
+The cancellation constant must therefore be1000*2^24/81, exactly the
+value recorded. The resulting Y+C_*E^3 is nonnegative and nonincreasing.
+Integrating controls all three nonnegative spacetime terms. Since E has
+a finite limit, Y also has a limit; integral Y^3<infinity forces it to0.
+
+The proof that L(t)->infinity, rather than just having an unbounded
+subsequence, is valid. On each disjoint unit interval beginning with
+L(t_n)<=R, the restart estimate gives L<=R+E(0). Fenchel then gives
+E>=2pi^2/(R+E(0)), and the virial estimate gives
+D>=16pi^6/(R+E(0))^5. Infinitely many such intervals contradict finite
+total dissipation. The subsequent M^2 estimate and M(t)->0 follow.
+
+The estimate
+  integral F_s^2<=2Z+(9/2)integral k^4 k_s^2
+is the elementary square inequality and is controlled by the Lyapunov
+dissipation. In normal gauge T_t=-F_s N, so the claimed arclength-weighted
+tangent action is indeed finite. It is squared action, not an assertion
+that integral ||T_t||_2 dt is finite, and the spatial measure is moving.
+Neither stronger assertion is needed or claimed in the draft.
+
+The numerical powers in the explicitly labelled scalar diagnostic also
+check out. For example Y^3=4E^2Z exactly, and already Y'<=-Z before
+adding the positive forcing allowance. The example does not satisfy an
+asserted geometric PDE; the note explicitly distinguishes these scalar
+consequences from an actual curve, which is essential.
+
+The remaining issue is unchanged: Y->0, M->0, and finite tangent action
+on the expanding physical domain do not provide a bound on the total
+variation A of the tangent. No claim of solving unrestricted length
+growth is justified by these estimates alone.

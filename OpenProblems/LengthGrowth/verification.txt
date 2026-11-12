@@ -5,9 +5,12 @@ MODULE LengthGrowth/ScalarDissipation
 'FreeElasticScalar.secant_sq_le_energy_drop' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FreeElasticScalar.conditional_fourth_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
 EXIT 0
+MODULE LengthGrowth/ElasticStress
+LengthGrowth elastic-stress audit passed for 65 declarations.
+EXIT 0
 MODULE LengthGrowth
 EXIT 0
 MODULE LengthGrowth/AxiomAudit
-Length-growth audit passed: 3 declarations; standard axioms only.
+Length-growth audit passed: 68 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.

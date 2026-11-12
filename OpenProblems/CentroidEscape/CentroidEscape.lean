@@ -84,3 +84,8 @@ import CentroidEscape.CenterStep009
 import CentroidEscape.CenterBlock000
 import CentroidEscape.CenterBlock005
 import CentroidEscape.CenterFirstTen
+import CentroidEscape.CompactStageAssembly
+import CentroidEscape.CenterCompactStep010
+import CentroidEscape.CenterFirstEleven
+import CentroidEscape.CenterCompactStepAudit
+import CentroidEscape.CertificateSeedParameters

@@ -1,0 +1,243 @@
+ELASTIC STRESS, CURVATURE CONCENTRATION, AND THE REMAINING DYNAMIC OBSTRUCTION
+12 November 2026. Analytic proof draft; not Lean formalized.
+This note does NOT prove unrestricted quarter-power length growth.
+No novelty or publication-priority claim is made.
+
+1. STATEMENT.
+
+Let gamma be any smooth closed regular planar immersion, parametrized by
+arclength s in R/LZ. Let J be the fixed counterclockwise rotation by pi/2,
+set N=JT, and write T_s=k N, N_s=-k T. Set
+
+ E=(1/2) integral k^2,  F=k_ss+k^3/2,  D=integral F^2,
+ M=max |k|,  A=integral |k|.
+
+Then
+
+                 E D >= 2^(-24) M^6,                         (1)
+                 D >= 2^(-18) E^5/A^6.                     (2)
+
+The constants are deliberately coarse. They are universal, independent of
+length and turning number. E,M,A are positive by Fenchel. There is no
+embeddedness assumption. Dependence on TOTAL ABSOLUTE CURVATURE A in (2)
+is essential: it is not dependence only on the signed turning number.
+
+The proof below is direct. It uses neither a uniform-in-length
+Gagliardo--Nirenberg constant nor a compactness/ODE-limit argument.
+
+2. ELEMENTARY PRELIMINARIES.
+
+Fenchel and Cauchy--Schwarz imply EL>=2 pi^2>2. Put B=||k_s||_2.
+Periodic integration by parts gives
+
+ B^2=(1/2)integral k^4-integral k F
+     <= E M^2+sqrt(2 E D).                                  (3)
+
+There is a point with k^2<=2E/L. Integrating the derivative of k^2
+from that point to a maximum point, then enlarging to the whole circle,
+gives
+
+ M^2 <= 2E/L+2 sqrt(2E) B <= E^2+2 sqrt(2E) B.               (4)
+
+Suppose, toward a contradiction to (1), that
+
+       r=sqrt(E D)/M^3 <= 1/4096,
+       x=M/E.
+
+Equations (3)--(4) imply
+
+ x^2 <= 1+2 sqrt(2) sqrt(x^2+sqrt(2) r x^3).                (5)
+
+In particular x<64. Indeed, if x>=64, use r<=1 and
+1+sqrt(2)x<=2x to bound the right side by
+
+ 1+4 x sqrt(x) <= 1+x^2/2 < x^2,
+
+a contradiction. Returning to (3), r x<=1/64 implies
+
+                    B <= 2 sqrt(E) M.                     (6)
+
+All estimates so far concern the actual periodic curvature, and no
+assumption on sign or on the number of curvature zeros has been made.
+
+3. THE ELASTIC STRESS CANNOT TURN ENOUGH TO CLOSE THE CURVE.
+
+Define the planar stress vector and its magnitude by
+
+ W=(k^2/2) T+k_s N,        w=|W|.
+
+The Frenet equations give the exact identities
+
+ W_s=F N,    (w^2)_s=2 k_s F.                              (7)
+
+At a point s0 where |k|=M, one has k_s=0 and w(s0)^2=M^4/4.
+By (6)--(7), at every point of the circle,
+
+ |w^2-M^4/4| <= 2 B sqrt(D) <= 4 r M^4 <= M^4/1024.
+
+Consequently W never vanishes, and the following coarser bounds suffice:
+
+                    M^2/4 <= w <= M^2.                    (8)
+
+Let e=W/w and v=e(s0). The component of W_s perpendicular to W gives
+
+ |e_s|=|det(W,W_s)|/w^2=k^2 |F|/(2w^2).
+
+Therefore, using (8),
+
+ integral |e_s|
+   <= (8/M^4) integral k^2 |F|
+   <= (8/M^4) ||k^2||_2 sqrt(D)
+   <= 8 sqrt(2) sqrt(E D)/M^3 = 8 sqrt(2) r < 1/2.          (9)
+
+For all s, |e(s)-v|<1/2 and hence e(s).v>=1/2. This statement
+uses the derivative of the UNIT stress, not the unweighted integral of
+|F|; the latter would introduce an uncontrolled factor sqrt(L).
+
+Set V=W/w^2. Differentiating inversion in the plane gives
+
+ V_s=w^(-2)(I-2 e tensor e) W_s,
+ |V_s|=|F|/w^2.                                           (10)
+
+The map I-2 e tensor e is an orthogonal reflection, so the equality in
+(10) is exact. The pointwise algebraic identity
+
+                 T=(k^2/2)V-k_s J V                       (11)
+
+follows by substituting W=(k^2/2)T+k_s N. Integrate (11), use
+the genuine closing condition integral T=0, and integrate the second
+term by parts. All factors are smooth and periodic, so there is no
+boundary term:
+
+           integral (k^2/2)V = - integral k J V_s.          (12)
+
+The v-component of the left side is at least E/(2M^2), by (8)--(9).
+The norm of the right side is at most 16 sqrt(2 E D)/M^4,
+by (8), (10), and Cauchy--Schwarz. Thus
+
+ E/(2M^2) <= 16 sqrt(2 E D)/M^4,
+ 1 <= 32 sqrt(2) r (M/E)
+   <= 32 sqrt(2) (1/4096) 64 = sqrt(2)/2 < 1,
+
+a contradiction. Hence r>1/4096, which proves the slightly weaker
+non-strict assertion (1). Finally 2E=integral k^2<=M A; inserting
+M>=2E/A into (1) proves (2).
+
+4. CONSEQUENCES FOR AN ACTUAL FREE ELASTIC FLOW.
+
+Now gamma(t) is a genuine smooth closed free elastic flow, with the same
+normalization as the paper: normal speed -F. Its exact identities are
+
+ E'=-D,  L'=integral k F,  (L')^2<=2 E D.
+
+(a) A new unconditional space-time curvature bound follows from (1):
+
+ integral_s^t ||k(u)||_infinity^6 du
+      <= 2^23 (E(s)^2-E(t)^2).                             (13)
+
+This has the correct scaling. It does not imply quarter-power growth.
+
+(b) If A(t)<=A0 for all t, (2) implies
+
+ E(t) <= [E(0)^(-4)+2^(-16) t/A0^6]^(-1/4).
+
+The already established restart estimate and dyadic summation then yield
+L(t)=O(t^(1/4)). Conversely, a bounded EL implies A^2<=2EL, so A is
+bounded. Combined with the previously established equivalence between
+quarter-power growth and bounded EL, this gives an exact new reduction:
+
+ For an individual actual flow,
+
+  L(t)=O((1+t)^(1/4))
+    iff sup_t E(t)L(t)<infinity
+    iff sup_t integral |k(t)| ds <infinity.                (14)
+
+This is an equivalence, not a proof that these quantities are bounded.
+
+(c) There is also a finite-time record bound which avoids an assumed
+decay estimate. Put U=EL. If U'>0, Cauchy--Schwarz gives
+
+ D < 2E^3/L^2.
+
+Combining with (2) gives
+
+              U < 512 sqrt(2) A^3 < 1024 A^3.             (15)
+
+For A_*(t)=max_{0<=u<=t} A(u), the usual first-crossing argument yields
+
+ U(t) <= max{U(0),1024 A_*(t)^3}.                           (16)
+
+For precision, fix a final time t and put K=max{U(0),1024 A_*(t)^3}.
+If U(t)>K, take the connected component of {u in [0,t]: U(u)>K}
+containing t, and let a be its left endpoint. Continuity gives U(a)=K
+(also when a=0), and U>K on (a,t]. The mean-value theorem on [a,t]
+provides c in (a,t) with U'(c)>0 and U(c)>K>=1024 A(c)^3,
+contradicting (15).
+
+Thus a counterexample to quarter-power growth must genuinely create
+unbounded total absolute curvature over its evolution. A family of
+different initial curves with many oscillations does not do this.
+
+5. WHY THIS DOES NOT CLOSE THE ORIGINAL PROBLEM.
+
+There is currently no proof here that A(t) stays bounded along every
+free elastic flow, and no constructed flow for which it becomes unbounded.
+The fourth-order equation does not give a Sturm zero-number principle.
+Nor is A monotone: at times when all curvature zeros are simple,
+
+ A'=2 sum_{k(z)=0} sign(k_s(z)) k_sss(z).                    (17)
+
+To derive (17), differentiate integral |k| using
+k_t=-F_ss-k^2 F and (ds)_t=k F ds. The zero-order terms cancel;
+integration against the distributional derivative of sign(k) then yields
+2 sum sign(k_s) F_s, and F_s=k_sss at a curvature zero.
+
+One explicit family of actual closed initial curves has A'>0. Let q be
+a nonzero integer, N>=4|q| an integer, and set on [0,2pi]
+
+ K(u)=sin u-(1/9)sin(3u)
+     =(2/3)sin u+(4/9)sin^3 u,
+ phi(u)=-cos u+(1/27)cos(3u),
+ theta(s)=q s+phi(Ns),
+ T(s)=exp(i theta(s)), gamma(s)=integral_0^s T.
+
+Successive 2pi/N cells of T differ by exp(2pi i q/N), whose geometric
+sum vanishes because 0<|q|<N. Hence gamma is exactly closed, unit speed,
+smooth, and has turning number q. Its curvature is k=q+N K(Ns).
+
+At each zero, sin(Ns)=z where (2/3)z+(4/9)z^3=-q/N. This has a unique
+z, with |z|<=3|q|/(2N)<=3/8. There are exactly two simple zeros per
+cell. Since
+
+ K'=cos u [(2/3)+(4/3)sin^2 u],
+ K'''=2 cos u [1-6 sin^2 u],
+
+one has sign(K')K'''=2 sqrt(1-z^2)(1-6z^2)>0 at each zero.
+Equation (17) gives the exact positive initial derivative
+
+       A'=8 N^5 sqrt(1-z^2)(1-6z^2)>0.
+
+This last example only excludes a monotonicity shortcut. Like the earlier
+static constructions, it is not a long-time counterexample.
+
+6. SCOPE AND SOURCES.
+
+The preceding stress argument and deductions were derived in this task.
+An independent agent review on 12 November checked (3)--(16) and found
+no substantive gap; its clarifications N=JT and the connected-component
+crossing argument have been incorporated. This is analytic review, not
+Lean verification. No theorem from a source
+is being claimed to settle the unrestricted problem. The original question
+is in Miura--Wheeler, arXiv:2404.12619v3, Section 1.2. The earlier local
+files quarter_growth_equivalence.txt and CoercivitySharpness.txt record
+the already reviewed reductions and obstructions, respectively.
+
+Literature check, 12 November 2026: Andrews--Wheeler, arXiv:2509.11129,
+improves near-circle stability under small curvature oscillation. Novaga,
+arXiv:2611.07242v1 (4 November 2026), proves non-migration only in the
+sublevel L integral k^2<=4pi^2+8/3. Neither is an unrestricted length
+growth theorem; the latter's local monotonicity does not contradict the
+high-energy examples. Primary source URLs:
+https://arxiv.org/abs/2404.12619
+https://arxiv.org/abs/2509.11129
+https://arxiv.org/html/2611.07242v1

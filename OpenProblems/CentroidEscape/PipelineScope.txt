@@ -1,0 +1,69 @@
+REPRODUCIBLE CONCRETE-CERTIFICATE PIPELINE TRIAL
+12 November 2026
+
+The default project now includes the frozen first11 center steps. A separate
+small workflow regenerates and kernel-checks steps11..15, joins them to the
+previous prefix, transfers the checked artifacts to a fresh runner, and
+rechecks the transitive axiom audit and the connected16-step statement.
+This is a trial for later sharding, not the complete3750-step certificate.
+
+Trust boundary
+NativeCertificateData.lean executes exact integer/rational arithmetic to
+produce proposed tables. Its output always says kernel_verified=false.
+generate_compact_shard.py is likewise an untrusted source producer. The
+resulting Lean files contain literal data and kernel proofs of every60-stage
+recurrence, actual Horner endpoint, input/output margin and boundary glue.
+CompactStageAssembly assembles existing proofs without adding any axiom.
+Balanced composition reuses earlier checked segments. The final750-step and
+five-path assembly must still use the correct parameter and endpoint data.
+
+Scope of the local trial
+The five new steps11..15 passed300 recurrence checks,5 endpoints, margin
+checks,4 internal glues, and a strict1007-declaration audit. The actual
+FirstEleven-to-new-block boundary was also kernel checked, producing
+CenterCompactData.FirstSixteen.checked. This is960 actual recurrence stages
+and16 consecutive polynomial steps, not an assertion about the full ODE.
+An isolated artifact reimport independently checked all8 module source,
+binary, log and dependency hashes, then reran the1007-declaration audit.
+All dependencies are among propext, Classical.choice and Quot.sound.
+
+The single-thread local five-step trial took283.641s including fresh process
+startup and generic imports. A fresh transferred-shard audit took17.750s.
+The separate first16 composition took16.893s. These are local measurements;
+the workflow supplies independent Linux measurements for this revision.
+
+Reproduction from this Lake project
+First build the checked-in project and run CentroidEscape/AxiomAudit.lean.
+Then execute:
+  lake env lean --run tools/NativeCertificateData.lean center shard/native 11 5
+  python3 tools/generate_compact_shard.py --data-root shard/native --case center --start 11 --count 5 --output-root shard/certificate
+  lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 4096
+  lake env lean tools/CenterFirstSixteen.lean
+
+Native generation replays the prefix from the exact rational seed; it writes
+only the requested interval and keeps h=L/750 fixed. Partial status records
+start/count and the separate750-step mesh size. The generator rejects missing
+tables, inconsistent step numbers, invalid integer/radius data, and h mismatches.
+The names include case, start and count, so different shards do not overwrite
+one another or the previously frozen concrete proof modules.
+
+Transfer and failure handling
+core_artifact.py packages all centroid core files, including required
+.olean.private/.olean.server companions, from one successful source build.
+It validates revision and every member hash before restoring the core.
+The shard compiler clears a stale success report before preflight, writes
+fresh proofs to unique temporary output files, rejects shadowed generated
+dependencies, and marks success only after every module and a fresh audit
+pass. Optional resume reuses only matching source, binary and dependency
+hashes. Linux cancellation includes the compiler process group.
+reimport_shard.py validates the complete recorded dependency graph, verifies
+the Lean version and source/binary/log hashes, restores the checked outputs,
+and reruns the transitive audit. A report bit alone is never accepted as the
+final mathematical argument. A mixed-core negative test was correctly rejected.
+
+The artifact files are build products of the workflow, while all generators,
+fixed seeds, soundness lemmas and trial connection source are stored here.
+Generated source files are included in the shard artifact for inspection.
+The workflow uses the same pinned Lean/mathlib environment as this project.
+No whole3750-step kernel run or unconditional numerical escape instance is
+claimed by this trial. The other open-problem projects remain independent.

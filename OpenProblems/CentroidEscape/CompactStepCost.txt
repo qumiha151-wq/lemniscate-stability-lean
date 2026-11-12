@@ -1,0 +1,78 @@
+FROZEN COMPACT ACTUAL ELEVENTH STEP -- 12 NOVEMBER 2026
+
+All final Lean 4.33.1 checks exit 0, without warnings or extra axioms.
+No sorry or native_decide proof is used. Existing First/Ten steps were not
+changed. This is an actual polynomial-grid certificate, not an exact ODE
+endpoint or shooting-root theorem.
+
+CompactStageAssembly.lean
+  569 source bytes; 12,256 olean bytes
+  checkedStagesExtend has NO axioms. It extends an already proved finite
+  sequence by requiring the actual next-stage proof.
+  SHA256 E25A871A8FEC0ACF6A7B1D1DB72DA75AADDB5045F8FC3B4E5570FEB5CCBF876D
+
+CenterCompactStep010.lean
+  namespace CentroidEscape.CenterCompactData.Step010
+  68,159 source bytes; 453,992 olean bytes
+  33,978 ms wall; peak resident 2,520,141,824 bytes; -M 4096 -j 1
+  SHA256 45398F3AADE4D27340BBE52A5FC6D04EEA2BFA05B3A6F342D279F3DC17329A52
+  Native input: work/centroid_native/n60_s80_v1/center/step10.json
+  All 60 actual stage recurrences, actual Horner endpoint, and input/output
+  margins are kernel checked. Data is not inferred from a numeric report.
+
+CenterFirstEleven.lean
+  1,835 source bytes; 61,128 olean bytes
+  16,667 ms cold process; peak resident 1,714,454,528 bytes
+  SHA256 C1032D8D8F8B81D634CF4261F7E3E277B0F154792297FFC9B62E0F48ED5BDDD7
+  Proves the preceding frozen ten-step endpoint equals the new input and
+  constructs an Order60SegmentValid segment of length 11 using append.
+  It imports and reuses the ten existing proofs, without rechecking their
+  arithmetic or assuming their truth as new axioms.
+
+CenterCompactStepAudit.lean
+  687 source bytes; 2,600 olean bytes
+  SHA256 9B1E21BD3C19BD6CC5927F7912F2F93907F9706E6FEBE4F4213E20A844510C05
+  Audits all 208 new namespace/helper declarations, including the final
+  eleven-step statement and therefore its transitive old dependencies.
+  Allowed axioms exactly propext, Classical.choice, Quot.sound.
+  Audit loop 802 ms; cold process 17,747 ms; resident 1,693,634,560 bytes.
+
+REPRODUCTION
+generate_compact_center_step.py --step 10 --assembly bounded
+  SHA256 F0C27D814364006E49E8FA42EF72A306DABEB7FF5351BEBECDC0116B1C7BDAC6
+The generator also implements explicit Fin.cases via --assembly fin_cases.
+It rejects steps below 10, preserving the previous frozen steps. It creates
+distinct module/namespace names for the two proof templates. It validates
+all imported JSON integer strings before inserting them into Lean source.
+Native data/source generation is untrusted; successful Lean checking is
+the mathematical evidence. The compiler script is run_measured_lean.ps1.
+Build helper, new step, eleven-step composition, and audit in that order.
+Logs have the matching module name plus _compile.log.
+
+PROOF-SIZE EXPERIMENTS
+Same 60 already proved stage facts, separate aggregation-only modules:
+  fin_cases tactic:            683,120 olean bytes
+  direct Fin.cases:            147,880 olean bytes
+  let-P plus Fin.cases:        120,264 olean bytes
+  let-P plus bounded extend:    62,984 olean bytes
+All pass kernel checking. The selected template uses bounded extend. The
+former fin_cases proof has 21,015,444 expression nodes before sharing;
+this is not a claimed resident-memory size. Inspecting proof values requires
+ConstantInfo.value? true; its default omits theorem proof values.
+
+Keep a run_cmd progress message every ten arithmetic stages. Removing these
+barriers caused two reproducible ~4.30GB failures on the same second-step
+table; restoring them passed at ~2.65GB without raising the Lean memory cap.
+
+SCALING IS NOT YET VERIFIED
+One new-step olean compressed with gzip9 is 142,741 bytes; with xz preset6,
+107,192 bytes. Multiplying this sample by 3,750 gives 1.702GB uncompressed,
+535MB gzip or 402MB xz, excluding shared modules/logs. These are arithmetic
+extrapolations, not measurements of full mixed-state trajectories.
+The eleven-step aggregate imports about 11MB of older step oleans and the
+new 454KB module within 1.715GB peak resident. This DOES NOT establish that
+loading 1.7--2GB of certificate oleans will fit. Larger bounded import
+samples and the real Linux CI measurement remain necessary.
+
+Next authorized bounded task: a reproducible shard generator and only the
+five new actual steps 11..15. No full 3,750-step run or workflow edit.

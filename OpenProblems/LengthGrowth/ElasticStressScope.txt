@@ -1,0 +1,28 @@
+FROZEN GEOMETRIC FOUNDATION -- 12 November 2026
+
+Source: ElasticStress.lean
+Check: powershell -NoProfile -ExecutionPolicy Bypass -File work/length_formal/check_elastic_stress.ps1
+Result: EXIT 0, no warnings, recursive audit of all 65 LengthGrowth declarations.
+Allowed axioms only: propext, Classical.choice, Quot.sound.
+Dependencies: Mathlib only. No CentroidEscape or other open-problem imports.
+
+The actual curve data contain a periodic position gamma with gamma'=T,
+unit tangent T, T'=k JT, and the first two actual curvature derivatives.
+The closing integral integral T=0 is derived from periodicity and FTC.
+
+Proved from these data:
+* W=(k^2/2)T+k_s JT has derivative F JT, F=k_ss+k^3/2.
+* |W|^2=k_s^2+k^4/4 and its derivative is 2k_sF.
+* V=(conj W)^-1 is differentiable where W is nonzero.
+* |V'|=|F|/|W|^2, with an actual derivative formula.
+* T=(k^2/2)V-k_s JV wherever W is nonzero.
+* If the actual stress is nowhere zero, closure and integration by parts
+  give integral (k^2/2)V = -integral k JV'.
+
+The nonvanishing assumption is explicitly local to inversion lemmas;
+the later contradiction estimate must derive it from small ED/M^6.
+The final coercivity inequality ED>=2^-24 M^6 is NOT yet in Lean.
+This module does not prove any long-time length-growth assertion.
+
+The independent analytic proof and audit are in work/next_research/
+length_stress_coercivity.txt and length_stress_coercivity_audit.txt.

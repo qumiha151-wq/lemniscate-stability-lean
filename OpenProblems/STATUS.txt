@@ -14,6 +14,10 @@ LengthGrowth/: scalar dissipation-to-secant theorem and conditional
   CoercivitySharpness.txt further rules out every homogeneous static coercivity
   bound with energy exponent greater than 2, even at fixed turning number.
   Its examples have initially decreasing EL, and do not settle long-time growth.
+  ElasticStress.lean now derives genuine closed-curve stress and inverse-stress
+  identities, including their closing integral. Reviewed human notes establish
+  quantitative stress coercivity and a higher-order Lyapunov estimate, but
+  these estimates and bounded total absolute curvature are not yet in Lean.
 Migration/: scalar one-sided homothetic migration criterion. No existence
   theorem for a one-sided closed free-elastic-flow expander is supplied.
 SolitonClassification/: independent support-function ODE and actual geometric
@@ -57,6 +61,8 @@ CentroidEscape/: computer-assisted existence proof of a closed expander
   The first10 actual center steps, with600 Taylor stages,10 endpoints and
   input margins, and9 glues, now pass kernel checks and a combined audit.
   They form a partial segment, not a finished750-step path or complete flow.
+  A compact proof constructor now extends that prefix to11 actual steps;
+  the remaining3739 steps and the final full certificate are still missing.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.

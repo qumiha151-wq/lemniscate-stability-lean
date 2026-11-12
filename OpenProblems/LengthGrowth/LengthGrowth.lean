@@ -1,4 +1,5 @@
 import LengthGrowth.ScalarDissipation
+import LengthGrowth.ElasticStress
 
 /-!
 Length-growth question: PARTIAL ANALYTIC REDUCTION ONLY.
@@ -20,4 +21,8 @@ Run this independent project from its own directory:
   lake +leanprover/lean4:v4.33.1 build
 
 This project does not import the stability or migration projects.
+
+`ElasticStress` additionally proves actual closed-curve stress identities
+and their integrated closing relation. The quantitative coercivity estimate
+and a uniform total-absolute-curvature bound are not proved by this module.
 -/
