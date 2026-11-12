@@ -45,6 +45,21 @@ MODULE CentroidEscape/SpatialRegularity
 'CentroidEscape.reparametrized_spatial_speed_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 Centroid spatial-regularity audit passed for 199 declarations.
 EXIT 0
+MODULE CentroidEscape/SmoothReparam
+'CentroidEscape.reparametrizedProfile_force' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.coherentExpandingCurve_geometric_FEF' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid intrinsic-force audit passed for 278 declarations.
+EXIT 0
+MODULE CentroidEscape/PartialDerivatives
+EXIT 0
+MODULE CentroidEscape/HigherRegularity
+'CentroidEscape.contDiff_intervalIntegral_parameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.parameterFlow_joint_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.exact_half_orbit_yields_smooth_classical_FEF_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Centroid joint-smoothness audit passed for 301 declarations.
+EXIT 0
 MODULE CentroidEscape/ValidatedIntegration
 CentroidEscape/ValidatedIntegration.lean:177:32: warning: try 'simp' instead of 'simpa'
 
@@ -92,9 +107,44 @@ MODULE CentroidEscape/ScalarMajorant
 'CentroidEscape.finite_majorant_residual_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
 Scalar-majorant audit passed for 87 declarations.
 EXIT 0
+MODULE CentroidEscape/VectorTaylor
+'CentroidEscape.vectorTaylor_majorized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.canonicalTaylorCoeff_majorized' depends on axioms: [propext, Classical.choice, Quot.sound]
+Vector-Taylor audit passed for 220 declarations.
+EXIT 0
+MODULE CentroidEscape/VectorPolynomial
+'CentroidEscape.canonicalTaylorPolynomial_deriv_residual_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CentroidEscape.canonicalTaylorPolynomial_clipped_residual_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Vector-polynomial audit passed for 286 declarations.
+EXIT 0
+MODULE CentroidEscape/RationalBall
+Rational-ball audit passed: 48 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape/BallExpression
+Ball-expression audit passed: 170 declarations; standard axioms only.
+EXIT 0
 MODULE CentroidEscape
 EXIT 0
 MODULE CentroidEscape/AxiomAudit
-Centroid-escape audit passed: 418 declarations; standard axioms only.
+Centroid-escape audit passed: 725 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.
+Additional frozen modules and final combined audit:
+MODULE CentroidEscape/BallTaylor
+'CentroidEscape.computeBallTaylor_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.ballTaylorEndpoint_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Ball-Taylor audit passed for 544 declarations.
+EXIT 0
+MODULE CentroidEscape/CanonicalStep
+Canonical-step audit passed: 302 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 864 declarations; standard axioms only.
+EXIT 0
+Final combined source set compiled and audited; concrete shooting certificate remains incomplete.

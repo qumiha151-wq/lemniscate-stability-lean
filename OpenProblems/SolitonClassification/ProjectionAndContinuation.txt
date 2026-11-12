@@ -1,0 +1,136 @@
+SIMILARITY PROJECTION AND A PRECISE ROTATING-CONTINUATION OBSTRUCTION
+12 November 2026. Analytic deductions; independently reviewed, not Lean formalized.
+This note does not classify all closed solitons or exclude all omega!=0.
+
+A. WHAT THE NOETHER IDENTITIES DO AND DO NOT SAY
+
+For any smooth closed unit-speed planar immersion beta, set
+ p=beta.N, q=beta.T, F=k_ss+k^3/2, E=(1/2)integral k^2, D=integral F^2.
+The exact identities are
+ <F,p>_L2=-E, <F,q>_L2=0, <F,Nx>_L2=<F,Ny>_L2=0.
+These are the dilation, rotation and translation identities already derived
+in similarity_reduction.txt. They hold for arbitrary closed curves.
+
+Let V be the finite-dimensional subspace of L2(ds) spanned by q,Nx,Ny,
+and let p_perp=p-Proj_V(p). Then A=||p_perp||_2^2 is STRICTLY positive.
+Indeed p_perp=0 would give (beta+bJbeta+c).N=0 for constants b,c;
+multiplying by k and integrating gives -L=0. This contradiction does not
+require excluding circular curves.
+
+Since F is orthogonal to V, <F,p_perp>=-E. Orthogonal projection onto
+span(V,p) therefore decomposes the actual force exactly as
+
+ F=-(E/A)p_perp+R,
+ R perpendicular to V and p,
+ D=E^2/A+||R||_2^2.
+
+Consequently the scale-invariant nonnegative defect
+ Phi=D*A/E^2-1
+vanishes IF AND ONLY IF the curve is an exact similarity profile (allowing
+rotation and translation). This is an exact equality criterion, not a
+replacement of the profile equation by a weaker necessary condition.
+The scalar coefficients of -(E/A)p_perp supply its normal similarity
+generator. For noncircular curves the generator is unique, by the previously
+proved kernel theorem; for circles the normal generator is unique but the
+rotation coefficient is a gauge redundancy.
+
+The space V and p_perp are unchanged under a translation of the origin:
+p changes by a linear combination of Nx,Ny, and q changes by another such
+combination. Thus A, Phi and the normal residual R are translation invariant;
+they also have the expected invariance under ambient rotations and parameter
+changes. Under scaling by r, A scales by r^3, E by r^-1 and D by r^-5, so Phi
+is genuinely scale invariant.
+
+This projection explains why the torque and Gram identities alone have not
+forced omega=0. They select the best normal similarity generator and leave
+the residual R. Exact self-similarity is the extra equality R=0. There is no
+identity above forcing the rotational coefficient of that best fit to vanish.
+In particular, claiming that the normal projection of the dilation vector is
+orthogonal to the rotation vector merely because beta.Jbeta=0 pointwise
+would be an error: the normal-projected cross term is integral p*q, which
+need not vanish by algebra.
+
+B. EXACT DYNAMIC DECOMPOSITION OF LENGTH-NORMALIZED ENERGY
+
+Apply the preceding decomposition at each time of an actual free elastic
+flow. Put a=E/A>0 and write S=a p_perp, so F=-S+R. The other similarity
+components of S are a rotation and a translation. Since integral k*p=-L
+and integral k*q=integral k*Nx=integral k*Ny=0,
+
+ E'=-aE-||R||_2^2,
+ L'=aL+<k,R>_L2,
+ (EL)'=E<k,R>_L2-L||R||_2^2.
+
+Thus every change in EL is caused by the component of the force orthogonal
+to all normal similarity motions. A pure similarity motion has R=0 and
+constant EL, including a genuinely rotating similarity motion if one exists.
+These identities are exact for arbitrary closed flows; no convergence or
+boundedness of EL follows without a new estimate on R.
+
+Cauchy--Schwarz yields |<k,R>|<=sqrt(2E)||R||. It alone does not close the
+long-time argument. For example it permits positive (EL)' when R is small
+and positively correlated with k, in agreement with the explicit m=2/3
+initial-data construction. A sign assertion for the last displayed derivative
+would therefore contradict known actual curves.
+
+One possible next target is a dynamical bound on the accumulated normalized
+shape residual. It must be a NEW estimate: the energy identity only controls
+integral ||R||^2 dt in the unnormalized geometry. No such sufficient normalized
+bound is proved here.
+
+C. CORRECT DIMENSION COUNT FOR PERIODIC SUPPORT-ORBIT CONTINUATION
+
+For the four-dimensional support ODE
+ f_omega(k,v,p,q)=(v,-k^3/2-p-omega*q,-k*q,1+k*p),
+fix the phase by q(0)=0, assuming q'(0)=1+k0*p0!=0. Let
+ x=(k0,v0,p0,omega,L) in R^5 and define the periodicity map
+ P(x)=z(L;x)-z(0;x) in R^4.
+The four periodicity equations generically leave a one-dimensional branch.
+The separate tangent-angle holonomy is
+ H(x)=integral_0^L k(s;x) ds.
+A closed planar profile requires H(x)=2pi*m, one further scalar equation.
+Therefore five unknowns/five equations is the correct closed-profile problem.
+For a fixed omega there are only four unknowns left: imposing both all four
+periodicity equations and the holonomy is generally overdetermined. One must
+not treat omega as fixed while silently dropping a closing condition.
+
+A robust continuation algorithm uses P=0 plus a pseudo-arclength condition,
+not omega as the continuation coordinate: omega can have folds or be locally
+constant. One then monitors H-2pi*m along the resulting periodic-orbit branch.
+There is also a second important obstruction near reversible omega=0 cycles.
+
+D. LOCAL PERIODIC BRANCHES CAN BE TRAPPED IN omega=0
+
+Let R(k,v,p,q)=(k,-v,p,-q). Direct substitution gives
+ f_omega(Rz)=-R f_{-omega}(z).
+The periodicity zero set is therefore invariant under
+ I(k0,v0,p0,omega,L)=(k0,-v0,p0,-omega,L),
+with the radial phase q0=0 unchanged.
+
+At omega=0, start in Fix(R), i.e. v0=q0=0. The half-return equations are
+ B(k0,p0,l)=(v(l),q(l))=0.
+If DB has rank2, the implicit function theorem gives a smooth one-dimensional
+family of such half-orbits. Reflection and time reversal double each one to a
+periodic orbit of length L=2l. This family lies entirely in v0=omega=0.
+
+Now suppose also that DP has rank4 at that doubled orbit. The full periodicity
+zero set P=0 is then locally a one-dimensional manifold. The doubled reversible
+family is a one-dimensional immersed submanifold of it. Its immersion is
+nondegenerate because (k0,p0,l) is recovered from (k0,v0,p0,omega,L).
+Hence the reversible family is locally an open piece of the full periodicity
+zero set. In a sufficiently small neighborhood, ALL periodic support orbits
+on this local branch have v0=omega=0.
+
+This is stronger than merely saying the integer holonomy root is isolated:
+there is no nearby nonzero-omega periodic branch at all under these rank and
+phase hypotheses. Accordingly, attempting to continue this cycle by prescribing
+small nonzero omega may fail for a structural reason. To find a chiral branch
+through such a reversible family, at least one of the rank/phase hypotheses
+must fail (or the branch must be sought away from that family).
+
+This local statement does not classify distant periodic orbits and is not a
+proof that omega is globally zero. It also does not claim the rank hypotheses
+have been interval-verified for the existing certified profile.
+
+No rank hypothesis has been rigorously verified for the concrete certified
+profile here. No global rotation exclusion or migration example follows.

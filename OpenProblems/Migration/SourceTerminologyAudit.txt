@@ -1,0 +1,100 @@
+PRIMARY-SOURCE AUDIT AND PRIOR-SEARCH COVERAGE
+Date: 2026-11-12. Read-only source investigation; no new migration solution.
+
+1. What Andrews--Wheeler actually claim
+
+Primary source: Ben Andrews and Glen Wheeler, Jellyfish exist,
+arXiv:2601.21227v1, https://arxiv.org/html/2601.21227v1 .
+Relevant location: Introduction, Figure 2 caption and the first paragraph of
+the immediately following subsection Open questions and outlook, before
+Section 2. In the current HTML text these are lines154--157.
+
+The paper describes its numerically observed asymmetric examples as
+non-symmetric "one-sided" jellyfish. The caption identifies the black point
+as the expansion center and describes lack of dihedral symmetry. The following
+paragraph leaves rigorous existence of these additional profiles open.
+
+NEITHER that paragraph NOR the figure caption says that the entire curve lies
+in a strict half-plane whose boundary passes through the expansion center.
+They do not assert that the center is outside the convex hull. Therefore the
+word "one-sided" here must not be silently upgraded to the exact separation
+condition needed for a pure-homothety migration example.
+
+Recommended status wording:
+  Numerical asymmetric jellyfish-like profiles (called "one-sided"
+  descriptively in Figure2) are reported; their rigorous existence is left
+  open. This wording does not assert strict half-plane separation from the
+  expansion center and supplies no migration example.
+
+The older note work/one_sided/migration/structural_constraints.txt, Section5,
+already states this distinction correctly. This audit confirms its reading.
+The currently certified asymmetric profile is an independently specified ODE
+root. One should not claim identity with a particular raster Figure2 profile
+without an additional comparison of its actual shooting data.
+
+2. Public code / data search
+
+Checked the paper's HTML, Glen Wheeler's publication page and homepage,
+https://glenw83.github.io/publications/ and https://glenw83.github.io/ ,
+the complete recursive tree of the public repository
+https://github.com/glenw83/glenw83.github.io , and Ben Andrews's homepage and
+linked publication list at https://maths-people.anu.edu.au/~andrews/ .
+No Jellyfish-specific shooting code, supplementary dataset, or Figure2
+initial parameters were located in these sources. This is a report of this
+bounded search, not a claim that no such data exists anywhere.
+
+The arXiv Figure2 asset names are 5wiggles.png and 4wiggles.png:
+https://arxiv.org/html/2601.21227v1/5wiggles.png
+https://arxiv.org/html/2601.21227v1/4wiggles.png
+Copies were already present in work/5wiggles.png and work/4wiggles.png,
+dated2026-11-11. Both were directly viewed on2026-11-12. Visually the indicated
+center lies between the long top arc and lower oscillating lobes, consistent
+with the old max-to-min seam family, and not suggestive of strict half-plane
+separation. THIS VISUAL OBSERVATION IS NOT A RIGOROUS HULL CERTIFICATE for any
+actual ODE solution and supplies no numerical shooting initial values.
+
+A shell attempt to download the arXiv source archive was refused by network
+sandboxing; no archive was obtained. The web PDF fetch exceeded that tool's
+11.6MB content limit. No attempt was made to contact authors, modify accounts,
+or route downloads through unrelated services.
+
+3. Exact coverage of existing scans -- do not duplicate
+
+The migration subdirectory contains119 records:
+  leftmost_candidates.json:54 records; scan_leftmost.py used initial
+    a in [.01,.1,.3,.6,1,2,4,8], b in [-.1,-.3,-.6,-1,-2,-3,-4,-6,-8,-12].
+  highwiggle_candidates.json:65 records; scan_highwiggle.py used initial
+    a in [.2,.6,1,1.4,1.8,2.4,3.2,4],
+    b in [3,4,5,6,7,8,10,12,15,18].
+Both used only the first downward y=0 crossing (n=0), with RK4 h=.008.
+Newton iteration could leave the seed sign ranges, so a negative-b seed list
+is NOT a classification of all final roots as negative-b or min-to-max.
+
+However, the EARLIER work/one_sided/shoot_numpy.py main program did scan
+n=0,1,2,3,4. Its candidates.json contains respectively33,6,3,2,1 records.
+Thus the assertion that later crossings were never searched would be false.
+Those earlier searches were finite seed grids, not branch continuation or
+exhaustion proofs. They also used floating-point RK4 and are not certificates.
+
+Max-to-max seam types were already reached in the highwiggle table. Four
+records have a>0,b>0,x_end>0,k_end>0; e.g.
+ a=.6436265253839031, b=7.9608961455269975, half-length30.00690226205792,
+ x_end=.06540978414895655, k_end=8.4531022559855,
+ sampled xmin=-.5954290186303813, theta_end=-1.5707963577787047.
+Here b^3>2a and -x_end-k_end^3/2<0, consistent with maxima at both seams.
+The record itself is not a rigorously verified exact root. Merely searching
+more positive-b initial values would not be a new mathematical direction.
+
+4. What would be a genuinely new next step
+
+If pursuing this class, first independently refine a specific old max-to-max
+record into a genuine, well-resolved boundary-value candidate. Then continue
+the reversible half-return family B=(v(l),q(l))=0 in (k0,p0,l), monitoring the
+angle holonomy, seam types, and geometric support. Pseudo-arclength avoids
+assuming a particular coordinate stays nonsingular. Only integer half-angle
+holonomy roots close with the same single reflection axis; rational roots
+with a nontrivial rotational symmetry force the center into the hull.
+
+Any strict-half-plane candidate would still require a continuous-curve lower
+bound, not the convex hull of finitely sampled points. No such candidate or
+new converged root has been obtained by this source audit.

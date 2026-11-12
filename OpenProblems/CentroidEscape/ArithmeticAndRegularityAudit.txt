@@ -1,0 +1,58 @@
+Independent source review, 12 November 2026
+
+RationalBall and BallExpression were reviewed independently of their author.
+The seven coordinate expressions agree with WeightedField, including the
+1/16 factor in the sixth weighted coordinate and the unscaled moment x.
+The product radius is |c|s+|d|r+rs. Contains implies nonnegative radii, which
+the proof uses. Flooring the center by a mesh 1/S changes it by at most 1/S;
+the new radius includes that amount and is rounded upward. Soundness requires
+S>0 explicitly. Division by a natural number has the ordinary Lean semantics,
+including zero; actual Taylor recurrence uses n+1>0. No unproved machine
+floating-point containment or native_decide is used.
+
+VectorTaylor and VectorPolynomial were source-reviewed for scope. The vector
+coefficients are constructed by a recurrence, rather than assumed to obey a
+desired bound. The finite polynomial field identity is coefficientwise; the
+low-order residual cancels by that recurrence and the high-order residual is
+majorized by the previously kernel-checked scalar residual. The clipped-field
+version requires a .023 center margin; it does not assert that the actual
+global trajectory is inside the tube without further verification.
+
+SmoothReparam computes the actual curve's intrinsic curvature derivatives.
+HigherRegularity obtains joint smoothness by bootstrapping the actual time
+derivative and the actual exponential Jacobian formula, using parameter
+integration on a fixed compact interval. No nonvanishing-field assumption
+excludes stationary points. The final theorem retains all exact half-orbit,
+reflection-endpoint and positive-moment hypotheses. It does not supply their
+numerical verification. Source review found no substantive mathematical gap
+in these stated conditional conclusions.
+
+This review does not validate a concrete 750-step interval computation. The
+enforced recursive Lean axiom audits, and the precise theorem hypotheses,
+remain the authoritative formal boundary.
+
+BallTaylor's executable array recurrence was also checked against its real
+coefficient semantics: its constant term includes the initial state, its
+square cache is updated before the next cubic coefficient, and the recurrence
+is proved against the canonical finite polynomial for n<160. The array
+invariant includes sizes and all coefficient enclosures. Horner evaluation
+uses 161 coefficients and is proved to enclose the actual polynomial endpoint.
+This is an algorithmic soundness theorem, not an evaluation of all concrete
+certificate data. A performance run using #eval is not a kernel certificate.
+
+CanonicalStep constructs a bounded clipped-field solution, compares it with
+the actual canonical polynomial, and then proves clipping inactive from the
+.024 initial-center margin, .023 polynomial excursion, and an error below
+.001. Its theorem therefore concludes the original ODE and tube membership
+throughout a step of length at most .01. It does not yet concatenate all
+750 numerical steps or assert that their concrete margins have been checked.
+
+THIRD-PARTY SOURCE
+PartialDerivatives.lean is adapted from the pinned Mathlib commit
+0df444a360eaa60ab8c11dca51a86af692955474,
+Mathlib/Analysis/Calculus/FDeriv/Partial.lean. The original copyright and
+A Tucker attribution remain in the source, and the Apache-2.0 license is
+included in LICENSE-Mathlib. The proof is wrapped in the CentroidEscape
+namespace because the local read-only dependency cache lacks that module's
+compiled object. Mathlib itself is not changed. The helper is included in
+the recursive project axiom audit.

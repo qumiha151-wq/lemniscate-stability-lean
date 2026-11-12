@@ -14,3 +14,11 @@ import CentroidEscape.ResidualFlow
 import CentroidEscape.PolynomialResidual
 import CentroidEscape.PolynomialEvaluation
 import CentroidEscape.ScalarMajorant
+import CentroidEscape.SmoothReparam
+import CentroidEscape.HigherRegularity
+import CentroidEscape.VectorTaylor
+import CentroidEscape.VectorPolynomial
+import CentroidEscape.RationalBall
+import CentroidEscape.BallExpression
+import CentroidEscape.BallTaylor
+import CentroidEscape.CanonicalStep

@@ -45,16 +45,36 @@ Lean currently proves:
   - positive spatial derivative from the actual variational formula,
     continuous Jacobian, C1 regularity of both real-line lift and inverse,
     and everywhere-positive spatial speed of the reparametrized curve.
+  - the actual reparametrized curve's unit normal, signed curvature and its
+    two arclength derivatives, identifying its intrinsic elastic force;
+  - joint C-infinity regularity of the actual parameter flow, smooth inverse,
+    and joint C-infinity of the actual curve for t > -1/4, derived from the
+    ODE and the actual Jacobian formula, including stationary parameters;
+  - exact_half_orbit_yields_smooth_classical_FEF_escape assembles a smooth
+    classical flow and divergent actual centroid from exact shooting data;
+  - construction of the actual vector Taylor coefficients, their majorization,
+    low-order residual cancellation, and a uniform degree-160 polynomial
+    residual bound for the concrete seven-dimensional field;
+  - computable rational-ball arithmetic with proved outward rounding and
+    an expression evaluator whose enclosure theorem covers the actual field.
+  - an executable cached Taylor algorithm using those rational balls, with
+    a proved enclosure of every actual coefficient through order 160 and
+    a Horner endpoint enclosure of the actual canonical Taylor polynomial.
+    The square-series cache avoids a cubic number of arithmetic operations.
+  - existence of an actual solution of the original weighted ODE over each
+    step of length at most .01 from a center with .024 tube margin, together
+    with the canonical polynomial error bound. Tube membership and inactive
+    clipping over that entire step are conclusions, not trajectory premises.
 
 Missing from the end-to-end Lean theorem:
   - construction of the exact shooting map/half-orbit and validated
     numerical/ODE estimates discharging the root and moment hypotheses;
-    in particular, the actual vector Taylor recurrence/majorization,
-    certified interval iterates, inactivity of clipping along the true orbit,
-    and the parameter variation bounds for shooting remain unproved;
-  - higher spatial smoothness and the full smooth reparametrized curvature/PDE
-    interface. C1 lift/inverse and centroid invariance are now proved, but
-    full smooth geometric regularity is not inferred from those results.
+    in particular, certified interval iterates, inactivity of clipping along
+    the full true orbit, and parameter variation bounds for shooting remain
+    unproved. The actual vector recurrence and polynomial residual are proved;
+    the concrete 750-step numerical certificate has not been checked in Lean.
+Higher spatial and joint smoothness and the intrinsic curvature/PDE interface
+are now proved, conditional only on the explicit exact shooting input.
 Thus the complete centroid-escape theorem is NOT yet Lean-formalized.
 
 This profile does not prove migration: its convex hull contains the

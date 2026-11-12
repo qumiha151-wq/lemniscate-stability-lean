@@ -32,9 +32,11 @@ CentroidEscape/: computer-assisted existence proof of a closed expander
   inputs remain to be verified.
   Concrete weighted field and clipping bounds, scalar finite-polynomial
   residual bounds, actual parameter-flow inverses, C1 lift/inverse and exact
-  arclength-centroid invariance are also now formalized. The full vector
-  Taylor/interval arithmetic shooting certificate is still incomplete.
-  See CentroidEscape/STATUS.txt for the numerical and reparametrization gaps.
+  arclength-centroid invariance are also now formalized. Actual vector Taylor
+  construction and uniform residual bounds, outward rational-ball arithmetic,
+  the intrinsic force of the reparametrized curve, and joint C-infinity
+  regularity are now proved. The concrete interval shooting certificate is
+  still incomplete. See CentroidEscape/STATUS.txt for the numerical gaps.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.
@@ -45,8 +47,10 @@ module imports a different open-problem project.
 
 Literature checked:
 Andrews--Wheeler, Jellyfish exist, arXiv:2601.21227: infinitely many new
-dihedral expanders, not a full classification. One-sided examples are
-reported numerically, not established by the existence theorem.
+dihedral expanders, not a full classification. Numerical asymmetric profiles
+are described as "one-sided", with rigorous existence left open. That wording
+does not assert strict half-plane separation from the expansion center and
+does not supply a migration example. See Migration/SourceTerminologyAudit.txt.
 Novaga, Non-migration for planar elastic flows, arXiv:2611.07242 (preprint,
 4 November 2026): non-migration under L integral k^2 <= 4 pi^2 + 8/3,
 not for unrestricted initial data.

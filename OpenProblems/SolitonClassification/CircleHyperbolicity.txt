@@ -1,0 +1,39 @@
+CIRCULAR SUPPORT EQUILIBRIA: A LOCAL EXCLUSION ONLY
+12 November 2026. Independently reviewed analytic proof; not Lean formalized.
+
+For the normalized support system
+ k'=v, v'=-k^3/2-p-omega*q, p'=-k*q, q'=1+k*p,
+a circular equilibrium is (k,0,-1/k,0), with k^4=2. It exists for every
+real omega; rotating a circle does not produce a noncircular rotating profile.
+The Jacobian in coordinate order (k,v,p,q) is
+
+ [       0, 1,  0,      0 ]
+ [ -3*k^2/2, 0, -1, -omega ]
+ [       0, 0,  0,     -k ]
+ [    -1/k, 0,  k,      0 ].
+
+Its characteristic polynomial is
+ P(lambda)=lambda^4+(5/2)*k^2*lambda^2-(omega/k)*lambda+4.
+This follows by determinant expansion; eliminating q from the last two
+linearized equations also gives delta_k=(lambda^2+k^2)*delta_p and the
+same polynomial. The determinant calculation does not divide by lambda.
+
+For every real nu the real part at lambda=i*nu is
+ nu^4-(5/2)*k^2*nu^2+4
+   = (nu^2-(5/4)*k^2)^2+7/8 > 0,
+where k^4=2 was used. Thus P has no purely imaginary root, for either sign
+of k and every finite real omega. Every circular equilibrium is hyperbolic.
+
+Fix omega0. Split the real linearization into its stable and unstable
+invariant spaces. Positive definite Lyapunov quadratic forms Qs and Qu can
+be chosen with derivatives -|s|^2 and |u|^2 on those respective spaces.
+H=Qu-Qs then has derivative |s|^2+|u|^2 for the linearized equation.
+The nonlinear error is O(|(s,u)|^3); changing omega near omega0 contributes
+O(|omega-omega0|*|(s,u)|^2). Hence H'>=c|(s,u)|^2 in a sufficiently small
+common neighborhood, with c>0. A nonconstant periodic orbit wholly contained
+there contradicts the strict increase of H over one period.
+
+This excludes a local finite-omega small-amplitude periodic bifurcation from
+a circle. It does not exclude large periodic orbits, distant rotating
+profiles, homoclinic mechanisms, or a singular limit |omega|->infinity.
+It is not the requested complete soliton classification.

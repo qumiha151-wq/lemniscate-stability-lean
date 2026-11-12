@@ -1,0 +1,32 @@
+Independent analytic review, 12 November 2026
+
+Reviewed ProjectionAndContinuation.txt and CircleHyperbolicity.txt against
+the stated support ODE and the earlier geometric reconstruction.
+
+The Noether identities follow by integration by parts for a smooth closed
+unit-speed immersion, with p'= -kq and q'=1+kp. In particular,
+integral(kp)=-L while integral(kq)=integral(kNx)=integral(kNy)=0.
+Therefore p cannot lie in V=span(q,Nx,Ny), so A=||p-Proj_V p||^2>0,
+including for circles. Orthogonal projection gives the exact force splitting
+and the nonnegative defect; no Gram determinant is divided by without a
+nondegeneracy argument. Translation changes p and q only by normal-coordinate
+terms, preserving V and p_perp. Scaling weights r^3,r^-1,r^-5 give the stated
+scale invariance. Substituting E'=-D and L'=integral(kF) verifies all three
+dynamic identities, including the sign of the residual contribution.
+
+The reversible half-return family maps injectively and immersively into the
+full periodicity zero set via (k0,p0,l)->(k0,0,p0,0,2l). Under the explicit
+rank hypotheses, both are locally one-dimensional, so the image is locally
+open and describes the entire nearby zero set. This is a local implicit
+function theorem argument. The ranks for the concrete orbit have not been
+rigorously checked; no floating-point singular values are used as premises
+proved in this document. Holonomy remains a separate closing condition.
+
+The circular Jacobian and its determinant were independently recomputed.
+The strictly positive real part on the imaginary axis is verified by the
+displayed square identity. The Lyapunov argument is local at each finite
+omega0, with no claimed bound uniform as |omega0| tends to infinity.
+
+No substantive gap was found in these explicitly limited analytic statements.
+Neither note is Lean formalized, and neither resolves general migration,
+long-time length growth, or the classification of all closed soliton profiles.
