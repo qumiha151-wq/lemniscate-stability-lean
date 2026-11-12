@@ -1,0 +1,119 @@
+CURVATURE SIGN RIGIDITY AND A HALF-RMS NECESSARY CONDITION
+Date: 2026-11-12. Human proof, independently checked algebraically by root.
+No novelty claim. OneSignCurvature.lean now formalizes the stated subclass.
+
+Theorem. Let beta:R/LZ -> R^2 be a smooth closed unit-speed immersion,
+L>0, with T=beta_s, N=JT, k the signed curvature, p=beta.N, q=beta.T.
+Suppose the actual similarity equation is
+ F:=k_ss+k^3/2 = -a p-b q,                 a>0, b real.
+Set B=int k^2 ds and R=sqrt(B/L)>0.
+If k>=-R/2 everywhere, beta is a positively oriented multiply-covered round
+circle centered at the similarity center0, with k=R and R^4=2a.
+Likewise, if k<=R/2 everywhere, beta is a negatively oriented such circle.
+Consequently EVERY noncircular closed similarity expander satisfies
+           min k < -R/2,                 max k > R/2.
+In particular every closed similarity expander whose curvature has one weak
+sign is a multiply-covered circle. Neither embeddedness nor turning number1
+is assumed. The conclusion includes nonrotating and rotating profiles; on a
+circle the rotation coefficient changes only parametrization.
+
+This is a partial classification and a necessary condition for strict
+half-plane migration candidates. It does NOT rule out general sign-changing
+profiles or prove nonmigration for arbitrary free elastic flows.
+
+1. Derive the three integral identities from the actual support ODE
+
+Write v=k_s. The actual scalar system is
+ k'=v, v'=-k^3/2-a p-bq, p'=-kq, q'=1+kp.
+All variables are L-periodic for a closed profile. Define F=-a p-bq.
+Then k''+k^3/2=F, and integrating the v equation gives
+                  int F ds = C/2,        C:=int k^3 ds.             (I)
+The p,q equations give int kq=0 and int kp=-L, whence
+                  int kF ds = aL.                                 (II)
+
+The following polynomial primitives make the stress/Noether steps explicit:
+ G = v p + (k^2/2)q,
+ H = v q - (k^2/2)p - k.
+Directly using the four differential equations,
+ G'=Fp+k^2/2,                       H'=Fq.
+Integrating over a period yields int Fp=-B/2 and int Fq=0. Therefore
+                  D:=int F^2 ds = aB/2.                            (III)
+This also derives the identities without supplying a stress tensor or any
+integral equality as an extra hypothesis.
+
+B>0. If B=0, continuity gives k=0, whereas (II) would give0=aL>0.
+
+2. Moment bounds, valid for arbitrary curvature sign
+
+Cauchy--Schwarz applied to (II) and (III) gives
+ (aL)^2 <= B D = a B^2/2,
+so                  B^2 >= 2aL^2.                                 (M1)
+Applying Cauchy--Schwarz to (I) and (III) gives
+                    C^2 <= 4LD=2aLB.                              (M2)
+Since B,L>0, combining these inequalities yields
+                    |C| <= B^(3/2)/sqrt(L) = L R^3.                (M3)
+Thus the normalized third signed-curvature moment lies in[-1,1].
+This last bound is NOT valid for all immersed curves; it uses the actual
+similarity equation through all three identities.
+
+3. Half-RMS rigidity using a nonnegative cubic
+
+Assume k>=-R/2. The continuous integrand
+              P(k)=(k+R/2)(k-R)^2
+is nonnegative. Its algebraic expansion is
+              P(k)=k^3-(3R/2)k^2+R^3/2.
+As B=LR^2, its integral equals C-LR^3. By (M3) this is nonpositive.
+Consequently the integral is zero, and continuity implies P(k(s))=0 for
+every s. Hence k(s) belongs to the two-point set{-R/2,R}.
+The parameter circle is connected, so continuous k is constant. The choice
+-R/2 is inconsistent with its own RMS R>0. Thus k=R everywhere.
+Replacing the orientation reverses k and proves the other assertion.
+For a nonconstant curvature both inequalities in the theorem are therefore
+strict, not weak. The case of constant nonzero curvature is handled below.
+
+Alternative for the weaker one-sign statement: if k>=0, Holder gives
+C>=B^(3/2)/sqrt(L); with(M2) this gives B^2<=2aL^2. Equality in the bounds
+then forces k constant. The cubic argument is stronger and avoids Holder.
+
+4. Locate the center and radius, rather than merely say constant curvature
+
+Let k=c!=0. Then v=0 and the v equation gives ap+bq=-c^3/2. Differentiating
+this relation using p'=-cq,q'=1+cp gives
+                    bc p-ac q=-b.
+The coefficient determinant is -c(a^2+b^2)!=0, so p and q are constant.
+Then p'=-cq implies q=0, and q'=1+cp implies p=-1/c. Substitution in the
+v equation gives c^4=2a. Reconstruction beta=qT+pN=-N/c has constant
+distance1/|c| from0. Since T'=cN and N'=-cT, it traces the circle at unit
+speed; closure forces cL in2piZ, giving a nonzero integer covering number.
+This identifies the geometric circle and its similarity center.
+
+5. Why the earlier balance counterexample does not invalidate this result
+
+The quadrilateral in work/one_sided/migration/balance_not_hull_obstruction.txt
+has edge-turn cross products (-4.3575,-1.9519,3.3156,.91), mixed signs, and
+total signed turning0. It is self-intersecting and nonconvex; small compatible
+rounding preserves the immersed turning class. More fundamentally, it was
+constructed only to satisfy int pN=0. Nothing in that construction supplies
+the additional identities(II)--(III), so it cannot defeat the moment proof.
+
+6. Literature check and status
+
+Focused searches of primary papers/pages on convex free-elastic expanders
+did not locate an explicit theorem matching this statement. This bounded
+search does not establish novelty. Sources checked include Miura--Wheeler
+arXiv:2404.12619v3 (Section1.2 gives a small-oscillation rigidity consequence),
+Andrews--Wheeler Jellyfish exist arXiv:2601.21227v1, and the primary paper
+Gazwani--McCoy arXiv:2411.14806 / NoDEA32(2025),89. The last concerns open
+curves in cones with smallness hypotheses; it is not an unrestricted convex
+closed-profile classification theorem. No contraction or convexity-preserving
+flow theorem has been imported into the proof above.
+
+Primary links:
+ https://arxiv.org/abs/2404.12619
+ https://arxiv.org/html/2601.21227v1
+ https://arxiv.org/abs/2411.14806
+ https://link.springer.com/article/10.1007/s00030-025-01098-8
+
+All numerical statements here concern only the old polygon's elementary
+geometry. No ODE scan, sampled hull claim, or numerical classification is
+used in this rigidity theorem.

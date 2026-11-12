@@ -148,3 +148,60 @@ MODULE CentroidEscape/AxiomAudit
 Centroid-escape audit passed: 864 declarations; standard axioms only.
 EXIT 0
 Final combined source set compiled and audited; concrete shooting certificate remains incomplete.
+Grid/rigidity additions and final combined audit: CentroidEscape
+MODULE CentroidEscape/BallStep
+'CentroidEscape.exists_ballCanonicalStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+Ball-step audit passed for 584 declarations.
+EXIT 0
+MODULE CentroidEscape/BallGrid
+'CentroidEscape.exists_checked_ball_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+Ball-grid audit passed for 632 declarations.
+EXIT 0
+MODULE CentroidEscape/BallInterior
+'CentroidEscape.clippedField_eventually_eq_of_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.exists_checked_ball_grid_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+Ball-interior audit passed for 643 declarations.
+EXIT 0
+MODULE CentroidEscape/FixedBall
+Fixed-ball audit passed for 122 declarations.
+EXIT 0
+MODULE CentroidEscape/FixedTaylor
+'CentroidEscape.computeFixedTaylor_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.fixedTaylorEndpoint_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Fixed-Taylor audit passed for 726 declarations.
+EXIT 0
+MODULE CentroidEscape/FixedCertificate
+'CentroidEscape.checkedFixedTaylorEndpoint_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Fixed-certificate audit passed for 747 declarations.
+EXIT 0
+MODULE CentroidEscape/WeightedDerivatives
+Weighted-derivative audit passed: 94 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape/ShootingVariation
+Shooting-variation audit passed for 704 declarations.
+EXIT 0
+MODULE CentroidEscape/VariableOrderTaylor
+'CentroidEscape.fixedTaylorEndpointOrder_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Variable-order Taylor audit passed for 750 declarations.
+EXIT 0
+MODULE CentroidEscape/VariableOrderCertificate
+'CentroidEscape.checkedOrderTaylorEndpoint_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Variable-order certificate audit passed for 772 declarations.
+EXIT 0
+MODULE CentroidEscape/MidpointDerivative
+'CentroidEscape.exists_hasFDerivAt_of_quadratic_midpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+Midpoint-derivative audit passed for 17 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingDifferentiability
+'CentroidEscape.shootingFlow_hasFDerivAt_initial_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.checked_grid_shootingFlow_initial_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Shooting-differentiability audit passed for 726 declarations.
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 1279 declarations; standard axioms only.
+EXIT 0
+Final combined source set compiled and audited; full research goal remains incomplete.

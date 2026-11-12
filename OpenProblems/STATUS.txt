@@ -20,6 +20,10 @@ SolitonClassification/: independent support-function ODE and actual geometric
   reconstruction. The reviewed analytic note reduces all noncircular similarity
   motions to fixed-center spiral expanders, but does not classify their profiles.
   The reduction note as a whole is not Lean-formalized.
+  New formal subclass: actual periodic similarity profiles of one-sign
+  curvature are centered circles. Nonconstant profiles must have positive
+  and negative curvature excursions exceeding half their RMS curvature.
+  Closed reconstruction includes the explicit integer angle condition.
 CentroidEscape/: computer-assisted existence proof of a closed expander
   with nonzero arclength centroid, hence a flow with unbounded centroid.
   Seven rigorous Arb integrations passed; two analytic/code reviews found
@@ -37,6 +41,9 @@ CentroidEscape/: computer-assisted existence proof of a closed expander
   the intrinsic force of the reparametrized curve, and joint C-infinity
   regularity are now proved. The concrete interval shooting certificate is
   still incomplete. See CentroidEscape/STATUS.txt for the numerical gaps.
+  A checked-grid-to-actual-ODE theorem, integer certificate checker, variable
+  polynomial order, actual field derivatives and initial-value/midpoint
+  estimates are now formalized. The concrete seven-path certificate is not.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.

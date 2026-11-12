@@ -1,0 +1,32 @@
+Independent review of the formal subclass theorem, 12 November 2026
+
+The reviewed source is OneSignCurvature.lean, together with the companion
+human proof CurvatureSignRigidity.txt. The profile structure contains only
+actual k,v,p,q derivative equations and periodicity. The dilation and rotation
+stress derivatives, all three moment identities, and the Cauchy--Schwarz
+bounds are conclusions. No desired moment estimate is assumed in the input.
+
+The nonnegative cubic is (k+R/2)(k-R)^2, R=sqrt(integral(k^2)/L).
+Its expansion has no linear k term, and its integral is C-L*R^3. The signed
+moment bound forces this nonnegative integral to vanish. A second continuous
+nonnegative integral, R^2-k^2, excludes the negative algebraic root pointwise.
+This proves the entire continuous-curve assertion, with strict excursions
+in the contrapositive, not a statement about sampled curvature.
+
+The constant-curvature support calculation retains arbitrary rotation b and
+proves p=-1/c,q=0,c^4=2a. It fixes the similarity center as well as the radius.
+The final closed reconstruction explicitly supplies theta'=k and integer
+angle holonomy. It proves the actual derivative speed and period rather than
+equating the four-coordinate support period with geometric closure.
+
+No substantive gap was found in the claimed subclass and excursion results.
+The theorem does not classify the remaining sign-changing profiles, prove a
+migration example, or prove a long-time length estimate. Literature novelty
+is not claimed. The general reduction of arbitrary similarity motions to
+this support system remains a separately reviewed analytic argument; it is
+not silently included in the formal audit.
+
+SolitonDilation independently removes the expanding premise in this support
+formulation: Cauchy--Schwarz with integral(kp)=-L implies B>0; the same argument
+with integral(Fp)=-B/2 implies D>0; D=aB/2 then implies a>0. This does not
+silently introduce a pure-translation generator absent from the support ODE.

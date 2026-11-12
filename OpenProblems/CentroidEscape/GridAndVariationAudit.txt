@@ -1,0 +1,47 @@
+Source review and precise verification boundary, 12 November 2026
+
+BallStep combines the actual polynomial enclosure with the proved local ODE
+error. The inflation is polynomialResidual/92, using h<=.01 and exp(8h)<=25/23.
+Its executable margin test constrains only the first six coordinates; the
+moment coordinate is intentionally unrestricted. The theorem applies to any
+actual clipped solution, not merely a newly selected local solution.
+
+BallGrid iterates the actual enclosure algorithm and accumulates all margin
+checks. One global clipped trajectory is constructed first. Its grid-node
+enclosures and original ODE on every cell follow by induction; the cell-cover
+lemma covers joins and final endpoints. BallInterior derives a uniform .0005
+interior margin and local equality of the clipped and original fields. Thus
+no assumed true-trajectory tube bound is hidden in these conclusions.
+
+FixedBall's shared integer denominator implements the same real interval
+meaning. Floor centers and ceiling radii enclose products and divisions;
+integer addition/scaling are exact. FixedTaylor and FixedCertificate derive
+actual canonical coefficient and endpoint containment from the executable
+algorithm or from checked untrusted finite data. Variable-order versions
+reduce the number of coefficients and checks, but do not yet supply the
+corresponding lower-order differential residual/error budget.
+
+WeightedDerivatives proves actual Frechet derivatives, not formal derivative
+symbols: Dg applied to u is weightedLinear; D2g applied to(u,v) is the sum of
+the two orders of weightedBilinear. Operator bounds8 and44 and the convex-tube
+derivative Lipschitz bound44 follow. This is the original polynomial field;
+no false global C2 assertion is made for the coordinate-clipped field.
+
+ShootingVariation constructs the actual finite-horizon flow and uses its
+unique solution, initial-value Lipschitz bound, and proved interior margin.
+Its small initial neighborhood consists of original-field trajectories.
+The actual projection is (state1,4*state2,64*state5), giving physical(y,u,v).
+Its quadratic midpoint estimate is derived from the actual field expansion.
+
+MidpointDerivative constructs the limit of actual dyadic difference quotients,
+proves its Lipschitz bound and exact midpoint law, and obtains a continuous
+real-linear map and an explicit quadratic remainder. ShootingDifferentiability
+applies this construction to the actual shootingFlow in its proved initial
+neighborhood, yielding HasFDerivAt. This is more than a finite-difference
+heuristic. The derivative bounds for the full variable-time three-parameter
+shooting map still require their separate interface and estimates.
+
+These proofs do not certify any concrete seven-path 750-step dataset.
+The checked finite conditions must still be evaluated with sufficient final
+widths, and the actual shooting-map derivative/root/moment conditions must
+be discharged. Native execution or an arithmetic timing is not that proof.

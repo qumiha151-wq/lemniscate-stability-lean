@@ -1,0 +1,28 @@
+Concrete certificate cost study -- incomplete numerical verification
+12 November 2026
+
+Local performance experiments used order160 and mesh10^180. Native execution
+of one Taylor step took4029ms with rational balls and348ms with fixed integer
+balls. Native generation is untrusted; these timings certify no ODE orbit.
+
+Small concrete kernel proofs did succeed: order10 radius checks and selected
+rank159 recurrence equalities. One giant all160-stage Boolean reduction was
+stopped after the host reported insufficient resources; it did NOT pass.
+No complete seven-path 750-step run was launched or represented as verified.
+
+The raw coefficient table for one mixed nonzero state used257271 bytes.
+Scaling that sample to5250 steps gives about1.35GB before proof/build files.
+A rough cost extrapolation gave about12 CPU days for the original checking
+layout. This is not a measured complete run and not a viable35-minute CI claim.
+
+Removing repeated array/index computation materially improved small checks.
+One flat rank159 coordinate-center sum of160 integer product/division terms
+was kernel checked in42.2ms. Norm_num proof checking was47.4ms plus1.77s tactic
+generation, so changing the tactic alone did not help. Quotient/remainder
+witnesses were also slower in the tested sample. These are local shared-host
+measurements, not guaranteed timings or a full-stage cost measurement.
+
+The current direction is smaller justified truncation order, stronger actual
+trajectory stability estimates, and fused integer convolution arithmetic.
+Those changes must retain proved real containment and kernel-checked data.
+The complete concrete numerical certificate is still missing.

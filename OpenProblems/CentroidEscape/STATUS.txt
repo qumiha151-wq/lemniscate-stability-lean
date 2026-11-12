@@ -65,14 +65,33 @@ Lean currently proves:
     step of length at most .01 from a center with .024 tube margin, together
     with the canonical polynomial error bound. Tube membership and inactive
     clipping over that entire step are conclusions, not trajectory premises.
+  - successful finite rational grid checks imply one actual original-field
+    solution on the whole interval, every node's computed enclosure, and
+    uniform .0005 interior margin; no trajectory tube premise is imposed;
+  - a shared-denominator integer backend, sound Taylor endpoint evaluation,
+    and a checker for externally supplied untrusted coefficient data;
+  - variable-order polynomial endpoints and finite coefficient checks for
+    every order at most 160; the corresponding lower-order differential
+    residual and global error budget are still being connected;
+  - the actual polynomial field's first and second Frechet derivatives,
+    operator bounds 8 and 44, and derivative Lipschitz bound 44 on the tube;
+  - an actual finite-horizon shooting flow and correctly weighted shooting
+    projection, a proved initial-value neighborhood of original-field
+    trajectories, and a genuine quadratic midpoint finite-difference bound.
+  - construction of the actual initial-state Frechet derivative from dyadic
+    difference-quotient limits. It is a genuine continuous linear map with
+    norm at most exp(8t) and an actual quadratic Taylor-remainder bound.
 
 Missing from the end-to-end Lean theorem:
-  - construction of the exact shooting map/half-orbit and validated
-    numerical/ODE estimates discharging the root and moment hypotheses;
-    in particular, certified interval iterates, inactivity of clipping along
-    the full true orbit, and parameter variation bounds for shooting remain
-    unproved. The actual vector recurrence and polynomial residual are proved;
-    the concrete 750-step numerical certificate has not been checked in Lean.
+  - the concrete numerical/ODE estimates discharging the shooting root and
+    moment hypotheses. The actual shooting map is constructed and the general
+    checked-grid theorem proves inactive clipping over the whole true orbit;
+    the required concrete seven 750-step checks have NOT been completed;
+  - joint time/initial-state and three-parameter shooting-map derivative
+    interfaces, and the derivative-variation bounds needed by the root test.
+    Initial-state Frechet differentiability itself is now proved;
+  - a feasible concrete certificate with all arithmetic checks replayed by
+    the kernel. Native evaluator performance is not a proof of those checks.
 Higher spatial and joint smoothness and the intrinsic curvature/PDE interface
 are now proved, conditional only on the explicit exact shooting input.
 Thus the complete centroid-escape theorem is NOT yet Lean-formalized.

@@ -17,6 +17,27 @@ have received an independent analytic review but are not Lean-formalized.
 Namespace: ClosedSimilarity. Independent project: SolitonClassification.
 Toolchain and dependency graph match the other separate projects.
 
+OneSignCurvature.lean proves a genuine subclass classification from the
+actual periodic support ODE with dilation a>0 and arbitrary rotation b:
+ - actual stress derivatives give the force/curvature moment identities;
+ - those identities imply signed third-moment bounds by Cauchy--Schwarz;
+ - k >= -R/2 everywhere forces k=R, where R=sqrt(integral(k^2)/L);
+   the reversed inequality gives k=-R;
+ - every nonconstant profile therefore has points k<-R/2 and k>R/2;
+ - weak one-sign curvature forces v=0,p=-1/c,q=0,c^4=2a;
+ - the reconstructed curve is centered at the similarity center and has
+   radius1/abs(c). With EXPLICIT theta'=k and integer angle holonomy it is
+   actually closed, has unit speed and satisfies cL=2*pi*n.
+Four periodic support variables alone are not treated as planar closure.
+CurvatureSignRigidity.txt gives the reviewed human proof. No novelty claim
+is made; the sign-changing general classification remains unresolved.
+
+SolitonDilation.lean additionally derives a>0 from the actual periodic support
+ODE and L>0, using integral(kp)=-L, integral(Fp)=-B/2 and D=aB/2. The expanding
+condition is thus a conclusion in its one-sign and excursion corollaries.
+This excludes nonexpanding dilation-rotation profiles in this formulation;
+a separate pure-translation generator is not silently included.
+
 New independently reviewed analytic notes, not Lean formalizations:
  - ProjectionAndContinuation.txt gives the exact orthogonal similarity-force
    decomposition, its dynamic identities, and a local reversible-branch
