@@ -1,0 +1,55 @@
+Root full semantic review, 13 November 2026
+All ten frozen source files were read in full. No semantic gap found.
+The independent root replay is recorded separately; reading the source
+does not substitute for completion of that compiler run.
+
+Scalar and Continuity: a smooth periodic real field has genuinely bounded
+field and derivative. Those bounds supply a global Lipschitz ODE, chosen
+global flow, uniqueness, group/inverse laws and periodic translation law.
+Initial and time Lipschitz estimates yield joint continuity. No global
+flow existence, derivative or regularity property is assumed.
+
+Spatial and Higher: the difference of two trajectories obeys its actual
+scalar linear ODE. Injectivity keeps its secant denominator nonzero.
+An integrating factor gives the difference formula; the global derivative
+bound controls secant slopes for dominated convergence. The resulting
+initial derivative is exp(integral g'), strictly positive, including where
+g vanishes. Rescaling to an integral over[0,1] handles negative time as
+well. Continuous partials and compact parameter integration bootstrap
+joint smoothness. The inverse is the negative-time flow and is smooth.
+
+Field and Log: the reparameterization field is computed from the actual
+smooth periodic profile as g=b*p-q, where p=position dot left normal and
+q=position dot tangent. The actual curve is exp(tau)*R(b*tau)*gamma(phi).
+Its tangential component cancels by phi_tau=g(phi). Exact position
+periodicity, positive metric and logarithmic-time velocity are derived.
+No absence of stationary points is required for this reparameterization.
+
+Curvature: speed is sqrt(X_s^2+Y_s^2), signed curvature is the actual
+determinant divided by speed^3, arclength differentiation is deriv/speed,
+and force is twice-arclength-differentiated curvature plus curvature^3/2.
+The derivative of the scalar Jacobian cancels from the curvature
+determinant. Positive Jacobian proves speed=exp(tau)*J. Each arclength
+derivative contributes exp(-tau), giving the exact force exp(-3*tau)*F.
+The required smooth curvature follows from actual profile coordinate
+smoothness and its coordinate-curvature identity, not an extra premise.
+
+Clock and Time: tau=log(1+4t)/4 is smooth on t>-1/4 and tau'=exp(-4tau).
+Thus logarithmic-time velocity exp(tau)*(-F*N) gives physical velocity
+-exp(-3tau)*F*N. Scale is positive and scale^4=1+4t on the actual domain.
+The definitions outside that domain are not claimed to satisfy the PDE.
+
+Final: the asserted equation is for the full time derivative, not merely
+its normal projection. Its force and normal are the intrinsic coordinate
+definitions above. The structure also contains joint smoothness, closed
+periodicity, positive period and positive speed. The initial curve is the
+given profile. The actual speed integral equals scale*L because the
+periodic scalar flow has phi(s+L)=phi(s)+L and integral J=L.
+
+Existence boundary: normalEvolution_is_pure_normal takes an actual closed
+rotating profile. The shooting corollary retains actual shooting zero,
+positive half-length and finite actual tube premises. This establishes a
+valid profile-to-PDE construction, not a concrete numerical root, not all
+soliton classification and not a general length-growth theorem. It imports
+only its own project and Mathlib. Adapted proof-strategy provenance in
+Spatial/Higher is retained, with no cross-project proof imports.

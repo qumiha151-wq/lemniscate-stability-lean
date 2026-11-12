@@ -1,0 +1,68 @@
+FROZEN: complete generic extended polynomial reference grid, state42/matrix22
+
+Main constructor: extendedPolynomialGrid42.
+Input: signed field factor |sigma|<=1, N>0, h>=0, r>=0, h+2r<=universalStepCap,
+reference node states a_j in innerTube and actual point matrices B_j for j<N,
+B_0=Id, IsUnit(B_j), norm(B_j)<=2000, norm(inverse B_j)<=4000, and 2400*R<=0.01.
+Only internal j+1<N state and matrix reset bounds are required, with their
+nonnegative budgets deltaX(j), deltaM(j). Neither a_N nor B_N needs to satisfy
+any terminal node condition in this construction.
+
+Output: an actual FlowBootstrapGridData
+  sigma N (N*h+2*r) 2400 5000 R (4e-16) (6e-40).
+Every field of the structure is proved from the specified inputs; the structure
+itself, actual trajectory tube/error, or actual P/Q bounds are not assumed.
+
+Definitions and mathematical checks:
+- Before the final node, X_j(t)=P42(a_j,sigma*(t-j*h)) and
+  M_j(t)=U22(a_j,sigma*(t-j*h))*B_j.
+- The grid time is j*h for j<N and T_new=N*h+2*r for j=N. Each actual local
+  argument has absolute value <=universalStepCap, including the enlarged last
+  segment. All times lie in the stated real covered interval, not a scalar
+  surrogate such as32.
+- The terminal node X_N is the last segment polynomial evaluated at T_new,
+  held constant as a time function. M_N is constructed identically from the
+  last segment matrix polynomial. No jump back to the old center data occurs.
+  Terminal matrices are genuine units and have inverse norm<=5000 by the
+  proved whole-local-interval U22 inverse bound and last B inverse bound.
+- Every reference derivative is actual. The matrix residual is against
+  Dfield(P42), not Dfield(P60); UniversalReducedVariation supplies its full
+  operator bound2e-19, multiplied by node norm<=2000 to give4e-16. The state42
+  residual6e-40 is retained independently. Signed factors are bounded by1.
+- U22 has norm<=6/5 and inverse norm<=5/4. Hence whole-reference norm<=2400
+  and inverse norm<=5000. The previously proved U22 bound may use a state60
+  majorant in its proof: U22 is the same canonical polynomial, whereas the
+  differential residual in this new grid explicitly uses P42.
+- The state42 reference has the proved0.01 coordinate tube margin. Monotonicity
+  supplies the requested margin2400*R. No actual tube hypothesis is used.
+- Last state and matrix reset are exactly zero, not an O(r) approximation.
+  The sum of reset budgets is exactly the sum over range(N-1). The factory
+  and these identities also cover N=1, where there are no internal resets.
+
+Original center versus new terminal endpoint:
+ExtendedPolynomialGridEndpoints42 proves explicit terminal formulas at h+2r
+and center formulas at h. The original center T0=N*h lies in the extended last
+segment. Comparing actual values at T0 with old checked a_N/B_N requires a
+separate bound for the original-h polynomial endpoint minus those points.
+The provided center comparison lemmas add that bound to an available actual
+reference error; these are norm-triangle transport lemmas, not standalone
+actual trajectory certificates. Such a center-data comparison is not charged
+as a new-time terminal reset or inserted into the global state bootstrap.
+
+Validation: actual dependent build session71005 completed both Reference42
+(audit1404) and GridAssembly42 (audit1452), EXIT0. Endpoints42 session3331
+completed EXIT0, audit1470. All three final logs are warning-free. Recursive
+axiom scans permit only propext, Classical.choice, Quot.sound. Counts include
+imports and auxiliary declarations. Prior62 owned frozen source hashes were
+checked unchanged. The three new sources are now frozen.
+
+Remaining candidate obligations: instantiate the point node data and each
+internal reset for the complete positive/negative grid; prove node point
+matrix/inverse bounds from checked finite data; discharge the global strict
+state and relative-matrix error budgets and the original-center comparisons;
+then feed actual shooting values/Jacobian/Hessian bounds to the Banach bridge.
+This constructor proves real extended-horizon coverage once those finite and
+budget obligations are supplied. It does not claim a completed4000/8000 grid,
+a concrete exact root, or complete soliton classification.
+
+Manifest SHA256: B845227E5DCB1B9A480B4F73639F9B3140D4A9DBF9CA1D1472C9DCE951233A5D

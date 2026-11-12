@@ -1,0 +1,48 @@
+Independent read-only review: physical-time pure-normal evolution
+Reviewer: finish_curve_input. Date: 2026-11-13.
+Scope: Clock, Time and final RotatingNormalEvolution, read in full. The reviewer
+wrote the separate Spatial/Higher/Curvature modules and does not describe this
+as an independent review of those own proofs. No source was changed or rebuilt.
+
+No semantic gap found in the reviewed time change and final PDE connection.
+
+- logClock(t)=log(1+4t)/4 has actual derivative exp(-4*logClock(t)) on
+  t>-1/4. exp(4*logClock(t))=1+4t uses positivity on precisely that domain.
+  Hence dilationScale^4=1+4t and the clock multiplies logarithmic velocity
+  exp(tau)*F by exp(-4tau), producing exp(-3tau)*F with the correct sign.
+- Time composes the proved actual logarithmic-time curve with that real clock.
+  Joint smoothness is on the open set t>-1/4 times the whole parameter line.
+  Its coordinate time derivatives are genuine HasDerivAt, not only projected
+  or within-interval derivative identities. Periodicity and positive speed
+  follow from the already proved actual scalar reparameterization and its
+  positive initial derivative.
+- With actual unit normal (-rotatedTy,rotatedTx), the two time derivatives
+  (+exp(-3tau)F*rotatedTy,-exp(-3tau)F*rotatedTx) are exactly minus the actual
+  intrinsic elastic force times that unit normal. The final structure requires
+  BOTH full coordinate velocity equations; merely zero tangential projection
+  would not discharge it. The force and normal refer to coordinate-defined
+  quantities from Curvature, not assumed geometric placeholders.
+- All nonnegative physical times lie in the open domain. No finite future
+  endpoint or global physical-time regularity assumption is hidden. Auxiliary
+  curve definitions and spatial identities outside that domain do not claim
+  the elastic PDE there: all PDE and joint-smoothness assertions retain the
+  t>-1/4 restriction.
+- The length statement integrates the actual speed over the positive period.
+  The Jacobian integral equals the period by the actual derivative and the
+  scalar-flow period-shift identity, so the result is dilationScale(t)*L.
+- The shooting corollary still takes positive half-length, an exact zero of
+  actualShootingMap, and actual finite support-tube membership as explicit
+  premises. Its 114*c2 period comes from the earlier 57-cycle closure theorem.
+  It does not assert a numeric root, a minimal period, embeddedness, or a
+  classification of all solitons.
+
+The total ten-source manifest was hash checked. Owner reports final actual
+compile45525 EXIT0,610 recursive declarations, standard three axioms and no
+warnings; this reviewer did not independently replay that compilation.
+
+Manifest SHA256: 6B61664D4A21865D72B9EB0904AB14A2F0C767A5865661420726745F5E12D1E3
+
+Reviewed sources:
+RotatingNormalEvolutionClock: D3B266F2CD1FA43893A4B50073767C028BF9172F4906A25C6D6631946BBCE9F7
+RotatingNormalEvolutionTime: F7543CC3481893EDE83B919EB7285A0FAE3CB19B0DE68D3C798049CA03D867A6
+RotatingNormalEvolution: C76EBF6ED2E7963FB197AC1E76C7F0B902863E5C9D32F9763A8AAFE30E234899

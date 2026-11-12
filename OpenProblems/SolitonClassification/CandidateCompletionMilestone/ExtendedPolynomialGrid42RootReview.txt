@@ -1,0 +1,37 @@
+Root full semantic review, 13 November 2026
+All three frozen sources read in full. No semantic gap found.
+Independent root replay session64553 returned EXIT0 for all three, with
+standard axioms only and no warnings. See the frozen hash manifest and
+ExtendedPolynomialGrid42IndependentVerification.txt.
+
+The reference on each physical segment j<N is an actual shifted Taylor42
+state and U22(a_j)*B_j. The mixed matrix residual is evaluated against that
+same state42 reference, with bound2e-19*norm(B_j), not a substituted state60
+residual. The canonical U22 itself does not depend on which truncation is
+used for the state reference; the earlier true inverse proof therefore
+still applies. Node norms2000/inverses4000 imply whole-segment2400/5000.
+
+The true ordered grid ends at Nh+2r. Every actual local argument stays
+inside hcap by the proved interval arithmetic. Both signs |sigma|<=1
+are retained in derivatives and residuals. The constant b-row permits
+reference margin0.01; the constructor requires2400*R<=0.01. Positivity
+of R remains an input to the later bootstrap, not hidden in this builder.
+
+For nodeN, state and matrix references are CONSTANT FUNCTIONS equal to
+the last segment's actual polynomial values at Nh+2r. Their node inverse
+is derived from the last physical segment. The terminal state/matrix
+resets are exactly zero; only j+1<N resets are inputs. The code does not
+place the old central numerical midpoint a_N/B_N at the new endpoint.
+
+The complete FlowBootstrapGridData supplies all derivatives, residuals,
+unit/inverse bounds, margins and resets. There is no actual state/tube/P/Q
+premise. The endpoint module proves the true final local time h+2r and
+the original central local time h separately. The old central data is
+used only through explicit triangle comparisons with its own numerical
+endpoint-error premise. Internal reset sums run over range(N-1), and the
+original center lies inside the final physical segment.
+
+These are a completed generic construction and exact endpoint identities.
+Full candidate node data, reset certificates, global budgets and actual
+shooting enclosures remain to be instantiated. No candidate root or
+unconditional new closed-profile existence is asserted by this review.

@@ -1,0 +1,106 @@
+ACTUAL PURE-NORMAL EVOLUTION: FROZEN TEN-MODULE CHAIN
+13 November 2026. Source/object hashes and dependency order are recorded in
+RotatingNormalEvolutionFrozenManifest.csv. Sources are now frozen.
+
+Outcome: a genuine global-future pure-normal free elastic evolution is
+constructed from IsClosedRotatingProfile a L. The final shooting corollary
+still assumes a TRUE actualShootingMap zero, positive half-length and its
+finite-interval support-tube certificate. No concrete numerical root, full
+soliton classification, or migration example is asserted.
+
+ACTUAL COMPILE RESULTS
+All listed runs returned EXIT 0 with no warnings. Recursive axiom checks
+permit only propext, Classical.choice and Quot.sound. Declaration counts
+include imported declarations in the audited namespaces, not only new ones.
+
+Module                              Session   Audit count
+RotatingNormalEvolutionScalar       45342       44
+RotatingNormalEvolutionContinuity   66259       55
+RotatingNormalSpatial               95029       68 (curve agent)
+RotatingNormalHigher                22621       81 (curve agent)
+RotatingNormalEvolutionField         7431      446
+RotatingNormalEvolutionLog          97832      511
+RotatingNormalEvolutionClock        71553       13
+RotatingNormalEvolutionTime         36406      541
+RotatingNormalEvolutionCurvature    94818      546 (curve agent)
+RotatingNormalEvolution             45525      610
+
+All modules are in the independent SolitonClassification project. They
+import no OpenTranslators, LengthGrowth, Migration or CentroidEscape project.
+The generic scalar proof is reconstructed using this project's BoundedODE
+and Mathlib. No previously frozen proof source or outputs file was changed.
+
+CONSTRUCTION AND VERIFIED CONTENT
+
+For the actual initial coordinates gamma=(rotatingX a,rotatingY a), define
+ p=<gamma,N>, q=<gamma,T>, g=b p-q with b=a 4.
+Here p and q are explicitly formed from coordinate derivatives. Smoothness
+and periodicity of g follow from the actual closed profile. Smooth periodic
+g and g' have bounded ranges; the latter gives a true global Lipschitz bound.
+The existing bounded ODE theorem therefore supplies a unique actual global
+scalar flow phi(tau,s), with phi_tau=g(phi), phi(0,s)=s.
+
+The scalar group law, inverse phi(-tau), and period commutation
+ phi(tau,s+L)=phi(tau,s)+L
+are proved from uniqueness. Initial-data differentiability is derived by
+an exact trajectory slope formula and dominated convergence. The spatial
+derivative is exp(integral_0^tau g'(phi(r,s)) dr)>0. Joint C-infinity follows
+by induction using actual partial derivatives and a compact-interval integral
+formula. Equilibria g(s)=0 are included; no flow-box nonvanishing assumption
+is used. The result is a smooth real-line diffeomorphism with an explicit
+smooth inverse and the equivariance needed for the period quotient. A
+separate bundled quotient-manifold diffeomorphism object is not defined.
+
+The explicit logarithmic-time curve is
+ X_log(tau,s)=exp(tau) R_(b tau) gamma(phi(tau,s)).
+It is jointly C-infinity and L-periodic. Its actual metric speed is
+ exp(tau)*phi_s(tau,s)>0.
+The actual time derivative is exactly
+ -exp(tau)*F_profile(phi(tau,s))*R_(b tau)N(phi(tau,s)).
+The tangential terms cancel by g=b p-q and the original unit-speed identity.
+
+Physical time is tau(t)=log(1+4t)/4 for t>-1/4. The positive scale
+ r(t)=exp(tau(t)) satisfies r(t)^4=1+4t, and tau'(t)=exp(-4tau(t)).
+The resulting actual X(t,s),Y(t,s) are smooth jointly on the open time
+domain, which contains every t>=0, and retain the initial coordinates.
+
+The intrinsic quantities in the final PDE are ACTUALLY DEFINED by
+ speed=sqrt(X_s^2+Y_s^2),
+ N=(-Y_s,X_s)/speed,
+ kappa=(X_s Y_ss-Y_s X_ss)/speed^3,
+ arcDerivative(f)=f_s/speed,
+ F=arcDerivative(arcDerivative(kappa))+kappa^3/2.
+The determinant calculation and both arclength differentiations prove
+ kappa_X=exp(-tau)*kappa_profile(phi),
+ F_X=exp(-3tau)*F_profile(phi).
+No identity between these quantities and the proposed expressions is a
+hypothesis. The final full coordinate time derivatives are -F_X*N, not
+merely an equality of their normal components. The tangential dot product
+is also proved to vanish.
+
+The length is computed from the actual speed integral over one period:
+ integral_0^L speed(t,s) ds=r(t)*L.
+This uses the positive scalar Jacobian and period commutation. The evolving
+material parameter is generally not unit speed; its exact speed is proved.
+The initial curve is unit speed by the supplied closed-profile theorem.
+
+MAIN FINAL INTERFACES
+namespace SolitonClassification.Rotating.NormalEvolution:
+* normalEvolution_is_pure_normal a L h
+  returns IsPureNormalElasticEvolution L (normalX a L h) (normalY a L h).
+  The predicate contains joint C-infinity, actual periodic immersion and
+  full actual-coordinate elastic-flow equations on t>-1/4.
+* normalEvolution_future a L h t ht s
+  specializes both actual HasDerivAt equations to any t>=0.
+* normal_length a L h t and dilationScale_pow_four ht.
+* actualShooting_exists_pure_normal_evolution e c hT hzero htube
+  produces the full evolution, initial actual profile and actual length
+  formula, while retaining the three stated shooting/geometry inputs.
+
+Final source SHA256:
+C76EBF6ED2E7963FB197AC1E76C7F0B902863E5C9D32F9763A8AAFE30E234899
+Final olean SHA256:
+E37565A19CB082177DF3E62CDCE04426FC50F62CD655FBA57EB4B2F572CD9F39
+
+The root agent should independently review/rebuild before publication.
+No GitHub operation was performed by this subtask.

@@ -1,0 +1,47 @@
+Independent semantic review of the extended42/22 grid constructor
+2026-11-13; reviewer /root/audit_full_escape
+
+Reviewed all three sources in ExtendedPolynomialGrid42FrozenManifest.csv:
+ExtendedPolynomialReference42, ExtendedPolynomialGridAssembly42, and
+ExtendedPolynomialGridEndpoints42. Manifest SHA256:
+B845227E5DCB1B9A480B4F73639F9B3140D4A9DBF9CA1D1472C9DCE951233A5D.
+No mathematical or semantic gap found in the construction inspected.
+This review does not independently recompile those sources or validate
+any 4000/8000 finite numerical node tables.
+
+The real state reference is order42. Its differential residual uses the
+proved state42 bound6e-40. The matrix differential residual is genuinely
+mixed42/22, obtained from reducedJacobian_budgets.1, and then multiplied
+by the full node matrix norm. The reference matrix polynomial U22 itself
+is independent of the chosen state truncation order; reusing its genuine
+norm/inverse theorem does not substitute a state60 residual for state42.
+Node bounds2000/4000 yield whole-segment2400/5000, including the prolonged
+last segment, while the matrix residual is4e-16. Signed time is covered
+by |sigma|<=1 and the actual local-time cap.
+
+The final node is the actual last polynomial state/matrix evaluated at
+Tnew=N*h+2*r, held constant as a function of time. It is not the old
+nominal a_N/B_N and requires no assumption about those old endpoint
+values. The final unit/inverse bounds follow from the whole last-segment
+bounds. Consequently the terminal reset is exactly zero. Internal
+reset hypotheses concern only j+1<N, and the explicit reset-sum theorem
+reduces their sum to range(N-1). The N=1 case has no internal resets and
+still has a genuine final segment and correctly defined terminal node.
+
+Every FlowBootstrapGridData field is filled using actual polynomial
+derivatives, state/matrix residuals, reference margin and node inverses.
+There is no hidden actual-flow confinement, state-error or actual-P/Q
+bound in this constructor. Such conclusions still require the separate
+strict bootstrap budgets and an actual finite dataset satisfying the
+remaining input hypotheses.
+
+The endpoint supplement explicitly distinguishes T0=N*h from Tnew.
+It proves T0 lies in the final extended segment, evaluates its local
+parameter as h, and charges the nominal state/matrix endpoint errors
+when comparing against a_N/B_N. It does not relabel a polynomial at h
+as the polynomial at h+2*r or hide an O(r) reset. This distinction is
+essential for the proposed small central error budget.
+
+No source was edited. The three source hashes were compared with the
+frozen manifest during this review. This is a generic assembly result,
+not completion of the rotating candidate or of a soliton classification.

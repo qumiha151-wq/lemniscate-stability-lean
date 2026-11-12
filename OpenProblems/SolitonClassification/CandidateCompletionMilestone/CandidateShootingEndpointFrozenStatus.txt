@@ -1,0 +1,52 @@
+FROZEN: actual center comparison from two endpoint states and full matrices
+
+New source: CandidateShootingEndpointComparison.lean.
+Dependency: existing frozen ShootingVariation, hence actual strict shooting
+and actual signed-flow derivative theory. No candidate data, arbitrary actual
+flow, or cross-problem import is introduced.
+
+Exact endpoint value: projection(x_plus-x_minus)+shootingTarget, with the
+original exact real angle target112*pi/57.
+Exact endpoint derivative comparison operator:
+ projection o [ (field(x_plus)+field(x_minus))*lengthDirectionFunctional
+                +(P_plus-P_minus) o shootingInitial(e) ].
+The length column is a SUM of the two physical fields. This follows because
+the negative-time derivative cancels subtraction of the negative branch.
+The phase column is (P_plus-P_minus)*(0,e0/8,0,e1,0,0), before projection;
+the fixed phase line, physical row factor8, and all six matrix coordinates
+are retained. P inputs are full six-dimensional initial-value derivative
+comparison operators, not a selected subset of columns.
+
+Proved generic bounds:
+- Value comparison <=8*(norm(dx_plus)+norm(dx_minus)).
+- Derivative comparison <=8*(17*(norm(dx_plus)+norm(dx_minus))
+                            +norm(dP_plus)+norm(dP_minus)).
+  Both compared state pairs must belong to outerTube for the actual field
+  Lipschitz17 bound. Norm shootingInitial(e)<=1 is proved from |e_i|<=1;
+  norm shootingProjection<=8 is the existing actual physical projection.
+- ActualShootingDerivative_endpoint_formula identifies this operator with
+  the ACTUAL strict derivative: it uses actual tube neighborhoods for both
+  signed flows, positive interior time, and initial state in the quarter
+  open ball. The equality follows via the already proved actual signed
+  strict derivative, not by assuming a numerical matrix is exact.
+- actualShootingValue_endpoint_error gives16*E from two actual endpoint
+  errors<=E. It needs no field Lipschitz/domain premise for the value map.
+- actualShootingDerivative_endpoint_error gives16*(17*E+D) from two actual
+  state errors<=E and two errors to actual full fderiv matrices<=D. Reference
+  endpoints must be in outerTube; actual endpoints' membership is derived
+  from the actual tube neighborhoods, not added as another free hypothesis.
+- shooting_center_numeric_transport adds separate finite numerical value
+  and derivative-operator comparison errors. These can account for rawJ and
+  target rounding; rawJ is never identified with the actual derivative.
+
+Actual validation: session15284 EXIT0,314 recursive Rotating declarations,
+standard three axioms only (propext,Classical.choice,Quot.sound), zero warnings.
+Prior65 owned frozen source hashes checked unchanged. This source is frozen.
+
+Remaining: obtain the full positive/negative candidate endpoint state and
+matrix enclosures at the original center time, prove the reference points
+are in the tube, check the finite comparison to the fixed y/J data including
+angle-target enclosure, and discharge full actual neighborhood/matrix bounds.
+No complete numerical root or full-grid certificate is asserted here.
+
+Manifest SHA256: 8202A88FAA26AA3F49ACABD2E76E308FCF2132D1CF20C39C56A671E204807FD2

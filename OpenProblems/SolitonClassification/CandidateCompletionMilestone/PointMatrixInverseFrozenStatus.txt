@@ -1,0 +1,32 @@
+Generic point-matrix inverse checker, independent of grid evaluation
+2026-11-13
+
+PointMatrixInverse, PointMatrixCertificate and PointMatrixGridBudget are
+frozen in PointMatrixInverseFrozenManifest.csv. Their actual final
+compilations are sessions22052,4322,52096, respectively: all exited0,
+all final logs are warning-free, and every recursively audited declaration
+uses only the standard three Lean axioms. Earlier development failures
+concerned explicit argument/coercion and simplifier handling, not a
+failed candidate numerical inequality.
+
+PointMatrixInverse first derives a genuine two-sided inverse of B from
+units CB and BC. Neumann series certify those products when both actual
+operator defects are bounded by q<1. It then identifies Ring.inverse B
+with Ring.inverse(CB)*C and bounds its true operator norm. C is a proposed
+matrix; it is never silently assumed equal to the actual inverse.
+
+PointMatrixCertificate represents every entry by an integer divided by a
+shared positive mesh. Indices are column first and row second. It proves
+the full real matrix products agree with integer sums divided by mesh^2,
+then converts full row-sum integer checks into actual operator norms.
+Both left and right product defects are checked in the same orientation
+as the genuine operator compositions. No floating point arithmetic or
+JSON predicate is part of these proof hypotheses.
+
+PointMatrixGridBudget fixes mesh1e60 and a decidable finite predicate:
+row norm B<=2000, row norm C<=3999, and both product defects<=1e-20.
+Its soundness theorem derives norm B<=2000, B a true unit, and
+norm(Ring.inverse B)<=4000. This is a conditional finite checker, not
+an assertion that any complete candidate grid passes it. Numerical point
+instances and the one-leaf42/full22 benchmark are a separate subsequent
+batch; all4000/8000 steps and the final root remain unfinished.

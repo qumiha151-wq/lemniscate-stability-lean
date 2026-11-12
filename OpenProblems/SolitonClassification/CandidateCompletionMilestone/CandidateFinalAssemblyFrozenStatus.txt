@@ -1,0 +1,61 @@
+FROZEN: final conditional candidate geometry and intrinsic PDE assembly
+
+Source: CandidateFinalAssembly.lean.
+Main theorem:
+ CandidateFinalAssembly.exists_geometry_and_pure_normal_evolution_of_remaining_enclosures.
+
+Its five substantive certificate premises are EXACTLY:
+1. ActualFlowMatrixBounds for the positive signed flow on the fixed actual
+   extended horizon, open initial tube8r, initial setclosedBall(r), K8000/I16000.
+2. The corresponding negative signed flow certificate.
+3. Error<=1e-27 from supplied center value y to actualShootingMap.
+4. Error<=1e-5 from the fixed CandidatePreconditioner.J to actualShootingDerivative.
+5. Residual norm(CandidatePreconditioner.B*y)<=1e-30.
+Here r=1e-24; all constants and domain facts are the already checked
+CandidateRootBudget/CandidateInputs definitions. No extra root, tube, periodic
+profile, smoothness, curvature identity, or evolution hypothesis is introduced.
+
+Proof chain and actual conclusion:
+- The existing actual Banach bridge gives c in the closed parameter ball,
+  an exact shooting zero, and uniqueness of that zero within this ball.
+- Exact candidate input bounds give c0>2, c4>0 and c2>0.
+- The full-horizon tube inputs and initial-domain inclusion give both signed
+  trajectories on[0,c2]; actual reflection gives the real support trajectory
+  throughout[-c2,c2]. This is derived in two_sided_tube_of_parameter_ball.
+- Exact shooting closure yields the actual C-infinity unit-speed position,
+  period114*c2, actual curvature and intrinsic soliton equation.
+- The curvature is nonconstant. The specified rotation normal term
+  c4*(X*X'+Y*Y') is nonzero somewhere. This is not a claim of classification
+  under all changes of origin or of minimal closing period/embeddedness.
+- The profile total curvature over the proved closing period is exactly
+  -56*(2*pi).
+- The actual reparameterized coordinates X(t,s),Y(t,s) are jointly smooth
+  and closed immersions for t>-1/4, start at the actual profile, and satisfy
+  the FULL pure-normal elastic velocity equation with speed, curvature,
+  elastic force and unit normal computed from their own coordinate derivatives.
+- The actual length is dilationScale(t)*(114*c2), with
+  dilationScale(t)^4=1+4t on that domain.
+- GeometricConclusion.future_PDE explicitly gives the full coordinate PDE
+  for every t>=0, without a further existence or regularity assumption.
+
+Validation: actual compile session59187 EXIT0, zero warnings; final main
+#print axioms and recursive dual-prefix audit cover1681 declarations with
+only propext,Classical.choice,Quot.sound. The count includes imports and
+auxiliary declarations. Prior66 owned frozen sources were checked unchanged.
+The new source is now frozen.
+
+Build after CandidateRootBudget, RotatingClosedProfileNonconstant, and the
+frozen ten-module RotatingNormalEvolution chain. These are all within the
+SolitonClassification project; no other open-problem project is imported.
+
+This is still a conditional implication. The five certificate premises have
+not been instantiated here for the complete numerical candidate, so this
+module does not assert unconditional candidate existence or a complete
+classification of the paper's solitons.
+
+Dependencies at freeze:
+CandidateRootBudget: 93ECBEE83477700393F4FDA2AE3C9B87EC6A9172AB86C284AD7145ACCB36369D
+RotatingClosedProfileNonconstant: E2D7A907286AD31E64118D424EE39BDBEEAD14FEBF84B70DE6055B2177E4222B
+RotatingNormalEvolution: C76EBF6ED2E7963FB197AC1E76C7F0B902863E5C9D32F9763A8AAFE30E234899
+
+Manifest SHA256: 9420477A7271E1896A1C2C3E943CDFB5AA99C3314367BDD5FA315FA235AEE4D7

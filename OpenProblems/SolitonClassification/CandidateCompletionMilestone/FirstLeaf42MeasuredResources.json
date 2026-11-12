@@ -1,0 +1,300 @@
+{
+  "scope": "Completed two point-node inverse checks, one state42 recurrence, all six matrix22 recurrences, both endpoint resets, and the actual42/22 ODE endpoint bridge.",
+  "measurements": [
+    {
+      "module": "SolitonClassification/Rotating/Grid42P00Nodes",
+      "exit_code": 0,
+      "wall_seconds": 21.567106399990735,
+      "user_cpu_seconds": 8.484375,
+      "termination": "completed",
+      "kernel_cpu_seconds": 12.34375,
+      "peak_working_set_bytes": 1801945088,
+      "source_bytes": 7169,
+      "source_sha256": "768775276ac2caa0f8a9fd105138969f09f70683fefb22183417f616012503e9",
+      "olean_bytes": 909392,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Grid42P00Nodes.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Grid42P00State",
+      "exit_code": 0,
+      "wall_seconds": 26.10647680000693,
+      "user_cpu_seconds": 14.84375,
+      "termination": "completed",
+      "kernel_cpu_seconds": 10.625,
+      "peak_working_set_bytes": 3183304704,
+      "source_bytes": 29939,
+      "source_sha256": "8d867e0142d39f48e7a235dab9bc5ffdeed65ced4a804ff0eb624fa919f32060",
+      "olean_bytes": 1442576,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Grid42P00State.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Grid42P00Matrix",
+      "exit_code": 0,
+      "wall_seconds": 41.44311910000397,
+      "user_cpu_seconds": 24.125,
+      "termination": "completed",
+      "kernel_cpu_seconds": 16.46875,
+      "peak_working_set_bytes": 2236346368,
+      "source_bytes": 63773,
+      "source_sha256": "985aca0d179872606222a94a7cbb7d62990845db491fda66d33fd74cc6485b0e",
+      "olean_bytes": 3261960,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Grid42P00Matrix.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Grid42P00Actual",
+      "exit_code": 0,
+      "wall_seconds": 18.192107299997588,
+      "user_cpu_seconds": 7.109375,
+      "termination": "completed",
+      "kernel_cpu_seconds": 10.71875,
+      "peak_working_set_bytes": 1792561152,
+      "source_bytes": 3896,
+      "source_sha256": "5d80ff60449e4691fd6404624e8299e23e92a1810097f91171300ce7a3d2cec5",
+      "olean_bytes": 130912,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Grid42P00Actual.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    }
+  ],
+  "cpu_seconds": 104.71875,
+  "wall_seconds": 107.30880959999922,
+  "peak_working_set_bytes": 3183304704,
+  "olean_bytes": 5744840,
+  "shared_host_including_import_overhead": true,
+  "excludes": "Generic preparatory proof compilation and the preserved Grid42P00Nodes.dev1 failed elaboration attempt.",
+  "axiom_audit_declarations": 1681,
+  "full_grid_completed": false,
+  "no_heavy_predecessor_dependencies": true,
+  "recursive_local_import_graph": {
+    "SolitonClassification.Rotating.Grid42P00Actual": [
+      "SolitonClassification.Rotating.Grid42P00Matrix",
+      "SolitonClassification.Rotating.UniversalReducedVariation"
+    ],
+    "SolitonClassification.Rotating.Grid42P00Matrix": [
+      "SolitonClassification.Rotating.Grid42P00State",
+      "SolitonClassification.Rotating.MixedOrderVariation",
+      "SolitonClassification.Rotating.VariationLinearity"
+    ],
+    "SolitonClassification.Rotating.Grid42P00State": [
+      "SolitonClassification.Rotating.Grid42P00Nodes",
+      "SolitonClassification.Rotating.TaylorDataCertificate",
+      "SolitonClassification.Rotating.FixedEndpointReset"
+    ],
+    "SolitonClassification.Rotating.Grid42P00Nodes": [
+      "SolitonClassification.Rotating.PointMatrixGridBudget",
+      "SolitonClassification.Rotating.FixedBall"
+    ],
+    "SolitonClassification.Rotating.PointMatrixGridBudget": [
+      "SolitonClassification.Rotating.PointMatrixCertificate",
+      "SolitonClassification.Rotating.CandidateInitial"
+    ],
+    "SolitonClassification.Rotating.PointMatrixCertificate": [
+      "SolitonClassification.Rotating.PointMatrixInverse",
+      "SolitonClassification.Rotating.MatrixRowNorm"
+    ],
+    "SolitonClassification.Rotating.PointMatrixInverse": [
+      "SolitonClassification.Rotating.ReferenceInversePerturbation"
+    ],
+    "SolitonClassification.Rotating.ReferenceInversePerturbation": [
+      "SolitonClassification.Rotating.FlowMetricCoordinates"
+    ],
+    "SolitonClassification.Rotating.FlowMetricCoordinates": [
+      "SolitonClassification.Rotating.FlowInverseODE"
+    ],
+    "SolitonClassification.Rotating.FlowInverseODE": [
+      "SolitonClassification.Rotating.FlowInverse"
+    ],
+    "SolitonClassification.Rotating.FlowInverse": [
+      "SolitonClassification.Rotating.QuantitativeVariation"
+    ],
+    "SolitonClassification.Rotating.QuantitativeVariation": [
+      "SolitonClassification.Rotating.FlowVariationalODE",
+      "SolitonClassification.Rotating.FieldHessian",
+      "SolitonClassification.Rotating.VariationConstantsWithin"
+    ],
+    "SolitonClassification.Rotating.FlowVariationalODE": [
+      "SolitonClassification.Rotating.FlowVariational"
+    ],
+    "SolitonClassification.Rotating.FlowVariational": [
+      "SolitonClassification.Rotating.FlowJoint"
+    ],
+    "SolitonClassification.Rotating.FlowJoint": [
+      "SolitonClassification.Rotating.FlowDifferentiability",
+      "SolitonClassification.Rotating.PartialDerivatives"
+    ],
+    "SolitonClassification.Rotating.FlowDifferentiability": [
+      "SolitonClassification.Rotating.FlowFoundation",
+      "SolitonClassification.Rotating.DerivativeVariation"
+    ],
+    "SolitonClassification.Rotating.FlowFoundation": [
+      "SolitonClassification.Rotating.BoundedODE",
+      "SolitonClassification.Rotating.ResidualODE"
+    ],
+    "SolitonClassification.Rotating.BoundedODE": [],
+    "SolitonClassification.Rotating.ResidualODE": [
+      "SolitonClassification.Rotating.TaylorCoefficients"
+    ],
+    "SolitonClassification.Rotating.TaylorCoefficients": [
+      "SolitonClassification.Rotating.Field"
+    ],
+    "SolitonClassification.Rotating.Field": [],
+    "SolitonClassification.Rotating.DerivativeVariation": [
+      "SolitonClassification.Rotating.MidpointDerivative"
+    ],
+    "SolitonClassification.Rotating.MidpointDerivative": [],
+    "SolitonClassification.Rotating.PartialDerivatives": [],
+    "SolitonClassification.Rotating.FieldHessian": [
+      "SolitonClassification.Rotating.ResidualODE"
+    ],
+    "SolitonClassification.Rotating.VariationConstantsWithin": [
+      "SolitonClassification.Rotating.VariationConstants"
+    ],
+    "SolitonClassification.Rotating.VariationConstants": [],
+    "SolitonClassification.Rotating.MatrixRowNorm": [
+      "SolitonClassification.Rotating.MatrixColumnNorm",
+      "SolitonClassification.Rotating.RationalBall"
+    ],
+    "SolitonClassification.Rotating.MatrixColumnNorm": [
+      "SolitonClassification.Rotating.Field"
+    ],
+    "SolitonClassification.Rotating.RationalBall": [],
+    "SolitonClassification.Rotating.CandidateInitial": [
+      "SolitonClassification.Rotating.FixedField"
+    ],
+    "SolitonClassification.Rotating.FixedField": [
+      "SolitonClassification.Rotating.FixedBall",
+      "SolitonClassification.Rotating.Field"
+    ],
+    "SolitonClassification.Rotating.FixedBall": [
+      "SolitonClassification.Rotating.RationalBall"
+    ],
+    "SolitonClassification.Rotating.TaylorDataCertificate": [
+      "SolitonClassification.Rotating.FixedTaylor"
+    ],
+    "SolitonClassification.Rotating.FixedTaylor": [
+      "SolitonClassification.Rotating.FixedField",
+      "SolitonClassification.Rotating.TaylorCoefficients"
+    ],
+    "SolitonClassification.Rotating.FixedEndpointReset": [
+      "SolitonClassification.Rotating.MatrixRowNorm",
+      "SolitonClassification.Rotating.FixedBall"
+    ],
+    "SolitonClassification.Rotating.MixedOrderVariation": [
+      "SolitonClassification.Rotating.VariationDataCertificate"
+    ],
+    "SolitonClassification.Rotating.VariationDataCertificate": [
+      "SolitonClassification.Rotating.TaylorDataCertificate",
+      "SolitonClassification.Rotating.VariationTaylor"
+    ],
+    "SolitonClassification.Rotating.VariationTaylor": [
+      "SolitonClassification.Rotating.TaylorCoefficients"
+    ],
+    "SolitonClassification.Rotating.VariationLinearity": [
+      "SolitonClassification.Rotating.VariationTaylor",
+      "SolitonClassification.Rotating.ResidualODE"
+    ],
+    "SolitonClassification.Rotating.UniversalReducedVariation": [
+      "SolitonClassification.Rotating.UniversalStateOrders",
+      "SolitonClassification.Rotating.UniversalVariationOrder22",
+      "SolitonClassification.Rotating.ReferencePolynomialMatrix"
+    ],
+    "SolitonClassification.Rotating.UniversalStateOrders": [
+      "SolitonClassification.Rotating.UniversalTrueStateTail"
+    ],
+    "SolitonClassification.Rotating.UniversalTrueStateTail": [
+      "SolitonClassification.Rotating.UniversalPolynomialTube",
+      "SolitonClassification.Rotating.UniversalTaylorResidual",
+      "SolitonClassification.Rotating.SignedLocalTail"
+    ],
+    "SolitonClassification.Rotating.UniversalPolynomialTube": [
+      "SolitonClassification.Rotating.TrueLocalStateTail"
+    ],
+    "SolitonClassification.Rotating.TrueLocalStateTail": [
+      "SolitonClassification.Rotating.FlowTube",
+      "SolitonClassification.Rotating.ResidualDataCertificate"
+    ],
+    "SolitonClassification.Rotating.FlowTube": [
+      "SolitonClassification.Rotating.FlowFoundation"
+    ],
+    "SolitonClassification.Rotating.ResidualDataCertificate": [
+      "SolitonClassification.Rotating.TaylorDataCertificate",
+      "SolitonClassification.Rotating.PolynomialEnvelope"
+    ],
+    "SolitonClassification.Rotating.PolynomialEnvelope": [
+      "SolitonClassification.Rotating.ResidualODE",
+      "SolitonClassification.Rotating.FixedField",
+      "SolitonClassification.Rotating.VariationTaylor"
+    ],
+    "SolitonClassification.Rotating.UniversalTaylorResidual": [
+      "SolitonClassification.Rotating.AnalyticMajorantVectorActual",
+      "SolitonClassification.Rotating.AnalyticMajorantBudget",
+      "SolitonClassification.Rotating.ResidualODE"
+    ],
+    "SolitonClassification.Rotating.AnalyticMajorantVectorActual": [
+      "SolitonClassification.Rotating.AnalyticMajorantVector"
+    ],
+    "SolitonClassification.Rotating.AnalyticMajorantVector": [
+      "SolitonClassification.Rotating.AnalyticMajorantScalar",
+      "SolitonClassification.Rotating.FlowTube"
+    ],
+    "SolitonClassification.Rotating.AnalyticMajorantScalar": [
+      "SolitonClassification.Rotating.TaylorCoefficients"
+    ],
+    "SolitonClassification.Rotating.AnalyticMajorantBudget": [
+      "SolitonClassification.Rotating.AnalyticMajorantScalar"
+    ],
+    "SolitonClassification.Rotating.SignedLocalTail": [
+      "SolitonClassification.Rotating.TrueLocalVariationTail"
+    ],
+    "SolitonClassification.Rotating.TrueLocalVariationTail": [
+      "SolitonClassification.Rotating.TrueLocalStateTail",
+      "SolitonClassification.Rotating.FlowVariationalODE",
+      "SolitonClassification.Rotating.FieldHessian"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationOrder22": [
+      "SolitonClassification.Rotating.UniversalVariationTrueTail"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationTrueTail": [
+      "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood",
+      "SolitonClassification.Rotating.UniversalVariationMajorantBudget",
+      "SolitonClassification.Rotating.UniversalTrueStateTail"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood": [
+      "SolitonClassification.Rotating.FlowTube",
+      "SolitonClassification.Rotating.FlowDifferentiability"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationMajorantBudget": [
+      "SolitonClassification.Rotating.UniversalVariationMajorantResidual",
+      "SolitonClassification.Rotating.AnalyticMajorantBudget"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationMajorantResidual": [
+      "SolitonClassification.Rotating.UniversalVariationMajorantActual"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationMajorantActual": [
+      "SolitonClassification.Rotating.UniversalVariationMajorantVector",
+      "SolitonClassification.Rotating.VariationTaylor",
+      "SolitonClassification.Rotating.FieldHessian"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationMajorantVector": [
+      "SolitonClassification.Rotating.AnalyticMajorantVectorActual",
+      "SolitonClassification.Rotating.UniversalVariationMajorantScalar"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationMajorantScalar": [
+      "SolitonClassification.Rotating.AnalyticMajorantScalar"
+    ],
+    "SolitonClassification.Rotating.ReferencePolynomialMatrix": [
+      "SolitonClassification.Rotating.UniversalVariationOperatorTail",
+      "SolitonClassification.Rotating.ReferenceInversePerturbation"
+    ],
+    "SolitonClassification.Rotating.UniversalVariationOperatorTail": [
+      "SolitonClassification.Rotating.VariationOperatorBounds",
+      "SolitonClassification.Rotating.UniversalVariationTrueTail"
+    ],
+    "SolitonClassification.Rotating.VariationOperatorBounds": [
+      "SolitonClassification.Rotating.VariationLinearity",
+      "SolitonClassification.Rotating.UniversalVariationMajorantBudget"
+    ]
+  }
+}

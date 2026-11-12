@@ -1,0 +1,56 @@
+Independent semantic review: CandidateRootBudget
+Reviewer: finish_curve_input. Date:2026-11-13.
+Result: no semantic gap found in the reviewed current source and its domain,
+preconditioner and actual-matrix-root interfaces. This is a read-only review,
+not an independent compile or concrete numeric shooting certification.
+
+1. Parameter radius is exactly1e-24. The initial map is the fixed linear phase
+   map and its norm<=1 was proved from the actual fixed phase bounds. Its center
+   is proved equal to Candidate.initial. Thus the full closed parameter ball
+   maps into the closed initial ball of the same radius, not just its center.
+2. The tube radius is8r. Its quarter radius is2r, so the closed initial ballr
+   lies strictly inside the required open2r region using r>0. That gives the
+   strict derivative neighborhood and convex initial domain actually required
+   by the existing variation theorem. The two ActualFlowMatrixBounds premises
+   retain true tube coverage for the larger8r ball and actual P/Q bounds on S.
+3. The actual horizon is T0+2r. Every parameter half-length T0+-r lies in the
+   open interval(0,T0+2r), by the separately proved candidate domain result.
+   The number32 is used only as an upper bound in monotone scalar arithmetic;
+   it is not substituted for actual trajectory coverage.
+4. The matrix constants8000/16000 concern actual fderiv and its proved
+   canonical inverse. FlowInverseRoot derives the inverse identity/continuity;
+   no independently chosen approximate inverse is used as an actual one.
+5. CandidatePreconditioner.J is a fixed rational comparison matrix. The
+   hypothesis hjacobian explicitly compares it with actualShootingDerivative
+   at the center, with tolerance1e-5. The finite Id-B*J defect1e-10 does not
+   assert that J itself is the actual derivative. All B/J row sums use full
+   five-dimensional operator norms and Bnorm<=82 is separately proved.
+6. The variation contribution is16*trueJointVariationBudget(T,8000,16000),
+   bounded by1e20. With r1e-24, epsilon1e-5, beta82 and q0=1e-10, the proposed
+   contraction estimate is at most0.0090200001, which fits q=1/50=0.02.
+   The value/self-map budget eta1e-27,zeta1e-30 gives
+   zeta+82eta+q*r=1.02001e-25<1e-24. Thus neither the actual derivative
+   uncertainty nor the preconditioner amplification of value error is omitted.
+7. hvalue is the error between supplied y and the ACTUAL shooting value;
+   hjacobian is the error to the ACTUAL derivative; hresidual bounds B*y.
+   These are explicit hypotheses. Together with the two actual-flow-matrix
+   certificates they imply a unique true zero only inside the stated closed
+   parameter ball. No global uniqueness or completed candidate existence is
+   asserted without those premises.
+
+Follow-up found: existing ShootingRoot gives the correct positive sum of time
+columns, ShootingVariation identifies the actual signed derivative, but no
+complete center error transport from two endpoint states and full six-by-six
+matrices was present. CandidateShootingEndpointComparison has now separately passed actual Lean
+checking (session15284 EXIT0,314 standard-axiom audited declarations). It
+retains state Lipschitz17, projection8, both branches and the fixed phase
+initial map. Its actual endpoint/matrix error hypotheses remain explicit.
+
+Reviewed source SHA256 (current versions, not a claim of root freeze):
+CandidateRootBudget: 93ECBEE83477700393F4FDA2AE3C9B87EC6A9172AB86C284AD7145ACCB36369D
+CandidateInputs: 9F2EB61FE4D0C12C1984DD7689388C76242EEF94F4BF6B6D6FFF2F1F049CDAF0
+CandidatePreconditioner: E5687E60129BE70F4C1C5A63EAFBEAB8CF03EA0DBE3DE9920AFDC2AA405D8509
+FlowInverseRoot: E04A9A1CC64CC1FE16F5575E0F5148B343A1C9DF0A5989FF930E73505B33B00F
+ActualRootFromMatrices: F1F4EA39CC27FE3106AE8962D0FFF8CD28C8FFFE23631E0CBABFCF24386FE446
+ActualShooting: C6825AF1F131C1C8898CAF564F9ADA47DAE47888627A8A3EE3B1628FBF004909
+ShootingVariation: 8B14163046B3994EA4501A8AD28319D18EC6FAE24BEB3EA6C7355D52C51EF98B

@@ -1,0 +1,37 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE RotatingNormalEvolutionScalar SOURCE 315F6DB344D0B3857B0524E25141E7661D405546C404D97214AF68667C5DF792
+Actual periodic scalar flow audited: 44 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalEvolutionContinuity SOURCE DD641920A6CC20EAE605C1419C9FEC9417E52DCA0F532888750B7B829A84B3AC
+Actual scalar-flow joint continuity audited: 55 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalSpatial SOURCE 7E58B369E2DECFF280C7D9B4883AD44326C59BC3F935476786EAEEEDBA352B80
+Periodic scalar spatial audit passed for 68 declarations.
+EXIT 0
+MODULE RotatingNormalHigher SOURCE 0DE7B4755D986474C5C7C02F8ABF8E4691759A88BF9C9EE28B0F7F1FE0744391
+Periodic scalar higher audit passed for 81 declarations.
+EXIT 0
+MODULE RotatingNormalEvolutionField SOURCE AF559161144A2FAE637110C655CA68BDA1E8DFC56680DCC549B9276E28DA4917
+Actual profile reparameterization field audited: 446 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalEvolutionLog SOURCE 004010E94705E7198483DDB6EC35E0EA2C57CD82E39D3390F330D82C30A170EF
+Actual logarithmic-time curve audited: 511 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalEvolutionClock SOURCE D3B266F2CD1FA43893A4B50073767C028BF9172F4906A25C6D6631946BBCE9F7
+Actual normal-evolution clock audited: 13 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalEvolutionTime SOURCE F7543CC3481893EDE83B919EB7285A0FAE3CB19B0DE68D3C798049CA03D867A6
+Actual physical-time closed curve audited: 541 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalEvolutionCurvature SOURCE 46799C63545B3FE3A3FA3929FCE56081761CF3F1197F9118C3870E423C00BE7B
+Actual intrinsic curvature and elastic force audited: 546 declarations; standard axioms only.
+EXIT 0
+MODULE RotatingNormalEvolution SOURCE C76EBF6ED2E7963FB197AC1E76C7F0B902863E5C9D32F9763A8AAFE30E234899
+'SolitonClassification.Rotating.NormalEvolution.normalEvolution_is_pure_normal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.NormalEvolution.actualShooting_exists_pure_normal_evolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual pure-normal free elastic evolution audited: 610 declarations; standard axioms only.
+EXIT 0
