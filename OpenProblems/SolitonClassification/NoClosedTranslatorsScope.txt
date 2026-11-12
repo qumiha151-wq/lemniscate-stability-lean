@@ -1,0 +1,63 @@
+FROZEN NO-CLOSED-TRANSLATOR CLASSIFICATION EDGE CASE -- 12 November 2026
+
+Source: work/classification_new/NoClosedTranslators.lean
+Namespace: ClosedSimilarity.ClosedUnitFrenetCurve
+Independent project: SolitonClassification.
+Only project import: SolitonClassification.SolitonDilation.
+No imports from LengthGrowth, CentroidEscape, Migration or OpenTranslators.
+Check: ./work/classification_new/check_no_closed_translators.ps1
+Direct Lean4.33.1, pinned local Mathlib read-only, dependency paths first.
+
+ACTUAL VERIFICATION
+Final compiler EXIT0, no warnings.
+NoClosedTranslators audit passed:166 declarations; standard axioms only.
+This count includes imported ClosedSimilarity support/dilation declarations.
+Main no_closed_translator and no_stationary theorems explicitly print only
+propext, Classical.choice, Quot.sound. Recursive audit also checks the
+position-force wrapper and every new definition/generated declaration.
+No sorry/admit/native_decide/custom axiom.
+
+EXACT GEOMETRIC DATA
+The new ClosedUnitFrenetCurve structure contains actual real periodic
+position coordinates x,y, their actual unit tangent tx,ty, actual curvature
+and its first two derivatives k,v,w, with w continuous and positive period.
+Derivative identities are x'=tx, y'=ty, tx'=-k*ty, ty'=k*tx, k'=v, v'=w.
+Unit speed is tx^2+ty^2=1. Position, tangent, k and v are periodic.
+No force/stress identity, integral bound, virial relation, translation
+identity or final contradiction is a structure field.
+
+The module proves unit speed of the position derivatives, identifies
+k=x'*y''-y'*x'', and identifies F=w+k^3/2 with the elastic force obtained
+by differentiating that actual position curvature twice. Thus supplied
+Frenet fields cannot replace the curve's actual curvature arbitrarily.
+An arbitrary-parameter immersion-to-arclength construction is not included.
+
+DERIVED ARGUMENT
+The stress coordinates Qx=k^2*tx/2-v*ty, Qy=k^2*ty/2+v*tx are defined.
+Their actual derivatives are Qx'=-F*ty, Qy'=F*tx, and both are periodic.
+For ANY real translation vector(vx,vy), the translator equation is
+ F=vx*ty-vy*tx=-V dot N, N=(-ty,tx).
+Projection of stress on V has derivative -F^2. FTC and periodicity give
+integral F^2=0. Continuity and the translator-implied periodicity of F
+then yield F=0 everywhere. No speed!=0 hypothesis is used.
+
+From the actual positions, p=-x*ty+y*tx and q=x*tx+y*ty are defined.
+Their actual derivatives and periodicity are proved. F=0 therefore yields
+an actual PeriodicSupportProfile 0 0 period. Existing proved positivity of
+the dilation coefficient contradicts a=0. This also directly proves the
+stationary exclusion. No independent energy/virial formula is assumed.
+
+THEOREMS
+no_stationary: actual F=0 everywhere is impossible.
+no_closed_translator: the translator force identity is impossible for every V.
+no_closed_translator_position_force: the same statement for force calculated
+directly from position-coordinate derivatives.
+
+SCOPE
+This formalizes the known absence of closed pure translators, including
+stationary profiles, as a required degenerate case in the soliton question.
+It does not exclude noncompact/open translators, classify noncircular
+expanders/rotators, or solve the remaining full classification question.
+No novelty or publication-priority claim is made.
+All earlier frozen modules, including OddLocalRigidity and
+CircleLinearization, were left unchanged. The new source is now frozen.

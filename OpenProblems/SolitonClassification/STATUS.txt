@@ -59,4 +59,40 @@ from odd injectivity in the finite-dimensional form.
 This is not yet an application to a concrete rotating support shooting
 map or a certified numerical rank computation. Full classification remains
 unresolved. See OddLocalRigidityScope.txt for exact assumptions and limits.
-Combined independent project audit:106 declarations,standard three axioms.
+At the OddLocalRigidity checkpoint,the combined independent project audit
+checked106 declarations with only the standard three axioms.
+
+ACTUAL CIRCULAR LINEARIZATION
+CircleLinearization.lean derives the Frechet Jacobian of the polynomial
+support field at every circular equilibrium,then directly eliminates the
+four complex eigenvector equations. The resulting polynomial has
+Re P(i*y)=(y^2-5*K^2/4)^2+7*K^4/16>0 for K!=0,for every rotation parameter.
+There is consequently no purely imaginary eigenvalue. This verifies the
+linear spectral calculation; nonlinear local periodic-orbit exclusion and
+full classification are not claimed. See CircleLinearizationScope.txt.
+
+NO CLOSED PURE TRANSLATORS
+NoClosedTranslators.lean derives the actual stress identity from periodic
+unit-speed position/Frenet data. For any constant translation vector,the
+translator equation forces integral(F^2)=0 and then F=0 everywhere. The
+actual position support functions then contradict the proved positivity
+of dilation. This includes the zero-vector stationary case and identifies
+curvature and force with the actual position derivatives. No stress or
+virial bound is assumed. This formalizes a known degenerate case of the
+classification; it does not settle the noncircular expanding/rotating case.
+See NoClosedTranslatorsScope.txt and verification.txt.
+
+ALL-INFLECTION SCALAR RECONSTRUCTION -- REVIEWED HUMAN PROOF
+IntrinsicRotationAndOddExclusion.txt gives intrinsic curvature constraints.
+ScalarReconstructionAllSmoothZeros.txt,independently reviewed in
+ScalarReconstructionIndependentAudit.txt,removes the simple-inflection
+assumption from its converse. Every nonzero C6 periodic curvature satisfying
+the scalar fourth-order equation reconstructs a unique smooth periodic
+auxiliary function. Together with integer angle holonomy and a>0,this gives
+a genuine smooth closed similarity profile. Multiple zeros are handled by
+a finite-order extension argument,with no assumed global divisibility.
+A local C5 gluing example shows that regularity cannot simply be weakened
+without further conditions. It is not a periodic-profile counterexample.
+This complete analytic reduction is NOT yet Lean-formalized. Determining
+all periodic solutions of the scalar equation remains the classification
+problem; the reduction does not settle it.

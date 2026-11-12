@@ -1,0 +1,214 @@
+INTRINSIC ROTATION CONSTRAINTS AND EXCLUSION AT EVEN BIFURCATIONS
+12 November 2026. Analytic deductions, not Lean formalized.
+The unrestricted classification of closed similarity profiles is NOT solved.
+No rotating closed profile, interval root or novelty claim is asserted here.
+
+1. SETTING AND THE TWO STRESS VARIABLES
+
+Let beta be a smooth closed unit-speed planar immersion of period L>0.
+Use N=JT, T'=kN, p=beta.N, q=beta.T and F=k''+k^3/2. An actual fixed-center
+similarity profile obeys
+
+             F=-a p-b q,     p'=-kq,     q'=1+kp.       (1)
+
+For closed profiles a>0 is already known. Circles may have arbitrary b
+because rotation only reparametrizes their image. Define h=aq-bp. Then
+
+             F'=k h-b,             h'=a-k F.            (2)
+
+These follow by differentiating (1), without dividing by k. They are
+regular at inflection points and are the main identities used below.
+The familiar stress W=(k^2/2)T+k'N satisfies W'=FN. Its torque primitive
+C=W.Jbeta-k has C'=Fq. Thus integration still gives only
+
+               a integral(pq)+b integral(q^2)=0.
+
+The cross term integral(pq) is not set to zero. Pointwise beta.Jbeta=0
+does not imply orthogonality of their normal components.
+
+2. A FOURTH-ORDER EQUATION INVOLVING CURVATURE ONLY
+
+Eliminating h from (2) without division gives
+
+      k F''-k'(F'+b)+k^3 F-a k^2=0.                     (3)
+
+Equivalently, for v=k', w=k'', j=k''',
+
+ k k''''-v j+(3/2)k^2 v^2+(5/2)k^3 w+k^6/2-a k^2-b v=0. (4)
+
+This is necessary for every actual profile, including at k=0. Integrate
+(4) over a period and use periodic integration by parts. The result is
+
+ 2 integral(w^2)-6 integral(k^2 v^2)+(1/2)integral(k^6)
+                   = a integral(k^2),
+
+or a=integral(F^2)/E, where E=(1/2)integral(k^2), as also follows from
+the geometric dilation identity. This intrinsic derivation agrees with
+the already established gradient identity; it is not a new sign argument.
+
+Multiplying (4) by v gives an additional explicit intrinsic formula:
+
+ b integral(v^2) = (9/4) integral[v (2w^2-k^2 v^2)].       (5)
+
+For transparency, if S is the left-hand side of (4), the exact local
+integration-by-parts identity is
+
+ S v = H' +(9/4)v(2w^2-k^2v^2)-b v^2,
+ H = k v j-2v^2 w-(1/2)k w^2+(5/4)k^3v^2+k^7/14-a k^3/3.
+
+Thus every NONCONSTANT periodic curvature determines b uniquely by (5),
+without choosing an origin or solving a Gram system. Constant-curvature
+circles have integral(v^2)=0, exactly matching their rotation redundancy.
+The numerator need not vanish for a general periodic function. Formula
+(5) constrains rotating profiles but does not exclude them universally.
+
+3. INFLECTION JETS AND A NEW LOCAL CONSTITUTIVE EXCLUSION
+
+At every curvature zero z, (2) gives the exact condition
+
+                          k'''(z)=-b.                    (6)
+
+Suppose a sign-changing periodic profile has the following additional
+property: on neighborhoods of ALL its inflection points, the force has
+the same differentiable dependence on curvature,
+
+                    F(s)=G(k(s)),     G in C^1 near 0.    (7)
+
+Then b=0. Indeed, if any zero has k'=0, differentiating (7) and using
+(2) gives b=0 immediately. Otherwise all zeros are simple. There are
+upward and downward crossings of a sign-changing periodic function;
+at them (6)--(7) give -b=G'(0)k'(z). Opposite nonzero signs of k'(z)
+cannot give the same nonzero value. Hence again b=0.
+
+The previously proved one-sign-curvature theorem says that a nonconstant
+closed profile must change curvature sign. Consequently a genuinely
+rotating noncircular closed profile cannot satisfy (7). It requires
+different force-versus-curvature branches near its inflections. This
+excludes all globally autonomous scalar curvature ansatzes F=G(k), but
+assumption (7) is substantially local: no dependence away from k=0 is
+required. It does not assume reflection symmetry or integral(pq)=0.
+
+For b!=0, actual curvature zeros have order at most three: (6) gives a
+nonzero third derivative whenever k=k'=k''=0. All triple zeros then cross
+in the same direction, sign(-b), so periodic sign-changing curvature
+cannot have only triple crossings. At least one opposite crossing is
+simple. Double zeros can be present but do not change sign. Polynomial
+ODE solutions are analytic, and k is not identically zero, so there are
+only finitely many zeros in a period. These are restrictions on admissible
+profiles, not an existence proof or exclusion of all b!=0.
+
+4. CONVERSE: AN EXACT INTRINSIC REDUCTION WITH SIMPLE INFLECTIONS
+
+Let k be a smooth L-periodic real function, not identically zero, with
+all zeros simple (the no-zero case is allowed). Suppose constants a>0,b
+make (3) hold everywhere, and integral_0^L k=2pi m for an integer m.
+Then k reconstructs an ACTUAL smooth closed unit-speed similarity profile.
+
+Proof. On {k!=0}, define h=(F'+b)/k. At a zero z, evaluating (3) yields
+-k'(z)(F'(z)+b)=0; because k'(z)!=0, the numerator vanishes. The smooth
+division lemma at a simple zero extends h smoothly, with
+h(z)=F''(z)/k'(z). Its periodic extension is unique. Equation (3), divided
+by k^2 away from the zeros, says h'=a-kF. Both sides are continuous,
+so this holds at the zeros too. The identity F'=kh-b holds everywhere.
+
+Put A=a^2+b^2>0 and set
+
+       p=(-aF-bh)/A,          q=(-bF+ah)/A.
+
+Direct differentiation gives p'=-kq and q'=1+kp, while F=-ap-bq.
+Let theta'=k, T=(cos theta,sin theta), N=JT, and beta=qT+pN.
+Then beta'=T exactly. The integer holonomy makes T,N periodic, and p,q
+are already periodic; hence beta is closed, smooth and unit speed with
+signed curvature k and the required profile equation.
+
+Therefore (3) plus integer holonomy is necessary and sufficient within
+the simple-inflection class. This is a scalar reduction, not a solution
+of its periodic boundary-value problem. For multiple zeros, (3) alone
+does not supply the required smooth divisibility; the converse above
+does not silently include them. More generally the same reconstruction
+works if smooth periodic divisibility F'+b=k h is supplied explicitly.
+
+5. LOCAL NONROTATION DOES NOT REQUIRE FULL SHOOTING RANK
+
+Normalize a=1. Write the support field
+ f_omega(k,v,p,q)=(v,-k^3/2-p-omega*q,-kq,1+kp)
+and R=diag(1,-1,1,-1). The exact reversing relation is
+ f_omega(Rz)=-R f_{-omega}(z).
+Consider a periodic base orbit with omega=0 and initial v=q=0. Use the
+phase slice q0=0 and parameters
+
+ e=(k0,p0,L) in R^3,        o=(v0,omega) in R^2.
+
+Let Phi_omega(t,z) denote the local flow, which is defined over the
+needed compact time interval near this periodic base. Instead of the
+usual residual P=Phi_omega(L,z0)-z0, use
+
+ G(e,o)=Phi_omega(L/2,z0)-Phi_omega(-L/2,z0).              (8)
+
+The conditions G=0 and P=0 are equivalent. Reversibility gives exactly
+
+                       G(e,-o)=-R G(e,o).
+
+Thus its (k,p) components G_odd are odd in o and vanish identically at
+o=0 for every nearby e; its (v,q) components are even in o.
+
+THEOREM. If the 2x2 matrix D_o G_odd is invertible at the base orbit,
+then every nearby periodic support orbit on the phase slice has
+v0=omega=0. This conclusion does NOT require rank4 for DP, rank2 for a
+half-return map, or a smooth one-dimensional full periodic zero set.
+
+Proof. Apply the implicit function theorem to G_odd(e,o)=0. It has a
+unique nearby solution o=o(e). Since o=0 is already a solution for every
+e by reversibility, uniqueness gives o(e)=0. Every full G=0 must satisfy
+this subsystem. If 1+k0p0!=0, the usual phase implicit function theorem
+puts all sufficiently nearby periodic orbits on q0=0, so the statement
+also holds modulo parameter shifts.
+
+At an exact periodic base, this condition can be checked using the
+ordinary shooting Jacobian: differentiating the flow composition gives
+
+       DG = D_z Phi_0(-L/2,z0) DP.
+
+The prefactor is invertible. Equivariance already puts D_oG entirely in
+the two odd target components. Hence rank(DP restricted to v0,omega)=2
+is equivalent to the required invertibility of D_oG_odd.
+
+This theorem improves the earlier local reversible-branch criterion:
+an even seam-swap or period-doubling degeneracy need not permit rotation.
+A chiral branch approaching this base requires the odd block to lose
+rank, even when the even subsystem is already singular. This is a local
+conditional theorem, not a global classification or a validated rank
+statement about a numerical seed.
+
+6. ONE BOUNDED NUMERICAL DIAGNOSTIC -- NO NEW SOLUTION CLAIM
+
+The separate migration task supplied the numerical seam-swap point
+ (k0,p0,l)=(7.741087883009235,2.297828854868269,32.509555581641365).
+The supplied orbit has support period approximately l, and its double
+cover has period2l and holonomy approximately-6.27089842384335. The
+integer-holonomy defect is about0.0122868833362, so it is not closed as
+a planar curve after2l even if periodic support data were exact.
+
+probe_rotating_tangent.py integrates the full variational equations in
+(k0,v0,p0,omega,L), including omega forcing (0,-q,0,0), at this SAME seed.
+It does not refit the seed or launch a new blind search. Two resolutions
+agree on the following double-period diagnostics:
+ full DP singular values: 742.1909,2.890858,0.231102,about5.0e-11;
+ odd(v0,omega) columns:   634.7620,0.3092084;
+ even(k0,p0,L) columns:   384.6204,about1.09e-10,about8.6e-13.
+The two approximate kernel directions have negligible v0 and omega
+components. The primitive-period DP has rank4 numerically and its lone
+kernel is also even. These results support an even bifurcation and give
+no rotating tangent. They are floating-point evidence only: neither
+periodicity nor odd-block invertibility has been interval validated.
+All numbers and both resolutions are in rotating_tangent_probe.json.
+
+7. WHAT REMAINS
+
+There is no general proof that the right side of (5) vanishes, that force
+is locally a single-valued function of curvature, or that every reversible
+orbit has a nonsingular odd block. Large nonsymmetric rotating profiles
+remain possible under these results. The intrinsic scalar reduction and
+odd-rank criterion identify concrete missing conditions, while preserving
+the distinction between periodic support data and integer planar closure.
+No frozen certificate pipeline file was modified during this investigation.

@@ -1,0 +1,50 @@
+FROZEN CIRCULAR SUPPORT LINEARIZATION -- 12 November 2026
+
+Source: work/classification_new/CircleLinearization.lean
+Namespace: ClosedSimilarity.CircleLinearization
+Independent project: SolitonClassification. Imports only Mathlib and Lean.
+Reproduction: ./work/classification_new/check_circle_linearization.ps1
+Direct Lean4.33.1; read-only pinned Mathlib; dependency paths first.
+
+ACTUAL CHECK
+Final compile EXIT0, no warnings.
+CircleLinearization audit passed:33 declarations; standard axioms only.
+The actual Frechet-derivative theorem and the imaginary-eigenvector exclusion
+explicitly print only propext, Classical.choice, Quot.sound.
+No sorry/admit/native_decide/custom axiom.
+
+PROVED FROM THE ACTUAL FIELD
+supportField(a,b)(k,v,p,q)=(v,-k^3/2-a*p-b*q,-k*q,1+k*p).
+For real K!=0, a=K^4/2 and every real b, the state(K,0,-1/K,0)
+is an equilibrium. Its actual Frechet derivative is the displayed real
+continuous linear map, with rows
+ (0,1,0,0),
+ (-3*K^2/2,0,-K^4/2,-b),
+ (0,0,0,-K),
+ (-1/K,0,K,0).
+A separate theorem identifies the explicit complex coefficient equations
+with this derivative on embedded real vectors.
+
+SPECTRAL ELIMINATION
+Starting from a NONZERO complex vector satisfying the four actual linearized
+eigenvector equations, direct elimination proves
+ P(mu)=mu^4+(5/2)*K^2*mu^2-(b/K)*mu+2*K^4=0.
+The proof divides only by K, never by mu; the zero eigenvalue is included.
+The polynomial relation is derived rather than assumed. This implementation
+uses eigenvector elimination, not a matrix-determinant or charpoly-library API.
+For every real y, the exact identity is
+ Re P(i*y)=(y^2-(5/4)*K^2)^2+(7/16)*K^4>0.
+Consequently every complex vector satisfying J*z=i*y*z must be zero, for
+both signs of K and every finite real b.
+
+SCOPE
+This verifies the actual Jacobian and absence of purely imaginary spectral
+values at all circular support equilibria. Under K^4=2 it gives the normalized
+circle polynomial with constant4 and the positive residual7/8 in the
+existing CircleHyperbolicity.txt human note.
+
+The nonlinear local periodic-orbit exclusion via stable/unstable spaces and
+a strict Lyapunov function has NOT been formalized here. Neither absence of
+large/distant periodic orbits nor full soliton classification follows from
+these algebraic theorems alone. No rotating-profile existence claim is made.
+OddLocalRigidity and all previously frozen modules were left unchanged.

@@ -1,4 +1,5 @@
 Independent project: SolitonClassification
+Command sequence: lean (module), lean (root), lean (AxiomAudit)
 Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
 MODULE SolitonClassification/SupportODE
 'ClosedSimilarity.profile_unit_speed' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -6,26 +7,38 @@ MODULE SolitonClassification/SupportODE
 'ClosedSimilarity.profile_soliton_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
 'ClosedSimilarity.profile_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
 EXIT 0
-MODULE SolitonClassification
-EXIT 0
-MODULE SolitonClassification/AxiomAudit
-SolitonClassification audit passed: 12 declarations; standard axioms only.
-EXIT 0
-All project modules compiled; enforced standard-axiom audit passed. Full profile classification remains unproved.
-Grid/rigidity additions and final combined audit: SolitonClassification
 MODULE SolitonClassification/OneSignCurvature
 OneSignCurvature audit passed: 92 declarations, standard axioms only.
 EXIT 0
 MODULE SolitonClassification/SolitonDilation
 Soliton-dilation audit passed: 98 declarations; standard axioms only.
 EXIT 0
+MODULE SolitonClassification/OddLocalRigidity
+'ClosedSimilarity.OddLocalRigidity.exists_ball_odd_eq_zero_of_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ClosedSimilarity.OddLocalRigidity.not_injective_of_accumulating_odd_zeros' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+OddLocalRigidity audit passed: 8 declarations; standard axioms only.
+EXIT 0
+MODULE SolitonClassification/CircleLinearization
+'ClosedSimilarity.CircleLinearization.supportField_hasFDerivAt_circle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ClosedSimilarity.CircleLinearization.no_purely_imaginary_eigenvector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CircleLinearization audit passed: 33 declarations; standard axioms only.
+EXIT 0
+MODULE SolitonClassification/NoClosedTranslators
+'ClosedSimilarity.ClosedUnitFrenetCurve.no_closed_translator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedSimilarity.ClosedUnitFrenetCurve.no_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+NoClosedTranslators audit passed: 166 declarations; standard axioms only.
+EXIT 0
 MODULE SolitonClassification
 EXIT 0
 MODULE SolitonClassification/AxiomAudit
-SolitonClassification audit passed: 98 declarations; standard axioms only.
+SolitonClassification audit passed: 207 declarations; standard axioms only.
 EXIT 0
-Final combined source set compiled and audited; full research goal remains incomplete.
-
-12 November 2026: new interface/local-rigidity module checked individually; coherent artifacts staged. Fresh root and complete project audit:
-SolitonClassification audit passed: 106 declarations; standard axioms only.
-EXIT 0. Only propext,Classical.choice,Quot.sound.
+All project modules compiled successfully. No claim of full PDE formalization.

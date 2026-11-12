@@ -1,0 +1,48 @@
+INDEPENDENT ANALYTIC REVIEW AND STATUS -- 12 November 2026
+
+Reviewed note: IntrinsicRotationAndOddExclusion.txt
+Reviewer: separate length_migration agent (read-only, no author edits).
+
+The reviewer independently recomputed Sections2--4 and found no gap:
+- The fourth-order elimination equation has the displayed signs.
+- Integral (k k''''-k'k''')k' is (9/2)integral k'(k'')^2.
+  The two nonlinear derivative terms contribute
+  -(9/4)integral k^2(k')^3. Thus the b-formula and its factor9/4 agree.
+- If a common C1 force law F=G(k) holds near all curvature zeros, any
+  multiple zero immediately gives b=0; otherwise upward/downward simple
+  crossings force b=0. No normal-projection orthogonality is assumed.
+- For smooth k with simple zeros, (F'+b)/k extends smoothly; the derived
+  first-order h equation extends continuously from the complement. The
+  p,q reconstruction and integer holonomy give actual position closure.
+
+The reviewer also checked Section5: DG=D_zPhi(-L/2)DP at the periodic base,
+the odd-target dimension2, and the implicit-function-theorem exclusion are
+correct. Independently, parameter_flow derived the same local theorem
+using symmetry of the periodic zero set and a rank2 linear projection
+of the ordinary residual P, without needing the midpoint residual G.
+The two proofs were cross-checked. Neither proof validates numerical rank.
+
+NUMERICAL DIAGNOSTIC
+The new script integrates analytic variational equations at one existing
+seed, with three bounded integrations (primitive period once, double period
+at two resolutions). Runtime about6.5s. It does not solve a new nonlinear
+root or run a broad search. The double-period odd block has two positive
+numerical singular values (634.7620 and0.3092084); near-zero full-kernel
+directions lie in the even variables. This is numerical evidence only,
+not an interval proof of the theorem's rank hypothesis.
+
+PRECISE DELIVERABLES
+1. Intrinsic formula recovering b from a nonconstant periodic curvature.
+2. Local force-versus-curvature graph exclusion for genuine rotation.
+3. Exact scalar fourth-order/holonomy reconstruction in the class with
+   simple inflections, including the converse position-closure proof.
+4. Local exclusion of rotation under odd-rank2, even when the even
+   shooting subsystem is singular; no full-rank assumption is imposed.
+5. A bounded numerical diagnostic locating the current seam-swap
+   degeneracy in the even sector, without a planar closing claim.
+
+The full SolitonClassification problem remains unresolved. There is no
+new closed rotating profile and no unrestricted theorem ruling all such
+profiles out. None of this note has been Lean formalized. No frozen
+pipeline file or outputs file was changed. All new files are confined to
+work/next_research/classification_after_coercivity.

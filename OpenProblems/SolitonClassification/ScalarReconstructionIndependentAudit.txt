@@ -1,0 +1,140 @@
+INDEPENDENT AUDIT OF SCALAR RECONSTRUCTION THROUGH ALL ZEROS
+12 November 2026. Reviewer: finish_curve_input.
+Reviewed source: ScalarReconstructionAllSmoothZeros.txt
+Reviewed source SHA256:
+73852E86AC5A592554B39410531F869ABFB599E6FC765CE21F9E7D7920E37BB3
+This is an independent analytic review, not a Lean verification or a
+literature-priority assessment. No frozen Lean source was modified.
+
+VERDICT
+
+The global divisibility theorem, all-inflection closed-profile converse,
+and local C5 obstruction are correct as stated. I found no hidden simple-
+zero assumption, unsupported closure condition, missing parameter case,
+sign error, or derivative-order gap. The result is a reconstruction
+equivalence; it does not classify the resulting periodic solutions.
+
+1. REGULARITY AND THE MAXIMAL INTERVAL
+
+For k in C6, F=k''+k^3/2 is C4, n=F'+b is C3, g=a-kF is C4,
+and the globally defined H(s)=n(s0)/k(s0)+integral_s0^s g is C5.
+Consequently r=n-kH is C3. Direct expansion gives
+  k r' - k' r = k n' - k' n - k^2 H' = 0.
+Thus r/k is constant on every nonzero-curvature interval. The anchor
+makes this constant zero initially, so the maximal open interval I of
+identically zero r containing s0 is nonempty.
+
+At a finite endpoint z, continuity of r and its first three derivatives
+gives r^(j)(z)=0 for j=0,1,2,3. The regular identity on I extends to z:
+  k'''=kH-b-(3/2)k^2 k'.
+If k(z)=0, its first nonzero derivative is k', k'', or, when b is nonzero
+and both lower ones vanish, k'''=-b. The only omitted possibility would
+be b=0 and (k,k',k'')(z)=(0,0,0). Treating the already globally defined
+H as a continuous coefficient gives a regular, locally Lipschitz third-
+order system. Its zero solution is unique backwards from z. Uniqueness
+propagates across connected I and contradicts k(s0) nonzero. This uses
+neither an ODE uniqueness theorem for the degenerate scalar equation nor
+any assertion that its arbitrary solutions are already smooth.
+
+Hence the endpoint zero has finite order m at most3. Taylor expansions
+under C3 regularity give k~c(s-z)^m, c nonzero, and r=o(|s-z|^m).
+Therefore r/k tends to zero at z and its constant on the adjacent side
+must vanish. This contradicts maximality. Equivalently, on that side
+r=Ck, and continuity of the m-th derivatives gives
+  0=r^(m)(z)=C k^(m)(z),
+so C=0. This alternative argument makes clear that only three derivatives
+of r are used; smooth Hadamard division is not needed for the C6 theorem.
+The same reasoning treats either finite endpoint. Thus I is all Real.
+
+2. UNIQUENESS, PERIODICITY AND BOOTSTRAP
+
+Two differentiable H satisfying the recovered identities have identical
+derivative g, so differ by a constant. The nonzero anchor fixes that
+constant. Here H' has its usual classical meaning; a formal statement
+should use C1/HasDerivAt rather than a bare totalized derivative equality.
+
+For periodic k, its derivatives, F, n and g are periodic. The period
+difference H(s+L)-H(s) has zero derivative. The identity kH=n at one
+nonzero anchor sets this constant difference to zero. Thus periodicity
+of H is proved and no separate divisibility premise has been introduced.
+
+The vector (k,k',k'',H) is already C1 and solves the displayed polynomial
+first-order system. Repeated substitution/differentiation gives C-infinity
+regularity. No analytic-regularity theorem is needed. At zeros, the same
+regular uniqueness argument yields order at most2 for b=0 and at most3
+for b nonzero. Isolated zeros are finite on a compact interval because
+their zero set is closed. Flat zeros, zero intervals and accumulating zeros
+are all excluded as consequences, not used as assumptions.
+
+3. SUPPORT RECONSTRUCTION AND INTEGER HOLONOMY
+
+For A=a^2+b^2 and a>0, the formulas
+  p=(-aF-bH)/A, q=(-bF+aH)/A
+give, using F'=kH-b and H'=a-kF,
+  p'=-kq, q'=1+kp, F=-ap-bq.
+With theta'=k, T=(cos theta,sin theta), N=JT, and beta=qT+pN,
+  beta'=(q'-kp)T+(p'+kq)N=T.
+This is an actual smooth unit-speed immersion with signed curvature k.
+Integer holonomy over the specified period L makes T,N periodic. The
+already proved periodicity of p,q then closes beta itself. No independent
+integral-of-tangent closing condition is needed or assumed.
+
+Conversely, for an actual closed unit-speed profile the support equations
+produce H=aq-bp and the regular identities, and tangent periodicity gives
+integer total curvature. A closed unit-speed curve cannot have k identically
+zero. These observations establish the full smooth fixed-a,b equivalence.
+The statement correctly distinguishes integer holonomy over L from a merely
+periodic support orbit with noninteger angle change. Multiple covers and
+a larger period are not incorrectly excluded.
+
+4. PARAMETER AND CONSTANT-CURVATURE CASES
+
+The divisibility theorem may use arbitrary a,b. The geometric reconstruction
+uses A>0 and the intended expanding assumption a>0. When a=b=0, nonzero
+periodic solutions of k''+k^3/2=0 illustrate why the support inverse cannot
+be used: A=0. The source does not claim they give closed profiles.
+
+For constant k nonzero, the scalar equation gives a=k^4/2 and H=b/k.
+The reconstructed values are p=-1/k and q=0, a centered circle. Arbitrary
+b is the usual rotational reparametrization of that circle. The identically
+zero function must be excluded: it solves the scalar equation but gives no
+closed unit-speed immersion; for b=0 it also destroys uniqueness of H.
+
+5. C5 GLUING COUNTEREXAMPLE
+
+For the regular polynomial system with initial data (k,v,w,H)=(0,0,0,H0)
+and b nonzero, direct differentiation yields
+  k0=k1=k2=0, k3=-b, k4=k5=0, k6=-b H0.
+Indeed (kH)''' at zero is k''' H0, while (k^2 k')''' vanishes; all
+other product terms have a zero lower jet of k. The a-dependent terms
+first enter higher jets and do not change this identity.
+
+Taking different H0 values on the two sides gives matching k jets through
+order5 and different sixth jets. The glued curvature is C5 but not C6.
+Away from zero the scalar equation holds by the regular ODE; at zero each
+term vanishes since k=k'=0 and k'''' exists continuously. It is therefore
+a classical solution of that fourth-order equation. Its leading term
+(-b/6)s^3 makes k nonzero on both sufficiently small punctured sides, so
+n/k equals the respective smooth H there and has distinct one-sided
+limits. No continuous H can reconstruct this local solution.
+
+This proves sharpness of C6 versus C5 for general local reconstruction.
+It does NOT provide a periodic C5 example or a new closed profile, as the
+source explicitly states. The regularity distinction is substantive.
+
+OPTIONAL SHARPENING (NOT NEEDED BY THE REVIEWED THEOREM)
+
+For b=0 the same proof already works under k in C5: r is C2 and every
+possible endpoint zero has order at most2. A local C4 obstruction is obtained
+by gluing regular solutions with common (k,v,w)(0)=(0,0,c), c nonzero,
+but different H0. Their matching lower jets are k2=c,k3=k4=0 and
+k5=cH0; hence k is C4 but not C5 and n/k has different limits. This
+refinement is an analytic observation only and is not a further classified
+periodic solution or a Lean theorem.
+
+REMAINING SCOPE
+
+The nonlinear periodic scalar equation with integer holonomy remains to
+be solved/classified. This equivalence neither rules out all rotating
+noncircular profiles nor constructs one. It does not address migration
+or general long-time length growth.

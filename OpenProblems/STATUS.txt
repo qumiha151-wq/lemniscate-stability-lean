@@ -29,6 +29,11 @@ SolitonClassification/: independent support-function ODE and actual geometric
   curvature are centered circles. Nonconstant profiles must have positive
   and negative curvature excursions exceeding half their RMS curvature.
   Closed reconstruction includes the explicit integer angle condition.
+  The actual circular Jacobian has now been formally shown to have no
+  purely imaginary eigenvalue at any rotation rate. Closed pure translators,
+  including stationary curves,are excluded from actual position/Frenet data.
+  The scalar reconstruction across all smooth curvature zeros is a reviewed
+  human proof only; the full classification remains unresolved.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,

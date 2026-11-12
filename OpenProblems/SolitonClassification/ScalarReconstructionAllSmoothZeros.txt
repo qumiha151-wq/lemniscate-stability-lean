@@ -1,0 +1,249 @@
+SCALAR CURVATURE RECONSTRUCTION THROUGH ALL INFLECTIONS
+12 November 2026. Analytic addendum by audit_full_escape.
+This is not Lean-formalized and does not solve the periodic classification.
+No publication-priority claim is made.
+
+This strengthens Section4 of IntrinsicRotationAndOddExclusion.txt. The
+simple-inflection assumption can be removed for smooth curvature. It cannot
+be removed indiscriminately for every classical C4 solution of the degenerate
+scalar equation: Section6 below gives even a C5 local counterexample.
+
+1. GLOBAL DIVISIBILITY THEOREM
+
+Let k:Real->Real be C6, not identically zero, and let a,b be real constants.
+Set F=k''+k^3/2 and n=F'+b. Suppose, at every s,
+
+             k n' - k' n = k^2 (a-kF).                 (S)
+
+Then there is a UNIQUE function H satisfying everywhere
+
+                   n=kH,        H'=a-kF.              (R)
+
+It is obtained without division at zeros: choose s0 with k(s0)!=0 and set
+
+ H(s)=n(s0)/k(s0)+ integral from s0 to s of [a-k(u)F(u)] du.             (1)
+
+Initially H is C5. In fact (k,k',k'',H) is a smooth solution of the regular
+polynomial system in Section3, so k and H are C-infinity. In particular the
+theorem applies to every smooth k. No simple-zero, finite-zero, or a priori
+smooth-divisibility assumption is used. The conclusion is independent of
+the selected nonzero anchor s0.
+
+Proof.
+Write r=n-kH, using r rather than q to avoid confusion with the tangential
+support function q in Section4. The definition of H and (S) give
+
+                         k r' - k' r=0.                (2)
+
+On an interval where k is nonzero, (r/k)'=0. At s0 we have r(s0)=0, so r
+vanishes on a neighborhood of s0. Let I be the maximal open interval
+containing s0 on which r is identically zero. This interval exists as the
+connected component containing s0 of the interior of the zero set of r.
+
+Suppose z is a finite endpoint of I. All functions and their indicated
+derivatives extend across z because the original data are defined on Real.
+Since r is C3 and identically zero on the I side, continuity gives
+
+                       r^(j)(z)=0,       j=0,1,2,3.     (3)
+
+If k(z)!=0, equation (2) and r(z)=0 immediately extend r=0 to a neighborhood
+of z, contradicting maximality. It remains to consider k(z)=0.
+
+On I, the identity r=0 is precisely
+
+            k'''=kH-b-(3/2)k^2 k'.                      (4)
+
+It holds at z by continuity. If k'(z)!=0, the zero of k has order1. If
+k'(z)=0 but k''(z)!=0, it has order2. If k'(z)=k''(z)=0 and b!=0, (4) gives
+k'''(z)=-b!=0, so it has order3.
+
+The remaining case k(z)=k'(z)=k''(z)=0 and b=0 is impossible. For this
+claim regard the already defined smooth-enough function H(s) as a known
+coefficient. On I, (k,k',k'') solves the regular nonautonomous system
+
+               x'=v,   v'=w,   w'=H(s)x-(3/2)x^2 v.     (5)
+
+Its right side is continuous in s and locally Lipschitz in (x,v,w).
+The zero solution has the same limiting data at z. Uniqueness also holds
+backwards from this endpoint: on a sufficiently small closed interval ending
+at z, the integral difference estimate and Gronwall give (k,k',k'')=0.
+One may then start uniqueness at an interior point and continue over the
+connected interval I. This forces k(s0)=0, a contradiction. Thus the zero
+at z has finite order m in {1,2,3}.
+
+Taylor's formula and (3) now give
+
+ k(s)=c(s-z)^m+o(|s-z|^m),  c!=0,
+ r(s)=o(|s-z|^m).
+
+Consequently k has no other zero sufficiently close to z, and r/k extends
+continuously to z with value0. Equation (2) makes this quotient constant on
+each of the two punctured sides. Continuity forces both constants to be0.
+Hence r=0 across z, again contradicting maximality. For smooth input, the
+same step can be phrased using Hadamard division: both k and r factor by
+(s-z)^m, the remaining factor of k is nonzero, and the quotient for r has
+value0. Smooth divisibility is concluded here, not assumed.
+
+Both finite endpoints are excluded by the same argument, so I=Real.
+This proves (R). If H1 and H2 both satisfy (R), their derivatives agree;
+their difference is constant and vanishes at s0 because k(s0)!=0. Therefore
+H1=H2. Applying this uniqueness to the constructions from different anchors
+proves anchor independence.
+
+2. PERIODICITY IS DERIVED, NOT ADDED
+
+Suppose additionally that k has period L>0. Then F,n and H'=a-kF are
+L-periodic. The difference d(s)=H(s+L)-H(s) has derivative zero and is
+therefore constant. At s0, the identity kH=n and periodicity of k,n give
+k(s0)d(s0)=0. Since k(s0)!=0, d=0. Thus H itself is L-periodic.
+
+An immediate necessary identity is
+
+ a L = integral_0^L kF
+     = -integral_0^L (k')^2 + (1/2)integral_0^L k^4.     (6)
+
+This is obtained from the periodicity just proved. In particular there is
+no separate unproved periodic smooth-division premise in the converse.
+
+3. ZERO STRUCTURE AND AUTOMATIC SMOOTHNESS
+
+The recovered identities are equivalent to the regular first-order system
+
+ k'=v,
+ v'=w,
+ w'=kH-b-(3/2)k^2 v,
+ H'=a-k(w+k^3/2).                                       (7)
+
+Its right side is polynomial. A C1 solution is C2 by substitution into (7),
+and repeated differentiation gives C-infinity regularity. This proves the
+smoothness assertion for the C6 input theorem without invoking any analytic
+regularity theorem.
+
+At every zero z of a nonzero solution, k'''(z)=-b. If b!=0 the zero has
+order at most3. If b=0, uniqueness in (5) rules out simultaneous vanishing
+of k,k',k'', so the order is at most2. Every zero is consequently isolated.
+There are finitely many zeros on every compact interval: an infinite set
+would have an accumulation point, which is a zero by continuity and cannot
+be isolated. In the periodic case there are finitely many in a period.
+These facts are conclusions, not hypotheses used to construct H.
+
+4. EXACT CLOSED-PROFILE RECONSTRUCTION, WITH ARBITRARY ZERO MULTIPLICITY
+
+Let k be C6, nonzero as a function, and L-periodic, with L>0. Suppose a>0,
+b is real, (S) holds, and
+
+                    integral_0^L k = 2*pi*m,   m integer.              (8)
+
+The equivalent unexpanded scalar equation is
+
+             kF''-k'(F'+b)+k^3F-a k^2=0.                (9)
+
+By Sections1--3, k,H are smooth and periodic and satisfy (R). Put
+
+ A=a^2+b^2>0,
+ p=(-aF-bH)/A,               q=(-bF+aH)/A.              (10)
+
+Direct differentiation using (R) gives
+
+                 p'=-kq,       q'=1+kp,
+                         F=-ap-bq.                     (11)
+
+Choose any constant theta0 and set
+ theta(s)=theta0+integral_0^s k,
+ T=(cos theta,sin theta), N=JT, beta=qT+pN.
+Then T'=kN and N'=-kT, while (11) gives
+
+          beta'=(q'-kp)T+(p'+kq)N=T.                   (12)
+
+Thus beta is an actual smooth unit-speed immersion with signed curvature k.
+All of p,q,T,N are L-periodic, the last two by (8); hence beta is closed.
+Its actual support components are beta.N=p and beta.T=q, so its actual
+elastic force obeys the fixed-center similarity profile equation
+
+                 k''+k^3/2=-a(beta.N)-b(beta.T).        (13)
+
+There is no additional unproved positional closure integral: (12) and the
+periodicity of the explicitly constructed beta imply integral_0^L T=0.
+The remaining choice theta0 rotates the constructed profile about its centre.
+
+Conversely, every smooth closed unit-speed profile satisfying (13) has
+F'=kH-b and H'=a-kF for H=aq-bp; these imply (9), and its tangent has
+integer holonomy (8). Its curvature is not identically zero, because a
+closed unit-speed curve cannot have a constant tangent. Hence (9) together
+with integer holonomy is necessary and sufficient for the entire smooth
+closed-profile class at fixed a>0,b, including every multiple inflection.
+
+The statement concerns the specified period L. If a scalar curvature is
+initially given with a smaller period P, rational holonomy over P can become
+integer holonomy after an integer multiple of P; one must use that larger
+period when applying this criterion. Noninteger holonomy must not be silently
+treated as positional closure over the original period.
+
+5. DEGENERATE CASES THAT MUST NOT BE DROPPED
+
+The nonzero-function hypothesis is essential. k identically0 satisfies (9)
+for every a,b and has holonomy0, but cannot represent a closed unit-speed
+immersion. When b!=0 it does not even satisfy n=kH for any H. When b=0 the
+identities (R) admit arbitrary additive constants, so uniqueness also fails.
+
+The divisibility theorem itself allows arbitrary a,b. The closed-profile
+converse above uses a>0 to ensure A>0 and the intended expanding class.
+For example, a=b=0 and nontrivial periodic solutions of k''+k^3/2=0 satisfy
+(S), with H=0, but the support formulas (10) are undefined. No conclusion
+about closed profiles is asserted by that degenerate parameter case.
+
+Constant nonzero curvature is included. Equation (9) then imposes
+a=k^4/2, H=b/k, and (10) gives p=-1/k,q=0: precisely a centered circle.
+Arbitrary b only rotates/reparametrizes its image, consistent with the
+previous rotation redundancy rather than a new rotating noncircular example.
+
+6. A C5 LOCAL COUNTEREXAMPLE TO A LOWER-REGULARITY CONVERSE
+
+Fix a>0 and b!=0, and choose distinct real numbers Hminus,Hplus. On a small
+neighborhood of0, take the two smooth local solutions of the regular system
+(7) with initial data
+
+              (k,v,w,H)(0)=(0,0,0,Hminus),
+              (k,v,w,H)(0)=(0,0,0,Hplus).
+
+Local existence and uniqueness follow directly from the polynomial vector
+field. In each solution, evaluation and differentiation of (7) give
+
+ k(0)=k'(0)=k''(0)=0,
+ k'''(0)=-b,     k''''(0)=k'''''(0)=0,
+                        k''''''(0)=-b*H(0).             (14)
+
+For the last identity, k has order3 and k' has order2, so the third
+derivative of k^2*k' vanishes at0; only k'''(0)H(0) survives in the third
+derivative of kH. The a terms multiply zero lower jets of k.
+
+Use the Hminus solution's k on s<=0 and the Hplus solution's k on s>=0.
+The first five derivatives match, so the resulting k is C5. The unequal
+sixth one-sided derivatives show that it is not C6. On both punctured
+sides it satisfies (9) because it comes from (7). At0 all terms of (9)
+vanish since k(0)=k'(0)=0, and the required fourth derivative exists and
+is continuous. Therefore it is a genuine classical C5 solution of the
+degenerate fourth-order equation on a neighborhood of0.
+
+Yet k(s)=(-b/6)s^3+o(s^3) is nonzero for sufficiently small s!=0, and
+
+        (F'(s)+b)/k(s)=Hminus(s) on the negative side,
+        (F'(s)+b)/k(s)=Hplus(s) on the positive side.
+
+The one-sided limits Hminus and Hplus differ. No continuous global H can
+satisfy n=kH across0. This local example is not periodic and does not claim
+an extra closed similarity profile. It shows precisely why one cannot use
+only the apparent C4 regularity of the scalar equation to deduce the smooth
+converse. C6 suffices by Section1, while C5 does not suffice even locally.
+
+7. CONSEQUENCE AND REMAINING OPEN PROBLEM
+
+Section4 of the earlier note may now be strengthened from simple inflections
+to all smooth curvature functions. Multiple, flat or accumulating zeros are
+not an unaddressed smooth loophole: finite-order zeros are derived, and flat
+or accumulating zeros are excluded for every nonzero smooth scalar solution.
+
+This is a complete equivalence/reconstruction reduction, not a classification
+of the periodic solutions of (9) satisfying integer holonomy. It neither
+constructs a new rotating closed profile nor proves all closed profiles are
+nonrotating. The full SolitonClassification problem remains unresolved.
