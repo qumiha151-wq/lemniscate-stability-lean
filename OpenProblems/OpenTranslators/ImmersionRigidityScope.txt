@@ -1,0 +1,79 @@
+FROZEN ACTUAL IMMERSION RIGIDITY FOR ARBITRARY NONZERO VELOCITY -- 13 November 2026
+
+Files: ProjectedRigidity.lean and ImmersionRigidity.lean.
+Independent project: OpenTranslators; no cross-problem imports.
+ImmersionRigidity imports actual ImmersionFrenet and ProjectedRigidity.
+It does NOT import ImmersionAngle or require a global angle in its hypotheses.
+
+VERIFICATION
+Both final direct compiler runs exit code 0, no warnings.
+ProjectedRigidity recursive audit: 188 OpenTranslator declarations, standard3.
+ImmersionRigidity recursive audit: 201 OpenTranslator declarations, standard3.
+Both main theorems print only propext, Classical.choice, Quot.sound.
+The four new immersion/projected sources contain no sorry, admit,
+native_decide, unsafe or custom axiom.
+
+ProjectedRigidity source SHA256:
+B6AF488BE46198600B9D71E785F16E578C3A3D297DC167FE64EDB58126129E24
+ProjectedRigidity olean SHA256 (556256 bytes):
+AD6457F6F8AAF9F6A06877F17F529AAF7AC3D5AFF0ECCAA106654C258D3CCBEF
+ImmersionRigidity source SHA256:
+9F3A53DA84EE0833E82D4567ABFE9C56AF5CAFA03B1FF192A87EEEAD4B76B397
+ImmersionRigidity olean SHA256 (439448 bytes):
+C9DD41624DEAFA6F913965C7EF55E367DAF68B85D8277F978F455B9E83B904DA
+
+FINAL ACTUAL-GEOMETRY INTERFACE
+OpenTranslator.Immersion.geometric_translator_affine_rigidity takes:
+ - actual coordinate functions x,y:R->R, both C-infinity;
+ - actual unit speed (deriv x)^2+(deriv y)^2=1 everywhere;
+ - a nonzero constant velocity, expressed as vx!=0 OR vy!=0;
+ - the geometric normal-speed equation
+     vx*(-deriv y)+vy*deriv x = -elasticForce x y;
+ - a bound |curvature x y|<=K everywhere.
+
+Both curvature and elasticForce are computed from ACTUAL POSITION DERIVATIVES:
+ k=x'*y''-y'*x'', F=k''+k^3/2. Unit speed justifies this arclength curvature.
+The theorem concludes that there exist constants a,b such that
+ a^2+b^2=1, vx*b-vy*a=0, and for every real s,
+ x(s)=x(0)+s*a, y(s)=y(0)+s*b.
+Thus the actual complete unit-speed coordinate immersion is an affine straight
+line with unit direction parallel to the arbitrary nonzero translation velocity.
+The sibling curvature theorem explicitly proves k=0 and normal force=0 globally.
+
+NO EXTRA REPRESENTATION ASSUMPTIONS
+No existing angle, Frenet fields, global ODE state, stress identity, derivative
+bound, finite-energy hypothesis, or endpoint limit is assumed by the final theorem.
+Frenet identities were independently derived from smooth positions and unit speed.
+Zero velocity is explicitly excluded; stationary profiles are NOT covered.
+
+DIRECT PROJECTION ARGUMENT
+Define from actual tangent coordinates
+ f=vx*y'-vy*x' = -V dot N, q=vx*x'+vy*y' = V dot T.
+Frenet differentiation proves f'=kq and q'=-kf.
+Actual unit speed gives f^2+q^2=L=vx^2+vy^2, with L>0 from nonzero velocity.
+The actual translator equation gives v'= -k^3/2+f, where v=deriv k.
+
+ProjectedRigidity proves rigidity from this system by deriving every bound:
+f,q are bounded using their invariant; bounded k bounds v', and the previously
+proved actual mean-value estimate bounds v. The projected stress
+P=-v*f+(k^2/2)*q is differentiated to get P'=-f^2. It is bounded and antitone,
+hence has finite limits. Bounded P'' and DerivativeLimit force f->0; bounded
+(kq)' forces kq->0; bounded k gives kf->0; the identity
+ L*k^2=(kf)^2+(kq)^2 then gives k->0, using L>0. DerivativeLimit gives v->0,
+so P->0 at both ends, P is identically zero, f=0, and then k=0 because q!=0.
+All projected hypotheses are explicitly constructed from actual coordinates
+in ImmersionRigidity. Finally actual x''=y''=0 is integrated to the displayed
+affine coordinate formula. No rotation, dilation or cube-root normalization
+is needed anywhere in this argument.
+
+INDEPENDENT ANGLE LIFT
+ImmersionAngle.lean separately constructs a global smooth angle from actual
+unit-speed coordinates and proves its cosine/sine equal the actual tangent.
+That result is fully proved, but is not a dependency of this main rigidity theorem.
+
+SCOPE
+The theorem concerns actual globally defined smooth unit-speed coordinate
+immersions on R. Reparametrizing arbitrary non-unit-speed abstract manifolds
+by arclength is outside this formal statement. No pure-normal gauge, embeddedness,
+properness, asymptotic classification or novelty claim is made.
+All previously frozen files remain unchanged; these two sources are now frozen.

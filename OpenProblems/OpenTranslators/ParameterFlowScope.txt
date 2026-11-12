@@ -1,0 +1,25 @@
+FROZEN VERIFIED PARAMETER-FLOW CHAIN
+13 November 2026.
+Sources: ParameterField.lean, ParameterFlowClock.lean, ParameterFlow.lean.
+Exact source and olean SHA256 values: ParameterFlowFrozenManifest.csv.
+Imports: Mathlib and this independent OpenTranslators project only. No CentroidEscape or other-problem imports. No previously frozen source was edited.
+
+Actual final checks using check_module.ps1, Lean 4.33.1, deps-first Mathlib:
+ParameterField: process 52348, exit 0, no warnings; recursive audit 171 declarations.
+ParameterFlowClock: process 23152, exit 0, no warnings; recursive audit 200 declarations.
+ParameterFlow: process 65721, exit 0, no warnings; recursive audit 218 declarations.
+Only allowed axioms: propext, Classical.choice, Quot.sound.
+
+Namespace: OpenTranslator.TranslatorParameter.
+Input: an actual global translator z with hz : forall s, HasDerivAt z (translatorNumerator (z s)) s.
+
+What is proved:
+- f(s)=-cos(theta(s)), D(s)=1+v(s)^2+k(s)^4/4, g=f/D are actual defined functions.
+- Actual D'=2v sin(theta); actual quotient derivative; |g|<=1 and |g'|<=4; g is globally 4-Lipschitz.
+- The proved BoundedFlow theorem supplies an actual global regularized scalar solution through any u0.
+- Its actual integral clock has derivative 1/D(psi), is strictly increasing and onto. The energy-radius estimate proves surjectivity, not an assumed global inverse time change.
+- Inverse-clock pullback solves phi'=f(phi) for every real time. Smooth local Lipschitz uniqueness of f gives exists_unique_global_parameter_flow hz u0.
+- The coherent choice parameterFlow hz t u satisfies zero-time identity, actual time derivative, time C-infinity, the group law, inverse by negative time, bijectivity, strict spatial monotonicity, spatial continuity for every time, and |phi(t,u)-phi(s,u)|<=|t-s|.
+
+Precise remaining steps:
+Joint C-infinity in (t,u) is not yet proved. Neither actual spatial differentiability nor phi_u>0 is asserted by this chain. Its time slices are increasing homeomorphisms via parameterFlowOrderIso; a smooth diffeomorphism conclusion requires the remaining spatial regularity argument. Actual intrinsic pure-normal FEF of beta(phi(t,u))+tV, including spatial arclength/curvature formulas after reparametrization, remains a subsequent geometric step. The existing Geometry module supplies only normal-component FEF before this reparametrization.

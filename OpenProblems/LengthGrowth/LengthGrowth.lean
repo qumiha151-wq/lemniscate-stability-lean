@@ -1,3 +1,4 @@
+import LengthGrowth.SubsqrtGrowth
 import LengthGrowth.CurveFromPosition
 import LengthGrowth.ScalarDissipation
 import LengthGrowth.ElasticStress

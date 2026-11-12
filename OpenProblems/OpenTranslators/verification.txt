@@ -34,9 +34,65 @@ MODULE OpenTranslators/Geometry
  Quot.sound]
 Geometry: audited 152 declarations; standard axioms only.
 EXIT 0
+MODULE OpenTranslators/DerivativeLimit
+Derivative limit audit passed; standard axioms only.
+EXIT 0
+MODULE OpenTranslators/BoundedCurvature
+'OpenTranslator.BoundedCurvature.bounded_curvature_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenTranslator.BoundedCurvature.exists_unbounded_curvature_translator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BoundedCurvature: audited 187 declarations; standard axioms only.
+EXIT 0
+MODULE OpenTranslators/ParameterField
+Parameter field audit passed for 171 declarations.
+EXIT 0
+MODULE OpenTranslators/ParameterFlowClock
+Parameter clock audit passed for 200 declarations.
+EXIT 0
+MODULE OpenTranslators/ParameterFlow
+Parameter flow audit passed for 218 declarations.
+EXIT 0
 MODULE OpenTranslators
 EXIT 0
 MODULE OpenTranslators/AxiomAudit
-Open-translator audit passed: 152 declarations; standard axioms only.
+Open-translator audit passed: 253 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.
+13 November 2026: staged extension; prior twelve-module root build passed unchanged.
+MODULE OpenTranslators/ParameterSpatial
+Parameter spatial audit passed for 235 declarations.
+EXIT 0
+MODULE OpenTranslators/ParameterPartialDerivatives
+EXIT 0
+MODULE OpenTranslators/ParameterHigher
+Parameter higher audit passed for 250 declarations.
+EXIT 0
+MODULE OpenTranslators/ParameterIntrinsic
+Parameter intrinsic audit passed for 293 declarations.
+EXIT 0
+MODULE OpenTranslators/ParameterExample
+Parameter example audit passed for 328 declarations.
+EXIT 0
+MODULE OpenTranslators/ImmersionFrenet
+'OpenTranslator.Immersion.frenet_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE OpenTranslators/ImmersionAngle
+'OpenTranslator.ImmersionAngle.tangent_angle_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+ImmersionAngle: audited 178 declarations; standard axioms only.
+EXIT 0
+MODULE OpenTranslators/ProjectedRigidity
+'OpenTranslator.ProjectedRigidity.projected_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ProjectedRigidity: audited 188 declarations; standard axioms only.
+EXIT 0
+MODULE OpenTranslators/ImmersionRigidity
+'OpenTranslator.Immersion.geometric_translator_affine_rigidity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ImmersionRigidity: audited 201 declarations; standard axioms only.
+EXIT 0
+MODULE OpenTranslators
+EXIT 0
+MODULE OpenTranslators/AxiomAudit
+Open-translator audit passed: 398 declarations; standard axioms only.
+EXIT 0

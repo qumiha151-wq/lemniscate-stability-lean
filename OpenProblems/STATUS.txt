@@ -7,6 +7,9 @@ Existing lemniscate stability: the original repository root project.
 LengthGrowth/: scalar dissipation-to-secant theorem and conditional
   fourth-power bound from a uniform normalized-energy bound. PDE identities and
   unrestricted quarter-power growth remain outside the formalization.
+  The scalar restart estimate now also gives L(t)=o(sqrt(t)) without
+  assuming total bending energy tends to zero. This does not settle the
+  unrestricted quarter-power rate or formalize the geometric PDE identities.
   The reviewed FixedTurningObstruction.txt gives actual closed curves of every
   fixed turning number with arbitrarily high EL and initially increasing EL,
   as well as D/E^5 tending to zero. This is a human proof of an obstruction
@@ -52,13 +55,15 @@ CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   The final existence theorem has no remaining numerical or analytic proof
   hypotheses. See CentroidEscape/FullVerification.txt and FullSemanticAudit.txt.
   This resolves the centroid question; it does not imply migration.
-OpenTranslators/: the original translator ODE now has proved unique smooth
-  global solutions for all initial states. Actual coordinate reconstruction
-  gives a nonstraight intrinsically complete immersed geometric translator
-  with joint smoothness,unit speed,and normal velocity equal to minus its
-  actual elastic force. The pure-normal gauge,properness and embeddedness
-  are not claimed. This addresses the unrestricted complete-immersion
-  formulation,not an unspecified bounded-regularity or properness class.
+OpenTranslators/: COMPLETE existence of an actual eternal nonstraight
+  intrinsically complete immersed pure-normal translator. The actual
+  induced metric is proved complete; actual curvature and arclength force,
+  joint smoothness and positive smooth reparametrizations are derived.
+  An arbitrary nonzero-velocity translator given by actual smooth unit-speed
+  coordinates has bounded curvature only if it is a parallel affine line.
+  The nonstraight example therefore has unbounded curvature. Properness,
+  embeddedness and all-translator classification are not claimed.
+  This addresses the broad complete-immersion existence formulation.
 
 Each populated directory is a separate Lake project with its own root
 module and enforced axiom audit. Build it from that directory. No proof

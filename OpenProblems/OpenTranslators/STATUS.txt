@@ -1,33 +1,49 @@
-Supplementary open-curve translator question: global geometric existence.
+OPEN TRANSLATORS: COMPLETE BROAD-IMMERSION EXISTENCE AND BOUNDED-CURVATURE RIGIDITY
 13 November 2026. Independent OpenTranslators Lake project.
 
-The actual angle/curvature system theta'=k,k'=v,v'=-k^3/2+sin(theta)
-has a unique global solution for every initial triple. Smoothness follows
-from the equation. Existence is proved by a bounded globally Lipschitz
-regularized field and an actual integral clock; surjectivity of the clock
-is derived from energy-radius estimates,not assumed.
+An unconditional Lean theorem constructs an eternal smooth, nonstraight,
+intrinsically complete immersed pure-normal free elastic flow whose images
+translate at velocity (1,0). It proves joint C-infinity, positive actual
+Euclidean speed, smooth orientation-preserving time-slice reparametrizations,
+and the complete velocity equation X_t=-F*N. Curvature, elastic force, unit
+normal and arclength derivatives are computed from actual coordinates.
+The actual speed-integral distance is isometric to the complete real line.
+At parameter zero the actual velocity is (1,0) and actual curvature is 1.
+Every time slice is proved not to lie in an affine line.
 
-Geometry.lean constructs beta(s)=integral(cos(theta),sin(theta)) and the
-eternal family X(t,s)=beta(s)+(t,0). It proves joint C-infinity,actual
-Euclidean unit speed and immersion,signed curvature and elastic force,
-and the geometric normal-velocity equation (X_t dot N)=-F with N unit
-and orthogonal to the actual tangent. The pullback metric is exactly u*w
-and the actual arclength distance is the standard real-line distance;
-the parameter domain is complete.
+Final existence entry:
+OpenTranslator.TranslatorPureNormal.exists_complete_nonstraight_pure_normal_translator
 
-Initial state(pi/2,1,0) supplies a concrete nonstraight example. Its image
-is proved not to lie in any affine line with nonzero normal,and its actual
-normal velocity at s=0 is -1 at every time.
+The underlying original angle/curvature ODE has a proved unique global
+smooth solution for every initial triple. Its bounded regularization and
+integral clock are actual constructions; clock surjectivity is proved.
+The tangential-removing field -cos(theta) also has a proved global flow.
+Its positive spatial derivative, joint smoothness, group law and smooth
+inverse are proved, including stationary parameter trajectories.
 
-This is a geometric translator theorem in the broad complete immersed
-class. X_t=(1,0) generally also has a tangential component. A pure-normal
-parametrization is not yet formalized. Properness,embeddedness,and global
-curvature/derivative bounds are not asserted. The source paper does not
-specify these extra conditions in its brief translator question; this
-result must not be silently promoted to an unspecified stricter class.
-No novelty or publication-priority claim is made.
+For any actual smooth unit-speed immersion on R translating with ANY
+nonzero constant velocity, globally bounded actual curvature forces an
+affine straight line parallel to that velocity. The input is actual
+position derivatives and the actual geometric normal-velocity equation;
+no angle, Frenet equations, stress bounds, endpoint limits, derivative
+bounds or finite-energy premise is added. Zero velocity is excluded.
+Final rigidity entry:
+OpenTranslator.Immersion.geometric_translator_affine_rigidity
 
-All source modules import only Mathlib and this project. See
-GlobalGeometryFrozenManifest.csv,GlobalExistenceScope.txt,GeometryScope.txt,
-and GlobalGeometrySemanticAudit.txt. Other closed-curve open questions
-remain separate and are not resolved by this construction.
+Consequently the specified nonstraight example has unbounded curvature.
+A global smooth angle lift for arbitrary smooth unit-speed coordinate
+immersions is separately proved; rigidity does not assume that lift.
+
+SCOPE: complete immersed curves with pointwise joint smoothness. Properness,
+embeddedness, asymptotic classification, and an arbitrary-speed arclength
+reparametrization theorem are not asserted. The source paper's brief open
+translator question does not specify such stricter classes; no conclusion
+about an unspecified stricter class or publication priority is made.
+This does not solve the separate closed-curve classification, length-growth
+or migration questions.
+
+See PureNormalScope.txt, ImmersionRigidityScope.txt, ExtendedSemanticAudit.txt,
+the frozen manifests and verification.txt. Earlier scope notes describe
+their respective intermediate modules; the current status above supersedes
+their statements that joint/spatial smoothness or the pure-normal gauge
+had not yet been formalized. All proof imports are Mathlib or this project.

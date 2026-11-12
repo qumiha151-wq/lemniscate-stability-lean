@@ -1,0 +1,28 @@
+SUB-SQUARE-ROOT LENGTH: SCALAR DISSIPATION CONSEQUENCE
+13 November 2026. Independent LengthGrowth project.
+
+Theorem FreeElasticScalar.restart_length_div_sqrt_tendsto_zero proves
+L(t)/sqrt(t) -> 0 as t -> infinity, from only:
+  H(s)>=0 for s>=0;
+  (L(t)-L(s))^2 <= (t-s)*(H(s)-H(t)) for 0<=s<=t.
+L need not be nonnegative. No continuity or differentiability is added to
+these hypotheses. No assumption H(t)->0, or E(t)->0, is used.
+
+Proof: take a=inf{H(s):s>=0}; choose S>=0 with H(S)<a+delta.
+Since H(t)>=a for all t>=S, the restart estimate yields
+L(t)^2 <= 2*t*delta+2*L(S)^2. Arbitrary delta>0 proves L(t)^2/t->0,
+and continuity of square root proves the signed quotient conclusion.
+The nonempty lower-bounded infimum, eventual thresholds, and all limit
+steps are kernel-checked. An independent analytic review confirmed this
+argument, including signed L and the absence of an energy-zero premise.
+
+The earlier ScalarDissipation module derives the finite-interval restart
+estimate from scalar derivatives and (L')^2<=-H'. For the geometric
+application H=E^2. Its derivation from actual free-elastic-flow PDE data
+remains outside this module, and the result is therefore recorded as a
+scalar consequence, not as a completed formalization of the PDE theorem.
+This improves the square-root scalar upper bound only. It neither proves
+unrestricted O(t^(1/4)) growth nor supplies a counterexample to that rate.
+
+Only Mathlib and this project are imported. Exact frozen hash is in
+SubsqrtGrowthManifest.json; compiler/audit evidence is in verification.txt.

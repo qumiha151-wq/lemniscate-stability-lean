@@ -67,3 +67,10 @@ The independent combined project audit now covers199 declarations,only
 propext,Classical.choice,Quot.sound. See ActualPositionScope.txt.
 General-speed arclength reparameterization and dynamic A(t) bounds are
 outside this addition; unrestricted length growth remains unresolved.
+
+SUB-SQUARE-ROOT SCALAR CONSEQUENCE
+SubsqrtGrowth.lean now proves L(t)/sqrt(t)->0 from the nonnegative energy
+reservoir H and the restart dissipation estimate alone. It does not assume
+H(t)->0 or E(t)->0. The proof uses a lower-bounded infimum and a restarted
+quadratic envelope. Geometric PDE identities and unrestricted quarter-power
+growth remain unresolved. See SubsqrtGrowthScope.txt and its frozen manifest.

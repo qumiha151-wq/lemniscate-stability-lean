@@ -1,0 +1,66 @@
+FROZEN VERIFIED JOINT-SMOOTH PURE-NORMAL TRANSLATOR CHAIN
+13 November 2026.
+
+New frozen sources: ParameterSpatial.lean, ParameterPartialDerivatives.lean,
+ParameterHigher.lean, ParameterIntrinsic.lean, ParameterExample.lean.
+Exact source/olean SHA256 values: ParameterPureNormalFrozenManifest.csv.
+The three earlier ParameterField/ParameterFlowClock/ParameterFlow sources were
+not edited. This chain completes the remaining spatial, joint-regularity and
+intrinsic-geometry steps listed in ParameterFlow_status.txt.
+
+Actual final checks, Lean 4.33.1, check_module.ps1, deps-first Mathlib:
+- ParameterSpatial: process 77328, exit 0, no warnings, recursive audit 235.
+- ParameterPartialDerivatives: process 49058, exit 0, no warnings; all of its
+  OpenTranslator declarations are recursively audited by ParameterHigher.
+- ParameterHigher: process 69323, exit 0, no warnings, recursive audit 250.
+- ParameterIntrinsic: process 64901, exit 0, no warnings, recursive audit 293.
+  Saved complete final output in ParameterIntrinsic_final_check.log.
+- ParameterExample: process 74566, exit 0, no warnings, recursive audit 328.
+  Saved complete final output in ParameterExample_final_check.log.
+Allowed axioms only: propext, Classical.choice, Quot.sound.
+The counts are transitive namespace declaration counts, not counts of new
+theorems or independently stated mathematical results.
+
+Dependencies: only Mathlib and this independent OpenTranslators project.
+ParameterPartialDerivatives is a project-namespaced copy of the pinned Mathlib
+FDeriv/Partial proof, retaining its Apache-2.0 copyright/author header. The
+readonly local Mathlib has its source but no cached object for that module.
+It imports Mathlib.Analysis.Calculus.MeanValue. There is no import from any
+other open-problem project. The namespace-local auxiliary copy avoids clashes
+if upstream Partial is later imported elsewhere.
+
+What is actually proved:
+1. parameterFlow is jointly continuous from its proved time displacement
+   bound and spatial continuity. A difference-quotient integrating factor
+   gives the exact spatial difference formula. Actual local compact bounds
+   on f' control the slope integral, and dominated convergence proves
+     d_u phi(t,u) = exp(integral_0^t f'(phi(r,u)) dr) > 0.
+   This works at zeros of f as well; no nonzero-field assumption or global
+   Lipschitz assumption on the original parameter field is imposed.
+2. Actual partial derivatives and compact-parameter integration give joint
+   C^n inductively for every n, hence joint C-infinity. Each time slice is a
+   C-infinity increasing diffeomorphism with inverse the negative-time slice.
+3. curveX(t,u)=betaX(phi(t,u))+t and curveY(t,u)=betaY(phi(t,u)) are jointly
+   C-infinity. Their Euclidean speed is the proved positive Jacobian.
+   Arc differentiation is defined by the actual coordinate derivative divided
+   by that speed. Unit tangent, unit normal, curvature and elastic force are
+   all computed from these actual reparametrized coordinates.
+4. The actual intrinsic curvature is k(phi), its first arc derivative is
+   v(phi), its second is -k(phi)^3/2+sin(theta(phi)), and the actual elastic
+   force is sin(theta(phi)). The complete actual time derivative equals minus
+   this force times the actual unit normal, not merely its normal projection.
+5. The actual arclength-distance integral equals dist(phi(t,a),phi(t,b)). A
+   separate parameter type carries this pullback metric, is isometrically
+   equivalent to the standard real line, and is proved CompleteSpace. The
+   metric distance is explicitly identified with the actual speed integral.
+6. The unconditional theorem
+   OpenTranslator.TranslatorPureNormal.exists_complete_nonstraight_pure_normal_translator
+   uses the already proved actual global translator through (pi/2,1,0), not
+   an assumed global curve/flow. It bundles joint smoothness, positive speed,
+   smooth time-slice diffeomorphisms, intrinsic pure-normal FEF, completeness,
+   the translating shape relation, noncontainment in any affine line at each
+   time, actual velocity (1,0) at parameter 0, and curvature 1 there.
+
+Scope: this establishes an actual complete nonstraight pure-normal translator
+and its geometric gauge. It does not enumerate all translators or classify all
+closed similarity profiles. Those remain separate mathematical questions.

@@ -1,0 +1,73 @@
+FROZEN BOUNDED-CURVATURE TRANSLATOR RIGIDITY -- 13 November 2026
+
+Source: work/translator_formal/BoundedCurvature.lean
+Independent project: OpenTranslators.
+Namespace: OpenTranslator.BoundedCurvature.
+Own-project imports: Geometry and DerivativeLimit. No cross-problem imports.
+Check: work/translator_formal/check_module.ps1 -Module BoundedCurvature
+Direct Lean 4.33.1; pinned read-only Mathlib; dependencies first.
+
+ACTUAL VERIFICATION
+Final compiler exit code 0; no warnings.
+Recursive namespace audit: 187 OpenTranslator declarations including imports.
+All collected axioms belong to propext, Classical.choice, Quot.sound.
+Main rigidity and unbounded-curvature existence theorems explicitly print
+only those axioms. No sorry, admit, native_decide, unsafe or custom axiom.
+
+Source SHA256:
+307ECC7374FCCB9E33AFCE3B1BA3A04E2CB00FFBDFB9035BBF9353FE493B0D2E
+Olean SHA256 (716928 bytes):
+0A481366393983C3A3B34288E0B4BDBF5DDBFE4D2EDAE34D90E7072B48873000
+
+EXACT RIGIDITY HYPOTHESES AND CONCLUSIONS
+Input is any actual global normalized ODE solution
+ theta'=k, k'=v, v'=-k^3/2+sin(theta)
+and a real K with |k(s)|<=K for every s in R.
+bounded_curvature_rigidity proves k(s)=0 and sin(theta(s))=0 everywhere.
+bounded_curvature_position_line proves that the ACTUAL integrated positions
+from Geometry satisfy betaX(s)=c*s, betaY(s)=0 for a constant c with c^2=1.
+Thus the reconstructed unit-speed immersion is a straight line parallel to V=(1,0).
+
+No v bound, stress relation, endpoint limit, integrability, finite energy,
+angle convergence, or no-zero-crossing hypothesis is assumed.
+
+DERIVED ANALYTIC CHAIN
+1. The ODE gives |v'|<=M=K^3/2+1.
+2. A generic actual two-derivative estimate gives |v|<=2K+M. It uses a
+   mean-value point in [s,s+1] and the Lipschitz bound for v derived from v'.
+   No Taylor formula or derivative bound is an input to the final theorem.
+3. Actual stress P=-v*sin(theta)+(k^2/2)*cos(theta) has derivative
+   P'=-sin(theta)^2. The formula is differentiated directly using the ODE.
+   Bounded k and derived bounded v bound P; monotonicity gives finite limits
+   at both spatial ends.
+4. P''=-2*sin(theta)*cos(theta)*k is bounded. The independently verified
+   DerivativeLimit theorem (finite function limit plus Lipschitz derivative
+   forces derivative ->0) gives sin(theta)^2 ->0 at both ends. Continuity
+   of square root gives sin(theta)->0.
+5. The actual derivative of sin(theta) is k*cos(theta), whose derivative
+   is v*cos(theta)-k^2*sin(theta), and is bounded by the preceding estimates.
+   DerivativeLimit therefore gives k*cos(theta)->0.
+6. Bounded k and sin(theta)->0 give k*sin(theta)->0. The trigonometric
+   identity k^2=(k*sin(theta))^2+(k*cos(theta))^2 gives k->0.
+   This avoids any angle-lift limit or decomposition into trigonometric intervals.
+7. DerivativeLimit applied to k with bounded v' gives v->0. The actual
+   stress bound |P|<=|v|+k^2/2 now gives P->0 at BOTH ends.
+8. Antitone P with both endpoint limits zero is identically zero. Its actual
+   derivative forces sin(theta)=0. Differentiating this identity, using
+   cos(theta)^2=1, gives k=0. The actual angle is constant, and integrating
+   the actual tangent proves the straight position-coordinate formula.
+
+ACTUAL NONTRIVIAL EXAMPLE HAS UNBOUNDED CURVATURE
+initial_curvature_unbounded applies to any actual global solution with
+initial state (pi/2,1,0) and proves forall K:R, exists s:R, K<|k(s)|.
+exists_unbounded_curvature_translator uses the earlier proved global initial-
+value theorem to construct such a witness. It is the same uniquely specified
+initial-value profile used in the complete nonstraight geometric example.
+
+SCOPE
+This formalizes the normalized global arclength-ODE version of Proposition B.
+The separate reduction of arbitrary nonzero translation vectors by planar
+rotation/dilation, and angle/arclength lifts of arbitrary abstract immersions,
+are not formalized here. No properness, embeddedness, asymptotic classification,
+finite-energy rigidity, or pure-normal reparametrization is claimed.
+No claim of novelty is made. Earlier frozen files remain unchanged.

@@ -1,0 +1,44 @@
+FROZEN ACTUAL FRENET IDENTITIES AND GLOBAL ANGLE LIFT -- 13 November 2026
+
+Files: ImmersionFrenet.lean and ImmersionAngle.lean, independent OpenTranslators.
+The Frenet module is separated so the arbitrary-velocity rigidity theorem can
+use it without importing the angle construction or complex argument.
+
+Both final direct compiler runs EXIT0, no warnings.
+ImmersionFrenet prints frenet_x axioms [propext, Classical.choice, Quot.sound].
+ImmersionAngle recursively audits all 178 OpenTranslator declarations,
+including every imported Frenet declaration, against the same standard3 set.
+It prints tangent_angle_identification with only those three axioms.
+
+ImmersionFrenet source SHA256:
+C7D844EF40470AE9D1599F78F0986877AC3AF20F0B33E24EB4B987EDF22A7D02
+ImmersionFrenet olean SHA256 (181816 bytes):
+8D81825842DCE243935737EEB053B3B04D0120E6D5B555436D414464B092D633
+ImmersionAngle source SHA256:
+5FE4440EFF07A2AA4703A10FC9E282C437C82628CC4F1B41133326A40A82B644
+ImmersionAngle olean SHA256 (266800 bytes):
+8FE3403C30CE466BC2393127A59F1D285B71842AF1C97C1D8C2006162F314C07
+
+HYPOTHESES
+Only actual real coordinates x,y:R->R, their C-infinity smoothness, and
+(deriv x)^2+(deriv y)^2=1 globally. No angle, curvature field, Frenet identity,
+translator equation, periodicity, or bound is assumed.
+
+FRENET DERIVATION
+k=x'*y''-y'*x'' is computed from actual positions.
+Differentiation of actual unit speed gives x'*x''+y'*y''=0.
+Algebra using these two identities proves x''=-k*y' and y''=k*x'.
+
+ANGLE CONSTRUCTION
+theta0=arg(x'(0)+i*y'(0)), with the initial complex tangent proved norm one.
+theta(s)=theta0+integral_0^s k. FTC and smoothness prove theta'=k and C-infinity.
+The actual tangent and (cos(theta),sin(theta)) are compared as global solutions
+of the autonomous augmented system (r,T1,T2)'=(1,-k(r)*T2,k(r)*T1).
+That actual field is proved smooth, hence locally Lipschitz. Their initial
+values agree by the complex-argument formulas, so previously proved actual
+ODE uniqueness yields x'=cos(theta), y'=sin(theta) on the whole real line.
+
+This fully constructs the global angle lift for arbitrary actual smooth
+unit-speed coordinate immersions. It is an independent theorem; the new
+arbitrary-velocity translator rigidity uses direct Frenet projections instead.
+All earlier frozen files were left unchanged. These two sources are now frozen.

@@ -1,0 +1,50 @@
+ROOT SEMANTIC REVIEW -- 13 NOVEMBER 2026
+
+The root reviewer read the actual DerivativeLimit, BoundedCurvature,
+ParameterField, ParameterFlowClock, ParameterFlow, ParameterSpatial,
+ParameterPartialDerivatives, ParameterHigher, ParameterIntrinsic and
+ParameterExample proofs, as well as ImmersionFrenet, ImmersionAngle,
+ProjectedRigidity and ImmersionRigidity. Final source hashes and actual
+compiler/audit results are separately recorded in the frozen manifests
+and verification.txt; this semantic review does not replace them.
+
+The bounded-curvature argument derives a bound for k' from bounded k and
+the actual k'' equation. It then derives a bounded monotone stress, finite
+endpoint limits, and vanishing of those limits using the proved derivative
+limit lemma. There are no assumed stress or finite-energy hypotheses.
+The arbitrary-velocity extension uses actual position derivatives and
+Frenet projections f=-V.N and q=V.T. It derives f^2+q^2=|V|^2>0 and
+P'=-f^2 directly. Zero velocity is correctly excluded. Actual coordinates
+are proved affine with unit direction parallel to V. The optional global
+angle construction is not an input to the arbitrary-velocity theorem.
+
+The pure-normal construction derives global existence for the actual
+scalar field f=-cos(theta) by a bounded regularization and a proved onto
+clock. Its coherent flow has the group law and inverse by negative time.
+The spatial derivative is proved from the exponential difference formula
+and dominated convergence on actual compact trajectory windows. This
+includes stationary trajectories and assumes no global bound for f'.
+An induction using continuous actual partial derivatives and parameter
+integrals proves joint C-infinity and smooth inverse time slices.
+
+The new curve is beta(phi(t,u))+(t,0). Its speed is the proved positive
+Jacobian phi_u, so it is an immersion. Unit tangent, unit normal, signed
+curvature, arclength derivatives and elastic force are explicitly defined
+from actual coordinate derivatives, then computed. The entire time
+velocity equals minus that intrinsic force times that actual unit normal.
+It is not merely an equality of normal projections. The actual arclength
+distance equals |phi(t,u)-phi(t,v)|, and the corresponding parameter type
+is isometric to the complete real line. Completeness is therefore for the
+induced intrinsic metric, not just for the original coordinate metric.
+
+The final existence theorem obtains its ODE solution from the earlier
+unconditional global initial-value theorem. Joint smoothness, parameter
+flow existence, diffeomorphism, completeness and nonstraightness are
+conclusions, not hidden hypotheses. The example has unbounded curvature.
+Properness, embeddedness and asymptotic classification are not proved.
+The immersion rigidity theorem starts from global unit-speed coordinates;
+an arbitrary-speed arclength reparametrization theorem is not included.
+
+All imports remain within Mathlib and the independent OpenTranslators
+project. The Mathlib partial-derivative proof retains its attribution and
+Apache 2.0 license. No novelty or publication-priority claim is made.
