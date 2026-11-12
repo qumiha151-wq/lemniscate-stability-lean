@@ -1,0 +1,204 @@
+COMPLETE FIVE-PATH CERTIFICATE: SHARDED KERNEL VERIFICATION PLAN
+12 November 2026; plan and measured small-sample cost record.
+The full 3750-step certificate has NOT been kernel checked.
+
+REPRODUCIBLE JOB GRAPH
+1. Pin one source revision, Lean 4.33.1 and the mathlib manifest. Build and
+   audit the shared generic modules once. Package all compiled files and
+   verify their exact hashes when restoring the same core in each job.
+2. Use five cases: center, a_plus, a_minus, b_plus, b_minus. Each contains
+   750 steps. Use 50 steps per shard, starts 0,50,...,700: 75 matrix entries.
+   Native generation may replay a prefix but only writes its chosen range.
+   Native JSON and generated Lean source are untrusted inputs.
+3. Each shard runs at most two independent Lean processes, each -j1 and
+   -M6144, with matrix max-parallel8. Each step has 60 separately kernel
+   checked rank lemmas, actual Horner endpoint and tube margin proofs.
+   Retain the command barriers every ten ranks. Five-step blocks and a
+   balanced append tree certify the entire actual 50-step segment.
+4. A successful shard requires every module plus a fresh strict audit.
+   Package generated source, hash manifest, oleans, logs and build report
+   as one tar.xz. There is no success package for a failed shard.
+5. Restore all 75 artifacts against the identical core hash graph. A
+   restore-only operation is transport/provenance validation and explicitly
+   leaves reimport_audit_passed false. The final compiler generates and
+   checks the five 750-step paths, initial state and actual endpoint links,
+   shooting inequalities, and the unconditional smooth FEF escape theorem.
+6. Final assembly initially uses one Lean process with -M12288 on the
+   intended 16GB runner. The final audit traverses the actual theorem's
+   full proof dependencies and permits only propext, Classical.choice and
+   Quot.sound. Import memory for all 3750 steps is still unmeasured. A
+   balanced tree reduces proof depth, not the total imported proof data.
+
+EXACT COMMAND INTERFACES
+python plan_full_certificate.py --output-root PLAN --revision COMMIT
+  [--data-root NATIVE --generate-sources]
+python generate_compact_shard.py --data-root NATIVE --case CASE
+  --start START --count 50 --output-root SHARD
+lake env python3 compile_shard.py --manifest SHARD/manifest.json --lean lean
+  --build-root .lake/build/lib/lean --jobs 2 --memory-mb 6144
+  [--resume-verified]
+python shard_artifact.py pack --manifest SHARD/manifest.json
+  --archive certificate.tar.xz --revision COMMIT
+python shard_artifact.py unpack --archive certificate.tar.xz
+  --output-root RESTORED --revision COMMIT
+An unpack is followed by reimport_shard.py to verify the exact core and
+restore the binary proofs. It then needs either a fresh shard audit or the
+final complete transitive Lean audit; unpack never certifies a theorem.
+
+STATIC FULL DATA PREPARATION ALREADY COMPLETED
+work/certificate_full_plan/manifest-index.json references 75 generated
+manifests, 5325 modules and 243075179 bytes of Lean source. All prescribed
+exact rational parameters, common h=L/750, and 3745 adjacent native ball
+boundaries were checked as source-generation preflight. The index records
+kernel_checked=false and full_certificate_proved=false. No full kernel
+compilation was started by this static preparation. The label
+LOCAL-STATIC-ONLY is not a published commit or completed proof.
+
+MEASURED COST AND LIMITATIONS
+- The original ten-step Linux CI passed: 39--42 seconds per older-format
+  leaf, four at a time; the ten-leaf window was 124 seconds. The centroid
+  job was 6m48s, Lake build306.324s; block imports were 2.5/2.9s, final
+  ten-step aggregate1.9s, 3979-declaration audit4.7s.
+- The first new compact Linux smoke at -M4096 failed on one leaf. Four
+  other leaves passed in22--23s; peak residents were4.17--4.30GB. The
+  Parameters import alone was3.31GB. This failure motivated -M6144.
+- The corrected compact smoke's five leaves passed in17--19s, peaking
+  at4.43GB, and FirstSixteen took2s. Its fresh artifact reimport and repeated
+  FirstSixteen audit also passed in run43211109332. These are early-step
+  samples only; see PipelineCloudCost.txt for recorded module measurements.
+- Conservatively using22--42s per leaf, 50 leaves at two processes give
+  9.2--17.5 minutes of leaf work per shard. Native prefix replay, setup,
+  artifact I/O and 19 block/merge modules add time. Planning12--22min per
+  shard gives about2--4h for ten waves of eight jobs, plus core/final/queue
+  time. This is an estimate, not a complete-run measurement or promise.
+  The corresponding sum of leaf-process elapsed times is22.9--43.8 hours;
+  it is not a direct CPU-utilization measurement.
+- Actual five-step artifact: 2753766 raw bytes in26 files compresses to
+  638684 bytes with xz preset6 (source, proofs, reports and logs included).
+  Naively scaling750 such pieces gives479013000 compressed bytes. Actual
+  50-step compression and full storage remain unmeasured. The raw full
+  source is243MB; compact oleans are estimated around1.7GB, before core.
+- Windows cold import figures near1.7GB for eleven/sixteen steps do not
+  establish final Linux import memory. Full final memory must be measured
+  and any failure fixed without stripping proof values or weakening audit.
+
+RESUMPTION AND FAILURES
+Use fail-fast:false so one shard failure does not cancel all others.
+Retry failed jobs against the same revision and exact shared core artifact.
+Keep failed-job directories only as explicitly partial diagnostic evidence.
+For a same-shard local recovery, --resume-verified accepts a previous
+successful module only after source, toolchain, dependency and output hashes
+match; the final shard Audit is always freshly compiled. A stale checked
+report is invalidated before preflight, and fresh compiles use temporary
+outputs before atomic replacement. Do not treat diagnostic upload, native
+pass bits, generated source or a successful artifact transport as proof.
+Independently rebuilt same-source core oleans can differ: never mix their
+binary hashes under a claimed identical build.
+
+GITHUB PRIMARY DOCUMENTATION CHECKED 12 NOVEMBER 2026
+Matrix maximum256 and hosted job maximum6h:
+https://docs.github.com/en/actions/reference/limits
+The planned75 entries fit. The old35-minute workflow timeout is a local
+setting. Public ubuntu-latest is documented as4CPU/16GB; private runners
+have different specifications, so the actual repository/runner matters:
+https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job
+Job artifacts and dependency ordering:
+https://docs.github.com/en/actions/tutorials/store-and-share-data
+Included artifact storage is plan-dependent (Free500MB, Pro1GB in the cited
+limits table). Measure full shard storage and available quota; this plan
+does not assume extra storage or spending. Prefer precompressed tar.xz,
+upload-artifact compression-level0 and short retention for intermediates.
+
+TRUST BOUNDARY
+No sorry, fresh mathematical axioms or native_decide. Native generation and
+Python orchestration may fail or emit incorrect inputs; kernel validation
+must reject incorrect arithmetic or theorem links. Only a successfully
+assembled actual theorem plus its fresh standard-three-axiom audit can mark
+the complete certificate proved. No full run has yet established this.
+Full five-path assembly tools
+============================
+
+assemble_full_certificate.py accepts --manifest-list INDEX, --candidate-source
+CandidateEndpointChecks.lean, and --outdir OUTPUT. Repeated --manifest or a
+--shards-root may replace the index. Each of the five cases must cover exactly
+0..749, with no missing or overlapping interval. New embedded parameters are
+required; old smoke-only manifests deliberately do not qualify. It checks every
+source hash, exact candidate/probe parameters, mesh/time, all shared boundary
+balls, actual initial-point containment, and all five candidate endpoint balls.
+
+For the 75 shards of 50 steps each it emits 152 modules: 75 adapters, 70 balanced
+cross-shard merges, 5 complete paths, final Certificate, and final Audit. The
+unconditional theorem in the generated source becomes a theorem only when its
+imports and body have actually compiled. Output status remains
+sources_generated_unverified and kernel_verified=false.
+
+Generic prerequisite: CentroidEscape.CandidatePathAssembly, already kernel
+checked locally, must be included in the audited core. This module only proves
+the finite assembly implication; it does not supply the concrete five paths.
+
+Production compile command, run under lake env:
+
+python3 compile_full_assembly.py --manifest OUTPUT/manifest.json 
+  --build-root FULL_BUILD --jobs 1 --memory-mb 12288
+
+CLI defaults are jobs=1 and memory-mb=8192. The workflow may explicitly grant
+12288 MB. Each process uses Lean -j 1. The two support tools
+assemble_full_certificate.py and the frozen compile_shard.py must be alongside
+compile_full_assembly.py. Their exact hashes are recorded and enforced.
+
+Use ONE common CentroidEscape build root for core, shard, and assembly .olean
+files (the production workflow uses .lake/build/lib/lean). Keep the ordinary
+mathlib/package search paths and that one project root in LEAN_PATH. Lean
+selects the first directory containing the top-level package, not the first
+individual module file across roots (Lean/Util/Path.lean, findWithExt). Splitting
+CentroidEscape across multiple roots can therefore fail to import an existing
+later-root module; the compiler's artifact checks do not make that supported.
+
+The default expects compile_report.json beside each input shard manifest, with
+its relative checked_oleans/ and logs/ files. If inputs moved across machines,
+pass --manifest-list to resolve the same input manifests at new paths, and
+--candidate-source for the same candidate source bytes. Optional --report-index
+supports separate downloaded report directories:
+
+{
+  "schema": "centroid.shard-report-index.v1",
+  "reports": [
+    {"manifest_sha256": "...", "report": "relative/path/compile_report.json",
+     "sha256": "optional exact report SHA256"}
+  ]
+}
+
+An index must cover precisely the input shards. Relative report paths are
+resolved against the index directory. Report/log/checked-artifact paths within
+a report must remain inside that report directory. Current report schema is
+centroid.compact-shard-build.v1; no native-data pass flag is consulted.
+
+Preflight verifies complete shard source coverage, report/module coverage,
+Lean version and shard compiler hash, all source/log/olean hashes, the audit
+log and success field, exact direct-import coverage, internal producer hashes,
+and agreement of shared core hashes. It regenerates all assembly sources in a
+temporary directory and compares their exact hashes and declared target names.
+Verified shard artifacts are atomically staged into FULL_BUILD. Any differing
+first-hit LEAN_PATH artifact is rejected. All assembly dependencies must be this
+run's actual producer artifact in FULL_BUILD, not a shadowing older file.
+
+Compilation uses a bounded DAG scheduler, unique temporary output .olean files,
+per-module exit/log/hash/wall/RSS evidence, and an always-fresh final axiom audit.
+--resume-verified reuses only exact matching source/dependency/artifact/log
+evidence under the same compiler, helpers, manifest, and Lean version. The audit
+is never reused. Interrupted or failed compilation leaves proof status false.
+
+OUTPUT/full_compile_report.json is initialized atomically with
+full_certificate_proved=false before any preflight. That flag becomes true only
+after every generated module exits successfully, actual nonempty outputs exist,
+and the fresh final transitive audit permits only propext, Classical.choice,
+Quot.sound. A final source, artifact and dependency snapshot is checked again.
+Sources generated, report verification, or restored artifacts alone never set
+the flag. The compiler is not a replacement for the original 3750 kernel steps.
+
+Local review evidence lives under work/certificate_tools_review/:
+review_full_assembly.py and full_assembly_review.json cover malformed metadata,
+source/evidence hash failures, a real checked smoke report, and stale-success
+clearing. assembly_template_smoke/ is an actual five-step 2+2+1 split using the
+same three adapter and two balanced-merge templates; it has no full path or
+complete certificate theorem. See its separate template_compile_report.json.

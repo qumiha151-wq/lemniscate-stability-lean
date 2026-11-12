@@ -1,0 +1,133 @@
+READ-ONLY INDEPENDENT REVIEW BY weighted_field -- 12 November 2026
+No reviewed producer, compiler, restore script or workflow was edited here.
+
+REVIEWED VERSIONS (SHA256)
+assemble_full_certificate.py
+21F062069AFFAA9431A7B695D1EB4623340D89EB66AE1C30EBCB7DE2A0AD6F9A
+compile_full_assembly.py
+5EDE482C269E12A989C60FF0B6CAE503832F3BFED6E7EB89F265F5C7E20455ED
+reimport_shard.py
+501F37E9F5F8E8CA4FA5DCC0D84E267A8671D3F4DB68E5650F6857DB9758AC0C
+restore_full_certificate.py
+C3FD5055627A289BC30D375B297C07771D0EC80341F9AA0C30627CF8682C9B81
+centroid-full-certificate.yml
+8C69B77D7C7C24D3C181A17144616F942413B937BF4E0DA4C990C7F78924D67F
+
+ASSEMBLER / MATHEMATICAL CONNECTION
+Read the complete assembler and its CandidatePathAssembly generic interface.
+No mathematical gap was found in the source-generation logic. It checks
+five exact case parameters (center, a+, a-, b+, b-), complete disjoint
+coverage of 0..749, common h and mesh, source hashes, initial inclusion and
+all native boundaries. Generated Lean adapters and balanced append modules
+prove the actual coefficient-zero seams, not only Python equality. Final
+paths prove FiniteShootingPath.check, inflated endpoint agreement with the
+candidate and the concrete FivePathCertificateData check. The final theorem
+and standard-three transitive audit have no remaining analytical hypotheses.
+This is a review of intended generated code: the 152 concrete full assembly
+modules cannot yet compile because the 3750 concrete step proofs are not built.
+
+FULL COMPILER
+The compiler regenerates the complete assembly and compares its intended
+module/source hashes and final theorem identities. It verifies every shard's
+successful report, exact compiler/toolchain, complete ordered modules, source,
+logs, olean and dependency hashes. Internal producer hashes and consistent
+external core hashes are checked before restore; first-hit Lean import hashes
+must agree. Fresh compilation uses unique temporary output, then atomic
+replacement. Generated dependencies must be produced in the current run.
+Verified resume still requires matching dependencies and output hashes;
+the final audit is never reused. The old success report is invalidated
+before preflight, and final provenance is rechecked before success is saved.
+full_certificate_proved can become true only when all generated modules and
+the fresh final audit actually succeed. The final audit source is part of
+the regenerated identity, rather than an arbitrary supplied success marker.
+
+RESTORE / WORKFLOW
+restore_full_certificate requires the exact ordered 75-entry plan and pinned
+revision, canonical expected artifact names, artifact member hashes, complete
+matching shard reports and exact core dependency resolution. Its old index is
+invalidated before preflight. --restore-only keeps reimport_audit_passed=false;
+the full restore output also keeps full_certificate_proved=false. The workflow
+performs actual full compile/audit only after all shard jobs succeed. Default
+reimport still executes the fresh shard audit. No transport step is mislabeled
+as a final theorem proof. The final artifact includes sources and audit logs.
+
+LIMITS
+This review found no blocking implementation issue. It does not replace the
+cloud smoke or full kernel run. Full import memory and 50-step artifact sizes
+remain unmeasured; -M12288 on a 16GB runner is an initial attempt, not evidence
+of fit. Current failure diagnostics preserve logs/manifests, not a complete
+per-module resume cache, so rerunning a failed cloud shard recomputes it.
+FROZEN FULL-SHARD PREPARATION TOOLS -- 12 November 2026
+These tools prepare/transport evidence. The 3750-step proof is not yet checked.
+
+SHA256
+generate_compact_shard.py
+173EF810B2AA47F356504588D05132CFD71E3A913076E04F41E2A252AE891384
+compile_shard.py (unchanged from independently reviewed smoke compiler)
+9954E3AE58136DF4475039DCC4900805F092613C24E5CA792A20892F27810EA6
+plan_full_certificate.py
+251E447D975992126B0894321B77E05B3ED0834F3C386A98C35A2BE3E54C338A
+shard_artifact.py
+AFBD95859AC1698FD76065330A1F39A209F201254FED376115A1DDD9C49F888F
+
+Compared with the frozen smoke generator, the producer now includes exact
+parameters {a,b,L} in its manifest and checks every native adjacent ball
+boundary before emitting sources. The generated Lean proof format is unchanged.
+The compiler CLI, report schema and all provenance protections are unchanged.
+
+PLAN
+5 cases x 15 intervals = 75 shards; each interval has 50 steps.
+2 Lean processes per shard, -j1 -M6144 each; max-parallel8.
+Final assembly: one Lean process, initially -M12288, actual full memory unknown.
+Full static manifest index: work/certificate_full_plan/manifest-index.json
+All 75 manifests generated; 5325 modules; 243075179 source bytes.
+All 3745 native boundaries and exact probe parameters statically checked.
+No complete-run Lean compilation was launched by this preparation.
+
+ARTIFACT INTERFACES
+python shard_artifact.py pack --manifest SHARD/manifest.json
+  --archive certificate.tar.xz --revision COMMIT
+python shard_artifact.py unpack --archive certificate.tar.xz
+  --output-root RESTORED --revision COMMIT
+The unpack only validates transport/provenance; reimport_audit_passed and
+full_certificate_proved remain false. Exact-core restore plus a fresh shard
+audit OR the final full transitive Lean audit is required afterward.
+
+TESTS
+Python py_compile passed for all four frozen tools.
+Fresh plan-only invocation produced the 75-entry matrix, no Lean invocation.
+work/certificate_tools_review/test_shard_artifact.py passed all four checks:
+deterministic byte-identical packs; positive roundtrip; wrong revision rejected
+before restoring members; changed source rejected before restoring members.
+Detailed test result: work/certificate_artifacts/review/review.json
+Actual checked five-step bundle: 2753766 raw bytes, 26 files, 638684 xz bytes.
+Archive SHA256:
+997F523C3C9CA0418396C50E5BF9BC25063C8B27109DDB68648B70EA92D6B755
+Tests used their own review directory, not the root agent's live fixture.
+
+COST / RECOVERY
+See work/centroid_formal/FullCertificate_CI_plan.txt for measured Linux/Windows
+samples, explicitly labeled full-run estimates, memory uncertainty and retry
+protocol. The prior CompactCertificate_CI_plan.txt is marked historical.
+
+FINAL COMPILER OUTPUT-ENCODING ADDENDUM
+Final compile_full_assembly.py SHA256:
+FA493C4BA5D6402999247C181AB56AB9A3680B784F40C8B32A7B5874CE11F717
+The only change from the reviewed5ede482c version is a guarded
+sys.stdout.reconfigure(errors='backslashreplace') for Windows console output.
+Proof inputs, process execution, provenance and success conditions are
+unchanged. The28 tooling checks pass on this version. Log files remain UTF-8.
+Root also checked restore-only (false audit status) followed by a fresh
+1007-declaration Lean audit on the compressed five-step roundtrip: PASS.
+Wrong-revision and missing-artifact full restore tests rejected their inputs
+and invalidated the old manifest index; no success status remained.
+
+ACTUAL ASSEMBLY-TEMPLATE LEAN TRIAL
+Seven modules passed with a fresh strict audit: actual existing five-step
+segment split2+2+1, three production adapters and two production balanced
+merges, including the odd unpaired branch. No750-step or full theorem was
+asserted by the trial. The final theorem depends only on propext,
+Classical.choice and Quot.sound. All generated CentroidEscape modules and
+core artifacts must share one build root; the production workflow does so.
+The first isolated test fixture exposed this Lean package-path requirement;
+the corrected single-root fixture passed without changing proof templates.

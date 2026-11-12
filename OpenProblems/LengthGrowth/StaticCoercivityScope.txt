@@ -1,0 +1,87 @@
+COMPLETE STATIC GEOMETRIC COERCIVITY -- FROZEN 12 November 2026
+
+The full static proof is now Lean-verified. This is an independent
+LengthGrowth project: every source imports only Mathlib and other
+LengthGrowth modules from this directory. No CentroidEscape or other
+open-problem project is imported.
+
+FINAL VERIFIED THEOREMS
+
+LengthGrowth.ClosedFrenetCurve.energy_dissipation_controls_curvature
+  Input: c : ClosedFrenetCurve, s : Real.
+  Output: (1/16777216)*|c.curvature s|^6 <= c.energy*c.dissipation.
+  This is ED >= 2^-24 ||k||_infinity^6, stated at every point; the proof
+  actually constructs a positive global curvature maximum in one period.
+
+LengthGrowth.ClosedFrenetCurve.absolute_curvature_coercivity
+  Input: c : ClosedFrenetCurve.
+  Output: (1/262144)*c.energy^5/c.absoluteCurvature^6 <= c.dissipation.
+  This is D >= 2^-18 E^5/A^6, where A=integral |k|.
+
+WHAT THE INPUT MEANS
+
+ClosedFrenetCurve contains an actual periodic position gamma : Real ->
+Complex with positive period, its actual unit tangent gamma'=T,
+T'=k*(I*T), actual real derivatives k'=k1 and k1'=k2, continuity of k2,
+and the periodicity of T,k,k1. Normal is DEFINED to be I*T. The force
+F is DEFINED as k2+k^3/2. Energy, dissipation, and absolute curvature are
+their actual interval integrals. The closing integral integral T=0 is
+proved from periodic gamma by FTC.
+
+The final theorems have NO assumed stress bound, no assumed direction
+cone, no assumed nonzero force, no assumed energy/coercivity inequality,
+and no assumed numerical constants about a trajectory. The maximum,
+stress nonvanishing under the contradiction hypothesis, all integral
+estimates, and the final closing contradiction are proved internally.
+
+VERIFICATION
+
+check_stress_coercivity.ps1: EXIT 0, no warnings; recursive audit of all
+169 imported/new LengthGrowth declarations passed.
+
+check_absolute_curvature_coercivity.ps1: EXIT 0, no warnings; recursive
+audit of all 173 imported/new LengthGrowth declarations passed.
+
+Both final theorems report only:
+  propext, Classical.choice, Quot.sound.
+No sorry, native_decide, oracle, or additional axiom is used.
+
+REPRODUCIBLE BUILD ORDER
+
+1. ElasticStress
+2. IntervalL2
+3. IntervalOscillation
+4. StressIntegralEstimates
+5. CurvaturePeak
+6. StressDirection
+7. StressNormVariation
+8. StressDirectionBounds
+9. StressClosureBounds
+10. StressAlgebra
+11. StressNormalization
+12. StressClosingAlgebra
+13. StressCoercivity
+14. AbsoluteCurvatureCoercivity
+
+Each has a check_*.ps1 script. build_stress_all.ps1 supplies one ordered
+rebuild. Sources use the pinned Mathlib/Lean 4.33.1 installation read-only;
+dependency library paths precede the local build path. No Mathlib
+namespace files are generated.
+
+SCOPE: ORIGINAL LENGTH QUESTION REMAINS OPEN
+
+These are unconditional static geometric estimates for actual closed
+curves. They do not establish a bound on A(t) for arbitrary free elastic
+flows. The reviewed analytic deductions give quarter growth iff A(t)
+is uniformly bounded along the actual trajectory, and derive a higher
+order Lyapunov estimate and pointwise flattening. Those time-dependent
+PDE deductions are not formalized by this static module collection.
+
+No general quarter-growth solution or actual anomalous-growth flow is
+claimed. The analytic proof and independent audits are recorded in
+work/next_research/length_stress_coercivity*.txt and
+work/next_research/length_dynamic_flattening*.txt. Their historical
+"not Lean formalized" notes are superseded for the STATIC stress
+coercivity theorem by this status; their dynamics remain analytic only.
+
+All files above are frozen. Further work should use new modules.

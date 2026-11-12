@@ -14,10 +14,11 @@ LengthGrowth/: scalar dissipation-to-secant theorem and conditional
   CoercivitySharpness.txt further rules out every homogeneous static coercivity
   bound with energy exponent greater than 2, even at fixed turning number.
   Its examples have initially decreasing EL, and do not settle long-time growth.
-  ElasticStress.lean now derives genuine closed-curve stress and inverse-stress
-  identities, including their closing integral. Reviewed human notes establish
-  quantitative stress coercivity and a higher-order Lyapunov estimate, but
-  these estimates and bounded total absolute curvature are not yet in Lean.
+  Fourteen static geometry modules now prove ED>=2^-24*|k(s)|^6 and
+  D>=2^-18*E^5/A^6 from actual closed-curve/Frenet data and integral definitions.
+  No stress or coercivity bounds are assumed. The higher-order dynamic
+  Lyapunov estimate remains a reviewed human argument. A uniform bound on
+  total absolute curvature along arbitrary flows is still missing.
 Migration/: scalar one-sided homothetic migration criterion. No existence
   theorem for a one-sided closed free-elastic-flow expander is supplied.
 SolitonClassification/: independent support-function ODE and actual geometric
@@ -62,7 +63,10 @@ CentroidEscape/: computer-assisted existence proof of a closed expander
   input margins, and9 glues, now pass kernel checks and a combined audit.
   They form a partial segment, not a finished750-step path or complete flow.
   A compact proof constructor now extends that prefix to11 actual steps;
-  the remaining3739 steps and the final full certificate are still missing.
+  the separate cloud pipeline then checks and connects steps11..15 and
+  successfully repeats their audit on a fresh runner. The checked16-step
+  prefix leaves3734 steps and the full certificate still missing. A75-shard
+  full verification workflow is included; its generated data are not proofs.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.

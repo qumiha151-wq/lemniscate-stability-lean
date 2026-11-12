@@ -1,16 +1,28 @@
-Independent project: LengthGrowth
-Command sequence: lean (module), lean (root), lean (AxiomAudit)
-Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-MODULE LengthGrowth/ScalarDissipation
-'FreeElasticScalar.secant_sq_le_energy_drop' depends on axioms: [propext, Classical.choice, Quot.sound]
-'FreeElasticScalar.conditional_fourth_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-EXIT 0
-MODULE LengthGrowth/ElasticStress
-LengthGrowth elastic-stress audit passed for 65 declarations.
-EXIT 0
-MODULE LengthGrowth
-EXIT 0
-MODULE LengthGrowth/AxiomAudit
-Length-growth audit passed: 68 declarations; standard axioms only.
-EXIT 0
-All project modules compiled successfully. No claim of full PDE formalization.
+12 November 2026: complete static geometric coercivity.
+Lean 4.33.1; pinned Mathlib 0df444a360eaa60ab8c11dca51a86af692955474.
+Each of the 14 modules was checked individually before staging. Sources and coherent checked artifacts match the frozen length_formal build.
+ElasticStress SHA256 81DD4061BAC9A16649CB98056DF2C2AAB0C306C62F5858EE52CFC68169B15E2F
+IntervalL2 SHA256 ADA5D680E83D658C4EBD9C72310C011DEB271684E03D4658B9B7C93B4BF9C904
+IntervalOscillation SHA256 341E7C1125C374A5EF9C72AE2ED55264DBE787CE76D11BA1CE86E960715F03E4
+StressIntegralEstimates SHA256 2C5AA9D5979D2A89CDAD837BE582B5CB7B24417922E666538719A3B845B9DBF7
+CurvaturePeak SHA256 E161729610E162AF232205E6F942CAD02BA4A2658C45AE07CC981EDCA1984097
+StressDirection SHA256 35CEC55A6E78E05276FCA555DA5F2C043DA659B063C8A926AC26DBD8515CB1EC
+StressNormVariation SHA256 10039E33B53F8E8D0D8811E2F49C8C79A22768E56EE0EA77DAD911EE44CD097F
+StressDirectionBounds SHA256 88AAA96F66E9CCC1492EECE90766CC235A5DCA80E844CD731826DCBE322ADB09
+StressClosureBounds SHA256 AAA02242DD563467E18F50421DB640171467DC553E638D5D6301A889AC0043C7
+StressAlgebra SHA256 411BFDE138DB64C3A43206D24E2997B91041218BE64CCECF755842E263469099
+StressNormalization SHA256 ACDF58E11BC41FAC2582F90AA01BDCCE24DADDE9F9FAB87673BB59748B4A4FAE
+StressClosingAlgebra SHA256 1F07593BB49209A06973BA9A8969DB10A92998F07881215D375709E90C960EAF
+StressCoercivity SHA256 6A35E0B6CAADFC9C9D3686E53816A2A56A8FCE275A299A3E30BE4C7BA59D43D3
+AbsoluteCurvatureCoercivity SHA256 65080285CF467810A0D7C9315C653A4729A071B6B16CC7DE4AEED024601B7A46
+
+Fresh staged StressCoercivity compilation: PASS, 169 declarations; standard axioms only.
+Fresh staged AbsoluteCurvatureCoercivity compilation: PASS, 173 declarations; standard axioms only.
+Staged independent LengthGrowth root compiled.
+Fresh direct AxiomAudit compilation: EXIT 0.
+Length-growth audit passed: 176 declarations; standard axioms only.
+Allowed: propext, Classical.choice, Quot.sound.
+
+The first reporting wrapper encountered a missing empty log after the successful silent root build. The wrapper was corrected; a separate direct Lean audit completed with EXIT 0. No proof error occurred.
+
+The static inequalities are complete. Arbitrary-flow total absolute curvature and unrestricted quarter-power growth remain unresolved.

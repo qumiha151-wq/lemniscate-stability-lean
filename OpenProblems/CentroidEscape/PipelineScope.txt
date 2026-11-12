@@ -7,6 +7,13 @@ previous prefix, transfers the checked artifacts to a fresh runner, and
 rechecks the transitive axiom audit and the connected16-step statement.
 This is a trial for later sharding, not the complete3750-step certificate.
 
+Cloud result: commit03c83f0f2610280385e0e44556eae847d80a7996,
+run43211109332, all three jobs PASS. The exact core, five new steps,
+1007-declaration shard audit, FirstSixteen connection, and fresh-runner
+reimport/audit/connection all succeeded. See PipelineCloudCost.txt.
+The earlier4096MB Linux trial correctly failed a memory cap; the corrected
+configuration is6144MB per process. No failed report was promoted to proof.
+
 Trust boundary
 NativeCertificateData.lean executes exact integer/rational arithmetic to
 produce proposed tables. Its output always says kernel_verified=false.
@@ -37,7 +44,7 @@ First build the checked-in project and run CentroidEscape/AxiomAudit.lean.
 Then execute:
   lake env lean --run tools/NativeCertificateData.lean center shard/native 11 5
   python3 tools/generate_compact_shard.py --data-root shard/native --case center --start 11 --count 5 --output-root shard/certificate
-  lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 4096
+  lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 6144
   lake env lean tools/CenterFirstSixteen.lean
 
 Native generation replays the prefix from the exact rational seed; it writes
@@ -60,6 +67,8 @@ reimport_shard.py validates the complete recorded dependency graph, verifies
 the Lean version and source/binary/log hashes, restores the checked outputs,
 and reruns the transitive audit. A report bit alone is never accepted as the
 final mathematical argument. A mixed-core negative test was correctly rejected.
+The optional --restore-only mode verifies and restores provenance but keeps
+reimport_audit_passed=false; it requires a later complete Lean audit.
 
 The artifact files are build products of the workflow, while all generators,
 fixed seeds, soundness lemmas and trial connection source are stored here.

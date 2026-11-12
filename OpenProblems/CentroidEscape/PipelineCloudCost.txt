@@ -1,0 +1,31 @@
+VERIFIED LINUX PIPELINE TRIAL -- 12 November 2026
+Commit03c83f0f2610280385e0e44556eae847d80a7996
+https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43211109332
+
+All three jobs succeeded:
+131158649038 built/audited the core and packaged its complete sidecars.
+131161342855 generated exact candidate data, compiled all five concrete
+steps11..15 and their1007-declaration audit, then proved FirstSixteen.
+131162743033 restored475 core files, checked transferred source/binary/log
+and dependency hashes, and freshly reran the shard and FirstSixteen audits.
+
+Measured trial modules (wall milliseconds; peak resident bytes):
+Parameters 1516;3309604864
+Step0011 19128;4320911360
+Step0012 19026;4276412416
+Step0013 18922;4353941504
+Step0014 18521;4425084928
+Step0015 17519;4333748224
+Block0000 1802;3353907200
+Audit 2203;3333599232
+Two parallel single-thread Lean processes, cap6144MB each.
+The fresh five-step compiler stage finished in about61 seconds.
+FirstSixteen connection took about2 seconds in the trial and2.7 seconds
+after reimport. These are measured small-sample costs, not a full-run bound.
+
+The earlier4096MB run43208214257 failed only step0012 with a Lean memory
+exception. It correctly reported shard_kernel_checked=false. Four other
+step modules passed. The memory-cap fix was tested by a new complete run.
+
+The current full3750-step verification has not yet completed. Neither this
+trial nor native generation establishes the complete centroid theorem.

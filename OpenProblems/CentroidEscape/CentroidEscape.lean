@@ -89,3 +89,4 @@ import CentroidEscape.CenterCompactStep010
 import CentroidEscape.CenterFirstEleven
 import CentroidEscape.CenterCompactStepAudit
 import CentroidEscape.CertificateSeedParameters
+import CentroidEscape.CandidatePathAssembly

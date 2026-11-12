@@ -99,6 +99,9 @@ def main():
             raise ValueError(f"Wrong step index or dimensions in {path.name}")
         records.append(record)
         inputs.append({"file": f"{args.case}/{path.name}", "sha256": sha(raw)})
+    for left, right in zip(records, records[1:]):
+        if left["endpoint"] != right["coefficients"][0]:
+            raise ValueError(f"Native input/endpoint mismatch before step {right['step']}")
     key = f"Shard_{args.case}_s{args.start:04}_n{args.count:04}_{args.assembly}"
     base = f"CentroidEscape.CertificateShards.{key}"
     outdir = args.outdir.resolve()
@@ -302,9 +305,11 @@ run_cmd do
         "schema": "centroid.compact-shard.v1", "key": key, "case": args.case,
         "start": args.start, "count": args.count, "order": 60, "mesh_steps": 750,
         "mesh": str(mesh), "h": str(h), "assembly": args.assembly, "namespace": base,
+        "parameters": {name: str(Fraction(status[name])) for name in ("a", "b", "L")},
         "generator_sha256": sha(Path(__file__).read_bytes()),
         "native_status": {"file": f"{args.case}/status.json", "sha256": sha(status_bytes)},
         "inputs": inputs, "modules": modules, "root_module": root["module"],
+        "native_internal_glues_checked": max(0, args.count - 1),
         "checked_theorem": root["namespace"] + ".checked", "audit_module": audit,
         "first_input": records[0]["coefficients"][0], "last_endpoint": records[-1]["endpoint"],
         "required_generic_modules": ["CentroidEscape.CompactStageAssembly", "CentroidEscape.FiniteTaylorBlock", "CentroidEscape.BallStep"],

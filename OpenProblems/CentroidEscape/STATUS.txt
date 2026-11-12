@@ -118,6 +118,15 @@ The complete finite-certificate soundness theorem is now proved:
     Its660 stages,11 endpoints and10 glues are kernel checked. The current
     checked-in concrete prefix is11 of3750 required steps, leaving3739 steps
     and the final assembly incomplete.
+  - the separate reproducible pipeline now checks five further steps11..15,
+    joins them to the prefix, and reimports/audits them on a fresh runner.
+    All three cloud jobs passed at03c83f0f (run43211109332). Thus an actual
+    16-step prefix is checked, leaving3734 steps for the full five-path proof.
+  - CandidatePathAssembly is a verified generic interface from five complete
+    checked paths and their exact endpoints to the candidate check and escape
+    theorem. The default project audit now covers4197 declarations.
+    Tools and a75-shard workflow prepare the remaining full run. Generation,
+    transport and static coverage checks are explicitly not full proofs.
 
 Missing from the unconditional concrete Lean instance:
   - the concrete numerical/ODE estimates discharging the shooting root and

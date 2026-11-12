@@ -1,0 +1,160 @@
+name: Full centroid certificate
+
+on:
+  push:
+    branches: ['research/remaining-open-problems']
+    paths:
+      - '.github/workflows/centroid-full-certificate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    name: Build exact-revision core and plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare all 75 disjoint shards
+        id: plan
+        working-directory: OpenProblems/CentroidEscape
+        run: |
+          python3 tools/plan_full_certificate.py --output-root full-plan --revision "$GITHUB_SHA"
+          python3 -c 'import os,pathlib; p=pathlib.Path("full-plan/matrix.json"); f=open(os.environ["GITHUB_OUTPUT"],"a"); f.write("matrix="+p.read_text().strip()+"\n")'
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/CentroidEscape
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - name: Enforce core axiom audit
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env lean CentroidEscape/AxiomAudit.lean
+      - name: Package audited core and sidecars
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/core_artifact.py pack .lake/build/lib/lean core.tar.xz --revision "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: full-centroid-core-${{ github.sha }}
+          path: |
+            OpenProblems/CentroidEscape/core.tar.xz
+            OpenProblems/CentroidEscape/full-plan/plan.json
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+  shard:
+    name: Check ${{ matrix.tag }}
+    needs: core
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: ${{ fromJSON(needs.core.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/CentroidEscape
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - uses: actions/download-artifact@v4
+        with:
+          name: full-centroid-core-${{ github.sha }}
+          path: OpenProblems/CentroidEscape
+      - name: Restore exact-revision core
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/core_artifact.py unpack .lake/build/lib/lean core.tar.xz --revision "$GITHUB_SHA"
+      - name: Generate native candidate data
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env lean -M6144 -j1 --run tools/NativeCertificateData.lean '${{ matrix.case }}' shard/native '${{ matrix.start }}' '${{ matrix.count }}'
+      - name: Generate literal proof sources
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/generate_compact_shard.py --data-root shard/native --case '${{ matrix.case }}' --start '${{ matrix.start }}' --count '${{ matrix.count }}' --output-root shard/certificate
+      - name: Kernel-check every Taylor stage and shard audit
+        working-directory: OpenProblems/CentroidEscape
+        run: |
+          ulimit -c 0
+          lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 6144
+      - name: Compress checked proofs with provenance
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/shard_artifact.py pack --manifest shard/certificate/manifest.json --archive certificate.tar.xz --revision "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: OpenProblems/CentroidEscape/certificate.tar.xz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+      - name: Preserve diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-centroid-${{ github.sha }}-${{ matrix.tag }}
+          path: |
+            OpenProblems/CentroidEscape/shard/certificate/manifest.json
+            OpenProblems/CentroidEscape/shard/certificate/compile_report.json
+            OpenProblems/CentroidEscape/shard/certificate/logs
+          if-no-files-found: warn
+          compression-level: 9
+          retention-days: 7
+
+  assembly:
+    name: Assemble and audit unconditional centroid theorem
+    needs: [core, shard]
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/CentroidEscape
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - uses: actions/download-artifact@v4
+        with:
+          name: full-centroid-core-${{ github.sha }}
+          path: OpenProblems/CentroidEscape
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: centroid-${{ github.sha }}-*
+          path: OpenProblems/CentroidEscape/downloaded-shards
+      - name: Restore audited core
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/core_artifact.py unpack .lake/build/lib/lean core.tar.xz --revision "$GITHUB_SHA"
+      - name: Verify and restore all 75 checked artifacts
+        working-directory: OpenProblems/CentroidEscape
+        run: lake env python3 tools/restore_full_certificate.py --plan full-plan/plan.json --artifacts-root downloaded-shards --output-root full --build-root .lake/build/lib/lean --revision "$GITHUB_SHA" --lean lean
+      - name: Generate exact full-certificate assembly
+        working-directory: OpenProblems/CentroidEscape
+        run: python3 tools/assemble_full_certificate.py --manifest-list full/manifest-index.json --candidate-source CentroidEscape/CandidateEndpointChecks.lean --output-root full/assembly
+      - name: Check full theorem and its transitive axiom audit
+        working-directory: OpenProblems/CentroidEscape
+        run: |
+          ulimit -c 0
+          lake env python3 tools/compile_full_assembly.py --manifest full/assembly/manifest.json --build-root .lake/build/lib/lean --lean lean --jobs 1 --memory-mb 12288
+      - name: Preserve assembly sources and verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-centroid-assembly-${{ github.sha }}
+          path: |
+            OpenProblems/CentroidEscape/full/assembly
+            OpenProblems/CentroidEscape/full/restore_report.json
+            OpenProblems/CentroidEscape/full/manifest-index.json
+          if-no-files-found: warn
+          compression-level: 9
+          retention-days: 7

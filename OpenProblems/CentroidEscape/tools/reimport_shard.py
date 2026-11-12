@@ -31,9 +31,9 @@ def main():
     parser.add_argument("--build-root", type=Path, required=True)
     parser.add_argument("--lean", default="lean")
     parser.add_argument("--memory-mb", type=int, default=6144)
+    parser.add_argument("--restore-only", action="store_true",
+                        help="Validate and restore checked artifacts; require a later full Lean audit")
     args = parser.parse_args()
-    if args.memory_mb <= 0:
-        parser.error("--memory-mb must be positive")
     manifest_path = args.manifest.resolve()
     directory = manifest_path.parent
     result_path = directory / "reimport_report.json"
@@ -41,6 +41,8 @@ def main():
               "complete_five_path_certificate": False}
     result_path.write_text(json.dumps(result) + "\n")
     try:
+        if args.memory_mb <= 0:
+            raise ValueError("--memory-mb must be positive")
         manifest = json.loads(manifest_path.read_text())
         report = json.loads((directory / "compile_report.json").read_text())
         if (manifest.get("schema") != "centroid.compact-shard.v1"
@@ -117,6 +119,14 @@ def main():
                 actual = resolved_import(dependency)
                 if actual is None or digest(actual) != checked[name]["import_hashes"][dependency]:
                     raise ValueError(f"Restored dependency resolution changed: {dependency}")
+
+        if args.restore_only:
+            result.update(status="restored", provenance_verified=True,
+                          manifest_sha256=digest(manifest_path), modules=len(modules),
+                          lean_version=version,
+                          meaning="Checked artifacts restored; a fresh full Lean audit is still required.")
+            print(json.dumps(result))
+            return 0
 
         log_path = directory / "reimport_audit.log"
         command = [lean, f"-M{args.memory_mb}", "-j1", str(sources[manifest["audit_module"]])]
