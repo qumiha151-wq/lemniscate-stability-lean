@@ -1,0 +1,1408 @@
+{
+  "schema": "centroid.compact-shard-build.v1",
+  "key": "Shard_b_minus_s0000_n0050_bounded",
+  "manifest_sha256": "c582cb0f4413a159d17d3e21bce1dbfb24f2d0569922f3d7b9a21fc67fa5c178",
+  "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_sha256": "9954e3ae58136df4475039dcc4900805f092613c24e5ca792a20892f27810ea6",
+  "jobs": 2,
+  "memory_mb_per_process": 6144,
+  "lean_threads_per_process": 1,
+  "shard_kernel_checked": true,
+  "status": "checked",
+  "modules": [
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters",
+      "source_sha256": "ef60a87fcc44f8ff0126bb6df931de0cd048969ce20a447b0c003f5dac3ab214",
+      "import_hashes": {
+        "CentroidEscape.CompactStageAssembly": "873edf21282b90d3b38fdd9c2373cc21fa196f80350d605bf75349c27ba24445"
+      },
+      "exit_code": 0,
+      "wall_ms": 1826,
+      "peak_resident_bytes": 3309277184,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Parameters.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+      "olean_bytes": 16008,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Parameters.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0000",
+      "source_sha256": "a3d0e46ae022a51f1e59c066f016683185d5bb65b59de4d5e68eb9cfcba2aa31",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24534,
+      "peak_resident_bytes": 4271017984,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0000.log",
+      "log_sha256": "ebe759ace1c8c2e9e0ee9e55bc468dd9888dccdaedd569c435c9bb0996da5763",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "e2258de3e976667878207f42527f035682ae423523c697ab0568d272fc530144",
+      "olean_bytes": 391808,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0000.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0001",
+      "source_sha256": "dee28bd16101ca05ba5c08c4de2f497d3aecc062ed5583229427e6caf7734de9",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25036,
+      "peak_resident_bytes": 4309123072,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0001.log",
+      "log_sha256": "638049f3df4b211707044e9cf2a105eedde30913d1046f4fbc2bae6d43feb940",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "ac81d2708c88e70a7429476b686bf8e8fccb0a3ed338b2a8a1b09da5e88392b8",
+      "olean_bytes": 454968,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0001.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0002",
+      "source_sha256": "fb2fcfeb47679adf26d24d68a0def34eeaff69169f9f6af35f4c992ac5349665",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25836,
+      "peak_resident_bytes": 4230946816,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0002.log",
+      "log_sha256": "fc492972a478c6f7b18699db0d86119c6aed849112aa51ac228ede34f791f69a",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c668dbb04d81e175db9cff6b355e5db41ae990f17872292e4cf04bb7b7e6a410",
+      "olean_bytes": 455320,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0002.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0003",
+      "source_sha256": "180c1afcb88e0403d1ea8e8cf2310a49f97f930fb3ed9200cb9c407e7c8e5dfc",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26038,
+      "peak_resident_bytes": 4394885120,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0003.log",
+      "log_sha256": "eeffaf0e881dc435f14d5049c149d2c039633e6df782e6129d19da6564c2c9f4",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "29f001b48678ce105597744a213637419aff29b03d3a98b2073effeacc4f4d30",
+      "olean_bytes": 455152,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0003.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0004",
+      "source_sha256": "32fcd526bde07ba319125cbd0a0afb3e0e3ea562a69d9ad7e7b56f768d4a5c7f",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25338,
+      "peak_resident_bytes": 4254527488,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0004.log",
+      "log_sha256": "2ab611fe5bed76bf8d6d9f845ca0ce1961bf8a84848ae39f96c93dcbe463e7f4",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "43e4a5dc9b9a874058ff23f2f899e840cc9085ba1f181ccf84be8a0b498b9651",
+      "olean_bytes": 455752,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0004.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0005",
+      "source_sha256": "8145e6e15edb7f5f9fe207a5445b4886e7eb74d068a1323865ae4fbae20aa005",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25336,
+      "peak_resident_bytes": 4239888384,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0005.log",
+      "log_sha256": "3872b1d3c06e515efecd87f21d1a004c9ad2e5b44517f8796ec4184f299918b7",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "18f3bea4e0d7cc29663f199a30238fcac16a4662b07867ca93428cef20f5f6f2",
+      "olean_bytes": 455960,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0005.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0006",
+      "source_sha256": "980d9a2444a40d61616256ead1bb4a8f619759950a8c2b628183a84feb1ad95a",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24935,
+      "peak_resident_bytes": 4310413312,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0006.log",
+      "log_sha256": "5af7ebc951799adf11d660e4647905f43984499c5c4ae8d460b655145be684a9",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c48674aa4ff66a45187ef093bb57640c4985df1c6c24e20255212048dbe4d6a5",
+      "olean_bytes": 456160,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0006.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0007",
+      "source_sha256": "e33956ca8623abfc3c72f50c8a03e01d5cbb89fd1ff118f2fb65050a1da5f912",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24834,
+      "peak_resident_bytes": 4175036416,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0007.log",
+      "log_sha256": "7c2f5cf6f74bab838281801d844b50038014f6546ee49b37cbfa187651cce94a",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "dc15e676927da7ebf695f0f60673739bed3ec13c048ca9d0ff3e9cf7f12f8a4c",
+      "olean_bytes": 455896,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0007.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0008",
+      "source_sha256": "7cc517f4a6b400727969128feccc001e78535cf04f616290ed2c57d1d9fa8721",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24936,
+      "peak_resident_bytes": 4215377920,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0008.log",
+      "log_sha256": "1187a890203c974ac005cdb74af02cd1680cd790d190729e596b52d44b928ae0",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "5cb71f3f4efe7889721c6479beb8bb4f8c7b20e2c739f1993f070f729dd9f900",
+      "olean_bytes": 456792,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0008.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0009",
+      "source_sha256": "48ff89a2adc6584b544accf9f9ff8eb03283f91510550c294f4d7fff877ba221",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24835,
+      "peak_resident_bytes": 4270333952,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0009.log",
+      "log_sha256": "a91d34967508b20f1179157a501647f5dec61d6455f86dd681fa9a897b80d9c0",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "6933b137b5f18a2f445ccd8566693f4897870308de30d0ee387dd5138f916364",
+      "olean_bytes": 456560,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0009.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0010",
+      "source_sha256": "df9800b9150d882c1d3a82ae6d81abdc6bc5acc238176b7d14097f5e9dbe5f6f",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24735,
+      "peak_resident_bytes": 4178771968,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0010.log",
+      "log_sha256": "947476a3199aaf2d984299334aa179e32a5a299d726c99b01811b2cff957f30b",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "9709457a754e57912c195dab7486d18b37914824b48cf93bfac92cee7337d67b",
+      "olean_bytes": 456368,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0010.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0011",
+      "source_sha256": "4f4ad794837ed2dfbd0646444f5e79ad886754154640d78d8828ebd9599e9f8e",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24736,
+      "peak_resident_bytes": 4298350592,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0011.log",
+      "log_sha256": "7b883fb1813507445be171d3e85df14992f17997308ff9c7b21ac93136befb4f",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "9e0c38b97b63c4c8b9076328d006f353a5c000a0fc8a250af84a036502b4eb5e",
+      "olean_bytes": 456696,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0011.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0012",
+      "source_sha256": "29d56f65a94b48c1a4ae25321eb3f426d522e79a182af7dcfe195c3cfa99fd56",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25236,
+      "peak_resident_bytes": 4198912000,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0012.log",
+      "log_sha256": "3ca96ecdd633baeed8607acb7a7143c0714308e18f757cb558a1bb5494b101e7",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "d1496b2a0fbba7486af7e742dab99ff9e3e76cdb8f9d794cf8eda0b6e833aa81",
+      "olean_bytes": 456352,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0012.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0013",
+      "source_sha256": "c57534d66d13a0f04249f60043d8212806e838de25a9ca7d98f97ef8f60b1226",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24931,
+      "peak_resident_bytes": 4376895488,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0013.log",
+      "log_sha256": "a8e23091ecd46367faffe48f0f7e6eff7877496ecbe7a31d4c7e9c052c9c9a99",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "3cc3072448b7b23d6e301a152ee33d5dd88ccbd2e12b2488edd24fdb347cb6f1",
+      "olean_bytes": 455704,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0013.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0014",
+      "source_sha256": "3e9dfb85f5f2bb33d03e93f7530c985173992dd5e5d6b9dafb53554006a69a1e",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24831,
+      "peak_resident_bytes": 4239847424,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0014.log",
+      "log_sha256": "9f325b29a274f488f93a93f03f907858f307ddbb7c551df58dc65e7b1f7d2d54",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "a75351fe82d40f5c40a8608d2a94fbf8f8512b9b66f9b34fc09bd0ef0f376689",
+      "olean_bytes": 456208,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0014.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0015",
+      "source_sha256": "7c986c4d4b66002317cbbfc3a3db5e65945c90746fdaeb42ea272caaa5564718",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25032,
+      "peak_resident_bytes": 4358721536,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0015.log",
+      "log_sha256": "b2a3b58465f5b619f2b5cf5ccdcc58984de1e60e38b44be55ad65c959b2c0522",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c2b3e3cb01fc6ca979ecfbe7189043834d6b4d180032408af3094393a4381d4d",
+      "olean_bytes": 456672,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0015.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0016",
+      "source_sha256": "60a92af739f2358cc24b1ace64a6efeaeca37c45348d954e031b7bf455fc423f",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25034,
+      "peak_resident_bytes": 4214583296,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0016.log",
+      "log_sha256": "9f6f0e5a779b10f80c61e9c7f035a072e608d824c6f932cdd925b84300ca0f58",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c178064e2786b8d44fbbc60a5e3848776594ca72c54f0e777dc5b52685a39612",
+      "olean_bytes": 456680,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0016.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0017",
+      "source_sha256": "36d91cf0a2f73cec9c7bb55b5f7fe714573787c363b2b20107ee698f7d0e6584",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25134,
+      "peak_resident_bytes": 4227088384,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0017.log",
+      "log_sha256": "e36a4104dbf75f82247e186f2b0ac7489be1a0e2c7d5e9f0d0fd82f22569aac2",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c0b07427c0898204c2cea1e4d34f3d32275ff04400591a66856ce25e78867571",
+      "olean_bytes": 457112,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0017.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0018",
+      "source_sha256": "5d3386b7146e06d7bfddafac9081d5250c130d213f2d607abf1d33b9c6b571ec",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24635,
+      "peak_resident_bytes": 4379209728,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0018.log",
+      "log_sha256": "2a09fb03ece527fd513be3bc47eb2a3f391e5b343ed7b49e48598d7c5f6c34ed",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "77f03231cba7709e3c91bb128b7a394b9d86ab0a49e47415e2ba0ea50b00a861",
+      "olean_bytes": 456896,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0018.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0019",
+      "source_sha256": "1495e5c821979bd688b07fc34e4c88072b885630ee5e1967c8d08dc591b50d80",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24837,
+      "peak_resident_bytes": 4226813952,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0019.log",
+      "log_sha256": "f74a16531728352b003b73d2979d39cfceed4e1774363b80f09a78ba650b0ce7",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "3df43d2da21826971fa008f48deee9216b7e73f3167336c7f948fed10f1a8479",
+      "olean_bytes": 457328,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0019.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0020",
+      "source_sha256": "1055395f1cf4d4d667a7ca41fa7235a9c7c609d589158c8d2d321676026524e0",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25034,
+      "peak_resident_bytes": 4057976832,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0020.log",
+      "log_sha256": "9a918472b8a6c263398d2f42cfb3f8eed6c5b9136a246383f7c2673d232fe20a",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "bd61d40f6ae3b5032ed1d1d736055d2f6e9ca0b722a1dd5b0166010b8befb857",
+      "olean_bytes": 457680,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0020.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0021",
+      "source_sha256": "4659da592ae0b644d6f470513c685553b9e1cfa7e06e79164775182c5bc8884a",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25134,
+      "peak_resident_bytes": 4382281728,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0021.log",
+      "log_sha256": "d6808648583be4158dd2450af2af54ca01aaf52a5c8d6639bfec278ab02a36d0",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "70bfe4b1fee12667cf392f7c29b162216ab98ca63bc9e364f5d08ad5329c97f2",
+      "olean_bytes": 456280,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0021.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0022",
+      "source_sha256": "ff6270d9e3d08e94810ac23e37cf57f2b53f9f4e541161ba249a392c182d3a44",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25036,
+      "peak_resident_bytes": 4406165504,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0022.log",
+      "log_sha256": "eb30f1be1ab9467c87268d19e4902850f49674defa4122f8821c967b2b1416e7",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "a44c2dd45723cfa0548807a8921aed08aab512ffb696bd6343eb529183d2703b",
+      "olean_bytes": 457416,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0022.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0023",
+      "source_sha256": "5ab8c010c17bb28b24e61a89f6b9efc78e46ef1c9d1b9cb264c32569413895c9",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25234,
+      "peak_resident_bytes": 4258447360,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0023.log",
+      "log_sha256": "d0cdc5bfdb6a092c48e5b431ab6bac0f346703cc8d8e2c132f80145ac21c0531",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "66e55076467686c09e10ef42cd8e3af56eec4c823e7e63352b482fa12e2adb61",
+      "olean_bytes": 457176,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0023.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0024",
+      "source_sha256": "111390161154b962b2158007047030bdbe89245ee2746062649cfe3041b138fa",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25235,
+      "peak_resident_bytes": 4247916544,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0024.log",
+      "log_sha256": "19b7288701ef066e68efe8a577ae278afedf25a06f2d5cd735657f03f7b21c26",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "8a6c35837d97c7d42e1ecdc6cc355a69eb75f6798ebb197e17a320884c5d0fdb",
+      "olean_bytes": 457016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0024.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0025",
+      "source_sha256": "4c8e66fc2b30ce8219da7be590937f04a49e4f8ca4b03ccaf68f281a36d0135c",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25234,
+      "peak_resident_bytes": 4421402624,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0025.log",
+      "log_sha256": "ec351834f5bca65737ae6e00c47972e04a1151c1c293f67e680dffb59e44059f",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "7a06078f8ca58d7945caf325f63e38c3232752fb40816962f1d1378c75a5b09f",
+      "olean_bytes": 457168,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0025.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0026",
+      "source_sha256": "b5bf2daf822e211fb282f90fa86833abbcaee630895497a0864d98bfec3c3918",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25235,
+      "peak_resident_bytes": 4279468032,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0026.log",
+      "log_sha256": "81b51e5a57483c9ee185fa6be84888613dc6acbd0758f52e5b66875feba2ad55",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "3292ed4fcf00df9f12c0753605be5fa97a9c4ae08c9d0108d93c9c79b83a30f1",
+      "olean_bytes": 457256,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0026.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0027",
+      "source_sha256": "1438ef288d2d8c567bcbeb6991c37074409f6629d596b4a1d3801a29e274049d",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25137,
+      "peak_resident_bytes": 4320976896,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0027.log",
+      "log_sha256": "3c184f31e9a0ec9cab7a23a0261cca135ac14bfa2ecfce128237f8cac3a846b4",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "8250e2030da05e676baf4290d24ce3bf0875dbe855f5c1f4c2dcea87767f9133",
+      "olean_bytes": 457264,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0027.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0028",
+      "source_sha256": "503244130c777893d2affeb5c0927044c88d041b4fec8f644e33c9752acddbc2",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24734,
+      "peak_resident_bytes": 4226908160,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0028.log",
+      "log_sha256": "38d13b80116450ea87e1f585ee5434249527eea51c3b522277f9fa154f4af02f",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "0dced0b51e889b61516e756674d42787b4bd0035fc390b1754ea6878ec40bef5",
+      "olean_bytes": 457696,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0028.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0029",
+      "source_sha256": "4b7fb0a278e4104ddfa08e2ac22b2bb6e56b22ad539e3dcdcf95a76e864a4790",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 24735,
+      "peak_resident_bytes": 4222779392,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0029.log",
+      "log_sha256": "6641f9b72fd0b076eff67f21bef299ce6de74ef6dd387eac0253091aae4452d8",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "a7b72ccf1c4690406414151e9b0ea801391650568c5c56a0bea12414075d5194",
+      "olean_bytes": 457584,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0029.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0030",
+      "source_sha256": "2e6011cd12a6fdd42ebb17a4b96e912ce1fe08aed6d4b18c00fa760b50fab7bc",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25335,
+      "peak_resident_bytes": 4246671360,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0030.log",
+      "log_sha256": "00e04fedab6dbb9009690575d950404fb4f410201ba2763a21ec91acc95babec",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "e904b6f6ce271a0e123cd3f96cc27fac5246997d8efa4481502577e15b545051",
+      "olean_bytes": 457288,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0030.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0031",
+      "source_sha256": "5681f7ff4006cd7f993e0c6349d387cd67471a9caa94a26f471dcc36be079f8a",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25336,
+      "peak_resident_bytes": 4207161344,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0031.log",
+      "log_sha256": "1dde9e2b1d1ddd058d8f2eb3a81f2edd499ef03e837209e29de260b280f7431f",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "70b4fb7fa7307cbed047d8dfab8cacc7d1dbdaaf8368dc513c973dce5e20acdc",
+      "olean_bytes": 457616,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0031.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0032",
+      "source_sha256": "322cb1da6e68dab239c587170ae360f2d9009cd24ac36a226d801613042c6529",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26339,
+      "peak_resident_bytes": 4387753984,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0032.log",
+      "log_sha256": "5237746a0f455cd80113127df0bebf15b894c8aea6ec7545fbbc86a34915df51",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "4a36d26f9bf178bef6a0309f424bfbf4d69c8036243cbfeb99fa7451f8a5478a",
+      "olean_bytes": 457544,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0032.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0033",
+      "source_sha256": "c26375935712f6919e5bd142bf39d2b675f6e2d150176fdc7ab4f20069284e9c",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26337,
+      "peak_resident_bytes": 4380090368,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0033.log",
+      "log_sha256": "52d985867d18cda39bc4a75ea3a4f8a15c9f20949de2b584769937545df0c7ed",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "6991eed6620c4dfceea37b4fab37fb2cd15d814e49a4a61f5664a52174b4a813",
+      "olean_bytes": 457448,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0033.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0034",
+      "source_sha256": "f3ad8f3b2622557715c57f4df9fd955093e4735a1f4537d7bc9cee58b53d11d4",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26536,
+      "peak_resident_bytes": 4289191936,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0034.log",
+      "log_sha256": "c66b36ba2b0dd57010a26f6d143b228374f1b2f52ef7336911c3f0f1dbf5fb30",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "31daab93a8a40bd9ece2dd6a26c03f3b342d803dccdbda19f98c23b3446a3226",
+      "olean_bytes": 458264,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0034.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0035",
+      "source_sha256": "abe08340139ee7770ab47b86b0b03d13f6859a31c40f4929b466492b4db30478",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26540,
+      "peak_resident_bytes": 4202020864,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0035.log",
+      "log_sha256": "4632896a9512d31ee3683595dbf854429aac7c111b7c408183c51f6223c24cb5",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "3628fe243554db47dfd2693e0d82da11f46e6d103f8f9567bf9385e74b8350b0",
+      "olean_bytes": 457816,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0035.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0036",
+      "source_sha256": "84f9de3e2801b8a04d002a677e1fb049acc4c49b2b975f481a806cfb42545ad8",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26642,
+      "peak_resident_bytes": 4275863552,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0036.log",
+      "log_sha256": "4a83b109aefd4583edd721adf1126b5b519b29ec181fd22dd820b64ac8214fcf",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c4926bcf17ef7504d5d67a40b538fc4d7854fe22bf126dbe64a8499c187e5d1f",
+      "olean_bytes": 457560,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0036.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0037",
+      "source_sha256": "e27eceb6d30a474a9fda345869bb97098a6b3823efbad305062c9b78985028ef",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26837,
+      "peak_resident_bytes": 4108787712,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0037.log",
+      "log_sha256": "5016281d90b9821c74a472307ccf26d2607831c5987353fdbe6c607e4e88af5e",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "0978388bbd6ed3b344fabeca1ad599e4c3683722ea4c81848c1e7a6e897cb939",
+      "olean_bytes": 457496,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0037.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0038",
+      "source_sha256": "4fb29ec47c826ce1c17857dd5df3a90b2370a45cb86529028075a13ff54c3e68",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26839,
+      "peak_resident_bytes": 4292194304,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0038.log",
+      "log_sha256": "b3e706d7f382fc6cf7707d5806f8f1b90dcbbe5ea91dcb4944ae75955e1e6a6f",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "999d2edd127130d1a736710d2ad2473eb725f4f6e8532a1298600c68ba6cc424",
+      "olean_bytes": 457744,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0038.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0039",
+      "source_sha256": "c4d996f12a5812ed819ffb010d639153028fb84456a04afed252980701c60983",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26746,
+      "peak_resident_bytes": 4233285632,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0039.log",
+      "log_sha256": "5b172c6c9a2c670787160a972ed56034d5e263e443a7973900b56600f6505b62",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "b2c77dbf0a540cdf73735c0e929eeba64931e0fedcf2e3beba95460f4f9cde29",
+      "olean_bytes": 457680,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0039.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0040",
+      "source_sha256": "80108d4bdb9707c97154994dc71ff1fe41991f750f1e229e02621136aa0220e3",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26740,
+      "peak_resident_bytes": 4249849856,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0040.log",
+      "log_sha256": "b905edfcbda090e221024460cb18ae81fde2a61df29db17b6b0b880f1703d5a9",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "00abf03a446492014d69247b4155e93507905ab7e129830625a372a6f62fe1c1",
+      "olean_bytes": 457696,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0040.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0041",
+      "source_sha256": "65342c3a3b0dba6295f3b656ae86a264212a94f5c88c05ecee468588db0237f9",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26637,
+      "peak_resident_bytes": 4318203904,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0041.log",
+      "log_sha256": "c3abf1fc304826dbff45c5e9a1d7b78e54fb342c5d2fa26dde0068911e001ce0",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "e8e9c289168b5af9297e871657d54a9ce8f3823ed11aab118e6095bc45c5f178",
+      "olean_bytes": 457784,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0041.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0042",
+      "source_sha256": "31e902d9ff697b36d02fa1264dab927374c41ea0fd2e062bbaf52acc2a092dd9",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26139,
+      "peak_resident_bytes": 4321964032,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0042.log",
+      "log_sha256": "ca70d356133b12f90a6b3d90819c6f89ac0454d0e3735de5bc556e3d0ab8c54f",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "e5f984e050456477ba6798e32faee6657c548e467ed58f4b5a7c4669c28f7988",
+      "olean_bytes": 457928,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0042.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0043",
+      "source_sha256": "6f6d132302fd528cd997108b461cebe35fcb1c49ca70f9b31d9356fe0594bccf",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26239,
+      "peak_resident_bytes": 4285378560,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0043.log",
+      "log_sha256": "f448afdb64c8d9f185a323fbc3997735b70b3e63fec217e33d01ad8fa21014a5",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "a7b96dd5003e2d1cf54952a30c65d2b844e121383f7a9f24fb1991e65b2a1c23",
+      "olean_bytes": 457752,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0043.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0044",
+      "source_sha256": "d016c79e12ecf4432c56fe81445b962ebda13e07f45ccc33c449d81fe089d7cf",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25535,
+      "peak_resident_bytes": 4345495552,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0044.log",
+      "log_sha256": "5f29fd72e08f2c5cd2334113a44e1107305ed085a9003df175a13ab8f3d2d37d",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "5bd77892b936b6f8264071d9f0a3ea7efdc00fe1b230ee2f5f6bee0cd896f68f",
+      "olean_bytes": 457848,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0044.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0045",
+      "source_sha256": "be751f3e3ebc3e9e994a1f3acd44e9c2b03504b6383b656088f05a0eba7f9823",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25636,
+      "peak_resident_bytes": 4275912704,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0045.log",
+      "log_sha256": "38f07ff38fe68b5944100ebffab0c71807dc2038d31e770ec21a1fcee1e13853",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "950745d91f340dc0f48bf629cf1e7a61806064e4cf659c03d67e3fe95c6a504a",
+      "olean_bytes": 457760,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0045.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0046",
+      "source_sha256": "2e3029bc5842b3c9c1283bcf747e7f5eb3f30148c0e9b56ba935ebe37fcead19",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26037,
+      "peak_resident_bytes": 4177424384,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0046.log",
+      "log_sha256": "88df1e017e6b3ce316ab464854151d79b88edc32326f7e224adcd901aad23ce6",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "03c8fef3d34c7bcc2e40e1dac0f4f73ee5f44303874d30b45323dd2071bb2da6",
+      "olean_bytes": 457864,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0046.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0047",
+      "source_sha256": "92c0eed09d7594bdc9e54e5045e72966f557577a89812ec260afa1af67313a70",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26239,
+      "peak_resident_bytes": 4216233984,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0047.log",
+      "log_sha256": "94695971fe0903e12ef3476a05aaffe1f932306952da75d80b908d22f52ace67",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "5348486a0aa48d2bf9c1b1e4c45af833b26bf6f003d8d60c1725744ff601a69a",
+      "olean_bytes": 457136,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0047.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0048",
+      "source_sha256": "113b54c776c6e6c24b0e3444eb5b08984570e8bfe5bc98755d2038e6587c376d",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 25934,
+      "peak_resident_bytes": 4371304448,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0048.log",
+      "log_sha256": "0b7ff2086ec80e69cf5c4fc0e3ffa1bd8882aa5b5820c0a628e09e77d56bf527",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "d2efde13b28419f3530005b07649f794791d7ce33dfb105d1361261901d4ea55",
+      "olean_bytes": 457304,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0048.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0049",
+      "source_sha256": "a49e9f113f95424cd7f97d8d88795baf67e81f0bd2b6ccc1a378b070c53eed76",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Parameters": "d20bd2426a5e24d604badea0c37d002deb77e0715489063e00b5cab34efe9311",
+        "CentroidEscape.BallStep": "ac2271717aa468794704ed17dd5838ed509d06e5517f2342a57409b8ff0c2d42"
+      },
+      "exit_code": 0,
+      "wall_ms": 26133,
+      "peak_resident_bytes": 4257656832,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Step0049.log",
+      "log_sha256": "a23f4ded01601043ff8c7d20ba372780255e42202abef80f2d1767b3223eb699",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "79abab73db92f11d3738f43c76c33ae181c393c6b5a67d4138b5321f9c829590",
+      "olean_bytes": 458208,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Step0049.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0000",
+      "source_sha256": "9295ffcc9ede7bcb1bd3a306d80914ecd00272764d617e7d2b61ebd7d93f8782",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0000": "e2258de3e976667878207f42527f035682ae423523c697ab0568d272fc530144",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0001": "ac81d2708c88e70a7429476b686bf8e8fccb0a3ed338b2a8a1b09da5e88392b8",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0002": "c668dbb04d81e175db9cff6b355e5db41ae990f17872292e4cf04bb7b7e6a410",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0003": "29f001b48678ce105597744a213637419aff29b03d3a98b2073effeacc4f4d30",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0004": "43e4a5dc9b9a874058ff23f2f899e840cc9085ba1f181ccf84be8a0b498b9651"
+      },
+      "exit_code": 0,
+      "wall_ms": 2304,
+      "peak_resident_bytes": 3351343104,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0000.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "e67043127c1cbc5c6b559e582f736155c97240566b4b9b4c3235247c8da43dd9",
+      "olean_bytes": 91032,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0000.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0001",
+      "source_sha256": "8561bf62c614f354994d38586fd84a5887218de2dcbdba8643b39d159f2a1b7f",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0005": "18f3bea4e0d7cc29663f199a30238fcac16a4662b07867ca93428cef20f5f6f2",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0006": "c48674aa4ff66a45187ef093bb57640c4985df1c6c24e20255212048dbe4d6a5",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0007": "dc15e676927da7ebf695f0f60673739bed3ec13c048ca9d0ff3e9cf7f12f8a4c",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0008": "5cb71f3f4efe7889721c6479beb8bb4f8c7b20e2c739f1993f070f729dd9f900",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0009": "6933b137b5f18a2f445ccd8566693f4897870308de30d0ee387dd5138f916364"
+      },
+      "exit_code": 0,
+      "wall_ms": 2204,
+      "peak_resident_bytes": 3353456640,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0001.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "4c892bb95e8abd0b69f57a1fb4ec509e2109824a796eb4b20e50b132562382e8",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0001.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0002",
+      "source_sha256": "0bfeca71035b9b84bf1e0f0c8ff3414722d2eb4de7aa60b5af5dbcfdb1bd3ce6",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0010": "9709457a754e57912c195dab7486d18b37914824b48cf93bfac92cee7337d67b",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0011": "9e0c38b97b63c4c8b9076328d006f353a5c000a0fc8a250af84a036502b4eb5e",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0012": "d1496b2a0fbba7486af7e742dab99ff9e3e76cdb8f9d794cf8eda0b6e833aa81",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0013": "3cc3072448b7b23d6e301a152ee33d5dd88ccbd2e12b2488edd24fdb347cb6f1",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0014": "a75351fe82d40f5c40a8608d2a94fbf8f8512b9b66f9b34fc09bd0ef0f376689"
+      },
+      "exit_code": 0,
+      "wall_ms": 2204,
+      "peak_resident_bytes": 3351326720,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0002.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "75e07afea0f96e5a30ea717bbdf5ea8151d0e1ffda194976d5203ac3c9d7204d",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0002.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0003",
+      "source_sha256": "708d63ab58e629231343aa1bf9f5bf50a7a15cd845389dc5e50c428479bf6a98",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0015": "c2b3e3cb01fc6ca979ecfbe7189043834d6b4d180032408af3094393a4381d4d",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0016": "c178064e2786b8d44fbbc60a5e3848776594ca72c54f0e777dc5b52685a39612",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0017": "c0b07427c0898204c2cea1e4d34f3d32275ff04400591a66856ce25e78867571",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0018": "77f03231cba7709e3c91bb128b7a394b9d86ab0a49e47415e2ba0ea50b00a861",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0019": "3df43d2da21826971fa008f48deee9216b7e73f3167336c7f948fed10f1a8479"
+      },
+      "exit_code": 0,
+      "wall_ms": 2203,
+      "peak_resident_bytes": 3353710592,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0003.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "07dbb2e446027b23c86bdd3afad24a641b00e859951b88400b39f119de2907aa",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0003.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0004",
+      "source_sha256": "e6e60534485a683e27118cc02dfa14ab22f454edd77805961cabf10fee7a2b91",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0020": "bd61d40f6ae3b5032ed1d1d736055d2f6e9ca0b722a1dd5b0166010b8befb857",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0021": "70bfe4b1fee12667cf392f7c29b162216ab98ca63bc9e364f5d08ad5329c97f2",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0022": "a44c2dd45723cfa0548807a8921aed08aab512ffb696bd6343eb529183d2703b",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0023": "66e55076467686c09e10ef42cd8e3af56eec4c823e7e63352b482fa12e2adb61",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0024": "8a6c35837d97c7d42e1ecdc6cc355a69eb75f6798ebb197e17a320884c5d0fdb"
+      },
+      "exit_code": 0,
+      "wall_ms": 2203,
+      "peak_resident_bytes": 3351285760,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0004.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "e6802596866799b2f865589fbd22f6effaf34a7b000fe5fa0cffd45cb3c9b93c",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0004.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0005",
+      "source_sha256": "533ddc19003ed68d82fd017bfea64b6fb0fe6b8d8ad208ddee9c92ac40a7bcf3",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0025": "7a06078f8ca58d7945caf325f63e38c3232752fb40816962f1d1378c75a5b09f",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0026": "3292ed4fcf00df9f12c0753605be5fa97a9c4ae08c9d0108d93c9c79b83a30f1",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0027": "8250e2030da05e676baf4290d24ce3bf0875dbe855f5c1f4c2dcea87767f9133",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0028": "0dced0b51e889b61516e756674d42787b4bd0035fc390b1754ea6878ec40bef5",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0029": "a7b72ccf1c4690406414151e9b0ea801391650568c5c56a0bea12414075d5194"
+      },
+      "exit_code": 0,
+      "wall_ms": 2203,
+      "peak_resident_bytes": 3353427968,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0005.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "757e1dd1f2baf3d293417c9cd4019c645244ac1d45e249d2b7ddb67fa3e7f53e",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0005.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0006",
+      "source_sha256": "99b554fef02fab743c82d940a6ddad31a90efc03987cb0cd71503ebaf266c365",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0030": "e904b6f6ce271a0e123cd3f96cc27fac5246997d8efa4481502577e15b545051",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0031": "70b4fb7fa7307cbed047d8dfab8cacc7d1dbdaaf8368dc513c973dce5e20acdc",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0032": "4a36d26f9bf178bef6a0309f424bfbf4d69c8036243cbfeb99fa7451f8a5478a",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0033": "6991eed6620c4dfceea37b4fab37fb2cd15d814e49a4a61f5664a52174b4a813",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0034": "31daab93a8a40bd9ece2dd6a26c03f3b342d803dccdbda19f98c23b3446a3226"
+      },
+      "exit_code": 0,
+      "wall_ms": 2203,
+      "peak_resident_bytes": 3353481216,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0006.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "5569b7ba0ae57faa4490522c57a0d93079be954cf27317ac22cf933ff60f81dd",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0006.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0007",
+      "source_sha256": "45fa5c71e4911e2a2a5c5767fb5909afdc81b01cbcad721b8c9444506db1a433",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0035": "3628fe243554db47dfd2693e0d82da11f46e6d103f8f9567bf9385e74b8350b0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0036": "c4926bcf17ef7504d5d67a40b538fc4d7854fe22bf126dbe64a8499c187e5d1f",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0037": "0978388bbd6ed3b344fabeca1ad599e4c3683722ea4c81848c1e7a6e897cb939",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0038": "999d2edd127130d1a736710d2ad2473eb725f4f6e8532a1298600c68ba6cc424",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0039": "b2c77dbf0a540cdf73735c0e929eeba64931e0fedcf2e3beba95460f4f9cde29"
+      },
+      "exit_code": 0,
+      "wall_ms": 2204,
+      "peak_resident_bytes": 3351449600,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0007.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "5ac381b5af29e1fce0357e33f6a60714eddb6416ab85f06778dc562830275e9a",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0007.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0008",
+      "source_sha256": "389b75210f9debdad89ff0017bd10004655d6c7da67348198c955af728216b04",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0040": "00abf03a446492014d69247b4155e93507905ab7e129830625a372a6f62fe1c1",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0041": "e8e9c289168b5af9297e871657d54a9ce8f3823ed11aab118e6095bc45c5f178",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0042": "e5f984e050456477ba6798e32faee6657c548e467ed58f4b5a7c4669c28f7988",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0043": "a7b96dd5003e2d1cf54952a30c65d2b844e121383f7a9f24fb1991e65b2a1c23",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0044": "5bd77892b936b6f8264071d9f0a3ea7efdc00fe1b230ee2f5f6bee0cd896f68f"
+      },
+      "exit_code": 0,
+      "wall_ms": 2203,
+      "peak_resident_bytes": 3353534464,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0008.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "85d66e33165834c7c7cef4c9cecc31bdbcc1b2703c4a708e8d4d7a093561ca7e",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0008.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0009",
+      "source_sha256": "005b10a0f3d382d03b1ac9ab459d31783315a13517272323d33e0c73d2f56f0b",
+      "import_hashes": {
+        "CentroidEscape.FiniteTaylorBlock": "a4612d684d724b27b3178e433e62e0fda3eda4b00907accfa7361882b53f98e0",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0045": "950745d91f340dc0f48bf629cf1e7a61806064e4cf659c03d67e3fe95c6a504a",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0046": "03c8fef3d34c7bcc2e40e1dac0f4f73ee5f44303874d30b45323dd2071bb2da6",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0047": "5348486a0aa48d2bf9c1b1e4c45af833b26bf6f003d8d60c1725744ff601a69a",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0048": "d2efde13b28419f3530005b07649f794791d7ce33dfb105d1361261901d4ea55",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Step0049": "79abab73db92f11d3738f43c76c33ae181c393c6b5a67d4138b5321f9c829590"
+      },
+      "exit_code": 0,
+      "wall_ms": 2204,
+      "peak_resident_bytes": 3353481216,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Block0009.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "92f4694b73bbef4475cba3f640a702913ae68106cf7c3179bcd402446866fcfa",
+      "olean_bytes": 91016,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Block0009.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0000",
+      "source_sha256": "f39d0df26e080ce33ca790160497594f8bc293400976cc7f3bc4d3a6570097ef",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0000": "e67043127c1cbc5c6b559e582f736155c97240566b4b9b4c3235247c8da43dd9",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0001": "4c892bb95e8abd0b69f57a1fb4ec509e2109824a796eb4b20e50b132562382e8"
+      },
+      "exit_code": 0,
+      "wall_ms": 1903,
+      "peak_resident_bytes": 3333459968,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge000_0000.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "f5dbc9a6028b8de53c43de9d73190c283acc54e2a4bc854a53e2d2cabb6c3515",
+      "olean_bytes": 43448,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge000_0000.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0001",
+      "source_sha256": "74869187f50c83954146a51cff6670b4b0962595486766fe525102e5a34191f0",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0002": "75e07afea0f96e5a30ea717bbdf5ea8151d0e1ffda194976d5203ac3c9d7204d",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0003": "07dbb2e446027b23c86bdd3afad24a641b00e859951b88400b39f119de2907aa"
+      },
+      "exit_code": 0,
+      "wall_ms": 1903,
+      "peak_resident_bytes": 3333697536,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge000_0001.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "ab770ce47405c73b638e91d5e767ccd64ea1810f9126f0f42decf4d6cac0737a",
+      "olean_bytes": 43432,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge000_0001.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0002",
+      "source_sha256": "6b232827f29b48da12b09c6799c5fc5ce1438463de23b532882f838e1a014b0e",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0004": "e6802596866799b2f865589fbd22f6effaf34a7b000fe5fa0cffd45cb3c9b93c",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0005": "757e1dd1f2baf3d293417c9cd4019c645244ac1d45e249d2b7ddb67fa3e7f53e"
+      },
+      "exit_code": 0,
+      "wall_ms": 1903,
+      "peak_resident_bytes": 3333267456,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge000_0002.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "ceea4657e36b637d53c735a9486caa8c732b87e7bec748d387b4aa765d8a3da4",
+      "olean_bytes": 43432,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge000_0002.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0003",
+      "source_sha256": "25abd8a8b521433f13296b27dbac260d15fe9846238269f3538a706c64531470",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0006": "5569b7ba0ae57faa4490522c57a0d93079be954cf27317ac22cf933ff60f81dd",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0007": "5ac381b5af29e1fce0357e33f6a60714eddb6416ab85f06778dc562830275e9a"
+      },
+      "exit_code": 0,
+      "wall_ms": 2003,
+      "peak_resident_bytes": 3333296128,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge000_0003.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "8bc514f90242cd813eb43c1bb172afedd8b554b725b447b6baa8baa519a0ab47",
+      "olean_bytes": 43432,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge000_0003.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0004",
+      "source_sha256": "1ccbd84512bb0be2f9e23ed761a7c0d63dc7486c28ad01d27503a81c7ce1fa91",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0008": "85d66e33165834c7c7cef4c9cecc31bdbcc1b2703c4a708e8d4d7a093561ca7e",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Block0009": "92f4694b73bbef4475cba3f640a702913ae68106cf7c3179bcd402446866fcfa"
+      },
+      "exit_code": 0,
+      "wall_ms": 2003,
+      "peak_resident_bytes": 3333246976,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge000_0004.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "50af278fede1c056cfd9e2e60f99426fc8022e3c9628afb0a46e7ea251d751ae",
+      "olean_bytes": 43432,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge000_0004.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge001_0000",
+      "source_sha256": "e7aaf15faf9fda47a80a164a3688989bddab4d6f5a80d5cd703329778ac419cb",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0000": "f5dbc9a6028b8de53c43de9d73190c283acc54e2a4bc854a53e2d2cabb6c3515",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0001": "ab770ce47405c73b638e91d5e767ccd64ea1810f9126f0f42decf4d6cac0737a"
+      },
+      "exit_code": 0,
+      "wall_ms": 2003,
+      "peak_resident_bytes": 3338350592,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge001_0000.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "f2750024350c2815624bb64b11dcbc7cfb27ed1b4a50b0694c4fade1fc33c14e",
+      "olean_bytes": 43432,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge001_0000.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge001_0001",
+      "source_sha256": "00091042cda6932022c7682eedb5a52af669bbbddde8b1041fdf844cebbee499",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0002": "ceea4657e36b637d53c735a9486caa8c732b87e7bec748d387b4aa765d8a3da4",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0003": "8bc514f90242cd813eb43c1bb172afedd8b554b725b447b6baa8baa519a0ab47"
+      },
+      "exit_code": 0,
+      "wall_ms": 2004,
+      "peak_resident_bytes": 3337891840,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge001_0001.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "73b1367daa70f3713ea366117cfc1c6c4402a5dbe6dc45ad6c0be9c8ff13ec31",
+      "olean_bytes": 43416,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge001_0001.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge002_0000",
+      "source_sha256": "786f37f4931ab6906d54b8991ff6a61246b237f73efd1eba4839f39066fa8659",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge001_0000": "f2750024350c2815624bb64b11dcbc7cfb27ed1b4a50b0694c4fade1fc33c14e",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge001_0001": "73b1367daa70f3713ea366117cfc1c6c4402a5dbe6dc45ad6c0be9c8ff13ec31"
+      },
+      "exit_code": 0,
+      "wall_ms": 1903,
+      "peak_resident_bytes": 3347247104,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge002_0000.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "c9fa2e6f611ab3cde49ed6800411e742d7d947b6fadc573a9535e6768d28e329",
+      "olean_bytes": 43336,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge002_0000.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge003_0000",
+      "source_sha256": "d3e687889b1d3a98433c85c25c894fd97b3e827215b72b3f9c735ec76e5d9f1d",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge002_0000": "c9fa2e6f611ab3cde49ed6800411e742d7d947b6fadc573a9535e6768d28e329",
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge000_0004": "50af278fede1c056cfd9e2e60f99426fc8022e3c9628afb0a46e7ea251d751ae"
+      },
+      "exit_code": 0,
+      "wall_ms": 1903,
+      "peak_resident_bytes": 3351568384,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Merge003_0000.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reused_verified": false,
+      "audit_message_seen": false,
+      "olean_sha256": "3952c0b12dd8138804f2ef28b9151d65e564a67abd78442acceb036e7698c95d",
+      "olean_bytes": 43472,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Merge003_0000.olean"
+    },
+    {
+      "name": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Audit",
+      "source_sha256": "47956e0607b031b4e0fbeb5241674dfc90ab1c220cb1c886b80423496088f313",
+      "import_hashes": {
+        "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Merge003_0000": "3952c0b12dd8138804f2ef28b9151d65e564a67abd78442acceb036e7698c95d"
+      },
+      "exit_code": 0,
+      "wall_ms": 2804,
+      "peak_resident_bytes": 3356000256,
+      "sampled_peak_private_bytes": null,
+      "log": "logs/Shard_b_minus_s0000_n0050_bounded_Audit.log",
+      "log_sha256": "4798345a557fe1173253f5b024c78f1bb6378ef22604fe1c550b08d19ce8c5d0",
+      "reused_verified": false,
+      "audit_message_seen": true,
+      "olean_sha256": "78d4b1b2a50c83200954e002b59d42d98f9e705f7ecbce28bf08c00bb0a5635a",
+      "olean_bytes": 2624,
+      "checked_olean": "checked_oleans/CentroidEscape/Shard_b_minus_s0000_n0050_bounded_Audit.olean"
+    }
+  ],
+  "axioms_allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "meaning": "Finite Taylor segment checked; no complete ODE or shooting-root claim.",
+  "wall_ms": 664909
+}

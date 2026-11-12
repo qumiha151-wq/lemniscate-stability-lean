@@ -1,0 +1,1392 @@
+{
+  "schema": "centroid.full-certificate-assembly.v1",
+  "key": "FullCandidate_v1_41fda1193ab84b01",
+  "status": "sources_generated_unverified",
+  "kernel_verified": false,
+  "expected_steps": 3750,
+  "steps_per_case": 750,
+  "case_order": [
+    "center",
+    "a_plus",
+    "a_minus",
+    "b_plus",
+    "b_minus"
+  ],
+  "generator_sha256": "21f062069affaa9431a7b695d1eb4623340d89eb66ae1c30ebcb7de2a0ad6f9a",
+  "candidate_source": {
+    "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/CentroidEscape/CandidateEndpointChecks.lean",
+    "sha256": "f8c058e1b24b7f754eb07c33e352c98cfbfca2954734aa138d2cadb61140838f"
+  },
+  "input_shards": [
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0000-n0050/manifest.json",
+      "sha256": "9caa3b77801629010c28bcf383e0a657d74c9219ecea2506a3cc4addd595830e",
+      "case": "center",
+      "start": 0,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0000_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0050-n0050/manifest.json",
+      "sha256": "d3c7492b121d32447b78b134de731e0b92600de4ed71b48f3b9f9b1c85bc4cf4",
+      "case": "center",
+      "start": 50,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0050_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0100-n0050/manifest.json",
+      "sha256": "ef14c16dd57bc5aedf52e6b0c6928ef5ee9e158434fd10b6da3e2f8ad9e919a6",
+      "case": "center",
+      "start": 100,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0100_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0150-n0050/manifest.json",
+      "sha256": "999bef05acfc2c410a7e8a3eab53e60df0dfb42b5a00e4f89120ba8de35fdbc0",
+      "case": "center",
+      "start": 150,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0150_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0200-n0050/manifest.json",
+      "sha256": "b5cd2c215d2fa6e33e34cb71b7fceffe4fa8504e15e46c263b1c3503399ac913",
+      "case": "center",
+      "start": 200,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0200_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0250-n0050/manifest.json",
+      "sha256": "10ce84c341e25a1fbc18ae7a21746a5cb73ea02f80a23486b181a73d7407511b",
+      "case": "center",
+      "start": 250,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0250_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0300-n0050/manifest.json",
+      "sha256": "83bed2e8df38cccb8d89748d889743bfb09236afa7308be005d80c7568ad081a",
+      "case": "center",
+      "start": 300,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0300_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0350-n0050/manifest.json",
+      "sha256": "afd7fc558cc094a68b2144b187f5a5a4de600c90c6fd1bbe3aefe939e63eac0d",
+      "case": "center",
+      "start": 350,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0350_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0400-n0050/manifest.json",
+      "sha256": "6a991cc505bed81dc4e6942d2978594146da190d1d852f0bd52199266ea86d6f",
+      "case": "center",
+      "start": 400,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0400_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0450-n0050/manifest.json",
+      "sha256": "ec6c3732ac4e0ab900dc39150889d41279e69b70bf37a663d9d29ccc1822d128",
+      "case": "center",
+      "start": 450,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0450_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0500-n0050/manifest.json",
+      "sha256": "5fa8e2954bc640a572650e803587c822a9a78998c7c0eb53038a710bd3859636",
+      "case": "center",
+      "start": 500,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0500_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0550-n0050/manifest.json",
+      "sha256": "8359030c201ac951975440e07242ec527b96cd99ac6948fcd20f1080012ea8e5",
+      "case": "center",
+      "start": 550,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0550_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0600-n0050/manifest.json",
+      "sha256": "c66da1f3b98e07eb8a7ce5ffd977be10f2ad43b69424205943aae44bb7761055",
+      "case": "center",
+      "start": 600,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0600_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0650-n0050/manifest.json",
+      "sha256": "6256a370b6ce57c9e43176e9d11ab4702d3c83b8676aa38ae95da64ea96cbee6",
+      "case": "center",
+      "start": 650,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0650_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/center-s0700-n0050/manifest.json",
+      "sha256": "ee0fab1644e5102ee498515a488b4a2b8ab8bac8697faacad0a46a2a190658b6",
+      "case": "center",
+      "start": 700,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_center_s0700_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0000-n0050/manifest.json",
+      "sha256": "2db2bc6dd6dc52738fa85bb54f95e9e4115930748ad1abb9c75ffe73394cf34e",
+      "case": "a_plus",
+      "start": 0,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0000_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0050-n0050/manifest.json",
+      "sha256": "0c5428d7b0a615ee859612d288710a315deb30592e7a3012ddaca1d8a9de59ad",
+      "case": "a_plus",
+      "start": 50,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0050_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0100-n0050/manifest.json",
+      "sha256": "4ea91a157929fabc69a4d3a0b748d7ef8e34c8014327dacf2d16ae0a81c87ca5",
+      "case": "a_plus",
+      "start": 100,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0100_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0150-n0050/manifest.json",
+      "sha256": "1c40c8b4f00f3f46e0aaebf8e18167131d136cc2e6bddafa1614c67af5f40f14",
+      "case": "a_plus",
+      "start": 150,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0150_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0200-n0050/manifest.json",
+      "sha256": "0972bf325cbaa6de7285923a7885c7b0d158f4241d2f4ceeec035fbfddaf859d",
+      "case": "a_plus",
+      "start": 200,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0200_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0250-n0050/manifest.json",
+      "sha256": "eacf8bd1291570b60645b69c98c29670251d2b16be22ab2d2632992590d17e23",
+      "case": "a_plus",
+      "start": 250,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0250_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0300-n0050/manifest.json",
+      "sha256": "d878d2d1a3c1a8f5f3e1370bdbe26b41594dbccd6ff402a56edddc322328e4c1",
+      "case": "a_plus",
+      "start": 300,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0300_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0350-n0050/manifest.json",
+      "sha256": "666847c2681fa8f5f1134087f3c31951613e599c3da94c56680dc0daf4a60d5f",
+      "case": "a_plus",
+      "start": 350,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0350_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0400-n0050/manifest.json",
+      "sha256": "98d1461286b141633c38084672ec8d0fb04eb2f67c855e91072919146be1777a",
+      "case": "a_plus",
+      "start": 400,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0400_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0450-n0050/manifest.json",
+      "sha256": "dce06cbb3b5520f727205f58f206436fe2b755976ed664b189fcbf5067e8e35a",
+      "case": "a_plus",
+      "start": 450,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0450_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0500-n0050/manifest.json",
+      "sha256": "96924737648582c269d7d967b61c858c9e47b81b9d1f15cf6dd6d7d787893829",
+      "case": "a_plus",
+      "start": 500,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0500_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0550-n0050/manifest.json",
+      "sha256": "37c5a3bd382bae0bf7a21eedec0921eb7171a8fded49bf36e121b47cf434758c",
+      "case": "a_plus",
+      "start": 550,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0550_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0600-n0050/manifest.json",
+      "sha256": "ef2beafa699c6a0408655cec3255adf357924ba13f320fc8c075a33364808dcd",
+      "case": "a_plus",
+      "start": 600,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0600_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0650-n0050/manifest.json",
+      "sha256": "86a52d5d453e857443eed272949c43421bf7965d8b626a25ae2d42174cf37253",
+      "case": "a_plus",
+      "start": 650,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0650_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_plus-s0700-n0050/manifest.json",
+      "sha256": "0aca4a3278de08027f171b5d5778cd05e48a127b9cb57546d09fd4cc87fade83",
+      "case": "a_plus",
+      "start": 700,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_plus_s0700_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0000-n0050/manifest.json",
+      "sha256": "a3371a1b3ce94d686c9ba66f4c006671b41894543c72fff71c902c885842ab33",
+      "case": "a_minus",
+      "start": 0,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0000_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0050-n0050/manifest.json",
+      "sha256": "9cd2e352138a55c95859c53d913153b4673f3349ed52bc04f6e3e0b001a23546",
+      "case": "a_minus",
+      "start": 50,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0050_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0100-n0050/manifest.json",
+      "sha256": "f98ab3da25412aee5a65fec06e4419ba425672a5a8a4156d8ea7c07dbea40f95",
+      "case": "a_minus",
+      "start": 100,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0100_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0150-n0050/manifest.json",
+      "sha256": "b1413789a56d44f92116994cd07f7b97ea0c279f30bf42b11cbc7f7e88708816",
+      "case": "a_minus",
+      "start": 150,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0150_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0200-n0050/manifest.json",
+      "sha256": "61d0ecd085245effcc48e7d411a74310117985c33748a096c118f2777ccf1946",
+      "case": "a_minus",
+      "start": 200,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0200_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0250-n0050/manifest.json",
+      "sha256": "2670db70cec721388648a45acfea5648d7d4c764df1f9a1a1da0144ae47b0385",
+      "case": "a_minus",
+      "start": 250,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0250_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0300-n0050/manifest.json",
+      "sha256": "ab269060c6d571c7cd50332ebe878df8130def0b5d75f7efcb93733864a7a362",
+      "case": "a_minus",
+      "start": 300,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0300_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0350-n0050/manifest.json",
+      "sha256": "b7c01f3e16643600ea3c9c1461469d1cb557b1216e4eea88d6d07e8e824e106e",
+      "case": "a_minus",
+      "start": 350,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0350_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0400-n0050/manifest.json",
+      "sha256": "8e3c5fea319640e224ba89851016904618a2f4b9cc7699cd55ac641c3fde29e1",
+      "case": "a_minus",
+      "start": 400,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0400_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0450-n0050/manifest.json",
+      "sha256": "3eb6f7a2be0b68497fa9d46366094bd66d04d8671dd912b39b8be060f6263176",
+      "case": "a_minus",
+      "start": 450,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0450_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0500-n0050/manifest.json",
+      "sha256": "318c8e4da20cce74bf713372c1a1246b48845bf25b6e30ec5bc7b9eed5113821",
+      "case": "a_minus",
+      "start": 500,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0500_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0550-n0050/manifest.json",
+      "sha256": "14e7c8cb51bcd4b2bc32ed29177d143fa7b7165e809f3e5e9b56ba79b13c82d9",
+      "case": "a_minus",
+      "start": 550,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0550_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0600-n0050/manifest.json",
+      "sha256": "07b47d66fd85971b6070bdfee371fd5a1be6467fb5b4ef72010d1a892f003618",
+      "case": "a_minus",
+      "start": 600,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0600_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0650-n0050/manifest.json",
+      "sha256": "a38bef39098e6d8538d7eb33016a5518eef36c04db727359d9e1f42a7d12258d",
+      "case": "a_minus",
+      "start": 650,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0650_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/a_minus-s0700-n0050/manifest.json",
+      "sha256": "f468c694ec4af18423a244e8370cba2a2c372bae02997bd958e8d0537014f136",
+      "case": "a_minus",
+      "start": 700,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_a_minus_s0700_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0000-n0050/manifest.json",
+      "sha256": "9a28a7a0e422c5eb5c276dab2a663303bc8fa574502e4011bdda9e65bc30962a",
+      "case": "b_plus",
+      "start": 0,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0000_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0050-n0050/manifest.json",
+      "sha256": "0a78f4b93b48f723e8b0acf1eb681af9f405e48333b603a02905729cf9b615df",
+      "case": "b_plus",
+      "start": 50,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0050_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0100-n0050/manifest.json",
+      "sha256": "21de919e44686458cb638f5180b5fd20d3ebbf64cc4d0a40e506c0aca2742611",
+      "case": "b_plus",
+      "start": 100,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0100_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0150-n0050/manifest.json",
+      "sha256": "656a1292bbe114073a91784be0a7c55cf5568cd9f63add4ad41137f6207e736c",
+      "case": "b_plus",
+      "start": 150,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0150_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0200-n0050/manifest.json",
+      "sha256": "da0a5a3ef6b8bf75df0200c448e93f183e96bd5ab65080e1b5121b68cc50fe76",
+      "case": "b_plus",
+      "start": 200,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0200_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0250-n0050/manifest.json",
+      "sha256": "f18889bfc58266ca92ed20a6b0c6fd11adde93c0cc728d5b1b3bd2a29fe2d614",
+      "case": "b_plus",
+      "start": 250,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0250_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0300-n0050/manifest.json",
+      "sha256": "3720c1bd95552991852a28949a7522c9f27d178e6bf56a57e01a6a84acc96597",
+      "case": "b_plus",
+      "start": 300,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0300_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0350-n0050/manifest.json",
+      "sha256": "bd8ddf57e1cf0747655ab90262ecbfedd58bff25c642918ae0640fae60ec5cdf",
+      "case": "b_plus",
+      "start": 350,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0350_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0400-n0050/manifest.json",
+      "sha256": "296a6e78d7f4b658a6324a33f050691b40b69c972aaf8c564f5fc3d6d8f98efc",
+      "case": "b_plus",
+      "start": 400,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0400_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0450-n0050/manifest.json",
+      "sha256": "2bc4850d98be1adf2721d770bf4dfb9bcf189a9b2c62ffc9fa9a8080315e0ab6",
+      "case": "b_plus",
+      "start": 450,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0450_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0500-n0050/manifest.json",
+      "sha256": "acee7f244564314058649ff23215d474aa6bb2a3182e87a5a0137b03a60a6413",
+      "case": "b_plus",
+      "start": 500,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0500_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0550-n0050/manifest.json",
+      "sha256": "3b970cd91f3dbf9400564aad7a39be92ff03f1aad9da8691c9dbb7c10983abac",
+      "case": "b_plus",
+      "start": 550,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0550_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0600-n0050/manifest.json",
+      "sha256": "807079c32a980f9de0bcee6b735e9326ed76e23e2addad09504bb06eee523a8d",
+      "case": "b_plus",
+      "start": 600,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0600_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0650-n0050/manifest.json",
+      "sha256": "e049605889dfc4c82f96fa12775aa59a3740256e3125c437058e3fbc5d9aa30e",
+      "case": "b_plus",
+      "start": 650,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0650_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_plus-s0700-n0050/manifest.json",
+      "sha256": "d9b3275d7e28e4658c53e71d9eafd149469cb30ba9aaef4471d9104ead2bd45f",
+      "case": "b_plus",
+      "start": 700,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_plus_s0700_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0000-n0050/manifest.json",
+      "sha256": "c582cb0f4413a159d17d3e21bce1dbfb24f2d0569922f3d7b9a21fc67fa5c178",
+      "case": "b_minus",
+      "start": 0,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0000_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0050-n0050/manifest.json",
+      "sha256": "a70ec6175bc7a899042beff9ffacd2d7574281d1d361a62a1d820fb6a8a8caf7",
+      "case": "b_minus",
+      "start": 50,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0050_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0100-n0050/manifest.json",
+      "sha256": "b3806d96a170db415b1f62fd8f449d90b1e348c18a0e9730c2425868eec22c62",
+      "case": "b_minus",
+      "start": 100,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0100_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0150-n0050/manifest.json",
+      "sha256": "85eb3ecac7fba3fc4a0e6144ad8864b8830574876a02e73f2eb999891584c132",
+      "case": "b_minus",
+      "start": 150,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0150_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0200-n0050/manifest.json",
+      "sha256": "15574d87d558ccf8c7460811f31edc9b498839ed2844ed39702ae3b4e00b3599",
+      "case": "b_minus",
+      "start": 200,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0200_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0250-n0050/manifest.json",
+      "sha256": "acfe78e3d1d32fd805ab59354670e23a207f26abeec7a174176cb8de5d1d8e99",
+      "case": "b_minus",
+      "start": 250,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0250_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0300-n0050/manifest.json",
+      "sha256": "15a4c4bb9e8302e28bd0e5202b8eb476437ae5601944b6db1e6382069ea221da",
+      "case": "b_minus",
+      "start": 300,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0300_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0350-n0050/manifest.json",
+      "sha256": "0e16b2b68d67c95d34ff4f03a4499e032bae4ecd57bbd69f19f2fda12e6c4199",
+      "case": "b_minus",
+      "start": 350,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0350_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0400-n0050/manifest.json",
+      "sha256": "745332bb96b97a64c5eb1640bb1b5ade8f89723636285d63529c12a28cae55fa",
+      "case": "b_minus",
+      "start": 400,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0400_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0450-n0050/manifest.json",
+      "sha256": "fd42cc180d9aad4f34b5b295e3c36996d3108d8b5dc6d04b54ffaaf37e7ef857",
+      "case": "b_minus",
+      "start": 450,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0450_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0500-n0050/manifest.json",
+      "sha256": "fd5d5fc44f42a8838aad5c8ea792639e4e2af852f834b2ee3efa34f837dac296",
+      "case": "b_minus",
+      "start": 500,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0500_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0550-n0050/manifest.json",
+      "sha256": "c6f0b153cfc4b9cd6df9ea7a5fd6f09667b774345904b8042a4443bdd5bb4d95",
+      "case": "b_minus",
+      "start": 550,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0550_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0600-n0050/manifest.json",
+      "sha256": "a2c770cc6f156955f762e2c0c75f5ceb926b923695464f8361e127b6d6858c16",
+      "case": "b_minus",
+      "start": 600,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0600_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0650-n0050/manifest.json",
+      "sha256": "3d6df5626769b20937139d06ea44c58646107d4477ba88ee568118447568b22c",
+      "case": "b_minus",
+      "start": 650,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0650_n0050_bounded_Audit"
+    },
+    {
+      "path": "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/CentroidEscape/full/shards/b_minus-s0700-n0050/manifest.json",
+      "sha256": "07bf595c445cba0a20fd28a3b6183cef40ab201332cbcfd27c3a8020bb6c396a",
+      "case": "b_minus",
+      "start": 700,
+      "count": 50,
+      "audit_module": "CentroidEscape.Shard_b_minus_s0700_n0050_bounded_Audit"
+    }
+  ],
+  "modules": [
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0000.lean",
+      "sha256": "565b8e716cbc828a09b11d229adf6327d49be2c630da04203e6ab527fb50f8cd"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0001.lean",
+      "sha256": "c19e1886c215091955973be7ffa316b4f0231ec81ef35f3cd7760efa66c34b47"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0002.lean",
+      "sha256": "37d6e5794428c2945a5b164c11cfdf476731169570e4b8abdd9458aab72367f9"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0003.lean",
+      "sha256": "b8a8232abae9f9aad2ac364174a103244c64bbc7e8b9507b2195812c5b0b5988"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0004.lean",
+      "sha256": "6cc16c9b7d9633a2017baba72439bda763d2f2e0b5b29dccd7489bd1f4f9a41f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0005.lean",
+      "sha256": "30b9ef1515f76653a41377b1a55a92775c530d99ab1109ca51fb048c196f7a39"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0006.lean",
+      "sha256": "66dac5cbd21adc037889e045dd72c38ef269915344eea9b3f32ecfbeef456149"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0007",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0007.lean",
+      "sha256": "3b708766dbcd6183a5f49c77732d9c72166d6ce2d7c25c1fdadbbd76daf6bf81"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0008",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0008.lean",
+      "sha256": "2824f0b895072786f36298c856a45ec6cf90189d189ad8f705f401efeb4e0eb7"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0009",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0009.lean",
+      "sha256": "70d0ca5e32df2656ab5aebaec97a0924713e95d07825cba7e40db7111a22b6e1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0010",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0010.lean",
+      "sha256": "2a523bd60e895cc050dd3ebaff4c1d7e99bbb79847fb3a4d77b628f3dcc900cc"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0011",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0011.lean",
+      "sha256": "b54ec33ae7fef3b9c41612dd1b1fd00bac1495c5cd47317a2414f3c08d5f13ff"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0012",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0012.lean",
+      "sha256": "182158aa623a553855969ea2f8158f7dec8b20564896cbb4cc90696779ff96c8"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0013",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0013.lean",
+      "sha256": "903bb5bb0a0ab962ce0d7a6a724372a5d3bf08f5147ec585086f0d5487bd42b6"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Input0014",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Input0014.lean",
+      "sha256": "217dbaab65046330ddcf42e9bba3160c67c890e0f16da9c9c9a5d1948844d83b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0000.lean",
+      "sha256": "af634d3a292ea3243fe1c02f1fa4bc4e168acc08b2a3cad04e8be90444f83d28"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0001.lean",
+      "sha256": "80b67b8f02d416f8104632f99d2be3785fbd63e3432e0eac749f4a0b7dac1bf2"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0002.lean",
+      "sha256": "c20e06abcdf5d807c1b2e78b9c97fc2d4f933b6902a9f0f37b356495becd8577"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0003.lean",
+      "sha256": "7f2fa4a04f1bcd2e7b85d7949610307e364e6705e342d85b9067091f93d6a496"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0004.lean",
+      "sha256": "72fbc3c83eda9166b916f88b25917524668c93e420911a68418010e8052bddb9"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0005.lean",
+      "sha256": "272d64cff6b992ad88bd04ffdf0c0b01d797c304dc6e4eb526f5ed5cf94aba0d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge000_0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge000_0006.lean",
+      "sha256": "6aa08aa90c9d58db48ccd41c42857917d2c7a084590fc98b340c4ef5aeb0bb4d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge001_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge001_0000.lean",
+      "sha256": "28646dea0c6bdbe3c76a2ae22053e388d57ee80daadac8ae6797a7e74f46f04e"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge001_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge001_0001.lean",
+      "sha256": "03886d2eee830337f3dc18c1bf7e35ac6c4c5f487edf5f2384a45d9edba5e7ec"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge001_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge001_0002.lean",
+      "sha256": "a16e902547ef172c631c069d4633b9eae4ff0df0024b2b874e50305cb0c168c6"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge001_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge001_0003.lean",
+      "sha256": "fb07093ba0e4ab9edffa7aab76ef94255545052d89304761beaf8bb9c42bd047"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge002_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge002_0000.lean",
+      "sha256": "abea52f07b485d3ab3c139b51a6ae5ad161955ca980e0427c1c4e1be698f9813"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge002_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge002_0001.lean",
+      "sha256": "11fd4d36823a97dbf23bcfeb52f76555ee3a543d553f89df8eeab852f39318c5"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Merge003_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Merge003_0000.lean",
+      "sha256": "4c748d375e38add92d5ddf6d65ca8826284a70dec70860c187c075c83c98c6ec"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_center_Path",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_center_Path.lean",
+      "sha256": "c9438ddf1fe6c36f7750fafddcd3a5bb65ee9d809405c99157b553820367ef20"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0000.lean",
+      "sha256": "8cd3dcb259c4a74b345a77c7c9592febe08f62e2b79175f90605dbd8b79fd03b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0001.lean",
+      "sha256": "a56238edb77dc67ed9ea6210236aa46bb595a9a849d7ad6a16ce834c02a02c37"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0002.lean",
+      "sha256": "ced535f02556afac60fcc908a891971398caf73a55d031555d528ad225845d35"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0003.lean",
+      "sha256": "1b2e9546b841b45fb561ee98f1998fb5a9835f75a8d295031805e601e95a17a5"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0004.lean",
+      "sha256": "4b477968533f8115b5453b76ae436d4721d182a0c8c4d2772fd92362202ca222"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0005.lean",
+      "sha256": "d90d4f69dfa93bc1d0cf9a68e4142e16244907649f682ac424968721211f54c3"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0006.lean",
+      "sha256": "4a29674829cc912c3bcae6acd6e6892eb0e3a2e18a2929254fa57ccf77737ee0"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0007",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0007.lean",
+      "sha256": "96f6ae515a36e5e8959ea2a3d28e5dabc7cf4314b7b28e63e4b9ff639bf94d25"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0008",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0008.lean",
+      "sha256": "ca258cb43f91b00ba35969d74fd88a8ff4ef55b502f1399dafd13c6c1224e423"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0009",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0009.lean",
+      "sha256": "764c57fa00d958f70b33a3eb9f0cdf228c4c6c4edb0b7778d853b03feebc7366"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0010",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0010.lean",
+      "sha256": "0f4685cab337a4efcf3f3dd143959ff8a7b3e79dc23ad729f7ba1a27a5bca9a1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0011",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0011.lean",
+      "sha256": "791dfb73c029f11f2b40519c5c981e205a18a751c91e7c34c329682655c1fb3f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0012",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0012.lean",
+      "sha256": "6612f4b146955deb586ceecaba15704b6d448bd75f5436d948759a8d07189c01"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0013",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0013.lean",
+      "sha256": "3864e828f946a0b7497768028bb034ea56cb5bf4b4d0826ba699e982390161d7"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Input0014",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Input0014.lean",
+      "sha256": "71bf4d2e4a6fa5f988179e4af9ae48a1b5788e7f587c4bd6950d51774738f11a"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0000.lean",
+      "sha256": "25504287d05f1e6c254beb26aeeb387df4c8cad8baa825a12478df0597bd71c3"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0001.lean",
+      "sha256": "d9da3ec124e881057aa7192878001f8084393072b5ab3d3fb6ae0598b4b8ed36"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0002.lean",
+      "sha256": "d8a57062606744fefb672bf6d82d6c69af50f6b17c27f66961634343c37d586b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0003.lean",
+      "sha256": "bec25d7105014579d3fc4f42876358ca09b132174e09a8f1dff52f370bdb5d8e"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0004.lean",
+      "sha256": "5a0bd946ca8a88e4eef7363685405a3697b67ab09b14b0efafd73c1df594b185"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0005.lean",
+      "sha256": "403215dd7d3f49f1d1dfbe07d7af87c91fe665cf3cb36a9c9ecff6d0894cd4c1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge000_0006.lean",
+      "sha256": "7672647c9d4cf9f221b0efbb1c51ecb54d9a1a602873cf611c237797e0d17e90"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0000.lean",
+      "sha256": "d64c5d003c49bed6c43e438958e72b5bb7a381ef4ae1fdc497111cf819083861"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0001.lean",
+      "sha256": "42fba5064c0ab99bfa88622d2972d0ccf5e1b44f2e1141351c5336307d0cb21b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0002.lean",
+      "sha256": "e882638087576fbaa76cb21951c9e19bb66af11b356adafcc0c352dd991c6e3b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge001_0003.lean",
+      "sha256": "52362038cf01138d3c095bec8bc560512952f701d899116e9970286c7971cb9c"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge002_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge002_0000.lean",
+      "sha256": "26d99ede890b526aeb6f2dcc54e9b034e262b805b50e0cdec60ebb62055ef175"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge002_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge002_0001.lean",
+      "sha256": "a02936baf04e91c021311afe6afc201b006a9842a04fbc85f166bda7958ed511"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Merge003_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Merge003_0000.lean",
+      "sha256": "ea787900636446e2f59926b68dc275ecf0671de0873769e7ade6178022974a02"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_plus_Path",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_plus_Path.lean",
+      "sha256": "e11b47331256bae1ba7950dd5ccd3358482eb8f64f0b9ff58793438829cfb8a6"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0000.lean",
+      "sha256": "4630d628452cd9c05a3b95b812d0deb513e6a5030b44b5da2b86843b4ba5aa38"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0001.lean",
+      "sha256": "015809acf7e2248ca78f5773cb8942a4afbf1dd43562179d69dd927937c5476d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0002.lean",
+      "sha256": "aeffd04792214469d5970e43ae6cb3ba54ea096c970e97ed7108f7dee7cd387a"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0003.lean",
+      "sha256": "1b8f5beb967debdf44928b89f59b67d4bc71a17101174cbf1d2e97cf13565d31"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0004.lean",
+      "sha256": "4e19ff0845b9c5de6777f3efae2f1d8265ea08e6a1e1c036fd0fbc80f4c67e8d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0005.lean",
+      "sha256": "3947ea849db2fb86b24916319f20a533c91799a3d8562174f00d085557c0a2a1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0006.lean",
+      "sha256": "2b57914e6cb83d15e9562f629ced097b34fe0217432a5e0871a8528411884527"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0007",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0007.lean",
+      "sha256": "eebe86ad16ad385796ec9bdf11882f6e2b1ae6bd5bbfd53b470a29284b3372c4"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0008",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0008.lean",
+      "sha256": "0db32ad179ee35db42a1056a5a2df32f7403b7cf8adf80a7c683b62b063029f6"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0009",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0009.lean",
+      "sha256": "5b3fdf248a15539eedd6a249642fd966d565d8e974c1c81e1bd6f12101d72e67"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0010",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0010.lean",
+      "sha256": "c3fa7d27a9bb0f9ebf59c9b3221813e6d2b49db89f73db21a74e238285ecd755"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0011",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0011.lean",
+      "sha256": "053074c0b51082922d390496540f7768998138dc2d6b70171e7ecbe3b6d935fe"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0012",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0012.lean",
+      "sha256": "8723e890c10441967ab760624bbd823b96ccb41e6f48606813afe70e52125283"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0013",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0013.lean",
+      "sha256": "fe81ecdbc5e8627399269ee7ea2e8844ce7ba7bba2c13ff06a86ca4df8def4f2"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Input0014",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Input0014.lean",
+      "sha256": "fbe90ed3eec1bd455c2ff7c5e34e6e6aa0bbadd62ac6471b0d83120887d23ef6"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0000.lean",
+      "sha256": "903e3274581a39ef46cc3977ca76f90f4aac0b0a7dc7241a994befcaa83ecbba"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0001.lean",
+      "sha256": "401b64169c207ace3fbf7079919427046357a3aac9f19b9216b188151cd2a96f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0002.lean",
+      "sha256": "75939c120c11b9515e13ea5797c58d4fd8fe588985a4c15e2d074601fc1c2c66"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0003.lean",
+      "sha256": "5338d65ad971fbe9333a59c13899cb5b4a04d267c07259bf134bc9aaf2157f92"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0004.lean",
+      "sha256": "8d89304e128d2ed2bf4845ce13a5a4e3a56be544b42f28a481d7147b9995074d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0005.lean",
+      "sha256": "d07971dd119b4e9f2825fed840ee00039f0d72dc03a7c7180861140ef15762f7"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge000_0006.lean",
+      "sha256": "8835eaa1f4d0a6ba9de5025fddeb3fb78f206c6172cf0547fc1c4ce94a9dcc3f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0000.lean",
+      "sha256": "b9fcdd9e5f9d83d78ebc22d02e232b9f173f69d53a8d28b622416d4d4fe5ab68"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0001.lean",
+      "sha256": "807fd69c1821c62ad92baa881c2203e268f6b92b2a95303fb5a2be07a04ebe87"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0002.lean",
+      "sha256": "d9d81f4f9d0ad3213525ae7df72803cc804a99dff8a18764d3182cd61a986659"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge001_0003.lean",
+      "sha256": "bd27e193d2e3287e74546b8185552cdfdb2ec7aa154ab6ab3f21c1393c2cc0ba"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge002_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge002_0000.lean",
+      "sha256": "c9f9042db57704afe2a7f081d7f893f50d1a60497652592473cd79362020ef27"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge002_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge002_0001.lean",
+      "sha256": "94352b13e3f6883925c0d378fe7d1c9046399e3ca0aa0dc5a0ca2741afb09801"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Merge003_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Merge003_0000.lean",
+      "sha256": "c91f77c2329127a5b1df67aad226634ea70a40492164e5df7e943aad2e866542"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_a_minus_Path",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_a_minus_Path.lean",
+      "sha256": "d0ca2d3d94862eb0685dcf7f2068d60ccfd734921f2a4e669aa7c2708b227140"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0000.lean",
+      "sha256": "89bb6a63162454f32ebe84c87df2a4e314ef87444abfd03828239f3ece8a662e"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0001.lean",
+      "sha256": "7d4698e6c82727765c1df27d0ce765ab449ccd21736e56e87c9af94a606a8cb7"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0002.lean",
+      "sha256": "680a3fa72383bb2ecf954c3738e25ff939103cd3632f9f59e51dd52089af366b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0003.lean",
+      "sha256": "b6688b3e9646a803fe086090b4d59c4e93ec07d7e107f2fb58c86412a2610de8"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0004.lean",
+      "sha256": "ef0c3954974cf98616d67907968a2cffca667871a3195865d346ba48e3d1656b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0005.lean",
+      "sha256": "f8d568f3b257a28177b90bc4cc2c9392ff5baa2711c0d37d54533a58917c92c0"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0006.lean",
+      "sha256": "1ddc55ab18849f47a5e573d99ea04547a8a1735cb03c12181b2b99584defe1f4"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0007",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0007.lean",
+      "sha256": "f94c4260c47ca67baa2af21af3a0f70dc58fab36e5b662b0300ef7b601d48a8d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0008",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0008.lean",
+      "sha256": "7f5713fb3071d731e62445c81701993eaf870b5620bbbe090a39783bdc3d6ac1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0009",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0009.lean",
+      "sha256": "2e45f65f9d304a514d2b82cecb49d22e25db50095dbb1a2f165a3707178662f1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0010",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0010.lean",
+      "sha256": "0ed919289aaa1576ac46c6d0ef94f891fe48057699cf92db3eac4535aceca156"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0011",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0011.lean",
+      "sha256": "528a3a7318a1bb4fba1c10984552e7c9f1c980b41d75519023378c168df0b307"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0012",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0012.lean",
+      "sha256": "c4db21ab52089c81cf6d534faf82f01f9eeeae1ab00896df835a39188c298499"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0013",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0013.lean",
+      "sha256": "804720682478a2535b4fd03dfc0f0ef9eb6fe2558292181eae98fc44ed1cbd13"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Input0014",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Input0014.lean",
+      "sha256": "619136139aebcbd287d7e962d6231c7e0bb82d827ff161ae2a3572d921039b44"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0000.lean",
+      "sha256": "0f3f3e6f572d716f352789b7ce6b34e6148007de2c1b8faa4ce0f5eab311f3b8"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0001.lean",
+      "sha256": "dad062e2c16e8022acb4688f85ad2798764561734235c8079e9b634c4f585d9e"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0002.lean",
+      "sha256": "57a3b8274012981707b2fc21ee1c03934d946c66fb1db04e48a635cf3dd2f3c4"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0003.lean",
+      "sha256": "d9ca1992d8790d1e134cfeed2c280ced7df75b39a7a7222eb03c8b917293b044"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0004.lean",
+      "sha256": "d50fa8e3115d2004f54853907190210069971888dd044f278b1c414de81f147f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0005.lean",
+      "sha256": "fbec7c4302c52c9311e0d0b8cf5696e3c11e9a462b13ed3dca37772bc37eeaef"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge000_0006.lean",
+      "sha256": "e8a7ca80045d63d82efaecaba6fdd13cb70514909e914bdf608899b845fe523b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0000.lean",
+      "sha256": "a6bac6101c602e5a90232caa8e18153d00ec8558bb58436fa7bf74db39e56c54"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0001.lean",
+      "sha256": "ab4f1de7bc528a7a928f46684a5097d4b02530aae233c921a88f409e70782949"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0002.lean",
+      "sha256": "83a123672c41762aabd0c13d162d0cd37ddfb003dbe47a18e72b4f9f257e681f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge001_0003.lean",
+      "sha256": "da0e4c5ac5219eefc3a03d19d0b16f0a0df8f15dc9b678e6084fd4a296aaa7c9"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge002_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge002_0000.lean",
+      "sha256": "61223bb316746fb882ca308781e31c79e9f00f8435beae85e05b5493d5a0ff63"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge002_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge002_0001.lean",
+      "sha256": "a2a8ed15820e8ef169462ffd857f188cf95b1e40361b1b25d02b40156987906b"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Merge003_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Merge003_0000.lean",
+      "sha256": "3c0b3ee64b9ddd4c8d1dd555033012ee80e697f8c1eeb6251bd3fddd7816ef06"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_plus_Path",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_plus_Path.lean",
+      "sha256": "5c9a9948d3c3452cddfdefc11d7531cbd9dbbd039548d2b2fd819d82877ac26e"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0000.lean",
+      "sha256": "c608f7846ee744aacac54d8c925a656bb830340649090e1ae238fa8ec2835628"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0001.lean",
+      "sha256": "1229e9445c364486f60e37ac55e4b51ab97e3cafe631759c4126288a49afb48c"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0002.lean",
+      "sha256": "4951503d1b47b11775079eee4c189e828a9704ac14bce111e54039e66a20d8e1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0003.lean",
+      "sha256": "4b3988310ef74051e954a0339185197d46c553e9b035008015d4a6cb31ad535c"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0004.lean",
+      "sha256": "5cc5ee2d59ce96ef118d144a1324c13129de30987826153fbe83da7269bd64e5"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0005.lean",
+      "sha256": "20bc8d53d8d44fb1e9c182594b626b7f3b0a8638ad1bb2dccd87805bacd6f871"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0006.lean",
+      "sha256": "51398574c7e09ecc5834bc54a902af372b648446d09f45d93df353ffc0bb5c16"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0007",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0007.lean",
+      "sha256": "01d9e95c1c32dae54e05f9fe90a09f1fad0d98fe0ea341c536a6566092707a56"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0008",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0008.lean",
+      "sha256": "b5ce9434b8a165a9ebbb12892789c44d9b4d2bbeb9c23daf478c728fd3630728"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0009",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0009.lean",
+      "sha256": "561646fb20b1df9486fd288efb0c702fc308cd618c8e979496143b17a6841756"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0010",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0010.lean",
+      "sha256": "ba2b21202c5dc0254187e3e9c42bac3cc807b76428503fa399544cf8020d3198"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0011",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0011.lean",
+      "sha256": "8052f4873c7fea6c0a492accd650898f6b511e6313dcf5127444015b309a7e71"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0012",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0012.lean",
+      "sha256": "677aaa839a4a34932e6c91eeb16162ac4a030874a1a02ebbed4c80751c5b8e51"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0013",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0013.lean",
+      "sha256": "e6e5875a4776d1f5364a72919a6f5acf92dd26940edc93ef3a883c7171bc5685"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Input0014",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Input0014.lean",
+      "sha256": "2e7b79402752dfbe2cc3774d75f28759d7544ab9e413e9347e1ebcef5a656779"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0000.lean",
+      "sha256": "0612b20f6219b9dcbcc9dddd773d9eab4036d47886b3813d7563d178078d07a7"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0001.lean",
+      "sha256": "5210cf735edc816ff75d3ca71d4e6fd8abba6ac82e7dd079249da4c1799c9df5"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0002.lean",
+      "sha256": "596432d952ea58656f81f457eafa175c9f3459720739e8b3676b9e58ff0ecf04"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0003.lean",
+      "sha256": "2f55c4465ac79c869f2cfa8e3b57ff586050040d3e7000a03da343b6fefa90ef"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0004",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0004.lean",
+      "sha256": "14c10968236d02da6010e3972740137437ab56e24f40b9d3d44a91f287588115"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0005",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0005.lean",
+      "sha256": "280ade0349b5e57372a5cf9335272731934f0cc168cdac46bd25a6a705f1d555"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0006",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge000_0006.lean",
+      "sha256": "ab7bd84ba82ee618cf24a6b7d82a5397d4041edc7d0f6aea8a098d3548a165d1"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0000.lean",
+      "sha256": "331609ee6bd580c122ea9da2e4df6bd9894f5f16d34d8cc743e7c8f30dce0947"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0001.lean",
+      "sha256": "6f651d28cc033d0a99fc16ece692d540640f8c8b611b516da441cad26878daa9"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0002",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0002.lean",
+      "sha256": "01c931ef47a363924f969e8e89453809c09c35a695f82e0755d2b2f0a9096250"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0003",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge001_0003.lean",
+      "sha256": "879985fcfa2ea466381ac60b718fcf25aded6e93aa2805120c054d29127f7e5f"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge002_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge002_0000.lean",
+      "sha256": "44d2d04e5567fb9e96919878f2260e9322c08898ff15eeadf4aaefdc62d76c03"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge002_0001",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge002_0001.lean",
+      "sha256": "47161fad18c50481dc62e33cead1e55fb9d6f31aa823b1baeadb3d13410dc806"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Merge003_0000",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Merge003_0000.lean",
+      "sha256": "ca16b3761278bc5b3a0b665d9d5cb62b437245e134fa9bccdc355e027940110d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_b_minus_Path",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_b_minus_Path.lean",
+      "sha256": "e4866140ce04a5d6a54311936b61b4f0adfbe8e65b9aebd448a69b3895bd440e"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_Certificate",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_Certificate.lean",
+      "sha256": "c33b23e19fcad5812fc9c42afe548384ae20ab2ab7167b721e273826fd52ac0d"
+    },
+    {
+      "name": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_Audit",
+      "source": "sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_Audit.lean",
+      "sha256": "5b63b2995ea3a25b4fcde08fdd780c7a2ce230e75c5076fc95f7a2b9bff38229"
+    }
+  ],
+  "root_module": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_Certificate",
+  "audit_module": "CentroidEscape.FullCandidate_v1_41fda1193ab84b01_Audit",
+  "checked_theorem": "CentroidEscape.FullCertificates.FullCandidate_v1_41fda1193ab84b01.Certificate.checked",
+  "escape_theorem": "CentroidEscape.FullCertificates.FullCandidate_v1_41fda1193ab84b01.Certificate.smooth_FEF_centroid_escape",
+  "required_generic_modules": [
+    "CentroidEscape.CandidatePathAssembly"
+  ],
+  "scope": "Generated proof sources only. All shard and assembly modules must compile before the final theorem is claimed."
+}
