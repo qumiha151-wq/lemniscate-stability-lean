@@ -1,0 +1,26 @@
+{
+  "frozen_utc": "2026-11-12T18:36:41.757185+00:00",
+  "modules": 20,
+  "sources_total_bytes": 242757,
+  "oleans_total_bytes": 9018872,
+  "numeric_dependency_stages": [
+    "BenchState60",
+    "FirstResidualIntegerData60",
+    "FirstResidualIntegerSquares60",
+    "FirstResidualIntegerRanks60",
+    "FirstResidualIntegerBudget60",
+    "FirstTrueState60"
+  ],
+  "measured_stage_wall_seconds_sum": 373.04977230000077,
+  "measured_stage_cpu_seconds_sum": 366.671875,
+  "measured_max_peak_working_set_bytes": 4954460160,
+  "caveats": [
+    "Each stage includes separate process/import overhead; not one optimized end-to-end process.",
+    "Generic analytic modules and failed development iterations are not included in stage CPU sum.",
+    "Measurements are from a shared Windows machine; not an isolated throughput benchmark.",
+    "Only first true state segment is concrete; full matrix tails and global grid remain unfinished.",
+    "Rank data preserve a verified baseline, not a proposal to run this algorithm for all 8000 segments.",
+    "Earlier monolithic Rat experiment was deliberately stopped; no result was claimed."
+  ],
+  "audit_log": "Actual first-segment dependency audit passed for 1928 declarations; standard axioms only.\n"
+}

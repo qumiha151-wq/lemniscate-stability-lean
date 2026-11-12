@@ -1,0 +1,35 @@
+13 November 2026 -- ACTUAL LEAN COMPILATION
+
+Command: work/rotating_formal/check_module.ps1 -Module
+  SolitonClassification/Rotating/AnalyticMajorantVector
+Final session89662, exit0, no warnings.
+Universal vector majorant audit passed:241 declarations; standard axioms only.
+
+Command: work/rotating_formal/check_module.ps1 -Module
+  SolitonClassification/Rotating/AnalyticMajorantVectorActual
+Final session16606, exit0, no warnings.
+Universal actual-Taylor bridge audit passed:288 declarations; standard axioms only.
+Both printed actualDisplacementCoeff_recurrence and taylorCoeff_majorized
+depend only on propext, Classical.choice, Quot.sound. The recursive audit
+checks every imported/developed declaration in the Rotating namespace.
+
+What is proved:
+* actual innerTube implies norm(field a)<=61, including unrestricted angle;
+* actual linear/bilinear/trilinear finite convolutions are bounded by the
+  arbitrary-order scalar majorant from AnalyticMajorantScalar;
+* removing ONLY the constant term of the pre-existing Rotating.taylorCoeff
+  produces that displacement recurrence, by actual polynomial-field lifts;
+* all positive-order actual taylorCoeff through any finite N are bounded;
+* all coefficients of actualDisplacementPolynomial are bounded, including
+  the zero coefficients above N;
+* arbitrary vector-polynomial coefficient majorization bounds evaluation
+  at signed t by scalar evaluation at |t|;
+* the pre-existing actual taylorPolynomial has the resulting signed-time
+  excursion bound, with no assumed recurrence or coefficient estimates.
+
+No new infinite-series convergence, residual estimate, actual-flow error,
+long-time tube statement, or rotating shooting zero is claimed here.
+The generic finite-sum argument was independently ported from workspace
+CentroidEscape VectorTaylor/VectorPolynomial; there are NO cross-problem
+imports. Only the independent SolitonClassification.Rotating project and
+Mathlib are imported.

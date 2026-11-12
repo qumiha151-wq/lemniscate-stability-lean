@@ -1,0 +1,38 @@
+Independent root review, 13 November 2026.
+All eight frozen source modules were read, including their assumptions and
+the meanings of the actual functions. The root separately recompiled the
+frozen sources against its own previously verified project objects, with
+Mathlib dependency paths first. Tool session42385 completed EXIT0.
+The per-module source hashes and complete compiler outputs are in
+work/FlowMetricIndependentVerification.txt. No warnings were observed.
+
+The fundamental matrices are actual P=fderiv(supportFlow) and its canonical
+Q=Ring.inverse(P), supplied by the preceding actual-flow proofs. For an
+actually differentiable invertible reference M the transformations are
+V=M^-1 P and U=QM. Differentiating yields V'=CV and U'=-UC with
+C=M^-1(A M-M'). Noncommutative order and the minus sign are correct.
+
+The reference derivative explicitly retains a residual Z:
+M'=sigma Df(X) M+Z. The proof uses actual state error E and the proved
+Df Lipschitz bound4 to obtain ||C||<=I(4EK+rho). It does not silently turn
+a finite polynomial into an exact variational solution.
+
+The two reset transitions are separately proved. Forward growth uses the
+new reference inverse; inverse growth uses the old reference inverse.
+Both required bounds are fields of the finite grid. The last dummy grid
+matrix is also required to be a unit with bounded inverse at its node.
+Each transition is bounded by1+I*delta. Finite induction accounts for all
+resets, and the coverage lemma includes both endpoints of the actual grid.
+
+The final theorem bounds actual P and Q throughout[0,T] by respectively
+K and I times exp(I(4EK+rho)T+I*sum(delta)). No actual P/Q norm estimate is
+a premise. The numerical specialization2000/4000 and exponent multiplier
+at most4 correctly gives8000/16000.
+
+Substantial hypotheses remain: actual tube confinement on an open initial
+neighborhood, actual state error, matrix/inverse bounds, differential
+residual, reset errors and numerical exponential budget. This is an
+analytic bridge, not an instantiated8000-step certificate. T must be the
+actual covered time horizon; a numerical upper bound32 for a scalar budget
+does not extend a shorter trace to32. The scope document states these
+limits accurately. No semantic gap was found in this frozen supplement.

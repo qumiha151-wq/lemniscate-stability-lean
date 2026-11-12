@@ -1,0 +1,64 @@
+Universal actual rotating-flow Taylor truncation -- 13 November 2026
+
+The seven modules in UniversalStateFrozenManifest.csv form a self-contained
+extension of this independent SolitonClassification project. They import
+no other open-problem project. All seven have actually compiled with only
+propext, Classical.choice and Quot.sound. Original successful sessions:
+Scalar9985, Budget82827, Vector89662, VectorActual16606, Residual34824,
+PolynomialTube88701, TrueStateTail7572. All seven final logs were clean.
+
+SCALAR FINITE MATHEMATICS
+Let mu=122/19 and c0=1, c(n+1)=mu*(2n+1)/(n+1)*cn. U_N is the finite
+polynomial with these coefficients; W_N=(19/2)(U_N-1). The proofs derive
+low-order cancellation for U_N'-mu U_N^3 using a linear differential
+identity, then nonnegativity of every coefficient of
+R_N=61 U_N^3-W_N'. There is no infinite-series convergence assumption.
+For h=1561/200000, the exact rational finite computation at N=60 is
+checked by decide +kernel once. It gives R_60(h)<=10^-57 and W_60(h)<=129/250.
+Coefficient nonnegativity gives uniform scalar bounds on[0,h].
+
+ACTUAL EXISTING COEFFICIENTS
+The actual six-dimensional field has norm<=61 at innerTube centers.
+Its already proved linear/bilinear/trilinear bounds17,2,1/16 are dominated
+by the coefficients of61*(1+w/(19/2))^3. Finite convolution induction
+majorizes all positive-order coefficients of the PRE-EXISTING taylorCoeff.
+The shift removing its constant initial state is proved from the actual
+polynomial field expansion, not identified by an unsupported assertion.
+This also bounds every coefficient of the actual truncated polynomial.
+
+Low residual coefficients vanish by the original Taylor recurrence.
+High residual coefficients are controlled by the scalar forcing; the
+derivative coefficients vanish there. Finite polynomial evaluation and
+the triangle inequality therefore give, for every a in innerTube and
+every real |t|<=h, ||P60'(t)-field(P60(t))||<=10^-57. The argument covers
+both signs of time and requires no per-center numerical residual data.
+
+TUBE AND TRUE SOLUTION
+The coarse polynomial excursion<=.516 by itself does not fit every
+inner-to-outer coordinate margin. A separate proof first places the
+polynomial in an expanded box, then bounds the ACTUAL polynomial
+coordinate derivatives by the field speeds plus residual. Integration
+sharpens the coordinate displacements and proves outerTube membership.
+No real-solution tube or solution-error premise enters this argument.
+
+Finally the previously constructed actual supportFlow and the proved
+signed residual comparison imply, for every a in innerTube, |sigma|<=1,
+and0<=t<=h,
+ ||supportFlow(sigma,t,a)-P60(sigma*t)|| <=2*10^-57*t <=2*10^-59.
+The final theorem is universal_signed_trueTaylor60_error_uniform.
+Its only hypotheses are the explicit initial box, sign bound and time
+range. There is no supplied numerical certificate or assumed ODE tube.
+
+LIMITS
+This is a universal local state-truncation theorem. It does not bound
+fixed-point rounding, all reference resets, actual global trajectory
+errors, the matrix truncation, the parameter cube or a closing root.
+Those separate obligations remain. In particular this is not the full
+8000-segment certificate or a classification of all closed solitons.
+
+INDEPENDENT ROOT SEMANTIC REVIEW
+The root read every source and checked the scalar constants, actual
+coefficient shift, finite-degree cancellation, negative-time handling,
+coordinate tube margins, and the final comparison to the chosen flow.
+No semantic gap was found. Source hashes and the independent replay logs
+permit checking the exact frozen modules, with no numerical oracle.

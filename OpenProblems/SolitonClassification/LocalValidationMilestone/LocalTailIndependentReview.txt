@@ -1,0 +1,87 @@
+Independent semantic review, finish_curve_input, 2026-11-13
+
+Result: no mathematical or soundness gap found in the five generic modules
+at the source hashes below. This was a source-level semantic review plus
+inspection of existing compiler logs; I did not independently recompile
+these modules or execute the concrete 60th-order residual certificate.
+No reviewed source was modified.
+
+1. TrueLocalStateTail compares the actually constructed supportFlow with
+the finite polynomial at the same exact initial state. Original-field
+agreement comes from FlowTube, rather than an assumed solution. The two
+paths are confined before applying Lipschitz constant 17. The residual is
+p'-f(p), and Gronwall starts with exactly zero initial error. On
+0 <= t <= 1/125, exp(17t)-1 <= 34t gives error <= 2*epsilon*t.
+No infinite Taylor-series convergence is assumed or needed.
+
+2. TrueLocalVariationTail uses the actual fderiv column and its previously
+proved variational ODE. For y=P_actual*v, w the polynomial column and
+z=w'-Df(p)w, the implemented identity is exactly
+  (y-w)' = Df(x)(y-w) + (Df(x)-Df(p))w - z.
+Thus the forcing includes 4*E*C, as well as residual epsilon. Both x and
+p are in outerTube when the genuine Df Lipschitz bound 4 is used. The
+initial column equals v exactly. The resulting 2*(4*E*C+epsilon)*t is
+correct. The polynomial derivative retains the b-direction coupling
+and theta component; no state coordinate is silently discarded.
+
+3. PolynomialEnvelope correctly uses degree at most 3*N: the highest
+state term is P0^3 and the highest variational term is P0^2*W0. Products
+with b/support coordinates are only quadratic. Derivatives have no
+higher degree, including N=0. The envelope includes indices 0 through
+3*N inclusive and bounds every real |t| <= h, not only an endpoint.
+Nonnegativity of coefficient upper bounds follows from their absolute-
+coefficient hypotheses; h >= 0 follows from |t| <= h.
+
+4. IntegerEnvelope proves the exact identity
+  sum[n=0..M] (A_n/S)*(1/base)^n
+    = sum[n=0..M] A_n*base^(M-n) / (S*base^M).
+The summation range supplies n <= M, avoiding truncated-natural-exponent
+errors. S and base are strictly positive in the denominator bridge.
+The fixed-ball numerator is |center|+radius; its rational cast matches
+fixedAbsUpper. The integer upper-bound comparison preserves direction.
+
+5. ResidualDataCertificate sets only n < N to zero, justified by the
+exact coefficient recurrence. At n=N, the derivative coefficient is
+already zero but the nonlinear coefficient generally is not, and it is
+explicitly checked. All n=N..3*N are checked. Extended square entries
+are checked against the truncated polynomial's full convolution, not
+the untruncated formal series. Array out-of-range defaults do not bypass
+verification: a missing high entry can pass only if the exact checked
+recurrence equals the zero default. TaylorDataValid/FixedTaylorInvariant
+provide coefficient sizes and the actual initial containment.
+
+Scope cautions for later assembly:
+- The two tail theorems presently concern positive-time sign +1. A
+  negative-time branch needs an explicit signed/reflected specialization.
+- The variational theorem proves a column/vector bound. In the infinity
+  norm, six separate column bounds epsilon imply operator bound at most
+  6*epsilon unless a sharper row-sum/all-vector argument is proved.
+- FlowTubeNeighborhood, polynomial tube, state-error, polynomial-column,
+  and residual bounds remain explicit inputs where shown in the theorem.
+  Concrete interval data must instantiate them for every required state
+  and segment; the generic statements are not the 8000-step result.
+- The stopped FirstResidual60 rational run does not establish that
+  concrete residual certificate. No integer-run completion was reviewed.
+
+Existing logs show standard-three-axiom audits. Two harmless warnings are
+present in the reviewed logs: deprecated ContinuousLinearMap.sub_apply in
+TrueLocalVariationTail, and an unused binder in ResidualDataCertificate.
+These do not alter the mathematical verdict; do not describe those logs
+as warning-free.
+
+Reviewed source SHA256:
+TrueLocalStateTail:
+C5E829E086093BDFEDE1DEACA9921E2EE1CCBD8C54360422AFC445254DF6DBE6
+TrueLocalVariationTail:
+5B612CF1B2930231C4F23921036D2AB3DFF6046F97B25DC1F9B03359C9695233
+PolynomialEnvelope:
+612C3861A3846C1FADE1756EADB5364D0CE7BAE1A2B95F23DF89E52A6F2322FB
+IntegerEnvelope:
+C41E59D174B7688F375D399B7DD8F5AE28CB77D9AC562E99CD4A9631F2A1F36E
+ResidualDataCertificate:
+A521815B045CFC8A389EEA9FA4B0B4E9F389C2CE2188D33ED88637C69A3D3A4C
+
+Supporting source read for this review: TaylorCoefficients, FixedTaylor,
+TaylorDataCertificate, VariationTaylor, ResidualODE. The actual-flow and
+FieldHessian bridges were previously independently derived and audited
+by this reviewer and are not numerical assumptions.

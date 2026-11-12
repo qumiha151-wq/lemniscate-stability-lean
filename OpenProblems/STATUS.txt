@@ -71,6 +71,12 @@ SolitonClassification/: independent support-function ODE and actual geometric
   Four further modules prove the actual derivative invertible, construct
   its canonical continuous inverse and derive the inverse ODE. The final
   root interface needs no independently assumed inverse or inverse identity.
+  A further35 modules give the actual global moving-matrix bound from
+  true reference-grid data, a kernel-checked actual first ODE endpoint,
+  and a universal order60 true-state local error<=2*10^-59 for every
+  inner-tube center. The universal local result requires no per-center
+  numerical residual or assumed tube. Global bootstrap, full numerical
+  grid and candidate root remain unfinished. See LocalValidationMilestone.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,

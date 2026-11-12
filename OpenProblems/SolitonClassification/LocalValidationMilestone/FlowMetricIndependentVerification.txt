@@ -1,0 +1,38 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE FlowMetricCoordinates SOURCE 81C9D1C641134C6C134C6D2BF1E646481E556188EA97CE521718D6759E51952D
+Rotating actual moving-matrix coordinate audit passed for 241 declarations.
+EXIT 0
+MODULE FlowMetricDiscrete SOURCE DD956914EAD6F18E02FFBC199E4F1A6998BC8467C728DD23121291223F308433
+Rotating discrete moving-matrix audit passed for 6 declarations.
+EXIT 0
+MODULE FlowMetricSegment SOURCE A22C6DDD181AED4A78359C2E848CDDFB1BA7C7684E616CC74EAAEF1F310EDF29
+Rotating actual moving-matrix segment audit passed for 246 declarations.
+EXIT 0
+MODULE FlowMetricReset SOURCE 3F442CDC60D6815DE76A91B19BD39186ECFD49643B5D48CB48436A844BF825BF
+Rotating bidirectional matrix-reset audit passed for 247 declarations.
+EXIT 0
+MODULE FlowMetricGridData SOURCE F7EF47F8DC5FCC59408DCA52C70C482DED23E14B497E85E37ED39FCE626F5994
+Rotating actual matrix-grid data audit passed for 310 declarations.
+EXIT 0
+MODULE FlowMetricGlobal SOURCE DCE20066C3F41051E637E77EDC0797441CE2BD77ECFE4EF50876FA3B3A11F48A
+Rotating global actual P/Q grid audit passed for 323 declarations.
+EXIT 0
+MODULE FlowMetricRoot SOURCE 947AA071549F87DFD14FD8DD8F3F92E55ED25630DEB54B3BEA70A74DB5037FF4
+Rotating finite-grid actual-root bridge audit passed for 453 declarations.
+EXIT 0
+MODULE FlowMetricAudit SOURCE 3276F7A69674BAD90C0E834DCB1A7885AE39EF236BD567DA50848ED3DB190B52
+'SolitonClassification.Rotating.flowMetricForward_hasDerivWithinAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.flowMetricInverse_hasDerivWithinAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.metric_inverse_reset_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.FlowMetricGridData.actual_matrix_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.actualFlowMatrixBounds_8000_16000_of_reference_grids' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Rotating combined actual moving-matrix audit passed for 473 declarations.
+EXIT 0

@@ -1,0 +1,105 @@
+Actual first-segment milestone, 2026-11-13
+
+The new 20-module batch is independent SolitonClassification source. It
+does not import CentroidEscape, use native_decide, or assume numerical
+certificate validity as an axiom. Original CAP16 and original first-mile
+13 sources are unchanged. FlowTube and other actual-flow prerequisites
+remain in their separately frozen batches.
+
+What is concretely proved
+
+1. A materialized state Taylor table through order 60 is checked against
+the genuine canonical recurrence and exact Candidate.initial. All table
+values supplied by Python are untrusted until decide +kernel checks them.
+
+2. The extended curvature-square coefficients through degree 180 and all
+state residual coefficients from degrees 60 through 180 are checked.
+The generic proof gives the missing low-degree residual coefficients as
+exactly zero. Finite degree bounds include degree 180 itself.
+
+3. Integer common-denominator inequalities prove that the actual finite
+Taylor polynomial lies in outerTube for every real |t| <= 1/100, and its
+actual residual p'(t)-field(p(t)) has supremum norm <= 10^(-80). The
+integer sum has denominator mesh * 100^M; its relation to the rational
+envelope is a proved algebraic theorem. No unchecked floating-point or
+Arb report enters this Lean chain.
+
+4. The already proved existing clipped supportFlow agrees with the
+original field on these short segments. SignedLocalTail evaluates the
+same polynomial at sigma*t and retains the sigma factor in derivatives
+and residuals. For every |sigma| <= 1 and 0 <= t <= Candidate.step,
+FirstTrueState60 proves the actual state error <= 2*10^(-80)*t.
+
+5. In particular, first_true_forward_endpoint encloses every coordinate
+of actual supportFlow(+1, Candidate.step, Candidate.initial) in the
+checked polynomial endpoint ball with its integer radius enlarged by 1
+at mesh 10^60. This is a true ODE endpoint, not only a polynomial endpoint.
+
+6. LocalFlowNeighborhood turns explicit coordinate margins into a genuine
+initial-data neighborhood where the original flow exists and stays in
+outerTube. FirstFlowNeighborhood60 checks a candidate neighborhood of
+radius 1/10000, for both signs and times <= 1/125. This supplies the tube
+premise required by the already proved actual fderiv and variational ODE.
+
+7. SignedLocalTail also compares actual fderiv columns with their finite
+variational polynomials. Its forcing is 4*E*C+epsilon, including the state
+trajectory error. MatrixColumnNorm assembles all six columns into a real
+continuous linear map and proves the exact column-sum bound, hence the
+conservative factor-six uniform-column-to-operator bound. Neither the b
+row nor the theta column is omitted.
+
+8. MixedOrderVariation proves that a validated state table of order M can
+be used directly for variational columns of any N <= M. This supports
+separate state/matrix orders without repeating the state table check;
+it does not itself certify a tail or choose a sufficient matrix order.
+
+Scope and remaining work
+
+The concrete variational residual/tail checks, many-segment reference
+grid, reset errors, global state/tube bootstrap, global true P/Q bounds,
+shooting Jacobian bounds, and final root certificate are not instantiated
+here. Generic theorems with those premises are not claimed to settle them.
+This milestone is not a complete Lean existence proof of the rotating
+closed profile, and is not a classification of all solitons.
+
+The new integer residual route is a verified baseline for one segment.
+It is not proposed for an 8000-segment cloud run. Universal scalar/vector
+majorants and independent matrix order are being developed separately to
+avoid repeating hundreds of residual-rank checks at every segment.
+
+Reproducibility and measured cost
+
+LocalKernelFrozenManifest.csv lists the 20 source hashes, source sizes,
+and actual olean sizes. LocalKernelAudit imports the entire local batch
+and recursively checks every imported declaration in the Rotating prefix
+against only propext, Classical.choice, and Quot.sound. Its declaration
+count includes transitive dependencies, not just new theorems.
+
+performance/FirstActualSegmentMetrics.json records actual measured
+per-process wall/CPU/peak-memory figures for the concrete numeric chain.
+These sum separate process/import overheads, exclude generic-module
+compilation and failed development edits, and were measured on a shared
+Windows host. They must not be extrapolated as isolated cloud throughput.
+
+The four integer residual stages completed successfully, peak about
+2.22 GB. The older FirstResidual60 monolithic rational experiment was
+deliberately stopped and produced no certificate; its abort record is
+preserved. Some older generic modules retain harmless unused-binder or
+deprecated-lemma warnings; the budget checker also reports a harmless
+norm_num exponent threshold warning. No warning-free claim is made for
+the entire batch. SignedLocalTail and MatrixColumnNorm have clean logs.
+
+Minimal generation inputs for the concrete integer residual baseline:
+performance/reference.py, generate_state_benchmark.py,
+probe_residual_budget.py, state_residual_proposal.json,
+generate_integer_residual.py, and the generated Lean sources. The
+state/residual generators additionally read the already frozen sibling
+../next_research/classification_odd_branch_interval/shooting_certificate.json
+for the exact candidate and phase; that file must accompany regeneration.
+Its arithmetic values are separately checked against CandidateInitial by
+the generated table's start_checked theorem. The
+proposal JSON has no trusted status; all of its relevant values are
+checked by the generated Lean modules. measure_lean.py records resource
+usage and limits its own compiler child to 600 seconds; it does not
+change proof semantics. Use check_module.ps1 with the pinned Lean 4.33.1
+and mathlib dependencies to replay a module in dependency order.

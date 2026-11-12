@@ -1,0 +1,114 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE TaylorDataCertificate SOURCE 09D40C957594C121FA6AABB5C3801E290ABD012606DEF6EFB1A163C39752412A
+C:\Users\17815\Documents\Codex\2026-11-11\w\work\rotating_formal\SolitonClassification\Rotating\TaylorDataCertificate.lean:16:39: warning: Variable name `n` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _n
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'SolitonClassification.Rotating.certifiedTable_endpoint_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Materialized Taylor table soundness audit passed.
+EXIT 0
+MODULE VariationTaylor SOURCE 2DAACA207BE01ED61BC6D616E428B5EACDB66A202C0267986A7E504607C57107
+'SolitonClassification.Rotating.variationResidual_low_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual six-state variational polynomial audit passed.
+EXIT 0
+MODULE VariationDataCertificate SOURCE 3465A22FB25C5187031B6F24C78D135C9008F763C2CD185DB7ADD4A45AE3B402
+'SolitonClassification.Rotating.certifiedVariation_endpoint_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Full-six-column integer variational table audit passed.
+EXIT 0
+MODULE PolynomialEnvelope SOURCE 612C3861A3846C1FADE1756EADB5364D0CE7BAE1A2B95F23DF89E52A6F2322FB
+'SolitonClassification.Rotating.finitePolynomial_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Finite state/variation residual-envelope audit passed.
+EXIT 0
+MODULE ResidualDataCertificate SOURCE A521815B045CFC8A389EEA9FA4B0B4E9F389C2CE2188D33ED88637C69A3D3A4C
+C:\Users\17815\Documents\Codex\2026-11-11\w\work\rotating_formal\SolitonClassification\Rotating\ResidualDataCertificate.lean:50:31: warning: Variable name `n` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _n
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'SolitonClassification.Rotating.certifiedState_residual_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Finite integer state-residual certificate audit passed.
+EXIT 0
+MODULE IntegerEnvelope SOURCE C41E59D174B7688F375D399B7DD8F5AE28CB77D9AC562E99CD4A9631F2A1F36E
+'SolitonClassification.Rotating.fixedEnvelope_le_of_integer_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Integer common-denominator envelope audit passed.
+EXIT 0
+MODULE TrueLocalStateTail SOURCE C5E829E086093BDFEDE1DEACA9921E2EE1CCBD8C54360422AFC445254DF6DBE6
+'SolitonClassification.Rotating.trueTaylorSegment_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual ODE local state-truncation audit passed.
+EXIT 0
+MODULE TrueLocalVariationTail SOURCE 5B612CF1B2930231C4F23921036D2AB3DFF6046F97B25DC1F9B03359C9695233
+C:\Users\17815\Documents\Codex\2026-11-11\w\work\rotating_formal\SolitonClassification\Rotating\TrueLocalVariationTail.lean:73:25: warning: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+'SolitonClassification.Rotating.actualVariationColumn_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual-flow variational-column truncation audit passed.
+EXIT 0
+MODULE BenchState60 SOURCE D410CB246C7973677ED46F53D379768807A9F33B06FA202ECE5C2D8BA640EAA0
+'SolitonClassification.Rotating.BenchState60.endpoint_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Materialized state-60 benchmark audit passed.
+EXIT 0
+MODULE FirstResidualIntegerData60 SOURCE 2B8F35566D4AD93034E55E07290EDDDC1C6E2FF74583AD4995E484E28EB8078D
+Integer residual input data audit passed.
+EXIT 0
+MODULE FirstResidualIntegerSquares60 SOURCE F12E376B1264F12120338347BDB23D93AA1B9D3D12B28C64942D27BAC4FBAD5A
+Integer residual extended-square ranks audit passed.
+EXIT 0
+MODULE FirstResidualIntegerRanks60 SOURCE 6BAED577C2B7053D5193513C041C0856F95DC19ADB9606C8DF4C11461A27A0C5
+Integer residual high-degree ranks audit passed.
+EXIT 0
+MODULE FirstResidualIntegerBudget60 SOURCE BDC7A7B953BB2B78941C3816BD26D760D9924A26812952A3629A7F8486A4F577
+C:\Users\17815\Documents\Codex\2026-11-11\w\work\rotating_formal\SolitonClassification\Rotating\FirstResidualIntegerBudget60.lean:26:90: warning: exponent 340 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+'SolitonClassification.Rotating.FirstResidualInteger60.actual_residual_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Concrete integer whole-segment residual audit passed.
+EXIT 0
+MODULE SignedLocalTail SOURCE 8BB07FA715E1C8E52691155A916E3BF24ECC55E4DD2849920323D3DAE0A6CADF
+'SolitonClassification.Rotating.signedTrueTaylorSegment_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.signedActualVariationColumn_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Signed actual state and variation tail audit passed.
+EXIT 0
+MODULE MatrixColumnNorm SOURCE EC12BB7E2C743015E6B55BE88C06B11434257B23DFF10B9E2EA3B5BF208ED53E
+'SolitonClassification.Rotating.operator_difference_le_six_column_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Full six-column operator-norm conversion audit passed.
+EXIT 0
+MODULE FirstTrueState60 SOURCE 6F83923149144393746D4E84D185024A2C9631930295B9A1846572BD67050063
+'SolitonClassification.Rotating.first_true_forward_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+Concrete true first ODE segment audit passed.
+EXIT 0
+MODULE LocalFlowNeighborhood SOURCE FDE2C82880F8BE4170F7F94347967B1C938251F780608707861043F4EB0B9C91
+'SolitonClassification.Rotating.shortFlowTubeNeighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual local flow neighborhood from coordinate margin audit passed.
+EXIT 0
+MODULE FirstFlowNeighborhood60 SOURCE 80B340358FB5FCE905C6D3E6BAE191004526FF81C914D37F793E5BA21B964A7C
+'SolitonClassification.Rotating.first_flow_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]
+Concrete first actual-flow neighborhood audit passed.
+EXIT 0
+MODULE MixedOrderVariation SOURCE 56B1EAE15566EA7314ACE501721FF6FB621FB1433990E13053AFAA51D295F0B4
+'SolitonClassification.Rotating.certifiedMixedVariation_endpoint_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Mixed state/variation order soundness audit passed.
+EXIT 0
+MODULE LocalKernelAudit SOURCE 2EA2A90F6BE3A4D03E43C19A3C592D11723602CB5FF904C8C3B43D89E64E99C7
+Actual first-segment dependency audit passed for 1928 declarations; standard axioms only.
+EXIT 0

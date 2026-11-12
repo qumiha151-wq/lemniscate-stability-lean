@@ -1,202 +1,106 @@
 SELF-SIMILAR CLASSIFICATION: PARTIAL RESULTS ONLY
+13 November2026. The complete classification remains unresolved.
+Different open problems are independent Lake projects. This project imports
+no other open-problem project. The original stability project is unchanged.
 
-SupportODE.lean proves from actual scalar HasDerivAt ODE hypotheses:
- - the reconstructed planar curve has tangent (cos theta,sin theta);
- - its coordinate Euclidean speed squared is one;
- - its signed curvature is exactly the ODE variable k;
- - its normal and tangent support functions are p and q;
- - its curvature obeys F=-p-omega q, permitting genuine rotation;
- - periodic p,q and an integral-multiple-of-2pi angle increment close it.
+PROVED GEOMETRIC AND SCALAR RESULTS
+SupportODE reconstructs actual unit-speed position, curvature and support
+from the actual support ODE. Periodic support alone is not position closure:
+integer angle holonomy remains explicit. SolitonDilation derives positive
+dilation for periodic nonzero profiles. OneSignCurvature classifies weak
+one-sign curvature profiles as centered circles; a nonconstant profile must
+have excursions on both sides exceeding half its RMS curvature.
+CircleLinearization proves no purely imaginary circular eigenvalue for any
+rotation parameter. NoClosedTranslators excludes closed pure translators,
+including the stationary case, from actual position/Frenet identities.
+OddLocalRigidity is a conditional local strict-derivative symmetry theorem;
+it is not a classification of the concrete shooting map.
 
-The module does not assume the conclusion of any existence theorem. It also
-does not prove existence of a periodic ODE orbit, a root for a closing map,
-or a classification of all profiles. The analytic similarity_reduction.txt
-derives further general similarity and symmetry restrictions; those parts
-have received an independent analytic review but are not Lean-formalized.
+The twelve ScalarReconstruction modules prove the actual necessary scalar
+equation, smooth periodic support equivalence, and a closed-curve converse
+across ALL curvature zeros. The converse needs smooth nonzero periodic k,
+positive period, the scalar equation, nonzero similarity parameters, and
+integer integral curvature. No finite-zero-order or quotient-extension
+premise is assumed. This does not determine every periodic scalar solution.
+The C6 refinement and C5 gluing example remain reviewed human proofs.
+ScalarParameterUniqueness gives unique dilation and, for nonconstant k,
+unique rotation. ScalarReflection changes b to-b under k(s)->k(c-s);
+nonconstant reflection-even scalar curvature forces b=0. Curve orientation
+reversal, which also changes signed curvature, is not silently identified.
 
-Namespace: ClosedSimilarity. Independent project: SolitonClassification.
-Toolchain and dependency graph match the other separate projects.
+ROTATING EXAMPLE: HUMAN+ARB CERTIFICATE, NOT YET FULL LEAN
+RotatingCertificate contains the independently reviewed proof and data for
+one nonconstant rotating closed expander. Two4000-step Arb integrations and
+a strict shooting contraction certify the stated box at that trust boundary.
+Angle holonomy-112*pi/57 closes the reconstructed profile after57 copies.
+The root independently repeated all8000 steps and the checker; non-timing
+fields matched. See RotatingCertificate/RootFullReplay. This repeat uses the
+same implementation; it is not an independent numerical algorithm or Lean
+kernel proof. The finite rotational symmetry puts the center in the convex
+hull, so no strict-half-plane migration follows. Full classification remains
+a different, unresolved question even after this example is formalized.
 
-OneSignCurvature.lean proves a genuine subclass classification from the
-actual periodic support ODE with dilation a>0 and arbitrary rotation b:
- - actual stress derivatives give the force/curvature moment identities;
- - those identities imply signed third-moment bounds by Cauchy--Schwarz;
- - k >= -R/2 everywhere forces k=R, where R=sqrt(integral(k^2)/L);
-   the reversed inequality gives k=-R;
- - every nonconstant profile therefore has points k<-R/2 and k>R/2;
- - weak one-sign curvature forces v=0,p=-1/c,q=0,c^4=2a;
- - the reconstructed curve is centered at the similarity center and has
-   radius1/abs(c). With EXPLICIT theta'=k and integer angle holonomy it is
-   actually closed, has unit speed and satisfies cL=2*pi*n.
-Four periodic support variables alone are not treated as planar closure.
-CurvatureSignRigidity.txt gives the reviewed human proof. No novelty claim
-is made; the sign-changing general classification remains unresolved.
+ACTUAL FLOW AND ROOT INTERFACE
+The actual clipped global flow is constructed and identified with the
+original field on confined trajectories. Its initial and joint derivatives,
+true variational ODE and quantitative derivative variation are derived.
+Canonical Q=Ring.inverse(P), with P=fderiv(supportFlow), satisfies PQ=QP=Id,
+is continuous and solves Q'=-QA. No supplied C1/Hessian or free inverse curve
+is accepted by exists_unique_actual_shooting_zero_of_actual_matrix_bounds.
+These results are in ActualFlowMilestone. The candidate root is not yet
+instantiated throughout its parameter cube.
 
-SolitonDilation.lean additionally derives a>0 from the actual periodic support
-ODE and L>0, using integral(kp)=-L, integral(Fp)=-B/2 and D=aB/2. The expanding
-condition is thus a conclusion in its one-sign and excursion corollaries.
-This excludes nonexpanding dilation-rotation profiles in this formulation;
-a separate pure-translation generator is not silently included.
+GLOBAL MATRIX ANALYTIC BRIDGE: EIGHT NEW MODULES
+For actual reference matrices M with derivative residual Z, moving
+coordinates V=M^-1 P and U=QM satisfy V'=CV and U'=-UC. The bound is
+||C||<=I*(4*E*K+rho), retaining both actual state separation E and matrix
+residual rho. Both reset directions are proved with the correct old/new
+inverse bounds. FlowMetricGridData.actual_matrix_bounds covers the entire
+actual finite grid and gives K/I times exp(I*(4EK+rho)*T+I*sum(delta)).
+Actual P/Q norm bounds are conclusions, not premises. Reference2000/4000
+and multiplier<=4 give actual8000/16000. Actual state/tube hypotheses and
+all finite grid fields still need a certificate. T is the covered horizon;
+the scalar upper bound32 does not extend a shorter trace to32.
 
-New independently reviewed analytic notes, not Lean formalizations:
- - ProjectionAndContinuation.txt gives the exact orthogonal similarity-force
-   decomposition, its dynamic identities, and a local reversible-branch
-   obstruction under explicit rank and phase hypotheses. Those hypotheses
-   are not numerically validated for the concrete orbit.
- - CircleHyperbolicity.txt proves every circular support equilibrium is
-   hyperbolic at every finite rotation parameter and excludes only local
-   small periodic orbits near a circle. Large rotating profiles are not excluded.
- - ProjectionAndCircleAudit.txt records the separate analytic review.
+TRUE FIRST SEGMENT: TWENTY NEW MODULES
+Materialized order60 state coefficients, extended squares through180 and
+residual coefficients60..180 are checked by the Lean kernel. A proved
+integer common-denominator bridge gives actual finite-polynomial tube and
+residual bounds on|t|<=.01. Signed comparison with the already constructed
+flow yields genuine solution error<=2*10^-80*t on the candidate's first
+step. FirstTrueState60.first_true_forward_endpoint encloses the actual
+positive endpoint, not just the finite polynomial. A genuine open initial
+neighborhood is also proved for both signs. All six variational directions
+are retained; operator error includes the factor six. MixedOrderVariation
+allows a state table of orderM to support matrix orderN<=M.
+Some generic sources have harmless warnings; no all-clean-log claim is made.
 
-FORMAL LOCAL ODD-DIRECTION RIGIDITY
-OddLocalRigidity.lean proves a generic local theorem for actual strict
-Frechet derivatives. If a zero set is locally reflection invariant and
-the derivative restricted to finite-dimensional odd directions is
-injective,nearby zeros have zero odd coordinate. The full derivative may
-have an even kernel. An accumulating sequence of non-even zeros forces
-loss of odd injectivity at its limit. All quantitative bounds are derived
-from odd injectivity in the finite-dimensional form.
-This is not yet an application to a concrete rotating support shooting
-map or a certified numerical rank computation. Full classification remains
-unresolved. See OddLocalRigidityScope.txt for exact assumptions and limits.
-At the OddLocalRigidity checkpoint,the combined independent project audit
-checked106 declarations with only the standard three axioms.
+UNIVERSAL TRUE LOCAL STATE TAIL: SEVEN NEW MODULES
+A finite scalar majorant with coefficients mu*(2n+1)/(n+1), mu=122/19,
+is connected to the PRE-EXISTING actual taylorCoeff. One exact kernel scalar
+budget gives residual<=10^-57 and excursion<=.516 for|t|<=1561/200000.
+Coordinate derivative bounds sharpen that coarse excursion into the
+required polynomial tube, without any true-solution-error premise.
+universal_signed_trueTaylor60_error_uniform then proves, for EVERY a in
+innerTube, every|sigma|<=1 and0<=t<=1561/200000, true flow error<=2*10^-59.
+No per-center numerical residual data, assumed tube or analytic-series
+convergence hypothesis remains in this local theorem. This avoids repeating
+hundreds of residual-rank checks at each center. It does not bound fixed
+rounding, matrix tails or accumulated global resets.
 
-ACTUAL CIRCULAR LINEARIZATION
-CircleLinearization.lean derives the Frechet Jacobian of the polynomial
-support field at every circular equilibrium,then directly eliminates the
-four complex eigenvector equations. The resulting polynomial has
-Re P(i*y)=(y^2-5*K^2/4)^2+7*K^4/16>0 for K!=0,for every rotation parameter.
-There is consequently no purely imaginary eigenvalue. This verifies the
-linear spectral calculation; nonlinear local periodic-orbit exclusion and
-full classification are not claimed. See CircleLinearizationScope.txt.
+VERIFICATION AND REMAINING OBLIGATIONS
+LocalValidationMilestone contains all35 frozen source hashes, exact scope,
+independent semantic reviews and full independent root replay logs.
+The enforced whole-project audit covers ClosedSimilarity and the Rotating
+namespace, permitting only propext, Classical.choice and Quot.sound.
+Declaration counts include definitions and helpers, not solved problems.
+The latest integrated count is recorded at the end of verification.txt.
 
-NO CLOSED PURE TRANSLATORS
-NoClosedTranslators.lean derives the actual stress identity from periodic
-unit-speed position/Frenet data. For any constant translation vector,the
-translator equation forces integral(F^2)=0 and then F=0 everywhere. The
-actual position support functions then contradict the proved positivity
-of dilation. This includes the zero-vector stationary case and identifies
-curvature and force with the actual position derivatives. No stress or
-virial bound is assumed. This formalizes a known degenerate case of the
-classification; it does not settle the noncircular expanding/rotating case.
-See NoClosedTranslatorsScope.txt and verification.txt.
+The full8000-step actual trajectory/grid, state/tube bootstrap, concrete
+matrix tails and inverse bounds, parameter-cube enclosures and final
+closed-orbit/root assembly remain unfinished. Work-in-progress modules
+outside the frozen publication are not presented as completed results.
+General migration, quarter-power growth and full closed-soliton
+classification remain unresolved. The overall goal remains ACTIVE.
 
-ALL-INFLECTION SCALAR RECONSTRUCTION -- REVIEWED HUMAN PROOF
-IntrinsicRotationAndOddExclusion.txt gives intrinsic curvature constraints.
-ScalarReconstructionAllSmoothZeros.txt,independently reviewed in
-ScalarReconstructionIndependentAudit.txt,removes the simple-inflection
-assumption from its converse. Every nonzero C6 periodic curvature satisfying
-the scalar fourth-order equation reconstructs a unique smooth periodic
-auxiliary function. Together with integer angle holonomy and a>0,this gives
-a genuine smooth closed similarity profile. Multiple zeros are handled by
-a finite-order extension argument,with no assumed global divisibility.
-A local C5 gluing example shows that regularity cannot simply be weakened
-without further conditions. It is not a periodic-profile counterexample.
-The C-infinity reconstruction converse is now Lean-formalized in the ten
-ScalarReconstruction modules. The C6 sharp-regularity statement and C5
-counterexample remain human proofs only. Determining all periodic solutions
-of the scalar equation remains the classification problem; reconstruction
-does not settle it.
-
-COMPLETE SMOOTH SCALAR-TO-CLOSED-CURVE CONVERSE -- 13 NOVEMBER 2026
-ScalarReconstructionCurve.exists_closed_soliton_of_scalar_equation takes
-only a smooth nonzero L-periodic k,L>0,the actual scalar equation,
-a^2+b^2!=0,and integral(k)=2*pi*m with integer m. It constructs actual
-smooth periodic position coordinates X,Y,proves unit speed and signed
-curvature k,and proves the soliton equation using X,Y and their actual
-derivatives. The integral support candidate,its global identity and its
-periodicity are derived. No finite-zero-order,global quotient extension,
-defect-vanishing or existing-curve hypothesis is assumed.
-The ten modules are independently hash-frozen in
-ScalarReconstructionFrozenManifest.csv. See ScalarReconstructionScope.txt
-and ScalarReconstructionSemanticAudit.txt for the verified scope.
-
-NECESSITY AND SUPPORT-ODE EQUIVALENCE
-ScalarReconstructionNecessity.lean derives the scalar equation from every
-actual PeriodicSupportProfile,including curvature zeros,without dividing
-by k or adding a smoothness premise. ScalarReconstructionEquivalence.lean
-proves that for smooth nonzero L-periodic k and a^2+b^2!=0,the scalar
-equation is equivalent to existence of a periodic support profile with
-exactly that k. This equivalence does not assert geometric position
-closure without the angle condition. Its two additional frozen modules
-are listed in ScalarReconstructionNecessityFrozenManifest.csv.
-
-RIGOROUS ROTATING EXAMPLE -- HUMAN + ARB, NOT LEAN
-RotatingCertificate/ contains a reviewed computer-assisted existence proof
-of one nonconstant closed rotating expanding profile. The support period
-has angle increment -112*pi/57, so 57 periods close the actual reconstructed
-curve. The proved parameter box has b>0.009. Two 4000-step order-60 Arb
-integrations, explicit tail/reset/variational bounds, and a strict shooting
-contraction supply the existence argument. The analytic proof and independent
-review state the precise computational trust boundary. The review replayed
-the checker and six local comparisons; it did not repeat all 8000 steps.
-This is not a Lean-kernel certificate and not a classification of all
-profiles. The example's finite rotational symmetry puts the origin in its
-convex hull; no half-plane migration conclusion follows. ReproductionLayout.txt
-and the 16-file inventory include both necessary sibling JSON inputs.
-
-FIRST ROTATING-CERTIFICATE KERNEL MILESTONE
-Thirteen additional independent Lean modules prove the actual normalized
-six-dimensional field, rational/fixed interval arithmetic, arbitrary-order
-Taylor recurrence and low residual cancellation, sound executable coefficient
-and Horner calculations, a true-solution residual comparison, reference-matrix
-reset identity, and the exact shooting/Banach zero interfaces. The candidate's
-first positive order-60 finite polynomial is fully re-executed by the kernel.
-It is not yet an ODE endpoint or a complete periodic-root certificate.
-
-The root audit now covers BOTH ClosedSimilarity and SolitonClassification.Rotating.
-The frozen 13-module milestone has 406 rotating-prefix declarations; these
-counts include helpers, not separate solved questions. See RotatingMilestone/
-MilestoneStatus.txt, milestone_manifest.json and RootSemanticAudit.txt.
-Actual state/matrix tails, all8000 segments, the moving-matrix bootstrap,
-full parameter-box derivative bounds and the final closed-orbit bridge
-remain proof obligations. Generic conditional zero theorems are not presented
-as an established candidate zero. Full classification remains unresolved.
-
-An additional complete independent execution of the original Arb program
-verified all8000 steps and the strict checker. Non-timing trajectory data
-and all certificate quantities matched. Archived outputs are in
-RotatingCertificate/RootFullReplay/. This is reproducibility evidence for
-the reviewed human+Arb proof, not a replacement for the missing Lean proof.
-
-INTRINSIC PARAMETER UNIQUENESS
-The same smooth, nonconstant periodic scalar curvature has at most one pair
-of dilation and rotation parameters. Nonzero constant curvature still has
-unique dilation; rotation uniqueness is not asserted for a circle.
-See ScalarParameterUniquenessScope.txt and the exact source manifest.
-The integrated local audit passes for 726 declarations; standard axioms only.
-
-ACTUAL FLOW AND SHARP DERIVATIVE BRIDGE
-Nineteen additional modules construct the actual clipped flow, prove its
-original-ODE identification on confined trajectories, and derive initial
-and joint strict differentiation and the true first variational ODE.
-From actual fundamental/right-inverse bounds K/I, they derive spatial
-variation4*K^3*I*t and the actual shooting derivative budget
-16*(4*K^3*I*T+34*K+1275). No FlowC1, Hessian or derivative-variation premise
-is required in exists_unique_actual_shooting_zero_of_true_matrices.
-The numerical candidate remains uninstantiated: true long-time tube/P/Q
-bounds and center enclosures are still certificate obligations. The337
-declarations in the standalone ActualFlowAudit include shared prerequisites;
-they are not337 solved problems and are not additive to the earlier406.
-See ActualFlowMilestone/ActualFlowFrozenStatus.txt and RootSemanticAudit.txt.
-The newest integrated audit at the end of verification.txt supersedes726.
-
-ScalarReflection proves the exact b sign-change under k(s)->k(c-s) and
-excludes this reflection-even scalar curvature when b is nonzero and k
-is nonconstant. It is not an existence or complete-classification result.
-
-CANONICAL ACTUAL INVERSE
-Four FlowInverse modules prove invertibility of the actual initial
-derivative by backward ODE uniqueness, define its canonical inverse,
-derive continuity and Q'=-Q*A, and remove the freely supplied inverse
-from the root certificate. The final interface is now
-exists_unique_actual_shooting_zero_of_actual_matrix_bounds.
-Only actual tube/P/canonical-Q norm bounds and the numerical center
-enclosures remain in this analytic-to-numerical interface. These have
-not yet been supplied for the entire candidate parameter cube.
-See ActualFlowMilestone/FlowInverseFrozenStatus.txt. The standalone
-combined inverse audit has364 declarations including prior imports;
-the newest whole-project count appears at the end of verification.txt.
-
-Current independent integrated audit:962 declarations; standard three axioms only.
+Current independent integrated audit:2725 declarations; standard three axioms only.

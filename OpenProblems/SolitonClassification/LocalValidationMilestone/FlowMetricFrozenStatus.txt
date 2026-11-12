@@ -1,0 +1,94 @@
+Actual rotating-flow global P/Q bounds: frozen eight-module supplement
+2026-11-13; independent SolitonClassification project.
+
+Dependency order is FlowMetricDependencyOrder.txt:
+FlowMetricCoordinates, FlowMetricDiscrete, FlowMetricSegment,
+FlowMetricReset, FlowMetricGridData, FlowMetricGlobal, FlowMetricRoot,
+FlowMetricAudit. Prerequisites are the frozen actual-flow 19 and inverse
+4 modules. All 23 earlier source hashes were checked unchanged at freeze.
+No other open-problem project is imported. Existing Centroid metric
+modules were read for orientation; these moving-matrix proofs were written
+in this independent namespace, rather than importing that project's
+special field or metric theorems.
+
+Actual compile evidence (all EXIT 0, no warnings, standard three axioms):
+Coordinates: session 3168, recursive audit 241.
+Discrete: session 42245, recursive audit 6.
+Segment: session 50716, recursive audit 246.
+Reset: session 91594, recursive audit 247.
+GridData: session 31433, recursive audit 310.
+Global: session 15035, recursive audit 323.
+Root: session 81947, recursive audit 453.
+Audit: session 81947, recursive audit 473.
+The combined audit imports all preceding actual-flow/inverse audits and
+explicitly prints the axioms of five main new theorems. Source, object,
+and compiler-output hashes are in FlowMetricFrozenManifest.csv.
+
+ANALYTIC CONTENT
+P(t) is the actual fderiv of the proved existing supportFlow; Q(t) is
+the actual canonical inverse already proved to exist. Let M(t) be an
+actually differentiable invertible reference matrix, R(t)=inverse M(t),
+and A(t) the actual signed field derivative along the actual trajectory.
+The code derives, rather than assumes, the transformed equations
+  V=R*P, U=Q*M,
+  C=R*(A*M-M'), V'=C*V, U'=-U*C.
+
+For a reference path X with
+  M'=(sigma*Df(X))*M+Z,
+state separation at most E, matrix residual norm at most rho, and true
+reference bounds ||M||<=K, ||inverse M||<=I, the actual coefficient bound
+is
+  ||C|| <= rate = I*(4*E*K+rho).
+The actual field derivative Lipschitz bound 4 is used only when both
+actual and reference states are in outerTube. State error E and matrix
+residual rho are independent inputs; no Taylor order is fixed. Exact
+local reference variational solutions are the special case rho=0.
+For polynomial reference matrices the actual residual cannot be omitted.
+
+At a reset from old M to new N, the exact transitions are
+  Vnew=(inverse N*M)*Vold,
+  Unew=Uold*(inverse M*N).
+Both transition norms are <=1+I*delta when ||M-N||<=delta and the required
+old/new inverse bounds hold. In particular the inverse transition uses
+the OLD inverse bound; it is not inferred by silently inverting a
+one-sided inequality. This permits the same reset exponent in both
+directions, without a Neumann estimate or a raw exp(17*T) bound.
+
+FlowMetricGridData records actual reference functions, their derivative
+equations/residuals, tube and state separation, reference matrix/inverse
+bounds, every reset, exact initial M=Id, and an ordered finite time grid.
+The generic discrete proof accumulates all multiplicative reset factors.
+The finite grid coverage proof includes the terminal endpoint and permits
+zero-length segments. For a nonempty grid ending at T, the main theorem
+FlowMetricGridData.actual_matrix_bounds gives, for every t in [0,T],
+  ||P(t)|| <= K*exp(I*(4*E*K+rho)*T+I*J),
+  ||Q(t)|| <= I*exp(I*(4*E*K+rho)*T+I*J),
+provided the sum of reset defects is <=J.
+No actual P/Q norm estimate is a premise.
+
+The uniform-family conversion actualFlowMatrixBounds_of_reference_grids
+fills the previously proved root certificate's actual P/Q norm fields.
+Its specialization actualFlowMatrixBounds_8000_16000_of_reference_grids
+derives actual 8000/16000 bounds from true reference 2000/4000 bounds and
+an exponential budget <=4. This specializes generic proved mathematics;
+it does not assert that the candidate's numerical data meets the inputs.
+
+REMAINING CERTIFICATE CONNECTION
+The actual tube neighborhood and the actual state-error bound E remain
+explicit premises. The finite interval data must instantiate every
+reference-grid field, including real-function matrix invertibility,
+uniform inverse bounds, differential residual, and resets. The actual
+state first-exit/bootstrap and the complete 8000-segment instantiation
+are not supplied by these eight modules. The existing local tails and
+finite arithmetic certificates are ingredients for that connection.
+
+T is the actual covered grid endpoint and the tube-neighborhood horizon.
+Using 32 as an upper bound for a scalar budget does not extend a trace
+that ends earlier to time 32. Any terminal-time neighborhood required
+by the closed parameter cube must be explicitly covered or extended.
+Likewise, tube confinement on the open initial-state neighborhood needed
+for fderiv is a separate actual premise, not inferred from one trajectory.
+
+These modules establish the global matrix analytic bridge. They do not
+yet establish a Lean-certified specific shooting root, a closed rotating
+curve, or classification of all periodic profiles.

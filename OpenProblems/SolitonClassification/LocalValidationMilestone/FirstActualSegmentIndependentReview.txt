@@ -1,0 +1,74 @@
+Independent source/semantic review, finish_curve_input, 2026-11-13
+
+No semantic gap found in the nine modules below. No reviewed source was
+edited. This review follows the exact finite-certificate-to-actual-flow
+connection; it does not independently rerun the expensive integer ranks
+or manually recompute their large integer literals. Those values remain
+untrusted data until the explicit decide +kernel equalities are proved.
+
+The integer chain is complete at its stated single-center scope:
+state_sound uses BenchState60.table_checked and actual initial enclosure;
+squares_checked combines checks 0..180 inclusive; residuals_checked
+combines indices 0..120, corresponding exactly to degrees 60..180.
+The n<60 zero coefficients come from the proved recurrence, not data.
+The budget checks use denominator mesh*100^M, where mesh=10^60, so the
+residual numerator upper bound 10^340 divided by mesh*100^180 yields
+10^-80. The tube and residual conclusions hold on every |t|<=1/100.
+No new unchecked numerical assumption appears in these two conclusions.
+
+SignedLocalTail consistently evaluates the same exact polynomial at
+sigma*t and multiplies its derivative/residual by sigma. |sigma|<=1
+controls the residual and derivative norms. This covers both signs and
+sigma=0. The variational forcing retains 4*E*C + epsilon; the actual
+fderiv column, rather than an independently assumed matrix solution,
+is the object being compared.
+
+FirstTrueState60 uses the checked step<1/125 and checked initial innerTube
+membership, so original-ODE confinement does not depend on the desired
+error estimate. |sigma*t|<=1/100 permits the all-point polynomial bounds.
+It derives actual error <=2*10^-80*t, then <=1/mesh. The endpoint interval
+widens the already certified finite-polynomial interval radius by one
+integer mesh unit. The triangle-inequality bridge to the actual endpoint
+is correct. The concrete endpoint theorem is forward-sign only; the
+preceding segment error theorem covers both signs. This is one actual
+segment, not an 8000-step or parameter-cube certificate.
+
+MatrixColumnNorm reconstructs all six columns through columnOperator and
+the exact coordinate-basis expansion. It proves operator norm <= sum of
+column norms and hence <=6*epsilon for uniform column error. No column
+error is silently identified with the infinity operator norm.
+
+LocalFlowNeighborhood uses coordinate margins to put every initial point
+of the full open six-dimensional ball in innerTube, then applies the
+already proved unconditional short original flow. Theta is unrestricted
+in the tube and therefore needs no coordinate margin. FirstFlowNeighborhood60
+checks exact rational margins at radius 1/10000 and obtains the actual
+FlowTubeNeighborhood for every T<=1/125, including the center itself.
+It provides genuine neighborhood regularity prerequisites; it does not
+claim the center's 10^-80 residual enclosure for every neighboring state.
+
+These modules remove the previous first-segment residual-instance and
+signed/local-neighborhood gaps. Global state bootstrap, a complete grid,
+uniform parameter errors, and long-time matrix/shooting certification
+remain separate tasks. The stopped earlier rational benchmark is not
+used as evidence; the current connection uses the new integer checks.
+
+Reviewed source SHA256:
+SignedLocalTail
+8BB07FA715E1C8E52691155A916E3BF24ECC55E4DD2849920323D3DAE0A6CADF
+MatrixColumnNorm
+EC12BB7E2C743015E6B55BE88C06B11434257B23DFF10B9E2EA3B5BF208ED53E
+FirstTrueState60
+6F83923149144393746D4E84D185024A2C9631930295B9A1846572BD67050063
+LocalFlowNeighborhood
+FDE2C82880F8BE4170F7F94347967B1C938251F780608707861043F4EB0B9C91
+FirstFlowNeighborhood60
+80B340358FB5FCE905C6D3E6BAE191004526FF81C914D37F793E5BA21B964A7C
+FirstResidualIntegerData60
+2B8F35566D4AD93034E55E07290EDDDC1C6E2FF74583AD4995E484E28EB8078D
+FirstResidualIntegerSquares60
+F12E376B1264F12120338347BDB23D93AA1B9D3D12B28C64942D27BAC4FBAD5A
+FirstResidualIntegerRanks60
+6BAED577C2B7053D5193513C041C0856F95DC19ADB9606C8DF4C11461A27A0C5
+FirstResidualIntegerBudget60
+BDC7A7B953BB2B78941C3816BD26D760D9924A26812952A3629A7F8486A4F577

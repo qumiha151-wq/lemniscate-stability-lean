@@ -1,0 +1,46 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE AnalyticMajorantScalar SOURCE 68C16DA6C8E4F4B3EAAD7F5D3F41125388CC6D63E3744681A225D75AFC1BC5CB
+'SolitonClassification.Rotating.UniversalMajorant.scalarResidual_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal scalar majorant audit passed: 147 declarations; standard axioms only.
+EXIT 0
+MODULE AnalyticMajorantBudget SOURCE F230E5633EE6A89A64AAF14F7839A57F3AF6A2B76312B83B9707CF5E765F4A3B
+'SolitonClassification.Rotating.UniversalMajorant.scalarResidual60_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.UniversalMajorant.displacement60_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal finite scalar budget audit passed: 164 declarations; standard axioms only.
+EXIT 0
+MODULE AnalyticMajorantVector SOURCE 453E3F89FC55364A60EB251035984F9F8C55D8DD94C16B34777CF2A87F6E9B6D
+'SolitonClassification.Rotating.UniversalMajorant.vectorTaylor_majorized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal vector majorant audit passed: 241 declarations; standard axioms only.
+EXIT 0
+MODULE AnalyticMajorantVectorActual SOURCE 0D0292A39B04EF3B84CE4A67F2E88B9A8614075B220E54EF9681C9BC702FF4F1
+'SolitonClassification.Rotating.UniversalMajorant.actualDisplacementCoeff_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.UniversalMajorant.taylorCoeff_majorized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal actual-Taylor bridge audit passed: 288 declarations; standard axioms only.
+EXIT 0
+MODULE UniversalTaylorResidual SOURCE D31654DCFEAEFB99082AFD0FAC8A529D7B2ACD43B42E9627FE5AE470B2493072
+'SolitonClassification.Rotating.UniversalMajorant.taylorResidual_coeff_majorized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.UniversalMajorant.taylorResidual60_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal actual Taylor residual coefficients audited; standard axioms only.
+EXIT 0
+MODULE UniversalPolynomialTube SOURCE F558D50491CE004409CEED4E71440E7EF3011D40ADDE85872B4B6D9E1DD8C392
+'SolitonClassification.Rotating.taylorPolynomial_tube_of_coarse_excursion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal polynomial tube audit passed for 502 declarations; standard axioms only.
+EXIT 0
