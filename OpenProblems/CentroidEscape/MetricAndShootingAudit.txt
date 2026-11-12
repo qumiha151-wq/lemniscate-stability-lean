@@ -1,0 +1,70 @@
+Source review and verification boundary, 12 November 2026
+
+The metric is the Euclidean norm after coordinate scaling by
+(1,1,4,4,20,128/5,1) in WeightedState coordinates. Its quadratic-form
+coefficients are the SQUARES of these scales. In physical coordinates the
+scaling is (1,1,1,1,5/4,2/5,1), again squared in the quadratic form.
+
+MetricCertificates contains exact rational sums-of-squares identities and
+sign conjugations for all32 vertices. MetricStability extends those bounds
+over the whole actual tube. The quadratic derivative and exact secant
+inequalities have constant K=39/20. This concerns the original field,
+not a false bound on the globally clipped field's Jacobian.
+
+MetricFlow proves comparison using sqrt(energy+epsilon^2), preserving K.
+MetricBootstrap and MetricResidual prove genuine first-exit arguments:
+the actual clipped solution remains in the original tube as a conclusion
+of an interior reference, derivative residual and explicit error budget.
+The factor34 converting a sup-norm residual to the metric is injected only
+into the residual forcing; it is not repeatedly applied to old errors.
+
+MetricHessian proves the actual second derivative in this metric has
+bilinear norm at most3. The proof uses a five-term Cauchy-Schwarz estimate
+and a positive rational polynomial remainder, rather than an incorrect
+Frobenius bound. Exact cubic cancellation gives midpoint forcing at most
+(3/8)*metricNorm(x-y)^2. MetricForcing retains its time dependence exp(2Kt).
+MetricMidpointFlow then proves for ACTUAL original-field trajectories
+  metricNorm((Phi_t(a)+Phi_t(b))/2-Phi_t((a+b)/2))
+    <= (5/26)*exp(2Kt)*metricNorm(a-b)^2.
+Its explicit trajectory-tube hypotheses can be discharged by the separate
+first-exit/domain modules; no shooting-root existence is assumed.
+
+MetricShootingMaps proves the actual initial map's energy coefficient41/16
+(norm bound13/8) and the actual physical output projection's metric bound5/2.
+DerivativeVariation constructs derivative variation from a quadratic midpoint
+bound for a genuine map. ShootingJacobian proves the actual joint time and
+initial-state derivative, the three-parameter shooting derivative, and their
+variation. ShootingDomain extends the true reference trajectory past the old
+terminal time by1/16000, so that the center time is inside an open interval.
+MetricShootingDomain supplies an improved true open initial/parameter domain
+using K=39/20. It includes final-time variation, not just initial data.
+MetricShootingJacobian connects the improved midpoint estimate to the
+actual Mathlib fderiv, including time. Its proved variation constant is
+  (975/32)*exp(2KT)+2210*exp(KT)+46240 <6*10^14
+when the extended horizon is at most7.5. The actual open parameter radius
+is greater than10^-13 when the original time is at least1. These conclusions
+do not assume an ideal Jacobian or a root. The proposed finite differences
+and Newton ball still need concrete endpoint and preconditioner checks.
+
+OrderScalarResidual and OrderVectorResidual connect the actual order-N
+canonical vector polynomial to a finite scalar residual for every N<=160.
+In particular the actual order60 polynomial's differential residual is
+bounded by finiteResidual60. This is a finite polynomial coefficient proof;
+it uses neither an assumed residual inequality nor an unproved infinite
+Taylor series. OrderMetricIntegration propagates these finite residuals
+over at most750 exact polynomial iterates without repeatedly multiplying
+the metric conversion factor34. OrderMetricGrid connects actual coefficient,
+endpoint-gluing and margin checks to the genuine original ODE, full interior
+tube containment, and all node enclosures inflated by10^-43. Its chosen-flow
+corollary feeds the actual shooting derivative/domain results directly.
+The specific seven750-step numerical tables and checks remain outstanding.
+
+FusedConvolution, FusedTaylor and FusedCertificate implement an alternative
+round-once integer convolution, with proved real containment. Native timing
+does not prove arithmetic. A small kernel timing did not favor this backend,
+so no performance improvement of the full certificate is claimed.
+
+All source checks enforce only propext, Classical.choice and Quot.sound.
+No custom axioms, sorry or native_decide acceptance is used. Independent
+project isolation is preserved. These modules do not solve every paper
+question or complete the numerical centroid-escape existence theorem.

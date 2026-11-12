@@ -71,8 +71,8 @@ Lean currently proves:
   - a shared-denominator integer backend, sound Taylor endpoint evaluation,
     and a checker for externally supplied untrusted coefficient data;
   - variable-order polynomial endpoints and finite coefficient checks for
-    every order at most 160; the corresponding lower-order differential
-    residual and global error budget are still being connected;
+    every order at most 160, and actual finite vector-polynomial residual
+    majorization, including the concrete order60 scalar residual;
   - the actual polynomial field's first and second Frechet derivatives,
     operator bounds 8 and 44, and derivative Lipschitz bound 44 on the tube;
   - an actual finite-horizon shooting flow and correctly weighted shooting
@@ -81,15 +81,32 @@ Lean currently proves:
   - construction of the actual initial-state Frechet derivative from dyadic
     difference-quotient limits. It is a genuine continuous linear map with
     norm at most exp(8t) and an actual quadratic Taylor-remainder bound.
+  - the actual joint time/initial and three-parameter shooting derivatives,
+    explicit derivative variation, and a genuine open time neighborhood
+    obtained by short continuation past the old checked terminal time;
+  - exact rational metric certificates giving one-sided constant39/20,
+    actual energy/Gronwall comparison, and first-exit tube conclusions;
+  - actual metric second derivative bound3 and flow midpoint defect with
+    exp(2Kt), with no extra exponential from constant-forcing replacement;
+  - improved open shooting domains, actual input/output metric constants,
+    and finite order60 residual arithmetic, including global budget1e-43.
+  - the actual three-parameter shooting Jacobian's improved variation bound
+    6e14 on an open domain of radius greater than1e-13, under the proved
+    reference-interior and finite-horizon conditions;
+  - the actual order60 grid integration bridge: finite coefficient, gluing
+    and margin checks imply a whole original-field trajectory, uniform
+    interior tube containment, and every node's ball inflated by1e-43.
+    The conclusion also holds for the chosen actual shootingFlow.
 
 Missing from the end-to-end Lean theorem:
   - the concrete numerical/ODE estimates discharging the shooting root and
     moment hypotheses. The actual shooting map is constructed and the general
     checked-grid theorem proves inactive clipping over the whole true orbit;
     the required concrete seven 750-step checks have NOT been completed;
-  - joint time/initial-state and three-parameter shooting-map derivative
-    interfaces, and the derivative-variation bounds needed by the root test.
-    Initial-state Frechet differentiability itself is now proved;
+  - the concrete finite-difference, preconditioner and root conditions.
+    The actual order60 grid bridge, genuine joint derivative and useful
+    metric variation budget are proved, but do not by themselves evaluate
+    the required numerical conditions;
   - a feasible concrete certificate with all arithmetic checks replayed by
     the kernel. Native evaluator performance is not a proof of those checks.
 Higher spatial and joint smoothness and the intrinsic curvature/PDE interface

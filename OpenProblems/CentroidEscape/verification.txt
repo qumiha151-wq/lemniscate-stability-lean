@@ -205,3 +205,122 @@ MODULE CentroidEscape/AxiomAudit
 Centroid-escape audit passed: 1279 declarations; standard axioms only.
 EXIT 0
 Final combined source set compiled and audited; full research goal remains incomplete.
+Metric, finite residual and joint shooting additions; combined source audit.
+MODULE CentroidEscape/FusedConvolution
+Fused-convolution audit passed for 774 declarations.
+EXIT 0
+MODULE CentroidEscape/FusedTaylor
+'CentroidEscape.fusedTaylorEndpointOrder_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Fused-Taylor audit passed for 810 declarations.
+EXIT 0
+MODULE CentroidEscape/FusedCertificate
+'CentroidEscape.checkedFusedOrderTaylorEndpoint_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+Fused-certificate audit passed for 832 declarations.
+EXIT 0
+MODULE CentroidEscape/DerivativeVariation
+'CentroidEscape.quadraticMidpoint_fderiv_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+Derivative-variation audit passed for 21 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingJacobian
+'CentroidEscape.shootingFlow_fderiv_space_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.actualShootingMap_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.actualShootingMap_fderiv_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+Shooting-Jacobian audit passed for 778 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingDomain
+'CentroidEscape.actualShootingMap_hasFDerivAt_extended' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.actualShootingMap_fderiv_variation_extended' depends on axioms: [propext, Classical.choice, Quot.sound]
+Shooting-domain audit passed for 795 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricCertificates
+Metric certificate audit passed for 51 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricStability
+'CentroidEscape.MetricStability.weightedLinear_metric_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Metric stability audit passed for 89 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricFlow
+'CentroidEscape.MetricStability.metric_approx_trajectories' depends on axioms: [propext, Classical.choice, Quot.sound]
+Metric flow audit passed for 96 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricBootstrap
+'CentroidEscape.MetricStability.shootingFlow_metric_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Metric first-exit audit passed for 99 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricResidual
+'CentroidEscape.MetricStability.metric_residual_tube_of_weighted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Metric residual first-exit audit passed for 103 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricBudget
+Metric arithmetic budget audit passed for 15 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricShootingMaps
+'CentroidEscape.MetricStability.shootingInitial_metric_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.MetricStability.shootingProjection_metric_difference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Metric shooting-map audit passed for 105 declarations.
+EXIT 0
+MODULE CentroidEscape/MetricHessian
+Metric Hessian audit passed: 202 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape/MetricForcing
+Metric exponential-forcing audit passed: 105 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape/MetricMidpointFlow
+Metric midpoint-flow audit passed: 832 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape/MetricShootingDomain
+'CentroidEscape.MetricStability.actualShootingMap_hasFDerivAt_metric_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Metric shooting-domain audit passed for 917 declarations.
+EXIT 0
+MODULE CentroidEscape/OrderScalarResidual
+'CentroidEscape.MetricStability.orderScalarResidual60_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EXIT 0
+MODULE CentroidEscape/OrderVectorResidual
+'CentroidEscape.MetricStability.orderTaylor60_residual_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Variable-order actual residual audit passed for 88 declarations.
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 1676 declarations; standard axioms only.
+EXIT 0
+Final combined source set compiled and audited. Concrete full trajectories and research goal remain incomplete.
+Metric, finite residual and joint shooting additions; combined source audit.
+MODULE CentroidEscape/MetricShootingJacobian
+'CentroidEscape.MetricStability.fixedShootingDifferential_time_variation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CentroidEscape.MetricStability.actualShootingMap_fderiv_metric_extended_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Metric shooting-Jacobian audit passed for 1006 declarations.
+EXIT 0
+MODULE CentroidEscape/OrderMetricIntegration
+'CentroidEscape.MetricStability.order60_metric_grid_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+Order60 metric integration audit passed for 204 declarations.
+EXIT 0
+MODULE CentroidEscape/OrderMetricGrid
+'CentroidEscape.MetricStability.exists_checked_order60_metric_grid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CentroidEscape.MetricStability.checked_order60_shootingFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+Checked order60 metric grid audit passed for 219 declarations.
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 1746 declarations; standard axioms only.
+EXIT 0
+Final combined source set compiled and audited. Concrete full trajectories and research goal remain incomplete.

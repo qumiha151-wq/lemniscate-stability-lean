@@ -1,0 +1,138 @@
+METRIC STABILITY FOR THE SEVEN-DIMENSIONAL SHOOTING FIELD
+2026-11-12. Partial formalization status is separated from mathematical bounds.
+
+1. Concrete coordinates and tube
+
+Raw coordinates z=(x,y,u,w,k,v,m) solve
+ f(z)=(u,w,-kw,ku,v,-k^3/2+xw-yu,x).
+The actual tube is |x|<=8/5, |y|<=12/5, |u|,|w|<=11/10,
+ |k|<=7/2, |v|<=6. There is NO restriction on m.
+Existing weighted coordinates are a=(x,y,u/4,w/4,k/16,v/64,m).
+
+Choose raw D=diag(1,1,1,1,5/4,2/5,1) as a COORDINATE SCALING,
+and |h|_D=||Dh||_2. The quadratic metric matrix is D^T D=D^2.
+In a-coordinates the metric scale is (1,1,4,4,20,128/5,1), and
+ E(h)=h0^2+h1^2+16h2^2+16h3^2+400h4^2+(16384/25)h5^2+h6^2.
+Define metricNorm=sqrt(E), with pairing the corresponding bilinear form.
+Sum of squared scales = 27259/25 < 34^2; all scales >=1, so
+ ||h||_infty <= metricNorm(h) <=34||h||_infty.
+
+2. Exact symmetric Jacobian certificate
+
+In raw metric coordinates the nonzero Jacobian entries are
+ A02=A13=A60=1; A23=-k; A24=-4w/5; A32=k; A34=4u/5;
+ A45=25/8; A50=2w/5; A51=-2u/5; A52=-2y/5; A53=2x/5;
+ A54=-12k^2/25.
+Thus the +/-k tangent block is exactly skew and cancels from h.A.h.
+The symmetric quadratic form depends affinely on x,y,u,w,r=k^2,
+on the box [-8/5,8/5] x [-12/5,12/5] x [-11/10,11/10]^2 x [0,49/4].
+
+For K=39/20, every one of 32 vertex forms K|h|^2-h.A.h is positive.
+Exact LDL^T factorizations give positive rational pivots; the smallest is
+ 68937938423/1559268984000 >0.
+Only eight sums-of-squares identities are needed: signs of u,w are removed
+by a diagonal sign conjugacy. All 32 vertex claims are nevertheless explicit.
+Repeated one-dimensional affine endpoint interpolation proves the whole box.
+Hence pairing(h,weightedLinear(a,h)) <= K E(h) on the ACTUAL tube.
+
+The finite difference inequality is equally exact, without a differentiability
+or mean-value theorem: for a,b in the tube, use midpoint coefficients x,y,u,w
+and r=(ka^2+ka*kb+kb^2)/3 in the same quadratic form. Here 0<=r<=49/4,
+by the two squared identities for ka+kb and ka-kb. Consequently
+ pairing(b-a,F(b)-F(a)) <= K E(b-a).
+
+Lean files MetricCertificates.lean and MetricStability.lean check the rational
+SOS identities, affine extension, actual weighted Jacobian identity, actual
+field secant identity, and both norm conversions. No Python boolean or
+floating eigenvalue is trusted by those proofs. The numerical maximum
+eigenvalue 1.9314391981481873 is only a diagnostic; K=1.95 is the certificate.
+
+3. Flow comparison and the clamp caveat
+
+For two approximate trajectories f,g in the actual tube, let h=f-g and
+ r=(f'-g')-(F(f)-F(g)). If metricNorm(r)<=delta, Cauchy-Schwarz yields
+ E(h)' <=2K E(h)+2delta sqrt(E(h)).
+Apply scalar one-sided Gronwall to sqrt(E+epsilon^2), then let epsilon->0:
+ metricNorm(h(t)) <= d0 exp(Kt)+(delta/K)(exp(Kt)-1).
+This retains K rather than replacing it with the Jacobian operator norm.
+
+The coordinatewise-clamped field need not satisfy this same one-sided bound.
+It is used solely for global existence. For an inner-tube reference, a first
+exit argument proves nearby clipped solutions remain in the true tube:
+ if metricNorm(b-a) exp(KT)<1/2000, they cannot first attain metric distance
+ 1/2000 from the reference. Prior to a first hit both solve the original
+field, so the preceding comparison contradicts the hit. This supplies
+the actual original-field parameter neighborhood at the improved scale.
+
+MetricFlow.lean contains the square-root regularization, metric Cauchy-Schwarz,
+energy differentiation, and actual approximate-trajectory comparison.
+MetricBootstrap.lean contains the first-hit and actual shooting-flow bootstrap.
+MetricResidual.lean proves the analogous first-exit result directly from
+an inner approximate curve and its finite differential residual; it does
+not assume the true clipped trajectory already remains in the tube.
+All these files have compiled successfully with standard-axiom audits.
+
+4. Additional finite-dimensional estimates (human proof at this checkpoint)
+
+On the same tube, metric field norm <=15 and metric Jacobian operator norm <=9:
+the explicit field envelope has squared norm 7907489/40000<225, and the
+Jacobian Frobenius envelope has square 3004289/40000<81.
+
+For metric unit vectors xi,eta, the only Hessian rows are
+ H2=-(4/5)(xi4 eta3+xi3 eta4),
+ H3= (4/5)(xi4 eta2+xi2 eta4),
+ H5=-(96/125)k xi4 eta4
+      +(2/5)(xi0 eta3+xi3 eta0-xi1 eta2-xi2 eta1).
+The first two rows combined have norm <=4/5, by two-component Cauchy-Schwarz.
+The last row is a symmetric bilinear form consisting of the scalar k block
+and two disjoint 2x2 off-diagonal blocks, so its norm <=336/125.
+Thus ||H[xi,eta]||^2 <=(4/5)^2+(336/125)^2=122896/15625<9.
+The metric Hessian norm is <=3. Third derivative norm is 384/625.
+
+Initial parameters (alpha,beta) in sup norm map to (alpha,0,0,1,beta,0,0),
+with metric linear norm sqrt(41)/4<13/8. Projection to (y,u,v) has norm <=5/2.
+The actual three-parameter initial map's energy bound41/16, norm bound13/8,
+and the actual projection's5/2 bound are now Lean-checked in MetricShootingMaps.
+For E=exp(KT), the first state derivative is <=E and the second <=(3/K)E(E-1).
+Including final time as a third parameter gives the shooting Hessian bound
+ Hshoot <= (5/2)[(205/52)E(E-1)+(117/4)E+135].
+The mixed coefficient is 2*9*(13/8), and time-time coefficient is 9*15.
+For T<=15/2, exp(KT)<=exp15<4,000,000, proved using exp1<=11/4.
+The displayed bound is then at most 4100006580008775/26<2*10^14.
+
+5. FINITE polynomial residual, not an infinite Taylor tail
+
+Let c0=1 and (n+1)c[n+1]=6(2n+1)c[n], and u60(t)=sum(n=0..60)c[n]t^n.
+At h=1/100 use R60=2u60(h)^3-u60'(h)/3, the finite scalar polynomial residual.
+It is positive and approximately 1.123779882421737e-54. The old tau60 from
+an infinite geometric Taylor tail is NOT used for the formal route.
+
+With 750 steps, 34 for each local residual injection, exp(KT)<4e6, and
+the safe local factor 25/23, the total metric error bound is
+ 34*750*4e6*(25/23)*(1/100)*R60 <1e-43
+(diagnostic value 1.2459298696414912e-45).
+The factor34 is NOT reapplied to propagated errors at every step.
+Arb balls already contain rounding errors of the finite polynomial iteration;
+these rounding balls must not also be multiplied by exp(KT).
+
+MetricBudget.lean verifies the rational residual budget, exp bound, Hessian
+arithmetic and proposed Newton budget. OrderScalarResidual and
+OrderVectorResidual now connect the order60 finite scalar residual to every
+actual order60 vector polynomial.
+The old order160 certificate is unchanged. No lower-order full shooting run
+is claimed to have passed merely because these analytic budgets pass.
+
+With deltaFD=1e-25, radius=1e-28, H=2e14, inverse norm<2 and FD defect<1e-9,
+the contraction bound is <=1e-9+2*(3*(H*deltaFD/2)+H*radius)<2e-9.
+An endpoint error1e-43 contributes at most O(1e-18) after division by deltaFD,
+well below the H*deltaFD/2=1e-11 finite-difference allowance.
+Nevertheless actual evaluation, tube margin, inverse defect and center
+displacement checks remain necessary; these are not replaced by this note.
+
+Formal boundary update: the displayed sharp shooting Hessian formula remains
+an analytic estimate, not the final proved shooting Jacobian budget. The
+formal midpoint-to-derivative route now proves the coarser H=6e14 in
+MetricShootingJacobian; the proposed finite-difference and root radii still
+leave sufficient arithmetic margin. OrderMetricIntegration/OrderMetricGrid
+also prove the actual grid error propagation and chosen-flow enclosure.
+Only an actual checked shooting certificate can discharge those conditions.

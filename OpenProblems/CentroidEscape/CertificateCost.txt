@@ -26,3 +26,19 @@ The current direction is smaller justified truncation order, stronger actual
 trajectory stability estimates, and fused integer convolution arithmetic.
 Those changes must retain proved real containment and kernel-checked data.
 The complete concrete numerical certificate is still missing.
+
+Verified local order60 single-step experiment (actual shooting center)
+The exact170-digit rational center and h=L/750 were used with mesh10^80.
+All60 recurrence stages, all actual-checker bridges, initial containment,
+Horner endpoint containment, and input/output .024 margins passed kernel
+checking. The endpoint theorem concerns the actual canonical order60
+POLYNOMIAL, not yet the full ODE endpoint with residual correction.
+Only propext, Classical.choice and Quot.sound occur in the final proofs.
+
+Single-thread run with a3GB memory cap:83.63s wall time,31.4s tactic execution,
+23.7s kernel type checking; source736KB, raw data46KB, olean27.18MB.
+A preceding2GB-capped run stopped safely after54 stages and was not a pass.
+These measurements show remaining proof-storage and total-run cost. They
+are not a completed750-step path or seven-path certificate. Removing
+unneeded runtime code generation and splitting certificates are being tested.
+The concrete benchmark module is not part of this generic-interface batch.
