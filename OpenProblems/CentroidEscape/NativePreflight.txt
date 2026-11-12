@@ -1,0 +1,34 @@
+UNTRUSTED FULL-DATA PREFLIGHT -- NOT A COMPLETE KERNEL CERTIFICATE
+12 November 2026
+
+The current candidate uses the exact rational parameters in the original
+JSON (179 decimal places), order60, mesh10^80, and h=L/750. Five native runs
+generated all3750 Taylor tables for center, a+/-, b+/- with probe step1e-25.
+Every endpoint becomes the next input; no global analytic error is inserted
+into these finite polynomial iteration balls. The proved grid theorem adds
+the separate1e-43 ODE allowance after propagation in the certified metric.
+
+All five native runs completed. Total table data are approximately163.4MB.
+The center run took53.9s; paired probe runs took about76-82s on the shared
+host. Every native input-margin check passed with minimum margin about.025.
+The maximum weighted polynomial-ball halfwidth was about9.77e-71, comfortably
+below the separately required output allowance after scaling and inflation.
+
+Independent exact-integer/rational diagnostics checked all3750 table shapes,
+nonnegative radii, adjacent endpoint/initial-table equality, all input margins,
+initial parameter perturbations, h=L/750, the horizon, projected endpoint
+radii, the actual expression evaluator's time-column radii, and moment bound.
+These diagnostics did NOT kernel-check all recurrences or Horner evaluations.
+
+The proposed rational preconditioner has infinity row norm about1.1492936.
+The computed defect is about1.84e-30; the preconditioned center output is
+about1.22e-77. The center moment is about3.78365096320749. CandidateEndpointChecks
+independently proves the needed finite rational inequalities in Lean, using
+the actual rounded field-expression evaluator for the time column.
+
+native_preflight_report.json records reproducible summaries and hashes of
+native result records, and explicitly sets kernel_verified=false. These
+records are evidence that the proposed data are numerically viable, not
+proof of a complete trajectory or shooting root. The final logical gap is
+the concrete finite-grid kernel proof, not a missing analytic derivative
+or geometric implication in the generic soundness theorem.

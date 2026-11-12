@@ -324,3 +324,273 @@ MODULE CentroidEscape/AxiomAudit
 Centroid-escape audit passed: 1746 declarations; standard axioms only.
 EXIT 0
 Final combined source set compiled and audited. Concrete full trajectories and research goal remain incomplete.
+Finite-certificate and actual-data additions; final combined source audit.
+MODULE CentroidEscape/FiniteDifferenceDerivative
+'CentroidEscape.centralDifference_columns_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.actualShooting_centralDifference_columns_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CentroidEscape.preconditioned_derivative_from_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+Finite-difference derivative audit passed for 1043 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingRootBridge
+'CentroidEscape.exists_actual_shooting_root_of_endpoint_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual shooting-root bridge audit passed for 1046 declarations.
+EXIT 0
+MODULE CentroidEscape/Preconditioner
+'CentroidEscape.preconditioner_injective_of_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+Preconditioner audit passed for 1047 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingRootMatrixBridge
+'CentroidEscape.exists_actual_shooting_root_of_matrix_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual shooting matrix-root bridge audit passed for 1049 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingGeometryBridge
+'CentroidEscape.actual_shooting_zero_yields_smooth_classical_FEF_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CentroidEscape.actualShootingMoment_positive_near_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.nearby_shooting_zero_yields_smooth_classical_FEF_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Shooting geometry bridge audit passed for 1323 declarations.
+EXIT 0
+MODULE CentroidEscape/MatrixCertificate
+'CentroidEscape.rational_preconditioner_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rational matrix certificate audit passed for 1071 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingProbeBridge
+'CentroidEscape.MetricStability.checked_order60_probe_output_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual shooting-probe bridge audit passed for 230 declarations.
+EXIT 0
+MODULE CentroidEscape/ShootingTimeColumn
+'CentroidEscape.MetricStability.shooting_time_column_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+Center-only time-column audit passed for 333 declarations.
+EXIT 0
+MODULE CentroidEscape/FivePathJacobian
+'CentroidEscape.MetricStability.actual_fivePathJacobian_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Five-path actual Jacobian audit passed for 341 declarations.
+EXIT 0
+MODULE CentroidEscape/FivePathRationalData
+'CentroidEscape.MetricStability.fivePathRationalJacobian_operator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CentroidEscape.MetricStability.checked_center_moment_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+Five-path rational-data audit passed for 354 declarations.
+EXIT 0
+MODULE CentroidEscape/FiniteShootingPath
+'CentroidEscape.MetricStability.FiniteShootingPath.checked_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Finite shooting path audit passed for 1477 declarations.
+EXIT 0
+MODULE CentroidEscape/FivePathCertificate
+'CentroidEscape.MetricStability.checked_fivePathCertificate_yields_smooth_classical_FEF_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Complete five-path certificate audit passed for 1841 declarations.
+EXIT 0
+MODULE CentroidEscape/CandidateEndpointChecks
+Candidate finite endpoint/matrix checks: 35 declarations; standard axioms only.
+EXIT 0
+MODULE CentroidEscape/FiniteTaylorBlock
+'CentroidEscape.MetricStability.finiteShootingPathOfStages_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 2006 declarations; standard axioms only.
+EXIT 0
+Combined audit passed. Complete concrete five-path checks and the overall research goal remain incomplete.
+Finite-certificate and actual-data additions; final combined source audit.
+MODULE CentroidEscape/CenterFirstTen
+'CentroidEscape.CenterBlockData.FirstTen.checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+Concrete first-ten audit passed: 600 Taylor stages, 10 endpoints and input margins, 9 glues; standard axioms only.
+EXIT 0
+MODULE CentroidEscape
+EXIT 0
+MODULE CentroidEscape/AxiomAudit
+Centroid-escape audit passed: 3979 declarations; standard axioms only.
+EXIT 0
+Combined audit passed. Complete concrete five-path checks and the overall research goal remain incomplete.
+Frozen concrete first-ten individual compilation records.
+MODULE CenterStep000
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=50533
+EXIT=0
+PEAK_RESIDENT_BYTES=2689695744
+SAMPLED_PEAK_PRIVATE_BYTES=4825800704
+MEMORY_CAP_MB=4096
+MODULE CenterStep001
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=34602
+EXIT=0
+PEAK_RESIDENT_BYTES=2649501696
+SAMPLED_PEAK_PRIVATE_BYTES=4788948992
+MEMORY_CAP_MB=4096
+MODULE CenterStep002
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=48977
+EXIT=0
+PEAK_RESIDENT_BYTES=2679627776
+SAMPLED_PEAK_PRIVATE_BYTES=4781740032
+MEMORY_CAP_MB=4096
+MODULE CenterStep003
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=49698
+EXIT=0
+PEAK_RESIDENT_BYTES=2670968832
+SAMPLED_PEAK_PRIVATE_BYTES=4806565888
+MEMORY_CAP_MB=4096
+MODULE CenterStep004
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=54762
+EXIT=0
+PEAK_RESIDENT_BYTES=2649780224
+SAMPLED_PEAK_PRIVATE_BYTES=4780883968
+MEMORY_CAP_MB=4096
+MODULE CenterStep005
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=55375
+EXIT=0
+PEAK_RESIDENT_BYTES=2754654208
+SAMPLED_PEAK_PRIVATE_BYTES=4828090368
+MEMORY_CAP_MB=4096
+MODULE CenterStep006
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=48110
+EXIT=0
+PEAK_RESIDENT_BYTES=2608410624
+SAMPLED_PEAK_PRIVATE_BYTES=4769472512
+MEMORY_CAP_MB=4096
+MODULE CenterStep007
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=52293
+EXIT=0
+PEAK_RESIDENT_BYTES=2594451456
+SAMPLED_PEAK_PRIVATE_BYTES=4743880704
+MEMORY_CAP_MB=4096
+MODULE CenterStep008
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=60490
+EXIT=0
+PEAK_RESIDENT_BYTES=2623098880
+SAMPLED_PEAK_PRIVATE_BYTES=4759707648
+MEMORY_CAP_MB=4096
+MODULE CenterStep009
+Stages 0 through 9 checked.
+Stages 0 through 19 checked.
+Stages 0 through 29 checked.
+Stages 0 through 39 checked.
+Stages 0 through 49 checked.
+Stages 0 through 59 checked.
+Stage proof aggregation checked.
+Endpoint arithmetic checked.
+Input margin checked.
+WALL_MS=58892
+EXIT=0
+PEAK_RESIDENT_BYTES=2796158976
+SAMPLED_PEAK_PRIVATE_BYTES=4934676480
+MEMORY_CAP_MB=4096
+MODULE CenterBlock000
+WALL_MS=28966
+EXIT=0
+PEAK_RESIDENT_BYTES=1699446784
+SAMPLED_PEAK_PRIVATE_BYTES=3860819968
+MEMORY_CAP_MB=4096
+MODULE CenterBlock005
+WALL_MS=23445
+EXIT=0
+PEAK_RESIDENT_BYTES=1694408704
+SAMPLED_PEAK_PRIVATE_BYTES=3855040512
+MEMORY_CAP_MB=4096
+MODULE CenterFirstTen
+'CentroidEscape.CenterBlockData.FirstTen.checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+Concrete first-ten audit passed: 600 Taylor stages, 10 endpoints and input margins, 9 glues; standard axioms only.
+WALL_MS=17537
+EXIT=0
+PEAK_RESIDENT_BYTES=1778618368
+SAMPLED_PEAK_PRIVATE_BYTES=3873591296
+MEMORY_CAP_MB=4096

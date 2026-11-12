@@ -1,0 +1,287 @@
+{
+  "status": "kernel_checked_partial_center_segment",
+  "complete_five_path_certificate": false,
+  "concrete_steps": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "stage_equalities_checked": 600,
+  "endpoint_arithmetic_checked": 10,
+  "input_margin_checks": 10,
+  "adjacent_glues_checked": 9,
+  "final_theorem": "CentroidEscape.CenterBlockData.FirstTen.checked",
+  "final_conclusion": "Order60SegmentValid mesh stepTime 10 stages",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "input_json": [
+    {
+      "path": "native/center/step0.json",
+      "sha256": "e2cd847f18d9c41d4203d318fd4c645c8de34dcc47f88d3b2a3d4ac4eb0d9d7d"
+    },
+    {
+      "path": "native/center/step1.json",
+      "sha256": "952e2564572676ca3c9ec4dd041d3d1fb5d411ab65f514915ade9c69674e0e72"
+    },
+    {
+      "path": "native/center/step2.json",
+      "sha256": "c2f9ada22a04e2472a4d51f4d7d6f8ccabb00ed9e91eaaeb1c7a560473e491c7"
+    },
+    {
+      "path": "native/center/step3.json",
+      "sha256": "4a611259d3f30fc21fa7e999e49db1915c41c21a09964af5846d4ecb2cdb020a"
+    },
+    {
+      "path": "native/center/step4.json",
+      "sha256": "888b454c5e5687897da65e73bf1c05b49df6900522e979aa75c899a60a0fdb33"
+    },
+    {
+      "path": "native/center/step5.json",
+      "sha256": "0b8b80cfe8bfe5d01a1578e4c26359e549e60aff92a72dd6420276099f1197cb"
+    },
+    {
+      "path": "native/center/step6.json",
+      "sha256": "61c9d17b83f86acd1326b03c2d327b144169bc820cf6fa1e4a889f5147f1755a"
+    },
+    {
+      "path": "native/center/step7.json",
+      "sha256": "d15dad9ff09896bb34589dcc95922ff64251de36307bede15bf433ff83847afb"
+    },
+    {
+      "path": "native/center/step8.json",
+      "sha256": "68a7cb71ed2db4b853136071854ff7c5774d90fc704f7272bb0b261f0544567b"
+    },
+    {
+      "path": "native/center/step9.json",
+      "sha256": "02472cd6e7e8c3d8cfa0d7d25890eb7c5132794bbd5595c67690b8c65545e07b"
+    }
+  ],
+  "modules_in_build_order": [
+    {
+      "module": "CentroidEscape.FiniteTaylorBlock",
+      "source": "CentroidEscape/FiniteTaylorBlock.lean",
+      "source_sha256": "68729d233dc5fca53e438ad77d1629bfd5b75e17586cd0e599c48ec09e30c381",
+      "source_bytes": 4722,
+      "olean_bytes": 239632,
+      "measurements": null
+    },
+    {
+      "module": "CentroidEscape.CenterBlockParameters",
+      "source": "CentroidEscape/CenterBlockParameters.lean",
+      "source_sha256": "b781cfc9bba83eb7fe7d2b130af5adb296adff50d37e7f0b50968639fcab480e",
+      "source_bytes": 622,
+      "olean_bytes": 14680,
+      "measurements": null
+    },
+    {
+      "module": "CentroidEscape.CenterStep000",
+      "source": "CentroidEscape/CenterStep000.lean",
+      "source_sha256": "f40d5ffda0118a630632af052429c97447c63de82f9482de92bd137b06cde11d",
+      "source_bytes": 46391,
+      "olean_bytes": 1040368,
+      "measurements": {
+        "WALL_MS": 50533,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2689695744,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4825800704,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep001",
+      "source": "CentroidEscape/CenterStep001.lean",
+      "source_sha256": "57c6895898d3e71da3bb89519381bc046e0373865cfca12d97c5bc5fafc7bcf0",
+      "source_bytes": 66503,
+      "olean_bytes": 1103528,
+      "measurements": {
+        "WALL_MS": 34602,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2649501696,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4788948992,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep002",
+      "source": "CentroidEscape/CenterStep002.lean",
+      "source_sha256": "ad48875f8e39b72deea26703694cba61676be25a3f044450e4e9bce44c824d66",
+      "source_bytes": 66615,
+      "olean_bytes": 1103880,
+      "measurements": {
+        "WALL_MS": 48977,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2679627776,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4781740032,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep003",
+      "source": "CentroidEscape/CenterStep003.lean",
+      "source_sha256": "900f4586140ad05405bfeca5fcf8d24f4dfd9010a188836ec3c473bcd56ce90c",
+      "source_bytes": 66644,
+      "olean_bytes": 1103712,
+      "measurements": {
+        "WALL_MS": 49698,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2670968832,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4806565888,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep004",
+      "source": "CentroidEscape/CenterStep004.lean",
+      "source_sha256": "c9f083c8ebdc015ca5ca980f5f4fff2910a6e8ca520dc03cfce0ac428bc76dd7",
+      "source_bytes": 66731,
+      "olean_bytes": 1104312,
+      "measurements": {
+        "WALL_MS": 54762,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2649780224,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4780883968,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep005",
+      "source": "CentroidEscape/CenterStep005.lean",
+      "source_sha256": "c2037ed50b1feed9a4e7878a22e1a22b07d2999e3a69b08fbc20c97313065c5c",
+      "source_bytes": 66751,
+      "olean_bytes": 1104520,
+      "measurements": {
+        "WALL_MS": 55375,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2754654208,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4828090368,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep006",
+      "source": "CentroidEscape/CenterStep006.lean",
+      "source_sha256": "a3ced44797b310064b97ab8962a4cbfe2c6cc1a7461ca4e439011e7f05f428a3",
+      "source_bytes": 66796,
+      "olean_bytes": 1104720,
+      "measurements": {
+        "WALL_MS": 48110,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2608410624,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4769472512,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep007",
+      "source": "CentroidEscape/CenterStep007.lean",
+      "source_sha256": "b67e540c991c05664e69fce2a6d7dd5d0fe20437097455b98969f969bc3d2e83",
+      "source_bytes": 66801,
+      "olean_bytes": 1104456,
+      "measurements": {
+        "WALL_MS": 52293,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2594451456,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4743880704,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep008",
+      "source": "CentroidEscape/CenterStep008.lean",
+      "source_sha256": "01bdec501a0a7b91666731daeb43490a8b14812fe9e32019a210398fdfb2c362",
+      "source_bytes": 66831,
+      "olean_bytes": 1105352,
+      "measurements": {
+        "WALL_MS": 60490,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2623098880,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4759707648,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterStep009",
+      "source": "CentroidEscape/CenterStep009.lean",
+      "source_sha256": "44b0062380ed5fc1d549c62604dfb76c1cc06f83184343fc4261c640a463e6b0",
+      "source_bytes": 66856,
+      "olean_bytes": 1105120,
+      "measurements": {
+        "WALL_MS": 58892,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 2796158976,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 4934676480,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterBlock000",
+      "source": "CentroidEscape/CenterBlock000.lean",
+      "source_sha256": "d4ed56d016a2bc6a42a9b717645ab56b9658e12479f78da7903a61eb1bd9df7d",
+      "source_bytes": 3492,
+      "olean_bytes": 85264,
+      "measurements": {
+        "WALL_MS": 28966,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 1699446784,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 3860819968,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterBlock005",
+      "source": "CentroidEscape/CenterBlock005.lean",
+      "source_sha256": "2519163e7c2de5db66c1502b2986de475a3a0e093ff388e55571194953cde4ee",
+      "source_bytes": 3492,
+      "olean_bytes": 85264,
+      "measurements": {
+        "WALL_MS": 23445,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 1694408704,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 3855040512,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    },
+    {
+      "module": "CentroidEscape.CenterFirstTen",
+      "source": "CentroidEscape/CenterFirstTen.lean",
+      "source_sha256": "8f6e1f7f24ec5dc989d9e4f6b688f0cdafa819a987fa140cbdd6c5f853c41116",
+      "source_bytes": 1389,
+      "olean_bytes": 35112,
+      "measurements": {
+        "WALL_MS": 17537,
+        "EXIT": 0,
+        "PEAK_RESIDENT_BYTES": 1778618368,
+        "SAMPLED_PEAK_PRIVATE_BYTES": 3873591296,
+        "MEMORY_CAP_MB": 4096
+      },
+      "compile_log": "verification.txt"
+    }
+  ],
+  "generator": {
+    "path": "generate_center_blocks.py (local provenance; generated Lean sources are self-contained)",
+    "sha256": "4831ccac7f1530bb7c01cdcc01b33599fa045b737ed083b32edd73b1fc2cc9e8"
+  },
+  "scope": "This certifies 10 of 3750 required polynomial steps. Initial-point containment and the full final shooting certificate are not asserted by FirstTen.checked."
+}

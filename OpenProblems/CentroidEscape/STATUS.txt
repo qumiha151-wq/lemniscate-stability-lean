@@ -98,17 +98,33 @@ Lean currently proves:
     interior tube containment, and every node's ball inflated by1e-43.
     The conclusion also holds for the chosen actual shootingFlow.
 
-Missing from the end-to-end Lean theorem:
+The complete finite-certificate soundness theorem is now proved:
+  - FiniteShootingPath and FivePathCertificate accept five finite751-table
+    paths, rational parameters and a rational preconditioner. The unique
+    proof hypothesis d.check=true implies existence of the smooth periodic
+    immersed classical intrinsic FEF with divergent arclength centroid;
+  - actual central-difference errors, the direct terminal-time column,
+    preconditioner injectivity, rational matrix checks and center-to-root
+    moment transport are discharged internally;
+  - CandidateEndpointChecks proves the finite scalar/matrix conditions on
+    actual proposed endpoint data. True endpoint containment still needs
+    the complete concrete grid checks;
+  - the first10 center steps now have concrete, unconditional kernel proofs:
+    600 Taylor stages,10 Horner endpoints,10 input margins and9 glues.
+    CenterFirstTen.checked proves the actual10-step partial segment. The
+    remaining3740 steps and the full five-path instance are still missing.
+
+Missing from the unconditional concrete Lean instance:
   - the concrete numerical/ODE estimates discharging the shooting root and
     moment hypotheses. The actual shooting map is constructed and the general
     checked-grid theorem proves inactive clipping over the whole true orbit;
-    the required concrete seven 750-step checks have NOT been completed;
-  - the concrete finite-difference, preconditioner and root conditions.
-    The actual order60 grid bridge, genuine joint derivative and useful
-    metric variation budget are proved, but do not by themselves evaluate
-    the required numerical conditions;
-  - a feasible concrete certificate with all arithmetic checks replayed by
-    the kernel. Native evaluator performance is not a proof of those checks.
+    the five required750-step paths have NOT all been kernel-checked.
+    The improved time-column formula removes the two old terminal-time probes;
+  - the final concrete d.check=true proof combining all3750 step recurrences,
+    Horner endpoints and finite gluing/margin conditions. Native five-path
+    generation and exact external diagnostics have passed, but do not prove
+    this premise. The actual proposed endpoint/matrix scalar checks already
+    pass in Lean; they alone do not prove that the balls contain true endpoints.
 Higher spatial and joint smoothness and the intrinsic curvature/PDE interface
 are now proved, conditional only on the explicit exact shooting input.
 Thus the complete centroid-escape theorem is NOT yet Lean-formalized.

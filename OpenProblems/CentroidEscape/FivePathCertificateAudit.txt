@@ -1,0 +1,63 @@
+Finite-certificate soundness and concrete verification boundary
+12 November 2026
+
+FivePathCertificate.lean closes the analytic and geometric chain. Its final
+theorem takes finite data d and ONE proof hypothesis d.check=true. It then
+produces a positive period and a jointly smooth periodic immersed classical
+free elastic flow, using the actual intrinsic elastic force, whose actual
+arclength centroid tends to positive infinity. It assumes neither an ideal
+shooting map/derivative nor an exact root or positive moment at that root.
+
+Finite data consist of a positive integer mesh, three rational parameters,
+five paths of751 finite Taylor tables, and a rational3x3 preconditioner.
+The paths are the center and the four spatial probes a+/-, b+/-. The true
+terminal-time derivative equals the projected field at the center endpoint,
+so no L+/- paths are required. Every path still requires750 order60 steps.
+
+The checks include all coefficient recurrences, endpoint gluing, input
+margins, rational initial containment, inflated projected endpoint radii,
+the time-column field-ball radius, rational matrix row sums and residuals,
+the horizon range, and a strict center moment lower bound. The fixed budgets
+are delta=1e-25, root radius1e-28, H=6e14, eta=etaTime=1e-40, inverse norm2,
+matrix defect1e-9, preconditioned center residual1e-35 and contraction2e-9.
+
+The weighted-state allowance1e-43 is NOT treated as the raw shooting error:
+projection multiplies coordinate radii by1,4,64. ShootingProbeBridge proves
+the common-horizon transfer, and ShootingTimeColumn proves the actual time
+column identity. FivePathRationalData verifies matrix orientation and casts.
+MatrixCertificate connects rational Bool row-sum checks to real CLM norms.
+The defect bound also proves preconditioner injectivity in dimension3.
+
+ShootingGeometryBridge transports the center moment to the unknown Newton
+root with error at most7,000,000*radius, then invokes the proved reflection,
+reparametrization, joint smoothness, intrinsic FEF and centroid arguments.
+The finite check on the center moment is therefore sufficient; a positive
+moment at an unknown root is not hidden among the assumptions.
+
+CandidateEndpointChecks contains ACTUAL finite numerical kernel checks on
+the proposed five endpoint balls and proposed rational preconditioner.
+Widths, horizon, matrix bound/defect, center residual and moment margin all
+pass. Those proposed balls become true ODE enclosures only after the full
+concrete grid checks. This module does not assert that missing containment.
+
+FiniteTaylorBlock composes separately proved step/block checks by reusing
+their proof terms. Only coefficient0 must agree at a boundary, so the final
+table need not carry another unused60-stage recurrence. A finished750-step
+segment can then be converted to FiniteShootingPath and its finite check.
+This permits incremental proofs instead of one huge Boolean reduction.
+
+CenterFirstTen.checked is an unconditional proof for the literal first10
+center steps:600 recurrence stages,10 Horner endpoints,10 input margins and
+9 glues. Two five-step blocks are composed without rechecking old stages.
+This certifies a partial segment; initial-point containment and the complete
+750-step endpoint enclosure are separate requirements of the full path API.
+
+All theorem dependencies are audited against propext, Classical.choice and
+Quot.sound. Native numerical generation and external exact Fraction audits
+do not supply the final d.check=true proof. All3750 concrete step recurrences
+and Horner calculations must still be kernel-checked and assembled before
+an unconditional numerical instance of the escape theorem is established.
+
+The constructed candidate's convex hull contains the expansion center.
+It is not a migration example, and this work is not a full classification
+or a solution of all remaining questions of the paper.

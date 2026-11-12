@@ -49,8 +49,14 @@ CentroidEscape/: computer-assisted existence proof of a closed expander
   constant39/20, actual metric Hessian/midpoint estimates, and the order60
   vector differential residual. The actual order60 checked-grid integration
   bridge and actual shooting Jacobian variation bound6e14 are now proved.
-  Concrete iterated data and final root hypotheses still need their checks;
-  generic small budgets are not roots.
+  A final finite five-path certificate soundness theorem now closes the
+  complete analytic/root/geometric chain. Proposed numerical endpoint and
+  matrix scalar checks pass in Lean, and all five native datasets have been
+  generated. The full3750-step kernel certificate is still incomplete;
+  generic soundness and native numerical viability are not its proof.
+  The first10 actual center steps, with600 Taylor stages,10 endpoints and
+  input margins, and9 glues, now pass kernel checks and a combined audit.
+  They form a partial segment, not a finished750-step path or complete flow.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence
   are not yet formalized.

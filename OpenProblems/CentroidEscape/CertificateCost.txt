@@ -28,7 +28,7 @@ Those changes must retain proved real containment and kernel-checked data.
 The complete concrete numerical certificate is still missing.
 
 Verified local order60 single-step experiment (actual shooting center)
-The exact170-digit rational center and h=L/750 were used with mesh10^80.
+The exact rational center from the JSON and h=L/750 were used with mesh10^80.
 All60 recurrence stages, all actual-checker bridges, initial containment,
 Horner endpoint containment, and input/output .024 margins passed kernel
 checking. The endpoint theorem concerns the actual canonical order60
@@ -42,3 +42,39 @@ These measurements show remaining proof-storage and total-run cost. They
 are not a completed750-step path or seven-path certificate. Removing
 unneeded runtime code generation and splitting certificates are being tested.
 The concrete benchmark module is not part of this generic-interface batch.
+
+Current direct-stage format and native five-path preflight
+Each stage is proved independently, using a typed validity proof for final
+assembly. Synchronization points every10 stages prevent deferred elaboration
+from retaining excessive memory; the same numerical statements then compile
+under the controlled4GB cap. Raising the cap was not the accepted fix.
+
+The direct first-step format measured51,154 source bytes and1,163,008 olean
+bytes,34.315s/peak resident2.601GB. A two-step import and strict audit used
+about1.689GB resident, with audit loop under1s. This format's full compiled
+step is about1.2MB; counting only the data and individual lemmas understates
+its size. A whole3750-step extrapolation is still not a measured full build.
+The concrete first-ten-step block is being used to measure cloud cost before
+scaling. The repository is public, and its existing ubuntu-latest workflow
+uses standard hosted runners; actual job logs are the performance evidence.
+
+Five native750-step datasets have been generated, approximately163.4MB total.
+These untrusted generation runs took54-82s each on the shared host. They are
+separate from trusted kernel checking. NativePreflight.txt records the exact
+verification boundary and CandidateEndpointChecks proves the small finite
+endpoint/matrix scalar inequalities without assuming full grid containment.
+
+Frozen concrete first-ten-step batch
+All600 stages,10 endpoints,10 input margins and9 glues now pass the Lean
+kernel and standard-axiom audit. The15 modules including FiniteTaylorBlock
+total660,636 source bytes and11,439,920 compiled olean bytes. The standalone
+Step001 took34.602s with2.6495GB peak resident memory; paired successful
+step runs took48.110--60.490s with2.594--2.796GB resident peaks. The two block
+aggregations took28.966s and23.445s; final aggregation and transitive audit
+took17.537s and1.7786GB peak resident. These are local shared-host numbers.
+ConcreteFirstTen.txt and its manifest record scope and frozen source hashes.
+
+Small proof-assembly experiments indicate that replacing fin_cases tactic
+aggregation can reduce per-step compiled size substantially. Those smaller
+layouts are not silently substituted into the already frozen first-ten
+batch. A fresh full-step measurement is required before extrapolating them.

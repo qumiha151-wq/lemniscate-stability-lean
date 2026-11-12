@@ -1,0 +1,62 @@
+FROZEN 2026-11-12: actual center steps0,...,9 kernel checked and aggregated.
+
+This is a concrete partial certificate, not only a generic soundness theorem.
+Every one of the600 Taylor-stage identities,10 Horner endpoint identities,
+10 input-margin checks, and9 adjacent endpoint/input equalities has now been
+checked by Lean. FirstTen.checked has no hypotheses and proves
+  Order60SegmentValid mesh stepTime10 stages
+for the literal data generated from center/step0.json,...,step9.json.
+Its transitive axiom audit passed with only propext,Classical.choice,Quot.sound.
+
+All files below are frozen after final successful compilation. The absolute
+source paths, source SHA256, original JSON SHA256, artifact sizes, compile
+logs, wall times and memory measurements are in CenterFirstTen_manifest.json.
+
+Build/import order (all files in work/centroid_formal):
+1. FiniteTaylorBlock.lean (imports existing FiniteShootingPath).
+2. CenterBlockParameters.lean (imports VariableOrderCertificate).
+3. CenterStep000.lean,...,CenterStep009.lean independently; each imports only
+   CenterBlockParameters and BallStep. No step imports another concrete step
+   or the large shooting/geometry chain.
+4. CenterBlock000.lean imports0,...,4 and FiniteTaylorBlock.
+   CenterBlock005.lean imports5,...,9 and FiniteTaylorBlock.
+5. CenterFirstTen.lean imports the two blocks and performs the final audit.
+
+FiniteTaylorBlock proves an arithmetic-free append theorem. At a block
+boundary only coefficient0 must agree: the left terminal table can have
+one coefficient vector, while the next step has all61. It also proves that
+a complete750-step segment, finite initial-point containment, and the final
+projected-radius check supply FiniteShootingPath.check=true. No10-step data
+are treated as a completed750-step path.
+
+Actual measured successful final runs (resident memory, not private mappings):
+Step001 alone:34.602s,2,649,501,696B peak resident.
+Steps mostly run in pairs:48.110--60.490s each; successful resident peaks
+over all10 steps range2,594,451,456--2,796,158,976B.
+Block000:28.966s,1,699,446,784B peak resident.
+Block005:23.445s,1,694,408,704B peak resident.
+FirstTen aggregation+transitive audit:17.537s,1,778,618,368B peak resident.
+All used Lean-M4096-j1. Total source660,636B; total olean11,439,920B.
+Two early Step001 runs without command synchronization exceeded the4GB
+Lean cap. The final successful generator inserts a run_cmd synchronization
+point after each ten stages, after proof aggregation, and after endpoint
+checking. These are included in the frozen checked sources. Removing them
+may reintroduce asynchronous-elaboration accumulation.
+
+Reproducible generation and recording:
+generate_center_blocks.py reads the untrusted native JSON and emits the
+literal proof sources. Trust comes from decide+kernel in the generated
+sources, never from the Python producer. The generator does not mark the
+native750-step status files as kernel verified.
+record_center_first_ten.py reads successful compile logs, records hashes,
+and clearly marks this as a partial center segment. It does not certify
+the remaining3740 steps, the five-path root check, or any complete escaping
+flow. Initial-point containment is intentionally not a conclusion of the
+partial segment theorem; the full finite-path API checks it separately.
+
+Future source-size optimization, not applied to this frozen batch:
+The weighted_field agent has checked that explicit nested Fin.cases in the
+60-stage proof aggregation can save roughly535KB per-step olean compared
+with the fin_cases tactic. Future newly generated steps can adopt its
+tested compact form. The already checked600-stage batch is not silently
+regenerated under a changed proof generator.
