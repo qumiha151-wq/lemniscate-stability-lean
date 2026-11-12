@@ -6,7 +6,7 @@ run_cmd do
   let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
-    if (`FreeElasticFlow).isPrefixOf name then
+    if (`FreeElasticFlow).isPrefixOf name || (`MigrationGeometry).isPrefixOf name then
       let axioms ← collectAxioms name
       for axiomName in axioms do
         unless allowed.contains axiomName do

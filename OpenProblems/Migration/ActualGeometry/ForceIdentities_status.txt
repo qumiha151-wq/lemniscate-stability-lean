@@ -1,0 +1,25 @@
+ACTUAL ELASTIC FORCE IDENTITIES -- 13 November 2026
+
+Actual verification: check_module.ps1 -Module ForceIdentities, Lean4.33.1,
+pinned Mathlib0df444a360eaa60ab8c11dca51a86af692955474. Final session63639
+returned exit0, no warnings, recursive audit50 MigrationGeometry declarations
+with only propext, Classical.choice and Quot.sound. Counts include imports.
+
+From actual C-infinity planar coordinates and the global unit-speed identity,
+the module constructs signed curvature k=x'y''-y'x'', the actual force
+F=k''+k^3/2 and stress W=(k^2/2)T+k'N. Differentiating unit speed gives the
+actual Frenet identities; differentiating this stress proves W'=F N.
+For periodic coordinates, derivative/stress periodicity is proved. Integrating
+the actual stress derivative proves the two force-balance components integral
+F N=0. For every center d, the derivative of (gamma-d).W is k^2/2+F p.
+Integrating this periodic actual scalar gives integral F p=-E, with
+E=(integral k^2)/2. These integral identities are conclusions, not hypotheses.
+
+No integral positivity, dilation defect, time-dependent PDE statement or
+migration conclusion is proved by this module alone. The subsequent actual
+geometry modules must provide the other required statements.
+
+The elementary coordinate Frenet proof is adapted from the same task's
+OpenTranslators/ImmersionFrenet.lean, independently compiled here; imports
+are only Migration.NormalRegression and Mathlib. No cross-problem proof
+dependency is introduced. Existing frozen source files were unchanged.

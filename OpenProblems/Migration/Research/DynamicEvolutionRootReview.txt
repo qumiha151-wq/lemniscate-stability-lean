@@ -1,0 +1,40 @@
+ROOT INDEPENDENT ANALYTIC REVIEW -- 13 November 2026
+
+The root checked the material derivatives and the two integrations by
+parts in the center identity. Differentiating the actual balance gives
+the displayed A*d' equation; the extra -2 integral F*N vanishes by force
+balance. The identity (p^2*T)'=-p*H removes the whole dilation term.
+The projected mobility coefficient correctly removes the two normal
+components and is already orthogonal to p. Symmetry of A justifies the
+directional coefficient A^(-1)e. The nonmigration argument uses actual
+center margins at the endpoints and a mobility bound in between; it does
+not prove that any initial-data condition propagates.
+
+The improved curvature projection is k+(L/J)p, whose squared integral
+is exactly2E-L^2/J. The stated dimensionless growth cone and the log
+identities follow with the displayed constants. The J derivative has
+the essential term -4 integral pF; retaining that factor gives
+J'=3E+C_J and the stated derivative of E^3*J. The history-dependent
+lambda normalization is not a static shape functional.
+
+For the explicit stretched lemniscate, direct differentiation gives
+x'=-sin(u)*(3-r)/(1+r)^2 and y'=b*(1-3r)/(1+r)^2. These verify the speed,
+normal support and tangent support in the note. Their curvature and
+second arclength derivative give exactly the stated F formula. The
+polynomial identity P-b^2*(1+r)^3=(1-b^2)*r*(3-r)^2 proves regularity at
+b=99/100. Reflection symmetry, not a centroid substitution, identifies
+the regression center as zero. Equation(15) is the actual normal-flow
+first variation, not differentiation in the stretching parameter b.
+
+The root inspected the Arb callback: every square root forwards its
+analytic flag; finiteness, real-part enclosure, strict positivity and
+two integral consistency checks are enforced. The exact unchanged
+program was independently rerun in work/independent_dynamic and exited0.
+Both precision reports were exactly identical to the original JSON.
+See ReplayResults.json for exact hashes and the actual python-flint
+version. This repeats the same implementation; it is not an independent
+algorithm, a Lean kernel proof or a time-dependent ODE enclosure.
+
+No substantive error was found in these stated limited conclusions.
+General migration, unrestricted quarter-power growth, propagation of
+the shape bounds, and an initial-data nonmigration theorem remain open.

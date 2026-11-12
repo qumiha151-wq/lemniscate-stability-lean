@@ -1,0 +1,41 @@
+POSITIVE ACTUAL NORMAL-DISTANCE ENERGY -- 13 November 2026
+
+NormalSupportPositive.lean was actually compiled by
+  work/migration_formal/check_module.ps1 -Module NormalSupportPositive
+with exit 0, no warnings, and the recursive standard-three-axiom audit:
+  Normal support positivity audit passed for 27 declarations; standard axioms only.
+Toolchain: Lean 4.33.1; Mathlib pin
+0df444a360eaa60ab8c11dca51a86af692955474.
+
+Source SHA256:
+EEDF10626181F3CEF7547600791496D0D3F603EF8E0136325A313AC56C191134
+Compiled olean SHA256 (474056 bytes):
+D220A6D3F3E69A7E9AA4641E4E782661E2B5C3ED450C004FD5D88B613F028520
+Compiled path: work/formal-build/Migration/Migration/NormalSupportPositive.olean.
+
+The main theorem normalDistanceSquared_pos takes actual C-infinity
+coordinates x,y, positive L, full L-periodicity of both coordinates,
+actual unit speed on [0,L], and an arbitrary point d:Fin 2->R. It proves
+strict positivity of the actual integral
+  integral_0^L [-(x-d0)y'+(y-d1)x']^2 ds.
+regressionCenter_distance_pos specializes this to the inverse-defined
+regression center; hence the denominator J in the proposed dynamic
+dilation decomposition is actually positive, not assumed positive.
+
+Proof: suppose the normal support vanishes throughout the period. Actual
+periodicity makes a maximum of squared distance on [0,L] a global maximum.
+Its actual derivative is zero, so the tangential projection also vanishes
+there. The unit-speed coordinate identity then forces the maximal squared
+distance to be zero. Both coordinates would be constant everywhere,
+contradicting actual unit speed. Thus support is nonzero somewhere;
+continuity gives a strictly positive squared integral.
+
+This avoids importing or assuming any Frenet system, elastic force,
+stress, virial identity, force balance, or dynamical conclusion. The
+only project import is Migration.NormalRegression. No proof source from
+another problem project was copied. Frozen NormalGram and NormalRegression
+and all published output snapshots remain unchanged.
+
+Boundary: this is a geometric positivity theorem. It does not itself
+prove the actual force residual identity or any migration/nonmigration
+claim. Those require the separate actual-force and evolution modules.

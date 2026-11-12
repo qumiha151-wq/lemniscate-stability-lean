@@ -24,6 +24,12 @@ LengthGrowth/: scalar dissipation-to-secant theorem and conditional
   total absolute curvature along arbitrary flows is still missing.
 Migration/: scalar one-sided homothetic migration criterion. No existence
   theorem for a one-sided closed free-elastic-flow expander is supplied.
+  Six actual-coordinate geometry modules additionally derive the inverse-
+  defined regression center, J>0, E>0, force balance, dilation virial and
+  D-E^2/J=integral w^2. The residual is orthogonal to support and normal
+  components; zero defect is equivalent to the actual dilation-profile
+  equation. No integral identities are assumed. These are spatial results;
+  the dynamic migration/nonmigration problem remains unresolved.
 SolitonClassification/: independent support-function ODE and actual geometric
   reconstruction. The reviewed analytic note reduces all noncircular similarity
   motions to fixed-center spiral expanders, but does not classify their profiles.
@@ -54,6 +60,17 @@ SolitonClassification/: independent support-function ODE and actual geometric
   finite Taylor/interval algorithms and conditional actual-root interfaces.
   The first order-60 finite polynomial is kernel-checked; the complete
   8000-segment ODE certificate and candidate root remain unfinished.
+  Nineteen further modules construct the actual confined ODE flow and
+  its initial/joint derivatives, derive the actual first variational ODE,
+  and prove a sharp shooting-derivative variation budget from true P/Q
+  bounds. The root interface now needs no assumed flow C1 or Hessian.
+  Its actual tube/matrix bounds and center enclosures remain to be supplied
+  by the full numerical certificate. No candidate zero is yet certified.
+  Scalar reflection is also formalized: nonconstant reflection-even
+  scalar curvature solving the equation forces zero rotation parameter.
+  Four further modules prove the actual derivative invertible, construct
+  its canonical continuous inverse and derive the inverse ODE. The final
+  root interface needs no independently assumed inverse or inverse identity.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,

@@ -1,3 +1,6 @@
+import SolitonClassification.Rotating.FlowInverseAudit
+import SolitonClassification.ScalarReflection
+import SolitonClassification.Rotating.ActualFlowAudit
 import SolitonClassification.Rotating.CoreAudit
 import SolitonClassification.ScalarParameterUniqueness
 import SolitonClassification.CircleLinearization

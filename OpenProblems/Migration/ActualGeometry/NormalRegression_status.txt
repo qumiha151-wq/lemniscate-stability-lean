@@ -1,0 +1,45 @@
+ACTUAL NORMAL-DISTANCE REGRESSION CENTER -- 13 November 2026
+
+NormalRegression.lean was actually compiled by
+  work/migration_formal/check_module.ps1 -Module NormalRegression
+with exit 0, no warnings, and the recursive standard-three-axiom audit:
+  Normal regression audit passed for 23 declarations; standard axioms only.
+Toolchain: Lean 4.33.1; Mathlib pin
+0df444a360eaa60ab8c11dca51a86af692955474.
+
+Source SHA256:
+435096E494A1AF850D5BB2193E9157606790A9AA964EC4B0A6E93B7ACAEA1740
+Compiled olean SHA256 (546792 bytes):
+BB668C0D2552DC5CE0E90DDB1F9823F069C5A839FBEFAB19AAB74E8304534BDB
+Compiled path: work/formal-build/Migration/Migration/NormalRegression.olean.
+
+Only Migration.NormalGram is imported. Definitions use the actual
+coordinate derivatives N=(-y',x'), actual support p_d=(gamma-d).N,
+actual interval integrals, and the actual Gram inverse:
+  d=A^(-1) * integral ((gamma.N)N) ds.
+NormalGram proves invertibility from actual closed coordinates and unit
+speed; no matrix invertibility or integral balance is assumed here.
+
+Proved conclusions:
+* regressionCenter_balance: integral p_d N ds=0, componentwise.
+* regressionCenter_distance_identity: for every z,
+    integral p_z^2 = integral p_d^2 + (z-d)^T A (z-d).
+* regressionCenter_unique_minimizer: d minimizes the actual normal-distance
+  functional over all points, with equality if and only if z=d.
+
+All principal theorems take actual C-infinity x,y, L>0, x(L)=x(0),
+y(L)=y(0), and actual unit speed on [0,L]. They do not take any Frenet,
+stress, force-balance, minimization, or integral-projection identity as
+an input. Such identities are proved from the definitions.
+
+The proof was written independently in this project using the mathematical
+definitions from migration_dynamic_decomposition.txt. No proof source from
+another problem's Lean project was copied or imported. Standard Hilbert
+algebra is not being substituted for the actual curve input: expansion
+and integration of the actual coordinate formulas are included.
+
+Boundary: no claim here that the center is inside the convex hull; this
+can fail for general curves. J>0 is handled separately, and the real
+elastic-force residual and time evolution are not yet formalized. This
+does not settle migration. Frozen NormalGram and all published outputs
+were left unchanged.

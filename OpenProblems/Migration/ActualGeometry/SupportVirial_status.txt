@@ -1,0 +1,32 @@
+ACTUAL TANGENT-SUPPORT VIRIAL AND POSITIVE BENDING ENERGY
+13 November 2026. Actual compilation PASS, exit 0, no warnings.
+Command: work/migration_formal/check_module.ps1 -Module SupportVirial
+Lean 4.33.1; Mathlib 0df444a360eaa60ab8c11dca51a86af692955474.
+Recursive audit: 58 MigrationGeometry declarations, standard axioms only
+(propext, Classical.choice, Quot.sound).
+
+Source SHA256:
+071052A22EA31E6E90CDB6EB8BF911CE0B82E06B68B284BB7D6C66AF72B49564
+Olean SHA256, 221536 bytes:
+47E3CF48648C94E564866D8A0ACBE66D7A3B6B0B911073B968F5C0AB09D783BC
+Olean: work/formal-build/Migration/Migration/SupportVirial.olean.
+
+From actual C-infinity coordinate functions x,y and actual global unit
+speed, the theorem tangentSupport_hasDerivAt derives q'=1+k*p for
+q=(x-d0)x'+(y-d1)y' and the already defined actual signed curvature k
+and normal support p. Periodicity of x,y then implies periodic q and
+curvature_normalSupport_integral proves integral_0^L k*p=-L.
+
+For L>0 this forces k to be nonzero at some point of [0,L]. Continuity
+of the actual curvature proves positivity of integral k^2, hence the
+theorem bendingEnergy_pos proves E>0 with no positive-energy hypothesis.
+
+Only Migration.ForceIdentities is imported; that module independently
+derives the actual Frenet formulas. No cross-problem import or copied
+proof source is used here. Closure, actual derivatives and unit speed
+are explicit input hypotheses. Neither a support ODE nor an integral
+virial relation is assumed.
+
+This module supplies a geometric ingredient for the positive actual
+dilation coefficient. It asserts no migration/nonmigration conclusion.
+All previous frozen sources and published output snapshots are unchanged.

@@ -166,3 +166,37 @@ of dilation and rotation parameters. Nonzero constant curvature still has
 unique dilation; rotation uniqueness is not asserted for a circle.
 See ScalarParameterUniquenessScope.txt and the exact source manifest.
 The integrated local audit passes for 726 declarations; standard axioms only.
+
+ACTUAL FLOW AND SHARP DERIVATIVE BRIDGE
+Nineteen additional modules construct the actual clipped flow, prove its
+original-ODE identification on confined trajectories, and derive initial
+and joint strict differentiation and the true first variational ODE.
+From actual fundamental/right-inverse bounds K/I, they derive spatial
+variation4*K^3*I*t and the actual shooting derivative budget
+16*(4*K^3*I*T+34*K+1275). No FlowC1, Hessian or derivative-variation premise
+is required in exists_unique_actual_shooting_zero_of_true_matrices.
+The numerical candidate remains uninstantiated: true long-time tube/P/Q
+bounds and center enclosures are still certificate obligations. The337
+declarations in the standalone ActualFlowAudit include shared prerequisites;
+they are not337 solved problems and are not additive to the earlier406.
+See ActualFlowMilestone/ActualFlowFrozenStatus.txt and RootSemanticAudit.txt.
+The newest integrated audit at the end of verification.txt supersedes726.
+
+ScalarReflection proves the exact b sign-change under k(s)->k(c-s) and
+excludes this reflection-even scalar curvature when b is nonzero and k
+is nonconstant. It is not an existence or complete-classification result.
+
+CANONICAL ACTUAL INVERSE
+Four FlowInverse modules prove invertibility of the actual initial
+derivative by backward ODE uniqueness, define its canonical inverse,
+derive continuity and Q'=-Q*A, and remove the freely supplied inverse
+from the root certificate. The final interface is now
+exists_unique_actual_shooting_zero_of_actual_matrix_bounds.
+Only actual tube/P/canonical-Q norm bounds and the numerical center
+enclosures remain in this analytic-to-numerical interface. These have
+not yet been supplied for the entire candidate parameter cube.
+See ActualFlowMilestone/FlowInverseFrozenStatus.txt. The standalone
+combined inverse audit has364 declarations including prior imports;
+the newest whole-project count appears at the end of verification.txt.
+
+Current independent integrated audit:962 declarations; standard three axioms only.

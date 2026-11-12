@@ -1,0 +1,50 @@
+ACTUAL ELASTIC-FORCE DILATION DEFECT -- 13 November 2026
+
+Actual final compilation succeeded, exit 0, no warnings:
+  work/migration_formal/check_module.ps1 -Module DilationDefect
+Lean 4.33.1; Mathlib pin 0df444a360eaa60ab8c11dca51a86af692955474.
+Recursive audit: 77 imported-and-new MigrationGeometry declarations;
+only propext, Classical.choice and Quot.sound are permitted.
+
+Source SHA256:
+F7D207F16169F2931B285956FEB8D10F8220F330A8352C47057A6FF6BB9B5F20
+Olean SHA256, 346864 bytes:
+BC886CA95F36AE3BE7A9691092A06375A1D4EE93CCBBF251A737DACD73291C31
+Olean: work/formal-build/Migration/Migration/DilationDefect.olean.
+
+The definitions are constructed from the same actual coordinate curve:
+  d = inverse-defined normal-distance regression center;
+  p = -(x-d0)y'+(y-d1)x'; J=integral p^2;
+  k=x'y''-y'x''; F=k''+k^3/2;
+  E=(1/2)integral k^2; D=integral F^2;
+  a=E/J; w=F+a*p; Delta=D-E^2/J.
+
+Main hypotheses are actual C-infinity coordinates x,y:R->R, a positive
+period L, periodicity of both coordinates, and actual global unit speed.
+No force balance, support identity, virial formula, E>0, J>0, projection
+orthogonality, residual equality, or desired conclusion is assumed.
+All of these prerequisites are derived by the independent Migration
+modules NormalGram, NormalRegression, NormalSupportPositive,
+ForceIdentities and SupportVirial.
+
+Proved:
+* dilationCoefficient_pos: a>0.
+* elasticForce_dilation_square_integral: the actual square integral for
+  every candidate coefficient b is D-2*b*E+b^2*J.
+* dilationDefect_eq_integral_square: Delta=integral w^2.
+* dilationDefect_nonneg: Delta>=0.
+* dilationResidual_support_orthogonal: integral w*p=0.
+* dilationResidual_normal_balance: integral w*N=0 in both coordinates.
+* dilationDefect_eq_zero_iff: Delta=0 iff F=-a*p everywhere on R.
+  Continuity upgrades zero squared integral to pointwise vanishing on
+  the period, and actual periodicity then extends it to every parameter.
+
+The last theorem characterizes the actual spatial dilation-profile
+equation at a curve. It is not a time-dependent homothety theorem and
+does not construct, classify, or exclude migrating trajectories.
+The support-function evolution inequality, centroid evolution, and
+propagation of a nonmigration criterion remain outside this module.
+
+Only the independent Migration project and Mathlib are imported.
+No proof source from another open-problem project was copied here.
+All previously frozen files and published output snapshots remain unchanged.

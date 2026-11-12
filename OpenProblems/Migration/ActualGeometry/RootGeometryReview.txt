@@ -1,0 +1,48 @@
+ROOT INDEPENDENT SEMANTIC REVIEW -- 13 November 2026
+
+Reviewed actual source: NormalGram.lean, NormalRegression.lean and
+NormalSupportPositive.lean. The pointwise normal is (-y',x'), built from
+coordinate derivatives. No auxiliary normal or Frenet data are supplied.
+
+NormalGram applies Rolle to the actual position projection on [0,L].
+At its critical point the unit tangent has zero projection in the chosen
+nonzero direction, so the normal projection is nonzero. Its squared
+integral is strictly positive by continuity. The concrete 2x2 matrix is
+proved to have precisely this integral quadratic form. Matrix.PosDef
+and invertibility are derived. Endpoint closure suffices for this part;
+the hypotheses do not silently assert derivative-periodicity.
+
+NormalRegression defines the center using that concrete matrix inverse.
+Expanding the actual integrals proves the affine balance equation, hence
+zero normal balance at the center. Expanding squared distance and using
+this proved balance yields exactly the Gram quadratic form as the gap.
+Positive definiteness makes the minimizer unique. Invertibility and
+least-squares optimality are conclusions, not assumptions.
+
+NormalSupportPositive requires actual periodic coordinates, L>0 and
+unit speed on [0,L]. A compact-period maximum of squared distance is a
+global maximum by periodicity. If all normal support vanished, zero
+derivative at this maximum would also make its tangent projection zero.
+The unit tangent/normal identity then makes the maximum distance zero.
+The coordinates would be constant globally, contradicting unit speed.
+Continuity supplies a strictly positive integral of squared support for
+every center. No force identity, time evolution or curvature assumption
+is used here.
+
+These arguments are valid geometric prerequisites for the proposed
+force/dilation decomposition. They do not constrain the regression
+center to the convex hull, prove nonmigration, or construct a migrating
+flow. No such conclusion is claimed. No correction to these three
+frozen sources was requested by the root review.
+
+The root also reviewed SupportVirial and DilationDefect in full. The actual
+Frenet/stress identities in ForceIdentities have the expected normal-gauge
+signs W'=F*N and ((gamma-d).W)'=k^2/2+F*p. The tangent support derivative
+is 1+k*p. Closed-period integration gives the required identities, and
+positive L rules out identically zero curvature. Strict positivity of E
+and J therefore precedes every division. Expanding the actual residual
+square gives D-E^2/J; both normal/support orthogonalities use the already
+proved geometric integrals. Continuity and actual periodicity upgrade
+zero square integral to the pointwise profile equation everywhere. This
+last conclusion is spatial only. No unproved evolution or convex-hull
+property is smuggled into its hypotheses or conclusions.

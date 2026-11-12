@@ -1,0 +1,27 @@
+INDEPENDENT SOURCE AND SEMANTIC REVIEW -- 13 November 2026
+Reviewer: finish_odd_rigidity.
+Reviewed ScalarReflection.lean, SHA256
+42C520C7ACCBA26B83C0450D4A6D8F7171F15221DEC024DCA511A37EF106038B.
+
+Verdict: the sign change and final scope are correct. For h(s)=k(c-s),
+h'=-k'(c-s), h''=k''(c-s), and force(h)=force(k)(c-s). Thus its force
+derivative and k' change sign while the force's second derivative does
+not. Substitution in the actual ScalarEquation sends (a,b) to (a,-b).
+
+For reflection-even k, the SAME k satisfies both parameter choices.
+Their difference gives 2*b*k'=0. Differentiability and nonconstancy on
+R provide a point where k' is nonzero, yielding b=0. This argument
+does not use periodicity or a positive dilation parameter, and the
+theorem does not silently assume them. Nonconstancy is essential:
+constant curvature does not determine b through this scalar equation.
+
+The reflection center is c/2. As the source explicitly states, this is
+the scalar transformation k(s)->k(c-s). Reversing the orientation of an
+actual plane curve changes signed curvature to -k(c-s), so that separate
+geometric operation must not be attributed to this theorem.
+
+The result is a necessary condition for reflection-even scalar solutions;
+it proves no existence and no exhaustive classification. The parent's
+actual log reports PASS40 with only standard three axioms. This review
+checked source and mathematical semantics independently, not a second
+compiler execution. No correction requested; frozen source unchanged.

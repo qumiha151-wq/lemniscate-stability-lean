@@ -1,0 +1,107 @@
+Actual rotating ODE / derivative / quantitative-root bridge
+Frozen source batch: 19 Lean files, 2026-11-13.
+
+This batch is independent of the other open-problem projects. Its imports
+are Mathlib and SolitonClassification.Rotating only. The previously
+published 13 rotating modules, their manifest, and the CAP16 files were
+not modified. FlowTube is owned and separately frozen by audit_full_escape;
+the other 18 files (including the combined audit) are owned by
+finish_curve_input.
+
+BUILD ORDER AND PREREQUISITES
+ActualFlowDependencyOrder.txt lists all 19 new files in valid dependency
+order. First build their already-published prerequisites: RationalBall,
+Field, ResidualODE, BanachRoot, ShootingRoot, together with any imports
+those modules themselves require. All project modules use namespace
+SolitonClassification.Rotating; whole-project axiom audits must include
+that prefix in addition to the older ClosedSimilarity prefix.
+
+The direct local checker is check_module.ps1. It uses Lean 4.33.1 and the
+read-only local Mathlib installation, with only this rotating build root
+and Mathlib/package object directories on LEAN_PATH. It never imports an
+OpenTranslators, LengthGrowth, or CentroidEscape project.
+
+ACTUAL VALIDATION
+Every source in the manifest has a successful direct compile. The manifest
+records the source, object, and compiler-output hashes and the observed
+tool-session identifiers. FlowTube's direct compile was performed by its
+owner; its source is also imported by the final combined audit.
+PartialDerivatives' final direct compile was session 21745, EXIT 0, with
+empty stdout/stderr; its zero-byte log records that empty output.
+
+Final ShootingVariation and ActualRootFromMatrices were compiled in that
+order in session 61302: EXIT 0, no warnings, respective recursive audits
+295 and 317 declarations. ActualFlowAudit was compiled in session 28202:
+EXIT 0, no warnings, 337 declarations recursively checked. Each permits
+only propext, Classical.choice, and Quot.sound. Seven main actual-flow,
+variation, and root theorems also have explicit #print axioms outputs in
+ActualFlowAudit.build.log. These are actual compiler results, not an
+inference from the presence of object files.
+
+WHAT IS PROVED
+1. A bounded globally Lipschitz field has an actual unique global flow.
+   Applying this to the clipped six-dimensional rotating field gives the
+   selected actual supportFlow for every real time and initial state.
+   It solves the original polynomial ODE on every actually confined
+   trajectory. FlowTube independently proves unconditional short original
+   trajectories from innerTube for 0 <= t <= 1/125.
+2. Actual ODE midpoint estimates construct the derivative in initial
+   state by convergent dyadic quotients. They give its continuity and
+   actual joint strict differentiability on confined time/state regions.
+   Flow C1 is a conclusion, never a free premise.
+3. Differentiating the actual integral equation proves the genuine first
+   variational integral equation and its right-derivative ODE. P is the
+   actual fderiv of supportFlow, not an independently specified matrix.
+4. The actual polynomial field has ||D^2 field|| <= 4 on outerTube, hence
+   its actual first derivative is Lipschitz with constant 4 there.
+5. Variation of constants is proved for true fundamental/right-inverse
+   matrices, including the one-sided/closed-interval interface needed
+   by the actual flow. If true P and true Q have bounds K and I, the
+   genuine spatial variation of P is <= 4*K^3*I*t*||b-a||.
+6. Actual joint flow derivative variation has budget
+       4*K^3*I*T + 34*K + 1275.
+   For |e0|,|e1| <= 1 the actual five-parameter shooting derivative has
+   variation budget
+       16*(4*K^3*I*T + 34*K + 1275).
+   Arithmetic verifies this is < 10^20 at T=32, K=8000, I=16000.
+7. exists_unique_actual_shooting_zero_of_true_matrices derives a genuine
+   unique shooting zero in the specified parameter ball from true tube
+   and actual P/Q bounds plus the center residual/Jacobian enclosures,
+   preconditioner, contraction and self-mapping inequalities. It has no
+   assumed flow differentiability, assumed shooting Hessian, or assumed
+   shooting derivative-variation estimate.
+
+REMAINING OBLIGATIONS / EXACT SCOPE
+The numerical candidate has NOT been instantiated in this theorem.
+Uniform tube confinement for the required long time and full parameter
+region, true P/Q bounds (including a continuous actual right inverse),
+and actual center residual/Jacobian enclosures remain explicit inputs.
+The intended K=8000 and I=16000 have not been proved from the 8000 stored
+segments by this batch. The interval Taylor tails, metric reset
+accumulation, true-matrix/inverse comparison, and full parameter-cube
+connection must still supply those inputs. A numerical array cannot be
+substituted for actual fderiv P or its actual inverse Q.
+
+This batch proves actual strict differentiability and Lipschitz variation
+of its derivative, which are enough for the Banach bridge. It does not
+claim a classical second derivative or joint C-infinity flow theorem.
+It does not by itself certify the specific rotating closed profile in
+Lean or enumerate/classify all periodic profiles.
+
+UPSTREAM LICENSE / SOURCE
+PartialDerivatives.lean is the Mathlib proof from
+Mathlib/Analysis/Calculus/FDeriv/Partial.lean, relocated into this project's
+namespace because the local read-only Mathlib cache lacks that object's
+file. Its A Tucker 2025 copyright and Apache-2.0 header are retained.
+The exact local upstream source has SHA256
+BD55F61CA2043FEFE0B343A6F7516608901BCE0BC219CFD0A66396771389042E.
+Upstream source location:
+https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/Analysis/Calculus/FDeriv/Partial.lean
+The source hash, rather than the mutable master URL, identifies the copy.
+The full Apache-2.0 license is bundled as MathlibApache-2.0.txt, SHA256
+B40930BBCF80744C86C46A12BC9DA056641D722716C378F5659B9E555EF833E1.
+The manifest also records this provenance in the PartialDerivatives row.
+
+The new generic BoundedODE, MidpointDerivative, DerivativeVariation, and
+variation-of-constants proofs are self-contained copies/adaptations of
+generic mathematics. No other open-problem project's theorem is imported.

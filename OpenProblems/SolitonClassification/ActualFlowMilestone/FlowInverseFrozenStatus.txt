@@ -1,0 +1,68 @@
+Actual rotating-flow canonical inverse: frozen four-module supplement
+2026-11-13; independent SolitonClassification project.
+
+Dependency order: FlowInverse, FlowInverseODE, FlowInverseRoot,
+FlowInverseAudit. The preceding 19-module ActualFlowFrozenManifest.csv
+batch is unchanged; all its source hashes were checked again before this
+freeze. No published 13-module source or CAP16 file was edited.
+
+Actual validation:
+FlowInverse: tool session 40963, EXIT 0, no warnings, audit 213.
+FlowInverseODE: tool session 25346, EXIT 0, no warnings, audit 216.
+FlowInverseRoot: tool session 37699, EXIT 0, no warnings, audit 341.
+FlowInverseAudit: tool session 25346, EXIT 0, no warnings, audit 364.
+The final combined audit imports the preceding ActualFlowAudit as well.
+Every audit recursively permits only propext, Classical.choice and
+Quot.sound. Four main theorems also have explicit #print axioms outputs.
+Source, object and clean compiler-output hashes are in
+FlowInverseFrozenManifest.csv. Build via check_module.ps1 with Lean 4.33.1,
+Mathlib and this independent rotating build directory only.
+
+Proved analytic conclusions:
+1. The already-derived actual variational integral equation gives the
+   terminal left derivative of P(t)=fderiv(supportFlow(t)) at every
+   t in (0,T]. This includes the terminal endpoint T.
+2. If P(t)u=0, then P(s)u and the zero trajectory solve the same actual
+   linear ODE on [0,t] and agree at t. Backwards ODE uniqueness implies
+   P(0)u=u=0. Thus actual P(t) is injective, and finite dimensionality
+   implies it is a unit. Neither invertibility nor an inverse ODE
+   solution is an independent assumption.
+3. supportFlowInverse sigma hsigma a t is defined as
+   Ring.inverse(fderiv R (supportFlow sigma hsigma t) a).
+   Actual tube confinement and initial-state neighborhood membership
+   imply both P*Q=Id and Q*P=Id and continuity of this canonical Q on
+   [0,T]. Outside those hypotheses no inverse assertion is made.
+4. Q(0)=Id and the actual right variational equation Q'=-Q*A are proved
+   by differentiating inversion at the proved unit P, using actual
+   P'=A*P and P*Q=Id. No numerical inverse matrix occurs in this proof.
+5. ActualFlowMatrixBounds now has only three analytic/numerical fields:
+   actual tube confinement, actual P norm bounds, and canonical actual
+   Q norm bounds. Its conversion to the former TrueFlowMatrixCertificate
+   constructs Q and proves inverse continuity and identity automatically.
+6. exists_unique_actual_shooting_zero_of_actual_matrix_bounds is the
+   resulting root theorem. Besides the actual matrix bounds and tube,
+   it retains explicit parameter-domain, phase, center residual/Jacobian,
+   preconditioner, contraction, and self-map certificate inequalities.
+   It assumes neither a free Q, inverse existence/continuity, flow C1,
+   shooting Hessian, nor shooting derivative variation.
+
+Still not instantiated:
+The true long-time tube, quantitative matrix bounds such as K=8000 and
+I=16000, and actual center enclosures for the particular candidate must
+still be derived from the interval/Taylor/metric data. That full 8000-step
+connection belongs to the separate certificate work. This supplement
+does not assert a Lean-certified candidate root, a closed rotating curve,
+or complete classification of periodic profiles.
+
+Main API names (namespace SolitonClassification.Rotating):
+supportFlow_fderiv_hasDerivWithinAt_left
+supportFlow_fderiv_injective
+supportFlow_fderiv_isUnit
+supportFlowInverse
+supportFlow_fderiv_comp_inverse
+supportFlow_inverse_comp_fderiv
+supportFlow_inverse_continuousOn
+supportFlow_inverse_zero
+supportFlow_inverse_hasDerivWithinAt
+ActualFlowMatrixBounds.toTrueCertificate
+exists_unique_actual_shooting_zero_of_actual_matrix_bounds

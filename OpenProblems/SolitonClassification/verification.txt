@@ -72,3 +72,120 @@ EXIT 0
 MODULE SolitonClassification/AxiomAudit
 SolitonClassification audit passed: 726 declarations; standard axioms only.
 EXIT 0
+13 November 2026 independent staged batch: SolitonClassification
+MODULE SolitonClassification/ScalarReflection
+Scalar reflection audit passed for 40 declarations; standard axioms only.
+EXIT 0
+MODULE SolitonClassification/Rotating/BoundedODE
+'SolitonClassification.Rotating.exists_unique_global_bounded_flow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EXIT 0
+MODULE SolitonClassification/Rotating/MidpointDerivative
+'SolitonClassification.Rotating.exists_hasFDerivAt_of_quadratic_midpoints' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Midpoint-derivative audit passed for 17 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/DerivativeVariation
+'SolitonClassification.Rotating.quadraticMidpoint_fderiv_variation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Derivative-variation audit passed for 21 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowFoundation
+Rotating actual-flow audit passed for 124 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowTube
+'SolitonClassification.Rotating.supportFlow_short_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual short original-flow tube audit passed.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowDifferentiability
+Rotating actual differentiability audit passed for 157 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/PartialDerivatives
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowJoint
+Rotating joint-flow audit passed for 167 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/ActualShooting
+Rotating actual-shooting audit passed for 233 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/VariationConstants
+Rotating variation-of-constants audit passed for 6 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowVariational
+Rotating first-variation audit passed for 181 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowVariationalODE
+Rotating first-variation ODE audit passed for 182 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FieldHessian
+Rotating actual field Hessian audit passed for 90 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/VariationConstantsWithin
+Rotating closed-interval variation audit passed for 10 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/QuantitativeVariation
+Rotating sharp actual variation audit passed for 203 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/QuantitativeJoint
+Rotating sharp joint variation audit passed for 211 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/ShootingVariation
+Rotating sharp shooting variation audit passed for 295 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/ActualRootFromMatrices
+Rotating actual-matrix root audit passed for 317 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/ActualFlowAudit
+'SolitonClassification.Rotating.supportFlow_short_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.supportFlow_hasStrictFDerivAt_joint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.supportFlow_fderiv_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.field_second_fderiv_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.supportFlow_fderiv_sharp_variation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.actualShootingDerivative_sharp_variation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.exists_unique_actual_shooting_zero_of_true_matrices' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Rotating combined actual-flow audit passed for 337 declarations.
+EXIT 0
+MODULE SolitonClassification
+EXIT 0
+MODULE SolitonClassification/AxiomAudit
+SolitonClassification audit passed: 935 declarations; standard axioms only.
+EXIT 0
+13 November 2026 independent staged batch: SolitonClassification
+MODULE SolitonClassification/Rotating/FlowInverse
+Rotating actual inverse audit passed for 213 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowInverseODE
+Rotating actual inverse ODE audit passed for 216 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowInverseRoot
+Rotating canonical-inverse root audit passed for 341 declarations.
+EXIT 0
+MODULE SolitonClassification/Rotating/FlowInverseAudit
+'SolitonClassification.Rotating.supportFlow_fderiv_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.supportFlow_inverse_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.supportFlow_inverse_hasDerivWithinAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.exists_unique_actual_shooting_zero_of_actual_matrix_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Rotating actual canonical-inverse combined audit passed for 364 declarations.
+EXIT 0
+MODULE SolitonClassification
+EXIT 0
+MODULE SolitonClassification/AxiomAudit
+SolitonClassification audit passed: 962 declarations; standard axioms only.
+EXIT 0

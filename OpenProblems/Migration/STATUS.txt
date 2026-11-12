@@ -1,0 +1,43 @@
+MIGRATION: ACTUAL GEOMETRIC AND FORCE DECOMPOSITION, QUESTION UNRESOLVED
+13 November 2026. Independent Migration Lake project.
+
+The original scalar homothetic-crossing criterion remains available.
+Six additional modules now work with actual smooth periodic planar
+coordinates x,y and their actual derivatives, with positive period L
+and unit speed. Curvature, normal, elastic force and all integrals are
+constructed from these same coordinates.
+
+The actual normal Gram matrix is positive definite and invertible.
+Its inverse defines a unique normal-distance regression center d.
+The integral J=integral((gamma-d).N)^2 is proved strictly positive;
+the corresponding center minimizes that integral uniquely. No convex-
+hull property of d is asserted.
+
+Actual coordinate differentiation gives Frenet and stress identities,
+translation-force balance integral F*N=0 and the dilation virial
+integral F*p=-E. Tangent-support differentiation gives integral k*p=-L
+and strictly positive bending energy E. None is an input assumption.
+
+With a=E/J and w=F+a*p, the module proves a>0,
+  D-E^2/J=integral w^2 >=0, integral w*p=0, integral w*N=0.
+The defect vanishes exactly when F=-a*p everywhere on the curve.
+These are actual spatial identities. A time-dependent homothety theorem,
+uniform evolution estimates, a migrating trajectory and unrestricted
+nonmigration remain unproved. The original Migration question is not solved.
+
+The global project axiom audit now covers FreeElasticFlow and
+MigrationGeometry. Imports are Mathlib or this independent project only.
+See ActualGeometry/FrozenManifest.json, per-module scope/actual logs,
+RootGeometryReview.txt and the integrated verification.txt.
+Research/DynamicDilationDefect.txt contains further reviewed human
+calculations; its time-dependent claims are not all Lean-formalized.
+
+Current independent integrated audit:88 declarations; standard three axioms only.
+
+The reviewed DynamicEvolution.txt derives actual regression-center and
+normal-distance evolution identities and a conditional nonmigration
+criterion. It does not prove propagation of the required shape bounds.
+The Arb countertest proves the actual initial derivative of E^3*J can be
+strictly positive. The root repeated both precision runs exactly; a
+separate unstretched-lemniscate benchmark contains zero as expected.
+These dynamic/quadrature results are not Lean proofs or time-ODE certificates.

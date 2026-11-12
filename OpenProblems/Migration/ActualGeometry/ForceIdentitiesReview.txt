@@ -1,0 +1,28 @@
+INDEPENDENT SOURCE AND SIGN REVIEW -- 13 November 2026
+Reviewer: finish_odd_rigidity.
+Reviewed ForceIdentities.lean, SHA256
+E387B0F0C7A87B976E4555349FA6DF0115AEBE1DC2AAAFE9C924888D8162AF7E.
+
+Verdict: actual definitions and all inspected signs are consistent.
+With N=(-y',x'), unit speed gives T'=kN for the defined signed curvature
+k=x'y''-y'x''. The defined stress is W=(k^2/2)T+k_sN, hence W_s=FN
+for F=k_ss+k^3/2. The module's coordinate derivatives are exactly
+W_x'=-F*y' and W_y'=F*x'. Integration around the actual periodic curve
+therefore proves integral FN=0. This is not a force-balance assumption.
+
+The actual virial is W dot (gamma-d). Its derivative is k^2/2+F*p,
+so periodicity gives integral F*p=-E. A counterclockwise round circle
+checks the convention: k=1/R, p=-R, F=1/(2R^3), E=pi/R, and the
+displayed integral is -pi/R. The free-flow normal velocity is -FN;
+the stress derivative itself has the opposite sign, as encoded.
+
+Inputs are actual C-infinity coordinate functions, coordinate periodicity,
+and actual global unit speed. Frenet, stress and virial identities are
+proved from those inputs, not hidden in a structure. The identities do
+not need a positive period; later positive-energy statements supply it.
+The adaptation of the elementary Frenet proof is explicitly documented,
+and there is no cross-problem import.
+
+The parent's actual compilation log reports PASS50 with standard three
+axioms. This is an independent semantic/source review, not a claimed
+second compiler run. No correction requested; frozen source unchanged.

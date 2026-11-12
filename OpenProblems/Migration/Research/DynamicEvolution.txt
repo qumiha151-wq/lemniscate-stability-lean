@@ -1,0 +1,309 @@
+ACTUAL EVOLUTION OF THE BEST-DILATION DECOMPOSITION
+13 November 2026. Analytic research; the time-evolution results below
+are not Lean formalized. General Migration and LengthGrowth remain open.
+
+The main new dynamic result here is the evolution equation for the
+regression center, not a scalar budget imposed on a curve. It yields a
+conditional, scale-invariant nonmigration criterion. A certified actual
+initial-curve test also disproves the candidate Lyapunov functional E^3 J.
+
+1. ACTUAL FLOW AND NOTATION
+
+Use a fixed material parameter u on the closed curve, g=|gamma_u|,
+partial_s=g^(-1)partial_u, N=JT, and the actual normal flow
+
+  gamma_t=-F N,  F=k_ss+k^3/2,  g_t=kF g,
+  T_t=-F_s N,  N_t=F_s T.
+
+All time derivatives in this note are at fixed material u before
+differentiating the arclength integrals. Define, at each time,
+
+  E=(1/2)integral k^2 ds, D=integral F^2 ds,
+  A=integral N tensor N ds,
+  d=A^(-1)integral (gamma dot N)N ds,
+  p=(gamma-d) dot N, q=(gamma-d) dot T, J=integral p^2 ds,
+  a=E/J, w=F+a p, Delta=integral w^2 ds=D-E^2/J.
+
+The independent Migration Lean modules now prove from actual smooth
+closed unit-speed coordinates that A is positive definite, d is the
+unique normal-distance least-squares center, E,J,a>0, and
+
+  integral pN=0, integral FN=0, integral Fp=-E,
+  integral wp=0, integral wN=0, integral kp=-L.
+
+Along a smooth flow A and the moment defining d vary smoothly, so d is
+smooth in time. Positivity of A makes differentiating its defining
+balance legitimate. The spatial identities are
+
+  p_s=-kq,  q_s=1+kp.                                  (1)
+
+2. PROJECTED LENGTH AND ENERGY EVOLUTION
+
+Put B=integral k w ds. The actual PDE gives exactly
+
+  L'=aL+B,  E'=-aE-Delta,
+  (EL)'=E B-L Delta.                                   (2)
+
+Orthogonality to p improves the Cauchy--Schwarz coefficient. Set
+
+  k_perp=k+(L/J)p,
+  K=integral k_perp^2 ds=2E-L^2/J >=0.
+
+Then B=integral k_perp*w and
+
+  B^2<=K Delta.                                        (3)
+
+This is an actual projected estimate, not an assumed dissipation law.
+It still does not imply monotonicity of EL: the term E B can be positive.
+
+For transparent scale-free variables, write
+
+  U=EL, eta=2EJ/L^2-1>=0, delta=Delta*J/E^2>=0,
+  d tau=a dt, chi=B/(aL).
+
+Then
+
+  |chi|<=sqrt(eta*delta),
+  d(log E)/d tau=-1-delta,
+  d(log L)/d tau=1+chi,
+  d(log U)/d tau=chi-delta<=sqrt(eta*delta)-delta<=eta/4. (4)
+
+In particular actual increase of U requires
+
+  0<delta<eta, equivalently 0<Delta<E^2*K/L^2,           (5)
+
+as well as positive correlation B. When K=0, U'=-L Delta<=0.
+Large residual dissipation decreases U; possible increase lies in the
+small-residual cone (5). No proof that a trajectory cannot spend enough
+time in that cone has been obtained.
+
+For example, finite integral eta d tau would imply bounded U by (4),
+and hence the previously proved quarter-growth implication. But this
+condition is not known and is stronger than necessary: on a noncircular
+homothetic expander eta can be a nonzero constant, tau diverges, and U
+is nevertheless constant because delta=0. This is a criterion, not a
+resolution of the unrestricted length problem.
+
+3. A GENUINE NEW CENTER-VELOCITY IDENTITY
+
+Differentiate integral pN ds=0. The actual material support derivative is
+
+  p_t=-F-d' dot N+qF_s.
+
+Therefore
+
+  A d'=integral [(-F+kFp)N+F_s(qN+pT)] ds.
+
+Using (1),
+  (qN+pT)_s=(1+2kp)N-2kqT.
+Integration by parts and integral FN=0 yield
+
+  A d'=integral kF(2qT-pN) ds.                         (6)
+
+Define the actual vector field H=k(2qT-pN). A second spatial identity,
+
+  (p^2 T)_s=-pH,
+
+shows integral pH=0. Substitution of F=-ap+w in (6) now cancels the
+entire pure-dilation contribution:
+
+                   A d'=integral wH ds.              (7)
+
+Thus regression-center motion is driven ONLY by the residual w. This
+differs from centroid motion, which has the additional a(c-d) term.
+In particular Delta=0 at a time forces d'=0 at that time. No assumption
+that d is fixed or that it belongs to the convex hull was made in deriving
+(7). This is an actual position-evolution statement beyond the static
+force decomposition and beyond the previous scalar energy budgets.
+
+4. AN OPTIMIZED DIRECTIONAL MOBILITY COEFFICIENT
+
+For a fixed unit vector e define
+
+  h_e=(A^(-1)e) dot H,
+  z_e=A^(-1)integral h_e N ds,
+  htilde_e=h_e-z_e dot N,
+  C_e^2=integral htilde_e^2 ds.
+
+This subtracts the L2 projection onto the two normal components. Since
+integral pH=0 and integral pN=0, htilde_e is also orthogonal to p.
+Equation (7) and integral wN=0 give the exact identity and bound
+
+  d' dot e=integral w htilde_e ds,
+  |d' dot e|<=C_e sqrt(Delta).                          (8)
+
+This is the optimal Cauchy--Schwarz coefficient using the residual norm
+and the proved normal/support orthogonality. Let C=sup_{|e|=1} C_e if a
+direction-independent estimate is desired. It is finite: A is positive
+definite and all integrands are smooth on the compact curve.
+
+Take the actual energy radius R=pi/E. Its evolution is
+
+  R'=pi D/E^2=(pi/J)(1+delta)>0.
+
+Consequently
+
+  |d' dot e|/R'
+    <= (E sqrt(J) C_e/pi)*sqrt(delta)/(1+delta)
+    <= beta_e,  beta_e:=E sqrt(J) C_e/(2*pi).           (9)
+
+The quantity beta_e is invariant under ambient dilations: C_e scales
+as length^(-1/2). The force-sensitive first bound is sharper than its
+last, shape-only bound; its scalar factor is largest at delta=1 and
+tends to zero both as delta->0 and delta->infinity.
+
+This replaces the length centroid by a center whose mobility vanishes
+under exact homothety. It does not assert a universal bound on beta_e.
+
+5. CONDITIONAL ACTUAL NONMIGRATION, WITHOUT AN ENERGY THRESHOLD
+
+Define margins relative to d, not the centroid:
+  r_e^+=max gamma dot e-d dot e,
+  r_e^-=d dot e-min gamma dot e.
+They need not be positive for a general curve.
+
+Proposition. Suppose along a time interval and for one fixed direction e
+there is a constant q0>0 such that
+
+  r_e^+(t)>=q0 R(t), r_e^-(t)>=q0 R(t), beta_e(t)<=q0   (10)
+
+throughout that interval. Then the actual curve cannot migrate entirely
+from the upper half-plane to the lower half-plane in direction e between
+any two times of that interval. The same conclusion holds if beta_e in
+(10) is replaced by the sharper first coefficient in (9).
+
+Proof. A crossing at t0<t1 would imply
+  (d(t0)-d(t1)) dot e >= r_e^-(t0)+r_e^+(t1)
+                       >=q0(R(t0)+R(t1)).
+But (8)--(10) and E'=-D imply
+  |(d(t1)-d(t0)) dot e|<=q0(R(t1)-R(t0)),
+which contradicts R(t0)>0. No embeddedness, turning number, or bound on
+EL occurs in this proof. For a single specified pair of times it suffices
+to assume the margin bounds at those endpoints and the mobility bound
+between them.
+
+Round circles, including multiple covers, have htilde_e=0, so beta_e=0.
+This confirms that the criterion is not restricted to the once-covered
+small-energy sublevel. It is nevertheless a CONDITION ALONG THE ACTUAL
+FLOW. No initial-data condition ensuring propagation of (10) has been
+proved. Center-in-hull and positive normalized margins cannot be silently
+assumed; both are genuine restrictions on the shapes.
+
+An additional conditional consequence of (9): if beta is uniformly
+bounded and E has a positive limit, then d has finite total variation
+and converges, because R has a finite limit. This alone gives neither
+nonmigration nor a contradiction to length divergence.
+
+6. THE NORMAL-DISTANCE MOMENT ALSO HAS AN EXACT EVOLUTION
+
+The balance removes the d' term when differentiating J:
+
+  J'=integral [2p(-F+qF_s)+kFp^2] ds
+    =-4 integral pF ds+integral kF(2q^2-p^2) ds
+    =4E+integral kF(2q^2-p^2) ds.                     (11)
+
+The identity
+  (q p^2)_s=p^2-kp(2q^2-p^2)
+implies integral kp(2q^2-p^2)=J. Hence with
+  C_J=integral kw(2q^2-p^2) ds,
+one obtains
+
+  J'=3E+C_J,
+  (E^3 J)'=E^3 C_J-3E^2 J Delta.                     (12)
+
+The natural scale-invariant candidate E^3J therefore has an uncontrolled
+linear residual term, not just a negative square. This is not merely a
+failure of the present estimate: Section 8 gives a certified actual
+initial curve where its derivative is strictly positive.
+
+For completeness,
+  d(log(1+eta))/dt=C_J/J-2B/L-Delta/E.                 (13)
+No favorable sign for the new geometric term C_J was found. Replacing
+the unclosed quantity U by eta or E^3J does not close the dynamics.
+
+7. A HISTORY-DEPENDENT MONOTONE NORMALIZATION
+
+Let lambda(t)=exp(integral_0^t a(r)dr), lambda(0)=1. Equations (2) give
+
+  (lambda E)'=-lambda Delta<=0,
+  lambda(t)E(t)/E(0)
+    =1-(1/E(0))integral_0^t lambda(r)Delta(r)dr.        (14)
+
+The ratio in (14) is scale invariant and genuinely nonincreasing, and
+the weighted residual action is finite. However, lambda depends on the
+entire history, not just the current unparameterized shape. In particular
+if E_infinity>0, (14) only makes lambda bounded; it does not contradict
+any established long-time estimate. Calling (14) an unconditional static
+shape Lyapunov functional, or using it to assume E_infinity=0, would be
+incorrect. The residual effect on L/lambda and on J/lambda^3 remains
+uncontrolled through B and C_J.
+
+8. CERTIFIED FAILURE OF E^3 J AS A LYAPUNOV FUNCTIONAL
+
+Use the explicit smooth closed curve, with exact rational b=99/100,
+
+  gamma_b(u)=( cos(u)/(1+sin(u)^2),
+               b sin(u)cos(u)/(1+sin(u)^2) ), 0<=u<=2*pi.
+
+Reflection in each coordinate axis preserves its image with arclength
+measure. Uniqueness and equivariance of the regression center force d=0.
+Write r=sin(u)^2, H0=1+r and
+
+  P=r(3-r)^2+b^2(1-3r)^2
+   =r^3+(9b^2-6)r^2+(9-6b^2)r+b^2.
+
+The actual speed is g=sqrt(P)/H0^2. Since 0<b<=1,
+  P>=b^2(1+r)^3, hence g^2>=b^2/2>0.
+Thus this is an actual globally smooth regular closed initial curve.
+No scalar data are being passed off as geometric realizability.
+
+The following formulas derive the actual intrinsic force used in the
+certificate; primes on f,P below mean differentiation with respect to r:
+
+  f=3b H0^4/P^(3/2), k=cos(u) f,
+  ell=f'/f=4/H0-(3/2)P'/P,
+  ell'=-4/H0^2-(3/2)(P''/P-(P'/P)^2),
+  h=g'/g=P'/(2P)-2/H0,
+  U0=-1+2(1-r)ell, U0'=-2ell+2(1-r)ell',
+  F=cos(u){ f[U0+2r(ell U0+U0')-2rhU0]/g^2
+             +(1-r)f^3/2 },
+  p=-b cos(u)^3/sqrt(P),
+  q=sin(u)cos(u)[-3+r+b^2(1-3r)]/[H0 sqrt(P)].
+
+Indeed k_u=sin(u)f U0 and
+k_ss=k_uu/g^2-k_u*g_u/g^3, proving the displayed F formula.
+Put Q=2q^2-p^2 and I=integral kFQ ds. Equations (11)--(12) give
+
+                (E^3J)'=E^3 I+4E^4-3E^2JD.           (15)
+
+The script migration_dynamic_arb_countertest.py integrates the actual
+expressions with complex-ball Arb quadrature, forwarding the required
+analytic flag to every square root. Reflection symmetry reduces each
+integral to four times the interval [0,pi/2]. Both 192-bit and 320-bit
+runs give a rigorously positive enclosure for (15). The latter records
+
+  (E^3J)' in
+  [2266.631398389836512023681820894847203324738812448023322300157168
+     +/- 4.08e-61].
+
+The force virial integral Fp=-E and geometric identity integral kpQ=J
+were independently integrated as consistency checks, with enclosures
+containing zero residual. The full inputs and enclosures are preserved
+in migration_dynamic_arb_countertest.json. This is an Arb quadrature
+certificate, NOT a Lean kernel proof and NOT a time-ODE enclosure.
+It certifies an actual initial free-flow first variation; local/global
+smooth-flow existence is the standard closed-flow existence result.
+
+The exploratory migration_dynamic_shape_probe.py used floating-point
+quadrature first. Its signs alone were not used as certificates. In
+particular its Fourier differentiation was replaced by the explicit
+actual force formula above for the rigorous countertest.
+
+9. REMAINING WORK
+
+The center identity (7), the moment identity (11), and criterion (10)
+are actual dynamic deductions. The certified test rules out one plausible
+new Lyapunov candidate. None controls the center margins, beta_e, eta,
+or time spent in the growth cone from arbitrary initial data. Those are
+the precise remaining gaps. No claim of unconditional nonmigration,
+unrestricted quarter-growth, or E_infinity=0 is made.

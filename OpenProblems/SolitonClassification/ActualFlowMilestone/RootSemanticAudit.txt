@@ -1,0 +1,61 @@
+ROOT SEMANTIC REVIEW -- 13 November 2026
+
+The selected flow exists globally for a bounded Lipschitz clipped field.
+Clipping bounds only the five active coordinates; angle is unrestricted
+because the original field does not depend on angle. Original-field
+identification explicitly uses actual tube membership. FlowTube derives
+short-interval membership from coordinate displacement bounds and the
+stated innerTube. No long-time membership is inferred from that lemma.
+
+The midpoint proof compares actual trajectories, derives a quadratic
+second difference, and constructs the initial derivative as the limit
+of dyadic quotients. Additivity, continuity and the genuine Frechet
+remainder are proved. Initial differentiability is not assumed.
+Spatial and time continuity of that derivative give the actual joint
+strict derivative on the open time/initial-data region. The clipped field
+is not claimed smooth at its clipping boundaries. Tube membership of
+every initial state in an open neighborhood is an explicit hypothesis.
+
+The first variational equation comes from differentiating the actual
+ODE integral equation with a proved dominating bound. Its P is exactly
+fderiv of the selected flow. The closed-interval right-derivative form
+is used consistently in the variation-of-constants proof. A continuous
+right inverse Q with P*Q=Id suffices for the displayed Duhamel solution;
+the theorem does not assume a derivative formula for Q.
+
+The field's actual second derivative is computed from its polynomial
+expansion and has norm at most4 on the outer tube. From actual P/Q bounds
+K/I the actual spatial derivative variation is at most4*K^3*I*t. The
+joint bound adds time terms34*K+1275. The exact shooting input map has
+norm at most1, the physical-coordinate projection norm at most8, and
+two signed endpoint flows contribute the additional factor2. Hence
+the shooting budget is16*(4*K^3*I*T+34*K+1275). The stated10^20 comparison
+is only arithmetic at the intended K/I/T values, not their certification.
+
+The signed shooting representation follows from actual flow uniqueness.
+The negative-time derivative is composed with actual time reflection.
+The final root wrapper applies the earlier proved Banach zero theorem
+to this actual shooting map. No assumed FlowC1, Hessian or derivative
+variation remains, but actual long-time tube/P/Q bounds and actual
+center residual/Jacobian enclosures remain required. The output is a
+conditional true zero. The numerical candidate has not been instantiated.
+
+The root reviewed the modules supporting the steps above, including the
+full dyadic construction, integral differentiation, closed-interval
+variation proof and final shooting wrapper. The copied Mathlib partial-
+derivative result retains its attribution and complete Apache license.
+No proof imports another open-problem project. Frozen hashes are checked
+on staging and this project's own build tree recompiles all19 sources.
+No full rotating-orbit certificate or complete classification is claimed.
+
+CANONICAL INVERSE SUPPLEMENT
+The root additionally reviewed all four FlowInverse* sources. The actual
+variational integral gives the terminal left derivative. Backward uniqueness
+of the actual linear ODE proves that P(t) has zero kernel; finite dimension
+then gives bijectivity. Q is defined as Ring.inverse of this actual P.
+Both inverse identities and continuity on the certified interval follow.
+Differentiating the genuine ring inverse proves Q'=-Q*A, with matrix order
+preserved. The final wrapper now requires only tube and numerical norm
+bounds for actual P and canonical Q. Existence/continuity of Q are no
+longer free premises. The finite interval data still have to establish
+these actual bounds and center enclosures; no candidate root is asserted.

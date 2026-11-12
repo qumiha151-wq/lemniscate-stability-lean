@@ -1,0 +1,47 @@
+ACTUAL CLOSED-CURVE NORMAL GRAM MATRIX -- 13 November 2026
+
+NormalGram.lean was actually compiled successfully by
+  work/migration_formal/check_module.ps1 -Module NormalGram
+using Lean 4.33.1 and Mathlib commit
+0df444a360eaa60ab8c11dca51a86af692955474.
+The final compiler run returned exit 0, with no warnings, and reported:
+  Normal Gram audit passed for 10 declarations; standard axioms only.
+The recursive namespace audit permits only propext, Classical.choice,
+and Quot.sound. No sorry/custom axiom occurs in the audited dependency set.
+
+Source SHA256:
+2734B0130B18EDD34880C32BD423D89539F1BCBDC1A112F8CDC317E8A9FEC712
+Compiled olean SHA256 (438488 bytes):
+8F07C1E38266FA414ED324D53D7279674B11F2FC69CE34B8C81E3241AE910A29
+Compiled path: work/formal-build/Migration/Migration/NormalGram.olean.
+
+The main input is actual coordinate functions x,y:R->R, C-infinity
+regularity, L>0, x(L)=x(0), y(L)=y(0), and the actual identity
+(deriv x)^2+(deriv y)^2=1 on [0,L]. Full periodicity is not needed:
+the theorem is stronger and only requires closed endpoints. Any smooth
+closed unit-speed periodic immersion supplies these data directly.
+
+The normal is defined as (-deriv y,deriv x), not supplied as a field.
+Rolle's theorem applied to ex*x+ey*y gives a point where the tangent
+projection vanishes. The actual unit-speed identity then forces a
+nonzero normal projection for every nonzero vector (ex,ey). Continuity
+proves positivity of its squared integral. The explicit 2-by-2 matrix
+normalGram is proved to have exactly that quadratic form; the final
+theorems assert standard Mathlib Matrix.PosDef and IsUnit for this matrix.
+
+Key theorems:
+  MigrationGeometry.normalProjection_square_integral_pos
+  MigrationGeometry.normalGram_quadratic
+  MigrationGeometry.normalGram_posDef
+  MigrationGeometry.normalGram_isUnit
+
+Only Mathlib is imported. There are no imports from SolitonClassification,
+OpenTranslators, LengthGrowth or the stability project. No integral balance,
+Frenet identity, positive-definiteness or invertibility is an input assumption.
+
+Boundary: this proves the actual geometric invertibility needed to define
+the normal-distance regression center. It does not yet formalize its
+least-squares property, the quantitative 2/E eigenvalue bound, the force
+residual decomposition, time evolution, or any migration/nonmigration
+theorem. It is an ingredient for the Migration project, not a solution
+of the original open question. Existing frozen sources were unchanged.
