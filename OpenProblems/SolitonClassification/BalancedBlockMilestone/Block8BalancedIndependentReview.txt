@@ -1,0 +1,142 @@
+INDEPENDENT READ-ONLY REVIEW: FLAT AND BALANCED EIGHT-LEAF ASSEMBLY
+13 November 2026. Reviewer: /root/finish_curve_input.
+
+RESULT
+No semantic gap was found in the reviewed new assembly. Both paths derive
+actual original-ODE tube confinement and true initial-derivative endpoint
+errors from the eight finite leaves and explicit scalar budgets. Neither
+path inserts an extra actual-tube or actual-error assumption.
+
+This review did not run Lean, recompute the large integer recurrences, or
+independently regenerate numerical data. The root's isolated recompilation
+is separate evidence. I authored parts of the earlier frozen analytic
+bootstrap/extended-grid foundations; this is an independent review of the
+NEW point-block/Block8/Balanced8 assembly, not a claim of independence from
+my own earlier foundations.
+
+VERSION LOCK
+All 27 source hashes were actually compared with their frozen manifests
+and matched. The first output attempt encountered a Windows console Unicode
+printing error AFTER writing the hash record; a subsequent explicit recheck
+of all 27 hashes completed with exit code 0.
+
+Manifest files:
+ Block8FrozenManifest.csv
+   550DEDEF111FEF2C6D1A64BDDEECCFA2731FC8FFD5FCE0798EA129BD035C4AD9
+ Balanced8FrozenManifest.csv
+   814DD3110177BD932847809C51EB18C6F00AE9588F3786647AE8C18AF1686215
+ PolynomialPointGridBlockFrozenManifest.csv
+   locks PolynomialPointGridBlock and PolynomialPointGridBlockGrid.
+The exact 27-source hash list is in the adjacent
+ Block8BalancedIndependentReviewHashes.json
+   A17A384F76CDEF51F506453A860C5CF73991971E246820A70BAE43B8942803C8.
+
+READ SCOPE
+Read fully: PolynomialPointGridBlock, PolynomialPointGridBlockGrid,
+Block8Grid, Block8Actual, Block8Leaf00, Block8FreshAudit,
+Balanced8Left4, Balanced8Right4, Balanced8Grid, Balanced8Actual,
+Balanced8FreshAudit. Read Block8Nodes' definitions and semantic bridge
+proofs, Leaf01State/Matrix's complete recurrence-to-endpoint proof assembly,
+and Leaf07State/Matrix's terminal reset assembly. Large integer literal
+tables were deliberately not independently checked; their frozen source
+hashes were checked. The all-eight import and case-split wiring was read.
+Also inspected the existing actualDeviation signature to confirm that its
+trajectory regularity/tube input is DERIVED by the nonlinear bootstrap.
+
+1. NUMERICAL LEAVES HAVE THE REQUIRED ACTUAL MEANING
+Block8Nodes.state 0 is Candidate.initial, not a rounded node substituted
+for it. Its initial enclosure is proved. Later states are exact rational
+midpoints. start_column_contains identifies each full point-matrix column
+with operator j applied to the actual coordinateBasis vector. The initial
+operator is the identity. PointNodeValid.sound supplies actual invertibility
+and norm/inverse bounds; raw inverse proposals are not asserted to be exact
+inverses. The innerTube inequalities are finite checked node inequalities.
+
+Leaf01State proves TaylorDataValid, the exact coefficient-zero interface,
+and the actual polynomial endpoint enclosure before comparing its midpoint
+with node 2. Leaf01Matrix checks all SIX variation columns against that
+same state table, with initial vectors B_1(e_col). The real operator is
+U_22(step) composed ON THE RIGHT with B_1. Row sums of all six column radii
+give the full operator reset norm; there is no omitted factor-six conversion.
+Leaf00 genuinely reuses the previously frozen first leaf and loosens its
+reset bound. Leaf07's terminal state/full-matrix resets target node 8,
+as required for the nominal endpoint comparison.
+
+The flat Grid imports all seven distinct later matrix modules, and its
+eight-case proofs select leaves 0 through 7 once each. These are neither
+eight reuses of leaf 0 nor arbitrary chosen numerical arrays declared to
+be an actual orbit.
+
+2. ACTUAL TIME DOMAIN, EXTENDED TERMINAL, AND RESET CHARGES
+The grid horizon is 8*h+2*r with r=1e-24. local_cap proves h+2*r is within
+the actual polynomial cap. horizon<=1 is used only in scalar budget
+estimates; it is not substituted for the grid's time domain.
+
+There are seven internal resets. The extended-grid constructor defines its
+terminal reference state and matrix by evaluating the LAST segment at
+h+2*r and holding that value constant as the terminal node. Thus the last
+state/matrix jumps really are zero. It does not reset the extended endpoint
+to the old node-8 values at 8*h.
+
+The nominal time 8*h is proved to lie in segment 7. The separate nominal
+state and matrix comparisons then add the eighth ordinary leaf reset,
+1e-55, to compare that polynomial at h with raw node 8. This final charge
+is present in BOTH flat and balanced Actual modules. No endpoint-time
+shift or uncharged final reset was found.
+
+3. THE BALANCED JOIN HAS TWO EXACT SEAMS
+PolynomialPointGridBlock.append requires BOTH state equality and full
+matrix equality at the seam. The join uses the left endpoint value at j=N;
+join_right identifies this with the right value at zero using the supplied
+equality. Resets with j<N use the left certificate; j>=N uses the right
+certificate at j-N. No seam interval is dropped or double-counted.
+
+Left4 uses nodes 0..4 and leaves 0..3. Right4 uses nodes 4..8 and leaves 4..7.
+Its initial matrix is the global reference B_4, not a reinitialized identity.
+The exact state/matrix seam is the SAME Block8Nodes node/operator 4 on both
+sides. The appended certificate exports its initial identity and last
+node-8 identities. Making the subcertificates irreducible changes proof
+evaluation, not their mathematical interfaces.
+
+The generic toExtendedGrid supplies all FlowBootstrapGridData fields from
+the point certificate and established polynomial bounds. It requires no
+chosen actual flow, actual error, or actual tube premise. It retains all
+ordinary point resets in the certificate, drops only the extended terminal
+reset, and separately exports the nominal last-reset comparison.
+
+Balanced8Grid does not import the flat Block8Grid or Block8Actual proof.
+Its two four-leaf certificates instantiate the genuine append theorem.
+
+4. THE ACTUAL FLOW AND DERIVATIVE CONCLUSIONS ARE DERIVED
+In both Actual modules the strict state budget is proved numerically from
+initial radius 1e-35, metric radius 1e-32, K=2400, I=5000,
+matrix residual 4e-16, state residual 6e-40, and seven resets of 1e-55.
+The state initial error is zero at Candidate.initial. The theorem for a
+general a assumes only membership in the open ball(initial,1e-35).
+
+The nonlinear bootstrap derives outerTube membership for the globally
+chosen clipped flow throughout [0,8*h+2*r]. The original field derivative
+then follows from that membership. It is not an ODE solution assumed to
+remain in the tube. The matrix-deviation theorem obtains the needed
+initial-condition neighborhood/tube regularity from this same bootstrap.
+Its explicit exponential budget proves relative error <=1e-10; this
+quantity is a relative MATRIX error, not the final shooting contraction.
+
+At the nominal endpoint the state error is
+2400*1e-32+1e-55 <=3e-29, and the FULL initial derivative error is
+2400*1e-10+1e-55 <=3e-7. There is no free assumed actual endpoint error
+hidden in either final theorem. Intermediate comparison lemmas have error
+arguments, but Actual supplies those arguments from the proved bootstrap.
+
+5. AUDIT AND LIMITS
+Both fresh audit modules recursively inspect the relevant Rotating
+declarations and permit only propext, Classical.choice, Quot.sound.
+The inspected stored final logs report 5802 declarations for flat Block8
+and 5925 for Balanced8. These are observed log records, not a fresh Lean
+run by this reviewer. All frozen sources remained unchanged.
+
+The exact scope is the positive-time eight-leaf pilot and its stated open
+initial ball. It does not establish the full 4000-step path, negative-time
+path, wide 8e-24 initial domain, final shooting enclosures/root, a closed
+rotating profile, or completion of classification. No memory/time forecast
+for the full grid follows solely from this pilot.

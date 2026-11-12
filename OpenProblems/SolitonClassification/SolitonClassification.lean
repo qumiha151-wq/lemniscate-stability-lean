@@ -1,3 +1,5 @@
+import SolitonClassification.Rotating.Balanced8FreshAudit
+import SolitonClassification.Rotating.Block8FreshAudit
 import SolitonClassification.Rotating.CandidateFinalAssembly
 import SolitonClassification.Rotating.Grid42P00Actual
 import SolitonClassification.Rotating.CandidateShootingEndpointComparison

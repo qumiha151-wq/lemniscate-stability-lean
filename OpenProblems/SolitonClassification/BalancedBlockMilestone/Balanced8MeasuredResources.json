@@ -1,0 +1,83 @@
+{
+  "manifest_sha256": "814dd3110177bd932847809c51eb18c6f00ae9588f3786647ae8c18af1686215",
+  "audit_declarations": 5925,
+  "warnings": 0,
+  "CPU_seconds": 116.21875,
+  "summed_wall_seconds": 118.57550419999461,
+  "peak_working_set_bytes": 1812004864,
+  "olean_bytes": 843344,
+  "measurements": [
+    {
+      "module": "SolitonClassification/Rotating/Balanced8Left4",
+      "exit_code": 0,
+      "wall_seconds": 23.439725600008387,
+      "user_cpu_seconds": 9.21875,
+      "termination": "completed",
+      "kernel_cpu_seconds": 13.671875,
+      "peak_working_set_bytes": 1793622016,
+      "source_bytes": 2973,
+      "source_sha256": "4c42368b8799853357784cf5971bc23160c4bea1ca526d56975028017df53bf3",
+      "olean_bytes": 119496,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Balanced8Left4.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Balanced8Right4",
+      "exit_code": 0,
+      "wall_seconds": 22.459149599992088,
+      "user_cpu_seconds": 8.5625,
+      "termination": "completed",
+      "kernel_cpu_seconds": 13.484375,
+      "peak_working_set_bytes": 1792790528,
+      "source_bytes": 2992,
+      "source_sha256": "295a0214062bf788485f0d446ab8e20315cb40d8a5223290d50c80c5b0525838",
+      "olean_bytes": 119616,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Balanced8Right4.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Balanced8Grid",
+      "exit_code": 0,
+      "wall_seconds": 26.212569399998756,
+      "user_cpu_seconds": 11.9375,
+      "termination": "completed",
+      "kernel_cpu_seconds": 14.03125,
+      "peak_working_set_bytes": 1808678912,
+      "source_bytes": 5151,
+      "source_sha256": "b7f15bda3919a3612de2f4b26057afbc2732e96420820a9c85e33781b5308c64",
+      "olean_bytes": 253456,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Balanced8Grid.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Balanced8Actual",
+      "exit_code": 0,
+      "wall_seconds": 26.210532500001136,
+      "user_cpu_seconds": 9.71875,
+      "termination": "completed",
+      "kernel_cpu_seconds": 15.59375,
+      "peak_working_set_bytes": 1812004864,
+      "source_bytes": 5883,
+      "source_sha256": "348657765ae04bcea36a5df66f525664141a3a69a0b085369e9e18dceaee68e6",
+      "olean_bytes": 348096,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Balanced8Actual.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/Balanced8FreshAudit",
+      "exit_code": 0,
+      "wall_seconds": 20.253527099994244,
+      "user_cpu_seconds": 8.0625,
+      "termination": "completed",
+      "kernel_cpu_seconds": 11.9375,
+      "peak_working_set_bytes": 1714253824,
+      "source_bytes": 670,
+      "source_sha256": "d593730ba7c1b913025d41e14718223a3327cf54bb145e7c7258664506cfbe96",
+      "olean_bytes": 2680,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Balanced8FreshAudit.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    }
+  ],
+  "scope": "Actual balanced 4+4 point append and true ODE/endpoints. No finite leaf recomputed.",
+  "limitation": "Shared host and one run per module. No claimed memory saving relative to flat8; no 8000-step feasibility claim."
+}

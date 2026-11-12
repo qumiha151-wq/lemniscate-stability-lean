@@ -1,0 +1,37 @@
+Independent semantic review of the point-grid append bridge
+Reviewer: audit_full_escape; 2026-11-13
+
+Reviewed complete sources against the supplied frozen manifest:
+PolynomialPointGridBlock.lean
+SHA256 1D7F184FF00F62FC05E6572B9BDB0DA90A98DD128FD22F03B90283E02DA9323F
+PolynomialPointGridBlockGrid.lean
+SHA256 6BF869E521091801470BF214020F5BE232B8A9FD1187BE66A457A9B819371A14
+
+No semantic gap found in the read sources. This review did not independently
+recompile the two modules; the author/root compilation is separate evidence.
+
+The block explicitly retains both state and full-matrix endpoint resets at
+every j<N, including the last ordinary polynomial endpoint. Its node bounds
+cover j<=N, so the terminal point used at an internal block seam is covered.
+It assumes neither an actual trajectory nor an actual variational bound.
+The initial-matrix identity is intentionally deferred to the whole-grid
+wrapper, allowing a later block to start at a nonidentity point matrix.
+
+The append proof requires exact real state and full-matrix seam equalities.
+For j<N both sides of the reset remain in the left block. For j>=N the
+right-block reset applies; at j=N the exact seam rewrites the left endpoint
+to the right initial point. The index identity j+1-N=(j-N)+1 is used only
+under N<=j. This covers a seam without dropping or duplicating its reset.
+The definitions and node proofs also handle zero-length left/right blocks;
+the extended-grid constructor separately requires N>0.
+
+The extended-grid wrapper uses the actual terminal polynomial value at
+h+2r. Its final reset is therefore zero, while the jump sums are exactly
+(N-1)*delta. Its nominal endpoint comparison still adds the final ordinary
+reset delta. It does not silently identify the old nominal point at Nh
+with the extended terminal at Nh+2r. State order42 and matrix order22 are
+kept distinct by the existing actual mixed-residual constructor.
+
+This is a generic verified bridge. Concrete point checks, reset checks,
+all block seam equalities, fixed initial data, and final global budgets
+must still be instantiated from actual kernel-checked finite data.

@@ -1,0 +1,2197 @@
+{
+  "schema": "rotating.block8-measured-resources.v1",
+  "scope": "Eight distinct positive state42/full-matrix22 leaves; original ODE and full derivative through actual extended pilot grid.",
+  "frozen_manifest_sha256": "550dedef111fef2c6d1a64bddeeccfa2731fc8ffd5fce0798ea129bd035c4ad9",
+  "new_leaf_header_modules": {
+    "actual_cpu_seconds": 467.140625,
+    "summed_wall_seconds": 476.93117510000593,
+    "peak_working_set_bytes": 3188957184,
+    "olean_bytes": 35353232,
+    "modules": 16
+  },
+  "reused_first_leaf_historical_checks": {
+    "actual_cpu_seconds": 86.890625,
+    "summed_wall_seconds": 89.11670230000163,
+    "peak_working_set_bytes": 3183304704,
+    "olean_bytes": 5613928,
+    "modules": 3
+  },
+  "actual_grid_endpoint_and_fresh_audit": {
+    "actual_cpu_seconds": 56.140625,
+    "summed_wall_seconds": 57.27569220001169,
+    "peak_working_set_bytes": 1824157696,
+    "olean_bytes": 680168,
+    "modules": 3
+  },
+  "complete_eight_leaf_and_assembly_excluding_control": {
+    "actual_cpu_seconds": 610.171875,
+    "summed_wall_seconds": 623.3235696000193,
+    "peak_working_set_bytes": 3188957184,
+    "olean_bytes": 41647328,
+    "modules": 22
+  },
+  "fair_import_control": {
+    "baseline_peak_bytes": 1704493056,
+    "eight_leaf_fresh_peak_bytes": 1714405376,
+    "observed_difference_bytes": 9912320,
+    "baseline_local_modules": 104,
+    "full_local_modules": 120,
+    "additional_local_modules": 17,
+    "additional_olean_bytes": 34419544,
+    "baseline": {
+      "module": "SolitonClassification/Rotating/Block8ImportBaseline",
+      "exit_code": 0,
+      "wall_seconds": 17.249440999992657,
+      "user_cpu_seconds": 7.15625,
+      "termination": "completed",
+      "kernel_cpu_seconds": 9.84375,
+      "peak_working_set_bytes": 1704493056,
+      "source_bytes": 998,
+      "source_sha256": "9925608a1e594be72229a1ed92afb2160ec0a9697b67ce140a24b9080447294f",
+      "olean_bytes": 3920,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Block8ImportBaseline.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide",
+      "import_hashes": {
+        "SolitonClassification.Rotating.Block8Leaf00": {
+          "path": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\build\\SolitonClassification\\Rotating\\Block8Leaf00.olean",
+          "sha256": "2f9ae4201b0daf43ba1db0b9fa80a4b7a6f43fa88cb4c9c9c39439a1f0761c06"
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": {
+          "path": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\build\\SolitonClassification\\Rotating\\ExtendedPolynomialGridEndpoints42.olean",
+          "sha256": "92cc22b01b9737f93989ecf4d2c0776e9e9d2b683e989317d3da201fde0412f4"
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizonCandidate": {
+          "path": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\build\\SolitonClassification\\Rotating\\RotatingGridHorizonCandidate.olean",
+          "sha256": "ee87c3bfed5746acd66654a5e082022a51f731db3b4122fef062cf65f4673371"
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationBootstrap": {
+          "path": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\build\\SolitonClassification\\Rotating\\FlowMetricDeviationBootstrap.olean",
+          "sha256": "064ea5bc0bd33944575cc6af2faabab0d60d8928c67d93106a000301b543c135"
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationBudget": {
+          "path": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\build\\SolitonClassification\\Rotating\\FlowMetricDeviationBudget.olean",
+          "sha256": "d41b28b3f69954de3ea11204e5324064141f1a1f38741401100fa3cb8f7b5465"
+        }
+      },
+      "log_sha256": "c96e25ea7c153c65ba8809f9738a27d358d1d5f5ee8ee33515a026b439a6bb67",
+      "olean_sha256": "89589034b7ba30c641340fb3d6897cec11294a4e2361fa82d63b4217a90f9bdb",
+      "local_dependency_closure": {
+        "SolitonClassification.Rotating.Block8ImportBaseline": {
+          "source_sha256": "9925608a1e594be72229a1ed92afb2160ec0a9697b67ce140a24b9080447294f",
+          "olean_sha256": "89589034b7ba30c641340fb3d6897cec11294a4e2361fa82d63b4217a90f9bdb",
+          "source_bytes": 998,
+          "olean_bytes": 3920
+        },
+        "SolitonClassification.Rotating.Block8Leaf00": {
+          "source_sha256": "921dc984e65ad222c10f46847c1968906c76644320a730afeefee23fa544868b",
+          "olean_sha256": "2f9ae4201b0daf43ba1db0b9fa80a4b7a6f43fa88cb4c9c9c39439a1f0761c06",
+          "source_bytes": 1473,
+          "olean_bytes": 58696
+        },
+        "SolitonClassification.Rotating.Block8Nodes": {
+          "source_sha256": "b51c60d4ae8fba53541f214237ae0d3b5ba89bac6cc2a77a62d7c16bde31fdb7",
+          "olean_sha256": "7582b41c3ce4e61875da47f81a350cff5b81fe218335902327b334643154bcfb",
+          "source_bytes": 32364,
+          "olean_bytes": 1555160
+        },
+        "SolitonClassification.Rotating.Grid42P00Nodes": {
+          "source_sha256": "768775276ac2caa0f8a9fd105138969f09f70683fefb22183417f616012503e9",
+          "olean_sha256": "9fce86a2f5ea6d50df4c559dc1ffbe482a963aab16ebeabe2407ff81a89a8133",
+          "source_bytes": 7169,
+          "olean_bytes": 909392
+        },
+        "SolitonClassification.Rotating.PointMatrixGridBudget": {
+          "source_sha256": "f1fae5dbe8aca05143f37bfc9d3d4ceb359ebfaf5b8782cde163ff4cc53fbf81",
+          "olean_sha256": "5cbf369a25610d97b2d8230dc61bd7aa709922dc74ca11111c042edfdab6a602",
+          "source_bytes": 1977,
+          "olean_bytes": 152344
+        },
+        "SolitonClassification.Rotating.PointMatrixCertificate": {
+          "source_sha256": "b7edc11825d5cadfbeb2dcf52c5bbad12b5e9c11240525f23e7dad96b3a8ede0",
+          "olean_sha256": "3a320830e86080887e053a1d094e7e4d8105d1e3e4e19715a0c01c3069820c8e",
+          "source_bytes": 5066,
+          "olean_bytes": 234296
+        },
+        "SolitonClassification.Rotating.PointMatrixInverse": {
+          "source_sha256": "dc2a9c00ed3556874645f251601884e6de64d2eb66cf270a6ec88130f7e85a40",
+          "olean_sha256": "4cde968f4e2637b7c49b63565b86124dc38388661b390f1f41117f1bf5a5f3d5",
+          "source_bytes": 2533,
+          "olean_bytes": 72720
+        },
+        "SolitonClassification.Rotating.ReferenceInversePerturbation": {
+          "source_sha256": "3cf37732a94a77e8587618afd508fe8b0df92ce76dbb6303556798178b6f2dc0",
+          "olean_sha256": "2c235c9b304b0f21d0dfdca19211f897cbd8d88f6f946a601fda8aca99c63926",
+          "source_bytes": 2250,
+          "olean_bytes": 111208
+        },
+        "SolitonClassification.Rotating.FlowMetricCoordinates": {
+          "source_sha256": "81c9d1c641134c6c134c6d2bf1e646481e556188ea97ce521718d6759e51952d",
+          "olean_sha256": "73091e07c9bfaba491ae1fa5f7e2dfba489000610fb6717c141e682875cda5d7",
+          "source_bytes": 7453,
+          "olean_bytes": 365736
+        },
+        "SolitonClassification.Rotating.FlowInverseODE": {
+          "source_sha256": "540b009ec28985b3c42fc30bafbc6c21c761291d55c560f45211499a59d7da12",
+          "olean_sha256": "d4b702ceae5c340c6bf53cb0a3f18c49b5907cfb384fb506374811b5121bb457",
+          "source_bytes": 2350,
+          "olean_bytes": 223232
+        },
+        "SolitonClassification.Rotating.FlowInverse": {
+          "source_sha256": "f343445a0a6516ffd7e2465f0978f67bbd16e1c523a67e3c9910acd613e597f5",
+          "olean_sha256": "232c14574a78d7eefa38a249a80721ce958c0c88e94781e8ab265ec7ec7626c8",
+          "source_bytes": 6702,
+          "olean_bytes": 187600
+        },
+        "SolitonClassification.Rotating.QuantitativeVariation": {
+          "source_sha256": "29859c237a9084e30d3204fbf92029a491fcb34a39a7862e9613fe74f2e6ea20",
+          "olean_sha256": "c0585c9282df5a2f52b73f34c7a10ec084e478639cc29506097f5894231e7d24",
+          "source_bytes": 7099,
+          "olean_bytes": 411576
+        },
+        "SolitonClassification.Rotating.FlowVariationalODE": {
+          "source_sha256": "a272156f70020ce10e82844b23246089002c6b372dd2be6fef6e2982c813b080",
+          "olean_sha256": "0149391144b198f0a8ab852f88218319c934a9b20354449043b16ede8ce4605d",
+          "source_bytes": 2555,
+          "olean_bytes": 94464
+        },
+        "SolitonClassification.Rotating.FlowVariational": {
+          "source_sha256": "66732c053b689ebdee52057677151d5d1001b8992152f8febb0efafe4ea4de46",
+          "olean_sha256": "d0d6cd64a1656aa024a529841a9c8fb6b9500bbffae3710169aa6f24561c3591",
+          "source_bytes": 7265,
+          "olean_bytes": 249248
+        },
+        "SolitonClassification.Rotating.FlowJoint": {
+          "source_sha256": "c5c853d0c6afc4a94d54c6c3006486b2ab14ca613bd63097c6e4cc28b81af515",
+          "olean_sha256": "83effce9c9b38520fc63e44306955d3936bc25c59caeaca507db72fda1b4c50c",
+          "source_bytes": 7872,
+          "olean_bytes": 427832
+        },
+        "SolitonClassification.Rotating.FlowDifferentiability": {
+          "source_sha256": "cf14d3d4a4f3c502491faf9ad1960b62dab2ffd33d299d6df4447ce7c1757852",
+          "olean_sha256": "dbb7e8818e96c2539edcc49915035aabed80a7bb2e54f857c225bc0493ad1933",
+          "source_bytes": 9755,
+          "olean_bytes": 1251384
+        },
+        "SolitonClassification.Rotating.FlowFoundation": {
+          "source_sha256": "86819c043f3759b94f88d1f52fa75c5adb297d17ce004ee84ee57272e7e9c1ec",
+          "olean_sha256": "a3e1619c7679e2e5a94ffc6cb1b01b720281386c376bd2438568222b004011ec",
+          "source_bytes": 7712,
+          "olean_bytes": 285344
+        },
+        "SolitonClassification.Rotating.BoundedODE": {
+          "source_sha256": "6e8a252fd2f0f7dcb5c8407587d518e8892f2ea263ac6567ad9190ccf935bfb4",
+          "olean_sha256": "e269fb043379bc57eacf8b27ba63d35d60a793e8a2bba6512953182dd69dde77",
+          "source_bytes": 4139,
+          "olean_bytes": 168392
+        },
+        "SolitonClassification.Rotating.ResidualODE": {
+          "source_sha256": "2035c068eff01d09288b3b98d73701d6f047643c089e8f0eee1929cbfd08f69f",
+          "olean_sha256": "111c4ccc5bdbe7f94bf428c58bc319fbb93cb0ff33a2db9475acc54bdc03cca9",
+          "source_bytes": 4579,
+          "olean_bytes": 141696
+        },
+        "SolitonClassification.Rotating.TaylorCoefficients": {
+          "source_sha256": "b43b82c83fa67f3ef7eb1a111dd73770086e0658e729322719b900fd6ad943f3",
+          "olean_sha256": "f094f811374f58ffc25473cd92b72851b74eba05593e715f8e229bddbb8b5e0f",
+          "source_bytes": 6197,
+          "olean_bytes": 571408
+        },
+        "SolitonClassification.Rotating.Field": {
+          "source_sha256": "e661ac4293f71a28caf28075c89234cf3e77259649741ce660978cd04e0c6377",
+          "olean_sha256": "744a1032bc7e43a48d64e362bba72459cfee66ea2fc7dda220e2e0c682924fd0",
+          "source_bytes": 9002,
+          "olean_bytes": 2100168
+        },
+        "SolitonClassification.Rotating.DerivativeVariation": {
+          "source_sha256": "ae131f7d0a19fc9eb92ca127a9dea5a73dfe3b81e3562494f7ba12a8b51d0d36",
+          "olean_sha256": "ef5f6e3662324165ace2bb194a9adfe4184084cd14bdd14101510c26e0400e5c",
+          "source_bytes": 6016,
+          "olean_bytes": 757488
+        },
+        "SolitonClassification.Rotating.MidpointDerivative": {
+          "source_sha256": "1aafd8fe935236693d22942f390e0bf4086399e04ac036735ceec9ce6484398b",
+          "olean_sha256": "35b93577c1447c1076ae8ae4ac3406ef03744210188f3c2e850896645eb505e0",
+          "source_bytes": 12781,
+          "olean_bytes": 978360
+        },
+        "SolitonClassification.Rotating.PartialDerivatives": {
+          "source_sha256": "84438c5e93fc6df5ee7599b2f8a17fe91705fe49993183adb344e4f0f89db502",
+          "olean_sha256": "3f471b8618177dd76b1e5b17738045ac6ebf37f6d4142b3ead72fd84bb8ce3ae",
+          "source_bytes": 6338,
+          "olean_bytes": 57640
+        },
+        "SolitonClassification.Rotating.FieldHessian": {
+          "source_sha256": "654c4efd71a868bdb0db58bf189cee0c2f80ebb01c4137873ac9f3fc3b7d5169",
+          "olean_sha256": "639ef695e6ea8c4b3076ef37eb51dad5842d06c7ccc0e9a2018e99fbbe8f0e4a",
+          "source_bytes": 3348,
+          "olean_bytes": 886848
+        },
+        "SolitonClassification.Rotating.VariationConstantsWithin": {
+          "source_sha256": "83296282fcd974b935a93819ffbb9ca545b1264d77a46153ea9cea38f505f2b2",
+          "olean_sha256": "fe62c6fb2c4371cc02cd76607f64a7140b5a7dbecbc227ec3b5a5eab8fefe4c2",
+          "source_bytes": 5633,
+          "olean_bytes": 207864
+        },
+        "SolitonClassification.Rotating.VariationConstants": {
+          "source_sha256": "6384804d0aa0f4dcf0d501e3b88757a635cd047a31f20d6c6f092e98e7861331",
+          "olean_sha256": "e72ff23577c7b3529d1818f12f4de0968aea41c1b5b6d01c0696488b30fb4ffc",
+          "source_bytes": 5709,
+          "olean_bytes": 201264
+        },
+        "SolitonClassification.Rotating.MatrixRowNorm": {
+          "source_sha256": "81612682b7b1eb544175f54d07af820073799768ad9507642f85a22178c4a5a3",
+          "olean_sha256": "bc302f7b7e259b095ea6e29b72eaaea843676b92681809f11b751cc86e8c283a",
+          "source_bytes": 2938,
+          "olean_bytes": 128808
+        },
+        "SolitonClassification.Rotating.MatrixColumnNorm": {
+          "source_sha256": "ec12bb7e2c743015e6b55be88c06b11434257b23dff10b9e2ea3b5bf208ed53e",
+          "olean_sha256": "bfc2fe87a03568bbec2c279d8a9146cd0a999d6cea88b04ac086c01f32d38b2a",
+          "source_bytes": 3192,
+          "olean_bytes": 163184
+        },
+        "SolitonClassification.Rotating.RationalBall": {
+          "source_sha256": "516fe9cad74b52293aec8d47cf2d075f8042f540be0590f97520f136984650ca",
+          "olean_sha256": "37559f0b8af222f6d3bbd233a7b5a108b98be83161c6e127f62437029b176b39",
+          "source_bytes": 7120,
+          "olean_bytes": 330408
+        },
+        "SolitonClassification.Rotating.CandidateInitial": {
+          "source_sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+          "olean_sha256": "4ed969d95ea27d662cf40e473b52e52a02887cb3e459d65540b372006f33d958",
+          "source_bytes": 4622,
+          "olean_bytes": 285568
+        },
+        "SolitonClassification.Rotating.FixedField": {
+          "source_sha256": "dbaa2b4212ea33e85d352ba0bbfb366bd59c57b61d17e9bd8d546a8f019d7d99",
+          "olean_sha256": "13cdc5cd6bad44579b251bb17e687d36fa86b7c86202349b5d126d9b68b0641c",
+          "source_bytes": 3489,
+          "olean_bytes": 293808
+        },
+        "SolitonClassification.Rotating.FixedBall": {
+          "source_sha256": "d595aa2083940b0c07a21becdc997f5c9ddc660ea28388a465891313e5ff72de",
+          "olean_sha256": "23294d71e27877e3d8931dc0abde004be83571bd15fb6d6dab1ed60b766c17df",
+          "source_bytes": 6660,
+          "olean_bytes": 428576
+        },
+        "SolitonClassification.Rotating.FlowTube": {
+          "source_sha256": "e78ec01bbca4d7f0d88f07548ebcc57dc2619b57368fbf641afe2799670eb565",
+          "olean_sha256": "4b8d717fb522cafede00fe4c37472dfae1ccc1e900ce1b46646b7f09057f9f07",
+          "source_bytes": 4354,
+          "olean_bytes": 572592
+        },
+        "SolitonClassification.Rotating.Grid42P00Matrix": {
+          "source_sha256": "985aca0d179872606222a94a7cbb7d62990845db491fda66d33fd74cc6485b0e",
+          "olean_sha256": "251e2d2a8c6dcd41fe8dd3739d81c428006447641a118b2421199e5b48419614",
+          "source_bytes": 63773,
+          "olean_bytes": 3261960
+        },
+        "SolitonClassification.Rotating.Grid42P00State": {
+          "source_sha256": "8d867e0142d39f48e7a235dab9bc5ffdeed65ced4a804ff0eb624fa919f32060",
+          "olean_sha256": "e901def12c8c29c91a3f79bd046cf3c62499a72d7e3146e4a4421376e2ff8c48",
+          "source_bytes": 29939,
+          "olean_bytes": 1442576
+        },
+        "SolitonClassification.Rotating.TaylorDataCertificate": {
+          "source_sha256": "09d40c957594c121fa6aabb5c3801e290abd012606def6efb1a163c39752412a",
+          "olean_sha256": "c0ad823bdd7f7d41813b010b51a1ac42abfe617232236aceaae64a93892b2ced",
+          "source_bytes": 3664,
+          "olean_bytes": 226896
+        },
+        "SolitonClassification.Rotating.FixedTaylor": {
+          "source_sha256": "8612aaa19bc49a54cc3fd0c2cc877f57ba750846e12b18b05790b70ff4d3af67",
+          "olean_sha256": "3f8ffa5553dbaf34a789891d583947327b96b4392bcf5354de7a8a2c6ec95ec0",
+          "source_bytes": 13701,
+          "olean_bytes": 774008
+        },
+        "SolitonClassification.Rotating.FixedEndpointReset": {
+          "source_sha256": "848ac4dd7b9054549893f1ed9d607bafcbbea4709dc17abd9db3356027bb3491",
+          "olean_sha256": "427be5836295a610e8e6c02c7f2f26a7b67d40e6280e35e87ed08d9faab36bc3",
+          "source_bytes": 2412,
+          "olean_bytes": 79192
+        },
+        "SolitonClassification.Rotating.MixedOrderVariation": {
+          "source_sha256": "56b1eae15566ea7314ace501721ff6fb621fb1433990e13053afaa51d295f0b4",
+          "olean_sha256": "1d29d928fa3706f26354dbc183aba867af3d7592b56b72ee0c5593aadaaf8471",
+          "source_bytes": 3502,
+          "olean_bytes": 199592
+        },
+        "SolitonClassification.Rotating.VariationDataCertificate": {
+          "source_sha256": "3465a22fb25c5187031b6f24c78d135c9008f763c2cd185db7add4a45ae3b402",
+          "olean_sha256": "629672dd881a4c1f31563075881b641db88cd471165481a12260534fb604edbb",
+          "source_bytes": 6539,
+          "olean_bytes": 522992
+        },
+        "SolitonClassification.Rotating.VariationTaylor": {
+          "source_sha256": "2daaca207be01ed61bc6d616e428b5eacdb66a202c0267986a7e504607c57107",
+          "olean_sha256": "bbc2606910e25b5786af69cf83b3e80066d685badf5c7e2c9cdcb8ce0cb03949",
+          "source_bytes": 5749,
+          "olean_bytes": 629800
+        },
+        "SolitonClassification.Rotating.VariationLinearity": {
+          "source_sha256": "51c1c9d393263624ab4128e5de9f68e38a11d5ed361247f260d3dbf886c82a62",
+          "olean_sha256": "724ea44e194ef791a88451d6607c216496cb2440a606b17bd299fb540c46027c",
+          "source_bytes": 5703,
+          "olean_bytes": 626728
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix": {
+          "source_sha256": "9e51e1de97749a0d6bb65bda7f65d2260895d046c995f428bb5d56256b439d2f",
+          "olean_sha256": "f332a1364c1f4a3319e7b3b3778e1c0d4179b4ca32805866102d8df1a0477592",
+          "source_bytes": 7753,
+          "olean_bytes": 401064
+        },
+        "SolitonClassification.Rotating.UniversalVariationOperatorTail": {
+          "source_sha256": "0c25b8f210dffc28f1382b54f747e29889bd33b1363454fd38475576b3a949ab",
+          "olean_sha256": "7fe8550aad0cfb223524097013d50d8ba5b9779da866d344d7211efcb5d080bd",
+          "source_bytes": 2372,
+          "olean_bytes": 65416
+        },
+        "SolitonClassification.Rotating.VariationOperatorBounds": {
+          "source_sha256": "3c8a9704ebf501723a98ebf67deb23bc7ce1028a7b31aca74fd9d5f84e998dfd",
+          "olean_sha256": "af1c846195b378b3969d2854fb956cbc64637a7dc9c40cf393d31a9fb82824c5",
+          "source_bytes": 2811,
+          "olean_bytes": 79336
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget": {
+          "source_sha256": "3d69073d4e5b92e2f009b6eb67ed3e9d665555dcab753f40f68a329487de36a5",
+          "olean_sha256": "e0ed7b3e86f054d15db57066d593bedf0bfbed40f82e6ce7a1c83ba76eca454e",
+          "source_bytes": 4704,
+          "olean_bytes": 172528
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantResidual": {
+          "source_sha256": "7da7c8f845c1b30914dd222a6714595033190035fd9e7a0df265c57b5d6d9620",
+          "olean_sha256": "956d5b85b59c5bfdf1bb04e93a310b8af38c53aaa34a99a1a83dbcbc4614d31a",
+          "source_bytes": 6182,
+          "olean_bytes": 199928
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantActual": {
+          "source_sha256": "d285f37fea5fd7aab20a7bab48abf4c33766516d03cf8a206b1f1e24f3cce4be",
+          "olean_sha256": "6a52610aa85a84fa7c4598c74b22a1cf177e69ce3c2e4e8de67663d78c120206",
+          "source_bytes": 7258,
+          "olean_bytes": 150848
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantVector": {
+          "source_sha256": "60c0736d84ee48cab389f77869162bae4136ad83a2029738509c1e3081051f9f",
+          "olean_sha256": "21b75a597feba5052574bfb128c0f5caa5074e93549491a7888f5bbfde203ef5",
+          "source_bytes": 7825,
+          "olean_bytes": 527288
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual": {
+          "source_sha256": "0d0292a39b04ef3b84ce4a67f2e88b9a8614075b220e54ef9681c9bc702ff4f1",
+          "olean_sha256": "b1edadd51ee3fc3bd96b441d8054edad9e990bab6a6fb7a02c843f868aaa9749",
+          "source_bytes": 13257,
+          "olean_bytes": 1063664
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVector": {
+          "source_sha256": "453e3f89fc55364a60eb251035984f9f8c55d8dd94c16b34777cf2a87f6e9b6d",
+          "olean_sha256": "ae21fdbec5b6bc01cc986dca3ce5454de1a0792a4de8f81a2a8abac09089f197",
+          "source_bytes": 8611,
+          "olean_bytes": 783160
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantScalar": {
+          "source_sha256": "68c16da6c8e4f4b3eaad7f5d3f41125388cc6d63e3744681a225d75afc1bc5cb",
+          "olean_sha256": "b60b1aee50dd148e16baef8fdd8d1b920255279ef3d8680a6c2769ef14fb5577",
+          "source_bytes": 9685,
+          "olean_bytes": 724504
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantScalar": {
+          "source_sha256": "8404393a86e3980072eb6d6d48e24eec9be26056d54ea5df93ff8befa85018b3",
+          "olean_sha256": "761a930dd67b79d79d8abcd50a1c6e2db6371ba970be184ea4f50cbb745e9bc7",
+          "source_bytes": 6142,
+          "olean_bytes": 482936
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantBudget": {
+          "source_sha256": "f230e5633ee6a89a64aaf14f7839a57f3af6a2b76312b83b9707cf5e765f4a3b",
+          "olean_sha256": "5dceaa6cb98cd011554f00d4474a66ed2045273ad8ba54ab00d32cd8bbb00303",
+          "source_bytes": 3885,
+          "olean_bytes": 169216
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTail": {
+          "source_sha256": "e799ea882efebd11ab9f566d4d16a8a11ebb8c9e01beefe43f74c0a617c704cc",
+          "olean_sha256": "f1e8066e1662e95ed83b63b751e6d8b4a7ecee1c6c27cc8ab15ddfc82189d8cc",
+          "source_bytes": 7008,
+          "olean_bytes": 292216
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood": {
+          "source_sha256": "39f8da18930055a0e84a25438e71ba360941e5a29ab7272e1711d10ee84441be",
+          "olean_sha256": "aa47e29e0007afef79a074cfbc317d25887b791f4d1e5827922333577744dd98",
+          "source_bytes": 2990,
+          "olean_bytes": 428376
+        },
+        "SolitonClassification.Rotating.UniversalTrueStateTail": {
+          "source_sha256": "f8a4d9d7719707ef9a2b40d473bfbe48fcaf10eefd3c9f93a57b96ac5ed01628",
+          "olean_sha256": "877ebe187879bd07943da560d7e0633710b8680b6fe14cd5605c6dae99d35e96",
+          "source_bytes": 3283,
+          "olean_bytes": 99200
+        },
+        "SolitonClassification.Rotating.UniversalPolynomialTube": {
+          "source_sha256": "f558d50491ce004409ceed4e71440e7ef3011d40adde85872b4b6d9e1dd8c392",
+          "olean_sha256": "b63aeca41bf618fb26647af95181c685ab15fc89428a75a64c7f93f8b9d46974",
+          "source_bytes": 5923,
+          "olean_bytes": 824704
+        },
+        "SolitonClassification.Rotating.TrueLocalStateTail": {
+          "source_sha256": "c5e829e086093bdfede1deaca9921e2ee1ccbd8c54360422afc445254df6dbe6",
+          "olean_sha256": "741866a9cc5090f9d5beeeebc3be1df8e3d29f28bde55a2622abb337b3b7e263",
+          "source_bytes": 3353,
+          "olean_bytes": 165952
+        },
+        "SolitonClassification.Rotating.ResidualDataCertificate": {
+          "source_sha256": "a521815b045cfc8a389eea9fa4b0b4e9f389c2ce2188d33ed88637c69a3d3a4c",
+          "olean_sha256": "1def2c79015fe60777156bccb7c4e3eb2d833a8f68659b9db8ecd55f5d3226f3",
+          "source_bytes": 5194,
+          "olean_bytes": 208640
+        },
+        "SolitonClassification.Rotating.PolynomialEnvelope": {
+          "source_sha256": "612c3861a3846c1fade1756eadb5364d0ce7bae1a2b95f23df89e52a6f2322fb",
+          "olean_sha256": "290217fc46ffa9400e7075c855a359ddf3b185346dbd8f5ed89ef76d67349e24",
+          "source_bytes": 6651,
+          "olean_bytes": 343120
+        },
+        "SolitonClassification.Rotating.UniversalTaylorResidual": {
+          "source_sha256": "d31654dcfeaefb99082afd0fac8a529d7b2acd43b42e9627fe5ae470b2493072",
+          "olean_sha256": "b28c6a61c5d95f795d89409458302ccc315c107559c6e8bb9b3a7bf6bbb65d65",
+          "source_bytes": 3949,
+          "olean_bytes": 111696
+        },
+        "SolitonClassification.Rotating.SignedLocalTail": {
+          "source_sha256": "8bb07fa715e1c8e52691155a916e3bf24ecc55e4dd2849920323d3dae0a6cadf",
+          "olean_sha256": "4b6208d427ece6a0ddb59b333e64bcefc257fe1f61aec875a7be299e3abe1d59",
+          "source_bytes": 7764,
+          "olean_bytes": 332856
+        },
+        "SolitonClassification.Rotating.TrueLocalVariationTail": {
+          "source_sha256": "5b612cf1b2930231c4f23921036d2ab3dff6046f97b25dc1f9b03359c9695233",
+          "olean_sha256": "0094fafa7c2cb6d1d988d84f86f917fe455da906969f3e99dd662686ff9a6976",
+          "source_bytes": 5537,
+          "olean_bytes": 197704
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": {
+          "source_sha256": "846f26c9ea94da88f16cd700c9c508c4c0a79072f18ea69c0c2a1cc5693f1edf",
+          "olean_sha256": "92cc22b01b9737f93989ecf4d2c0776e9e9d2b683e989317d3da201fde0412f4",
+          "source_bytes": 6319,
+          "olean_bytes": 850816
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42": {
+          "source_sha256": "e4f9db0ceea3070fbfd9c3ac5245f92830f5de461dd88de699bc2b70ff6c0d4a",
+          "olean_sha256": "b93101bee79731a65197730f53cc75745e4d1ecd60d05ea92eed2d82457dc981",
+          "source_bytes": 8906,
+          "olean_bytes": 389504
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialReference42": {
+          "source_sha256": "3be42532bc7c5be443980472ea16bc402960a230ca9220a54de41514bf6b986c",
+          "olean_sha256": "2fb5557e2574ca250c45633bc67a2e7a3ba816c33695506e56cfff612746582e",
+          "source_bytes": 4580,
+          "olean_bytes": 278888
+        },
+        "SolitonClassification.Rotating.PolynomialGridAssembly": {
+          "source_sha256": "694cd8e3df044e9ad057e39a5a0c8fda13b3cb751fb50dc347bc40bc2c0b57c8",
+          "olean_sha256": "f6ea960c29049a46d5898fab328fd93c9f346651b4ec0735ef2be6cdb75c8066",
+          "source_bytes": 7902,
+          "olean_bytes": 538104
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix22": {
+          "source_sha256": "5dab25d741b553cf7f914fbef798d295cfc46682567a5d1ef7f87986789aa9bf",
+          "olean_sha256": "a285edda2b9f7e453b0e8f6040e3da5a0716799c6634a9794e951b7d55741773",
+          "source_bytes": 4973,
+          "olean_bytes": 130816
+        },
+        "SolitonClassification.Rotating.UniversalVariationOrder22": {
+          "source_sha256": "e0e4527289bfdbae8b2503ab84d0f373c87d590e4bbf016b87c707ef3211404c",
+          "olean_sha256": "f48059b8d43b41b306da313605c02fd9133c8b0d28afbb8a96683e40f939bd92",
+          "source_bytes": 9076,
+          "olean_bytes": 341232
+        },
+        "SolitonClassification.Rotating.RotatingGridMargin": {
+          "source_sha256": "fcd53cf58c2b88bcf4693d98e1a0bbcc523a478d13f9ea08c817f8dcd0529725",
+          "olean_sha256": "bbc256c6a81098196be1dc0b1f9d705415a16f895cec147b31e8397bb3ab2b37",
+          "source_bytes": 4642,
+          "olean_bytes": 509352
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGeometry": {
+          "source_sha256": "2f5efb14dc524204d676ec47bffc965dd4b2b8602f6036c0b0ce5ffc054e2c10",
+          "olean_sha256": "2e3d9f51a581d899b536c231a6d0f35636c29f4014918f439d6d53e33bb3ed1a",
+          "source_bytes": 3177,
+          "olean_bytes": 597472
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGridData": {
+          "source_sha256": "a950fa6cb201f9edd8c3476d8eff00937ab5e34046e5f7dc35fa9de507245ebf",
+          "olean_sha256": "a8bb948d3f1bf22cbbc4060238374bc93c118491e27c4eb4e9e2aac3563d7d58",
+          "source_bytes": 5727,
+          "olean_bytes": 485928
+        },
+        "SolitonClassification.Rotating.FlowBootstrapSegment": {
+          "source_sha256": "804cd262b3ee1c7d40768df6f0f82f5c1b276688b5a9620b673a503d0b0f7ddf",
+          "olean_sha256": "c6395c9f1c8a8f544866c840bc34e0c5dee90f19d6f62649e2ca6cc6ac5b2a04",
+          "source_bytes": 5207,
+          "olean_bytes": 198664
+        },
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates": {
+          "source_sha256": "22e1cbb8cbbf019dc7170b8c84576fc238ad8800121e001f14ad293b0eec406d",
+          "olean_sha256": "e76712ba3bc8db46491dd9775f816218c259eab4155671ec0f5a529c02749059",
+          "source_bytes": 6155,
+          "olean_bytes": 359736
+        },
+        "SolitonClassification.Rotating.FlowMetricSegment": {
+          "source_sha256": "a22c6ddd181aed4a78359c2e848cddfb1ba7c7684e616cc74eaaef1f310edf29",
+          "olean_sha256": "ce1fe6021b1236e55282dfac0783957acc91d9fa22cabd5e7ff1c16f2784f4cc",
+          "source_bytes": 5388,
+          "olean_bytes": 126328
+        },
+        "SolitonClassification.Rotating.FlowBootstrapReset": {
+          "source_sha256": "9ef6208ddd6f03a2754f9ae4c136c563d40eaf54b274f8db077bcb44381918cf",
+          "olean_sha256": "2d920e9b2d3bd654898cfbce64184e36d0e4297d648d0377ccf1d4d79bdeee72",
+          "source_bytes": 2006,
+          "olean_bytes": 87984
+        },
+        "SolitonClassification.Rotating.FlowMetricReset": {
+          "source_sha256": "3f442cdc60d6815de76a91b19bd39186ecfd49643b5d48cb48436a844bf825bf",
+          "olean_sha256": "76b9066d1161bf2f07e0624019afd762febbd8878069b1818cdec0ef589832f5",
+          "source_bytes": 2913,
+          "olean_bytes": 92328
+        },
+        "SolitonClassification.Rotating.FlowBootstrapBudget": {
+          "source_sha256": "af86cd9e459dfc8e90c4eae628c12d333fd1d92f5ed34ced0953476c1e34c1cd",
+          "olean_sha256": "9cf247f780480b87e4deacfbbfdf627c1198cc72fdb9d0e206b4e9786469cffa",
+          "source_bytes": 5274,
+          "olean_bytes": 369784
+        },
+        "SolitonClassification.Rotating.FlowMetricDiscrete": {
+          "source_sha256": "dd956914ead6f18e02ffbc199e4f1a6998bc8467c728dd23121291223f308433",
+          "olean_sha256": "b4c01e8cdb9b2aa9bf39e9a2a423047365a1304a85fa541eea4a11089a3a68c9",
+          "source_bytes": 3896,
+          "olean_bytes": 174416
+        },
+        "SolitonClassification.Rotating.FlowMetricGlobal": {
+          "source_sha256": "dce20066c3f41051e637e77edc0797441ce2bd77ecfe4ef50876fa3b3a11f48a",
+          "olean_sha256": "e455d10d6ed331d88b5b7244fc60c4e0a83f6114520466584b60259002e6f20c",
+          "source_bytes": 5481,
+          "olean_bytes": 220016
+        },
+        "SolitonClassification.Rotating.FlowMetricGridData": {
+          "source_sha256": "f7ef47f8dc5fcc59408dca52c70c482ded23e14b497e85e37ed39fce626f5994",
+          "olean_sha256": "5fb92619cc88770edec02c654b32c6c78fd47e857dcf9fe58682a66f52a4db5c",
+          "source_bytes": 6648,
+          "olean_bytes": 456728
+        },
+        "SolitonClassification.Rotating.UniversalReducedVariation": {
+          "source_sha256": "cfb7ba7292dc7baeeccd46a583a3c05274e5f703da2b339a93d82eeb56ffd945",
+          "olean_sha256": "9e744316a251d671d32633021500c6c13a302e5977b67af3f7da459b01d56873",
+          "source_bytes": 7521,
+          "olean_bytes": 310144
+        },
+        "SolitonClassification.Rotating.UniversalStateOrders": {
+          "source_sha256": "48d528cab2bae1d023f76588ca98b2fbf156af58fd87b1f4d29a26eb14dad61e",
+          "olean_sha256": "378cfb7ee060f813be4f9aae2d3d41e9f2b733b269db42d2bc2e56268dcf60e1",
+          "source_bytes": 7387,
+          "olean_bytes": 247256
+        },
+        "SolitonClassification.Rotating.RotatingGridMarginOrders": {
+          "source_sha256": "272cf2e36e77756a49f92be185be89d901b0b8eef635d9aa6cda1ea3360a2375",
+          "olean_sha256": "d52aaeff7c1b161340f9232924fbebaba2a7fcdb0482542c5bd90135bcbe93a0",
+          "source_bytes": 2222,
+          "olean_bytes": 57808
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizon": {
+          "source_sha256": "b122a762ddaa8783a227403ebdba2ccb977bec9f54239e89fb3be9edcbfb8f97",
+          "olean_sha256": "fee416c3e4d86fd8a9df7d437a3db4a84ab87410c563c9903d7861585586d50a",
+          "source_bytes": 5871,
+          "olean_bytes": 306696
+        },
+        "SolitonClassification.Rotating.FlowBootstrapNeighborhood": {
+          "source_sha256": "163fa9f411619faaad0ec23f2074b1efc6b198021e545da4be8d368b10bce976",
+          "olean_sha256": "026e27a1bf3da31c18e26ee563cb341f1703025b1f4352bdc6e3615ed00dc37f",
+          "source_bytes": 3100,
+          "olean_bytes": 118928
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGlobal": {
+          "source_sha256": "15b93dd052ff55abb9c5913a3aaa8fdf544ae635db30353325502e60d243a682",
+          "olean_sha256": "4c7887abfafd4c2f57d9eba50f94014e88d4b026430da3d34de51385bd57993d",
+          "source_bytes": 5710,
+          "olean_bytes": 265736
+        },
+        "SolitonClassification.Rotating.ActualShooting": {
+          "source_sha256": "c6825af1f131c1c8898caf564f9ada47dae47888627a8a3ee3b1628fbf004909",
+          "olean_sha256": "233357634d6d602e6950e255d2e38f3a3679fadd236da663352d440d19c79c41",
+          "source_bytes": 6178,
+          "olean_bytes": 413384
+        },
+        "SolitonClassification.Rotating.ShootingRoot": {
+          "source_sha256": "d7afa96114090aabd27eae3359d416e8a44010cea75c6571ec81bb83ecc99184",
+          "olean_sha256": "7feda6058c6561bf8a6ffcad8d41973f665edfb81b31385287f25cae16987047",
+          "source_bytes": 12461,
+          "olean_bytes": 803496
+        },
+        "SolitonClassification.Rotating.BanachRoot": {
+          "source_sha256": "2af074df18e20528b6501fb117f40db20d896471774cdbfca7e30021670d851c",
+          "olean_sha256": "fd2a31c42aad6c0eb2858d8fed2db87e4c9ad4ce4aef5f2f45a6b46ec6ceb093",
+          "source_bytes": 9417,
+          "olean_bytes": 416400
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizonCandidate": {
+          "source_sha256": "d47e6a1039e6a6ab79ae4386c9464f728de27b39db26ff87322ad762da7b3855",
+          "olean_sha256": "ee87c3bfed5746acd66654a5e082022a51f731db3b4122fef062cf65f4673371",
+          "source_bytes": 6159,
+          "olean_bytes": 183488
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationBootstrap": {
+          "source_sha256": "cff18ebfd03b412c170af5fc5c724da36d5641845311e6a01556c1f6fc04fcef",
+          "olean_sha256": "064ea5bc0bd33944575cc6af2faabab0d60d8928c67d93106a000301b543c135",
+          "source_bytes": 3527,
+          "olean_bytes": 67240
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationGlobal": {
+          "source_sha256": "b5f5a404cf59c017070ce2333204b5f0ccf11c21bb73e66d79ad0ebc4299b99b",
+          "olean_sha256": "23bc2abfab530cec897e6c06179978c46a0db9b7808f5a169ae8dbe7f20afa01",
+          "source_bytes": 10652,
+          "olean_bytes": 378656
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationSegment": {
+          "source_sha256": "cb843bb5cdf991ac2fbcb224e06f44691031cf9215f249aca7fa7ed3b1d30b86",
+          "olean_sha256": "65235553b4fbbd7ed8fcd52b93f32783df10fc550395c681e35b34b20674396a",
+          "source_bytes": 3656,
+          "olean_bytes": 175408
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationReset": {
+          "source_sha256": "cddab403c6bac2f64be952fd3bdd7bef8df3e9a8ffbf87fa5a9cdcd0dfebcbd5",
+          "olean_sha256": "4e9643b67b423e097e3975680a7b5dc7b5e816caf4dab6767bba2b72785e79fb",
+          "source_bytes": 2083,
+          "olean_bytes": 115128
+        },
+        "SolitonClassification.Rotating.FlowBootstrapMatrices": {
+          "source_sha256": "4572e11e0d34fdeeb790614f133de07b32397538bac133e5dd3f19747fd39a55",
+          "olean_sha256": "dbb935e7e906014cf64609f4c9807ead3543a8539d133a866f78eb0c2e0ff759",
+          "source_bytes": 4476,
+          "olean_bytes": 113240
+        },
+        "SolitonClassification.Rotating.FlowMetricRoot": {
+          "source_sha256": "947aa071549f87dfd14fd8dd8f3f92e55ed25630deb54b3bea70a74db5037ff4",
+          "olean_sha256": "38316b8112946829c34cd16a10ae79d6ad8f370b2c8c319681691904d22c0272",
+          "source_bytes": 2764,
+          "olean_bytes": 60272
+        },
+        "SolitonClassification.Rotating.FlowInverseRoot": {
+          "source_sha256": "e04a9a1cc64cc1fe16f5575e0f5148b343a1c9df0a5989ff930e73505b33b00f",
+          "olean_sha256": "485dd8c9cce53029897adb3df2f612590c60d3e290f8778756165db0cd31132a",
+          "source_bytes": 3518,
+          "olean_bytes": 151704
+        },
+        "SolitonClassification.Rotating.ActualRootFromMatrices": {
+          "source_sha256": "f1f4ea39cc27fe3106ae8962d0fff8cd28c8fffe23631e0cbabfcf24386fe446",
+          "olean_sha256": "738900918c81df2e3c163357a83fe8522d7a03f0ea9808014d939cb62d25c506",
+          "source_bytes": 3765,
+          "olean_bytes": 189088
+        },
+        "SolitonClassification.Rotating.ShootingVariation": {
+          "source_sha256": "8b14163046b3994ea4501a8ad28319d18ec6fae24beb3ea6c7355d52c51ef98b",
+          "olean_sha256": "544e0bb66ee39e24fe815c8c7895fdefe26fb08a78f66f0913b6f076b14f54a2",
+          "source_bytes": 8881,
+          "olean_bytes": 562976
+        },
+        "SolitonClassification.Rotating.QuantitativeJoint": {
+          "source_sha256": "403ecf38f037d1ac777c3896bfeafa10ce76f3a2957b4fbdd7600c95dd776346",
+          "olean_sha256": "dc459dbd0aba830b1f8cfe807dcda947f05d584f54aee13bf4e28ca4d19aeef8",
+          "source_bytes": 7053,
+          "olean_bytes": 449896
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationBudget": {
+          "source_sha256": "39920c19c674b2bab55997407b92807956b8a34b41dceafb151957b99408c248",
+          "olean_sha256": "d41b28b3f69954de3ea11204e5324064141f1a1f38741401100fa3cb8f7b5465",
+          "source_bytes": 1422,
+          "olean_bytes": 96696
+        }
+      }
+    },
+    "fresh": {
+      "module": "SolitonClassification/Rotating/Block8FreshAudit",
+      "exit_code": 0,
+      "wall_seconds": 17.870192800008226,
+      "user_cpu_seconds": 6.921875,
+      "termination": "completed",
+      "kernel_cpu_seconds": 10.734375,
+      "peak_working_set_bytes": 1714405376,
+      "source_bytes": 762,
+      "source_sha256": "994f42eb1b583e31b643a09a2689fcf7952a463d25b2c2f25fe4fefdbd1e3637",
+      "olean_bytes": 2680,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\Block8FreshAudit.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide",
+      "import_hashes": {
+        "SolitonClassification.Rotating.Block8Actual": {
+          "path": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\build\\SolitonClassification\\Rotating\\Block8Actual.olean",
+          "sha256": "cac47a788bc35a23fe678f014bc95c73ef725696662c2f91fb56a5e7339ce08d"
+        }
+      },
+      "log_sha256": "3163383a4b44a627169064ae2478067161b9c29fc8aa6709512ba3c6c9bcc668",
+      "olean_sha256": "4479f05ca5655ed3fe90f9d4062700f27082591cfc0beafb53f6c9b48b4589ff",
+      "local_dependency_closure": {
+        "SolitonClassification.Rotating.Block8FreshAudit": {
+          "source_sha256": "994f42eb1b583e31b643a09a2689fcf7952a463d25b2c2f25fe4fefdbd1e3637",
+          "olean_sha256": "4479f05ca5655ed3fe90f9d4062700f27082591cfc0beafb53f6c9b48b4589ff",
+          "source_bytes": 762,
+          "olean_bytes": 2680
+        },
+        "SolitonClassification.Rotating.Block8Actual": {
+          "source_sha256": "49828f48c676bc98f0878b1f6f3ac4941fc42b15192322741627e2c97f46ffb5",
+          "olean_sha256": "cac47a788bc35a23fe678f014bc95c73ef725696662c2f91fb56a5e7339ce08d",
+          "source_bytes": 5894,
+          "olean_bytes": 348168
+        },
+        "SolitonClassification.Rotating.Block8Grid": {
+          "source_sha256": "a5a8de8e8b2dfd7e71f396d116784bb3e32ca32061822775786e04a02ec9b792",
+          "olean_sha256": "5cdc8d0722883409486b36a39a54d08d8e668f2631e61bde39210c10055097b5",
+          "source_bytes": 6230,
+          "olean_bytes": 329320
+        },
+        "SolitonClassification.Rotating.Block8Leaf00": {
+          "source_sha256": "921dc984e65ad222c10f46847c1968906c76644320a730afeefee23fa544868b",
+          "olean_sha256": "2f9ae4201b0daf43ba1db0b9fa80a4b7a6f43fa88cb4c9c9c39439a1f0761c06",
+          "source_bytes": 1473,
+          "olean_bytes": 58696
+        },
+        "SolitonClassification.Rotating.Block8Nodes": {
+          "source_sha256": "b51c60d4ae8fba53541f214237ae0d3b5ba89bac6cc2a77a62d7c16bde31fdb7",
+          "olean_sha256": "7582b41c3ce4e61875da47f81a350cff5b81fe218335902327b334643154bcfb",
+          "source_bytes": 32364,
+          "olean_bytes": 1555160
+        },
+        "SolitonClassification.Rotating.Grid42P00Nodes": {
+          "source_sha256": "768775276ac2caa0f8a9fd105138969f09f70683fefb22183417f616012503e9",
+          "olean_sha256": "9fce86a2f5ea6d50df4c559dc1ffbe482a963aab16ebeabe2407ff81a89a8133",
+          "source_bytes": 7169,
+          "olean_bytes": 909392
+        },
+        "SolitonClassification.Rotating.PointMatrixGridBudget": {
+          "source_sha256": "f1fae5dbe8aca05143f37bfc9d3d4ceb359ebfaf5b8782cde163ff4cc53fbf81",
+          "olean_sha256": "5cbf369a25610d97b2d8230dc61bd7aa709922dc74ca11111c042edfdab6a602",
+          "source_bytes": 1977,
+          "olean_bytes": 152344
+        },
+        "SolitonClassification.Rotating.PointMatrixCertificate": {
+          "source_sha256": "b7edc11825d5cadfbeb2dcf52c5bbad12b5e9c11240525f23e7dad96b3a8ede0",
+          "olean_sha256": "3a320830e86080887e053a1d094e7e4d8105d1e3e4e19715a0c01c3069820c8e",
+          "source_bytes": 5066,
+          "olean_bytes": 234296
+        },
+        "SolitonClassification.Rotating.PointMatrixInverse": {
+          "source_sha256": "dc2a9c00ed3556874645f251601884e6de64d2eb66cf270a6ec88130f7e85a40",
+          "olean_sha256": "4cde968f4e2637b7c49b63565b86124dc38388661b390f1f41117f1bf5a5f3d5",
+          "source_bytes": 2533,
+          "olean_bytes": 72720
+        },
+        "SolitonClassification.Rotating.ReferenceInversePerturbation": {
+          "source_sha256": "3cf37732a94a77e8587618afd508fe8b0df92ce76dbb6303556798178b6f2dc0",
+          "olean_sha256": "2c235c9b304b0f21d0dfdca19211f897cbd8d88f6f946a601fda8aca99c63926",
+          "source_bytes": 2250,
+          "olean_bytes": 111208
+        },
+        "SolitonClassification.Rotating.FlowMetricCoordinates": {
+          "source_sha256": "81c9d1c641134c6c134c6d2bf1e646481e556188ea97ce521718d6759e51952d",
+          "olean_sha256": "73091e07c9bfaba491ae1fa5f7e2dfba489000610fb6717c141e682875cda5d7",
+          "source_bytes": 7453,
+          "olean_bytes": 365736
+        },
+        "SolitonClassification.Rotating.FlowInverseODE": {
+          "source_sha256": "540b009ec28985b3c42fc30bafbc6c21c761291d55c560f45211499a59d7da12",
+          "olean_sha256": "d4b702ceae5c340c6bf53cb0a3f18c49b5907cfb384fb506374811b5121bb457",
+          "source_bytes": 2350,
+          "olean_bytes": 223232
+        },
+        "SolitonClassification.Rotating.FlowInverse": {
+          "source_sha256": "f343445a0a6516ffd7e2465f0978f67bbd16e1c523a67e3c9910acd613e597f5",
+          "olean_sha256": "232c14574a78d7eefa38a249a80721ce958c0c88e94781e8ab265ec7ec7626c8",
+          "source_bytes": 6702,
+          "olean_bytes": 187600
+        },
+        "SolitonClassification.Rotating.QuantitativeVariation": {
+          "source_sha256": "29859c237a9084e30d3204fbf92029a491fcb34a39a7862e9613fe74f2e6ea20",
+          "olean_sha256": "c0585c9282df5a2f52b73f34c7a10ec084e478639cc29506097f5894231e7d24",
+          "source_bytes": 7099,
+          "olean_bytes": 411576
+        },
+        "SolitonClassification.Rotating.FlowVariationalODE": {
+          "source_sha256": "a272156f70020ce10e82844b23246089002c6b372dd2be6fef6e2982c813b080",
+          "olean_sha256": "0149391144b198f0a8ab852f88218319c934a9b20354449043b16ede8ce4605d",
+          "source_bytes": 2555,
+          "olean_bytes": 94464
+        },
+        "SolitonClassification.Rotating.FlowVariational": {
+          "source_sha256": "66732c053b689ebdee52057677151d5d1001b8992152f8febb0efafe4ea4de46",
+          "olean_sha256": "d0d6cd64a1656aa024a529841a9c8fb6b9500bbffae3710169aa6f24561c3591",
+          "source_bytes": 7265,
+          "olean_bytes": 249248
+        },
+        "SolitonClassification.Rotating.FlowJoint": {
+          "source_sha256": "c5c853d0c6afc4a94d54c6c3006486b2ab14ca613bd63097c6e4cc28b81af515",
+          "olean_sha256": "83effce9c9b38520fc63e44306955d3936bc25c59caeaca507db72fda1b4c50c",
+          "source_bytes": 7872,
+          "olean_bytes": 427832
+        },
+        "SolitonClassification.Rotating.FlowDifferentiability": {
+          "source_sha256": "cf14d3d4a4f3c502491faf9ad1960b62dab2ffd33d299d6df4447ce7c1757852",
+          "olean_sha256": "dbb7e8818e96c2539edcc49915035aabed80a7bb2e54f857c225bc0493ad1933",
+          "source_bytes": 9755,
+          "olean_bytes": 1251384
+        },
+        "SolitonClassification.Rotating.FlowFoundation": {
+          "source_sha256": "86819c043f3759b94f88d1f52fa75c5adb297d17ce004ee84ee57272e7e9c1ec",
+          "olean_sha256": "a3e1619c7679e2e5a94ffc6cb1b01b720281386c376bd2438568222b004011ec",
+          "source_bytes": 7712,
+          "olean_bytes": 285344
+        },
+        "SolitonClassification.Rotating.BoundedODE": {
+          "source_sha256": "6e8a252fd2f0f7dcb5c8407587d518e8892f2ea263ac6567ad9190ccf935bfb4",
+          "olean_sha256": "e269fb043379bc57eacf8b27ba63d35d60a793e8a2bba6512953182dd69dde77",
+          "source_bytes": 4139,
+          "olean_bytes": 168392
+        },
+        "SolitonClassification.Rotating.ResidualODE": {
+          "source_sha256": "2035c068eff01d09288b3b98d73701d6f047643c089e8f0eee1929cbfd08f69f",
+          "olean_sha256": "111c4ccc5bdbe7f94bf428c58bc319fbb93cb0ff33a2db9475acc54bdc03cca9",
+          "source_bytes": 4579,
+          "olean_bytes": 141696
+        },
+        "SolitonClassification.Rotating.TaylorCoefficients": {
+          "source_sha256": "b43b82c83fa67f3ef7eb1a111dd73770086e0658e729322719b900fd6ad943f3",
+          "olean_sha256": "f094f811374f58ffc25473cd92b72851b74eba05593e715f8e229bddbb8b5e0f",
+          "source_bytes": 6197,
+          "olean_bytes": 571408
+        },
+        "SolitonClassification.Rotating.Field": {
+          "source_sha256": "e661ac4293f71a28caf28075c89234cf3e77259649741ce660978cd04e0c6377",
+          "olean_sha256": "744a1032bc7e43a48d64e362bba72459cfee66ea2fc7dda220e2e0c682924fd0",
+          "source_bytes": 9002,
+          "olean_bytes": 2100168
+        },
+        "SolitonClassification.Rotating.DerivativeVariation": {
+          "source_sha256": "ae131f7d0a19fc9eb92ca127a9dea5a73dfe3b81e3562494f7ba12a8b51d0d36",
+          "olean_sha256": "ef5f6e3662324165ace2bb194a9adfe4184084cd14bdd14101510c26e0400e5c",
+          "source_bytes": 6016,
+          "olean_bytes": 757488
+        },
+        "SolitonClassification.Rotating.MidpointDerivative": {
+          "source_sha256": "1aafd8fe935236693d22942f390e0bf4086399e04ac036735ceec9ce6484398b",
+          "olean_sha256": "35b93577c1447c1076ae8ae4ac3406ef03744210188f3c2e850896645eb505e0",
+          "source_bytes": 12781,
+          "olean_bytes": 978360
+        },
+        "SolitonClassification.Rotating.PartialDerivatives": {
+          "source_sha256": "84438c5e93fc6df5ee7599b2f8a17fe91705fe49993183adb344e4f0f89db502",
+          "olean_sha256": "3f471b8618177dd76b1e5b17738045ac6ebf37f6d4142b3ead72fd84bb8ce3ae",
+          "source_bytes": 6338,
+          "olean_bytes": 57640
+        },
+        "SolitonClassification.Rotating.FieldHessian": {
+          "source_sha256": "654c4efd71a868bdb0db58bf189cee0c2f80ebb01c4137873ac9f3fc3b7d5169",
+          "olean_sha256": "639ef695e6ea8c4b3076ef37eb51dad5842d06c7ccc0e9a2018e99fbbe8f0e4a",
+          "source_bytes": 3348,
+          "olean_bytes": 886848
+        },
+        "SolitonClassification.Rotating.VariationConstantsWithin": {
+          "source_sha256": "83296282fcd974b935a93819ffbb9ca545b1264d77a46153ea9cea38f505f2b2",
+          "olean_sha256": "fe62c6fb2c4371cc02cd76607f64a7140b5a7dbecbc227ec3b5a5eab8fefe4c2",
+          "source_bytes": 5633,
+          "olean_bytes": 207864
+        },
+        "SolitonClassification.Rotating.VariationConstants": {
+          "source_sha256": "6384804d0aa0f4dcf0d501e3b88757a635cd047a31f20d6c6f092e98e7861331",
+          "olean_sha256": "e72ff23577c7b3529d1818f12f4de0968aea41c1b5b6d01c0696488b30fb4ffc",
+          "source_bytes": 5709,
+          "olean_bytes": 201264
+        },
+        "SolitonClassification.Rotating.MatrixRowNorm": {
+          "source_sha256": "81612682b7b1eb544175f54d07af820073799768ad9507642f85a22178c4a5a3",
+          "olean_sha256": "bc302f7b7e259b095ea6e29b72eaaea843676b92681809f11b751cc86e8c283a",
+          "source_bytes": 2938,
+          "olean_bytes": 128808
+        },
+        "SolitonClassification.Rotating.MatrixColumnNorm": {
+          "source_sha256": "ec12bb7e2c743015e6b55be88c06b11434257b23dff10b9e2ea3b5bf208ed53e",
+          "olean_sha256": "bfc2fe87a03568bbec2c279d8a9146cd0a999d6cea88b04ac086c01f32d38b2a",
+          "source_bytes": 3192,
+          "olean_bytes": 163184
+        },
+        "SolitonClassification.Rotating.RationalBall": {
+          "source_sha256": "516fe9cad74b52293aec8d47cf2d075f8042f540be0590f97520f136984650ca",
+          "olean_sha256": "37559f0b8af222f6d3bbd233a7b5a108b98be83161c6e127f62437029b176b39",
+          "source_bytes": 7120,
+          "olean_bytes": 330408
+        },
+        "SolitonClassification.Rotating.CandidateInitial": {
+          "source_sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+          "olean_sha256": "4ed969d95ea27d662cf40e473b52e52a02887cb3e459d65540b372006f33d958",
+          "source_bytes": 4622,
+          "olean_bytes": 285568
+        },
+        "SolitonClassification.Rotating.FixedField": {
+          "source_sha256": "dbaa2b4212ea33e85d352ba0bbfb366bd59c57b61d17e9bd8d546a8f019d7d99",
+          "olean_sha256": "13cdc5cd6bad44579b251bb17e687d36fa86b7c86202349b5d126d9b68b0641c",
+          "source_bytes": 3489,
+          "olean_bytes": 293808
+        },
+        "SolitonClassification.Rotating.FixedBall": {
+          "source_sha256": "d595aa2083940b0c07a21becdc997f5c9ddc660ea28388a465891313e5ff72de",
+          "olean_sha256": "23294d71e27877e3d8931dc0abde004be83571bd15fb6d6dab1ed60b766c17df",
+          "source_bytes": 6660,
+          "olean_bytes": 428576
+        },
+        "SolitonClassification.Rotating.FlowTube": {
+          "source_sha256": "e78ec01bbca4d7f0d88f07548ebcc57dc2619b57368fbf641afe2799670eb565",
+          "olean_sha256": "4b8d717fb522cafede00fe4c37472dfae1ccc1e900ce1b46646b7f09057f9f07",
+          "source_bytes": 4354,
+          "olean_bytes": 572592
+        },
+        "SolitonClassification.Rotating.Grid42P00Matrix": {
+          "source_sha256": "985aca0d179872606222a94a7cbb7d62990845db491fda66d33fd74cc6485b0e",
+          "olean_sha256": "251e2d2a8c6dcd41fe8dd3739d81c428006447641a118b2421199e5b48419614",
+          "source_bytes": 63773,
+          "olean_bytes": 3261960
+        },
+        "SolitonClassification.Rotating.Grid42P00State": {
+          "source_sha256": "8d867e0142d39f48e7a235dab9bc5ffdeed65ced4a804ff0eb624fa919f32060",
+          "olean_sha256": "e901def12c8c29c91a3f79bd046cf3c62499a72d7e3146e4a4421376e2ff8c48",
+          "source_bytes": 29939,
+          "olean_bytes": 1442576
+        },
+        "SolitonClassification.Rotating.TaylorDataCertificate": {
+          "source_sha256": "09d40c957594c121fa6aabb5c3801e290abd012606def6efb1a163c39752412a",
+          "olean_sha256": "c0ad823bdd7f7d41813b010b51a1ac42abfe617232236aceaae64a93892b2ced",
+          "source_bytes": 3664,
+          "olean_bytes": 226896
+        },
+        "SolitonClassification.Rotating.FixedTaylor": {
+          "source_sha256": "8612aaa19bc49a54cc3fd0c2cc877f57ba750846e12b18b05790b70ff4d3af67",
+          "olean_sha256": "3f8ffa5553dbaf34a789891d583947327b96b4392bcf5354de7a8a2c6ec95ec0",
+          "source_bytes": 13701,
+          "olean_bytes": 774008
+        },
+        "SolitonClassification.Rotating.FixedEndpointReset": {
+          "source_sha256": "848ac4dd7b9054549893f1ed9d607bafcbbea4709dc17abd9db3356027bb3491",
+          "olean_sha256": "427be5836295a610e8e6c02c7f2f26a7b67d40e6280e35e87ed08d9faab36bc3",
+          "source_bytes": 2412,
+          "olean_bytes": 79192
+        },
+        "SolitonClassification.Rotating.MixedOrderVariation": {
+          "source_sha256": "56b1eae15566ea7314ace501721ff6fb621fb1433990e13053afaa51d295f0b4",
+          "olean_sha256": "1d29d928fa3706f26354dbc183aba867af3d7592b56b72ee0c5593aadaaf8471",
+          "source_bytes": 3502,
+          "olean_bytes": 199592
+        },
+        "SolitonClassification.Rotating.VariationDataCertificate": {
+          "source_sha256": "3465a22fb25c5187031b6f24c78d135c9008f763c2cd185db7add4a45ae3b402",
+          "olean_sha256": "629672dd881a4c1f31563075881b641db88cd471165481a12260534fb604edbb",
+          "source_bytes": 6539,
+          "olean_bytes": 522992
+        },
+        "SolitonClassification.Rotating.VariationTaylor": {
+          "source_sha256": "2daaca207be01ed61bc6d616e428b5eacdb66a202c0267986a7e504607c57107",
+          "olean_sha256": "bbc2606910e25b5786af69cf83b3e80066d685badf5c7e2c9cdcb8ce0cb03949",
+          "source_bytes": 5749,
+          "olean_bytes": 629800
+        },
+        "SolitonClassification.Rotating.VariationLinearity": {
+          "source_sha256": "51c1c9d393263624ab4128e5de9f68e38a11d5ed361247f260d3dbf886c82a62",
+          "olean_sha256": "724ea44e194ef791a88451d6607c216496cb2440a606b17bd299fb540c46027c",
+          "source_bytes": 5703,
+          "olean_bytes": 626728
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix": {
+          "source_sha256": "9e51e1de97749a0d6bb65bda7f65d2260895d046c995f428bb5d56256b439d2f",
+          "olean_sha256": "f332a1364c1f4a3319e7b3b3778e1c0d4179b4ca32805866102d8df1a0477592",
+          "source_bytes": 7753,
+          "olean_bytes": 401064
+        },
+        "SolitonClassification.Rotating.UniversalVariationOperatorTail": {
+          "source_sha256": "0c25b8f210dffc28f1382b54f747e29889bd33b1363454fd38475576b3a949ab",
+          "olean_sha256": "7fe8550aad0cfb223524097013d50d8ba5b9779da866d344d7211efcb5d080bd",
+          "source_bytes": 2372,
+          "olean_bytes": 65416
+        },
+        "SolitonClassification.Rotating.VariationOperatorBounds": {
+          "source_sha256": "3c8a9704ebf501723a98ebf67deb23bc7ce1028a7b31aca74fd9d5f84e998dfd",
+          "olean_sha256": "af1c846195b378b3969d2854fb956cbc64637a7dc9c40cf393d31a9fb82824c5",
+          "source_bytes": 2811,
+          "olean_bytes": 79336
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget": {
+          "source_sha256": "3d69073d4e5b92e2f009b6eb67ed3e9d665555dcab753f40f68a329487de36a5",
+          "olean_sha256": "e0ed7b3e86f054d15db57066d593bedf0bfbed40f82e6ce7a1c83ba76eca454e",
+          "source_bytes": 4704,
+          "olean_bytes": 172528
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantResidual": {
+          "source_sha256": "7da7c8f845c1b30914dd222a6714595033190035fd9e7a0df265c57b5d6d9620",
+          "olean_sha256": "956d5b85b59c5bfdf1bb04e93a310b8af38c53aaa34a99a1a83dbcbc4614d31a",
+          "source_bytes": 6182,
+          "olean_bytes": 199928
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantActual": {
+          "source_sha256": "d285f37fea5fd7aab20a7bab48abf4c33766516d03cf8a206b1f1e24f3cce4be",
+          "olean_sha256": "6a52610aa85a84fa7c4598c74b22a1cf177e69ce3c2e4e8de67663d78c120206",
+          "source_bytes": 7258,
+          "olean_bytes": 150848
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantVector": {
+          "source_sha256": "60c0736d84ee48cab389f77869162bae4136ad83a2029738509c1e3081051f9f",
+          "olean_sha256": "21b75a597feba5052574bfb128c0f5caa5074e93549491a7888f5bbfde203ef5",
+          "source_bytes": 7825,
+          "olean_bytes": 527288
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual": {
+          "source_sha256": "0d0292a39b04ef3b84ce4a67f2e88b9a8614075b220e54ef9681c9bc702ff4f1",
+          "olean_sha256": "b1edadd51ee3fc3bd96b441d8054edad9e990bab6a6fb7a02c843f868aaa9749",
+          "source_bytes": 13257,
+          "olean_bytes": 1063664
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVector": {
+          "source_sha256": "453e3f89fc55364a60eb251035984f9f8c55d8dd94c16b34777cf2a87f6e9b6d",
+          "olean_sha256": "ae21fdbec5b6bc01cc986dca3ce5454de1a0792a4de8f81a2a8abac09089f197",
+          "source_bytes": 8611,
+          "olean_bytes": 783160
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantScalar": {
+          "source_sha256": "68c16da6c8e4f4b3eaad7f5d3f41125388cc6d63e3744681a225d75afc1bc5cb",
+          "olean_sha256": "b60b1aee50dd148e16baef8fdd8d1b920255279ef3d8680a6c2769ef14fb5577",
+          "source_bytes": 9685,
+          "olean_bytes": 724504
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantScalar": {
+          "source_sha256": "8404393a86e3980072eb6d6d48e24eec9be26056d54ea5df93ff8befa85018b3",
+          "olean_sha256": "761a930dd67b79d79d8abcd50a1c6e2db6371ba970be184ea4f50cbb745e9bc7",
+          "source_bytes": 6142,
+          "olean_bytes": 482936
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantBudget": {
+          "source_sha256": "f230e5633ee6a89a64aaf14f7839a57f3af6a2b76312b83b9707cf5e765f4a3b",
+          "olean_sha256": "5dceaa6cb98cd011554f00d4474a66ed2045273ad8ba54ab00d32cd8bbb00303",
+          "source_bytes": 3885,
+          "olean_bytes": 169216
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTail": {
+          "source_sha256": "e799ea882efebd11ab9f566d4d16a8a11ebb8c9e01beefe43f74c0a617c704cc",
+          "olean_sha256": "f1e8066e1662e95ed83b63b751e6d8b4a7ecee1c6c27cc8ab15ddfc82189d8cc",
+          "source_bytes": 7008,
+          "olean_bytes": 292216
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood": {
+          "source_sha256": "39f8da18930055a0e84a25438e71ba360941e5a29ab7272e1711d10ee84441be",
+          "olean_sha256": "aa47e29e0007afef79a074cfbc317d25887b791f4d1e5827922333577744dd98",
+          "source_bytes": 2990,
+          "olean_bytes": 428376
+        },
+        "SolitonClassification.Rotating.UniversalTrueStateTail": {
+          "source_sha256": "f8a4d9d7719707ef9a2b40d473bfbe48fcaf10eefd3c9f93a57b96ac5ed01628",
+          "olean_sha256": "877ebe187879bd07943da560d7e0633710b8680b6fe14cd5605c6dae99d35e96",
+          "source_bytes": 3283,
+          "olean_bytes": 99200
+        },
+        "SolitonClassification.Rotating.UniversalPolynomialTube": {
+          "source_sha256": "f558d50491ce004409ceed4e71440e7ef3011d40adde85872b4b6d9e1dd8c392",
+          "olean_sha256": "b63aeca41bf618fb26647af95181c685ab15fc89428a75a64c7f93f8b9d46974",
+          "source_bytes": 5923,
+          "olean_bytes": 824704
+        },
+        "SolitonClassification.Rotating.TrueLocalStateTail": {
+          "source_sha256": "c5e829e086093bdfede1deaca9921e2ee1ccbd8c54360422afc445254df6dbe6",
+          "olean_sha256": "741866a9cc5090f9d5beeeebc3be1df8e3d29f28bde55a2622abb337b3b7e263",
+          "source_bytes": 3353,
+          "olean_bytes": 165952
+        },
+        "SolitonClassification.Rotating.ResidualDataCertificate": {
+          "source_sha256": "a521815b045cfc8a389eea9fa4b0b4e9f389c2ce2188d33ed88637c69a3d3a4c",
+          "olean_sha256": "1def2c79015fe60777156bccb7c4e3eb2d833a8f68659b9db8ecd55f5d3226f3",
+          "source_bytes": 5194,
+          "olean_bytes": 208640
+        },
+        "SolitonClassification.Rotating.PolynomialEnvelope": {
+          "source_sha256": "612c3861a3846c1fade1756eadb5364d0ce7bae1a2b95f23df89e52a6f2322fb",
+          "olean_sha256": "290217fc46ffa9400e7075c855a359ddf3b185346dbd8f5ed89ef76d67349e24",
+          "source_bytes": 6651,
+          "olean_bytes": 343120
+        },
+        "SolitonClassification.Rotating.UniversalTaylorResidual": {
+          "source_sha256": "d31654dcfeaefb99082afd0fac8a529d7b2acd43b42e9627fe5ae470b2493072",
+          "olean_sha256": "b28c6a61c5d95f795d89409458302ccc315c107559c6e8bb9b3a7bf6bbb65d65",
+          "source_bytes": 3949,
+          "olean_bytes": 111696
+        },
+        "SolitonClassification.Rotating.SignedLocalTail": {
+          "source_sha256": "8bb07fa715e1c8e52691155a916e3bf24ecc55e4dd2849920323d3dae0a6cadf",
+          "olean_sha256": "4b6208d427ece6a0ddb59b333e64bcefc257fe1f61aec875a7be299e3abe1d59",
+          "source_bytes": 7764,
+          "olean_bytes": 332856
+        },
+        "SolitonClassification.Rotating.TrueLocalVariationTail": {
+          "source_sha256": "5b612cf1b2930231c4f23921036d2ab3dff6046f97b25dc1f9b03359c9695233",
+          "olean_sha256": "0094fafa7c2cb6d1d988d84f86f917fe455da906969f3e99dd662686ff9a6976",
+          "source_bytes": 5537,
+          "olean_bytes": 197704
+        },
+        "SolitonClassification.Rotating.Block8Leaf01Matrix": {
+          "source_sha256": "f326eb58b2e74b49520edf652005a5afc598ba8abd27010c3295fd4104ca921b",
+          "olean_sha256": "b0ab68099075d9c3133bdc3c92dfe1d95d52b6a9c7a5f2126da689f2513a9b90",
+          "source_bytes": 66607,
+          "olean_bytes": 3382496
+        },
+        "SolitonClassification.Rotating.Block8Leaf01State": {
+          "source_sha256": "0938eb227b36afc800513e1548e8dcda885e7e300b3250c42cdbcb69d56f6cd9",
+          "olean_sha256": "d7ab818e635b08290573b17bbe8fa0abb58a7ba3f25400b724813ef696a48d95",
+          "source_bytes": 30393,
+          "olean_bytes": 1430504
+        },
+        "SolitonClassification.Rotating.Block8Leaf02Matrix": {
+          "source_sha256": "cc3c8d90ffa37720c9025f15b0071e3ca20a901fd97605fb901eef8035c81536",
+          "olean_sha256": "296883375b0330efd6c58a65f4e527a6b92f109707a007eccecd1456bfec1a3d",
+          "source_bytes": 66717,
+          "olean_bytes": 3380296
+        },
+        "SolitonClassification.Rotating.Block8Leaf02State": {
+          "source_sha256": "832a74c784117cd045fc2c2fff460907d4afdc4a258b5cdd08cb191e3766c47a",
+          "olean_sha256": "54530d54f2255ac96886a746d9d96dff07733774dfa0c217f8b91e710dde9dd6",
+          "source_bytes": 30389,
+          "olean_bytes": 1437176
+        },
+        "SolitonClassification.Rotating.Block8Leaf03Matrix": {
+          "source_sha256": "5d2e5a5ecd1736c20a48e7ccff2317b38991738eafd29d61477d9e7c426c3010",
+          "olean_sha256": "0dfcc046c2222f44e56193ce68a8f4d169de74f76cf31eb55bbc1c231e288034",
+          "source_bytes": 66730,
+          "olean_bytes": 3381728
+        },
+        "SolitonClassification.Rotating.Block8Leaf03State": {
+          "source_sha256": "c1891e77d59e5725868d479de74b9d7a5afb8b6c6509c3033210f1f12d94affc",
+          "olean_sha256": "a75384cd182f7c9f54c3139a89016d94e7e4878e89a519cb4d42cca655cbce18",
+          "source_bytes": 30421,
+          "olean_bytes": 1434952
+        },
+        "SolitonClassification.Rotating.Block8Leaf04Matrix": {
+          "source_sha256": "7a8fc71c88762a978e246cabe26b2f0f31237b68a344af75d8085839bf7bd490",
+          "olean_sha256": "ad32865b28af06d69ea64a832f356f8849bfe25eed8174c68cc49f926f367d58",
+          "source_bytes": 66757,
+          "olean_bytes": 3384440
+        },
+        "SolitonClassification.Rotating.Block8Leaf04State": {
+          "source_sha256": "8d29031d08df3a6e356632a80c51bdd5f1653f7f35098e746dc7c859d1a96319",
+          "olean_sha256": "505ce883187337d77de906920adc0abc8e33ba958242a5eac7614d9370e1002b",
+          "source_bytes": 30420,
+          "olean_bytes": 1435992
+        },
+        "SolitonClassification.Rotating.Block8Leaf05Matrix": {
+          "source_sha256": "8dbc0ee9a328253827f8802f9bc6d7f63170178258147841f602499a9f729044",
+          "olean_sha256": "12fb98acc26501aa270f372a91d96d2064fcbf6fb3ea75048e95d2a600ef3669",
+          "source_bytes": 66756,
+          "olean_bytes": 3383592
+        },
+        "SolitonClassification.Rotating.Block8Leaf05State": {
+          "source_sha256": "a98dc698ece6b2164416559c33981607efa97f2fbb6cce0c19ff48ded0a62b86",
+          "olean_sha256": "67fa1e5e3e042d2d72809f1d9092ef621f04602451baad1d4fb46ef7657238ac",
+          "source_bytes": 30425,
+          "olean_bytes": 1437136
+        },
+        "SolitonClassification.Rotating.Block8Leaf06Matrix": {
+          "source_sha256": "75a1a2afae55a0df57abc049f2488678aacd0e548e09e5c3a4f9e08fef86f53a",
+          "olean_sha256": "3b13d8c4e7934686bfcb2230f2bfa61317c2df482d1d7286dc876115ae329927",
+          "source_bytes": 66755,
+          "olean_bytes": 3385000
+        },
+        "SolitonClassification.Rotating.Block8Leaf06State": {
+          "source_sha256": "709964d8c18ef784442ff4539653d5cfc0323c0b8baf056c5c4220095c8b69f8",
+          "olean_sha256": "3253d138979728a0cb23e514599162d3863fb5dd922b94d5ddcb9afb686f32dd",
+          "source_bytes": 30420,
+          "olean_bytes": 1438592
+        },
+        "SolitonClassification.Rotating.Block8Leaf07Matrix": {
+          "source_sha256": "745bb886cc1fa7052eb61e8464c1059ad1b67b2f2d173fd96056b824ae3cc576",
+          "olean_sha256": "d7e0e956911593b7d8c6a825cb158279b755d091ac6bbb016cc0154b94776357",
+          "source_bytes": 66755,
+          "olean_bytes": 3390144
+        },
+        "SolitonClassification.Rotating.Block8Leaf07State": {
+          "source_sha256": "f866b7f241a53097167b03f3a8b7caaf49456218da4b3d5257509d82faaa38a8",
+          "olean_sha256": "1bed6f47b4154787f282572226aa2ca7556fd4d2db9ccb4635e24ab11375d476",
+          "source_bytes": 30402,
+          "olean_bytes": 1437328
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": {
+          "source_sha256": "846f26c9ea94da88f16cd700c9c508c4c0a79072f18ea69c0c2a1cc5693f1edf",
+          "olean_sha256": "92cc22b01b9737f93989ecf4d2c0776e9e9d2b683e989317d3da201fde0412f4",
+          "source_bytes": 6319,
+          "olean_bytes": 850816
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42": {
+          "source_sha256": "e4f9db0ceea3070fbfd9c3ac5245f92830f5de461dd88de699bc2b70ff6c0d4a",
+          "olean_sha256": "b93101bee79731a65197730f53cc75745e4d1ecd60d05ea92eed2d82457dc981",
+          "source_bytes": 8906,
+          "olean_bytes": 389504
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialReference42": {
+          "source_sha256": "3be42532bc7c5be443980472ea16bc402960a230ca9220a54de41514bf6b986c",
+          "olean_sha256": "2fb5557e2574ca250c45633bc67a2e7a3ba816c33695506e56cfff612746582e",
+          "source_bytes": 4580,
+          "olean_bytes": 278888
+        },
+        "SolitonClassification.Rotating.PolynomialGridAssembly": {
+          "source_sha256": "694cd8e3df044e9ad057e39a5a0c8fda13b3cb751fb50dc347bc40bc2c0b57c8",
+          "olean_sha256": "f6ea960c29049a46d5898fab328fd93c9f346651b4ec0735ef2be6cdb75c8066",
+          "source_bytes": 7902,
+          "olean_bytes": 538104
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix22": {
+          "source_sha256": "5dab25d741b553cf7f914fbef798d295cfc46682567a5d1ef7f87986789aa9bf",
+          "olean_sha256": "a285edda2b9f7e453b0e8f6040e3da5a0716799c6634a9794e951b7d55741773",
+          "source_bytes": 4973,
+          "olean_bytes": 130816
+        },
+        "SolitonClassification.Rotating.UniversalVariationOrder22": {
+          "source_sha256": "e0e4527289bfdbae8b2503ab84d0f373c87d590e4bbf016b87c707ef3211404c",
+          "olean_sha256": "f48059b8d43b41b306da313605c02fd9133c8b0d28afbb8a96683e40f939bd92",
+          "source_bytes": 9076,
+          "olean_bytes": 341232
+        },
+        "SolitonClassification.Rotating.RotatingGridMargin": {
+          "source_sha256": "fcd53cf58c2b88bcf4693d98e1a0bbcc523a478d13f9ea08c817f8dcd0529725",
+          "olean_sha256": "bbc256c6a81098196be1dc0b1f9d705415a16f895cec147b31e8397bb3ab2b37",
+          "source_bytes": 4642,
+          "olean_bytes": 509352
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGeometry": {
+          "source_sha256": "2f5efb14dc524204d676ec47bffc965dd4b2b8602f6036c0b0ce5ffc054e2c10",
+          "olean_sha256": "2e3d9f51a581d899b536c231a6d0f35636c29f4014918f439d6d53e33bb3ed1a",
+          "source_bytes": 3177,
+          "olean_bytes": 597472
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGridData": {
+          "source_sha256": "a950fa6cb201f9edd8c3476d8eff00937ab5e34046e5f7dc35fa9de507245ebf",
+          "olean_sha256": "a8bb948d3f1bf22cbbc4060238374bc93c118491e27c4eb4e9e2aac3563d7d58",
+          "source_bytes": 5727,
+          "olean_bytes": 485928
+        },
+        "SolitonClassification.Rotating.FlowBootstrapSegment": {
+          "source_sha256": "804cd262b3ee1c7d40768df6f0f82f5c1b276688b5a9620b673a503d0b0f7ddf",
+          "olean_sha256": "c6395c9f1c8a8f544866c840bc34e0c5dee90f19d6f62649e2ca6cc6ac5b2a04",
+          "source_bytes": 5207,
+          "olean_bytes": 198664
+        },
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates": {
+          "source_sha256": "22e1cbb8cbbf019dc7170b8c84576fc238ad8800121e001f14ad293b0eec406d",
+          "olean_sha256": "e76712ba3bc8db46491dd9775f816218c259eab4155671ec0f5a529c02749059",
+          "source_bytes": 6155,
+          "olean_bytes": 359736
+        },
+        "SolitonClassification.Rotating.FlowMetricSegment": {
+          "source_sha256": "a22c6ddd181aed4a78359c2e848cddfb1ba7c7684e616cc74eaaef1f310edf29",
+          "olean_sha256": "ce1fe6021b1236e55282dfac0783957acc91d9fa22cabd5e7ff1c16f2784f4cc",
+          "source_bytes": 5388,
+          "olean_bytes": 126328
+        },
+        "SolitonClassification.Rotating.FlowBootstrapReset": {
+          "source_sha256": "9ef6208ddd6f03a2754f9ae4c136c563d40eaf54b274f8db077bcb44381918cf",
+          "olean_sha256": "2d920e9b2d3bd654898cfbce64184e36d0e4297d648d0377ccf1d4d79bdeee72",
+          "source_bytes": 2006,
+          "olean_bytes": 87984
+        },
+        "SolitonClassification.Rotating.FlowMetricReset": {
+          "source_sha256": "3f442cdc60d6815de76a91b19bd39186ecfd49643b5d48cb48436a844bf825bf",
+          "olean_sha256": "76b9066d1161bf2f07e0624019afd762febbd8878069b1818cdec0ef589832f5",
+          "source_bytes": 2913,
+          "olean_bytes": 92328
+        },
+        "SolitonClassification.Rotating.FlowBootstrapBudget": {
+          "source_sha256": "af86cd9e459dfc8e90c4eae628c12d333fd1d92f5ed34ced0953476c1e34c1cd",
+          "olean_sha256": "9cf247f780480b87e4deacfbbfdf627c1198cc72fdb9d0e206b4e9786469cffa",
+          "source_bytes": 5274,
+          "olean_bytes": 369784
+        },
+        "SolitonClassification.Rotating.FlowMetricDiscrete": {
+          "source_sha256": "dd956914ead6f18e02ffbc199e4f1a6998bc8467c728dd23121291223f308433",
+          "olean_sha256": "b4c01e8cdb9b2aa9bf39e9a2a423047365a1304a85fa541eea4a11089a3a68c9",
+          "source_bytes": 3896,
+          "olean_bytes": 174416
+        },
+        "SolitonClassification.Rotating.FlowMetricGlobal": {
+          "source_sha256": "dce20066c3f41051e637e77edc0797441ce2bd77ecfe4ef50876fa3b3a11f48a",
+          "olean_sha256": "e455d10d6ed331d88b5b7244fc60c4e0a83f6114520466584b60259002e6f20c",
+          "source_bytes": 5481,
+          "olean_bytes": 220016
+        },
+        "SolitonClassification.Rotating.FlowMetricGridData": {
+          "source_sha256": "f7ef47f8dc5fcc59408dca52c70c482ded23e14b497e85e37ed39fce626f5994",
+          "olean_sha256": "5fb92619cc88770edec02c654b32c6c78fd47e857dcf9fe58682a66f52a4db5c",
+          "source_bytes": 6648,
+          "olean_bytes": 456728
+        },
+        "SolitonClassification.Rotating.UniversalReducedVariation": {
+          "source_sha256": "cfb7ba7292dc7baeeccd46a583a3c05274e5f703da2b339a93d82eeb56ffd945",
+          "olean_sha256": "9e744316a251d671d32633021500c6c13a302e5977b67af3f7da459b01d56873",
+          "source_bytes": 7521,
+          "olean_bytes": 310144
+        },
+        "SolitonClassification.Rotating.UniversalStateOrders": {
+          "source_sha256": "48d528cab2bae1d023f76588ca98b2fbf156af58fd87b1f4d29a26eb14dad61e",
+          "olean_sha256": "378cfb7ee060f813be4f9aae2d3d41e9f2b733b269db42d2bc2e56268dcf60e1",
+          "source_bytes": 7387,
+          "olean_bytes": 247256
+        },
+        "SolitonClassification.Rotating.RotatingGridMarginOrders": {
+          "source_sha256": "272cf2e36e77756a49f92be185be89d901b0b8eef635d9aa6cda1ea3360a2375",
+          "olean_sha256": "d52aaeff7c1b161340f9232924fbebaba2a7fcdb0482542c5bd90135bcbe93a0",
+          "source_bytes": 2222,
+          "olean_bytes": 57808
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizon": {
+          "source_sha256": "b122a762ddaa8783a227403ebdba2ccb977bec9f54239e89fb3be9edcbfb8f97",
+          "olean_sha256": "fee416c3e4d86fd8a9df7d437a3db4a84ab87410c563c9903d7861585586d50a",
+          "source_bytes": 5871,
+          "olean_bytes": 306696
+        },
+        "SolitonClassification.Rotating.FlowBootstrapNeighborhood": {
+          "source_sha256": "163fa9f411619faaad0ec23f2074b1efc6b198021e545da4be8d368b10bce976",
+          "olean_sha256": "026e27a1bf3da31c18e26ee563cb341f1703025b1f4352bdc6e3615ed00dc37f",
+          "source_bytes": 3100,
+          "olean_bytes": 118928
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGlobal": {
+          "source_sha256": "15b93dd052ff55abb9c5913a3aaa8fdf544ae635db30353325502e60d243a682",
+          "olean_sha256": "4c7887abfafd4c2f57d9eba50f94014e88d4b026430da3d34de51385bd57993d",
+          "source_bytes": 5710,
+          "olean_bytes": 265736
+        },
+        "SolitonClassification.Rotating.ActualShooting": {
+          "source_sha256": "c6825af1f131c1c8898caf564f9ada47dae47888627a8a3ee3b1628fbf004909",
+          "olean_sha256": "233357634d6d602e6950e255d2e38f3a3679fadd236da663352d440d19c79c41",
+          "source_bytes": 6178,
+          "olean_bytes": 413384
+        },
+        "SolitonClassification.Rotating.ShootingRoot": {
+          "source_sha256": "d7afa96114090aabd27eae3359d416e8a44010cea75c6571ec81bb83ecc99184",
+          "olean_sha256": "7feda6058c6561bf8a6ffcad8d41973f665edfb81b31385287f25cae16987047",
+          "source_bytes": 12461,
+          "olean_bytes": 803496
+        },
+        "SolitonClassification.Rotating.BanachRoot": {
+          "source_sha256": "2af074df18e20528b6501fb117f40db20d896471774cdbfca7e30021670d851c",
+          "olean_sha256": "fd2a31c42aad6c0eb2858d8fed2db87e4c9ad4ce4aef5f2f45a6b46ec6ceb093",
+          "source_bytes": 9417,
+          "olean_bytes": 416400
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizonCandidate": {
+          "source_sha256": "d47e6a1039e6a6ab79ae4386c9464f728de27b39db26ff87322ad762da7b3855",
+          "olean_sha256": "ee87c3bfed5746acd66654a5e082022a51f731db3b4122fef062cf65f4673371",
+          "source_bytes": 6159,
+          "olean_bytes": 183488
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationBootstrap": {
+          "source_sha256": "cff18ebfd03b412c170af5fc5c724da36d5641845311e6a01556c1f6fc04fcef",
+          "olean_sha256": "064ea5bc0bd33944575cc6af2faabab0d60d8928c67d93106a000301b543c135",
+          "source_bytes": 3527,
+          "olean_bytes": 67240
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationGlobal": {
+          "source_sha256": "b5f5a404cf59c017070ce2333204b5f0ccf11c21bb73e66d79ad0ebc4299b99b",
+          "olean_sha256": "23bc2abfab530cec897e6c06179978c46a0db9b7808f5a169ae8dbe7f20afa01",
+          "source_bytes": 10652,
+          "olean_bytes": 378656
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationSegment": {
+          "source_sha256": "cb843bb5cdf991ac2fbcb224e06f44691031cf9215f249aca7fa7ed3b1d30b86",
+          "olean_sha256": "65235553b4fbbd7ed8fcd52b93f32783df10fc550395c681e35b34b20674396a",
+          "source_bytes": 3656,
+          "olean_bytes": 175408
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationReset": {
+          "source_sha256": "cddab403c6bac2f64be952fd3bdd7bef8df3e9a8ffbf87fa5a9cdcd0dfebcbd5",
+          "olean_sha256": "4e9643b67b423e097e3975680a7b5dc7b5e816caf4dab6767bba2b72785e79fb",
+          "source_bytes": 2083,
+          "olean_bytes": 115128
+        },
+        "SolitonClassification.Rotating.FlowBootstrapMatrices": {
+          "source_sha256": "4572e11e0d34fdeeb790614f133de07b32397538bac133e5dd3f19747fd39a55",
+          "olean_sha256": "dbb935e7e906014cf64609f4c9807ead3543a8539d133a866f78eb0c2e0ff759",
+          "source_bytes": 4476,
+          "olean_bytes": 113240
+        },
+        "SolitonClassification.Rotating.FlowMetricRoot": {
+          "source_sha256": "947aa071549f87dfd14fd8dd8f3f92e55ed25630deb54b3bea70a74db5037ff4",
+          "olean_sha256": "38316b8112946829c34cd16a10ae79d6ad8f370b2c8c319681691904d22c0272",
+          "source_bytes": 2764,
+          "olean_bytes": 60272
+        },
+        "SolitonClassification.Rotating.FlowInverseRoot": {
+          "source_sha256": "e04a9a1cc64cc1fe16f5575e0f5148b343a1c9df0a5989ff930e73505b33b00f",
+          "olean_sha256": "485dd8c9cce53029897adb3df2f612590c60d3e290f8778756165db0cd31132a",
+          "source_bytes": 3518,
+          "olean_bytes": 151704
+        },
+        "SolitonClassification.Rotating.ActualRootFromMatrices": {
+          "source_sha256": "f1f4ea39cc27fe3106ae8962d0fff8cd28c8fffe23631e0cbabfcf24386fe446",
+          "olean_sha256": "738900918c81df2e3c163357a83fe8522d7a03f0ea9808014d939cb62d25c506",
+          "source_bytes": 3765,
+          "olean_bytes": 189088
+        },
+        "SolitonClassification.Rotating.ShootingVariation": {
+          "source_sha256": "8b14163046b3994ea4501a8ad28319d18ec6fae24beb3ea6c7355d52c51ef98b",
+          "olean_sha256": "544e0bb66ee39e24fe815c8c7895fdefe26fb08a78f66f0913b6f076b14f54a2",
+          "source_bytes": 8881,
+          "olean_bytes": 562976
+        },
+        "SolitonClassification.Rotating.QuantitativeJoint": {
+          "source_sha256": "403ecf38f037d1ac777c3896bfeafa10ce76f3a2957b4fbdd7600c95dd776346",
+          "olean_sha256": "dc459dbd0aba830b1f8cfe807dcda947f05d584f54aee13bf4e28ca4d19aeef8",
+          "source_bytes": 7053,
+          "olean_bytes": 449896
+        },
+        "SolitonClassification.Rotating.FlowMetricDeviationBudget": {
+          "source_sha256": "39920c19c674b2bab55997407b92807956b8a34b41dceafb151957b99408c248",
+          "olean_sha256": "d41b28b3f69954de3ea11204e5324064141f1a1f38741401100fa3cb8f7b5465",
+          "source_bytes": 1422,
+          "olean_bytes": 96696
+        }
+      }
+    }
+  },
+  "fresh_recursive_rotating_declarations": 5802,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "warnings": [],
+  "excluded_costs": [
+    "Generic theorem preparation",
+    "Deliberate failed development attempts",
+    "Historical first-leaf actual wrapper not imported here"
+  ],
+  "limits": [
+    "Shared Windows host, single runs rather than statistically repeated microbenchmarks",
+    "Serialized artifact growth and eight-leaf peak do not prove 8000-leaf feasibility",
+    "No negative-time pilot and no full shooting value/Jacobian enclosure yet"
+  ],
+  "preserved_failed_attempts": [
+    "performance/Block8Leaf01Matrix.dev1.log",
+    "performance/Block8Leaf01Matrix.dev1.metrics.json",
+    "performance/Block8Grid.dev1.log",
+    "performance/Block8Grid.dev1.metrics.json",
+    "performance/Block8Actual.dev1.log",
+    "performance/Block8Actual.dev1.metrics.json"
+  ],
+  "full_local_dependency_closure": {
+    "SolitonClassification.Rotating.Block8FreshAudit": {
+      "source_sha256": "994f42eb1b583e31b643a09a2689fcf7952a463d25b2c2f25fe4fefdbd1e3637",
+      "olean_sha256": "4479f05ca5655ed3fe90f9d4062700f27082591cfc0beafb53f6c9b48b4589ff",
+      "source_bytes": 762,
+      "olean_bytes": 2680
+    },
+    "SolitonClassification.Rotating.Block8Actual": {
+      "source_sha256": "49828f48c676bc98f0878b1f6f3ac4941fc42b15192322741627e2c97f46ffb5",
+      "olean_sha256": "cac47a788bc35a23fe678f014bc95c73ef725696662c2f91fb56a5e7339ce08d",
+      "source_bytes": 5894,
+      "olean_bytes": 348168
+    },
+    "SolitonClassification.Rotating.Block8Grid": {
+      "source_sha256": "a5a8de8e8b2dfd7e71f396d116784bb3e32ca32061822775786e04a02ec9b792",
+      "olean_sha256": "5cdc8d0722883409486b36a39a54d08d8e668f2631e61bde39210c10055097b5",
+      "source_bytes": 6230,
+      "olean_bytes": 329320
+    },
+    "SolitonClassification.Rotating.Block8Leaf00": {
+      "source_sha256": "921dc984e65ad222c10f46847c1968906c76644320a730afeefee23fa544868b",
+      "olean_sha256": "2f9ae4201b0daf43ba1db0b9fa80a4b7a6f43fa88cb4c9c9c39439a1f0761c06",
+      "source_bytes": 1473,
+      "olean_bytes": 58696
+    },
+    "SolitonClassification.Rotating.Block8Nodes": {
+      "source_sha256": "b51c60d4ae8fba53541f214237ae0d3b5ba89bac6cc2a77a62d7c16bde31fdb7",
+      "olean_sha256": "7582b41c3ce4e61875da47f81a350cff5b81fe218335902327b334643154bcfb",
+      "source_bytes": 32364,
+      "olean_bytes": 1555160
+    },
+    "SolitonClassification.Rotating.Grid42P00Nodes": {
+      "source_sha256": "768775276ac2caa0f8a9fd105138969f09f70683fefb22183417f616012503e9",
+      "olean_sha256": "9fce86a2f5ea6d50df4c559dc1ffbe482a963aab16ebeabe2407ff81a89a8133",
+      "source_bytes": 7169,
+      "olean_bytes": 909392
+    },
+    "SolitonClassification.Rotating.PointMatrixGridBudget": {
+      "source_sha256": "f1fae5dbe8aca05143f37bfc9d3d4ceb359ebfaf5b8782cde163ff4cc53fbf81",
+      "olean_sha256": "5cbf369a25610d97b2d8230dc61bd7aa709922dc74ca11111c042edfdab6a602",
+      "source_bytes": 1977,
+      "olean_bytes": 152344
+    },
+    "SolitonClassification.Rotating.PointMatrixCertificate": {
+      "source_sha256": "b7edc11825d5cadfbeb2dcf52c5bbad12b5e9c11240525f23e7dad96b3a8ede0",
+      "olean_sha256": "3a320830e86080887e053a1d094e7e4d8105d1e3e4e19715a0c01c3069820c8e",
+      "source_bytes": 5066,
+      "olean_bytes": 234296
+    },
+    "SolitonClassification.Rotating.PointMatrixInverse": {
+      "source_sha256": "dc2a9c00ed3556874645f251601884e6de64d2eb66cf270a6ec88130f7e85a40",
+      "olean_sha256": "4cde968f4e2637b7c49b63565b86124dc38388661b390f1f41117f1bf5a5f3d5",
+      "source_bytes": 2533,
+      "olean_bytes": 72720
+    },
+    "SolitonClassification.Rotating.ReferenceInversePerturbation": {
+      "source_sha256": "3cf37732a94a77e8587618afd508fe8b0df92ce76dbb6303556798178b6f2dc0",
+      "olean_sha256": "2c235c9b304b0f21d0dfdca19211f897cbd8d88f6f946a601fda8aca99c63926",
+      "source_bytes": 2250,
+      "olean_bytes": 111208
+    },
+    "SolitonClassification.Rotating.FlowMetricCoordinates": {
+      "source_sha256": "81c9d1c641134c6c134c6d2bf1e646481e556188ea97ce521718d6759e51952d",
+      "olean_sha256": "73091e07c9bfaba491ae1fa5f7e2dfba489000610fb6717c141e682875cda5d7",
+      "source_bytes": 7453,
+      "olean_bytes": 365736
+    },
+    "SolitonClassification.Rotating.FlowInverseODE": {
+      "source_sha256": "540b009ec28985b3c42fc30bafbc6c21c761291d55c560f45211499a59d7da12",
+      "olean_sha256": "d4b702ceae5c340c6bf53cb0a3f18c49b5907cfb384fb506374811b5121bb457",
+      "source_bytes": 2350,
+      "olean_bytes": 223232
+    },
+    "SolitonClassification.Rotating.FlowInverse": {
+      "source_sha256": "f343445a0a6516ffd7e2465f0978f67bbd16e1c523a67e3c9910acd613e597f5",
+      "olean_sha256": "232c14574a78d7eefa38a249a80721ce958c0c88e94781e8ab265ec7ec7626c8",
+      "source_bytes": 6702,
+      "olean_bytes": 187600
+    },
+    "SolitonClassification.Rotating.QuantitativeVariation": {
+      "source_sha256": "29859c237a9084e30d3204fbf92029a491fcb34a39a7862e9613fe74f2e6ea20",
+      "olean_sha256": "c0585c9282df5a2f52b73f34c7a10ec084e478639cc29506097f5894231e7d24",
+      "source_bytes": 7099,
+      "olean_bytes": 411576
+    },
+    "SolitonClassification.Rotating.FlowVariationalODE": {
+      "source_sha256": "a272156f70020ce10e82844b23246089002c6b372dd2be6fef6e2982c813b080",
+      "olean_sha256": "0149391144b198f0a8ab852f88218319c934a9b20354449043b16ede8ce4605d",
+      "source_bytes": 2555,
+      "olean_bytes": 94464
+    },
+    "SolitonClassification.Rotating.FlowVariational": {
+      "source_sha256": "66732c053b689ebdee52057677151d5d1001b8992152f8febb0efafe4ea4de46",
+      "olean_sha256": "d0d6cd64a1656aa024a529841a9c8fb6b9500bbffae3710169aa6f24561c3591",
+      "source_bytes": 7265,
+      "olean_bytes": 249248
+    },
+    "SolitonClassification.Rotating.FlowJoint": {
+      "source_sha256": "c5c853d0c6afc4a94d54c6c3006486b2ab14ca613bd63097c6e4cc28b81af515",
+      "olean_sha256": "83effce9c9b38520fc63e44306955d3936bc25c59caeaca507db72fda1b4c50c",
+      "source_bytes": 7872,
+      "olean_bytes": 427832
+    },
+    "SolitonClassification.Rotating.FlowDifferentiability": {
+      "source_sha256": "cf14d3d4a4f3c502491faf9ad1960b62dab2ffd33d299d6df4447ce7c1757852",
+      "olean_sha256": "dbb7e8818e96c2539edcc49915035aabed80a7bb2e54f857c225bc0493ad1933",
+      "source_bytes": 9755,
+      "olean_bytes": 1251384
+    },
+    "SolitonClassification.Rotating.FlowFoundation": {
+      "source_sha256": "86819c043f3759b94f88d1f52fa75c5adb297d17ce004ee84ee57272e7e9c1ec",
+      "olean_sha256": "a3e1619c7679e2e5a94ffc6cb1b01b720281386c376bd2438568222b004011ec",
+      "source_bytes": 7712,
+      "olean_bytes": 285344
+    },
+    "SolitonClassification.Rotating.BoundedODE": {
+      "source_sha256": "6e8a252fd2f0f7dcb5c8407587d518e8892f2ea263ac6567ad9190ccf935bfb4",
+      "olean_sha256": "e269fb043379bc57eacf8b27ba63d35d60a793e8a2bba6512953182dd69dde77",
+      "source_bytes": 4139,
+      "olean_bytes": 168392
+    },
+    "SolitonClassification.Rotating.ResidualODE": {
+      "source_sha256": "2035c068eff01d09288b3b98d73701d6f047643c089e8f0eee1929cbfd08f69f",
+      "olean_sha256": "111c4ccc5bdbe7f94bf428c58bc319fbb93cb0ff33a2db9475acc54bdc03cca9",
+      "source_bytes": 4579,
+      "olean_bytes": 141696
+    },
+    "SolitonClassification.Rotating.TaylorCoefficients": {
+      "source_sha256": "b43b82c83fa67f3ef7eb1a111dd73770086e0658e729322719b900fd6ad943f3",
+      "olean_sha256": "f094f811374f58ffc25473cd92b72851b74eba05593e715f8e229bddbb8b5e0f",
+      "source_bytes": 6197,
+      "olean_bytes": 571408
+    },
+    "SolitonClassification.Rotating.Field": {
+      "source_sha256": "e661ac4293f71a28caf28075c89234cf3e77259649741ce660978cd04e0c6377",
+      "olean_sha256": "744a1032bc7e43a48d64e362bba72459cfee66ea2fc7dda220e2e0c682924fd0",
+      "source_bytes": 9002,
+      "olean_bytes": 2100168
+    },
+    "SolitonClassification.Rotating.DerivativeVariation": {
+      "source_sha256": "ae131f7d0a19fc9eb92ca127a9dea5a73dfe3b81e3562494f7ba12a8b51d0d36",
+      "olean_sha256": "ef5f6e3662324165ace2bb194a9adfe4184084cd14bdd14101510c26e0400e5c",
+      "source_bytes": 6016,
+      "olean_bytes": 757488
+    },
+    "SolitonClassification.Rotating.MidpointDerivative": {
+      "source_sha256": "1aafd8fe935236693d22942f390e0bf4086399e04ac036735ceec9ce6484398b",
+      "olean_sha256": "35b93577c1447c1076ae8ae4ac3406ef03744210188f3c2e850896645eb505e0",
+      "source_bytes": 12781,
+      "olean_bytes": 978360
+    },
+    "SolitonClassification.Rotating.PartialDerivatives": {
+      "source_sha256": "84438c5e93fc6df5ee7599b2f8a17fe91705fe49993183adb344e4f0f89db502",
+      "olean_sha256": "3f471b8618177dd76b1e5b17738045ac6ebf37f6d4142b3ead72fd84bb8ce3ae",
+      "source_bytes": 6338,
+      "olean_bytes": 57640
+    },
+    "SolitonClassification.Rotating.FieldHessian": {
+      "source_sha256": "654c4efd71a868bdb0db58bf189cee0c2f80ebb01c4137873ac9f3fc3b7d5169",
+      "olean_sha256": "639ef695e6ea8c4b3076ef37eb51dad5842d06c7ccc0e9a2018e99fbbe8f0e4a",
+      "source_bytes": 3348,
+      "olean_bytes": 886848
+    },
+    "SolitonClassification.Rotating.VariationConstantsWithin": {
+      "source_sha256": "83296282fcd974b935a93819ffbb9ca545b1264d77a46153ea9cea38f505f2b2",
+      "olean_sha256": "fe62c6fb2c4371cc02cd76607f64a7140b5a7dbecbc227ec3b5a5eab8fefe4c2",
+      "source_bytes": 5633,
+      "olean_bytes": 207864
+    },
+    "SolitonClassification.Rotating.VariationConstants": {
+      "source_sha256": "6384804d0aa0f4dcf0d501e3b88757a635cd047a31f20d6c6f092e98e7861331",
+      "olean_sha256": "e72ff23577c7b3529d1818f12f4de0968aea41c1b5b6d01c0696488b30fb4ffc",
+      "source_bytes": 5709,
+      "olean_bytes": 201264
+    },
+    "SolitonClassification.Rotating.MatrixRowNorm": {
+      "source_sha256": "81612682b7b1eb544175f54d07af820073799768ad9507642f85a22178c4a5a3",
+      "olean_sha256": "bc302f7b7e259b095ea6e29b72eaaea843676b92681809f11b751cc86e8c283a",
+      "source_bytes": 2938,
+      "olean_bytes": 128808
+    },
+    "SolitonClassification.Rotating.MatrixColumnNorm": {
+      "source_sha256": "ec12bb7e2c743015e6b55be88c06b11434257b23dff10b9e2ea3b5bf208ed53e",
+      "olean_sha256": "bfc2fe87a03568bbec2c279d8a9146cd0a999d6cea88b04ac086c01f32d38b2a",
+      "source_bytes": 3192,
+      "olean_bytes": 163184
+    },
+    "SolitonClassification.Rotating.RationalBall": {
+      "source_sha256": "516fe9cad74b52293aec8d47cf2d075f8042f540be0590f97520f136984650ca",
+      "olean_sha256": "37559f0b8af222f6d3bbd233a7b5a108b98be83161c6e127f62437029b176b39",
+      "source_bytes": 7120,
+      "olean_bytes": 330408
+    },
+    "SolitonClassification.Rotating.CandidateInitial": {
+      "source_sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+      "olean_sha256": "4ed969d95ea27d662cf40e473b52e52a02887cb3e459d65540b372006f33d958",
+      "source_bytes": 4622,
+      "olean_bytes": 285568
+    },
+    "SolitonClassification.Rotating.FixedField": {
+      "source_sha256": "dbaa2b4212ea33e85d352ba0bbfb366bd59c57b61d17e9bd8d546a8f019d7d99",
+      "olean_sha256": "13cdc5cd6bad44579b251bb17e687d36fa86b7c86202349b5d126d9b68b0641c",
+      "source_bytes": 3489,
+      "olean_bytes": 293808
+    },
+    "SolitonClassification.Rotating.FixedBall": {
+      "source_sha256": "d595aa2083940b0c07a21becdc997f5c9ddc660ea28388a465891313e5ff72de",
+      "olean_sha256": "23294d71e27877e3d8931dc0abde004be83571bd15fb6d6dab1ed60b766c17df",
+      "source_bytes": 6660,
+      "olean_bytes": 428576
+    },
+    "SolitonClassification.Rotating.FlowTube": {
+      "source_sha256": "e78ec01bbca4d7f0d88f07548ebcc57dc2619b57368fbf641afe2799670eb565",
+      "olean_sha256": "4b8d717fb522cafede00fe4c37472dfae1ccc1e900ce1b46646b7f09057f9f07",
+      "source_bytes": 4354,
+      "olean_bytes": 572592
+    },
+    "SolitonClassification.Rotating.Grid42P00Matrix": {
+      "source_sha256": "985aca0d179872606222a94a7cbb7d62990845db491fda66d33fd74cc6485b0e",
+      "olean_sha256": "251e2d2a8c6dcd41fe8dd3739d81c428006447641a118b2421199e5b48419614",
+      "source_bytes": 63773,
+      "olean_bytes": 3261960
+    },
+    "SolitonClassification.Rotating.Grid42P00State": {
+      "source_sha256": "8d867e0142d39f48e7a235dab9bc5ffdeed65ced4a804ff0eb624fa919f32060",
+      "olean_sha256": "e901def12c8c29c91a3f79bd046cf3c62499a72d7e3146e4a4421376e2ff8c48",
+      "source_bytes": 29939,
+      "olean_bytes": 1442576
+    },
+    "SolitonClassification.Rotating.TaylorDataCertificate": {
+      "source_sha256": "09d40c957594c121fa6aabb5c3801e290abd012606def6efb1a163c39752412a",
+      "olean_sha256": "c0ad823bdd7f7d41813b010b51a1ac42abfe617232236aceaae64a93892b2ced",
+      "source_bytes": 3664,
+      "olean_bytes": 226896
+    },
+    "SolitonClassification.Rotating.FixedTaylor": {
+      "source_sha256": "8612aaa19bc49a54cc3fd0c2cc877f57ba750846e12b18b05790b70ff4d3af67",
+      "olean_sha256": "3f8ffa5553dbaf34a789891d583947327b96b4392bcf5354de7a8a2c6ec95ec0",
+      "source_bytes": 13701,
+      "olean_bytes": 774008
+    },
+    "SolitonClassification.Rotating.FixedEndpointReset": {
+      "source_sha256": "848ac4dd7b9054549893f1ed9d607bafcbbea4709dc17abd9db3356027bb3491",
+      "olean_sha256": "427be5836295a610e8e6c02c7f2f26a7b67d40e6280e35e87ed08d9faab36bc3",
+      "source_bytes": 2412,
+      "olean_bytes": 79192
+    },
+    "SolitonClassification.Rotating.MixedOrderVariation": {
+      "source_sha256": "56b1eae15566ea7314ace501721ff6fb621fb1433990e13053afaa51d295f0b4",
+      "olean_sha256": "1d29d928fa3706f26354dbc183aba867af3d7592b56b72ee0c5593aadaaf8471",
+      "source_bytes": 3502,
+      "olean_bytes": 199592
+    },
+    "SolitonClassification.Rotating.VariationDataCertificate": {
+      "source_sha256": "3465a22fb25c5187031b6f24c78d135c9008f763c2cd185db7add4a45ae3b402",
+      "olean_sha256": "629672dd881a4c1f31563075881b641db88cd471165481a12260534fb604edbb",
+      "source_bytes": 6539,
+      "olean_bytes": 522992
+    },
+    "SolitonClassification.Rotating.VariationTaylor": {
+      "source_sha256": "2daaca207be01ed61bc6d616e428b5eacdb66a202c0267986a7e504607c57107",
+      "olean_sha256": "bbc2606910e25b5786af69cf83b3e80066d685badf5c7e2c9cdcb8ce0cb03949",
+      "source_bytes": 5749,
+      "olean_bytes": 629800
+    },
+    "SolitonClassification.Rotating.VariationLinearity": {
+      "source_sha256": "51c1c9d393263624ab4128e5de9f68e38a11d5ed361247f260d3dbf886c82a62",
+      "olean_sha256": "724ea44e194ef791a88451d6607c216496cb2440a606b17bd299fb540c46027c",
+      "source_bytes": 5703,
+      "olean_bytes": 626728
+    },
+    "SolitonClassification.Rotating.ReferencePolynomialMatrix": {
+      "source_sha256": "9e51e1de97749a0d6bb65bda7f65d2260895d046c995f428bb5d56256b439d2f",
+      "olean_sha256": "f332a1364c1f4a3319e7b3b3778e1c0d4179b4ca32805866102d8df1a0477592",
+      "source_bytes": 7753,
+      "olean_bytes": 401064
+    },
+    "SolitonClassification.Rotating.UniversalVariationOperatorTail": {
+      "source_sha256": "0c25b8f210dffc28f1382b54f747e29889bd33b1363454fd38475576b3a949ab",
+      "olean_sha256": "7fe8550aad0cfb223524097013d50d8ba5b9779da866d344d7211efcb5d080bd",
+      "source_bytes": 2372,
+      "olean_bytes": 65416
+    },
+    "SolitonClassification.Rotating.VariationOperatorBounds": {
+      "source_sha256": "3c8a9704ebf501723a98ebf67deb23bc7ce1028a7b31aca74fd9d5f84e998dfd",
+      "olean_sha256": "af1c846195b378b3969d2854fb956cbc64637a7dc9c40cf393d31a9fb82824c5",
+      "source_bytes": 2811,
+      "olean_bytes": 79336
+    },
+    "SolitonClassification.Rotating.UniversalVariationMajorantBudget": {
+      "source_sha256": "3d69073d4e5b92e2f009b6eb67ed3e9d665555dcab753f40f68a329487de36a5",
+      "olean_sha256": "e0ed7b3e86f054d15db57066d593bedf0bfbed40f82e6ce7a1c83ba76eca454e",
+      "source_bytes": 4704,
+      "olean_bytes": 172528
+    },
+    "SolitonClassification.Rotating.UniversalVariationMajorantResidual": {
+      "source_sha256": "7da7c8f845c1b30914dd222a6714595033190035fd9e7a0df265c57b5d6d9620",
+      "olean_sha256": "956d5b85b59c5bfdf1bb04e93a310b8af38c53aaa34a99a1a83dbcbc4614d31a",
+      "source_bytes": 6182,
+      "olean_bytes": 199928
+    },
+    "SolitonClassification.Rotating.UniversalVariationMajorantActual": {
+      "source_sha256": "d285f37fea5fd7aab20a7bab48abf4c33766516d03cf8a206b1f1e24f3cce4be",
+      "olean_sha256": "6a52610aa85a84fa7c4598c74b22a1cf177e69ce3c2e4e8de67663d78c120206",
+      "source_bytes": 7258,
+      "olean_bytes": 150848
+    },
+    "SolitonClassification.Rotating.UniversalVariationMajorantVector": {
+      "source_sha256": "60c0736d84ee48cab389f77869162bae4136ad83a2029738509c1e3081051f9f",
+      "olean_sha256": "21b75a597feba5052574bfb128c0f5caa5074e93549491a7888f5bbfde203ef5",
+      "source_bytes": 7825,
+      "olean_bytes": 527288
+    },
+    "SolitonClassification.Rotating.AnalyticMajorantVectorActual": {
+      "source_sha256": "0d0292a39b04ef3b84ce4a67f2e88b9a8614075b220e54ef9681c9bc702ff4f1",
+      "olean_sha256": "b1edadd51ee3fc3bd96b441d8054edad9e990bab6a6fb7a02c843f868aaa9749",
+      "source_bytes": 13257,
+      "olean_bytes": 1063664
+    },
+    "SolitonClassification.Rotating.AnalyticMajorantVector": {
+      "source_sha256": "453e3f89fc55364a60eb251035984f9f8c55d8dd94c16b34777cf2a87f6e9b6d",
+      "olean_sha256": "ae21fdbec5b6bc01cc986dca3ce5454de1a0792a4de8f81a2a8abac09089f197",
+      "source_bytes": 8611,
+      "olean_bytes": 783160
+    },
+    "SolitonClassification.Rotating.AnalyticMajorantScalar": {
+      "source_sha256": "68c16da6c8e4f4b3eaad7f5d3f41125388cc6d63e3744681a225d75afc1bc5cb",
+      "olean_sha256": "b60b1aee50dd148e16baef8fdd8d1b920255279ef3d8680a6c2769ef14fb5577",
+      "source_bytes": 9685,
+      "olean_bytes": 724504
+    },
+    "SolitonClassification.Rotating.UniversalVariationMajorantScalar": {
+      "source_sha256": "8404393a86e3980072eb6d6d48e24eec9be26056d54ea5df93ff8befa85018b3",
+      "olean_sha256": "761a930dd67b79d79d8abcd50a1c6e2db6371ba970be184ea4f50cbb745e9bc7",
+      "source_bytes": 6142,
+      "olean_bytes": 482936
+    },
+    "SolitonClassification.Rotating.AnalyticMajorantBudget": {
+      "source_sha256": "f230e5633ee6a89a64aaf14f7839a57f3af6a2b76312b83b9707cf5e765f4a3b",
+      "olean_sha256": "5dceaa6cb98cd011554f00d4474a66ed2045273ad8ba54ab00d32cd8bbb00303",
+      "source_bytes": 3885,
+      "olean_bytes": 169216
+    },
+    "SolitonClassification.Rotating.UniversalVariationTrueTail": {
+      "source_sha256": "e799ea882efebd11ab9f566d4d16a8a11ebb8c9e01beefe43f74c0a617c704cc",
+      "olean_sha256": "f1e8066e1662e95ed83b63b751e6d8b4a7ecee1c6c27cc8ab15ddfc82189d8cc",
+      "source_bytes": 7008,
+      "olean_bytes": 292216
+    },
+    "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood": {
+      "source_sha256": "39f8da18930055a0e84a25438e71ba360941e5a29ab7272e1711d10ee84441be",
+      "olean_sha256": "aa47e29e0007afef79a074cfbc317d25887b791f4d1e5827922333577744dd98",
+      "source_bytes": 2990,
+      "olean_bytes": 428376
+    },
+    "SolitonClassification.Rotating.UniversalTrueStateTail": {
+      "source_sha256": "f8a4d9d7719707ef9a2b40d473bfbe48fcaf10eefd3c9f93a57b96ac5ed01628",
+      "olean_sha256": "877ebe187879bd07943da560d7e0633710b8680b6fe14cd5605c6dae99d35e96",
+      "source_bytes": 3283,
+      "olean_bytes": 99200
+    },
+    "SolitonClassification.Rotating.UniversalPolynomialTube": {
+      "source_sha256": "f558d50491ce004409ceed4e71440e7ef3011d40adde85872b4b6d9e1dd8c392",
+      "olean_sha256": "b63aeca41bf618fb26647af95181c685ab15fc89428a75a64c7f93f8b9d46974",
+      "source_bytes": 5923,
+      "olean_bytes": 824704
+    },
+    "SolitonClassification.Rotating.TrueLocalStateTail": {
+      "source_sha256": "c5e829e086093bdfede1deaca9921e2ee1ccbd8c54360422afc445254df6dbe6",
+      "olean_sha256": "741866a9cc5090f9d5beeeebc3be1df8e3d29f28bde55a2622abb337b3b7e263",
+      "source_bytes": 3353,
+      "olean_bytes": 165952
+    },
+    "SolitonClassification.Rotating.ResidualDataCertificate": {
+      "source_sha256": "a521815b045cfc8a389eea9fa4b0b4e9f389c2ce2188d33ed88637c69a3d3a4c",
+      "olean_sha256": "1def2c79015fe60777156bccb7c4e3eb2d833a8f68659b9db8ecd55f5d3226f3",
+      "source_bytes": 5194,
+      "olean_bytes": 208640
+    },
+    "SolitonClassification.Rotating.PolynomialEnvelope": {
+      "source_sha256": "612c3861a3846c1fade1756eadb5364d0ce7bae1a2b95f23df89e52a6f2322fb",
+      "olean_sha256": "290217fc46ffa9400e7075c855a359ddf3b185346dbd8f5ed89ef76d67349e24",
+      "source_bytes": 6651,
+      "olean_bytes": 343120
+    },
+    "SolitonClassification.Rotating.UniversalTaylorResidual": {
+      "source_sha256": "d31654dcfeaefb99082afd0fac8a529d7b2acd43b42e9627fe5ae470b2493072",
+      "olean_sha256": "b28c6a61c5d95f795d89409458302ccc315c107559c6e8bb9b3a7bf6bbb65d65",
+      "source_bytes": 3949,
+      "olean_bytes": 111696
+    },
+    "SolitonClassification.Rotating.SignedLocalTail": {
+      "source_sha256": "8bb07fa715e1c8e52691155a916e3bf24ecc55e4dd2849920323d3dae0a6cadf",
+      "olean_sha256": "4b6208d427ece6a0ddb59b333e64bcefc257fe1f61aec875a7be299e3abe1d59",
+      "source_bytes": 7764,
+      "olean_bytes": 332856
+    },
+    "SolitonClassification.Rotating.TrueLocalVariationTail": {
+      "source_sha256": "5b612cf1b2930231c4f23921036d2ab3dff6046f97b25dc1f9b03359c9695233",
+      "olean_sha256": "0094fafa7c2cb6d1d988d84f86f917fe455da906969f3e99dd662686ff9a6976",
+      "source_bytes": 5537,
+      "olean_bytes": 197704
+    },
+    "SolitonClassification.Rotating.Block8Leaf01Matrix": {
+      "source_sha256": "f326eb58b2e74b49520edf652005a5afc598ba8abd27010c3295fd4104ca921b",
+      "olean_sha256": "b0ab68099075d9c3133bdc3c92dfe1d95d52b6a9c7a5f2126da689f2513a9b90",
+      "source_bytes": 66607,
+      "olean_bytes": 3382496
+    },
+    "SolitonClassification.Rotating.Block8Leaf01State": {
+      "source_sha256": "0938eb227b36afc800513e1548e8dcda885e7e300b3250c42cdbcb69d56f6cd9",
+      "olean_sha256": "d7ab818e635b08290573b17bbe8fa0abb58a7ba3f25400b724813ef696a48d95",
+      "source_bytes": 30393,
+      "olean_bytes": 1430504
+    },
+    "SolitonClassification.Rotating.Block8Leaf02Matrix": {
+      "source_sha256": "cc3c8d90ffa37720c9025f15b0071e3ca20a901fd97605fb901eef8035c81536",
+      "olean_sha256": "296883375b0330efd6c58a65f4e527a6b92f109707a007eccecd1456bfec1a3d",
+      "source_bytes": 66717,
+      "olean_bytes": 3380296
+    },
+    "SolitonClassification.Rotating.Block8Leaf02State": {
+      "source_sha256": "832a74c784117cd045fc2c2fff460907d4afdc4a258b5cdd08cb191e3766c47a",
+      "olean_sha256": "54530d54f2255ac96886a746d9d96dff07733774dfa0c217f8b91e710dde9dd6",
+      "source_bytes": 30389,
+      "olean_bytes": 1437176
+    },
+    "SolitonClassification.Rotating.Block8Leaf03Matrix": {
+      "source_sha256": "5d2e5a5ecd1736c20a48e7ccff2317b38991738eafd29d61477d9e7c426c3010",
+      "olean_sha256": "0dfcc046c2222f44e56193ce68a8f4d169de74f76cf31eb55bbc1c231e288034",
+      "source_bytes": 66730,
+      "olean_bytes": 3381728
+    },
+    "SolitonClassification.Rotating.Block8Leaf03State": {
+      "source_sha256": "c1891e77d59e5725868d479de74b9d7a5afb8b6c6509c3033210f1f12d94affc",
+      "olean_sha256": "a75384cd182f7c9f54c3139a89016d94e7e4878e89a519cb4d42cca655cbce18",
+      "source_bytes": 30421,
+      "olean_bytes": 1434952
+    },
+    "SolitonClassification.Rotating.Block8Leaf04Matrix": {
+      "source_sha256": "7a8fc71c88762a978e246cabe26b2f0f31237b68a344af75d8085839bf7bd490",
+      "olean_sha256": "ad32865b28af06d69ea64a832f356f8849bfe25eed8174c68cc49f926f367d58",
+      "source_bytes": 66757,
+      "olean_bytes": 3384440
+    },
+    "SolitonClassification.Rotating.Block8Leaf04State": {
+      "source_sha256": "8d29031d08df3a6e356632a80c51bdd5f1653f7f35098e746dc7c859d1a96319",
+      "olean_sha256": "505ce883187337d77de906920adc0abc8e33ba958242a5eac7614d9370e1002b",
+      "source_bytes": 30420,
+      "olean_bytes": 1435992
+    },
+    "SolitonClassification.Rotating.Block8Leaf05Matrix": {
+      "source_sha256": "8dbc0ee9a328253827f8802f9bc6d7f63170178258147841f602499a9f729044",
+      "olean_sha256": "12fb98acc26501aa270f372a91d96d2064fcbf6fb3ea75048e95d2a600ef3669",
+      "source_bytes": 66756,
+      "olean_bytes": 3383592
+    },
+    "SolitonClassification.Rotating.Block8Leaf05State": {
+      "source_sha256": "a98dc698ece6b2164416559c33981607efa97f2fbb6cce0c19ff48ded0a62b86",
+      "olean_sha256": "67fa1e5e3e042d2d72809f1d9092ef621f04602451baad1d4fb46ef7657238ac",
+      "source_bytes": 30425,
+      "olean_bytes": 1437136
+    },
+    "SolitonClassification.Rotating.Block8Leaf06Matrix": {
+      "source_sha256": "75a1a2afae55a0df57abc049f2488678aacd0e548e09e5c3a4f9e08fef86f53a",
+      "olean_sha256": "3b13d8c4e7934686bfcb2230f2bfa61317c2df482d1d7286dc876115ae329927",
+      "source_bytes": 66755,
+      "olean_bytes": 3385000
+    },
+    "SolitonClassification.Rotating.Block8Leaf06State": {
+      "source_sha256": "709964d8c18ef784442ff4539653d5cfc0323c0b8baf056c5c4220095c8b69f8",
+      "olean_sha256": "3253d138979728a0cb23e514599162d3863fb5dd922b94d5ddcb9afb686f32dd",
+      "source_bytes": 30420,
+      "olean_bytes": 1438592
+    },
+    "SolitonClassification.Rotating.Block8Leaf07Matrix": {
+      "source_sha256": "745bb886cc1fa7052eb61e8464c1059ad1b67b2f2d173fd96056b824ae3cc576",
+      "olean_sha256": "d7e0e956911593b7d8c6a825cb158279b755d091ac6bbb016cc0154b94776357",
+      "source_bytes": 66755,
+      "olean_bytes": 3390144
+    },
+    "SolitonClassification.Rotating.Block8Leaf07State": {
+      "source_sha256": "f866b7f241a53097167b03f3a8b7caaf49456218da4b3d5257509d82faaa38a8",
+      "olean_sha256": "1bed6f47b4154787f282572226aa2ca7556fd4d2db9ccb4635e24ab11375d476",
+      "source_bytes": 30402,
+      "olean_bytes": 1437328
+    },
+    "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": {
+      "source_sha256": "846f26c9ea94da88f16cd700c9c508c4c0a79072f18ea69c0c2a1cc5693f1edf",
+      "olean_sha256": "92cc22b01b9737f93989ecf4d2c0776e9e9d2b683e989317d3da201fde0412f4",
+      "source_bytes": 6319,
+      "olean_bytes": 850816
+    },
+    "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42": {
+      "source_sha256": "e4f9db0ceea3070fbfd9c3ac5245f92830f5de461dd88de699bc2b70ff6c0d4a",
+      "olean_sha256": "b93101bee79731a65197730f53cc75745e4d1ecd60d05ea92eed2d82457dc981",
+      "source_bytes": 8906,
+      "olean_bytes": 389504
+    },
+    "SolitonClassification.Rotating.ExtendedPolynomialReference42": {
+      "source_sha256": "3be42532bc7c5be443980472ea16bc402960a230ca9220a54de41514bf6b986c",
+      "olean_sha256": "2fb5557e2574ca250c45633bc67a2e7a3ba816c33695506e56cfff612746582e",
+      "source_bytes": 4580,
+      "olean_bytes": 278888
+    },
+    "SolitonClassification.Rotating.PolynomialGridAssembly": {
+      "source_sha256": "694cd8e3df044e9ad057e39a5a0c8fda13b3cb751fb50dc347bc40bc2c0b57c8",
+      "olean_sha256": "f6ea960c29049a46d5898fab328fd93c9f346651b4ec0735ef2be6cdb75c8066",
+      "source_bytes": 7902,
+      "olean_bytes": 538104
+    },
+    "SolitonClassification.Rotating.ReferencePolynomialMatrix22": {
+      "source_sha256": "5dab25d741b553cf7f914fbef798d295cfc46682567a5d1ef7f87986789aa9bf",
+      "olean_sha256": "a285edda2b9f7e453b0e8f6040e3da5a0716799c6634a9794e951b7d55741773",
+      "source_bytes": 4973,
+      "olean_bytes": 130816
+    },
+    "SolitonClassification.Rotating.UniversalVariationOrder22": {
+      "source_sha256": "e0e4527289bfdbae8b2503ab84d0f373c87d590e4bbf016b87c707ef3211404c",
+      "olean_sha256": "f48059b8d43b41b306da313605c02fd9133c8b0d28afbb8a96683e40f939bd92",
+      "source_bytes": 9076,
+      "olean_bytes": 341232
+    },
+    "SolitonClassification.Rotating.RotatingGridMargin": {
+      "source_sha256": "fcd53cf58c2b88bcf4693d98e1a0bbcc523a478d13f9ea08c817f8dcd0529725",
+      "olean_sha256": "bbc256c6a81098196be1dc0b1f9d705415a16f895cec147b31e8397bb3ab2b37",
+      "source_bytes": 4642,
+      "olean_bytes": 509352
+    },
+    "SolitonClassification.Rotating.FlowBootstrapGeometry": {
+      "source_sha256": "2f5efb14dc524204d676ec47bffc965dd4b2b8602f6036c0b0ce5ffc054e2c10",
+      "olean_sha256": "2e3d9f51a581d899b536c231a6d0f35636c29f4014918f439d6d53e33bb3ed1a",
+      "source_bytes": 3177,
+      "olean_bytes": 597472
+    },
+    "SolitonClassification.Rotating.FlowBootstrapGridData": {
+      "source_sha256": "a950fa6cb201f9edd8c3476d8eff00937ab5e34046e5f7dc35fa9de507245ebf",
+      "olean_sha256": "a8bb948d3f1bf22cbbc4060238374bc93c118491e27c4eb4e9e2aac3563d7d58",
+      "source_bytes": 5727,
+      "olean_bytes": 485928
+    },
+    "SolitonClassification.Rotating.FlowBootstrapSegment": {
+      "source_sha256": "804cd262b3ee1c7d40768df6f0f82f5c1b276688b5a9620b673a503d0b0f7ddf",
+      "olean_sha256": "c6395c9f1c8a8f544866c840bc34e0c5dee90f19d6f62649e2ca6cc6ac5b2a04",
+      "source_bytes": 5207,
+      "olean_bytes": 198664
+    },
+    "SolitonClassification.Rotating.FlowBootstrapCoordinates": {
+      "source_sha256": "22e1cbb8cbbf019dc7170b8c84576fc238ad8800121e001f14ad293b0eec406d",
+      "olean_sha256": "e76712ba3bc8db46491dd9775f816218c259eab4155671ec0f5a529c02749059",
+      "source_bytes": 6155,
+      "olean_bytes": 359736
+    },
+    "SolitonClassification.Rotating.FlowMetricSegment": {
+      "source_sha256": "a22c6ddd181aed4a78359c2e848cddfb1ba7c7684e616cc74eaaef1f310edf29",
+      "olean_sha256": "ce1fe6021b1236e55282dfac0783957acc91d9fa22cabd5e7ff1c16f2784f4cc",
+      "source_bytes": 5388,
+      "olean_bytes": 126328
+    },
+    "SolitonClassification.Rotating.FlowBootstrapReset": {
+      "source_sha256": "9ef6208ddd6f03a2754f9ae4c136c563d40eaf54b274f8db077bcb44381918cf",
+      "olean_sha256": "2d920e9b2d3bd654898cfbce64184e36d0e4297d648d0377ccf1d4d79bdeee72",
+      "source_bytes": 2006,
+      "olean_bytes": 87984
+    },
+    "SolitonClassification.Rotating.FlowMetricReset": {
+      "source_sha256": "3f442cdc60d6815de76a91b19bd39186ecfd49643b5d48cb48436a844bf825bf",
+      "olean_sha256": "76b9066d1161bf2f07e0624019afd762febbd8878069b1818cdec0ef589832f5",
+      "source_bytes": 2913,
+      "olean_bytes": 92328
+    },
+    "SolitonClassification.Rotating.FlowBootstrapBudget": {
+      "source_sha256": "af86cd9e459dfc8e90c4eae628c12d333fd1d92f5ed34ced0953476c1e34c1cd",
+      "olean_sha256": "9cf247f780480b87e4deacfbbfdf627c1198cc72fdb9d0e206b4e9786469cffa",
+      "source_bytes": 5274,
+      "olean_bytes": 369784
+    },
+    "SolitonClassification.Rotating.FlowMetricDiscrete": {
+      "source_sha256": "dd956914ead6f18e02ffbc199e4f1a6998bc8467c728dd23121291223f308433",
+      "olean_sha256": "b4c01e8cdb9b2aa9bf39e9a2a423047365a1304a85fa541eea4a11089a3a68c9",
+      "source_bytes": 3896,
+      "olean_bytes": 174416
+    },
+    "SolitonClassification.Rotating.FlowMetricGlobal": {
+      "source_sha256": "dce20066c3f41051e637e77edc0797441ce2bd77ecfe4ef50876fa3b3a11f48a",
+      "olean_sha256": "e455d10d6ed331d88b5b7244fc60c4e0a83f6114520466584b60259002e6f20c",
+      "source_bytes": 5481,
+      "olean_bytes": 220016
+    },
+    "SolitonClassification.Rotating.FlowMetricGridData": {
+      "source_sha256": "f7ef47f8dc5fcc59408dca52c70c482ded23e14b497e85e37ed39fce626f5994",
+      "olean_sha256": "5fb92619cc88770edec02c654b32c6c78fd47e857dcf9fe58682a66f52a4db5c",
+      "source_bytes": 6648,
+      "olean_bytes": 456728
+    },
+    "SolitonClassification.Rotating.UniversalReducedVariation": {
+      "source_sha256": "cfb7ba7292dc7baeeccd46a583a3c05274e5f703da2b339a93d82eeb56ffd945",
+      "olean_sha256": "9e744316a251d671d32633021500c6c13a302e5977b67af3f7da459b01d56873",
+      "source_bytes": 7521,
+      "olean_bytes": 310144
+    },
+    "SolitonClassification.Rotating.UniversalStateOrders": {
+      "source_sha256": "48d528cab2bae1d023f76588ca98b2fbf156af58fd87b1f4d29a26eb14dad61e",
+      "olean_sha256": "378cfb7ee060f813be4f9aae2d3d41e9f2b733b269db42d2bc2e56268dcf60e1",
+      "source_bytes": 7387,
+      "olean_bytes": 247256
+    },
+    "SolitonClassification.Rotating.RotatingGridMarginOrders": {
+      "source_sha256": "272cf2e36e77756a49f92be185be89d901b0b8eef635d9aa6cda1ea3360a2375",
+      "olean_sha256": "d52aaeff7c1b161340f9232924fbebaba2a7fcdb0482542c5bd90135bcbe93a0",
+      "source_bytes": 2222,
+      "olean_bytes": 57808
+    },
+    "SolitonClassification.Rotating.RotatingGridHorizon": {
+      "source_sha256": "b122a762ddaa8783a227403ebdba2ccb977bec9f54239e89fb3be9edcbfb8f97",
+      "olean_sha256": "fee416c3e4d86fd8a9df7d437a3db4a84ab87410c563c9903d7861585586d50a",
+      "source_bytes": 5871,
+      "olean_bytes": 306696
+    },
+    "SolitonClassification.Rotating.FlowBootstrapNeighborhood": {
+      "source_sha256": "163fa9f411619faaad0ec23f2074b1efc6b198021e545da4be8d368b10bce976",
+      "olean_sha256": "026e27a1bf3da31c18e26ee563cb341f1703025b1f4352bdc6e3615ed00dc37f",
+      "source_bytes": 3100,
+      "olean_bytes": 118928
+    },
+    "SolitonClassification.Rotating.FlowBootstrapGlobal": {
+      "source_sha256": "15b93dd052ff55abb9c5913a3aaa8fdf544ae635db30353325502e60d243a682",
+      "olean_sha256": "4c7887abfafd4c2f57d9eba50f94014e88d4b026430da3d34de51385bd57993d",
+      "source_bytes": 5710,
+      "olean_bytes": 265736
+    },
+    "SolitonClassification.Rotating.ActualShooting": {
+      "source_sha256": "c6825af1f131c1c8898caf564f9ada47dae47888627a8a3ee3b1628fbf004909",
+      "olean_sha256": "233357634d6d602e6950e255d2e38f3a3679fadd236da663352d440d19c79c41",
+      "source_bytes": 6178,
+      "olean_bytes": 413384
+    },
+    "SolitonClassification.Rotating.ShootingRoot": {
+      "source_sha256": "d7afa96114090aabd27eae3359d416e8a44010cea75c6571ec81bb83ecc99184",
+      "olean_sha256": "7feda6058c6561bf8a6ffcad8d41973f665edfb81b31385287f25cae16987047",
+      "source_bytes": 12461,
+      "olean_bytes": 803496
+    },
+    "SolitonClassification.Rotating.BanachRoot": {
+      "source_sha256": "2af074df18e20528b6501fb117f40db20d896471774cdbfca7e30021670d851c",
+      "olean_sha256": "fd2a31c42aad6c0eb2858d8fed2db87e4c9ad4ce4aef5f2f45a6b46ec6ceb093",
+      "source_bytes": 9417,
+      "olean_bytes": 416400
+    },
+    "SolitonClassification.Rotating.RotatingGridHorizonCandidate": {
+      "source_sha256": "d47e6a1039e6a6ab79ae4386c9464f728de27b39db26ff87322ad762da7b3855",
+      "olean_sha256": "ee87c3bfed5746acd66654a5e082022a51f731db3b4122fef062cf65f4673371",
+      "source_bytes": 6159,
+      "olean_bytes": 183488
+    },
+    "SolitonClassification.Rotating.FlowMetricDeviationBootstrap": {
+      "source_sha256": "cff18ebfd03b412c170af5fc5c724da36d5641845311e6a01556c1f6fc04fcef",
+      "olean_sha256": "064ea5bc0bd33944575cc6af2faabab0d60d8928c67d93106a000301b543c135",
+      "source_bytes": 3527,
+      "olean_bytes": 67240
+    },
+    "SolitonClassification.Rotating.FlowMetricDeviationGlobal": {
+      "source_sha256": "b5f5a404cf59c017070ce2333204b5f0ccf11c21bb73e66d79ad0ebc4299b99b",
+      "olean_sha256": "23bc2abfab530cec897e6c06179978c46a0db9b7808f5a169ae8dbe7f20afa01",
+      "source_bytes": 10652,
+      "olean_bytes": 378656
+    },
+    "SolitonClassification.Rotating.FlowMetricDeviationSegment": {
+      "source_sha256": "cb843bb5cdf991ac2fbcb224e06f44691031cf9215f249aca7fa7ed3b1d30b86",
+      "olean_sha256": "65235553b4fbbd7ed8fcd52b93f32783df10fc550395c681e35b34b20674396a",
+      "source_bytes": 3656,
+      "olean_bytes": 175408
+    },
+    "SolitonClassification.Rotating.FlowMetricDeviationReset": {
+      "source_sha256": "cddab403c6bac2f64be952fd3bdd7bef8df3e9a8ffbf87fa5a9cdcd0dfebcbd5",
+      "olean_sha256": "4e9643b67b423e097e3975680a7b5dc7b5e816caf4dab6767bba2b72785e79fb",
+      "source_bytes": 2083,
+      "olean_bytes": 115128
+    },
+    "SolitonClassification.Rotating.FlowBootstrapMatrices": {
+      "source_sha256": "4572e11e0d34fdeeb790614f133de07b32397538bac133e5dd3f19747fd39a55",
+      "olean_sha256": "dbb935e7e906014cf64609f4c9807ead3543a8539d133a866f78eb0c2e0ff759",
+      "source_bytes": 4476,
+      "olean_bytes": 113240
+    },
+    "SolitonClassification.Rotating.FlowMetricRoot": {
+      "source_sha256": "947aa071549f87dfd14fd8dd8f3f92e55ed25630deb54b3bea70a74db5037ff4",
+      "olean_sha256": "38316b8112946829c34cd16a10ae79d6ad8f370b2c8c319681691904d22c0272",
+      "source_bytes": 2764,
+      "olean_bytes": 60272
+    },
+    "SolitonClassification.Rotating.FlowInverseRoot": {
+      "source_sha256": "e04a9a1cc64cc1fe16f5575e0f5148b343a1c9df0a5989ff930e73505b33b00f",
+      "olean_sha256": "485dd8c9cce53029897adb3df2f612590c60d3e290f8778756165db0cd31132a",
+      "source_bytes": 3518,
+      "olean_bytes": 151704
+    },
+    "SolitonClassification.Rotating.ActualRootFromMatrices": {
+      "source_sha256": "f1f4ea39cc27fe3106ae8962d0fff8cd28c8fffe23631e0cbabfcf24386fe446",
+      "olean_sha256": "738900918c81df2e3c163357a83fe8522d7a03f0ea9808014d939cb62d25c506",
+      "source_bytes": 3765,
+      "olean_bytes": 189088
+    },
+    "SolitonClassification.Rotating.ShootingVariation": {
+      "source_sha256": "8b14163046b3994ea4501a8ad28319d18ec6fae24beb3ea6c7355d52c51ef98b",
+      "olean_sha256": "544e0bb66ee39e24fe815c8c7895fdefe26fb08a78f66f0913b6f076b14f54a2",
+      "source_bytes": 8881,
+      "olean_bytes": 562976
+    },
+    "SolitonClassification.Rotating.QuantitativeJoint": {
+      "source_sha256": "403ecf38f037d1ac777c3896bfeafa10ce76f3a2957b4fbdd7600c95dd776346",
+      "olean_sha256": "dc459dbd0aba830b1f8cfe807dcda947f05d584f54aee13bf4e28ca4d19aeef8",
+      "source_bytes": 7053,
+      "olean_bytes": 449896
+    },
+    "SolitonClassification.Rotating.FlowMetricDeviationBudget": {
+      "source_sha256": "39920c19c674b2bab55997407b92807956b8a34b41dceafb151957b99408c248",
+      "olean_sha256": "d41b28b3f69954de3ea11204e5324064141f1a1f38741401100fa3cb8f7b5465",
+      "source_bytes": 1422,
+      "olean_bytes": 96696
+    }
+  }
+}

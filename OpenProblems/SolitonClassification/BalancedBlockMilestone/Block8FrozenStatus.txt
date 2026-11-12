@@ -1,0 +1,33 @@
+Frozen actual eight-leaf pilot (positive direction only)
+
+Manifest SHA256: 550dedef111fef2c6d1a64bddeeccfa2731fc8ffd5fce0798ea129bd035c4ad9
+Resource report SHA256: f83a4d6b4bf3e5044ed23ea11b092eb0d2a7d19a6a12162f6bffa36456570e57
+All 20 new modules actually compiled; final recursive Rotating
+audit: 5802 declarations, standard three axioms only.
+Warnings in final new-module logs: 0.
+
+There are eight different consecutive leaf calculations, not eight copies
+of one proof. Leaf0 reuses the independently frozen first42/22 kernel
+proofs. Leaf1 through leaf7 each check all state42 coefficients, all six
+matrix22 columns, and the complete endpoint reset enclosure. Nine point
+matrices have both inverse defects checked and true inverse bounds derived.
+
+Block8Grid builds a real extended reference grid on [0,8*h+2e-24]. Seven
+internal resets are charged. The extended terminal is the last polynomial
+value at h+2e-24, so its reset is exactly zero. The nominal eighth point is
+compared only at 8*h, and the last finite endpoint defect is then added.
+
+Block8Actual constructs actual original-ODE tube confinement for every
+initial point in ball(Candidate.initial,1e-35). Its true endpoint state
+error at 8*h is <=3e-29, and its true full initial-derivative operator
+error is <=3e-7. These conservative bounds use actual polynomial residual,
+state bootstrap, and moving-matrix comparison, not assumed actual errors.
+
+The import baseline uses the same shared header and analytic dependencies
+but only leaf0. The final audit imports all actual eight-leaf evidence.
+Their measured difference is evidence only for this bounded test; no
+8000-leaf memory or completion-time claim follows automatically.
+
+No full 4000-step path, negative-time path, shooting root, or complete
+classification is asserted by this batch. JSON is proposal/provenance data;
+the mathematical conclusions come from the actual Lean kernel checks.

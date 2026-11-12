@@ -1,0 +1,33 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE Balanced8Left4 SOURCE 4C42368B8799853357784CF5971BC23160C4BEA1CA526D56975028017DF53BF3
+Balanced pilot audited: 3735 declarations; standard axioms only.
+EXIT 0
+MODULE Balanced8Right4 SOURCE 295A0214062BF788485F0D446AB8E20315CB40D8A5223290D50C80C5B0525838
+Balanced pilot audited: 3729 declarations; standard axioms only.
+EXIT 0
+MODULE Balanced8Grid SOURCE B7F15BDA3919A3612DE2F4B26057AFBC2732E96420820A9C85E33781B5308C64
+'SolitonClassification.Rotating.Balanced8.grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+Balanced pilot audited: 5806 declarations; standard axioms only.
+EXIT 0
+MODULE Balanced8Actual SOURCE 348657765AE04BCEA36A5DF66F525664141A3A69A0B085369E9E18DCEAEE68E6
+'SolitonClassification.Rotating.Balanced8.center_actual_state' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.Balanced8.center_actual_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Balanced pilot audited: 5925 declarations; standard axioms only.
+EXIT 0
+MODULE Balanced8FreshAudit SOURCE D593730BA7C1B913025D41E14718223A3327CF54BB145E7C7258664506CFBE96
+SolitonClassification.Rotating.Balanced8.center_actual_state :
+  ‖SolitonClassification.Rotating.supportFlow 1 ⋯ SolitonClassification.Rotating.Balanced8.nominalTime
+          SolitonClassification.Rotating.Candidate.initial -
+        SolitonClassification.Rotating.Block8Nodes.state 8‖ ≤
+    3 / 10 ^ 29
+SolitonClassification.Rotating.Balanced8.center_actual_matrix :
+  ‖fderiv ℝ (SolitonClassification.Rotating.supportFlow 1 ⋯ SolitonClassification.Rotating.Balanced8.nominalTime)
+          SolitonClassification.Rotating.Candidate.initial -
+        SolitonClassification.Rotating.Block8Nodes.operator 8‖ ≤
+    3 / 10 ^ 7
+Balanced pilot audited: 5925 declarations; standard axioms only.
+EXIT 0
