@@ -1,0 +1,80 @@
+Reference margin and real time-neighborhood supplement: five modules
+2026-11-13; independent SolitonClassification project.
+
+All five modules passed actual Lean 4.33.1 checking with zero warnings.
+Final session96638 EXIT0, combined audit1443 declarations under both
+SolitonClassification.Rotating and ClosedSimilarity. Only propext,
+Classical.choice, Quot.sound are allowed. Six main theorem axiom lists
+are printed. Earlier module counts: Margin826, MarginOrders851,
+Horizon1098, Candidate1154. Actual sessions/hashes are in the manifest.
+All 54 previous frozen owned analytic/geometry source hashes were checked
+unchanged. This supplement changes no CAP data or previously frozen source.
+
+UNIFORM REAL REFERENCE MARGIN
+The exact Taylor recurrence has zero b-coordinate at every positive
+order. The actual Taylor polynomial therefore has b(t)=b(0), for ANY
+truncation order N. This is proved algebraically, not inferred from
+rounded data or from a coarse residual estimate.
+
+For a reference polynomial starting in innerTube, assume its actual
+excursion is at most129/250 and its actual differential residual norm
+is at most1 on |t|<=H, with0<=H<=1/125. The previously proved coordinate
+derivative estimates sharpen the first four coordinate displacements
+to39|t|,44|t|,70|t|,70|t|. Together with exact constancy of b, these give
+outerTubeMargin(reference,1/100). Without the exact b-row, the coarse
+residual estimate would only leave0.002 margin in that coordinate.
+No actual solution tube is assumed to prove this reference margin.
+
+taylorPolynomial_margin_of_coarse is generic in N. The new exact-budget
+adapter taylorPolynomial_order_margin consumes the scalar cap residual
+and excursion bounds from UniversalStateOrders. Explicit60/42/44 margin
+instances are proved. outerTubeMargin_mono converts1/100 to the bootstrap
+margin K*R whenever K*R<=1/100. Thus a numerical grid need only certify
+that its real reference centers lie in innerTube and supply the already
+proved uniform Taylor budgets; pointwise reference-margin assertions
+need not be left as additional unverified assumptions.
+
+ACTUAL TIME DOMAIN, SEPARATE FROM A SCALAR BUDGET
+For N>0 and step h, define the extended grid times by
+  t_j=j*h for j<N, t_N=N*h+2*r.
+Only the LAST endpoint changes. Nonnegative step/radius give an ordered
+grid contained in[0,N*h+2*r]. Every time in segment j satisfies
+  0<=t-j*h<=h+2*r.
+For |sigma|<=1, h+2*r<=hcap therefore guarantees that the signed local
+polynomial argument sigma*(t-j*h) lies in the actual certified cap.
+The original center endpoint N*h remains inside the final extended
+segment. Its original polynomial endpoint data are not moved to the new
+endpoint or silently reinterpreted as data at N*h+2*r.
+
+A closed parameter ball of positive radius r, with center half-length
+greater than r, has ALL half-length coordinates strictly inside the open
+time interval(0,centerHalfLength+2*r). The extra r supplies strict slack
+for joint differentiability at the entire closed parameter domain.
+
+extended_grid_actual_tube invokes the proved noncircular bootstrap for a
+real FlowBootstrapGridData certificate whose endpoint is N*h+2*r.
+It derives the actual tube neighborhood on THAT interval. It does not
+transform an old shorter certificate into a longer one without proving
+the new interval's reference data. The full-grid constructor must still
+instantiate the extended final segment, its real matrix/trajectory
+bounds, and terminal node/reset convention. A possible terminal node
+can be taken from the final reference itself to avoid an invented reset,
+but that particular construction is not asserted in this supplement.
+
+EXACT CANDIDATE TIME SLACK, RADII1e-32 AND1e-24
+The stored CandidateInitial center is used without modification. Exact
+kernel rational checks prove, for both radii1e-32 and1e-24,
+  radius>0, radius<centerHalfLength,
+  step+2*radius<hcap, centerHalfLength+2*radius<32.
+The generic candidate_extension_for_radius covers every real radius
+at most1e-24. Positive-radius closed-ball time-domain and signed local
+argument results are then derived. There is an explicit1e-24 domain
+adapter as well as the original1e-32 adapter.
+
+The inequality newHorizon<32 is ONLY an upper scalar budget estimate.
+The actual certified horizon remains centerHalfLength+2*radius.
+The candidate arithmetic is not a certificate of a4000-segment actual
+grid, nor a Banach contraction/self-map proof for either radius. State,
+matrix, reset and initial-neighborhood budgets for the selected radius
+remain separate obligations. No particular shooting root or full
+classification is established by these five modules.

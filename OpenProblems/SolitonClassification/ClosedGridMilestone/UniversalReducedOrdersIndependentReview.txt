@@ -1,0 +1,166 @@
+INDEPENDENT READ-ONLY REVIEW: LOWER STATE ORDERS AND ACTUAL VARIATION
+13 November 2026. Reviewer: finish_odd_rigidity.
+
+Reviewed source snapshots:
+ UniversalStateOrders.lean
+ SHA256 48D528CAB2BAE1D023F76588CA98B2FBF156AF58FD87B1F4D29A26EB14DAD61E
+ UniversalReducedVariation.lean
+ SHA256 CFB7BA7292DC7BAEECCD46A583A3C05274E5F703DA2B339A93D82EEB56FFD945
+ performance/check_reduced_state_orders.py
+ SHA256 EC5873BE84A0BB8D106F75ADF3CA35D572F19B30094195D288F321CB7FDAD410
+
+The Lean source hashes were independently read and match the requested
+snapshots. The script was updated during the review; the final read and
+this review refer to the hash above, with proved_budgets for 42/44/60,
+explicit terminal-reset corrections, and the conditional feasibility key.
+No source edits, Lean rebuild, or numerical benchmark were performed.
+Root reports actual compile EXIT 0 for sessions 26640/89963, then an independent
+object rebuild in session 25362, with standard-axiom audits of 777/1037
+namespace declarations. This review does not
+represent those runs as independently repeated. Both reviewed sources
+include recursive collectAxioms checks allowing only the standard three.
+
+VERDICT ON THE TWO LEAN MODULES
+
+No mathematical-semantic error or state-order substitution was found.
+They prove actual signed local state/Jacobian approximation statements
+under only the displayed innerTube, signed-time, and step-size conditions.
+They do not prove a concrete long-grid orbit or a shooting root.
+
+1. UniversalStateOrders
+
+stateResidualAtCap N evaluates the residual of the ACTUAL finite scalar
+majorant at order N, namely 61 U_N(h)^3-(19/2) U_N'(h). The derivative
+sum includes n=0 with zero coefficient; natural subtraction n-1 causes
+no spurious constant term. The value/cast lemmas identify this exact
+rational expression with scalarResidual N evaluated over the reals.
+
+The order-42 and order-44 residual budgets and the common displacement
+bound are separate exact decide +kernel statements. Nonnegative scalar
+residual coefficients justify monotonicity from t to h, and abs(t) handles
+both signs in the actual vector residual bound. This is not an endpoint
+sampling argument or an assumed polynomial remainder.
+
+taylorPolynomial_order_tube uses the SAME N for excursion, residual and
+polynomial. The generic polynomial tube lemma first puts the polynomial
+in an expanded box, then improves coordinates using derivative bounds.
+It does not assume the actual solution tube or infer outerTube directly
+from the coarse 0.516 displacement in the narrow curvature coordinate.
+
+universal_signed_trueTaylor_order_error passes that N to the actual signed
+segment comparison. It retains the residual norm and 2 epsilon t factor.
+The final rounded conclusions are correctly budgeted:
+ N=42: residual <= 6e-40, actual state error <= 1e-41;
+ N=44: residual <= 6e-42, actual state error <= 1e-43.
+Here h=1561/200000, so 2*6*h<0.1. No order-60 residual or state error is
+used to bound a lower-order state polynomial.
+
+2. UniversalReducedVariation
+
+mixedJacResidualAtCap M N is the actual mixed scalar residual
+ 3*(122/19)*U_M(h)^2*V_N(h)-V_N'(h).
+The bridge identifies it with jacResidual M N, and N<=M is retained where
+coefficient nonnegativity/majorization needs it. The lower-state cases
+42/22 and 44/22 are separately kernel-checked to be <=2e-19.
+
+The residual-norm theorem uses mixedVariationResidual a v M N with the
+actual state polynomial M and actual canonical variation polynomial N.
+The opNorm theorem quantifies over arbitrary v and applies the true
+continuous-linear-map bound. No factor six is needed in this analytic
+operator argument. That fact does not remove row-sum conversion factors
+from separately computed entrywise numerical matrix enclosures.
+
+The genuine fderiv comparison explicitly calls
+ signedActualMixedVariationColumn_error ... M N,
+and retains forcing 4*EX*(||v||*6/5)+||v||*epsilonV. Its polynomial-tube and
+state-error inputs are supplied by the SAME M through the newly proved
+generic state theorems. Its residual input is the SAME mixed M,N residual.
+For the 42/22 wrapper, EX is 1e-41; for 44/22 it is 1e-43. Neither is
+silently replaced by the much smaller order-60 error.
+
+The initial-data derivative is actual: innerTube_flowTubeNeighborhood is
+constructed from the clipped flow in a radius-1e-4 ball, including points
+on the innerTube boundary. No unproved interior-ball assumption appears.
+The signed-time reduction |sigma*s|<=h is used in all four inputs, and
+the local comparison includes the sigma factor in the real ODE.
+
+There is one harmless occurrence of 60 worth distinguishing explicitly:
+variationPolynomial_order_uniform, imported from UniversalVariationOrder22,
+uses a degree-60 scalar witness to bound the canonical variationPolynomial
+a v N for N<=60. The polynomial being bounded has no state-order parameter;
+it is the same original coefficient sequence. Thus this is a valid norm
+bound for variation order 22 and does NOT use a state60 tube, state60
+residual or state60 trajectory error in the reduced mixed comparison.
+
+The final directional errors <=||v||*4e-21 for both 42/22 and 44/22 follow
+from 2*(4*EX*(6/5)+2e-19)*h<=4e-21. The final 42/22 operator statement
+correctly converts the arbitrary-v bound to the actual operator norm of
+ fderiv(supportFlow)-variationPolynomialMap a 22.
+
+3. Conditional performance budget
+
+The current script's scalar recurrence matches the formal scalarCoeff
+recurrence. Its 42/44/60 rows now use the rounded PROVED residual bounds,
+not the tighter unproved decimal values. Other rows remain Fraction
+explorations. The emitted booleans compare exact Fractions; printed floats
+are display only. The script's header correctly says feasibility, not a
+grid certificate or Lean proof.
+
+The nonlinear forcing I*(2*K^2*R^2+rho*R+delta_bound) matches the proved
+FlowBootstrap formula. State rounding is accumulated as I*SX; matrix reset
+defects enter the multiplier bounded by 1/(1-I*SM). The variational exponent
+ I*(4*(K*neighborhood_R)*K+rho)*T+I*SM
+matches the actual moving-reference comparison, including the matrix
+residual rho. Its rational exp bound exponent/(1-exponent) is legitimate
+for these fixed nonnegative constants with exponent<1. Both this denominator
+condition and I*SM<1 must remain explicit if the inputs are later changed.
+
+The state-center radius and full parameter-neighborhood radius are distinct.
+The script does not replace the full-neighborhood bootstrap by the very
+small center radius when computing the variational exponent. The center
+physical error K*R, increased to K*R+SX at a terminal post-reset node, only
+feeds the center force/center-residual comparison.
+The projection factor 16 is consistent with two physical shooting
+projections of norm at most 8. The 17*terminal_E term retains the local
+field mismatch for the time derivative in the endpoint derivative.
+
+At the reviewed constants the stored report has 42/44 strict center and
+neighborhood budgets; the conditional contraction is about 0.0106048 and
+self-map/r about 0.0490048. These are conditional arithmetic conclusions.
+In particular eta=16*(K*R+SX) is NOT a certified actual shooting error until
+the concrete grid, center alignment, and strict bootstrap premises exist.
+
+Unresolved data obligations, not supplied by these two modules or script:
+* Concrete whole-segment reference bounds K/I, node norm/inverse bounds,
+  all node membership and reference margins, and the full extended horizon.
+* Actual state and matrix reset errors with total bounds SX/SM, including
+  denominator-clearing, rounding, and any terminal reset.
+* Initial center alignment for the center calculation, and the initial
+  neighborhood bound represented by Binit=3r/2.
+* The numerical shooting matrix/preconditioner and q0; actual H and input
+  norm bounds on the required neighborhood; independent central residual
+  zeta=||B*y||, including the irrational angle target enclosure.
+* Numerical reference-matrix endpoint/evaluation error. The script explicitly
+  lists this as still requiring an additional budget; it is not included
+  in eps. The renamed analytic_budget_feasible_before_numeric_errors=true
+  therefore has its correct conditional meaning, not a completed contraction
+  certificate.
+
+Terminal-node issue resolved during review: the generic proved terminal
+post-reset deviation bound uses (K+lastJump)*deltaRel. The current script
+uses (K+SM)*relative_error in eps and K*R+SX in both eps and eta. Since all
+reset defects are nonnegative, the total sums bound the last jumps, so
+these corrections correctly cover the terminal conventions. The displayed
+derived_P_bound=K*multiplier remains a segment-reference bound; if that
+particular diagnostic is quoted for a terminal post-reset node, use
+(K+SM)*multiplier or a separately proved terminal node norm<=K. This does
+not affect the now-corrected eps/self-map calculation.
+
+Minor status wording: the report's last assumption says the generic finite
+scalar residual formula is instantiated only in Fraction, not Lean. Read
+that as applying to the other exploratory orders: the 42/44/60 rows are
+explicitly marked as using proved Lean budgets in the current script.
+
+No correction to either reviewed Lean source is requested by this review.
+The remaining items concern the future concrete grid/root instantiation,
+not a hidden hypothesis in the local actual-flow theorems.

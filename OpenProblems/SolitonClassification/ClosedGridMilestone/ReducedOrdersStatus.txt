@@ -1,0 +1,48 @@
+Work-only reduced-order supplement, 13 November2026. Not yet published.
+
+UniversalStateOrders: actual compiler26640 EXIT0, audit777 standard axioms.
+UniversalReducedVariation: actual compiler89963 EXIT0, audit1037 standard axioms.
+Both sources were independently recompiled in root build session25362,
+EXIT0. Full hashes and logs are in ReducedOrdersFrozenManifest.csv and
+ReducedOrdersIndependentVerification.txt. Odd's independent semantic review
+found no order mismatch; see UniversalReducedOrdersIndependentReview.txt.
+
+The original actual state coefficients are used. For every innerTube center,
+both signs (indeed |sigma|<=1) and0<=t<=1561/200000:
+state42 residual<=6e-40 and actual local state error<=1e-41;
+state44 residual<=6e-42 and actual local state error<=1e-43.
+The actual polynomial tube is derived, not assumed. Scalar exact budgets
+are kernel decisions. The generic cap-to-tube/error theorem allows other
+orders when their finite rational budgets are supplied.
+
+For mixed state42/variation22 and state44/variation22, the actual mixed
+derivative-field residual is bounded by2e-19*norm(v). The lower state
+error is retained in4EC+epsilon. Both actual local Jacobian errors are
+<=4e-21*norm(v); the42/22 operator version has bound4e-21 with no analytic
+factor six. Use of the old variation coefficient bound with M=60 only
+bounds the same canonical variationPolynomial22. It does not substitute
+a state60 residual for the lower-order state residual.
+
+The accompanying Fraction budget remains CONDITIONAL on actual reference
+K2400/I5000, node bounds, residuals, all reset/rounding sums, reference
+margins, shooting input norm, H1e20, preconditioner100 and q0/center data.
+It now includes terminal K+SM and state E+SX. For radius1e-24 and metric
+center radius1e-32, rounded proved state42/44 budgets fit the analytic
+inequalities. The provisional contraction is about.010605 and self-map
+ratio.049345 BEFORE missing numeric matrix endpoint/rounding contributions.
+The JSON deliberately calls this analytic_budget_feasible_before_numeric_errors.
+It is not a complete grid or Banach certificate and was not published.
+
+These results make a cheaper full-grid calculation possible in principle.
+No reduced-order full-grid benchmark or actual candidate existence theorem
+has been completed. Existing60-order frozen sources and original CAP are
+unchanged.
+
+Final-root domain correction: the actual analytic interface requires the
+initial set S inside one quarter of its open tube radius. The earlier
+1.5r initial tube and4r metric budget did not meet this interface condition.
+The updated conditional script uses initial tube/Binit=8r and metric
+neighborhood radius16r, so the closed initial radiusr set lies strictly
+inside the required radius2r ball. The updated provisional contraction is
+.010944515 (superseding.010605 above); the self-map ratio is.049344515.
+The full grid and missing numeric errors remain unverified assumptions.

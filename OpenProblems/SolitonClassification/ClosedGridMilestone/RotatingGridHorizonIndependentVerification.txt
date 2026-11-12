@@ -1,0 +1,32 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE RotatingGridMargin SOURCE FCD53CF58C2B88BCF4693D98E1A0BBCC523A478D13F9EA08C817F8DCD0529725
+Rotating uniform reference-margin audit passed for 826 declarations.
+EXIT 0
+MODULE RotatingGridMarginOrders SOURCE 272CF2E36E77756A49F92BE185BE89D901B0B8EEF635D9AA6CDA1EA3360A2375
+Rotating lower-order reference-margin audit passed for 851 declarations.
+EXIT 0
+MODULE RotatingGridHorizon SOURCE B122A762DDAA8783A227403EBDBA2CCB977BEC9F54239E89FB3BE9EDCBFB8F97
+Rotating actual extended-grid horizon audit passed for 1098 declarations.
+EXIT 0
+MODULE RotatingGridHorizonCandidate SOURCE D47E6A1039E6A6AB79AE4386C9464F728DE27B39DB26FF87322AD762DA7B3855
+Rotating candidate time-neighborhood audit passed for 1154 declarations.
+EXIT 0
+MODULE RotatingGridHorizonAudit SOURCE 3C9AF436DC9E8E677E2CA9EAD196748E1F00CFF2852C284F9A6A741EE7C6BB0E
+'SolitonClassification.Rotating.taylorPolynomial_margin_of_coarse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.taylorPolynomial42_margin_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.extendedGridTime_signed_local_cap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.extended_grid_actual_tube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.candidate_parameter_time_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.candidate_center_endpoint_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Rotating combined real time-neighborhood audit passed for 1443 declarations.
+EXIT 0

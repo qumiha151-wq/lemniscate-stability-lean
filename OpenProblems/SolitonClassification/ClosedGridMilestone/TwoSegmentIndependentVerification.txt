@@ -1,0 +1,78 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE MatrixRowNorm SOURCE 81612682B7B1EB544175F54D07AF820073799768AD9507642F85A22178C4A5A3
+'SolitonClassification.Rotating.rationalColumnOperator_sub_one_norm_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Full rational row-sum operator norm audit passed.
+EXIT 0
+MODULE BenchMatrix22 SOURCE 8AB837290D40BE498E13BF8D0B17CF5CB1C0E3B1C9A006180F4956E3A9B05FE4
+Order-22 column 0 recurrence and endpoint kernel checked.
+Order-22 column 1 recurrence and endpoint kernel checked.
+Order-22 column 2 recurrence and endpoint kernel checked.
+Order-22 column 3 recurrence and endpoint kernel checked.
+Order-22 column 4 recurrence and endpoint kernel checked.
+Order-22 column 5 recurrence and endpoint kernel checked.
+'SolitonClassification.Rotating.BenchMatrix22.full_matrix_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Full 6-by-6 variational polynomial audit passed; no actual tail assertion.
+EXIT 0
+MODULE GridResetNodes SOURCE D6AB38BCE2729AFB3AD646BFED1E68C56728AEC18239ABB90D65597ADEC2A6C8
+'SolitonClassification.Rotating.GridReset.matrix1_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+First exact midpoint state and full matrix nodes checked.
+EXIT 0
+MODULE GridResetStep1State60 SOURCE 5C3827BF51BB425798964496AFF444E1860A61BF380493C3D7F8302DF1872EA3
+'SolitonClassification.Rotating.GridResetStep1State60.endpoint_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Second reset-segment finite recurrence and endpoint audit passed.
+EXIT 0
+MODULE GridResetStep1Matrix22 SOURCE AD0339C110FE3142B3AC303ABD3D89F10B82D524DBA9DC7AA9EDAE29C73286D8
+Second segment full matrix column 0 checked.
+Second segment full matrix column 1 checked.
+Second segment full matrix column 2 checked.
+Second segment full matrix column 3 checked.
+Second segment full matrix column 4 checked.
+Second segment full matrix column 5 checked.
+'SolitonClassification.Rotating.GridResetStep1Matrix22.full_matrix_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Second reset-segment finite recurrence and endpoint audit passed.
+EXIT 0
+MODULE FixedEndpointReset SOURCE 848AC4DD7B9054549893F1ED9D607BAFCBBEA4709DC17ABD9DB3356027BB3491
+'SolitonClassification.Rotating.fixedMatrixMidpoint_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual state and full matrix midpoint reset defects audited.
+EXIT 0
+MODULE GridResetEndpointData SOURCE 53211DDF038834868EC233A9EEA36963E3634F98C36B2F9B621DF13011EA72BE
+'SolitonClassification.Rotating.GridReset.second_matrix_reset' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Both state and full-matrix reset jumps, including terminal reset, kernel checked.
+EXIT 0
+MODULE ReferencePolynomialMatrix22 SOURCE 5DAB25D741B553CF7F914FBEF798D295CFC46682567A5D1EF7F87986789AA9BF
+'SolitonClassification.Rotating.referencePolynomialMatrix22_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Order-22 full-operator and reference-inverse audit passed for 1007 declarations.
+EXIT 0
+MODULE PolynomialGridAssembly SOURCE 694CD8E3DF044E9AD057E39A5A0C8FDA13B3CB751FB50DC347BC40BC2C0B57C8
+'SolitonClassification.Rotating.polynomialGrid60_22' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual polynomial reference-grid assembly audited.
+EXIT 0
+MODULE TwoSegmentGrid SOURCE BB40DB64EC0681779943A2E529ED86B06116E2C8D3D7E3B97002D51BEF380423
+'SolitonClassification.Rotating.GridReset.twoSegmentGrid' depends on axioms: [propext, Classical.choice, Quot.sound]
+Concrete two-segment 60/22 reference grid and all reset inputs checked.
+EXIT 0
+MODULE TwoSegmentActual SOURCE DDA5C73D47AC9A783BC873F426B400B513BD0F8ED934C0F97720C5C08C58D5AE
+'SolitonClassification.Rotating.GridReset.two_center_actual_state' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.GridReset.two_center_actual_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual two-segment state/full-matrix bootstrap audited for 3768 declarations.
+EXIT 0
+MODULE FirstTrueMatrix22 SOURCE 7DE25886F0594146F9FAA2D502BB9B48A513E09BDF78118B99778CB100707031
+'SolitonClassification.Rotating.first_true_matrix22_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+Concrete actual first 6-by-6 matrix endpoint audit passed for 2699 declarations.
+EXIT 0

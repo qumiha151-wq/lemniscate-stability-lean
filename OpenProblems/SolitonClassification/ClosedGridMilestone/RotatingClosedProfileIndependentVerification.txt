@@ -1,0 +1,42 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE RotatingPeriodicFlow SOURCE EFDDB851BB234F228C3AB80406B1EDD76850A170C1709C1230B371DA9F29E3A2
+Rotating exact endpoint-periodicity audit passed for 249 declarations.
+EXIT 0
+MODULE RotatingPeriodicSmooth SOURCE BA4EF3BC47AC2486660DBDAF7539B0F0F4A23B4D6DA07936C2E4963857A014F7
+Rotating all-time smooth periodic-support audit passed for 257 declarations.
+EXIT 0
+MODULE RotatingClosedProfile SOURCE D00FCAAD55EA65F41CD0857CFDA84EC7470EE4A3AA72C14B9D05B1ECD45D9313
+Rotating actual periodic-support profile audit passed for 380 declarations.
+EXIT 0
+MODULE RotatingClosedProfileClosure SOURCE B144777C95D4BCC27D6E92ED5B8441824A5108394B0A26DB77ED890507C0D5F4
+Rotating rational-holonomy closure audit passed for 386 declarations.
+EXIT 0
+MODULE RotatingClosedProfileShooting SOURCE FCD530F246E1B8500EA44E49EA021C6F46289CB80D305100121FBBAC69FBD217
+Rotating actual-shooting closed-geometry audit passed for 391 declarations.
+EXIT 0
+MODULE RotatingClosedProfileNonconstant SOURCE E2D7A907286AD31E64118D424EE39BDBEEAD14FEBF84B70DE6055B2177E4222B
+Rotating nonconstant actual-profile audit passed for 396 declarations.
+EXIT 0
+MODULE RotatingClosedProfileAudit SOURCE 26900B48B25839536FF9C5CAA4E3C6A8F6F2BB7A98D38DDD24AEAE0D6C7DA9CD
+'SolitonClassification.Rotating.rotatingTrajectory_quasiperiodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.rotatingTrajectory_global_tube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.rotatingTrajectory_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.periodicRotatingSupport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.closed_rotating_profile_of_endpoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.actualShooting_closed_profile' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.actualShooting_total_curvature' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.actualShooting_nonconstant_rotating' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Rotating combined conditional closed-geometry audit passed for 788 declarations.
+EXIT 0

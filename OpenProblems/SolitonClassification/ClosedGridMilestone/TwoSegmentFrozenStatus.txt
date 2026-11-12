@@ -1,0 +1,90 @@
+Concrete two-segment actual ODE certificate, state60 / full matrix22
+2026-11-13
+
+The nine new sources listed in TwoSegmentFrozenManifest.csv are frozen.
+They do not modify any earlier frozen CAP or Lean source. All final logs
+are warning-free; the final recursive audit covers 3768 Rotating-prefix
+declarations and permits only propext, Classical.choice and Quot.sound.
+This count includes imported declarations, not 3768 newly proved theorems.
+
+Actual conclusion: let h=Candidate.step=Candidate.l/4000. For every real
+six-dimensional initial a in ball(Candidate.initial,1e-55), the already
+constructed supportFlow solves the original polynomial ODE throughout
+[0,2h]. It lies in outerTube there. At the actual time 2h,
+
+  norm(supportFlow(2h,a)-GridReset.state2) <= 4e-54;
+  norm(D_a supportFlow(2h,a)-GridReset.matrix2) <= 4e-19.
+
+The derivative norm is the full six-dimensional supremum operator norm.
+The center is explicitly proved to belong to that open initial ball.
+The chosen state2 and matrix2 are exact rational point midpoints, not
+interval-valued or assumed actual endpoints. The result is positive-time
+for these two concrete segments. Generic polynomial and tail interfaces
+support either sign, but no negative candidate data is asserted here.
+
+The second segment starts from the exact midpoint of the first state
+endpoint with zero radius. Its full variational initial matrix is the
+exact midpoint of the first full matrix endpoint, rather than identity.
+Every second-state60 and six-column matrix22 recurrence and endpoint is
+checked by decide +kernel, and its initial points are checked equal to
+the first already-certified endpoint midpoints. No Python or JSON data
+are used as an axiom, actual-flow hypothesis or trusted arithmetic oracle.
+
+Both state reset defects and both full matrix reset defects, including
+the final reset, are proved <=1e-57. Matrix errors use full row sums of
+all six numerical coordinate radii. Both midpoint matrices have norm
+<=2, norm(B-Id)<=1/2 and true inverse norm<=2 by Neumann inversion.
+Whole-segment references M=U22*B therefore have norm and inverse norm
+<=3. The state polynomial is order60; the mixed variational residual
+uses that state60 reference and matrix22, without equating their orders.
+
+PolynomialGridAssembly fills every field of FlowBootstrapGridData using
+actual derivatives, the universal state residual1e-57, full operator
+matrix residual4e-19, the proved polynomial tube margin0.01, genuine
+matrix inverses and the explicit resets. TwoSegmentGrid supplies every
+remaining numerical premise, including the terminal node. The strict
+bootstrap uses initial radius/budget1e-55 and metric radius1e-54. It
+proves actual tube membership and state error rather than assuming them.
+The matrix deviation budget is a proved real exponential inequality
+with relative tolerance1e-19. Its actual final-node theorem explicitly
+charges K+lastMatrixJump. The state endpoint explicitly adds the last
+state reset to the final left-reference bound.
+
+Completed numeric runs: GridResetStep1State60 session62603 and
+GridResetStep1Matrix22 session8229 both exited0, each with a 600-second
+own-child resource limit. Final actual-flow proof session71711 exited0;
+its measured replay session85421 imports the checked data and repeats
+no numerical recurrence. TwoSegmentMeasuredResources.json records the
+actual process CPU, wall, peak memory and artifact bytes. The reported
+measured core consists of the original first state60 and matrix22 runs,
+the new second state60 and matrix22 runs, and the final actual wrapper.
+It excludes generic preparatory proof compilation and development errors.
+All runs used a shared Windows host and include import/startup overhead.
+Do not multiply these short-block measurements into a claimed completed
+4000/8000-step cost or a uniform later-node bound.
+
+Reproduction: performance/generate_reset_second_segment.py proposes the
+two new finite tables using performance/reference.py, the frozen sibling
+CAP shooting_certificate.json and performance/matrix22_record.json. The
+Lean initial-value equalities independently verify the links to the
+already-checked first endpoints. The Python output is untrusted until
+the finite Lean checks. The generated .lean sources are sufficient for
+kernel replay together with their manifest dependencies; Python is not
+needed to check an existing certificate.
+
+Still open for the candidate Lean proof: all remaining positive and
+negative steps, the extended-time initial neighborhood, full-grid point
+matrix/inverse/reset bounds, the actual shooting residual and Jacobian,
+and the concrete root certificate. This two-segment theorem is neither
+a periodic solution theorem nor a complete soliton classification.
+The old 1.5r/4r conditional shooting-domain diagnostic must not be used
+as the final root input: the current full-grid plan reserves initial
+ball radius8r and metric radius16r to meet the root interface's r/4
+interior-domain requirement. That future budget does not alter this
+separately proved two-segment ball1e-55 result.
+
+Scaling warning: this prototype imports predecessor tables to prove
+midpoint linkage directly. A full-grid generator should separate exact
+node data from heavy coefficient proofs and check every leaf against
+the relevant shared node values; otherwise transitive predecessor
+imports may dominate memory. No full-grid pipeline is launched here.

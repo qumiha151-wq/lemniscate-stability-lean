@@ -124,24 +124,66 @@ differential-residual bounds. Numeric node inverses remain obligations.
 The exact b-row and theta-column structure is proved without suppressing
 any of the six variational directions.
 
+Closed geometry and concrete two-segment milestone, 13 November 2026
+
+Twenty-nine new Lean modules, independently replayed with the frozen hashes.
+This is an intermediate result in the separate SolitonClassification project.
+
+Seven modules turn a TRUE actual shooting zero and finite actual confinement
+into an explicit globally smooth periodic unit-speed rotating soliton profile.
+The angle shift is -112*pi/57;57 copies give position period114*c2 and total
+curvature -56*(2*pi). Candidate signs imply nonconstant curvature and a
+nonzero normal rotation contribution. No shooting zero is instantiated yet.
+This batch concerns spatial profiles; a pure-normal time evolution is not
+included. Minimal period, primitivity and embeddedness are not asserted.
+
+Two modules prove universal state42/44 residuals6e-40/6e-42 and actual local
+state tails1e-41/1e-43. Mixed state42/44 with variation22 has actual Jacobian
+tail4e-21. These are real original-ODE statements for every inner center,
+both signs and time<=1561/200000, with no assumed tube or truncation tail.
+
+Five modules prove exact constant b along Taylor references, reference margin
+0.01, and the real time-neighborhood required by the shooting interface.
+The endpoint is T0+2r, not an unrelated scalar bound32. Exact candidate
+arithmetic covers r<=1e-24. The extended full grid is still to be constructed.
+
+Three modules prove the actual five-dimensional rational preconditioner
+norm<=82, defect against a fixed RATIONAL comparison matrix<=1e-10, and
+injectivity, together with exact candidate initial-state, norm and sign
+facts. The comparison matrix is NOT yet a certified actual shooting
+derivative. The closed radius r initial set requires an open radius8r
+tube to meet the final interface's quarter-radius condition.
+
+Twelve additional modules complete the checked positive first TWO segments
+with state60 and full matrix22. For every a in ball(Candidate.initial,1e-55),
+the actual flow obeys the original ODE on[0,2*step], with final state error
+<=4e-54 and full initial-derivative error<=4e-19 relative to the explicit
+rational node2. Both reset transitions, including the terminal one, are
+charged. Six numerical columns use complete row sums; actual inverses are
+proved. The shared RotatingGridMargin is counted among the five above.
+
+The conditional Fraction budget is a feasibility diagnostic, not a grid
+certificate. Its updated8r initial tube/16r metric radius supersede the
+earlier proposed1.5r/4r values. Missing numerical errors are not zeroed or
+certified by that script. Frozen status notes say work-only at their freeze;
+this milestone publishes the sources listed above after independent replay.
+
+Remaining: the rest of the full positive/negative8000-step certificate,
+extended endpoint convention, all node inverses and reset sums, numeric
+shooting residual/Jacobian and the concrete Banach root. The full closed
+classification, general migration and unrestricted quarter-power length
+growth remain unresolved. Counts in logs include imported definitions and
+helpers, not numbers of solved problems. Only standard Lean axioms are
+permitted by the enforced project audit. Other open-problem projects and
+the original stability project remain separate.
+
 VERIFICATION AND REMAINING OBLIGATIONS
-LocalValidationMilestone retains the earlier35-module verification.
-VariationBootstrapMilestone adds30 frozen sources, scope and semantic
-reviews, and independent root replay records. An initial replay of the
-last operator module lacked its root-build Neumann dependency; compiling
-that unchanged dependency and retrying only the affected module completed
-the replay. Both the initial failure and recovery evidence are preserved.
-The enforced whole-project audit covers ClosedSimilarity and Rotating,
-permitting only propext, Classical.choice and Quot.sound. Counts include
-definitions and helpers, not solved open problems. The latest integrated
-count is recorded at the end of verification.txt.
 
-The full8000-step actual reference grid, numeric center/endpoint data,
-node inverse checks, reset budgets, parameter-cube bounds and final
-closed-orbit/root assembly remain unfinished. The generic bootstrap and
-local tails are proved, but their full candidate inputs are uninstantiated.
-Work-only numeric benchmarks and later geometry are not included here.
-General migration, quarter-power growth and full closed-soliton
-classification remain unresolved. The overall goal remains ACTIVE.
+Earlier milestones and their evidence remain unchanged. ClosedGridMilestone
+contains29 new frozen sources, scope reviews and29 independent root module
+checks. Its final integrated audit is recorded at the end of verification.txt.
+The project audit checks both ClosedSimilarity and SolitonClassification.Rotating
+recursively and accepts only propext, Classical.choice and Quot.sound.
+The overall goal remains ACTIVE and the unresolved problems above remain open.
 
-Current independent integrated audit:3076 declarations; standard three axioms only.
+Current independent integrated audit:4335 declarations; standard three axioms only.

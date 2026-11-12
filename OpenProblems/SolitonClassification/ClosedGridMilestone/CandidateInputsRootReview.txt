@@ -1,0 +1,28 @@
+Root semantic review, 13 November 2026
+
+ParameterMatrixNorm uses row i / column j on the actual five-dimensional
+supremum-norm parameter space. Its composition proof matches rational
+matrix multiplication in the same order. The full row sums give actual
+continuous-linear-map norms, not an entrywise maximum without dimension.
+
+CandidatePreconditioner is finite exact rational data. B is copied from
+the archived inverse_exact_decimal strings. J is copied from the archived
+unscaled_physical_jacobian with decimal-preserving parsing. The provenance
+JSON records both source hashes. Lean kernel arithmetic checks norm(B)<=82
+and norm(Id-BJ)<=1e-10. The true injectivity of B follows from that actual
+operator defect and the existing finite-dimensional perturbation theorem.
+No claim identifies J with the actual shooting derivative. Its comparison
+to that derivative remains a numerical full-grid obligation.
+
+CandidateInputs proves that the actual shooting initial-state map at the
+candidate center equals Candidate.initial exactly. Its operator norm is
+at most one, so a closed parameter ball of radius r maps into the closed
+initial-state ball of radius r. That set lies strictly inside the quarter
+of an open tube of radius 8r when r>0. This corrects the earlier proposed
+1.5r tube, which did not meet the actual-root interface. No actual tube is
+assumed or asserted by this domain result. Kernel rational signs imply
+c0>2, c4>0 and c2>0 throughout every candidate ball with radius<=1e-24.
+
+All three sources were read in full. The independent root compiler record
+is CandidateInputsIndependentVerification.txt, anchored to the frozen
+source manifest. This review does not certify a shooting root.

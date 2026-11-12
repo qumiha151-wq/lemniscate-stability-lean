@@ -1,0 +1,81 @@
+{
+  "scope": "All four finite state/matrix segment checks plus final actual-flow wrapper; generic preparatory proof compilation and development failures excluded.",
+  "environment": "Shared Windows host; observed module times include import/startup overhead. Runs are not isolated and are not a uniform per-node extrapolation.",
+  "measurements": [
+    {
+      "module": "SolitonClassification/Rotating/BenchState60",
+      "exit_code": 0,
+      "wall_seconds": 44.392190700003994,
+      "user_cpu_seconds": 27.203125,
+      "kernel_cpu_seconds": 17.09375,
+      "peak_working_set_bytes": 4954460160,
+      "source_bytes": 43454,
+      "olean_bytes": 1991400,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\BenchState60.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/BenchMatrix22",
+      "exit_code": 0,
+      "wall_seconds": 32.295895500006736,
+      "user_cpu_seconds": 21.59375,
+      "termination": "completed",
+      "kernel_cpu_seconds": 10.171875,
+      "peak_working_set_bytes": 1957687296,
+      "source_bytes": 63523,
+      "source_sha256": "8ab837290d40be498e13bf8d0b17cf5cb1c0e3b1c9a006180f4956e3a9b05fe4",
+      "olean_bytes": 3248024,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\BenchMatrix22.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/GridResetStep1State60",
+      "exit_code": 0,
+      "wall_seconds": 38.59921790000226,
+      "user_cpu_seconds": 25.96875,
+      "termination": "completed",
+      "kernel_cpu_seconds": 11.796875,
+      "peak_working_set_bytes": 5207781376,
+      "source_bytes": 44073,
+      "source_sha256": "5c3827bf51bb425798964496aff444e1860a61bf380493c3d7f8302df1872ea3",
+      "olean_bytes": 1976424,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\GridResetStep1State60.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/GridResetStep1Matrix22",
+      "exit_code": 0,
+      "wall_seconds": 55.47828759999538,
+      "user_cpu_seconds": 35.828125,
+      "termination": "completed",
+      "kernel_cpu_seconds": 18.640625,
+      "peak_working_set_bytes": 2265116672,
+      "source_bytes": 65449,
+      "source_sha256": "ad0339c110fe3142b3ac303abd3d89f10b82d524dba9dc7aa9edae29c73286d8",
+      "olean_bytes": 3322256,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\GridResetStep1Matrix22.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    },
+    {
+      "module": "SolitonClassification/Rotating/TwoSegmentActual",
+      "exit_code": 0,
+      "wall_seconds": 27.300356799998553,
+      "user_cpu_seconds": 11.828125,
+      "termination": "completed",
+      "kernel_cpu_seconds": 14.859375,
+      "peak_working_set_bytes": 1807138816,
+      "source_bytes": 7044,
+      "source_sha256": "dda5c73d47ac9a783bc873f426b400b513bd0f8ed934c0f97720c5c08c58d5ae",
+      "olean_bytes": 330208,
+      "log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\performance\\TwoSegmentActual.log",
+      "trust": "Lean kernel with standard-axiom audit; no native_decide"
+    }
+  ],
+  "sum_wall_seconds": 198.06594850000693,
+  "sum_cpu_seconds": 194.984375,
+  "peak_working_set_bytes": 5207781376,
+  "sum_measured_olean_bytes": 10868312,
+  "new_nine_module_olean_bytes": 7055976,
+  "trust": "Each finite operation sequence is checked by Lean kernel; final 3768-declaration recursive axiom audit permits standard three axioms only.",
+  "global_certificate_completed": false
+}

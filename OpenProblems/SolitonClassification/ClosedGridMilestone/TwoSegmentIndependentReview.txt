@@ -1,0 +1,69 @@
+Independent semantic review: concrete two-segment actual-flow certificate
+Reviewer: finish_curve_input (not the numeric-data author)
+Date: 2026-11-13
+
+Result: no mathematical semantic gap found in the nine-source connection.
+The manifest hashes were independently checked against the current sources.
+This review read the generic/assembly/reset/actual-flow modules in full and
+all state and six-column finite-data proof assemblies. It did not independently
+rerun the long finite recurrences or manually recalculate all raw integer table
+entries. The numeric kernel replay is the separately recorded owner/root check.
+No source was changed and no new actual-flow theorem is claimed by this review.
+
+Checked points:
+1. MatrixRowNorm uses the real six-dimensional supremum norm. Numerical
+   coordinate radii are summed over all six columns at a fixed output row;
+   no missing dimension factor or column/row transposition was found.
+2. FixedEndpointReset charges each endpoint interval radius before replacing
+   it by its exact rational midpoint. The next state starts at state1, and
+   the next full matrix starts at matrix1, not identity. Equality of every
+   initial finite datum with those points is kernel checked.
+3. Every second-stage matrix column is the order22 variation polynomial with
+   seed matrix1(e_j), driven by the checked state60 coefficients. The assembled
+   operator is U22(state1)*matrix1 in that order. All six columns, including
+   parameter and angle columns, enter the full endpoint and row sums.
+4. matrix1 and matrix2 have proved real operator norm <=2 and distance to
+   identity <=1/2. Their actual inverses follow by Neumann inversion with
+   norm <=2; an approximate numeric inverse is not substituted for an inverse.
+5. PolynomialGridAssembly references are honest polynomial functions with
+   proved derivatives. Signed time and right seed multiplication are retained.
+   Their matrix residual is against Dfield evaluated on the same state60
+   polynomial, with the full mixed-order residual retained. Matrix and state
+   residual norms are independent budgets (4e-19 and 1e-57), not equated.
+6. The grid structure supplies the genuine whole-segment matrix/inverse
+   bounds, exact initial M=Id, proved 0.01 reference tube margin, and both
+   state and matrix reset defects. Its inputs do not assume any actual tube,
+   state error, actual variational derivative, or actual matrix norm bound.
+7. The concrete two-segment constructor discharges those remaining inputs
+   from the checked endpoints and node bounds. It includes node2 and both
+   transitions j=0,1; terminal node/reset obligations are not omitted.
+8. TwoSegmentActual invokes the strict noncircular bootstrap on the actual
+   globally constructed clipped flow, uniformly for the open initial ball
+   of radius1e-55. The strict metric radius1e-54 budget proves tube membership,
+   then identifies the original ODE throughout the real interval [0,2h].
+9. The endpoint state estimate compares to the last left reference first,
+   then explicitly adds the final state reset1e-57. The derivative estimate
+   uses actualDeviation_terminal and its K+lastMatrixJump factor. The stated
+   bounds4e-54 and4e-19 are valid relaxations of those complete budgets.
+10. All time and scope claims are explicit: positive sign, two concrete
+    segments, actual horizon2*Candidate.step. No 4000-step, negative-branch,
+    whole candidate parameter cube, true shooting root or closed-profile
+    existence conclusion is inferred from these two segments.
+
+Observed owner final log: TwoSegmentActual.build.log reports 3768 recursively
+scanned Rotating declarations with only propext, Classical.choice, Quot.sound.
+This is an imported-declaration audit count, not a count of new theorems.
+The reviewer did not independently repeat that build or its numeric precursor.
+
+Frozen manifest SHA256: B3099AFB46D37D194BC07ECED808E6E24EDB042B51B48BD1C6136CD049981AD1
+
+Reviewed source SHA256:
+MatrixRowNorm: 81612682B7B1EB544175F54D07AF820073799768AD9507642F85A22178C4A5A3
+FixedEndpointReset: 848AC4DD7B9054549893F1ED9D607BAFCBBEA4709DC17ABD9DB3356027BB3491
+GridResetNodes: D6AB38BCE2729AFB3AD646BFED1E68C56728AEC18239ABB90D65597ADEC2A6C8
+GridResetStep1State60: 5C3827BF51BB425798964496AFF444E1860A61BF380493C3D7F8302DF1872EA3
+GridResetStep1Matrix22: AD0339C110FE3142B3AC303ABD3D89F10B82D524DBA9DC7AA9EDAE29C73286D8
+GridResetEndpointData: 53211DDF038834868EC233A9EEA36963E3634F98C36B2F9B621DF13011EA72BE
+PolynomialGridAssembly: 694CD8E3DF044E9AD057E39A5A0C8FDA13B3CB751FB50DC347BC40BC2C0B57C8
+TwoSegmentGrid: BB40DB64EC0681779943A2E529ED86B06116E2C8D3D7E3B97002D51BEF380423
+TwoSegmentActual: DDA5C73D47AC9A783BC873F426B400B513BD0F8ED934C0F97720C5C08C58D5AE

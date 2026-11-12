@@ -1,0 +1,28 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE ParameterMatrixNorm SOURCE 7E4709D8C949A199F05EEA82DFEA1754B5DBAF07B926DB43CDE1B3CD44B37120
+'SolitonClassification.Rotating.parameterMatrixOperator_defect_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual parameter matrix operator audit passed: 101 declarations; standard axioms only.
+EXIT 0
+MODULE CandidatePreconditioner SOURCE E5687E60129BE70F4C1C5A63EAFBEAB8CF03EA0DBE3DE9920AFDC2AA405D8509
+'SolitonClassification.Rotating.CandidatePreconditioner.actual_preconditioner_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.CandidatePreconditioner.actual_preconditioner_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Concrete rational shooting preconditioner audited: 112 declarations; standard axioms only.
+EXIT 0
+MODULE CandidateInputs SOURCE 9F2EB61FE4D0C12C1984DD7689388C76242EEF94F4BF6B6D6FFF2F1F049CDAF0
+'SolitonClassification.Rotating.CandidateInputs.initial_state_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.CandidateInputs.initial_set_subset_quarter_tube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.CandidateInputs.parameter_signs_of_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Concrete candidate input/domain audit passed: 1197 declarations; standard axioms only.
+EXIT 0

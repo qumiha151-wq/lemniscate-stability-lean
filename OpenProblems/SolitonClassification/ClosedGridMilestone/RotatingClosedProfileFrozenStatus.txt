@@ -1,0 +1,101 @@
+Conditional actual shooting root to closed geometry: seven modules
+2026-11-13; independent SolitonClassification project.
+
+All seven sources passed actual Lean 4.33.1 checking with zero warnings.
+Final session 81272 EXIT 0. The combined audit checks both namespace
+prefixes SolitonClassification.Rotating and ClosedSimilarity, covering
+788 declarations with only propext, Classical.choice, Quot.sound.
+Eight key theorem axiom lists are printed explicitly. Source, object,
+compiler-log hashes and individual sessions/counts are in the manifest.
+All 47 earlier frozen actual-flow/inverse/metric/bootstrap/deviation
+source hashes were checked unchanged at this freeze.
+
+ROOT TO GLOBAL ORIGINAL ODE
+rotatingTrajectory(a,s) is the actual already constructed global clipped
+flow with sign +1, not a new free solution. The angle coordinate is not
+clipped and is absent from every component of the field's right-hand
+side. Thus field(x+angleVector(d))=field(x), and the same exact symmetry
+holds for clippedField.
+
+The actual b coordinate has derivative zero, hence remains equal to its
+initial value. The five actual shooting equations match the first four
+support coordinates and impose theta(T)-theta(-T)=-112*pi/57. The proved
+constancy of b fills the remaining coordinate, giving the exact full
+state equality x(T)=x(-T)+angleVector(-112*pi/57).
+
+Uniqueness of the actual global clipped flow propagates this equality:
+  x(s+2*T)=x(s)+angleVector(d) for every real s.
+The support coordinates k,v/8,p,q,b are therefore periodic. The angle
+has the derived additive holonomy d; it is not incorrectly declared
+periodic when d is nonzero.
+
+Outer-tube membership depends only on the five periodic coordinates.
+For T>0, periodic interval reduction moves any real time into [-T,T).
+Consequently finite-interval tube data implies tube membership for ALL
+times. The actual clipped trajectory then satisfies the original
+polynomial ODE globally. Smoothness is derived by induction from
+deriv(x)=field composed with x and the proved smooth polynomial field;
+no global smooth-flow dependence assumption is used.
+
+ACTUAL PERIODIC SUPPORT AND POSITION
+The physical variables are k=x0, v=8*x1, p=x2, q=x3, b=a4, theta=x5.
+The code derives the actual equations
+  k'=v, v'=-k^3/2-p-b*q, p'=-k*q, q'=1+k*p, theta'=k.
+periodicRotatingSupport constructs the existing PeriodicSupportProfile
+with dilation coefficient 1, rotation coefficient b, and period 2*T.
+Its periodicity and differential fields are proved from endpoint matching
+and finite tube confinement, not supplied as independent assumptions.
+The support variables and angle are C-infinity on the whole real line.
+
+The actual position is explicitly
+  X=q*cos(theta)-p*sin(theta), Y=q*sin(theta)+p*cos(theta).
+Existing same-project SupportODE theorems give actual coordinate
+derivatives X'=cos(theta), Y'=sin(theta), Euclidean unit speed
+X'^2+Y'^2=1, and computed signed curvature X'Y''-Y'X''=k.
+The new code derives the actual force k''+k^3/2=-p-b*q and the intrinsic
+position equation using normal (-Y',X') and tangent (X',Y').
+
+RATIONAL HOLONOMY AND EXACT CLOSURE
+For a natural n>0 and integer m, the generic condition n*d=m*(2*pi)
+implies position periodicity with positive period n*(2*T). The support
+period is iterated and the angle shift is proved by induction. The sine
+and cosine integer-period identities then close X and Y exactly.
+This is not an assumed position closure or a floating-point endpoint
+match. The actual curvature integral over the closed period is also
+proved to equal m*(2*pi).
+
+For actualShootingMap, n=57 and m=-56. The main theorem
+  actualShooting_closed_profile
+takes ONLY a true actual shooting zero, c2>0, and confinement of that
+actual trajectory on [-c2,c2]. It proves IsClosedRotatingProfile for
+the explicit position with period 114*c2. The predicate includes positive
+period, coordinate C-infinity regularity, periodicity, unit speed,
+actual coordinate curvature, and the intrinsic soliton equation.
+actualShooting_total_curvature gives -56*(2*pi). No claim of minimal
+period, embeddedness, or primitivity of this closed immersion is made.
+
+A helper converts separately certified positive/negative signed flow
+tubes into the required two-sided interval, using the already proved
+actual flow reflection identity.
+
+OPTIONAL NONCONSTANT AND NONZERO ROTATION TERM
+If the initial k0>2, any hypothetical constant curvature would satisfy
+k0^4=2 by the existing actual support rigidity theorem, a contradiction.
+Thus nonconstancy is proved, not assumed. A nonconstant profile cannot
+have q identically zero: p'=0 would make p constant and q'=1+k*p=0
+would force k constant. With b>0, the actual normal rotation term
+b*(X*X'+Y*Y') is consequently nonzero somewhere.
+actualShooting_nonconstant_rotating requires c0>2 and c4>0 explicitly.
+These are future candidate-box obligations. The statement proves a
+nonvanishing rotation contribution relative to the chosen origin; it
+does not silently assert a stronger uniqueness theorem about every
+possible representation under changes of origin.
+
+REMAINING EXISTENCE BOUNDARY
+No particular actual shooting zero is instantiated by this supplement.
+The complete interval reference grid, budgets, preconditioned residual,
+Jacobian certificate, and Banach self-map/contraction inputs remain to
+be connected and numerically certified in Lean. The raw CAP report is
+not substituted for these obligations. This is a proved conditional
+root-to-closed-geometry bridge, not a completed specific existence proof
+and not a classification of all periodic soliton profiles.
