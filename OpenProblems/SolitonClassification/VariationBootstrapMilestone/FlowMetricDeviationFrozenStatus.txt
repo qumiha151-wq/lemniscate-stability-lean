@@ -1,0 +1,86 @@
+Actual variational/reference deviation: six-module supplement
+2026-11-13; independent SolitonClassification project.
+
+The final compiler outcomes, recursive audit counts, source/object/output
+hashes and tool sessions are recorded in the matching FrozenManifest.
+The recursive audit permits only propext, Classical.choice, Quot.sound.
+No existing frozen source is edited by this supplement.
+Final validation: session 37917 EXIT 0; combined audit 625 declarations,
+with seven main theorem axiom lists explicitly printed. All six modules
+have zero warnings. Earlier Segment/Reset final compiles are session
+41747, both EXIT 0 and audit 250. Final Global/Bootstrap/Budget counts
+are respectively 352/604/7. All 41 prior frozen source hashes were
+checked unchanged when this six-module manifest was generated.
+
+ACTUAL DEVIATION, NOT ONLY A MATRIX NORM BOUND
+P(t)=fderiv supportFlow(t) is the actual variational matrix. On a real
+reference segment, V=M^-1*P satisfies the previously derived V'=C*V.
+Consequently (V-Id)'=C*(V-Id)+C. The proof applies actual right-derivative
+Gronwall to V-Id, obtaining
+  ||V(t)-Id||+1 <= (||V(l)-Id||+1)*exp(rate*(t-l)).
+The rate-zero case is handled explicitly, without dividing by zero.
+
+At a matrix reset old M -> new N,
+  Vnew=(inverse N*M)*Vold,
+  Vnew-Id=(inverse N*M)*(Vold-Id)+(inverse N*M-Id).
+Both terms are bounded. In particular ||inverse N*M-Id||<=I*delta,
+and thus the shifted deviation satisfies the homogeneous reset bound
+  ||Vnew-Id||+1 <= (1+I*delta)*(||Vold-Id||+1).
+This additive reset defect would be missing from a norm-only argument.
+
+The exact initial M(0)=P(0)=Id gives shifted deviation 1. Finite grid
+growth then proves, for all reference-segment times and all reset nodes,
+  ||M^-1*P-Id|| <= exp(rate*T+I*J)-1,
+where rate=I*(4*E*K+rho) and J bounds the sum of actual matrix resets.
+The rate includes actual state separation E and the actual matrix
+differential residual rho. No actual deviation estimate is an input.
+
+Since P-M=M*(V-Id), on every closed reference segment,
+  ||P-M|| <= K*(exp(rate*T+I*J)-1).
+All-time coverage explicitly returns a covering segment. Node estimates
+include n=N AFTER the last reset. At a node the theorem first retains
+the actual reference-node norm as its factor, rather than pretending the
+last segment bound K automatically applies to a different reset matrix.
+For n>0 it also derives ||M_n(t_n)||<=K+jump_(n-1). Thus the terminal
+post-reset estimate uses (K+lastJump), unless a sharper node norm is
+separately supplied. This covers the endpoint convention without
+silently dropping the final reset.
+
+BOOTSTRAP COMBINATION AND RELATIVE MATRIX ERROR
+FlowBootstrapGridData.actualDeviation derives the actual tube and state
+error from the frozen noncircular bootstrap, builds the actual metric
+grid, then proves uniformly on the open initial-state ball:
+  ||P(t)-M_j(t)|| <= K*deltaRel
+provided
+  exp(I*(4*(K*R)*K+rho)*T+I*SM) <= 1+deltaRel.
+The terminal version derives
+  ||P(T)-M_N(T)|| <= (K+matrixJump_(N-1))*deltaRel.
+The public Lean parameter is named deltaRel (Unicode identifier δrel).
+It is a RELATIVE MATRIX ERROR budget, not a shooting contraction factor.
+
+exp_deviation_budget proves the generic rational sufficient condition
+  deltaRel>=0 and budget<=deltaRel/(1+deltaRel)
+  imply exp(budget)<=1+deltaRel.
+No transcendental numeric evaluation is assumed. The bound is generic,
+including very small rational deltaRel; no specific candidate accuracy
+or Taylor order is asserted.
+
+REMAINING NUMERICAL AND SHOOTING CONNECTION
+The full reference-grid and strict bootstrap budgets are still actual
+certificate obligations. This supplement does not instantiate 8000
+segments, select a Taylor order, or alter the original raw CAP data.
+State and matrix Taylor orders remain independent inputs.
+
+To convert K*deltaRel into a shooting Jacobian error, one must still apply
+the actual coordinate projection, initial-data derivative, any endpoint
+time columns, and the preconditioner. Their norms multiply the error.
+In particular deltaRel is NOT the final contraction constant for the
+preconditioned shooting map; a small contraction target may require a
+much smaller relative matrix error. Any residual/rounding error between
+the real reference matrix and a stored numeric matrix also remains to
+be included. This file claims neither a particular shooting zero nor a
+classification of periodic profiles.
+
+The horizon is still the exact covered endpoint T. An upper bound used
+inside a scalar budget does not extend the actual trajectory's interval
+or provide an unproved parameter-time neighborhood.

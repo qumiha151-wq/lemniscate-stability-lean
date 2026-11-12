@@ -1,0 +1,54 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE FlowBootstrapGeometry SOURCE 2F5EFB14DC524204D676EC47BFFC965DD4B2B8602F6036C0B0CE5FFC054E2C10
+Rotating state-bootstrap geometry audit passed for 251 declarations.
+EXIT 0
+MODULE FlowBootstrapCoordinates SOURCE 22E1CBB8CBBF019DC7170B8C84576FC238AD8800121E001F14AD293B0EEC406D
+Rotating nonlinear state-coordinate audit passed for 267 declarations.
+EXIT 0
+MODULE FlowBootstrapSegment SOURCE 804CD262B3EE1C7D40768DF6F0F82F5C1B276688B5A9620B673A503D0B0F7DDF
+Rotating actual state first-threshold audit passed for 271 declarations.
+EXIT 0
+MODULE FlowBootstrapReset SOURCE 9EF6208DDD6F03A2754F9AE4C136C563D40EAF54B274F8DB077BCB44381918CF
+Rotating nonlinear state reset audit passed for 276 declarations.
+EXIT 0
+MODULE FlowBootstrapBudget SOURCE AF86CD9E459DFC8E90C4EAE628C12D333FD1D92F5ED34CED0953476C1E34C1CD
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Rotating affine state-budget audit passed for 21 declarations.
+EXIT 0
+MODULE FlowBootstrapGridData SOURCE A950FA6CB201F9EDD8C3476D8EFF00937AB5E34046E5F7DC35FA9DE507245EBF
+Rotating bootstrap reference-grid audit passed for 424 declarations.
+EXIT 0
+MODULE FlowBootstrapGlobal SOURCE 15B93DD052FF55ABB9C5913A3AAA8FDF544AE635DB30353325502E60D243A682
+Rotating global actual state-bootstrap audit passed for 433 declarations.
+EXIT 0
+MODULE FlowBootstrapNeighborhood SOURCE 163FA9F411619FAAAD0EC23F2074B1EFC6B198021E545DA4BE8D368B10BCE976
+Rotating actual initial-ball bootstrap audit passed for 438 declarations.
+EXIT 0
+MODULE FlowBootstrapMatrices SOURCE 4572E11E0D34FDEEB790614F133DE07B32397538BAC133E5DD3F19747FD39A55
+Rotating actual state-to-matrix bootstrap audit passed for 573 declarations.
+EXIT 0
+MODULE FlowBootstrapAudit SOURCE 5075BDCF36DBDB0D2296C23B771B24433EB0F6DD41C50F2BC05A113C8ECA4F3F
+'SolitonClassification.Rotating.field_quadratic_remainder_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.bootstrap_reference_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.bootstrap_reset_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.FlowBootstrapGridData.node_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowBootstrapGridData.actual_mem_outerTube' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowBootstrapGridData.tubeNeighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowBootstrapGridData.actualMatrixBounds_8000_16000' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Rotating combined actual state-bootstrap audit passed for 593 declarations.
+EXIT 0

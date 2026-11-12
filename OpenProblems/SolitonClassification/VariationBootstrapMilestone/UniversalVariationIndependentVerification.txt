@@ -1,0 +1,58 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE UniversalVariationMajorantScalar SOURCE 8404393A86E3980072EB6D6D48E24EEC9BE26056D54EA5DF93FF8BEFA85018B3
+'SolitonClassification.Rotating.UniversalMajorant.jacForcing_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal variation scalar audit passed: 179 declarations; standard axioms only.
+EXIT 0
+MODULE UniversalVariationMajorantVector SOURCE 60C0736D84EE48CAB389F77869162BAE4136AD83A2029738509C1E3081051F9F
+'SolitonClassification.Rotating.UniversalMajorant.variationTaylor_majorized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal variation vector audit passed; standard axioms only.
+EXIT 0
+MODULE UniversalVariationMajorantActual SOURCE D285F37FEA5FD7AAB20A7BAB48ABF4C33766516D03CF8A206B1F1E24F3CCE4BE
+'SolitonClassification.Rotating.UniversalMajorant.variationCoeff_displaced_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.UniversalMajorant.variationCoeff_majorized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal actual variation majorant audit passed; standard axioms only.
+EXIT 0
+MODULE UniversalVariationMajorantResidual SOURCE 7DA7C8F845C1B30914DD222A6714595033190035FD9E7A0DF265C57B5D6D9620
+'SolitonClassification.Rotating.UniversalMajorant.mixedVariationResidual_coeff_majorized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.UniversalMajorant.mixedVariationResidual_actual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal mixed variation residual audit passed; standard axioms only.
+EXIT 0
+MODULE UniversalVariationMajorantBudget SOURCE 3D69073D4E5B92E2F009B6EB67ED3E9D665555DCAB753F40F68A329487DE36A5
+'SolitonClassification.Rotating.UniversalMajorant.actual_variation_residual60_30_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal variation degree60/30 budget audit passed; standard axioms only.
+EXIT 0
+MODULE UniversalVariationTrueTailNeighborhood SOURCE 39F8DA18930055A0E84A25438E71BA360941E5A29AB7272E1711D10EE84441BE
+'SolitonClassification.Rotating.UniversalMajorant.innerTube_flowTubeNeighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Boundary-safe actual flow neighborhood audit passed; standard axioms only.
+EXIT 0
+MODULE UniversalVariationTrueTail SOURCE E799EA882EFEBD11AB9F566D4D16A8A11EBB8C9E01BEEFE43F74C0A617C704CC
+'SolitonClassification.Rotating.UniversalMajorant.universal_signed_trueVariation60_30_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal actual mixed-order variational tail audit passed; standard axioms only.
+EXIT 0
+MODULE UniversalVariationOrder22 SOURCE E0E4527289BFDBAE8B2503AB84D0F373C87D590E4BBF016B87C707EF3211404C
+'SolitonClassification.Rotating.UniversalMajorant.universal_signed_trueVariation60_22_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.UniversalMajorant.universal_signed_trueVariation60_20_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal order22/20 actual variation budget and tail audit passed; standard axioms only.
+EXIT 0

@@ -1,0 +1,26 @@
+Independent root review, 13 November 2026.
+
+The root read all five files in OperatorReferenceFrozenManifest.csv.
+VariationStructure proves the original coefficient b-row and theta-column
+identities. It does not skip numeric verification of other entries.
+VariationLinearity proves additivity and real homogeneity of the existing
+variationCoeff, and derives continuous linear operators with exact apply
+identities and actual derivatives. The arbitrary-vector majorant therefore
+implies operator norm bounds directly. No column-count factor is required
+for this analytic argument; numeric entrywise errors still need row sums.
+
+The true operator tail is the existing actual fderiv error, quantified over
+all initial vectors, with the same signed time and inner-box hypotheses.
+Composition multiplies by the actual norm of the reference node matrix.
+The reference polynomial uses U(sigma*t)*B with B constant on each segment.
+Its derivative and residual retain sigma and the right multiplication by B.
+The velocity estimate is 17*(6/5)+1=107/5. Integrating from U(0)=Id gives
+norm(U-Id)<=107*t/5<=1/5 on the exact cap. Neumann inversion then gives a
+true unit and inverse norm<=5/4. The product inverse is in the correct
+reverse order. No inverse bound for the actual flow is assumed here.
+
+The norm/unit/inverse bounds for the node B remain explicit inputs. These
+are generic whole-segment analytic bounds, not a materialized grid or a
+shooting-zero existence proof. No semantic gap found. Independent root
+compiler results are in OperatorReferenceIndependentVerification.txt;
+frozen source hashes are checked before each compilation.

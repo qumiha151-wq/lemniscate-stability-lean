@@ -1,0 +1,36 @@
+Independent root verification of frozen rotating source; no other project imports.
+MODULE FlowMetricDeviationSegment SOURCE CB843BB5CDF991AC2FBCB224E06F44691031CF9215F249ACA7FA7ED3B1D30B86
+Rotating actual matrix segment-deviation audit passed for 250 declarations.
+EXIT 0
+MODULE FlowMetricDeviationReset SOURCE CDDAB403C6BAC2F64BE952FD3BDD7BEF8DF3E9A8FFBF87FA5A9CDCD0DFEBCBD5
+Rotating actual matrix reset-deviation audit passed for 250 declarations.
+EXIT 0
+MODULE FlowMetricDeviationGlobal SOURCE B5F5A404CF59C017070CE2333204B5F0CCF11C21BB73E66D79AD0EBC4299B99B
+Rotating actual global matrix-deviation audit passed for 352 declarations.
+EXIT 0
+MODULE FlowMetricDeviationBootstrap SOURCE CFF18EBFD03B412C170AF5FC5C724DA36D5641845311E6A01556C1F6FC04FCEF
+Rotating bootstrapped actual matrix-deviation audit passed for 604 declarations.
+EXIT 0
+MODULE FlowMetricDeviationBudget SOURCE 39920C19C674B2BAB55997407B92807956B8A34B41DCEAFB151957B99408C248
+Rotating rational deviation-budget audit passed for 7 declarations.
+EXIT 0
+MODULE FlowMetricDeviationAudit SOURCE C8E78CA69B070BE9A5167FF634FED747D0B423191EFE0900CF85DE85F09C6F18
+'SolitonClassification.Rotating.matrix_left_deviation_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.metric_forward_deviation_reset_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowMetricGridData.actual_deviation_on_segment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowMetricGridData.metric_deviation_at_node' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowBootstrapGridData.actualDeviation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.FlowBootstrapGridData.actualDeviation_terminal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.exp_deviation_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rotating combined actual matrix-deviation audit passed for 625 declarations.
+EXIT 0

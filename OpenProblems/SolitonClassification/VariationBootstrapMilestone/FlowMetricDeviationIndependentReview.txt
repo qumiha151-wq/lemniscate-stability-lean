@@ -1,0 +1,58 @@
+Independent semantic review by audit_full_escape, 2026-11-13
+
+Result: no mathematical or soundness gap found in the five substantive
+FlowMetricDeviation modules, plus their aggregate audit, at the hashes
+below. I read the final source; I did not independently recompile the
+batch or instantiate a numerical grid. No reviewed file was edited.
+
+The local deviation estimate correctly starts from W=M^-1*P and W'=C*W.
+Subtracting Id leaves an additive rate term: the proof bounds
+||(W-Id)'|| by rate*||W-Id||+rate and applies Gronwall. The identity
+gronwallBound(d,rate,rate,t)+1=(d+1)*exp(rate*t) is valid at rate=0 as
+well as nonzero rate. Thus no additive forcing is lost by treating W-Id
+as a homogeneous system.
+
+The reset expansion is
+Wnew-Id = (invNew*Old)*(Wold-Id) + (invNew*Old-Id).
+Both terms are bounded. In particular the extra I*matrixJump contribution
+is retained, producing the multiplicative bound for ||W-Id||+1. The
+initial shifted norm is exactly 1 because actual P(0)=Id and M(0)=Id.
+Finite grid growth includes every reset and every partial segment.
+
+Conversion to physical matrix deviation uses P-M=M*(W-Id), so the result
+is K*(exp(totalBudget)-1). The arbitrary-vector/operator norm remains the
+supremum norm on the complete six-dimensional state. There is no silent
+entrywise or spectral-norm substitution.
+
+The final reset is handled explicitly. actual_deviation_at_node retains
+the actual node matrix norm, and matrix_node_bound_from_reset derives
+K+lastJump from the preceding segment. The bootstrap adapter therefore
+gives (K+lastJump)*deltaRel at the post-reset terminal matrix, instead of
+silently applying the previous segment's K bound to a different matrix.
+
+The bootstrap adapter obtains actual tube confinement and actual state
+error from the previously proved noncircular FlowBootstrap chain. It then
+uses E=K*R in the actual variational coefficient bound. No actual P-M
+deviation is assumed in the new theorem inputs.
+
+The rational exponential budget is sound: deltaRel>=0 and
+b<=deltaRel/(1+deltaRel) imply exp(b)<=1+deltaRel via the standard
+geometric upper bound. It imposes no arbitrary candidate-specific
+threshold and does not require a floating-point exponential evaluation.
+
+Scope must remain explicit. deltaRel is a relative matrix-deviation
+budget; the physical matrix error is K*deltaRel (or the terminal-node
+version). It is not the final shooting contraction constant. Projection,
+initial-data and length columns, preconditioning, and parameter-cube
+variation still need their correct norm factors. The real grid data,
+matrix/state residuals, inverse bounds, reset sums, and strict bootstrap
+budget remain obligations. No orbit existence or full classification
+is concluded by this generic batch alone.
+
+Source hashes follow.
+FlowMetricDeviationAudit.lean C8E78CA69B070BE9A5167FF634FED747D0B423191EFE0900CF85DE85F09C6F18
+FlowMetricDeviationBootstrap.lean CFF18EBFD03B412C170AF5FC5C724DA36D5641845311E6A01556C1F6FC04FCEF
+FlowMetricDeviationBudget.lean 39920C19C674B2BAB55997407B92807956B8A34B41DCEAFB151957B99408C248
+FlowMetricDeviationGlobal.lean B5F5A404CF59C017070CE2333204B5F0CCF11C21BB73E66D79AD0EBC4299B99B
+FlowMetricDeviationReset.lean CDDAB403C6BAC2F64BE952FD3BDD7BEF8DF3E9A8FFBF87FA5A9CDCD0DFEBCBD5
+FlowMetricDeviationSegment.lean CB843BB5CDF991AC2FBCB224E06F44691031CF9215F249ACA7FA7ED3B1D30B86

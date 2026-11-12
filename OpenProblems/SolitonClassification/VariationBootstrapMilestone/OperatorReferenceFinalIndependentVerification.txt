@@ -1,0 +1,34 @@
+Successful independent replay results, extracted without changing source.
+The original missing-dependency attempt is retained in OperatorReferenceIndependentVerification.txt.
+ReferenceInverseIndependentVerification compiled the missing root dependency; only the affected module was retried.
+Independent root verification of frozen rotating source; no other project imports.
+MODULE VariationStructure SOURCE 77A51390F618BABD7421EFC0CD840A05CD8C063BBFA7A8F7B306F70EBDD3C617
+'SolitonClassification.Rotating.variationPolynomial_theta_column' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Complete variational b-row/theta-column structure audit passed for 127 declarations.
+EXIT 0
+MODULE VariationLinearity SOURCE 51C1C9D393263624AB4128E5DE9F68E38A11D5ED361247F260D3DBF886C82A62
+'SolitonClassification.Rotating.variationPolynomialMap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolitonClassification.Rotating.variationVelocityMap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual variational-polynomial linearity audit passed for 142 declarations.
+EXIT 0
+MODULE VariationOperatorBounds SOURCE 3C8A9704EBF501723A98EBF67DEB23BC7CE1028A7B31ACA74FD9D5F84E998DFD
+'SolitonClassification.Rotating.mixedVariationResidualMap60_30_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Uniform arbitrary-vector to operator bound audit passed for 482 declarations.
+EXIT 0
+MODULE UniversalVariationOperatorTail SOURCE 0C25B8F210DFFC28F1382B54F747E29889BD33B1363454FD38475576B3A949AB
+'SolitonClassification.Rotating.universal_signed_trueVariation60_30_operator_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Universal actual full-matrix tail audit passed for 902 declarations.
+EXIT 0
+Independent root verification of frozen rotating source; no other project imports.
+MODULE ReferencePolynomialMatrix SOURCE 9E51E1DE97749A0D6BB65BDA7F65D2260895D046C995F428BB5D56256B439D2F
+'SolitonClassification.Rotating.referencePolynomialMatrix30_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Polynomial reference-matrix whole-segment inverse audit passed for 974 declarations.
+EXIT 0

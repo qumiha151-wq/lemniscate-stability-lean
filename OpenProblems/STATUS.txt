@@ -77,6 +77,12 @@ SolitonClassification/: independent support-function ODE and actual geometric
   inner-tube center. The universal local result requires no per-center
   numerical residual or assumed tube. Global bootstrap, full numerical
   grid and candidate root remain unfinished. See LocalValidationMilestone.
+  A further30 modules now prove noncircular actual state/tube bootstrap,
+  actual matrix deviation including every reset, universal mixed-order
+  true variational tails, operator linearity and true polynomial-reference
+  inverses. These discharge generic analytic bootstrap obligations noted
+  above; the full concrete grid and shooting root remain uninstantiated.
+  See SolitonClassification/VariationBootstrapMilestone.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,

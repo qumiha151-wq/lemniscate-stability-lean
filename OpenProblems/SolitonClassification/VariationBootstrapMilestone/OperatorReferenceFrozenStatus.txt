@@ -1,0 +1,62 @@
+Frozen generic operator/reference batch: five modules, 2026-11-13
+
+Dependency order is listed in OperatorReferenceFrozenManifest.csv:
+VariationStructure, VariationLinearity, VariationOperatorBounds,
+UniversalVariationOperatorTail, ReferencePolynomialMatrix.
+All five have actual successful compiler/audit logs in this directory,
+with no warnings and only propext/Classical.choice/Quot.sound dependencies.
+They do not import CentroidEscape and do not change earlier frozen sources.
+
+VariationStructure proves the exact b-row and theta-column identities for
+the complete canonical variational coefficients and polynomials. It has
+not yet changed any numerical evaluator to exploit the 11 constant entries.
+
+VariationLinearity proves actual additivity and real homogeneity in the
+initial variation. It builds continuous linear maps for the finite
+variational polynomial and its actual derivative, and proves their apply
+identities against the pre-existing canonical polynomial. This is not an
+assumed linear surrogate for the numerical columns.
+
+VariationOperatorBounds uses genuinely uniform arbitrary-vector estimates
+to prove ||U30||<=6/5 and ||U30'-Df(P60)*U30||<=4e-27 in operator norm.
+Right composition with any reference matrix B costs ||B||, without an
+analytic factor six. This does NOT waive the separate row-sum/factor-six
+conversion for numeric entrywise interval errors.
+
+UniversalVariationOperatorTail proves, for every innerTube initial state,
+both signs (indeed every |sigma|<=1), and 0<=t<=hcap, that the actual
+initial derivative of supportFlow differs from U30(sigma*t) in complete
+six-dimensional operator norm by at most 7e-29. It includes actual-flow
+existence and boundary-safe initial-data differentiability through the
+separately frozen true-tail dependencies. It assumes no numerical residual,
+flow tube, or actual state-error bound. The same error right-composed with
+an arbitrary B is bounded by 7e-29*||B||.
+
+ReferencePolynomialMatrix proves the signed polynomial derivative and
+whole-segment invertibility independently of actual Q. The polynomial
+velocity bound is 107/5, so ||U(sigma*t)-Id||<=107*t/5<1/5. The separately
+proved Neumann inverse bridge gives U a true unit and ||inverse U||<=5/4.
+Consequently M(t)=U(sigma*t)*B is a unit whenever B is, with
+||M||<=6/5*||B|| and ||inverse M||<=5/4*||inverse B||. Its real differential
+residual is explicitly sigma*(U'-Df(P60)U)*B and is bounded by
+4e-27*||B||. A generic velocity-bound version supports other orders.
+
+Required external frozen prerequisites include the local 20-module batch,
+the scalar/state majorants, the five universal variation-majorant modules,
+the two actual mixed-variation tail modules, and root's actual
+ReferenceInversePerturbation theorem. Their proof obligations are not
+replaced by external arithmetic reports.
+
+This five-module release excludes ReferencePolynomialMatrix22,
+BenchMatrix22, and FirstTrueMatrix22, which are tracked separately. It
+asserts no completed reference grid, shooting zero, periodic orbit, or
+full classification. All node matrices, finite reset checks, uniform grid
+margins, accumulated budgets, and final shooting certificate remain to be
+instantiated. The node matrix B's unit/norm/inverse hypotheses are explicit.
+
+Final individual audit counts (transitive namespace declarations, not new
+theorem counts): 127, 142, 482, 902, 974. Compiler logs use the corresponding
+module basename plus .build.log. Original CAP16 and first 13 modules remain
+unchanged. The benchmark-only matrix30 run was stopped for resource
+coordination; the only completed new full numeric benchmark is order22,
+reported separately and not evidence for an 8000-step certificate.

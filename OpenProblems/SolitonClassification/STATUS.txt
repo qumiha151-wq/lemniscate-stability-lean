@@ -88,19 +88,60 @@ convergence hypothesis remains in this local theorem. This avoids repeating
 hundreds of residual-rank checks at each center. It does not bound fixed
 rounding, matrix tails or accumulated global resets.
 
-VERIFICATION AND REMAINING OBLIGATIONS
-LocalValidationMilestone contains all35 frozen source hashes, exact scope,
-independent semantic reviews and full independent root replay logs.
-The enforced whole-project audit covers ClosedSimilarity and the Rotating
-namespace, permitting only propext, Classical.choice and Quot.sound.
-Declaration counts include definitions and helpers, not solved problems.
-The latest integrated count is recorded at the end of verification.txt.
+NONLINEAR BOOTSTRAP AND MATRIX DEVIATION: SIXTEEN MODULES
+FlowBootstrap derives actual tube confinement and state separation from
+real reference curves, differential residuals, node inverses, reset sums,
+coordinate margins and a strict budget. The first-threshold argument uses
+the global clipped flow before confinement, so it is not circular.
+Uniform open-ball confinement then supplies the earlier actual P/Q bridge.
+FlowMetricDeviation derives actual P-M error from the same data, retaining
+the additive deviation created at every matrix reset. At the terminal
+post-reset matrix its bound includes K+lastJump. Relative matrix deviation
+is not the shooting contraction factor: all projections and preconditioner
+norms must still be applied. No actual state/tube/P/Q bound is assumed in
+the final bootstrap conclusions. The concrete reference grid is not supplied.
 
-The full8000-step actual trajectory/grid, state/tube bootstrap, concrete
-matrix tails and inverse bounds, parameter-cube enclosures and final
-closed-orbit/root assembly remain unfinished. Work-in-progress modules
-outside the frozen publication are not presented as completed results.
+UNIVERSAL ACTUAL VARIATION TAILS: EIGHT MODULES
+Finite mixed-order scalar majorants bound the original full six-state
+variationCoeff for arbitrary initial directions. Exact rational kernel
+budgets and genuine initial-data differentiability prove actual fderiv
+error<=norm(v)*7e-29,4e-21,4e-19 at matrix orders30,22,20 respectively,
+with state order60 and 0<=t<=1561/200000. The only local domain hypotheses
+are a in innerTube and |sigma|<=1. The proof retains the state-displacement
+forcing4EC+epsilon; it does not identify the polynomial trajectory with
+the actual solution. Boundary points have a separately proved open initial
+neighborhood; no inner-box neighborhood assumption is used.
+
+REFERENCE OPERATORS AND TRUE INVERSES: SIX MODULES
+Actual linearity of the canonical variational polynomials permits direct
+operator norm bounds from arbitrary-vector estimates. Analytic bounds need
+no factor six; numeric entrywise interval errors still require row sums.
+The actual degree30 full-operator tail is<=7e-29. The reference polynomial
+U30 remains within1/5 of Id and has a genuine inverse of norm<=5/4 by a
+proved Neumann-series identity. A reference segment M=U30*B is therefore
+invertible whenever its actual node B is, with explicit norm/inverse and
+differential-residual bounds. Numeric node inverses remain obligations.
+The exact b-row and theta-column structure is proved without suppressing
+any of the six variational directions.
+
+VERIFICATION AND REMAINING OBLIGATIONS
+LocalValidationMilestone retains the earlier35-module verification.
+VariationBootstrapMilestone adds30 frozen sources, scope and semantic
+reviews, and independent root replay records. An initial replay of the
+last operator module lacked its root-build Neumann dependency; compiling
+that unchanged dependency and retrying only the affected module completed
+the replay. Both the initial failure and recovery evidence are preserved.
+The enforced whole-project audit covers ClosedSimilarity and Rotating,
+permitting only propext, Classical.choice and Quot.sound. Counts include
+definitions and helpers, not solved open problems. The latest integrated
+count is recorded at the end of verification.txt.
+
+The full8000-step actual reference grid, numeric center/endpoint data,
+node inverse checks, reset budgets, parameter-cube bounds and final
+closed-orbit/root assembly remain unfinished. The generic bootstrap and
+local tails are proved, but their full candidate inputs are uninstantiated.
+Work-only numeric benchmarks and later geometry are not included here.
 General migration, quarter-power growth and full closed-soliton
 classification remain unresolved. The overall goal remains ACTIVE.
 
-Current independent integrated audit:2725 declarations; standard three axioms only.
+Current independent integrated audit:3076 declarations; standard three axioms only.

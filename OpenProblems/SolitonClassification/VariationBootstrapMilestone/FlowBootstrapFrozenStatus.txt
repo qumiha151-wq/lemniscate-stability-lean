@@ -1,0 +1,96 @@
+Actual state/tube bootstrap: frozen ten-module supplement
+2026-11-13; independent SolitonClassification project.
+
+All ten modules passed actual Lean 4.33.1 checking and recursive axiom
+audits. Allowed axioms are only propext, Classical.choice, Quot.sound.
+The final combined audit covers 593 declarations and explicitly prints
+the axioms of seven main results. Latest final audit: tool session 81095,
+EXIT 0. No module reports a warning. FlowBootstrapBudget's successful
+compiler output contains an informational ring-normalizer suggestion;
+it is not an error or missing proof. The final kernel audit passes.
+The source, object, output hashes and per-module sessions/counts are in
+FlowBootstrapFrozenManifest.csv. Prior 31 frozen actual-flow/inverse/
+metric source hashes were checked unchanged at this freeze.
+
+WHAT IS PROVED
+For the actual globally existing signed clipped supportFlow, let X(t)
+be a real reference state and M(t) a real invertible reference matrix.
+The differential data are actual HasDerivWithinAt statements:
+  X' = sigma*f(X) + rx,
+  M' = (sigma*Df(X))*M + Z,
+where |sigma|<=1, ||rx||<=delta, ||Z||<=rho,
+||M||<=K and ||inverse M||<=I. The state and matrix residuals are
+independent and may use different Taylor orders.
+
+For w=inverse M*(actual-X), exact differentiation derives
+  w' = inverse M*(sigma*(f(actual)-f(X)-Df(X)*(actual-X)) - rx - Z*w).
+The original-field derivative is used only at points already proved to
+be in outerTube. The actual cubic field has the exact remainder identity
+  f(y)-f(x)-Df(x)*(y-x)
+    = bilinear((2/3)*x+(1/3)*y, y-x, y-x),
+which gives a quadratic bound 2*||y-x||^2 in the convex outerTube.
+
+If ||w||<R and reference X has coordinate margin K*R, the actual state
+is in outerTube, so the true transformed derivative is bounded by
+  C = I*(2*K^2*R^2 + rho*R + delta).
+A compact first-threshold argument uses this estimate only BEFORE the
+first threshold. The strict segment budget then excludes the threshold,
+including its terminal point. Global clipped-flow existence and
+continuity supply the trajectory without assuming tube confinement.
+
+At a reference reset from old (X,M) to new (Y,N), both jumps appear:
+  wNew = (inverse N*M)*wOld + inverse N*(X-Y),
+  ||wNew|| <= (1+I*matrixJump)*||wOld|| + I*stateJump.
+The matrix transition uses the new inverse bound. A finite recurrence
+accumulates both additive state jumps and multiplicative matrix jumps.
+With initial reference M(0)=Id, ||actualInitial-X(0)||<=B, total jumps
+bounded by SX and SM, and the strict global budget
+  (B+C*T+I*SX)*exp(I*SM) < R,
+induction proves every segment safe. No actual state error or actual
+tube assumption appears among the grid inputs.
+
+FlowBootstrapGridData.actual_mem_outerTube proves confinement on all
+of [0,T], including the exact covered endpoint, for a nonempty finite
+grid. actual_on_segment proves ||actual-X_j||<=K*R on each segment.
+The reference grid may have zero-duration segments; all reset bounds
+and final node bookkeeping remain explicit.
+
+FlowBootstrapGridData.tubeNeighborhood applies the same proof to every
+initial state in the genuine open ball ball(c,r), using the explicit
+initial bound ||c-X_0(0)||+r<=B. It therefore supplies the neighborhood
+needed by the existing actual-flow differentiation results.
+
+FlowBootstrapGridData.toMetricGrid supplies the previous frozen metric
+grid's actual state-error field with E=K*R. Its referenceTube field is
+derived from the reference margin. actualMatrixBounds then derives
+actual P/Q bounds from the proved tube neighborhood and state errors:
+  ||P(t)|| <= K*D, ||Q(t)|| <= I*D,
+when exp(I*(4*(K*R)*K+rho)*T+I*SM)<=D.
+P is the actual fderiv of supportFlow and Q its proved canonical inverse.
+The specialization actualMatrixBounds_8000_16000 uses reference K=2000,
+I=4000 and D=4. Actual tube, actual E, actual P/Q norm estimates are
+conclusions, not premises, of this final bridge.
+
+REMAINING CERTIFICATE BOUNDARY
+The candidate's complete numerical reference grid is NOT instantiated.
+Real reference functions, their derivative residuals, invertibility and
+inverse bounds, coordinate margins, initial discrepancy, both reset
+arrays, and strict scalar budgets still require interval certificates.
+Numeric arrays alone do not inhabit FlowBootstrapGridData. Existing
+local tails and integer certificates are ingredients for that task.
+
+The horizon T is the actual grid endpoint. Replacing T by 32 in a scalar
+budget does not extend a shorter covered trajectory. A parameter-time
+neighborhood needed at the shooting cube's terminal time must be covered
+or extended explicitly.
+
+At the terminal endpoint T, actual_on_segment compares to the LAST
+SEGMENT'S reference X_(N-1)(T). If downstream data use the reset value
+X_N(T), add the final stateJump, or use the proved node error together
+with an additional norm bound for the final-node matrix. No unchanged
+K*R estimate for the post-reset state is asserted here.
+
+This supplement closes the generic actual state/tube bootstrap gap. It
+does not instantiate all 8000 segments, certify the particular shooting
+root in Lean, or classify all periodic profiles. The raw computer-aided
+certificate and previously published frozen sources are unchanged.
