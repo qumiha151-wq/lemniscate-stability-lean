@@ -26,13 +26,18 @@ declaration depending on axioms other than `propext`, `Classical.choice`, and
 in the build output. No numerical exploration program, local manuscript,
 unpublished source, or precompiled project artifact is required.
 
-The manuscript links to the complete source ZIP for release v1.0.2:
-https://github.com/qumiha151-wq/lemniscate-stability-lean/archive/refs/tags/v1.0.2.zip
+The manuscript links to the complete source ZIP for release v1.1.0:
+https://github.com/qumiha151-wq/lemniscate-stability-lean/archive/refs/tags/v1.1.0.zip
 The tag identifies this complete proof version and will not be moved. Keep
 its sources together when rebuilding. The manuscript SHA-256 below binds
 the statements and exposition to the exact revision used for this release.
 
 ## Manuscript-to-Lean correspondence
+
+This expanded revision preserves the theorem statements while separating
+the spectral argument from its quantitative estimates, reproducible finite
+calculations, and elementary analytic derivations in three appendices.
+The formal theorem statements and executable proof terms are unchanged.
 
 All declaration names below have prefix `Lemniscate.` unless otherwise stated.
 File paths are relative to this repository. The correspondence uses statement
@@ -134,7 +139,7 @@ verification establishes the propositions encoded by these definitions; the
 definitions and this correspondence make their mathematical interpretation
 available for independent inspection.
 
-Current manuscript SHA-256: 7dabc635e25ac3dc3f29cf95f7a089191da3a4abbf4ff76758d11a26d1ad2247
+Current manuscript SHA-256: 2ff24714af447ae5641d9889284e3cf21755b4bfe662831238909463b8e07e6c
 Checked environment: Lean 4.33.1 and Mathlib revision
 0df444a360eaa60ab8c11dca51a86af692955474.
 Only compiled Lean source is published.
