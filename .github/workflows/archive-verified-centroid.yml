@@ -1,0 +1,32 @@
+name: Archive verified centroid sources
+on:
+  push:
+    branches: ['research/remaining-open-problems']
+    paths: ['.github/workflows/archive-verified-centroid.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/remaining-open-problems
+          fetch-depth: 1
+      - uses: actions/download-artifact@v4
+        with:
+          run-id: 43214648337
+          github-token: ${{ github.token }}
+          path: downloaded-certificate
+      - name: Validate and preserve the exact checked sources
+        run: python3 OpenProblems/CentroidEscape/archive_verified.py --downloads downloaded-certificate --staging "$RUNNER_TEMP/centroid-source-archive" --destination OpenProblems/CentroidEscape/VerifiedCertificate/9ef471f7e818029931ad20abaa1119a08819b718
+      - name: Commit durable sources to the research branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- OpenProblems/CentroidEscape/VerifiedCertificate/9ef471f7e818029931ad20abaa1119a08819b718
+          git commit -m 'Archive the complete kernel-checked centroid escape certificate'
+          git push origin HEAD:research/remaining-open-problems
