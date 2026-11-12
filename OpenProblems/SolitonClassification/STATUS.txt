@@ -93,6 +93,31 @@ a genuine smooth closed similarity profile. Multiple zeros are handled by
 a finite-order extension argument,with no assumed global divisibility.
 A local C5 gluing example shows that regularity cannot simply be weakened
 without further conditions. It is not a periodic-profile counterexample.
-This complete analytic reduction is NOT yet Lean-formalized. Determining
-all periodic solutions of the scalar equation remains the classification
-problem; the reduction does not settle it.
+The C-infinity reconstruction converse is now Lean-formalized in the ten
+ScalarReconstruction modules. The C6 sharp-regularity statement and C5
+counterexample remain human proofs only. Determining all periodic solutions
+of the scalar equation remains the classification problem; reconstruction
+does not settle it.
+
+COMPLETE SMOOTH SCALAR-TO-CLOSED-CURVE CONVERSE -- 13 NOVEMBER 2026
+ScalarReconstructionCurve.exists_closed_soliton_of_scalar_equation takes
+only a smooth nonzero L-periodic k,L>0,the actual scalar equation,
+a^2+b^2!=0,and integral(k)=2*pi*m with integer m. It constructs actual
+smooth periodic position coordinates X,Y,proves unit speed and signed
+curvature k,and proves the soliton equation using X,Y and their actual
+derivatives. The integral support candidate,its global identity and its
+periodicity are derived. No finite-zero-order,global quotient extension,
+defect-vanishing or existing-curve hypothesis is assumed.
+The ten modules are independently hash-frozen in
+ScalarReconstructionFrozenManifest.csv. See ScalarReconstructionScope.txt
+and ScalarReconstructionSemanticAudit.txt for the verified scope.
+
+NECESSITY AND SUPPORT-ODE EQUIVALENCE
+ScalarReconstructionNecessity.lean derives the scalar equation from every
+actual PeriodicSupportProfile,including curvature zeros,without dividing
+by k or adding a smoothness premise. ScalarReconstructionEquivalence.lean
+proves that for smooth nonzero L-periodic k and a^2+b^2!=0,the scalar
+equation is equivalent to existence of a periodic support profile with
+exactly that k. This equivalence does not assert geometric position
+closure without the angle condition. Its two additional frozen modules
+are listed in ScalarReconstructionNecessityFrozenManifest.csv.

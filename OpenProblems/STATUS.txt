@@ -1,4 +1,4 @@
-Status at 12 November 2026
+Status at 13 November 2026
 
 These independent projects include a complete new centroid solution and partial results for the
 remaining questions in Miura--Wheeler arXiv:2404.12619v3.
@@ -32,8 +32,15 @@ SolitonClassification/: independent support-function ODE and actual geometric
   The actual circular Jacobian has now been formally shown to have no
   purely imaginary eigenvalue at any rotation rate. Closed pure translators,
   including stationary curves,are excluded from actual position/Frenet data.
-  The scalar reconstruction across all smooth curvature zeros is a reviewed
-  human proof only; the full classification remains unresolved.
+  Scalar reconstruction across all smooth curvature zeros is now proved
+  in Lean: a smooth nonzero periodic scalar-equation solution with integer
+  angle holonomy yields an actual smooth closed unit-speed soliton profile.
+  This is a reconstruction converse; classifying all periodic solutions
+  and the full self-similar classification remain unresolved.
+  The necessary scalar equation is also derived from the actual support
+  ODE. For smooth nonzero periodic curvature the scalar equation is formally
+  equivalent to existence of same-curvature periodic support data; actual
+  position closure retains the separate integer angle condition above.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,

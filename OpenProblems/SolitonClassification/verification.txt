@@ -42,3 +42,14 @@ MODULE SolitonClassification/AxiomAudit
 SolitonClassification audit passed: 207 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.
+
+13 November 2026: complete smooth scalar reconstruction and support equivalence.
+Twelve new modules individually compiled with direct Lean 4.33.1, no warnings,
+with recursive standard-three-axiom audits. Exact source/olean hashes and
+per-module declaration counts are in the two ScalarReconstruction manifests.
+Root independently verified all frozen source hashes and reviewed semantics.
+Fresh integrated root and enforced complete project audit:
+PASS SolitonClassification
+SolitonClassification audit passed:316 declarations; standard axioms only.
+PASS SolitonClassification/AxiomAudit
+Compiler EXIT0. No claim that all periodic scalar solutions are classified.

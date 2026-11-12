@@ -1,5 +1,7 @@
 import SolitonClassification.CircleLinearization
 import SolitonClassification.NoClosedTranslators
+import SolitonClassification.ScalarReconstructionCurve
+import SolitonClassification.ScalarReconstructionEquivalence
 import SolitonClassification.OddLocalRigidity
 import SolitonClassification.SupportODE
 import SolitonClassification.OneSignCurvature

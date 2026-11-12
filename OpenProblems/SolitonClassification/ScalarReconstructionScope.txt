@@ -1,0 +1,11 @@
+FROZEN VERIFIED MODULE
+Source: ScalarReconstructionCurve.lean
+SHA256: D96CF711185565371CD1C1921BBE5B2ED1A74F850C97F8AE1228174C7E50B1EB
+Verification: direct Lean 4.33.1, deps-first Mathlib, check_scalar_reconstruction_curve.ps1; final process 62090 exited 0, no warnings.
+Observed final output: Scalar curve audit passed for 102 declarations.
+Allowed recursive axioms: propext, Classical.choice, Quot.sound only.
+Final theorem: exists_closed_soliton_of_scalar_equation.
+Inputs: actual smooth k, ScalarEquation k a b, L>0, k L-periodic, some nonzero curvature anchor, a^2+b^2!=0, integer m with integral(0,L,k)=m*(2*pi).
+Outputs: actual real coordinate functions X,Y, smooth and L-periodic, positive L, unit speed, signed curvature k, and F=-a*(X*(-Y')+Y*X')-b*(X*X'+Y*Y').
+The support candidate H is defined by an integral; its global identity and periodicity are proved. No hypotheses assert a zero-order bound, global quotient extension, defect vanishing, support reconstruction, or pre-existing closed curve.
+Scope: this proves the scalar-to-closed-curve reconstruction converse across all smooth curvature zero sets. It does not classify all periodic scalar solutions, prove existence of a new noncircular rotating solution, or finish the paper's full classification problem.

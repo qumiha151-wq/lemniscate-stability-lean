@@ -1,0 +1,50 @@
+ROOT SEMANTIC REVIEW: COMPLETE SMOOTH RECONSTRUCTION CONVERSE
+13 November 2026. Scope review of the ten frozen ScalarReconstruction modules.
+
+The reviewer read the actual Residual,Jets,Uniqueness,Zeros,Order,
+Continuation,Global,Periodicity,Profile and Curve proof sources and checked
+their hashes against ScalarReconstructionFrozenManifest.csv before staging.
+
+The scalar equation uses the actual derivative-defined F=k''+k^3/2 and
+n=F'+b: k*n'-k'*n=k^2*(a-k*F). The globally defined candidate H is its
+anchored quotient value plus the integral of a-k*F. Only k at the anchor
+is assumed nonzero; division by k is not used to define H elsewhere.
+
+Residual derives k*r'-k'*r=0 for r=n-kH. Zeros derives the finite-order
+Taylor quotient limit,denominator isolation,and both one-sided extension
+lemmas. Order derives an actual order at most three at each continuation
+frontier: the b=0 triple-zero case is excluded by proved backward/forward
+uniqueness of the actual regular third-order ODE,contradicting the anchor.
+Continuation uses real continuous induction in both directions. Global
+therefore proves r=0 everywhere without an assumed zero-set property.
+
+Periodicity derives H(s+L)=H(s) using periodic derivatives,uniqueness of
+the anchored integral candidate,and the already proved global n=kH.
+Profile defines p=(-aF-bH)/(a^2+b^2),q=(-bF+aH)/(a^2+b^2),and theta=int k.
+Their actual derivative equations are proved. The nonzero denominator
+is explicit in the final theorem; it does not disguise a curvature-zero
+condition. The separate NoClosedTranslators module handles stationary
+and pure-translation degeneracies.
+
+Curve constructs actual X,Y from p,q,cos(theta),sin(theta). The final
+theorem includes smoothness,positive period,periodic positions,unit speed,
+the derivative-defined signed curvature equal to k,and
+ k''+k^3/2=-a*(X*(-Y')+Y*X')-b*(X*X'+Y*Y').
+The integer angle integral is explicit and is used to prove position
+closure. Periodic support coefficients alone are not presented as closure.
+
+The Lean theorem assumes C-infinity k. It does not formalize the stronger
+C6 minimum-regularity result or the C5 gluing counterexample in the human
+notes. It is a complete reconstruction converse,not an enumeration of all
+periodic scalar solutions and not a new rotating-orbit existence theorem.
+The original full self-similar classification question remains unresolved.
+
+ADDITIONAL NECESSITY/EQUIVALENCE REVIEW
+The two additional modules were read and checked against their separate
+frozen manifest. Necessity identifies the derivative-defined force with
+the actual support force,defines H=a*q-b*p,and differentiates the real
+ODE twice to obtain the scalar Wronskian equation without division by k.
+Equivalence constructs the actual PeriodicSupportProfile from the proved
+global support candidate and periodicity. Its reverse implication invokes
+the newly proved necessity theorem. It does not assume a closed position
+curve or omit the angle condition from the separate geometric theorem.

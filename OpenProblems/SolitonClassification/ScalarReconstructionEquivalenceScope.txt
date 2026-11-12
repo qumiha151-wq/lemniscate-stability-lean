@@ -1,0 +1,10 @@
+FROZEN VERIFIED MODULE
+Source: ScalarReconstructionEquivalence.lean
+SHA256: 217A5F271772E1FE948568F32E4DBC0ED0077521D9AD64F1A9D6F2A90108DA0F
+Verification: check_scalar_reconstruction_equivalence.ps1, direct Lean 4.33.1 and deps-first Mathlib; actual process 37197 exited 0, no warnings.
+Observed final output: Scalar equivalence audit passed for 201 declarations.
+Recursive axiom whitelist: propext, Classical.choice, Quot.sound.
+Main theorem: scalarEquation_iff_exists_periodicSupportProfile.
+For a given smooth nonzero L-periodic k and a^2+b^2!=0, ScalarEquation k a b is equivalent to existence of an actual PeriodicSupportProfile a b L with curvature exactly k. The forward direction constructs the profile, rather than assuming the support equations.
+This equivalence is a reduction to periodic support solutions. It does not classify or enumerate those solutions. Position closure additionally uses the integer holonomy condition in the previously frozen Curve module.
+All 10 previously frozen ScalarReconstruction source hashes were rechecked and remain unchanged.
