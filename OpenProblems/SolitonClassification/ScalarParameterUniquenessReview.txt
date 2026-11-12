@@ -1,0 +1,38 @@
+INDEPENDENT SEMANTIC REVIEW: SCALAR PARAMETER UNIQUENESS
+13 November 2026. Reviewer: finish_odd_rigidity.
+
+Reviewed ScalarParameterUniqueness.lean and the actual definitions of
+ScalarEquation, force, numerator and supportDerivative in
+ScalarReconstructionResidual.lean. Source SHA256:
+552FAD7F119AEC54B3FDEB42F6DA222183E056D3D3267377C765AD5F580DCD44.
+
+Verdict: the mathematical statements and proof match their descriptions.
+Subtracting the two actual scalar equations gives
+(a1-a2) k^2+(b1-b2) k'=0. Integration over a positive period eliminates
+k'; continuity and one nonzero value make the squared-curvature integral
+strictly positive, forcing a1=a2. Nonconstancy then supplies a point
+where k' is nonzero, forcing b1=b2. The zero-curvature case is correctly
+excluded from dilation uniqueness, and constant nonzero curvature is
+correctly excluded only from uniqueness of the rotation coefficient.
+
+The main theorem assumes exactly: the SAME C-infinity curvature function
+on R, a positive period, periodicity, nonconstancy, and its satisfaction
+of both actual scalar equations. It does not assume a support field,
+zero-set regularity, reconstruction, existence of a closed curve, an
+injectivity statement, or the desired uniqueness conclusion. Its
+dependencies contain no extra parameter-uniqueness hypothesis.
+
+Scope: uniqueness of coefficients for that fixed curvature and arclength
+coordinate. It does not classify scalar periodic solutions, prove that
+they exist, or compare different curvature functions after rescaling or
+orientation changes. The stronger smoothness assumption is sufficient;
+optimizing it is unnecessary here.
+
+The supplied actual compilation log reports PASS for 34 declarations
+with only propext, Classical.choice and Quot.sound. The source audit
+recursively collects axioms for the ClosedSimilarity declarations, so
+it does not merely inspect the final theorem's immediate arguments.
+This review independently checked mathematical semantics and source;
+the log is the parent's compiler execution, not a claimed second run.
+
+No correction requested. No frozen source was modified.

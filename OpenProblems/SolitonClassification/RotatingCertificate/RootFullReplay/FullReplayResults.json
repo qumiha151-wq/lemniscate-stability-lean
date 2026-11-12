@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE INDEPENDENT FULL-RUN REPLAY PASSED",
+  "trajectories": [
+    {
+      "sign": "plus",
+      "steps": 4000,
+      "order": 60,
+      "dps": 100,
+      "every_non_timing_field_identical": true,
+      "seconds": 488.42200000000594,
+      "original_sha256": "6cb0b6eeca760093d1ec42c27296d5913fb41d398ed12c08d5b18b6637cc2075",
+      "replay_sha256": "8bca10f607b49b99e6af9d0c7cac16f07b10a5a1320f2b517d9de6a58becc2a2"
+    },
+    {
+      "sign": "minus",
+      "steps": 4000,
+      "order": 60,
+      "dps": 100,
+      "every_non_timing_field_identical": true,
+      "seconds": 487.81200000000536,
+      "original_sha256": "32d7f521fb7d9d077eb414d78102b6daf7c898fb6c9f12188b2b3f8a27c8a3af",
+      "replay_sha256": "23251362d4488fd7d24740f762c0e56214f6243dcffc68cc4d1d296934f2a82f"
+    }
+  ],
+  "checker_exit_code": 0,
+  "all_certificate_fields_except_report_hashes_identical": true,
+  "contraction_bound": "[1.7319815971530727625e-7 +/- 7.23e-27]",
+  "center_displacement": "[+/- 2.60e-40]",
+  "scope": "Independent rerun of the same audited implementation; not an independent algorithm or Lean certificate.",
+  "frozen_original_files_unchanged": true
+}

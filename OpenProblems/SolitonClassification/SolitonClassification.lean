@@ -1,3 +1,5 @@
+import SolitonClassification.Rotating.CoreAudit
+import SolitonClassification.ScalarParameterUniqueness
 import SolitonClassification.CircleLinearization
 import SolitonClassification.NoClosedTranslators
 import SolitonClassification.ScalarReconstructionCurve

@@ -1,0 +1,15 @@
+COMPLETE ROOT REPLAY -- 13 November 2026
+The root independently executed both4000-step order60,100-digit integrations
+in a separate directory using the exact frozen generator and two required
+sibling JSON inputs. Both processes exited0 after488.422 and487.812 seconds.
+All non-timing trajectory fields were identical to the original reports.
+The strict checker was then rerun on these fresh outputs and exited0.
+Every certificate field except input report hashes was identical. The
+different report hashes are explained by the freshly measured timing fields.
+Original frozen source/data files were not modified. See FullReplayResults.json
+for original and repeated report SHA256 values. The other three JSON files
+are the fresh execution outputs; use the original ReproductionLayout.txt and
+audited scripts to repeat the computation. This is a second execution of
+the SAME implementation, not a separately implemented algorithm or Lean proof.
+It supplements the earlier independent analytic review, whose author did
+not replay all8000 steps. All Lean omissions remain as stated in the status.

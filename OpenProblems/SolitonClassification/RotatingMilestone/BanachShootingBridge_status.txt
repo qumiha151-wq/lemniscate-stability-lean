@@ -1,0 +1,76 @@
+INDEPENDENT ROTATING BANACH / EXACT SHOOTING BRIDGE
+
+Owned sources:
+  SolitonClassification/Rotating/BanachRoot.lean
+  SolitonClassification/Rotating/ShootingRoot.lean
+Namespace: SolitonClassification.Rotating.
+Imports: Mathlib and this independent SolitonClassification project only.
+No other open-problem project is imported. The frozen computer-assisted
+certificate files are not modified or treated as Lean axioms.
+
+BanachRoot proves:
+- Actual Frechet derivative bounds imply contraction of T(x)=x-B(F(x)) by
+  the mean-value theorem on the convex closed ball.
+- The actual center residual bound implies that T preserves the ball.
+- Completeness plus contraction gives a fixed point. Preconditioner
+  injectivity converts it into a true zero of F; zeros within the ball are
+  unique. The zero is never an input hypothesis.
+- In finite dimension, ||Id-BJ||<1 itself proves B injective.
+- Explicit errors in approximate center residual y and Jacobian J propagate
+  to actual residual and derivative bounds. In particular the contraction
+  estimate is q0+beta*(epsilon+H*r), and the displacement estimate is
+  zeta+beta*eta. None of these approximation errors is silently discarded.
+- An actual second Frechet derivative bound gives the derivative-variation
+  estimate by the mean-value theorem. A strict-derivative interface is also
+  supplied for subsequent local C1 flow constructions.
+
+ShootingRoot proves:
+- The exact linear initial-data map for parameters (k0,p0,l,alpha,b) into
+  normalized state (k,v/8,p,q,b,theta), keeping the two-component phase fixed.
+- The actual forward/backward endpoint inputs (+/-l,initial), physical
+  output projection Q of norm at most 8, and exact target 112*pi/57.
+- Ordinary and strict Frechet chain rules for this exact shooting map from
+  actual derivatives of the supplied endpoint flow.
+- Differentiating the half-length produces Q(f(endpoint_plus)+f(endpoint_minus))
+  when actual time derivatives satisfy the normalized ODE. The plus sign is
+  proved from the chain rule, not adopted from a numerical Jacobian.
+- A zero is equivalent to matching the four support variables and the exact
+  angle increment -112*pi/57. The angle target is not a rounded decimal.
+- Explicit actual flow-derivative and approximation bounds imply a unique
+  true shooting zero. A further interface derives the necessary derivative
+  variation from the actual shooting Hessian bound.
+
+PRECISE REMAINING OBLIGATIONS FOR THE NUMERICAL ROTATING CANDIDATE
+
+These modules are generic analytic implications. They do not prove that the
+specific candidate has a shooting zero or a closed rotating profile.
+The following concrete premises are still not discharged here:
+1. Construct the actual normalized ODE flow on an open neighborhood of every
+   forward/backward endpoint for the entire closed five-parameter cube.
+   Establish its actual joint C1/strict derivative and the actual variational
+   equations, rather than derivatives of numerical polynomials.
+2. Prove the local Taylor-series convergence, state and variational tail
+   bounds, and all numerical interval containments for the 4000 positive and
+   4000 negative segments. Current first-polynomial or arithmetic budgets
+   alone do not prove those complete-trajectory statements.
+3. Connect every reset and metric tube estimate to the actual flow; accumulate
+   state/matrix jumps and prove uniform flow/inverse-flow derivative bounds on
+   the full parameter cube, including variable-terminal-time extensions.
+4. Derive the actual shooting Hessian bound (intended budget 10^20), the true
+   center residual and Jacobian enclosures, and the checked preconditioner
+   inequalities from those bounds and exact rational/real data.
+5. After a true zero is obtained, apply the independent support-ODE periodic
+   extension and integer holonomy/geometric reconstruction theorems to obtain
+   the closed nonconstant rotating profile. This is a separate final bridge.
+
+The published Arb/analytic certificate remains a computer-assisted proof at
+its documented trust boundary. The present modules do not replace the entire
+8000-segment certificate with a Lean kernel proof and do not classify all
+periodic solutions or all closed similarity profiles.
+
+Validation evidence and frozen hashes are recorded separately in
+BanachShootingBridge_manifest.csv and the two *.build.log files.
+Each module's audit scans all imported declarations with namespace prefix
+SolitonClassification.Rotating and permits only propext, Classical.choice and
+Quot.sound. The eventual whole-project audit must scan both ClosedSimilarity
+and SolitonClassification.Rotating; the old single-prefix audit is insufficient.

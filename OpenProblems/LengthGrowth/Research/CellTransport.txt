@@ -1,0 +1,288 @@
+CELL TRANSPORT IN THE ACTUAL FREE ELASTIC FLOW
+13 November 2026. Analytic research note; not Lean formalized.
+
+STATUS AND SCOPE
+
+This note does not prove unrestricted quarter-power length growth, does
+not prove that the total bending energy tends to zero, and does not
+construct a counterexample trajectory. It records exact transport laws,
+one genuine finite-action consequence of the already established PDE
+estimates, and two obstructions to turning cell displacement into a
+complete argument. All algebra below can be checked directly. The
+companion Python check verifies the rational jets and scaling exponents
+only; it does not verify PDE existence or a trajectory.
+
+Read alongside length_energy_limit_independent.txt,
+length_dynamic_flattening.txt, length_absolute_curvature_entropy.txt,
+length_stress_coercivity.txt and the static obstruction/audit notes.
+In particular, no static monotonicity of EL is invoked. The newly
+established L=o(sqrt(t)) is compatible with the unresolved scenarios.
+
+1. CONVENTIONS AND EXACT MOVING-CELL IDENTITIES
+
+Let gamma(t,u) be a genuine smooth closed free elastic flow in normal
+gauge, with fixed material parameter u. Put
+
+  g=|gamma_u|,  partial_s=g^(-1) partial_u,  T=gamma_s, N=JT,
+  gamma_t=-F N,  F=k_ss+k^3/2,  W=(k^2/2)T+k_s N.
+
+The actual evolution and spatial stress identities are
+
+  g_t=kF g,  T_t=-F_s N,  k_t=-F_ss-k^2 F,
+  W_s=F N,  gamma_t=-W_s.                              (1)
+
+The time derivatives here are at fixed material u. For a cell with
+endpoints a(t),b(t) in the material coordinate, write
+
+  sigma_a=g(t,a)a'(t),  sigma_b=g(t,b)b'(t),
+  d=gamma(t,b)-gamma(t,a),  ell=integral_a^b ds,
+  E_I=(1/2)integral_a^b k^2 ds,  Theta=integral_a^b k ds,
+  D_I=integral_a^b F^2 ds.
+
+For a continuously chosen oriented arc, differentiation gives
+
+  d' = -F_b N_b+F_a N_a +sigma_b T_b-sigma_a T_a,
+  ell' = integral_I kF ds +[sigma]_a^b,
+  E_I' = -D_I+[k_s F-k F_s+(k^2/2)sigma]_a^b,
+  Theta' = [-F_s+sigma k]_a^b.                         (2)
+
+For example the energy bulk integrand is
+  k(-F_ss-k^2F)+(1/2)k^3F=-kF_ss-(1/2)k^3F;
+two integrations by parts give its boundary term in (2).
+For fixed material endpoints sigma=0. At curvature-zero endpoints the
+sigma terms in energy and turning vanish, but the sigma terms in chord
+transport do not vanish. Confusing these two facts loses the main issue.
+
+There is also an exact local virial identity at each time:
+
+  partial_s [W dot (gamma-gamma(a))]
+     =F N dot (gamma-gamma(a))+k^2/2,
+  E_I=W(b) dot d-integral_I F <gamma-gamma(a),N> ds.      (3)
+
+Using |gamma(s)-gamma(a)|<=s-s(a) and Cauchy--Schwarz,
+
+  |E_I-W(b) dot d| <= sqrt(ell^3/3) sqrt(D_I).           (4)
+
+For a rectangular-elastica-like cell of scale lambda, the stationary
+orders are ell~lambda, |d|~lambda, E_I~lambda^(-1),
+|W|~lambda^(-2). With epsilon^2=lambda^5 D_I the error in
+(4) has order epsilon/lambda. Thus (4) identifies the natural residual
+scale. It is a static identity and by itself supplies no cell lifetime,
+birth estimate, or integrated boundary-velocity estimate.
+
+2. A GENUINE FINITE MATERIAL-CHORD ACTION
+
+For fixed material endpoints, the derivative of the cell chord obeys
+
+  d'=integral_I partial_s gamma_t ds,
+  partial_s gamma_t=-F_s N+kF T.
+
+Consequently
+
+  |d'|^2/ell <= integral_I (F_s^2+k^2F^2) ds.            (5)
+
+For any finite fixed material partition into disjoint arcs, summing (5)
+gives the simultaneous estimate
+
+  sum_j |d_j'|^2/ell_j <= integral_whole (F_s^2+k^2F^2) ds.
+                                                                  (6)
+Likewise |ell_j'|^2/ell_j<=integral_Ij k^2 F^2 ds.
+
+The previously derived genuine PDE estimates give
+  integral_0^infinity integral F_s^2 ds dt < infinity,
+  E'=-D,  integral_0^infinity D dt<=E(0),  M=||k||_infinity ->0.
+Smoothness on compact time intervals together with M->0 makes M
+globally bounded. Hence integral M^2 D dt is finite and (6) proves
+
+  integral_0^infinity sum_j |d_j'|^2/ell_j dt < infinity. (7)
+
+The action tail tends to zero, uniformly over the choice of such a
+partition. This is a consequence of the already known H1 spatial
+velocity bound, not a new independent Lyapunov estimate.
+
+For one material cell, (5) only yields
+
+  |d(t)-d(S)| <= [integral_S^t ell(r)dr]^(1/2)
+                 [integral_S^t |d'(r)|^2/ell(r)dr]^(1/2). (8)
+
+The first factor need not stay bounded. Small squared action does not
+give finite total displacement. A scale lambda=t^alpha has dilational
+action density lambda'^2/lambda~t^(alpha-2), integrable for every
+alpha<1. An order-lambda change over an order-lambda^4 time interval
+costs order lambda^(-3) in this action. These costs can be summable
+at increasing scales. These statements test the estimate, not the PDE.
+
+Equation (7) also concerns fixed material partitions. A time-dependent
+partition acquires the sigma terms in (2), and even a fixed partition
+does not label all future curvature cells if new oscillations appear
+inside its members.
+
+3. EXACT SYMMETRY: TRANSLATION AND ROTATION DIFFER
+
+Suppose an actual open flow has an exact material translation symmetry
+
+  gamma(t,u+P)=gamma(t,u)+d(t),
+
+where P is fixed. The tangent, curvature, normal and F at corresponding
+points agree. Differentiating this equality in the same normal gauge
+therefore gives d'(t)=0. This proves the proposed conservation law for
+an exactly translation-periodic flow. It does not assert that every
+approximate cell in a closed curve is translation-periodic.
+
+The small-rotation cells used in closed fixed-turn constructions instead
+have an exact Euclidean symmetry of the form
+
+  gamma(t,u+P)=R gamma(t,u)+c(t),
+
+with fixed rotation R. Equivariance of the normal velocity gives c'=0.
+For R not the identity, the rotation center is therefore fixed. But
+the ordinary chord between the corresponding endpoints is
+
+  d_cell=(R-I)gamma(t,u)+c,
+  d_cell'=(R-I)gamma_t(t,u),
+  |d_cell'|<=2|sin(delta/2)| |F(t,u)|,                 (9)
+
+where delta is the rotation angle. Thus the chord is generally NOT
+conserved. Conservation of the symmetry center is not conservation of
+each cell displacement. In fixed-turn N-cell constructions the relevant
+rotation is delta=2*pi*q/N, not an exact nonzero translation.
+
+Moreover an initially fixed exact symmetry order N does not bound the
+number of curvature oscillations which may arise inside one fundamental
+symmetry interval. Preserving the symmetry group cannot substitute for
+a bound on the number of dynamically formed cells.
+
+One useful conditional consequence is precise: if a persistent material
+cell satisfies |d(t)|>=c lambda(t), lambda(t)->infinity, and
+
+  integral_0^infinity |F_b N_b-F_a N_a|dt < infinity,   (10)
+
+then (2) would make d bounded, a contradiction. Condition (10) is the
+missing L1 boundary-velocity control; (7) does not imply it.
+
+4. ACTUAL CLOSED INITIAL CURVES WITH FAST ZERO MARKERS
+
+The failure of a norm-only estimate for moving inflection markers is
+visible on explicit smooth closed initial curves, not merely on scalar
+data. Let 0<epsilon<=1 and put
+
+  a=-257/480, b=17/480, c=epsilon/4,
+  phi(u)=a sin u+(b/2)sin(2u)-c cos u+c,
+  theta_epsilon(s)=s+phi(2s),
+  T_epsilon(s)=(cos theta_epsilon(s),sin theta_epsilon(s)),
+  gamma_epsilon(s)=integral_0^s T_epsilon(r)dr.
+
+The function phi is 2*pi-periodic, so theta(s+pi)=theta(s)+pi.
+Thus T(s+pi)=-T(s), and gamma closes smoothly with length 2*pi,
+unit speed, and turning number one. All fixed-order initial C^m norms
+are bounded uniformly in epsilon. The curvature is exactly
+
+  k(s)=1+2a cos(2s)+2b cos(4s)+(epsilon/2)sin(2s).
+
+At s=0 its exact jets are
+
+  theta=0, T=(1,0), N=(0,1),
+  k=0, k_s=epsilon, k_ss=63/20, k_sss=-4epsilon,
+  k_ssss=1;
+  F=63/20, F_s=-4epsilon, F_ss=1, k_t=-1.             (11)
+
+Here k_t is the instantaneous actual normal-flow derivative from (1).
+For any smooth short-time normal-gauge flow through this initial curve,
+the implicit function theorem follows the simple zero near s=0 as a
+material marker a(t). At t=0 its physical tangential speed satisfies
+
+  0=k_t+sigma_a k_s,  sigma_a=1/epsilon.
+
+The velocity of the tracked spatial point at that instant is
+
+  gamma_t+sigma_a T=(1/epsilon,-63/20).                (12)
+
+All initial E,D and integral F_s^2, and indeed all fixed-order derivative
+norms, stay uniformly bounded in this family. Yet the inflection-marker
+speed is unbounded as epsilon->0. Therefore a marker-speed estimate
+depending only on those uniformly bounded quantities is false without
+some nondegeneracy input such as a lower bound for |k_s| at the marker.
+
+This example has a strict limitation. As epsilon tends to zero, the
+zero near 0 and a second nearby zero coalesce at a double zero. From
+k(s)=epsilon*s+(63/40)s^2+O(epsilon*s^3+s^4), their separation is order
+epsilon and the enclosed tangent excursion is order epsilon^3. It is
+NOT creation of a fixed-angle rectangular cell and does NOT show that
+A grows without bound along a flow. The large sigma cancels out of
+the energy and turning boundary terms when k=0. It must not be used
+to infer a large A' merely from a large marker speed. Its role is to
+identify the singularity in naive zero-tracking displacement arguments.
+
+5. SCALE DIAGNOSTIC: THE NEW ACTION DOES NOT EXCLUDE DIFFUSE ENERGY
+
+The following is a consistency test of exponents only. It is not an
+actual curve or solution, and N below is a continuous effective cell
+count. Let u=1+t, E_infinity>0, c>0 and set
+
+  lambda=u^(1/5), E=E_infinity+c*u^(-1/10),
+  D=-E'=(c/10)*u^(-11/10), N~E*lambda.
+
+Rectangular-cell orders then suggest
+
+  L~N lambda~u^(2/5), M~lambda^(-1), A~N~u^(1/5),
+  Y~N lambda^(-3)~u^(-2/5), Z~N lambda^(-7)~u^(-6/5).
+
+These orders are compatible with L=o(sqrt(t)), finite integral D,
+finite integral M^6 and Z, and the scalar stress/virial/length bounds:
+
+  ED/M^6~u^(1/10),
+  D/(E^2/L^3)~u^(1/10),
+  (L')^2/(ED)~u^(-1/10).
+
+If the dissipation is spread over cells of this scale, the dimensionless
+residual per cell and the force-gradient budget have orders
+
+  epsilon_cell^2~(D/N)*lambda^5~u^(-3/10)->0,
+  H:=D/lambda^2~u^(-3/2),
+
+where H represents the order of integral(F_s^2+k^2F^2) for residual
+forces varying on the cell scale. It is integrable. The action required
+by dilation of the N persistent cells has order
+
+  N lambda'^2/lambda~u^(-8/5),
+  (N lambda'^2/lambda)/H~u^(-1/10)->0.                 (13)
+
+Thus the new dynamic bound (6), even with its integrable tail, does not
+exclude this positive-energy scenario at the scaling level. All '~'
+statements allow cell constants; checking the exponents does not claim
+that arbitrary constants satisfy every geometric identity. Neither
+integer cell births nor a flow have been constructed here.
+
+6. WHAT WOULD STILL BE NEEDED
+
+The proposed conservation route works for one exact translation-periodic
+cell, but it has not extended to the actual closed-flow problem. A proof
+must resolve at least the following concrete points:
+
+  (i) Select and follow cells carrying a fixed nonvanishing tangent
+      excursion, not just arbitrary inflection intervals.
+ (ii) Control material/marker exchange and boundary energy flux in (2).
+(iii) Obtain an integrated displacement or fixed-angle-cell-creation
+      estimate stronger than the weighted squared action (7).
+
+A possible target is a dissipation toll at least c/lambda for every
+genuinely new fixed-angle cell at scale lambda. In a quasiuniform
+positive-energy regime N~lambda, summing such a toll over new cells
+would have a harmonic divergence. This is only a proposed estimate:
+it has NOT been proved; cells can receive energy through
+[k_sF-kF_s], and a newly born tiny oscillation is not yet a fixed-angle
+cell. Even this proposed toll would not automatically bound A when
+E->0, since scale-weighted costs can then be summable.
+
+The present rigorous gain is therefore the exact transport package
+(1)--(9), the finite material-chord action (7), and the actual closed
+zero-marker countertest (11)--(12). They locate the remaining dynamic
+gap but do not settle the general length-growth question.
+
+VALIDATION
+
+length_cell_transport_checks.py uses exact rational arithmetic to check
+the jets in (11) and all displayed scaling exponents in Section 5.
+Its result is length_cell_transport_checks.json. The script deliberately
+labels the scaling data as a budget diagnostic, not a geometric flow.
+No new formal verification claim or full-theorem claim is made here.

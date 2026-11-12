@@ -44,10 +44,16 @@ SolitonClassification/: independent support-function ODE and actual geometric
   ODE. For smooth nonzero periodic curvature the scalar equation is formally
   equivalent to existence of same-curvature periodic support data; actual
   position closure retains the separate integer angle condition above.
+  A nonconstant smooth periodic scalar curvature now formally determines
+  both similarity parameters uniquely. This gives no new existence claim.
   A nonconstant rotating closed expander now has a reviewed human+Arb
   computer-assisted existence proof in RotatingCertificate/. This separate
   certificate is not Lean-formalized and does not give full classification
   or a migration example.
+  Thirteen rotating-certificate Lean modules now verify the actual field,
+  finite Taylor/interval algorithms and conditional actual-root interfaces.
+  The first order-60 finite polynomial is kernel-checked; the complete
+  8000-segment ODE certificate and candidate root remain unfinished.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,

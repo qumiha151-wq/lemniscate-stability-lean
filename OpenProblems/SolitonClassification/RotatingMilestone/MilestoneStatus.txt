@@ -1,0 +1,154 @@
+Independent rotating-profile Lean formalization: first kernel milestone
+Date: 2026-11-13
+
+RESULT AND SCOPE
+
+Thirteen Lean source modules compile in an isolated source/build tree against
+Lean 4.33.1 and mathlib4-4.33.1. CoreAudit imports the entire milestone and
+checks 406 declarations with prefix SolitonClassification.Rotating, including
+their transitive axioms. Only propext, Classical.choice, and Quot.sound occur.
+There is no import of CentroidEscape, no new axiom, no sorry, and no
+native_decide. Executable numerical equalities use decide +kernel.
+
+This milestone DOES NOT prove existence of the rotating periodic orbit in
+Lean. It does not claim all closed solitons have been classified. The frozen
+human+Arb CAP16 package is unchanged and retains its separate proof boundary.
+
+ACTUAL MATHEMATICAL CONTENT
+
+1. RationalBall and FixedBall are independently copied generic arithmetic
+   proofs. Their original hashes and copy procedure are recorded. These
+   modules prove real containment for outward-rounded rational/integer balls.
+   They import only mathlib or modules inside this rotating source tree.
+
+2. Field is the actual normalized six-dimensional support equation
+   x=(k,u,p,q,b,theta), u=v/8:
+   f(x)=(8u,-k^3/16-p/8-bq/8,-kq,1+kp,0,k).
+   The linear coordinate conjugacy to v is proved. So are the exact cubic
+   expansion, actual Frechet derivative, smoothness, and bounds on the tube
+   |k|<=8.5, |u|<=4.5, |p|,|q|<=8.5, |b|<=.02 (theta unrestricted):
+   ||f||<=75, ||Df||<=17, ||B||<=2, ||C||<=1/16, with majorant
+   75*(1+||w||/10)^3. B and C denote the actual quadratic/cubic expansion
+   maps, not assumed external numerical matrices.
+
+3. CandidateInitial records the exact center and phase rationals of this
+   rotating candidate. Every claimed inequality is checked in Lean. It
+   proves initial-ball containment, first-field and first-degree polynomial
+   containment, 31<half-length<31.22, step<.007805, the intended rational
+   tail/Hessian budget inequalities, and actual v'(0)<-200 at the center.
+   The rational tail-budget inequalities alone are not asserted to be ODE
+   truncation estimates. Nonconstancy at this center is not a proof that the
+   still-to-be-constructed nearby periodic root exists.
+
+4. TaylorCoefficients constructs canonical coefficients for every finite
+   order by the actual six-component convolution recurrence. The associated
+   polynomial field evaluates to f. For every N, the actual differential
+   residual of the order-N polynomial has coefficient zero at every n<N.
+
+5. FixedTaylor proves the concrete cached O(N^2) fixed-mesh algorithm encloses
+   those canonical real coefficients and its Horner output encloses their
+   actual finite polynomial. The order is arbitrary; the algorithm does not
+   borrow any certificate for the other problem's seven-component ODE.
+
+6. FirstPolynomial60 performs a real closed computation: Lean's kernel
+   re-executes all 60 coefficient steps and the Horner evaluation for the
+   first positive segment of the exact candidate. It proves equality with
+   the recorded six integer balls, then real polynomial containment. The
+   approximate centers are
+   (7.494485587272867,-.20718215284826208,1.541393746582516,
+    .09744916332285981,.009686618454842835,.058520760540799355).
+   The largest ball radius is 2.9e-59. These are polynomial endpoint balls,
+   not yet ODE endpoint balls. The Python output is untrusted input to the
+   kernel equality; its correctness is not an assumption.
+
+7. ResidualODE proves the tube convex, f Lipschitz with constant 17 there,
+   and the polynomial residual is its actual derivative minus f. It proves
+   a Gronwall comparison with a true solution, given actual solution
+   existence, tube confinement, and a uniform residual bound. Those
+   hypotheses remain explicit construction obligations.
+
+8. MetricReset proves the exact change of error coordinates and norm bound
+   when an actual invertible reference matrix is reset. It does not assume
+   the stored external numerical matrices are invertible or satisfy bounds.
+
+9. BanachRoot and ShootingRoot (independent contribution) prove the genuine
+   preconditioned root theorem, injectivity from ||I-BJ||<1, and the actual
+   five-parameter shooting chain rule. The length column has the correct
+   sum of the forward/backward vector fields. The target is exactly
+   (0,0,0,0,112*pi/57), with parameters (k0,p0,l,alpha,b).
+   The root theorems have explicit true-flow/derivative/bound hypotheses;
+   the particular candidate has not yet been supplied with those hypotheses.
+
+MINIMAL BUILD AND REPRODUCTION
+
+The source modules under SolitonClassification/Rotating are sufficient;
+no donor source or CAP JSON is required to compile the emitted Lean files.
+check_module.ps1 sets LEAN_PATH to this isolated build tree plus mathlib
+and its packages. build_milestone.ps1 lists the dependency order explicitly.
+The script's absolute toolchain/mathlib paths are local installation paths;
+a repository CI build must supply the same versions with its own paths.
+
+Optional regeneration scripts are separate from the trusted build:
+- prepare_generic_modules.py and prepare_fixed_taylor.py document which
+  generic donor source was copied; changing donors cannot change an already
+  emitted Lean file or its successful kernel proof.
+- generate_candidate_initial.py reads the frozen shooting_certificate.json
+  as exact rational data, with its SHA in candidate_input_provenance.json.
+- generate_first_polynomial.py computes an untrusted proposed integer-ball
+  result; FirstPolynomial60.lean checks it by exact kernel re-execution.
+
+REMAINING WORK: SPECIFIC PROOF OBLIGATIONS
+
+A. Actual bounded/clipped flow existence, agreement with f while in the
+   tube, and initial/time parameter differentiability. Another independent
+   worker is constructing these in new modules; they are not in this frozen
+   milestone and have not been assumed proved here.
+
+B. A local state and FULL 6-by-6 variational truncation theorem. Possible
+   route: finite polynomial residual bounds for degrees 60..180, validated
+   tube confinement, and local Gronwall comparison. This avoids requiring a
+   complex analytic infinite-series theorem, but it must actually be proved.
+   The variational b row and theta column must be included or restored by
+   proved identities. Actual second-derivative bounds are also required.
+
+C. Concrete proofs for both 4000-step paths. Existing CAP JSON stores
+   aggregate extrema/sums. It is insufficient as a self-contained Lean
+   certificate. Need either exact kernel regeneration or detailed per-step
+   verified arithmetic data for coefficients, matrix inverses/norms, and
+   state/reference-matrix resets. Every reset must contribute its true jump.
+   New generated data must be separate from the frozen CAP16 files.
+
+D. Transported error metric stability and bootstrap. The other problem's
+   constant diagonal metric and already-verified 750 steps do not apply.
+   The new proof must control the piecewise reference fundamental matrix,
+   its inverse, and nonlinear errors on the full parameter cube, including
+   variable terminal time. MetricReset handles only the exact local reset
+   identity, not this global bootstrap.
+
+E. Derive actual center F/J bounds and uniform shooting-Hessian bounds;
+   prove a sufficiently narrow interval for pi; check the exact rational
+   preconditioner inequalities; instantiate the genuine zero theorem.
+   A strict pi interval is a new requirement because the target includes pi.
+
+F. Connect that actual zero to periodic support data, then 57 support periods
+   with angle -112*pi/57, then the closed smooth nonconstant rotating curve.
+   All these conclusions must use the actual field/flow just constructed.
+
+COMPUTATIONAL COST OBSERVATION
+
+The first order-60 STATE-ONLY kernel re-execution took about 60 seconds by
+the build log creation/final-write timestamps (01:07:32 to 01:08:32). This is
+not a calibrated isolated CPU benchmark. Naively multiplying by 8000 gives
+about 5.6 days sequentially for states alone, before full variational
+matrices, inverse checks, and proof assembly. Thus certificate layout,
+sharing/materialization and sharding must be designed before scaling.
+No large cloud certification pipeline was started for this milestone.
+
+PROJECT-INTEGRATION AUDIT
+
+The existing SolitonClassification project's old audit filters only
+ClosedSimilarity. Integration MUST also audit SolitonClassification.Rotating;
+otherwise old declaration counts do not cover these new results. CoreAudit
+already covers the new prefix. The count 406 is a count of namespace
+declarations including generated helpers, not 406 separate mathematical
+theorems or solved open questions.

@@ -53,3 +53,22 @@ PASS SolitonClassification
 SolitonClassification audit passed:316 declarations; standard axioms only.
 PASS SolitonClassification/AxiomAudit
 Compiler EXIT0. No claim that all periodic scalar solutions are classified.
+13 November2026: thirteen frozen rotating modules compiled in dependency order; final integration and new parameter-uniqueness module checked below.
+MODULE SolitonClassification/ScalarParameterUniqueness
+Scalar parameter uniqueness audit passed for 34 declarations; standard axioms only.
+EXIT 0
+MODULE SolitonClassification/Rotating/CoreAudit
+'SolitonClassification.Rotating.Candidate.first_polynomial60_computed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.Candidate.first_polynomial60_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SolitonClassification.Rotating.polynomial_ode_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rotating first-milestone audit passed for 406 namespace declarations; standard axioms only.
+EXIT 0
+MODULE SolitonClassification
+EXIT 0
+MODULE SolitonClassification/AxiomAudit
+SolitonClassification audit passed: 726 declarations; standard axioms only.
+EXIT 0

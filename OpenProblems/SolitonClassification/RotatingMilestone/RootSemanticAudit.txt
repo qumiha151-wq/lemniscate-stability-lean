@@ -1,0 +1,50 @@
+ROOT SEMANTIC REVIEW -- 13 November 2026
+
+The root reviewed the actual six-coordinate Field, canonical Taylor
+recurrence, FixedTaylor induction/Horner algorithm, CandidateInitial and
+FirstPolynomial60 declarations, ResidualODE, MetricReset, BanachRoot and
+ShootingRoot. RationalBall/FixedBall containment definitions and arithmetic
+provenance were also inspected. All frozen manifest hashes were checked
+before staging; the staged modules are independently rebuilt in this
+project's own build tree and included in the expanded whole-project audit.
+
+The actual field has the intended support equations with u=v/8; its
+sixth coordinate is the actual tangent angle, not a redundant discarded
+state. The outer tube leaves theta unrestricted, which is compatible
+with the field and derivative bounds because theta does not enter them.
+The scalar majorant inequality alone does not prove Taylor convergence.
+
+Fixed intervals mean |x-center/mesh|<=radius/mesh. Canonical real Taylor
+coefficients are defined recursively for this field. A proved invariant
+relates all cached coefficients and cached squares to those coefficients.
+The exact first degree60 computation then certifies the finite polynomial
+at the actual rational step. It does not certify an ODE endpoint. The
+Gronwall comparison still requires actual solution existence, confinement
+of both paths and a uniform residual bound; these are not hidden.
+
+The reference-matrix reset uses actual continuous linear equivalences.
+It does not assert invertibility or norm bounds of any stored matrix.
+The Banach theorem uses actual Frechet derivatives, explicit residual and
+Jacobian approximation errors, a strict contraction and an invariant ball.
+Preconditioner injectivity is derived from the defect bound in finite
+dimension. Its fixed point is proved to be a true zero, not assumed.
+
+The shooting map uses exact initial coordinates and +/- half-time. The
+length derivative column is correctly the sum of the two endpoint fields.
+The angle residual contains the actual Real.pi target 112*pi/57. No
+rounded decimal target or numerical Jacobian is silently substituted.
+The generic root interface still requires actual flow/variation bounds
+and actual numerical enclosures for the entire parameter cube.
+
+The current milestone therefore makes the numerical algorithm and the
+analytic zero interface partly formal, but does not prove the candidate
+orbit exists in Lean. All8000 segments, state and full matrix error bounds,
+the moving reference-matrix argument, true derivative/Hessian bounds,
+strict pi enclosure, root instantiation and periodic geometry must still
+be connected. The separate human+Arb certificate retains its documented
+trust boundary and independently repeated execution evidence.
+
+No proof imports another open-problem project. Copied generic arithmetic
+is compiled independently under SolitonClassification.Rotating. The final
+project audit explicitly covers both that prefix and ClosedSimilarity.
+No full closed-soliton classification is claimed by these modules.

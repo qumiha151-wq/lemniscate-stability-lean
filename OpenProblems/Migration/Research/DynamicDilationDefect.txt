@@ -1,0 +1,299 @@
+DYNAMIC DILATION DEFECT AND MIGRATION
+13 November 2026. Analytic research; not Lean formalized.
+
+STATUS
+The general migration problem remains open. This note proves an exact
+actual-flow decomposition, a quantitative necessary condition for a
+complete directional crossing, and rigidity of the zero-defect case.
+It does not construct a migrating trajectory. No centroid-divergence
+example or rotationally symmetric profile is called a migration example.
+
+1. WHERE THE PUBLISHED ENERGY THRESHOLD IS USED
+
+Primary source checked: M. Novaga, Non-migration for planar elastic flows,
+arXiv:2611.07242v1, https://arxiv.org/html/2611.07242v1 .
+Its notation is B=integral k^2, U=LB, and speed -(2k_ss+k^3)N;
+our E=B/2 and speed -F N differ by a constant time factor.
+
+The threshold U<=4*pi^2+8/3 has three separate jobs: Lemma 2.2 identifies
+turning number +/-1; Proposition 3.1 proves forward invariance of the
+sublevel and monotonicity of U; Lemmas 4.2--4.4 compare centroid mobility
+with two-sided directional margins using the same constant 3/4. The
+last comparison yields the contradiction in Section 6. Embeddedness is
+not the only use of the threshold. The Section 4 shape estimates retain
+explicit dependence on U-4*pi^2, but their comparison need not hold at
+large defect. Without forward control, an initial bound alone also does
+not control later coefficients. Therefore deleting the threshold from
+that argument is unjustified. The following computations instead use
+actual forces and geometric matrices, with no turning or energy bound.
+
+2. THE NORMAL-DISTANCE REGRESSION CENTER
+
+Let gamma be a smooth closed regular immersed planar curve, parameterized
+instantaneously by arclength. Use T=gamma_s, N=JT, T_s=kN,
+F=k_ss+k^3/2, E=(1/2)integral k^2 ds, D=integral F^2 ds.
+Let c=L^(-1)integral gamma ds be the arclength centroid. Define
+
+  A=integral N tensor N ds,
+  d=A^(-1) integral (gamma dot N)N ds,
+  p=(gamma-d) dot N,
+  J=integral p^2 ds.                                   (1)
+
+The matrix A is positive definite. Indeed, if a nonzero vector e had
+integral(e dot N)^2=0, continuity would make T everywhere parallel to e.
+Its unit length and continuity would make T constant, contradicting
+closure. Thus d is well-defined; it is the unique minimizer of
+z -> integral ((gamma-z) dot N)^2 ds. In particular
+
+  integral p N ds=0.                                    (2)
+
+There is also an elementary quantitative bound A >= (2/E) I as quadratic
+forms. To see it, fix a unit e and put f=T dot e. Closure of the component
+T dot Je gives a point where that component vanishes, hence |f|=1 there.
+Closure also gives integral f=0, so max f-min f>=1. Periodicity implies
+integral |f_s|>=2(max f-min f)>=2. Since f_s=k(N dot e),
+Cauchy--Schwarz gives 4<=2E integral(N dot e)^2, as asserted.
+This controls invertibility but does not place d in the convex hull.
+
+The center d transforms naturally under translations, rotations and
+positive dilations. It is reparametrization invariant. It is NOT asserted
+to belong to the convex hull: an existing independent smooth-curve
+counterexample to that assertion is in
+work/one_sided/migration/balance_not_hull_obstruction.txt.
+
+The stress W=(k^2/2)T+k_sN satisfies W_s=FN. Periodic integration gives
+
+  integral F N ds=0,
+  integral F p ds=-E.                                  (3)
+
+For the second identity, integrate W_s dot (gamma-d), obtaining
+-integral W dot T=-E. E>0 for a closed immersion, so (3) also proves J>0.
+
+3. EXACT BEST-DILATION DECOMPOSITION OF THE ACTUAL FORCE
+
+Set
+
+  a=E/J >0,    w=F+a p,    Delta=D-E^2/J.
+
+Then, without any approximation,
+
+  integral w N ds=0,  integral w p ds=0,
+  Delta=integral w^2 ds >=0,
+  gamma_t=-FN=a p N-wN.                               (4)
+
+Thus Delta is the exact squared normal-velocity residual after removing
+the best normal dilation about d. The coefficient a minimizes
+integral(F+b p)^2 over real b; it is positive by (3).
+Equivalently, E^2/J is the sharp lower bound on dissipation using both
+translation balance and the scaling identity at that actual curve.
+This bound is shape-dependent, not a replacement for a universal
+energy coercivity exponent.
+
+All quantities are smooth in time along a smooth closed flow, because
+A stays positive definite and J>0. Under ambient dilation by lambda,
+a scales as lambda^(-4), w as lambda^(-3), and Delta as lambda^(-5).
+
+There is an exact centroid identity with the same decomposition:
+
+  c'=a(c-d)+(1/L)integral w k(gamma-c) ds.               (5)
+
+Proof: translation balance implies L c'=integral F k(gamma-c).
+Put q=(gamma-d) dot T, so q_s=1+kp. Integration by parts yields
+
+  integral kp(gamma-c) ds=-integral q T ds=-L(c-d).
+
+The last equality uses integral pN=0 and
+(gamma-d)=qT+pN. Substitute F=-ap+w to obtain (5).
+
+This separates actual centroid motion into a dilation contribution and
+a true residual contribution. Large centroid drift alone still gives
+no half-plane crossing.
+
+4. SHARP DIRECTIONAL CENTROID BUDGETS WITHOUT AN ENERGY THRESHOLD
+
+For a unit vector e, put h_e=k(gamma-c) dot e. In the Hilbert space
+L2(ds), let P be orthogonal projection onto the finite dimensional span
+of N_1,N_2,p, and define
+
+  Q_e=integral |h_e-P h_e|^2 ds.
+
+Since w is orthogonal to this span, (5) implies
+
+  |c'_e-a(c_e-d_e)| <= sqrt(Delta Q_e)/L.               (6)
+
+This is the optimal Cauchy--Schwarz bound using these orthogonality
+constraints and the norm of w. It does not presume that d lies in the
+hull or that the dilation part has a favorable sign.
+
+A separate direct bound uses projection P_N onto span(N_1,N_2): set
+  M_e=integral |h_e-P_N h_e|^2 ds.
+Then |c'_e|<=sqrt(D M_e)/L. Consequently, if the entire curve is in
+{x dot e>=h} at t0 and in {x dot e<=h} at t1, its actual margins obey
+
+  rho_e^-(t0)+rho_e^+(t1)
+     <= integral_t0^t1 sqrt(D M_e)/L dt
+     <= sqrt(E(t0)-E(t1))
+          * sqrt(integral_t0^t1 M_e/L^2 dt).            (7)
+
+This gives a threshold-free necessary dissipation/shape budget for
+migration. It is not an unconditional bound on that budget. Projection
+can only strengthen the unprojected centroid estimate; on any round
+circle, including a multiple cover, M_e=0.
+
+5. A SUPPORT-BASED DYNAMIC OBSTRUCTION
+
+The following goes directly to the whole curve rather than its centroid.
+Fix a unit vector e and define the support value and regression-center
+margin
+
+  H_e(t)=max_u gamma(t,u) dot e,
+  m_e(t)=H_e(t)-d(t) dot e.
+
+At any support maximizer u, T dot e=0, hence N=+e or -e. From (4),
+
+  gamma_t(t,u) dot e = a m_e-w(t,u)(N dot e).           (8)
+
+The maximum of a smooth function over the compact parameter circle is
+locally Lipschitz in time. Its right derivative is the maximum of the
+time derivatives at the active maximizers; in particular, whenever the
+ordinary derivative exists, (8) gives
+
+  H_e' >= a m_e-||w||_infinity.                         (9)
+
+Therefore the explicit condition
+
+  ||w(t)||_infinity <= a(t)m_e(t)  for all t in [t0,t1] (10)
+
+forces H_e to be nondecreasing. A complete migration from the upper to
+the lower half-plane in direction e is impossible under (10): a closed
+regular immersion cannot lie entirely in the separating line, so its
+initial H_e is strictly greater than h, while its final H_e is at most h.
+
+In particular, if d belongs to the interior of the convex hull and
+r_d=dist(d,boundary(conv(gamma)))>0, the direction-independent condition
+
+  ||w||_infinity <= a r_d                              (11)
+
+throughout a time interval makes every support value nondecreasing.
+Thus the convex hulls are nested outward on that interval. This is a
+sufficient dynamic criterion, not a claim that free flow preserves it.
+
+An actual migration must have a time at which (10) fails. More precisely,
+H_e decreases between its endpoint times, so H_e'<0 on a positive-measure
+set. At almost every such time,
+
+  ||w||_infinity > a m_e.                              (12)
+
+If m_e<0 then the regression center has already passed beyond the
+support line in that direction; otherwise a nonzero residual must
+overcome the outward dilation speed. This gives two distinct mechanisms
+that a construction would have to realize. Neither is produced here.
+
+One can replace the sup norm in this test by measurable quadratic data.
+For any periodic scalar w, choosing a point with w^2<=Delta/L and
+integrating (w^2)_s=2ww_s gives
+
+  ||w||_infinity^2 <= Delta/L+2 sqrt(Delta Z_w),
+  Z_w=integral w_s^2 ds.                               (13)
+
+Here the derivative is actual and explicit:
+  p_s=-kq,  w_s=F_s-a kq.
+Thus at a decrease time with m_e>=0, a necessary condition is
+
+  Delta/L+2 sqrt(Delta Z_w) > a^2 m_e^2.               (14)
+
+This is a proved quantitative obstruction involving the real force and
+position. It contains no small-energy, turning-number or embeddedness
+assumption. Global estimates forcing its opposite have not been found.
+
+6. ZERO DEFECT ON AN INTERVAL IS RIGID
+
+If Delta vanishes at one time, continuity gives F=-ap on that slice.
+If Delta(t)=0 for every t in a time interval, then the geometric flow
+on that interval is a homothety about one FIXED point d0, and
+
+  d(t)=d0, gamma(t)=d0+rho(t)(gamma(t0)-d0)
+
+as unparameterized immersed curves, with rho'>0.
+
+Here is a direct argument which does not assume the conclusion. From
+(4), gamma_t=a[(gamma-d)-qT]. A smooth tangential reparametrization on
+any compact time subinterval removes the term -a qT: solve its ordinary
+parameter-flow equation, whose coefficients are smooth on the compact
+parameter circle. The resulting beta obeys
+
+  beta_t=a(t)(beta-d(t)).
+
+Solving this scalar-coefficient linear vector ODE gives
+  beta(t,u)=rho(t) beta(t0,u)+b(t),
+  rho'=a rho, b'=a b-a d, rho(t0)=1, b(t0)=0.
+By reparametrization invariance and similarity covariance of the center
+in (1), d(t)=rho(t)d(t0)+b(t). Differentiating this equality and using
+the ODEs gives d'=a(rho d(t0)+b-d)=0. This proves the fixed-center claim.
+
+Consequently, in the zero-defect case, migration is possible only if
+the fixed center lies outside the initial convex hull. Conversely, a
+strictly separated homothetic profile gives migration after a suitable
+ambient translation, as already proved in the independent Migration
+criterion. The reduction does not prove that such a profile exists.
+
+7. CONCRETE FAILURE OF A UNIVERSAL CENTROID-MARGIN REPLACEMENT
+
+The small-defect directional centroid margins in Novaga's argument
+cannot simply be replaced by rho_e^+/- >= C/E for all closed immersions,
+with any fixed C>0. The following exact geometric family shows why.
+
+For 0<u<1 take the regular arc
+
+  alpha(u)=( exp(-1/(u(1-u))), u(1-u)(u+1/2) ),
+
+extended at both endpoints by alpha(0)=alpha(1)=(0,0).
+The first coordinate is positive inside and flat to all orders at the
+endpoints. Its derivative vanishes only at u=1/2 in the interior; there
+the second coordinate derivative is 1/4. At u=0 and 1 the second
+derivatives with respect to the parameter are not needed for regularity:
+the first derivatives of the second coordinate are respectively 1/2
+and -3/2. Thus alpha is regular, starts vertically upward and ends
+vertically downward. After arclength parametrization its curvature and
+all curvature derivatives vanish at the endpoints, allowing smooth
+joining to straight vertical segments.
+
+For H>0 concatenate: the upward segment (0,0) to (0,H), the translate
+alpha+(0,H), the downward segment back to (0,0), and the reflection
+(alpha_x,-alpha_y). This is a smooth closed regular immersion. The
+two long straight segments overlap; embeddedness is deliberately not
+assumed in the original migration problem.
+
+Let ell_alpha be the fixed cap length, E_alpha its positive bending
+energy, and M_alpha=integral_alpha x ds>0. The resulting curve satisfies
+
+  L_H=2H+2ell_alpha, E_H=2E_alpha,
+  min x=0, c_x=M_alpha/(H+ell_alpha).
+
+Hence the lower centroid margin in the x direction tends to zero while
+E_H remains fixed: E_H rho_x^- ->0. Translating the whole curve slightly
+right makes it initially lie in a strict half-plane without changing
+this margin. This is not a migrating solution and not a counterexample
+to Novaga's theorem: U_H grows without bound. It isolates one minimal
+geometric degeneration that any threshold-free centroid argument must
+handle. A different center, such as (1), avoids the length-mass bias but
+introduces the separate, genuine issue that it can lie outside the hull.
+
+8. REMAINING GAP AND NEXT TEST
+
+The usable new objects are a(t), d(t), Delta(t), and the actual support
+margin m_e(t). No invariant region controlling them has been proved.
+The preceding estimates would support either of two rigorous routes:
+
+* prove persistence of d in the hull together with a residual bound
+  strong enough for (10) or an integrated version of (9); or
+* construct an actual trajectory for which the center exits the relevant
+  support region, or the residual overcomes expansion for long enough
+  to reverse the whole-curve support. Local support decrease is not
+  itself complete migration.
+
+The exact zero-defect reduction shows why a strict-half-plane expander
+would suffice, but does not justify repeating the already unsuccessful
+finite half-return searches. The positive-defect mechanism genuinely
+allows shape change; it requires new dynamical control or a validated
+time-dependent construction. At present neither route is completed.

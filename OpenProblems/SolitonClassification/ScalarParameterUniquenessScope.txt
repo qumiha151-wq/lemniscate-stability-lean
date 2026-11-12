@@ -1,0 +1,20 @@
+INTRINSIC SCALAR SIMILARITY PARAMETERS -- 13 November 2026
+ScalarParameterUniqueness.lean proves four new statements. Subtracting two
+actual scalar equations for the same curvature gives
+  (a1-a2) k^2 + (b1-b2) k' = 0.
+For a smooth, nonzero periodic curvature and a positive period, integration
+over one period proves a1=a2. If the curvature is nonconstant, its derivative
+is nonzero somewhere and the same identity also proves b1=b2.
+
+All smoothness, periodicity and nonconstancy hypotheses are explicit.
+The positive integral of k^2 is proved from a nonzero point and continuity;
+the integral of k' is computed by the fundamental theorem of calculus.
+The result applies to the actual scalar equation used in the reconstruction
+converse. It asserts neither existence nor classification of its periodic
+solutions. A circle is deliberately excluded from rotation uniqueness.
+
+The isolated module compiles with 34 imported-and-new declarations in its
+namespace audit. The integrated project now has 726 audited declarations,
+including the 406 rotating-prefix declarations. These counts include helpers.
+Only propext, Classical.choice and Quot.sound are allowed by either audit.
+The four new declarations are not four separately solved open problems.

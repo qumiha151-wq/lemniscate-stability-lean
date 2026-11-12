@@ -1,0 +1,132 @@
+{
+  "status": "First kernel milestone only; no periodic-root existence theorem yet",
+  "lean": "4.33.1",
+  "mathlib": "4.33.1",
+  "namespace_declarations_audited": 406,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    "RationalBall",
+    "FixedBall",
+    "Field",
+    "FixedField",
+    "CandidateInitial",
+    "TaylorCoefficients",
+    "FixedTaylor",
+    "FirstPolynomial60",
+    "MetricReset",
+    "ResidualODE",
+    "BanachRoot",
+    "ShootingRoot",
+    "CoreAudit"
+  ],
+  "files": [
+    {
+      "path": "SolitonClassification/Rotating/RationalBall.lean",
+      "sha256": "516fe9cad74b52293aec8d47cf2d075f8042f540be0590f97520f136984650ca"
+    },
+    {
+      "path": "SolitonClassification/Rotating/FixedBall.lean",
+      "sha256": "d595aa2083940b0c07a21becdc997f5c9ddc660ea28388a465891313e5ff72de"
+    },
+    {
+      "path": "SolitonClassification/Rotating/Field.lean",
+      "sha256": "e661ac4293f71a28caf28075c89234cf3e77259649741ce660978cd04e0c6377"
+    },
+    {
+      "path": "SolitonClassification/Rotating/FixedField.lean",
+      "sha256": "dbaa2b4212ea33e85d352ba0bbfb366bd59c57b61d17e9bd8d546a8f019d7d99"
+    },
+    {
+      "path": "SolitonClassification/Rotating/CandidateInitial.lean",
+      "sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6"
+    },
+    {
+      "path": "SolitonClassification/Rotating/TaylorCoefficients.lean",
+      "sha256": "b43b82c83fa67f3ef7eb1a111dd73770086e0658e729322719b900fd6ad943f3"
+    },
+    {
+      "path": "SolitonClassification/Rotating/FixedTaylor.lean",
+      "sha256": "8612aaa19bc49a54cc3fd0c2cc877f57ba750846e12b18b05790b70ff4d3af67"
+    },
+    {
+      "path": "SolitonClassification/Rotating/FirstPolynomial60.lean",
+      "sha256": "9b91c9a0289b87bdb5c266ef5ba366d9fcdd8a4bbbb385403e716979d0ef9297"
+    },
+    {
+      "path": "SolitonClassification/Rotating/MetricReset.lean",
+      "sha256": "9933b54c56e48ddc94b2b2c29b279c1ce08bbcafddc9dbdb4220000d542db198"
+    },
+    {
+      "path": "SolitonClassification/Rotating/ResidualODE.lean",
+      "sha256": "2035c068eff01d09288b3b98d73701d6f047643c089e8f0eee1929cbfd08f69f"
+    },
+    {
+      "path": "SolitonClassification/Rotating/BanachRoot.lean",
+      "sha256": "2af074df18e20528b6501fb117f40db20d896471774cdbfca7e30021670d851c"
+    },
+    {
+      "path": "SolitonClassification/Rotating/ShootingRoot.lean",
+      "sha256": "d7afa96114090aabd27eae3359d416e8a44010cea75c6571ec81bb83ecc99184"
+    },
+    {
+      "path": "SolitonClassification/Rotating/CoreAudit.lean",
+      "sha256": "ec8e57c4d9fe642ef1035e309f6e931a9688c7e8fc825cf95eff11a98aa494f9"
+    },
+    {
+      "path": "check_module.ps1",
+      "sha256": "cd008ced9ecbe31722d831c5fa1c9d3705090c30571bbd6b22349d604dc07503"
+    },
+    {
+      "path": "build_milestone.ps1",
+      "sha256": "82f1f86eb69773782b6a0cde95c844f42fd353ae415d04a82b9114a4f7f4a1fe"
+    },
+    {
+      "path": "prepare_generic_modules.py",
+      "sha256": "d1992a0b6ad0442d8c768dadd59156ec8f3a2de42ff90507f461aebe5e0b005a"
+    },
+    {
+      "path": "prepare_fixed_taylor.py",
+      "sha256": "5a1ff979bc475a41a33d84e91b4040e563d5ba4f63a549198a1d452bc5e87c4f"
+    },
+    {
+      "path": "generate_candidate_initial.py",
+      "sha256": "9ef711324c85199577a5854550188d161334dddc087958221bdb44edd27e4f24"
+    },
+    {
+      "path": "generate_first_polynomial.py",
+      "sha256": "9fb9e1fc893b401b90feea5daba1826a4699c8c413a423201cd1d21e6fe20bbe"
+    },
+    {
+      "path": "generic_source_provenance.json",
+      "sha256": "5a026742a35896e48a2a0d4c7c91cee4b9d9c936d14e7b0ead86cdb39b1f53ae"
+    },
+    {
+      "path": "fixed_taylor_source_provenance.json",
+      "sha256": "86c11abafd48df3213d5e4068b93b5fff67ef03589ebfff846a8bd607cfc5c11"
+    },
+    {
+      "path": "candidate_input_provenance.json",
+      "sha256": "7710ba4ab9133c33b64f2a1bf5fbe6d00fd10a9f24907672f737f5402e109bea"
+    },
+    {
+      "path": "first_polynomial60_record.json",
+      "sha256": "ae3e556bf976260db928a5a1a85fb00efe388a38a699e54d9e1cc11678868a24"
+    },
+    {
+      "path": "CoreAudit.build.log",
+      "sha256": "640e709a887deb24e8b3be89c6dc431b218866d0f61a45838e2d6329d08e288b"
+    },
+    {
+      "path": "FirstPolynomial60.build.log",
+      "sha256": "407edee3a3758c6661af2818db10336629233f7bdfd716f94f7f6b0c77a1ab12"
+    },
+    {
+      "path": "MilestoneStatus.txt",
+      "sha256": "336e4f23be40cf4e0a317b2fc1396e28b1189880a4d65d49cd1253c361ba68bf"
+    }
+  ]
+}
