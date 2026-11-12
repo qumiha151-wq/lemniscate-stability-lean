@@ -11,6 +11,9 @@ LengthGrowth/: scalar dissipation-to-secant theorem and conditional
   fixed turning number with arbitrarily high EL and initially increasing EL,
   as well as D/E^5 tending to zero. This is a human proof of an obstruction
   to two proposed methods; it is not a long-time counterexample or a Lean proof.
+  CoercivitySharpness.txt further rules out every homogeneous static coercivity
+  bound with energy exponent greater than 2, even at fixed turning number.
+  Its examples have initially decreasing EL, and do not settle long-time growth.
 Migration/: scalar one-sided homothetic migration criterion. No existence
   theorem for a one-sided closed free-elastic-flow expander is supplied.
 SolitonClassification/: independent support-function ODE and actual geometric
@@ -27,6 +30,10 @@ CentroidEscape/: computer-assisted existence proof of a closed expander
   Generic bounded-ODE existence and validated-integration lemmas now establish
   error propagation and the numerical error budget; their concrete shooting
   inputs remain to be verified.
+  Concrete weighted field and clipping bounds, scalar finite-polynomial
+  residual bounds, actual parameter-flow inverses, C1 lift/inverse and exact
+  arclength-centroid invariance are also now formalized. The full vector
+  Taylor/interval arithmetic shooting certificate is still incomplete.
   See CentroidEscape/STATUS.txt for the numerical and reparametrization gaps.
 OpenTranslators/: supplementary complete-open-curve translator estimates
   derived from the actual ODE. Global continuation and geometric existence

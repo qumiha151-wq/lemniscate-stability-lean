@@ -1,0 +1,39 @@
+Independent analytic review by the root agent, 12 November 2026.
+
+I checked the force expansion, integral orders, closure correction, and the
+finite-energy obstruction in coercivity_sharpness.txt. No substantive gap
+was found. This is an analytic review, not a Lean proof or novelty check.
+
+At m=1/2 the cn identity gives K''+K^3/2=0 exactly, eliminating the N^3
+force term. For fixed nonzero q, squaring the remaining three terms and
+canceling odd moments gives the displayed D polynomial. The q^4 N^2
+coefficient is 9/4+3/2=15/4; multiplication of E and L' and subtraction
+of LD gives the negative U' polynomial. Cauchy--Schwarz makes its leading
+coefficient at most -3 A2^2/4, hence strictly negative for q nonzero.
+
+For general q the two-parameter exact closure construction is justified by
+the positive mean r and two nonparallel tangent directions. Its correction
+is O(1/N) with fixed smooth bump functions. Thus all fixed derivatives of
+b_N are bounded and b_N converges smoothly to the base curvature. The
+displayed exact force contains b_N'' and has leading term
+(3/2)b_N N^2 K(Ns)^2. Squaring and periodic averaging proves the positive
+D_N/N^4 limit, including turning number zero since every smooth closed
+unit-speed base curve has strictly positive energy.
+
+The N^3 K^3 term in L' does not spoil the limit: its coefficient is smooth
+periodic with uniformly bounded second derivative, and two integrations by
+parts against the bounded periodic primitives give an O(N^-2) integral.
+This proves the stated negative leading U'/N^4 limit.
+
+Since E_N is asymptotic to a positive multiple of N^2 and L is fixed, the
+failure of every homogeneous coercivity exponent alpha>2 follows. The
+statement concerns the exponent; it does not establish the optimal constant.
+
+For disjoint intervals, the angle-change inequality followed by two
+Cauchy--Schwarz estimates gives 2E >= A^2*n^2/L. This correctly rules out
+direct infinite packing of the fixed-angle cells in finite initial energy.
+It does not rule out the subsequent creation of oscillations by the flow.
+
+The note consistently distinguishes families of different initial curves
+from one long-time trajectory. It does not settle unrestricted length
+growth, general migration, or all self-similar profile classification.

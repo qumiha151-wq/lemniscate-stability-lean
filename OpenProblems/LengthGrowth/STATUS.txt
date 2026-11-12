@@ -20,3 +20,12 @@ still possible. The construction is NOT Lean-formalized.
 
 check_fixed_turning.py is an optional numerical check of the explicit
 identities; it is not part of the Lean proof or a substitute for the argument.
+
+CoercivitySharpness.txt, reviewed in CoercivitySharpnessAudit.txt, sharpens
+the obstruction: for every fixed turning number, actual closed curves have
+E asymptotic to N^2 and D asymptotic to N^4. Hence every homogeneous static
+bound with energy exponent greater than 2 fails uniformly in that class.
+This family has initially decreasing EL. A finite-energy packing argument
+also rules out directly placing infinitely many fixed-angle cells in one
+smooth initial curve. Neither assertion settles long-time length growth;
+these additional analytic results are not Lean-formalized.

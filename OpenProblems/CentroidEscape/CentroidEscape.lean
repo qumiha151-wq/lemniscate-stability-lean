@@ -5,3 +5,12 @@ import CentroidEscape.Geometry
 import CentroidEscape.Centroid
 import CentroidEscape.Reparametrization
 import CentroidEscape.ValidatedIntegration
+import CentroidEscape.ParameterFlow
+import CentroidEscape.IntegralReparam
+import CentroidEscape.SpatialRegularity
+import CentroidEscape.WeightedField
+import CentroidEscape.WeightedExpansion
+import CentroidEscape.ResidualFlow
+import CentroidEscape.PolynomialResidual
+import CentroidEscape.PolynomialEvaluation
+import CentroidEscape.ScalarMajorant

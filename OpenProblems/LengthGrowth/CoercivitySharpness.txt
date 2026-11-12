@@ -1,0 +1,186 @@
+SHARPNESS OF STATIC DISSIPATION COERCIVITY AND THE MULTISCALE OBSTRUCTION
+12 November 2026. Human proof, independently reviewed in the accompanying
+CoercivitySharpnessAudit.txt; not Lean-formalized.
+This note does NOT solve the long-time length-growth or migration questions.
+
+THEOREM A (optimal energy exponent even at fixed turning number).
+For every integer q and every real alpha>2, there are smooth closed unit-speed
+immersions gamma_N of length L=2pi and turning number q such that
+
+  E_N -> infinity,  D_N = O(E_N^2),
+  D_N L^(5-alpha)/E_N^alpha -> 0,
+
+where E=(1/2) integral k^2 and D=integral (k_ss+k^3/2)^2. In fact D_N/E_N^2
+converges to a finite positive number. The curves can be kept in a common
+bounded region and converge uniformly to a fixed nonconstant closed immersion.
+
+Consequently no c(q)>0 yields D>=c(q) E^alpha/L^(5-alpha) for every closed
+immersion of turning number q when alpha>2. The known virial estimate
+D>=4pi^2 E^2/L^3 therefore has an optimal POWER of E among such homogeneous
+bounds, even after fixing the turning number. This does not claim that its
+numerical constant is optimal.
+
+1. A PERIODIC FREE-EULER WAVE.
+
+Take elliptic parameter m=1/2. Let K_e and E_e be its complete elliptic
+integrals and let omega=2K_e/pi. Define, with parameter notation sn(u|m),
+
+  phi(s)=2 arcsin(sqrt(m) sn(omega s|m)),
+  K(s)=phi'(s)=2 omega sqrt(m) cn(omega s|m).
+
+These are smooth 2pi-periodic real functions. The derivatives sn'=cn dn,
+cn'=-sn dn, dn'=-m sn cn and positivity of dn give these identities directly.
+Moreover
+
+  K''+K^3/2=0,   K(s+pi)=-K(s),   max K^2=2 omega^2.
+
+Write A2=integral_0^L K^2 and A4=integral_0^L K^4. Both are positive and
+A2^2<=L A4 by Cauchy--Schwarz. All odd moments of K vanish.
+The first integral K'^2+K^4/4=omega^4 and the integrated equation give
+A4=(4/3)L omega^4, though this explicit value is not needed below.
+
+The complex periodic tangent multiplier g=exp(i phi) has mean
+
+  r=(1/L)integral g = 2 E_e/K_e-1 > 0.
+
+To see positivity without decimal numerics, pair a=1-m sin^2 u and
+b=1-m cos^2 u on [0,pi/2]. Since ab>=1-m,
+sqrt(a)+sqrt(b)>=sqrt(1-m)(1/sqrt(a)+1/sqrt(b)). Integration yields
+E_e/K_e>=sqrt(1-m)=1/sqrt(2), so r>=sqrt(2)-1>0.
+
+References for the elementary special-function identities and periods:
+NIST DLMF https://dlmf.nist.gov/22.13 and https://dlmf.nist.gov/22.4,
+checked 12 November 2026. DLMF uses modulus k, whereas this note uses m=k^2.
+The subsequent closed-curve construction and estimates are deductions here;
+no novelty or publication claim is made.
+
+2. EXPLICIT CLOSURE FOR q!=0.
+
+For an integer N>|q| let theta_N(s)=qs+phi(Ns), T_N=exp(i theta_N), and
+ gamma_N(s)=integral_0^s T_N(u) du.
+As in the previous m=2/3 construction, successive cells of length L/N are
+rotated by exp(2pi i q/N). Their geometric series sums to zero, so gamma_N
+is EXACTLY closed and has unit speed and turning number q.
+Its curvature is k_N=q+N K(Ns). Because K''+K^3/2=0, the leading N^3 term
+in its elastic force cancels exactly:
+
+  F_N=(3q/2)N^2 K(Ns)^2+(3q^2/2)N K(Ns)+q^3/2.
+
+The actual geometric quantities are therefore
+
+  E_N=(Lq^2+N^2 A2)/2,
+  D_N=(9/4)q^2 A4 N^4+(15/4)q^4 A2 N^2+Lq^6/4,
+  L'_N=3q^2 A2 N^2+Lq^4/2.
+
+In particular
+
+  D_N/E_N^2 -> 9q^2 A4/A2^2 >0.
+
+These are actual closed curves, not scalar histories satisfying selected
+inequalities. The exact force expansion proves the asymptotic exponents.
+
+For clarity, this family is NOT the earlier positive-U' family. Here
+
+  (EL)'_N=q^2[(3/2)A2^2-(9/4)L A4]N^4-2q^4 L A2 N^2 <0,
+
+because A2^2<=L A4. Thus being nearly extremal for the POWER in the virial
+estimate does not by itself cause normalized energy to increase. This is a
+useful obstruction to interpreting a small D/E^5 ratio dynamically.
+
+3. ALL TURNING NUMBERS, INCLUDING ZERO.
+
+Choose ANY smooth closed unit-speed immersion beta of length L=2pi and
+turning number q; write T0=exp(i theta0) and b0=theta0'. Its energy is
+positive because a closed unit-speed curve cannot have constant tangent.
+Choose smooth periodic real h1,h2 so that the two real vectors
+ integral i T0 h1, integral i T0 h2
+are independent. This is possible by bump localization near two nonparallel
+tangent directions. A closed smooth unit-speed immersion necessarily has
+such directions.
+
+Set
+ C_N(a)=integral_0^L T0(s) g(Ns) exp(i(a1 h1(s)+a2 h2(s))) ds.
+The mean-zero periodic function g-r has a bounded smooth periodic primitive.
+Integration by parts against smooth periodic test functions gives
+ C_N(0)=O(1/N),  DC_N(0)=J+O(1/N),
+where J has columns r integral iT0 hj and is invertible. Hessians of C_N
+are uniformly bounded because all complex phases have modulus one and the
+hj are fixed. On a fixed small ball, a -> a-J^-1 C_N(a) is a contraction
+with constant at most 1/2 for large N; it preserves the smaller ball of radius
+2||J^-1 C_N(0)||. Hence an EXACT zero a_N exists with a_N=O(1/N).
+
+Let
+ theta_N=theta0+phi(Ns)+a_N.h,
+ gamma_N(s)=integral_0^s exp(i theta_N(u)) du,
+ b_N=theta0'+a_N.h'.
+The resulting curve is closed, smooth, unit-speed and of turning q. Every
+fixed derivative of b_N is uniformly bounded, and b_N converges smoothly to
+b0. Its curvature and force are EXACTLY
+
+ k_N=NK(Ns)+b_N,
+ F_N=(3/2)b_N N^2 K(Ns)^2+(3/2)b_N^2 N K(Ns)+b_N^3/2+b_N''.
+
+Periodic averaging now gives
+
+ E_N/N^2 -> A2/2,
+ D_N/N^4 -> (9A4/(4L)) integral_0^L b0^2 >0.
+
+For example, the latter follows by dividing the displayed F_N by N^2:
+the remainder is uniformly O(1/N), and K^4(Ns) has mean A4/L. Thus
+
+ D_N/E_N^2 -> [9A4/(L A2^2)] integral b0^2 >0.
+
+Since L is fixed, the asserted failure of every alpha>2 follows. Uniform
+position convergence gamma_N -> r beta (with matching initial point) follows
+by the bounded-primitive integration estimate and a_N->0; the curves therefore
+remain in one bounded region. This does not assert embeddedness.
+
+One can also verify that these general-q curves have initially decreasing EL.
+Expansion gives
+ L'_N=integral[(3/2)b_N N^3 K^3+3b_N^2 N^2 K^2
+                 +N K(2b_N^3+b_N'')+b_N^4/2+b_N b_N''].
+The N^3 term divided by N^2 tends to zero: K^3 is mean zero, and integrating
+by parts twice gives integral b_N K^3(Ns)=O(N^-2), uniformly in N. Thus
+ L'_N/N^2 -> (3A2/L) integral b0^2,
+ (EL)'_N/N^4 -> [(3A2^2/(2L))-(9A4/4)] integral b0^2 <0.
+(The coefficient 2b_N^3 in the N term is harmless for this limit.)
+
+4. WHY DIRECT MULTISCALE PATCHING DOES NOT PRODUCE ONE COUNTEREXAMPLE.
+
+Let a finite-energy unit-speed curve have length L and E=(1/2)integral k^2.
+If disjoint parameter intervals I_1,...,I_n each have tangent-angle variation
+at least A between two selected points, then
+
+ A <= integral_{I_j}|k| <= sqrt(|I_j| integral_{I_j} k^2).
+
+Consequently
+ 2E >= A^2 sum_j 1/|I_j| >= A^2 n^2/L,
+so n <= sqrt(2EL)/A. The same estimate also shows that a selected angle change
+A requires interval length at least A^2/(2E).
+
+The positive-U' elliptic-wave construction uses m>1/2 and therefore has an
+order-one tangent excursion on every cell (2 arcsin(sqrt(m))>pi/2). Infinitely
+many such cells cannot simply be patched into a single finite-length,
+finite-energy initial immersion. Shrinking their spatial sizes only increases
+the energy cost. Smoothness supplies an even stronger local obstruction via
+a bounded curvature and uniform continuity of the tangent.
+
+This excludes a direct diagonal argument from the sequence gamma_N to one
+smooth initial datum carrying all its cells. It does NOT exclude a dynamical
+creation of oscillations as length grows, nor a different small-amplitude
+construction, nor concentration in normalized coordinates.
+
+5. PRECISE LIMITS AND NEXT MATHEMATICAL QUESTION.
+
+All constructions here vary the initial curve. They do not yield a single
+trajectory whose EL becomes unbounded; the time derivative for Theorem A is
+actually negative. The earlier m=2/3 examples have positive initial (EL)', but
+still do not supply unbounded growth along one trajectory.
+
+The exact equivalence in work/global_length/quarter_growth_equivalence.txt
+remains the correct target: a long-time counterexample must have EL unbounded.
+This note proves that improving the static virial estimate to any higher
+energy power using only turning number is impossible, even on C0-bounded
+families. Any proof of universal quarter-power growth must therefore use
+additional dynamical information or constants depending on more initial data.
+No full classification or migration result is inferred.

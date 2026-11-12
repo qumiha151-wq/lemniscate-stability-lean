@@ -27,6 +27,24 @@ MODULE CentroidEscape/Reparametrization
 'CentroidEscape.exists_reparametrized_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
 Centroid reparametrization audit passed for 119 declarations.
 EXIT 0
+MODULE CentroidEscape/ParameterFlow
+'CentroidEscape.parameterFlow_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.parameterFlowHomeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.profileCircleHomeomorph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.coherent_reparametrized_vector_FEF' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid parameter-flow audit passed for 181 declarations.
+EXIT 0
+MODULE CentroidEscape/IntegralReparam
+'CentroidEscape.reparametrized_expandingCurve_centroid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.coherentExpandingCurve_centroid_escapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid integral-reparametrization audit passed for 222 declarations.
+EXIT 0
+MODULE CentroidEscape/SpatialRegularity
+'CentroidEscape.parameterFlow_hasDerivAt_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.parameterFlowHomeomorph_C1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.reparametrized_spatial_speed_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+Centroid spatial-regularity audit passed for 199 declarations.
+EXIT 0
 MODULE CentroidEscape/ValidatedIntegration
 CentroidEscape/ValidatedIntegration.lean:177:32: warning: try 'simp' instead of 'simpa'
 
@@ -35,9 +53,48 @@ Note: This linter can be disabled with `set_option linter.unnecessarySimpa false
 'CentroidEscape.integration_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
 Validated integration audit passed for 15 declarations.
 EXIT 0
+MODULE CentroidEscape/WeightedField
+'CentroidEscape.weightedField_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.clippedField_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+Weighted-field audit passed for 47 declarations.
+EXIT 0
+MODULE CentroidEscape/WeightedExpansion
+'CentroidEscape.weightedLinear_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.weightedBilinear_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.weightedTrilinear_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Weighted-expansion audit passed for 76 declarations.
+EXIT 0
+MODULE CentroidEscape/ResidualFlow
+'CentroidEscape.approximate_grid_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE CentroidEscape/PolynomialResidual
+'CentroidEscape.majorantCoeff_recurrence' depends on axioms: [propext]
+'CentroidEscape.polynomialResidual_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE CentroidEscape/PolynomialEvaluation
+CentroidEscape/PolynomialEvaluation.lean:22:37: warning: This simp argument is unused:
+  Pi.pow_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [id_eq, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+CentroidEscape/PolynomialEvaluation.lean:21:77: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+CentroidEscape/PolynomialEvaluation.lean:22:60: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CentroidEscape.polynomialResidual_is_derivative_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE CentroidEscape/ScalarMajorant
+'CentroidEscape.scalarResidual_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CentroidEscape.finite_majorant_residual_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+Scalar-majorant audit passed for 87 declarations.
+EXIT 0
 MODULE CentroidEscape
 EXIT 0
 MODULE CentroidEscape/AxiomAudit
-Centroid-escape audit passed: 163 declarations; standard axioms only.
+Centroid-escape audit passed: 418 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.

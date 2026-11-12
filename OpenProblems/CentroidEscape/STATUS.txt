@@ -30,16 +30,31 @@ Lean currently proves:
     local ODE error comparison by Gronwall and its finite-grid accumulation;
     the kernel-checked inequality 750*tail*exp(60) < 10^(-118). These are
     generic integration lemmas, not a verifier of the Arb certificate.
+  - concrete weighted seven-coordinate field bounds (2 and 8), nonexpansive
+    coordinate clipping, and its globally bounded/Lipschitz field; exact
+    finite linear/bilinear/trilinear expansion with bounds 8, 22 and 32;
+  - error propagation from approximate-path differential residuals, without
+    assuming a local exact Taylor series or a true trajectory in the tube;
+  - kernel verification of the 160th-order scalar coefficient table and
+    rational residual budget, its actual finite-polynomial evaluation and
+    derivative, low-coefficient cancellation and uniform residual/excursion
+    bounds throughout the whole step interval;
+  - group law, inverse, strict monotonicity, Lipschitz dependence and a circle
+    homeomorphism for the actual parameter flow; exact invariance of the
+    actual arclength-centroid integral under that parameter change;
+  - positive spatial derivative from the actual variational formula,
+    continuous Jacobian, C1 regularity of both real-line lift and inverse,
+    and everywhere-positive spatial speed of the reparametrized curve.
 
 Missing from the end-to-end Lean theorem:
   - construction of the exact shooting map/half-orbit and validated
     numerical/ODE estimates discharging the root and moment hypotheses;
-    in particular, Taylor coefficients/series for this polynomial field,
-    first-exit continuation, interval arithmetic enclosures, and parameter
-    variation bounds are still not established inside Lean;
-  - smooth dependence of the parameter trajectories on their initial value,
-    the circle diffeomorphism property, and centroid invariance under that
-    reparametrization (the geometric normal flow is already formalized).
+    in particular, the actual vector Taylor recurrence/majorization,
+    certified interval iterates, inactivity of clipping along the true orbit,
+    and the parameter variation bounds for shooting remain unproved;
+  - higher spatial smoothness and the full smooth reparametrized curvature/PDE
+    interface. C1 lift/inverse and centroid invariance are now proved, but
+    full smooth geometric regularity is not inferred from those results.
 Thus the complete centroid-escape theorem is NOT yet Lean-formalized.
 
 This profile does not prove migration: its convex hull contains the
