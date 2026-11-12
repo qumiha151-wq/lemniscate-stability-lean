@@ -72,11 +72,12 @@ jobs:
         run: python3 tools/generate_compact_shard.py --data-root shard/native --case center --start 11 --count 5 --output-root shard/certificate
       - name: Kernel-check arithmetic, gluing and final shard audit
         working-directory: OpenProblems/CentroidEscape
-        run: lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 4096
+        run: lake env python3 tools/compile_shard.py --manifest shard/certificate/manifest.json --lean lean --build-root .lake/build/lib/lean --jobs 2 --memory-mb 6144
       - name: Connect to the previous eleven-step prefix
         working-directory: OpenProblems/CentroidEscape
-        run: lake env lean -M4096 -j1 tools/CenterFirstSixteen.lean
+        run: lake env lean -M6144 -j1 tools/CenterFirstSixteen.lean
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: centroid-trial-${{ github.sha }}
           path: OpenProblems/CentroidEscape/shard/certificate
@@ -115,4 +116,4 @@ jobs:
         run: lake env python3 tools/reimport_shard.py --manifest shard/certificate/manifest.json --build-root .lake/build/lib/lean --lean lean
       - name: Recheck the sixteen-step connected statement
         working-directory: OpenProblems/CentroidEscape
-        run: lake env lean -M4096 -j1 tools/CenterFirstSixteen.lean
+        run: lake env lean -M6144 -j1 tools/CenterFirstSixteen.lean

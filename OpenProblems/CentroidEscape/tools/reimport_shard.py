@@ -30,7 +30,10 @@ def main():
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--build-root", type=Path, required=True)
     parser.add_argument("--lean", default="lean")
+    parser.add_argument("--memory-mb", type=int, default=6144)
     args = parser.parse_args()
+    if args.memory_mb <= 0:
+        parser.error("--memory-mb must be positive")
     manifest_path = args.manifest.resolve()
     directory = manifest_path.parent
     result_path = directory / "reimport_report.json"
@@ -116,7 +119,7 @@ def main():
                     raise ValueError(f"Restored dependency resolution changed: {dependency}")
 
         log_path = directory / "reimport_audit.log"
-        command = [lean, "-M4096", "-j1", str(sources[manifest["audit_module"]])]
+        command = [lean, f"-M{args.memory_mb}", "-j1", str(sources[manifest["audit_module"]])]
         resource_path = directory / "reimport_resources.txt"
         if os.name != "nt" and Path("/usr/bin/time").is_file():
             command = ["/usr/bin/time", "-v", "-o", str(resource_path)] + command
