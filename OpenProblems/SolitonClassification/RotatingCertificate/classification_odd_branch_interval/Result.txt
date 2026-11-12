@@ -1,0 +1,70 @@
+ONE ROTATING CLOSED PROFILE: COMPUTER-ASSISTED EXISTENCE CERTIFICATE
+13 November 2026. Human+Arb certificate passed two independent analytic
+reviews; not a Lean kernel theorem.
+
+The two interval integrations and the analytic/shooting inequality checker
+completed successfully. The exact root lies in the infinity-norm cube of
+radius10^-32 around center_exact_decimal in shooting_certificate.json,
+with variable order(k0,p0,l,alpha,b) and the fixed phase line recorded there.
+
+ b approximately0.0096866184548428354043345169336205371
+ l approximately31.2160721433580563699689779121099611
+ support period2l approximately62.43214428671611274
+ closed-curve period114l approximately3558.63222434281842618.
+
+Certified checks:
+ contraction factor q <1.733e-7;
+ center displacement eta <=2.60e-40;
+ eta+q*r <2.3e-39 < r=1e-32;
+ b>.009, 31<l<32, initial curvature second derivative v'(0)<-200.
+The exact holonomy equation is Delta(theta)+112*pi/57=0; pi is enclosed
+by an Arb constant ball, not replaced by a decimal target.
+
+The analytic proof in AnalyticCertificate.txt explicitly establishes
+local Taylor series existence/tails, accounts for every midpoint reset,
+uses a piecewise exact reference fundamental matrix to control global
+state and derivative errors, proves a uniform shooting Hessian bound
+below1e20 on the root cube, and applies Banach's theorem. It then derives
+the57-period geometric closure and nonconstant curvature.
+
+This is substantially stronger than the earlier high-precision numerical
+candidate: truncation tails and a true root box are included. It is NOT a
+Lean kernel theorem and does NOT classify all similarity profiles.
+
+The normalized state is(k,v/8,p,q,b,theta). There are4000 steps per half
+period, Taylor order60, and100 decimal digits. Both full integrations took
+approximately402--406 seconds when run concurrently on this machine.
+Their actual grid matrix bounds were:
+ positive direction ||M||<430, ||M^-1||<2203;
+ negative direction ||M||<862, ||M^-1||<902.
+The proof conservatively uses continuous-segment K=2000,I=4000.
+Every local state tail is below2e-56 and every local fundamental tail
+factor below3e-55. The actual ODE endpoint error budget is2e-43 in the
+normalized state norm; fundamental error budget is approximately4.10e-31.
+
+Reproduce from the workspace root with the available Python runtime:
+
+ python work/next_research/classification_odd_branch_interval/validated_metric_shoot.py --sign 1
+ python work/next_research/classification_odd_branch_interval/validated_metric_shoot.py --sign -1
+ python work/next_research/classification_odd_branch_interval/check_shooting_certificate.py
+
+The current Windows runtime is
+C:/Users/17815/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe
+and python-flint/numpy are loaded from work/pydeps.
+
+The seed is read without modification from the SAME problem's frozen
+classification_odd_branch/arb_rotating_o55_n1800.json. The decimal inverse
+matrix is constructed from that problem's natural_shooting_jacobian.json;
+its exact decimal entries, nonsingularity, and all uses are checked anew.
+No other problem's Lean sources or certificate machinery are imported.
+
+The root agent's first independent review found no substantive problem
+and requested clarification of bounded theta for continuation. That
+clarification and additional step/center consistency checks were added;
+the checker was rerun successfully with updated source/proof hashes.
+The second independent review also found no substantive gap. Its
+lightweight checker replay reproduced shooting_certificate.json byte for
+byte, and six local degree60/72 comparisons passed. It did not rerun all
+8000 full-trajectory steps; that limit is explicit in
+IndependentAnalyticReview.txt. The authoritative proof, generator, checker,
+two trajectory reports, and root certificate were unchanged by that review.

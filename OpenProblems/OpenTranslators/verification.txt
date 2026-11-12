@@ -8,9 +8,35 @@ MODULE OpenTranslators/Bounds
 'OpenTranslator.state_bounds_on_bounded_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
 Translator estimate audit passed for 15 declarations.
 EXIT 0
+MODULE OpenTranslators/BoundedFlow
+'OpenTranslator.exists_unique_global_bounded_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE OpenTranslators/RegularizedField
+'OpenTranslator.regularizedField_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+RegularizedField: audited 33 declarations; standard axioms only.
+EXIT 0
+MODULE OpenTranslators/LocalUniqueness
+'OpenTranslator.unique_global_of_locallyLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE OpenTranslators/SmoothFlow
+'OpenTranslator.smooth_integral_curve_of_smooth_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT 0
+MODULE OpenTranslators/RegularizedGlobal
+'OpenTranslator.exists_unique_global_translator' depends on axioms: [propext, Classical.choice, Quot.sound]
+RegularizedGlobal: audited 97 declarations; standard axioms only.
+EXIT 0
+MODULE OpenTranslators/Geometry
+'OpenTranslator.TranslatorGeometry.exists_nonstraight_translator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'OpenTranslator.TranslatorGeometry.exists_complete_nonstraight_geometric_translator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Geometry: audited 152 declarations; standard axioms only.
+EXIT 0
 MODULE OpenTranslators
 EXIT 0
 MODULE OpenTranslators/AxiomAudit
-Open-translator audit passed: 15 declarations; standard axioms only.
+Open-translator audit passed: 152 declarations; standard axioms only.
 EXIT 0
 All project modules compiled successfully. No claim of full PDE formalization.

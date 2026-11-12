@@ -1,0 +1,63 @@
+FROZEN ACTUAL GLOBAL TRANSLATOR ODE EXISTENCE -- 13 November 2026
+
+Source: work/translator_formal/RegularizedGlobal.lean
+Independent project: OpenTranslators. Namespace OpenTranslator.
+Own-project imports: BoundedFlow, RegularizedField, Bounds, LocalUniqueness,
+SmoothFlow. No import from any other open-problem project.
+Check: work/translator_formal/check_module.ps1 -Module RegularizedGlobal
+Direct Lean 4.33.1, pinned read-only Mathlib, dependency paths first.
+
+ACTUAL VERIFICATION
+Final compiler exit code 0, no warnings.
+Recursive namespace audit: 97 declarations including own-project imports.
+Every collected axiom belongs to propext, Classical.choice, Quot.sound.
+Main global existence/uniqueness theorem prints only those three axioms.
+No sorry, admit, native_decide, unsafe or custom axiom found by source scan.
+
+Source SHA256:
+9EE458D18B92686FDF5D5349E2756AB12EFF27E510B5106558C84BB3891DFCC7
+Olean SHA256 (816664 bytes):
+58571E140703F1950E798D1894F6A6426828F39CEC2983C9BFD53A67776DE476
+
+EXACT GLOBAL RESULT
+For every z0 : Fin 3 -> R there exists a unique x : R -> (Fin 3 -> R)
+with x(0)=z0 and actual HasDerivAt x (translatorNumerator(x(t))) t for every t.
+The coordinate equations, from the actual numerator definition, are
+ theta'=k, k'=v, v'=-k^3/2+sin(theta).
+The theorem global_translator_smooth derives C-infinity of every such solution.
+exists_unique_smooth_global_translator packages existence, smoothness, and
+uniqueness. The uniqueness theorem covers all actual global solutions, not
+only a selected construction or an a priori smooth subclass.
+
+ACTUAL CONSTRUCTION
+BoundedFlow plus the proved bounds for g=N/D gives a global regularized flow z.
+D=1+v^2+k^4/4 and H=v^2/2+k^4/8.
+The actual clock is S(t)=integral from 0 to t of 1/D(z(u)).
+FTC proves its positive derivative, hence strict monotonicity.
+The actual radius R(t)=sqrt(H(z(t))+1) has derivative
+ (v*sin(theta)/(2R))/D; the previous actual energy estimate gives |R'|<=1/D.
+The algebraic bound D<=2R^2 is proved from the radius identity.
+
+The generic clock proof is then instantiated with precisely those functions.
+If S had upper bound K, monotonicity of S-R gives R(t)<=R(0)+K for t>=0.
+Thus D<=E=2(R(0)+K)^2 and S'>=1/E. At T=E(K+1), the mean-value inequality
+forces S(T)>=K+1, contradicting the supposed upper bound. Reflection of time
+proves the lower endpoint is unbounded. Continuity and connectedness of the
+range therefore prove that S is onto R.
+
+Strict monotonicity plus the derived surjectivity constructs an order isomorphism.
+Continuity of its inverse and HasDerivAt.of_local_left_inverse prove inverse
+derivative D. The actual chain rule for z composed with the inverse clock
+cancels D, giving the original cubic field N globally.
+
+LocalUniqueness applies because N is proved C-infinity and hence locally
+Lipschitz. SmoothFlow bootstraps the actual equation to C-infinity.
+No clock-surjectivity, bounded-energy, original-solution, or smooth-solution
+premise is assumed in the final initial-value theorem.
+
+SCOPE
+This is a global initial-value theorem for the normalized unit-speed translator
+curvature/angle system. It does not by itself reconstruct position coordinates,
+prove curve properness or embeddedness, classify all complete translator shapes,
+or settle all remaining open questions in the paper. Those are separate steps.
+Previously frozen files and other agents' sources were not modified.

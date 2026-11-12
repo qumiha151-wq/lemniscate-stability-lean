@@ -1,0 +1,77 @@
+FROZEN ACTUAL GEOMETRIC TRANSLATOR RECONSTRUCTION -- 13 November 2026
+
+Source: work/translator_formal/Geometry.lean
+Independent project: OpenTranslators.
+Namespace: OpenTranslator.TranslatorGeometry.
+Imports own RegularizedGlobal plus Mathlib. No cross-problem dependencies.
+Check: work/translator_formal/check_module.ps1 -Module Geometry
+Direct Lean 4.33.1, pinned read-only Mathlib, dependencies first.
+
+VERIFICATION
+Final compiler exit code 0; no warnings.
+Recursive audit: 152 OpenTranslator declarations including imports, standard3.
+Both existential geometric theorems print only propext, Classical.choice,
+Quot.sound. Source scan finds no sorry, admit, native_decide, unsafe or axiom.
+
+Source SHA256:
+7007B52B8C3A6633B877D9CE1C65094D93B8FD2691AB288D5332689927C27B79
+Olean SHA256 (345512 bytes):
+DE03E0A75B78A983B9676988B0FEBF6663DA4D2ACA76B3D2B742AADC41DC73F4
+
+ACTUAL POSITION
+For an actual global solution z=(theta,k,v) constructed by RegularizedGlobal,
+betaX(s)=integral_0^s cos(theta(u))du and
+betaY(s)=integral_0^s sin(theta(u))du.
+The translating positions are X(t,s)=betaX(s)+t, Y(t,s)=betaY(s).
+FTC proves their actual spatial derivatives. SmoothFlow and the derivative
+criterion prove beta is C-infinity; position_joint_smooth proves joint
+C-infinity in time and space for the actual coordinate pair.
+
+GEOMETRY FROM POSITION DERIVATIVES
+speedSquared is (deriv X)^2+(deriv Y)^2 and is proved equal to 1 for all t,s.
+The actual tangent pair is proved nonzero (immersion).
+signedCurvature is the actual determinant X_s*Y_ss-Y_s*X_ss. Because actual
+unit speed is proved, this is the signed arclength curvature, and equals k(s).
+elasticForce is obtained by twice differentiating that actual curvature and
+adding its cube/2. It is proved equal to sin(theta(s)), using the original ODE.
+The normal is the actual rotated tangent N=(-Y_s,X_s); both unit length and
+orthogonality to the actual tangent are proved.
+
+EXACT FLOW CLAIM
+The actual time derivatives are X_t=1, Y_t=0. normalSpeed is their Euclidean
+dot product with the proved unit normal. It is proved to equal -elasticForce.
+normal_projection_equation proves the actual normal velocity projection
+ (V dot N)N = -F N.
+This is the geometric normal-component elastic-flow equation. The translating
+parameterization is NOT claimed to satisfy the pure-normal vector equation
+V=-F N; its tangential component may be nonzero. No reparameterization or
+pure-normal gauge has been assumed or constructed in this module.
+
+EXACT COMPLETENESS CONTENT
+pullbackMetric applies actual spatial derivatives to arbitrary real tangent
+vectors u,w and takes their Euclidean coordinate inner product. It equals u*w.
+intrinsicDistance integrates the actual Euclidean speed along a parameter
+interval, with absolute value for orientation, and is proved equal to the
+standard real distance dist(a,b). The complete standard real metric is then
+included explicitly as CompleteSpace R. Thus the induced metric tensor is
+ds^2 and its intrinsic distance is exactly the complete real-line distance.
+This concerns the immersed parameter manifold, not an ambient image metric
+or any unproved properness/embeddedness property. Ordinary Prod's max norm
+is never substituted for Euclidean speed.
+
+CONCRETE NONTRIVIAL EXAMPLE
+Initial state (theta,k,v)=(pi/2,1,0) is supplied to actual global existence.
+For this witness the actual curvature at s=0 is 1, and normalSpeed(t,0)=-1
+for every t. The curve is proved not contained in ANY affine line with
+nonzero normal (A,B): differentiating a hypothetical A*betaX+B*betaY=C first
+and second at zero forces B=0 and A=0, a contradiction.
+
+exists_complete_nonstraight_geometric_translator explicitly packages joint
+smoothness, all-time unit speed, the normal-speed equation, exact pullback
+metric and intrinsic distance, CompleteSpace R, no affine-line containment,
+and nonzero normal motion, all for an actual constructed initial-value witness.
+
+SCOPE
+No properness, embeddedness, asymptotic classification, pure-normal gauge,
+or complete solution of every remaining paper question is claimed here.
+Earlier frozen proofs and other agents' files were unchanged.

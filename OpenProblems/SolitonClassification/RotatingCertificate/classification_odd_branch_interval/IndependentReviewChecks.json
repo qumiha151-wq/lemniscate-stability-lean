@@ -1,0 +1,64 @@
+{
+  "status": "PASS: lightweight checker and six local degree-60/72 comparisons",
+  "authoritative_inputs_unchanged": true,
+  "sha256": {
+    "AnalyticCertificate.txt": "0be3f8801ba24781ae8cf697454596a1aed4ad398849fc504e23c12bfdee3192",
+    "validated_metric_shoot.py": "f9d9c04b663e7ee1f3eeeb3bff2b7c7203b16b399329e6c387726a7e027b8049",
+    "check_shooting_certificate.py": "5f132b7b7abe5e1636989ea560602a94e638dad0678ee516d25a50060a73ed64",
+    "metric_plus_o60_n4000.json": "6cb0b6eeca760093d1ec42c27296d5913fb41d398ed12c08d5b18b6637cc2075",
+    "metric_minus_o60_n4000.json": "32d7f521fb7d9d077eb414d78102b6daf7c898fb6c9f12188b2b3f8a27c8a3af",
+    "shooting_certificate.json": "7f227259292b5e4795f6df4e2f5f4e907bdc360a973915fee2e0bf3015ed3486"
+  },
+  "local_checks": [
+    {
+      "label": "initial",
+      "sign": 1,
+      "state_difference": "[5.60063821728314741285733938670e-99 +/- 3.83e-129]",
+      "state_budget": "[1.68674671454563342096392109113e-56 +/- 3.79e-86]",
+      "matrix_difference": "[4.81108227974085107298525284013e-98 +/- 1.21e-128]",
+      "matrix_budget": "[2.07917104111305843201973498783e-55 +/- 4.82e-85]"
+    },
+    {
+      "label": "initial",
+      "sign": -1,
+      "state_difference": "[5.60063821728314741285733938670e-99 +/- 3.83e-129]",
+      "state_budget": "[1.68674671454563342096392109113e-56 +/- 3.79e-86]",
+      "matrix_difference": "[4.81769224666836790519069800302e-98 +/- 2.44e-128]",
+      "matrix_budget": "[2.07917104111305843201973498783e-55 +/- 4.82e-85]"
+    },
+    {
+      "label": "plus_endpoint",
+      "sign": 1,
+      "state_difference": "[6.31807711544864039075690902267e-97 +/- 3.08e-127]",
+      "state_budget": "[1.68674671454563342096392109113e-56 +/- 3.79e-86]",
+      "matrix_difference": "[6.69679198595447899824557675806e-94 +/- 4.42e-124]",
+      "matrix_budget": "[8.86529626188218021094089870494e-53 +/- 4.25e-84]"
+    },
+    {
+      "label": "plus_endpoint",
+      "sign": -1,
+      "state_difference": "[6.30561140921246807923211813335e-97 +/- 6.26e-128]",
+      "state_budget": "[1.68674671454563342096392109113e-56 +/- 3.79e-86]",
+      "matrix_difference": "[6.69262779714118984991661910464e-94 +/- 3.23e-124]",
+      "matrix_budget": "[8.86529626188218021094089870494e-53 +/- 4.25e-84]"
+    },
+    {
+      "label": "minus_endpoint",
+      "sign": 1,
+      "state_difference": "[6.31807711544864039075690902267e-97 +/- 3.08e-127]",
+      "state_budget": "[1.68674671454563342096392109113e-56 +/- 3.79e-86]",
+      "matrix_difference": "[1.39516314924423388495660724241e-93 +/- 1.52e-123]",
+      "matrix_budget": "[1.82544119028499047704511885899e-52 +/- 2.37e-82]"
+    },
+    {
+      "label": "minus_endpoint",
+      "sign": -1,
+      "state_difference": "[6.30557569085649050813892389011e-97 +/- 3.49e-127]",
+      "state_budget": "[1.68674671454563342096392109113e-56 +/- 3.79e-86]",
+      "matrix_difference": "[1.39951358070926128447969831890e-93 +/- 4.43e-123]",
+      "matrix_budget": "[1.82544119028499047704511885899e-52 +/- 2.37e-82]"
+    }
+  ],
+  "full_8000_step_replay": false,
+  "scope": "Diagnostic replay plus independent analytic/source review; not Lean verification"
+}

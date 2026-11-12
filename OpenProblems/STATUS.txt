@@ -41,6 +41,10 @@ SolitonClassification/: independent support-function ODE and actual geometric
   ODE. For smooth nonzero periodic curvature the scalar equation is formally
   equivalent to existence of same-curvature periodic support data; actual
   position closure retains the separate integer angle condition above.
+  A nonconstant rotating closed expander now has a reviewed human+Arb
+  computer-assisted existence proof in RotatingCertificate/. This separate
+  certificate is not Lean-formalized and does not give full classification
+  or a migration example.
 CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   free elastic flow with unbounded arclength centroid. At source9ef471f7,
   run43214648337 passed all77 jobs:75 concrete shards covering3750 steps,
@@ -48,9 +52,13 @@ CentroidEscape/: COMPLETE concrete Lean proof of a smooth closed immersed
   The final existence theorem has no remaining numerical or analytic proof
   hypotheses. See CentroidEscape/FullVerification.txt and FullSemanticAudit.txt.
   This resolves the centroid question; it does not imply migration.
-OpenTranslators/: supplementary complete-open-curve translator estimates
-  derived from the actual ODE. Global continuation and geometric existence
-  are not yet formalized.
+OpenTranslators/: the original translator ODE now has proved unique smooth
+  global solutions for all initial states. Actual coordinate reconstruction
+  gives a nonstraight intrinsically complete immersed geometric translator
+  with joint smoothness,unit speed,and normal velocity equal to minus its
+  actual elastic force. The pure-normal gauge,properness and embeddedness
+  are not claimed. This addresses the unrestricted complete-immersion
+  formulation,not an unspecified bounded-regularity or properness class.
 
 Each populated directory is a separate Lake project with its own root
 module and enforced axiom audit. Build it from that directory. No proof

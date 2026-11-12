@@ -1,0 +1,202 @@
+INDEPENDENT SECOND REVIEW OF THE ROTATING CLOSED-PROFILE CERTIFICATE
+13 November 2026. Reviewer: finish_curve_input, who did not construct the
+numerical candidate or the validated integrator.
+
+VERDICT AND SCOPE
+
+No substantive error or unclosed analytic estimate was found in the reviewed
+version. The combination of the explicit real-analysis argument, the audited
+Arb generator, its two completed grid-data reports, and the successful root
+checks supports existence of one nonconstant rotating closed similarity
+profile. This is a computer-assisted argument, not a Lean kernel theorem,
+not an enumeration of periodic orbits, and not a complete classification.
+No priority or novelty conclusion was checked.
+
+I read the complete AnalyticCertificate.txt, validated_metric_shoot.py,
+check_shooting_certificate.py, both 4000-step reports, and the final shooting
+certificate. I independently checked the formulas and constants below.
+The corrected proof includes the explicit bound |theta|<=272 needed when
+invoking compact-set continuation for the full six-dimensional ODE.
+
+1. FIELD, SCALING, AND LOCAL COEFFICIENT MAJORANTS
+
+The normalized state u=v/8 gives exactly
+ (k',u',p',q',b',theta')=(8u,-k^3/16-p/8-bq/8,-kq,1+kp,0,k).
+This is the actual support ODE with dilation coefficient 1. On the specified
+outer tube the infinity norm bounds 75,17,4 for f,Df,D^2f are valid. In
+particular the u row of Df has sum 14.736875; its bilinear Hessian row bound
+is 3.4375. Both p and q Hessian row bounds are 2.
+
+The expansion about any allowed center is coefficientwise dominated by
+75+17w+2w^2+w^3/16, and 75(1+w/10)^3 has respective coefficients
+75,22.5,2.25,.075, all large enough. Its scalar solution is
+w=10((1-15t)^(-1/2)-1). Therefore the state tail
+10*(15|h|)^61/(1-15|h|) after degree 60 is valid. This is a convergent
+power-series existence argument, not a posterior assertion of small error.
+It works in both time directions by absolute coefficient majorization.
+The unrestricted theta coordinate causes no field-bound issue because the
+field is independent of theta.
+
+For the matrix equation the coefficient norm of Df(X) is bounded by
+17+4w+(3/16)w^2, which is in turn dominated by g'(w).
+The scalar fundamental majorant is (1-15t)^(-3/2), whose coefficient is
+(2n+1)*binom(2n,n)*15^n/4^n <= (2n+1)*15^n. Summing its tail yields exactly
+s^61*(123/(1-s)+2s/(1-s)^2), s=15|h|. Multiplication by ||M0|| is required
+and is included. This is the matrix operator infinity norm, not an
+entrywise estimate with a missing dimension factor.
+
+2. IMPLEMENTATION OF STATE AND MATRIX RECURRENCES
+
+The state recurrence is the coefficient recurrence of the displayed field.
+The matrix recurrence differentiates all its nonlinear terms. In particular
+the b-sensitivity term -q[n]/8 in the u row is present. Updating the state
+coefficient of degree n+1 before the matrix coefficient of degree n+1 is
+harmless: the latter only uses state coefficients through degree n.
+
+The stored 5-by-5 block is completed to the full 6-by-6 matrix. Its b row
+is exactly the b-coordinate unit row, and its initial-theta column is the
+theta-coordinate unit column. These are exact invariants of the augmented
+ODE, so no parameter sensitivity has been omitted. Norms and inverses are
+computed on that completed matrix at every grid point, including the final
+point. All acceptance tests use Arb inequalities; floating-point conversions
+are confined to progress diagnostics or the choice of a subsequently
+validated rational preconditioner.
+
+3. LOCAL TUBE, ROUNDING, AND RESET ERRORS
+
+The four inner-to-outer margins after .008 units of worst-case coordinate
+motion are .072, .0592675, .612, and .604. All exceed .05. This validates
+the first-exit tube argument for each exact local segment. The b coordinate
+is constant. Initial decimal-to-dyadic rounding is explicitly included.
+
+The radius of each finite polynomial evaluation is recorded before replacing
+it by its exact dyadic midpoint. State reset error is bounded by that radius
+plus the state analytic tail. Matrix reset error is bounded by the row-sum
+of entry radii plus ||M_j|| times the analytic matrix tail. The code records
+both rounding sums and these full jump sums. The checker independently uses
+the larger uniform tail budgets, rather than relying only on the latter sums.
+Serialization is through Arb ball strings, preserving containment.
+
+The step is constructed from the exact center decimal half-length divided by
+4000. The revised checker verifies that each stored step ball contains that
+signed rational step, as well as checking sign, order, precision, completion,
+and equality of both center/phase lists.
+
+4. GLOBAL METRIC BOOTSTRAP AND ENTIRE PARAMETER CUBE
+
+For w=M^{-1}(x-X), differentiating on each exact reference segment cancels
+the linear error, leaving ||w'|| <= (I*4*K^2/2)||w||^2. At a reset the
+correct multiplier is Id+M_new^{-1}(M_old_end-M_new), and the correct
+additive term is M_new^{-1}(X_old_end-X_new). Both are included.
+Discrete Gronwall therefore gives the displayed (sigma+T*C*R^2)exp(epsilon)
+bound. Initially M=Id, so the initial error d0 is correctly unmultiplied;
+later state jumps carry the inverse bound I.
+
+The strict bootstrap inequality holds for R=1e-46. For every initial state
+coming from the parameter cube, ||Dz||<=1 and R_u=2e-32 give the second
+strict bootstrap. The time-coordinate change contributes at most 75e-32
+additional displacement. The spare tube margin is far larger than these
+errors. All non-angular coordinates are bounded, and theta'=k with theta(0)=0
+gives |theta|<=8.5*32=272. Thus the compact-set continuation step applies
+to the full polynomial ODE. Strict margins also give existence on an open
+neighborhood of the closed parameter cube, as needed for derivatives.
+
+5. VARIATIONAL ERROR, INVERSE BOUND, AND SHOOTING HESSIAN
+
+For V=M^{-1}P the coefficient norm is <=I*4*K^2*R. Its jump matrices are
+the same ones used above. The product/integral norm estimates give
+||V-Id||<=exp(T*I*4*K^2*R+epsilon)-1. Every inverse jump exists because
+each jump norm is below epsilon<1/4; (1-d)^(-1)<=exp(2d) justifies the
+inverse product estimate. With R_u, the forward and inverse bounds are
+uniform over the entire parameter cube, not only along the center trajectory.
+The extra terminal-time interval accounts for the additional factor 2.
+Consequently ||D_z Phi||<=4K and ||(D_z Phi)^(-1)||<=4I are justified.
+
+The second-variation integral formula is valid for this smooth polynomial
+flow. With |t|<32 it yields
+32*(4K)*(4I)*4*(4K)^2. Mixed initial/time and double-time derivatives are
+bounded by 17*(4K) and 17*75. The linear initial-data map has norm at most
+1 and zero second derivative. The two time branches and output projection
+of norm 8 produce the factor 16. The resulting expression is
+16777216000004372400 < 1e20. Thus the Hessian bound really is uniform on
+the cube, and gives ||DF(c)-DF(c0)||<=1e20*r with no dimension factor lost.
+
+The center shooting Jacobian has the correct length column f(C+)+f(C-).
+Its other columns use (M+-M-)Dz. The bound 16D+16*17E covers their combined
+operator error; inflating every entry by that whole bound is conservative.
+The residual inflation 16E likewise covers both branches and output scaling.
+The irrational target 112*pi/57 is obtained from the Arb pi enclosure.
+
+6. BANACH AND THE ACTUAL GEOMETRIC CURVE
+
+The finite-decimal matrix B is a legitimate exact rational preconditioner.
+Its floating-point origin has no logical role after validating its nonzero
+determinant, norm, and the residual/Jacobian inequalities. The checker gives
+ q <= about 1.732e-7,
+ eta <= 2.60e-40,
+ eta+q*r < r=1e-32.
+These certify a contraction of the closed infinity-norm cube into itself.
+Completeness gives a fixed point, and invertibility of B makes it F(c)=0.
+There is no unstated assumption that the numerical center is already a root.
+
+At this exact root the four support variables match at -l and l. Polynomial
+ODE uniqueness permits a smooth periodic extension with period 2l. The exact
+angle increment is -112*pi/57. With T=(cos theta,sin theta), N=JT and
+beta=qT+pN, direct differentiation gives beta'=T and signed curvature k.
+After 57 support periods the angle increment is -112*pi=-56*(2*pi), so
+both position and all derivatives agree. This is an actual closed immersion,
+not just closure of the tangent or support variables. Its turning number
+is -56. The strict bound v'(0)<-200 rules out constant curvature, and b>.009
+rules out zero rotational coefficient.
+
+The stated lambda(t)=(1+4t)^(1/4) and angle=(b/4)log(1+4t) have normal
+velocity lambda^(-3)(p+bq), equal to minus the scaled force. The remaining
+tangential velocity can be removed by a smooth periodic reparametrization.
+This sign and scaling check supports the rotating expanding-profile claim.
+The rotational symmetry also explains why no strict-half-plane migration
+conclusion follows from this example.
+
+7. INDEPENDENT EXECUTION AND LIMITS OF THE REVIEW
+
+IndependentReviewChecks.py reran the original lightweight checker with only
+its output path redirected. It exited 0. The resulting
+IndependentRecheckCertificate.json is byte-identical to the authoritative
+shooting_certificate.json. Six local tests (initial point and both reported
+endpoints, each in both step directions) compared degrees 60 and 72 at 100
+decimal precision. All state and completed-matrix differences lie below the
+sum of analytic-tail and arithmetic-rounding budgets. These are useful local
+consistency diagnostics, not a replacement for the coefficient proof.
+
+I did NOT independently replay all 8000 long-trajectory steps. The two reports
+are generated execution data, not standalone kernel-checkable proofs. Their
+production by the audited generator and the reliability of Python/FLINT/Arb
+remain part of the computer-assisted proof's trust boundary. A hash check
+alone does not establish that an arbitrary JSON report is truthful. The
+existing full-run reports and logs, source audit, analytic linkage, and these
+independent rechecks are the evidence actually reviewed here.
+
+For public reproducibility, also bundle the two auxiliary JSON inputs read
+by the generator/checker from classification_odd_branch:
+arb_rotating_o55_n1800.json and natural_shooting_jacobian.json, or inline the
+exact finite decimal center/phase/preconditioner data in a later revision.
+This is a packaging requirement, not an analytic failure of the present
+explicit finite-decimal witness.
+
+8. SHA256 OF THE REVIEWED AUTHORITATIVE FILES
+
+AnalyticCertificate.txt
+0be3f8801ba24781ae8cf697454596a1aed4ad398849fc504e23c12bfdee3192
+validated_metric_shoot.py
+f9d9c04b663e7ee1f3eeeb3bff2b7c7203b16b399329e6c387726a7e027b8049
+check_shooting_certificate.py
+5f132b7b7abe5e1636989ea560602a94e638dad0678ee516d25a50060a73ed64
+metric_plus_o60_n4000.json
+6cb0b6eeca760093d1ec42c27296d5913fb41d398ed12c08d5b18b6637cc2075
+metric_minus_o60_n4000.json
+32d7f521fb7d9d077eb414d78102b6daf7c898fb6c9f12188b2b3f8a27c8a3af
+shooting_certificate.json and IndependentRecheckCertificate.json
+7f227259292b5e4795f6df4e2f5f4e907bdc360a973915fee2e0bf3015ed3486
+
+All six authoritative inputs were unchanged by the independent execution.
+The machine-readable local diagnostics and hashes are in
+IndependentReviewChecks.json.

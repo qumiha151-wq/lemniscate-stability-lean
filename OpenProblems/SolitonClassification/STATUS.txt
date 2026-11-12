@@ -121,3 +121,17 @@ equation is equivalent to existence of a periodic support profile with
 exactly that k. This equivalence does not assert geometric position
 closure without the angle condition. Its two additional frozen modules
 are listed in ScalarReconstructionNecessityFrozenManifest.csv.
+
+RIGOROUS ROTATING EXAMPLE -- HUMAN + ARB, NOT LEAN
+RotatingCertificate/ contains a reviewed computer-assisted existence proof
+of one nonconstant closed rotating expanding profile. The support period
+has angle increment -112*pi/57, so 57 periods close the actual reconstructed
+curve. The proved parameter box has b>0.009. Two 4000-step order-60 Arb
+integrations, explicit tail/reset/variational bounds, and a strict shooting
+contraction supply the existence argument. The analytic proof and independent
+review state the precise computational trust boundary. The review replayed
+the checker and six local comparisons; it did not repeat all 8000 steps.
+This is not a Lean-kernel certificate and not a classification of all
+profiles. The example's finite rotational symmetry puts the origin in its
+convex hull; no half-plane migration conclusion follows. ReproductionLayout.txt
+and the 16-file inventory include both necessary sibling JSON inputs.

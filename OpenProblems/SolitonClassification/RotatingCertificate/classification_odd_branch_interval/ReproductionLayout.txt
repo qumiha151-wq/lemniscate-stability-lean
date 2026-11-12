@@ -1,0 +1,50 @@
+MINIMAL PUBLIC REPRODUCTION LAYOUT
+
+Keep these two directories as siblings under a single RotatingCertificate
+directory. The names preserve the audited source paths without modifying
+the generator or its recorded hash:
+
+ RotatingCertificate/
+   classification_odd_branch_interval/
+     validated_metric_shoot.py
+     check_shooting_certificate.py
+     AnalyticCertificate.txt
+     metric_plus_o60_n4000.json
+     metric_minus_o60_n4000.json
+     shooting_certificate.json
+     IndependentAnalyticReview.txt
+     IndependentReviewChecks.py
+     IndependentReviewChecks.json
+     IndependentRecheckCertificate.json
+     metric_plus_console.log
+     metric_minus_console.log
+     Result.txt
+     ReproductionLayout.txt
+   classification_odd_branch/
+     arb_rotating_o55_n1800.json
+     natural_shooting_jacobian.json
+
+The two sibling JSON files are required INPUT DATA from this same profile
+problem. No other classification, centroid, stability, or migration source
+tree is needed. In particular no other Lean project is imported.
+
+Use Python with python-flint and numpy installed. The audited execution used
+Python3.12.14 and python-flint0.9.0; the exact runtime strings are recorded in
+shooting_certificate.json. The optional work/pydeps search path in the
+scripts does not prevent normal Python package resolution when absent.
+
+For a quick replay from any working directory:
+ python PATH/RotatingCertificate/classification_odd_branch_interval/check_shooting_certificate.py
+
+For complete regeneration, run these before the checker:
+ python PATH/RotatingCertificate/classification_odd_branch_interval/validated_metric_shoot.py --sign 1
+ python PATH/RotatingCertificate/classification_odd_branch_interval/validated_metric_shoot.py --sign -1
+
+The two integrations are independent and may run concurrently. Each took
+about405 seconds on the original machine. The independent review script
+reruns the quick checker with redirected output and six local consistency
+checks; it does not regenerate all8000 integration steps.
+
+Paths, destination names, byte sizes and SHA256 values are machine-readable
+in minimal_reproduction.json. That manifest is a file inventory, not a
+substitute for the analytic argument or the validated computation.

@@ -1,0 +1,291 @@
+ANALYTIC LINKAGE FOR ONE ROTATING SHOOTING CERTIFICATE
+13 November 2026. This is a human real-analysis argument, not Lean code.
+The accompanying checker must finish successfully before any root is asserted.
+No complete classification is claimed.
+
+1. EXACT PARAMETERS, NORMALIZED STATE, AND TARGET
+
+Unknowns are c=(k0,p0,l,alpha,b), with the infinity norm. The phase vector
+is the exact decimal/rational pair
+ e=(-0.05995393111634394,-0.9982011451324311).
+Initial physical support state is(k0,alpha*e0,p0,alpha*e1), with theta0=0.
+Use normalized autonomous state x=(k,u,p,q,b,theta), u=v/8, and field
+
+ f(x)=(8u,-k^3/16-p/8-bq/8,-kq,1+kp,0,k).               (1)
+
+The initial-state map z(c)=(k0,alpha*e0/8,p0,alpha*e1,b,0) is linear and
+has infinity operator norm at most1. The length coordinate has zero
+initial-state derivative. Write Phi(t,z) for the local flow of(1).
+The natural shooting map is
+
+ F(c)=Q(Phi(l,z(c))-Phi(-l,z(c)))+(0,0,0,0,112*pi/57),    (2)
+
+where Q extracts(k,8u,p,q,theta), so ||Q||=8. The exact center is recorded
+as finite decimal strings in the data. alpha is the EXACT decimal product
+of the frozen rho and b center strings, computed with sufficient Decimal
+precision to retain the whole finite product. The phase line is kept fixed.
+The root cube is ||c-c0||_infinity <= r, r=10^-32.
+
+2. OUTER TUBE AND LOCAL EXISTENCE
+
+In normalized coordinates use the convex tube
+ |k|<=8.5, |u|<=4.5, |p|,|q|<=8.5, |b|<=.02;
+there is no restriction on theta. Direct coefficient/row bounds give
+
+ ||f||<=75, ||Df||<=17, ||D^2 f||<=4.
+
+Here the nontrivial derivative row for u has absolute row sum
+ 3*(8.5)^2/16+1/8+.02/8+8.5/8 =14.736875<17.
+The p and q rows have sums at most17; the k row has sum8 and theta row1.
+For the bilinear Hessian, the u row is bounded by3*8.5/8+1/4=3.4375,
+the p/q rows by2, and all other rows vanish. The cubic Taylor coefficient
+in the infinity-norm majorization is1/16.
+
+At every center C in the tube, absolute coefficients of f(C+h) are thus
+majorized by
+ 75+17w+2w^2+w^3/16 <= g(w)=75(1+w/10)^3.                (3)
+The scalar equation w'=g(w), w(0)=0 has solution
+ w(t)=10((1-15t)^(-1/2)-1).
+Coefficient induction for the polynomial ODE bounds every normalized
+state coefficient by the corresponding coefficient of w; in particular
+the n-th coefficient is bounded by10*15^n for n>=1. These convergent
+series solve(1) for |t|<1/15. Polynomial local uniqueness identifies the
+series with the unique local ODE solution. This proves local existence;
+no unproved global ODE existence is hidden in the integration routine.
+
+For an order-N state Taylor polynomial at |h|<1/15, with s=15|h|,
+the omitted tail is bounded in infinity norm by
+
+ tau_x=10*s^(N+1)/(1-s).                                (4)
+
+The field coefficients about C are bounded as polynomials for every w>=0;
+this coefficient argument does not assume the true path already stays
+inside the tube. To obtain the tube property separately, each numerical
+grid center is checked against the smaller bounds
+ |k|<8.14, |u|<4.125, |p|,|q|<7.31, |b|<.01.
+Each step has |h|<.008. On the outer tube, component bounds for
+(k',u',p',q') are(36,39.4665625,72.25,73.25).
+For all four constrained moving coordinates the inner-to-outer margin
+minus .008 times that component bound exceeds .05. A first-exit argument
+therefore keeps every local exact reference segment in the tube, with
+more than .05 spare margin. The coordinate b is constant. Theta is free.
+The same estimates hold backwards in time, using absolute coefficients.
+
+3. LOCAL FUNDAMENTAL MATRIX TAIL
+
+Let X(t) be a local exact state segment from C and let M(t) solve
+ M'=Df(X(t))M with prescribed initial matrix M0.
+In the coefficient majorization, ||Df(X(t))|| is dominated by g'(w(t)).
+The scalar fundamental majorant solves U'=g'(w)U, U(0)=1, hence
+ U(t)=(1-15t)^(-3/2).
+Its n-th coefficient is(2n+1)*binom(2n,n)*15^n/4^n, at most
+(2n+1)*15^n. Thus the omitted matrix Taylor tail after degree N is at most
+
+ ||M0|| * tau_M,
+ tau_M=s^(N+1)((2N+3)/(1-s)+2s/(1-s)^2).                (5)
+
+This is an OPERATOR infinity-norm bound, not an entrywise bound. The
+matrix Taylor recurrence is exactly the derivative recurrence for(1).
+The implementation stores the nonconstant5x5 block: rows(k,u,p,q,theta)
+and columns for initial(k,u,p,q,b). The missing b row is(0,0,0,0,1,0)
+and the missing initial-theta column is(0,0,0,0,0,1). These are exact
+invariants of the full6x6 variational equation, not dropped sensitivities.
+
+4. WHAT THE ARB PROGRAM ACTUALLY ENCLOSES
+
+Every grid state C_j and matrix M_j is an exact dyadic midpoint. Starting
+there, Arb computes the finite state and matrix Taylor polynomials and
+evaluates them at the exact rational step h=+/-l0/4000. Ball arithmetic
+also encloses conversion/evaluation error in the step. The next grid
+state/matrix is chosen as the midpoint of that evaluation. The program
+records, before resetting, the largest state radius and largest matrix
+row-sum of radii. No reset error is silently discarded.
+
+Let X_j(h) and M_j(h) denote the TRUE local state and fundamental segment
+from C_j,M_j, whose local existence was just proved. The jumps to the
+next dyadic centers satisfy
+
+ d_j=||X_j(h)-C_(j+1)|| <= rounding_x,j+tau_x,
+ D_j=||M_j(h)-M_(j+1)|| <= rounding_M,j+||M_j|| tau_M.    (6)
+
+The integrator checks at EVERY grid point, including the endpoint,
+ ||M_j||<1000 and ||M_j^-1||<2500.
+The inverses are computed with Arb on exact dyadic matrices; a finite
+verified inverse encloses the actual inverse. Every reported norm check
+is a strict ball inequality. In particular no floating-point SVD is used.
+The field Lipschitz bound17 gives on every true local segment
+ ||M_j(t)||<=1000 exp(17*.008)<K=2000,
+ ||M_j(t)^-1||<=2500 exp(17*.008)<I=4000.                (7)
+Thus each local reference matrix is invertible throughout its segment.
+
+N=60 and n=4000 are used for each sign. The checker recomputes(4),(5)
+from the exact step and verifies tau_x<2e-56, tau_M<3e-55. It uses the
+independently enlarged total budgets
+ Sx=sum(rounding_x)+4000*(2e-56),
+ SM=sum(rounding_M)+4000*1000*(3e-55).
+The finer jump totals emitted by the integrator are also checked below
+these budgets. Initial exact-parameter-to-dyadic rounding is included as
+d0. The printed balls include the rounding of serialization itself.
+
+5. GLOBAL TRUE-FLOW EXISTENCE AND ERROR WITHOUT exp(17*l)
+
+Concatenate the TRUE local segments just described into a piecewise
+reference path X and a piecewise reference matrix M. Both can jump at
+the grid points; all jumps are bounded by(6). Compare with the actual
+ODE solution x from the exact initial condition, initially known only
+on its local existence interval. On any open segment set
+ e=x-X, w=M^-1 e.
+Because X and M solve their exact local equations, linear terms cancel:
+ w'=M^-1(f(X+Mw)-f(X)-Df(X)Mw).
+As long as the true path stays in the tube,
+
+ ||w'|| <= C ||w||^2, C=(I*4*K^2)/2.                   (8)
+
+At a grid point,
+ w_new=(Id+M_new^-1(M_old_end-M_new))w_old_end
+          +M_new^-1(X_old_end-X_new).
+The multiplicative jump has error at most I*D_j, and the additive jump
+has norm at most I*d_j. Define
+ sigma=d0+I*Sx, epsilon=I*SM, T=32.
+Discrete Gronwall and(8), stopped at the first crossing of a proposed
+radius R, give
+
+ ||w|| <= (sigma+T*C*R^2) exp(epsilon).                 (9)
+
+The checker verifies this expression is STRICTLY smaller than R=1e-46.
+It also verifies KR<.001, much smaller than the .05 reference margin.
+The first-exit assumption is therefore self-consistent. The tube itself
+is NOT bounded in theta. For continuation, additionally use theta'=k,
+theta(0)=0, |k|<=8.5 and |t|<32: then |theta(t)|<=272. The other five
+state coordinates are bounded by the tube. Thus the actual trajectory
+stays in a compact subset of finite-dimensional state space on each
+finite time interval (and a slightly larger compact set covers nearby
+initial theta values). Polynomial local existence and this compactness
+allow continuation past every candidate terminal time; hence the true
+ODE exists on the entire positive and negative half intervals.
+Its normalized endpoint error is
+at most E=K*R. This argument uses the true local Taylor tails; it is not
+an arithmetic-roundoff-only calculation.
+
+For EVERY parameter point in the cube of radius r=1e-32, the initial
+state displacement has norm at most r. The same argument now uses
+R_u=2r and verifies
+ (r+sigma+T*C*R_u^2)exp(epsilon)<R_u.
+Thus the entire initial-state parameter cube stays in the same tube.
+Changing the terminal time from +/-l0 to +/-l adds at most r of travel;
+the extra displacement is at most75r. The checker verifies the spare
+margin and exp(17r)<2. Therefore(2) is defined on an open neighborhood
+of the CLOSED parameter cube, not only at its center.
+
+6. DERIVATIVE AND INVERSE DERIVATIVE ENCLOSURES
+
+Let P be the true variational flow with P(0)=Id along any of these
+actual trajectories, and put V=M^-1 P on each segment. It satisfies
+ V'=M^-1(Df(x)-Df(X))M V.
+For ||w||<=R, the coefficient norm is at most I*4*K^2*R. At a node V
+is multiplied by Id+M_new^-1(M_old_end-M_new), as in(9). Therefore
+
+ ||V-Id|| <= exp(T*I*4*K^2*R+epsilon)-1,
+ ||P-M|| <= D=K*(exp(T*I*4*K^2*R+epsilon)-1).           (10)
+
+This matrix estimate follows by the integral equation and product bound
+for the linear ODE/jump evolution; no numerical variational solution is
+assumed to be exact. For inverse bounds, epsilon<1/4 ensures that every
+jump inverse exists and has norm at most exp(2 I D_j). Hence
+ ||V^-1|| <= exp(T*I*4*K^2*R+2epsilon).
+
+Use R_u=2r in this last inequality. The checker proves the exponential
+is below2, both forward and inverse, and allows another factor2 for the
+terminal-time extension. Uniformly over the parameter cube and all
+needed times, true initial-state derivatives satisfy
+
+ ||D_z Phi||<=4K, ||(D_z Phi)^-1||<=4I.                (11)
+
+At the center, the stored endpoint matrices M+ and M- approximate the
+true flow derivatives with the sharper bound D in(10). The approximate
+shooting Jacobian uses(M+-M-) times the exact initial-data differential;
+its length column is f(C+)+f(C-). The latter plus sign is required when
+differentiating Phi(l)-Phi(-l). Taking the physical output projection Q
+into account, the full matrix infinity error is at most
+
+ Jerr=16D+16*17*E.                                    (12)
+
+The checker inflates EVERY Jacobian entry by this bound (an intentionally
+larger rectangular enclosure). It inflates each center residual by16E,
+also conservative. pi is obtained from the rigorous Arb constant ball,
+and112*pi/57 is computed by ball arithmetic. Thus the returned residual
+balls enclose the exact irrational-angle target, not a decimal surrogate.
+
+7. UNIFORM SHOOTING HESSIAN
+
+The standard differentiated variational equation gives, for initial
+state arguments,
+ D_z^2 Phi(t)=P(t) integral_0^t P(s)^-1 D^2f(x(s))[P(s),P(s)] ds.
+Taking absolute time for the negative branch and applying(11) gives
+ ||D_z^2 Phi|| <=32*(4K)*(4I)*4*(4K)^2.
+For mixed/time derivatives use
+ ||D_z Phi_t||<=17*(4K), ||Phi_tt||<=17*75.
+The initial-data map is linear with norm<=1. A combined parameter
+bilinear estimate therefore gives the valid shooting Hessian bound
+
+ Hshoot <=16*(32*(4K)*(4I)*4*(4K)^2+2*17*(4K)+17*75)
+          <1e20.                                     (13)
+
+All these estimates hold UNIFORMLY in the parameter cube, by Section5.
+Consequently ||DF(c)-DF(c0)||<=1e20*r throughout that cube. This is the
+required interval Jacobian variation bound; checking the center matrix
+alone would not suffice.
+
+8. BANACH ZERO CERTIFICATE
+
+B is an explicitly recorded finite-decimal5x5 matrix, considered exact
+rational. Its origin as a floating-point approximate inverse is irrelevant
+to correctness: every use of B is rechecked by interval arithmetic.
+Let J0 be the rectangular enclosure from(12), and f0 the center residual
+balls. The checker verifies B is nonsingular, ||B||<100, and computes
+
+ q=||Id-B*J0||+||B||*(1e20)*r,
+ eta=||B*f0||,
+
+requiring q<.01 and eta+q*r<r. Thus c -> c-B F(c) is a contraction of
+the closed radius-r cube strictly into itself. Banach's theorem gives a
+unique fixed point in that cube; nonsingularity of B makes it an exact
+zero of F. The pi enclosure is already included in f0.
+
+The initial physical v' equals8 times the second component of(1).
+Its parameter derivative has norm at most8*17=136 on the cube; the
+checker conservatively inflates by1000r and proves v'(0)<-200. Hence
+curvature is nonconstant. It also proves b>.009 and l>31 throughout the
+cube, so rotation is strictly nonzero and the period is positive.
+
+9. GEOMETRIC CONSEQUENCE OF THE EXACT SHOOTING ZERO
+
+The four support variables(k,v,p,q) have identical values at -l and l.
+Uniqueness of their autonomous polynomial ODE therefore extends them
+smoothly and periodically, with support period L0=2l. The angle increment
+over L0 is exactly-112*pi/57 by(2). Put T=(cos theta,sin theta), N=JT,
+and beta=pN+qT. Equations(1) imply beta'=T, so this is an immersion of
+unit speed. After57 support periods T and N agree because the total
+angle is-112*pi; p and q already agree after each support period.
+Thus beta is smooth closed with period57 L0 and turning number-56.
+Its curvature is nonconstant and it satisfies
+ k''+k^3/2=-p-bq with b>.009.
+
+It is consequently a noncircle rotating expanding similarity profile.
+The geometric free-elastic-flow evolution uses
+ lambda(t)=(1+4t)^(1/4), rotation=(b/4)log(1+4t).
+Its normal velocity is(p+bq)/lambda^3, exactly minus the scaled elastic
+force. A smooth periodic tangential reparametrization gives pure normal
+gauge if that convention is required. This proves existence of ONE
+rotating profile after all numerical checks pass; it is not a complete
+classification. Its finite rotational symmetry puts the origin in its
+convex hull, so no strict-half-plane migration claim follows.
+
+10. AUDIT BOUNDARY
+
+The mathematical trust boundary consists of the elementary local ODE,
+majorant, matrix evolution, and Banach arguments written here, plus Arb's
+outward-rounded arithmetic and the checked source implementation. No
+other problem's Lean project is imported or modified. The data files and
+source hashes must match the checker output. A successful checker run is
+a computer-assisted real-analysis certificate, not a Lean kernel theorem.

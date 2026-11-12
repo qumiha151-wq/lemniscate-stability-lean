@@ -1,12 +1,33 @@
-Supplementary open-curve translator question; partial formalization.
+Supplementary open-curve translator question: global geometric existence.
+13 November 2026. Independent OpenTranslators Lake project.
 
-The Lean proof derives H'=v sin(theta), with H=v^2/2+k^4/8,
-directly from the translator ODE, proves sqrt(H+1) is 1-Lipschitz,
-and bounds all three state coordinates on any bounded interval.
+The actual angle/curvature system theta'=k,k'=v,v'=-k^3/2+sin(theta)
+has a unique global solution for every initial triple. Smoothness follows
+from the equation. Existence is proved by a bounded globally Lipschitz
+regularized field and an actual integral clock; surjectivity of the clock
+is derived from energy-radius estimates,not assumed.
 
-Local existence, global continuation, complete immersed geometric
-reconstruction, properness and embeddedness are not formalized here.
-There is no complete-translator existence theorem in this Lake project.
+Geometry.lean constructs beta(s)=integral(cos(theta),sin(theta)) and the
+eternal family X(t,s)=beta(s)+(t,0). It proves joint C-infinity,actual
+Euclidean unit speed and immersion,signed curvature and elastic force,
+and the geometric normal-velocity equation (X_t dot N)=-F with N unit
+and orthogonal to the actual tangent. The pullback metric is exactly u*w
+and the actual arclength distance is the standard real-line distance;
+the parameter domain is complete.
 
-This independent project does not import the closed-centroid, migration,
-length-growth or existing lemniscate-stability projects.
+Initial state(pi/2,1,0) supplies a concrete nonstraight example. Its image
+is proved not to lie in any affine line with nonzero normal,and its actual
+normal velocity at s=0 is -1 at every time.
+
+This is a geometric translator theorem in the broad complete immersed
+class. X_t=(1,0) generally also has a tangential component. A pure-normal
+parametrization is not yet formalized. Properness,embeddedness,and global
+curvature/derivative bounds are not asserted. The source paper does not
+specify these extra conditions in its brief translator question; this
+result must not be silently promoted to an unspecified stricter class.
+No novelty or publication-priority claim is made.
+
+All source modules import only Mathlib and this project. See
+GlobalGeometryFrozenManifest.csv,GlobalExistenceScope.txt,GeometryScope.txt,
+and GlobalGeometrySemanticAudit.txt. Other closed-curve open questions
+remain separate and are not resolved by this construction.
