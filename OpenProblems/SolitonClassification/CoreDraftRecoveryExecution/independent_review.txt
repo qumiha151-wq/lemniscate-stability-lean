@@ -1,0 +1,138 @@
+INDEPENDENT REVIEW: CONCRETE CORE DRAFT RECOVERY EXECUTION
+13 November 2026. Reviewer: finish_curve_input.
+
+Reviewed generator:
+work/prepare_core_draft_recovery_execution.py
+  C9F1D98CCC55E3FB81D1E80A5872773029A6B5F57190479271539E2D9E5D497A
+Reviewed output directory: work/core_draft_recovery_execution_review.
+request.json
+  4DAFD3235270B9792012CAE912A3CA7820915835728694ED0BFC9C9D68D89E5E
+rotating-recover-core-draft.yml
+  5E5D1B4514860B5A836907E74C780C0D368D517669B8B3E2FD66CB3C80662B8C
+Frozen package SourceInventory.json
+  821ECDD18EF62D557F2D6294F819A5F79C99486FD3694AF7EB93E9E2E6214FB9
+New tool commit P: 37fa090e1f51cb17d40f45706fb24879fd068d75.
+Reported published tool tree: 412a0a04bbd8640f18aa98be1f0b96923738036b.
+
+Conclusion: no blocking source, identity, workflow-context, or scope issue
+found. This is review of the concrete prepared execution. It does not say
+the workflow has run, the release is published, or a new durable record
+exists. This reviewer made zero GitHub requests/writes and changed none of
+the reviewed sources. The underlying final recovery implementation and its
+actual/synthetic evidence boundaries were reviewed separately in
+CoreDraftRecoveryImplementationIndependentReview.txt (EBE7C52A...A174658).
+
+1. P/Q AND ORIGINAL HISTORY
+
+The request pins the already published tool P=37fa... and final recovery
+source F2F6231B..., while retaining the original request as exactly
+66b278629384aa3b01bf5732def0512b711feac68582e6a44b99c19b0a63f18e.
+That original request still binds its original publisher P=d64ad3cf..., not
+the recovery tool P. All forty original journal files are separately pinned;
+the final chain digest remains e166d05a...ff980a. The failed execution pins
+run 43360690582, attempt 1, job 131673215746 and its original evidence artifact
+identity. No new request field rewrites the original history.
+
+The tool checkout explicitly uses P. The separate request checkout uses
+the actual workflow github.sha, Q, and the request bytes must match the
+literal approved request SHA. Verification then runs checked_tool_revision
+and actions_context, so the actual committed helper/entry blobs are bound
+to P and the real workflow Q is separately recorded. Q is not replaced with
+P and need not be embedded in its own request bytes, avoiding a hash cycle.
+The supplied tool tree/remote publication verification was reported by root;
+I did not independently repeat the GitHub remote tree check in this review.
+
+2. EXACT OBJECT AND INPUT BYTES
+
+The actual prepared request selects release 443789076 and asset 742149339,
+test_fixture=false. Original archive identity remains exactly 1303430664
+bytes and SHA256
+01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c.
+Its tag/source/base/report identities continue through the unchanged
+original request and the recovery preflight. The helper pin set includes
+the frozen old publisher, URL protocol and exact arithmetic/helper closure.
+
+The workflow hashes SourceInventory.json before reading its file list,
+requires the exact package file set and checks every file's size/hash while
+rejecting file symlinks. It imports only after this verification. The sibling
+performance/reference.py layout is present and is checked by the reviewed
+recovery code's committed-blob loop. PYTHONDONTWRITEBYTECODE=1 prevents Python
+imports from introducing cache files into this exact inventory. The fixed
+request hash is checked before writer.prepare; the latter revalidates the
+original journal and core evidence. The executor repeats its own pinned
+input/tool checks and later rechecks them around publication.
+
+This verifier does not re-download or restore six gigabytes of libraries,
+compile Lean, or substitute a local placeholder for the actual archive.
+The actual remote content checks are the executor's two full asset-ID
+downloads. The code may attempt only the previously reviewed single PATCH
+to the pinned existing release; there is no creation/upload/delete/tag edit.
+
+3. WORKFLOW AND CREDENTIAL SCOPE
+
+The workflow uses the intended research branch and its own workflow-path
+push filter, with workflow_dispatch also explicit. It introduces no broad
+numeric build trigger. A fixed rotating-core-publisher concurrency group
+and cancel-in-progress:false serialize cooperating core publishers. Both
+source checkouts set persist-credentials:false. The explicit GH_TOKEN
+environment variable is supplied only to the executor step, not to the
+preflight or result checker. Checkout/artifact actions still use their normal
+Actions authentication; this observation is not a claim that the entire
+job is incapable of accessing the workflow's automatic token.
+
+The run-attempt-one guard appears both in preflight and the reviewed actual
+executor. WORK is initialized from shell RUNNER_TEMP into GITHUB_ENV before
+its first use. There is no invalid runner.temp expression in jobs.env.
+github.workspace in jobs.env and env.WORK in step inputs have the proper
+context placement. The generated bash quotes paths and passes the literal
+request hash to the execution CLI. It calls no global Lean/toolchain command.
+
+The job timeout is 30 minutes. The executor retains its bounded streaming
+and network deadlines; this review does not benchmark the real 1.3GB
+downloads. A timeout must be treated as an observed failure/possible
+ambiguous publication, not permission to rerun automatically.
+
+4. RESULT CHECKING AND FAILURE EVIDENCE
+
+The post-check requires the normal durable-core schema, remote_verified,
+test_fixture=false, exactly one actual write, the same fixed release/asset,
+published status, original tag/source/content digest, both complete-download
+byte/hash results, recovery P/request hash, actual workflow Q, and unchanged
+original-request provenance. It rejects any claim of new asset creation,
+Lean execution, or full mathematical-certificate proof. The underlying
+executor additionally validates canonical published URLs and exact asset
+membership before writing this result.
+
+The artifact upload has if:always() and includes both the journal and the
+copied approved-request/tool-identity/inventory evidence. It names the run
+and attempt explicitly and retains artifacts for 30 days. Thus a failed
+post-check or ambiguous executor response still schedules evidence upload.
+if-no-files-found:warn is appropriate before any mutation could have started;
+the executor fsyncs its mutation intent before its one network write.
+Always-upload is best effort and is not a guarantee against total runner
+loss or external deletion. No permanent-storage claim follows from this
+temporary Actions artifact retention.
+
+5. INDEPENDENT LOCAL CHECKS ACTUALLY PERFORMED
+
+I read the entire generator, YAML, prepared request and preparation report.
+The generator was not rerun because it intentionally writes a fresh output
+directory and the prepared bytes already exist. I separately ran a read-only
+Python check, EXIT 0, against these exact prepared files and the frozen
+package. It verified:
+- The inventory's external SHA and exact 67 listed files plus inventory,
+  including every byte count/hash and the absence of file symlinks.
+- The actual writer.prepare preflight using the packaged tool and inputs.
+- Recovery P, original P, fixed release/asset ids, production mode, exact
+  archive SHA and byte count, and all forty original journal files.
+- Both embedded Python strings parse as ASTs.
+- Exactly one explicit GH_TOKEN binding and one --execute call, both
+  checkouts nonpersistent, always-upload, concurrency no-cancel, and absence
+  of the previously invalid runner.temp jobs.env expression.
+
+I also independently matched the four displayed input hashes. This local
+check made zero network requests and did not execute the GitHub workflow,
+actual publication, large download, or a real committed-tool Git check.
+No claim of live recovery success is made by this review. The known
+GET-before-PATCH concurrency limitation remains as documented in the
+separate protocol review.

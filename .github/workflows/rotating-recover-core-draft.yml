@@ -1,0 +1,112 @@
+"name": "Recover the verified existing rotating core draft"
+"on":
+  "workflow_dispatch": {}
+  "push":
+    "branches":
+      - "research/remaining-open-problems"
+    "paths":
+      - ".github/workflows/rotating-recover-core-draft.yml"
+"permissions":
+  "contents": "write"
+  "actions": "read"
+"concurrency":
+  "group": "rotating-core-publisher"
+  "cancel-in-progress": false
+"jobs":
+  "recover":
+    "runs-on": "ubuntu-24.04"
+    "timeout-minutes": 30
+    "defaults":
+      "run":
+        "shell": "bash"
+    "env":
+      "PYTHONDONTWRITEBYTECODE": "1"
+      "TOOL_REVISION": "37fa090e1f51cb17d40f45706fb24879fd068d75"
+      "PACKAGE_SHA": "821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9"
+      "REQUEST_SHA": "4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e"
+      "PACKAGE": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools"
+      "REQUEST": "${{ github.workspace }}/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json"
+    "steps":
+      -
+        "name": "Set isolated recovery output"
+        "run": |
+          printf 'WORK=%s/rotating-core-draft-recovery\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "37fa090e1f51cb17d40f45706fb24879fd068d75"
+          "path": "tool-source"
+          "persist-credentials": false
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "${{ github.sha }}"
+          "path": "request-source"
+          "persist-credentials": false
+      -
+        "name": "Check frozen tools, original failed journal and exact existing draft request"
+        "run": |
+          python3 - <<'PY'
+          import hashlib,json,os,sys
+          from pathlib import Path
+          package=Path(os.environ['PACKAGE']);request=Path(os.environ['REQUEST']);work=Path(os.environ['WORK'])
+          def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+          assert os.environ['GITHUB_RUN_ATTEMPT']=='1'
+          assert sha(package/'SourceInventory.json')==os.environ['PACKAGE_SHA']
+          inventory=json.loads((package/'SourceInventory.json').read_bytes())
+          assert {p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file()}==set(inventory['files'])|{'SourceInventory.json'}
+          for name,pin in inventory['files'].items():
+              p=package/name;assert not p.is_symlink() and p.stat().st_size==pin['bytes'] and sha(p)==pin['sha256']
+          assert sha(request)==os.environ['REQUEST_SHA']
+          sys.path.insert(0,str(package/'tools'))
+          import production_core_draft_recovery as writer
+          ctx=writer.prepare(request,os.environ['REQUEST_SHA'],package/'inputs')
+          assert ctx['request']['publisher_revision']==os.environ['TOOL_REVISION']
+          identity=writer.old.actions_context(ctx['request'],os.environ,writer.checked_tool_revision())
+          (work/'evidence').mkdir(parents=True)
+          (work/'evidence/approved_recovery_request.json').write_bytes(request.read_bytes())
+          (work/'evidence/tool_identity.json').write_text(json.dumps(identity,indent=2)+'\n')
+          (work/'evidence/source_inventory.json').write_bytes((package/'SourceInventory.json').read_bytes())
+          PY
+      -
+        "name": "Verify existing draft bytes, publish once, and verify published bytes"
+        "run": |
+          python3 -B "$PACKAGE/tools/production_core_draft_recovery.py" --request "$REQUEST" --request-sha256 "$REQUEST_SHA" --input-root "$PACKAGE/inputs" --output "$WORK/journal" --execute
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "name": "Check actual durable record and preserved proof scope"
+        "run": |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          work=Path(os.environ['WORK']);q=json.loads(Path(os.environ['REQUEST']).read_bytes())
+          o=json.loads((Path(os.environ['PACKAGE'])/'inputs/original_request.json').read_bytes())
+          r=json.loads((work/'journal/result.json').read_bytes())
+          assert r['schema']=='rotating.durable-core-release-record.v1' and r['status']=='remote_verified'
+          assert r['test_fixture'] is False and r['remote_durability_verified'] is True and r['actual_http_writes']==1
+          assert r['release']['id']==q['release_id'] and r['asset']['id']==q['asset_id']
+          assert r['release']['draft'] is False and r['release']['tag']==o['tag']
+          assert r['revision']==o['source_revision'] and r['asset']['digest']=='sha256:'+o['archive']['sha256']
+          assert r['verification']['redownload_sha256']==o['archive']['sha256']
+          assert r['verification']['redownload_bytes']==o['archive']['bytes']
+          assert r['verification']['draft_redownload']=={'sha256':o['archive']['sha256'],'bytes':o['archive']['bytes']}
+          assert r['publisher']['revision']==q['publisher_revision']
+          assert r['publisher']['request_sha256']==os.environ['REQUEST_SHA']
+          assert r['publisher']['actions']['workflow_revision']==os.environ['GITHUB_SHA']
+          assert r['recovery']['original_request_sha256']==q['original_request']['sha256']
+          assert r['recovery']['created_new_release_or_asset'] is False
+          assert r['actual_lean_run_here'] is False and r['full_certificate_proved'] is False
+          PY
+      -
+        "name": "Retain recovery journal even after an ambiguous failure"
+        "if": "always()"
+        "uses": "actions/upload-artifact@v4"
+        "with":
+          "name": "rotating-core-draft-recovery-${{ github.run_id }}-${{ github.run_attempt }}"
+          "path": |
+            ${{ env.WORK }}/journal
+            ${{ env.WORK }}/evidence
+          "if-no-files-found": "warn"
+          "retention-days": 30
+          "compression-level": 1
