@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.ForwardDissipation
 import LengthGrowth.SubsqrtGrowth
 import LengthGrowth.CurveFromPosition
 import LengthGrowth.ScalarDissipation
@@ -9,9 +10,14 @@ import LengthGrowth.CircleConnectionBacktracking
 Length-growth question: STATIC GEOMETRIC COERCIVITY AND PARTIAL DYNAMICS.
 
 `FreeElasticScalar.secant_sq_le_energy_drop` derives a finite-interval
-secant bound from explicitly assumed scalar derivative and dissipation
-hypotheses. The free-elastic-flow PDE, its variation formulae, and the
-unrestricted quarter-power upper bound are not formalized here.
+secant bound from scalar derivative and dissipation hypotheses. The new
+ActualFlow chain derives those laws from a genuine smooth periodic position
+family satisfying the actual normal FEF equation on an open time domain:
+L' = integral k F ds and E' = -integral F^2 ds. Actual spatial-jet continuity
+extends the integral and secant laws to initial time. For a global forward
+classical normal FEF with the stated initial regularity it proves
+L(t)/sqrt(t) tends to zero. It proves neither global existence for arbitrary
+initial curves nor the unrestricted quarter-power upper bound.
 
 `FreeElasticScalar.conditional_fourth_power_bound` uses the intermediate
 value theorem and assumes the restart estimate and a uniform bound on

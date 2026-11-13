@@ -1,0 +1,62 @@
+ACTUAL POSITION TO FORWARD FREE ELASTIC FLOW VARIATION AND SUBSQRT GROWTH
+
+Input: SmoothPeriodicImmersion I, where I is open in R, a positive fixed
+material period, an actual complex-valued position Gamma(t,u), joint spatial
+and temporal smoothness on I x R, position periodicity at each t in I,
+and nonvanishing actual spatial derivative. These are all the record fields.
+
+Derived: g=|Gamma_u|, D_s=g^-1 d/du, T=D_s Gamma, N=iT, signed curvature,
+F=D_s^2 k+k^3/2, W=(k^2/2)T+k_s N, V=Gamma_t, and all their required
+regularity and periodicity. Mixed partials derive g_t, T_t, N_t and
+g*k_t+k*g_t=b_u, where b=<D_s V,N>. No variation identity is assumed.
+
+Actual material integrals:
+L=int g du, E=(1/2)int k^2 g du, D=int F^2 g du, ell=int k F g du.
+Compact parameter differentiation and periodic integration by parts give
+the generic first variations. IsNormalFEF imposes only the actual vector
+position derivative Gamma_t=-F N; it implies L'=ell and E'=-D.
+Weighted Cauchy-Schwarz proves ell^2<=2ED from these actual integrals.
+
+Main interfaces (namespace LengthGrowth.ActualFlow.SmoothPeriodicImmersion):
+  length_hasDerivAt_firstVariation
+  energy_hasDerivAt_firstVariation
+  length_hasDerivAt_normal
+  energy_hasDerivAt_normal
+  energy_sq_hasDerivAt_normal
+  actual_secant_sq_le_energy_drop
+The last statement requires s<t and [s,t] contained in the open time domain.
+Its L and E are position-defined integrals, not supplied scalar functions.
+
+The independent JetGeometry/FourJetForce branch derives the two-jet curvature
+formula and the four-jet intrinsic elastic-force formula. Its pure value is
+continuous along arbitrary filters with nonzero limiting first position jet.
+ForwardImmersion records actual global forward position data: initial spatial
+smoothness, positive-time joint smoothness, periodicity and immersion for t>=0,
+and continuity of actual spatial jets of orders 0 through 4 up to t=0.
+ForwardGeometry uses these facts to derive one-sided continuity of L,E,D,ell.
+No backward smooth extension of a forward FEF is assumed.
+
+With the actual normal PDE imposed only at t>0, ForwardDissipation proves
+E(t)+integral_s^t D=E(s), L(t)-L(s)=integral_s^t ell, and the secant estimate
+for every 0<=s<=t, including s=0. It then applies the previously checked scalar
+restart theorem to prove L(t)/sqrt(t) tends to zero for such a global forward
+classical flow. No vanishing limiting energy or monotonicity of length is assumed.
+This is a theorem about a flow with the stated actual-position regularity;
+it does not construct a global flow for arbitrary initial data.
+
+Final interfaces (namespace LengthGrowth.ActualFlow.ForwardImmersion):
+  energy_add_integral_dissipation
+  length_sub_eq_integral_lengthRate
+  secant_sq_le_energy_drop
+  length_div_sqrt_tendsto_zero
+
+Sixteen new modules are listed in ActualFlowEvidence/Modules.json in dependency
+order. All use only Mathlib and LengthGrowth; the prior 18 mathematical leaves
+(17 earlier modules plus CircleConnectionBacktracking) are byte-preserved.
+The original AxiomAudit source is unchanged and scans both FreeElasticScalar
+and LengthGrowth recursively. Exact successful integration evidence states
+the actual new declaration count; the preserved baseline count is 236.
+
+Unresolved: unrestricted quarter-power length growth, a general normalized-
+energy bound, and a uniform total-absolute-curvature bound along every flow.
+No general open-problem solution or new flow existence theorem is claimed.

@@ -1,0 +1,40 @@
+Actual integration verification, 13 November 2026
+
+The updated project entry point and the original, byte-unchanged AxiomAudit
+were actually compiled using Lean 4.33.1. Both returned EXIT0 with no warnings.
+Entry point: 18.875 seconds. Audit: 19.531 seconds.
+The fresh original audit reports 570 project declarations, permitting only
+propext, Classical.choice and Quot.sound.
+
+All 34 mathematical leaf modules were reused from their successful checked
+artifacts: 18 prior modules, including CircleConnectionBacktracking, and 16
+new ActualFlow modules. No leaf was recompiled during this integration.
+The original 236-declaration baseline is preserved through the exact prior
+source and artifact reuse; no old mathematical source was changed.
+
+Explicit importArts binds all 34 project dependencies plus two official
+Mathlib modules built separately from unchanged upstream source. Ordinary
+Mathlib library roots remain on LEAN_PATH; no partial project root or partial
+Mathlib addon root is placed there. The two exact setup files are retained.
+Selected original sources, artifacts and runner inputs were hashed before
+and after, as were the staged sources and reused copied objects. All matched.
+The entire ordinary Mathlib/toolchain cache was not rehashed; this is not a
+claim of full cache provenance verification or a fresh all-leaf rebuild.
+
+Integration.json records the actual commands, durations, source/setup/log/
+output hashes and verified scope. Modules.json lists the frozen source
+dependency order and proof roles. SelectedInputs.json records the exact
+local inputs. Successful author logs are retained for all sixteen new leaves.
+These path-specific build records are evidence; normal portable rebuilding
+uses the source project's pinned Lean/Lake dependencies with lake build.
+
+After the successful check, only read-only review reports, the exact setup
+copies and this explanatory text were added; the STATUS date was corrected
+from 12 to 13 November. The compiled mathematical
+sources, entry point and audit source were not changed. No compiled object
+is part of the publication entries and no GitHub operation was performed.
+
+Result scope: actual normal FEF variation laws, one-sided initial-time
+integral laws and restart, and L(t)/sqrt(t)->0 for a global forward classical
+flow with the stated actual-position regularity. This is neither a general
+initial-value existence theorem nor unrestricted quarter-power growth.

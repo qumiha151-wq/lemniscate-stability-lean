@@ -1,0 +1,86 @@
+Independent mathematical and statement review: actual FEF first variation
+Reviewer: finish_odd_rigidity. 2026-11-13.
+
+Scope: all five sources below were read in full. This review concerns the
+root-authored integration/first-variation chain, not an independent review of
+my own FamilyRegularity, FamilyDerivatives, or CompactParameterIntegral.
+No reviewed source was edited and no duplicate build was run by this review.
+The final CurveFirstVariation object/log were inspected after the author's
+actual successful compile; the final explicit-function elaboration change
+does not alter the mathematics or hypotheses.
+
+Frozen SHA256 source identifiers:
+PeriodicIntegration.lean
+8597C8126814EFB2492458D86A45D6FED072B517B8EADF4DA5B0BEFA1B2D3B6C
+MaterialIntegrals.lean
+05A94CF64CAF950B5CEC7B99ED08F360A9EA214E003ABAB95D11BCF48F2659A5
+SpatialFirstVariation.lean
+B5B235B1C2769F1D02BD6B85742E7E6292A925BAD52495EFE2A73EC098AAE7EA
+FamilyIntegrals.lean
+53F8A9C7D6B5AE0425E3C3C648C2AE20F73818C777057493679ED92A0EB2A5D5
+CurveFirstVariation.lean
+3775CB0032910105AF10A623B35402530C102E5568E379A769183F516FAB72E8
+
+1. PeriodicIntegration differentiates the actual real inner product of two
+smooth fields. Integrability follows from spatial smoothness and compactness;
+the endpoint term vanishes by the two actual periodicity equalities. The
+scalar specialization uses the real inner product, so no complex Hermitian
+sign/conjugation convention is silently imported. Arbitrary signed period is
+valid for this oriented identity; later geometric positivity uses P>0.
+
+2. MaterialIntegrals defines every quantity from the actual arbitrary-speed
+curve. The fixed upper limit P is the material period, not evolving length.
+All four integrals retain g=|gamma_u|, including E=(1/2) integral k^2*g and
+D=integral F^2*g. The Cauchy--Schwarz proof applies to k*sqrt(g) and F*sqrt(g)
+and derives ell^2<=2ED. The named lengthRate is initially only an integral;
+no claim that it equals L' is assumed in that module.
+
+3. SpatialFirstVariation uses actual tangent/normal, curvature, and stress.
+For arbitrary smooth periodic V it derives
+ L'[V]=-integral g*k*<V,N>,
+ E'[V]= integral g*F*<N,V>.
+The energy proof first identifies the density
+ k*b_u-(k^2/2)<V_u,T>, b=<D_s V,N>, integrates the k*b_u term
+by parts, then uses W_s=F*N. The signs of both integrations by parts and
+of the stress product agree. Periodicity of V and all geometric quantities
+is supplied by actual derivative theorems, rather than erased boundary terms.
+
+4. FamilyIntegrals derives time continuity and time differentiation of the
+actual fixed-parameter integrals from joint smoothness on an OPEN time set.
+The compact-parameter theorem derives a local uniform bound; domination is
+not a flow-record premise. The actual time derivative of k^2*g remains in
+the initial energy differentiation theorem. Thus the later curvature
+variation is genuinely required and not built into the definitions.
+
+5. CurveFirstVariation supplies that derivative from
+ g*k_t+k*g_t=b_u and g_t=g*a, already proved from position and mixed partials.
+The calculation (1/2)(k^2*g)_t=k*b_u-(k^2/2)g_t is correct. Its only dynamical
+premise IsNormalFEF is the actual vector position derivative V=-F*N.
+With N=i*T this implies <N,V>=-F, hence L'=ell and E'=-D, and
+(E^2)'=-2ED. The material-speed factors are preserved throughout.
+
+6. The resulting secant theorem requires s<t and Icc s t contained in the
+OPEN time domain I. This is sufficient for its stated conclusion but does
+not itself cover s=0 for I=(0,infinity). No backwards extension or initial
+time derivative is claimed. A separately implemented forward wrapper must
+prove initial continuity from actual position jets and use interior-only FTC.
+
+7. Imports stay within Mathlib and LengthGrowth. There is no dependence on
+CentroidEscape, SolitonClassification, or OpenTranslators; no geometrical
+identity, dissipation inequality, or evolution law is supplied as a hidden
+record field. The scalar restart theorem is applied only after all its
+analytic premises have been established for the actual geometric integrals.
+
+Compile evidence inspected:
+curve_first_variation_build/1794550544485520800/CurveFirstVariation.olean
+SHA256 EC62E1FD34130954A3F748799E790A5ACB95C40676F57EC1F8E3ED1D77967789
+Its stdout states: Actual open-time first variation: 203 declarations,
+standard axioms only. Author reports session 37364, exit 0, no warnings;
+result.json records exit 0 and unchanged source/dependency artifacts.
+
+Conclusion: no mathematical or statement-scope gap found in the five-module
+chain. This establishes actual open-time first variations and their secant
+consequence. It does not establish arbitrary-flow existence, the initial-time
+extension by itself, fourth-root length growth, or any other unresolved open
+problem. The forward endpoint work and little-o(sqrt(t)) consequence are
+separate modules and are not being credited to this review's five sources.

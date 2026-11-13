@@ -1,0 +1,353 @@
+{
+  "schema": "actual-flow-forward16-v1",
+  "topological_order": [
+    "LengthGrowth.ActualFlow.CompactParameterIntegral",
+    "LengthGrowth.ActualFlow.IntrinsicCurve",
+    "LengthGrowth.ActualFlow.MixedPartials",
+    "LengthGrowth.ActualFlow.PeriodicIntegration",
+    "LengthGrowth.ActualFlow.FamilyRegularity",
+    "LengthGrowth.ActualFlow.JetGeometry",
+    "LengthGrowth.ActualFlow.MaterialIntegrals",
+    "LengthGrowth.ActualFlow.SpatialPeriodicity",
+    "LengthGrowth.ActualFlow.FamilyDerivatives",
+    "LengthGrowth.ActualFlow.FamilyIntegrals",
+    "LengthGrowth.ActualFlow.FamilyPeriodicity",
+    "LengthGrowth.ActualFlow.FourJetForce",
+    "LengthGrowth.ActualFlow.SpatialFirstVariation",
+    "LengthGrowth.ActualFlow.CurveFirstVariation",
+    "LengthGrowth.ActualFlow.ForwardGeometry",
+    "LengthGrowth.ActualFlow.ForwardDissipation"
+  ],
+  "new_modules": [
+    {
+      "module": "LengthGrowth.ActualFlow.CompactParameterIntegral",
+      "role": "Differentiation of a compact spatial parameter integral",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\CompactParameterIntegral.lean",
+      "sha256": "a4fa2790570ff1600dc88dc167053a0d7643eee7edcff2f82482092b1051c079",
+      "bytes": 9753,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\compact_integral_build\\LengthGrowth\\ActualFlow\\CompactParameterIntegral.olean",
+      "artifact": {
+        "sha256": "6c1769c5967c159c1d0f3ea2eb7069528ef46d4c297013949a3db65af4167b79",
+        "bytes": 176952
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\CompactParameterIntegral_check02.log",
+      "success_log_sha256": "1dbf171f3b9cf68c6727aeb033f207499aeb407f2b1b0d50251eaeb4cec091ea",
+      "imports": [
+        "Mathlib.Analysis.Calculus.ParametricIntegral",
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+        "Mathlib.MeasureTheory.Integral.Bochner.Set"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.IntrinsicCurve",
+      "role": "Actual arbitrary-speed intrinsic geometry and stress derivative",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\IntrinsicCurve.lean",
+      "sha256": "c87069beefce3a69cbe728ff3f36c85c3233b329d84582fd4915365311272766",
+      "bytes": 12674,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\build\\LengthGrowth\\ActualFlow\\IntrinsicCurve.olean",
+      "artifact": {
+        "sha256": "bd219e010977ab13c3a06cdaad267a5dbbc72d9f762516a353edfa9296dc660e",
+        "bytes": 562784
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\check_intrinsic_06.log",
+      "success_log_sha256": "85b3302b6b7bd2d649073d3d6737a338a87b9ab457105973f85b9455656152eb",
+      "imports": [
+        "Mathlib.Analysis.Complex.RealDeriv",
+        "Mathlib.Analysis.Calculus.ContDiff.Deriv",
+        "Mathlib.Analysis.Calculus.Deriv.Star",
+        "Mathlib.Analysis.Calculus.Deriv.Inv",
+        "Mathlib.Analysis.Calculus.Deriv.Add",
+        "Mathlib.Analysis.InnerProductSpace.Calculus",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum",
+        "Lean.Util.CollectAxioms"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MixedPartials",
+      "role": "Actual mixed-partial commutation on an open domain",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\MixedPartials.lean",
+      "sha256": "e9b9982e60e7d56742b7bf10770e423436af5be6f7b3dd30b2a74be85b8c9b6b",
+      "bytes": 2586,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\mixed_partials_build\\1794548685872452600\\MixedPartials.olean",
+      "artifact": {
+        "sha256": "ac5ac261178e5ce39908f1efe131c998af5e74deafabf3959a6da345852a4986",
+        "bytes": 118032
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\mixed_partials_build\\1794548685872452600\\stdout.txt",
+      "success_log_sha256": "441d9a34d08847714b6aafe050b63beced93a777a7a17463c01e5cb6d0d54b38",
+      "imports": [
+        "Mathlib.Analysis.Calculus.FDeriv.Symmetric",
+        "Mathlib.Analysis.Calculus.FDeriv.CompCLM",
+        "Mathlib.Analysis.Calculus.Deriv.Prod",
+        "Mathlib.Tactic.NormNum",
+        "Lean.Util.CollectAxioms"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.PeriodicIntegration",
+      "role": "Periodic integration by parts for actual derivatives",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\PeriodicIntegration.lean",
+      "sha256": "8597c8126814efb2492458d86a45d6fed072b517b8eadf4da5b0befa1b2d3b6c",
+      "bytes": 2700,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\periodic_integration_build\\1794549248415212300\\PeriodicIntegration.olean",
+      "artifact": {
+        "sha256": "e439a61d30009fb82f6b5ee41a3f29ae897e389e483e37737c98d6dd09cf291d",
+        "bytes": 115272
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\periodic_integration_build\\1794549248415212300\\stdout.txt",
+      "success_log_sha256": "a014aae53acde754b1cb991604da37589f398d899b431385c3c595dca448f3f6",
+      "imports": [
+        "Mathlib.Analysis.Calculus.ContDiff.Deriv",
+        "Mathlib.Analysis.InnerProductSpace.Calculus",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+        "Mathlib.Tactic.Linarith",
+        "Lean.Util.CollectAxioms"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FamilyRegularity",
+      "role": "Position-only moving immersion and derived joint regularity",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\FamilyRegularity.lean",
+      "sha256": "336a39e7ecfec57ef68163fc35ffe47a83b663393612d4f776611f73f37111f0",
+      "bytes": 8537,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\build\\LengthGrowth\\ActualFlow\\FamilyRegularity.olean",
+      "artifact": {
+        "sha256": "2a9ae1f6ce5a316867600b55389b4a1fdf0bb4f340ef041430793074e824245d",
+        "bytes": 193344
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\FamilyRegularity_check05.log",
+      "success_log_sha256": "03d9e235e0deee9d0f51b557ae73384c87bf7e9821b20b13d081693c8f67cb26",
+      "imports": [
+        "LengthGrowth.ActualFlow.IntrinsicCurve",
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.Analysis.Calculus.Deriv.Prod"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.JetGeometry",
+      "role": "Actual first-through-fourth jets and two-jet curvature formula",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\JetGeometry.lean",
+      "sha256": "a37c4934ef97c44373fcc776173219fb35d26955f4fee075f762d7c05a24f445",
+      "bytes": 8129,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\build\\LengthGrowth\\ActualFlow\\JetGeometry.olean",
+      "artifact": {
+        "sha256": "c790c87ca044ba2a25ecc11577890038d98c8ba69fdb5f82cd056f2c4fd939f7",
+        "bytes": 412424
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\JetGeometry_check03.log",
+      "success_log_sha256": "79d46432aea9b483cb67bda4c3773b6c44cd2b9c754399d0a674928270a97786",
+      "imports": [
+        "LengthGrowth.ActualFlow.IntrinsicCurve",
+        "Mathlib.Analysis.Calculus.Deriv.Pow"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MaterialIntegrals",
+      "role": "Actual weighted integrals and Cauchy-Schwarz bound",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\MaterialIntegrals.lean",
+      "sha256": "05a94cf64caf950b5cec7b99ed08f360a9ea214e003abab95d11bcf48f2659a5",
+      "bytes": 3778,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\material_integrals_build\\1794549481996751500\\MaterialIntegrals.olean",
+      "artifact": {
+        "sha256": "2f199c414c897463abf042d227b63942cbb2bc36c01337be702dd9e75c6b6fc1",
+        "bytes": 115848
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\material_integrals_build\\1794549481996751500\\stdout.txt",
+      "success_log_sha256": "b729a18502661921e4820a2ee1145fbaa048062a0f2ddbede2e20317e3cb42c2",
+      "imports": [
+        "LengthGrowth.ActualFlow.IntrinsicCurve",
+        "LengthGrowth.IntervalL2"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.SpatialPeriodicity",
+      "role": "Periodicity of actual spatial fields",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\SpatialPeriodicity.lean",
+      "sha256": "028ea07209b8675c7515b297c29d4ed5c100cf53bc3e72fde415b23ddcf76009",
+      "bytes": 4746,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\build\\LengthGrowth\\ActualFlow\\SpatialPeriodicity.olean",
+      "artifact": {
+        "sha256": "7f79f1ae24ff66cda29447c1d1b4c63322689fa6ac3e7676760af2d578e2cabc",
+        "bytes": 103808
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\SpatialPeriodicity_check01.log",
+      "success_log_sha256": "573a57245f1d71f6908d0271b8a3254015f2acf3fc99c5708d80a907cf5eda8f",
+      "imports": [
+        "LengthGrowth.ActualFlow.IntrinsicCurve"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FamilyDerivatives",
+      "role": "Derived metric, frame and curvature time variations",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\FamilyDerivatives.lean",
+      "sha256": "5f66d5c830721cd8ac4fd43d008949a197350ce8cb776e0e0fcde788ef4baa56",
+      "bytes": 13253,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\family_derivatives_build\\1794549982314638000\\FamilyDerivatives.olean",
+      "artifact": {
+        "sha256": "1a8d570914715afd4ecd2a89dff8ec4ad9a0b43bb674ee6b6bfa3e2e9f0b2d74",
+        "bytes": 449712
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\family_derivatives_build\\1794549982314638000\\stdout.txt",
+      "success_log_sha256": "9052ac296cce38549ded3b97c6a980a7394f5729393f082bddd3e7636c31f056",
+      "imports": [
+        "LengthGrowth.ActualFlow.FamilyRegularity",
+        "LengthGrowth.ActualFlow.MixedPartials",
+        "Mathlib.Tactic.LinearCombination"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FamilyIntegrals",
+      "role": "Time continuity and actual integral derivatives",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\FamilyIntegrals.lean",
+      "sha256": "53f8a9c7d6b5ae0425e3c3c648c2ae20f73818c777057493679ed92a0eb2a5d5",
+      "bytes": 3653,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\family_integrals_build\\1794549904508879500\\FamilyIntegrals.olean",
+      "artifact": {
+        "sha256": "b82587fe6dff51d0b610145114ad8f3d72cd4e5ca4429de327464035b516f6e5",
+        "bytes": 69584
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\family_integrals_build\\1794549904508879500\\stdout.txt",
+      "success_log_sha256": "1a7cf6a6a2ad250ba2ff11173bd8b54476f17299f83a15cdd46082b3e154e70d",
+      "imports": [
+        "LengthGrowth.ActualFlow.FamilyRegularity",
+        "LengthGrowth.ActualFlow.MaterialIntegrals",
+        "LengthGrowth.ActualFlow.CompactParameterIntegral"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FamilyPeriodicity",
+      "role": "Derived actual velocity periodicity and variation boundary terms",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\FamilyPeriodicity.lean",
+      "sha256": "1bd69952c9a2105423b3e33914a01a58a5c9c8b2f23a40b191f012857c418db7",
+      "bytes": 5388,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\build\\LengthGrowth\\ActualFlow\\FamilyPeriodicity.olean",
+      "artifact": {
+        "sha256": "de2f8657e6a013a38b20ac559b673c6f9a0f4f09a5e0e50307dd025f54c5ab72",
+        "bytes": 73888
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\FamilyPeriodicity_check02.log",
+      "success_log_sha256": "67cd22f5ad9ac996a5a49cd12fabcfe0a9cc676a690cbc7bd13f4bdd4f862345",
+      "imports": [
+        "LengthGrowth.ActualFlow.SpatialPeriodicity",
+        "LengthGrowth.ActualFlow.FamilyRegularity"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FourJetForce",
+      "role": "Actual four-jet force formula and arbitrary-filter continuity",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\FourJetForce.lean",
+      "sha256": "00d6f86bce7e4fdd20f3e1f5d47e89b8f8df1a3540128a6894ef58df9f404f98",
+      "bytes": 6353,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\build\\LengthGrowth\\ActualFlow\\FourJetForce.olean",
+      "artifact": {
+        "sha256": "2f1f967db85ab9d02f57c41789c2dc03544c2998320dea80296da48575599054",
+        "bytes": 542128
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\FourJetForce_check03.log",
+      "success_log_sha256": "0851ba0038f0dcf1966497e57355b0ba79974468fceb285221566ded50ff6242",
+      "imports": [
+        "LengthGrowth.ActualFlow.JetGeometry"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.SpatialFirstVariation",
+      "role": "Spatial first-variation stress identities",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\SpatialFirstVariation.lean",
+      "sha256": "b5b235b1c2769f1d02bd6b85742e7e6292a925bad52495efe2a73ec098aae7ea",
+      "bytes": 5814,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\spatial_first_variation_build\\1794549634563391800\\SpatialFirstVariation.olean",
+      "artifact": {
+        "sha256": "2eafa4d51f90df4a9980ade63a4a0e86a36918a01acb4748740ff2a59e5e59fa",
+        "bytes": 230504
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\spatial_first_variation_build\\1794549634563391800\\stdout.txt",
+      "success_log_sha256": "3fec08c44ed16319bcecd4ba20e7d7b6327e56f463ed9e700d618d4909d2e32b",
+      "imports": [
+        "LengthGrowth.ActualFlow.SpatialPeriodicity",
+        "LengthGrowth.ActualFlow.PeriodicIntegration"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CurveFirstVariation",
+      "role": "Open-time first variations, normal FEF laws and actual secant estimate",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\CurveFirstVariation.lean",
+      "sha256": "3775cb0032910105af10a623b35402530c102e5568e379a769183f516fab72e8",
+      "bytes": 7589,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\curve_first_variation_build\\1794550544485520800\\CurveFirstVariation.olean",
+      "artifact": {
+        "sha256": "ec62e1fd34130954a3f748799e790a5acb95c40676f57ec1f8e3ed1d77967789",
+        "bytes": 247520
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\curve_first_variation_build\\1794550544485520800\\stdout.txt",
+      "success_log_sha256": "f4b1a5b5ca1506c9f6f760e67e11de0efd09857672e5d773411b7f068eb807cf",
+      "imports": [
+        "LengthGrowth.ActualFlow.FamilyIntegrals",
+        "LengthGrowth.ActualFlow.FamilyDerivatives",
+        "LengthGrowth.ActualFlow.FamilyPeriodicity",
+        "LengthGrowth.ActualFlow.SpatialFirstVariation",
+        "LengthGrowth.ScalarDissipation"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ForwardGeometry",
+      "role": "Actual forward spatial jets and initial-time integral continuity",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\ForwardGeometry.lean",
+      "sha256": "010c570cc45d57fd5254bfeed830d53aebf748e2a5947069136ca08e67bd7362",
+      "bytes": 7117,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\forward_owned_build\\ForwardGeometry\\1794550599741113500\\ForwardGeometry.olean",
+      "artifact": {
+        "sha256": "a2f31d835f07b80358ad3cd452a576b3d6eda57789747038b0780ba18cd6f00f",
+        "bytes": 189128
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\forward_owned_build\\ForwardGeometry\\1794550599741113500\\stdout.txt",
+      "success_log_sha256": "53e3a0cfc01ca9b6f4c88bdab98d12aef784f499f73f597821465fb2d97d8f41",
+      "imports": [
+        "LengthGrowth.ActualFlow.FamilyIntegrals",
+        "LengthGrowth.ActualFlow.FourJetForce",
+        "Mathlib.Analysis.Calculus.IteratedDeriv.Defs"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ForwardDissipation",
+      "role": "Initial-time dissipation/restart and actual conditional subsqrt growth",
+      "source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\LengthGrowth\\ActualFlow\\ForwardDissipation.lean",
+      "sha256": "e3cd7fc567a67322369119a9338a234b01e6b757f9406908731751e841e0e8b1",
+      "bytes": 5045,
+      "artifact_origin": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\forward_owned_build\\ForwardDissipation\\1794550768746585100\\ForwardDissipation.olean",
+      "artifact": {
+        "sha256": "dab140f69ef50279e603610edac13a4f839950acf19e04d6a133336292ead275",
+        "bytes": 125368
+      },
+      "success_log": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\length_flow_formal\\forward_owned_build\\ForwardDissipation\\1794550768746585100\\stdout.txt",
+      "success_log_sha256": "4a46ca942bd3cbb0b695b3e0d3d01c0c44506c5b36c3980da22f9b53f025d709",
+      "imports": [
+        "LengthGrowth.ActualFlow.ForwardGeometry",
+        "LengthGrowth.ActualFlow.CurveFirstVariation",
+        "LengthGrowth.SubsqrtGrowth"
+      ],
+      "actual_leaf_recompiled_in_integration": false
+    }
+  ],
+  "prior_mathematical_leaves": 18,
+  "prior_audited_declarations": 236,
+  "forward_extension_included": true
+}

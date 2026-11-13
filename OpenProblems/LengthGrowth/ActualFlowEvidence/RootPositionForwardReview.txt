@@ -1,0 +1,76 @@
+ROOT INDEPENDENT REVIEW: POSITION GEOMETRY AND THE FORWARD ENDPOINT
+2026-11-13. Read-only mathematical/statement review of agent-authored sources.
+
+The root read the full sources IntrinsicCurve, SpatialPeriodicity,
+FamilyRegularity, FamilyDerivatives, FamilyPeriodicity, JetGeometry,
+FourJetForce, ForwardGeometry and ForwardDissipation. This note reviews
+those modules, not the root's own integration/first-variation proofs.
+The latter have a separate independent review by finish_odd_rigidity.
+All source/output identifiers are retained in the corresponding frozen
+manifests and actual compile reports; no duplicate leaf compilation was
+performed as part of this source review.
+
+IntrinsicCurve defines g=|gamma_u|, T=g^-1 gamma_u, N=iT and the signed
+curvature from actual derivatives. It proves unit/orthogonal frame,
+gamma_u=gT, T_u=g*kappa*N and N_u=-g*kappa*T. The stress is
+W=(kappa^2/2)T+kappa_s N and the actual identity W_u=g*F*N is proved by
+product rules. No supplied Frenet field, curvature derivative or stress
+identity replaces an actual position derivative. SpatialPeriodicity
+derives all required periodicity from the actual position's periodicity.
+
+FamilyRegularity contains only position, open-time joint smoothness,
+fixed positive period, periodic position and immersion. V, a=<DsV,T>
+and b=<DsV,N> are actual definitions. In FamilyDerivatives the actual
+curried mixed derivatives are related to the root's proved Frechet
+partial symmetry using equality on time neighbourhoods. It is applied
+to both the position and tangent, using their proved joint smoothness.
+The resulting identities are g_t=g*a, T_t=b*N, N_t=-b*T and
+g*kappa_t+kappa*g_t=b_u. The final curvature identity follows by
+cancelling the nonzero unit normal, not by assuming the curvature PDE.
+FamilyPeriodicity obtains V-periodicity from equality of the position
+at spatial translates on an open time neighbourhood. All three relevant
+variation boundary terms then have equal endpoint values.
+
+JetGeometry uses genuine successive spatial derivatives of gamma.
+Its curvature formula is kappa=det(gamma_u,gamma_uu)/g^3. FourJetForce
+differentiates that formula twice in arclength and proves the given
+four-jet polynomial divided by g^9 equals the previously defined F.
+The coefficients 7/2, 3/2 and 9/2, powers of g and n^3/2 match the
+independent analytic calculation in ActualFEFFirstVariationLeanSpec.
+The pure fourJetForceValue does not redefine the force; equality with
+the intrinsic force is a proved theorem. Its filter-limit theorem needs
+only convergence of the four actual jets and nonzero limiting first jet.
+
+ForwardGeometry assumes smooth initial position, smooth interior family,
+immersion and periodicity for t>=0, and joint continuity to t=0 of actual
+iterated spatial derivatives of orders 0..4. These are explicit classical
+geometric regularity assumptions, not an energy law or an independent
+continuous force field. There is no time derivative required at zero,
+and no FEF equation or geometric smoothness required at negative times.
+The fact that Lean functions have domain R does not impose constraints
+on their arbitrary negative-time values.
+
+The actual two/four-jet formulas give continuity of g, kappa and F on
+the closed forward domain. Fixed-parameter compact integration gives
+continuity of L,E,D and ell there, including zero. The initial energy
+and force are calculated from the actual initial immersion.
+
+ForwardDissipation imposes V=-F*N only at strictly positive times.
+It uses the already proved open-time variation formulas, then the FTC
+version whose derivative hypothesis is only on Ioo(s,t). Therefore,
+for 0<=s<=t, it proves the genuine identities
+  E(t)+integral_s^t D=E(s),
+  L(t)-L(s)=integral_s^t ell,
+as well as (L(t)-L(s))^2 <= (t-s)*(E(s)^2-E(t)^2).
+No backward extension, initial two-sided derivative, or limiting value
+E(infinity)=0 is assumed. The existing scalar restart theorem applies
+to actual H=E^2>=0 and yields L(t)/sqrt(t)->0 for the given global
+forward classical normal FEF. Global existence is a hypothesis embodied
+by such a family on the whole half-line, not a theorem proved here.
+
+No mathematical or statement-scope gap was found. Imports remain in
+Mathlib and LengthGrowth. These results complete the actual PDE-to-scalar
+dissipation bridge and the one-sided endpoint treatment under the stated
+regularity assumptions. They do not prove the unrestricted fourth-root
+length estimate, unrestricted whole-curve migration, complete soliton
+classification, or the existence of every initial-value flow.

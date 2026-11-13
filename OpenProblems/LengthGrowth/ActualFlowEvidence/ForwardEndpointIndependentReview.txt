@@ -1,0 +1,59 @@
+Independent read-only semantic review of ForwardGeometry / ForwardDissipation
+Reviewer: finish_curve_input; 13 November 2026.
+
+Reviewed complete frozen sources:
+ForwardGeometry.lean
+  010C570CC45D57FD5254BFEED830D53AEBF748E2A5947069136CA08E67BD7362
+ForwardDissipation.lean
+  E3CD7FC567A67322369119A9338A234B01E6B757F9406908731751E841E0E8B1
+Frozen manifest:
+  EF2DFEE0FF6F9560796356EAFB336F91402E695E741CDAADCBE3D0685EBE5422
+
+No substantive semantic gap found in this endpoint assembly.
+
+1. The ForwardImmersion record contains an actual position, fixed positive
+period, periodicity and immersion at nonnegative times, initial spatial
+smoothness, interior joint smoothness, and continuity of the actual iterated
+spatial derivatives through order four on the forward time domain. It does
+not contain an independently assigned curvature, force, energy or variation
+identity. Although position is a total function of real time, no property of
+negative-time values is used to assert a backward solution.
+
+2. The conversion from iteratedDeriv to positionJet1--4 uses actual recursive
+derivative identities. The two-jet curvature formula and four-jet force
+formula identify the existing intrinsic fields with their pure expressions.
+The immersion hypothesis supplies a nonzero limiting first jet at t=0, so
+the arbitrary-filter continuity argument applies to the forward topology.
+This reviewer authored the jet modules; this is an independent review of the
+two new endpoint modules, not an independent re-review of those jet proofs.
+
+3. Compact spatial integration is justified on each finite closed time slab.
+The local slab [0,t+1] is a neighbourhood within nonnegative times at t, which
+correctly yields continuity up to zero of the actual L,E,D,ell integrals.
+No global uniform lower speed bound is assumed or required by this argument.
+
+4. The normal velocity condition is imposed only at t>0 and agrees exactly
+with the interior SmoothPeriodicImmersion PDE. The derivatives of L and E
+are inherited from the already proved actual first variation. The interval
+FTC consumes endpoint continuity and derivatives only on the open interval
+(s,t). For 0<=s<t, these derivative times are strictly positive. The s=t
+restart branch is handled directly; no initial-time derivative is asserted.
+
+5. The energy identity has E(t)+integral_s^t D=E(s), with the correct negative
+sign in E'=-D. The length identity and squared secant inequality use actual
+ell and the actual weighted Cauchy--Schwarz bound. Endpoint initial energy
+is the same position-defined integral, not a free scalar constant.
+
+6. The final L(t)/sqrt(t)->0 theorem invokes the existing scalar restart
+theorem with H=E^2>=0 and the proved actual secant inequality for all forward
+intervals. It assumes a global forward classical immersion with the stated
+regularity and normal PDE. It neither constructs that flow for arbitrary
+initial data nor assumes limiting energy is zero or length is monotone.
+It does not give quarter-power growth or resolve the remaining general
+length-growth conjecture.
+
+Verification scope: full source inspection and direct interface inspection.
+No leaf was independently recompiled for this review. The publication
+integration separately reuses the checked frozen leaf objects and compiles
+the updated project entry point and unchanged recursive AxiomAudit.
+No source was edited during this review; no remote operation was performed.

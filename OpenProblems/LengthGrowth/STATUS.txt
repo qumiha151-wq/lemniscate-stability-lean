@@ -1,10 +1,15 @@
 LENGTH GROWTH: COMPLETE STATIC COERCIVITY, PARTIAL DYNAMICS
-12 November 2026
+13 November 2026
 
-ScalarDissipation.lean derives a secant estimate from genuine derivative
-hypotheses and proves a conditional fourth-power length bound. The geometric
-PDE identities and the assumed normalized-energy bound are not formalized
-or proved here. This does not solve unrestricted quarter-power growth.
+ScalarDissipation.lean derives a secant estimate from derivative hypotheses
+and proves a conditional fourth-power length bound. The new sixteen-module
+ActualFlow chain derives length and energy laws and the actual secant bound
+from the position PDE, including the initial endpoint using actual spatial-jet
+continuity. For a global forward classical normal FEF with the stated initial
+regularity it proves L(t)/sqrt(t) tends to zero. Global existence for arbitrary
+initial curves, a uniform normalized-energy bound, and unrestricted
+quarter-power growth remain unproved. See ActualFlowScope.txt and
+ActualFlowEvidence.
 
 FixedTurningObstruction.txt constructs smooth closed immersed curves in every
 fixed turning-number class with EL arbitrarily large and initially increasing.
