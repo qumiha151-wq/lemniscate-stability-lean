@@ -1,3 +1,5 @@
+import LengthGrowth.ActualFlow.ProductWindow
+import LengthGrowth.ActualFlow.ConditionalQuarterGrowth
 import LengthGrowth.ActualFlow.ArclengthCoercivity
 import LengthGrowth.ActualFlow.NormalizedProduct
 import LengthGrowth.ActualFlow.ForwardDissipation
@@ -62,4 +64,16 @@ e'=E ell-L D, (e^2)'<=E^4, and
 e(t)^2-e(s)^2<=integral_s^t E(r)^4 dr for 0<=s<=t.
 No energy-clock or ancient-limit theorem is included. The unrestricted
 fourth-root growth question remains open. See ArclengthAndProductScope.txt.
+-/
+
+/-!
+ProductWindow proves a physical-time dissipation estimate for actual forward
+normal FEF using only endpoint gain of e=EL and the actual budget U=int E^4.
+For Z=int D/E and U<e(t)^2 it proves (e(t)^2-U)Z<=2U.
+
+ConditionalQuarterGrowth separately assumes a UNIFORM bound A(t)<=A0 for
+the actual total absolute curvature. It derives explicit energy decay and
+L(t)+sqrt(t)E(t)<=L(0)+64 A0 sqrt(A0) fourthRoot(t).
+No uniform A bound is proved. Unrestricted quarter-power growth remains open.
+See ProductWindowAndConditionalGrowthScope.txt for precise scope.
 -/

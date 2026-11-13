@@ -1,0 +1,40 @@
+Conditional actual quarter-growth: frozen status
+13 November 2026
+
+Three new modules passed actual Lean 4.33.1, in dependency order:
+EnergyDecay: session 29244, EXIT 0, audit 21 FreeElasticScalar declarations.
+WeightedLengthComparison: session 92575, EXIT 0, audit 41 FreeElasticScalar declarations.
+ConditionalQuarterGrowth: session 85660, EXIT 0, audit 694 declarations in
+LengthGrowth and FreeElasticScalar. Each final stdout contains only its
+standard-three-axiom marker; each stderr is empty. No final Lean warnings.
+The distinct development failures remain in their own directories and are
+not included as successful evidence. No prior frozen source was edited and
+no prior leaf was recompiled.
+
+The scalar proof differentiates E^(-4) only at positive times and uses
+continuity at zero. The weighted comparison first proves the complete
+positive-shift estimate, then takes the actual right-sided limit of smaller
+positive shifts. It retains the positive sqrt(t)*E(t) term. Neither sign of
+the length derivative nor a bound for the energy-length product is assumed.
+
+For a genuine ForwardImmersion satisfying IsNormalFEF, the only new geometric
+assumption is: for every t>=0, the ACTUAL total absolute curvature A(t)<=A0.
+Actual closed-curve geometry implies A0>0 and E(t)>0. The previously checked
+arclength and force comparison gives D(t)>=E(t)^5/(262144*A0^6). Actual
+first variations and weighted Cauchy--Schwarz discharge all scalar derivative
+and quadratic assumptions. The resulting statements are:
+
+ E(t) <= 1 / sqrt(sqrt(E(0)^(-4) + 4*t/(262144*A0^6))),
+ L(t) + sqrt(t)*E(t) <= L(0) + 64*A0*sqrt(A0)*sqrt(sqrt(t)),
+ L(t)-L(0) <= 64*A0*sqrt(A0)*sqrt(sqrt(t)), for every t>=0.
+
+This proves quarter-power growth CONDITIONAL on the uniform actual A cap.
+It does not prove that cap, global existence, or the paper's unconditional
+quarter-power growth question. Different open-problem projects are not
+imported; dependencies are Mathlib and LengthGrowth only. Project imports
+are explicit setup mappings; regular Mathlib roots remain on LEAN_PATH.
+The checkers bind selected sources/artifacts/executable/tool before and
+after, not the entire Mathlib cache. A later independent aggregate project
+audit is outside this three-module author check.
+
+Frozen manifest SHA256: 0b1cdf584cb3b2c1c9381d95b1fa845ab63bade60153a1bfd51d83121b9aa3c7

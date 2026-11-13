@@ -1,0 +1,39 @@
+INDEPENDENT ROOT REVIEW: ACTUAL PRODUCT WINDOW
+13 November 2026. Reviewed the complete final ProductWindow.lean source,
+its frozen manifest, actual compiler result and terminal compiler output.
+
+Source SHA256:
+e274a49276077c981bdf918cf216a18e36ac544589ed150f62c4373705b14221
+Frozen manifest SHA256:
+8ca7c05a02d3eb9f552b172aa61aa1433d5c68c8a4ff79d09f8f396227050b93
+Actual build session 64841, exit 0, 17.656 seconds. This reuses the fixed
+40 prior module objects; it is not a recompilation of those sources.
+The enforced recursive audit reports 672 declarations and only propext,
+Classical.choice and Quot.sound. No compiler warning appears in this run.
+
+Mathematical scope and proof inspection:
+1. E, L, D and ell are the actual geometric material integrals inherited
+   from ForwardImmersion, not freely specified scalar substitutes.
+2. U is the physical-time integral of E^4 on [s,t]; Z is the physical-time
+   integral of D/E. Closed regularity supplies E>0 on all nonnegative times.
+   No additional energy-positivity assumption appears in the final theorem.
+3. The previously proved differential bound for (EL)^2, applied on [x,t],
+   yields EL(x)>=sqrt(EL(t)^2-U) throughout [s,t]. The interval comparison
+   uses the nonnegative integrand E^4 and the actual continuous energy.
+4. The actual product derivative is E*ell-L*D. Interior FTC and continuity
+   at s=0 give its integrated identity, with no derivative at zero assumed.
+   Endpoint gain EL(s)<=EL(t) consequently controls the integral of L*D.
+5. Interval Cauchy--Schwarz is proved by a nonnegative quadratic integral
+   using continuity only on [s,t]. For f=E^2 and g=ell/E, the actual bound
+   ell^2<=2*E*D gives (integral E*ell)^2<=2*U*Z.
+6. Combining these yields (EL(t)^2-U)*Z<=2*U. The explicit Z=0 branch
+   avoids cancellation at zero; the positive branch cancels Z. The strict
+   budget hypothesis justifies the final division. Degenerate s=t is covered.
+7. No first-record maximum property, monotone length, time reparametrization,
+   ancient limit, compactness or uniform absolute-curvature cap is assumed.
+
+No substantive mathematical or hypothesis mismatch found. This is a window
+estimate, not a solution of unrestricted quarter-power length growth or a
+formal construction of the energy clock and ancient windows. The compile
+evidence checks this new module against recorded dependency artifacts; the
+combined project import and separate cloud build are later validation stages.

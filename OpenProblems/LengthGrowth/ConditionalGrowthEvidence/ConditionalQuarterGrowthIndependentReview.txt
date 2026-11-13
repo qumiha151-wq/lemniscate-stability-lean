@@ -1,0 +1,84 @@
+Independent review of conditional energy decay and quarter-power growth
+13 November 2026. Reviewer: finish_odd_rigidity.
+
+I read all three sources, their actual retained build result/setup/stdout,
+and the relevant existing geometric interfaces. No substantive mathematical,
+constant, endpoint or hypothesis mismatch was found. I did not recompile
+these frozen leaves or alter their sources. This review is independent of
+their author; it is not an independent review of my own ProductWindow module.
+
+Frozen sources (relative to work/length_flow_formal):
+LengthGrowth/EnergyDecay.lean
+  B956757EF024CB0ADE167F5EF9E3B2E4E2C0197D1CBD1C4F06601AA77E47646E
+LengthGrowth/WeightedLengthComparison.lean
+  1E2BCB980850973E2809E5BB0746AB5D207C8A99243F2AF931665108FB4A76E9
+LengthGrowth/ActualFlow/ConditionalQuarterGrowth.lean
+  63C0BF9EABE74F8110CBBC89D25BAFFD7A974D9EF74A04A746145B4614454BAD
+
+Actual retained successful build directories:
+conditional_owned_build/EnergyDecay/1794554888866345400
+conditional_owned_build/WeightedLengthComparison/1794555180606605800
+conditional_actual_build/1794555613289635100
+Their result.json hashes are respectively:
+  AB3319129E3FE5A35530FF8B32EBA58A65114EA16AFD305F106943EBBCE1027D
+  0880515908D3333F2F177A5627419AA2DE1F8822DACDEDBDBB12FAB0C3BB439D
+  D130E05F5900E5343E1EEF10EAE273665C0D529E9E0B77A500CDD35B86511848
+Each result records actual exit 0, unchanged source/dependency artifacts,
+and its actual setup and output hash. I independently recomputed all listed
+dependency pins and setup hashes. The retained standard-axiom audits report
+21, 41 and 694 declarations respectively; all three stderr files are empty
+and the final stdout files contain no warnings. I did not rerun the compiler.
+
+Scalar energy argument
+The helpers explicitly assume E>0, continuity on nonnegative time, E'=-D
+on strictly positive time, and D>=c E^5. These are honestly scalar premises.
+The actual inverse differentiation is 4D/E^5. Subtracting 4ct gives a
+nondecreasing function, hence E(t)^(-4)>=E(0)^(-4)+4ct. Positivity justifies
+each inversion and fourth-root comparison. fourthRoot is the actual
+sqrt(sqrt(x)); for nonnegative x its fourth power is x. The positive-shift
+envelope follows from E(0)^4*tau<=B^4 and 1<=4cB^4, with no missing sign.
+Continuity plus the mean-value theorem includes t=0; no derivative at zero
+or extension to backward normal FEF is used.
+
+Weighted length argument
+The elementary square identity gives ell<=aD+E/(2a) from ell^2<=2ED,
+E,D>=0 and a>0, whether ell is positive or negative. Taking a=sqrt(t+tau),
+the derivative of L+sqrt(t+tau)E is at most E/sqrt(t+tau). The energy
+envelope bounds this by B/(t+tau)^(3/4), exactly the derivative of
+4B*fourthRoot(t+tau). The proof uses the actual derivatives and a compact
+interval mean-value argument, so no integrability beyond the stated
+continuity is hidden. It does not assume monotone length or bounded EL.
+
+The zero-shift theorem is a parameter limit delta down to zero, not an
+improper time integral. Any positive envelope shift tau yields the weaker
+envelope for 0<delta<=tau, because the positive denominator is smaller and
+B>=0. Both sides are continuous at delta=0 and the right-neighborhood
+filter is nontrivial. This retains the nonnegative term sqrt(t)E(t) in the
+final bound. The coercive wrapper chooses tau=B^4/E(0)^4>0, so its required
+positive-shift hypothesis is derived, not supplied as another assumption.
+
+Actual curve adapter and constants
+The extra hypothesis is explicitly the uniform bound on the genuine
+material absolute curvature: for every t>=0, c.absoluteCurvature(t)<=A0.
+It is not a bound on an unrelated scalar or on signed turning. The earlier
+actual arclength adapter supplies A>=1 and E>0; therefore A0>0 follows.
+Existing actual static coercivity gives
+  D >= E^5/(262144 A(t)^6) >= E^5/(262144 A0^6).
+All scalar continuity, normal velocity derivative and weighted ell^2<=2ED
+premises are discharged by the frozen forward position-flow chain.
+
+For c0=1/(262144 A0^6) and B=16 A0 sqrt(A0),
+B^4=65536 A0^6 and 4c0B^4=1. The precise consequences are
+  E(t) <= [E(0)^(-4)+t/(65536 A0^6)]^(-1/4),
+  L(t)+sqrt(t)E(t) <= L(0)+64 A0 sqrt(A0)*fourthRoot(t),
+and hence the displayed length-increment bound. The constants, signs and
+geometric scaling agree with the scalar derivation. The proof does not
+assume E tends to zero; the conditional decay estimate supplies that rate.
+
+Boundary of the result
+The global actual absolute-curvature cap is NOT proved. Neither do these
+modules prove arbitrary-data global existence, unconditioned quarter-power
+growth, finite zero count, a clock inverse, or an ancient compactness theorem.
+They prove the stated conditional implication for an existing forward
+classical normal FEF. The separate four-module integration and any remote
+CI are later checks and are not claimed by these retained leaf builds.

@@ -1,0 +1,57 @@
+ProductWindow: actual physical-time dissipation window estimate
+
+Final real Lean process: session 64841, exit 0.
+Build directory: product_window_build/1794555226206592000.
+Actual output: "Actual product window: 672 declarations; standard axioms only."
+No warnings; stderr is empty. The source recursively collects axioms for all
+LengthGrowth and FreeElasticScalar declarations in its import environment.
+Only propext, Classical.choice and Quot.sound are accepted.
+
+The source imports only the frozen NormalizedProduct and ArclengthCoercivity
+chains. The checking runner reuses the published forty mathematical leaves'
+verified artifacts from the arclength integration; it checks all dependency
+source and object hashes before/after. No frozen leaf or output was modified.
+Exact hashes and paths are recorded in ProductWindowFrozenManifest.json and
+the final build's result.json, including the actual command and setup.
+
+For ForwardImmersion c, define e(t) = c.energy(t)*c.length(t), and genuine
+physical-time integrals U(s,t) = integral_s^t E^4,
+Z(s,t) = integral_s^t D/E. For the actual normal position PDE, 0 <= s <= t,
+e(s) <= e(t), and U(s,t) < e(t)^2, the main conclusions are:
+  (e(t)^2 - U(s,t))*Z(s,t) <= 2*U(s,t),
+  Z(s,t) <= 2*U(s,t)/(e(t)^2 - U(s,t)).
+
+The four main steps are proved, not assumed:
+1. The earlier actual squared-product estimate gives
+   sqrt(e(t)^2-U) <= e(x) throughout the window.
+2. Actual product FTC and endpoint gain imply
+   integral_s^t L*D <= integral_s^t E*lengthRate.
+3. Compact-interval ContinuousOn Cauchy--Schwarz for E^2 and lengthRate/E,
+   followed by the genuine weighted estimate lengthRate^2 <= 2*E*D, gives
+   (integral E*lengthRate)^2 <= 2*U*Z.
+4. Multiplying the pointwise product lower bound by D/E, integrating, and
+   splitting Z=0 versus Z>0 gives the claimed bound.
+
+Strict energy positivity follows from the actual periodic immersed curve
+through ArclengthCoercivity. It is not a new scalar assumption. All time
+continuity needed for division or integration is restricted to Ici 0 or the
+compact window. FTC uses normal FEF only at strictly positive interior times;
+s=0 and s=t are included. The Z=0 case is explicitly handled.
+
+Public interfaces (namespace LengthGrowth.ActualFlow.ForwardImmersion):
+  energyFourthBudget; relativeDissipation
+  relativeDissipation_density_continuousOn
+  energyFourthBudget_nonneg; relativeDissipation_nonneg
+  normalizedProduct_nonneg
+  normalizedProduct_lower_on_window
+  normalizedProduct_sub_eq_integral_rate
+  energy_lengthRate_integral_sq_le
+  productWindow_bound
+  relativeDissipation_le_of_product_gain
+The general ContinuousOn interval integral CS lemma is in LengthGrowth.
+
+Scope: endpoint product gain is sufficient; a first-record or whole-window
+product upper bound is not assumed. No energy clock, clock inverse, ancient
+limit, compactness, energy-limit theorem, or fourth-root length bound is
+formalized here. This is a window estimate for an existing actual forward
+flow, not a new global-existence theorem. No GitHub writes or solver run.

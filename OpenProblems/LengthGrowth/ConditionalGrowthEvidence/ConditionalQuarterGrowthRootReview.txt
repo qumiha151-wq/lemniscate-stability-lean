@@ -1,0 +1,50 @@
+ROOT INDEPENDENT REVIEW: CONDITIONAL QUARTER-POWER GROWTH
+13 November 2026. Complete final sources read and checked:
+EnergyDecay.lean
+b956757ef024cb0ade167f5ef9e3b2e4e2c0197d1cbd1c4f06601aa77e47646e
+WeightedLengthComparison.lean
+1e2bcb980850973e2809e5bb0746ab5d207c8a99243f2af931665108fb4a76e9
+ActualFlow/ConditionalQuarterGrowth.lean
+63c0bf9eabe74f8110cbbc89d25baffd7a974d9ef74a04a746145b4614454bad
+
+The actual successful sessions are respectively 29244, 92575 and 85660,
+all exit 0. Enforced recursive audits report 21, 41 and 694 declarations
+in their specified namespaces, with only the standard three axioms. These
+counts are overlapping environments, not additive independent theorems.
+Final stdout has no warnings and stderr is empty in each frozen build.
+
+EnergyDecay differentiates E^(-4), not a proxy quantity. Positivity permits
+all divisions. Fifth-power coercivity gives derivative >=4c, and monotonicity
+on [0,t] yields E(t)^(-4)>=E(0)^(-4)+4ct. Continuity at zero and derivatives
+only on (0,t) suffice. Fourth-root inversion and the flexible shift estimate
+preserve all positivity and coefficient conditions.
+
+WeightedLengthComparison uses ell<=aD+E/(2a), obtained from ell^2<=2ED.
+For a=sqrt(t+tau), the energy derivative cancels the aD term in (L+aE)'.
+The explicit energy envelope bounds the remaining rate by B/(t+tau)^(3/4).
+The antitone comparison therefore gives the asserted shifted estimate.
+For every 0<delta<=tau the envelope remains valid, so the continuous right
+limit delta->0 gives L(t)+sqrt(t)E(t)<=L(0)+4B*t^(1/4). No derivative of
+sqrt(t) at zero is used. No monotonicity of length or product bound is used.
+The final scalar theorem derives its own envelope from fifth-power coercivity.
+
+The geometric wrapper has one explicit additional geometric condition:
+  for every s>=0, the ACTUAL total absolute curvature A(s)<=A0.
+It does not assert or assume this condition is known for every flow.
+Actual arclength coercivity gives D>=E^5/(262144 A(s)^6). Since A(s)>=1,
+the cap implies A0>0 and supplies c=1/(262144 A0^6). The coefficient
+B=16*A0*sqrt(A0) satisfies B^4=65536*A0^6 and 4*c*B^4=1 exactly.
+All energy positivity, time continuity, derivative laws and quadratic
+length-rate control are obtained from the actual closed position family
+and normal FEF PDE. No additional scalar law is left as a premise.
+
+The resulting actual statement is
+  L(t)+sqrt(t)*E(t)<=L(0)+64*A0*sqrt(A0)*t^(1/4), t>=0.
+Dropping its nonnegative energy term gives the claimed length increment.
+The exact energy decay formula is also established under the same cap.
+
+No substantive mathematical or scope error found. This is a conditional
+theorem for an existing forward flow. It is not general quarter-power
+growth, a proof of the cap, a construction of arbitrary-data solutions,
+or a resolution of migration or self-similar classification. Project-wide
+integration and independent cloud compilation are separate later checks.

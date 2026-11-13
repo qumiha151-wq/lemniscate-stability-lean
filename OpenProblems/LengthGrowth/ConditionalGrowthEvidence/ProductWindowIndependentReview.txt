@@ -1,0 +1,56 @@
+Independent semantic review of ProductWindow
+13 November 2026
+
+Reviewer: finish_curve_input. Read-only source review; no Lean rerun and no
+source edits. ProductWindow source SHA256:
+E274A49276077C981BDF918CF216A18E36AC544589ED150F62C4373705B14221.
+Author's frozen manifest SHA256:
+8CA7C05A02D3EB9F552B172AA61AA1433D5C68C8A4FF79D09F8F396227050B93.
+The directly used NormalizedProduct source was also read in full, SHA256:
+AB826F872A5E30CE4852C1DE3F668719AAE42BD5DE1D016493CCCBCDE1AAB5B5.
+
+No substantive semantic gap was found.
+
+Let e=EL, U=integral_s^t E^4, and Z=integral_s^t D/E. All E,L,D,ell
+are the actual weighted material integrals of the forward position family.
+The new module invokes previously proved normal-flow first variations and
+actual energy positivity. It does not introduce an abstract substitute for
+the position, force, energy, or dissipation.
+
+1. The compact-interval Cauchy--Schwarz lemma is proved from the nonnegative
+integral of (f+ag)^2 for every real a, then the quadratic discriminant.
+Continuity is needed only on Icc s t. The argument handles s=t and vanishing
+quadratic coefficients; it does not divide by the integral of g^2.
+
+2. NormalizedProduct supplies (e^2)'<=E^4 with its exact sum-of-squares
+deficit. Applying its integral form from x to t and monotonicity of the
+nonnegative E^4 integral gives e(x)^2>=e(t)^2-U throughout [s,t].
+Nonnegative actual E,L permit the square-root conclusion. No record maximum
+or monotonicity of e or L is assumed. The strict budget U<e(t)^2 ensures
+the square-root argument and eventual denominator are positive.
+
+3. The product FTC identity is e(t)-e(s)=integral E*ell-integral L*D.
+Continuity holds on the closed nonnegative-time interval. Differentiability
+is used only on its interior, where x>0 follows from s>=0. Thus s=0 is
+included without backwards extension or a derivative hypothesis at zero.
+
+4. Weighted Cauchy--Schwarz uses f=E^2 and g=ell/E, hence
+  (integral E*ell)^2 <= U * integral(ell/E)^2 <= 2 U Z.
+All divisions occur where actual E>0; the second inequality follows from
+ell^2<=2ED. No unjustified assumption ell>=0 appears.
+
+5. With m=sqrt(e(t)^2-U), the pointwise bound e>=m and D/E>=0 give
+m Z<=integral L D. The endpoint-gain hypothesis e(s)<=e(t), together with
+the exact product FTC identity, then gives m Z<=integral E ell. This also
+proves that the latter integral is nonnegative before it is squared.
+Combining the two inequalities gives m^2 Z^2<=2UZ. The code separates
+Z=0 before canceling the positive Z in the other branch. The result is
+  (e(t)^2-U) Z <= 2 U,
+and division by the strictly positive coefficient gives the stated ratio.
+
+Scope: this is a conditional, physical-time window theorem. Endpoint gain
+and the budget comparison remain explicit inputs. It proves no energy-clock
+inverse, first-record existence, uniform bound for EL, quarter-power bound,
+ancient compactness, or contradiction from local straightening. The author's
+reported actual check (672 declarations, standard three axioms, no warnings)
+was not independently repeated by this review.
