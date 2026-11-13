@@ -53,7 +53,7 @@ def verify_sources(project):
     return raw, inventory
 
 
-def discover_roots(project, prefix, lean_path):
+def discover_roots(project, prefix, lean_path, omitted=None):
     """Preserve Lake's actual first-hit order, then its implicit stdlib root."""
     generic = (project / '.lake/build/lib/lean').resolve()
     stdlib = (prefix / 'lib/lean').resolve()
@@ -65,6 +65,14 @@ def discover_roots(project, prefix, lean_path):
     paths = []
     for value in [*values, str(stdlib)]:
         path = Path(value).resolve()
+        if not path.exists() and path not in (generic, stdlib):
+            # Lake lists optional package build roots even when no imported
+            # module required that package (for example Cli). Such a path
+            # cannot contribute an artifact. Omit it from the explicit search
+            # paths later passed to Lean; never create or silently search it.
+            if omitted is not None and str(path) not in omitted:
+                omitted.append(str(path))
+            continue
         if not path.is_dir():
             raise NotADirectoryError(path)
         if path not in paths:
@@ -101,7 +109,8 @@ def capture(args):
     if Path(subprocess.check_output([str(lean), '--print-prefix'], text=True).strip()).resolve() != prefix:
         raise ValueError('Shim and actual Lean executable disagree on prefix')
     environment_path = os.environ.get('LEAN_PATH', '')
-    roots = discover_roots(project, prefix, environment_path)
+    omitted = []
+    roots = discover_roots(project, prefix, environment_path, omitted)
     for label, root in roots.items():
         if label != 'generic' and ((root / 'SolitonClassification').exists()
                                    or (root / 'SolitonClassification.olean').exists()):
@@ -137,6 +146,8 @@ def capture(args):
         raise ValueError('Source inventory changed during capture')
     if compiler.lean_identity(str(lean))[1] != identity:
         raise ValueError('Compiler changed during capture')
+    if any(Path(path).exists() for path in omitted):
+        raise ValueError('An omitted nonexistent search root appeared during capture')
     for path, expected in helper_hashes.items():
         if compiler.digest(path) != expected:
             raise ValueError('Environment capture code changed')
@@ -147,6 +158,7 @@ def capture(args):
         'schema': 'rotating.production-environment.v1',
         'platform': os.name, 'project': str(project), 'lean_prefix': str(prefix),
         'original_lean_path': environment_path,
+        'omitted_nonexistent_roots': omitted,
         'roots': {label: str(path) for label, path in roots.items()},
         'inventory_sha256': compiler.digest(project / 'ModuleProductionSourceInventory.json'),
         'helper_sha256': helper_hashes, 'lean': identity,
