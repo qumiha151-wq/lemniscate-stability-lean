@@ -1,0 +1,108 @@
+Independent semantic review of the actual growth-equivalence wrapper
+13 November 2026
+
+Reviewer: finish_curve_input. Read-only review; no source modification,
+Lean recompile, numerical calculation, or remote action was performed.
+The complete GrowthEquivalence source was read, as was AbsoluteCurvatureCS.
+The directly used frozen conditional and weighted comparison interfaces
+were reread. I authored EnergyFromLength, ConditionalQuarterGrowth and
+WeightedLengthComparison; this is an independent review of root's new
+actual wrapper and static CS assembly, not a claim of independent authorship
+review of those earlier scalar/conditional proofs.
+
+Locked source and observed build evidence
+-----------------------------------------
+GrowthEquivalence.lean SHA256:
+2F070A8EE3FF45A8C2487ABE2227C2A8A1E930CAC161622124793174A7246A17
+AbsoluteCurvatureCS.lean SHA256:
+A86AC87F2B43797BDB5EAA0456CE550FE178EE3219DAE67D0174B66DE72E6969
+ConditionalQuarterGrowth.lean SHA256:
+63C0BF9EABE74F8110CBBC89D25BAFFD7A974D9EF74A04A746145B4614454BAD
+EnergyFromLength.lean SHA256:
+9545D9BB08ADEC6E34CDB7AA5D6DC0FC2235194342D898B6E513758D3770A688
+WeightedLengthComparison.lean SHA256:
+1E2BCB980850973E2809E5BB0746AB5D207C8A99243F2AF931665108FB4A76E9
+
+Root's actual build directory read:
+work/length_flow_formal/growth_equivalence_build/1794556761800238100/
+Result SHA256:
+F2E0F6C5D837114115555F0147AA54FE135C58AC4466404C150CB1018DA7ED78
+Object SHA256 independently recomputed during this review:
+0C2F6DD131FCDFA4F0CB7689E8F645F82E6C87881EA9ADD55B5E870B22F1AFB9
+The result reports actual EXIT 0, 27.703 seconds, unchanged source and
+selected dependency sources/outputs. The read stdout contains only
+"Actual growth equivalence: 722 declarations; standard axioms only."
+The read stderr is empty. This review did not repeat the Lean invocation
+or independently rehash the complete dependency graph/cache.
+
+Conclusion: no substantive semantic gap was found.
+
+Definitions and quantifiers
+--------------------------
+All four properties concern one fixed genuine ForwardImmersion c and all
+physical times t>=0. Absolute curvature, energy and length retain their
+actual geometric definitions; none is a new abstract scalar placeholder.
+HasBoundedAbsoluteCurvature and HasBoundedEnergyLength existentially quantify
+a real cap; positivity is then recovered from genuine closed-curve facts.
+HasQuarterLengthBound and HasQuarterEnergyBound explicitly require a
+positive witness. Their weights are exactly q(1+t)=sqrt(sqrt(1+t)).
+No witness is uniform over distinct initial curves or distinct flows.
+
+Five directions
+---------------
+1. Bounded EL => bounded absolute curvature is purely static. At t=0,
+nonnegative E,L imply K>=0. Actual Cauchy--Schwarz gives A(t)^2<=2E(t)L(t)
+<=2K, so sqrt(2K) is a valid cap. The use of actual A(t)>=1 is legitimate;
+there is no hidden assumed total-curvature bound. In AbsoluteCurvatureCS,
+the arbitrary-speed integral transport is supplied by the already checked
+arclength construction. Cubing A^2<=2EL and combining the existing
+E^5/(262144*A^6) dissipation lower bound gives exactly
+  D >= E^2/(2097152*L^3).
+All canceled energies and lengths are strictly positive by actual geometry.
+The number is deliberately 2^(-21), not the unformalized sharp 4*pi^2.
+
+2. Bounded absolute curvature => quarter length invokes the already proved
+actual conditional increment. A>0 follows from A(0)>=1. With
+C=64*A*sqrt(A)>0, the increment L(t)<=L(0)+C*q(t), the monotonicity
+q(t)<=q(1+t), and q(1+t)>=1 give witness K=L(0)+C>0. No normal-flow
+assumption is silently dropped: this direction explicitly receives hflow.
+
+3. Quarter length => quarter energy supplies all scalar assumptions to
+EnergyFromLength from actual geometry: positive length/energy, energy
+continuity, actual E'=-D only at positive time, and the just-proved weak
+virial. The explicit scalar length envelope is exactly the existential
+witness extracted from the incoming property. Its positive energy witness
+is B=E(0)+K^3/(4a), a=1/2097152. No stronger virial or abstract energy law
+is assumed in the final theorem.
+
+4. Quarter length => bounded EL invokes the companion scalar result with
+the same actual quantities and hypotheses. The resulting witness is K*B.
+The product cap is derived; it is not used to justify the energy estimate.
+
+5. Quarter energy => quarter length invokes weighted_length_zero_shift
+with tau=1, the positive incoming B, actual continuity of E and L, actual
+normal first variations and actual ell^2<=2ED. The envelope argument is
+only the commutation 1+s=s+1. The previously proved positive-shift limit
+therefore gives L(t)+sqrt(t)E(t)<=L(0)+4B*q(t). Nonnegativity permits
+dropping the weighted energy, and q(1+t)>=1 and q(t)<=q(1+t) give the
+positive length witness L(0)+4B. No absolute-curvature cap, product cap,
+dyadic construction, endpoint product gain, or RelativeEnergy import is
+needed for this direction.
+
+Iff assembly and scope
+----------------------
+The three final iff theorems compose the five directions correctly:
+quarter length iff bounded absolute curvature;
+quarter length iff bounded EL;
+quarter length iff quarter energy.
+All dynamical equivalences retain the actual positive-time normal-FEF
+hypothesis. Their scalar components use continuity at zero, so the common
+t>=0 domain does not require a backwards extension.
+
+These are exact reductions for a given actual forward flow. An iff does
+not prove either side, and the code does not assert a bound witness exists
+for every flow. It proves neither global flow existence nor the paper's
+unrestricted quarter-power bound, and supplies no counterexample with an
+unbounded product. The source's opening scope statement correctly says
+the equivalent boundedness properties are not asserted to hold. Distinct
+open-problem projects are not imported.

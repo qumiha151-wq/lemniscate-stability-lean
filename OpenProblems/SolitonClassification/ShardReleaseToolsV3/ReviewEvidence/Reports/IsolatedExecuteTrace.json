@@ -1,0 +1,28 @@
+{
+  "exit_code": 1,
+  "events": [
+    {
+      "event": "call",
+      "module": "production_shard_release_controller",
+      "function": "prepare"
+    },
+    {
+      "event": "call",
+      "module": "production_release_preflight",
+      "function": "validate_request"
+    },
+    {
+      "event": "ValueError",
+      "module": "production_release_preflight",
+      "function": "validate_request",
+      "message": "Test-only request forbidden in production"
+    },
+    {
+      "event": "ValueError",
+      "module": "production_shard_release_controller",
+      "function": "prepare",
+      "message": "Test-only request forbidden in production"
+    }
+  ],
+  "network_attempts": []
+}

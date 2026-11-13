@@ -1,0 +1,123 @@
+{
+  "schema": "growth-equivalence-project-integration-v1",
+  "status": "PASS",
+  "base_commit_reported_by_root": "d713b33de6e6498f9ac1260ed9a3d041aff02042",
+  "actual_integration_calls": [
+    {
+      "module": "LengthGrowth",
+      "argv": [
+        "C:\\Users\\17815\\.elan\\toolchains\\leanprover--lean4---v4.33.1\\bin\\lean.exe",
+        "--setup",
+        "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\equivalence_publication\\stage_v1\\LengthGrowth.setup.json",
+        "-M",
+        "4096",
+        "-j",
+        "1",
+        "-o",
+        "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\equivalence_publication\\stage_v1\\build\\LengthGrowth.olean",
+        "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\equivalence_publication\\stage_v1\\project\\LengthGrowth.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 15.735000000000582,
+      "source": {
+        "sha256": "d657e641d8d0c3265da8209f137d5c8bf68b59ce21afba3dd00bcdc9078c9715",
+        "bytes": 4772
+      },
+      "setup": {
+        "sha256": "3917284991a0904cc321c0fc3f57433854b13032d58329a5d51d3c48f2655041",
+        "bytes": 13644
+      },
+      "stdout": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "output": {
+        "sha256": "30e05b751c210e38497cfda7d348496b2b01eeb07093a87caf7b57d19f971fed",
+        "bytes": 8048
+      }
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "argv": [
+        "C:\\Users\\17815\\.elan\\toolchains\\leanprover--lean4---v4.33.1\\bin\\lean.exe",
+        "--setup",
+        "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\equivalence_publication\\stage_v1\\LengthGrowth.AxiomAudit.setup.json",
+        "-M",
+        "4096",
+        "-j",
+        "1",
+        "-o",
+        "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\equivalence_publication\\stage_v1\\build\\LengthGrowth\\AxiomAudit.olean",
+        "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\equivalence_publication\\stage_v1\\project\\LengthGrowth\\AxiomAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 18.46900000000096,
+      "source": {
+        "sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+        "bytes": 727
+      },
+      "setup": {
+        "sha256": "048529d6cc32d86c9a430e2bc18d6ccd330c343cfd4fe5aa5c5b76f754a5427d",
+        "bytes": 13844
+      },
+      "stdout": {
+        "sha256": "67243da67b5f761dccded8062f09edaa9afeb510728afc2c79af773427583083",
+        "bytes": 68
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "output": {
+        "sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+        "bytes": 2696
+      }
+    }
+  ],
+  "prior_mathematical_leaves": 44,
+  "new_mathematical_leaves": 4,
+  "reused_mathematical_leaves": 48,
+  "leaf_recompilations": 0,
+  "original_audit_source_unchanged": true,
+  "prior_evidence_unchanged": true,
+  "actual_recursive_audit_count": 802,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "selected_inputs_unchanged": true,
+  "base_outputs_unchanged": true,
+  "other_projects_unchanged": true,
+  "staged_sources_unchanged": true,
+  "reused_artifacts_unchanged": true,
+  "explicit_root_importArts": 50,
+  "no_project_LEAN_PATH": true,
+  "ordinary_mathlib_roots": [
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean",
+    "C:\\Users\\17815\\Desktop\\论文\\lean_deps\\mathlib4-4.33.1\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean"
+  ],
+  "whole_mathlib_cache_snapshot_performed": false,
+  "old_evidence_rewritten": false,
+  "actual_relative_energy_accounting_proved": true,
+  "actual_four_property_equivalence_proved": true,
+  "equivalent_properties_asserted_unconditionally": false,
+  "quarter_growth_requires_uniform_absolute_curvature_cap": true,
+  "uniform_absolute_curvature_bound_proved": false,
+  "general_quarter_power_growth_proved": false,
+  "energy_clock_formalized": false,
+  "ancient_window_formalized": false,
+  "runner_sha256": "a4d8c14154ec330b7841dd8f286a30e0fe9bc7fe9e3f63e4d0900a4413d2be9d",
+  "selected_inputs_sha256": "6121f76b7231367d754e865f84af374f8d6048e8689d159ce94c8e4f0d7ab8ae",
+  "staged_before_sha256": "e06cad5d659b84d8c5870e38fa7ab8d1521becc6e88f1e8b2934138e10e1b54b"
+}

@@ -1,0 +1,53 @@
+Independent review: actual absolute-curvature CS and weak virial bound
+13 November 2026; reviewer finish_odd_rigidity. Read-only, no recompilation.
+
+Complete source reviewed:
+LengthGrowth/ActualFlow/AbsoluteCurvatureCS.lean
+SHA256 A86AC87F2B43797BDB5EAA0456CE550FE178EE3219DAE67D0174B66DE72E6969
+Frozen manifest SHA256:
+CB2507B1EB8CE9DCA6C8381278CC76B214A082F52F93CF90D4CFA07FFBC22511
+Actual retained build: absolute_curvature_cs_build/1794555955830764500,
+session 22582 exit 0, 15.547 seconds. Object SHA256:
+5223CA2FED282CEE4DC6257328E775C5E30CBD011B4D9B776EF4C9766943FA6E
+The retained stdout says 572 declarations, standard axioms only, with no
+warnings; stderr is empty. I read result/setup/stdout and independently
+rehashed every manifest artifact and every recorded dependency source/object.
+They match. I did not independently rerun or observe the original process.
+
+No substantive mathematical or semantic gap was found.
+
+1. The auxiliary ClosedFrenetCurve inequality applies the existing proved
+interval Cauchy--Schwarz lemma to |curvature| and the constant function 1.
+Its period is positive. Thus (integral |k|)^2 <= period*integral k^2,
+which equals 2*E*period with the project's bending-energy normalization.
+This step assumes neither a normal PDE nor a uniform bound for curvature.
+
+2. The actual arbitrary-speed adapter uses the already constructed smooth
+global arclength inverse, not an assumed unit-speed proxy. The previously
+proved transport equalities identify all three quantities: its Frenet period
+is the actual material length, its energy is materialEnergy, and its absolute
+curvature is materialAbsoluteCurvature. Hence A^2 <= 2 E L refers to the
+original position with the genuine speed weight. I checked these exact
+transport signatures and the original positive-length construction.
+
+3. The weak virial estimate is a deliberate non-sharp consequence of the
+existing actual coercivity D >= E^5/(262144 A^6). Since A^2 <= 2EL,
+raising nonnegative sides to the third power gives A^6 <= 8E^3L^3.
+All divisions are legitimate: actual closed immersion supplies E>0 and
+A>=1, and positive speed on a positive parameter period supplies L>0.
+Consequently
+  D >= E^5/(262144*8E^3L^3) = E^2/(2097152 L^3).
+The reciprocal comparison direction and the factor 2097152=2^21 are correct.
+
+4. ForwardImmersion.length_pos, absoluteCurvature_sq_le and weak_virial
+are actual static slice theorems for every t>=0. The regularPositionAt
+adapter supplies the required smoothness, periodicity and nonzero velocity
+from the already checked initial/interior regularity fields. Normal FEF is
+not assumed or needed for these static inequalities; initial time is included.
+
+Scope: this module proves no uniform-in-time A or EL bound, no energy limit,
+no unrestricted quarter-power growth, and no existence theorem. Its weak
+virial name denotes precisely the displayed algebraic consequence, not a
+new unproved moment identity. It imports only the independent LengthGrowth
+ArclengthCoercivity chain. It is outside the current four-module publication
+batch; any later integrated audit or remote CI remains a separate check.

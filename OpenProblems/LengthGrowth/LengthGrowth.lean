@@ -1,3 +1,5 @@
+import LengthGrowth.ActualFlow.GrowthEquivalence
+import LengthGrowth.ActualFlow.RelativeEnergy
 import LengthGrowth.ActualFlow.ProductWindow
 import LengthGrowth.ActualFlow.ConditionalQuarterGrowth
 import LengthGrowth.ActualFlow.ArclengthCoercivity
@@ -76,4 +78,17 @@ the actual total absolute curvature. It derives explicit energy decay and
 L(t)+sqrt(t)E(t)<=L(0)+64 A0 sqrt(A0) fourthRoot(t).
 No uniform A bound is proved. Unrestricted quarter-power growth remains open.
 See ProductWindowAndConditionalGrowthScope.txt for precise scope.
+-/
+
+/-!
+GrowthEquivalence proves an exact reduction for one actual forward normal
+FEF: bounded actual absolute curvature, bounded actual E*L, a quarter-power
+length upper bound, and quarter-power energy decay are equivalent. It does
+NOT assert that any of these properties holds for every flow. Constants
+may depend on the entire given flow. The weak virial coefficient is 2^-21.
+
+RelativeEnergy gives exact Z=log E(s)-log E(t), E(s)/E(t)=exp Z,
+U exp(-4Z)<=E(t)^4(t-s)<=U, and normalized energy loss exp Z-1 on 0<=s<=t.
+This is exact window accounting, not an ancient-window or clock-inverse
+construction. See GrowthEquivalenceScope.txt. General growth remains open.
 -/

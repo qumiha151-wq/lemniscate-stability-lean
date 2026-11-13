@@ -1,0 +1,28 @@
+ROOT REVIEW: ENERGY DECAY FROM A LENGTH ENVELOPE
+13 November 2026. Complete final EnergyFromLength.lean read at SHA256
+9545d9bb08adec6e34cdb7aa5d6dc0fc2235194342d898b6e513758d3770a688.
+Actual session84803 exit0, 51 FreeElasticScalar declarations using only
+standard three axioms, no warnings. The frozen source is a scalar helper;
+its actual geometric adapter is the separately checked GrowthEquivalence.
+
+With positive E,L,c,A and the explicit premises E'=-D,
+D>=cE^2/L^3 and L<=A*fourthRoot(1+t), the proof correctly differentiates
+G=1/E-(4c/A^3)*fourthRoot(1+t). Reciprocal comparison of positive cubes
+gives G'>=0. Continuity of E and positive energy suffice for G continuity;
+no continuity or derivative of L is needed. Mean-value monotonicity on
+[0,t] uses derivatives only on its interior and includes t=0.
+
+The exact inverse-energy lower bound then controls E by
+B/fourthRoot(1+t), B=E(0)+A^3/(4c)>0. The sum is a deliberately loose
+constant: its reciprocal is <=1/E(0) and <=4c/A^3. Since the fourth root
+is >=1, these two inequalities give the required lower bound on 1/E(t).
+Multiplying the derived energy envelope by the original length envelope
+gives EL<=AB. The direction of each division and positive multiplication
+is correct, and the original length bound remains an explicit input.
+
+No substantive mathematical or hypothesis error found. The helper does
+not assert any flow satisfies its assumptions or any global boundedness
+property. GrowthEquivalence supplies the genuine geometric premises with
+the proved weak virial coefficient 1/2097152, not the sharper 4*pi^2 value.
+The equivalence theorem still does not establish those properties for all
+flows. Integration and later remote compilation are separate checks.

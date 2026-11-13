@@ -1,0 +1,94 @@
+Independent read-only review of the partial release controller
+13 November 2026; reviewer: finish_odd_rigidity.
+
+Scope and conclusion
+I fully read the controller, the original orchestration fixtures and the final
+narrow tests; I checked the called public interfaces against the actual frozen
+outer, v3 publisher, preflight, plan, Git-identity and record-validation code.
+I found no material defect in this bounded orchestration layer. This is not an
+authorization to publish or evidence of a successful production execution.
+No runtime source, frozen dependency, workflow, catalog or remote state was
+changed by this review. I did not rerun the existing large fixture suite.
+
+Exact versions
+Original controller, retained as controller_orchestration_review_v2/controller_source.py:
+  1FCFB017D6D404A0012B0005A961A31D3B18565AEF3CF00F59EF1C46325A62D7
+Final pipeline/production_shard_release_controller.py:
+  50AA90F43C54A3C9404D6611C9970CDA3F1EA7A1F50B335FA8C6CE6972FDA30E
+Original pipeline/review_shard_release_controller.py and retained test_source.py:
+  588FC7B688783D6F07895C52885E095A8F1AE46111EF8481FC6B1DE81A57AD2B
+Original controller_orchestration_review_v2/report.json:
+  2E0A2CD466AA9500B674B0208DF0BF22744FCA6248CF8367D7EC612C8CA7D000
+Final pipeline/review_controller_final_recheck.py:
+  D8A8B7271F3D96CB321E8A5142F9C12F860FC3F4C83A3743ACA77A357D0BBF00
+Final controller_final_recheck_review_v1/report.json:
+  AF8BDF0D6A372DC2B006AC415B38D8E17770F1F625CE9CEC7D17CFE8BE30CF31
+Paths in this list are relative to work/rotating_formal. All listed hashes
+were independently recalculated from the retained local files in this review.
+
+Commit and input binding
+The production check compares every exact runtime Python helper against its
+actual committed blob, rejects extra/nested Python files and cached inputs,
+and requires the actual tool HEAD to equal the request's publisher revision P.
+The input checkout is separately required to be the Git root at GITHUB_SHA Q.
+Each request, catalog, full plan and all 250 plan checkpoint files must both
+match its pinned digest and equal its actual Q blob. P and Q are distinct.
+There is no literal Q embedded in its own input commit. The local Q comparison
+is explicitly only same-execution consistency; independent post-commit/run
+head verification remains an external deployment responsibility.
+
+bound_plan actually validates the complete canonical 250-job plan, its signed
+partition, candidate/protocol metadata and chained checkpoint attachments.
+prepare adds each checkpoint to the immutable pin map: 3 input files plus
+250 checkpoints. recheck covers that entire map between stages and at exit.
+The final source diff adds only comments and one recheck after the potentially
+long complete output hashing pass, before either successful receipt is written.
+That is the correct location for detecting changes during the last traversal.
+These are staged consistency checks, not an atomic filesystem lock against an
+adversarial concurrent process after the final check.
+
+Actual interfaces and control flow
+execute constructs the fixed public d.prepare / d.download_with_budget and
+v.prepare / v.publish_with_budget phases. It does not accept fixture hooks,
+construct an alternative HTTP client, invoke private publish methods or bypass
+the publisher's quota gate. Both prepares receive the same original six-tuple;
+the actual downloaded archives directory is passed directly into v.prepare.
+That frozen public prepare calls the complete original-archive preflight624.
+The controller then verifies status, exact requested order/coverage, input
+hashes and original archive identities before publication can begin.
+
+Returned publication evidence is checked against its saved summary, N+3
+mutation count, source/plan/request/catalog/base/tool identities, ordered keys,
+durable record bytes and production record schema. Journal sequence and hash
+links, raw response hashes, exact file inventory and earlier-stage preservation
+are checked before final success. The controller makes no extra REST requests.
+Its final receipt remains partial scope, with full_certificate_proved false;
+it does not turn publication into a complete numerical or Lean theorem.
+
+Failure and credential treatment
+A failed download/preflight prevents the subsequent publication call. A failed
+publisher or final check is not retried and triggers no remote cleanup. Local
+failure evidence records phase and whether publication started/returned;
+it deliberately does not infer zero remote writes after an attempted call.
+Existing summary/journal/original files are retained. Failed evidence writes
+cannot convert the original exception into success. The controller records
+exception type/status rather than an arbitrary error string, and does not
+serialize the supplied token or environment. Production credentials only flow
+to the two fixed public libraries; fixture credentials are explicit constants.
+
+Validation boundary
+The original retained report records success and 14 rejecting cases, including
+earlier-stage failure, changed inputs/evidence, fixture-to-production rejection,
+and real local Git clean/dirty tool and Q checks. Its phase implementations are
+orchestration stubs: synthetic fixture preflight/summary fields are NOT actual
+archive preflight, HTTP, mutation or durability observations.
+The new narrow report additionally records late request/checkpoint changes
+injected only after the final exact-files traversal, both rejected before any
+success receipt, while retaining the fixture publication summary. It checks a
+real local Git checkout built from the full 253 prepare pins, accepts its clean
+identity and rejects a dirty checkpoint. I read these test implementations and
+their retained reports/console, and independently checked their source hashes;
+I did not independently rerun either process or observe its process exit code.
+The runtime diff and these narrow cases address the final traversal gap without
+changing the frozen network protocol. No production network/full-preflight run,
+new Lean execution, real catalog or deployment YAML is established by them.

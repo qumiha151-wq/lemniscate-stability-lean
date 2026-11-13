@@ -1,0 +1,72 @@
+ROOT REVIEW: PINNED V3 LAUNCHER AND LOCAL PACKAGE TOOLS
+13 November 2026. Read the complete launcher, builder, verifier, primary
+fixture, supplemental fixture and both reports. Also checked the actual
+frozen controller and outer-stage receipt fields, public call signatures,
+directory names and file inventories used by the launcher.
+
+Reviewed sources:
+shard_release_v3_launch.py
+2ce88e2a38f76d40816b96a6c4bc92b87580237ea351c230a1e71c1d59178dc4
+prepare_shard_release_v3_tools.py
+fc8e8689455342cbd2adda9acc2498b379666681e31f93243b80ad1ec4ea1040
+verify_shard_release_v3_tools.py
+3de033c061714286e1fe8bf792ceb0183188bb47f096ebba084611a89865fffa
+Package v2 manifest:
+e829412c3bd9fea644288cc7e30cdbf36ca0b6e1503dd797ae8b57c297f4b5f5
+
+The package keeps precisely the eighteen frozen runtime modules. The
+launcher and evidence are outside that flat import directory. Before any
+runtime import, the isolated entry checks bounded canonical manifest bytes,
+the exact package inventory and actual committed P blobs. It checks its own
+member path, the imported module origins and frozen runtime identity map.
+The manifest does not contain a self-hash or future P/Q. The external P and
+manifest hash remain the anchors; Q/GITHUB_SHA is execution consistency,
+not an independently supplied Q commitment.
+
+The production entry accepts no fixture switch or token argument. It calls
+only the actual public controller prepare/execute path with the original
+request/catalog/plan and their expected hashes. It introduces no HTTP,
+second preflight, retry, wait, archive deletion or automatic remote recovery.
+The full checkpoint closure and actual Q identity remain controller checks.
+
+Compact evidence is outside the controller-owned output. It is selected
+from the actual controller inventory and pinned inputs, with exact JSON
+location allowlists, caps and hash comparisons. Original ZIP/tar bodies
+are excluded from copies; recovery lists retained tar paths with observed
+versus pinned size/hash and does not relabel partial bodies as validated.
+Post-publication failure keeps the actual controller return state and never
+infers zero writes. A collection failure is marked incomplete and does not
+replace the originating exception. Runner loss is not claimed to be solved.
+
+Primary fixture, actual session21623 exit0:
+test e454e6f74c9a8b48daa537cdf7fc1df8d0435d41dc4cf2dbb2e8c4a98a5a0baa;
+report ff0c9dc51b6355c35692b11f7f08b6e1a5eb760d00b9996a5d16b9733bd4e5b1.
+It creates actual local Git P ae563c7ee616cd739a41c8a480d1558d45b1b683
+and runs fourteen actual subprocesses, including clean isolated imports,
+ignored PYTHONPATH, dirty/wrong identities, extra/nested helpers and explicit
+path contamination. Six additional structural rejects are tested. Failure
+compact collection copies 268 text files and no archive body. Actual Windows
+symlink creation failed with OSError: that link test was NOT exercised and
+is not counted as a pass.
+
+Root requested a narrow supplemental test for the previously unexercised
+successful compact-copy branch and the real CLI's fixture rejection.
+Actual session86467 exit0, unchanged production sources:
+test a8a585b434b4eff6293c7bf0a8dbf248c37dcedaeb5f91904e87e224e8b9ff15;
+report 9dfa5a9c2ecb2c9df9e3dbca4d8c3cb352580a860e218a0ed02bb0406ba70799.
+A clearly labelled SYNTHETIC success-format fixture copies and rehashes
+272 text files. This fabricated local receipt is NOT an actual controller
+or HTTP success. Four one-time faults (changed, missing, extra file, bad
+receipt inventory pin) each produce the exact expected ValueError, not an
+arbitrary exception counted as rejection. No checked inventory is emitted.
+The actual isolated --execute entry reaches controller.prepare and rejects
+an explicitly test-only request with the expected production prohibition.
+The traced controller.execute is not reached; no output is created and the
+socket/DNS audit records zero attempts. Its token is a nonsecret dummy.
+
+No substantive implementation or scope error found in this local milestone.
+There have been zero real network requests, remote mutations, full preflight
+calls or Lean calls in these launcher fixtures. The positive production
+execute path has NOT been exercised end-to-end. Publication of reviewed tool
+bytes is separate from creating a production catalog/workflow or executing
+them; whole246 completion and concrete input verification remain required.

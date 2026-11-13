@@ -1,0 +1,25 @@
+ROOT REVIEW OF ACTUAL RELATIVE ENERGY
+13 November 2026. Full final RelativeEnergy.lean source read at SHA256
+76c042ca45694d14977d8db8e77993da27b25eb851bed574b675c7706544e73e.
+Frozen manifest 738ad9e32751d6b451bbdb30bda9dc35447ddc2c082059b3c0f5a30ede918448.
+Actual session 4947 exit 0, 20.547 seconds, 682 recursively audited
+declarations with only propext, Classical.choice and Quot.sound. Final
+stdout is solely the audit marker; stderr is empty. This is a new leaf
+check, not a fresh compilation of all imported project modules.
+
+Actual E monotonicity follows directly from the integrated normal-flow
+energy identity and nonnegative D. Positivity on all t>=0 is supplied by
+closed immersion. Composition with log is thus continuous and has derivative
+-D/E at positive time. Interior FTC proves Z=log(E(s))-log(E(t)) through
+s=0, without a derivative at zero. Exponentiation yields E(s)/E(t)=exp(Z).
+
+Monotonicity gives E(t)^4*(t-s)<=U<=E(s)^4*(t-s). Substituting the exact
+endpoint ratio, with a positive exponential multiplier, gives the correct
+orientation U*exp(-4Z)<=E(t)^4*(t-s)<=U. Subtracting one from the endpoint
+ratio gives (E(s)-E(t))/E(t)=exp(Z)-1. The equal-endpoint case is included.
+
+No substantive error found. No endpoint product gain, strict budget, uniform
+curvature cap, time inverse, ancient limit or new existence premise is
+introduced. The result is exact accounting for the given actual flow and
+does not establish any global boundedness property. Full-project integration
+of this new leaf remains a later task.

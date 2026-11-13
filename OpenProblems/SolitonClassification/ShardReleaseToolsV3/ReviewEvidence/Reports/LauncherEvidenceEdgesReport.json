@@ -1,0 +1,61 @@
+{
+  "actual_Lean_calls": 0,
+  "actual_full_preflight_calls": 0,
+  "actual_isolated_execute_rejection": {
+    "controller_execute_reached": false,
+    "controller_prepare_reached": true,
+    "exit_code": 1,
+    "publication_output_exists": false,
+    "reason": "Test-only request forbidden in production",
+    "socket_DNS_attempts": 0,
+    "trace_sha256": "5f4227a622143e0f394b62872ba8f4ec0ccabf5ae3c96e363fb9a2ad1301a7ca"
+  },
+  "actual_network_requests": 0,
+  "actual_positive_production_execute_tested": false,
+  "actual_remote_mutations": 0,
+  "cases": [
+    {
+      "case": "changed_file",
+      "exception_type": "ValueError",
+      "fault_count": 1,
+      "message": "Controller evidence differs after completion",
+      "rejected": true
+    },
+    {
+      "case": "missing_file",
+      "exception_type": "ValueError",
+      "fault_count": 1,
+      "message": "Controller evidence differs after completion",
+      "rejected": true
+    },
+    {
+      "case": "extra_file",
+      "exception_type": "ValueError",
+      "fault_count": 1,
+      "message": "Controller evidence differs after completion",
+      "rejected": true
+    },
+    {
+      "case": "receipt_pin",
+      "exception_type": "ValueError",
+      "fault_count": 1,
+      "message": "Wrong controller inventory",
+      "rejected": true
+    }
+  ],
+  "deployment_YAML_generated": false,
+  "launcher_sha256": "2ce88e2a38f76d40816b96a6c4bc92b87580237ea351c230a1e71c1d59178dc4",
+  "package_manifest_sha256": "e829412c3bd9fea644288cc7e30cdbf36ca0b6e1503dd797ae8b57c297f4b5f5",
+  "production_catalog_generated": false,
+  "schema": "rotating.launcher-evidence-edge-fixtures.v1",
+  "status": "checked",
+  "synthetic_success_format_result": {
+    "compact_bytes": 1267403,
+    "compact_files": 272,
+    "inventory_sha256": "15d5fa7d77e1f64cdaca5949235da1c5226842155ca8b90fa562b2ff1550d260",
+    "originals_copied": 0,
+    "recovery_paths_sha256": "82aefb05f15b51f4945d121c6f1b25c0ff9d018c56493a801a8f483bb8cc3b8c"
+  },
+  "synthetic_success_is_not_actual_controller_or_HTTP_success": true,
+  "test_sha256": "a8a585b434b4eff6293c7bf0a8dbf248c37dcedaeb5f91904e87e224e8b9ff15"
+}

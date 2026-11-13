@@ -1,0 +1,72 @@
+INDEPENDENT ROOT REVIEW: ONE-BATCH RELEASE CONTROLLER
+13 November 2026. Library review only, not deployment authorization/evidence.
+
+Final source production_shard_release_controller.py:
+50aa90f43c54a3c9404d6611c9970cda3f1ea7a1f50b335fa8c6ce6972fda30e.
+I read the complete original 1fcfb017d6d404a0012b0005a961a31d3b18565aef3cf00f59ef1c46325a62d7
+source, its full 588fc7b688783d6f07895c52885e095a8f1ae46111ef8481fc6b1de81a57ad2b
+test, and the complete orchestration report
+2e0a2cd466aa9500b674b0208df0bf22744fca6248cf8367d7ec612c8ca7d000.
+I then compared the final source to that retained original. The only change
+is a documented final recheck after the complete output hash traversal.
+I read the full targeted test d8a8b7271f3d96cb321e8a5142f9c12f860fc3f4c83a3743aca77a357d0bbf00
+and its report af8bdf0d6a372dc2b006ac415b38d8e17770f1f625ce9cec7d17cfe8be30cf31.
+Actual observed test sessions were 43832 EXIT0 and 93996 EXIT0. The earlier
+missing-checkpoint fixture failure is preserved separately.
+
+Production execution fixes the exact public outer and v3 publisher entry
+points. It cannot accept supplied phase hooks or fixture requests. The
+fixture entry is separately marked, supplies no production credential, and
+cannot emit a production verified receipt. The frozen protocol libraries
+were not modified by this controller work.
+
+The same raw request, catalog and plan paths and hashes flow through both
+prepare calls. All 250 checkpoint attachments read by bound_plan are
+explicitly pinned as part of the immutable closure. Original archives are
+passed directly from download/archives to the unchanged full preflight;
+no projection, summary, successful CI badge or outer receipt replaces that
+validation. I compared the actual outer receipt, frozen 624 preflight and
+v3 summary/record field definitions with all controller validators. No
+schema or public-call-signature mismatch was found.
+
+Tool identity checks inspect actual committed blobs and reject extra or
+nested Python helpers and caches in the intended flat runtime directory.
+Input identity checks the actual input Git HEAD against GITHUB_SHA and
+the committed raw bytes of the entire 253-file input closure. This is a
+same-execution consistency check. It correctly does not embed Q inside its
+own commit or pretend to independently pin Q: root must externally bind
+the actual post-commit workflow head. P remains the separately known tool
+revision in the request. Package/launcher deployment remains future work.
+
+The controller verifies each returned stage and stops before publication
+if download or full preflight fails. After publication it checks durable
+record hashes and the actual standard durable-record validator, full
+journals/raw responses and original earlier-stage files. It preserves
+successful publication evidence on a later failure and does not infer
+zero mutations from an exception. It performs no retries, sleeps, remote
+cleanup, extra REST requests or fallback to a different publisher.
+The final input/tool/checkpoint recheck now also follows the long complete
+output hashing pass. These are sequential consistency checks, not a claim
+of an atomic filesystem transaction.
+
+Fixture scope is accurately limited. The 43832 test uses orchestration
+STUBS for transfers/preflight/publication; its synthetic per-stage records
+are explicitly fixture-only. Its 14 rejections exercise phase stopping,
+wrong stage output, changed originals/input/records, extra output, fixture
+escape and local Q consistency. Actual local Git children test clean and
+modified controller blobs and extra helper rejection. These tests do not
+constitute another real protocol run or full original-archive validation.
+
+The narrow final test injects exactly one mutation after a completed final
+hash traversal, for the request and separately a checkpoint. Both are
+rejected by the final recheck; both retain the already-returned publication
+summary and write neither successful receipt nor checked-file inventory.
+The separate actual local Q fixture builds all 253 pins through prepare,
+accepts clean committed input and rejects the modified p_0032 checkpoint.
+No full 32-batch transfer suite was unnecessarily repeated.
+
+No substantive defect was found in the final library. All cited controller
+tests made zero network requests, remote mutations, full preflight calls or
+Lean calls. No production catalog, launcher, deployment YAML or actual
+remaining-246 publication was created. The library is ready for separately
+reviewed packaging; it does not prove the full rotating-profile theorem.

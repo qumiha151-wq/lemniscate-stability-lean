@@ -1,0 +1,44 @@
+Scalar energy decay from a quarter-length envelope: frozen status
+13 November 2026
+
+EnergyFromLength.lean passed actual Lean 4.33.1, session 84803, EXIT 0.
+Its final recursive audit checked 51 FreeElasticScalar declarations with
+only propext, Classical.choice and Quot.sound. Final stdout contains only
+the audit marker, stderr is empty, and there are no warnings. The earlier
+successful development build with unused-tactic warnings remains in its
+own directory and is not the frozen final artifact.
+
+The three public interfaces, in order, are:
+energy_inverse_lower_of_quarter_length,
+energy_decay_of_quarter_length,
+energy_length_cap_of_quarter_length.
+Their common parameter order matches the approved specification exactly:
+(L E D) (c A), positive c,A, continuity of E, positivity of L and E,
+positive-time derivative E'=-D, weak virial coercivity, length envelope,
+then t and 0<=t.
+
+For q(t)=sqrt(sqrt(1+t)), d=4c/A^3 and B=E(0)+A^3/(4c), they prove
+  E(t)^(-1) >= E(0)^(-1) + d*(q(t)-1),
+  E(t) <= B/q(t),
+  E(t)L(t) <= A*B.
+The scalar hypotheses retain the assumed length envelope L(t)<=A*q(t)
+and weak virial D(t)>=c*E(t)^2/L(t)^3. The module does not itself derive
+them from a position family. That actual geometric wrapper is a separate
+module owned by root. The available actual coefficient c=2^(-21) gives
+B=E(0)+2^19*A^3; no sharp 4*pi^2 coefficient is claimed here.
+
+The reciprocal comparison differentiates only at positive interior times
+and uses E continuity at zero, so t=0 is included. It does not assume a
+backward flow, length derivative, length continuity, monotone length,
+continuous D, or an independent product cap. The product cap is obtained
+by multiplying the already assumed length envelope and the newly proved
+energy envelope; it does not assert that such an envelope always exists.
+
+Dependencies are only Mathlib and LengthGrowth. The frozen scalar modules
+EnergyDecay and WeightedLengthComparison were reused through explicit
+setup mappings and were not edited or recompiled. RelativeEnergy and the
+four-module publication stage were also left unchanged. The checker's
+selected input/source/executable hashes match before and after; this is
+not a complete cache snapshot or aggregate project root check.
+
+Frozen manifest SHA256: f372a8aaa1483706083401fcf19114d5c2c575a2fbe83186fe794734fd8d17c7

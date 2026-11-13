@@ -1,0 +1,43 @@
+Actual relative energy: frozen standalone status
+13 November 2026
+
+RelativeEnergy.lean passed actual Lean 4.33.1 in session 4947, EXIT 0.
+The recursive audit checked 682 declarations in LengthGrowth and
+FreeElasticScalar with only propext, Classical.choice, Quot.sound.
+The final stdout contains exactly the audit marker; stderr is empty.
+There are no final Lean warnings or residual tactic suggestions.
+Development attempts remain separately preserved and are not substituted
+for the successful final artifact.
+
+For a given actual ForwardImmersion c satisfying its positive-time normal
+FEF equation and any 0<=s<=t, the module proves actual energy antitonicity,
+the actual log-energy derivative, and the exact identities
+
+ Z(s,t) = integral_s^t D/E = log E(s) - log E(t),
+ E(s)/E(t) = exp Z(s,t),
+ U(s,t) exp(-4 Z(s,t)) <= E(t)^4 (t-s) <= U(s,t),
+ (E(s)-E(t))/E(t) = exp Z(s,t)-1,
+
+where U(s,t)=integral_s^t E^4. It also records the direct endpoint bound
+E(t)^4(t-s)<=U(s,t)<=E(s)^4(t-s).
+
+All E,D,U,Z are the frozen actual geometric integrals. Energy positivity
+is derived from the closed-curve arclength development. The logarithmic
+FTC differentiates only on Ioo s t; continuity and integrability handle
+s=0, and the same theorem includes s=t. No backward normal flow, separate
+energy ODE assumption, endpoint product gain, absolute-curvature cap,
+first-record property, or energy-clock inverse is introduced.
+
+This gives exact accounting and a time comparison at the actual terminal
+energy scale. It does not construct a flow, prove a record exists, prove
+ancient compactness, or settle unconditional quarter-power growth.
+It is a separate later batch and was not added to the four-module stage
+containing ProductWindow and ConditionalQuarterGrowth.
+
+Only Mathlib and LengthGrowth are imported. Frozen ProductWindow and prior
+objects were reused by explicit setup mappings. The checker and finalizer
+rechecked source, selected dependency artifacts, executable and checker
+hashes. They do not hash the entire Mathlib cache or rerun a complete
+project root audit. No prior source was edited and no old leaf recompiled.
+
+Frozen manifest SHA256: 738ad9e32751d6b451bbdb30bda9dc35447ddc2c082059b3c0f5a30ede918448

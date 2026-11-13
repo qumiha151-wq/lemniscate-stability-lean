@@ -1,0 +1,56 @@
+READ-ONLY ZIP LIBRARY: LOCAL MILESTONE, NOT DEPLOYED
+13 November 2026
+
+Runtime is production_shard_zip_download.py SHA256
+8E9905C801CF08D4F4697B2FABAE3B22EE5C4DFED28267D7B1F0DC2EB7E30F65.
+The v3 publisher/catalog, v2, B44, 624, AAA1 and all proof sources are unchanged.
+
+Evidence:
+- Primary fixture session 26100 ended EXIT 1. Its intended malicious backslash
+  member was normalized by Windows ZipInfo before writing. The library saw
+  a canonical x/y member, correctly accepted it, and the test assertion failed.
+  The failed script, console and all partial outputs are preserved.
+- This primary run had already completed N=1..32 full in-memory read-only
+  flows. The independent completion fixture rechecked every retained receipt,
+  exact file inventory/hash and journal hash chain, and counted the actual
+  recorded GET observations: N+10, with N ZIP transfers, zero mutations and
+  gate threshold N+110. These 32 flows were not repeated.
+- The new completion fixture produced its checked report and final checked
+  console line. The PTY terminal result was lost at context compaction;
+  a later poll reported Unknown process id. No new process was launched.
+  This status records the completed report and console, not an independently
+  retained process exit-code observation for session 83932.
+- All 15 ZIP-layout/corruption tests in the completion report rejected with
+  the specified exception class. The real backslash fixture patched both
+  local and central filename bytes and checked the actual parsed name.
+- The retained actual RP0000 Actions ZIP (221772404 bytes) passed complete
+  SHA and selected member extraction. Its original tar.xz was 25183056 bytes
+  with SHA 4f6e00f119c104550034d0cd46db34c0bba14ab3840e20364e469fb6de857f95.
+  Transport was file-backed in-memory HTTP; this was not a new live download.
+- A real isolated local Git repository committed every runtime helper,
+  including the outer library. checked_tool_revision matched that commit;
+  editing only the outer source caused a child process to exit 1 with the
+  expected committed-blob error. Restoring the exact bytes passed again.
+  This exercises local Git identity, not an actual Actions checkout.
+- Earlier primary-run protocol rejection cases occurred before its fixture
+  failure but have no completed aggregate report. They are not counted as
+  newly certified coverage by this milestone.
+
+CRC scope is exactly the selected extracted archive member. Other ZIP members
+receive directory-metadata checks only. The complete original ZIP SHA binds
+all ZIP bytes. This is not a claim that every ZIP member body/CRC was read.
+
+Authoritative completion report:
+shard_zip_completion_review_v1/report.json
+SHA256 4C51CCA1E90A92FCD721E727830FDB0DF661DE7A58D4F0326F04267C38116002.
+Completion test:
+pipeline/review_shard_zip_completion.py
+SHA256 11C70B3A3C2E7EEC996711429C9EF547106A229F386BCB43D2027B149958B034.
+Historical primary test:
+pipeline/review_shard_zip_download.py
+SHA256 5B4B5505576B15A38D4505F6B8A5EEA566EBA3F77DD64E2B6069097E56F460CE.
+
+Zero network requests, zero remote mutations, zero new Lean calls, no actual
+remaining246 production catalog, no durable publication or full certificate.
+Root review and a future pinned execution package are still separate steps.
+

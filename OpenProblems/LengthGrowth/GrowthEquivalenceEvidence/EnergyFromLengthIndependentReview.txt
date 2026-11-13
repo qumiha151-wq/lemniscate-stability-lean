@@ -1,0 +1,43 @@
+Independent read-only review: EnergyFromLength
+13 November 2026; reviewer finish_odd_rigidity.
+
+Full source reviewed: LengthGrowth/EnergyFromLength.lean
+SHA256 9545D9BB08ADEC6E34CDB7AA5D6DC0FC2235194342D898B6E513758D3770A688
+Frozen manifest SHA256:
+F372A8AAA1483706083401FCF19114D5C2C575A2FBE83186FE794734FD8D17C7
+Actual build: energy_from_length_build/1794556624888686800,
+session 84803 exit 0, 16.219 seconds; 51 declarations, standard three axioms.
+I independently rehashed the source, all manifest evidence and all recorded
+dependency pins. They match the retained actual build result. Its final
+stdout has no warnings and stderr is empty. I did not rerun the compiler.
+
+No substantive mathematical or hypothesis mismatch was found.
+
+The scalar premises are explicit: positive c,A,L,E; E continuous on Ici 0;
+E'=-D at positive times; cE^2/L^3<=D; and L<=A*fourthRoot(1+t).
+No continuity, derivative or monotonicity of L is needed: its envelope is
+used only in a pointwise reciprocal comparison. No energy product cap or
+independent decay envelope is assumed.
+
+The derivative of 1/E is D/E^2. Positivity permits the coercivity comparison
+D/E^2>=c/L^3>=c/[A^3*fourthRoot(1+t)^3]. Subtracting
+(4c/A^3)*fourthRoot(1+t) gives a nondecreasing function. Continuity and
+the compact-interval mean-value theorem yield the exact lower bound
+  E(t)^(-1)>=E(0)^(-1)+(4c/A^3)*(fourthRoot(1+t)-1).
+The fourth root at 1 is 1, and the coefficient 4 is correct. Only positive
+interior times are differentiated; the initial and equal-endpoint cases
+are valid without a backward extension or derivative at zero.
+
+For B=E(0)+A^3/(4c)>0, both 1/B<=1/E(0) and 1/B<=4c/A^3 hold.
+Since q=fourthRoot(1+t)>=1, the exact lower bound is at least q/B.
+Inversion gives E(t)<=B/q. Multiplying by the assumed positive length
+envelope gives E(t)L(t)<=AB. All inequality directions and nonnegative
+multiplication conditions in the source are correct. B is deliberately
+nonoptimal; the sum is sufficient without an unjustified maximum argument.
+
+This is a conditional scalar helper. The actual geometric wrapper must
+still supply the weak virial bound and all scalar hypotheses from a genuine
+forward flow. The source does not itself assert those laws for arbitrary
+functions or construct a flow. It neither proves the length envelope nor
+unrestricted quarter-power growth. No frozen source was edited and this
+review does not add the module to an already published integration batch.

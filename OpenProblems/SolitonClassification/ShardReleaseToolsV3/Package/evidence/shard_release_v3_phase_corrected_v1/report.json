@@ -1,0 +1,163 @@
+{
+  "actual_GitHub_writes": 0,
+  "cases": [
+    {
+      "binaries": 0,
+      "case": "d0_extra",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "d0",
+      "published": false,
+      "publisher_rejected": true,
+      "writes": 6
+    },
+    {
+      "binaries": 0,
+      "case": "d0_missing",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "d0",
+      "published": false,
+      "publisher_rejected": true,
+      "writes": 6
+    },
+    {
+      "binaries": 0,
+      "case": "d0_duplicate",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Duplicate asset identity/name across pages",
+      "phase": "d0",
+      "published": false,
+      "publisher_rejected": true,
+      "writes": 6
+    },
+    {
+      "binaries": 4,
+      "case": "d1_extra",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "d1",
+      "published": false,
+      "publisher_rejected": true,
+      "writes": 6
+    },
+    {
+      "binaries": 4,
+      "case": "d1_missing",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "d1",
+      "published": false,
+      "publisher_rejected": true,
+      "writes": 6
+    },
+    {
+      "binaries": 4,
+      "case": "d1_duplicate",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Duplicate asset identity/name across pages",
+      "phase": "d1",
+      "published": false,
+      "publisher_rejected": true,
+      "writes": 6
+    },
+    {
+      "binaries": 4,
+      "case": "p0_extra",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "p0",
+      "published": true,
+      "publisher_rejected": true,
+      "writes": 7
+    },
+    {
+      "binaries": 4,
+      "case": "p0_missing",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "p0",
+      "published": true,
+      "publisher_rejected": true,
+      "writes": 7
+    },
+    {
+      "binaries": 4,
+      "case": "p0_duplicate",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Duplicate asset identity/name across pages",
+      "phase": "p0",
+      "published": true,
+      "publisher_rejected": true,
+      "writes": 7
+    },
+    {
+      "binaries": 8,
+      "case": "p1_extra",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "p1",
+      "published": true,
+      "publisher_rejected": true,
+      "writes": 7
+    },
+    {
+      "binaries": 8,
+      "case": "p1_missing",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Release contains missing/extra assets",
+      "phase": "p1",
+      "published": true,
+      "publisher_rejected": true,
+      "writes": 7
+    },
+    {
+      "binaries": 8,
+      "case": "p1_duplicate",
+      "exception_type": "ValueError",
+      "fault_applied": 1,
+      "message": "Duplicate asset identity/name across pages",
+      "phase": "p1",
+      "published": true,
+      "publisher_rejected": true,
+      "writes": 7
+    }
+  ],
+  "network_requests": 0,
+  "new_Lean_calls": 0,
+  "old_d0_extra_duplicate_IndexErrors_count_as_protocol_coverage": false,
+  "other_prior_Git_quota_pagination_tests_repeated": false,
+  "runtime_helper_sha256": {
+    "plan_production_grid.py": "61ea4ae11174cffa51dd5b4fc3c1caba05838b54b05d14c4793f4846ca864cca",
+    "production_artifact.py": "ddb448165391a04ab1ffcd9e4b572f9945f29fab5e1fa6ec981adad4b56323b5",
+    "production_bulk_origin.py": "de7b32db9c8f2ebea7fc4b1cc7786ea6ba44c807c91a18b989033eb62bce5468",
+    "production_compile_shard.py": "f0abd2db3d6b8db32707d33e8ebb8a6aaee7da0c6f2332c9c4da8e931c64310b",
+    "production_core_artifact.py": "1ead0d5ced187dbf2d9847f7b08ea7f7a1e8931fe88ce8461c284fa277c73ea6",
+    "production_core_release_publisher.py": "c063b963b402cdce9354caac5451b6bf686ea2297a962e049649e97db2826eed",
+    "production_core_release_request.py": "3cd4eb7e08f9e5e7d61a373d31aee03ac1bdd5eec3c1b67254ae925fbc2fe210",
+    "production_public_projection.py": "b206b8a43a3e1b9a47a31ab33b038ca2ac351a461b810d9265f183019c56708d",
+    "production_release_preflight.py": "624df2b5af0c8350bdaeba353b811ae60de9ed17558eeff792da17cd0ff1cf2f",
+    "production_release_url_protocol.py": "aaa1f9fbaa1b5b7e3ca12890638abdce4a25d28eb3b992889efa45e8157b1f7d",
+    "production_shard_prewrite_budget.py": "b44da9709ae548af4caa419cf54601f76a5f663a986cfa96e55992c72a5c37b5",
+    "production_shard_release_publisher_v2.py": "cba63be08c987643a1bbf86aeb5793171667b433dc2a4bbacd962817fdf90b38",
+    "production_shard_release_publisher_v3.py": "6aac21ed2412c200d1db0638c45b42ac1588e2b440c4f415867ee9e4742f49e4",
+    "propose_grid42x22.py": "dcd5024d5d182763cf91ca552080065dbe7dab6cec18bb1f49f7b07a5911c183",
+    "reference.py": "e586dcd92c56567232ce7751765eec5a55377d1e7f6398291606d674aa5568b4",
+    "stage_public_archives.py": "44f7407c525d4882b2efde128eed23477e06d5e94dbef06673743476e6d4cbb9"
+  },
+  "schema": "rotating.v3-corrected-phase-faults.v1",
+  "status": "checked",
+  "supersedes_only_phase_coverage_of": "EB816444522356F1E48DBFD422FE60B796DBF6E554C757A9C8A4485E5864F2E3",
+  "test_sha256": "cc00a592dec7f230ee99b9f717166ff2ca4d17ba2598325992872a5cb540638b"
+}

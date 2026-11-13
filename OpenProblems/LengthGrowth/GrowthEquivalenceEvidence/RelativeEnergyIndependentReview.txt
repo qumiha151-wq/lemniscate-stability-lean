@@ -1,0 +1,57 @@
+Independent read-only review of actual relative energy accounting
+13 November 2026; reviewer finish_odd_rigidity.
+
+Source: LengthGrowth/ActualFlow/RelativeEnergy.lean
+SHA256 76C042CA45694D14977D8DB8E77993DA27B25EB851BED574B675C7706544E73E
+Frozen manifest SHA256:
+738AD9E32751D6B451BBDB30BDA9DC35447DDC2C082059B3C0F5A30EDE918448
+Actual build directory: relative_energy_build/1794556125930274100.
+Retained result.json SHA256:
+7875C5455A20D0545DBEE495307E01502D56A1CEF42E14D766C53BDFA51C9C6D
+Object SHA256:
+CBA3BBAB47CB3B84534CCF900F01E5DA76545813CFC7B739C98388C21E78E3AE
+
+I read the complete source, manifest and actual retained build evidence.
+I independently rehashed the source, every manifest artifact and every
+recorded dependency pin. All matched. The retained actual session 4947
+records exit 0, 20.547 seconds; stdout is only the 682-declaration standard
+three-axiom audit marker and stderr is empty. I did not rerun the compiler.
+I authored the earlier ProductWindow dependency; this independent review
+covers Curve's new RelativeEnergy module, not my own earlier proof.
+
+No substantive mathematical, endpoint or hypothesis issue was found.
+
+The quantities E,D,U,Z are the actual material energy/dissipation and the
+physical-time integrals defined by the previous position-flow chain. The
+energy monotonicity follows directly from E(t)+integral_s^t D=E(s) and
+actual nonnegative D. It is not a new assumed scalar law.
+
+Actual closed immersion gives E>0 at every nonnegative time. Thus log(E)
+is continuous on Ici 0, and normal FEF gives log(E)'=-D/E at strictly
+positive times. Compact-interval FTC proves
+  Z(s,t)=log(E(s))-log(E(t)),
+  E(s)/E(t)=exp(Z(s,t)),
+  E(s)=E(t)*exp(Z(s,t)).
+Continuity and the actual quotient's compact-interval integrability include
+s=0. Differentiation is only in Ioo(s,t), where positive time is guaranteed.
+The degenerate window s=t is also covered. No lower bound away from zero on
+the entire half-line is assumed; positivity and compactness suffice locally.
+
+Energy monotonicity gives E(t)^4<=E(r)^4<=E(s)^4 throughout [s,t].
+Integrating against physical time yields
+  E(t)^4*(t-s)<=U(s,t)<=E(s)^4*(t-s).
+Substituting E(s)=E(t)*exp(Z) into the upper bound and multiplying by the
+positive exp(-4Z) gives exactly
+  U*exp(-4Z)<=E(t)^4*(t-s)<=U.
+The displayed exponential cancellation has the correct sign and fourth
+power. The final identity (E(s)-E(t))/E(t)=exp(Z)-1 is an exact algebraic
+consequence of the ratio, justified by E(t)>0.
+
+There is no endpoint product-gain, first-record maximum or absolute-curvature
+cap premise. Importing ProductWindow supplies definitions and established
+regularity, not an application of its conditional bound without hypotheses.
+The module does not construct a rescaled geometric flow or an energy-clock
+inverse, prove ancient compactness, establish a uniform EL/A bound, or solve
+unrestricted quarter-power growth. Its terminal-energy time comparison is
+precisely the finite-window inequality above. No frozen source was edited,
+no earlier leaf was recompiled, and no current publication batch was changed.

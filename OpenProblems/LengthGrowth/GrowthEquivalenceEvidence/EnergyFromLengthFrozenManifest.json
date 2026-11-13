@@ -1,0 +1,84 @@
+{
+  "schema": "energy-from-length-frozen-v1",
+  "module": "LengthGrowth.EnergyFromLength",
+  "source": {
+    "path": "work/length_flow_formal/LengthGrowth/EnergyFromLength.lean",
+    "bytes": 6685,
+    "sha256": "9545d9bb08adec6e34cdb7aa5d6dc0fc2235194342d898b6e513758d3770a688"
+  },
+  "evidence": [
+    {
+      "path": "work/length_flow_formal/energy_from_length_build/1794556624888686800/command.json",
+      "bytes": 1628,
+      "sha256": "2f988b610e74c0331a2a7b8ba1f0c5ef35126851c8ee649adbd2468c78200887"
+    },
+    {
+      "path": "work/length_flow_formal/energy_from_length_build/1794556624888686800/setup.json",
+      "bytes": 906,
+      "sha256": "642b6b4fc7de11bb888d0b23ddbbb5153a5b6c365908a19936f2cfcec98d9077"
+    },
+    {
+      "path": "work/length_flow_formal/energy_from_length_build/1794556624888686800/result.json",
+      "bytes": 2628,
+      "sha256": "1a26ebe4dcd742baa108590615539f52848d59775271842c0bbbec5bcf7cd9ed"
+    },
+    {
+      "path": "work/length_flow_formal/energy_from_length_build/1794556624888686800/stdout.txt",
+      "bytes": 57,
+      "sha256": "7000f90578badc293c03be47e36fb2f6dc9496cd45af876e5a493b43ba3a531b"
+    },
+    {
+      "path": "work/length_flow_formal/energy_from_length_build/1794556624888686800/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/length_flow_formal/energy_from_length_build/1794556624888686800/EnergyFromLength.olean",
+      "bytes": 492312,
+      "sha256": "225582f17d0bceb10e81407e39cf496f2f11bee93aced464ba0ca7d6a3968a1f"
+    }
+  ],
+  "builder": {
+    "path": "work/length_flow_formal/check_energy_from_length.py",
+    "bytes": 3055,
+    "sha256": "8d67aa4fd92812880d2902314fb538d8e4adccde0b2724f67480f9011058a5b1"
+  },
+  "freezer": {
+    "path": "work/length_flow_formal/freeze_energy_from_length.py",
+    "bytes": 5400,
+    "sha256": "7ec177034d63554260d2ced7d683a7a9e5467cc605cb960ef1e5f3b5b49af9d8"
+  },
+  "specification": {
+    "path": "work/next_research/EnergyFromLengthSpec.txt",
+    "bytes": 5537,
+    "sha256": "fdd2667798a0ebecd8ae94ebf4f8de7d01861ec10156039ce152893e7e3db263"
+  },
+  "prior_conditional_manifest": {
+    "path": "work/length_flow_formal/ConditionalQuarterGrowthFrozenManifest.json",
+    "bytes": 7789,
+    "sha256": "0b1cdf584cb3b2c1c9381d95b1fa845ab63bade60153a1bfd51d83121b9aa3c7"
+  },
+  "session": 84803,
+  "exit_code": 0,
+  "seconds": 16.21900000000096,
+  "audit_count": 51,
+  "audit_prefixes": [
+    "FreeElasticScalar"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "final_stdout_only_audit_marker": true,
+  "final_stderr_empty": true,
+  "initial_endpoint_included": true,
+  "scope": "Given scalar positive L,E, continuous E at nonnegative times, E prime=-D at positive time, c,A>0, weak virial D>=c E^2/L^3 and L<=A fourthRoot(1+t), prove the reciprocal primitive, E<=B/fourthRoot(1+t), and EL<=AB for B=E(0)+A^3/(4c).",
+  "length_continuity_required": false,
+  "length_monotonicity_required": false,
+  "actual_geometric_wrapper_in_this_module": false,
+  "length_envelope_existence_proved": false,
+  "prior_sources_edited": false,
+  "prior_leaves_recompiled": false,
+  "verification_limit": "Selected project artifacts, frozen scalar sources, Lean executable and checker hashes verified before and after. This is not a whole-Mathlib-cache hash or complete-project root audit."
+}

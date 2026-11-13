@@ -1,0 +1,87 @@
+{
+  "schema": "actual-relative-energy-frozen-v1",
+  "module": "LengthGrowth.ActualFlow.RelativeEnergy",
+  "source": {
+    "path": "work/length_flow_formal/LengthGrowth/ActualFlow/RelativeEnergy.lean",
+    "bytes": 6592,
+    "sha256": "76c042ca45694d14977d8db8e77993da27b25eb851bed574b675c7706544e73e"
+  },
+  "evidence": [
+    {
+      "path": "work/length_flow_formal/relative_energy_build/1794556125930274100/command.json",
+      "bytes": 1630,
+      "sha256": "4b35d5f1ddeb20ad2b4724fa8b5eef790eaab0aa256713f46b0630e5ae40ce39"
+    },
+    {
+      "path": "work/length_flow_formal/relative_energy_build/1794556125930274100/setup.json",
+      "bytes": 11897,
+      "sha256": "410af3ad237e90aa448aded199834f5b3b1beae6f87aad0a88c3e15b9b27f131"
+    },
+    {
+      "path": "work/length_flow_formal/relative_energy_build/1794556125930274100/result.json",
+      "bytes": 13108,
+      "sha256": "7875c5455a20d0545dbee495307e01502d56a1cef42e14d766c53bdfa51c9c6d"
+    },
+    {
+      "path": "work/length_flow_formal/relative_energy_build/1794556125930274100/stdout.txt",
+      "bytes": 62,
+      "sha256": "7a636ca3cee070b022b2018e83336a31c0d4e99f6edc66448d07a67d35a05a00"
+    },
+    {
+      "path": "work/length_flow_formal/relative_energy_build/1794556125930274100/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/length_flow_formal/relative_energy_build/1794556125930274100/RelativeEnergy.olean",
+      "bytes": 228904,
+      "sha256": "cba3bbab47cb3b84534ccf900f01e5da76545813cfc7b739c98388c21e78e3ae"
+    }
+  ],
+  "builder": {
+    "path": "work/length_flow_formal/check_relative_energy.py",
+    "bytes": 2915,
+    "sha256": "353219c629012bf8fdb24394194029c2b1752b263814a2a3c479992b254e7626"
+  },
+  "freezer": {
+    "path": "work/length_flow_formal/freeze_relative_energy.py",
+    "bytes": 5327,
+    "sha256": "6aa24e8d8f553d262ab4ff3ac52d6136a7d17a0e987101298ef10ff53af8a908"
+  },
+  "specification": {
+    "path": "work/next_research/ActualRelativeEnergySpec.txt",
+    "bytes": 5731,
+    "sha256": "f7d271f0c9d122b72473f7a458127c4ee687505100c918850eb8b07032f22ce8"
+  },
+  "product_window_dependency": {
+    "path": "work/length_flow_formal/ProductWindowFrozenManifest.json",
+    "bytes": 1908,
+    "sha256": "8ca7c05a02d3eb9f552b172aa61aa1433d5c68c8a4ff79d09f8f396227050b93"
+  },
+  "session": 4947,
+  "exit_code": 0,
+  "seconds": 20.5470000000023,
+  "audit_count": 682,
+  "audit_prefixes": [
+    "LengthGrowth",
+    "FreeElasticScalar"
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "final_stdout_only_audit_marker": true,
+  "final_stderr_empty": true,
+  "normal_flow_required_only_at_positive_time": true,
+  "initial_endpoint_included": true,
+  "equal_endpoints_included": true,
+  "energy_clock_inverse_proved": false,
+  "endpoint_product_gain_required": false,
+  "absolute_curvature_cap_required": false,
+  "new_global_existence_proved": false,
+  "scope": "Exact actual Z=log E(s)-log E(t), E(s)/E(t)=exp Z, frozen endpoint time budget U exp(-4Z)<=E(t)^4(t-s)<=U, and normalized loss exp Z-1.",
+  "prior_sources_edited": false,
+  "prior_leaves_recompiled": false,
+  "verification_limit": "Selected project artifacts/source/compiler/checker hash checks before and after; ordinary Mathlib root reused, not a whole-cache hash. This is a single-leaf recursive audit, not an updated complete-project root build."
+}

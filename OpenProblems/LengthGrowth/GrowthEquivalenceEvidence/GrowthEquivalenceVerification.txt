@@ -1,0 +1,39 @@
+ACTUAL GROWTH EQUIVALENCE: A REDUCTION, NOT A BOUNDEDNESS THEOREM
+13 November 2026.
+
+For one given ForwardImmersion c satisfying its genuine normal FEF PDE,
+the new module establishes equivalence of four explicit existence properties:
+  a finite uniform bound for total absolute curvature A(t);
+  a finite uniform bound for the actual product E(t)L(t);
+  a positive K with L(t)<=K*(1+t)^(1/4) for all t>=0;
+  a positive B with E(t)<=B/(1+t)^(1/4) for all t>=0.
+No one of these properties is asserted to hold for every flow. The constants
+are individual-flow constants, not universal over different initial curves.
+
+The proof uses only this independent LengthGrowth project. Static actual
+arclength transport supplies A^2<=2EL and positive length, and the previously
+proved absolute-curvature coercivity gives the weak coefficient
+D>=E^2/(2097152 L^3). No sharp 4*pi^2 inequality is claimed here.
+
+Bounded A implies quarter length by the earlier actual conditional estimate.
+Quarter length implies quarter energy and bounded EL by differentiating 1/E
+and applying the newly checked scalar EnergyFromLength theorem with actual
+geometric premises. Bounded EL implies bounded A by Cauchy--Schwarz.
+Quarter energy implies quarter length by the earlier positive-shift weighted
+comparison and its zero-shift limit. All statements include t=0 without a
+backward solution or a derivative there, and none assumes monotone length.
+
+Actual fresh leaf check: session68072, exit0, stdout:
+  Actual growth equivalence: 722 declarations; standard axioms only.
+The final stdout contains only that marker; stderr is empty. Recursive
+axiom collection permits only propext, Classical.choice and Quot.sound.
+The runner reuses the forty-four fixed published mathematical leaves and
+the two new fixed leaves AbsoluteCurvatureCS and EnergyFromLength, with
+recorded dependency source/object hashes checked before and after.
+
+Exact files/hashes are in GrowthEquivalenceFrozenManifest.json and
+growth_equivalence_build/1794556761800238100/result.json. This selected-leaf
+check is not a fresh compilation of imported leaves or a new full Mathlib
+cache audit. Whole-project integration and cloud checking are later stages.
+The remaining unrestricted length problem is precisely whether these
+equivalent bounds hold along every actual forward flow or fail on one.

@@ -1,0 +1,179 @@
+MINIMAL V3 LAUNCHER AND IMMUTABLE TOOL PACKAGE DESIGN
+13 November 2026. Design only: no launcher/package generator, deployment YAML,
+production catalog or remote write is created by this document.
+
+1. Package P has sibling runtime and launcher directories
+
+Proposed repository subtree:
+  ShardReleaseToolsV3/
+    runtime/                         exactly the 18 current controller helpers
+    launcher/launch.py               new reviewed entry point, outside runtime
+    evidence/                       frozen tests, reports, reviews and history
+    README.txt
+    package_manifest.json
+
+runtime contains exactly helpers() from controller50AA, with unchanged bytes.
+No CLI, test, extra Python module, __pycache__ or nested Python directory may
+be put under runtime. checked_tools already rejects such layouts. The new
+launcher is a sibling, not a child, of runtime. Historical .py evidence can
+exist under evidence but is never an import path or executable input.
+
+The manifest lists canonical relative paths, exact byte sizes and SHA256 for
+all package files except the manifest itself; runtime entries are explicitly
+separated from launcher/evidence entries. It includes a schema and strict
+local-test/not-yet-deployed scope. It contains no P, no Q and no manifest
+self-hash. Paths are bounded, casefold-unique and confined; all entries and
+directories must be ordinary and no symlink/junction is allowed. Inventory
+verification is over this package subtree only, not the whole repository.
+
+Prepare bytes locally, review them, then publish P. Only afterwards Q fixes
+the actual P and SHA256 of the manifest plus the input hashes. The launcher
+does not embed its own SHA or the eventual P: it verifies its actual bytes
+against the externally pinned manifest and against Git's committed P blob.
+Root independently checks the actual published P/tree and later Q/run head.
+The manifest cannot serve as its own independent authenticity anchor.
+
+2. Entry checks and import isolation
+
+Future CLI accepts exact tool P, manifest SHA, package root, input-checkout
+root, request/catalog/plan relative paths and SHA values, and a new output
+root. Token comes only from a named environment variable (e.g. GH_TOKEN);
+no token argument, environment dump or token-valued output. Remote execution
+requires an explicit --execute switch. A separate --verify-package-only
+mode is local read-only validation and must not construct a publisher.
+
+Recommended interpreter invocation is python -I -S -B launcher/launch.py:
+isolated mode, no site initialization and no bytecode writes. Launcher checks
+these flags. Starting sys.path must contain only trusted interpreter stdlib
+locations under the actual sys.base_prefix/exec_prefix (including ordinary
+platform stdlib zip/dynamic-library paths); no cwd, checkout, user-site,
+PYTHONPATH or site-packages fallback. It then prepends exactly the verified
+runtime directory, never the package root, launcher directory or evidence.
+No subprocess imports a generated or downloaded Python module.
+
+Before importing any runtime helper, use only stdlib to verify:
+- externally supplied manifest SHA, strict bounded JSON/schema and the exact
+  complete package inventory/ordinary paths;
+- actual tool checkout HEAD equals the expected P;
+- the manifest, launcher and every runtime file are actual committed blobs
+  at that P and match the manifest byte hashes;
+- runtime basename set is exactly the known 18-helper closure, including
+  controller50AA, outer8E99, v3 writer6AAC and catalogDE7B;
+- none of those module basenames was loaded before the verified import.
+
+After importing only production_shard_release_controller, verify every loaded
+runtime helper resolves to its exact runtime/name.py path and pinned bytes.
+Call its checked_tools() as well. Recheck package/launcher/import origins after
+the controller returns or fails. This is defense against accidental mixed
+tool roots; it is not a claim to defend a compromised OS/Python interpreter.
+
+The input checkout is Q selected by trusted github.sha. Check its actual HEAD
+against the current GITHUB_SHA and record that as same-execution consistency.
+Do not pretend this is an independent Q pin. Root records Q only after commit
+and separately verifies the triggered run.head_sha. No literal Q inside Q,
+no third execution commit, and no overwrite of GITHUB_SHA with P.
+
+3. Only public production calls, one immutable tuple
+
+The launcher reads and externally hashes request/catalog/plan from the Q
+checkout. The plan closure includes all 250 referenced checkpoints; it must
+be present under the exact canonical relative paths. Controller prepare locks
+all 253 raw inputs and checks their actual Q blobs. Missing checkpoints are a
+hard failure, not a reason to infer or regenerate the proposals.
+
+Use the controller's public prepare with helper_sha256 equal to the manifest's
+18-runtime hash mapping, input_checkout=Q root, and a new controller output
+directory. Production _fixture remains false; no CLI fixture option exists.
+Then call only controller.execute(ctx, token=environment_token).
+The controller in turn uses the already reviewed public d/v entry points and
+does exactly one frozen624 full preflight. The launcher never constructs an
+HTTP client, imports fixture adapters, invokes private _download/_publish,
+injects phases, invokes v2/core publish, fetches origin again or re-runs
+preflight. No automatic wait/retry/resume/remote cleanup is added.
+
+Potential sibling output tree on the runner:
+  WORK/
+    launch_evidence/                 launcher status and compact evidence
+    controller_run/                 passed as controller output; owned by it
+    recovery_originals/             optional failure-only recovery copies
+
+Do not place launch_evidence, shell logs or unrelated metadata inside
+controller_run: controller exact_files deliberately rejects unexpected files.
+Output must be fresh and disjoint from both checkouts. The launcher never
+deletes source/archive files. Frozen624's already audited one-at-a-time scratch
+cleanup remains its own implementation detail and is not repeated elsewhere.
+
+4. Status and compact evidence
+
+Write durable launcher started metadata after local path/package validation,
+with exact P, observed Q, manifest/input SHAs, schema and actual invocation
+options excluding the token. Scope fields remain partial/false full-certificate.
+
+Success requires controller's checked nonfixture receipt, its pinned inventory
+and summary/record paths to be present and byte-consistent. No second API
+verification is performed by the launcher. It copies a bounded allowlisted
+set of text evidence to launch_evidence: original request/catalog/plan bytes,
+all 250 plan checkpoints (small exact source attachments), package pins,
+controller status/inventory, outer receipt/disk evidence/journal/raw JSON,
+full-preflight report, release journal/summary and per-key durable records.
+Bind all copies to their source SHA/size and recheck source bytes before the
+final launcher receipt. Evidence itself is a new external hash inventory,
+without a self-hash cycle. Original ZIP/tar bodies are deliberately excluded
+from compact evidence and listed with observed versus expected hashes/sizes.
+
+On failure, preserve the real exception/exit state and every already produced
+stage. Never rewrite publication success into writes=0 if the final local
+postcheck failed. Record phase, whether a publication journal/summary exists,
+and actual controller failure inventory when available. No remote recovery
+is attempted. If some files are unsafe or cannot be hashed, report incomplete
+evidence and preserve the original error instead of issuing checked evidence.
+
+For failure-only recovery artifacts, include complete original tar.xz files
+as separate artifacts. A local hash/length equality and recorded stage determine
+whether a retained file is validated or merely observed; partial bytes cannot
+be relabeled as originals. Keep existing original ZIPs/tars on disk throughout.
+Do not upload all original ZIP bodies again. Later workflow always-upload steps
+retain compact evidence and, on failure, recovery originals; their retention
+is temporary. The durable success assets and records remain the actual release
+proof archive. Runner loss can prevent evidence upload; fsync is not immortality.
+
+The launcher can emit and hash its own sanitized status/event log. A surrounding
+shell console log is outside controller_run and may still be growing until
+process exit; do not include an unfinished console hash in the launcher's
+checked inventory. The workflow saves console/actual exit code afterwards,
+and root's download postcheck binds those outer files. Actions upload failures
+must not mask the controller/launcher failure or become a proof-success signal.
+
+5. Workflow and quota boundaries
+
+No concrete YAML or batch inputs are generated before whole246 SUCCESS.
+The future Q job has contents:write/actions:read, immutable action pins,
+persist-credentials:false, max-parallel:1, non-cancelling publisher concurrency
+and an explicit concrete batch selection. Tools P and Q inputs are separate
+checkouts. RUNNER_TEMP is read within a shell step, not invalid job env context.
+Actual quota headers at existing outer and prewrite gates remain authoritative.
+
+Launcher/package/Git checks are local. The successful library REST count stays
+6N+4A+22+L: 235 for N32,A5,L1 and 175 for N22. Launcher adds no probe or request.
+Checkout/Actions artifact infrastructure is outside that protocol count and
+can share quota/resources. No estimate overrides a gate. At insufficient quota
+stop with actual evidence; root may later schedule a fresh reviewed attempt
+only if no mutation occurred, or an exact-ID recovery if a write was attempted.
+
+6. Narrow next implementation milestone if root approves
+
+Create only the new launcher, package builder/verifier and local fixtures.
+Package verification fixtures use an actual local committed P and test dirty
+launcher/manifest/helper, extra runtime Python module, nested module, links,
+wrong manifest SHA, wrong P, unsafe paths and contaminated import path.
+Use real -I -S -B subprocesses to prove the import layout, not only AST claims.
+Do not modify any of the 18 frozen runtime sources.
+
+Any positive orchestration fixture must be a separate explicit test function
+using fixture_only stubs, never a production CLI flag or replacement for the
+frozen controller public interfaces. It must report zero protocol HTTP and
+zero real full-preflight calls. Production CLI must reject fixture inputs.
+Exercise safe failure evidence and no second execution after failure.
+No live catalog, actual GitHub request/mutation, numerical Lean task or
+deployment YAML is part of this local milestone.
+

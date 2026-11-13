@@ -1,0 +1,63 @@
+ACTUAL FOUR-PROPERTY EQUIVALENCE AND EXACT RELATIVE ENERGY
+13 November 2026
+
+This four-module addition is a reduction for one given genuine forward
+classical normal free elastic flow, with the existing actual initial-jet
+regularity. It does not prove that any of its boundedness properties holds
+for every flow and does not construct a new global solution.
+
+AbsoluteCurvatureCS starts with actual arbitrary-speed smooth closed
+immersions. The checked arclength transport and Cauchy--Schwarz prove
+A^2<=2EL. Existing static coercivity then gives the deliberately weak
+positive virial coefficient D>=E^2/(2097152 L^3), together with L>0.
+No sharp 4*pi^2 theorem is claimed by this addition.
+
+EnergyFromLength is a scalar lemma. Given positive L,E, continuous E at
+nonnegative times, E'=-D at positive times, c,A>0, D>=cE^2/L^3, and
+L<=A*fourthRoot(1+t), it derives
+  E(t)^(-1)>=E(0)^(-1)+(4c/A^3)*(fourthRoot(1+t)-1),
+  E(t)<=B/fourthRoot(1+t), and E(t)L(t)<=AB,
+where B=E(0)+A^3/(4c). It needs no derivative, monotonicity, or continuity
+of L. The actual wrapper supplies every scalar assumption geometrically.
+
+GrowthEquivalence gives three iff statements connecting four properties:
+  a uniform finite bound for actual total absolute curvature A(t);
+  a uniform finite bound for the actual product E(t)L(t);
+  a positive K with L(t)<=K*fourthRoot(1+t) for all t>=0;
+  a positive B with E(t)<=B/fourthRoot(1+t) for all t>=0.
+The actual normal FEF is an explicit premise of the dynamical equivalences.
+Witness constants may depend on the entire individual flow. The code does
+not assert a witness exists universally. Bounded A gives quarter length
+by the earlier conditional theorem; quarter length gives decay and bounded
+EL by EnergyFromLength with c=2^(-21); bounded EL gives bounded A by actual
+Cauchy--Schwarz; quarter energy gives quarter length by weighted comparison.
+No circular use of a desired cap is present. The older human proof in
+quarter_growth_equivalence.txt is preserved as historical evidence; this
+formal version uses the stated weaker coefficient and additionally includes
+bounded absolute curvature as the fourth equivalent property.
+
+RelativeEnergy independently proves exact physical-time accounting. With
+U=int_s^t E^4 and Z=int_s^t D/E, it proves
+  Z=log E(s)-log E(t), E(s)/E(t)=exp Z,
+  U exp(-4Z)<=E(t)^4(t-s)<=U,
+  (E(s)-E(t))/E(t)=exp Z-1, for 0<=s<=t.
+It does not require endpoint product gain or an absolute-curvature cap.
+It does not construct a clock inverse, first-record window, ancient limit
+or contradiction from local straightening. Initial time and equal endpoints
+are included; the PDE is used only at positive interior times.
+
+All four frozen leaves previously passed actual Lean 4.33.1 checks with
+standard-three-axiom audits and no final warnings. This local integration
+reuses those four objects and the 44 fixed published mathematical objects.
+Only the updated root and unchanged recursive AxiomAudit are compiled.
+The observed aggregate count and exact commands/hashes are in
+GrowthEquivalenceEvidence/Integration.json. No old leaf is recompiled, no
+previous evidence is rewritten, and only the old root/STATUS are updated
+in the separate staging copy. The source package contains no binary object.
+Project imports are explicitly mapped; the Mathlib cache is reused rather
+than independently rehashed in full. This local stage does not publish,
+sync outputs, or constitute a new cloud CI result.
+
+The unrestricted quarter-power question remains unresolved: these results
+do not decide whether the equivalent bounds hold on every actual trajectory
+or fail on some one trajectory. Other open-problem projects are not imported.

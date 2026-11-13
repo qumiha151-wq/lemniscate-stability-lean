@@ -1,0 +1,72 @@
+{
+  "schema": "rotating.shard-publisher-v3-local-milestone.v1",
+  "status": "local_library_checked_not_deployed",
+  "files": {
+    "pipeline/production_bulk_origin.py": {
+      "sha256": "de7b32db9c8f2ebea7fc4b1cc7786ea6ba44c807c91a18b989033eb62bce5468",
+      "bytes": 6489
+    },
+    "pipeline/production_shard_release_publisher_v3.py": {
+      "sha256": "6aac21ed2412c200d1db0638c45b42ac1588e2b440c4f415867ee9e4742f49e4",
+      "bytes": 17250
+    },
+    "pipeline/review_shard_release_publisher_v3.py": {
+      "sha256": "b6e8422f04719a26666485297f23f13c338ee9c6bd83f558ced7af67926237b7",
+      "bytes": 15306
+    },
+    "pipeline/review_shard_release_v3_edges.py": {
+      "sha256": "ec7cca3bf47fe6e03189f0dd6bd8d51d2f7564cb060e4eb25466807ceb239c89",
+      "bytes": 11660
+    },
+    "pipeline/review_shard_v3_origin_pages.py": {
+      "sha256": "0daf4e1c279edf647aff2b2c4aeff589eb221b9f1323965276fd30f8763d3cc2",
+      "bytes": 3188
+    },
+    "pipeline/review_shard_v3_phase_faults.py": {
+      "sha256": "cc00a592dec7f230ee99b9f717166ff2ca4d17ba2598325992872a5cb540638b",
+      "bytes": 5037
+    },
+    "shard_release_v3_review_v1/report.json": {
+      "sha256": "2afba296d1a375abc86d0cb59933333d8e747df5bf15c8624e9691d1ef967db5",
+      "bytes": 14134
+    },
+    "shard_release_v3_edge_review_v2/report.json": {
+      "sha256": "eb816444522356f1e48dbfd422fe60b796dbf6e554c757a9c8a4485e5864f2e3",
+      "bytes": 5939
+    },
+    "shard_release_v3_pages_review_v1/report.json": {
+      "sha256": "dd561091edea523eeb4302706aa63205521363075ea9f0a62151e4d90f98eda2",
+      "bytes": 2696
+    },
+    "shard_release_v3_phase_corrected_v1/report.json": {
+      "sha256": "781aa8a8ef42ddf3fb945b6893bf175e041a78870f7587e04f301c1afeeaa363",
+      "bytes": 5619
+    },
+    "performance/ShardPublisherV3SnapshotDesign.txt": {
+      "sha256": "024897bbd4b1222de53c7b6dab59630083c2ffd424f21d8eb0bda995621944b9",
+      "bytes": 14614
+    }
+  },
+  "actual_terminal_sessions": {
+    "79879": 0,
+    "52978": 0,
+    "82798": 0
+  },
+  "page_edge_direct_exec_exit": 0,
+  "corrected_phase_report_replaces_old_phase_coverage": true,
+  "old_edge_d0_extra_duplicate_IndexErrors_are_not_protocol_coverage": true,
+  "failed_edge_v1_preserved": {
+    "source": "work\\rotating_formal\\shard_release_v3_edge_review_v1\\test_source.py",
+    "sha256": "8fdcc42e24756caa4b3f0879efdc2d52a062fea17dfc1717bbcb31c155184099",
+    "reason": "test-only reference.py copy path; no runtime change"
+  },
+  "runtime_sources_unchanged_across_all_tests": true,
+  "actual_GitHub_writes": 0,
+  "actual_network_requests": 0,
+  "new_Lean_calls": 0,
+  "production_catalog_generated": false,
+  "actual_publisher_token_quota_measured": false,
+  "actual_GitHub_deployment_approved_by_this_report": false,
+  "outer_reader_separate_still_in_testing": true,
+  "full_certificate_proved": false
+}

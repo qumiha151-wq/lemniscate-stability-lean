@@ -1,0 +1,81 @@
+INDEPENDENT ROOT REVIEW: ORIGINAL ACTIONS ZIP READER
+13 November 2026. Local library and fixture review, not deployment evidence.
+
+Runtime source read in full:
+production_shard_zip_download.py
+8e9905c801cf08d4f4697b2fabae3b22ee5c4dfed28267d7b1f0dc2eb7e30f65.
+The original fixture source and the narrow completion fixture were also
+read in full. Completion report:
+shard_zip_completion_review_v1/report.json
+4c51cca1e90a92fcd721e727830fdb0df661de7a58d4f0326f04267c38116002.
+Completion test source SHA:
+11c70b3a3c2e7eec996711429c9ef547106a229f386bcb43d2027b149958b034.
+
+The reader binds exact request, plan, catalog, implementation and helper
+bytes before doing work. Production validation retains the exact successful
+whole remaining-246 run requirement. The caller cannot supply a selected
+artifact list as a substitute for the catalog. The outer source itself is
+checked against the actual committed tool blob in the same checkout as the
+already-reviewed v3 publisher and its helpers. P/Q Actions identity checks
+remain unchanged. Fixtures cannot yield production receipts.
+
+The metadata client is read-only, with no retry, wait or cleanup. The
+complete O0 catalog observation precedes the quota gate. This gate consumes
+the most recent observation from this same client and context; it requires
+N+2A+100 remaining primary requests. It neither reserves quota atomically
+nor claims to rule out secondary limits. One complete original Actions ZIP
+is requested by artifact ID for each requested shard. An approved redirect
+is followed without Authorization. Every ZIP is streamed to a fresh file
+with an exact byte cap, complete SHA256 and a total deadline. A complete O1
+catalog observation must agree with O0 after the transfers.
+
+The archive extraction checks central-directory names, duplicate/casefold
+names, explicit parent file/directory conflicts, encryption, special file
+types and expanded-size/member-count caps. It extracts only the exact
+canonical shard archive member. That member's CRC, byte count and raw
+archive SHA are checked. Other ZIP members are not read or CRC checked;
+only their directory metadata is examined. All original ZIP bytes are
+nevertheless covered by the complete ZIP SHA. The outer receipt is not a
+substitute for the publisher's unchanged full raw-archive preflight.
+
+The disk gate accounts for remaining ZIPs and archives, the frozen 512 MiB
+single-preflight stage cap, and 2 GiB headroom. It is rechecked before each
+transfer. Completion checks the journal hash chain, saved raw API response
+hashes, pinned inputs/helpers and exact output inventory, then rehashes all
+files listed in the checked receipt. Extra files or directories do not
+silently become part of the receipt.
+
+Actual fixture history is deliberately retained. Primary session 26100
+failed because Windows ZipInfo normalized the intended backslash member
+before writing it: the supposed malicious input was valid. This was a test
+defect, not a runtime rejection. The runtime was not changed. The separate
+completion test patched both raw ZIP filename occurrences and verified the
+actual backslash in orig_filename before expecting its rejection.
+
+The completion report rechecks all 32 already-executed N=1..32 receipts,
+their complete file inventory and journal chain. Their recorded in-memory
+GET counts are N+10, including N original ZIP requests; these counts are
+not merely a predicted formula. No full 32-case rerun was performed.
+All 15 completed layout cases give the intended library rejection types.
+The real retained RP0000 ZIP (221772404 bytes, SHA
+7f83be6c3709989154504f14abd35e685fe1c7c18d55bc0e4fa5068a72a3c4c2)
+was streamed through the file-backed fixture and yielded the exact original
+25183056-byte archive, SHA
+4f6e00f119c104550034d0cd46db34c0bba14ab3840e20364e469fb6de857f95.
+The local committed-tool test accepted the clean outer source, rejected
+its modified blob, and accepted the restored source. The local test commit
+8f3a1477652a330deafe1b106bd956c8171d5b4c is not a GitHub commit claim.
+
+Root also inspected the 11 pre-layout failure journals from the original
+run: failed/expired/changed origin, low quota, short/long/corrupt ZIP,
+foreign redirect, extra output, changed saved response and changed input.
+All end in their actual failure event with zero remote writes and no
+receipt. Their source control flow and assertions were read; they are not
+credited as a successful overall primary test run.
+
+No substantive runtime defect was found. These tests made zero network
+requests or GitHub writes and made no Lean calls. No real remaining-246
+production catalog or durable release was created. Integration into an
+actual controller/workflow still needs its own explicit, reviewable inputs
+and execution evidence. The full rotating-profile certificate is not
+proved by this reader or by this review.
