@@ -1,0 +1,114 @@
+FROZEN ENDPOINT ARITHMETIC AND CONDITIONAL ACTUAL-SHOOTING COMPARISON
+2026-11-13
+
+Manifest: Endpoint4000FrozenManifest.csv
+SHA256: BE3732B4123731BA98D053DD0AED63CF99C41DCEC3BC6B48679A3619168FDC61
+Twelve source modules, all using the default module system.
+Detailed source/log/three-layer artifact hashes: Endpoint4000FrozenEvidence.json.
+No existing frozen module, production generator, base lock, or numeric leaf
+was edited. CertifiedPi remains separately frozen and is imported unchanged.
+
+ACTUAL CHECKS
+
+The new endpoint modules were compiled against the separately frozen 87-module
+base using explicit public-olean setup mappings. The project LEAN_PATH has no
+legacy-project fallback. Base sources were hash-checked against the existing
+module manifest; this run did not independently rebuild those 87 modules.
+The seven additional analytic dependencies were copied into a new directory,
+converted to module/public imports/public section, and freshly compiled.
+Their mathematical proof bodies are unchanged; the transformation script
+checks exact restoration after reversing those header changes. Original and
+converted hashes are recorded in endpoint4000_compat_source/manifest.json.
+
+Final checks, all EXIT 0 and no warnings:
+  Endpoint4000Data:             session 61724, 74.813 seconds.
+  Endpoint4000Finite:           session 92598, 29.625 seconds, 42 declarations.
+  Endpoint4000Meaning:          session 42206, 26.375 seconds.
+  Endpoint4000ActualComparison: session 37872, 15.219 seconds.
+  Endpoint4000Audit:            session 51216, 14.390 seconds.
+Seven compatibility modules: session 2652, each freshly EXIT 0.
+Their child wall times, in dependency order, were 28.453,22.937,27.781,
+27.782,22.094,19.016,21.360 seconds.
+The final recursive audit covers 1254 imported Rotating declarations,
+including private-name normalization, and permits only
+  propext, Classical.choice, Quot.sound.
+No sorry or native_decide is used. Rational decidable checks use decide +kernel.
+
+PUBLIC ENDPOINT DATA
+
+Namespace SolitonClassification.Rotating.Endpoint4000Data:
+  mesh = 10^60;
+  plusCenters/minusCenters : Fin 6 -> Z;
+  plusMatrix/minusMatrix : Fin 6 -> Fin 6 -> Z, COLUMN first, ROW second;
+  plusState/minusState are real centers divided by mesh;
+  plusOperator/minusOperator = pointMatrixOperator mesh plusMatrix/minusMatrix.
+The exact 6 states and 36 matrix entries per sign come from p_4000.json and
+m_4000.json of full4000_plan. They are PROPOSED rational endpoints. Neither
+their plan index nor the JSON candidate hash is treated as an ODE proof.
+The input hashes are recorded in the source and Endpoint4000ProposalLedger.json.
+An independent peer compared all literals with the two JSON files; that is
+recorded separately and is not substituted for a Lean actual-flow proof.
+
+FINITE THEOREMS
+
+Endpoint4000Finite defines a rational y from the physical projection of the
+state difference and the fixed rational CertifiedPi.center angle target.
+The target uses +112*pi/57, and the physical v residual has factor eight.
+Its rational finite Jacobian uses:
+  parameter k0: full state column 0;
+  parameter p0: full state column 2;
+  half-length: field(plusState)+field(minusState);
+  phase alpha: e0/8 times full state column 1 plus e1 times column 3;
+  rotation b: full state column 4.
+The input keeps all six columns; the initial angle is fixed, so its initial
+parameter derivative is zero. There is no missing or silently rescaled column.
+
+Proved finite results:
+  value_error: ||y-endpointValue_with_actual_Real.pi|| <= 1e-30;
+  jacobian_error: operator norm of rawJ minus finite endpoint Jacobian <= 6e-6;
+  preconditioned_value: ||rawB*y|| <= 1e-30.
+The row-sum-to-operator norm conversion is proved for the actual supremum norm.
+Endpoint4000Meaning.derivative_formula proves that this rational matrix acts
+exactly as the actual polynomial field and full point-matrix expression at
+the proposed endpoints. It does not identify those matrices as true fderiv.
+
+EXACT CONNECTION TO THE OLD CANDIDATE AND ACTUAL FLOW
+
+Endpoint4000ActualComparison proves, by rfl, that the finite rawB/rawJ/phase
+are precisely the previously fixed CandidatePreconditioner and Candidate data.
+It proves that its value and matrix expressions are the existing
+shootingEndpointValue and shootingEndpointDerivative at the proposed data.
+It also verifies membership of both proposed states in outerTube.
+
+Its theorem actual_center_enclosures has EXPLICIT hypotheses:
+  R>0;
+  actual positive and negative FlowTubeNeighborhood on [0,T], centered at
+  Candidate.initial with radius R;
+  actual candidate half-length in (0,T);
+  each proposed state differs from the corresponding actual supportFlow
+  endpoint by at most 2400/10^32+1/10^55;
+  each proposed full matrix differs from the corresponding actual fderiv
+  endpoint by at most 2400/10^10+1/10^55.
+Its conclusions are exactly the three remaining center norms:
+  ||y-actualShootingMap phaseReal candidateParameterCenter|| <= 1e-27;
+  ||CandidatePreconditioner.J-actualShootingDerivative ...|| <= 1e-5;
+  ||CandidatePreconditioner.B y|| <= 1e-30.
+All domain substitutions, signs, factors and triangle budgets are proved.
+
+The actual state/full-derivative premises are not replaced by plan identities,
+point inverse bounds, or hypothetical flow regularity. They must be supplied
+by the complete signed-grid theorem and exact endpoint identifications.
+FullPathBlockEndpoints has compatible endpoint error constants, but this
+batch does not instantiate a 4000-step block for either sign.
+No shooting zero, closed rotating profile, or full classification is claimed.
+
+DEPENDENCY ORDER FOR THIS BATCH
+
+Endpoint4000Data, Endpoint4000Finite, Endpoint4000Meaning;
+QuantitativeJoint, ShootingVariation, RotatingGridHorizonCandidate,
+CandidateInputs, ParameterMatrixNorm, CandidatePreconditioner,
+CandidateShootingEndpointComparison;
+Endpoint4000ActualComparison, Endpoint4000Audit.
+The middle seven sources live under endpoint4000_compat_source; the others
+are new sources under SolitonClassification/Rotating. check_endpoint4000.py
+selects those explicit locations and writes only endpoint4000_build.

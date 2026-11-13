@@ -1,0 +1,784 @@
+{
+  "scope": "Two genuine signed 4000-step blocks and eight exact identities imply actual nonconstant closed rotating pure-normal FEF; neither block instantiated",
+  "previous_frozen_sources_unchanged": true,
+  "base87_sources_unchanged": true,
+  "compile_session": 81338,
+  "compiler_helper_sha256": "7b6c9e1c778f0600da7e34d9308969e97b9da434eafcf0646095dc6b0326d197",
+  "compatibility_originals": [
+    {
+      "module": "SolitonClassification.Rotating.RotatingPeriodicFlow",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingPeriodicFlow.lean",
+      "original_sha256": "efddb851bb234f228c3ab80406b1edd76850a170c1709c1230b371da9f29e3a2",
+      "module_sha256": "a086dfcc6c737e59a1a5ef18364dfde317e35c85412dd0ecf4fc6bd50b906ccb",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingPeriodicSmooth",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingPeriodicSmooth.lean",
+      "original_sha256": "ba4ef3bc47ac2486660dbdaf7539b0f0f4a23b4d6da07936c2e4963857a014f7",
+      "module_sha256": "77e37deb0b5d65e345db27b4fe81cbc7e8b3b5517ea01fc40e75b89d432165c7",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.SupportODE",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\classification_new\\SupportODE.lean",
+      "original_sha256": "23abaaef62e7900b7a3457f976bd39032ac50b9374cd780373dd5fc9380a7ce7",
+      "module_sha256": "dbf5842e7ad224e8c723927a839ad1323c1140b36bada4d1181bf8396a08495d",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.OneSignCurvature",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\classification_new\\OneSignCurvature.lean",
+      "original_sha256": "10afe36dca63651793f8133cee3e60bc4b83176dd9b5d02860757f1587c8fd4d",
+      "module_sha256": "d635061c2d0bd4fc23e3ac9d48abef7465428d6596ffa2bd2c72f924019f5aef",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfile",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingClosedProfile.lean",
+      "original_sha256": "d00fcaad55ea65f41cd0857cfda84ec7470ee4a3aa72c14b9d05b1ecd45d9313",
+      "module_sha256": "ef4aa433eda7aba1898c8ade66e408c12021fc6f42967c68f7efec5328cacbf1",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfileClosure",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingClosedProfileClosure.lean",
+      "original_sha256": "b144777c95d4bcc27d6e92ed5b8441824a5108394b0a26db77ed890507c0d5f4",
+      "module_sha256": "7b163c967d77165051258785f50b3fc24918fee0687f719dfb6cabb2297db282",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfileShooting",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingClosedProfileShooting.lean",
+      "original_sha256": "fcd530f246e1b8500ea44e49ea021c6f46289cb80d305100121fbbac69fbd217",
+      "module_sha256": "b706856b3365f98e237706229904e46199437f35b83231d9ec2be7cef3c1b1ac",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfileNonconstant",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingClosedProfileNonconstant.lean",
+      "original_sha256": "e2d7a907286ad31e64118d424ee39bdbeead14febf84b70de6055b2177e4222b",
+      "module_sha256": "a12018d565f791904ea4541dd4cbe87d7f0c3bdeea2445c9d6846963b8af94d7",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionScalar",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionScalar.lean",
+      "original_sha256": "315f6db344d0b3857b0524e25141e7661d405546c404d97214af68667c5df792",
+      "module_sha256": "46d18c5c6251b72eca25a2735f66add54668003af67ca8d022449142c0a6cd8b",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionField",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionField.lean",
+      "original_sha256": "af559161144a2fae637110c655ca68bda1e8dfc56680dcc549b9276e28da4917",
+      "module_sha256": "c42d0c524da2d91c353f36c7df50ffa3e93e7f98e89553969e4e9d2b4d969e2a",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionContinuity",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionContinuity.lean",
+      "original_sha256": "dd641920a6cc20eae605c1419c9fec9417e52dca0f532888750b7b829a84b3ac",
+      "module_sha256": "3e1a88c718ba5cc7499d493129a6524aa0aaab3a9bac1802e9d57ce9f567f149",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalSpatial",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalSpatial.lean",
+      "original_sha256": "7e58b369e2decff280c7d9b4883ad44326c59bc3f935476786eaeeedba352b80",
+      "module_sha256": "727b2062f35a597b2a395c5fccaa4756112cefa07afe827017147bb8c552f752",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalHigher",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalHigher.lean",
+      "original_sha256": "0de7b4755d986474c5c7c02f8abf8e4691759a88bf9c9ee28b0f7f1fe0744391",
+      "module_sha256": "7c5031722abaae8e1a27ac049f6a8131e9b774736d8c35b19c933c88a1a1fd07",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionLog",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionLog.lean",
+      "original_sha256": "004010e94705e7198483ddb6ec35e0ea2c57cd82e39d3390f330d82c30a170ef",
+      "module_sha256": "413779e5377697df5a19e3f1a913891cfbf87a60b6a7e3a3bdb503b1ec17a996",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionClock",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionClock.lean",
+      "original_sha256": "d3b266f2cd1fa43893a4b50073767c028bf9172f4906a25c6d6631946bbce9f7",
+      "module_sha256": "3cb7e12a5731074909153d8e30e950acd06e19190936e22cb30c50bd98303fa7",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionTime",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionTime.lean",
+      "original_sha256": "f7543cc3481893ede83b919eb7285a0fae3cb19b0de68d3c798049ca03d867a6",
+      "module_sha256": "9115ae9ccd4f41a0eddf0f92300c4b916d018b263f5a1a168c0ff3f69648932e",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionCurvature",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolutionCurvature.lean",
+      "original_sha256": "46799c63545b3fe3a3fa3929fce56081761cf3f1197f9118c3870e423c00be7b",
+      "module_sha256": "531fd40cdc904e8b6a7faa8c468806e8efdde74359f96b7665ae00a7230c3532",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolution",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\RotatingNormalEvolution.lean",
+      "original_sha256": "c76ebf6ed2e7963fb197ac1e76c7f0b902863e5c9d32f9763a8aafe30e234899",
+      "module_sha256": "3562244987268101445a01a1f05b159cd2423b5d997df4d839edaf86b1bb9778",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidateFinalAssembly",
+      "original_source": "C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\SolitonClassification\\Rotating\\CandidateFinalAssembly.lean",
+      "original_sha256": "30de68bf69234a65d0d0deb732421e67db274e15c8d4a205f8675c0e8fc18310",
+      "module_sha256": "54a7c75d5b8f66f977bc9301fe821932021fa51d33652792bc4cc0395ba95aab",
+      "proof_body_unchanged": true
+    }
+  ],
+  "modules": [
+    {
+      "module": "SolitonClassification.Rotating.RotatingPeriodicFlow",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingPeriodicFlow.lean",
+      "source_sha256": "a086dfcc6c737e59a1a5ef18364dfde317e35c85412dd0ecf4fc6bd50b906ccb",
+      "log": "endpoint4000_build\\RotatingPeriodicFlow.log",
+      "log_sha256": "84486aeacc0237bc8d70abc505c0df502ad972654f66053af50bbedd8a79742f",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingPeriodicFlow",
+        "source_sha256": "a086dfcc6c737e59a1a5ef18364dfde317e35c85412dd0ecf4fc6bd50b906ccb",
+        "log_sha256": "84486aeacc0237bc8d70abc505c0df502ad972654f66053af50bbedd8a79742f",
+        "exit_code": 0,
+        "wall_seconds": 17.891
+      },
+      "setup_sha256": "4e930e667ee1bb867a58b70f5813c54c43b46269db14abb93edf3a25c9ce968d",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingPeriodicFlow.olean",
+          "sha256": "ef884f0598b1b3047e68e89a8f3b6d102dbdd9058277a9d1907dbbe802741446",
+          "bytes": 38304
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingPeriodicFlow.olean.private",
+          "sha256": "8fcdfd5dd3090a125f55b85855b915c5669fd3a819b817b5868e21b244f5b872",
+          "bytes": 463784
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingPeriodicFlow.olean.server",
+          "sha256": "d7b9b610c43d7bea00ec5cab0e36d6e70475bdca223d10e9018d58ec5aefce1b",
+          "bytes": 3912
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingPeriodicSmooth",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingPeriodicSmooth.lean",
+      "source_sha256": "77e37deb0b5d65e345db27b4fe81cbc7e8b3b5517ea01fc40e75b89d432165c7",
+      "log": "endpoint4000_build\\RotatingPeriodicSmooth.log",
+      "log_sha256": "582477e1b08a31fec93eef0e61be8b294ca7adb1e9e0287c9df0f7c3fe2da1d1",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingPeriodicSmooth",
+        "source_sha256": "77e37deb0b5d65e345db27b4fe81cbc7e8b3b5517ea01fc40e75b89d432165c7",
+        "log_sha256": "582477e1b08a31fec93eef0e61be8b294ca7adb1e9e0287c9df0f7c3fe2da1d1",
+        "exit_code": 0,
+        "wall_seconds": 15.141
+      },
+      "setup_sha256": "e09e21a5f75412cc87671ffd6d73d7f69fbb40d7da8a9543c544d8a145fc572c",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingPeriodicSmooth.olean",
+          "sha256": "46674ab0a8ccb16e5786cd33e40c077eeabfeea552993996e9fffff56f7e7f0e",
+          "bytes": 43784
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingPeriodicSmooth.olean.private",
+          "sha256": "a418ae695116f1360aa15d45e4304ba465c88a698c1b688e77f5873f25a4059a",
+          "bytes": 224168
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingPeriodicSmooth.olean.server",
+          "sha256": "39b758c055dda4bbd23ec253d4f85e93b1587f34c3feb25d3fbba0158792ddd7",
+          "bytes": 3128
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.SupportODE",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\SupportODE.lean",
+      "source_sha256": "dbf5842e7ad224e8c723927a839ad1323c1140b36bada4d1181bf8396a08495d",
+      "log": "endpoint4000_build\\SupportODE.log",
+      "log_sha256": "83ac92396eb4d5c0d21dc27f4e933c5ce81766bac207ca458920e6bae32db0bf",
+      "result": {
+        "module": "SolitonClassification.SupportODE",
+        "source_sha256": "dbf5842e7ad224e8c723927a839ad1323c1140b36bada4d1181bf8396a08495d",
+        "log_sha256": "83ac92396eb4d5c0d21dc27f4e933c5ce81766bac207ca458920e6bae32db0bf",
+        "exit_code": 0,
+        "wall_seconds": 13.078
+      },
+      "setup_sha256": "cc8274aa5df0b8e2ef24ef0f053e5097197c1ba84a4e3251c41a082c4b9d90a7",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\SupportODE.olean",
+          "sha256": "c69e7fec8ea06e6842654923e35d303a0706e40559625f9f1ce1104273b64272",
+          "bytes": 35208
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\SupportODE.olean.private",
+          "sha256": "1269587c7e4c763bf56b10eb56056b445bc4ff6aa400389eabacf2d09ecf70be",
+          "bytes": 309720
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\SupportODE.olean.server",
+          "sha256": "f343fc1e522ab7f6667122427a24ff13c69e0c287c0067c880705671cf741c67",
+          "bytes": 3976
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.OneSignCurvature",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\OneSignCurvature.lean",
+      "source_sha256": "d635061c2d0bd4fc23e3ac9d48abef7465428d6596ffa2bd2c72f924019f5aef",
+      "log": "endpoint4000_build\\OneSignCurvature.log",
+      "log_sha256": "3b60faf24224e40aa654c8bec1ef01d4aa2cee12540196c62f8c3a10e599d4a8",
+      "result": {
+        "module": "SolitonClassification.OneSignCurvature",
+        "source_sha256": "d635061c2d0bd4fc23e3ac9d48abef7465428d6596ffa2bd2c72f924019f5aef",
+        "log_sha256": "3b60faf24224e40aa654c8bec1ef01d4aa2cee12540196c62f8c3a10e599d4a8",
+        "exit_code": 0,
+        "wall_seconds": 21.953
+      },
+      "setup_sha256": "696efd61947e75873d78d471fa93fba141cc8e05c875d27f0bffdf5c8594d0d5",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\OneSignCurvature.olean",
+          "sha256": "51743364a78f731230a19491948d607917c031636a0cca848b41d8f234403aba",
+          "bytes": 147152
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\OneSignCurvature.olean.private",
+          "sha256": "3dd2c51e00847d216f71695df9e236b5b1981d39527474d3457b5464b8f385e1",
+          "bytes": 1530616
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\OneSignCurvature.olean.server",
+          "sha256": "691466aa079e6b1cef42902c94cdec9f2ebbdb83344f70ad9d20336740c56ec3",
+          "bytes": 15656
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfile",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingClosedProfile.lean",
+      "source_sha256": "ef4aa433eda7aba1898c8ade66e408c12021fc6f42967c68f7efec5328cacbf1",
+      "log": "endpoint4000_build\\RotatingClosedProfile.log",
+      "log_sha256": "b9437deeed34dc398ff08f3e007a2a8961c4f877a1bda554316cb2995033dc11",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingClosedProfile",
+        "source_sha256": "ef4aa433eda7aba1898c8ade66e408c12021fc6f42967c68f7efec5328cacbf1",
+        "log_sha256": "b9437deeed34dc398ff08f3e007a2a8961c4f877a1bda554316cb2995033dc11",
+        "exit_code": 0,
+        "wall_seconds": 17.875
+      },
+      "setup_sha256": "e7fee6cfcd0717fa7ba47de1477c638e116e7ba29dce148896842ede7c4742c6",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfile.olean",
+          "sha256": "10c4e5cc448334e1cd9a0c8f0653c3ac7e83cc68e17f123bd444c71d47a091ea",
+          "bytes": 57424
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfile.olean.private",
+          "sha256": "bcf54b6dd0aebe24b7364c2a3e08ddaaa345dc27c12fc249206838a360593da0",
+          "bytes": 217288
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfile.olean.server",
+          "sha256": "01ad194394ba7335affe9acc51cfeb727a77850f5fca8884d614d9f973305ac4",
+          "bytes": 5560
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfileClosure",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingClosedProfileClosure.lean",
+      "source_sha256": "7b163c967d77165051258785f50b3fc24918fee0687f719dfb6cabb2297db282",
+      "log": "endpoint4000_build\\RotatingClosedProfileClosure.log",
+      "log_sha256": "e51118ee067d6ab53e4f4defd5849604101660aea4ef36d2eaeabc11102b3bbc",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingClosedProfileClosure",
+        "source_sha256": "7b163c967d77165051258785f50b3fc24918fee0687f719dfb6cabb2297db282",
+        "log_sha256": "e51118ee067d6ab53e4f4defd5849604101660aea4ef36d2eaeabc11102b3bbc",
+        "exit_code": 0,
+        "wall_seconds": 18.344
+      },
+      "setup_sha256": "fd728ecb61b379cda39a8c686799f5ae52b5f549fb42a67b111f8c8c9c14009d",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileClosure.olean",
+          "sha256": "50fac130a21207793b8beffe07dc7c4bbd95eac02e37d14b0d54815f10bc5fbc",
+          "bytes": 33072
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileClosure.olean.private",
+          "sha256": "0d305c370aab1d22a983feeda852c1468af834520c3fccc7194a0f85f4cd2dc4",
+          "bytes": 92552
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileClosure.olean.server",
+          "sha256": "91aaf5419239614751a7fdb432257938a72e513587074924c0225340abd3c2a0",
+          "bytes": 2400
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfileShooting",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingClosedProfileShooting.lean",
+      "source_sha256": "b706856b3365f98e237706229904e46199437f35b83231d9ec2be7cef3c1b1ac",
+      "log": "endpoint4000_build\\RotatingClosedProfileShooting.log",
+      "log_sha256": "005482881166462ac5c3e435684d5ad8bb4edc32837f555cb4e007922f0b1f0b",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingClosedProfileShooting",
+        "source_sha256": "b706856b3365f98e237706229904e46199437f35b83231d9ec2be7cef3c1b1ac",
+        "log_sha256": "005482881166462ac5c3e435684d5ad8bb4edc32837f555cb4e007922f0b1f0b",
+        "exit_code": 0,
+        "wall_seconds": 15.719
+      },
+      "setup_sha256": "c775fdd2947041125ec5bf7cf97a473fc4be8eae693c6bff5fbec5237d87723e",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileShooting.olean",
+          "sha256": "aaf2517aeede085c7f20f23f096c841808132ec1fc3b3e6ecfdb6294824c5cee",
+          "bytes": 45088
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileShooting.olean.private",
+          "sha256": "9745ea1774e04ed1588ecf6a4259e0886730b4ef2bdd7e546ba9c44b1012ce97",
+          "bytes": 236448
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileShooting.olean.server",
+          "sha256": "cb0eb5e253e4d1c9888360f9d147f67e1772b3b26caf8513c8223414a467f8e0",
+          "bytes": 2648
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingClosedProfileNonconstant",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingClosedProfileNonconstant.lean",
+      "source_sha256": "a12018d565f791904ea4541dd4cbe87d7f0c3bdeea2445c9d6846963b8af94d7",
+      "log": "endpoint4000_build\\RotatingClosedProfileNonconstant.log",
+      "log_sha256": "fa98cabb5bc649db3084b31ac2b4cfd92d3cf5a0f9db749aba485dca9b524bea",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingClosedProfileNonconstant",
+        "source_sha256": "a12018d565f791904ea4541dd4cbe87d7f0c3bdeea2445c9d6846963b8af94d7",
+        "log_sha256": "fa98cabb5bc649db3084b31ac2b4cfd92d3cf5a0f9db749aba485dca9b524bea",
+        "exit_code": 0,
+        "wall_seconds": 15.016
+      },
+      "setup_sha256": "854e69924abf0fdedd608f185973bdd72845009bec23fde230e42c8a27193e41",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileNonconstant.olean",
+          "sha256": "6d57e07165c5408cc7be7e8fde0aa5af99ea895008787abc80f63e3fdcbd2888",
+          "bytes": 31336
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileNonconstant.olean.private",
+          "sha256": "e2040958332bd5fecbb612873816e10154c93ece20dd5774d8871d986273b1a4",
+          "bytes": 208464
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingClosedProfileNonconstant.olean.server",
+          "sha256": "036c964f348b66264f92f1378a31df56e7c56aa9279d09422a50fbf5f1a0e35d",
+          "bytes": 2016
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionScalar",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionScalar.lean",
+      "source_sha256": "46d18c5c6251b72eca25a2735f66add54668003af67ca8d022449142c0a6cd8b",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionScalar.log",
+      "log_sha256": "889d61a8d74ff959c70385135b2b3c1167703a87025a64a797ad52ac989ae4d3",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionScalar",
+        "source_sha256": "46d18c5c6251b72eca25a2735f66add54668003af67ca8d022449142c0a6cd8b",
+        "log_sha256": "889d61a8d74ff959c70385135b2b3c1167703a87025a64a797ad52ac989ae4d3",
+        "exit_code": 0,
+        "wall_seconds": 15.141
+      },
+      "setup_sha256": "05f80a2f2a52b1dd23eca3666f73876a3f9ca48f489c70169ae51cbbd4177a02",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionScalar.olean",
+          "sha256": "9e9400f47a59b54b31144f2124a86654a5f9114506895b28d1e123a536e62841",
+          "bytes": 72744
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionScalar.olean.private",
+          "sha256": "edba3c5eb04abc689a44806a206741522113e48fb13a76a4a51e7c1fe34aedca",
+          "bytes": 186072
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionScalar.olean.server",
+          "sha256": "baf04cffc7062fc4d1e1cc8cc6fb9da9e87fb692ec4c9bc07d881acdfa1263ef",
+          "bytes": 6168
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionField",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionField.lean",
+      "source_sha256": "c42d0c524da2d91c353f36c7df50ffa3e93e7f98e89553969e4e9d2b4d969e2a",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionField.log",
+      "log_sha256": "57085cbd258b5aff0dd0d8d953e6b931e9c2a0de0ab6ad2b89ce3d1735896d2f",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionField",
+        "source_sha256": "c42d0c524da2d91c353f36c7df50ffa3e93e7f98e89553969e4e9d2b4d969e2a",
+        "log_sha256": "57085cbd258b5aff0dd0d8d953e6b931e9c2a0de0ab6ad2b89ce3d1735896d2f",
+        "exit_code": 0,
+        "wall_seconds": 17.016
+      },
+      "setup_sha256": "60e94dc813e8f8ffc9a830c5cd5df5c212cba9ca0398c4ea15112a694974f9b2",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionField.olean",
+          "sha256": "546c4b9da20cf81dfc40da242e3c0110ffe41787b057e8ac3f6af419d41115b5",
+          "bytes": 36024
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionField.olean.private",
+          "sha256": "63a789574f1676fd347624dee7f822391a056ed18b8cbd6ee2205374e664bff0",
+          "bytes": 145696
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionField.olean.server",
+          "sha256": "76b0918d04e36900fe9a370b3e846b920839aad062758c633a6c6c2be04d755d",
+          "bytes": 3360
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionContinuity",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionContinuity.lean",
+      "source_sha256": "3e1a88c718ba5cc7499d493129a6524aa0aaab3a9bac1802e9d57ce9f567f149",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionContinuity.log",
+      "log_sha256": "a70217cce86be86a8bf7f08a2c6ead0c59c1392673b61d06d34d1a1c8cfd66e6",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionContinuity",
+        "source_sha256": "3e1a88c718ba5cc7499d493129a6524aa0aaab3a9bac1802e9d57ce9f567f149",
+        "log_sha256": "a70217cce86be86a8bf7f08a2c6ead0c59c1392673b61d06d34d1a1c8cfd66e6",
+        "exit_code": 0,
+        "wall_seconds": 16.328
+      },
+      "setup_sha256": "9fbe6c441bb55751eb33d4739732c9ebbbdeb14160c2fbbb308b7f57f0046db9",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionContinuity.olean",
+          "sha256": "9c58cbd4479b93191c7753059749093c689d2d409a029a6fb812c02432553d75",
+          "bytes": 32824
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionContinuity.olean.private",
+          "sha256": "f94c575888213bae071224c13f9e737e5c5d5d61fd14a434a0310c72b05326fc",
+          "bytes": 167752
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionContinuity.olean.server",
+          "sha256": "a3613bf172d4e7af850c7e3fe364b8d921e2b68104cd29c1bc341e8442152c23",
+          "bytes": 3344
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalSpatial",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalSpatial.lean",
+      "source_sha256": "727b2062f35a597b2a395c5fccaa4756112cefa07afe827017147bb8c552f752",
+      "log": "endpoint4000_build\\RotatingNormalSpatial.log",
+      "log_sha256": "3f9504494273b89b57b0ab88ee478e22c7fc9c7c9d714f188287d99f36a3e662",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalSpatial",
+        "source_sha256": "727b2062f35a597b2a395c5fccaa4756112cefa07afe827017147bb8c552f752",
+        "log_sha256": "3f9504494273b89b57b0ab88ee478e22c7fc9c7c9d714f188287d99f36a3e662",
+        "exit_code": 0,
+        "wall_seconds": 15.0
+      },
+      "setup_sha256": "21e34f04e687de329e37bc4d2785f7674faa47cf4c5ccab84abdb7c3a88f945f",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalSpatial.olean",
+          "sha256": "d16938b973ba7388171c49f4b56e8fa92157fa36ce7165c769f2981d61bd9bf0",
+          "bytes": 35376
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalSpatial.olean.private",
+          "sha256": "0abf381fa047915f0588b448ac1fd9e62a1eaebc26cad64282f975523f4aebcd",
+          "bytes": 240440
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalSpatial.olean.server",
+          "sha256": "e747c217e645b5798cc850a4aeac1fb97772614b54bdc9576984e08adcd934c2",
+          "bytes": 3760
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalHigher",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalHigher.lean",
+      "source_sha256": "7c5031722abaae8e1a27ac049f6a8131e9b774736d8c35b19c933c88a1a1fd07",
+      "log": "endpoint4000_build\\RotatingNormalHigher.log",
+      "log_sha256": "29b2a164ce10548f89217cc8a5b20a5e929346f4543ad475b9ca08f4b4a21f14",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalHigher",
+        "source_sha256": "7c5031722abaae8e1a27ac049f6a8131e9b774736d8c35b19c933c88a1a1fd07",
+        "log_sha256": "29b2a164ce10548f89217cc8a5b20a5e929346f4543ad475b9ca08f4b4a21f14",
+        "exit_code": 0,
+        "wall_seconds": 16.625
+      },
+      "setup_sha256": "97d6095e1c0ed770cb59f0621a63a48d4238ff07eda406db7dfdede3068ed771",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalHigher.olean",
+          "sha256": "e8548ae813101796b7046a265c15e47c41e3a26494518a9af16ef3f83dd07520",
+          "bytes": 43200
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalHigher.olean.private",
+          "sha256": "8f95599e0db5688537aeec5af8e64621b20f5703120f35a33b99da94a09cf5f5",
+          "bytes": 280536
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalHigher.olean.server",
+          "sha256": "6b86752c976752e385413960ded507dbbba66c24a88aac0697818dd1b85517cc",
+          "bytes": 3688
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionLog",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionLog.lean",
+      "source_sha256": "413779e5377697df5a19e3f1a913891cfbf87a60b6a7e3a3bdb503b1ec17a996",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionLog.log",
+      "log_sha256": "961097e280312e24f9653b8c4b1cdb51570f592c58de896321505e31ab4079ef",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionLog",
+        "source_sha256": "413779e5377697df5a19e3f1a913891cfbf87a60b6a7e3a3bdb503b1ec17a996",
+        "log_sha256": "961097e280312e24f9653b8c4b1cdb51570f592c58de896321505e31ab4079ef",
+        "exit_code": 0,
+        "wall_seconds": 15.718
+      },
+      "setup_sha256": "efa86e85aa17a4ec339740a1cc9aa306f8443f7489ba3aed0c1111c92edea6b2",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionLog.olean",
+          "sha256": "02a5aa929519b212cbf5f2dc7c96beec84aa57b13130e5d9d9dbf0ce48b30fba",
+          "bytes": 56152
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionLog.olean.private",
+          "sha256": "18fe04936fb9ffb791e4612a917edc543093521bf0d2d967cfbe558c24021b73",
+          "bytes": 648904
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionLog.olean.server",
+          "sha256": "e3cc977696412e9e250b6c9c5029857bd717f5dbc56ababfb877dc2623a46502",
+          "bytes": 6224
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionClock",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionClock.lean",
+      "source_sha256": "3cb7e12a5731074909153d8e30e950acd06e19190936e22cb30c50bd98303fa7",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionClock.log",
+      "log_sha256": "085a8da9358a0452894a66984e3f0e68900b9de4de6fa58cc4df116ab753c6e7",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionClock",
+        "source_sha256": "3cb7e12a5731074909153d8e30e950acd06e19190936e22cb30c50bd98303fa7",
+        "log_sha256": "085a8da9358a0452894a66984e3f0e68900b9de4de6fa58cc4df116ab753c6e7",
+        "exit_code": 0,
+        "wall_seconds": 14.281
+      },
+      "setup_sha256": "68ff2414a0c3e637657b071071bd1c314b6f74592214ea55cafab5b6a5ea3f45",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionClock.olean",
+          "sha256": "737970c0d52c5644b014a59abd3db636bb83ab47fedc006b6375d6bf5c95790a",
+          "bytes": 28632
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionClock.olean.private",
+          "sha256": "907573ed77ac7a8c053eb2866f24775d9cf91d4a0516b30726e6872d437e1649",
+          "bytes": 227864
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionClock.olean.server",
+          "sha256": "44beac14f38aeb2f506b42311a2b02d5c2ce0331ca7a3c3d1ad42b70f3d7329a",
+          "bytes": 3352
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionTime",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionTime.lean",
+      "source_sha256": "9115ae9ccd4f41a0eddf0f92300c4b916d018b263f5a1a168c0ff3f69648932e",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionTime.log",
+      "log_sha256": "133966617a8cd654fe477bb054b3f7869c8d3cfcf7430af98f2bdfbbe8269834",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionTime",
+        "source_sha256": "9115ae9ccd4f41a0eddf0f92300c4b916d018b263f5a1a168c0ff3f69648932e",
+        "log_sha256": "133966617a8cd654fe477bb054b3f7869c8d3cfcf7430af98f2bdfbbe8269834",
+        "exit_code": 0,
+        "wall_seconds": 14.797
+      },
+      "setup_sha256": "ecde6d1eb6520bff42550fb69e0944696d6677f12371f136834354fd5b6475ef",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionTime.olean",
+          "sha256": "933a0951b2c769dc001a6967588a06be795fcdd88c1450598af8d1dd9931f503",
+          "bytes": 44792
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionTime.olean.private",
+          "sha256": "4de512b8fb4f15d75f926b3c0abb29552d29afc161bb3e0fe8b5a97f418db5ad",
+          "bytes": 199088
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionTime.olean.server",
+          "sha256": "8bf9addee97a54466812dd7a5d3a20e02e869706dcd57201142055d80cc9c0d1",
+          "bytes": 4520
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolutionCurvature",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolutionCurvature.lean",
+      "source_sha256": "531fd40cdc904e8b6a7faa8c468806e8efdde74359f96b7665ae00a7230c3532",
+      "log": "endpoint4000_build\\RotatingNormalEvolutionCurvature.log",
+      "log_sha256": "38c723e55e8b239ef5f85691ad2a496c0dd1ef63e7b1d41852999eb880c019d5",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolutionCurvature",
+        "source_sha256": "531fd40cdc904e8b6a7faa8c468806e8efdde74359f96b7665ae00a7230c3532",
+        "log_sha256": "38c723e55e8b239ef5f85691ad2a496c0dd1ef63e7b1d41852999eb880c019d5",
+        "exit_code": 0,
+        "wall_seconds": 15.579
+      },
+      "setup_sha256": "f1db8e0cab02dee3c5889d03cd93675daef8d16c95e19fe1e1acbed54f6acca0",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionCurvature.olean",
+          "sha256": "6ff2e41131faef471fa08f402bb6cfce6ff67843e557d11e55f79cde1c730e5a",
+          "bytes": 52600
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionCurvature.olean.private",
+          "sha256": "ac8162ceb39f3d649bcb2d65eafd8096c5e4117fbfb5bf92282afb2703cf3358",
+          "bytes": 370880
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolutionCurvature.olean.server",
+          "sha256": "911359c6acdae0ee3023212c1381a04d0ff5a039503bb68e2d5f8c47fc813118",
+          "bytes": 5976
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingNormalEvolution",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingNormalEvolution.lean",
+      "source_sha256": "3562244987268101445a01a1f05b159cd2423b5d997df4d839edaf86b1bb9778",
+      "log": "endpoint4000_build\\RotatingNormalEvolution.log",
+      "log_sha256": "48eb57351c0318a521474ce0e7e3659a5bd5a0b237a0f77279eb768a925f9c25",
+      "result": {
+        "module": "SolitonClassification.Rotating.RotatingNormalEvolution",
+        "source_sha256": "3562244987268101445a01a1f05b159cd2423b5d997df4d839edaf86b1bb9778",
+        "log_sha256": "48eb57351c0318a521474ce0e7e3659a5bd5a0b237a0f77279eb768a925f9c25",
+        "exit_code": 0,
+        "wall_seconds": 15.234
+      },
+      "setup_sha256": "03cd18f7eca7a9ab73b6098907413f0a377a9fb4c6f660007b7825cd83dbe219",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolution.olean",
+          "sha256": "813f3e52203f45b8054b3d9e08995439982e5d81cf8fe635a1226705d2a422b2",
+          "bytes": 85304
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolution.olean.private",
+          "sha256": "3ed3efc7b29a4dda930054097ac3d0c0181cb5d6019fc95d094532d4a6eea9ec",
+          "bytes": 146272
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingNormalEvolution.olean.server",
+          "sha256": "d5832d29c5d76b100213975ec7d56a7d17ae6f519b8ee5779922e31bfeec0de3",
+          "bytes": 6288
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidateFinalAssembly",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\CandidateFinalAssembly.lean",
+      "source_sha256": "54a7c75d5b8f66f977bc9301fe821932021fa51d33652792bc4cc0395ba95aab",
+      "log": "endpoint4000_build\\CandidateFinalAssembly.log",
+      "log_sha256": "5b8f05225ac6023467f686e545dcfa526d14af704dec7db2b3c54ff06a299c91",
+      "result": {
+        "module": "SolitonClassification.Rotating.CandidateFinalAssembly",
+        "source_sha256": "54a7c75d5b8f66f977bc9301fe821932021fa51d33652792bc4cc0395ba95aab",
+        "log_sha256": "5b8f05225ac6023467f686e545dcfa526d14af704dec7db2b3c54ff06a299c91",
+        "exit_code": 0,
+        "wall_seconds": 14.843
+      },
+      "setup_sha256": "b42c69b4a624a792bbdfd8961bd92289a682f608c525f87165cfd3c0b18d292a",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateFinalAssembly.olean",
+          "sha256": "e2e80b7abac82a5075ac0e3b4bf20555efc1c4f0178e1f21d9980672a6ecb432",
+          "bytes": 93360
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateFinalAssembly.olean.private",
+          "sha256": "95341e3bd723369947bb2f82ea6172f37f7424cb0f9184aea27e9a72a1f7dd4b",
+          "bytes": 111400
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateFinalAssembly.olean.server",
+          "sha256": "9658fae744c22726b66025e0423ebcdd7a10d26e1f403e9ca6d284bad49eed77",
+          "bytes": 4672
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.FullPathFinalGeometry",
+      "source": "SolitonClassification\\Rotating\\FullPathFinalGeometry.lean",
+      "source_sha256": "e21a47a5c32c05fc05d3b8ba49026eb41350f11832540dfaa15a681a22832582",
+      "log": "endpoint4000_build\\FullPathFinalGeometry.log",
+      "log_sha256": "250306b14d5b5c5da3028313a8de82b2009077b545ca089ca80a66eb01f379ae",
+      "result": {
+        "module": "SolitonClassification.Rotating.FullPathFinalGeometry",
+        "source_sha256": "e21a47a5c32c05fc05d3b8ba49026eb41350f11832540dfaa15a681a22832582",
+        "log_sha256": "250306b14d5b5c5da3028313a8de82b2009077b545ca089ca80a66eb01f379ae",
+        "exit_code": 0,
+        "wall_seconds": 14.609
+      },
+      "setup_sha256": "e77420ed477615d2e3a0af6c53cd1c6c383be75db7bcf86104e5350b7e94dce1",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\FullPathFinalGeometry.olean",
+          "sha256": "c9d4942288b848164cf58cae95a829e476cd9834737d9a6cee5c61ae0cc20c3b",
+          "bytes": 19048
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\FullPathFinalGeometry.olean.private",
+          "sha256": "cc0dc4298733fed667c08b9164725e4cbd52bb42955a33acdbab4a28a7fad07c",
+          "bytes": 4176
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\FullPathFinalGeometry.olean.server",
+          "sha256": "d9827baff3cc139e1d22d41735b88a9ef37a9dfb2e3771ab19482df861b950a9",
+          "bytes": 1904
+        }
+      ]
+    }
+  ]
+}

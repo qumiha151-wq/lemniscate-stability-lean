@@ -1,0 +1,54 @@
+SUPPLEMENTAL ROTATING CERTIFICATE SOURCES — CONDITIONAL SCOPE
+
+This source-only supplement contains 48 distinct default-module Lean files:
+47 form the final geometry theorem's noncore dependency closure and one is
+the separate Endpoint4000Audit. Forty compatibility copies have exactly the
+same mathematical bodies as their frozen originals; only module/export
+headers differ. The eight other sources are the new pi, endpoint and final
+composition modules. The source manifest gives the actual dependency order,
+roles, hashes, origins and complete mapping to the reused 87 generic modules.
+Only 83 of those 87 modules are required transitively by this supplement.
+
+The directory final_sources/SolitonClassification is deliberately outside the
+existing project's top-level SolitonClassification source tree. Nothing here
+changes its default Lake glob, 88 core source modules, 108-file inventory,
+lakefile, base lock, production generator or numeric shard sources. Do not
+silently merge these sources into the default core target. A later explicit
+build/staging configuration may select this independent manifest.
+
+NO COMPLETE GRID INSTANCE IS INCLUDED. Endpoint4000Data contains proposed
+rational endpoint states and full 6-by-6 matrices. Finite arithmetic and pi
+bounds are checked, but those data become actual endpoints only through the
+explicit genuine signed-grid premises. FullPathFinalGeometry proves:
+  two genuine 4000-step signed PolynomialPointGridBlock certificates,
+  four exact initial state/matrix identities and four exact nominal endpoint
+  identities imply an actual unique shooting zero, nonconstant closed rotating
+  profile, and future-global pure-normal elastic evolution.
+It does not construct either complete block. A conditional theorem may be
+compiled before its premises are instantiated; this order is NOT a claim
+that the numeric grid or the unconditional rotating example is certified.
+The closing period is 114*c2 and total curvature is -56*(2*pi). No minimal
+period, embeddedness or full-classification claim is made.
+
+The sources have prior local Lean 4.33.1 checks with standard-three axioms.
+The final geometry audit covered 2205 imported Rotating/ClosedSimilarity
+declarations. Logs and frozen evidence are included as provenance. This
+packaging run performs no Lean compile, Linux validation, numerical grid
+verification, archive transport test, or publication. It contains no .olean,
+private/server artifact, native executable, or generated numeric shard.
+Mathlib is pinned to revision 0df444a360eaa60ab8c11dca51a86af692955474.
+CertifiedPi imports the ordinary upstream Complex.Arctan module; no patched
+Mathlib source is included. Ordinary dependency compilation may need to build
+that module if its cache is absent.
+
+To verify this package without accessing the original workspace:
+  python final_sources/tools/prepare_final_source_package.py \
+    --verify-package . --core-path PATH_TO_UNCHANGED_MODULE_PRODUCTION
+The optional --core-path also verifies every original core inventory file and
+its 88-module source tree. Without it, package bytes, module dependency order
+and explicit conditional scope are still verified. This is a packaging check,
+not a substitute for Lean or the missing complete numeric certificates.
+
+To reproduce packaging, run the original prepare_final_source_package.py from
+its frozen workspace with --output NEW_DIRECTORY. Its --plan mode performs
+the exact-source/core/body inventory checks without copying a package.

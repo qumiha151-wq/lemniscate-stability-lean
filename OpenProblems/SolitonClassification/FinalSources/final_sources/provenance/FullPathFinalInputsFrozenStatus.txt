@@ -1,0 +1,110 @@
+FROZEN CONDITIONAL TWO-BLOCK TO ACTUAL FINAL-INPUT BRIDGE
+2026-11-13
+
+Manifest: FullPathFinalInputsFrozenManifest.csv
+SHA256: 21E0914CA42B2045755DB0D6534D839817420C6DEC5E13970CAE2AF1A5D41D98
+Evidence: FullPathFinalInputsFrozenEvidence.json
+SHA256: 79AD42D6B0E609F04D89896838561B03537AFE1D9325CDAA8DCBCE18104D01C9
+New theorem source: SolitonClassification/Rotating/FullPathFinalInputs.lean
+SHA256: B0A341C551A9CDEEC2AD1222C15122C22C5E3EB6CB739B0176853F6064D9E489
+
+ACTUAL VERIFICATION
+
+Fourteen missing analytic dependencies were copied into the existing isolated
+endpoint4000_compat_source directory and converted to the default module
+system. Their proof bodies are unchanged: reversing module/public headers
+recovers the corresponding original source. Original and converted hashes are
+recorded in the NEW fullpath_manifest.json. The previous seven compatibility
+copies and their manifest.json were not changed.
+
+The 14-module sequential compilation session 23801 finished EXIT 0. Every
+module was freshly compiled and all final logs contain no error or warning.
+FullPathFinalInputs session 17375 finished EXIT 0 in 15.828 seconds.
+Its recursive audit covers 1812 imported Rotating declarations, normalizing
+private declaration names, and permits only propext, Classical.choice and
+Quot.sound. The main theorem also has an explicit #print axioms check.
+
+The compilation helper uses explicit --setup public-olean mappings for the
+separately frozen 87-module base and existing endpoint modules. There is no
+legacy project fallback in LEAN_PATH. These 87 base modules were not freshly
+rebuilt here. Their source hashes were checked before each compile and again
+at freezing. All 12 previous Endpoint4000 source hashes were rechecked against
+their frozen manifest; all remain identical. No existing frozen source,
+numeric leaf, production generator or base lock was modified.
+
+Every new source, log, setup file and generated public/private/server artifact
+is hash-bound in the new manifest/evidence. The preparation/freezing helpers
+are prepare_fullpath_compat.py and freeze_fullpath_inputs.py; the established
+check_endpoint4000.py was reused without modification.
+
+EXACT LOGICAL SCOPE
+
+Namespace SolitonClassification.Rotating.FullPathFinalInputs.
+PlusBlock and MinusBlock abbreviate genuine PolynomialPointGridBlock with
+sign +1 and -1 respectively, Candidate.step, both reset budgets 1e-55, and
+exactly 4000 steps. A block carries the existing certified polynomial grid
+conditions; it is not a raw list of proposed JSON endpoints.
+
+The theorem final_inputs_of_two_blocks takes:
+  P : PlusBlock, M : MinusBlock;
+  P.state 0 = Candidate.initial, P.matrix 0 = identity;
+  M.state 0 = Candidate.initial, M.matrix 0 = identity;
+  P.state 4000 = Endpoint4000Data.plusState;
+  P.matrix 4000 = Endpoint4000Data.plusOperator;
+  M.state 4000 = Endpoint4000Data.minusState;
+  M.matrix 4000 = Endpoint4000Data.minusOperator.
+
+It proves FinalInputs, a proposition containing exactly:
+  positive actual-flow matrix and canonical inverse bounds K=8000, I=16000;
+  negative actual-flow matrix and canonical inverse bounds K=8000, I=16000;
+  ||y - actualShootingMap phaseReal candidateParameterCenter|| <= 1e-27;
+  ||CandidatePreconditioner.J - actualShootingDerivative ...|| <= 1e-5;
+  ||CandidatePreconditioner.B y|| <= 1e-30.
+Here y is the already kernel-checked Endpoint4000Finite.value, not a free
+assumed residual. Both matrix-bound propositions include the actual tube.
+
+The uniform bounds cover the extended horizon T0+2*r, r=1e-24, centered at
+the exact Candidate.initial, tube radius 8*r and closed initial ball radius r.
+The endpoint identities concern the original nominal time T0=4000*h. The
+existing FullPathBlock.actual_center_endpoints proof charges the nominal last
+reset; it does not identify the extended terminal reference with the nominal
+endpoint. The sign -1 block controls the actual reverse-time flow and all
+six initial-variation columns, not a sign-changed numerical matrix shortcut.
+
+Actual state and derivative endpoint errors come from FullPathBlock, with
+stateError=2400/10^32+1/10^55 and matrixError=2400/10^10+1/10^55.
+The new bridge proves exact equality of those scalar budgets and reverses
+the norm subtraction orientation explicitly. It derives positive tube radius
+and the candidate time's strict inclusion in (0,horizon) from the existing
+candidate-radius and parameter-domain theorems. No extra tube, endpoint error,
+flow regularity, inverse, time-domain or numerical-enclosure premise is added.
+
+This batch DOES NOT construct either signed 4000-step block, prove their
+initial/end identities for all generated shards, invoke the Banach theorem,
+or assert a shooting root, closed rotating curve, or completed classification.
+It completes the conditional analytic interface needed once the two genuine
+blocks and their exact data identities have been checked.
+
+DEPENDENCY ORDER (15 NEW SOURCES)
+
+1 PolynomialPointGridBlockGrid
+2 ActualRootFromMatrices
+3 FlowInverseRoot
+4 CandidateRootBudget
+5 FlowMetricDeviationSegment
+6 FlowMetricDeviationReset
+7 FlowMetricDeviationGlobal
+8 FlowMetricRoot
+9 FlowBootstrapMatrices
+10 FlowMetricDeviationBootstrap
+11 FlowMetricDeviationBudget
+12 CandidateBootstrapBudget
+13 CandidateCenterEndpointBudget
+14 FullPathBlockEndpoints
+15 FullPathFinalInputs
+
+The first 14 are proof-preserving module copies under
+endpoint4000_compat_source/SolitonClassification/Rotating; the final source is
+under SolitonClassification/Rotating. Earlier Endpoint4000 modules and their
+7 compatibility dependencies must already be available. The prior frozen
+endpoint manifest remains the authoritative earlier batch record.

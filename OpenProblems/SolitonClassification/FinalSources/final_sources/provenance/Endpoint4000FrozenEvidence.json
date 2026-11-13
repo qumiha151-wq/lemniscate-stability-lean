@@ -1,0 +1,340 @@
+{
+  "scope": "Finite numerical enclosures plus a conditional actual-flow comparison; no complete grid or root instantiation",
+  "default_module": true,
+  "base": "separately frozen module87; not recompiled in this run",
+  "project_input_mode": "explicit public-only importArts, no legacy project fallback",
+  "compatibility_originals": [
+    {
+      "module": "SolitonClassification.Rotating.QuantitativeJoint",
+      "original_sha256": "403ecf38f037d1ac777c3896bfeafa10ce76f3a2957b4fbdd7600c95dd776346",
+      "module_sha256": "63cd643e139e4447dc719f976e3314ec604cf61ca6fd98ed422da2fbec744248",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.ShootingVariation",
+      "original_sha256": "8b14163046b3994ea4501a8ad28319d18ec6fae24beb3ea6c7355d52c51ef98b",
+      "module_sha256": "18eb869bf5ca8bd98c4e1730df7c9abdc3b24f889544e8747d7e94bc99a1574b",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingGridHorizonCandidate",
+      "original_sha256": "d47e6a1039e6a6ab79ae4386c9464f728de27b39db26ff87322ad762da7b3855",
+      "module_sha256": "46b875af0aa6a1fea9219b217cecd976ceb82c1abf57f86587d891e188f38d09",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidateInputs",
+      "original_sha256": "9f2eb61fe4d0c12c1984dd7689388c76242eef94f4bf6b6d6fff2f1f049cdaf0",
+      "module_sha256": "386a67b694787d7b3fd1c06a3cffc8378e8dff77aff35cfa634d297b432722e7",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.ParameterMatrixNorm",
+      "original_sha256": "7e4709d8c949a199f05eea82dfea1754b5dbaf07b926db43cde1b3cd44b37120",
+      "module_sha256": "81f38b43405f2c9bbf34eda4d89d1151aefdacd88cd47e06b91846e585221883",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidatePreconditioner",
+      "original_sha256": "e5687e60129be70f4c1c5a63eafbeab8cf03ea0dbe3de9920afdc2aa405d8509",
+      "module_sha256": "3bf50d3b61b67f37ce25b4f3da678cfe9a6d6b8f0336e400d27b79ae46da13eb",
+      "proof_body_unchanged": true
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidateShootingEndpointComparison",
+      "original_sha256": "003bcbc62fcd6082e1f5a6d21ab6a1d0dc1249376f0a1d4d5f96befd30a00f08",
+      "module_sha256": "a7a70fea06f3f2f7f77ca529f20637bc7065bc95ca4dd8256cf7e79812f684e2",
+      "proof_body_unchanged": true
+    }
+  ],
+  "modules": [
+    {
+      "module": "SolitonClassification.Rotating.Endpoint4000Data",
+      "source": "SolitonClassification\\Rotating\\Endpoint4000Data.lean",
+      "source_sha256": "9264029da5e33f3a2f8c89795d5decc06507c5443abb6f1b7c4db8c71b2b7439",
+      "log": "endpoint4000_build\\Endpoint4000Data.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Data.olean",
+          "sha256": "b6827f732644f36670ea70f9388196f2466eb6660d5846ba792e75db4c640895",
+          "bytes": 44824
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Data.olean.private",
+          "sha256": "b3f01d424c64c550b105f2cdcb8a128d7dbb07838fe9717cbd264a4dc28bbf39",
+          "bytes": 272768
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Data.olean.server",
+          "sha256": "c310aae3a1cd2edbc99a5c32502ef02fa5a363fbc972d2cbd54314dccad2ab59",
+          "bytes": 4488
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.Endpoint4000Finite",
+      "source": "SolitonClassification\\Rotating\\Endpoint4000Finite.lean",
+      "source_sha256": "de4697bc0a64e62d2928a5d58b6384f9f1d1a8634cae3dad8b0675f19f7cfcc1",
+      "log": "endpoint4000_build\\Endpoint4000Finite.log",
+      "log_sha256": "d170aacd6cb402eb1689f38b0ad3c323aac99b41378d4d90f507df0f81782785",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Finite.olean",
+          "sha256": "22127f67f0c06f409960f61f760ffe960f6bd4d4d47005aeb19ac0d14a022aea",
+          "bytes": 98624
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Finite.olean.private",
+          "sha256": "c08bb916624089d6c208df89bcb2fc716871c9a8a9daf6847d68e7e6786576b1",
+          "bytes": 658568
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Finite.olean.server",
+          "sha256": "c1960c6a02c20e83a01df44f1e9600732d0fe0ee2ae5cbb325bf61d8a314f7a1",
+          "bytes": 7104
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.Endpoint4000Meaning",
+      "source": "SolitonClassification\\Rotating\\Endpoint4000Meaning.lean",
+      "source_sha256": "99de227e67d87d7d7edfe8bacfe5587324878f547a85530fb2b13610d794a8c6",
+      "log": "endpoint4000_build\\Endpoint4000Meaning.log",
+      "log_sha256": "1d3e1dcbd82e6638a5402c33419403e6a1869668e1e7db1cec1cea37a632dbd1",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Meaning.olean",
+          "sha256": "ca47f1ebe0b9d6241798c261a0b831612b4d577d12f8156c2d20a0e445d8b16c",
+          "bytes": 47008
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Meaning.olean.private",
+          "sha256": "704ae040ae5904fe82a0d569037876d8ed553297175b5a40d52833348fe05210",
+          "bytes": 1543008
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Meaning.olean.server",
+          "sha256": "ba5717a4e56a76bcd4dca0953979e80003cdba861e648400a00682cfd690aedc",
+          "bytes": 2528
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.QuantitativeJoint",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\QuantitativeJoint.lean",
+      "source_sha256": "63cd643e139e4447dc719f976e3314ec604cf61ca6fd98ed422da2fbec744248",
+      "log": "endpoint4000_build\\QuantitativeJoint.log",
+      "log_sha256": "5392248384f0d99052eb11143791350e1bc3b5772f26cd799f694f512e380c26",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\QuantitativeJoint.olean",
+          "sha256": "3f0670392acdd1a9140950ca576f56c3bf39068b90ea886007facb3d0ddc8674",
+          "bytes": 57912
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\QuantitativeJoint.olean.private",
+          "sha256": "cd874a2fe5e46c10e9bc8beb0f84f9799669077032b85843f4c33c0a1a71c60e",
+          "bytes": 411528
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\QuantitativeJoint.olean.server",
+          "sha256": "bb49dd31504634f9198a0d04c55998e3b0714f3bd558ac9dda38229a952fc672",
+          "bytes": 1776
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.ShootingVariation",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\ShootingVariation.lean",
+      "source_sha256": "18eb869bf5ca8bd98c4e1730df7c9abdc3b24f889544e8747d7e94bc99a1574b",
+      "log": "endpoint4000_build\\ShootingVariation.log",
+      "log_sha256": "b92e42aa8031cab3897c098d3fea8c0a5bae94988170907ace2717293a7e84ce",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\ShootingVariation.olean",
+          "sha256": "baa00884bdf96defd867485190d3715644554040fa115869e88f92c83e21e1bb",
+          "bytes": 76712
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\ShootingVariation.olean.private",
+          "sha256": "ad957fb8cb6462a05b74eb3a4d9f10739369b7ca3c23d2ae256195e4586d8e04",
+          "bytes": 483008
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\ShootingVariation.olean.server",
+          "sha256": "e43482a91bec3fbe2d4d0916e64bc14d633573de049cbe6258f6113f5c9c90e7",
+          "bytes": 3528
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.RotatingGridHorizonCandidate",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\RotatingGridHorizonCandidate.lean",
+      "source_sha256": "46b875af0aa6a1fea9219b217cecd976ceb82c1abf57f86587d891e188f38d09",
+      "log": "endpoint4000_build\\RotatingGridHorizonCandidate.log",
+      "log_sha256": "780bbf4079d4dce701e507220a7b8510622bf4311d8864a8a98570049192caf0",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingGridHorizonCandidate.olean",
+          "sha256": "ffcae6676e0339a8a347f8cbd8c53ef02bffc778583c8ded76069b84ba0ba313",
+          "bytes": 41552
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingGridHorizonCandidate.olean.private",
+          "sha256": "3e01f045bebd11bfefda45878747eb3e4e9f56ff89d80913fa645aa3cf85f68f",
+          "bytes": 161016
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\RotatingGridHorizonCandidate.olean.server",
+          "sha256": "ee6ba86d13732a8cd7f418765005b8267546115b634d5989b92d3ab20316d72b",
+          "bytes": 5816
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidateInputs",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\CandidateInputs.lean",
+      "source_sha256": "386a67b694787d7b3fd1c06a3cffc8378e8dff77aff35cfa634d297b432722e7",
+      "log": "endpoint4000_build\\CandidateInputs.log",
+      "log_sha256": "21b9119605ca50e837c8f6e2451029a64579039f87898eb9e712ed82699b71d2",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateInputs.olean",
+          "sha256": "1954a10fb8d35ff4284ae3bdbb480b2c4c58c690495c61f1dc2501aa5465019c",
+          "bytes": 46944
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateInputs.olean.private",
+          "sha256": "04e0770685243aa2ff76dd193f0577d74e55dd05393a8e70b5fdf90ea889d80b",
+          "bytes": 246824
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateInputs.olean.server",
+          "sha256": "8bb5a0be6023c043fad5ee6774abc7959d1e59f6703ee4f0dca59e45b700a96d",
+          "bytes": 3696
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.ParameterMatrixNorm",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\ParameterMatrixNorm.lean",
+      "source_sha256": "81f38b43405f2c9bbf34eda4d89d1151aefdacd88cd47e06b91846e585221883",
+      "log": "endpoint4000_build\\ParameterMatrixNorm.log",
+      "log_sha256": "dc8ee31efb4bb4bba88c64558f07fcfbc6f00329ae430bec1c8a3639672aba67",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\ParameterMatrixNorm.olean",
+          "sha256": "6d0042fbc89c92e709d55bbecee84893f07ec220a23a9c624f5ab3dc2e4c023f",
+          "bytes": 47312
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\ParameterMatrixNorm.olean.private",
+          "sha256": "e9d0634577648af6d2e1180e4f89e9877012242bc9ff922859bf9c755df212e7",
+          "bytes": 181336
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\ParameterMatrixNorm.olean.server",
+          "sha256": "a1103fb64533d6793062a12a2e18a8d05dbc6a986e0bc8a5468bc7d48aa31dfb",
+          "bytes": 3400
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidatePreconditioner",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\CandidatePreconditioner.lean",
+      "source_sha256": "3bf50d3b61b67f37ce25b4f3da678cfe9a6d6b8f0336e400d27b79ae46da13eb",
+      "log": "endpoint4000_build\\CandidatePreconditioner.log",
+      "log_sha256": "9c0fd3c292ab43ccfc55c2c9991ee99c0dc486f1e4eeab56af7223974a7baaf6",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidatePreconditioner.olean",
+          "sha256": "d8274e4731dbbcbe5ba43808a735a31432fd10eceeb9c3cba91f283081be23d8",
+          "bytes": 54560
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidatePreconditioner.olean.private",
+          "sha256": "21b4cf8b1dbe0ca10aa76a8432fdf04dd03c9bc2d0429bef6f204cb610589cfa",
+          "bytes": 294544
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidatePreconditioner.olean.server",
+          "sha256": "9ae514ac13e292c953f15c93ce25beb5227624627f954fa85ece95c9968b026b",
+          "bytes": 3288
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.CandidateShootingEndpointComparison",
+      "source": "endpoint4000_compat_source\\SolitonClassification\\Rotating\\CandidateShootingEndpointComparison.lean",
+      "source_sha256": "a7a70fea06f3f2f7f77ca529f20637bc7065bc95ca4dd8256cf7e79812f684e2",
+      "log": "endpoint4000_build\\CandidateShootingEndpointComparison.log",
+      "log_sha256": "6deb711b453b4d96c0da544ecb278d6303f731e1e982e11d650fac3bc40a24c8",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateShootingEndpointComparison.olean",
+          "sha256": "760bf91247a4db25da76c1aa06837fd191df99baf845e15ce21a9688cb952239",
+          "bytes": 76312
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateShootingEndpointComparison.olean.private",
+          "sha256": "ac89151a26793fbb9504442c26ff126d51eb951c2d184f96eadf408ed90b1cf1",
+          "bytes": 417336
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\CandidateShootingEndpointComparison.olean.server",
+          "sha256": "515fc8a42158fcb1e5103374c95074eee0246f339ecb05a76f4ebbbf7e8c0cc7",
+          "bytes": 4392
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.Endpoint4000ActualComparison",
+      "source": "SolitonClassification\\Rotating\\Endpoint4000ActualComparison.lean",
+      "source_sha256": "f7a4e2c39b5a5a147401fc4452cedb04a47797dc804870a0e467731d7b6eb64d",
+      "log": "endpoint4000_build\\Endpoint4000ActualComparison.log",
+      "log_sha256": "2ddf2e7e8041a6c0f78836fca5f7ea3f9979bdb0a167a4985118a5de598795b9",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000ActualComparison.olean",
+          "sha256": "531359e58907f58696fa54c9f1d03923d1cf89cc13100bddb36acf1b6e828296",
+          "bytes": 58656
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000ActualComparison.olean.private",
+          "sha256": "e023934b7591a7d835b51a8dcd520cbc2af46d528b8b7882a1b2f26c9a824143",
+          "bytes": 288120
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000ActualComparison.olean.server",
+          "sha256": "a23ba8ff5fa840ad8856192e83a9e609dc2b628d7ee85e35600dfe985b8dc815",
+          "bytes": 3224
+        }
+      ]
+    },
+    {
+      "module": "SolitonClassification.Rotating.Endpoint4000Audit",
+      "source": "SolitonClassification\\Rotating\\Endpoint4000Audit.lean",
+      "source_sha256": "f55bdf45eddbdd364d846005675b59c2696fd36ec8e7f8e20f037268eb976db3",
+      "log": "endpoint4000_build\\Endpoint4000Audit.log",
+      "log_sha256": "e37d04515c4c720a9897dfaced735d024e18073cb07f703ee2125613aa7a325f",
+      "artifacts": [
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Audit.olean",
+          "sha256": "914d0f87549a61869eaefae1b2b616003ca41e329a91e457bcae662a8a18a2f1",
+          "bytes": 1584
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Audit.olean.private",
+          "sha256": "63f6d46098087c81cdea1c407e929c158853529217becb9168cbaf7120b52525",
+          "bytes": 1064
+        },
+        {
+          "path": "endpoint4000_build\\SolitonClassification\\Rotating\\Endpoint4000Audit.olean.server",
+          "sha256": "307e7c80fa5b45dbd08c3c6a3599520669c6ab0b36eb404eb60277f8f5c84bb2",
+          "bytes": 96
+        }
+      ]
+    }
+  ]
+}

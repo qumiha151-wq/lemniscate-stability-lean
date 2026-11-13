@@ -1,0 +1,116 @@
+FROZEN CONDITIONAL TWO-BLOCK TO CLOSED GEOMETRY AND ACTUAL FEF
+2026-11-13
+
+Manifest: FullPathFinalGeometryFrozenManifest.csv
+SHA256: E27F01ACF7D5636D0E3CCC58E7CA339CDB11E599FCD2538332A82F0F68979A88
+Evidence: FullPathFinalGeometryFrozenEvidence.json
+SHA256: 74F0F4951F053855C0663774F55F9C1F8594FD660667EA0827839947D460D3D2
+New source: SolitonClassification/Rotating/FullPathFinalGeometry.lean
+SHA256: E21A47A5C32C05FC05D3B8BA49026EB41350F11832540DFAA15A681A22832582
+
+ACTUAL VERIFICATION
+
+All 20 modules were freshly compiled in session 81338, which finished EXIT 0.
+The final module took 14.609 seconds. Every final source-specific log contains
+no error or warning. The final recursive audit covers 2205 imported Rotating
+and ClosedSimilarity declarations, including normalized private names, and
+allows only propext, Classical.choice and Quot.sound. The main existential
+theorem also has a separate explicit #print axioms check.
+
+Nineteen original analytic source files were copied, without mathematical
+proof changes, into endpoint4000_compat_source. The only conversion is the
+module header, public import headers and an exposed public section. Reversing
+those changes is checked against each original source. The complete minimal
+dependency scan is finalgeometry_missing_closure.json; original and converted
+hashes are bound by endpoint4000_compat_source/finalgeometry_manifest.json.
+
+The two non-Rotating dependencies, SupportODE and OneSignCurvature, belong to
+the same independent SolitonClassification project. There is no import from
+the LengthGrowth, Migration, CentroidEscape or OpenTranslators projects.
+
+The separately frozen 87-module base and prior endpoint/full-input modules
+are reused through explicit public-olean --setup mappings. The project
+LEAN_PATH has no legacy-project fallback. The 87 base source hashes and all
+27 source hashes in the two earlier Endpoint4000/FullPathFinalInputs batches
+were rechecked unchanged. No previous frozen source, original geometry/PDE
+source, base lock, numeric leaf or production generator was modified.
+This check did not independently rebuild the 87-module base.
+
+Each new source has a source-specific result.json recording actual exit code,
+elapsed time and source/log hashes. The evidence also binds the setup and all
+generated public/private/server artifacts. The helpers are
+scan_finalgeometry_closure.py, prepare_finalgeometry_compat.py,
+check_finalgeometry.py and freeze_finalgeometry.py.
+
+THE EXACT CONDITIONAL THEOREM
+
+FullPathFinalGeometry.exists_geometry_of_two_blocks takes exactly the same
+two genuine signed 4000-step PolynomialPointGridBlock values and eight exact
+initial/final state and matrix identities as FullPathFinalInputs:
+  positive and negative blocks with step Candidate.step and both reset
+  budgets 1e-55;
+  each initial state is Candidate.initial and each initial matrix is Id;
+  each nominal endpoint state/matrix is the corresponding exact
+  Endpoint4000Data state/operator.
+
+It derives the five actual final inputs by final_inputs_of_two_blocks, then
+uses the unchanged existing CandidateFinalAssembly theorem. It adds no zero,
+tube, regularity, periodicity, inverse, numerical or geometric assumption.
+
+The conclusion is an actual parameter c and coordinate functions X(t,s),
+Y(t,s) satisfying CandidateFinalAssembly.GeometricConclusion. In particular:
+  c is in the closed candidate ball of radius 1e-24;
+  the actual shooting map vanishes at c, uniquely within that ball;
+  c0>2, c4>0 and c2>0;
+  the actual smooth unit-speed rotating profile closes with period 114*c2;
+  its curvature is nonconstant and its rotational normal-velocity term is
+  nonzero somewhere;
+  its total signed curvature over that closing period is -56*(2*pi);
+  X and Y give a jointly smooth, regular, periodic pure-normal elastic
+  evolution for every t>-1/4, including every future time t>=0;
+  the initial curve is the reconstructed rotating profile;
+  its length is dilationScale(t)*(114*c2).
+
+The PDE is the full coordinate time derivative -F*N. Its speed, curvature,
+arc derivative, elastic force and normal are defined from the actual spatial
+coordinate derivatives. It is not merely a normal-component identity or an
+evolution with an unremoved tangential velocity. The already imported
+GeometricConclusion.future_PDE exposes this coordinate equation explicitly.
+No minimal-period or embeddedness claim is made.
+
+WHAT REMAINS
+
+Neither 4000-step block nor its eight identifying equations is instantiated
+in this batch. Proposed JSON plans and rational endpoint checks are not
+substituted for the required complete signed polynomial-grid certificates.
+Consequently this remains a conditional existence theorem; it is not yet an
+unconditional rotating example or a full classification. The numerical
+production and exact block assembly must still provide its explicit inputs.
+
+DEPENDENCY ORDER (20 NEW SOURCES)
+
+1 RotatingPeriodicFlow
+2 RotatingPeriodicSmooth
+3 SolitonClassification.SupportODE
+4 SolitonClassification.OneSignCurvature
+5 RotatingClosedProfile
+6 RotatingClosedProfileClosure
+7 RotatingClosedProfileShooting
+8 RotatingClosedProfileNonconstant
+9 RotatingNormalEvolutionScalar
+10 RotatingNormalEvolutionField
+11 RotatingNormalEvolutionContinuity
+12 RotatingNormalSpatial
+13 RotatingNormalHigher
+14 RotatingNormalEvolutionLog
+15 RotatingNormalEvolutionClock
+16 RotatingNormalEvolutionTime
+17 RotatingNormalEvolutionCurvature
+18 RotatingNormalEvolution
+19 CandidateFinalAssembly
+20 FullPathFinalGeometry
+
+All names except entries 3 and 4 have the prefix
+SolitonClassification.Rotating. The first 19 sources are new compatibility
+copies; entry 20 is the new short composition theorem. Earlier frozen
+Endpoint4000 and FullPathFinalInputs batches must already be available.

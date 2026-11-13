@@ -1,0 +1,78 @@
+CERTIFIED PI: FROZEN ACTUAL LEAN RESULT
+2026-11-13
+
+Source: SolitonClassification/Rotating/CertifiedPi.lean
+SHA256: 6D506A13EE6B7641857634A5AB9BDDFAB24C7DD1FA0A7EEA24C27795F3930DD0
+Lean: 4.33.1; Mathlib source/dependencies: mathlib4-4.33.1.
+The source uses the default module system and public declarations.
+
+Actual final compile: session 4400, EXIT 0, elapsed 17.7072691 seconds.
+There were no warnings or errors. Recursive standard-three axiom audit
+passed for all 22 declarations under
+SolitonClassification.Rotating.CertifiedPi.
+Both printed final theorems depend only on
+  propext, Classical.choice, Quot.sound.
+There is no sorry, native_decide, unchecked arithmetic oracle, imported
+open-problem project, or additional numerical assumption in this proof.
+
+Final compiler log: CertifiedPi.check.log
+SHA256: 6237C2B8584F48E82819CEC3DC06DBE048CF4A17EB0E57066381A821383DDC97
+Build helper: check_certified_pi.ps1
+SHA256: 065C91429612814FFA804089D3FCB019E4A38A89B15EB68D1EEDA7180EAF1283
+
+PUBLIC RESULT
+
+In namespace SolitonClassification.Rotating.CertifiedPi:
+  lower : Q =
+    31415926535897932384626433832795028841971693993751058209749445923 / 10^64
+  upper : Q = lower + 1/10^64
+  center : Q = (lower+upper)/2
+  radius : Q = 1/(2*10^64)
+
+Theorems:
+  lower_lt_pi : (lower:R) < Real.pi
+  pi_lt_upper : Real.pi < (upper:R)
+  enclosure : (lower:R) < Real.pi and Real.pi < (upper:R)
+  radius_pos : 0 < (radius:R)
+  abs_pi_sub_center_lt : |Real.pi-(center:R)| < (radius:R)
+  radius_lt_ten_neg_sixty : (radius:R) < 1/(10:R)^60
+  abs_pi_sub_center_le_ten_neg_sixty :
+    |Real.pi-(center:R)| <= 1/(10:R)^60
+
+PROOF AND EXACT FINITE ARITHMETIC
+
+Use Mathlib's actual theorem Real.hasSum_arctan and the alternating-series
+even/odd partial-sum bounds. The antitonicity of the positive arctangent
+terms is proved for every real 0<=x<=1. Machin's theorem identifies
+16 arctan(1/5)-4 arctan(1/239) with the actual Real.pi.
+The proof uses 48/49 terms for 1/5 and 16/17 terms for 1/239.
+Two norm_num proofs check the exact finite rational inequalities against
+the displayed decimal endpoints. The internal Machin interval has width
+about 2.614e-69; this approximate description is not an input to Lean.
+
+LOCAL DEPENDENCY BUILD
+
+This machine lacked the cached olean for the unchanged upstream module
+Mathlib.Analysis.SpecialFunctions.Complex.Arctan, while its dependencies
+were already present. The helper compiled that exact upstream source
+into the workspace-only directory pi_deps_build. Its source SHA256 is
+F7D25DAC9724284DD8820B4841AC21EF9DABD98AD03AB3CAF6E92AC80E623613.
+The CertifiedPi build uses an explicit --setup importArts mapping for
+that workspace artifact; it does not write to the external Mathlib tree.
+The mathematical source still imports the ordinary Mathlib module, so
+an ordinary Lake build can build this dependency normally.
+Use check_certified_pi.ps1 -BuildDependency to rebuild that upstream
+module as well. No production base lock or existing certificate source
+was changed.
+
+Output artifacts from the successful check:
+  build/SolitonClassification/Rotating/CertifiedPi.olean          34352 bytes
+  build/SolitonClassification/Rotating/CertifiedPi.olean.private 975064 bytes
+  build/SolitonClassification/Rotating/CertifiedPi.olean.server    5424 bytes
+
+SCOPE
+
+This is a rigorous high-precision constant enclosure for subsequent
+shooting-value arithmetic. It proves no candidate shooting zero, no
+4000-segment endpoint enclosure, and no new closed rotating profile.
+Those actual numerical/analytic obligations remain separate.
