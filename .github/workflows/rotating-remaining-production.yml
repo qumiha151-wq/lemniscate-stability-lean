@@ -1,0 +1,1342 @@
+"name": "Rotating remaining 246 exact-core shards"
+"on":
+  "workflow_dispatch": {}
+  "push":
+    "branches":
+      - "research/remaining-open-problems"
+    "paths":
+      - ".github/workflows/rotating-remaining-production.yml"
+"permissions":
+  "contents": "read"
+  "actions": "read"
+"concurrency":
+  "group": "rotating-remaining-production-${{ github.ref }}"
+  "cancel-in-progress": false
+"jobs":
+  "checked":
+    "name": "${{ matrix.key }} on one exact restored core"
+    "runs-on": "ubuntu-24.04"
+    "timeout-minutes": "${{ matrix.timeout }}"
+    "strategy":
+      "fail-fast": false
+      "max-parallel": 12
+      "matrix":
+        "include":
+          -
+            "kind": "shard"
+            "key": "RP0032"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0064"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0096"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0128"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0160"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0192"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0224"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0256"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0288"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0320"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0352"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0384"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0416"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0448"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0480"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0512"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0544"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0576"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0608"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0640"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0672"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0704"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0736"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0768"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0800"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0832"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0864"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0896"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0928"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0960"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP0992"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1024"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1056"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1088"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1120"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1152"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1184"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1216"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1248"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1280"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1312"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1344"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1376"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1408"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1440"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1472"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1504"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1536"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1568"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1600"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1632"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1664"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1696"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1728"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1760"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1792"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1824"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1856"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1888"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1920"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1952"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP1984"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2016"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2048"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2080"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2112"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2144"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2176"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2208"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2240"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2272"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2304"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2336"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2368"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2400"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2432"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2464"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2496"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2528"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2560"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2592"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2624"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2656"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2688"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2720"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2752"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2784"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2816"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2848"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2880"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2912"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2944"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP2976"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3008"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3040"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3072"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3104"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3136"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3168"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3200"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3232"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3264"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3296"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3328"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3360"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3392"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3424"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3456"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3488"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3520"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3552"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3584"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3616"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3648"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3680"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3712"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3744"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3776"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3808"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3840"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3872"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3904"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3936"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0032"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0064"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0096"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0128"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0160"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0192"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0224"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0256"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0288"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0320"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0352"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0384"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0416"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0448"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0480"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0512"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0544"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0576"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0608"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0640"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0672"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0704"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0736"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0768"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0800"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0832"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0864"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0896"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0928"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0960"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0992"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1024"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1056"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1088"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1120"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1152"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1184"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1216"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1248"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1280"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1312"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1344"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1376"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1408"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1440"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1472"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1504"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1536"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1568"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1600"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1632"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1664"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1696"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1728"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1760"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1792"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1824"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1856"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1888"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1920"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1952"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM1984"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2016"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2048"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2080"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2112"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2144"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2176"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2208"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2240"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2272"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2304"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2336"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2368"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2400"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2432"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2464"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2496"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2528"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2560"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2592"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2624"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2656"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2688"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2720"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2752"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2784"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2816"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2848"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2880"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2912"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2944"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM2976"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3008"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3040"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3072"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3104"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3136"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3168"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3200"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3232"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3264"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3296"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3328"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3360"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3392"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3424"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3456"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3488"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3520"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3552"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3584"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3616"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3648"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3680"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3712"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3744"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3776"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3808"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3840"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3872"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3904"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3936"
+            "timeout": 120
+    "defaults":
+      "run":
+        "shell": "bash"
+    "env":
+      "PYTHONDONTWRITEBYTECODE": "1"
+      "CORE_REVISION": "cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+      "TOOL_REVISION": "ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9"
+      "CORE_SHA": "01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c"
+      "LOCK_SHA": "dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d"
+      "PIPELINE_SHA": "598bee6a58a1d0531944f229fd1a7a1c6522f2bfcb06e61a96ee7cc5e7ff4b57"
+      "PLAN_SHA": "a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1"
+      "KIND": "${{ matrix.kind }}"
+      "KEY": "${{ matrix.key }}"
+      "CORE_PROJECT": "${{ github.workspace }}/core-source/OpenProblems/SolitonClassification/ModuleProduction"
+      "PACKAGE": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/ProductionPipeline"
+      "TOOLS": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/ProductionPipeline/tools"
+      "FINAL_SOURCES": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/FinalSources"
+      "PINS": "{\"schema\":\"rotating.first-production-workflow-pins.v1\",\"repository\":\"qumiha151-wq/lemniscate-stability-lean\",\"core_run_id\":43345535919,\"core_run_attempt\":1,\"core_source_revision\":\"cff971bcac7ac2d83aba04596ce09e44fda1ac29\",\"tool_package_revision\":\"ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9\",\"tool_inventory_sha256\":\"598bee6a58a1d0531944f229fd1a7a1c6522f2bfcb06e61a96ee7cc5e7ff4b57\",\"core_inventory_sha256\":\"2c252cf849e22e027ca2630b836e5227b8ff8390cf45f36a6b467db64580c924\",\"plan_sha256\":\"a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1\",\"final_manifest_sha256\":\"51e1abe4b94640773e1fe66f93cfc1ad58a57fafbd050a260eba53da0f61fd72\",\"core_artifact_id\":14003699438,\"core_artifact_name\":\"rotating-core-full-43345535919-1\",\"core_archive_sha256\":\"01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c\",\"core_base_lock_sha256\":\"dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d\",\"core_archive_bytes\":1303430664,\"core_payload_bytes\":6035488572,\"core_artifact_zip_bytes\":1303431717,\"headroom_bytes\":2147483648,\"shard_reserve_bytes\":8589934592,\"final48_reserve_bytes\":2147483648,\"max_parallel\":12,\"retention_days\":30,\"full_certificate_proved\":false}"
+      "FIRST_PINS": "{\"run_id\":43354529340,\"head_sha\":\"cef10f7ef398d1526c03c66f5ef84a71e697b3cb\",\"run_attempt\":1,\"jobs\":{\"final48 on one exact restored core\":131653266716,\"RM3968 on one exact restored core\":131653266897,\"RP3968 on one exact restored core\":131653266904,\"RP0000 on one exact restored core\":131653266990,\"RM0000 on one exact restored core\":131653266994}}"
+    "steps":
+      -
+        "name": "Set the isolated output path using the runner shell environment"
+        "run": |
+          printf 'WORK=%s/rotating-remaining-production\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+          "path": "core-source"
+          "persist-credentials": false
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9"
+          "path": "tool-source"
+          "persist-credentials": false
+      -
+        "name": "Bind exact source and tool revisions; verify unchanged packages"
+        "run": |
+          set -euo pipefail
+          test "$(git -C "$GITHUB_WORKSPACE/core-source" rev-parse HEAD)" = "$CORE_REVISION"
+          test "$(git -C "$GITHUB_WORKSPACE/tool-source" rev-parse HEAD)" = "$TOOL_REVISION"
+          mkdir -p "$WORK/evidence"
+          python3 -B "$TOOLS/verify_production_pipeline.py" --package "$PACKAGE" --inventory-sha256 "$PIPELINE_SHA" --core-project "$CORE_PROJECT"
+      -
+        "name": "Require the actual successful first four shards and final48"
+        "run": |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          p=json.loads(os.environ['FIRST_PINS'])
+          def get(suffix):
+              req=urllib.request.Request('https://api.github.com/repos/qumiha151-wq/lemniscate-stability-lean'+suffix,
+                  headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],
+                           'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(req,timeout=60) as response: return json.load(response)
+          run=get('/actions/runs/'+str(p['run_id']))
+          jobs=get('/actions/runs/'+str(p['run_id'])+'/jobs?per_page=100')
+          assert run['id']==p['run_id'] and run['head_sha']==p['head_sha']
+          assert run['repository']['full_name']=='qumiha151-wq/lemniscate-stability-lean'
+          assert run['status']=='completed' and run['conclusion']=='success'
+          assert run['run_attempt']==p['run_attempt']
+          assert jobs['total_count']==len(jobs['jobs'])==5
+          assert {j['name']:j['id'] for j in jobs['jobs']}==p['jobs']
+          assert all(j['run_id']==p['run_id'] and j['head_sha']==p['head_sha']
+                     and j['status']=='completed' and j['conclusion']=='success' for j in jobs['jobs'])
+          out=Path(os.environ['WORK'])/'evidence'
+          (out/'successful-first-run.json').write_text(json.dumps(run,indent=2)+'\n')
+          (out/'successful-first-jobs.json').write_text(json.dumps(jobs,indent=2)+'\n')
+          PY
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "uses": "leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee"
+        "with":
+          "lake-package-directory": "core-source/OpenProblems/SolitonClassification/ModuleProduction"
+          "build": "false"
+          "test": "false"
+          "lint": "false"
+          "use-mathlib-cache": "false"
+          "use-github-cache": "false"
+      -
+        "name": "Resolve the pinned project Lean executable and record its exact version"
+        "run": |
+          set -euo pipefail
+          test ! -e "$CORE_PROJECT/.lake"
+          ulimit -c 0
+          LEAN_BIN="$(cd "$CORE_PROJECT" && elan which lean)"
+          python3 - "$LEAN_BIN" <<'PY'
+          from pathlib import Path
+          import json, os, sys
+          p=Path(sys.argv[1])
+          assert p.is_absolute() and p.is_file() and os.access(p,os.X_OK), "Lean must be an installed absolute executable"
+          assert "\n" not in str(p) and "\r" not in str(p), "Unsafe executable path"
+          (Path(os.environ["WORK"])/"evidence/installed-lean-path.json").write_text(json.dumps({"selected_path":str(p),"resolved_path":str(p.resolve()),"selection_context":os.environ["CORE_PROJECT"],"global_default_changed":False},indent=2)+"\n")
+          PY
+          printf 'LEAN_BIN=%s\n' "$LEAN_BIN" >> "$GITHUB_ENV"
+          "$LEAN_BIN" --version | tee "$WORK/evidence/installed-lean.txt"
+      -
+        "name": "Check the successful original run and exact unexpired artifact"
+        "run": |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          p=json.loads(os.environ['PINS'])
+          token=os.environ['GH_TOKEN']
+          def get(suffix):
+              request=urllib.request.Request('https://api.github.com/repos/'+p['repository']+suffix,
+                  headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json',
+                           'X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(request,timeout=60) as response: return json.load(response)
+          run=get('/actions/runs/'+str(p['core_run_id']))
+          artifact=get('/actions/artifacts/'+str(p['core_artifact_id']))
+          assert run['id']==p['core_run_id'] and run['head_sha']==p['core_source_revision']
+          assert run['status']=='completed' and run['conclusion']=='success'
+          assert run['run_attempt']==p['core_run_attempt'] and run['repository']['full_name']==p['repository']
+          assert artifact['id']==p['core_artifact_id'] and artifact['name']==p['core_artifact_name']
+          assert artifact['expired'] is False and artifact['workflow_run']['id']==p['core_run_id']
+          assert artifact['workflow_run']['head_sha']==p['core_source_revision']
+          assert artifact['size_in_bytes']==p['core_artifact_zip_bytes']
+          out=Path(os.environ['WORK'])/'evidence';out.mkdir(parents=True,exist_ok=True)
+          for name,value in [('github-core-run.json',run),('github-core-artifact.json',artifact),('pins.json',p)]:
+              (out/name).write_text(json.dumps(value,indent=2)+'\n')
+          PY
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "name": "Check actual-size disk budget before download"
+        "run": |
+          python3 - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);stage=os.environ['DISK_STAGE'];work=Path(os.environ['WORK'])
+          reserve=p['final48_reserve_bytes'] if os.environ['KIND']=='final48' else p['shard_reserve_bytes']
+          required=reserve+p['headroom_bytes']
+          if stage in ('before_download','after_download'): required+=p['core_payload_bytes']
+          if stage=='before_download': required+=p['core_archive_bytes']+p['core_artifact_zip_bytes']
+          free=shutil.disk_usage(work).free
+          row={'stage':stage,'actual_free_bytes':free,'required_free_bytes':required,
+               'reserve_bytes':reserve,'reserve_is_policy_not_measurement':True,
+               'core_archive_bytes':p['core_archive_bytes'],'core_payload_bytes':p['core_payload_bytes'],
+               'core_artifact_zip_bytes':p['core_artifact_zip_bytes'],'sufficient':free>=required}
+          (work/'evidence'/('disk-'+stage+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+          assert free>=required, 'Insufficient disk space for exact retained-core test'
+          PY
+        "env":
+          "DISK_STAGE": "before_download"
+      -
+        "uses": "actions/download-artifact@v4"
+        "with":
+          "artifact-ids": "14003699438"
+          "repository": "qumiha151-wq/lemniscate-stability-lean"
+          "run-id": "43345535919"
+          "github-token": "${{ github.token }}"
+          "merge-multiple": true
+          "path": "${{ env.WORK }}/download"
+      -
+        "name": "Verify downloaded archive/index identities and actual sizes"
+        "run": |
+          python3 - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);d=Path(os.environ['WORK'])/'download'
+          assert {f.name for f in d.iterdir()}=={'core.tar.xz','core.tar.xz.index.json'}
+          archive=d/'core.tar.xz';index=json.loads((d/'core.tar.xz.index.json').read_bytes())
+          assert archive.stat().st_size==p['core_archive_bytes']
+          assert index['schema']=='rotating.production-core-pack.v1' and index['status']=='checked'
+          assert index['revision']==p['core_source_revision']
+          assert index['archive_sha256']==p['core_archive_sha256'] and index['base_lock_sha256']==p['core_base_lock_sha256']
+          assert index['payload_bytes']==p['core_payload_bytes'] and index['archive_bytes']==p['core_archive_bytes']
+          assert index['source_inventory_sha256']==p['core_inventory_sha256']
+          h=hashlib.sha256()
+          with archive.open('rb') as stream:
+              for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
+          assert h.hexdigest()==p['core_archive_sha256']
+          PY
+      -
+        "name": "Check remaining disk before restoration"
+        "run": |
+          python3 - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);stage=os.environ['DISK_STAGE'];work=Path(os.environ['WORK'])
+          reserve=p['final48_reserve_bytes'] if os.environ['KIND']=='final48' else p['shard_reserve_bytes']
+          required=reserve+p['headroom_bytes']
+          if stage in ('before_download','after_download'): required+=p['core_payload_bytes']
+          if stage=='before_download': required+=p['core_archive_bytes']+p['core_artifact_zip_bytes']
+          free=shutil.disk_usage(work).free
+          row={'stage':stage,'actual_free_bytes':free,'required_free_bytes':required,
+               'reserve_bytes':reserve,'reserve_is_policy_not_measurement':True,
+               'core_archive_bytes':p['core_archive_bytes'],'core_payload_bytes':p['core_payload_bytes'],
+               'core_artifact_zip_bytes':p['core_artifact_zip_bytes'],'sufficient':free>=required}
+          (work/'evidence'/('disk-'+stage+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+          assert free>=required, 'Insufficient disk space for exact retained-core test'
+          PY
+        "env":
+          "DISK_STAGE": "after_download"
+      -
+        "name": "Restore the exact captured core into new paths"
+        "run": |
+          python3 -B "$TOOLS/production_core_artifact.py" restore --archive "$WORK/download/core.tar.xz" --output "$WORK/restored" --sha256 "$CORE_SHA" --revision "$CORE_REVISION" --lean "$LEAN_BIN"
+      -
+        "name": "Match this job restoration receipt to all pinned identities"
+        "run": |
+          python3 - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);r=Path(os.environ['WORK'])/'restored'
+          receipt=json.loads((r/'restore_receipt.json').read_bytes())
+          assert receipt['schema']=='rotating.production-core-restore.v1' and receipt['status']=='checked'
+          assert receipt['revision']==p['core_source_revision'] and receipt['archive_sha256']==p['core_archive_sha256']
+          assert receipt['base_lock_sha256']==p['core_base_lock_sha256']
+          assert receipt['source_inventory_sha256']==p['core_inventory_sha256']
+          assert receipt['stdlib_before_after_checked'] is True and receipt['complete_restored_base_twice_checked'] is True
+          assert hashlib.sha256((r/'base_lock.json').read_bytes()).hexdigest()==p['core_base_lock_sha256']
+          assert hashlib.sha256((r/'base_args.json').read_bytes()).hexdigest()==receipt['restored_base_args_sha256']
+          PY
+      -
+        "name": "Fresh private audit and Arctan import from the restored core"
+        "run": |
+          python3 -B "$TOOLS/production_core_import_check.py" --restored "$WORK/restored" --project "$CORE_PROJECT" --output "$WORK/core_import" --revision "$CORE_REVISION" --archive-sha256 "$CORE_SHA" --base-lock-sha256 "$LOCK_SHA" --memory-mb 4096 --seconds 600
+      -
+        "name": "Check reserved space before compilation"
+        "run": |
+          python3 - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);stage=os.environ['DISK_STAGE'];work=Path(os.environ['WORK'])
+          reserve=p['final48_reserve_bytes'] if os.environ['KIND']=='final48' else p['shard_reserve_bytes']
+          required=reserve+p['headroom_bytes']
+          if stage in ('before_download','after_download'): required+=p['core_payload_bytes']
+          if stage=='before_download': required+=p['core_archive_bytes']+p['core_artifact_zip_bytes']
+          free=shutil.disk_usage(work).free
+          row={'stage':stage,'actual_free_bytes':free,'required_free_bytes':required,
+               'reserve_bytes':reserve,'reserve_is_policy_not_measurement':True,
+               'core_archive_bytes':p['core_archive_bytes'],'core_payload_bytes':p['core_payload_bytes'],
+               'core_artifact_zip_bytes':p['core_artifact_zip_bytes'],'sufficient':free>=required}
+          (work/'evidence'/('disk-'+stage+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+          assert free>=required, 'Insufficient disk space for exact retained-core test'
+          PY
+        "env":
+          "DISK_STAGE": "after_restore"
+      -
+        "name": "Generate exact shard sources from the pinned untrusted plan"
+        "run": |
+          python3 -B "$TOOLS/production_job.py" prepare --plan "$PACKAGE/plan/plan.json" --plan-sha256 "$PLAN_SHA" --revision "$CORE_REVISION" --key "$KEY" --seed "$PACKAGE/inputs/shooting_certificate.json" --candidate-source "$PACKAGE/inputs/CandidateInitial.original.lean" --template-root "$PACKAGE/inputs/templates" --output "$WORK/job"
+        "if": "matrix.kind == 'shard'"
+      -
+        "name": "Actually compile all 47 modules and pack the complete checked shard"
+        "run": |
+          python3 -B "$TOOLS/production_job.py" compile-pack --plan "$PACKAGE/plan/plan.json" --plan-sha256 "$PLAN_SHA" --revision "$CORE_REVISION" --key "$KEY" --seed "$PACKAGE/inputs/shooting_certificate.json" --candidate-source "$PACKAGE/inputs/CandidateInitial.original.lean" --template-root "$PACKAGE/inputs/templates" --output "$WORK/job" --base-lock "$WORK/restored/base_lock.json" --base-lock-sha256 "$LOCK_SHA" --base-args "$WORK/restored/base_args.json" --seconds 600 --memory-mb 4096
+        "if": "matrix.kind == 'shard'"
+      -
+        "name": "Actually import the validated complete bundle using public project inputs only"
+        "run": |
+          python3 -B "$TOOLS/production_public_consumer.py" --manifest "$WORK/job/generated/manifest.json" --base-args "$WORK/restored/base_args.json" --output "$WORK/public_consumer" --seconds 120 --memory-mb 4096
+        "if": "matrix.kind == 'shard'"
+      -
+        "name": "Check actual completion and retain the conditional scope"
+        "run": |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          w=Path(os.environ['WORK']);p=json.loads(os.environ['PINS'])
+          if os.environ['KIND']=='shard':
+              job=json.loads((w/'job/checked_job.json').read_bytes())
+              report=json.loads((w/'job/generated/compile_report.json').read_bytes())
+              consumer=json.loads((w/'public_consumer/public_consumer_report.json').read_bytes())
+              assert job['kernel_checked'] is True and job['key']==os.environ['KEY']
+              assert job['revision']==p['core_source_revision'] and job['plan_sha256']==p['plan_sha256']
+              assert job['base_lock_sha256']==p['core_base_lock_sha256']
+              assert report['status']=='checked' and report['shard_kernel_checked'] is True
+              assert consumer['status']=='checked' and consumer['exit_code']==0 and consumer['public_only_consumer_checked'] is True
+          else:
+              report=json.loads((w/'final48/compile_report.json').read_bytes())
+              assert report['status']=='checked' and report['supplementary_modules_checked']==48
+              assert report['conditional_geometry_audit_count']==2205 and report['full_certificate_proved'] is False
+              assert report['base_lock_sha256']==p['core_base_lock_sha256']
+              assert report['supplement_manifest_sha256']==p['final_manifest_sha256']
+              assert report['core_inventory_sha256']==p['core_inventory_sha256']
+              assert report['full_path_instances_checked'] is False
+              assert report['fresh_public_only_audit_checked'] is True and report['private_project_input_files']==0
+              assert report['extra_external_setup_modules']==[]
+              rows=report['modules']
+              assert len(rows)==48 and len({r['name'] for r in rows})==48
+              assert all(r['exit_code']==0 and r['termination']=='completed' for r in rows)
+              audit=report['fresh_audit']
+              assert audit['name']=='SolitonClassification.Rotating.FinalSupplementFreshAudit'
+              assert audit['exit_code']==0 and audit['termination']=='completed'
+          summary={'schema':'rotating.first-production-job.v1','kind':os.environ['KIND'],'key':os.environ['KEY'],
+                   'status':'checked','source_revision':p['core_source_revision'],
+                   'tool_package_revision':p['tool_package_revision'],'core_archive_sha256':p['core_archive_sha256'],
+                   'core_base_lock_sha256':p['core_base_lock_sha256'],'plan_sha256':p['plan_sha256'],
+                   'full_certificate_proved':False,'retention_days':30,'permanent_archive_claim':False}
+          (w/'evidence/job-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+          PY
+      -
+        "name": "Recheck all pinned source bytes and absence of fallback cache"
+        "run": |
+          set -euo pipefail
+          python3 -B "$TOOLS/verify_production_pipeline.py" --package "$PACKAGE" --inventory-sha256 "$PIPELINE_SHA" --core-project "$CORE_PROJECT"
+          test ! -e "$CORE_PROJECT/.lake"
+          test "$(git -C "$GITHUB_WORKSPACE/core-source" rev-parse HEAD)" = "$CORE_REVISION"
+          test "$(git -C "$GITHUB_WORKSPACE/tool-source" rev-parse HEAD)" = "$TOOL_REVISION"
+      -
+        "name": "Retain complete original archive and review evidence for 30 days"
+        "if": "always()"
+        "uses": "actions/upload-artifact@v4"
+        "with":
+          "name": "rotating-remaining-${{ matrix.key }}-${{ github.run_id }}-${{ github.run_attempt }}"
+          "path": |
+            ${{ env.WORK }}/evidence
+            ${{ env.WORK }}/restored/restore_receipt.json
+            ${{ env.WORK }}/restored/base_args.json
+            ${{ env.WORK }}/restored/base_lock.json
+            ${{ env.WORK }}/restored/core-metadata.json
+            ${{ env.WORK }}/download/core.tar.xz.index.json
+            ${{ env.WORK }}/core_import
+            ${{ env.WORK }}/job/*.json
+            ${{ env.WORK }}/job/*.tar.xz
+            ${{ env.WORK }}/public_consumer
+          "if-no-files-found": "warn"
+          "compression-level": 0
+          "retention-days": 30
+      -
+        "name": "Retain expanded diagnostics when a job fails"
+        "if": "failure()"
+        "uses": "actions/upload-artifact@v4"
+        "with":
+          "name": "rotating-failed-${{ matrix.key }}-${{ github.run_id }}-${{ github.run_attempt }}"
+          "path": "${{ env.WORK }}/job/generated"
+          "if-no-files-found": "warn"
+          "compression-level": 1
+          "retention-days": 30

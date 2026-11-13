@@ -1,0 +1,110 @@
+{
+  "schema": "rotating.remaining-workflow-synthetic-tests.v1",
+  "status": "passed",
+  "test_fixture": true,
+  "generator_sha256": "928365630b5027c31da58f455c65e16fa0bf9540f68ec6bafbd8d4f8b4ffa1f5",
+  "test_sha256": "75f593bbda08f578f856c04a7aa0737cfc8c649dc1aa51a020b6afc53bce413b",
+  "negative_count": 18,
+  "negative_cases": [
+    {
+      "name": "wrong_run",
+      "rejected": true,
+      "reason": "Actual first-five run is not successfully completed"
+    },
+    {
+      "name": "wrong_revision",
+      "rejected": true,
+      "reason": "Actual first-five run is not successfully completed"
+    },
+    {
+      "name": "unfinished_run",
+      "rejected": true,
+      "reason": "Actual first-five run is not successfully completed"
+    },
+    {
+      "name": "failed_run",
+      "rejected": true,
+      "reason": "Actual first-five run is not successfully completed"
+    },
+    {
+      "name": "missing_attempt",
+      "rejected": true,
+      "reason": "Invalid first-five run attempt"
+    },
+    {
+      "name": "foreign_repository",
+      "rejected": true,
+      "reason": "Actual first-five run is not successfully completed"
+    },
+    {
+      "name": "missing_job",
+      "rejected": true,
+      "reason": "Missing/duplicate first-five jobs"
+    },
+    {
+      "name": "duplicate_job",
+      "rejected": true,
+      "reason": "Missing/duplicate first-five jobs"
+    },
+    {
+      "name": "wrong_job_revision",
+      "rejected": true,
+      "reason": "First-five job not checked successfully"
+    },
+    {
+      "name": "failed_job",
+      "rejected": true,
+      "reason": "First-five job not checked successfully"
+    },
+    {
+      "name": "skipped_compile",
+      "rejected": true,
+      "reason": "Missing actual compile/import completion step"
+    },
+    {
+      "name": "no_audit",
+      "rejected": true,
+      "reason": "Missing actual compile/import completion step"
+    },
+    {
+      "name": "missing_source_job",
+      "rejected": true,
+      "reason": "Expected canonical full250 source plan"
+    },
+    {
+      "name": "duplicate_source_job",
+      "rejected": true,
+      "reason": "Expected canonical full250 source plan"
+    },
+    {
+      "name": "reordered_source_jobs",
+      "rejected": true,
+      "reason": "Expected canonical full250 source plan"
+    },
+    {
+      "name": "wrong_plan_revision",
+      "rejected": true,
+      "reason": "Wrong source plan"
+    },
+    {
+      "name": "duplicate_json",
+      "rejected": true,
+      "reason": "Duplicate JSON key: a"
+    },
+    {
+      "name": "unsafe_workflow_path",
+      "rejected": true,
+      "reason": "Unsafe workflow filename"
+    }
+  ],
+  "embedded_Python_AST_count": 9,
+  "matrix_entries": 246,
+  "unchanged_proof_execution_steps": true,
+  "actual_first_five_success_observed_by_this_test": false,
+  "workflow_installed": false,
+  "workflow_executed": false,
+  "Lean_calls": 0,
+  "numeric_generation_calls": 0,
+  "real_GitHub_requests": 0,
+  "full_certificate_proved": false
+}

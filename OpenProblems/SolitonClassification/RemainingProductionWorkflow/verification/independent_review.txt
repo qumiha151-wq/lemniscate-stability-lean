@@ -1,0 +1,72 @@
+INDEPENDENT READ-ONLY REVIEW: remaining246 workflow generator
+Date: 2026-11-13
+Reviewer: finish_curve_input (did not author remaining246 generator)
+
+Reviewed:
+ pipeline/remaining_production_design_v1/generate_workflow.py
+ SHA256 928365630b5027c31da58f455c65e16fa0bf9540f68ec6bafbd8d4f8b4ffa1f5
+ pipeline/remaining_production_design_v1/test_generator.py
+ SHA256 75f593bbda08f578f856c04a7aa0737cfc8c649dc1aa51a020b6afc53bce413b
+ Frozen first-production V3 basis
+ SHA256 4acffcc6a6724368c29a24b18856ab923c07f8d93ce2e7d88cd542e67cdfd6c8
+
+No substantive provenance, coverage, or archive-retention gap found in the
+reviewed versions. I read both new files and the invoked basis constructor,
+source pins, actual report checks, artifact upload pattern, and path/context/
+toolchain guards. I did not independently run their synthetic test suite,
+parse generated YAML, render a real remaining246 workflow, query GitHub, or
+execute Linux/Lean for this review. The basis V3 was authored by me, so this is
+an independent review of the new remaining246 modifications, not a second
+independent review of my own old basis.
+
+Coverage:
+The source plan digest is pinned before rendering. render checks the full
+canonical RP0000..RP3968 then RM0000..RM3968 ordering, preserving that order
+when removing exactly RP0000/RP3968/RM0000/RM3968. The resulting 246 entries
+have kind=shard and a 120-minute timeout. No final48 row remains. No slicing,
+skip, or replacement job is used.
+The actual first4 outputs are not recreated or marked durable by this tool.
+
+Success gate:
+The generator requires externally pinned API response bytes for exact run
+43354529340 at revision cef10f7ef398d1526c03c66f5ef84a71e697b3cb. It checks
+five distinct exact job names/IDs, successful completion, and the named
+private core/Arctan, actual shard compile-pack/public import or Linux48,
+completion, and source recheck steps. It does not infer success from run
+existence, JSON syntax, or a synthetic test fixture. Before each numerical
+job's toolchain/download work, FIRST_CHECK queries the actual repository,
+run attempt and exact five IDs again. A later rerun/attempt mismatch fails.
+
+Scope of this gate:
+It consumes API completion evidence, not a local independent re-execution of
+the first jobs. Root's separately required artifact/report review is still a
+publication prerequisite. A synthetic passing gate fixture is explicitly
+marked as synthetic and cannot by itself provide the actual runtime API gate.
+
+Unchanged proof execution:
+The new workflow comes from the byte-pinned V3 constructor. Source/tool
+checkouts, package verification, project-selected absolute LEAN_BIN, exact
+cross-run core download, archive/disk/restore identities, fresh private core
+audit, numerical prepare+compile-pack, public consumer and post-checks stay
+unchanged. Mathlib cache remains disabled; project headers are not overridden.
+The early gate is inserted after WORK/evidence setup, so its output directory
+and github.token are available. jobs.env contains no illegal runner context.
+Only read permissions are retained. max-parallel=12 changes scheduling, not
+the mathematical data or per-job proof checking.
+
+Retention:
+The always-upload artifact still includes job/*.tar.xz and job/*.json,
+public-consumer results, restored base receipt/lock/args, original core index,
+fresh core audit and general evidence. A successful packed full original
+already contains its source, full three proof layers, logs and reports;
+omitting the duplicate expanded job/generated directory does not delete that
+original bundle or replace it with a public-only projection. Failed jobs
+additionally upload their expanded generated diagnostics. All retention is
+30-day interim retention, not permanent archival and not a durable250 ledger.
+The frozen compile-pack and completion checker determine that a successful
+job really produced its full bundle; upload's warn-on-missing setting alone
+is never treated as that proof.
+
+The source remains a generator/review artifact. This review does not assert
+that the first-five run has completed or that any remaining job has run.
+
