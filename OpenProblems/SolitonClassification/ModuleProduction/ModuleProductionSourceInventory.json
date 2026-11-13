@@ -1,0 +1,1476 @@
+{
+  "schema": "rotating.module-production-source.v1",
+  "source_only": true,
+  "linux_rebuild_completed": false,
+  "full_certificate_proved": false,
+  "frozen_base_manifest_sha256": "6aaac204087174daa047c18c5592752cc56a3724f91b483f4697568c705bb792",
+  "packager_sha256": "a2745e604277b3ed73e428fdddf1494bc413eca108fc4d963b01e2fe09c99335",
+  "generic_count": 87,
+  "fresh_all_private_audit_count": 1,
+  "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "original_lake_manifest_sha256": "c4aedc479ee6e10f6273459f84430dab62ef75ab977f60dc1c224a5ca9abdd9c",
+  "topological_modules": [
+    {
+      "name": "SolitonClassification.Rotating.BoundedODE",
+      "source": "SolitonClassification/Rotating/BoundedODE.lean",
+      "sha256": "9f6fa6a09ed3a7baa56ff359491d25989682fed2f4bdccc968319f80158a874a",
+      "imports": [
+        "Mathlib.Analysis.ODE.ExistUnique",
+        "Mathlib.Topology.Instances.Real.Lemmas",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Linarith",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.Field",
+      "source": "SolitonClassification/Rotating/Field.lean",
+      "sha256": "8669d982851fe635dd796a0d1a9ace18cdb4e6e9e63faad3d8d53b0928b11849",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Constructions",
+        "Mathlib.Analysis.Calculus.ContDiff.Operations",
+        "Mathlib.Analysis.Calculus.Deriv.Pow",
+        "Mathlib.Analysis.Calculus.Deriv.Mul",
+        "Mathlib.Analysis.Calculus.Deriv.Add",
+        "Mathlib.Analysis.Calculus.FDeriv.CompCLM",
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.Data.Fin.VecNotation",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.GCongr",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.FunProp",
+        "Mathlib.Tactic.Convert",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.TaylorCoefficients",
+      "source": "SolitonClassification/Rotating/TaylorCoefficients.lean",
+      "sha256": "c14199f4efb50fc58d29a13b20be1da7dbd32fa970796acf543d602c13ac6a03",
+      "imports": [
+        "SolitonClassification.Rotating.Field",
+        "Mathlib.Algebra.Polynomial.Derivative",
+        "Mathlib.Algebra.Polynomial.Eval.Coeff",
+        "Mathlib.Data.List.NatAntidiagonal"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ResidualODE",
+      "source": "SolitonClassification/Rotating/ResidualODE.lean",
+      "sha256": "fdb8f3fc7526fc1c3b0352c957088d108ec563d32706eaa61f3518344c56318f",
+      "imports": [
+        "SolitonClassification.Rotating.TaylorCoefficients",
+        "Mathlib.Analysis.Calculus.Deriv.Polynomial",
+        "Mathlib.Analysis.Calculus.Deriv.Prod",
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.Analysis.ODE.Gronwall"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowFoundation",
+      "source": "SolitonClassification/Rotating/FlowFoundation.lean",
+      "sha256": "fea20439314c89deca4efe4f8888ccae377f8cb69d079e9b164fced414dfa239",
+      "imports": [
+        "SolitonClassification.Rotating.BoundedODE",
+        "SolitonClassification.Rotating.ResidualODE"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.MidpointDerivative",
+      "source": "SolitonClassification/Rotating/MidpointDerivative.lean",
+      "sha256": "f4b00560025c538a994ea84145c1150d0d77f28d2946cbe42b72e68370aa1326",
+      "imports": [
+        "Mathlib.Analysis.Calculus.FDeriv.Basic",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "Mathlib.LinearAlgebra.AffineSpace.Midpoint",
+        "Mathlib.Topology.Instances.RealVectorSpace",
+        "Mathlib.Tactic.Module",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.DerivativeVariation",
+      "source": "SolitonClassification/Rotating/DerivativeVariation.lean",
+      "sha256": "bf8f7abaa39404ceb13a42b472e60bb82ca9b3dcd8c02784f1bce1c923e90ecf",
+      "imports": [
+        "SolitonClassification.Rotating.MidpointDerivative"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowDifferentiability",
+      "source": "SolitonClassification/Rotating/FlowDifferentiability.lean",
+      "sha256": "9e37a7c8bd34b2eabccb565bc0628d2ce7a9f27872d06632aed2a25207eb51b7",
+      "imports": [
+        "SolitonClassification.Rotating.FlowFoundation",
+        "SolitonClassification.Rotating.DerivativeVariation"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PartialDerivatives",
+      "source": "SolitonClassification/Rotating/PartialDerivatives.lean",
+      "sha256": "5c9dfdd2083746a4beeec8448fd480793efab4b9c6fc623613fdad14edbb7d00",
+      "imports": [
+        "Mathlib.Analysis.Calculus.MeanValue"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowJoint",
+      "source": "SolitonClassification/Rotating/FlowJoint.lean",
+      "sha256": "0432ddb18877dc499efec28bd232782de6aef57f0bb05c419fbd1ebdafcad86a",
+      "imports": [
+        "SolitonClassification.Rotating.FlowDifferentiability",
+        "SolitonClassification.Rotating.PartialDerivatives"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowVariational",
+      "source": "SolitonClassification/Rotating/FlowVariational.lean",
+      "sha256": "39189b4cd6a944c46d5a7f43dd4d7802c1b204ed6925b1b18da02cb42fb92966",
+      "imports": [
+        "SolitonClassification.Rotating.FlowJoint",
+        "Mathlib.Analysis.Calculus.ParametricIntegral",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowVariationalODE",
+      "source": "SolitonClassification/Rotating/FlowVariationalODE.lean",
+      "sha256": "4a823ade446cafc15c47c163b2e9326d6a442b153b0a921e67aa1b71e6dc6794",
+      "imports": [
+        "SolitonClassification.Rotating.FlowVariational"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FieldHessian",
+      "source": "SolitonClassification/Rotating/FieldHessian.lean",
+      "sha256": "1268907ed3b9aae090f596def701030e33e738bfcc2e313d6b67e918b160ae55",
+      "imports": [
+        "SolitonClassification.Rotating.ResidualODE"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.VariationConstants",
+      "source": "SolitonClassification/Rotating/VariationConstants.lean",
+      "sha256": "3180347ea3d496c3ef29324535e63b52b1125ab09dce3d105bbac6e9777a5565",
+      "imports": [
+        "Mathlib.Analysis.ODE.ExistUnique",
+        "Mathlib.Analysis.Calculus.Deriv.Mul",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.VariationConstantsWithin",
+      "source": "SolitonClassification/Rotating/VariationConstantsWithin.lean",
+      "sha256": "5e9f2b6344ef53d25de743426618a9c05f64390536c60334f139e7f6c306f1d9",
+      "imports": [
+        "SolitonClassification.Rotating.VariationConstants"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.QuantitativeVariation",
+      "source": "SolitonClassification/Rotating/QuantitativeVariation.lean",
+      "sha256": "5a2cbbdedd3340cffcd360876a3c7ed036a401427fa85f50e1a33ca0606e8f69",
+      "imports": [
+        "SolitonClassification.Rotating.FlowVariationalODE",
+        "SolitonClassification.Rotating.FieldHessian",
+        "SolitonClassification.Rotating.VariationConstantsWithin"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowInverse",
+      "source": "SolitonClassification/Rotating/FlowInverse.lean",
+      "sha256": "4bd7945ae77e193ebda08f67bba4319c2caa7e2c2c0e2e84cb742ca509251b41",
+      "imports": [
+        "SolitonClassification.Rotating.QuantitativeVariation",
+        "Mathlib.Analysis.Normed.Operator.Banach",
+        "Mathlib.Analysis.Normed.Ring.Units"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowInverseODE",
+      "source": "SolitonClassification/Rotating/FlowInverseODE.lean",
+      "sha256": "220b968d543adf7462eebe832e7dad67920c3acf9b91f7f1682f7e99ede4fb00",
+      "imports": [
+        "SolitonClassification.Rotating.FlowInverse",
+        "Mathlib.Analysis.Calculus.FDeriv.Mul"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowMetricCoordinates",
+      "source": "SolitonClassification/Rotating/FlowMetricCoordinates.lean",
+      "sha256": "a1e303d5bcbe732725425cab4df621cf28ac2149631e73408d0eba7410c1c14b",
+      "imports": [
+        "SolitonClassification.Rotating.FlowInverseODE"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ReferenceInversePerturbation",
+      "source": "SolitonClassification/Rotating/ReferenceInversePerturbation.lean",
+      "sha256": "9e9a726e767f5772e26525092453e0bb459a2f778a580e92e10bfa8c656e66e6",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricCoordinates",
+        "Mathlib.Analysis.Normed.Ring.Units"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PointMatrixInverse",
+      "source": "SolitonClassification/Rotating/PointMatrixInverse.lean",
+      "sha256": "47bbfbc3204d51254dae7d530e41fec2698d0897e4cd341fb4bef0fe32605301",
+      "imports": [
+        "SolitonClassification.Rotating.ReferenceInversePerturbation"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.MatrixColumnNorm",
+      "source": "SolitonClassification/Rotating/MatrixColumnNorm.lean",
+      "sha256": "571c97ab19ab8a5ed775acb8331ccb2165fea7d0c24df62dfa3ccbfbc170d1ab",
+      "imports": [
+        "SolitonClassification.Rotating.Field",
+        "Mathlib.Analysis.Normed.Operator.Basic",
+        "Mathlib.Algebra.BigOperators.Fin"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RationalBall",
+      "source": "SolitonClassification/Rotating/RationalBall.lean",
+      "sha256": "3ed7520204d078f6be670294c6de57ba45634d488f01473df746ff0518eb23d2",
+      "imports": [
+        "Mathlib.Data.Rat.Floor",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.GCongr",
+        "Mathlib.Tactic.Ring",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.MatrixRowNorm",
+      "source": "SolitonClassification/Rotating/MatrixRowNorm.lean",
+      "sha256": "e052db49bf319cefcfa9a975a0240f4c14b93345dbb7e4a7c0e6a58eaeaa4d7c",
+      "imports": [
+        "SolitonClassification.Rotating.MatrixColumnNorm",
+        "SolitonClassification.Rotating.RationalBall"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PointMatrixCertificate",
+      "source": "SolitonClassification/Rotating/PointMatrixCertificate.lean",
+      "sha256": "603767505ebd07f5f5cc294d95a74424454a16fd4bdd2898c194c71709ef8a2e",
+      "imports": [
+        "SolitonClassification.Rotating.PointMatrixInverse",
+        "SolitonClassification.Rotating.MatrixRowNorm"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FixedBall",
+      "source": "SolitonClassification/Rotating/FixedBall.lean",
+      "sha256": "bad829546248e849b93e723f886b57ceb76bddabc985dec232723ea34a2970ba",
+      "imports": [
+        "SolitonClassification.Rotating.RationalBall"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FixedField",
+      "source": "SolitonClassification/Rotating/FixedField.lean",
+      "sha256": "9609531cafae617e231277eeb2680af2b36ea408e887c11543f0addd8e672fe9",
+      "imports": [
+        "SolitonClassification.Rotating.FixedBall",
+        "SolitonClassification.Rotating.Field"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.CandidateInitial",
+      "source": "SolitonClassification/Rotating/CandidateInitial.lean",
+      "sha256": "5e50b78a73a7d818dd973517bb22048b57039e753923612910683d57d1b8ae53",
+      "imports": [
+        "SolitonClassification.Rotating.FixedField"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PointMatrixGridBudget",
+      "source": "SolitonClassification/Rotating/PointMatrixGridBudget.lean",
+      "sha256": "38a907372f9495390987c57e2d0b7426fe32bcc85ab6f323cfc84dd16124eeda",
+      "imports": [
+        "SolitonClassification.Rotating.PointMatrixCertificate",
+        "SolitonClassification.Rotating.CandidateInitial"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowTube",
+      "source": "SolitonClassification/Rotating/FlowTube.lean",
+      "sha256": "1720829e4ed9a174f4847acbe52ea89e43a725419c899e13df27aa384cfd83d6",
+      "imports": [
+        "SolitonClassification.Rotating.FlowFoundation"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FixedTaylor",
+      "source": "SolitonClassification/Rotating/FixedTaylor.lean",
+      "sha256": "1f441f5150abdce4f0b2d4fe83efeb618456f8a76a564c34d1bd9e939a3b085a",
+      "imports": [
+        "SolitonClassification.Rotating.FixedField",
+        "SolitonClassification.Rotating.TaylorCoefficients"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.TaylorDataCertificate",
+      "source": "SolitonClassification/Rotating/TaylorDataCertificate.lean",
+      "sha256": "9be56d014ad58b56c9d0847fb225859fbaa85a770f271505275c36309f7b29d6",
+      "imports": [
+        "SolitonClassification.Rotating.FixedTaylor"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FixedEndpointReset",
+      "source": "SolitonClassification/Rotating/FixedEndpointReset.lean",
+      "sha256": "bd44687dfee31d353a077cf11b897fd9d4c68d6ab1342015e65e0a0f1e7ce7ee",
+      "imports": [
+        "SolitonClassification.Rotating.MatrixRowNorm",
+        "SolitonClassification.Rotating.FixedBall"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.VariationTaylor",
+      "source": "SolitonClassification/Rotating/VariationTaylor.lean",
+      "sha256": "953d92d44ad1f38cb352be1f80f8a2be2e85873a74291a7cd4af0434d30224e8",
+      "imports": [
+        "SolitonClassification.Rotating.TaylorCoefficients"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.VariationDataCertificate",
+      "source": "SolitonClassification/Rotating/VariationDataCertificate.lean",
+      "sha256": "bea5e455d4391f33804f04cbed69d457bdda30de29a660e54078b73e86fb18e4",
+      "imports": [
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.VariationTaylor"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.MixedOrderVariation",
+      "source": "SolitonClassification/Rotating/MixedOrderVariation.lean",
+      "sha256": "7616769c446923374a3996b25c0191589dd59998531f0a1e6df3f943ec02e9d7",
+      "imports": [
+        "SolitonClassification.Rotating.VariationDataCertificate"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.VariationLinearity",
+      "source": "SolitonClassification/Rotating/VariationLinearity.lean",
+      "sha256": "8035a54e278a381511106db23dfebf38c54f3c4f52a2eae69fa55b0e7374405d",
+      "imports": [
+        "SolitonClassification.Rotating.VariationTaylor",
+        "SolitonClassification.Rotating.ResidualODE",
+        "Mathlib.Topology.Algebra.Module.FiniteDimension"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.AnalyticMajorantScalar",
+      "source": "SolitonClassification/Rotating/AnalyticMajorantScalar.lean",
+      "sha256": "fee866462078460ca094652754667afef3ba839f9b26884b434b9d7c4987869a",
+      "imports": [
+        "SolitonClassification.Rotating.TaylorCoefficients",
+        "Mathlib.Algebra.Polynomial.Eval.Defs"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.AnalyticMajorantVector",
+      "source": "SolitonClassification/Rotating/AnalyticMajorantVector.lean",
+      "sha256": "2c49e66e155d4df07a21956fe9751699695c9d71b27e8541cc71b0ea7b69cd3e",
+      "imports": [
+        "SolitonClassification.Rotating.AnalyticMajorantScalar",
+        "SolitonClassification.Rotating.FlowTube"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.AnalyticMajorantVectorActual",
+      "source": "SolitonClassification/Rotating/AnalyticMajorantVectorActual.lean",
+      "sha256": "4c2ae349f276897c822fcf20a37e0c3c6dc304a24f18155eb542c137c3cfe2b8",
+      "imports": [
+        "SolitonClassification.Rotating.AnalyticMajorantVector",
+        "Mathlib.Algebra.Polynomial.Roots",
+        "Mathlib.Algebra.Polynomial.Eval.Degree"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationMajorantScalar",
+      "source": "SolitonClassification/Rotating/UniversalVariationMajorantScalar.lean",
+      "sha256": "ec753a5c76d3635fb31dcd756b539ba033f6974bdfefe2b87b906e50e53229c1",
+      "imports": [
+        "SolitonClassification.Rotating.AnalyticMajorantScalar",
+        "Mathlib.Algebra.Polynomial.Roots",
+        "Mathlib.Algebra.Polynomial.Basic"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationMajorantVector",
+      "source": "SolitonClassification/Rotating/UniversalVariationMajorantVector.lean",
+      "sha256": "53af997c64e33df0610ddf1e6d00d1fe8718c015147216e91391d0f5b705d8ca",
+      "imports": [
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual",
+        "SolitonClassification.Rotating.UniversalVariationMajorantScalar"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationMajorantActual",
+      "source": "SolitonClassification/Rotating/UniversalVariationMajorantActual.lean",
+      "sha256": "45995c4368e3dbd38295493b27b02ff6cc7a4e387c3cb5abcf0087368efbb398",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalVariationMajorantVector",
+        "SolitonClassification.Rotating.VariationTaylor",
+        "SolitonClassification.Rotating.FieldHessian"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationMajorantResidual",
+      "source": "SolitonClassification/Rotating/UniversalVariationMajorantResidual.lean",
+      "sha256": "0bd7c6db836316494fb1497b35505038159309dc011d84d9db4a96407673a69f",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalVariationMajorantActual"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.AnalyticMajorantBudget",
+      "source": "SolitonClassification/Rotating/AnalyticMajorantBudget.lean",
+      "sha256": "7b3e6eea170aec05ed991d63520488964b7ac8e738ffd715e71f525a841f3bbc",
+      "imports": [
+        "SolitonClassification.Rotating.AnalyticMajorantScalar"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationMajorantBudget",
+      "source": "SolitonClassification/Rotating/UniversalVariationMajorantBudget.lean",
+      "sha256": "7f655887010f102fe5d1872a6cc0664521575f84238e83eadb0529f0b5f6ea15",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalVariationMajorantResidual",
+        "SolitonClassification.Rotating.AnalyticMajorantBudget"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.VariationOperatorBounds",
+      "source": "SolitonClassification/Rotating/VariationOperatorBounds.lean",
+      "sha256": "7efb6450a1811a7e54233f9b0a893a37ce466672bf5d0eef54ed9eedcd32027a",
+      "imports": [
+        "SolitonClassification.Rotating.VariationLinearity",
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood",
+      "source": "SolitonClassification/Rotating/UniversalVariationTrueTailNeighborhood.lean",
+      "sha256": "28dd94662d4be676e454eb041fd6b943fe851ab90340de91f5501b000ab29241",
+      "imports": [
+        "SolitonClassification.Rotating.FlowTube",
+        "SolitonClassification.Rotating.FlowDifferentiability"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PolynomialEnvelope",
+      "source": "SolitonClassification/Rotating/PolynomialEnvelope.lean",
+      "sha256": "3f9a10ab392b1ff10f48095a5d15f112d8dac15cce7e153520952be8e76e8df0",
+      "imports": [
+        "SolitonClassification.Rotating.ResidualODE",
+        "SolitonClassification.Rotating.FixedField",
+        "SolitonClassification.Rotating.VariationTaylor",
+        "Mathlib.Algebra.Polynomial.Eval.Degree"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ResidualDataCertificate",
+      "source": "SolitonClassification/Rotating/ResidualDataCertificate.lean",
+      "sha256": "eade84f29a2af89dcf8f708bfe494e4d3930439a2863e9ae673deaeb90740a02",
+      "imports": [
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.PolynomialEnvelope"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.TrueLocalStateTail",
+      "source": "SolitonClassification/Rotating/TrueLocalStateTail.lean",
+      "sha256": "2be6e01cf256d3c78d5a0319cd92cf012168ee7d091b954946d522014e2675b6",
+      "imports": [
+        "SolitonClassification.Rotating.FlowTube",
+        "SolitonClassification.Rotating.ResidualDataCertificate"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalPolynomialTube",
+      "source": "SolitonClassification/Rotating/UniversalPolynomialTube.lean",
+      "sha256": "a0ba2dad3c3a9662719043bcf1db3d83482ae64b1395bcee01783e95f1f743fb",
+      "imports": [
+        "SolitonClassification.Rotating.TrueLocalStateTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalTaylorResidual",
+      "source": "SolitonClassification/Rotating/UniversalTaylorResidual.lean",
+      "sha256": "584c99c5f1a7b9af4b8a300c3559bd6ab17c69405f823df8bba4b88cf52df2d8",
+      "imports": [
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual",
+        "SolitonClassification.Rotating.AnalyticMajorantBudget",
+        "SolitonClassification.Rotating.ResidualODE"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.TrueLocalVariationTail",
+      "source": "SolitonClassification/Rotating/TrueLocalVariationTail.lean",
+      "sha256": "1437bdd00781f7438a7cacd2be21ae0973f928ede32b22341f297747e299368d",
+      "imports": [
+        "SolitonClassification.Rotating.TrueLocalStateTail",
+        "SolitonClassification.Rotating.FlowVariationalODE",
+        "SolitonClassification.Rotating.FieldHessian"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.SignedLocalTail",
+      "source": "SolitonClassification/Rotating/SignedLocalTail.lean",
+      "sha256": "f2a7c59418eae7a20e431d4d964ba1e4c510ff5bd8c42670b97949a2946ff302",
+      "imports": [
+        "SolitonClassification.Rotating.TrueLocalVariationTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalTrueStateTail",
+      "source": "SolitonClassification/Rotating/UniversalTrueStateTail.lean",
+      "sha256": "d07717553f4ebb9afa230947182e0178de3fc9f06e601ada60ef3e4d4c7d2f22",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalPolynomialTube",
+        "SolitonClassification.Rotating.UniversalTaylorResidual",
+        "SolitonClassification.Rotating.SignedLocalTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationTrueTail",
+      "source": "SolitonClassification/Rotating/UniversalVariationTrueTail.lean",
+      "sha256": "8b368952a631d22f8def6c77c99ceb944549cb35c922dc643f9f0fbbee99f664",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood",
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget",
+        "SolitonClassification.Rotating.UniversalTrueStateTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationOperatorTail",
+      "source": "SolitonClassification/Rotating/UniversalVariationOperatorTail.lean",
+      "sha256": "9e781709b6b5a2bf33533beaf25a42c7f49d1ee870bb888a49f7449df0e69d76",
+      "imports": [
+        "SolitonClassification.Rotating.VariationOperatorBounds",
+        "SolitonClassification.Rotating.UniversalVariationTrueTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ReferencePolynomialMatrix",
+      "source": "SolitonClassification/Rotating/ReferencePolynomialMatrix.lean",
+      "sha256": "563979e74893078c340710ac571cb7c99c9c256acbb90a2f52f081ce12ca862e",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalVariationOperatorTail",
+        "SolitonClassification.Rotating.ReferenceInversePerturbation"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalVariationOrder22",
+      "source": "SolitonClassification/Rotating/UniversalVariationOrder22.lean",
+      "sha256": "16524795a9917345410752b329fcb3c1ab6b7b066227851b806f8b0b7d276215",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalVariationTrueTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ReferencePolynomialMatrix22",
+      "source": "SolitonClassification/Rotating/ReferencePolynomialMatrix22.lean",
+      "sha256": "1f4f7a261a8dd946ac8500ecad5442d738e5f9e616c5f82c17f912a03967ef0c",
+      "imports": [
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix",
+        "SolitonClassification.Rotating.UniversalVariationOrder22"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapGeometry",
+      "source": "SolitonClassification/Rotating/FlowBootstrapGeometry.lean",
+      "sha256": "44c30160d0f738761840b4357d3fe5931fc639452488fb76e56ea674c5a7177f",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricCoordinates",
+        "Mathlib.Topology.Order.Compact"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RotatingGridMargin",
+      "source": "SolitonClassification/Rotating/RotatingGridMargin.lean",
+      "sha256": "024edd59559b05ac62746b1485113c91659fc8e9764beedb7126aa2e957b09a0",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapGeometry",
+        "SolitonClassification.Rotating.UniversalTrueStateTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowMetricSegment",
+      "source": "SolitonClassification/Rotating/FlowMetricSegment.lean",
+      "sha256": "afee274c361e84dacdf1429e1a446f529ba98aaa9699b789906add8e3c21ecdf",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricCoordinates"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapCoordinates",
+      "source": "SolitonClassification/Rotating/FlowBootstrapCoordinates.lean",
+      "sha256": "028f8323fadf4c18b6bd189521063f7c83181bc7706281d2aae884c1287ba1e1",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapGeometry",
+        "SolitonClassification.Rotating.FlowMetricSegment"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapSegment",
+      "source": "SolitonClassification/Rotating/FlowBootstrapSegment.lean",
+      "sha256": "c57fd172f2ffd24c32676cb0aa1c7723e05759e820e0230618e8ef01f08c5186",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowMetricReset",
+      "source": "SolitonClassification/Rotating/FlowMetricReset.lean",
+      "sha256": "a340aea3eb7f228263374d3b1664b25f847e6bf6f75bb15c4edb8c12e37da51d",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricCoordinates"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapReset",
+      "source": "SolitonClassification/Rotating/FlowBootstrapReset.lean",
+      "sha256": "b5ebeab4a8d5be4ee49fb24fb55bd3e3d4273d75c94f550d414f57389e49dcb2",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates",
+        "SolitonClassification.Rotating.FlowMetricReset"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowMetricDiscrete",
+      "source": "SolitonClassification/Rotating/FlowMetricDiscrete.lean",
+      "sha256": "f4e05bd7e3fa0be575c99baac3739f186f533a0080604a90c286442ad6385b36",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.ExpDeriv",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapBudget",
+      "source": "SolitonClassification/Rotating/FlowBootstrapBudget.lean",
+      "sha256": "3bf6b5fc13e0dbbc0f398654130682bd8fb7c1d0e33c3ebeea06ab37bc50805f",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricDiscrete"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowMetricGridData",
+      "source": "SolitonClassification/Rotating/FlowMetricGridData.lean",
+      "sha256": "1a5e0ce677d93bc41928debbf7cfccf9121beeaf9dd2a50797eec74c6c97a03e",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricSegment",
+        "SolitonClassification.Rotating.FlowMetricReset",
+        "SolitonClassification.Rotating.FlowMetricDiscrete"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowMetricGlobal",
+      "source": "SolitonClassification/Rotating/FlowMetricGlobal.lean",
+      "sha256": "6f40536bc90eb32a76adc810d58dedd6752fcc5218fd489cf9f55135317c30d3",
+      "imports": [
+        "SolitonClassification.Rotating.FlowMetricGridData"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapGridData",
+      "source": "SolitonClassification/Rotating/FlowBootstrapGridData.lean",
+      "sha256": "04cde8849d896bd8fc25e5dc2fdb89412727cd4e2d0d42052938279f84183bf1",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapSegment",
+        "SolitonClassification.Rotating.FlowBootstrapReset",
+        "SolitonClassification.Rotating.FlowBootstrapBudget",
+        "SolitonClassification.Rotating.FlowMetricGlobal"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PolynomialGridAssembly",
+      "source": "SolitonClassification/Rotating/PolynomialGridAssembly.lean",
+      "sha256": "75330a16b9dc7ba77ea6fc0025380db90d2b339bb35fc61b971846268106a17c",
+      "imports": [
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix22",
+        "SolitonClassification.Rotating.RotatingGridMargin",
+        "SolitonClassification.Rotating.FlowBootstrapGridData"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalStateOrders",
+      "source": "SolitonClassification/Rotating/UniversalStateOrders.lean",
+      "sha256": "c34cff8f255e9cea9dd014518f3cd23875cce566df0b257e0ff57908f0b0affe",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalTrueStateTail"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.UniversalReducedVariation",
+      "source": "SolitonClassification/Rotating/UniversalReducedVariation.lean",
+      "sha256": "cc8b16313ea706edcacb1c68ac3432742da1ebe9beb3bbc8b25335d779b42ddc",
+      "imports": [
+        "SolitonClassification.Rotating.UniversalStateOrders",
+        "SolitonClassification.Rotating.UniversalVariationOrder22",
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RotatingGridMarginOrders",
+      "source": "SolitonClassification/Rotating/RotatingGridMarginOrders.lean",
+      "sha256": "bc353da30bda92d62abe20a70487428c42d082d6a7a9f606c75413dd996b1edf",
+      "imports": [
+        "SolitonClassification.Rotating.RotatingGridMargin",
+        "SolitonClassification.Rotating.UniversalStateOrders"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapGlobal",
+      "source": "SolitonClassification/Rotating/FlowBootstrapGlobal.lean",
+      "sha256": "d158731e89736ecfa9936d2757a718d94a29f73fe46e85a5fc7995b797989cb3",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapGridData"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FlowBootstrapNeighborhood",
+      "source": "SolitonClassification/Rotating/FlowBootstrapNeighborhood.lean",
+      "sha256": "a8ba64519f51704add63ad9a9eee4b3c5e5aa162dccb69b297b7b9519a6ce772",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapGlobal"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.BanachRoot",
+      "source": "SolitonClassification/Rotating/BanachRoot.lean",
+      "sha256": "f0da4d9801da4c35436bbceac29ccb9ffbd392b22c6d6149f87c1e3802ca2641",
+      "imports": [
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.Topology.MetricSpace.Contracting",
+        "Mathlib.LinearAlgebra.FiniteDimensional.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Abel",
+        "Lean.Util.CollectAxioms"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ShootingRoot",
+      "source": "SolitonClassification/Rotating/ShootingRoot.lean",
+      "sha256": "7d5a1fb74291cc47ebb134627fb66ffe3522c9ad318e310e7b310c0bc65b9cdd",
+      "imports": [
+        "SolitonClassification.Rotating.BanachRoot",
+        "SolitonClassification.Rotating.Field",
+        "Mathlib.Analysis.Calculus.FDeriv.Prod",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ActualShooting",
+      "source": "SolitonClassification/Rotating/ActualShooting.lean",
+      "sha256": "f290e8d1358ed791fe651e83d15b7e1efc357eb367a126d5bbea0f8e9ebcdfcd",
+      "imports": [
+        "SolitonClassification.Rotating.FlowJoint",
+        "SolitonClassification.Rotating.ShootingRoot"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RotatingGridHorizon",
+      "source": "SolitonClassification/Rotating/RotatingGridHorizon.lean",
+      "sha256": "beb09f3c0ecc78ea3d66c7916aac3bf2b035931a4dee9d0f8456cf5a13a91342",
+      "imports": [
+        "SolitonClassification.Rotating.FlowBootstrapNeighborhood",
+        "SolitonClassification.Rotating.ActualShooting",
+        "SolitonClassification.Rotating.RotatingGridMargin"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ExtendedPolynomialReference42",
+      "source": "SolitonClassification/Rotating/ExtendedPolynomialReference42.lean",
+      "sha256": "5af6542daa79191c6d71f901123c1a1dae4a5faf3bebd551c6cce55badbefbc6",
+      "imports": [
+        "SolitonClassification.Rotating.PolynomialGridAssembly",
+        "SolitonClassification.Rotating.UniversalReducedVariation",
+        "SolitonClassification.Rotating.RotatingGridMarginOrders",
+        "SolitonClassification.Rotating.RotatingGridHorizon"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42",
+      "source": "SolitonClassification/Rotating/ExtendedPolynomialGridAssembly42.lean",
+      "sha256": "f4c23e2f132c5afe93b8c8a410a6dd0407bda9c493df9ba7b975cf14cfe99304",
+      "imports": [
+        "SolitonClassification.Rotating.ExtendedPolynomialReference42"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42",
+      "source": "SolitonClassification/Rotating/ExtendedPolynomialGridEndpoints42.lean",
+      "sha256": "eeb938738037c812616c1c279129f5dbd61ccdb3eb31705c9879132e9aac7aa1",
+      "imports": [
+        "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.PolynomialPointGridBlock",
+      "source": "SolitonClassification/Rotating/PolynomialPointGridBlock.lean",
+      "sha256": "ff09eecffad54e46e2aa269e4c4e4b048b1f2eb08aeb3bfb9150a4d3454e1ff4",
+      "imports": [
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.ModuleFullGenericAudit",
+      "source": "SolitonClassification/Rotating/ModuleFullGenericAudit.lean",
+      "sha256": "135c86c345ecac3f8c5a964f408987ceaed2e01c312025321fd9792c0eb9a55c",
+      "imports": [
+        "SolitonClassification.Rotating.BoundedODE",
+        "SolitonClassification.Rotating.Field",
+        "SolitonClassification.Rotating.TaylorCoefficients",
+        "SolitonClassification.Rotating.ResidualODE",
+        "SolitonClassification.Rotating.FlowFoundation",
+        "SolitonClassification.Rotating.MidpointDerivative",
+        "SolitonClassification.Rotating.DerivativeVariation",
+        "SolitonClassification.Rotating.FlowDifferentiability",
+        "SolitonClassification.Rotating.PartialDerivatives",
+        "SolitonClassification.Rotating.FlowJoint",
+        "SolitonClassification.Rotating.FlowVariational",
+        "SolitonClassification.Rotating.FlowVariationalODE",
+        "SolitonClassification.Rotating.FieldHessian",
+        "SolitonClassification.Rotating.VariationConstants",
+        "SolitonClassification.Rotating.VariationConstantsWithin",
+        "SolitonClassification.Rotating.QuantitativeVariation",
+        "SolitonClassification.Rotating.FlowInverse",
+        "SolitonClassification.Rotating.FlowInverseODE",
+        "SolitonClassification.Rotating.FlowMetricCoordinates",
+        "SolitonClassification.Rotating.ReferenceInversePerturbation",
+        "SolitonClassification.Rotating.PointMatrixInverse",
+        "SolitonClassification.Rotating.MatrixColumnNorm",
+        "SolitonClassification.Rotating.RationalBall",
+        "SolitonClassification.Rotating.MatrixRowNorm",
+        "SolitonClassification.Rotating.PointMatrixCertificate",
+        "SolitonClassification.Rotating.FixedBall",
+        "SolitonClassification.Rotating.FixedField",
+        "SolitonClassification.Rotating.CandidateInitial",
+        "SolitonClassification.Rotating.PointMatrixGridBudget",
+        "SolitonClassification.Rotating.FlowTube",
+        "SolitonClassification.Rotating.FixedTaylor",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.VariationTaylor",
+        "SolitonClassification.Rotating.VariationDataCertificate",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "SolitonClassification.Rotating.AnalyticMajorantScalar",
+        "SolitonClassification.Rotating.AnalyticMajorantVector",
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual",
+        "SolitonClassification.Rotating.UniversalVariationMajorantScalar",
+        "SolitonClassification.Rotating.UniversalVariationMajorantVector",
+        "SolitonClassification.Rotating.UniversalVariationMajorantActual",
+        "SolitonClassification.Rotating.UniversalVariationMajorantResidual",
+        "SolitonClassification.Rotating.AnalyticMajorantBudget",
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget",
+        "SolitonClassification.Rotating.VariationOperatorBounds",
+        "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood",
+        "SolitonClassification.Rotating.PolynomialEnvelope",
+        "SolitonClassification.Rotating.ResidualDataCertificate",
+        "SolitonClassification.Rotating.TrueLocalStateTail",
+        "SolitonClassification.Rotating.UniversalPolynomialTube",
+        "SolitonClassification.Rotating.UniversalTaylorResidual",
+        "SolitonClassification.Rotating.TrueLocalVariationTail",
+        "SolitonClassification.Rotating.SignedLocalTail",
+        "SolitonClassification.Rotating.UniversalTrueStateTail",
+        "SolitonClassification.Rotating.UniversalVariationTrueTail",
+        "SolitonClassification.Rotating.UniversalVariationOperatorTail",
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix",
+        "SolitonClassification.Rotating.UniversalVariationOrder22",
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix22",
+        "SolitonClassification.Rotating.FlowBootstrapGeometry",
+        "SolitonClassification.Rotating.RotatingGridMargin",
+        "SolitonClassification.Rotating.FlowMetricSegment",
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates",
+        "SolitonClassification.Rotating.FlowBootstrapSegment",
+        "SolitonClassification.Rotating.FlowMetricReset",
+        "SolitonClassification.Rotating.FlowBootstrapReset",
+        "SolitonClassification.Rotating.FlowMetricDiscrete",
+        "SolitonClassification.Rotating.FlowBootstrapBudget",
+        "SolitonClassification.Rotating.FlowMetricGridData",
+        "SolitonClassification.Rotating.FlowMetricGlobal",
+        "SolitonClassification.Rotating.FlowBootstrapGridData",
+        "SolitonClassification.Rotating.PolynomialGridAssembly",
+        "SolitonClassification.Rotating.UniversalStateOrders",
+        "SolitonClassification.Rotating.UniversalReducedVariation",
+        "SolitonClassification.Rotating.RotatingGridMarginOrders",
+        "SolitonClassification.Rotating.FlowBootstrapGlobal",
+        "SolitonClassification.Rotating.FlowBootstrapNeighborhood",
+        "SolitonClassification.Rotating.BanachRoot",
+        "SolitonClassification.Rotating.ShootingRoot",
+        "SolitonClassification.Rotating.ActualShooting",
+        "SolitonClassification.Rotating.RotatingGridHorizon",
+        "SolitonClassification.Rotating.ExtendedPolynomialReference42",
+        "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42",
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42",
+        "SolitonClassification.Rotating.PolynomialPointGridBlock"
+      ]
+    }
+  ],
+  "files": {
+    "SolitonClassification/Rotating/BoundedODE.lean": {
+      "sha256": "9f6fa6a09ed3a7baa56ff359491d25989682fed2f4bdccc968319f80158a874a",
+      "bytes": 4302,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/Field.lean": {
+      "sha256": "8669d982851fe635dd796a0d1a9ace18cdb4e6e9e63faad3d8d53b0928b11849",
+      "bytes": 9397,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/TaylorCoefficients.lean": {
+      "sha256": "c14199f4efb50fc58d29a13b20be1da7dbd32fa970796acf543d602c13ac6a03",
+      "bytes": 6416,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ResidualODE.lean": {
+      "sha256": "fdb8f3fc7526fc1c3b0352c957088d108ec563d32706eaa61f3518344c56318f",
+      "bytes": 4759,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowFoundation.lean": {
+      "sha256": "fea20439314c89deca4efe4f8888ccae377f8cb69d079e9b164fced414dfa239",
+      "bytes": 7936,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/MidpointDerivative.lean": {
+      "sha256": "f4b00560025c538a994ea84145c1150d0d77f28d2946cbe42b72e68370aa1326",
+      "bytes": 13152,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/DerivativeVariation.lean": {
+      "sha256": "bf8f7abaa39404ceb13a42b472e60bb82ca9b3dcd8c02784f1bce1c923e90ecf",
+      "bytes": 6209,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowDifferentiability.lean": {
+      "sha256": "9e37a7c8bd34b2eabccb565bc0628d2ce7a9f27872d06632aed2a25207eb51b7",
+      "bytes": 10010,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PartialDerivatives.lean": {
+      "sha256": "5c9dfdd2083746a4beeec8448fd480793efab4b9c6fc623613fdad14edbb7d00",
+      "bytes": 6485,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowJoint.lean": {
+      "sha256": "0432ddb18877dc499efec28bd232782de6aef57f0bb05c419fbd1ebdafcad86a",
+      "bytes": 8082,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowVariational.lean": {
+      "sha256": "39189b4cd6a944c46d5a7f43dd4d7802c1b204ed6925b1b18da02cb42fb92966",
+      "bytes": 7463,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowVariationalODE.lean": {
+      "sha256": "4a823ade446cafc15c47c163b2e9326d6a442b153b0a921e67aa1b71e6dc6794",
+      "bytes": 2655,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FieldHessian.lean": {
+      "sha256": "1268907ed3b9aae090f596def701030e33e738bfcc2e313d6b67e918b160ae55",
+      "bytes": 3476,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/VariationConstants.lean": {
+      "sha256": "3180347ea3d496c3ef29324535e63b52b1125ab09dce3d105bbac6e9777a5565",
+      "bytes": 5913,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/VariationConstantsWithin.lean": {
+      "sha256": "5e9f2b6344ef53d25de743426618a9c05f64390536c60334f139e7f6c306f1d9",
+      "bytes": 5793,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/QuantitativeVariation.lean": {
+      "sha256": "5a2cbbdedd3340cffcd360876a3c7ed036a401427fa85f50e1a33ca0606e8f69",
+      "bytes": 7292,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowInverse.lean": {
+      "sha256": "4bd7945ae77e193ebda08f67bba4319c2caa7e2c2c0e2e84cb742ca509251b41",
+      "bytes": 6888,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowInverseODE.lean": {
+      "sha256": "220b968d543adf7462eebe832e7dad67920c3acf9b91f7f1682f7e99ede4fb00",
+      "bytes": 2460,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowMetricCoordinates.lean": {
+      "sha256": "a1e303d5bcbe732725425cab4df621cf28ac2149631e73408d0eba7410c1c14b",
+      "bytes": 7656,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ReferenceInversePerturbation.lean": {
+      "sha256": "9e9a726e767f5772e26525092453e0bb459a2f778a580e92e10bfa8c656e66e6",
+      "bytes": 2360,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PointMatrixInverse.lean": {
+      "sha256": "47bbfbc3204d51254dae7d530e41fec2698d0897e4cd341fb4bef0fe32605301",
+      "bytes": 2649,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/MatrixColumnNorm.lean": {
+      "sha256": "571c97ab19ab8a5ed775acb8331ccb2165fea7d0c24df62dfa3ccbfbc170d1ab",
+      "bytes": 3333,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/RationalBall.lean": {
+      "sha256": "3ed7520204d078f6be670294c6de57ba45634d488f01473df746ff0518eb23d2",
+      "bytes": 7221,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/MatrixRowNorm.lean": {
+      "sha256": "e052db49bf319cefcfa9a975a0240f4c14b93345dbb7e4a7c0e6a58eaeaa4d7c",
+      "bytes": 3062,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PointMatrixCertificate.lean": {
+      "sha256": "603767505ebd07f5f5cc294d95a74424454a16fd4bdd2898c194c71709ef8a2e",
+      "bytes": 5229,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FixedBall.lean": {
+      "sha256": "bad829546248e849b93e723f886b57ceb76bddabc985dec232723ea34a2970ba",
+      "bytes": 6712,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FixedField.lean": {
+      "sha256": "9609531cafae617e231277eeb2680af2b36ea408e887c11543f0addd8e672fe9",
+      "bytes": 3618,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/CandidateInitial.lean": {
+      "sha256": "5e50b78a73a7d818dd973517bb22048b57039e753923612910683d57d1b8ae53",
+      "bytes": 4674,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PointMatrixGridBudget.lean": {
+      "sha256": "38a907372f9495390987c57e2d0b7426fe32bcc85ab6f323cfc84dd16124eeda",
+      "bytes": 2080,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowTube.lean": {
+      "sha256": "1720829e4ed9a174f4847acbe52ea89e43a725419c899e13df27aa384cfd83d6",
+      "bytes": 4497,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FixedTaylor.lean": {
+      "sha256": "1f441f5150abdce4f0b2d4fe83efeb618456f8a76a564c34d1bd9e939a3b085a",
+      "bytes": 13760,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/TaylorDataCertificate.lean": {
+      "sha256": "9be56d014ad58b56c9d0847fb225859fbaa85a770f271505275c36309f7b29d6",
+      "bytes": 3794,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FixedEndpointReset.lean": {
+      "sha256": "bd44687dfee31d353a077cf11b897fd9d4c68d6ab1342015e65e0a0f1e7ce7ee",
+      "bytes": 2526,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/VariationTaylor.lean": {
+      "sha256": "953d92d44ad1f38cb352be1f80f8a2be2e85873a74291a7cd4af0434d30224e8",
+      "bytes": 5922,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/VariationDataCertificate.lean": {
+      "sha256": "bea5e455d4391f33804f04cbed69d457bdda30de29a660e54078b73e86fb18e4",
+      "bytes": 6713,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/MixedOrderVariation.lean": {
+      "sha256": "7616769c446923374a3996b25c0191589dd59998531f0a1e6df3f943ec02e9d7",
+      "bytes": 3554,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/VariationLinearity.lean": {
+      "sha256": "8035a54e278a381511106db23dfebf38c54f3c4f52a2eae69fa55b0e7374405d",
+      "bytes": 5891,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/AnalyticMajorantScalar.lean": {
+      "sha256": "fee866462078460ca094652754667afef3ba839f9b26884b434b9d7c4987869a",
+      "bytes": 9744,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/AnalyticMajorantVector.lean": {
+      "sha256": "2c49e66e155d4df07a21956fe9751699695c9d71b27e8541cc71b0ea7b69cd3e",
+      "bytes": 8861,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/AnalyticMajorantVectorActual.lean": {
+      "sha256": "4c2ae349f276897c822fcf20a37e0c3c6dc304a24f18155eb542c137c3cfe2b8",
+      "bytes": 13589,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationMajorantScalar.lean": {
+      "sha256": "ec753a5c76d3635fb31dcd756b539ba033f6974bdfefe2b87b906e50e53229c1",
+      "bytes": 6398,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationMajorantVector.lean": {
+      "sha256": "53af997c64e33df0610ddf1e6d00d1fe8718c015147216e91391d0f5b705d8ca",
+      "bytes": 8063,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationMajorantActual.lean": {
+      "sha256": "45995c4368e3dbd38295493b27b02ff6cc7a4e387c3cb5abcf0087368efbb398",
+      "bytes": 7459,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationMajorantResidual.lean": {
+      "sha256": "0bd7c6db836316494fb1497b35505038159309dc011d84d9db4a96407673a69f",
+      "bytes": 6355,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/AnalyticMajorantBudget.lean": {
+      "sha256": "7b3e6eea170aec05ed991d63520488964b7ac8e738ffd715e71f525a841f3bbc",
+      "bytes": 4030,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationMajorantBudget.lean": {
+      "sha256": "7f655887010f102fe5d1872a6cc0664521575f84238e83eadb0529f0b5f6ea15",
+      "bytes": 4862,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/VariationOperatorBounds.lean": {
+      "sha256": "7efb6450a1811a7e54233f9b0a893a37ce466672bf5d0eef54ed9eedcd32027a",
+      "bytes": 2926,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationTrueTailNeighborhood.lean": {
+      "sha256": "28dd94662d4be676e454eb041fd6b943fe851ab90340de91f5501b000ab29241",
+      "bytes": 3112,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PolynomialEnvelope.lean": {
+      "sha256": "3f9a10ab392b1ff10f48095a5d15f112d8dac15cce7e153520952be8e76e8df0",
+      "bytes": 6869,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ResidualDataCertificate.lean": {
+      "sha256": "eade84f29a2af89dcf8f708bfe494e4d3930439a2863e9ae673deaeb90740a02",
+      "bytes": 5347,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/TrueLocalStateTail.lean": {
+      "sha256": "2be6e01cf256d3c78d5a0319cd92cf012168ee7d091b954946d522014e2675b6",
+      "bytes": 3476,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalPolynomialTube.lean": {
+      "sha256": "a0ba2dad3c3a9662719043bcf1db3d83482ae64b1395bcee01783e95f1f743fb",
+      "bytes": 6095,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalTaylorResidual.lean": {
+      "sha256": "584c99c5f1a7b9af4b8a300c3559bd6ab17c69405f823df8bba4b88cf52df2d8",
+      "bytes": 4096,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/TrueLocalVariationTail.lean": {
+      "sha256": "1437bdd00781f7438a7cacd2be21ae0973f928ede32b22341f297747e299368d",
+      "bytes": 5707,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/SignedLocalTail.lean": {
+      "sha256": "f2a7c59418eae7a20e431d4d964ba1e4c510ff5bd8c42670b97949a2946ff302",
+      "bytes": 7816,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalTrueStateTail.lean": {
+      "sha256": "d07717553f4ebb9afa230947182e0178de3fc9f06e601ada60ef3e4d4c7d2f22",
+      "bytes": 3414,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationTrueTail.lean": {
+      "sha256": "8b368952a631d22f8def6c77c99ceb944549cb35c922dc643f9f0fbbee99f664",
+      "bytes": 7198,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationOperatorTail.lean": {
+      "sha256": "9e781709b6b5a2bf33533beaf25a42c7f49d1ee870bb888a49f7449df0e69d76",
+      "bytes": 2479,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ReferencePolynomialMatrix.lean": {
+      "sha256": "563979e74893078c340710ac571cb7c99c9c256acbb90a2f52f081ce12ca862e",
+      "bytes": 7959,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalVariationOrder22.lean": {
+      "sha256": "16524795a9917345410752b329fcb3c1ab6b7b066227851b806f8b0b7d276215",
+      "bytes": 9302,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ReferencePolynomialMatrix22.lean": {
+      "sha256": "1f4f7a261a8dd946ac8500ecad5442d738e5f9e616c5f82c17f912a03967ef0c",
+      "bytes": 5124,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapGeometry.lean": {
+      "sha256": "44c30160d0f738761840b4357d3fe5931fc639452488fb76e56ea674c5a7177f",
+      "bytes": 3309,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/RotatingGridMargin.lean": {
+      "sha256": "024edd59559b05ac62746b1485113c91659fc8e9764beedb7126aa2e957b09a0",
+      "bytes": 4790,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowMetricSegment.lean": {
+      "sha256": "afee274c361e84dacdf1429e1a446f529ba98aaa9699b789906add8e3c21ecdf",
+      "bytes": 5545,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapCoordinates.lean": {
+      "sha256": "028f8323fadf4c18b6bd189521063f7c83181bc7706281d2aae884c1287ba1e1",
+      "bytes": 6328,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapSegment.lean": {
+      "sha256": "c57fd172f2ffd24c32676cb0aa1c7723e05759e820e0230618e8ef01f08c5186",
+      "bytes": 5353,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowMetricReset.lean": {
+      "sha256": "a340aea3eb7f228263374d3b1664b25f847e6bf6f75bb15c4edb8c12e37da51d",
+      "bytes": 3028,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapReset.lean": {
+      "sha256": "b5ebeab4a8d5be4ee49fb24fb55bd3e3d4273d75c94f550d414f57389e49dcb2",
+      "bytes": 2107,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowMetricDiscrete.lean": {
+      "sha256": "f4e05bd7e3fa0be575c99baac3739f186f533a0080604a90c286442ad6385b36",
+      "bytes": 4051,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapBudget.lean": {
+      "sha256": "3bf6b5fc13e0dbbc0f398654130682bd8fb7c1d0e33c3ebeea06ab37bc50805f",
+      "bytes": 5428,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowMetricGridData.lean": {
+      "sha256": "1a5e0ce677d93bc41928debbf7cfccf9121beeaf9dd2a50797eec74c6c97a03e",
+      "bytes": 6832,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowMetricGlobal.lean": {
+      "sha256": "6f40536bc90eb32a76adc810d58dedd6752fcc5218fd489cf9f55135317c30d3",
+      "bytes": 5645,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapGridData.lean": {
+      "sha256": "04cde8849d896bd8fc25e5dc2fdb89412727cd4e2d0d42052938279f84183bf1",
+      "bytes": 5909,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PolynomialGridAssembly.lean": {
+      "sha256": "75330a16b9dc7ba77ea6fc0025380db90d2b339bb35fc61b971846268106a17c",
+      "bytes": 8114,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalStateOrders.lean": {
+      "sha256": "c34cff8f255e9cea9dd014518f3cd23875cce566df0b257e0ff57908f0b0affe",
+      "bytes": 7590,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/UniversalReducedVariation.lean": {
+      "sha256": "cc8b16313ea706edcacb1c68ac3432742da1ebe9beb3bbc8b25335d779b42ddc",
+      "bytes": 7727,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/RotatingGridMarginOrders.lean": {
+      "sha256": "bc353da30bda92d62abe20a70487428c42d082d6a7a9f606c75413dd996b1edf",
+      "bytes": 2326,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapGlobal.lean": {
+      "sha256": "d158731e89736ecfa9936d2757a718d94a29f73fe46e85a5fc7995b797989cb3",
+      "bytes": 5866,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/FlowBootstrapNeighborhood.lean": {
+      "sha256": "a8ba64519f51704add63ad9a9eee4b3c5e5aa162dccb69b297b7b9519a6ce772",
+      "bytes": 3212,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/BanachRoot.lean": {
+      "sha256": "f0da4d9801da4c35436bbceac29ccb9ffbd392b22c6d6149f87c1e3802ca2641",
+      "bytes": 9692,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ShootingRoot.lean": {
+      "sha256": "7d5a1fb74291cc47ebb134627fb66ffe3522c9ad318e310e7b310c0bc65b9cdd",
+      "bytes": 12775,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ActualShooting.lean": {
+      "sha256": "f290e8d1358ed791fe651e83d15b7e1efc357eb367a126d5bbea0f8e9ebcdfcd",
+      "bytes": 6359,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/RotatingGridHorizon.lean": {
+      "sha256": "beb09f3c0ecc78ea3d66c7916aac3bf2b035931a4dee9d0f8456cf5a13a91342",
+      "bytes": 6061,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ExtendedPolynomialReference42.lean": {
+      "sha256": "5af6542daa79191c6d71f901123c1a1dae4a5faf3bebd551c6cce55badbefbc6",
+      "bytes": 4749,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ExtendedPolynomialGridAssembly42.lean": {
+      "sha256": "f4c23e2f132c5afe93b8c8a410a6dd0407bda9c493df9ba7b975cf14cfe99304",
+      "bytes": 9114,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ExtendedPolynomialGridEndpoints42.lean": {
+      "sha256": "eeb938738037c812616c1c279129f5dbd61ccdb3eb31705c9879132e9aac7aa1",
+      "bytes": 6507,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/PolynomialPointGridBlock.lean": {
+      "sha256": "ff09eecffad54e46e2aa269e4c4e4b048b1f2eb08aeb3bfb9150a4d3454e1ff4",
+      "bytes": 5836,
+      "role": "frozen_generic"
+    },
+    "SolitonClassification/Rotating/ModuleFullGenericAudit.lean": {
+      "sha256": "135c86c345ecac3f8c5a964f408987ceaed2e01c312025321fd9792c0eb9a55c",
+      "bytes": 6236,
+      "role": "frozen_all_private_audit"
+    },
+    "inputs/ModuleProductionBaseFrozenManifest.csv": {
+      "sha256": "6aaac204087174daa047c18c5592752cc56a3724f91b483f4697568c705bb792",
+      "bytes": 24094,
+      "role": "frozen_manifest"
+    },
+    "inputs/generic_source_manifest.json": {
+      "sha256": "44218c49c9e104728c6ee4f7795aacc86f97e58bd68036e83bc9927f518ddb26",
+      "bytes": 33380,
+      "role": "original_body_bindings"
+    },
+    "inputs/CandidateInitial.original.lean": {
+      "sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+      "bytes": 4622,
+      "role": "canonical_candidate_hash"
+    },
+    "inputs/shooting_certificate.json": {
+      "sha256": "7f227259292b5e4795f6df4e2f5f4e907bdc360a973915fee2e0bf3015ed3486",
+      "bytes": 8205,
+      "role": "exact_candidate_seed"
+    },
+    "inputs/templates/Block16Leaf08State.lean": {
+      "sha256": "ae34925a5de78a1f4499c23abacc847d5b2add1796bb23a01c44c656df9a314b",
+      "bytes": 30403,
+      "role": "frozen_numeric_template"
+    },
+    "inputs/templates/Block16Leaf08Matrix.lean": {
+      "sha256": "e91aa87d6b69219c834f1e87f24ac178b627f51d61befe122ee2d4ee5fa09f6e",
+      "bytes": 66792,
+      "role": "frozen_numeric_template"
+    },
+    "performance/reference.py": {
+      "sha256": "e586dcd92c56567232ce7751765eec5a55377d1e7f6398291606d674aa5568b4",
+      "bytes": 1945,
+      "role": "untrusted_integer_arithmetic"
+    },
+    "tools/production_compile_shard.py": {
+      "sha256": "f0abd2db3d6b8db32707d33e8ebb8a6aaee7da0c6f2332c9c4da8e931c64310b",
+      "bytes": 25493,
+      "role": "production_tool"
+    },
+    "tools/production_artifact.py": {
+      "sha256": "ddb448165391a04ab1ffcd9e4b572f9945f29fab5e1fa6ec981adad4b56323b5",
+      "bytes": 14088,
+      "role": "production_tool"
+    },
+    "tools/generate_production_shard.py": {
+      "sha256": "2d530034695382ac892768595c3ee8b1106372ed3e1ac2a4bb492e1017adf34b",
+      "bytes": 20559,
+      "role": "production_tool"
+    },
+    "tools/propose_grid42x22.py": {
+      "sha256": "dcd5024d5d182763cf91ca552080065dbe7dab6cec18bb1f49f7b07a5911c183",
+      "bytes": 6084,
+      "role": "production_tool"
+    },
+    "tools/plan_production_grid.py": {
+      "sha256": "61ea4ae11174cffa51dd5b4fc3c1caba05838b54b05d14c4793f4846ca864cca",
+      "bytes": 11722,
+      "role": "production_tool"
+    },
+    "tools/production_environment.py": {
+      "sha256": "16129c41a2bf6d1a729187b8c2d7955324bb7aed321f76dce3240d7107d91456",
+      "bytes": 9186,
+      "role": "production_tool"
+    },
+    "tools/production_public_consumer.py": {
+      "sha256": "9c26fa9a6285c26e44f461b2ca8d38b90cdd30579743ac2e504e4c19dd36f38d",
+      "bytes": 13602,
+      "role": "production_tool"
+    },
+    "lakefile.lean": {
+      "sha256": "0665a0d12018bf23cb707d41fb17ff1bc9dbf4674655c7c0ffc9735a8d8364b9",
+      "bytes": 314,
+      "role": "project_configuration"
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25,
+      "role": "project_configuration"
+    },
+    "lake-manifest.json": {
+      "sha256": "a6aa9d2466d05990e00faa548751fe9b9aaf35885905c9129ac758ebcb33cb1e",
+      "bytes": 3573,
+      "role": "project_configuration"
+    },
+    ".gitignore": {
+      "sha256": "5753685bcef71a30e6a7a4a95542d2a5fb93202c0d8397f219bacf86ef79197f",
+      "bytes": 109,
+      "role": "project_configuration"
+    },
+    ".gitattributes": {
+      "sha256": "a99e3a07b879ba820a2b3f4e5daf7b0f0a9e2933548dc4a4f59dd9d3021d760d",
+      "bytes": 83,
+      "role": "project_configuration"
+    },
+    "README.md": {
+      "sha256": "1182044ff9a0e1068d1cfa2d433689d607c05009aa2e65129294475306511f97",
+      "bytes": 3614,
+      "role": "scope_and_usage"
+    }
+  },
+  "meaning": "Byte-verified source packaging only; no new mathematical or Linux execution claim."
+}

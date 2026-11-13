@@ -1,0 +1,128 @@
+name: Rotating module Linux pilot
+
+on:
+  push:
+    branches: ['research/remaining-open-problems']
+    paths:
+      - '.github/workflows/rotating-module-pilot.yml'
+      - 'OpenProblems/SolitonClassification/ModuleProduction/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pilot:
+    name: Check one 32-step module shard and public consumer
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: OpenProblems/SolitonClassification/ModuleProduction
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify the isolated source inventory
+        run: python3 tools/production_environment.py --project . --verify-source-only
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/SolitonClassification/ModuleProduction
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - name: Run a fresh audit including private generic declarations
+        run: |
+          set -o pipefail
+          lake env lean SolitonClassification/Rotating/ModuleFullGenericAudit.lean | tee generic-audit.log
+      - name: Lock the actual Linux compiler and library bytes
+        run: lake env python3 tools/production_environment.py --project . --output checked_environment
+      - name: Generate untrusted checkpoints for the two complete paths
+        run: |
+          python3 tools/plan_production_grid.py \
+            --seed inputs/shooting_certificate.json \
+            --candidate-source inputs/CandidateInitial.original.lean \
+            --template-root inputs/templates --output plan --revision "$GITHUB_SHA" \
+            --steps-per-sign 4000 --shard-size 32
+      - name: Generate the first positive 32-step shard
+        run: |
+          python3 tools/generate_production_shard.py --key RP0000 --count 32 --sign 1 \
+            --seed inputs/shooting_certificate.json \
+            --candidate-source inputs/CandidateInitial.original.lean \
+            --template-root inputs/templates --module --output generated/RP0000
+      - name: Check the pilot against the pinned proposal plan
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'tools')
+          import plan_production_grid as planner
+          plan_root = Path('plan')
+          plan = json.loads((plan_root / 'plan.json').read_text())
+          planner.validate_plan(plan, plan_root)
+          assert plan['revision'] == os.environ['GITHUB_SHA']
+          job = plan['jobs'][0]
+          manifest = json.loads(Path('generated/RP0000/manifest.json').read_text())
+          for key in ['key', 'sign', 'start', 'count', 'input_node_sha256']:
+              assert manifest[key] == job[key], key
+          for key in ['candidate_hash', 'orders', 'mesh', 'step']:
+              assert manifest[key] == plan[key], key
+          proposed = (plan_root / job['output_node']).read_bytes()
+          generated = Path('generated/RP0000/output_node.json').read_bytes()
+          assert hashlib.sha256(proposed).hexdigest() == job['output_node_sha256']
+          assert json.loads(proposed) == json.loads(generated)
+          print('Proposal plan and pilot agree; this comparison is not a Lean proof.')
+          PY
+      - name: Kernel-check all shard modules and a fresh final audit
+        run: |
+          ulimit -c 0
+          python3 - <<'PY'
+          import json, subprocess, sys
+          from pathlib import Path
+          common = json.loads(Path('checked_environment/base_args.json').read_text())
+          subprocess.run([sys.executable, 'tools/production_compile_shard.py', 'compile',
+              '--manifest', 'generated/RP0000/manifest.json',
+              '--build-root', 'checked/shard_build',
+              '--base-lock', 'checked_environment/base_lock.json',
+              '--memory-mb', '4096', '--seconds', '600', *common], check=True)
+          PY
+      - name: Archive and restore the complete checked shard
+        run: |
+          python3 tools/production_artifact.py pack --manifest generated/RP0000/manifest.json \
+            --archive positive32.tar.xz --revision "$GITHUB_SHA"
+          python3 tools/production_artifact.py unpack --archive positive32.tar.xz \
+            --output-root restored/RP0000 --revision "$GITHUB_SHA"
+      - name: Fresh public-only consumption of the restored shard
+        run: |
+          python3 tools/production_public_consumer.py --manifest restored/RP0000/manifest.json \
+            --base-args checked_environment/base_args.json --output public_consumer \
+            --seconds 240 --memory-mb 4096
+      - name: Recheck source bytes after the pilot
+        run: python3 tools/production_environment.py --project . --verify-source-only
+      - name: Preserve complete checked proof archive
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rotating-module-pilot-full-${{ github.sha }}
+          path: OpenProblems/SolitonClassification/ModuleProduction/positive32.tar.xz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
+      - name: Preserve pilot inputs, logs and result evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rotating-module-pilot-evidence-${{ github.sha }}
+          path: |
+            OpenProblems/SolitonClassification/ModuleProduction/ModuleProductionSourceInventory.json
+            OpenProblems/SolitonClassification/ModuleProduction/generic-audit.log
+            OpenProblems/SolitonClassification/ModuleProduction/checked_environment
+            OpenProblems/SolitonClassification/ModuleProduction/plan
+            OpenProblems/SolitonClassification/ModuleProduction/generated/RP0000/manifest.json
+            OpenProblems/SolitonClassification/ModuleProduction/generated/RP0000/compile_report.json
+            OpenProblems/SolitonClassification/ModuleProduction/generated/RP0000/logs
+            OpenProblems/SolitonClassification/ModuleProduction/restored/RP0000/unpack_report.json
+            OpenProblems/SolitonClassification/ModuleProduction/public_consumer
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
