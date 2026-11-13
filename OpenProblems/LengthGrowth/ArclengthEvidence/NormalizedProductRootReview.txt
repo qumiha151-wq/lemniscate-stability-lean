@@ -1,0 +1,34 @@
+INDEPENDENT ROOT SEMANTIC REVIEW: ACTUAL ENERGY-LENGTH PRODUCT
+13 November 2026.
+
+Reviewed full final NormalizedProduct.lean source:
+ab826f872a5e30ce4852c1de3f668719aae42bd5de1d016493cccbcde1aab5b5.
+The actual successful result is
+normalized_product_build/1794553603161595200/result.json,
+f7122742d52be7b7b2bf7173897ca4fa5f6a872c9e59fac4b894ef64cf06007f.
+Session 40384 exited zero, with 349 recursively audited declarations and
+only standard axioms. No independent recompilation was performed here.
+
+The only import is the frozen ForwardDissipation. normalizedProduct is
+the product of the already-defined actual material bending energy and
+length. Its derivative follows from their proved normal-flow derivatives,
+then the square derivative follows by the actual chain rule.
+
+The exact deficit identity is
+E^4 - 2 E L (E ell - L D) = (E^2-L ell)^2 + L^2(2 E D-ell^2).
+Both terms are nonnegative by a square and the existing material weighted
+Cauchy--Schwarz inequality. The proof divides by none of E, L or D, so
+no hidden strict-positivity or nonzero-dissipation premise is needed.
+
+For 0<=s<=t, the actual product and rate coefficient are continuous on
+the closed interval. The normal PDE and derivative identities are used
+only at its strictly positive interior times. FTC identifies the actual
+squared-product difference with the integral of its rate; interval
+monotonicity then bounds it by the actual integral of E^4. The degenerate
+case s=t is included in the theorem being applied. No value at negative
+time or derivative at initial time is required.
+
+No substantive semantic gap was found. This module supplies a growth-rate
+and integral estimate, not a uniform product bound. It does not construct
+the energy-normalized clock, record windows or an ancient limit. In
+particular it does not settle the quarter-power length-growth question.

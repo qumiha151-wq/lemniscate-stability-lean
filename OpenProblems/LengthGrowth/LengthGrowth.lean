@@ -1,3 +1,5 @@
+import LengthGrowth.ActualFlow.ArclengthCoercivity
+import LengthGrowth.ActualFlow.NormalizedProduct
 import LengthGrowth.ActualFlow.ForwardDissipation
 import LengthGrowth.SubsqrtGrowth
 import LengthGrowth.CurveFromPosition
@@ -46,4 +48,18 @@ missing. These static estimates do not resolve general quarter-power growth.
 nondecreasing curvature in a profile joining the two oriented unit-circle
 states. It uses only the Frenet support equations and endpoint limits.
 It does not assert existence of such a profile or a general growth bound.
+-/
+
+/-!
+The actual arclength adapter constructs a global smooth parameter inverse
+from arbitrary-speed position and transports curvature, force, E, D and A.
+It supplies the legacy static coercivity bounds for the actual material
+integrals of each forward slice, including time zero. It also proves E>0
+and the coarse bound A>=1; it does not prove a uniform-in-time A bound.
+
+For actual forward normal FEF, NormalizedProduct defines e=E L and proves
+e'=E ell-L D, (e^2)'<=E^4, and
+e(t)^2-e(s)^2<=integral_s^t E(r)^4 dr for 0<=s<=t.
+No energy-clock or ancient-limit theorem is included. The unrestricted
+fourth-root growth question remains open. See ArclengthAndProductScope.txt.
 -/

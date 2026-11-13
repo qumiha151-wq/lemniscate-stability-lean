@@ -70,12 +70,28 @@ The two exported actual_position_* coercivity inequalities use actual
 integrals. Caller-supplied Frenet data are no longer needed by this interface.
 The independent combined project audit now covers199 declarations,only
 propext,Classical.choice,Quot.sound. See ActualPositionScope.txt.
-General-speed arclength reparameterization and dynamic A(t) bounds are
-outside this addition; unrestricted length growth remains unresolved.
+That earlier unit-speed addition did not include general-speed arclength
+reparameterization; the new six-module addition below now supplies it.
+Dynamic A(t) bounds and unrestricted length growth remain unresolved.
 
 SUB-SQUARE-ROOT SCALAR CONSEQUENCE
 SubsqrtGrowth.lean now proves L(t)/sqrt(t)->0 from the nonnegative energy
 reservoir H and the restart dissipation estimate alone. It does not assume
 H(t)->0 or E(t)->0. The proof uses a lower-bounded infimum and a restarted
-quadratic envelope. Geometric PDE identities and unrestricted quarter-power
-growth remain unresolved. See SubsqrtGrowthScope.txt and its frozen manifest.
+quadratic envelope. The later ActualFlow chain supplies the geometric PDE
+identities; unrestricted quarter-power growth remains unresolved. See
+SubsqrtGrowthScope.txt for the original scalar-only addition and its manifest.
+
+ACTUAL ARCLENGTH AND ENERGY-LENGTH PRODUCT ADDITION
+Six new modules now construct the global smooth arclength inverse from an
+actual arbitrary-speed periodic immersion and transport its intrinsic force
+and material E/D/A integrals. The existing static coercivity estimates now
+apply directly to those actual material quantities, including forward time
+zero. The coarse A>=1 and E>0 statements are also proved on each slice.
+NormalizedProduct defines e=E L for the actual flow and proves e'=E ell-L D,
+(e^2)'<=E^4 and e(t)^2-e(s)^2<=integral_s^t E^4, for 0<=s<=t.
+This batch contains no time-uniform A or EL bound, energy-clock theorem,
+ancient-limit theorem, or arbitrary-data existence theorem. General
+quarter-power growth remains unresolved. The project now has 40 mathematical
+leaves, plus its entry point and unchanged recursive audit. See
+ArclengthAndProductScope.txt and ArclengthEvidence for exact scope and checks.

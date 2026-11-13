@@ -1,0 +1,51 @@
+INDEPENDENT ROOT REVIEW: CONSTRUCTED GLOBAL ARCLENGTH COORDINATE
+13 November 2026. Semantic review of the two modules authored by Curve.
+
+I read the complete final sources and their actual successful compilation
+records. The reviewed source hashes are:
+ArclengthCoordinate.lean
+e318ec6a58f5b7ff7cc626818d80b59067ab9ee7065dbd365b72d9ff5bbee019
+ArclengthSmooth.lean
+4acb3ad93ff88eb488319e4904af1c5b7d664b2fe4048ad5d60aee258d9060b4.
+The frozen evidence manifest is ArclengthOwnedFrozenManifest.json,
+553d4969c8bb5497e6a57c886f545b281c4bb447b94a50241071127e926b552f.
+Actual sessions 34164 and 81321 exited zero; their audits counted 129 and
+139 declarations respectively, with only the standard three axioms. This
+review did not repeat those compilations.
+
+PeriodicRegularPosition contains only a positive period, actual complex
+position, smoothness, periodicity and a nonzero actual derivative. It does
+not contain an inverse, unit-speed curve, Frenet frame, or force field.
+Length is the existing materialLength and S(u) is the actual integral of
+speed from zero to u. FTC proves S'=speed, giving smoothness and strict
+monotonicity. The periodic integral identity proves S(u+P)=S(u)+L with the
+correct original period P and actual geometric length L.
+
+The surjectivity proof is global, including negative u. The continuous
+periodic difference S(u)-(L/P)u is bounded. Since L/P>0, the two resulting
+affine bounds give limits at plus/minus infinity, and continuous
+surjectivity constructs the order isomorphism. Its inverse is therefore
+derived from S rather than supplied as an additional assumption. Both
+inverse identities, the endpoint identities eta(0)=0, eta(L)=P, and
+eta(s+L)=eta(s)+P follow from this order isomorphism and the proved shift
+law. Its homeomorphism supplies the inverse continuity used subsequently.
+
+The inverse derivative theorem applies to the actual S(eta(s))=s identity
+and positive speed, giving eta'=1/speed(gamma)(eta(s)). The finite-order
+induction bootstraps that formula to all natural differentiability orders,
+then to ContDiff infinity. The finite-order analytic side condition is
+explicitly discharged, not assumed. The composition gamma o eta is smooth,
+L-periodic, and its actual derivative is the original unit tangent at eta.
+Its norm is proved to be one, and its derivative is consequently nonzero.
+
+No minimal-period claim or injectivity of the original curve is needed.
+The inverse is only the inverse of the increasing parameter coordinate.
+No time-dependent inverse is constructed, and no claim is made that a
+time-dependent arclength gauge preserves purely normal material velocity.
+The sources have only LengthGrowth and Mathlib dependencies, so the other
+open-problem projects remain independent.
+
+No substantive semantic gap was found. The root authored the subsequent
+Transport/Integrals/Coercivity modules and does not label its own reading
+of those modules an independent review. These two reviewed modules alone
+do not establish the integral transport or the quarter-power growth bound.

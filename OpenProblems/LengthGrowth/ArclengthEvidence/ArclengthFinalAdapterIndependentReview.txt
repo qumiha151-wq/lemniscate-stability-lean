@@ -1,0 +1,65 @@
+Actual arclength integral and coercivity adapter: independent semantic review
+13 November 2026. Reviewer: finish_curve_input; author: root.
+Read-only review of both complete sources. No edits or repeated Lean runs.
+
+ArclengthIntegrals.lean
+SHA256 05A09DC220FCA02A59A99C109421071F2508925226ADFD2FCC8E9E8E87DFD122
+ArclengthCoercivity.lean
+SHA256 1676E62C2448A8249ECA499418A20ACEE6583574279233A1552566F13AC37514
+Directory: work/length_flow_formal/LengthGrowth/ActualFlow.
+
+Verdict: no semantic gap found. The arbitrary-speed actual-position record
+supplies every premise of the legacy static coercivity theorem through the
+constructed global arclength inverse. The final slice statements refer to the
+same material quantities used by the actual first-variation/PDE development.
+
+Integral and geometric identification:
+- The inverse derivative and smoothness hypotheses of ArclengthTransport
+  are instantiated by the proved actual inverse, not supplied independently
+  in the final theorem. Both actual signed curvature and complete force are
+  transported, including the two intrinsic curvature derivatives.
+- The change of variable uses the actual arclength S, its HasDerivAt S g,
+  continuous g, and continuous outer function f o eta. Mathlib's formula
+  integrates on original material interval [0,P] and maps its endpoints to
+  [S(0),S(P)]=[0,L]. Eta(S(u))=u simplifies the material integrand. Thus
+  the Jacobian is the actual positive speed, and P is never substituted
+  for the geometric length L.
+- The constructed ClosedFrenetCurve comes from the existing actual-position
+  constructor with the proved smooth periodic unit-speed beta. Its actual
+  legacy curvature and second derivative/force definitions are explicitly
+  rewritten through ArclengthTransport's whole-function identities.
+- Energy uses the true factor 1/2, dissipation is integral F^2, and absolute
+  curvature is integral |kappa|, each with speed in material coordinates.
+  Their integrands' continuity is proved from actual intrinsic smoothness.
+  No assumed integral identity or independent force field appears.
+
+Coercivity and actual time slices:
+- The pointwise legacy bound is evaluated at S(u), so eta(S(u)) gives the
+  requested original material point. Constants 1/16777216 and 1/262144 are
+  unchanged. The energy and dissipation factors are exactly the original
+  material integrals, not different normalized scalars.
+- Positive material energy and the inherited absolute-curvature lower bound
+  1 are proved via the closed curve. No denominator-zero or total-turning
+  replacement is silently used. The period may be a multiple covering.
+- SmoothPeriodicImmersion.regularPositionAt uses only the actual spatial
+  slice properties at t in the open time domain. ForwardImmersion uses its
+  proved spatial smoothness and immersion for all t>=0, including its initial
+  curve. No backward-time extension is required.
+- I checked FamilyIntegrals and ForwardGeometry: their energy/dissipation
+  definitions are exactly materialEnergy/materialDissipation of position t.
+  Hence the final wrappers are connected to the actual flow quantities.
+  Their absence of a normal-PDE premise is appropriate for spatial estimates.
+
+Scope and independence:
+These two modules complete the static arbitrary-speed geometry adapter.
+They do not prove time-uniform absolute curvature, global existence of a
+flow, or the quarter-power growth question. They make no claim that a
+time-dependent arclength reparametrization preserves pure-normal velocity.
+All imports stay within LengthGrowth/Mathlib.
+
+The author reported actual successful checks of Integrals (366 declarations)
+and Coercivity (566 declarations), both standard-three and without warnings.
+This review does not claim an independent compilation. I authored the
+Coordinate/Smooth prerequisites; the present independent review is of root's
+two adapter sources and their use of those explicit interfaces, not an
+independent audit of my own prerequisite proofs.

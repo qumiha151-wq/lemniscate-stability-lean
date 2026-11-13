@@ -1,0 +1,60 @@
+ACTUAL ARCLENGTH ADAPTER AND ENERGY-LENGTH PRODUCT: SIX-MODULE SCOPE
+13 November 2026
+
+This addition extends the independent LengthGrowth project with six frozen
+Lean modules. The previous 34 mathematical sources and all prior evidence
+remain byte-identical. The new project has 40 mathematical leaves, plus its
+entry point and the unchanged recursive AxiomAudit.
+
+ArclengthCoordinate and ArclengthSmooth start with only a smooth periodic
+actual position, a positive material period, and nonzero actual derivative.
+They construct S(u)=integral_0^u |gamma_u|, prove its global strict monotonicity
+and surjectivity, construct its order-isomorphism inverse eta, prove eta is
+smooth with derivative 1/|gamma_u(eta)|, and construct gamma o eta as a smooth
+unit-speed curve with period equal to actual length. No inverse or unit-speed
+parametrization is an input field. Self-intersections and multiple covers
+are allowed; this is a parameter inverse, not an injective-image assertion.
+
+ArclengthTransport proves the actual chain-rule transport of curvature and
+elastic force under a smooth inverse satisfying the derivative identity.
+ArclengthIntegrals supplies that inverse from the first two modules, identifies
+the legacy unit-speed curvature and force with the actual intrinsic ones,
+and proves the true substitution formulas for E, D, and A=integral |k| ds.
+Every original material integral keeps its speed density.
+
+ArclengthCoercivity therefore applies the established static inequalities to
+arbitrary-speed actual periodic immersions and to actual open-time or forward
+flow slices, including time zero when the existing initial-jet hypotheses hold:
+  E D >= 2^-24 |k(u)|^6,
+  D >= 2^-18 E^5/A^6,
+  E>0 and A>=1.
+The bound A>=1 is the coarse proved bound, not an assertion that Fenchel's
+sharp 2pi bound has been formalized in these new modules. Neither a normal
+velocity equation nor time-uniform A control is needed for these static slices.
+
+NormalizedProduct imports only the frozen ForwardDissipation chain. For an
+actual forward normal FEF it defines e=E L and proves
+  e'=E ell-L D,
+  (e^2)'=2 E L(E ell-L D),
+  E^4-(e^2)'=(E^2-L ell)^2+L^2(2 E D-ell^2)>=0,
+  e(t)^2-e(s)^2<=integral_s^t E(r)^4 dr, 0<=s<=t.
+Here ell is the actual material length-rate integral. The proof uses the
+already proved weighted Cauchy--Schwarz inequality and actual PDE variation
+laws, not freely supplied scalar ODE data. It assumes neither positive energy
+as a separate premise nor monotonicity of length. Endpoint continuity and
+interior-only FTC cover s=0 without a backward flow.
+
+The construction is spatial on each slice. No smooth time-dependent inverse,
+preservation of pure-normal gauge by a time-dependent reparametrization, or
+global existence for arbitrary initial data is claimed. An energy clock,
+record-time windows, ancient limits, bounded total absolute curvature, bounded
+EL, and the unrestricted fourth-root growth theorem remain outside this batch.
+The general length-growth problem remains unresolved.
+
+ArclengthEvidence contains author compilation records, exact source/object/log
+hashes, independent semantic reviews, and the actual integration result. The
+integration reuses all 40 checked leaf objects and compiles only the new root
+and the byte-identical original audit. It is not a fresh full leaf rebuild or
+a complete Mathlib-cache provenance audit. No .olean objects are published.
+All imports stay within Mathlib and LengthGrowth; the other open-problem
+formalizations are not dependencies and are not modified.

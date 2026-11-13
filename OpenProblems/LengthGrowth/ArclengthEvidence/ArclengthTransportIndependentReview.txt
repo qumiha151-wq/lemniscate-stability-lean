@@ -1,0 +1,54 @@
+ArclengthTransport: independent read-only semantic review
+13 November 2026
+Reviewer: finish_curve_input; author: root.
+
+Source: work/length_flow_formal/LengthGrowth/ActualFlow/ArclengthTransport.lean
+SHA256: 64B963A6615410798DB670643F210F99A43F990C54A2DEAE0A280D5BE90985A4
+
+I read the entire source and checked its interfaces against the frozen actual
+IntrinsicCurve definitions and the legacy CurveFromPosition definitions.
+No semantic gap was found. I did not modify or recompile this source.
+The author reports actual EXIT 0 / 279 LengthGrowth declarations under the
+standard-three audit; this review is a semantic reading, not an independent
+replay of that compilation.
+
+1. The auxiliary premise is the actual HasDerivAt eta with derivative
+   1/speed(gamma)(eta s). It is explicitly present, and no inverse identity or
+   global existence is smuggled into these auxiliary lemmas. My separately
+   constructed ArclengthSmooth.inverse_hasDerivAt supplies exactly this
+   premise for the actual global inverse in the final adapter. The source
+   comment correctly distinguishes these two stages.
+
+2. The scalar chain rule produces actual derivative of f o eta equal to the
+   existing arcDerivative gamma f evaluated at eta. It works for the real
+   normed-space generality stated. Position differentiation is the same
+   chain rule; the tangent norm theorem then proves unit speed and regularity.
+   Positive reciprocal speed fixes the signed orientation.
+
+3. Tangent and normal transport are actual definition equalities after the
+   proved speed identity. Curvature transport uses the actual normal inner
+   product of DsT. Smoothness and regularity of gamma o eta are supplied by
+   proved chain consequences, not independently assumed geometric fields.
+   Rewriting the entire tangent function before differentiation is essential
+   and is present. The curvatureGradient and curvatureSecond proofs likewise
+   rewrite whole functions before taking the next actual derivative. Thus
+   the force identity includes both intrinsic derivatives and the cubic term.
+
+4. The legacy bridge checks the definitions, rather than identifying names:
+   under actual unit speed, tangent beta = deriv beta, speed beta = 1, and
+   Im(conj(beta') beta'') equals ActualFlow.curvature. Whole-function equality
+   is used before two ordinary derivatives in the legacy force. These last
+   algebraic identities do not require extra smoothness assumptions because
+   Lean's total deriv respects function equality; the eventual actual curve
+   is smooth by construction.
+
+5. Imports are only LengthGrowth/Mathlib transitively. No CentroidEscape
+   theorem, abstract frame, force invariance, integral substitution, or
+   unit-speed hypothesis on the original gamma is used. This module alone
+   does not yet prove the energy/dissipation change of variables or the final
+   arbitrary-speed static coercivity theorem, and does not make a time-gauge
+   or global PDE existence assertion.
+
+Independence boundary: this review concerns root's Transport module only.
+I authored Coordinate/Smooth and do not label my checks of those as an
+independent review.
