@@ -1,0 +1,41 @@
+Read-only core execution review -- 2026-11-13
+
+Read complete work/prepare_core_release_execution.py and its concrete generated
+request, workflow and preparation report. No workflow, tag, release or asset was
+written or executed by this reviewer.
+
+Reviewed request SHA256:
+66b278629384aa3b01bf5732def0512b711feac68582e6a44b99c19b0a63f18e.
+Reviewed workflow SHA256:
+5b48f77e180b30f301f80bcd25bb14476fa141a5a075fbb6380bbc389399f5c3.
+The publisher tool commit is d64ad3cf29e2eb285f3c3a25cd20f9a28a7aca57;
+the source/core commit remains cff971bcac7ac2d83aba04596ce09e44fda1ac29.
+
+No blocking logic or deployment-binding gap was found. The request pins the
+already published tool commit P and writer C063. A later workflow commit Q checks
+out P separately and verifies the actual Git HEAD and committed writer blob;
+GITHUB_SHA is recorded as Q. No request field needs its own containing Q hash.
+The package inventory and exact file set are verified before imports; Python
+bytecode writes are disabled. The separate request checkout is checked against
+the exact request digest. The helper/evidence pins match the frozen publisher.
+
+The upstream successful core transfer run and three artifact identities are read
+and compared before download. Actual free space is checked. The exact core artifact
+id is downloaded; the inner original archive and pack index are fully rehashed.
+The original archive is retained at its dedicated inputs/exact-core.tar.xz path,
+and the pinned pack/restore/import JSON files are copied alongside it. The writer's
+actual --execute call therefore has the filenames and identities its adapter requires.
+This wrapper independently hashes inner archive/index bytes, while Actions handles
+the ZIP transport. It does not itself separately hash a retained raw ZIP stream.
+
+The single writer creates a new exact tag and draft, uploads the unique core asset,
+checks complete draft bytes, publishes, and checks complete published bytes and
+stable identity. Four actual mutation calls are expected. The workflow's postcheck
+retains the core-only schema and false numerical/full-certificate scope. The writer
+performs POSIX file and directory synchronization for its journal/result. The final
+always() step retains journal, approved request/identity/disk evidence, input JSON
+and downloaded index on failure as well. Whole-runner loss remains outside that
+local durability guarantee; a failed/ambiguous remote action is not auto-cleaned up.
+
+This review is not an actual release-publication result or network upload test.
+Actual tag/release/asset ids and redownload verification must come from execution.
