@@ -95,12 +95,22 @@
           "use-mathlib-cache": "false"
           "use-github-cache": "false"
       -
-        "name": "Assert no fallback Lake tree; record installed Lean"
+        "name": "Resolve the pinned project Lean executable and record its exact version"
         "run": |
           set -euo pipefail
           test ! -e "$CORE_PROJECT/.lake"
           ulimit -c 0
-          lean --version | tee "$WORK/evidence/installed-lean.txt"
+          LEAN_BIN="$(cd "$CORE_PROJECT" && elan which lean)"
+          python3 - "$LEAN_BIN" <<'PY'
+          from pathlib import Path
+          import json, os, sys
+          p=Path(sys.argv[1])
+          assert p.is_absolute() and p.is_file() and os.access(p,os.X_OK), "Lean must be an installed absolute executable"
+          assert "\n" not in str(p) and "\r" not in str(p), "Unsafe executable path"
+          (Path(os.environ["WORK"])/"evidence/installed-lean-path.json").write_text(json.dumps({"selected_path":str(p),"resolved_path":str(p.resolve()),"selection_context":os.environ["CORE_PROJECT"],"global_default_changed":False},indent=2)+"\n")
+          PY
+          printf 'LEAN_BIN=%s\n' "$LEAN_BIN" >> "$GITHUB_ENV"
+          "$LEAN_BIN" --version | tee "$WORK/evidence/installed-lean.txt"
       -
         "name": "Check the successful original run and exact unexpired artifact"
         "run": |
@@ -203,7 +213,7 @@
       -
         "name": "Restore the exact captured core into new paths"
         "run": |
-          python3 -B "$TOOLS/production_core_artifact.py" restore --archive "$WORK/download/core.tar.xz" --output "$WORK/restored" --sha256 "$CORE_SHA" --revision "$CORE_REVISION" --lean lean
+          python3 -B "$TOOLS/production_core_artifact.py" restore --archive "$WORK/download/core.tar.xz" --output "$WORK/restored" --sha256 "$CORE_SHA" --revision "$CORE_REVISION" --lean "$LEAN_BIN"
       -
         "name": "Match this job restoration receipt to all pinned identities"
         "run": |

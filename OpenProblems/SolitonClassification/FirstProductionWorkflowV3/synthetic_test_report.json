@@ -1,0 +1,237 @@
+{
+  "schema": "rotating.first-production-workflow-tests.v1",
+  "status": "passed",
+  "synthetic_fixtures_only": true,
+  "rejections": [
+    {
+      "name": "pending_original_run",
+      "rejected": true,
+      "reason": "Original core run has not actually succeeded"
+    },
+    {
+      "name": "failed_original_run",
+      "rejected": true,
+      "reason": "Original core run has not actually succeeded"
+    },
+    {
+      "name": "wrong_original_run",
+      "rejected": true,
+      "reason": "Original core run has not actually succeeded"
+    },
+    {
+      "name": "source_equals_new_tool_revision",
+      "rejected": true,
+      "reason": "Original core run has not actually succeeded"
+    },
+    {
+      "name": "wrong_repository",
+      "rejected": true,
+      "reason": "Original core run has not actually succeeded"
+    },
+    {
+      "name": "wrong_attempt",
+      "rejected": true,
+      "reason": "Wrong/expired upstream artifact"
+    },
+    {
+      "name": "expired_artifact",
+      "rejected": true,
+      "reason": "Wrong/expired upstream artifact"
+    },
+    {
+      "name": "wrong_artifact_name",
+      "rejected": true,
+      "reason": "Wrong/expired upstream artifact"
+    },
+    {
+      "name": "wrong_artifact_source",
+      "rejected": true,
+      "reason": "Wrong/expired upstream artifact"
+    },
+    {
+      "name": "wrong_artifact_run",
+      "rejected": true,
+      "reason": "Wrong/expired upstream artifact"
+    },
+    {
+      "name": "invalid_artifact_id",
+      "rejected": true,
+      "reason": "Invalid positive integer: artifact id"
+    },
+    {
+      "name": "nonpositive_observed_size",
+      "rejected": true,
+      "reason": "Invalid positive integer: payload_bytes"
+    },
+    {
+      "name": "unchecked_pack",
+      "rejected": true,
+      "reason": "Missing actual checked core evidence: rotating.production-core-pack.v1"
+    },
+    {
+      "name": "changed_archive_identity",
+      "rejected": true,
+      "reason": "Conflicting core digest: archive_sha256"
+    },
+    {
+      "name": "changed_base_identity",
+      "rejected": true,
+      "reason": "Conflicting core digest: base_lock_sha256"
+    },
+    {
+      "name": "missing_whole_restore_check",
+      "rejected": true,
+      "reason": "Incomplete actual restoration"
+    },
+    {
+      "name": "failed_restore",
+      "rejected": true,
+      "reason": "Missing actual checked core evidence: rotating.production-core-restore.v1"
+    },
+    {
+      "name": "failed_import_report",
+      "rejected": true,
+      "reason": "Missing actual checked core evidence: rotating.restored-core-import.v1"
+    },
+    {
+      "name": "missing_Arctan_import",
+      "rejected": true,
+      "reason": "Incomplete actual restored import check"
+    },
+    {
+      "name": "wrong_private_count",
+      "rejected": true,
+      "reason": "Missing actual generic1704/private331 and Arctan results"
+    },
+    {
+      "name": "actual_Lean_failure",
+      "rejected": true,
+      "reason": "Missing actual generic1704/private331 and Arctan results"
+    },
+    {
+      "name": "fallback_cache_used",
+      "rejected": true,
+      "reason": "Incomplete actual restored import check"
+    },
+    {
+      "name": "injected_output_on_search_path",
+      "rejected": true,
+      "reason": "Incomplete actual restored import check"
+    },
+    {
+      "name": "wrong_core_inventory",
+      "rejected": true,
+      "reason": "Wrong core source inventory"
+    },
+    {
+      "name": "tool_revision_reused_as_core",
+      "rejected": true,
+      "reason": "Wrong separate published tool revision"
+    },
+    {
+      "name": "missing_actual_restore_evidence",
+      "rejected": true,
+      "reason": "Missing actual evidence"
+    },
+    {
+      "name": "invalid_job_env_runner_context:${{ runner.temp }}/bad",
+      "rejected": true
+    },
+    {
+      "name": "invalid_job_env_runner_context:${{runner.temp}}/bad",
+      "rejected": true
+    },
+    {
+      "name": "invalid_job_env_runner_context:${{ runner[\"temp\"] }}",
+      "rejected": true
+    },
+    {
+      "name": "bare_lean_version",
+      "rejected": true
+    },
+    {
+      "name": "bare_lean_after_shell_operator",
+      "rejected": true
+    },
+    {
+      "name": "bare_restore_argument",
+      "rejected": true
+    },
+    {
+      "name": "global_stable_default",
+      "rejected": true
+    },
+    {
+      "name": "wrong_toolchain_selection_directory",
+      "rejected": true
+    },
+    {
+      "name": "unsafe_workflow_name:'../../injected.yml'",
+      "rejected": true
+    },
+    {
+      "name": "unsafe_workflow_name:'x.yaml'",
+      "rejected": true
+    },
+    {
+      "name": "unsafe_workflow_name:'x.yml\\nfoo'",
+      "rejected": true
+    },
+    {
+      "name": "unsafe_workflow_name:'X.yml'",
+      "rejected": true
+    },
+    {
+      "name": "wrong_final_base",
+      "rejected": true
+    },
+    {
+      "name": "wrong_final_manifest",
+      "rejected": true
+    },
+    {
+      "name": "false_full_path_claim",
+      "rejected": true
+    },
+    {
+      "name": "nonzero_final_module",
+      "rejected": true
+    },
+    {
+      "name": "timed_out_final_module",
+      "rejected": true
+    },
+    {
+      "name": "failed_fresh_audit",
+      "rejected": true
+    },
+    {
+      "name": "wrong_fresh_audit",
+      "rejected": true
+    },
+    {
+      "name": "private_project_input",
+      "rejected": true
+    },
+    {
+      "name": "unapproved_Arctan_override",
+      "rejected": true
+    }
+  ],
+  "matrix_entries": 5,
+  "max_parallel": 4,
+  "embedded_Python_compiled": 6,
+  "synthetic_summary_execution_checked": true,
+  "independent_YAML_parser_used": false,
+  "in_memory_synthetic_render_sha256": "cd990ba848f644ab9e04659f64aa0e4e7429e3f2067b7d741d9e8f280d0c3e33",
+  "final_workflow_file_written": false,
+  "actual_core_PASS_inferred": false,
+  "Lean_calls": 0,
+  "numeric_generation_calls": 0,
+  "network_calls": 0,
+  "workflow_installed": false,
+  "workflow_executed": false,
+  "full_certificate_proved": false,
+  "generator_sha256": "4acffcc6a6724368c29a24b18856ab923c07f8d93ce2e7d88cd542e67cdfd6c8",
+  "test_source_sha256": "596036e7cf591a7bfc131331143aebf31135258b3927d3261ada38d453691b31"
+}
