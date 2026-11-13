@@ -1,0 +1,33 @@
+Exact-core transfer source package
+
+This independent ProductionTools directory leaves ModuleProduction's frozen
+108-file inventory and 88 Lean sources unchanged. Four existing production
+helpers are copied byte-for-byte. New wrappers and a two-job workflow compose
+their actual checks; package preparation is not a new theorem or Linux run.
+
+Job one builds the 88-module core, explicitly builds the upstream Complex.Arctan
+dependency, performs a fresh private audit, captures actual Linux bytes and
+archives all locked nonstdlib roots. Job two is a distinct fresh runner with the
+same pinned Lean version. It obtains no Mathlib/Lake cache, restores exactly those
+bytes, and performs a fresh all-private generic audit plus a real Arctan import.
+The consumer uses only restored explicit LEAN_PATH roots and checks Lean's actual
+resolved dependencies and the full base before/after. Output is not an import root.
+
+The recent Linux pilot had about 6.02 GB of locked nonstdlib files, rather than
+the smaller Windows library layout. Separate workers avoid keeping the original
+and restored 6 GB copies on the same machine. Actual disk usage is logged; the
+8 GiB complete expanded TAR limit remains enforced. No universal fit or runtime
+bound is inferred from the earlier small fixture. No old 32-step numeric shard
+is compiled by this workflow, and no full 8000-step result is asserted.
+
+Actions artifacts expire after 30 days here. They are transport/test evidence,
+not a claim of permanent proof-source archival storage. Later complete-proof
+delivery must preserve its reproducible sources durably.
+
+Run Python with PYTHONDONTWRITEBYTECODE=1 or -B: exact source-package verification
+rejects unexpected files, including stale __pycache__ artifacts. Verify with:
+  python -B tools/verify_production_tools.py --package . --project ../ModuleProduction
+The included workflow is intended for .github/workflows/rotating-core-transfer.yml
+without byte changes. It supports workflow_dispatch and narrowly scoped pushes
+on research/remaining-open-problems affecting this workflow or ProductionTools.
+It does not change the older 32-step numerical pilot's trigger paths.

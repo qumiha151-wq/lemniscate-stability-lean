@@ -1,0 +1,171 @@
+name: Rotating exact core transfer
+
+on:
+  push:
+    branches: ['research/remaining-open-problems']
+    paths:
+      - '.github/workflows/rotating-core-transfer.yml'
+      - 'OpenProblems/SolitonClassification/ProductionTools/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  produce:
+    name: Build and archive one exact Linux core
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      TOOLS: ${{ github.workspace }}/OpenProblems/SolitonClassification/ProductionTools/tools
+    defaults:
+      run:
+        working-directory: OpenProblems/SolitonClassification/ModuleProduction
+    outputs:
+      archive_sha256: ${{ steps.identity.outputs.archive_sha256 }}
+      base_lock_sha256: ${{ steps.identity.outputs.base_lock_sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set an isolated producer directory on this runner
+        run: printf 'TRANSFER=%s/rotating-core-production\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      - name: Verify separate transport tools and unchanged core sources
+        run: python3 "$TOOLS/verify_production_tools.py" --package "$TOOLS/.." --project .
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/SolitonClassification/ModuleProduction
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          use-github-cache: 'false'
+      - name: Include the final endpoint proof's upstream Arctan dependency
+        run: lake build Mathlib.Analysis.SpecialFunctions.Complex.Arctan
+      - name: Fresh generic audit including private declarations
+        run: |
+          set -o pipefail
+          mkdir -p "$TRANSFER/evidence"
+          lake env lean SolitonClassification/Rotating/ModuleFullGenericAudit.lean | tee "$TRANSFER/evidence/generic-audit.log"
+          df -h "$GITHUB_WORKSPACE" "$RUNNER_TEMP" | tee "$TRANSFER/evidence/disk-before-pack.txt"
+      - name: Capture the actual compiler and complete Linux library bytes
+        run: lake env python3 "$TOOLS/production_environment.py" --project . --output "$TRANSFER/environment"
+      - name: Pack all exact nonstdlib roots once
+        run: |
+          python3 "$TOOLS/production_core_artifact.py" pack \
+            --base-lock "$TRANSFER/environment/base_lock.json" \
+            --base-args "$TRANSFER/environment/base_args.json" \
+            --source-inventory ModuleProductionSourceInventory.json \
+            --archive "$TRANSFER/core.tar.xz" --revision "$GITHUB_SHA"
+          df -h "$GITHUB_WORKSPACE" "$RUNNER_TEMP" | tee "$TRANSFER/evidence/disk-after-pack.txt"
+      - name: Bind downstream archive and lock hashes
+        id: identity
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          record = json.loads((Path(os.environ['TRANSFER']) / 'core.tar.xz.index.json').read_bytes())
+          assert record['status'] == 'checked' and record['revision'] == os.environ['GITHUB_SHA']
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as stream:
+              for name in ['archive_sha256', 'base_lock_sha256']:
+                  assert re.fullmatch('[0-9a-f]{64}', record[name])
+                  stream.write(name + '=' + record[name] + '\n')
+          PY
+      - name: Recheck all source bytes
+        run: python3 "$TOOLS/verify_production_tools.py" --package "$TOOLS/.." --project .
+      - name: Transfer the complete exact core
+        uses: actions/upload-artifact@v4
+        with:
+          name: rotating-core-full-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/rotating-core-production/core.tar.xz
+            ${{ runner.temp }}/rotating-core-production/core.tar.xz.index.json
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
+      - name: Preserve producer evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rotating-core-producer-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/rotating-core-production/environment
+            ${{ runner.temp }}/rotating-core-production/evidence
+            ${{ runner.temp }}/rotating-core-production/core.tar.xz.index.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  restore:
+    name: Restore on a fresh runner and audit real imports
+    needs: produce
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      TOOLS: ${{ github.workspace }}/OpenProblems/SolitonClassification/ProductionTools/tools
+      CORE_SHA: ${{ needs.produce.outputs.archive_sha256 }}
+      LOCK_SHA: ${{ needs.produce.outputs.base_lock_sha256 }}
+    defaults:
+      run:
+        working-directory: OpenProblems/SolitonClassification/ModuleProduction
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set an isolated consumer directory on this runner
+        run: printf 'TRANSFER=%s/rotating-core-restoration\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      - name: Verify tool/source bytes before any library is restored
+        run: python3 "$TOOLS/verify_production_tools.py" --package "$TOOLS/.." --project .
+      - name: Install only the pinned Lean toolchain, without a dependency cache
+        uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/SolitonClassification/ModuleProduction
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'false'
+      - name: Confirm no local Lake dependency tree was created
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          assert not Path('.lake').exists(), 'Restore job must not build or cache dependencies'
+          PY
+      - uses: actions/download-artifact@v4
+        with:
+          name: rotating-core-full-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/rotating-core-download
+      - name: Restore exact core bytes into new isolated paths
+        run: |
+          mkdir -p "$TRANSFER/evidence"
+          df -h "$GITHUB_WORKSPACE" "$RUNNER_TEMP" | tee "$TRANSFER/evidence/disk-before-restore.txt"
+          python3 "$TOOLS/production_core_artifact.py" restore \
+            --archive "$RUNNER_TEMP/rotating-core-download/core.tar.xz" \
+            --sha256 "$CORE_SHA" --revision "$GITHUB_SHA" --lean lean \
+            --output "$TRANSFER/restored"
+          df -h "$GITHUB_WORKSPACE" "$RUNNER_TEMP" | tee "$TRANSFER/evidence/disk-after-restore.txt"
+      - name: Actual fresh generic private audit and Arctan import from restored roots
+        run: |
+          ulimit -c 0
+          python3 "$TOOLS/production_core_import_check.py" \
+            --restored "$TRANSFER/restored" --project . --output "$TRANSFER/import_check" \
+            --revision "$GITHUB_SHA" --archive-sha256 "$CORE_SHA" --base-lock-sha256 "$LOCK_SHA" \
+            --memory-mb 4096 --seconds 600
+      - name: Recheck source inventory and absence of a fallback dependency cache
+        run: |
+          python3 "$TOOLS/verify_production_tools.py" --package "$TOOLS/.." --project .
+          python3 - <<'PY'
+          from pathlib import Path
+          assert not Path('.lake').exists(), 'No dependency rebuild/cache is permitted in this job'
+          PY
+      - name: Preserve actual restoration and import evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rotating-core-consumer-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/rotating-core-restoration/restored/restore_receipt.json
+            ${{ runner.temp }}/rotating-core-restoration/restored/base_args.json
+            ${{ runner.temp }}/rotating-core-restoration/restored/base_lock.json
+            ${{ runner.temp }}/rotating-core-restoration/restored/core-metadata.json
+            ${{ runner.temp }}/rotating-core-restoration/import_check
+            ${{ runner.temp }}/rotating-core-restoration/evidence
+          if-no-files-found: warn
+          retention-days: 30
