@@ -1,0 +1,431 @@
+﻿2026-11-13T04:08:02.4442118Z Current runner version: '2.338.2'
+2026-11-13T04:08:02.4458687Z ##[group]Runner Image Provisioner
+2026-11-13T04:08:02.4459296Z Hosted Compute Agent
+2026-11-13T04:08:02.4459861Z Version: 20261028.624
+2026-11-13T04:08:02.4460276Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-13T04:08:02.4460736Z Build Date: 2026-10-28T21:51:42Z
+2026-11-13T04:08:02.4461157Z Worker ID: {0944f8ad-e870-4611-9caf-0159e994d1a4}
+2026-11-13T04:08:02.4461961Z Region: centralus
+2026-11-13T04:08:02.4462359Z Cloud: Azure
+2026-11-13T04:08:02.4462768Z ##[endgroup]
+2026-11-13T04:08:02.4463795Z ##[group]Operating System
+2026-11-13T04:08:02.4464178Z Ubuntu
+2026-11-13T04:08:02.4464582Z 24.04.5
+2026-11-13T04:08:02.4464911Z LTS
+2026-11-13T04:08:02.4465221Z ##[endgroup]
+2026-11-13T04:08:02.4465610Z ##[group]Runner Image
+2026-11-13T04:08:02.4465984Z Image: ubuntu-24.04
+2026-11-13T04:08:02.4466444Z Version: 20261101.360.1
+2026-11-13T04:08:02.4467229Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-13T04:08:02.4468159Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-13T04:08:02.4468750Z ##[endgroup]
+2026-11-13T04:08:02.4469751Z ##[group]GITHUB_TOKEN Permissions
+2026-11-13T04:08:02.4471296Z Actions: read
+2026-11-13T04:08:02.4471710Z Contents: write
+2026-11-13T04:08:02.4472064Z Metadata: read
+2026-11-13T04:08:02.4472400Z ##[endgroup]
+2026-11-13T04:08:02.4473775Z Secret source: Actions
+2026-11-13T04:08:02.4474335Z Cache mode: write
+2026-11-13T04:08:02.4474825Z Prepare workflow directory
+2026-11-13T04:08:02.4834733Z Prepare all required actions
+2026-11-13T04:08:02.4867339Z Getting action download info
+2026-11-13T04:08:02.7568215Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-13T04:08:02.8327027Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-13T04:08:03.0506289Z Complete job name: recover
+2026-11-13T04:08:03.1321253Z ##[group]Run printf 'WORK=%s/rotating-core-draft-recovery\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+2026-11-13T04:08:03.1321940Z [36;1mprintf 'WORK=%s/rotating-core-draft-recovery\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"[0m
+2026-11-13T04:08:03.1341570Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-13T04:08:03.1342044Z env:
+2026-11-13T04:08:03.1342288Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:08:03.1342631Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:03.1343110Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:08:03.1343656Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:08:03.1344451Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:08:03.1345586Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:08:03.1346329Z ##[endgroup]
+2026-11-13T04:08:03.1544848Z ##[group]Run actions/checkout@v4
+2026-11-13T04:08:03.1545173Z with:
+2026-11-13T04:08:03.1545440Z   ref: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:03.1545775Z   path: tool-source
+2026-11-13T04:08:03.1546041Z   persist-credentials: false
+2026-11-13T04:08:03.1546365Z   repository: qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:03.1548367Z   token: ***
+2026-11-13T04:08:03.1548601Z   ssh-strict: true
+2026-11-13T04:08:03.1548845Z   ssh-user: git
+2026-11-13T04:08:03.1549081Z   clean: true
+2026-11-13T04:08:03.1549332Z   sparse-checkout-cone-mode: true
+2026-11-13T04:08:03.1549823Z   fetch-depth: 1
+2026-11-13T04:08:03.1550067Z   fetch-tags: false
+2026-11-13T04:08:03.1550317Z   show-progress: true
+2026-11-13T04:08:03.1550571Z   lfs: false
+2026-11-13T04:08:03.1550802Z   submodules: false
+2026-11-13T04:08:03.1551053Z   set-safe-directory: true
+2026-11-13T04:08:03.1551535Z   allow-unsafe-pr-checkout: false
+2026-11-13T04:08:03.1551819Z env:
+2026-11-13T04:08:03.1552078Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:08:03.1552406Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:03.1552973Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:08:03.1553521Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:08:03.1554316Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:08:03.1555430Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:08:03.1556241Z   WORK: /home/runner/work/_temp/rotating-core-draft-recovery
+2026-11-13T04:08:03.1556596Z ##[endgroup]
+2026-11-13T04:08:03.3742320Z Syncing repository: qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:03.3743461Z ##[group]Getting Git version info
+2026-11-13T04:08:03.3744020Z Working directory is '/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source'
+2026-11-13T04:08:03.3744721Z [command]/usr/bin/git version
+2026-11-13T04:08:03.3825805Z git version 2.56.0
+2026-11-13T04:08:03.3839095Z ##[endgroup]
+2026-11-13T04:08:03.3850813Z Temporarily overriding HOME='/home/runner/work/_temp/b1a9b774-4118-43a7-b2df-6cf540e709ad' before making global git config changes
+2026-11-13T04:08:03.3852452Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T04:08:03.3854323Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source
+2026-11-13T04:08:03.3895680Z ##[group]Initializing the repository
+2026-11-13T04:08:03.3898922Z [command]/usr/bin/git init /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source
+2026-11-13T04:08:03.4004829Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-13T04:08:03.4005850Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-13T04:08:03.4006760Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-13T04:08:03.4007404Z hint: call:
+2026-11-13T04:08:03.4007750Z hint:
+2026-11-13T04:08:03.4008212Z hint: 	git config --global init.defaultBranch <name>
+2026-11-13T04:08:03.4008760Z hint:
+2026-11-13T04:08:03.4009292Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-13T04:08:03.4010261Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-13T04:08:03.4010906Z hint:
+2026-11-13T04:08:03.4011265Z hint: 	git branch -m <name>
+2026-11-13T04:08:03.4011675Z hint:
+2026-11-13T04:08:03.4012234Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-13T04:08:03.4014467Z Initialized empty Git repository in /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/.git/
+2026-11-13T04:08:03.4024039Z [command]/usr/bin/git remote add origin https://github.com/qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:03.4069178Z ##[endgroup]
+2026-11-13T04:08:03.4070174Z ##[group]Disabling automatic garbage collection
+2026-11-13T04:08:03.4071247Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-13T04:08:03.4101341Z ##[endgroup]
+2026-11-13T04:08:03.4102204Z ##[group]Setting up auth
+2026-11-13T04:08:03.4106857Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T04:08:03.4141867Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T04:08:03.4488486Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T04:08:03.4527082Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T04:08:03.4725036Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T04:08:03.4764301Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T04:08:03.4973118Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-13T04:08:03.5016878Z ##[endgroup]
+2026-11-13T04:08:03.5017594Z ##[group]Fetching the repository
+2026-11-13T04:08:03.5026288Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:06.2258660Z From https://github.com/qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:06.2259678Z  * branch            37fa090e1f51cb17d40f45706fb24879fd068d75 -> FETCH_HEAD
+2026-11-13T04:08:06.2262863Z ##[endgroup]
+2026-11-13T04:08:06.2263639Z ##[group]Determining the checkout info
+2026-11-13T04:08:06.2266083Z ##[endgroup]
+2026-11-13T04:08:06.2272425Z [command]/usr/bin/git sparse-checkout disable
+2026-11-13T04:08:06.2329732Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-13T04:08:06.2372861Z ##[group]Checking out the ref
+2026-11-13T04:08:06.2376127Z [command]/usr/bin/git checkout --progress --force 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:07.2531389Z Updating files:  85% (15920/18552)
+2026-11-13T04:08:07.2658136Z Updating files:  86% (15955/18552)
+2026-11-13T04:08:07.2764059Z Updating files:  87% (16141/18552)
+2026-11-13T04:08:07.2867914Z Updating files:  88% (16326/18552)
+2026-11-13T04:08:07.2988541Z Updating files:  89% (16512/18552)
+2026-11-13T04:08:07.3094859Z Updating files:  90% (16697/18552)
+2026-11-13T04:08:07.3164146Z Updating files:  91% (16883/18552)
+2026-11-13T04:08:07.3240965Z Updating files:  92% (17068/18552)
+2026-11-13T04:08:07.3358438Z Updating files:  93% (17254/18552)
+2026-11-13T04:08:07.3433050Z Updating files:  94% (17439/18552)
+2026-11-13T04:08:07.3517679Z Updating files:  95% (17625/18552)
+2026-11-13T04:08:07.3601859Z Updating files:  96% (17810/18552)
+2026-11-13T04:08:07.3677889Z Updating files:  97% (17996/18552)
+2026-11-13T04:08:07.3811113Z Updating files:  98% (18181/18552)
+2026-11-13T04:08:07.3901389Z Updating files:  99% (18367/18552)
+2026-11-13T04:08:07.3901641Z Updating files: 100% (18552/18552)
+2026-11-13T04:08:07.3901870Z Updating files: 100% (18552/18552), done.
+2026-11-13T04:08:07.4037385Z Note: switching to '37fa090e1f51cb17d40f45706fb24879fd068d75'.
+2026-11-13T04:08:07.4037619Z 
+2026-11-13T04:08:07.4037827Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-13T04:08:07.4038193Z changes and commit them, and you can discard any commits you make in this
+2026-11-13T04:08:07.4098948Z state without impacting any branches by switching back to a branch.
+2026-11-13T04:08:07.4099366Z 
+2026-11-13T04:08:07.4099993Z If you want to create a new branch to retain commits you create, you may
+2026-11-13T04:08:07.4100627Z do so (now or later) by using -c with the switch command. Example:
+2026-11-13T04:08:07.4100926Z 
+2026-11-13T04:08:07.4101071Z   git switch -c <new-branch-name>
+2026-11-13T04:08:07.4101251Z 
+2026-11-13T04:08:07.4101413Z Or undo this operation with:
+2026-11-13T04:08:07.4101564Z 
+2026-11-13T04:08:07.4101659Z   git switch -
+2026-11-13T04:08:07.4101782Z 
+2026-11-13T04:08:07.4102004Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-13T04:08:07.4102288Z 
+2026-11-13T04:08:07.4102598Z HEAD is now at 37fa090 Preserve failed core publication and add reviewed single-draft recovery tools
+2026-11-13T04:08:07.4103951Z ##[endgroup]
+2026-11-13T04:08:07.4147996Z [command]/usr/bin/git log -1 --format=%H
+2026-11-13T04:08:07.4177469Z 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:07.4184996Z ##[group]Removing auth
+2026-11-13T04:08:07.4187719Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T04:08:07.4221714Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T04:08:07.4444291Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T04:08:07.4474778Z http.https://github.com/.extraheader
+2026-11-13T04:08:07.4480104Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-13T04:08:07.4520430Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T04:08:07.4736721Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T04:08:07.4771096Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T04:08:07.4986969Z ##[endgroup]
+2026-11-13T04:08:07.5143930Z ##[group]Run actions/checkout@v4
+2026-11-13T04:08:07.5144121Z with:
+2026-11-13T04:08:07.5144280Z   ref: 291c31922e643c0a22a9bef60da3e10354af4b81
+2026-11-13T04:08:07.5144471Z   path: request-source
+2026-11-13T04:08:07.5144638Z   persist-credentials: false
+2026-11-13T04:08:07.5144832Z   repository: qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:07.5146202Z   token: ***
+2026-11-13T04:08:07.5146340Z   ssh-strict: true
+2026-11-13T04:08:07.5146483Z   ssh-user: git
+2026-11-13T04:08:07.5146618Z   clean: true
+2026-11-13T04:08:07.5146773Z   sparse-checkout-cone-mode: true
+2026-11-13T04:08:07.5146943Z   fetch-depth: 1
+2026-11-13T04:08:07.5147082Z   fetch-tags: false
+2026-11-13T04:08:07.5147226Z   show-progress: true
+2026-11-13T04:08:07.5147369Z   lfs: false
+2026-11-13T04:08:07.5147502Z   submodules: false
+2026-11-13T04:08:07.5147665Z   set-safe-directory: true
+2026-11-13T04:08:07.5147834Z   allow-unsafe-pr-checkout: false
+2026-11-13T04:08:07.5148007Z env:
+2026-11-13T04:08:07.5148177Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:08:07.5148372Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:07.5148651Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:08:07.5148967Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:08:07.5149436Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:08:07.5150305Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:08:07.5150770Z   WORK: /home/runner/work/_temp/rotating-core-draft-recovery
+2026-11-13T04:08:07.5150981Z ##[endgroup]
+2026-11-13T04:08:07.5714891Z Syncing repository: qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:07.5715653Z ##[group]Getting Git version info
+2026-11-13T04:08:07.5716324Z Working directory is '/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source'
+2026-11-13T04:08:07.5737867Z [command]/usr/bin/git version
+2026-11-13T04:08:07.5773319Z git version 2.56.0
+2026-11-13T04:08:07.5791617Z ##[endgroup]
+2026-11-13T04:08:07.5795383Z Temporarily overriding HOME='/home/runner/work/_temp/7c7c500e-2459-4012-9ab8-ec33d84e5f87' before making global git config changes
+2026-11-13T04:08:07.5796188Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T04:08:07.5800342Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source
+2026-11-13T04:08:07.5830500Z ##[group]Initializing the repository
+2026-11-13T04:08:07.5833348Z [command]/usr/bin/git init /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source
+2026-11-13T04:08:07.5874475Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-13T04:08:07.5875259Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-13T04:08:07.5875914Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-13T04:08:07.5876430Z hint: call:
+2026-11-13T04:08:07.5876763Z hint:
+2026-11-13T04:08:07.5877176Z hint: 	git config --global init.defaultBranch <name>
+2026-11-13T04:08:07.5877613Z hint:
+2026-11-13T04:08:07.5878063Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-13T04:08:07.5878707Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-13T04:08:07.5879214Z hint:
+2026-11-13T04:08:07.5879668Z hint: 	git branch -m <name>
+2026-11-13T04:08:07.5880040Z hint:
+2026-11-13T04:08:07.5880522Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-13T04:08:07.5881474Z Initialized empty Git repository in /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/.git/
+2026-11-13T04:08:07.5883672Z [command]/usr/bin/git remote add origin https://github.com/qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:07.5946607Z ##[endgroup]
+2026-11-13T04:08:07.5947070Z ##[group]Disabling automatic garbage collection
+2026-11-13T04:08:07.5949683Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-13T04:08:07.5978984Z ##[endgroup]
+2026-11-13T04:08:07.5979407Z ##[group]Setting up auth
+2026-11-13T04:08:07.5984088Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T04:08:07.6012555Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T04:08:07.6242949Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T04:08:07.6279344Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T04:08:07.6488819Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T04:08:07.6525033Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T04:08:07.6716787Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-13T04:08:07.6759152Z ##[endgroup]
+2026-11-13T04:08:07.6759694Z ##[group]Fetching the repository
+2026-11-13T04:08:07.6765485Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 291c31922e643c0a22a9bef60da3e10354af4b81
+2026-11-13T04:08:09.5407207Z From https://github.com/qumiha151-wq/lemniscate-stability-lean
+2026-11-13T04:08:09.5407702Z  * branch            291c31922e643c0a22a9bef60da3e10354af4b81 -> FETCH_HEAD
+2026-11-13T04:08:09.5410879Z ##[endgroup]
+2026-11-13T04:08:09.5411266Z ##[group]Determining the checkout info
+2026-11-13T04:08:09.5413432Z ##[endgroup]
+2026-11-13T04:08:09.5419648Z [command]/usr/bin/git sparse-checkout disable
+2026-11-13T04:08:09.5478981Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-13T04:08:09.5520116Z ##[group]Checking out the ref
+2026-11-13T04:08:09.5523222Z [command]/usr/bin/git checkout --progress --force 291c31922e643c0a22a9bef60da3e10354af4b81
+2026-11-13T04:08:10.5703547Z Updating files:  91% (17017/18559)
+2026-11-13T04:08:10.5771130Z Updating files:  92% (17075/18559)
+2026-11-13T04:08:10.5886803Z Updating files:  93% (17260/18559)
+2026-11-13T04:08:10.5955709Z Updating files:  94% (17446/18559)
+2026-11-13T04:08:10.6038011Z Updating files:  95% (17632/18559)
+2026-11-13T04:08:10.6121068Z Updating files:  96% (17817/18559)
+2026-11-13T04:08:10.6193313Z Updating files:  97% (18003/18559)
+2026-11-13T04:08:10.6298537Z Updating files:  98% (18188/18559)
+2026-11-13T04:08:10.6385917Z Updating files:  99% (18374/18559)
+2026-11-13T04:08:10.6386263Z Updating files: 100% (18559/18559)
+2026-11-13T04:08:10.6386565Z Updating files: 100% (18559/18559), done.
+2026-11-13T04:08:10.6520120Z Note: switching to '291c31922e643c0a22a9bef60da3e10354af4b81'.
+2026-11-13T04:08:10.6520450Z 
+2026-11-13T04:08:10.6520637Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-13T04:08:10.6521119Z changes and commit them, and you can discard any commits you make in this
+2026-11-13T04:08:10.6521541Z state without impacting any branches by switching back to a branch.
+2026-11-13T04:08:10.6521790Z 
+2026-11-13T04:08:10.6521953Z If you want to create a new branch to retain commits you create, you may
+2026-11-13T04:08:10.6522335Z do so (now or later) by using -c with the switch command. Example:
+2026-11-13T04:08:10.6522560Z 
+2026-11-13T04:08:10.6522751Z   git switch -c <new-branch-name>
+2026-11-13T04:08:10.6522921Z 
+2026-11-13T04:08:10.6523015Z Or undo this operation with:
+2026-11-13T04:08:10.6523170Z 
+2026-11-13T04:08:10.6523532Z   git switch -
+2026-11-13T04:08:10.6523638Z 
+2026-11-13T04:08:10.6523823Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-13T04:08:10.6524132Z 
+2026-11-13T04:08:10.6524407Z HEAD is now at 291c319 Recover the pinned existing core draft after complete before-and-after download checks
+2026-11-13T04:08:10.6575718Z ##[endgroup]
+2026-11-13T04:08:10.6622826Z [command]/usr/bin/git log -1 --format=%H
+2026-11-13T04:08:10.6653981Z 291c31922e643c0a22a9bef60da3e10354af4b81
+2026-11-13T04:08:10.6661574Z ##[group]Removing auth
+2026-11-13T04:08:10.6663815Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T04:08:10.6698059Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T04:08:10.6917972Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T04:08:10.6947666Z http.https://github.com/.extraheader
+2026-11-13T04:08:10.6952509Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-13T04:08:10.6988731Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T04:08:10.7214847Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T04:08:10.7253240Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T04:08:10.7486667Z ##[endgroup]
+2026-11-13T04:08:10.7634507Z ##[group]Run python3 - <<'PY'
+2026-11-13T04:08:10.7634719Z [36;1mpython3 - <<'PY'[0m
+2026-11-13T04:08:10.7634918Z [36;1mimport hashlib,json,os,sys[0m
+2026-11-13T04:08:10.7635077Z [36;1mfrom pathlib import Path[0m
+2026-11-13T04:08:10.7635338Z [36;1mpackage=Path(os.environ['PACKAGE']);request=Path(os.environ['REQUEST']);work=Path(os.environ['WORK'])[0m
+2026-11-13T04:08:10.7635655Z [36;1mdef sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()[0m
+2026-11-13T04:08:10.7635876Z [36;1massert os.environ['GITHUB_RUN_ATTEMPT']=='1'[0m
+2026-11-13T04:08:10.7636113Z [36;1massert sha(package/'SourceInventory.json')==os.environ['PACKAGE_SHA'][0m
+2026-11-13T04:08:10.7636396Z [36;1minventory=json.loads((package/'SourceInventory.json').read_bytes())[0m
+2026-11-13T04:08:10.7636774Z [36;1massert {p.relative_to(package).as_posix() for p in package.rglob('*') if p.is_file()}==set(inventory['files'])|{'SourceInventory.json'}[0m
+2026-11-13T04:08:10.7637132Z [36;1mfor name,pin in inventory['files'].items():[0m
+2026-11-13T04:08:10.7637415Z [36;1m    p=package/name;assert not p.is_symlink() and p.stat().st_size==pin['bytes'] and sha(p)==pin['sha256'][0m
+2026-11-13T04:08:10.7637818Z [36;1massert sha(request)==os.environ['REQUEST_SHA'][0m
+2026-11-13T04:08:10.7638007Z [36;1msys.path.insert(0,str(package/'tools'))[0m
+2026-11-13T04:08:10.7638199Z [36;1mimport production_core_draft_recovery as writer[0m
+2026-11-13T04:08:10.7638439Z [36;1mctx=writer.prepare(request,os.environ['REQUEST_SHA'],package/'inputs')[0m
+2026-11-13T04:08:10.7638718Z [36;1massert ctx['request']['publisher_revision']==os.environ['TOOL_REVISION'][0m
+2026-11-13T04:08:10.7639043Z [36;1midentity=writer.old.actions_context(ctx['request'],os.environ,writer.checked_tool_revision())[0m
+2026-11-13T04:08:10.7639309Z [36;1m(work/'evidence').mkdir(parents=True)[0m
+2026-11-13T04:08:10.7639740Z [36;1m(work/'evidence/approved_recovery_request.json').write_bytes(request.read_bytes())[0m
+2026-11-13T04:08:10.7640059Z [36;1m(work/'evidence/tool_identity.json').write_text(json.dumps(identity,indent=2)+'\n')[0m
+2026-11-13T04:08:10.7640402Z [36;1m(work/'evidence/source_inventory.json').write_bytes((package/'SourceInventory.json').read_bytes())[0m
+2026-11-13T04:08:10.7640654Z [36;1mPY[0m
+2026-11-13T04:08:10.7657537Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-13T04:08:10.7657724Z env:
+2026-11-13T04:08:10.7657850Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:08:10.7658023Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:10.7658273Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:08:10.7658555Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:08:10.7658990Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:08:10.7659728Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:08:10.7660169Z   WORK: /home/runner/work/_temp/rotating-core-draft-recovery
+2026-11-13T04:08:10.7660355Z ##[endgroup]
+2026-11-13T04:08:10.8894032Z ##[group]Run python3 -B "$PACKAGE/tools/production_core_draft_recovery.py" --request "$REQUEST" --request-sha256 "$REQUEST_SHA" --input-root "$PACKAGE/inputs" --output "$WORK/journal" --execute
+2026-11-13T04:08:10.8894723Z [36;1mpython3 -B "$PACKAGE/tools/production_core_draft_recovery.py" --request "$REQUEST" --request-sha256 "$REQUEST_SHA" --input-root "$PACKAGE/inputs" --output "$WORK/journal" --execute[0m
+2026-11-13T04:08:10.8911117Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-13T04:08:10.8911323Z env:
+2026-11-13T04:08:10.8911445Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:08:10.8911613Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:08:10.8911859Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:08:10.8912138Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:08:10.8912611Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:08:10.8913208Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:08:10.8913632Z   WORK: /home/runner/work/_temp/rotating-core-draft-recovery
+2026-11-13T04:08:10.8915070Z   GH_TOKEN: ***
+2026-11-13T04:08:10.8915184Z ##[endgroup]
+2026-11-13T04:09:05.2311906Z {"status": "remote_verified", "release_id": 443789076, "asset_id": 742149339, "actual_http_writes": 1}
+2026-11-13T04:09:05.2436247Z ##[group]Run python3 - <<'PY'
+2026-11-13T04:09:05.2436456Z [36;1mpython3 - <<'PY'[0m
+2026-11-13T04:09:05.2436587Z [36;1mimport json,os[0m
+2026-11-13T04:09:05.2436720Z [36;1mfrom pathlib import Path[0m
+2026-11-13T04:09:05.2436954Z [36;1mwork=Path(os.environ['WORK']);q=json.loads(Path(os.environ['REQUEST']).read_bytes())[0m
+2026-11-13T04:09:05.2437408Z [36;1mo=json.loads((Path(os.environ['PACKAGE'])/'inputs/original_request.json').read_bytes())[0m
+2026-11-13T04:09:05.2437687Z [36;1mr=json.loads((work/'journal/result.json').read_bytes())[0m
+2026-11-13T04:09:05.2437993Z [36;1massert r['schema']=='rotating.durable-core-release-record.v1' and r['status']=='remote_verified'[0m
+2026-11-13T04:09:05.2438376Z [36;1massert r['test_fixture'] is False and r['remote_durability_verified'] is True and r['actual_http_writes']==1[0m
+2026-11-13T04:09:05.2438709Z [36;1massert r['release']['id']==q['release_id'] and r['asset']['id']==q['asset_id'][0m
+2026-11-13T04:09:05.2439000Z [36;1massert r['release']['draft'] is False and r['release']['tag']==o['tag'][0m
+2026-11-13T04:09:05.2439302Z [36;1massert r['revision']==o['source_revision'] and r['asset']['digest']=='sha256:'+o['archive']['sha256'][0m
+2026-11-13T04:09:05.2439807Z [36;1massert r['verification']['redownload_sha256']==o['archive']['sha256'][0m
+2026-11-13T04:09:05.2440064Z [36;1massert r['verification']['redownload_bytes']==o['archive']['bytes'][0m
+2026-11-13T04:09:05.2440378Z [36;1massert r['verification']['draft_redownload']=={'sha256':o['archive']['sha256'],'bytes':o['archive']['bytes']}[0m
+2026-11-13T04:09:05.2440680Z [36;1massert r['publisher']['revision']==q['publisher_revision'][0m
+2026-11-13T04:09:05.2440920Z [36;1massert r['publisher']['request_sha256']==os.environ['REQUEST_SHA'][0m
+2026-11-13T04:09:05.2441187Z [36;1massert r['publisher']['actions']['workflow_revision']==os.environ['GITHUB_SHA'][0m
+2026-11-13T04:09:05.2441479Z [36;1massert r['recovery']['original_request_sha256']==q['original_request']['sha256'][0m
+2026-11-13T04:09:05.2441741Z [36;1massert r['recovery']['created_new_release_or_asset'] is False[0m
+2026-11-13T04:09:05.2442007Z [36;1massert r['actual_lean_run_here'] is False and r['full_certificate_proved'] is False[0m
+2026-11-13T04:09:05.2442225Z [36;1mPY[0m
+2026-11-13T04:09:05.2458541Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-13T04:09:05.2458720Z env:
+2026-11-13T04:09:05.2458839Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:09:05.2459005Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:09:05.2459251Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:09:05.2459685Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:09:05.2460112Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:09:05.2460716Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:09:05.2461143Z   WORK: /home/runner/work/_temp/rotating-core-draft-recovery
+2026-11-13T04:09:05.2461325Z ##[endgroup]
+2026-11-13T04:09:05.2722210Z ##[group]Run actions/upload-artifact@v4
+2026-11-13T04:09:05.2722373Z with:
+2026-11-13T04:09:05.2722514Z   name: rotating-core-draft-recovery-43363486188-1
+2026-11-13T04:09:05.2722860Z   path: /home/runner/work/_temp/rotating-core-draft-recovery/journal
+/home/runner/work/_temp/rotating-core-draft-recovery/evidence
+
+2026-11-13T04:09:05.2723176Z   if-no-files-found: warn
+2026-11-13T04:09:05.2723305Z   retention-days: 30
+2026-11-13T04:09:05.2723426Z   compression-level: 1
+2026-11-13T04:09:05.2723547Z   overwrite: false
+2026-11-13T04:09:05.2723665Z   include-hidden-files: false
+2026-11-13T04:09:05.2723795Z env:
+2026-11-13T04:09:05.2723906Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-13T04:09:05.2724068Z   TOOL_REVISION: 37fa090e1f51cb17d40f45706fb24879fd068d75
+2026-11-13T04:09:05.2724313Z   PACKAGE_SHA: 821ecdd18ef62d557f2d6294f819a5f79c99486fd3694af7eb93e9e2e6214fb9
+2026-11-13T04:09:05.2724595Z   REQUEST_SHA: 4dafd3235270b9792012cae912a3ca7820915835728694ed0bfc9c9d68d89e5e
+2026-11-13T04:09:05.2725043Z   PACKAGE: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source/OpenProblems/SolitonClassification/CoreDraftRecoveryTools
+2026-11-13T04:09:05.2725780Z   REQUEST: /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source/OpenProblems/SolitonClassification/CoreDraftRecoveryExecution/request.json
+2026-11-13T04:09:05.2726211Z   WORK: /home/runner/work/_temp/rotating-core-draft-recovery
+2026-11-13T04:09:05.2726390Z ##[endgroup]
+2026-11-13T04:09:05.3851364Z (node:2557) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T04:09:05.3851848Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T04:09:05.3960779Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-13T04:09:05.3961732Z The least common ancestor is /home/runner/work/_temp/rotating-core-draft-recovery. This will be the root directory of the artifact
+2026-11-13T04:09:05.3962335Z With the provided path, there will be 80 files uploaded
+2026-11-13T04:09:05.3962810Z Artifact name is valid!
+2026-11-13T04:09:05.3963023Z Root directory input is valid!
+2026-11-13T04:09:05.6933345Z Beginning upload of artifact content to blob storage
+2026-11-13T04:09:05.7579833Z (node:2557) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-13T04:09:06.0196354Z Uploaded bytes 63158
+2026-11-13T04:09:06.0720601Z Finished uploading artifact content to blob storage!
+2026-11-13T04:09:06.0721281Z SHA256 digest of uploaded artifact zip is 3ba009395df95df5399ee2212ed5507c7b1caeb6f681bf7f59240745c009b126
+2026-11-13T04:09:06.0721823Z Finalizing artifact upload
+2026-11-13T04:09:06.4254753Z Artifact rotating-core-draft-recovery-43363486188-1.zip successfully finalized. Artifact ID 14009501641
+2026-11-13T04:09:06.4255583Z Artifact rotating-core-draft-recovery-43363486188-1 has been successfully uploaded! Final size is 63158 bytes. Artifact ID is 14009501641
+2026-11-13T04:09:06.4259764Z Artifact download URL: https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43363486188/artifacts/14009501641
+2026-11-13T04:09:06.4434695Z Post job cleanup.
+2026-11-13T04:09:06.5020146Z [command]/usr/bin/git version
+2026-11-13T04:09:06.5048704Z git version 2.56.0
+2026-11-13T04:09:06.5073087Z Temporarily overriding HOME='/home/runner/work/_temp/7c35c9e8-eda3-4799-995a-a74329accbed' before making global git config changes
+2026-11-13T04:09:06.5075326Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T04:09:06.5077312Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/request-source
+2026-11-13T04:09:06.5115221Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T04:09:06.5151392Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T04:09:06.5402592Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T04:09:06.5437206Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T04:09:06.5678824Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T04:09:06.5715863Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T04:09:06.6059010Z Post job cleanup.
+2026-11-13T04:09:06.6739302Z [command]/usr/bin/git version
+2026-11-13T04:09:06.6761706Z git version 2.56.0
+2026-11-13T04:09:06.6803107Z Temporarily overriding HOME='/home/runner/work/_temp/1f1e1d69-c299-4019-9281-9970bb3c579e' before making global git config changes
+2026-11-13T04:09:06.6804121Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T04:09:06.6804957Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/tool-source
+2026-11-13T04:09:06.6890798Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T04:09:06.6941092Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T04:09:06.7193826Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T04:09:06.7241171Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T04:09:06.7477219Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T04:09:06.7519751Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T04:09:06.7883300Z Cleaning up orphan processes
+2026-11-13T04:09:06.8143512Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

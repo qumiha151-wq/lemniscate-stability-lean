@@ -1,0 +1,44 @@
+Root review of the frozen multiasset publisher, 2026-11-13
+
+Read production_shard_release_publisher_v2.py in full; source
+CBA63BE08C987643A1BBF86AEB5793171667B433DC2A4BBACD962817FDF90B38.
+Its narrow draft-URL change uses the frozen pure AAA1F9FB... helper.
+Expected identity remains fixed API id, file name, uploaded state, size and
+digest. The exact presentation URL is then checked against the validated
+same-repository release phase/slug. Published records use only final tagged
+URLs. A draft URL is never an authority or binary download destination.
+
+The original source/plan/full archive preflight, complete asset pagination,
+per-upload original-file rehash, complete draft downloads and stable sets,
+all-or-stop publication, complete published downloads, and per-job durable
+record validator remain in force. Partial requests cover at most 32 jobs;
+full mode requires all 250 canonical jobs. The source revision, original
+workflow revision, publisher tool P, and workflow request Q are distinct.
+The helper inventory and actual deployed package will be externally pinned.
+
+Reviewed actual local reports: original four full archives were previously
+validated under the unchanged preflight, with report11F9E1CE...C9AF59.
+The narrow v2 suite ran 26 in-memory wire scenarios and 36 rejecting checks,
+reportDD08F04B...27E8A2. The pure helper additionally accepts the actual core
+draft metadata and rejects 27 malformed/wrong-phase cases. These are no-network
+fixtures. They do not establish real multiasset uploads, live250 pagination,
+or full250 numerical compilation. Curve independent reviewEF1F1C18...C04979
+confirms the AST-preserved routines and the intended phase distinction.
+
+No blocking issue found for the next bounded first-four real execution.
+It must use a fresh concrete v2 request and tag, exactly the already checked
+four raw archives, original successful Actions provenance, real tool P, and
+the original unchanged plan. One tag + one draft + four uploads + one PATCH
+means seven actual writes. Eight complete asset-ID downloads and four standard
+durable records are required before success is reported. Failure retains the
+remote state and journal; no overwrite, deletion, retry or resume is provided.
+
+The known external-edit GET/PATCH window is not transactional. Snapshot
+identity does not lock presentation name/body/prerelease against concurrent
+editing, although creation sends the reviewed values; it does lock content,
+ids, source/tag target and canonical published URLs. No stronger claim is made.
+
+The generic core's separate actual recovery has now succeeded with a complete
+draft and published download of the same 1,303,430,664-byte archive. That real
+success supports the observed GitHub URL protocol, but does not substitute
+for the first-four shard integration run or the remaining mathematical work.

@@ -1,0 +1,329 @@
+{
+  "actual_archive_hashes": {
+    "RM0000": "7b2a5adba142023ee60bdaa1bd2242f309b500e24bed7847371e69c062adcb8a",
+    "RM3968": "2eb9ba93bf4c73bd42534ab0e141dc4c59c0a068c5059c05916ba169685822b1",
+    "RP0000": "4f6e00f119c104550034d0cd46db34c0bba14ab3840e20364e469fb6de857f95",
+    "RP3968": "7cd4bec36e73cccc81d633951c4b2de5481edeb95d664401e99db32573103882"
+  },
+  "actual_github_requests": 0,
+  "actual_github_writes": 0,
+  "actual_local_preflight_sha256": "9afda8955004e23048fc9e1743e2d78d6b91974ab5f4691116dc52f53bd1a927",
+  "actual_network_sockets": 0,
+  "actual_original_archives_locally_validated": 4,
+  "cases": [
+    {
+      "case": "publisher_hash",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "helper_hash",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_jobs",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "noncanonical_order",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "four_claim_full",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "zero_jobs",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_production_rejected",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_good_RP0000",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_good_RP3968",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_good_RM0000",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_good_RM3968",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_reordered_list_RP0000",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_reordered_list_RP3968",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_reordered_list_RM0000",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "fixture_record_reordered_list_RM3968",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "failed_origin",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "expired_origin",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "existing_tag",
+      "exception_type": "RuntimeError",
+      "rejected": true
+    },
+    {
+      "case": "existing_release",
+      "exception_type": "RuntimeError",
+      "rejected": true
+    },
+    {
+      "case": "fail_second_upload",
+      "exception_type": "HTTPError",
+      "rejected": true
+    },
+    {
+      "case": "ambiguous_second_upload",
+      "exception_type": "TimeoutError",
+      "rejected": true
+    },
+    {
+      "case": "starter_second",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_uploaded_id",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "extra_draft_asset",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "changed_previous_asset",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "short_second_draft",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "tag_after_publish",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "missing_published_asset",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_published_asset",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "long_second_published",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_last_published",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "changed_after_download",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "pagination_251_rejected",
+      "exception_type": "ValueError",
+      "rejected": true
+    }
+  ],
+  "directory_fsync_exercised": false,
+  "fixture_payloads_are_numerical_archives": false,
+  "full250_numerical_validation": false,
+  "full_certificate_proved": false,
+  "new_Lean_elaborations": 0,
+  "platform": "nt",
+  "scenarios": [
+    {
+      "downloads": 8,
+      "journal_events": 101,
+      "published_in_memory": true,
+      "scenario": "good",
+      "writes": 7
+    },
+    {
+      "downloads": 8,
+      "journal_events": 101,
+      "published_in_memory": true,
+      "scenario": "reordered_list",
+      "writes": 7
+    },
+    {
+      "downloads": 0,
+      "journal_events": 4,
+      "published_in_memory": false,
+      "scenario": "failed_origin",
+      "writes": 0
+    },
+    {
+      "downloads": 0,
+      "journal_events": 4,
+      "published_in_memory": false,
+      "scenario": "expired_origin",
+      "writes": 0
+    },
+    {
+      "downloads": 0,
+      "journal_events": 12,
+      "published_in_memory": false,
+      "scenario": "existing_tag",
+      "writes": 0
+    },
+    {
+      "downloads": 0,
+      "journal_events": 13,
+      "published_in_memory": false,
+      "scenario": "existing_release",
+      "writes": 0
+    },
+    {
+      "downloads": 1,
+      "journal_events": 38,
+      "published_in_memory": false,
+      "scenario": "fail_second_upload",
+      "writes": 4
+    },
+    {
+      "downloads": 1,
+      "journal_events": 38,
+      "published_in_memory": false,
+      "scenario": "ambiguous_second_upload",
+      "writes": 4
+    },
+    {
+      "downloads": 1,
+      "journal_events": 40,
+      "published_in_memory": false,
+      "scenario": "starter_second",
+      "writes": 4
+    },
+    {
+      "downloads": 1,
+      "journal_events": 40,
+      "published_in_memory": false,
+      "scenario": "duplicate_uploaded_id",
+      "writes": 4
+    },
+    {
+      "downloads": 1,
+      "journal_events": 43,
+      "published_in_memory": false,
+      "scenario": "extra_draft_asset",
+      "writes": 4
+    },
+    {
+      "downloads": 1,
+      "journal_events": 43,
+      "published_in_memory": false,
+      "scenario": "changed_previous_asset",
+      "writes": 4
+    },
+    {
+      "downloads": 2,
+      "journal_events": 45,
+      "published_in_memory": false,
+      "scenario": "short_second_draft",
+      "writes": 4
+    },
+    {
+      "downloads": 4,
+      "journal_events": 90,
+      "published_in_memory": true,
+      "scenario": "tag_after_publish",
+      "writes": 7
+    },
+    {
+      "downloads": 4,
+      "journal_events": 89,
+      "published_in_memory": true,
+      "scenario": "missing_published_asset",
+      "writes": 7
+    },
+    {
+      "downloads": 4,
+      "journal_events": 89,
+      "published_in_memory": true,
+      "scenario": "duplicate_published_asset",
+      "writes": 7
+    },
+    {
+      "downloads": 6,
+      "journal_events": 93,
+      "published_in_memory": true,
+      "scenario": "long_second_published",
+      "writes": 7
+    },
+    {
+      "downloads": 8,
+      "journal_events": 97,
+      "published_in_memory": true,
+      "scenario": "corrupt_last_published",
+      "writes": 7
+    },
+    {
+      "downloads": 5,
+      "journal_events": 92,
+      "published_in_memory": true,
+      "scenario": "changed_after_download",
+      "writes": 7
+    }
+  ],
+  "schema": "rotating.shard-release-wire-fixture.v1",
+  "sources_sha256": {
+    "production_shard_release_publisher.py": "59381067b9972974cf3e2fe12a30c22038966075daa8e98c0d4807573a095cda",
+    "review_shard_release_publisher.py": "5824b8ae0ff29f268ac85c630b90d27f332406cd656963bc0944df5c6a68f38c"
+  },
+  "status": "checked",
+  "synthetic_pagination_assets": 250,
+  "wall_seconds": 90.74244550000003
+}

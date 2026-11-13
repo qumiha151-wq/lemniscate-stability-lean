@@ -1,0 +1,69 @@
+Numerical Layer A publisher v2 -- observed draft URL protocol, 2026-11-13
+
+This is a new version. The previous core writer C063 and shard writer 5938,
+their test reports, and all mathematical/proof sources remain byte-identical.
+The old wire tests did not model GitHub's actual untagged draft presentation
+URLs. The real core attempt reached release 443789076 / asset 742149339 but
+stopped before publication because of that assumption. See the separately
+retained ActualCoreDraftFailureIndependentReview.json and
+DraftPresentationURLIncident.txt. An uploaded draft is not a published release.
+
+New pure protocol helper:
+pipeline/production_release_url_protocol.py
+AAA1F9FBAA1B5B7E3CA12890638ABDCE4A25D28EB3B992889EFA45E8157B1F7D.
+Its public API is validate_release(...) and validate_asset(...). Draft release
+URLs may use the exact final tag or the observed restricted untagged hex slug;
+published URLs must use the exact final tag. Release/asset API URLs, repository,
+IDs, target source commit, tag, phase, file name, digest and byte length stay
+exact. Asset presentation URLs must use the validated release's same slug.
+The caller separately checks membership and complete asset lists. No browser
+presentation URL authorizes a download; downloads use the pinned asset API ID.
+
+The helper's actual local captured-metadata test passed 27 rejection checks,
+including phase, repository, source, asset ID/name/hash/size and malformed URL
+cases. Its report is release_url_protocol_review_v1/review.json,
+E25FD85192B98142B13A49FBF62BEF190F8D5EC55A56AE861EAFD3F8530D4B8B.
+No network or write was used by that test.
+
+New publisher:
+pipeline/production_shard_release_publisher_v2.py
+CBA63BE08C987643A1BBF86AEB5793171667B433DC2A4BBACD962817FDF90B38.
+The envelope schema is rotating.release-shards-envelope.v2. Exact helper/source
+hashes are required. The original frozen full-archive preflight and canonical
+partial 1..32 / full 250 request semantics are reused without editing them.
+
+Draft snapshots derive URLs from the phase-specific release identity. Every
+uploaded asset and every draft full redownload are checked against that
+snapshot. Explicit 100-entry asset pagination checks the exact complete set.
+After all requested assets pass, publication is attempted once; the resulting
+published snapshot must have final-tag URLs. Every asset is fully redownloaded
+again and the complete set/tag/release identity must remain stable before any
+production durable record is emitted. Records use final published URLs.
+
+Actual local test session 68988 terminated EXIT0 in 50.924 seconds. The frozen
+v1 preflight-related function ASTs are unchanged; the v2 test does not rerun the
+four real archive preflights and instead binds their prior report. It tests
+26 explicitly simulated wire scenarios with 36 expected rejection checks,
+including actual-style untagged draft URLs, canonical draft URLs, changing
+draft slugs, foreign URLs, wrong source revisions, published untagged URLs,
+corrupt/short/long data, duplicate/missing assets and a synthetic 250-asset
+pagination boundary. These are fixture payloads, not 250 numerical archives.
+
+Test source pipeline/review_shard_release_publisher_v2.py:
+DFF3EDE978D1BAC2813F05A9A42266B826B95CFB42ABBF303E37D37F58A2EEA5.
+Report shard_release_wire_review_v2/review.json:
+DD08F04B79E87C60FC48CEE5341DFF306B6385A6A307EAD7B9CFC8E47927E8A2.
+
+The tests made zero GitHub/network requests or writes and zero new Lean calls.
+Windows fixtures do not exercise POSIX directory fsync or physical power loss.
+Actual existing-core-draft recovery belongs to a separate reviewed tool and is
+not performed by this publisher. No actual v2 release publication is claimed.
+No overwrite, delete, tag movement, automatic retry/resume or remote cleanup is
+implemented. A failure preserves the remote draft and local journal evidence.
+The external summary binds per-job durable records without a self-hash cycle.
+
+The helper and v2 source are stable for independent/root review. Publication
+requires a separately reviewed Actions request/workflow with exact tool P and
+workflow Q identities. Full 250 numerical verification, cross-shard Lean seams,
+the final 503 elaborations, and complete classification are not established by
+this transport test.

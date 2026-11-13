@@ -1,0 +1,142 @@
+INDEPENDENT DELTA REVIEW: MULTI-ASSET PUBLISHER V2
+13 November 2026. Reviewer: finish_curve_input.
+
+Locked sources/evidence:
+Old production_shard_release_publisher.py
+  59381067B9972974CF3E2FE12A30C22038966075DAA8E98C0D4807573A095CDA
+New production_shard_release_publisher_v2.py
+  CBA63BE08C987643A1BBF86AEB5793171667B433DC2A4BBACD962817FDF90B38
+production_release_url_protocol.py
+  AAA1F9FBAA1B5B7E3CA12890638ABDCE4A25D28EB3B992889EFA45E8157B1F7D
+review_shard_release_publisher_v2.py
+  DFF3EDE978D1BAC2813F05A9A42266B826B95CFB42ABBF303E37D37F58A2EEA5
+shard_release_wire_review_v2/review.json
+  DD08F04B79E87C60FC48CEE5341DFF306B6385A6A307EAD7B9CFC8E47927E8A2
+Prior actual-four-archive/wire report:
+shard_release_wire_review_v1/review.json
+  11F9E1CE4E944915CB15BABECF870AA4A3F0108A38A2608488ADBEABB1C9AF59
+
+Conclusion: no blocking regression found in the phase-aware URL delta.
+The known untagged draft representation is accepted without weakening the
+fixed asset identity, exact complete collection, byte/hash checks, or final
+canonical URL requirement. This review does not certify actual multiasset
+publication or full250 production completion. Old 5938 and C063 sources
+remain unchanged. I edited no reviewed source and made no GitHub request.
+
+1. PRECISE URL CHANGE
+
+Previously expected_asset prematurely required the final tag-based browser
+URL during draft verification. V2's expected object contains only the fixed
+id/name/uploaded-state/size/digest. This does not mean the actual URL is left
+unchecked: release_snapshot obtains a normalized release identity through
+the frozen AAA1 helper, checks repository-specific API URL, exact id/tag/
+target source/draft phase, and permits either the canonical tag or a strict
+untagged-20-hex presentation slug for a draft. Each asset must have the exact
+repository/asset-id API URL and browser URL formed from that same release
+slug and its fixed name. A foreign host, unrelated slug or mismatched asset
+presentation is rejected. After publication only the exact final tag slug
+is accepted. The helper never uses presentation URLs to perform downloads.
+
+The upload response's fixed fields are first checked. After obtaining the
+actual draft snapshot, its full phase-aware presentation identity must also
+match the listed asset. verify_asset_bytes then validates the individual
+asset metadata against the same normalized identity before and after the
+complete pinned asset-ID download. The complete draft snapshots around that
+download must agree. Legitimate changes in download_count are not mistaken
+for identity changes. A draft slug change within that checked window fails.
+
+Once published, the starting full snapshot must already have canonical final
+URLs. Every asset is individually re-read, fully downloaded and re-read
+against that final snapshot. The terminal complete snapshot must equal the
+starting one. Records use the final verified asset object, not a stale draft
+object or the presentation-free expected object. Thus record browser URLs
+still satisfy the unchanged canonical durable-record validator.
+
+2. PAGINATION, ORIGINAL ARCHIVES, AND RECORDS
+
+The exact pagination loop is unchanged: per_page=100, up to four requests,
+short-page termination, and a hard maximum of 250 total rows. A 250-asset set
+terminates as 100+100+50; a 100- or 200-asset set needs the following empty
+page. Duplicate ids/names, absent/extra assets and changed fixed identities
+remain rejected. The embedded release array may be partial but every row
+present must agree with the explicit complete collection. An incomplete
+embedded array cannot substitute for pagination.
+
+prepare, archive_path, recheck, checked_tool_revision, validate_envelope and
+make_record retain exactly their old function ASTs. The new envelope schema
+and helper pins intentionally select V2 plus AAA1. All actual archive
+preflight, source/plan/base/origin identity checks, per-upload local original
+archive rehashes, and final whole-input recheck therefore remain in force.
+No original archive is deleted or replaced by a public projection, and no
+resume, overwrite, delete or tag-move operation has been added.
+
+The record schema and frozen p.durable_record production call are unchanged.
+All assets complete published verification before the per-job records are
+written. Fixture records remain fixture_only and are rejected by the normal
+durable-record consumer. The summary remains explicit about partial/full
+input scope and full_certificate_proved=false. Publishing all numerical
+shards would still not assert that inter-shard assembly or classification
+has been proved.
+
+3. INDEPENDENT CHECKS AND TEST SCOPE
+
+I read the full old/new diff, current V2 source, AAA1 helper, regression test
+and final report. All displayed hashes were independently matched. A narrow
+local structural check actually ran with EXIT 0: the six function ASTs above
+and the entire pagination for-loop are identical, and the report contains
+26 scenarios and 36 rejection cases. This check performed zero archive
+preflights or HTTP requests.
+
+I did not repeat the four large real-archive preflights or the V2 wire suite.
+The author report records the old actual-four-archive report as a pinned
+prior input and explicitly reports zero new actual archive preflights.
+Its V2 wire tests use synthetic payloads and in-memory HTTP responses, with
+zero network sockets/GitHub requests/writes. The three success variants
+(untagged draft, canonical draft, reordered listing) produce four fixture
+records and two synthetic downloads per asset. The negative cases include
+other draft slug, foreign html host, wrong release target, changed draft
+slug, nonfinal published html and retained draft asset URL, in addition to
+the previous missing/duplicate/changed/corrupt asset cases. The 250-row
+pagination case is structural/synthetic, not 250 uploaded proof archives;
+251 rows are rejected. These limits are accurately stated in the report.
+
+4. REQUIREMENTS AND REMAINING RISKS FOR A REAL FIRST-FOUR RUN
+
+- Prepare a fresh V2 envelope pinned to a separately published actual tool P
+  and frozen full helper/package inventory, plus the exact unchanged plan
+  and four genuine original archives. Preserve their original source/base
+  and successful Actions-origin identities. The old V1 envelope cannot be
+  relabeled as a V2 execution without updating and externally pinning the
+  tool/envelope identity. Workflow Q remains a separate actual revision.
+- Use the intended fresh tag/release, serialized workflow scope, explicit
+  executor credential and always-retained journal. The code checks actual
+  core/V2 committed blobs and all helper hashes; deployment should continue
+  to verify the complete helper package and correct sibling reference.py
+  layout. A run-attempt-one workflow guard is appropriate for no-retry scope.
+- A real first-four success still requires four actual uploads, four complete
+  draft asset-ID downloads, the publication PATCH, four complete published
+  downloads, stable complete metadata and normal durable-record validation.
+  The synthetic outcomes do not establish throughput, rate limits, token
+  behavior, live pagination, or platform behavior beyond previously observed
+  draft metadata. Preserve actual failures rather than automatically retrying.
+- A failure after some uploads leaves the draft/tag/assets intact; a lost
+  publication response may leave a published release without final records.
+  There is no built-in recovery. Any later recovery must use the observed
+  remote ids and an independently reviewed protocol, as for the core draft.
+- The inherited external concurrency limitation remains: metadata GETs and
+  publication are not an atomic hash-conditional transaction. Complete
+  before/after checks detect changed observed state but cannot retroactively
+  prevent a concurrent writer's changes between calls.
+- An unchanged limitation, not introduced by this URL delta: snapshot
+  identity omits release name/body/prerelease. The writer sends the intended
+  modest title/body and prerelease=false when creating the release, but
+  does not later fail on a concurrent change to those presentation fields.
+  Content identity, API object ids, source/tag target and final URLs remain
+  checked. A future strict presentation-scope check could be added separately
+  if required; the current review does not claim those omitted fields are
+  continuously locked against external edits.
+
+The intended first-four real release is a useful bounded integration test
+of this protocol. Until its actual downloads, journal and durable records
+are observed and independently checked, it remains planned execution, not
+an achieved publication or a mathematical completion milestone.
