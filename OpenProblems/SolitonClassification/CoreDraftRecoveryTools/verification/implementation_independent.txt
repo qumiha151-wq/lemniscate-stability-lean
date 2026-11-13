@@ -1,0 +1,150 @@
+INDEPENDENT REVIEW: PINNED EXISTING CORE DRAFT RECOVERY
+13 November 2026. Reviewer: finish_curve_input.
+
+FINAL REVIEWED INPUTS
+production_core_draft_recovery.py
+  F2F6231BCD47B8FE9F0C5BCF619AAFA0A7B51C260F2B1C0D77D0F061303D4DE2
+production_release_url_protocol.py
+  AAA1F9FBAA1B5B7E3CA12890638ABDCE4A25D28EB3B992889EFA45E8157B1F7D
+review_core_draft_recovery.py
+  207A9BDF66A783C7C2F1911BCBEB7E525664D166CB92E07A6B1A21E27B938CCE
+performance/core_draft_recovery_wire_review_v3/review.json
+  D42FFB69B881A7C1C3E7A22EECA5EB3E9400AD0B8A68F08C26016D27D4501B1E
+
+Conclusion: no remaining blocking protocol or implementation gap found in
+the reviewed final sources. This is a code/evidence review, not an actual
+GitHub recovery or durable-publication result. No source was edited by this
+reviewer. The earlier protocol review remains a separate unchanged record:
+CoreDraftRecoveryProtocolIndependentReview.txt
+  08F460FB080E58FBB93E3009B603859A6527328C6712211DDCF478740BB3FDC2.
+
+1. INPUTS, ORIGINAL HISTORY, AND TOOL IDENTITY
+
+The new request has an exact field set, external SHA pin and size bounds.
+It binds the original request unchanged, every original journal file and
+the final journal-chain digest, the failed run/job/artifact identity, and
+the new recovery tool commit/hash/helper hashes. Original evidence is read
+through confined plain paths and checked against its prior exact request;
+pack/restore/import evidence preserves the original source/base identities
+and the false full-certificate claim. It does not require or pretend to
+rehash a local 1.3GB archive in this recovery preflight. The two subsequent
+remote full downloads establish the current remote content identity.
+
+The original journal is required to be precisely the pinned file set. Its
+26 consecutive events, raw-response hashes, start/request/source/tool/run
+bindings, failed endpoint, exactly three POST intents, and recorded created
+release/asset ids are validated. The captured final draft and asset metadata
+are normalized through the new URL protocol and retained for comparison
+with the actual prepublication snapshot. No previous publication PATCH is
+silently adopted as a clean draft state.
+
+I identified an intermediate deployment bug: checking every helper under
+the script directory fails for performance/reference.py. The author fixed
+its sibling-directory mapping. I also requested an explicit bridge from
+the intended checked path to the actually imported helper hash; the final
+source requires c.digest(path)==helpers()[name] before comparing that path's
+bytes with its actual HEAD blob. Thus the final check connects both hash
+and committed-source identities. The entry script and all twelve helpers
+are covered; inherited GIT_* overrides are removed. Recovery P is the
+actual tool checkout, workflow Q is separately recorded by actions_context,
+and original P remains unchanged in the old request. Run attempts other
+than one are rejected before any HTTP call.
+
+2. MUTATION BOUNDARY AND TWO FULL DOWNLOADS
+
+RecoveryHTTP.mutate rejects every operation except a single PATCH to its
+bound release id with the exact body {draft:false}; archive and upload-name
+arguments must be absent, and writes must still be zero. The inherited
+sender records and fsyncs the intent before sending and does not retry or
+follow mutation redirects. The broad old publisher is imported for reviewed
+utilities but its create/upload publish routine is not invoked.
+
+Each snapshot reads the pinned release, pinned asset, and dedicated assets
+collection with per_page=100,page=1, then checks the exact lightweight tag.
+The required collection has exactly one row, so this short page proves the
+expected complete singleton under the API pagination contract. Both it and
+the release's embedded row must match the individually fetched asset on all
+identity fields. A long or extra collection is rejected, not truncated into
+an apparent singleton. This protocol is deliberately not a 250-asset list
+implementation.
+
+The draft snapshot must exactly match the captured stable release and asset
+fields. The new helper validates API URLs and phase-specific presentation
+URLs: the captured untagged slug is allowed for a draft and its asset must
+use that same slug. Presentation URLs are never download authority. Binary
+downloads use the pinned repository/asset id and the already reviewed
+bounded-stream, exact-length/SHA256 reader with credential-stripped approved
+redirects. The original fixed final-tag URL requirement remains in force
+once published.
+
+After the first complete asset-id download, local inputs/tools and live
+origin identities are rechecked, and another complete draft snapshot must
+match. Only then is the one PATCH issued. The postpublication snapshot must
+have the same pinned ids, content, target, title, false prerelease flag and
+canonical final URLs; its body must also match the original reviewed scope.
+A second complete binary download follows. A final snapshot must equal the
+initial published snapshot, and another local/tool recheck precedes result
+creation. Download counts are appropriately omitted from stable equality.
+
+3. FAILURE AND RESULT SEMANTICS
+
+An already published object at entry is rejected. A timeout or lost PATCH
+response, changed published metadata, corrupt second download, or changed
+inputs enters the failure path: there is no retry, second publication,
+delete, rollback, tag mutation, upload, or success record. Remote state is
+left intact for a separately reviewed reconciliation. The one-write count
+does not misattribute the old three POSTs to this recovery.
+
+The output retains the standard durable-core-release record schema and adds
+explicit recovery provenance. The record identifies both full downloads,
+final metadata response hashes, new tool/request/actions identity, original
+request/tool/journal/failed execution, and the observed immutable flag.
+Fixture output is fixture_only and remote_durability_verified=false; actual
+Lean execution and full-certificate proof remain false in all branches.
+Result bytes and parent directory are fsynced by the reviewed durability
+utility, and the result hash enters the final journal. This does not claim
+survival of complete ephemeral-runner loss.
+
+The unavoidable external concurrency limitation in the protocol review
+still applies: GET and PATCH are separate remote requests. Before/after
+checks detect changed observed state but are not a hash-conditional atomic
+GitHub transaction. No code path promises such atomicity or permanent
+immutability. The future workflow must also bind the actual request and
+tool revision and use the intended serialized execution scope.
+
+4. REVIEWER CHECKS AND AUTHOR TEST EVIDENCE
+
+I read the complete final recovery code, URL helper, fixture, and v3 report.
+I verified all four source/report hashes above. I did not independently
+repeat the full wire fixture suite.
+
+My own local probes actually ran with EXIT 0 and no network:
+- The original 26-event/14-raw-response chain, complete response set and
+  original request hash were checked independently; exactly three POSTs
+  and zero PATCHs were present. This was recorded in the protocol review.
+- The actual captured 00023 release and 00024 asset metadata passed the new
+  draft check and were rejected as published. This narrow probe initially
+  ran against source 18098333...; the state-check implementation was not
+  changed by the later helper-identity/run-attempt patches.
+- Against final F2F6231B..., all twelve actually imported helper __file__
+  paths matched the intended frozen directory layout, including the sibling
+  performance/reference.py, and all their hashes matched helpers(). This
+  is an actual local path/hash check, not a real committed Git checkout test.
+
+The author's actual v3 report is bound to the final F2F6231B... source and
+reports 25 synthetic wire scenarios and 37 rejection cases. I inspected the
+test paths and outcomes. Success performs one in-memory PATCH and two full
+synthetic downloads. Lost-response and postpublication-change cases leave
+the in-memory object published where appropriate but emit no result and
+perform no second write. The fixture also checks forbidden writes, changed
+inputs, rerun rejection, and all thirteen entry/helper Git blobs using
+mocked Git replies, explicitly not an actual committed checkout. The
+underlying requests use an in-memory HTTPResponse, with zero sockets,
+GitHub requests, GitHub writes or Lean runs.
+
+The local preflight does use the actual prior failed journal/request/core
+reports. Its wire payload is explicitly synthetic and is not represented
+as the real core archive. These tests do not establish live GitHub draft
+download/publication behavior, real 1.3GB transfer timing, a new durable
+record, or any mathematical certificate beyond prior separately checked
+artifacts. A real recovery result remains to be observed after deployment.

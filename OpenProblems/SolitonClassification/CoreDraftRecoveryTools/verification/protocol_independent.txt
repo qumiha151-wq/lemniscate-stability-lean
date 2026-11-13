@@ -1,0 +1,160 @@
+EXISTING CORE DRAFT RECOVERY: INDEPENDENT PROTOCOL REVIEW
+13 November 2026. Reviewer: finish_curve_input.
+Design review before receipt of the new recovery implementation.
+No remote repository request or mutation was performed by this reviewer.
+
+1. OBSERVED STARTING STATE, NOT AN ASSUMED CLEAN RETRY
+
+Original run: 43360690582; job: 131673215746.
+Original publisher: C063B963B402CDCE9354CAAC5451B6BF686EA2297A962E049649E97DB2826EED.
+Original tool commit P: d64ad3cf29e2eb285f3c3a25cd20f9a28a7aca57.
+Original workflow commit Q: 9e5bca3af5cff67ac476196fb19c56752bb825fd.
+Original approved request SHA256:
+66b278629384aa3b01bf5732def0512b711feac68582e6a44b99c19b0a63f18e.
+Release id 443789076; asset id 742149339.
+Asset bytes 1303430664; SHA256:
+01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c.
+Tag: soliton-rotating-cff971bcac7a-core-20261113-01110125281c.
+Exact lightweight tag target: cff971bcac7ac2d83aba04596ce09e44fda1ac29.
+
+I read the original request, creation/upload responses, failed event, and
+the independent failure review:
+ActualCoreDraftFailureIndependentReview.json SHA256
+7E36F77A81380B0C92AA2FCD7B2A11B70D25FCE48631A3A81856730B0CF410CB.
+I separately replayed the local journal checks with Python, EXIT 0:
+26 consecutive events, 14 exact raw responses, matching byte/hash fields,
+complete raw-response set, and the previous-hash chain ending at
+e166d05a2a85510f1c791f26d9b3f6a104002c9241a5738cbc113436feff980a.
+There are exactly three mutation intents: create tag, create draft, upload
+the named asset. There is no PATCH intent. The final failure records three
+writes attempted. These checks made zero HTTP requests.
+
+The draft tag_name is correct. Its presentation URLs use
+untagged-390c5b0e380000cfceb8, which differs from the final canonical tag
+URL required by the original publisher. Its control flow rejects that
+URL before full draft download and before publication. The recorded
+platform response establishes this behavior for this draft; prior fixture
+success did not cover it. Recovery is a separate protocol for this exact
+existing object, not restarting the creation/upload publisher.
+
+2. REQUIRED INPUT AND DEPLOYMENT BINDINGS
+
+Keep the original request bytes unchanged, including its original P and
+publisher hash. A new recovery approval/request should separately pin:
+the original request hash; original journal file inventory or external
+evidence hash plus full hash chain; original failed run/job; exact release
+and asset ids; current recovery source/helper hashes and its already
+published tool commit P_recovery. A self-consistent hash chain alone is
+not an authorization anchor: its external pin is also required.
+
+The later workflow/request commit Q_recovery must remain distinct from
+P_recovery. Execute the actual committed recovery tool bytes from a checkout
+of P_recovery, checking git HEAD and git-show blob identities with inherited
+GIT_* overrides removed. Check every imported helper against its pinned
+source/origin rather than only the entry script. Record the actual workflow
+GITHUB_SHA as Q_recovery; do not replace it with P_recovery or rewrite the
+old request to avoid a commit self-reference.
+
+The workflow should use a fixed concurrency group for this release with
+cancel-in-progress:false. A run-attempt-one guard is a useful explicit way
+to prevent an Actions rerun from silently reusing this recovery approval.
+No such guard makes external human/API writers impossible; see Section 5.
+
+Preserve all original request/evidence/archive files. New journal/output
+must be fresh and disjoint. Recheck input hashes and tool identities before
+the one publication operation and before issuing the durable result.
+
+3. PROPOSED READ / SINGLE WRITE / READ STATE MACHINE
+
+A. Read by fixed API identities. Require the exact lightweight tag ref to
+remain a commit with the pinned source SHA. Read release 443789076, asset
+742149339, and the dedicated release-assets collection. For this singleton
+release, a per_page=100 first page containing exactly the expected one item
+is a complete short page; reject any other set. Do not rely only on the
+embedded assets array. Cross-check asset API url/name/id/size/digest/state
+with the collection and original approval. Require draft=true and
+published_at=null. Check the pinned tag/title/body/prerelease=false and
+target_commitish as appropriate to the original creation response.
+
+B. Treat draft html/browser URLs as presentation metadata, not proof of
+tag identity. An exact match to the captured untagged URL is an admissible
+extra conservative check; a canonical-final-URL requirement is not. Do not
+download from an arbitrary presentation URL. Use GET on the fixed asset-id
+endpoint with Accept:application/octet-stream, supporting a direct 200 or
+the reviewed 302 flow. Stream to EOF with exact total byte count and SHA256.
+Reject excess/truncated bytes, unexpected statuses and unapproved redirect
+hosts; never forward API credentials to a binary redirect. Do not log token
+or temporary signed redirect URLs.
+
+C. After complete draft download, re-read tag, release, exact asset and
+the complete singleton collection. Compare stable identity fields, allowing
+download_count to increase. Recheck the pinned local inputs and tool blobs.
+The last mutation interface should have a strict whitelist containing only
+  PATCH /repos/qumiha151-wq/lemniscate-stability-lean/releases/443789076
+with the exact body {"draft":false}. No generic POST/upload/delete/tag-update
+capability should be reachable through the recovery interface. Fsync the
+intent and containing directory before sending it. Allow one attempt only;
+do not retry a timeout, redirect, non-200 response, or ambiguous failure.
+
+D. A successful PATCH response is not a durable verification. Re-read the
+fixed release/asset/tag/collection, now requiring draft=false and a nonempty
+published_at, the same ids/content identity, and final canonical html and
+browser-download URLs using the pinned tag. Independently perform the full
+asset-id binary download again, with the same byte/hash requirement. Then
+repeat all stable metadata/tag/collection comparisons and local/tool checks.
+Only after this sequence emit a standard durable-core record with new
+recovery provenance and references back to the old request/journal. Record
+one actual new write, not the old three as if this process performed them.
+
+E. A preexisting published release at entry must fail the draft-recovery
+path. A failure after the PATCH must retain the new journal and remote state
+and stop; it must not publish again, delete/recreate assets, move tags, or
+pretend the missing post-verification succeeded. Any later read-only
+reconciliation is a separately reviewed action. Fsync result bytes and
+parent directory; hash-bind the result in the final journal event. Preserve
+the distinction between process/filesystem durability and surviving loss of
+the entire ephemeral runner.
+
+4. MINIMUM IMPLEMENTATION / FIXTURE REVIEW CASES
+
+Use the actual captured untagged release and asset JSON as the positive
+metadata fixture, without pretending its binary payload is the real 1.3GB
+archive. Synthetic byte fixtures must remain fixture_only and be rejected
+by the production durable-record validator. The meaningful negative cases
+include changed request/journal or helper; wrong P/Q identity; wrong ref
+type/target; wrong release/asset id; another/duplicate asset; changed draft
+metadata between reads; already published entry; changed digest/size/name;
+bad redirect or credential forwarding; short/long/corrupt downloads; PATCH
+timeout or response loss; second attempted PATCH; changed published tag/
+collection/URL/digest; corrupt second download; and output/input collision.
+Fixture call traces should prove zero POST/DELETE/upload/tag writes and
+exactly one allowed PATCH on the success path. They do not establish live
+platform behavior, large-stream performance or actual durable publication.
+
+5. RESIDUAL CONCURRENCY LIMIT AND SCOPE
+
+The reviewed protocol has no demonstrated GitHub compare-and-publish
+transaction conditional on an asset hash. The final metadata read and
+PATCH are separate requests. A concurrent external actor could change the
+release between them; post-verification detects a changed outcome but
+cannot make the already attempted publication atomic or automatically undo
+it. Workflow serialization reduces our own concurrent executions only.
+Do not claim an atomic transaction or permanent immutability; record the
+immutable flag actually observed. Deliberate external writers remain a
+repository-control assumption common to the original publisher as well.
+
+With these conditions, the proposed recovery is appropriately narrower
+than the original creation publisher and repairs the actual draft URL
+mismatch without weakening content identity. Final approval of code still
+requires reading the new implementation and its real fixture results.
+This note performs no GitHub API operation, no Lean run, no full archive
+download, and no publication. It does not alter any frozen source.
+
+Primary API references checked read-only while reviewing:
+https://docs.github.com/en/rest/releases/assets?apiVersion=2022-11-28
+  Documents the asset-id binary GET with either 200 or 302 and the separate
+  paginated release-assets collection (per_page up to 100).
+https://docs.github.com/en/rest/releases/releases?apiVersion=2022-11-28
+  Documents draft/public release metadata and update operations. The
+  specific untagged draft behavior above is supported by captured actual
+  responses, not inferred as a universal guarantee from those docs.

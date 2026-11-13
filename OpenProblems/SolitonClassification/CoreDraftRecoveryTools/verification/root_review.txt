@@ -1,0 +1,51 @@
+Reviewed existing-draft recovery, 2026-11-13
+
+The original execution 43360690582 created lightweight tag, draft 443789076,
+and asset 742149339, then stopped before any PATCH or binary redownload.
+The captured draft used an untagged presentation URL; the original frozen
+C063 publisher incorrectly required the final tag URL during the draft phase.
+Its code, request, and failure journal are preserved without rewriting history.
+
+Recovery implementation F2F6231BCD47B8FE9F0C5BCF619AAFA0A7B51C260F2B1C0D77D0F061303D4DE2
+uses pure URL protocol AAA1F9FBAA1B5B7E3CA12890638ABDCE4A25D28EB3B992889EFA45E8157B1F7D.
+It has no creation/upload/delete/tag-change route. Its HTTP override permits
+only one PATCH, to the pinned existing release, with exactly draft:false.
+The original request, 26-event journal chain, all captured raw responses, and
+three small actual core reports are checked before remote operations. The
+original code/request revision remains d64ad3cf29e2eb285f3c3a25cd20f9a28a7aca57.
+The later recovery tool commit P and workflow request commit Q are separate.
+Actual Git HEAD and every used helper blob, including sibling
+performance/reference.py, are checked against the bytes used by Python.
+
+The draft must exactly match its reviewed identity, body, and singleton asset
+set, including an independent list-assets GET. Its display URL may use the
+validated same-repository draft slug. Both complete binary downloads use the
+fixed asset-ID endpoint, never the display URL. A complete digest/size check,
+renewed input/tool/origin checks, and final draft metadata/tag checks precede
+the sole PATCH. Published metadata must use the final tag URLs. A second
+complete asset-ID download and stable metadata/tag check precede the result.
+Only actual successful production execution may emit remote_verified.
+An ambiguous PATCH or subsequent mismatch preserves evidence and stops; no
+retry, cleanup, rollback, or acceptance of an already-published draft exists.
+Workflow reruns (GITHUB_RUN_ATTEMPT other than 1) are refused.
+
+Actual local fixture execution 83541 exited 0 in 19.0924096 seconds. Report
+D42FFB69B881A7C1C3E7A22EECA5EB3E9400AD0B8A68F08C26016D27D4501B1E
+contains 25 synthetic wire scenarios and 37 rejecting checks. It uses stdlib
+HTTPResponse with memory streams, no sockets or GitHub requests. The small
+synthetic payload is not a Lean archive. The actual captured original request,
+journal, and small core evidence also pass preflight without modification.
+Git process replies in this local fixture are mocked, not a real deployed
+checkout. No 1.3GB binary download or real recovery is claimed by this test.
+
+GitHub exposes no verified hash-conditional atomic publication operation in
+this implementation. There remains an external-edit window between the final
+GET and PATCH; post-publication verification detects mismatches but cannot
+promise transactional atomicity. Fixed noncancelling publisher concurrency
+reduces competing executions under our control. A separately reviewed request
+and workflow, with this frozen tool package, will perform the authorized
+existing release publication.
+
+This is durability work for the generic checked Lean core. It does not run Lean,
+establish all 8000 numerical steps, instantiate the complete rotating candidate,
+or resolve any remaining general open problem.
