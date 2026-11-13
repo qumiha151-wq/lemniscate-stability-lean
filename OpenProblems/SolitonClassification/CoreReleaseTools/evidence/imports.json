@@ -1,0 +1,3217 @@
+{
+  "schema": "rotating.restored-core-import.v1",
+  "status": "checked",
+  "revision": "cff971bcac7ac2d83aba04596ce09e44fda1ac29",
+  "archive_sha256": "01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c",
+  "base_lock_sha256": "dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d",
+  "source_inventory_sha256": "2c252cf849e22e027ca2630b836e5227b8ff8390cf45f36a6b467db64580c924",
+  "helper_sha256": {
+    "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/SolitonClassification/ProductionTools/tools/production_core_import_check.py": "a2ef4c45982e90a9e33dc83c0acda51fa10cba08d1b4096adea904776ecc78fa",
+    "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/SolitonClassification/ProductionTools/tools/production_core_artifact.py": "1ead0d5ced187dbf2d9847f7b08ea7f7a1e8931fe88ce8461c284fa277c73ea6",
+    "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/SolitonClassification/ProductionTools/tools/production_compile_shard.py": "f0abd2db3d6b8db32707d33e8ebb8a6aaee7da0c6f2332c9c4da8e931c64310b",
+    "/home/runner/work/lemniscate-stability-lean/lemniscate-stability-lean/OpenProblems/SolitonClassification/ProductionTools/tools/production_environment.py": "e51d7452662a39353a774242c60873ca5099deaad75db04c7ae083b68a7b74ac"
+  },
+  "modules": [
+    {
+      "name": "SolitonClassification.Rotating.ModuleFullGenericAudit",
+      "exit_code": 0,
+      "wall_seconds": 1.968544903999998,
+      "source_sha256": "135c86c345ecac3f8c5a964f408987ceaed2e01c312025321fd9792c0eb9a55c",
+      "imports_before": {
+        "Init": {
+          "path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9ed3667be31b6ce04b831418a8bc9e99c44804b8ddaf52f6ebbdebfd26d8409e",
+              "bytes": 5784
+            },
+            ".private": {
+              "sha256": "308412e9d2130bcd1ef80a642169b1fef3d51302755147b4b3a31090c091487c",
+              "bytes": 96
+            },
+            ".server": {
+              "sha256": "6b169235e1f7577455a071b11e45fc16336166ce1ea80be1e00bd317f847c3e1",
+              "bytes": 96
+            }
+          }
+        },
+        "SolitonClassification.Rotating.BoundedODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/BoundedODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9f0127227ddeffb1c607f28b456f503e47bc7d00197eb25096106141a2adca6f",
+              "bytes": 34272
+            },
+            ".private": {
+              "sha256": "2a3f1d6840181b99a17c4fe51cd7d163655787b7f3efb51770a1aa8ac6ae3770",
+              "bytes": 133552
+            },
+            ".server": {
+              "sha256": "b2cf304c09ac4903f5b3b6ad8797dcb264a547a3cab0002a513bdca1e67d6fab",
+              "bytes": 2104
+            }
+          }
+        },
+        "SolitonClassification.Rotating.Field": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/Field.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3ac0ecdc974368458b16db94d9893aa51e3d09387c5e62abc5d689e8f6056e67",
+              "bytes": 71616
+            },
+            ".private": {
+              "sha256": "1925c9258fbe66d7c0856dff5791c9ed366dba707997657bb6b668f453f9ea09",
+              "bytes": 2036256
+            },
+            ".server": {
+              "sha256": "0c610dca40f60415285e8bd2a632a83727a0d9028cac04baf4dcbd23c171c799",
+              "bytes": 6048
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TaylorCoefficients": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TaylorCoefficients.olean",
+          "artifacts": {
+            "": {
+              "sha256": "142989975569d9f52ba03af6dcd23a424fb00f6e910a154aad845170bd88b41b",
+              "bytes": 73528
+            },
+            ".private": {
+              "sha256": "d29fc903e6f36ba1d2cb691a63ee70b2e9aa6c2bc2d193efb205b1cfdde295b0",
+              "bytes": 490920
+            },
+            ".server": {
+              "sha256": "6155f54884b06f3a41a1fbb775a843665bc5051ad380f269a7a7561af90dc3f7",
+              "bytes": 5152
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ResidualODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ResidualODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "939c81872336c8260b6594d2206566142081e93ea84dfa10d9d5b8ca882de4b6",
+              "bytes": 43360
+            },
+            ".private": {
+              "sha256": "244d297561c87757c1b2d35694644b7c2f7625761f9c855d690ceeb60ac97eb8",
+              "bytes": 95872
+            },
+            ".server": {
+              "sha256": "2dea74bc17c44106c7f6494287c8a3739dc6196022f7d559baa7dba151296f55",
+              "bytes": 3144
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowFoundation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowFoundation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7aee5a731619f8df4e33f4af7bad318253cbe6aae197f9db7e635760c18eb57f",
+              "bytes": 72984
+            },
+            ".private": {
+              "sha256": "268b42355178d1f63ed06e1beebdca4bf14f44013781ef81d722dd850858fb0e",
+              "bytes": 208984
+            },
+            ".server": {
+              "sha256": "44e03f111d1c23a72944262d99b27df1264d57858eeaafc6199c3f5641deb203",
+              "bytes": 6872
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MidpointDerivative": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MidpointDerivative.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9544afda1b24d81e0f243765216171e6c8c4607ab323a1e700b53fe7e1debaa1",
+              "bytes": 105544
+            },
+            ".private": {
+              "sha256": "cdf9eef4df7bf7a8dee6e0b5d517bbc0abeca053214bded9055d482e0250452d",
+              "bytes": 871896
+            },
+            ".server": {
+              "sha256": "4c0f1d137199c6b680782b0e8674b4c48cad7de6107701281fa30209533e75a0",
+              "bytes": 3584
+            }
+          }
+        },
+        "SolitonClassification.Rotating.DerivativeVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/DerivativeVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "bd9746f07310b23f7f74058c146b01226f783a62f3c5d4c8ec1535ce41ffb484",
+              "bytes": 62944
+            },
+            ".private": {
+              "sha256": "57a4999bd73f91063c6bc1d6d535ab8177e33937645092b9c1d52ce3240708f9",
+              "bytes": 694448
+            },
+            ".server": {
+              "sha256": "746888a6d2cc78f63f888b9f49f7455e9dfae054136463e7a8870265eb43c437",
+              "bytes": 1384
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowDifferentiability": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowDifferentiability.olean",
+          "artifacts": {
+            "": {
+              "sha256": "081abc5e5e23880abb105c317da0b07303e768c0df392e1789c2e60a0c99288f",
+              "bytes": 61096
+            },
+            ".private": {
+              "sha256": "89feb84895b7f53969742ce11a91e0ae10ef9492eecd437c22167dc9ca52bef5",
+              "bytes": 1187864
+            },
+            ".server": {
+              "sha256": "21dcc14aa6628741829dedb8f00addb03fed8d8e0b5c92d307932f7978aaeed6",
+              "bytes": 4160
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PartialDerivatives": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PartialDerivatives.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0d04658d237e3b21e01228b6d18cb0ee92b96389d294246ad9d3666b33b18d0a",
+              "bytes": 87568
+            },
+            ".private": {
+              "sha256": "982b54cdb5f30c7dbd1111f1147b4290f78243e1a93669f0b6441e369bba0c8c",
+              "bytes": 332016
+            },
+            ".server": {
+              "sha256": "ab988112a1ba425c28392752bec265383c038c3bf77756ca08035a78b6b2a5a1",
+              "bytes": 2800
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowJoint": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowJoint.olean",
+          "artifacts": {
+            "": {
+              "sha256": "40ef11e6cc65dbfe83ba00442054bb80a47bdc3f92f5445b370629b0229f5158",
+              "bytes": 52064
+            },
+            ".private": {
+              "sha256": "91ec63ce00056f352f6f66b2582ba855c5735f1a3a416f7b158775733b1743bd",
+              "bytes": 373328
+            },
+            ".server": {
+              "sha256": "64a2b77bdabc15fbcf70c5dec1b0d7f7c35186fa807b49008df914d693b6cf21",
+              "bytes": 2920
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowVariational": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowVariational.olean",
+          "artifacts": {
+            "": {
+              "sha256": "994830ace1692a2fecfaa76eed9a8234116099cf39703099564de8b216515722",
+              "bytes": 55936
+            },
+            ".private": {
+              "sha256": "b6e30911688428799b72f42feabcbae7380f969a1039a662717537b1641d0c84",
+              "bytes": 191752
+            },
+            ".server": {
+              "sha256": "79279153400ce538587ec209414448fd2b83d6ea7a7bc5b024769fd906d2480d",
+              "bytes": 3616
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowVariationalODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowVariationalODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "00edf16aa15c67be0f44cf1317169e731d57ea237dbefd94a368f82e5b9aa28a",
+              "bytes": 34440
+            },
+            ".private": {
+              "sha256": "403f3e07cbb2df1ae64a735f902e5f6b62d4fab202140c7c0dfa419456212835",
+              "bytes": 59496
+            },
+            ".server": {
+              "sha256": "eda1ddf66ca165e792c3adca13aec51a6d8026f80ff2058188952f6dd0bfcc6f",
+              "bytes": 1328
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FieldHessian": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FieldHessian.olean",
+          "artifacts": {
+            "": {
+              "sha256": "79240022bc36e419e5be41b63709a6a4b9ab7650f4ec19ccddcfeadf89356133",
+              "bytes": 48528
+            },
+            ".private": {
+              "sha256": "d2fa2e8d56f7e9634ce4c81c1da7d65c42c6220da7a44839c663498f5deb2719",
+              "bytes": 837152
+            },
+            ".server": {
+              "sha256": "c948d6bea39241c3e0d4b5d1abdb62341d4f433e18242f19f537b585d88d4d99",
+              "bytes": 2456
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationConstants": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationConstants.olean",
+          "artifacts": {
+            "": {
+              "sha256": "30a52d1dce1bd6ccee9e42747efd4773ee4f764dbb8ed96afefea2685c875045",
+              "bytes": 87504
+            },
+            ".private": {
+              "sha256": "ea616ca7f8151031b6d3c1b0c7d236f6bbb89f2c24f956c25a3e44017dd93dfd",
+              "bytes": 112640
+            },
+            ".server": {
+              "sha256": "2e76a0852bcea24081613a6f52865ecc2f8e03c2fb916b320e2942c8ef10b845",
+              "bytes": 2944
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationConstantsWithin": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationConstantsWithin.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0e90524f455b064faed73e2ea3d15f6d9d9dc405465e833da8901f4996b26912",
+              "bytes": 76136
+            },
+            ".private": {
+              "sha256": "f94800073103be38a1c44effffa86f3bbe4825fc5f5dfb98489b013a770e6ce5",
+              "bytes": 131464
+            },
+            ".server": {
+              "sha256": "5fbd255bc596afe2fa7dc3e44ee169e341fd60b5c7b007497a5483afb3a2ca4f",
+              "bytes": 1792
+            }
+          }
+        },
+        "SolitonClassification.Rotating.QuantitativeVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/QuantitativeVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "ff5e3636364d112a02439f397f7a86605a10cd72ab34e57090465587af4f2332",
+              "bytes": 42904
+            },
+            ".private": {
+              "sha256": "095cd0d667beb13a86f005a2dbb07259263ea7191d50a81473a9852f97c9f248",
+              "bytes": 367344
+            },
+            ".server": {
+              "sha256": "cc52f24fc05553e8d16736b4b5a9fb213d0cb0c5cae1932ce99856e9ad1dcffb",
+              "bytes": 2712
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowInverse": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowInverse.olean",
+          "artifacts": {
+            "": {
+              "sha256": "dbfff9db44a7946edf444a9498791dc7ececa8b17acd39cf78d123ed3cb34f41",
+              "bytes": 54656
+            },
+            ".private": {
+              "sha256": "b0f1359ffaf86731b899978eb5fb1440d8359771269ab0f25d228534a7024e74",
+              "bytes": 131440
+            },
+            ".server": {
+              "sha256": "2aa37d940524275b3f12377c76b41e7d56e09192d7375df971e8ce522b41da52",
+              "bytes": 3072
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowInverseODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowInverseODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6e625b7d8bc4076d9657f9fc80f0457da917d5e5843963d28a45bb0efece9794",
+              "bytes": 42072
+            },
+            ".private": {
+              "sha256": "dc236f096aa26ce963d75bc66b95302454100e92658131e2f21332c8a2759fa4",
+              "bytes": 180608
+            },
+            ".server": {
+              "sha256": "218c4cf3a244ee5d6f060c1134d4aedea16f8019ca17077d03c5693004c50a17",
+              "bytes": 1488
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricCoordinates": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricCoordinates.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3e03494269ef73f1c1d5a7dc1cfb6d8a9771d4281b898b55370a5a51bc158a16",
+              "bytes": 88696
+            },
+            ".private": {
+              "sha256": "505add2e05323770c7a54be0701993e200711cd98956b32dc9f89255846e3edd",
+              "bytes": 274728
+            },
+            ".server": {
+              "sha256": "15081679f16efb7890f91d4c2ec95ce9f62e92df4d47e62eb744be483e6c38d7",
+              "bytes": 4736
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ReferenceInversePerturbation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ReferenceInversePerturbation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c61d69ec291cfdc29e8918ecdb4fd452b42ac156bb569e60b4e669fc146f842e",
+              "bytes": 26384
+            },
+            ".private": {
+              "sha256": "9c06eb0556f4246612e9db1b6715f3a9e646928d0b594cc6769e337507f36612",
+              "bytes": 84312
+            },
+            ".server": {
+              "sha256": "d9ce0ff7b8819354cb17b9da251b719c2b1e304ad99b30892dc4d3dbb3535f41",
+              "bytes": 1776
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PointMatrixInverse": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PointMatrixInverse.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d177e96def5a88504800c90750072fc32ee4b355b952ee1c2c6bef0b90660933",
+              "bytes": 27088
+            },
+            ".private": {
+              "sha256": "97ddb29cb42bb711d65ac68624e585023304a4d15b1c80330be20cac2027cfe7",
+              "bytes": 44912
+            },
+            ".server": {
+              "sha256": "b20e86c11cf57c21d25ab88e1f57806a658a9d10a56b6ee59560e752bdebd5b9",
+              "bytes": 1624
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MatrixColumnNorm": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MatrixColumnNorm.olean",
+          "artifacts": {
+            "": {
+              "sha256": "130541737755cc20edd4e470a01a850cc94af601e06fdb029bd81af9e7f3c98f",
+              "bytes": 43912
+            },
+            ".private": {
+              "sha256": "10f3f56dd14f0208ac9a5115ec44dae00ad52ee87110a6152154a5b3e5ea11c4",
+              "bytes": 113728
+            },
+            ".server": {
+              "sha256": "28f0ead8bcb6b3fbf2ee691c01c1035c05069a10a263ff2a288181c9dc2c5aeb",
+              "bytes": 3232
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RationalBall": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RationalBall.olean",
+          "artifacts": {
+            "": {
+              "sha256": "771cc351b6aa3b354de13434d3918cda2cb3709881951242b74aa85c07b08683",
+              "bytes": 72248
+            },
+            ".private": {
+              "sha256": "63f5071d054248689f235259325b6bd48ee20cf5b08b8f1242d0afbf29af405b",
+              "bytes": 247400
+            },
+            ".server": {
+              "sha256": "989f92ae2d1d2a049b54d5e2f3d4750e405735713ce1a70d7275471fc48e3243",
+              "bytes": 7120
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MatrixRowNorm": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MatrixRowNorm.olean",
+          "artifacts": {
+            "": {
+              "sha256": "335775ab61956b3916d9383a4574bb8ac730fb8c20d63f9ba3c4e224ffdd9ab5",
+              "bytes": 29616
+            },
+            ".private": {
+              "sha256": "ad30e11810e39956c96b1eca196bd47c3138730174d339d0348beb5e260423a9",
+              "bytes": 106496
+            },
+            ".server": {
+              "sha256": "08238d8c880b1d9cc6a12895c41e9cfe6e7a65886a8009a023c395573508a9cc",
+              "bytes": 1976
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PointMatrixCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PointMatrixCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7ce9e2d922219e29b475cf48e87f3e51982ed874e0a381f7d879ea0ad2d3c21d",
+              "bytes": 52576
+            },
+            ".private": {
+              "sha256": "443da9e3545b68e8c3732348a0bff09aa9d6d492e1af5aad1a7920e5d3bcc5ca",
+              "bytes": 178016
+            },
+            ".server": {
+              "sha256": "173be15982f2e750a042f3b22010e1ec9b3c800401412c108f5758e5fc4bbc85",
+              "bytes": 3528
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedBall": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedBall.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0b4dff72e7a666fee65f64adc6eff54d465da5323801c97856da8979bf18c3e1",
+              "bytes": 85288
+            },
+            ".private": {
+              "sha256": "72f2fb8503fa123a392266663fa462190e23ae5fdcc288cb20f622d8e85c9081",
+              "bytes": 319352
+            },
+            ".server": {
+              "sha256": "47658f2a68052b56e7d42b52e8be7552c6d9e7b526aa9ba3bb9887675cf68215",
+              "bytes": 8432
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedField": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedField.olean",
+          "artifacts": {
+            "": {
+              "sha256": "675245ec4401dd8c741e227c2206c2cf55a8115eef7c7f3a75fcdf99736084f3",
+              "bytes": 63736
+            },
+            ".private": {
+              "sha256": "997de607ae7c5ba12e177c2b0f5a146487c9c6fc3c71f420bace3e1193e499df",
+              "bytes": 215728
+            },
+            ".server": {
+              "sha256": "51feb718ebb0b31cce5002f1154ad11f275efa9769d6df39e268579404124cae",
+              "bytes": 2432
+            }
+          }
+        },
+        "SolitonClassification.Rotating.CandidateInitial": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/CandidateInitial.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9ffd5aaa1d39830c9b7f97491ce0e4233eaeb85b2e29d67fbca8e5c8b4edcb1f",
+              "bytes": 47088
+            },
+            ".private": {
+              "sha256": "1493b102ed6c67544da179e0008ff68b34c76ee54367abadb5d3e8193272aa0e",
+              "bytes": 225952
+            },
+            ".server": {
+              "sha256": "582d2a6326a853f0c06639ebb00091454ede1477c5c26b091d50083064e825e3",
+              "bytes": 6424
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PointMatrixGridBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PointMatrixGridBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "e323d80ca4cd03904c0d57106bc81fb632b95b2a7e0c93b9d893b04db1b3baf3",
+              "bytes": 33896
+            },
+            ".private": {
+              "sha256": "5b8504a2afe084948709f128a8b65b04d95b9feed76b8c6f68413fd4c847039f",
+              "bytes": 120720
+            },
+            ".server": {
+              "sha256": "097526f6955d3c5b46b2664b549d1ba63cc5908f960c2648b53510cefc251110",
+              "bytes": 1816
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowTube": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowTube.olean",
+          "artifacts": {
+            "": {
+              "sha256": "edd2130b9363d6809c2dc34d69f513096e220f8745680b030f9cf7b2e59d8c60",
+              "bytes": 42000
+            },
+            ".private": {
+              "sha256": "d191393c833b10019f25f4fb927b40a077bbae62e0daba2ad71c8b393cee47bc",
+              "bytes": 530304
+            },
+            ".server": {
+              "sha256": "b73671709392efa917ab0192de09cdb41ed120ba5c88dd70f94a9300c0650071",
+              "bytes": 2664
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedTaylor": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedTaylor.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3fd68ae90fe365ac1484295d00ba9f9b7c1cdba28dff60eb492a27e1fa2e1add",
+              "bytes": 207120
+            },
+            ".private": {
+              "sha256": "87a7d12bd75bf26e58faa6ad10cc6dcd06c1ac0030d40f697ad5c30f9c7d16fd",
+              "bytes": 530896
+            },
+            ".server": {
+              "sha256": "e963c0d98d5988d7efb501a757b95364e9024c9fbefcaa0b78f293641f9eb73b",
+              "bytes": 9584
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TaylorDataCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TaylorDataCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "11fddb03f401d2fd3398ad4e0c9b84ab084b11c6150cdfa51d57c838216aa6ee",
+              "bytes": 26384
+            },
+            ".private": {
+              "sha256": "10564b0867aa8c54225dca0dc6b77091925ab54a87b23561634202d5580b19c0",
+              "bytes": 194752
+            },
+            ".server": {
+              "sha256": "b67d907fc1cc1e29cb9177b239d3f6e8a3f4340d42f529a5b11f8cf448ec3431",
+              "bytes": 2056
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedEndpointReset": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedEndpointReset.olean",
+          "artifacts": {
+            "": {
+              "sha256": "29320630e9bbe243796b0fa4fb1fbeb45b380f521ab61b4b7c6d66cfef20dac0",
+              "bytes": 32448
+            },
+            ".private": {
+              "sha256": "d027978a3dca013fb74c900c5432dc974c79ab26c87cb525eae1cfa437188903",
+              "bytes": 61176
+            },
+            ".server": {
+              "sha256": "b7b3da23410980ba3de19d59343bbf1643647d903293d8818dce1b2c8f894e14",
+              "bytes": 2040
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationTaylor": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationTaylor.olean",
+          "artifacts": {
+            "": {
+              "sha256": "08a0165875794a166fdaddaffb9fb5159a983a29497bbdae97424afc9410e154",
+              "bytes": 71112
+            },
+            ".private": {
+              "sha256": "0aa6bed9139e89059f8859734e80ba8824dcfe7df2f99ea1459b5fdd24b95894",
+              "bytes": 554576
+            },
+            ".server": {
+              "sha256": "6e8f2f0219b663a5661431c21bb2f414a3d00130416debedfcc0d22773b87274",
+              "bytes": 3872
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationDataCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationDataCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "b4c090a20847d0e735259729288b93c0ff236465270f64f39ef1fe3060573848",
+              "bytes": 79800
+            },
+            ".private": {
+              "sha256": "3e472a2bedd8cb445671175e265f01e7e3853a704ca8a56bf0329f70675fb8b1",
+              "bytes": 418496
+            },
+            ".server": {
+              "sha256": "7006d4e7589927a57b680f00fb105dcbc0b917baafdef46a160706aea7047dcb",
+              "bytes": 2656
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MixedOrderVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MixedOrderVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "943f1b4b8f57bd87fc21a021e0b5efca4530fdea41ada542a3788edd3395bc91",
+              "bytes": 15464
+            },
+            ".private": {
+              "sha256": "5c78b395e061cdc75ee127652834b9b31de4e18d4d25dccf8d208e1f54999c55",
+              "bytes": 183568
+            },
+            ".server": {
+              "sha256": "e4e615f26e25a8f81c84747eb7873d37b02dea9eb6a69d6b96b9ef5f7399f037",
+              "bytes": 1632
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationLinearity": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationLinearity.olean",
+          "artifacts": {
+            "": {
+              "sha256": "2c773a1ec037812c52ac796de537444c458e98a2d82de0c6ad2182161d91a1f1",
+              "bytes": 69848
+            },
+            ".private": {
+              "sha256": "61aa225efe8c7a7339515c3c94962e4bfecf205975cfd48be5a031aa60b5181f",
+              "bytes": 555720
+            },
+            ".server": {
+              "sha256": "162a483d3312d53642da3082fe72bb8d6956453a368baa1a87c289894bdedd52",
+              "bytes": 4368
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantScalar": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantScalar.olean",
+          "artifacts": {
+            "": {
+              "sha256": "022a4a7710c5db252b78d1fe1d347be452f94f2b98bb662850249e5ebb10c859",
+              "bytes": 79672
+            },
+            ".private": {
+              "sha256": "25701f3d32975927b2d6cc9a39573f812b5475a65b5af5d40f14a6cbe4eb377c",
+              "bytes": 637496
+            },
+            ".server": {
+              "sha256": "2af2b55b5188b600cbb7bfc45026244e6c99d65ba510502f988b7eaa5bf63525",
+              "bytes": 8376
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVector": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantVector.olean",
+          "artifacts": {
+            "": {
+              "sha256": "92d5aba03b778cfd549565344ca88adce309c50995a47502eba05915bd22689e",
+              "bytes": 34632
+            },
+            ".private": {
+              "sha256": "04c2af8fb541075c0a7db0be455442ba7e0d60695f6ab2ebe3828870419e0b61",
+              "bytes": 746096
+            },
+            ".server": {
+              "sha256": "ffa35f8e08149bb358b287fc3a5d4db2c85fabc2638ba5d07ef0f56fbb3048f1",
+              "bytes": 4056
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantVectorActual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "ffebeef3f812ba386d201cec865db6bf438024b06e437e5a38edebbd6a6892d6",
+              "bytes": 71472
+            },
+            ".private": {
+              "sha256": "bb498345943dbb8d6fe49598f5432ad77ad394dddc92239f19150adf50d4d33e",
+              "bytes": 993960
+            },
+            ".server": {
+              "sha256": "c167c0d180a9cf75265c4207915cac35165d989a18a300a30fb3c5b08f46a28e",
+              "bytes": 9968
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantScalar": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantScalar.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d0b19b361ddaeafdc1fe00a905befb1403c3b4f48de29430c8c294e46d88d7c8",
+              "bytes": 45424
+            },
+            ".private": {
+              "sha256": "808d00fb714bd4f1492a671043ef3b7e13a306ddb15004703c3eab9f54101e47",
+              "bytes": 435640
+            },
+            ".server": {
+              "sha256": "20d6bcd0ebd10dab5a52dfb3627d4acfc2f32d813a2a1d656d84cb78f2aba2ca",
+              "bytes": 5568
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantVector": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantVector.olean",
+          "artifacts": {
+            "": {
+              "sha256": "95bba01757beef8d76306a6db6f6637b7cb73ef43bed22bad043d2808ba7f906",
+              "bytes": 37152
+            },
+            ".private": {
+              "sha256": "5b6837be91747b0d35cfe0f4f27373fd8951d1cf44de216835047f82118a31f4",
+              "bytes": 488440
+            },
+            ".server": {
+              "sha256": "ccd21250445a54bcb673905c81317e11c6a46323c809db68a64c92b580e1a8ce",
+              "bytes": 3272
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantActual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantActual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "78e996cdb62bc5c705fdb28a7fe36bc08405c063eaacde6af6eddd1174e148f7",
+              "bytes": 32624
+            },
+            ".private": {
+              "sha256": "18d686c25a2e729f323eaeaebe49e3656d0d8f2c530ed7d72a0645124c961fb5",
+              "bytes": 116080
+            },
+            ".server": {
+              "sha256": "e030a62eaba7c6c6bf2790d6a493ad55cc6cd86744780159b32a4d950c6c719e",
+              "bytes": 4176
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantResidual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantResidual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "698290bd17742304b2c956e3e42ce6ad381c84b069f74c01f114ad952ecebe8b",
+              "bytes": 33920
+            },
+            ".private": {
+              "sha256": "1120fe9316ed74c2af669b51b14ffec097bc1fdaa8644330b17dbdf60291de5b",
+              "bytes": 164752
+            },
+            ".server": {
+              "sha256": "56265d58eee501e3275481d3b32dadcb2963401353fdaa60f8aff2ac0f6136df",
+              "bytes": 2784
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "2e7d709154ab32943eeab16645a065b8d497131eedccdb2485775021d19a6794",
+              "bytes": 31992
+            },
+            ".private": {
+              "sha256": "b5fd6b640a8136c7b8d13433006b9756a86f6ff7074fe71a7ff17888dc13a674",
+              "bytes": 131200
+            },
+            ".server": {
+              "sha256": "c84f0580b8e20902b3141b99c8256986b8c80ddba66a280fa94266df94c95028",
+              "bytes": 3840
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "78afa71fd51a844025798e473d6aee6778e3a175c87929527339a755d92d8c74",
+              "bytes": 43744
+            },
+            ".private": {
+              "sha256": "8081a4b474738ae4cf72ee97c2f7696cd40dc8a939a748e9458df59951884d5c",
+              "bytes": 131000
+            },
+            ".server": {
+              "sha256": "ab945214e91397a476304f6b8b15991d3563896e1a7d9d677ddfc3e6519ab5e7",
+              "bytes": 4576
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationOperatorBounds": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationOperatorBounds.olean",
+          "artifacts": {
+            "": {
+              "sha256": "61c25daa384ec599e5f0356bae7b9cc89a5dd008a282bc7a4dc76bb6dcb3dc6b",
+              "bytes": 36528
+            },
+            ".private": {
+              "sha256": "bce0831be13482dcaab463eae63c32f774f63a3414633b4941eb48998e4ee7e4",
+              "bytes": 42032
+            },
+            ".server": {
+              "sha256": "1bd35ad510f200763204231e439b2b7a9a6307c11e4ea39e3c3a79702eb81407",
+              "bytes": 2264
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationTrueTailNeighborhood.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3e024a52fc21a80e5c6dccabe766ba87a5c39b90488059ac39a0c075ff997c33",
+              "bytes": 18840
+            },
+            ".private": {
+              "sha256": "1ad2699bb1f7fea13e0bccfb329e8e634a2c8d2c531dcc0f690be8db26669873",
+              "bytes": 408840
+            },
+            ".server": {
+              "sha256": "7ba89014877e4f03756a607c703ad6282f926f589856d6abeff23f1ff3f3c3dc",
+              "bytes": 1904
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PolynomialEnvelope": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PolynomialEnvelope.olean",
+          "artifacts": {
+            "": {
+              "sha256": "de9b580981b79d16771a59617b8a56b6ac734b690f70b8fc887c707042906cdd",
+              "bytes": 35656
+            },
+            ".private": {
+              "sha256": "0ddfb1c09d91adcdd3f945d53d1ca3adadcc8a97b8a214fb3fab68b96858aa79",
+              "bytes": 306248
+            },
+            ".server": {
+              "sha256": "77f58ff93ede66e989a9bbc76a9ffe22ef4bede51d21d92093c7c0888c3619ee",
+              "bytes": 4120
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ResidualDataCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ResidualDataCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "769404efce1a7c2177da2bc9301cfa7fe36ce65eb3a2050289d206a921cb7ed1",
+              "bytes": 55536
+            },
+            ".private": {
+              "sha256": "db2aeef461ccb5c2bde53ae3f67e1e2054135b4f16f2049a6e7dd9eb1eed282b",
+              "bytes": 142776
+            },
+            ".server": {
+              "sha256": "9c80cf178edc26bedbeec32820c8046038ab6167c84098676f8a4050c07ade30",
+              "bytes": 3656
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TrueLocalStateTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TrueLocalStateTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "97a427a1d35643f6c2e6c9357fd95db2dd87edee1e0ade575ebfbe34c9a8281b",
+              "bytes": 20472
+            },
+            ".private": {
+              "sha256": "86927aad3e1c9587d850cd477d460629224228e29c44f3ae59df1c72c868a886",
+              "bytes": 145256
+            },
+            ".server": {
+              "sha256": "d7460354a389367684292ba77c8e851b0ffa51557e95ed4ac183122f4f79c045",
+              "bytes": 1792
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalPolynomialTube": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalPolynomialTube.olean",
+          "artifacts": {
+            "": {
+              "sha256": "f63f859b743b5d1c18766984064e44eb60ccdc4ee00f0200d24374c4344605c2",
+              "bytes": 41264
+            },
+            ".private": {
+              "sha256": "84ca0c335da81e03d9ad4a1036b07e89f1143eee3f2f885a3e11c8a1b4e8219b",
+              "bytes": 795984
+            },
+            ".server": {
+              "sha256": "d1966addf151e45bee241aa3e9d266d76115eede4c4924e623542c6566104d71",
+              "bytes": 2728
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalTaylorResidual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalTaylorResidual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9e5f12f17e4b7182bdff1b5d61ee326af599db26ee0f82ad5e291269be0c1638",
+              "bytes": 23024
+            },
+            ".private": {
+              "sha256": "d4f2c71d58cf00faf6e88434d2238aa0bc88019d6434390dd4d61909edc12dc1",
+              "bytes": 87312
+            },
+            ".server": {
+              "sha256": "2b06c7e34566895150c062903c5c506743d2918361d526d5b58210cd8a416147",
+              "bytes": 2808
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TrueLocalVariationTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TrueLocalVariationTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6620c14cc15a93dd0214c2bd1a325e20987547bbe6416bae26b78b3de0c88bb5",
+              "bytes": 33016
+            },
+            ".private": {
+              "sha256": "f7839adf01e676dda6d8ee03e7bbafff05eb7486d150ef300d8fb480a4017e26",
+              "bytes": 164720
+            },
+            ".server": {
+              "sha256": "489a7643101ace5aeb5d1a7aad03f770c49cd965b2758bcfb582195292c6a991",
+              "bytes": 1848
+            }
+          }
+        },
+        "SolitonClassification.Rotating.SignedLocalTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/SignedLocalTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "f427ebc88a1d2a6c12cc6a8b497a05c0e17869bf4dfab857fadd3d35d2f43fe4",
+              "bytes": 46832
+            },
+            ".private": {
+              "sha256": "d43d2314180e7a8609db9fc140653f84e0a8ff4a702788a7e54abcb6408bb671",
+              "bytes": 285504
+            },
+            ".server": {
+              "sha256": "3f7ea455447541bc53d5b6fbe01b5dfcab85357d2711283beb662ba366e2eb0c",
+              "bytes": 2024
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalTrueStateTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalTrueStateTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c08ff8b5c736c7ea18953c3ed99f5997f61c60464167d7099cb5048bc9a84d9e",
+              "bytes": 25568
+            },
+            ".private": {
+              "sha256": "242c73ba7069fabf1d87a2350492c5b00c04721b1f9eb3dcdd4213706862fa7b",
+              "bytes": 72592
+            },
+            ".server": {
+              "sha256": "d1fa9fe3babb5ec7fa0fb7583a791f426148236c363958ca8e8f653b1b05831f",
+              "bytes": 2488
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationTrueTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "598f547a05df8c9530090e598482263291b1ac909e53a292f18c096f12e77e66",
+              "bytes": 36496
+            },
+            ".private": {
+              "sha256": "11eb9aaf82b3b7636bc1b91ccbe6a46f635256caaee23632bae0d96c3a3bb790",
+              "bytes": 255000
+            },
+            ".server": {
+              "sha256": "166d34f4744c8239c9e8d0410e54a82b008d4843dc9f5084108b65c431a6a986",
+              "bytes": 2104
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationOperatorTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationOperatorTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "f270f71c0fdd60533680842f70f226cc76b6af5a0caf8800d8ca875a1ddc4a6f",
+              "bytes": 31728
+            },
+            ".private": {
+              "sha256": "37bb085bf8d74c1b1a307e25cb8a95a352f56e772fe7e2404a38e1389ed0ccae",
+              "bytes": 33104
+            },
+            ".server": {
+              "sha256": "6606ad02cb960b7fef233b936df372347844bde6ba0880b26b88060e7219478f",
+              "bytes": 1552
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ReferencePolynomialMatrix.olean",
+          "artifacts": {
+            "": {
+              "sha256": "376e7ab8f079b57fee8099c72d3145fac8de61027e86d4532dbf14745a630220",
+              "bytes": 72048
+            },
+            ".private": {
+              "sha256": "c41cd26f879b61fd43e29d94190d6b9384d92687eb0bf714ea4f02f0ead66993",
+              "bytes": 327432
+            },
+            ".server": {
+              "sha256": "d0c1578cda40af60f59c1940f5ea9ba0a99be7754bfbca3db766c98111c4a99c",
+              "bytes": 3888
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationOrder22": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationOrder22.olean",
+          "artifacts": {
+            "": {
+              "sha256": "4e5dd7cee63c14f3abbff7d8d95306c0d21a6bb63fd83015b00536a130937f7b",
+              "bytes": 58240
+            },
+            ".private": {
+              "sha256": "a5360410ae4682da41ab7ef122da9cbccc2b07b48fab4ce743a68d37ffa5453e",
+              "bytes": 283960
+            },
+            ".server": {
+              "sha256": "3947d08c547680ec4139c5c30e2e4c56161cf48ee540914cc2668bf5e67b8303",
+              "bytes": 5952
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix22": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ReferencePolynomialMatrix22.olean",
+          "artifacts": {
+            "": {
+              "sha256": "01002ce0a51e4d2882a880607386dbfbe6f1a55e1cdb8b6158c64849d3483507",
+              "bytes": 49888
+            },
+            ".private": {
+              "sha256": "8d809a62ef883ee580a993c36411eee3c590b45487191837f9ff66338617fd2f",
+              "bytes": 79752
+            },
+            ".server": {
+              "sha256": "bfc6b319c399e4745deaaa128b6f2d5235d7936705a7d05c85acfe586941c7a3",
+              "bytes": 2648
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGeometry": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapGeometry.olean",
+          "artifacts": {
+            "": {
+              "sha256": "1ad5b1fad4e6d95b0db237d576c66d85b07ade8eba54717b2aff757a15585f3c",
+              "bytes": 38056
+            },
+            ".private": {
+              "sha256": "c3e44e26d0d508dcb8774f93fde048beaf1549f1bfc924229498e2c3ab034af6",
+              "bytes": 558696
+            },
+            ".server": {
+              "sha256": "132f49aa806d7c329deb27a97adb77f126326c09c8106b0d1688530217bc0461",
+              "bytes": 2320
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RotatingGridMargin": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RotatingGridMargin.olean",
+          "artifacts": {
+            "": {
+              "sha256": "5f28ab09e26da8a03d4ff0bdc6fed36c7ea57772010d7bd32dfa5edfde7b0e50",
+              "bytes": 31128
+            },
+            ".private": {
+              "sha256": "e25751083ba959c85732073d1730b7d027e696446fb1a0671822bda928cb6c26",
+              "bytes": 476784
+            },
+            ".server": {
+              "sha256": "c8adc4308dd5fa89f6f2eb93402131b5ea3e353ab8945772ce5e6936d424f5ae",
+              "bytes": 2944
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricSegment": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricSegment.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c84cac4366a5f37ce52f4aebdffd13d375877d707e57974ff5021b675c079cd2",
+              "bytes": 57304
+            },
+            ".private": {
+              "sha256": "61377f4a1087601dabf4b28ccd394e25e63e99b64cc4b775204601979e70114f",
+              "bytes": 68016
+            },
+            ".server": {
+              "sha256": "595920929d6f1922ef94c9b688f8a30ddb83fc058510b300222df0307359aa11",
+              "bytes": 2248
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapCoordinates.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7085152a0e5b4b23a1ebeca056ae839c2855e46d92116a485b048a4ebaa082f4",
+              "bytes": 72992
+            },
+            ".private": {
+              "sha256": "dbab157aea5aef3f145106ca882fa50de4064f3d6a63df9f02f79bbee87cdd96",
+              "bytes": 285256
+            },
+            ".server": {
+              "sha256": "1d385f17f67fb82ae276865e2ccbaae2062fd6cc7898d0f9b80d5c6f69a40597",
+              "bytes": 3248
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapSegment": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapSegment.olean",
+          "artifacts": {
+            "": {
+              "sha256": "b7130a4c86b10134941c1894a28fe04383e760e2a330a6ba353dd1f0cc1aeb52",
+              "bytes": 76408
+            },
+            ".private": {
+              "sha256": "36a22f70f684153a4e6c39329554b12fed62ca4b136ce400a409ac21026c4bb0",
+              "bytes": 142064
+            },
+            ".server": {
+              "sha256": "401bc26b74d6c0946ae73e13badddb0d62fec55ba9ff99ced3b7070cea3c23c8",
+              "bytes": 1816
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricReset": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricReset.olean",
+          "artifacts": {
+            "": {
+              "sha256": "4af3b892d875c86043f19fe8c9ba3c68c899312d9feb186cdae3f6a672910f3b",
+              "bytes": 28688
+            },
+            ".private": {
+              "sha256": "97e2b032e65fb36feb05ddc1c0e517fa0f0e8aa620e5e2a507bca1f7c690146a",
+              "bytes": 62816
+            },
+            ".server": {
+              "sha256": "9b9f3191aeb3e7ce6973332801915288cb91d291563da80f097bca6fa54af82a",
+              "bytes": 2248
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapReset": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapReset.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0c0a750aec2c7184b4acea25e14fe709fec49a1fa7c3f912512b4cd63f658c1e",
+              "bytes": 29808
+            },
+            ".private": {
+              "sha256": "42c1e88ed0ecf457748b95eccf42792dd9a91c821875ae615c37953792bfd79d",
+              "bytes": 57896
+            },
+            ".server": {
+              "sha256": "089c30ac25b67273eff223a0e81c47175c6a3268bd131d6c6198f50e6de0ef78",
+              "bytes": 1472
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricDiscrete": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricDiscrete.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d805a16ffaf91fbabc945180e4aa33d8041f73ac63969b5d14105739985b8a2c",
+              "bytes": 23144
+            },
+            ".private": {
+              "sha256": "64193bb5ac0062ff930f891126ced3347cc024bc2fbf4f52fb8cc4a45087d6d7",
+              "bytes": 148920
+            },
+            ".server": {
+              "sha256": "87c6583354805096d93e3659f8b22785c5cc6045c1b5de911c0bcee00fdf058d",
+              "bytes": 1832
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "553b35c03950cc12525d71f0f92b01923a0a51d2ce2e6fe1488490232bbb72de",
+              "bytes": 54856
+            },
+            ".private": {
+              "sha256": "da853e613436dd811ceede6639e77f6296f9a571e010f713cb1918069c28d3b6",
+              "bytes": 309536
+            },
+            ".server": {
+              "sha256": "d8b8d44ba4c81601a536cd6f861dc5371a0c70066c9a5e92b717e94770da1efe",
+              "bytes": 2040
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricGridData": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricGridData.olean",
+          "artifacts": {
+            "": {
+              "sha256": "69cd62de49c825c2d9c97797f32c6ae7eda3bbdba999e7baaf2fcf5a0f6ea5d0",
+              "bytes": 247536
+            },
+            ".private": {
+              "sha256": "86e317dce32d5dec4bd4770029335a9ce725c3c96f38a4914f3747cfda60293f",
+              "bytes": 221496
+            },
+            ".server": {
+              "sha256": "f1eb06c24d19bad26ea52345d434aa9f49ae94f1af649b34c65b7db185fb021c",
+              "bytes": 6888
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricGlobal": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricGlobal.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0c2bcb844dc6431d418c480cca48e1232fb3306d284dcdc28955d4ee148e4a8f",
+              "bytes": 46576
+            },
+            ".private": {
+              "sha256": "2b7d7888523abe2d190cee91f9172c239ad81d9ba11c0f7f2c25a5722ff022f5",
+              "bytes": 172120
+            },
+            ".server": {
+              "sha256": "4a14ea3ff063f779e11a9f0a800cf704eb1e456b5e9c31de4cc700b983b36ad8",
+              "bytes": 2872
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGridData": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapGridData.olean",
+          "artifacts": {
+            "": {
+              "sha256": "02cdddd799abab8ff006f9167084e2b71c23784cc39c81126679120070cec144",
+              "bytes": 264432
+            },
+            ".private": {
+              "sha256": "b78679381c6d4b50b4363e63ec38025e3a7afbb427e368c72576bd9b43d3f353",
+              "bytes": 215584
+            },
+            ".server": {
+              "sha256": "fb264d0d4e9db23a3f81ebc255f9c04b60fa8e5539ebe5862091b7731abb0f36",
+              "bytes": 7984
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PolynomialGridAssembly": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PolynomialGridAssembly.olean",
+          "artifacts": {
+            "": {
+              "sha256": "ac88a3f8a7d22b2760ea60d32cd6cdbf92727160d1d75d2215f11bfb9b320b5b",
+              "bytes": 130984
+            },
+            ".private": {
+              "sha256": "77b4d5b526e96df792252ba5ac0d3e00578c67cb63418bba9af10ee885bab257",
+              "bytes": 413496
+            },
+            ".server": {
+              "sha256": "e78dd9f544c0cfeff707f06e6a862282f7f67504c0f74729429f0f22079472d2",
+              "bytes": 3880
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalStateOrders": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalStateOrders.olean",
+          "artifacts": {
+            "": {
+              "sha256": "371d3b1744b20e9cb729365ac3e5671740e9422bbc0a4d010d99e7cb4501175d",
+              "bytes": 49744
+            },
+            ".private": {
+              "sha256": "669ee5d6d6a5bb2618c03f1489a80f07e3c481bf00a82ab338647009beb101dd",
+              "bytes": 199960
+            },
+            ".server": {
+              "sha256": "72aeec0bf30b2cceb54ebb20bda33c4c582088410bb2fc5f3216687bbfea3939",
+              "bytes": 5064
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalReducedVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalReducedVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3496064bd931dee485c090882a3dfc333c2e4efac3c3d61e4433edb401672f04",
+              "bytes": 54632
+            },
+            ".private": {
+              "sha256": "07df2d804542fcaea0aed5baafb4ee3ff8b4bc44feeef53d9f805664b5d28f26",
+              "bytes": 254080
+            },
+            ".server": {
+              "sha256": "d22a2af36e636cbeb1dbb90cdb12d28e55d5bdd135cb89ae07c72053a912a26f",
+              "bytes": 3456
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RotatingGridMarginOrders": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RotatingGridMarginOrders.olean",
+          "artifacts": {
+            "": {
+              "sha256": "54ff2edce80cc38eb8e76cc6eb742065c411f22e636410f647cff54c5f3367a2",
+              "bytes": 16408
+            },
+            ".private": {
+              "sha256": "eb2fccc9abbbc9f446304b6ef69c966aca88e6860f17f2e4733a7fd34ccf1fdd",
+              "bytes": 40744
+            },
+            ".server": {
+              "sha256": "ad625f4c96a27489ad203f3956647283a5b050861ab4eb3648a39e29b83b4749",
+              "bytes": 1712
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGlobal": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapGlobal.olean",
+          "artifacts": {
+            "": {
+              "sha256": "488c29cf7aa285de6f7b9c61f1a0bdd14aea7872ac8fe450ea7b78dff1709e61",
+              "bytes": 47336
+            },
+            ".private": {
+              "sha256": "44302356c035375de6ccf217d738139a48c4af6cf31d0431e8cb18c4c6dbf034",
+              "bytes": 217856
+            },
+            ".server": {
+              "sha256": "2444cd665978607853b726aa2541398a83b8949513e3e7dca8c37b4caeda8ddd",
+              "bytes": 2032
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapNeighborhood": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapNeighborhood.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7cd7f84e67f9611e99c30eb88863cc9657e6f5df67f17e3957dfca693f7c32cb",
+              "bytes": 41144
+            },
+            ".private": {
+              "sha256": "e5470e852959345b03e5d64c95315183ccae4bb823577dd890542f890eba0560",
+              "bytes": 76968
+            },
+            ".server": {
+              "sha256": "b8bf8eb06d424f859be9e4066be31752c31c3383d942b14614680dea310ee975",
+              "bytes": 2176
+            }
+          }
+        },
+        "SolitonClassification.Rotating.BanachRoot": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/BanachRoot.olean",
+          "artifacts": {
+            "": {
+              "sha256": "e73f987c4dfa969ca077598d2bfe64894df8a34f2874da153e58cbd08b4a5f7d",
+              "bytes": 95704
+            },
+            ".private": {
+              "sha256": "0bacc03fb49efa5127495c3950a6f2acc897e2648e801229c34784089d3e1f85",
+              "bytes": 318912
+            },
+            ".server": {
+              "sha256": "5a4663046c4dcf176d82a091d11e2f125fdb4a6995fb1c3cabc027578d3b42d9",
+              "bytes": 3800
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ShootingRoot": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ShootingRoot.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6fe633b60293e794075d6559c355dd5e1f1115659b38e2f83ac6b280254ff7c2",
+              "bytes": 121384
+            },
+            ".private": {
+              "sha256": "4f17faa8d687032b56c04eb19f4adc812c15801cca80e78ce51ecad464ed5fad",
+              "bytes": 685920
+            },
+            ".server": {
+              "sha256": "cbac9e05beaba33ab523d630c45400e816d03e659b2ea17ece07b09fb43dae52",
+              "bytes": 8360
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ActualShooting": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ActualShooting.olean",
+          "artifacts": {
+            "": {
+              "sha256": "96082fe33c6d4b49c33852afa2ea061b592a7aa41155a67367094186d1f4998a",
+              "bytes": 62648
+            },
+            ".private": {
+              "sha256": "3ef39ca5fd5746b5ffcef6547752cec960c441b44b6ebbb06bad108bba291041",
+              "bytes": 344224
+            },
+            ".server": {
+              "sha256": "e6741a359f384e39e2ba8b9bbfa5db3a26a3268efd18eb7d47b23d4dce75e3de",
+              "bytes": 4408
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizon": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RotatingGridHorizon.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d42fdc90bb3f27bd9418bb3f6ebfc18c3a49d912fa019335612e2d8fe8cb8997",
+              "bytes": 47912
+            },
+            ".private": {
+              "sha256": "e4a63e350b9e4d47e604c212a4050450d52b07ff4e98ba30494e2769df592367",
+              "bytes": 271400
+            },
+            ".server": {
+              "sha256": "441f40712297f165b05cd6e615fce8e8c99d3345622bd42430fd5da8ad79f55b",
+              "bytes": 4664
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialReference42": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ExtendedPolynomialReference42.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c38ba0f4bf9d628b67a36f72073b3166ee603f64018c83597c74540ca3895048",
+              "bytes": 53672
+            },
+            ".private": {
+              "sha256": "4def83fcb66b6b2331fb2510e2da95189654d1489f9985622f3c4bfdae6a0a7f",
+              "bytes": 238248
+            },
+            ".server": {
+              "sha256": "8dbef35fac2d197efcee90c17897c910e69bcb526b689ef123995942675a522c",
+              "bytes": 3184
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ExtendedPolynomialGridAssembly42.olean",
+          "artifacts": {
+            "": {
+              "sha256": "8708e5570545760f4021d2f24a0bb1a8c1f572c5254213c0d51ea1a9a73822a7",
+              "bytes": 126344
+            },
+            ".private": {
+              "sha256": "7ae3a3e0fd991991eeb0b1ce829c83d848041497836324c1f8e7a73e07039b4b",
+              "bytes": 256376
+            },
+            ".server": {
+              "sha256": "12ec9b87bcf490b6d32df0f623f017eec3f50c1d35235c60419347210b71420d",
+              "bytes": 2504
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ExtendedPolynomialGridEndpoints42.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6079562abf19881bac5c8013779dade58759b1aa2bad2b92de80bcf4e7482803",
+              "bytes": 207808
+            },
+            ".private": {
+              "sha256": "1b499c22068529ae5b4b9b0f49652b2bc62ae2cc0c67f63e10bf7139d21c8226",
+              "bytes": 643560
+            },
+            ".server": {
+              "sha256": "b6c5c60aa69b045eb5dc4ce4eac24932274cc0b61f863c80a971ecfc968d3c10",
+              "bytes": 7576
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PolynomialPointGridBlock": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PolynomialPointGridBlock.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d034dfe2de97b69b485d8a024940fd0372353701c72e89f230febb09641529d1",
+              "bytes": 149904
+            },
+            ".private": {
+              "sha256": "4a0099f226e70ccc95bc9cc6a51112564c5bae75847b63e4b5ff832e85ea2d42",
+              "bytes": 204336
+            },
+            ".server": {
+              "sha256": "e3a845af38d2702a079f29f340b2825882b5c911251b44253d69a7019ad7616e",
+              "bytes": 5864
+            }
+          }
+        }
+      },
+      "log_sha256": "fa66030c61d9b983346c04eeddc5e80435083b837448a2020eb2730f50da8a6c",
+      "cpu_seconds": null,
+      "peak_memory_bytes": null,
+      "declarations": 1704,
+      "private_declarations": 331,
+      "imports_after": {
+        "Init": {
+          "path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9ed3667be31b6ce04b831418a8bc9e99c44804b8ddaf52f6ebbdebfd26d8409e",
+              "bytes": 5784
+            },
+            ".private": {
+              "sha256": "308412e9d2130bcd1ef80a642169b1fef3d51302755147b4b3a31090c091487c",
+              "bytes": 96
+            },
+            ".server": {
+              "sha256": "6b169235e1f7577455a071b11e45fc16336166ce1ea80be1e00bd317f847c3e1",
+              "bytes": 96
+            }
+          }
+        },
+        "SolitonClassification.Rotating.BoundedODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/BoundedODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9f0127227ddeffb1c607f28b456f503e47bc7d00197eb25096106141a2adca6f",
+              "bytes": 34272
+            },
+            ".private": {
+              "sha256": "2a3f1d6840181b99a17c4fe51cd7d163655787b7f3efb51770a1aa8ac6ae3770",
+              "bytes": 133552
+            },
+            ".server": {
+              "sha256": "b2cf304c09ac4903f5b3b6ad8797dcb264a547a3cab0002a513bdca1e67d6fab",
+              "bytes": 2104
+            }
+          }
+        },
+        "SolitonClassification.Rotating.Field": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/Field.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3ac0ecdc974368458b16db94d9893aa51e3d09387c5e62abc5d689e8f6056e67",
+              "bytes": 71616
+            },
+            ".private": {
+              "sha256": "1925c9258fbe66d7c0856dff5791c9ed366dba707997657bb6b668f453f9ea09",
+              "bytes": 2036256
+            },
+            ".server": {
+              "sha256": "0c610dca40f60415285e8bd2a632a83727a0d9028cac04baf4dcbd23c171c799",
+              "bytes": 6048
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TaylorCoefficients": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TaylorCoefficients.olean",
+          "artifacts": {
+            "": {
+              "sha256": "142989975569d9f52ba03af6dcd23a424fb00f6e910a154aad845170bd88b41b",
+              "bytes": 73528
+            },
+            ".private": {
+              "sha256": "d29fc903e6f36ba1d2cb691a63ee70b2e9aa6c2bc2d193efb205b1cfdde295b0",
+              "bytes": 490920
+            },
+            ".server": {
+              "sha256": "6155f54884b06f3a41a1fbb775a843665bc5051ad380f269a7a7561af90dc3f7",
+              "bytes": 5152
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ResidualODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ResidualODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "939c81872336c8260b6594d2206566142081e93ea84dfa10d9d5b8ca882de4b6",
+              "bytes": 43360
+            },
+            ".private": {
+              "sha256": "244d297561c87757c1b2d35694644b7c2f7625761f9c855d690ceeb60ac97eb8",
+              "bytes": 95872
+            },
+            ".server": {
+              "sha256": "2dea74bc17c44106c7f6494287c8a3739dc6196022f7d559baa7dba151296f55",
+              "bytes": 3144
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowFoundation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowFoundation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7aee5a731619f8df4e33f4af7bad318253cbe6aae197f9db7e635760c18eb57f",
+              "bytes": 72984
+            },
+            ".private": {
+              "sha256": "268b42355178d1f63ed06e1beebdca4bf14f44013781ef81d722dd850858fb0e",
+              "bytes": 208984
+            },
+            ".server": {
+              "sha256": "44e03f111d1c23a72944262d99b27df1264d57858eeaafc6199c3f5641deb203",
+              "bytes": 6872
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MidpointDerivative": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MidpointDerivative.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9544afda1b24d81e0f243765216171e6c8c4607ab323a1e700b53fe7e1debaa1",
+              "bytes": 105544
+            },
+            ".private": {
+              "sha256": "cdf9eef4df7bf7a8dee6e0b5d517bbc0abeca053214bded9055d482e0250452d",
+              "bytes": 871896
+            },
+            ".server": {
+              "sha256": "4c0f1d137199c6b680782b0e8674b4c48cad7de6107701281fa30209533e75a0",
+              "bytes": 3584
+            }
+          }
+        },
+        "SolitonClassification.Rotating.DerivativeVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/DerivativeVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "bd9746f07310b23f7f74058c146b01226f783a62f3c5d4c8ec1535ce41ffb484",
+              "bytes": 62944
+            },
+            ".private": {
+              "sha256": "57a4999bd73f91063c6bc1d6d535ab8177e33937645092b9c1d52ce3240708f9",
+              "bytes": 694448
+            },
+            ".server": {
+              "sha256": "746888a6d2cc78f63f888b9f49f7455e9dfae054136463e7a8870265eb43c437",
+              "bytes": 1384
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowDifferentiability": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowDifferentiability.olean",
+          "artifacts": {
+            "": {
+              "sha256": "081abc5e5e23880abb105c317da0b07303e768c0df392e1789c2e60a0c99288f",
+              "bytes": 61096
+            },
+            ".private": {
+              "sha256": "89feb84895b7f53969742ce11a91e0ae10ef9492eecd437c22167dc9ca52bef5",
+              "bytes": 1187864
+            },
+            ".server": {
+              "sha256": "21dcc14aa6628741829dedb8f00addb03fed8d8e0b5c92d307932f7978aaeed6",
+              "bytes": 4160
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PartialDerivatives": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PartialDerivatives.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0d04658d237e3b21e01228b6d18cb0ee92b96389d294246ad9d3666b33b18d0a",
+              "bytes": 87568
+            },
+            ".private": {
+              "sha256": "982b54cdb5f30c7dbd1111f1147b4290f78243e1a93669f0b6441e369bba0c8c",
+              "bytes": 332016
+            },
+            ".server": {
+              "sha256": "ab988112a1ba425c28392752bec265383c038c3bf77756ca08035a78b6b2a5a1",
+              "bytes": 2800
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowJoint": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowJoint.olean",
+          "artifacts": {
+            "": {
+              "sha256": "40ef11e6cc65dbfe83ba00442054bb80a47bdc3f92f5445b370629b0229f5158",
+              "bytes": 52064
+            },
+            ".private": {
+              "sha256": "91ec63ce00056f352f6f66b2582ba855c5735f1a3a416f7b158775733b1743bd",
+              "bytes": 373328
+            },
+            ".server": {
+              "sha256": "64a2b77bdabc15fbcf70c5dec1b0d7f7c35186fa807b49008df914d693b6cf21",
+              "bytes": 2920
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowVariational": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowVariational.olean",
+          "artifacts": {
+            "": {
+              "sha256": "994830ace1692a2fecfaa76eed9a8234116099cf39703099564de8b216515722",
+              "bytes": 55936
+            },
+            ".private": {
+              "sha256": "b6e30911688428799b72f42feabcbae7380f969a1039a662717537b1641d0c84",
+              "bytes": 191752
+            },
+            ".server": {
+              "sha256": "79279153400ce538587ec209414448fd2b83d6ea7a7bc5b024769fd906d2480d",
+              "bytes": 3616
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowVariationalODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowVariationalODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "00edf16aa15c67be0f44cf1317169e731d57ea237dbefd94a368f82e5b9aa28a",
+              "bytes": 34440
+            },
+            ".private": {
+              "sha256": "403f3e07cbb2df1ae64a735f902e5f6b62d4fab202140c7c0dfa419456212835",
+              "bytes": 59496
+            },
+            ".server": {
+              "sha256": "eda1ddf66ca165e792c3adca13aec51a6d8026f80ff2058188952f6dd0bfcc6f",
+              "bytes": 1328
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FieldHessian": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FieldHessian.olean",
+          "artifacts": {
+            "": {
+              "sha256": "79240022bc36e419e5be41b63709a6a4b9ab7650f4ec19ccddcfeadf89356133",
+              "bytes": 48528
+            },
+            ".private": {
+              "sha256": "d2fa2e8d56f7e9634ce4c81c1da7d65c42c6220da7a44839c663498f5deb2719",
+              "bytes": 837152
+            },
+            ".server": {
+              "sha256": "c948d6bea39241c3e0d4b5d1abdb62341d4f433e18242f19f537b585d88d4d99",
+              "bytes": 2456
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationConstants": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationConstants.olean",
+          "artifacts": {
+            "": {
+              "sha256": "30a52d1dce1bd6ccee9e42747efd4773ee4f764dbb8ed96afefea2685c875045",
+              "bytes": 87504
+            },
+            ".private": {
+              "sha256": "ea616ca7f8151031b6d3c1b0c7d236f6bbb89f2c24f956c25a3e44017dd93dfd",
+              "bytes": 112640
+            },
+            ".server": {
+              "sha256": "2e76a0852bcea24081613a6f52865ecc2f8e03c2fb916b320e2942c8ef10b845",
+              "bytes": 2944
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationConstantsWithin": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationConstantsWithin.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0e90524f455b064faed73e2ea3d15f6d9d9dc405465e833da8901f4996b26912",
+              "bytes": 76136
+            },
+            ".private": {
+              "sha256": "f94800073103be38a1c44effffa86f3bbe4825fc5f5dfb98489b013a770e6ce5",
+              "bytes": 131464
+            },
+            ".server": {
+              "sha256": "5fbd255bc596afe2fa7dc3e44ee169e341fd60b5c7b007497a5483afb3a2ca4f",
+              "bytes": 1792
+            }
+          }
+        },
+        "SolitonClassification.Rotating.QuantitativeVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/QuantitativeVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "ff5e3636364d112a02439f397f7a86605a10cd72ab34e57090465587af4f2332",
+              "bytes": 42904
+            },
+            ".private": {
+              "sha256": "095cd0d667beb13a86f005a2dbb07259263ea7191d50a81473a9852f97c9f248",
+              "bytes": 367344
+            },
+            ".server": {
+              "sha256": "cc52f24fc05553e8d16736b4b5a9fb213d0cb0c5cae1932ce99856e9ad1dcffb",
+              "bytes": 2712
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowInverse": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowInverse.olean",
+          "artifacts": {
+            "": {
+              "sha256": "dbfff9db44a7946edf444a9498791dc7ececa8b17acd39cf78d123ed3cb34f41",
+              "bytes": 54656
+            },
+            ".private": {
+              "sha256": "b0f1359ffaf86731b899978eb5fb1440d8359771269ab0f25d228534a7024e74",
+              "bytes": 131440
+            },
+            ".server": {
+              "sha256": "2aa37d940524275b3f12377c76b41e7d56e09192d7375df971e8ce522b41da52",
+              "bytes": 3072
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowInverseODE": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowInverseODE.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6e625b7d8bc4076d9657f9fc80f0457da917d5e5843963d28a45bb0efece9794",
+              "bytes": 42072
+            },
+            ".private": {
+              "sha256": "dc236f096aa26ce963d75bc66b95302454100e92658131e2f21332c8a2759fa4",
+              "bytes": 180608
+            },
+            ".server": {
+              "sha256": "218c4cf3a244ee5d6f060c1134d4aedea16f8019ca17077d03c5693004c50a17",
+              "bytes": 1488
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricCoordinates": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricCoordinates.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3e03494269ef73f1c1d5a7dc1cfb6d8a9771d4281b898b55370a5a51bc158a16",
+              "bytes": 88696
+            },
+            ".private": {
+              "sha256": "505add2e05323770c7a54be0701993e200711cd98956b32dc9f89255846e3edd",
+              "bytes": 274728
+            },
+            ".server": {
+              "sha256": "15081679f16efb7890f91d4c2ec95ce9f62e92df4d47e62eb744be483e6c38d7",
+              "bytes": 4736
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ReferenceInversePerturbation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ReferenceInversePerturbation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c61d69ec291cfdc29e8918ecdb4fd452b42ac156bb569e60b4e669fc146f842e",
+              "bytes": 26384
+            },
+            ".private": {
+              "sha256": "9c06eb0556f4246612e9db1b6715f3a9e646928d0b594cc6769e337507f36612",
+              "bytes": 84312
+            },
+            ".server": {
+              "sha256": "d9ce0ff7b8819354cb17b9da251b719c2b1e304ad99b30892dc4d3dbb3535f41",
+              "bytes": 1776
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PointMatrixInverse": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PointMatrixInverse.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d177e96def5a88504800c90750072fc32ee4b355b952ee1c2c6bef0b90660933",
+              "bytes": 27088
+            },
+            ".private": {
+              "sha256": "97ddb29cb42bb711d65ac68624e585023304a4d15b1c80330be20cac2027cfe7",
+              "bytes": 44912
+            },
+            ".server": {
+              "sha256": "b20e86c11cf57c21d25ab88e1f57806a658a9d10a56b6ee59560e752bdebd5b9",
+              "bytes": 1624
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MatrixColumnNorm": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MatrixColumnNorm.olean",
+          "artifacts": {
+            "": {
+              "sha256": "130541737755cc20edd4e470a01a850cc94af601e06fdb029bd81af9e7f3c98f",
+              "bytes": 43912
+            },
+            ".private": {
+              "sha256": "10f3f56dd14f0208ac9a5115ec44dae00ad52ee87110a6152154a5b3e5ea11c4",
+              "bytes": 113728
+            },
+            ".server": {
+              "sha256": "28f0ead8bcb6b3fbf2ee691c01c1035c05069a10a263ff2a288181c9dc2c5aeb",
+              "bytes": 3232
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RationalBall": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RationalBall.olean",
+          "artifacts": {
+            "": {
+              "sha256": "771cc351b6aa3b354de13434d3918cda2cb3709881951242b74aa85c07b08683",
+              "bytes": 72248
+            },
+            ".private": {
+              "sha256": "63f5071d054248689f235259325b6bd48ee20cf5b08b8f1242d0afbf29af405b",
+              "bytes": 247400
+            },
+            ".server": {
+              "sha256": "989f92ae2d1d2a049b54d5e2f3d4750e405735713ce1a70d7275471fc48e3243",
+              "bytes": 7120
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MatrixRowNorm": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MatrixRowNorm.olean",
+          "artifacts": {
+            "": {
+              "sha256": "335775ab61956b3916d9383a4574bb8ac730fb8c20d63f9ba3c4e224ffdd9ab5",
+              "bytes": 29616
+            },
+            ".private": {
+              "sha256": "ad30e11810e39956c96b1eca196bd47c3138730174d339d0348beb5e260423a9",
+              "bytes": 106496
+            },
+            ".server": {
+              "sha256": "08238d8c880b1d9cc6a12895c41e9cfe6e7a65886a8009a023c395573508a9cc",
+              "bytes": 1976
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PointMatrixCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PointMatrixCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7ce9e2d922219e29b475cf48e87f3e51982ed874e0a381f7d879ea0ad2d3c21d",
+              "bytes": 52576
+            },
+            ".private": {
+              "sha256": "443da9e3545b68e8c3732348a0bff09aa9d6d492e1af5aad1a7920e5d3bcc5ca",
+              "bytes": 178016
+            },
+            ".server": {
+              "sha256": "173be15982f2e750a042f3b22010e1ec9b3c800401412c108f5758e5fc4bbc85",
+              "bytes": 3528
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedBall": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedBall.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0b4dff72e7a666fee65f64adc6eff54d465da5323801c97856da8979bf18c3e1",
+              "bytes": 85288
+            },
+            ".private": {
+              "sha256": "72f2fb8503fa123a392266663fa462190e23ae5fdcc288cb20f622d8e85c9081",
+              "bytes": 319352
+            },
+            ".server": {
+              "sha256": "47658f2a68052b56e7d42b52e8be7552c6d9e7b526aa9ba3bb9887675cf68215",
+              "bytes": 8432
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedField": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedField.olean",
+          "artifacts": {
+            "": {
+              "sha256": "675245ec4401dd8c741e227c2206c2cf55a8115eef7c7f3a75fcdf99736084f3",
+              "bytes": 63736
+            },
+            ".private": {
+              "sha256": "997de607ae7c5ba12e177c2b0f5a146487c9c6fc3c71f420bace3e1193e499df",
+              "bytes": 215728
+            },
+            ".server": {
+              "sha256": "51feb718ebb0b31cce5002f1154ad11f275efa9769d6df39e268579404124cae",
+              "bytes": 2432
+            }
+          }
+        },
+        "SolitonClassification.Rotating.CandidateInitial": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/CandidateInitial.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9ffd5aaa1d39830c9b7f97491ce0e4233eaeb85b2e29d67fbca8e5c8b4edcb1f",
+              "bytes": 47088
+            },
+            ".private": {
+              "sha256": "1493b102ed6c67544da179e0008ff68b34c76ee54367abadb5d3e8193272aa0e",
+              "bytes": 225952
+            },
+            ".server": {
+              "sha256": "582d2a6326a853f0c06639ebb00091454ede1477c5c26b091d50083064e825e3",
+              "bytes": 6424
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PointMatrixGridBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PointMatrixGridBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "e323d80ca4cd03904c0d57106bc81fb632b95b2a7e0c93b9d893b04db1b3baf3",
+              "bytes": 33896
+            },
+            ".private": {
+              "sha256": "5b8504a2afe084948709f128a8b65b04d95b9feed76b8c6f68413fd4c847039f",
+              "bytes": 120720
+            },
+            ".server": {
+              "sha256": "097526f6955d3c5b46b2664b549d1ba63cc5908f960c2648b53510cefc251110",
+              "bytes": 1816
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowTube": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowTube.olean",
+          "artifacts": {
+            "": {
+              "sha256": "edd2130b9363d6809c2dc34d69f513096e220f8745680b030f9cf7b2e59d8c60",
+              "bytes": 42000
+            },
+            ".private": {
+              "sha256": "d191393c833b10019f25f4fb927b40a077bbae62e0daba2ad71c8b393cee47bc",
+              "bytes": 530304
+            },
+            ".server": {
+              "sha256": "b73671709392efa917ab0192de09cdb41ed120ba5c88dd70f94a9300c0650071",
+              "bytes": 2664
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedTaylor": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedTaylor.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3fd68ae90fe365ac1484295d00ba9f9b7c1cdba28dff60eb492a27e1fa2e1add",
+              "bytes": 207120
+            },
+            ".private": {
+              "sha256": "87a7d12bd75bf26e58faa6ad10cc6dcd06c1ac0030d40f697ad5c30f9c7d16fd",
+              "bytes": 530896
+            },
+            ".server": {
+              "sha256": "e963c0d98d5988d7efb501a757b95364e9024c9fbefcaa0b78f293641f9eb73b",
+              "bytes": 9584
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TaylorDataCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TaylorDataCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "11fddb03f401d2fd3398ad4e0c9b84ab084b11c6150cdfa51d57c838216aa6ee",
+              "bytes": 26384
+            },
+            ".private": {
+              "sha256": "10564b0867aa8c54225dca0dc6b77091925ab54a87b23561634202d5580b19c0",
+              "bytes": 194752
+            },
+            ".server": {
+              "sha256": "b67d907fc1cc1e29cb9177b239d3f6e8a3f4340d42f529a5b11f8cf448ec3431",
+              "bytes": 2056
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FixedEndpointReset": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FixedEndpointReset.olean",
+          "artifacts": {
+            "": {
+              "sha256": "29320630e9bbe243796b0fa4fb1fbeb45b380f521ab61b4b7c6d66cfef20dac0",
+              "bytes": 32448
+            },
+            ".private": {
+              "sha256": "d027978a3dca013fb74c900c5432dc974c79ab26c87cb525eae1cfa437188903",
+              "bytes": 61176
+            },
+            ".server": {
+              "sha256": "b7b3da23410980ba3de19d59343bbf1643647d903293d8818dce1b2c8f894e14",
+              "bytes": 2040
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationTaylor": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationTaylor.olean",
+          "artifacts": {
+            "": {
+              "sha256": "08a0165875794a166fdaddaffb9fb5159a983a29497bbdae97424afc9410e154",
+              "bytes": 71112
+            },
+            ".private": {
+              "sha256": "0aa6bed9139e89059f8859734e80ba8824dcfe7df2f99ea1459b5fdd24b95894",
+              "bytes": 554576
+            },
+            ".server": {
+              "sha256": "6e8f2f0219b663a5661431c21bb2f414a3d00130416debedfcc0d22773b87274",
+              "bytes": 3872
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationDataCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationDataCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "b4c090a20847d0e735259729288b93c0ff236465270f64f39ef1fe3060573848",
+              "bytes": 79800
+            },
+            ".private": {
+              "sha256": "3e472a2bedd8cb445671175e265f01e7e3853a704ca8a56bf0329f70675fb8b1",
+              "bytes": 418496
+            },
+            ".server": {
+              "sha256": "7006d4e7589927a57b680f00fb105dcbc0b917baafdef46a160706aea7047dcb",
+              "bytes": 2656
+            }
+          }
+        },
+        "SolitonClassification.Rotating.MixedOrderVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/MixedOrderVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "943f1b4b8f57bd87fc21a021e0b5efca4530fdea41ada542a3788edd3395bc91",
+              "bytes": 15464
+            },
+            ".private": {
+              "sha256": "5c78b395e061cdc75ee127652834b9b31de4e18d4d25dccf8d208e1f54999c55",
+              "bytes": 183568
+            },
+            ".server": {
+              "sha256": "e4e615f26e25a8f81c84747eb7873d37b02dea9eb6a69d6b96b9ef5f7399f037",
+              "bytes": 1632
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationLinearity": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationLinearity.olean",
+          "artifacts": {
+            "": {
+              "sha256": "2c773a1ec037812c52ac796de537444c458e98a2d82de0c6ad2182161d91a1f1",
+              "bytes": 69848
+            },
+            ".private": {
+              "sha256": "61aa225efe8c7a7339515c3c94962e4bfecf205975cfd48be5a031aa60b5181f",
+              "bytes": 555720
+            },
+            ".server": {
+              "sha256": "162a483d3312d53642da3082fe72bb8d6956453a368baa1a87c289894bdedd52",
+              "bytes": 4368
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantScalar": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantScalar.olean",
+          "artifacts": {
+            "": {
+              "sha256": "022a4a7710c5db252b78d1fe1d347be452f94f2b98bb662850249e5ebb10c859",
+              "bytes": 79672
+            },
+            ".private": {
+              "sha256": "25701f3d32975927b2d6cc9a39573f812b5475a65b5af5d40f14a6cbe4eb377c",
+              "bytes": 637496
+            },
+            ".server": {
+              "sha256": "2af2b55b5188b600cbb7bfc45026244e6c99d65ba510502f988b7eaa5bf63525",
+              "bytes": 8376
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVector": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantVector.olean",
+          "artifacts": {
+            "": {
+              "sha256": "92d5aba03b778cfd549565344ca88adce309c50995a47502eba05915bd22689e",
+              "bytes": 34632
+            },
+            ".private": {
+              "sha256": "04c2af8fb541075c0a7db0be455442ba7e0d60695f6ab2ebe3828870419e0b61",
+              "bytes": 746096
+            },
+            ".server": {
+              "sha256": "ffa35f8e08149bb358b287fc3a5d4db2c85fabc2638ba5d07ef0f56fbb3048f1",
+              "bytes": 4056
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantVectorActual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantVectorActual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "ffebeef3f812ba386d201cec865db6bf438024b06e437e5a38edebbd6a6892d6",
+              "bytes": 71472
+            },
+            ".private": {
+              "sha256": "bb498345943dbb8d6fe49598f5432ad77ad394dddc92239f19150adf50d4d33e",
+              "bytes": 993960
+            },
+            ".server": {
+              "sha256": "c167c0d180a9cf75265c4207915cac35165d989a18a300a30fb3c5b08f46a28e",
+              "bytes": 9968
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantScalar": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantScalar.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d0b19b361ddaeafdc1fe00a905befb1403c3b4f48de29430c8c294e46d88d7c8",
+              "bytes": 45424
+            },
+            ".private": {
+              "sha256": "808d00fb714bd4f1492a671043ef3b7e13a306ddb15004703c3eab9f54101e47",
+              "bytes": 435640
+            },
+            ".server": {
+              "sha256": "20d6bcd0ebd10dab5a52dfb3627d4acfc2f32d813a2a1d656d84cb78f2aba2ca",
+              "bytes": 5568
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantVector": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantVector.olean",
+          "artifacts": {
+            "": {
+              "sha256": "95bba01757beef8d76306a6db6f6637b7cb73ef43bed22bad043d2808ba7f906",
+              "bytes": 37152
+            },
+            ".private": {
+              "sha256": "5b6837be91747b0d35cfe0f4f27373fd8951d1cf44de216835047f82118a31f4",
+              "bytes": 488440
+            },
+            ".server": {
+              "sha256": "ccd21250445a54bcb673905c81317e11c6a46323c809db68a64c92b580e1a8ce",
+              "bytes": 3272
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantActual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantActual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "78e996cdb62bc5c705fdb28a7fe36bc08405c063eaacde6af6eddd1174e148f7",
+              "bytes": 32624
+            },
+            ".private": {
+              "sha256": "18d686c25a2e729f323eaeaebe49e3656d0d8f2c530ed7d72a0645124c961fb5",
+              "bytes": 116080
+            },
+            ".server": {
+              "sha256": "e030a62eaba7c6c6bf2790d6a493ad55cc6cd86744780159b32a4d950c6c719e",
+              "bytes": 4176
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantResidual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantResidual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "698290bd17742304b2c956e3e42ce6ad381c84b069f74c01f114ad952ecebe8b",
+              "bytes": 33920
+            },
+            ".private": {
+              "sha256": "1120fe9316ed74c2af669b51b14ffec097bc1fdaa8644330b17dbdf60291de5b",
+              "bytes": 164752
+            },
+            ".server": {
+              "sha256": "56265d58eee501e3275481d3b32dadcb2963401353fdaa60f8aff2ac0f6136df",
+              "bytes": 2784
+            }
+          }
+        },
+        "SolitonClassification.Rotating.AnalyticMajorantBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/AnalyticMajorantBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "2e7d709154ab32943eeab16645a065b8d497131eedccdb2485775021d19a6794",
+              "bytes": 31992
+            },
+            ".private": {
+              "sha256": "b5fd6b640a8136c7b8d13433006b9756a86f6ff7074fe71a7ff17888dc13a674",
+              "bytes": 131200
+            },
+            ".server": {
+              "sha256": "c84f0580b8e20902b3141b99c8256986b8c80ddba66a280fa94266df94c95028",
+              "bytes": 3840
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationMajorantBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationMajorantBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "78afa71fd51a844025798e473d6aee6778e3a175c87929527339a755d92d8c74",
+              "bytes": 43744
+            },
+            ".private": {
+              "sha256": "8081a4b474738ae4cf72ee97c2f7696cd40dc8a939a748e9458df59951884d5c",
+              "bytes": 131000
+            },
+            ".server": {
+              "sha256": "ab945214e91397a476304f6b8b15991d3563896e1a7d9d677ddfc3e6519ab5e7",
+              "bytes": 4576
+            }
+          }
+        },
+        "SolitonClassification.Rotating.VariationOperatorBounds": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/VariationOperatorBounds.olean",
+          "artifacts": {
+            "": {
+              "sha256": "61c25daa384ec599e5f0356bae7b9cc89a5dd008a282bc7a4dc76bb6dcb3dc6b",
+              "bytes": 36528
+            },
+            ".private": {
+              "sha256": "bce0831be13482dcaab463eae63c32f774f63a3414633b4941eb48998e4ee7e4",
+              "bytes": 42032
+            },
+            ".server": {
+              "sha256": "1bd35ad510f200763204231e439b2b7a9a6307c11e4ea39e3c3a79702eb81407",
+              "bytes": 2264
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTailNeighborhood": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationTrueTailNeighborhood.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3e024a52fc21a80e5c6dccabe766ba87a5c39b90488059ac39a0c075ff997c33",
+              "bytes": 18840
+            },
+            ".private": {
+              "sha256": "1ad2699bb1f7fea13e0bccfb329e8e634a2c8d2c531dcc0f690be8db26669873",
+              "bytes": 408840
+            },
+            ".server": {
+              "sha256": "7ba89014877e4f03756a607c703ad6282f926f589856d6abeff23f1ff3f3c3dc",
+              "bytes": 1904
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PolynomialEnvelope": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PolynomialEnvelope.olean",
+          "artifacts": {
+            "": {
+              "sha256": "de9b580981b79d16771a59617b8a56b6ac734b690f70b8fc887c707042906cdd",
+              "bytes": 35656
+            },
+            ".private": {
+              "sha256": "0ddfb1c09d91adcdd3f945d53d1ca3adadcc8a97b8a214fb3fab68b96858aa79",
+              "bytes": 306248
+            },
+            ".server": {
+              "sha256": "77f58ff93ede66e989a9bbc76a9ffe22ef4bede51d21d92093c7c0888c3619ee",
+              "bytes": 4120
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ResidualDataCertificate": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ResidualDataCertificate.olean",
+          "artifacts": {
+            "": {
+              "sha256": "769404efce1a7c2177da2bc9301cfa7fe36ce65eb3a2050289d206a921cb7ed1",
+              "bytes": 55536
+            },
+            ".private": {
+              "sha256": "db2aeef461ccb5c2bde53ae3f67e1e2054135b4f16f2049a6e7dd9eb1eed282b",
+              "bytes": 142776
+            },
+            ".server": {
+              "sha256": "9c80cf178edc26bedbeec32820c8046038ab6167c84098676f8a4050c07ade30",
+              "bytes": 3656
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TrueLocalStateTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TrueLocalStateTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "97a427a1d35643f6c2e6c9357fd95db2dd87edee1e0ade575ebfbe34c9a8281b",
+              "bytes": 20472
+            },
+            ".private": {
+              "sha256": "86927aad3e1c9587d850cd477d460629224228e29c44f3ae59df1c72c868a886",
+              "bytes": 145256
+            },
+            ".server": {
+              "sha256": "d7460354a389367684292ba77c8e851b0ffa51557e95ed4ac183122f4f79c045",
+              "bytes": 1792
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalPolynomialTube": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalPolynomialTube.olean",
+          "artifacts": {
+            "": {
+              "sha256": "f63f859b743b5d1c18766984064e44eb60ccdc4ee00f0200d24374c4344605c2",
+              "bytes": 41264
+            },
+            ".private": {
+              "sha256": "84ca0c335da81e03d9ad4a1036b07e89f1143eee3f2f885a3e11c8a1b4e8219b",
+              "bytes": 795984
+            },
+            ".server": {
+              "sha256": "d1966addf151e45bee241aa3e9d266d76115eede4c4924e623542c6566104d71",
+              "bytes": 2728
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalTaylorResidual": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalTaylorResidual.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9e5f12f17e4b7182bdff1b5d61ee326af599db26ee0f82ad5e291269be0c1638",
+              "bytes": 23024
+            },
+            ".private": {
+              "sha256": "d4f2c71d58cf00faf6e88434d2238aa0bc88019d6434390dd4d61909edc12dc1",
+              "bytes": 87312
+            },
+            ".server": {
+              "sha256": "2b06c7e34566895150c062903c5c506743d2918361d526d5b58210cd8a416147",
+              "bytes": 2808
+            }
+          }
+        },
+        "SolitonClassification.Rotating.TrueLocalVariationTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/TrueLocalVariationTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6620c14cc15a93dd0214c2bd1a325e20987547bbe6416bae26b78b3de0c88bb5",
+              "bytes": 33016
+            },
+            ".private": {
+              "sha256": "f7839adf01e676dda6d8ee03e7bbafff05eb7486d150ef300d8fb480a4017e26",
+              "bytes": 164720
+            },
+            ".server": {
+              "sha256": "489a7643101ace5aeb5d1a7aad03f770c49cd965b2758bcfb582195292c6a991",
+              "bytes": 1848
+            }
+          }
+        },
+        "SolitonClassification.Rotating.SignedLocalTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/SignedLocalTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "f427ebc88a1d2a6c12cc6a8b497a05c0e17869bf4dfab857fadd3d35d2f43fe4",
+              "bytes": 46832
+            },
+            ".private": {
+              "sha256": "d43d2314180e7a8609db9fc140653f84e0a8ff4a702788a7e54abcb6408bb671",
+              "bytes": 285504
+            },
+            ".server": {
+              "sha256": "3f7ea455447541bc53d5b6fbe01b5dfcab85357d2711283beb662ba366e2eb0c",
+              "bytes": 2024
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalTrueStateTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalTrueStateTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c08ff8b5c736c7ea18953c3ed99f5997f61c60464167d7099cb5048bc9a84d9e",
+              "bytes": 25568
+            },
+            ".private": {
+              "sha256": "242c73ba7069fabf1d87a2350492c5b00c04721b1f9eb3dcdd4213706862fa7b",
+              "bytes": 72592
+            },
+            ".server": {
+              "sha256": "d1fa9fe3babb5ec7fa0fb7583a791f426148236c363958ca8e8f653b1b05831f",
+              "bytes": 2488
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationTrueTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationTrueTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "598f547a05df8c9530090e598482263291b1ac909e53a292f18c096f12e77e66",
+              "bytes": 36496
+            },
+            ".private": {
+              "sha256": "11eb9aaf82b3b7636bc1b91ccbe6a46f635256caaee23632bae0d96c3a3bb790",
+              "bytes": 255000
+            },
+            ".server": {
+              "sha256": "166d34f4744c8239c9e8d0410e54a82b008d4843dc9f5084108b65c431a6a986",
+              "bytes": 2104
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationOperatorTail": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationOperatorTail.olean",
+          "artifacts": {
+            "": {
+              "sha256": "f270f71c0fdd60533680842f70f226cc76b6af5a0caf8800d8ca875a1ddc4a6f",
+              "bytes": 31728
+            },
+            ".private": {
+              "sha256": "37bb085bf8d74c1b1a307e25cb8a95a352f56e772fe7e2404a38e1389ed0ccae",
+              "bytes": 33104
+            },
+            ".server": {
+              "sha256": "6606ad02cb960b7fef233b936df372347844bde6ba0880b26b88060e7219478f",
+              "bytes": 1552
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ReferencePolynomialMatrix.olean",
+          "artifacts": {
+            "": {
+              "sha256": "376e7ab8f079b57fee8099c72d3145fac8de61027e86d4532dbf14745a630220",
+              "bytes": 72048
+            },
+            ".private": {
+              "sha256": "c41cd26f879b61fd43e29d94190d6b9384d92687eb0bf714ea4f02f0ead66993",
+              "bytes": 327432
+            },
+            ".server": {
+              "sha256": "d0c1578cda40af60f59c1940f5ea9ba0a99be7754bfbca3db766c98111c4a99c",
+              "bytes": 3888
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalVariationOrder22": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalVariationOrder22.olean",
+          "artifacts": {
+            "": {
+              "sha256": "4e5dd7cee63c14f3abbff7d8d95306c0d21a6bb63fd83015b00536a130937f7b",
+              "bytes": 58240
+            },
+            ".private": {
+              "sha256": "a5360410ae4682da41ab7ef122da9cbccc2b07b48fab4ce743a68d37ffa5453e",
+              "bytes": 283960
+            },
+            ".server": {
+              "sha256": "3947d08c547680ec4139c5c30e2e4c56161cf48ee540914cc2668bf5e67b8303",
+              "bytes": 5952
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix22": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ReferencePolynomialMatrix22.olean",
+          "artifacts": {
+            "": {
+              "sha256": "01002ce0a51e4d2882a880607386dbfbe6f1a55e1cdb8b6158c64849d3483507",
+              "bytes": 49888
+            },
+            ".private": {
+              "sha256": "8d809a62ef883ee580a993c36411eee3c590b45487191837f9ff66338617fd2f",
+              "bytes": 79752
+            },
+            ".server": {
+              "sha256": "bfc6b319c399e4745deaaa128b6f2d5235d7936705a7d05c85acfe586941c7a3",
+              "bytes": 2648
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGeometry": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapGeometry.olean",
+          "artifacts": {
+            "": {
+              "sha256": "1ad5b1fad4e6d95b0db237d576c66d85b07ade8eba54717b2aff757a15585f3c",
+              "bytes": 38056
+            },
+            ".private": {
+              "sha256": "c3e44e26d0d508dcb8774f93fde048beaf1549f1bfc924229498e2c3ab034af6",
+              "bytes": 558696
+            },
+            ".server": {
+              "sha256": "132f49aa806d7c329deb27a97adb77f126326c09c8106b0d1688530217bc0461",
+              "bytes": 2320
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RotatingGridMargin": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RotatingGridMargin.olean",
+          "artifacts": {
+            "": {
+              "sha256": "5f28ab09e26da8a03d4ff0bdc6fed36c7ea57772010d7bd32dfa5edfde7b0e50",
+              "bytes": 31128
+            },
+            ".private": {
+              "sha256": "e25751083ba959c85732073d1730b7d027e696446fb1a0671822bda928cb6c26",
+              "bytes": 476784
+            },
+            ".server": {
+              "sha256": "c8adc4308dd5fa89f6f2eb93402131b5ea3e353ab8945772ce5e6936d424f5ae",
+              "bytes": 2944
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricSegment": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricSegment.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c84cac4366a5f37ce52f4aebdffd13d375877d707e57974ff5021b675c079cd2",
+              "bytes": 57304
+            },
+            ".private": {
+              "sha256": "61377f4a1087601dabf4b28ccd394e25e63e99b64cc4b775204601979e70114f",
+              "bytes": 68016
+            },
+            ".server": {
+              "sha256": "595920929d6f1922ef94c9b688f8a30ddb83fc058510b300222df0307359aa11",
+              "bytes": 2248
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapCoordinates": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapCoordinates.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7085152a0e5b4b23a1ebeca056ae839c2855e46d92116a485b048a4ebaa082f4",
+              "bytes": 72992
+            },
+            ".private": {
+              "sha256": "dbab157aea5aef3f145106ca882fa50de4064f3d6a63df9f02f79bbee87cdd96",
+              "bytes": 285256
+            },
+            ".server": {
+              "sha256": "1d385f17f67fb82ae276865e2ccbaae2062fd6cc7898d0f9b80d5c6f69a40597",
+              "bytes": 3248
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapSegment": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapSegment.olean",
+          "artifacts": {
+            "": {
+              "sha256": "b7130a4c86b10134941c1894a28fe04383e760e2a330a6ba353dd1f0cc1aeb52",
+              "bytes": 76408
+            },
+            ".private": {
+              "sha256": "36a22f70f684153a4e6c39329554b12fed62ca4b136ce400a409ac21026c4bb0",
+              "bytes": 142064
+            },
+            ".server": {
+              "sha256": "401bc26b74d6c0946ae73e13badddb0d62fec55ba9ff99ced3b7070cea3c23c8",
+              "bytes": 1816
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricReset": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricReset.olean",
+          "artifacts": {
+            "": {
+              "sha256": "4af3b892d875c86043f19fe8c9ba3c68c899312d9feb186cdae3f6a672910f3b",
+              "bytes": 28688
+            },
+            ".private": {
+              "sha256": "97e2b032e65fb36feb05ddc1c0e517fa0f0e8aa620e5e2a507bca1f7c690146a",
+              "bytes": 62816
+            },
+            ".server": {
+              "sha256": "9b9f3191aeb3e7ce6973332801915288cb91d291563da80f097bca6fa54af82a",
+              "bytes": 2248
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapReset": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapReset.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0c0a750aec2c7184b4acea25e14fe709fec49a1fa7c3f912512b4cd63f658c1e",
+              "bytes": 29808
+            },
+            ".private": {
+              "sha256": "42c1e88ed0ecf457748b95eccf42792dd9a91c821875ae615c37953792bfd79d",
+              "bytes": 57896
+            },
+            ".server": {
+              "sha256": "089c30ac25b67273eff223a0e81c47175c6a3268bd131d6c6198f50e6de0ef78",
+              "bytes": 1472
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricDiscrete": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricDiscrete.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d805a16ffaf91fbabc945180e4aa33d8041f73ac63969b5d14105739985b8a2c",
+              "bytes": 23144
+            },
+            ".private": {
+              "sha256": "64193bb5ac0062ff930f891126ced3347cc024bc2fbf4f52fb8cc4a45087d6d7",
+              "bytes": 148920
+            },
+            ".server": {
+              "sha256": "87c6583354805096d93e3659f8b22785c5cc6045c1b5de911c0bcee00fdf058d",
+              "bytes": 1832
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapBudget": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapBudget.olean",
+          "artifacts": {
+            "": {
+              "sha256": "553b35c03950cc12525d71f0f92b01923a0a51d2ce2e6fe1488490232bbb72de",
+              "bytes": 54856
+            },
+            ".private": {
+              "sha256": "da853e613436dd811ceede6639e77f6296f9a571e010f713cb1918069c28d3b6",
+              "bytes": 309536
+            },
+            ".server": {
+              "sha256": "d8b8d44ba4c81601a536cd6f861dc5371a0c70066c9a5e92b717e94770da1efe",
+              "bytes": 2040
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricGridData": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricGridData.olean",
+          "artifacts": {
+            "": {
+              "sha256": "69cd62de49c825c2d9c97797f32c6ae7eda3bbdba999e7baaf2fcf5a0f6ea5d0",
+              "bytes": 247536
+            },
+            ".private": {
+              "sha256": "86e317dce32d5dec4bd4770029335a9ce725c3c96f38a4914f3747cfda60293f",
+              "bytes": 221496
+            },
+            ".server": {
+              "sha256": "f1eb06c24d19bad26ea52345d434aa9f49ae94f1af649b34c65b7db185fb021c",
+              "bytes": 6888
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowMetricGlobal": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowMetricGlobal.olean",
+          "artifacts": {
+            "": {
+              "sha256": "0c2bcb844dc6431d418c480cca48e1232fb3306d284dcdc28955d4ee148e4a8f",
+              "bytes": 46576
+            },
+            ".private": {
+              "sha256": "2b7d7888523abe2d190cee91f9172c239ad81d9ba11c0f7f2c25a5722ff022f5",
+              "bytes": 172120
+            },
+            ".server": {
+              "sha256": "4a14ea3ff063f779e11a9f0a800cf704eb1e456b5e9c31de4cc700b983b36ad8",
+              "bytes": 2872
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGridData": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapGridData.olean",
+          "artifacts": {
+            "": {
+              "sha256": "02cdddd799abab8ff006f9167084e2b71c23784cc39c81126679120070cec144",
+              "bytes": 264432
+            },
+            ".private": {
+              "sha256": "b78679381c6d4b50b4363e63ec38025e3a7afbb427e368c72576bd9b43d3f353",
+              "bytes": 215584
+            },
+            ".server": {
+              "sha256": "fb264d0d4e9db23a3f81ebc255f9c04b60fa8e5539ebe5862091b7731abb0f36",
+              "bytes": 7984
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PolynomialGridAssembly": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PolynomialGridAssembly.olean",
+          "artifacts": {
+            "": {
+              "sha256": "ac88a3f8a7d22b2760ea60d32cd6cdbf92727160d1d75d2215f11bfb9b320b5b",
+              "bytes": 130984
+            },
+            ".private": {
+              "sha256": "77b4d5b526e96df792252ba5ac0d3e00578c67cb63418bba9af10ee885bab257",
+              "bytes": 413496
+            },
+            ".server": {
+              "sha256": "e78dd9f544c0cfeff707f06e6a862282f7f67504c0f74729429f0f22079472d2",
+              "bytes": 3880
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalStateOrders": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalStateOrders.olean",
+          "artifacts": {
+            "": {
+              "sha256": "371d3b1744b20e9cb729365ac3e5671740e9422bbc0a4d010d99e7cb4501175d",
+              "bytes": 49744
+            },
+            ".private": {
+              "sha256": "669ee5d6d6a5bb2618c03f1489a80f07e3c481bf00a82ab338647009beb101dd",
+              "bytes": 199960
+            },
+            ".server": {
+              "sha256": "72aeec0bf30b2cceb54ebb20bda33c4c582088410bb2fc5f3216687bbfea3939",
+              "bytes": 5064
+            }
+          }
+        },
+        "SolitonClassification.Rotating.UniversalReducedVariation": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/UniversalReducedVariation.olean",
+          "artifacts": {
+            "": {
+              "sha256": "3496064bd931dee485c090882a3dfc333c2e4efac3c3d61e4433edb401672f04",
+              "bytes": 54632
+            },
+            ".private": {
+              "sha256": "07df2d804542fcaea0aed5baafb4ee3ff8b4bc44feeef53d9f805664b5d28f26",
+              "bytes": 254080
+            },
+            ".server": {
+              "sha256": "d22a2af36e636cbeb1dbb90cdb12d28e55d5bdd135cb89ae07c72053a912a26f",
+              "bytes": 3456
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RotatingGridMarginOrders": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RotatingGridMarginOrders.olean",
+          "artifacts": {
+            "": {
+              "sha256": "54ff2edce80cc38eb8e76cc6eb742065c411f22e636410f647cff54c5f3367a2",
+              "bytes": 16408
+            },
+            ".private": {
+              "sha256": "eb2fccc9abbbc9f446304b6ef69c966aca88e6860f17f2e4733a7fd34ccf1fdd",
+              "bytes": 40744
+            },
+            ".server": {
+              "sha256": "ad625f4c96a27489ad203f3956647283a5b050861ab4eb3648a39e29b83b4749",
+              "bytes": 1712
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapGlobal": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapGlobal.olean",
+          "artifacts": {
+            "": {
+              "sha256": "488c29cf7aa285de6f7b9c61f1a0bdd14aea7872ac8fe450ea7b78dff1709e61",
+              "bytes": 47336
+            },
+            ".private": {
+              "sha256": "44302356c035375de6ccf217d738139a48c4af6cf31d0431e8cb18c4c6dbf034",
+              "bytes": 217856
+            },
+            ".server": {
+              "sha256": "2444cd665978607853b726aa2541398a83b8949513e3e7dca8c37b4caeda8ddd",
+              "bytes": 2032
+            }
+          }
+        },
+        "SolitonClassification.Rotating.FlowBootstrapNeighborhood": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/FlowBootstrapNeighborhood.olean",
+          "artifacts": {
+            "": {
+              "sha256": "7cd7f84e67f9611e99c30eb88863cc9657e6f5df67f17e3957dfca693f7c32cb",
+              "bytes": 41144
+            },
+            ".private": {
+              "sha256": "e5470e852959345b03e5d64c95315183ccae4bb823577dd890542f890eba0560",
+              "bytes": 76968
+            },
+            ".server": {
+              "sha256": "b8bf8eb06d424f859be9e4066be31752c31c3383d942b14614680dea310ee975",
+              "bytes": 2176
+            }
+          }
+        },
+        "SolitonClassification.Rotating.BanachRoot": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/BanachRoot.olean",
+          "artifacts": {
+            "": {
+              "sha256": "e73f987c4dfa969ca077598d2bfe64894df8a34f2874da153e58cbd08b4a5f7d",
+              "bytes": 95704
+            },
+            ".private": {
+              "sha256": "0bacc03fb49efa5127495c3950a6f2acc897e2648e801229c34784089d3e1f85",
+              "bytes": 318912
+            },
+            ".server": {
+              "sha256": "5a4663046c4dcf176d82a091d11e2f125fdb4a6995fb1c3cabc027578d3b42d9",
+              "bytes": 3800
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ShootingRoot": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ShootingRoot.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6fe633b60293e794075d6559c355dd5e1f1115659b38e2f83ac6b280254ff7c2",
+              "bytes": 121384
+            },
+            ".private": {
+              "sha256": "4f17faa8d687032b56c04eb19f4adc812c15801cca80e78ce51ecad464ed5fad",
+              "bytes": 685920
+            },
+            ".server": {
+              "sha256": "cbac9e05beaba33ab523d630c45400e816d03e659b2ea17ece07b09fb43dae52",
+              "bytes": 8360
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ActualShooting": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ActualShooting.olean",
+          "artifacts": {
+            "": {
+              "sha256": "96082fe33c6d4b49c33852afa2ea061b592a7aa41155a67367094186d1f4998a",
+              "bytes": 62648
+            },
+            ".private": {
+              "sha256": "3ef39ca5fd5746b5ffcef6547752cec960c441b44b6ebbb06bad108bba291041",
+              "bytes": 344224
+            },
+            ".server": {
+              "sha256": "e6741a359f384e39e2ba8b9bbfa5db3a26a3268efd18eb7d47b23d4dce75e3de",
+              "bytes": 4408
+            }
+          }
+        },
+        "SolitonClassification.Rotating.RotatingGridHorizon": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/RotatingGridHorizon.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d42fdc90bb3f27bd9418bb3f6ebfc18c3a49d912fa019335612e2d8fe8cb8997",
+              "bytes": 47912
+            },
+            ".private": {
+              "sha256": "e4a63e350b9e4d47e604c212a4050450d52b07ff4e98ba30494e2769df592367",
+              "bytes": 271400
+            },
+            ".server": {
+              "sha256": "441f40712297f165b05cd6e615fce8e8c99d3345622bd42430fd5da8ad79f55b",
+              "bytes": 4664
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialReference42": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ExtendedPolynomialReference42.olean",
+          "artifacts": {
+            "": {
+              "sha256": "c38ba0f4bf9d628b67a36f72073b3166ee603f64018c83597c74540ca3895048",
+              "bytes": 53672
+            },
+            ".private": {
+              "sha256": "4def83fcb66b6b2331fb2510e2da95189654d1489f9985622f3c4bfdae6a0a7f",
+              "bytes": 238248
+            },
+            ".server": {
+              "sha256": "8dbef35fac2d197efcee90c17897c910e69bcb526b689ef123995942675a522c",
+              "bytes": 3184
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridAssembly42": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ExtendedPolynomialGridAssembly42.olean",
+          "artifacts": {
+            "": {
+              "sha256": "8708e5570545760f4021d2f24a0bb1a8c1f572c5254213c0d51ea1a9a73822a7",
+              "bytes": 126344
+            },
+            ".private": {
+              "sha256": "7ae3a3e0fd991991eeb0b1ce829c83d848041497836324c1f8e7a73e07039b4b",
+              "bytes": 256376
+            },
+            ".server": {
+              "sha256": "12ec9b87bcf490b6d32df0f623f017eec3f50c1d35235c60419347210b71420d",
+              "bytes": 2504
+            }
+          }
+        },
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/ExtendedPolynomialGridEndpoints42.olean",
+          "artifacts": {
+            "": {
+              "sha256": "6079562abf19881bac5c8013779dade58759b1aa2bad2b92de80bcf4e7482803",
+              "bytes": 207808
+            },
+            ".private": {
+              "sha256": "1b499c22068529ae5b4b9b0f49652b2bc62ae2cc0c67f63e10bf7139d21c8226",
+              "bytes": 643560
+            },
+            ".server": {
+              "sha256": "b6c5c60aa69b045eb5dc4ce4eac24932274cc0b61f863c80a971ecfc968d3c10",
+              "bytes": 7576
+            }
+          }
+        },
+        "SolitonClassification.Rotating.PolynomialPointGridBlock": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/generic/SolitonClassification/Rotating/PolynomialPointGridBlock.olean",
+          "artifacts": {
+            "": {
+              "sha256": "d034dfe2de97b69b485d8a024940fd0372353701c72e89f230febb09641529d1",
+              "bytes": 149904
+            },
+            ".private": {
+              "sha256": "4a0099f226e70ccc95bc9cc6a51112564c5bae75847b63e4b5ff832e85ea2d42",
+              "bytes": 204336
+            },
+            ".server": {
+              "sha256": "e3a845af38d2702a079f29f340b2825882b5c911251b44253d69a7019ad7616e",
+              "bytes": 5864
+            }
+          }
+        }
+      },
+      "artifacts": {
+        "": {
+          "sha256": "d4cba922b7ac965a4aee4429e032c4a2332bef92cc1aecbd4fca57d91802ae22",
+          "bytes": 11968
+        },
+        ".private": {
+          "sha256": "cf0f0ea6d05827471b10743e1a5eb3b3a0b62fbcea6f8721825790750aac65ff",
+          "bytes": 1168
+        },
+        ".server": {
+          "sha256": "1d58040903a4ea98d74bb6548744fb0c2fb926b7afbfb4bcdd3c32dcdfd5362b",
+          "bytes": 96
+        }
+      },
+      "all_outputs": {
+        "SolitonClassification/Rotating/ModuleFullGenericAudit.olean": {
+          "sha256": "d4cba922b7ac965a4aee4429e032c4a2332bef92cc1aecbd4fca57d91802ae22",
+          "bytes": 11968
+        },
+        "SolitonClassification/Rotating/ModuleFullGenericAudit.olean.private": {
+          "sha256": "cf0f0ea6d05827471b10743e1a5eb3b3a0b62fbcea6f8721825790750aac65ff",
+          "bytes": 1168
+        },
+        "SolitonClassification/Rotating/ModuleFullGenericAudit.olean.server": {
+          "sha256": "1d58040903a4ea98d74bb6548744fb0c2fb926b7afbfb4bcdd3c32dcdfd5362b",
+          "bytes": 96
+        },
+        "SolitonClassification/Rotating/ModuleFullGenericAudit.ir": {
+          "sha256": "8900deb463067d62a43517c7d3602d16d14823ff5d4c95a83773dd4663ef24f7",
+          "bytes": 11864
+        },
+        "SolitonClassification/Rotating/ModuleFullGenericAudit.ir.sig": {
+          "sha256": "0ced623c14c753cc03d9359e9ace73bb5c92c8982f849ee228b33289f11df438",
+          "bytes": 176
+        }
+      }
+    },
+    {
+      "name": "RestoredArctanProbe",
+      "exit_code": 0,
+      "wall_seconds": 1.2682632470000499,
+      "source_sha256": "2b2e3aa60d3b1d213cb4e5e5609a522fd0cdc2f90671edda042595038527a1d6",
+      "imports_before": {
+        "Init": {
+          "path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9ed3667be31b6ce04b831418a8bc9e99c44804b8ddaf52f6ebbdebfd26d8409e",
+              "bytes": 5784
+            },
+            ".private": {
+              "sha256": "308412e9d2130bcd1ef80a642169b1fef3d51302755147b4b3a31090c091487c",
+              "bytes": 96
+            },
+            ".server": {
+              "sha256": "6b169235e1f7577455a071b11e45fc16336166ce1ea80be1e00bd317f847c3e1",
+              "bytes": 96
+            }
+          }
+        },
+        "Mathlib.Analysis.SpecialFunctions.Complex.Arctan": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/env_007/Mathlib/Analysis/SpecialFunctions/Complex/Arctan.olean",
+          "artifacts": {
+            "": {
+              "sha256": "5d2ecef8bdbb0ece07357d554ae69bba5ecac6b86498b4bcfc0a07376f212d51",
+              "bytes": 31824
+            },
+            ".private": {
+              "sha256": "22d38c4a27681c029506792072395e77cf0c7cc9d46afe566ba43f29fbc02344",
+              "bytes": 457632
+            },
+            ".server": {
+              "sha256": "e63992795b73b1d9bb99156d9db1a6faed542d2aae38fda9e4a28f57b1c5d40f",
+              "bytes": 4432
+            }
+          }
+        },
+        "Lean.Util.CollectAxioms": {
+          "path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean/Util/CollectAxioms.olean",
+          "artifacts": {
+            "": {
+              "sha256": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d",
+              "bytes": 39528
+            },
+            ".private": {
+              "sha256": "1ab89cbac2f98e0f9c3cedd98fc294718b0e9e668992ef79d6f3a6e9bf6a11f7",
+              "bytes": 382168
+            },
+            ".server": {
+              "sha256": "d10ff4518153afa782210e2da08a02d6be8d5fe62f87e78c7dfe1c8d049d4c5a",
+              "bytes": 6056
+            }
+          }
+        }
+      },
+      "log_sha256": "5ee363d2016425c48c975c0190e80d147642e5763c46b0fff4c2d39114828dba",
+      "cpu_seconds": null,
+      "peak_memory_bytes": null,
+      "imports_after": {
+        "Init": {
+          "path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean",
+          "artifacts": {
+            "": {
+              "sha256": "9ed3667be31b6ce04b831418a8bc9e99c44804b8ddaf52f6ebbdebfd26d8409e",
+              "bytes": 5784
+            },
+            ".private": {
+              "sha256": "308412e9d2130bcd1ef80a642169b1fef3d51302755147b4b3a31090c091487c",
+              "bytes": 96
+            },
+            ".server": {
+              "sha256": "6b169235e1f7577455a071b11e45fc16336166ce1ea80be1e00bd317f847c3e1",
+              "bytes": 96
+            }
+          }
+        },
+        "Mathlib.Analysis.SpecialFunctions.Complex.Arctan": {
+          "path": "/home/runner/work/_temp/rotating-core-restoration/restored/roots/env_007/Mathlib/Analysis/SpecialFunctions/Complex/Arctan.olean",
+          "artifacts": {
+            "": {
+              "sha256": "5d2ecef8bdbb0ece07357d554ae69bba5ecac6b86498b4bcfc0a07376f212d51",
+              "bytes": 31824
+            },
+            ".private": {
+              "sha256": "22d38c4a27681c029506792072395e77cf0c7cc9d46afe566ba43f29fbc02344",
+              "bytes": 457632
+            },
+            ".server": {
+              "sha256": "e63992795b73b1d9bb99156d9db1a6faed542d2aae38fda9e4a28f57b1c5d40f",
+              "bytes": 4432
+            }
+          }
+        },
+        "Lean.Util.CollectAxioms": {
+          "path": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean/Util/CollectAxioms.olean",
+          "artifacts": {
+            "": {
+              "sha256": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d",
+              "bytes": 39528
+            },
+            ".private": {
+              "sha256": "1ab89cbac2f98e0f9c3cedd98fc294718b0e9e668992ef79d6f3a6e9bf6a11f7",
+              "bytes": 382168
+            },
+            ".server": {
+              "sha256": "d10ff4518153afa782210e2da08a02d6be8d5fe62f87e78c7dfe1c8d049d4c5a",
+              "bytes": 6056
+            }
+          }
+        }
+      },
+      "artifacts": {
+        "": {
+          "sha256": "89c58851d7ce10108792ae76f3951b208198a668f8ff13417df97e3101beec55",
+          "bytes": 1888
+        },
+        ".private": {
+          "sha256": "297ab87237d96fc9224074dc10ecf0f48cdc32a454e3c890a8a560bb53f2951e",
+          "bytes": 960
+        },
+        ".server": {
+          "sha256": "92fa3c202c9e6ddaf6f3165cc4f41b498274e9f3dfe5bc641f230d46541c97e8",
+          "bytes": 96
+        }
+      },
+      "all_outputs": {
+        "RestoredArctanProbe.olean": {
+          "sha256": "89c58851d7ce10108792ae76f3951b208198a668f8ff13417df97e3101beec55",
+          "bytes": 1888
+        },
+        "RestoredArctanProbe.olean.private": {
+          "sha256": "297ab87237d96fc9224074dc10ecf0f48cdc32a454e3c890a8a560bb53f2951e",
+          "bytes": 960
+        },
+        "RestoredArctanProbe.olean.server": {
+          "sha256": "92fa3c202c9e6ddaf6f3165cc4f41b498274e9f3dfe5bc641f230d46541c97e8",
+          "bytes": 96
+        },
+        "RestoredArctanProbe.ir": {
+          "sha256": "61a8a82e35d7c32950aae39a151c66b97b104fec7e91dff1b62a09ace9b1e748",
+          "bytes": 1784
+        },
+        "RestoredArctanProbe.ir.sig": {
+          "sha256": "a545377e929121381b71010fc6d5f59664d03203d173d4ba851d0e5ebe9d127c",
+          "bytes": 176
+        }
+      }
+    }
+  ],
+  "numerical_leaves_checked": 0,
+  "full_certificate_proved": false,
+  "complete_base_before_after_checked": true,
+  "actual_fresh_private_audit": true,
+  "actual_arctan_import": true,
+  "used_lake_or_mathlib_cache": false,
+  "output_on_library_search_path": false
+}

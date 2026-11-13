@@ -1,0 +1,55 @@
+Core release publisher v3 candidate -- 2026-11-13
+
+This supersedes the deployment/durability statements of AuthorStatus v1 only.
+Original v1/v2 reports and source snapshots remain in their fixture directories.
+No actual GitHub write, network request, new Lean call or large archive download
+was performed by any publisher fixture.
+
+Current sources:
+production_core_release_request.py
+3CD4EB7E08F9E5E7D61A373D31AEE03AC1BDD5EEC3C1B67254AE925FBC2FE210
+production_core_release_publisher.py
+C063B963B402CDCE9354CAAC5451B6BF686EA2297A962E049649E97DB2826EED
+review_core_release_publisher.py
+533E75AEE9D983750020344485490155D06C865440639794A1E420A923B70241
+
+Session 42646 actually terminated EXIT 0. Report:
+core_release_wire_review_v3/review.json
+E50D9952B9FF1A09840A6A0ECA1B0E00EB55AB994C83E82242E656A567D28CFD.
+39 rejection checks, 20 wire publisher scenarios, 10.662 seconds. The actual
+platform was Windows; zero network sockets/requests/writes and zero Lean runs.
+The publisher upload payload is synthetic; actual old Linux core reports are
+checked separately. Neither this fixture nor its hash check represents a fresh
+1.3GB core upload or a repeated Lean core proof.
+
+Deployment no longer has a commit self-reference cycle. P is a previously
+published tool commit. A request authored at a later workflow commit Q names P
+and its exact script/helper hashes. The actual Actions job checks out P and the
+publisher independently reads git HEAD and the committed publisher blob, requiring
+HEAD=P and the committed bytes equal its running source. GITHUB_SHA=Q is checked
+as a full commit id and recorded separately with Actions run/event provenance.
+P and Q are allowed to differ. The fixture tests this identity logic with mocked
+Git subprocess responses and explicitly does not claim actual deployment success.
+Git-related override environment variables are removed from those subprocesses.
+
+Journal writes are exclusively new files. On POSIX the new file is fsynced and
+its parent directory is fsynced; new journal directory chains synchronize each
+new entry and parent as well. The result uses the same durable writer. Windows
+still fsyncs files but does not claim to synchronize directory entries. The report
+explicitly states directory_fsync_exercised=false and power_loss_simulated=false.
+No mechanism here guarantees survival of complete runner loss. The eventual
+workflow still must upload the journal and bound request/evidence even on failure.
+
+Unchanged semantics: dedicated core schema, externally pinned archive/evidence,
+live successful transfer origins, absent tag/release/draft, new exact lightweight
+tag, one draft, one unique asset, full draft-byte verification, publication, full
+published-byte verification and metadata/tag recheck. No overwrite/delete/tagmove,
+automatic retry/resume or remote cleanup. Fixture results use fixture_only and
+remote_durability_verified=false. Core records have their own schema/kind and are
+not numerical-shard records. The small request and upstream evidence must accompany
+the journal in future workflow evidence; originals are never removed by this tool.
+
+Real publication is still pending root review and a separately reviewed workflow
+with an externally pinned real request. Numerical shard publishing, Layer B,
+explicit recovery and full250 assembly are not implemented by this core-only tool.
+Complete classification and full rotating-certificate claims remain false.

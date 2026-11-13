@@ -1,0 +1,35 @@
+Root review, 2026-11-13.
+Read the complete core request adapter, initial journaled publisher, complete
+wire fixture, actual v3 report/status, and final P/Q and directory-sync changes.
+Accepted adapter 3cd4eb7e08f9e5e7d61a373d31aee03ac1bdd5eec3c1b67254ae925fbc2fe210
+and publisher c063b963b402cdce9354caac5451b6bf686ea2297a962e049649e97db2826eed.
+Independent review and delta review are retained separately.
+
+The dedicated core schema cannot stand in for numerical-shard certification.
+It binds complete raw archive SHA/size, actual successful pack/restore/private
+1704/331 plus Arctan evidence, exact helpers and the three upstream artifact
+origins. Actual publication requires an explicit pinned Actions invocation,
+actual Git HEAD and committed publisher blob at earlier code commit P. The
+later workflow commit Q is recorded independently; no commit hashes itself.
+
+The mutation sequence checks absent tag/draft/release, creates a new exact
+lightweight tag and draft, uploads one canonical asset, verifies draft metadata
+and a complete byte redownload, then publishes and repeats complete download,
+metadata and tag checks. No overwrite, delete, tag move, automatic retry or
+automatic cleanup is implemented. Upload is a bounded stream with explicit
+Content-Length; authenticated redirects are disabled. Signed binary redirects
+are constrained and carry no API token. Journal intents precede mutations.
+
+The final code fsyncs files and POSIX parent directories, including result and
+new directory entries. Windows tests explicitly did not exercise directory
+fsync or simulate power failure. No promise of survival of total runner loss
+is made; the workflow must upload journal and evidence even after failure.
+
+Actual v3 author fixture: EXIT0,39 negative cases,20 wire scenarios; root read
+the code/results rather than repeating them. The actual core evidence is used
+for adapter checking, but the upload payload/HTTP service and Git process
+responses are explicitly synthetic. These tests establish no actual GitHub
+publication, 1.3GB transfer performance, or new mathematical theorem.
+Publishing the reviewed tool code is approved within the existing user task.
+A separately pinned actual request and reviewed workflow are still required
+before the first real publication.

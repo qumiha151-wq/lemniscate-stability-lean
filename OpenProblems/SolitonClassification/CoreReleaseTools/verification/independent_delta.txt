@@ -1,0 +1,69 @@
+CORE RELEASE PUBLISHER — INDEPENDENT DELTA REVIEW
+Date: 2026-11-13
+Reviewer: finish_curve_input
+
+Final reviewed source identities:
+ production_core_release_request.py (unchanged adapter)
+ 3cd4eb7e08f9e5e7d61a373d31aee03ac1bdd5eec3c1b67254ae925fbc2fe210
+ production_core_release_publisher.py
+ c063b963b402cdce9354caac5451b6bf686ea2297a962e049649e97db2826eed
+ review_core_release_publisher.py
+ 533e75aee9d983750020344485490155d06c865440639794a1e420a923b70241
+ Author test report core_release_wire_review_v3/review.json
+ e50d9952b9ff1a09840a6a0eca1b0e00eb55ab994c83e82242e656a567d28cfd
+
+This supplements the initial independent review, SHA
+ac55a69d1168edcd57f2203855bed68037e3d6c9a6962f2943e74ecff874a49f.
+I read the changed source and the updated fixture, and checked their hashes.
+No author's source was edited, no fixture was independently rerun, and no
+network/GitHub/Lean action was performed. The author's 39 rejection checks and
+20 in-memory scenarios are attributed evidence, not my independent execution.
+
+The two previous issues are resolved at source level:
+
+1. Tool/workflow commit separation:
+checked_tool_revision executes actual local Git queries from the publisher's
+own directory. It clears inherited GIT_* variables, reads the real worktree
+top and HEAD, checks the file lies inside that checkout, and compares the
+committed HEAD:path blob byte-for-byte with the executing publisher source.
+actions_context requires this actual tool revision to equal the separately
+pinned request publisher revision P. The real GITHUB_SHA is independently
+validated and recorded as workflow revision Q with run/event identity; it is
+not overwritten or falsely relabelled as P. Rechecks before later mutations
+and final success reject a moved checkout. Adapter helper hashes remain
+separately tied to the externally pinned request. This permits tool commit P
+to precede the later request/workflow commit Q without a self-hash cycle.
+
+The unit fixture mocks Git process responses and checks arguments, env cleanup,
+correct revision, and wrong committed blob rejection. It does not claim an
+actual separate P/Q checkout deployment; that remains a workflow check.
+
+2. Durable journal primitives:
+The publisher now owns durable_new rather than changing the frozen core helper.
+Every event, raw REST response and result.json is created exclusively, flushed,
+file-fsynced, then followed by a directory fsync on POSIX. durable_directory
+creates missing directories from the first existing ancestor outward and
+syncs each new directory's parent entry and the new directory itself.
+Consequently mutation_intent returns only after these operations, before the
+HTTP request is sent; failures are propagated. No destructive cleanup or retry
+was introduced. The started event records the actual platform's sync mode and
+explicitly disclaims survival of loss of the whole runner.
+
+This matches the local-storage distinction in Linux man-pages fsync(2):
+https://man7.org/linux/man-pages/man2/fsync.2.html .
+The author test ran on Windows, where directory fsync is skipped and explicitly
+reported as not exercised; no power-loss test or Linux durable-storage test is
+claimed. This is a source-level correction with accurate execution limits.
+
+I rechecked that the release mutation sequence and inherited token/redirect/
+binary-hash controls remain as reviewed initially: the draft and published
+asset each undergo a complete redownload, and fixture mode cannot emit a
+production durable result. No additional substantive gap was found.
+
+Remaining execution boundary:
+A reviewed real request, actual separate pinned tool checkout, real Actions
+wrapper, large streamed upload, live draft/public verification and retained
+evidence are still required for a real release. This review does not authorize
+or assert any GitHub write, permanent retention, numeric leaf proof or full250
+trajectory/root theorem.
+

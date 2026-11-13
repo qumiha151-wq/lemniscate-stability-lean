@@ -1,0 +1,102 @@
+CORE RELEASE PUBLISHER — INITIAL INDEPENDENT READ-ONLY REVIEW
+Date: 2026-11-13
+Reviewer: finish_curve_input
+
+Reviewed candidate versions:
+ production_core_release_request.py
+ 3cd4eb7e08f9e5e7d61a373d31aee03ac1bdd5eec3c1b67254ae925fbc2fe210
+ production_core_release_publisher.py
+ b92617e49e55047a562453de74fbcb94e7b21c8d37d4a9ca535aa9b10ba2bc96
+ review_core_release_publisher.py
+ 43e280c7a75e743c2c0411d8fb86d5480875a6c20fdf7979976fab77ba35a27f
+ Author's wire report core_release_wire_review_v1/review.json
+ 69ea6e8a1b5f5b7da1a606dbba1f5d3812c7d06cff3da96ec3cbfa3e42f6ee3a
+
+I read all three sources, the inherited ReadOnlyReleaseHTTP implementation,
+the core helper write_new/plain_path, the author status and wire report, and
+the local Python http.client streaming-send implementation. No author's file
+was edited; no fixture, network request, GitHub mutation, or Lean invocation
+was independently run for this review. The author report's 37 rejection and
+20 scenario results are attributed to the author, not independently replayed.
+
+Two issues require resolution or an explicit narrowed promise before production:
+1. The original Actions gate equates GITHUB_SHA with q.publisher_revision.
+   Root independently identified the deployment self-reference if the request
+   containing its publisher commit and request digest lives in that same commit.
+   A sound deployment separates an already published tool commit P from the
+   later request/workflow commit Q, verifies the actual tool checkout is P,
+   and records the real workflow GITHUB_SHA=Q without overriding/spoofing it.
+   Root has already requested that change from the author.
+
+2. Journal.event and Journal.response fsync new files but do not fsync the
+   containing directory. Journal.__init__ also creates the journal directory
+   without synchronizing its parent. On a POSIX sudden-loss boundary, file
+   data fsync alone does not guarantee a newly created directory entry persists.
+   Thus the stronger promise that every attempted remote mutation has a
+   crash-durable local intent is not yet established. result.json uses the
+   frozen core.write_new, which has neither file fsync nor directory fsync.
+   A new publisher-owned durable writer should sync data and the necessary
+   directory entries, leaving frozen core helpers untouched; alternatively
+   the claim must be narrowed to process/normal-exit logging. This was reported
+   to root and the author. No overwrite/delete/retry behavior is required to
+   address it.
+   Primary documentation checked independently: Linux man-pages fsync(2),
+   https://man7.org/linux/man-pages/man2/fsync.2.html (DESCRIPTION). It explicitly
+   distinguishes synchronizing a file from persisting its directory entry.
+
+Other reviewed boundaries:
+- The core has a dedicated request schema and is not relabelled as a numeric
+  shard. The request is externally hash-pinned; archive bytes/size and raw
+  pack/restore/import reports are independently pinned and rehashed. Adapter
+  comparisons bind source, archive, exact base/inventory, successful restore,
+  full before/after base checks, actual private1704/331 and Arctan imports.
+  This consumes trusted upstream checked evidence; it does not recompile Lean
+  or rederive the core contents by unpacking the 6GB library set. Binding the
+  chosen local reports to the externally reviewed Actions ZIP provenance is
+  part of preparing the pinned request; live origin metadata is not a second
+  download/extraction of those three ZIPs.
+- Production prepare rejects test_fixture, and production main exposes no
+  allow-fixture switch. The injected in-memory transport is confined to the
+  explicit fixture call path and emits fixture_only with
+  remote_durability_verified=false. An internal synthetic response cannot
+  itself become a production durable record.
+- All origin run and artifact IDs/revision/digest/size/success/expiry are checked
+  before mutation and again before publication. Existing tag or release,
+  including a same-tag draft visible in the bounded collection scan, causes
+  refusal. The writer has no DELETE, tag-update, overwrite, automatic retry
+  or resume branch. A failed/ambiguous mutation retains remote state for a
+  separate recovery decision.
+- Mutation intents precede the four allowed writes: create exact lightweight
+  tag, create draft, upload new asset, publish that draft. PATCH is restricted
+  to draft=false; no arbitrary patch payload or destructive endpoint is
+  accepted. Exact tag identity is repeatedly read back.
+- Draft verification requires precisely one uploaded asset with matching ID,
+  name, size, SHA256 metadata and expected browser URL, then hashes its entire
+  downloaded body. It rechecks draft/asset/tag identity afterward. Only then
+  may publication occur. The published verifier performs a second complete
+  body hash and before/after metadata/tag comparison; the final extra read
+  again checks exactly one asset. download_count changes are intentionally
+  excluded from stable identity comparisons.
+- Authorization is added only to approved API/upload requests. Authenticated
+  mutation redirects are forbidden. The inherited binary reader permits only
+  its explicit approved HTTPS redirect hosts and clears credentials for the
+  signed binary request. It rejects additional/unapproved redirects, wrong
+  length, corrupt content, or changed release association. Journals store
+  endpoint/payload/result metadata, not the bearer token or signed binary URL.
+  Failure journal rows include exception type/status rather than arbitrary
+  exception text or request headers.
+- The production upload passes a timed file reader with explicit Content-Length.
+  The local stdlib http.client._send_output selects _read_readable when the
+  body has read(); that helper repeatedly calls read(self.blocksize). This
+  supports bounded upload buffering by source inspection. The author fixture
+  uses request.data.read() once for a small synthetic body, so it does not
+  measure 1.3GB upload streaming, peak memory, TLS or real GitHub behavior.
+  No such stress test is claimed here.
+- No proof that an asset will remain hosted forever is obtained. A successful
+  record establishes the observed release/asset and complete downloaded bytes
+  at that time. It remains distinct from the eventual full250 numerical
+  certificates and complete geometry theorem.
+
+These observations apply to the locked initial versions above. The P/Q gate
+and journal durability amendments are pending a separate delta review.
+

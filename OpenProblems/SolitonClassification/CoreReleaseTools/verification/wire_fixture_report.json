@@ -1,0 +1,369 @@
+{
+  "actual_core_evidence_check": {
+    "actual_lean_run_here": false,
+    "full_certificate_proved": false,
+    "upstream_pack_restore_imports_checked": true
+  },
+  "actual_github_requests": 0,
+  "actual_github_writes": 0,
+  "actual_lean_runs": 0,
+  "actual_network_sockets": 0,
+  "actual_platform": "nt",
+  "cases": [
+    {
+      "case": "fixture_blocked_in_production",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_layer",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_repo",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_publisher",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_helper",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_archive_path",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "asset_2gib",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_origins",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "mixed_run",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "no_private_audit",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_counts",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "failed_actual_import",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "false_base_check",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_archive_hash",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "no_real_execution_of_fixture",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "local_not_actions",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "invalid_workflow_sha",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "pull_request_event",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_actual_tool_revision",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "uncommitted_publisher_blob",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "failed_origin",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "expired_origin",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_source_commit",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "preexisting_tag",
+      "exception_type": "RuntimeError",
+      "rejected": true
+    },
+    {
+      "case": "preexisting_release",
+      "exception_type": "RuntimeError",
+      "rejected": true
+    },
+    {
+      "case": "existing_draft_collection",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "ambiguous_tag_creation",
+      "exception_type": "TimeoutError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_created_tag",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "nonempty_created_draft",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "starter_asset",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_upload_digest",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "extra_draft_asset",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "bad_draft_download",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "tag_moves_during_draft",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "tag_moves_after_publish",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "bad_published_download",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_published_download",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "wrong_published_membership",
+      "exception_type": "ValueError",
+      "rejected": true
+    },
+    {
+      "case": "changed_published_identity",
+      "exception_type": "ValueError",
+      "rejected": true
+    }
+  ],
+  "fixture_upload_is_real_core": false,
+  "full_certificate_proved": false,
+  "input_actual_evidence_sha256": {
+    "imports": "79833a87e8b776a425c574dc2133129a4eee8ab6091e5d130df3aad36b4a0fdc",
+    "pack": "5485db735cfaad337abe62237a4567160dbb918af2a6d030dcb09f0c826069f3",
+    "restore": "4b6da5ce25cadd7f9b90b9605567bf49d1c2f9d1c284ce0c75fc54ecebf2d912"
+  },
+  "journal_directory_fsync_exercised": false,
+  "power_loss_simulated": false,
+  "scenarios": [
+    {
+      "binary_downloads": 2,
+      "journal_events": 48,
+      "published_in_memory": true,
+      "scenario": "good",
+      "writes": 4
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 4,
+      "published_in_memory": false,
+      "scenario": "failed_origin",
+      "writes": 0
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 4,
+      "published_in_memory": false,
+      "scenario": "expired_origin",
+      "writes": 0
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 9,
+      "published_in_memory": false,
+      "scenario": "wrong_source_commit",
+      "writes": 0
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 10,
+      "published_in_memory": false,
+      "scenario": "preexisting_tag",
+      "writes": 0
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 11,
+      "published_in_memory": false,
+      "scenario": "preexisting_release",
+      "writes": 0
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 12,
+      "published_in_memory": false,
+      "scenario": "existing_draft_collection",
+      "writes": 0
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 13,
+      "published_in_memory": false,
+      "scenario": "ambiguous_tag_creation",
+      "writes": 1
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 15,
+      "published_in_memory": false,
+      "scenario": "wrong_created_tag",
+      "writes": 1
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 20,
+      "published_in_memory": false,
+      "scenario": "nonempty_created_draft",
+      "writes": 2
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 26,
+      "published_in_memory": false,
+      "scenario": "starter_asset",
+      "writes": 3
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 26,
+      "published_in_memory": false,
+      "scenario": "wrong_upload_digest",
+      "writes": 3
+    },
+    {
+      "binary_downloads": 0,
+      "journal_events": 26,
+      "published_in_memory": false,
+      "scenario": "extra_draft_asset",
+      "writes": 3
+    },
+    {
+      "binary_downloads": 1,
+      "journal_events": 27,
+      "published_in_memory": false,
+      "scenario": "bad_draft_download",
+      "writes": 3
+    },
+    {
+      "binary_downloads": 1,
+      "journal_events": 30,
+      "published_in_memory": false,
+      "scenario": "tag_moves_during_draft",
+      "writes": 3
+    },
+    {
+      "binary_downloads": 1,
+      "journal_events": 42,
+      "published_in_memory": true,
+      "scenario": "tag_moves_after_publish",
+      "writes": 4
+    },
+    {
+      "binary_downloads": 2,
+      "journal_events": 42,
+      "published_in_memory": true,
+      "scenario": "bad_published_download",
+      "writes": 4
+    },
+    {
+      "binary_downloads": 2,
+      "journal_events": 42,
+      "published_in_memory": true,
+      "scenario": "corrupt_published_download",
+      "writes": 4
+    },
+    {
+      "binary_downloads": 1,
+      "journal_events": 42,
+      "published_in_memory": true,
+      "scenario": "wrong_published_membership",
+      "writes": 4
+    },
+    {
+      "binary_downloads": 2,
+      "journal_events": 45,
+      "published_in_memory": true,
+      "scenario": "changed_published_identity",
+      "writes": 4
+    }
+  ],
+  "schema": "rotating.core-release-wire-fixture.v1",
+  "sources_sha256": {
+    "production_core_release_publisher.py": "c063b963b402cdce9354caac5451b6bf686ea2297a962e049649e97db2826eed",
+    "production_core_release_request.py": "3cd4eb7e08f9e5e7d61a373d31aee03ac1bdd5eec3c1b67254ae925fbc2fe210",
+    "review_core_release_publisher.py": "533e75aee9d983750020344485490155d06c865440639794a1e420a923b70241"
+  },
+  "status": "checked",
+  "tool_git_identity_test": "mocked process responses, no actual checkout assertion",
+  "wall_seconds": 10.66236299999946
+}
