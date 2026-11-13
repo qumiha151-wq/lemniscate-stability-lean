@@ -1,0 +1,884 @@
+{
+  "schema": "rotating.production-shard.v1",
+  "key": "RP0000",
+  "candidate_id": "nonzero_rotation_minus56_over57",
+  "candidate_hash": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+  "sign": 1,
+  "start": 0,
+  "count": 32,
+  "orders": {
+    "state": 42,
+    "matrix": 22
+  },
+  "mesh": "1000000000000000000000000000000000000000000000000000000000000",
+  "step": {
+    "num": "156080360716790281849844889560549805394762194677867378746575322740205093349685521380557013",
+    "den": "20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "modules": [
+    {
+      "name": "SolitonClassification.Rotating.RP0000B00Nodes",
+      "source": "SolitonClassification/Rotating/RP0000B00Nodes.lean",
+      "sha256": "2eefe46a0fb733ce0fecf3ec2a6609713c3ccb55ea96cc7577244afee5cd812e",
+      "imports": [
+        "SolitonClassification.Rotating.PointMatrixGridBudget",
+        "SolitonClassification.Rotating.FlowTube"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0000",
+      "source": "SolitonClassification/Rotating/RP0000L0000.lean",
+      "sha256": "db5d5470ffb32f5e0b77a30cfb163baee855a2311b4d8e3742eaa8095bf0b92f",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0001",
+      "source": "SolitonClassification/Rotating/RP0000L0001.lean",
+      "sha256": "2d32361476e6e815cf0e30b3978d150d7969c357fb572ac352f7172c66ea5582",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0002",
+      "source": "SolitonClassification/Rotating/RP0000L0002.lean",
+      "sha256": "3f72ba6e28bdc572e5dc4b27040e04feab4296297e11ae95b8b7a6ccef4ba3ed",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0003",
+      "source": "SolitonClassification/Rotating/RP0000L0003.lean",
+      "sha256": "19bd13f5ff61a04cf70f66ae8cc0b766c090310c828f4e23f44b156b1b03bc80",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0004",
+      "source": "SolitonClassification/Rotating/RP0000L0004.lean",
+      "sha256": "f58088bbf6289b56d97aad4b3176827a60e625a075d0f2e240c03b93e2c2f498",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0005",
+      "source": "SolitonClassification/Rotating/RP0000L0005.lean",
+      "sha256": "717127f5d2cd27c35178abdec33df1a299b2b1513bcc8f71099ceae7b004259a",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0006",
+      "source": "SolitonClassification/Rotating/RP0000L0006.lean",
+      "sha256": "0faa0f0a77d5ae13596cc8d18846ab98292e8dda0ff488e5de19c6e7cd0896d7",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0007",
+      "source": "SolitonClassification/Rotating/RP0000L0007.lean",
+      "sha256": "b3c6462ec48a363265e83a0214ff2554f7d6c55b6bde389ef29736d5cec9e7e1",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B00Block",
+      "source": "SolitonClassification/Rotating/RP0000B00Block.lean",
+      "sha256": "4a175709e2c1a2df46d17f3371f680db5a0d61ca57472ac69a64726e9ab95f81",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000L0000",
+        "SolitonClassification.Rotating.RP0000L0001",
+        "SolitonClassification.Rotating.RP0000L0002",
+        "SolitonClassification.Rotating.RP0000L0003",
+        "SolitonClassification.Rotating.RP0000L0004",
+        "SolitonClassification.Rotating.RP0000L0005",
+        "SolitonClassification.Rotating.RP0000L0006",
+        "SolitonClassification.Rotating.RP0000L0007",
+        "SolitonClassification.Rotating.PolynomialPointGridBlock"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B01Nodes",
+      "source": "SolitonClassification/Rotating/RP0000B01Nodes.lean",
+      "sha256": "64b75bfbb08796f710ebda8acb3bcadd5d6d71b0fbe88d727d53a7cb4b0bc24d",
+      "imports": [
+        "SolitonClassification.Rotating.PointMatrixGridBudget",
+        "SolitonClassification.Rotating.FlowTube"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0008",
+      "source": "SolitonClassification/Rotating/RP0000L0008.lean",
+      "sha256": "2906ec2deec44caf7ccf31d9684f752a8a755c139cb2a4c60af9c158eabdf764",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0009",
+      "source": "SolitonClassification/Rotating/RP0000L0009.lean",
+      "sha256": "61bfbf11118be227ff0fb25fafcacae9d4eb881895d4b47c518d789d02760113",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0010",
+      "source": "SolitonClassification/Rotating/RP0000L0010.lean",
+      "sha256": "cafc3ff35eed174a9e6fd35541adc3d3a38f4279baa7b41e7736cf2a013fd5b3",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0011",
+      "source": "SolitonClassification/Rotating/RP0000L0011.lean",
+      "sha256": "c1ea4709f8fb01b3e64f44fc14c1f1c7cb90e9a3ebee5879c4cc7f794f753ba9",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0012",
+      "source": "SolitonClassification/Rotating/RP0000L0012.lean",
+      "sha256": "b2fee925c3775831320f91523344b2c24790d1e538d9af890d50b00ba537d576",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0013",
+      "source": "SolitonClassification/Rotating/RP0000L0013.lean",
+      "sha256": "823797e65fffec325c6e2cdfa4d062d29e713a29f4854822740f5ba9a53c8896",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0014",
+      "source": "SolitonClassification/Rotating/RP0000L0014.lean",
+      "sha256": "4ebac1edcde11c11c404ce3f8c6d2b7e5da73fb4f29ee2cf44dccd2a20bbe687",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0015",
+      "source": "SolitonClassification/Rotating/RP0000L0015.lean",
+      "sha256": "72fccb18a4a1d52f841d36133eb106c9de0ba48b95a329f1f9278db87ee9b1a6",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B01Block",
+      "source": "SolitonClassification/Rotating/RP0000B01Block.lean",
+      "sha256": "4fdd0df6d554871e045847d237e5a578602ddea6142a036cea8cd6efa0167030",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000L0008",
+        "SolitonClassification.Rotating.RP0000L0009",
+        "SolitonClassification.Rotating.RP0000L0010",
+        "SolitonClassification.Rotating.RP0000L0011",
+        "SolitonClassification.Rotating.RP0000L0012",
+        "SolitonClassification.Rotating.RP0000L0013",
+        "SolitonClassification.Rotating.RP0000L0014",
+        "SolitonClassification.Rotating.RP0000L0015",
+        "SolitonClassification.Rotating.PolynomialPointGridBlock"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B02Nodes",
+      "source": "SolitonClassification/Rotating/RP0000B02Nodes.lean",
+      "sha256": "e2125764169de8d0c01ba0cb5d7460e92a0c0c759b963557b5d1db0ef3ecaa72",
+      "imports": [
+        "SolitonClassification.Rotating.PointMatrixGridBudget",
+        "SolitonClassification.Rotating.FlowTube"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0016",
+      "source": "SolitonClassification/Rotating/RP0000L0016.lean",
+      "sha256": "4f2185bb4b34e2e16491356b94ab221059d68c776520d56534641516de93b475",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0017",
+      "source": "SolitonClassification/Rotating/RP0000L0017.lean",
+      "sha256": "8cc1154d2e01067e69fcdd265105036e0d339042acfddf67c332ecd1952db11c",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0018",
+      "source": "SolitonClassification/Rotating/RP0000L0018.lean",
+      "sha256": "bf1e5affff4b6e25c8094e6d1f0a92766fdea6dc57e037275b64e52b5521af23",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0019",
+      "source": "SolitonClassification/Rotating/RP0000L0019.lean",
+      "sha256": "f4a8f373720844f38763dfa1e39a475ea2ab232804cec324d51e5356e14afc60",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0020",
+      "source": "SolitonClassification/Rotating/RP0000L0020.lean",
+      "sha256": "64274892fa9f5e7916b4261e62fe99369c571983d08b6b36c23082e9874bf4be",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0021",
+      "source": "SolitonClassification/Rotating/RP0000L0021.lean",
+      "sha256": "8ff836a0631e5e06fd37c45e0027ff8aafa2918605b5b7cef5628f2ce68a451b",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0022",
+      "source": "SolitonClassification/Rotating/RP0000L0022.lean",
+      "sha256": "50b308e146eb267b404c28fad571653816af9aecf97d1969ec9194c14e32cb82",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0023",
+      "source": "SolitonClassification/Rotating/RP0000L0023.lean",
+      "sha256": "a939642d29d8133c95c01513af34d51e521b4c9bf5d477d784bf99a4f87199e8",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B02Block",
+      "source": "SolitonClassification/Rotating/RP0000B02Block.lean",
+      "sha256": "906d9728a9da3f3659338280b41d3759e98a4856114f14a3efda7e8f190d183c",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000L0016",
+        "SolitonClassification.Rotating.RP0000L0017",
+        "SolitonClassification.Rotating.RP0000L0018",
+        "SolitonClassification.Rotating.RP0000L0019",
+        "SolitonClassification.Rotating.RP0000L0020",
+        "SolitonClassification.Rotating.RP0000L0021",
+        "SolitonClassification.Rotating.RP0000L0022",
+        "SolitonClassification.Rotating.RP0000L0023",
+        "SolitonClassification.Rotating.PolynomialPointGridBlock"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B03Nodes",
+      "source": "SolitonClassification/Rotating/RP0000B03Nodes.lean",
+      "sha256": "72776dc34ef674ca9b943a5ff0842f676001a4aefc9a04084521bd98d7bbdc1c",
+      "imports": [
+        "SolitonClassification.Rotating.PointMatrixGridBudget",
+        "SolitonClassification.Rotating.FlowTube"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0024",
+      "source": "SolitonClassification/Rotating/RP0000L0024.lean",
+      "sha256": "847019d7953529613a35e5b0e796cc545b9640179ed8aab69b421085ea74bd6f",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0025",
+      "source": "SolitonClassification/Rotating/RP0000L0025.lean",
+      "sha256": "8bfc73ad9bbb972a9b86e5eb701c008a3e4dff537d6abe26f3bf3f8165e26f5f",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0026",
+      "source": "SolitonClassification/Rotating/RP0000L0026.lean",
+      "sha256": "852cb8f434591139646543591c53c47c3c769b131a1431c93c29b02fd1bc9e15",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0027",
+      "source": "SolitonClassification/Rotating/RP0000L0027.lean",
+      "sha256": "f89f2f1c60ba4b5935d1cd2667af14db122080bced53fa81b4dd5aafcdbc0bf1",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0028",
+      "source": "SolitonClassification/Rotating/RP0000L0028.lean",
+      "sha256": "eec140bfc86261d0e5f3211d6b0078e32e51332c0dd400683812b0d74bf7d188",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0029",
+      "source": "SolitonClassification/Rotating/RP0000L0029.lean",
+      "sha256": "086c4acb7cf6c79eb2ac170977706261e7a7445dc6e8f02810e399188a30835c",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0030",
+      "source": "SolitonClassification/Rotating/RP0000L0030.lean",
+      "sha256": "b11e921cef5719fddbd6e771ca8ac6b5b601d1a1d07094e6c9123af827a46a9d",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000L0031",
+      "source": "SolitonClassification/Rotating/RP0000L0031.lean",
+      "sha256": "f424595223050300fe7d91743cc981705b2dd419c27308f9584c34b44756172f",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B03Nodes",
+        "SolitonClassification.Rotating.TaylorDataCertificate",
+        "SolitonClassification.Rotating.FixedEndpointReset",
+        "SolitonClassification.Rotating.MixedOrderVariation",
+        "SolitonClassification.Rotating.VariationLinearity",
+        "Init.Data.Vector.Basic",
+        "Init.Data.Array.DecidableEq"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000B03Block",
+      "source": "SolitonClassification/Rotating/RP0000B03Block.lean",
+      "sha256": "67a150c7bfd889d6627bc92f281d4da0e432c9fd78ff98d60a0710b1dc783332",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000L0024",
+        "SolitonClassification.Rotating.RP0000L0025",
+        "SolitonClassification.Rotating.RP0000L0026",
+        "SolitonClassification.Rotating.RP0000L0027",
+        "SolitonClassification.Rotating.RP0000L0028",
+        "SolitonClassification.Rotating.RP0000L0029",
+        "SolitonClassification.Rotating.RP0000L0030",
+        "SolitonClassification.Rotating.RP0000L0031",
+        "SolitonClassification.Rotating.PolynomialPointGridBlock"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Seam0_0",
+      "source": "SolitonClassification/Rotating/RP0000Seam0_0.lean",
+      "sha256": "289a491343d154fc60c815c05d205a0e1a4a867a9845fd5ecb19c2aaf02f1ca1",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Nodes",
+        "SolitonClassification.Rotating.RP0000B01Nodes"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Join0_0",
+      "source": "SolitonClassification/Rotating/RP0000Join0_0.lean",
+      "sha256": "c1d8dbc8dc729e36e2f5a40a973f394039df7469b477b4270d4c5a031842bd71",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B00Block",
+        "SolitonClassification.Rotating.RP0000B01Block",
+        "SolitonClassification.Rotating.RP0000Seam0_0"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Seam0_1",
+      "source": "SolitonClassification/Rotating/RP0000Seam0_1.lean",
+      "sha256": "5641992ee1c6d4dd0adc040856767a8ea8f0736d619607d97a92b53298dd217c",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Nodes",
+        "SolitonClassification.Rotating.RP0000B03Nodes"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Join0_1",
+      "source": "SolitonClassification/Rotating/RP0000Join0_1.lean",
+      "sha256": "943bb871a98b4012572a7d778e06d47250e116564e81488fc98f79de8101e917",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B02Block",
+        "SolitonClassification.Rotating.RP0000B03Block",
+        "SolitonClassification.Rotating.RP0000Seam0_1"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Seam1_0",
+      "source": "SolitonClassification/Rotating/RP0000Seam1_0.lean",
+      "sha256": "a2d26687a34479723396479398f5099413786bcffdfd183d419ba3391f8827f8",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000B01Nodes",
+        "SolitonClassification.Rotating.RP0000B02Nodes"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Join1_0",
+      "source": "SolitonClassification/Rotating/RP0000Join1_0.lean",
+      "sha256": "41e86e24c71099683d98ecdb2ba68eea722fe20f8ad523948bd1716a134eb214",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000Join0_0",
+        "SolitonClassification.Rotating.RP0000Join0_1",
+        "SolitonClassification.Rotating.RP0000Seam1_0"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.RP0000Audit",
+      "source": "SolitonClassification/Rotating/RP0000Audit.lean",
+      "sha256": "e696a10b38789179d52acc8da71eb3174782ed4c720e224f650aec08d2284f4a",
+      "imports": [
+        "SolitonClassification.Rotating.RP0000Join1_0"
+      ]
+    }
+  ],
+  "root_module": "SolitonClassification.Rotating.RP0000Join1_0",
+  "audit_module": "SolitonClassification.Rotating.RP0000Audit",
+  "audit_marker": "Production_RP0000_audit",
+  "total_path_steps": 4000,
+  "local_block_size": 8,
+  "reset_bounds": {
+    "state": {
+      "num": "1",
+      "den": "10000000000000000000000000000000000000000000000000000000"
+    },
+    "matrix": {
+      "num": "1",
+      "den": "10000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "leaf_coverage": [
+    {
+      "global_step": 0,
+      "state_module": "SolitonClassification.Rotating.RP0000L0000",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0000",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 1,
+      "state_module": "SolitonClassification.Rotating.RP0000L0001",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0001",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 2,
+      "state_module": "SolitonClassification.Rotating.RP0000L0002",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0002",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 3,
+      "state_module": "SolitonClassification.Rotating.RP0000L0003",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0003",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 4,
+      "state_module": "SolitonClassification.Rotating.RP0000L0004",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0004",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 5,
+      "state_module": "SolitonClassification.Rotating.RP0000L0005",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0005",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 6,
+      "state_module": "SolitonClassification.Rotating.RP0000L0006",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0006",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 7,
+      "state_module": "SolitonClassification.Rotating.RP0000L0007",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0007",
+      "header_module": "SolitonClassification.Rotating.RP0000B00Nodes"
+    },
+    {
+      "global_step": 8,
+      "state_module": "SolitonClassification.Rotating.RP0000L0008",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0008",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 9,
+      "state_module": "SolitonClassification.Rotating.RP0000L0009",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0009",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 10,
+      "state_module": "SolitonClassification.Rotating.RP0000L0010",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0010",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 11,
+      "state_module": "SolitonClassification.Rotating.RP0000L0011",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0011",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 12,
+      "state_module": "SolitonClassification.Rotating.RP0000L0012",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0012",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 13,
+      "state_module": "SolitonClassification.Rotating.RP0000L0013",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0013",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 14,
+      "state_module": "SolitonClassification.Rotating.RP0000L0014",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0014",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 15,
+      "state_module": "SolitonClassification.Rotating.RP0000L0015",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0015",
+      "header_module": "SolitonClassification.Rotating.RP0000B01Nodes"
+    },
+    {
+      "global_step": 16,
+      "state_module": "SolitonClassification.Rotating.RP0000L0016",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0016",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 17,
+      "state_module": "SolitonClassification.Rotating.RP0000L0017",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0017",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 18,
+      "state_module": "SolitonClassification.Rotating.RP0000L0018",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0018",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 19,
+      "state_module": "SolitonClassification.Rotating.RP0000L0019",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0019",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 20,
+      "state_module": "SolitonClassification.Rotating.RP0000L0020",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0020",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 21,
+      "state_module": "SolitonClassification.Rotating.RP0000L0021",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0021",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 22,
+      "state_module": "SolitonClassification.Rotating.RP0000L0022",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0022",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 23,
+      "state_module": "SolitonClassification.Rotating.RP0000L0023",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0023",
+      "header_module": "SolitonClassification.Rotating.RP0000B02Nodes"
+    },
+    {
+      "global_step": 24,
+      "state_module": "SolitonClassification.Rotating.RP0000L0024",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0024",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 25,
+      "state_module": "SolitonClassification.Rotating.RP0000L0025",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0025",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 26,
+      "state_module": "SolitonClassification.Rotating.RP0000L0026",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0026",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 27,
+      "state_module": "SolitonClassification.Rotating.RP0000L0027",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0027",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 28,
+      "state_module": "SolitonClassification.Rotating.RP0000L0028",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0028",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 29,
+      "state_module": "SolitonClassification.Rotating.RP0000L0029",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0029",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 30,
+      "state_module": "SolitonClassification.Rotating.RP0000L0030",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0030",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    },
+    {
+      "global_step": 31,
+      "state_module": "SolitonClassification.Rotating.RP0000L0031",
+      "matrix_module": "SolitonClassification.Rotating.RP0000L0031",
+      "header_module": "SolitonClassification.Rotating.RP0000B03Nodes"
+    }
+  ],
+  "checked_constant": "SolitonClassification.Rotating.RP0000Join1_0.certificate",
+  "output_node": "output_node.json",
+  "attachments": [
+    {
+      "source": "output_node.json",
+      "sha256": "b5e1017bb95e5cbfe1a868ff1a98305edcc5b56a1600b5874a077ff9a964a12c"
+    }
+  ],
+  "input_node_sha256": null,
+  "generator_sha256": "2d530034695382ac892768595c3ee8b1106372ed3e1ac2a4bb492e1017adf34b",
+  "source_fingerprints": {
+    "seed": {
+      "sha256": "7f227259292b5e4795f6df4e2f5f4e907bdc360a973915fee2e0bf3015ed3486",
+      "bytes": 8205
+    },
+    "candidate_initial": {
+      "sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+      "bytes": 4622
+    },
+    "state_template": {
+      "sha256": "ae34925a5de78a1f4499c23abacc847d5b2add1796bb23a01c44c656df9a314b",
+      "bytes": 30403
+    },
+    "matrix_template": {
+      "sha256": "e91aa87d6b69219c834f1e87f24ac178b627f51d61befe122ee2d4ee5fa09f6e",
+      "bytes": 66792
+    },
+    "generator": {
+      "sha256": "2d530034695382ac892768595c3ee8b1106372ed3e1ac2a4bb492e1017adf34b",
+      "bytes": 20559
+    },
+    "proposal_arithmetic": {
+      "sha256": "dcd5024d5d182763cf91ca552080065dbe7dab6cec18bb1f49f7b07a5911c183",
+      "bytes": 6084
+    },
+    "interval_arithmetic": {
+      "sha256": "e586dcd92c56567232ce7751765eec5a55377d1e7f6398291606d674aa5568b4",
+      "bytes": 1945
+    }
+  },
+  "module_system": true,
+  "status": "Generated untrusted proposals and Lean source only; no successful compile or trajectory/root claim."
+}

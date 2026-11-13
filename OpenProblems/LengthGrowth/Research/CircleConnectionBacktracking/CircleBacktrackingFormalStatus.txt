@@ -1,0 +1,30 @@
+CircleConnectionBacktracking: actual local Lean verification
+2026-11-13.
+
+Source SHA256:
+672908a1d09c1e8695b846a734a69dc78d7ba9e179eb75d082d413762524ce25
+Lean: leanprover/lean4:v4.33.1.
+Mathlib: 0df444a360eaa60ab8c11dca51a86af692955474.
+Actual compiler exit0, elapsed14.829728s; source rehashed unchanged.
+Actual log printed both final declarations' axiom dependencies:
+  propext, Classical.choice, Quot.sound.
+No sorryAx, additional axiom or native_decide appears in either closure.
+Two style warnings concern convert! sequencing only.
+
+Verified final declarations:
+LengthGrowth.CircleConnection.SupportProfile.exists_negative_derivative
+LengthGrowth.CircleConnection.SupportProfile.not_monotone_curvature
+
+The hypotheses explicitly include genuine real differentiability, the two
+Frenet support derivative equations and all six oriented-circle endpoint
+limits. The balance derivative and its limits are proved, not assumed.
+The conclusions force a strictly negative curvature derivative somewhere
+and rule out globally nondecreasing curvature. No exponential tail,
+integral convergence, curvature-zero alignment or elastic force equation
+is assumed. This is a geometric necessary condition, not an existence
+theorem, a full classification or the general quarter-power length bound.
+
+The companion text derives strict total-negative-variation bounds. Those
+integral arguments have not been formalized in this module. The original
+source and observed stdout/stderr/result are retained separately. The two
+earlier development failures are not successful verification evidence.

@@ -1,0 +1,409 @@
+{
+  "schema": "rotating.assembly-plan-tests.v1",
+  "status": "passed",
+  "structural_fixture_scope": "synthetic internal helper data only; production full CLI was not called",
+  "rejection_checks": [
+    {
+      "name": "graph_missing_transitive",
+      "rejected": true,
+      "reason": "Missing transitive project module: ClosureFixture.A"
+    },
+    {
+      "name": "graph_cycle",
+      "rejected": true,
+      "reason": "Cyclic project imports: ClosureFixture.A"
+    },
+    {
+      "name": "graph_casefold_duplicate",
+      "rejected": true,
+      "reason": "Duplicate/case-fold or foreign project module: ClosureFixture.a"
+    },
+    {
+      "name": "graph_duplicate_import",
+      "rejected": true,
+      "reason": "Duplicate or malformed source imports"
+    },
+    {
+      "name": "graph_bad_name",
+      "rejected": true,
+      "reason": "Invalid module name"
+    },
+    {
+      "name": "graph_foreign",
+      "rejected": true,
+      "reason": "Duplicate/case-fold or foreign project module: Other.A"
+    },
+    {
+      "name": "order_future_dep",
+      "rejected": true,
+      "reason": "Collision or non-topological planned import: ClosureFixture.D"
+    },
+    {
+      "name": "order_existing_collision",
+      "rejected": true,
+      "reason": "Collision or non-topological planned import: ClosureFixture.A"
+    },
+    {
+      "name": "duplicate_JSON_key",
+      "rejected": true,
+      "reason": "Duplicate JSON key: x"
+    },
+    {
+      "name": "path_parent_escape",
+      "rejected": true,
+      "reason": "Noncanonical evidence path"
+    },
+    {
+      "name": "path_absolute",
+      "rejected": true,
+      "reason": "Noncanonical evidence path"
+    },
+    {
+      "name": "path_double_separator",
+      "rejected": true,
+      "reason": "Noncanonical evidence path"
+    },
+    {
+      "name": "externally_pinned_input_mutation",
+      "rejected": true,
+      "reason": "Externally pinned bytes differ: C:\\Users\\17815\\Documents\\Codex\\2026-11-11\\w\\work\\rotating_formal\\assembly_plan_fixture_v2\\pin_probe.json"
+    },
+    {
+      "name": "synthetic_scope_ledger_mode_13",
+      "rejected": true,
+      "reason": "Pilot is not complete250 evidence"
+    },
+    {
+      "name": "synthetic_scope_merged_mode_14",
+      "rejected": true,
+      "reason": "Pilot is not complete250 evidence"
+    },
+    {
+      "name": "synthetic_scope_ledger_jobs_15",
+      "rejected": true,
+      "reason": "Incomplete or reordered full250 coverage"
+    },
+    {
+      "name": "synthetic_scope_ledger_jobs_16",
+      "rejected": true,
+      "reason": "Incomplete or reordered full250 coverage"
+    },
+    {
+      "name": "synthetic_scope_ledger_jobs_17",
+      "rejected": true,
+      "reason": "Incomplete or reordered full250 coverage"
+    },
+    {
+      "name": "synthetic_scope_ledger_source_revision_18",
+      "rejected": true,
+      "reason": "Foreign source revision"
+    },
+    {
+      "name": "synthetic_scope_merged_base_lock_sha256_19",
+      "rejected": true,
+      "reason": "Mixed plan/base identities"
+    },
+    {
+      "name": "synthetic_scope_ledger_plan_sha256_20",
+      "rejected": true,
+      "reason": "Mixed plan/base identities"
+    },
+    {
+      "name": "synthetic_scope_ledger_publication_revision_21",
+      "rejected": true,
+      "reason": "Missing publication revision"
+    },
+    {
+      "name": "synthetic_scope_merged_full_certificate_proved_22",
+      "rejected": true,
+      "reason": "Invalid merge status/scope"
+    },
+    {
+      "name": "synthetic_scope_merged_actual_lean_import_checked_23",
+      "rejected": true,
+      "reason": "Invalid merge status/scope"
+    },
+    {
+      "name": "synthetic_scope_merged_all_250_projections_validated_24",
+      "rejected": true,
+      "reason": "Invalid merge status/scope"
+    },
+    {
+      "name": "synthetic_scope_no_durable",
+      "rejected": true,
+      "reason": "Full ledger requires durable original proof bindings"
+    },
+    {
+      "name": "synthetic_final_base_lock_sha256",
+      "rejected": true,
+      "reason": "Wrong actual48 report/source/base"
+    },
+    {
+      "name": "synthetic_final_private_project_input_files",
+      "rejected": true,
+      "reason": "Actual48 report overstates scope or has extra project inputs"
+    },
+    {
+      "name": "synthetic_final_full_path_instances_checked",
+      "rejected": true,
+      "reason": "Actual48 report overstates scope or has extra project inputs"
+    },
+    {
+      "name": "synthetic_final_modules",
+      "rejected": true,
+      "reason": "Wrong actual48/audit modules"
+    },
+    {
+      "name": "synthetic_final_lean",
+      "rejected": true,
+      "reason": "Actual48 must be from the same Linux captured core"
+    },
+    {
+      "name": "synthetic_final_extra_external_setup_modules",
+      "rejected": true,
+      "reason": "Actual48 report overstates scope or has extra project inputs"
+    },
+    {
+      "name": "synthetic_final_fresh_audit",
+      "rejected": true,
+      "reason": "An actual48/audit call failed"
+    },
+    {
+      "name": "synthetic_final_helper_sha256",
+      "rejected": true,
+      "reason": "Actual48 runner identity differs"
+    },
+    {
+      "name": "setup_missing_transitive",
+      "rejected": true,
+      "reason": "Setup changed/overrides source imports/private map"
+    },
+    {
+      "name": "setup_private_layer",
+      "rejected": true,
+      "reason": "Setup changed/overrides source imports/private map"
+    },
+    {
+      "name": "setup_source_import_override",
+      "rejected": true,
+      "reason": "Setup changed/overrides source imports/private map"
+    },
+    {
+      "name": "archived_setup_private_layer",
+      "rejected": true,
+      "reason": "Actual48 setup includes private/server/IR or invalid mapping"
+    },
+    {
+      "name": "archived_setup_source_import_override",
+      "rejected": true,
+      "reason": "Actual48 setup changes imports/plugins/options"
+    },
+    {
+      "name": "archived_setup_wrong_origin",
+      "rejected": true,
+      "reason": "Actual48 setup path is not its canonical public primary"
+    },
+    {
+      "name": "archived_setup_missing_transitive",
+      "rejected": true,
+      "reason": "Actual48 setup does not map precisely its proven inputs"
+    },
+    {
+      "name": "fallback_contains_project",
+      "rejected": true,
+      "reason": "Project namespace exposed in fallback root"
+    },
+    {
+      "name": "closure_missing_available",
+      "rejected": true,
+      "reason": "An actual transitive primary has not been supplied"
+    },
+    {
+      "name": "public_tree_private",
+      "rejected": true,
+      "reason": "Extra/missing primary or private/server/IR project artifact"
+    },
+    {
+      "name": "public_tree_changed",
+      "rejected": true,
+      "reason": "Changed public primary: ClosureFixture.A"
+    }
+  ],
+  "actual_tiny_lean_modules": [
+    {
+      "name": "ClosureFixture.A",
+      "exit_code": 0,
+      "source": {
+        "sha256": "18d01c0a82d83291f66e24c14df498e51a678c9f156cc6fcdeba2309c16a6d5f",
+        "bytes": 163
+      },
+      "setup": {
+        "sha256": "94e33cd1580250e4a41c798d4c99e581a676d452aea37ad3cb969f05e8bd6a93",
+        "bytes": 143
+      },
+      "log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "artifacts": {
+        "": {
+          "sha256": "260c3f200b1d63a413dd49e67f335765ce9fcf03a1d3ed9f99a46941e434a12e",
+          "bytes": 5368
+        },
+        ".private": {
+          "sha256": "000334116e1741ad05145111407a1c615bc10a91f5fe222bc4f327df14111c1a",
+          "bytes": 1824
+        },
+        ".server": {
+          "sha256": "6a7dde3ea28fda5e3fc0bf25424694903d472cae6ca6a6740c50a0d47b858cc1",
+          "bytes": 1336
+        }
+      },
+      "mapped_project_names": [],
+      "wall_seconds": 1.0159999999996217
+    },
+    {
+      "name": "ClosureFixture.B",
+      "exit_code": 0,
+      "source": {
+        "sha256": "4967d35cbec651fcdbfa173f1c1f5c4a67b65933ac259191a1f4abfe04f3ef55",
+        "bytes": 157
+      },
+      "setup": {
+        "sha256": "34c47e44e161f136945f213e7400f17013e6f5bf4d5bcaf63b128b70d25d8fd4",
+        "bytes": 353
+      },
+      "log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "artifacts": {
+        "": {
+          "sha256": "20145e210d06df13c0847aa822d091fe7f3dc7d22f6be148aa7a42fa4e4750fb",
+          "bytes": 6392
+        },
+        ".private": {
+          "sha256": "c7906e540865b2bba1d26309c26ef9c885a28f552e06c9e08eb7114579dffb70",
+          "bytes": 1376
+        },
+        ".server": {
+          "sha256": "89b250a9ec5643311fd2906fccf8aa492e6b908478ded539c7b87d5231dfa3f8",
+          "bytes": 872
+        }
+      },
+      "mapped_project_names": [
+        "ClosureFixture.A"
+      ],
+      "wall_seconds": 1.0319999999992433
+    },
+    {
+      "name": "ClosureFixture.C",
+      "exit_code": 0,
+      "source": {
+        "sha256": "2d8f421aeedfeff04ca70df76487ee4de4206ea13ac39848c6dc92023d6e3d96",
+        "bytes": 157
+      },
+      "setup": {
+        "sha256": "6713c0e0212e3ed650e0de5046b0ced787f2aace8094aae7dcf6572e6d86c35e",
+        "bytes": 561
+      },
+      "log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "artifacts": {
+        "": {
+          "sha256": "bf2d39d02179da7284be818f1fbf011aadca6b540bb4bb5641c576ffc52bcfda",
+          "bytes": 6392
+        },
+        ".private": {
+          "sha256": "c6146ab972c55c9b9273c09d4b3886b49cd9ff860bbcc6c41cd35599af903372",
+          "bytes": 1288
+        },
+        ".server": {
+          "sha256": "1152b730bec496ead0da40cd646394c7eb65f1971bc23127130aa2c0d74f2310",
+          "bytes": 872
+        }
+      },
+      "mapped_project_names": [
+        "ClosureFixture.A",
+        "ClosureFixture.B"
+      ],
+      "wall_seconds": 0.9529999999995198
+    },
+    {
+      "name": "ClosureFixture.D",
+      "exit_code": 0,
+      "source": {
+        "sha256": "ddc3e61bcbaa9c00b7ebe8aeee62c7ff07d7c1f8234c175a853eb9fc9d49fe57",
+        "bytes": 389
+      },
+      "setup": {
+        "sha256": "40a82b3e20ba87cd011567d2e8d5c8df0cda67e66fff08f1830d04a521a431dd",
+        "bytes": 769
+      },
+      "log": {
+        "sha256": "0934395f1dbc36d163761bfc9330070488bda221e1990633a5c13e146bc1c3ca",
+        "bytes": 101
+      },
+      "artifacts": {
+        "": {
+          "sha256": "2fe78f23452dc1cb0615a91693ffdc34db7aa210f1ca7ebae4987641bdbca596",
+          "bytes": 3704
+        },
+        ".private": {
+          "sha256": "92a58d4d9c4917aed4c0a92a59b39c0fae6044a6fedfd85610ca5335381389b4",
+          "bytes": 976
+        },
+        ".server": {
+          "sha256": "b49019127fe417872922a4bededece9634957a3595db4db204223dab1eab488c",
+          "bytes": 592
+        }
+      },
+      "mapped_project_names": [
+        "ClosureFixture.A",
+        "ClosureFixture.B",
+        "ClosureFixture.C"
+      ],
+      "wall_seconds": 2.2180000000007567
+    }
+  ],
+  "actual_project_private_inputs": 0,
+  "actual_missing_transitive": {
+    "exit_code": 1,
+    "log": {
+      "sha256": "2663dac38776354165f3c38481c6026c7576bf640861579a926ae9cd7f3e69c6",
+      "bytes": 403
+    },
+    "absent_mapping": "ClosureFixture.A",
+    "primary_and_private_exist_outside_search": true
+  },
+  "mapped_project_counts": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "actual_full250_validation": false,
+  "actual_full_assembly_Lean_calls": 0,
+  "full_certificate_proved": false,
+  "validator_sha256": "c8cb7c4402c8b01e11c3c4b9083694b27126367cd9a480d91df7c0245765d4f8",
+  "fixture_sha256": "4b6b7ee953cb2bc83e6272f21dc5e343710e21ba4ac018d5efaa55b6b580226f",
+  "lean": {
+    "sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+    "version": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "adjacent_runtime": {
+      "libc++.dll": "8a9deaac6d2f4d2de468a544d1f35cd0dd4bcde03cda3cfb76fb9674749828d4",
+      "libclang-cpp.dll": "1b32dd58335db4a984237e1fd1993cfd0f0fa413b5d10957290703eb03377ca4",
+      "libInit_shared.dll": "78a70f06876c01c67d44e7ae5595f1447a0df5acaeca642db115d4089cc7002c",
+      "libLake_shared.dll": "6bbd4415f804254f1577c2227a46b2d23069ce6539c324c824df17b861d67e0a",
+      "libleanshared.dll": "9a3fdb05f1383ff50780d864d33d05e7385f74dec73209cdefd752ce3c8650cd",
+      "libleanshared_1.dll": "f66e47f5c96556b6592e81ca82ea22a73f835f4f0a3b9863111b459f20048114",
+      "libleanshared_2.dll": "b300c2b440f7ed036f56dca5e2de92bedabddfd33fa5f7921866c72127b68b28",
+      "libLLVM-22.dll": "beaba61b3176e06fc0c4bf87e8bfae094a2405d01fa8e03d78029471555445d2",
+      "zlib1.dll": "94dd0a72d4da79e25294a91d1edf902d76eade7512d9218609a5fe43e3a7397a"
+    }
+  },
+  "stdlib_lock_sha256": "8704fa8060770845dee0fb3c04b002d58895f4009afccf5b72fec5f819dd835b",
+  "whole_stdlib_before_after_unchanged": true
+}

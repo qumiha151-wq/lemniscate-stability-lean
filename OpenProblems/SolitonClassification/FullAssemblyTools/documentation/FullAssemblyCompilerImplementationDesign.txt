@@ -1,0 +1,54 @@
+Full assembly compiler implementation design (2026-11-13)
+
+New file: pipeline/production_full_assembly_compile.py. Frozen D509 input
+validator, all proof sources, all existing compilers and base locks stay intact.
+
+The production CLI has no pilot, resume, supplied graph, stub, or bypass mode.
+Its first substantive step is the complete D509 validator with externally
+pinned full250 ledger, merged receipt, same-base actual Linux48 and all source
+packages. The reviewed Linux48 report is 23e73ccbac0d8d374ff23634eb67967ac41ae3f8bc5594e24e3f53fb3b26d9af.
+Validation writes a new validation_before directory; missing real inputs fail
+before any assembly elaboration. The two input-index/plan files are pinned
+after creation. A separate run manifest contains their identities, the 502
+ordered sources, the generated fresh audit source and code/argument identities.
+It does not include its own digest or any future output digest.
+
+The new compilation output is disjoint from originals and locked roots.
+11885 existing primary artifacts are copied to its isolated public_inputs.
+Each module setup maps only its actual recursively closed project dependency
+set. No project source or output directory enters LEAN_PATH; only completely
+locked external roots without SolitonClassification are exposed. No private,
+server or IR project input is mapped, and source headers are not overridden.
+
+Every source is copied unchanged and checked against the pinned header and
+source hash. Actual Lean --deps-json must report exactly public module imports
+and implicit ordinary/meta Init. Before and after each call, selected input
+primaries, source and setup are hashed. Each call records its exact arguments,
+parsed flags, setup/closure identities, output log, exit/timeout status and all
+three produced olean layers. Only a successful, warning-free checked primary
+becomes available to later modules. Full outputs/evidence are retained.
+Cancellation/timeout only terminates the owned child; there is no resume.
+
+After all 502 source modules pass, one new fresh module imports FullCandidate
+and writes the same explicit existential geometric proposition as an alias.
+It directly invokes the actual FullCandidate theorem, without parameters.
+The metaprogram checks the alias's actual type has no leading forall binders
+and no universe parameters. It #checks and #prints axioms of both concrete
+block certificates and all eight supplied identities. It recursively checks
+all imported Rotating/ClosedSimilarity declarations against only propext,
+Classical.choice and Quot.sound, reporting the actual count without guessing
+it from the earlier conditional2205 audit.
+
+Success requires complete output/source/setup/log/input verification, all
+tool hashes and runtime/base snapshots, then a second complete D509 validation
+in a separate validation_after directory. Its actual index and execution plan
+must equal the before objects. Original files are never overwritten. Only
+then may the production report mark the concrete candidate instance checked;
+it never claims a full enumeration/classification or unrelated open problems.
+
+The same internal sequence will be exercised with the four previously proved
+tiny ClosureFixture sources plus a fresh alias/audit. This internal fixture is
+not an option exposed on the production CLI. It tests recursive primary-only
+imports, source/setup/sidecar rejection and the actual final type/audit path.
+No fullgrid source, stub, missing certificate or numerical fake will be made.
+

@@ -1,0 +1,110 @@
+FULL ASSEMBLY COMPILER — IMPLEMENTED, TINY-TESTED, NOT FULL-RUN
+Date: 2026-11-13
+
+Frozen implementation:
+ pipeline/production_full_assembly_compile.py
+ SHA256 a0e2b19e60ebefdf1b35ac162df0a5a7f9b67188b4eb26d604d0664a1186456a
+ pipeline/test_full_assembly_compile.py
+ SHA256 80e1362e8dd4ead3b389f40dbf7ac890d6343802bd99291054a8836a2f08b609
+ full_assembly_compiler_tiny_v1/report.json
+ SHA256 e1a7b9c24d23df2391c803b50ed380654df8044417f150f73d451e821ed4ed47
+
+The existing frozen D509 validator, final48 runner, core87, numerical helpers,
+all 502 proposed assembly sources and all published packages were NOT edited.
+This new compiler has not run its production CLI or any fullgrid source.
+
+Production CLI:
+ python -B production_full_assembly_compile.py
+   --ledger LEDGER --ledger-sha256 EXTERNAL_SHA
+   --merged MERGED --merge-receipt-sha256 EXTERNAL_SHA
+   --pipeline-package FROZEN_PRODUCTION_PIPELINE_V1
+   --core-project FROZEN_MODULE_PRODUCTION_V4
+   --final-package FROZEN_FINAL_SOURCES_V3
+   --final-output ACTUAL_LINUX48_OUTPUT
+   --final-report-sha256 23e73ccbac0d8d374ff23634eb67967ac41ae3f8bc5594e24e3f53fb3b26d9af
+   --assembly-root ASSEMBLY_FULL_SOURCES
+   --endpoint-root ASSEMBLY_ENDPOINT_SOURCES_V2
+   --candidate-source FULL_CANDIDATE_LEAN
+   --census FULL_ASSEMBLY_DESIGN_CENSUS_JSON
+   --base-lock RESTORED_BASE_LOCK
+   --base-lock-sha256 dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d
+   --base-args RESTORED_BASE_ARGS
+   --output NEW_DISJOINT_DIRECTORY
+   --seconds 600 --memory-mb 4096
+
+There is no pilot, test, supplied graph, resume, or source/header override flag.
+The reviewed actual same-core Linux48 report SHA is required in addition to
+the external ledger and merge-receipt hashes. The first substantive production
+operation is complete D509 verification in output/validation_before. Missing
+genuine250 data fails before any assembly elaboration. The input validation
+directory is separate from output/compiled and validation_after.
+
+Run manifest and execution:
+The new manifest pins the freshly validated index/plan, 502 topologically
+ordered source records, deterministic fresh audit text, tool hashes and
+external identities. It excludes its own digest and all future artifact
+digests, so there is no hash cycle. Its 503 planned Lean calls mean the 502
+source elaborations plus one fresh audit elaboration; --deps-json header
+queries and compiler identity/libdir queries are additional read-only calls.
+
+11885 already checked primaries are copied to a new isolated public_inputs.
+For each module, only the full recursive project closure is mapped explicitly
+as primary-only importArts. Project roots, copied sources, checked outputs and
+temporary outputs are absent from LEAN_PATH. Each original source is copied
+unchanged. Actual --deps-json must agree with public module header flags,
+including implicit ordinary/meta Init; setup does not replace source imports.
+
+Each call binds the copied source, setup, selected physical input hashes,
+parsed header, command, log, termination code and actual three-layer output.
+Only a successful warning-free call promotes its primary for future imports.
+The complete original three-layer output and evidence are retained. Temporary
+automatic IR, if produced, stays outside every import path; it is not promoted
+or claimed as part of the final three-layer proof inventory. Timeout or
+cancellation terminates only the actual owned child. No reuse/resume exists.
+
+Final actual claim, if and only if a future full run succeeds:
+The fresh alias states the explicit existential GeometricConclusion and is
+proved directly by FullCandidate.exists_closed_rotating_elastic_flow. The
+actual alias constant type is checked for no leading forall binder and no
+universe parameters. The source #checks and #prints axioms of both concrete
+4000-block certificates and all eight exact initial/endpoint identities.
+All imported Rotating and ClosedSimilarity declarations are recursively
+audited using privateToUserName, accepting only propext, Classical.choice and
+Quot.sound. The count is read from the actual log, never guessed from 2205.
+
+After all elaborations, the original full D509 gate runs again into the
+separate validation_after. Its public index and execution plan must match the
+before objects. All new proof artifacts, sources, setups, logs and copied
+primaries are rehashed after that pass; original input origins, runtime, full
+base and tool hashes are rechecked. Only then may the report state
+concrete_candidate_kernel_checked with the concrete candidate instance true.
+classification_claimed remains false: this would prove this rotating example,
+not enumerate all solutions or solve the other open problems.
+
+Actual test evidence:
+ Session 61557 exited 0 on Windows Lean4.33.1.
+ The same internal compile_sequence built the four existing actual tiny
+ ClosureFixture sources A/B/C/D, then a fresh alias/audit: five successful
+ kernel elaborations with recursive mapping sizes 0/1/2/3/4.
+ The fresh audit actually counted 8 declarations; no count was assumed.
+ A separate actual universally quantified alias failed with Lean EXIT1 and
+ 'Final alias has an additional binder'. No fullgrid or geometry stub was made.
+ Six rejection checks passed: changed source, wrong source/header binding,
+ actual forall alias, private sidecar in the public pool, missing transitive
+ setup entry, and source-import override.
+ The complete standard library and runtime were checked before and after.
+ The compiler/test self hashes were unchanged during the entire test.
+ Positive compile report SHA256:
+ 4311419df3491c693abd54a82a5b3e569d89cda9002afe585f1f3ab2129962fe
+
+The production audit text was inspected as text only and hashed:
+ fda8e7e63042d4b29bd496b51346ab7408ba2d4e86a2c2c995996fee851c27b3
+It was not elaborated against missing fullgrid modules. The test does not
+establish all502 source compatibility, full-run memory/disk/time requirements,
+a complete250 dataset, or a mathematical candidate root.
+
+A's independent read-only source review:
+ performance/FullAssemblyCompilerIndependentReview.txt
+ SHA256 610d964b50a06acba131495ad86641999d48f8654a3d8fb2fdaed1b3c1813620
+The reviewer did not rerun the tiny fixture or any full assembly.
+

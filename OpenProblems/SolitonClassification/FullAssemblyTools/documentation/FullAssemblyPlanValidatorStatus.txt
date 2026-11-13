@@ -1,0 +1,120 @@
+FULL ASSEMBLY INPUT PLAN VALIDATOR — FROZEN MILESTONE
+Date: 2026-11-13
+Scope: input/evidence validation and a conservative recursive public-import
+closure index. This is not an assembly compiler and does not prove a full root.
+
+Files:
+  pipeline/production_full_assembly_plan.py
+    SHA256 d50998d092942c3cb60d24632d446d9e4d4108269bc6bc1a35b3c7fc505cb0e4
+  pipeline/test_full_assembly_plan.py
+    SHA256 4b6b7ee953cb2bc83e6272f21dc5e343710e21ba4ac018d5efaa55b6b580226f
+  assembly_plan_fixture_v2/report.json
+    SHA256 5f46f37581aac06e69de04d6f7943fd4d37ef6648583df8b3ddc171b72d89cc7
+  pipeline/test_full_assembly_audit_patch.py
+    SHA256 498388a383748733c782a82e0696a6d6975a75e824d4ef3dfd667962468bba71
+
+Production API
+  python -B production_full_assembly_plan.py
+    --ledger LEDGER --ledger-sha256 EXTERNAL_SHA
+    --merged MERGED --merge-receipt-sha256 EXTERNAL_SHA
+    --pipeline-package PRODUCTION_PIPELINE_V1
+    --core-project MODULE_PRODUCTION_V4
+    --final-package FINAL_SOURCES_V3
+    --final-output ACTUAL_SAME_BASE_LINUX48
+    --final-report-sha256 EXTERNAL_SHA
+    --assembly-root ASSEMBLY_FULL_SOURCES
+    --endpoint-root ASSEMBLY_ENDPOINT_SOURCES_V2
+    --candidate-source FULL_CANDIDATE_LEAN
+    --census FULL_ASSEMBLY_DESIGN_CENSUS_JSON
+    --base-lock RESTORED_BASE_LOCK
+    --base-lock-sha256 dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d
+    --base-args RESTORED_BASE_ARGS
+    --output NEW_DISJOINT_DIRECTORY
+
+No pilot flag, skip-verification flag, arbitrary graph file, or source-header
+override is provided. External hashes must be supplied by the caller from
+independently reviewed provenance, not copied solely from an adjacent digest.
+
+The full entry point requires exactly 250 canonical signed jobs and published
+durable original-archive bindings. It binds the merged receipt to that ledger,
+the exact source cff971bc... revision, the exact frozen production plan, and the
+exact restored base. It uses the frozen merger/projector validation protocol
+with one contained, disposable projection view at a time. Every original
+merged file is retained. Each source/report edge is bound to all three checked
+proof-layer hashes; only primary paths enter the future public input index.
+
+The actual Linux48 report is externally pinned. Its source package, own runner,
+compiler/runtime, base identity, parsed headers, setup public maps, previous
+public input hashes, logs, all three output layers, and fresh audit are checked.
+This deliberately rejects the earlier Windows report and its local Arctan
+override. Imported final modules remain conditional. The validator does not
+re-elaborate their proof bodies.
+
+The 499 assembly modules, two endpoint links, and FullCandidate are read from
+the exact frozen source manifests/census. The old source-plan identity is
+linked to the production source revision only through the reviewed package
+PlanRevisionBinding and byte-preserving package verifier. Their new imports
+must be topological. The graph comes from bound source headers and actual
+checked numeric reports, not an arbitrary production graph parameter.
+
+Successful full validation would write:
+  public_input_index.json : 11885 checked existing public primary records
+                           (87 + 11750 + 48), paths and provenance.
+  execution_plan.json    : 502 uncompiled source records, graph, recursive
+                           all-header project closures and closure digests.
+No Lean elaboration occurs. Only the frozen helper's compiler identity/libdir
+queries run during base validation. Status is inputs_and_source_graph_validated;
+new_Lean_elaborations=0 and full_certificate_proved=false.
+
+The closure deliberately overapproximates imports by all source-header edges,
+including potentially non-runtime edges. The setup includes every recursive
+project dependency as one primary .olean and no project private/server/IR.
+External LEAN_PATH roots must expose no project namespace. The tiny real
+fixture checks that omitting an indirect entry cannot fall back into the
+neighboring retained full-output tree. A future actual compiler must continue
+checking the complete base before/after, validate every setup, copy frozen
+sources to a new output, and rehash any newly available primaries before use.
+The present plan is not authorization to compile missing or synthetic grids.
+
+Actual validation evidence
+  Session 70788 exited 0.
+  Four fresh local Lean 4.33.1 modules A -> B -> C -> D passed.
+  Project importArts entry counts: 0, 1, 2, 3.
+  A's public theorem was proved through a private helper; later consumers had
+  only the public primary, and the final theorem's axiom collection was empty.
+  A/B/C/D output three-layer bundles were retained in a separate full tree.
+  A primary and private artifact both remained physically present outside
+  LEAN_PATH. Removing A from D's otherwise valid recursive setup made actual
+  Lean exit 1 with unknown project prefix; it did not locate them by fallback.
+  45 synthetic/structural rejection probes passed.
+  The complete stdlib snapshot and compiler/runtime hashes were unchanged.
+  No frozen mathematical source, base lock, or original archive was modified.
+
+Earlier assembly_plan_fixture_v1 is retained as an unsuccessful fixture:
+all four actual Lean calls passed, but the final validator self-hash guard
+rejected because a path-safety edit was made while that first test was running.
+It is not counted as a completed passing run. v2 was rerun on the final frozen
+source with no such edit and all guards completed.
+
+After parent review, one narrow additional guard was added: the final48 fresh
+audit must have source SHA596379EF8A531B49D8F13FEAF198706A7304807D45D8A82DCBAC67CD339C8CFB
+and log marker FINAL_SUPPLEMENT_CONDITIONAL_AUDIT 2205. The source digest was
+independently matched both to the actually compiled Windows audit source and
+to the deterministic string AST in the pinned 14C936 runner. Three separate
+missing-marker/wrong-count/changed-source rejection cases passed with no new
+Lean calls (assembly_plan_audit_patch_check/report.json). The old C8CB7C
+validator used for the four actual tiny calls is retained as
+assembly_plan_fixture_v2/validator_source.py. AST comparison verifies all
+existing helper functions are unchanged and validate only gained the single
+fresh-audit guard call. This preserves the precise scope of the v2 evidence;
+it does not relabel that Windows fixture as a Linux48 or production250 check.
+
+Limits
+The production full250 CLI has NOT been executed. The same-core Linux48 and
+250 durable projections are not simulated. Synthetic full-scope tuples only
+exercise the internal structural helper. No full-grid Lean stubs were made.
+The four tiny proofs do not establish the final 502-module source compatibility,
+kernel resource bounds, or the numerical root. Whole production integration,
+fresh final full axiom audit, and all eight concrete geometric premises remain
+for the actual full compiler after all real inputs exist.
+

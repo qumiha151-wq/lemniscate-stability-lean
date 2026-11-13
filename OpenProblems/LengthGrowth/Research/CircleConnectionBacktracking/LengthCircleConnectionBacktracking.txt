@@ -1,0 +1,79 @@
+Geometric backtracking for an oriented circle-to-circle connection
+2026-11-13. Necessary conditions only; no existence theorem or general
+quarter-power length-growth bound is asserted.
+
+Let U,p,q be C1 real functions on R satisfying the Frenet support equations
+  p'=-Uq, q'=1+Up,
+and suppose
+  (U,p,q)(-infinity)=(-1,1,0),
+  (U,p,q)(+infinity)=(1,-1,0).
+Write v=U', w=p^2+q^2 and H=Uw+2p. These hypotheses involve no elastic
+profile equation and no condition on p at the zeros of U. Thus every true
+connection in the normalized elastic support system, for any Omega,
+obeys the conclusions below. Conversely these conclusions do not certify
+an elastic profile or a geometric-flow solution.
+
+1. Exact differential identities and unrestricted backtracking
+
+Direct differentiation gives
+  w'=2p(-Uq)+2q(1+Up)=2q,
+  H'=v*w+2Uq-2Uq=v*w.
+The end states give H(-infinity)=1 and H(+infinity)=-1.
+If v>=0 everywhere, then H'>=0 everywhere, so H is nondecreasing, which
+contradicts those two limits. Therefore v(s)<0 at some s. This argument
+needs only differentiability and the stated limits; no integrability,
+exponential tail rate or scalar fourth-order ODE is needed. For C1 U the
+negative derivative persists on an open interval.
+
+For finite A<B one also has the exact signed identity
+  integral_A^B v*w = [Uw+2p]_A^B.
+As A tends to -infinity and B to +infinity the right side tends to -2.
+This is a two-ended improper limit; it must not be silently called an
+absolutely convergent integral for an arbitrary C1 profile. If integral
+|v| is finite, w is bounded and absolute convergence does follow.
+
+2. Strict lower bounds for the total negative variation
+
+Put a=inf_R w, b=sup_R w, and N=integral_R max(-v,0), allowing N=infinity.
+The endpoint limits and continuity imply 0<=a<=1<=b<infinity. Also b>a:
+otherwise w is constant, so q=0 and p'=0, contrary to p(-infinity)=1
+and p(+infinity)=-1. In particular b>0 and b-a>0.
+
+On every finite interval write P_AB=integral max(v,0) and N_AB=integral
+max(-v,0). Then P_AB-N_AB=U(B)-U(A) and
+  integral_A^B v*w >= a*(U(B)-U(A))-(b-a)*N_AB.
+Pass to the endpoint limits and monotone limits for N_AB to obtain
+  N >= 2*(1+a)/(b-a) >= 2/b.
+The latter comparison uses a*(b+1)>=0. Infinite N is allowed throughout.
+
+Both bounds are actually strict. It suffices to treat N finite. Since U
+has end values -1 and 1, P=N+2 is then finite as well. The nonnegative
+defects give
+  -2 = a*(N+2)-b*N
+       + integral (w-a)*max(v,0)
+       + integral (b-w)*max(-v,0).
+Equality in the first bound forces the second defect to vanish. The first
+part proved that v<0 somewhere, and v is continuous, so an open interval
+has v<0. On that interval continuity and the vanishing nonnegative
+integral force w=b. Hence q=w'/2=0, p'=0, and q'=1+Up=0 there. Since b>=1,
+p is a nonzero constant, whence U=-1/p is constant, contradicting v<0.
+Therefore
+  N > 2*(1+a)/(b-a) >= 2/b.
+Writing a=m^2 and b=Rmax^2 gives the radius notation used in the other
+wall notes. These are dimensionless geometric bounds; a fixed numerical
+radius cap or a tail window is an additional hypothesis, not a conclusion.
+
+3. Formalization boundary
+
+The module LengthGrowth/CircleConnectionBacktracking.lean formalizes the
+two derivative identities, monotonicity implication, both endpoint limits
+and existence of a point with v<0. Its explicit SupportProfile structure
+contains the derivative/Frenet equations. The integral/strict-variation
+arguments in section2 are mathematical derivations in this note and are
+not yet claimed as Lean-checked. No zero-alignment condition, exponential
+tail estimate or elastic force equation appears in the Lean theorem.
+
+Root derived the identity independently; agent finish_curve_input checked
+both the unrestricted monotonicity proof and the strict-variation argument.
+Do not conflate this local necessary condition with solving the original
+general length-growth question or classifying every self-similar solution.

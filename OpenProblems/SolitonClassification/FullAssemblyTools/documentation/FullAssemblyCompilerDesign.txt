@@ -1,0 +1,230 @@
+Separate full assembly compiler -- design, not an implemented checker
+13 November 2026
+
+No Lean call, numerical generation, placeholder module or proof stub was made
+for this design. No frozen compiler, source, stager, final48 package or lock
+was modified. This design requires parent review before broad implementation.
+
+1. Exact existing sources and phase boundary
+
+The source census actually read and hash-checked499 grid assembly sources,
+two endpoint links and the one FullCandidate draft:502 existing sources.
+The499 include248 inter-shard seam proofs,248 binary joins, the two4000-step
+root wrappers and FullGridAssemblyAudit. A separate fresh final consumer/audit
+adds one future Lean call, so the eventual new assembly run has503 calls.
+The48 supplementary sources are independently precompiled inputs, not part
+of these502. No assembly source is currently claimed fully compiled.
+
+Pinned existing source identities:
+pipeline/assembly_full_sources/assembly_manifest.json
+93675BAC7479A6FDCDE5C247EF21FA568F4971C5C114078A7FB5F4C976E5C492
+pipeline/assembly_endpoint_sources_v2/endpoint_links_manifest.json
+9B559BFF52F049FFE627982256F5EC2D4A732EBCC4518BA491E4D2834F26EBB0
+FullGridPActual.lean
+87825F685A9F6122B03391E1496DC3A9EFC2DDA20628B6B9E9ECAD25EDAB066E
+FullGridMActual.lean
+C123F07EC8186E6A711F250D385B91C9086EDF3FEF76B53BA48344A139C90BB8
+pipeline/assembly_final_sources_v1/.../FullCandidate.lean
+697B53E7BD0546A26C2DC10769A9B93C5D5082A386644D6F9AC908D53F28BB70
+final_source_package_v3/FinalSourcesManifest.json
+51E1ABE4B94640773E1FE66F93CFC1AD58A57FAFBD050A260EBA53DA0F61FD72
+Core source inventory
+2C252CF849E22E027CA2630B836E5227B8FF8390CF45F36A6B467DB64580C924
+
+FullAssemblyDesignCensus.json records all502 actual individual source hashes,
+bytes and direct project import names in their existing order. The inspector
+pipeline/inspect_full_assembly_design.py only reads sources/metadata and writes
+this diagnostic JSON; it does not create Lean sources or numeric proposals.
+
+Important plan distinction: the frozen499-source manifest binds the original
+worktree plan0151212BD25D256D328FB52E4DB5FB953722C9FAF870B31526E91B82E23A60BF.
+Actual production uses the separately published plan
+A62EF654EC4F2FD01D55B6DAE19C28483DBA137C424C3068A372C514B89559C1,
+whose source revision is cff971bcac7ac2d83aba04596ce09e44fda1ac29.
+The checker must verify the frozen ProductionPipeline PlanRevisionBinding:
+only revision/revision_kind/archive names changed; all numeric fields,250
+checkpoint bytes and eight proposal inputs are identical. A NEW execution
+manifest records both plan hashes and this exact relation. It must not edit
+the old manifest or falsely say the old source manifest already binds the
+new plan. Endpoint manifest already pins the499 manifest exactly.
+
+2. Inputs that must exist before any assembly elaboration
+
+A. An externally pinned FULL ledger with exactly250 jobs in canonical
+   positive-then-negative order, starts0,32,...,3968, count32 each, covering
+   both4000-step paths once. Candidate identity, step, mesh10^60, orders42/22,
+   reset bounds, canonical names, source revision and plan hash must match.
+   Full mode requires published/durable complete-original-archive bindings;
+   a pilot ledger or local-test projection is rejected. Publication revision
+   of tools/ledger remains distinct from the mathematical source revision.
+B. The externally pinned merged public tree and merge receipt, revalidated
+   against every projection receipt, manifest, full compile report, log hash,
+   original archive hash/durable record and compact transport identity.
+   Exactly47 generated module primaries per job means11,750 shard primaries.
+   No private/server/IR project sidecars or extra project modules in that tree.
+   The source-to-compiled proof connection is the previously validated full
+   original archive, not the assertion status=projected or inputs_prepared.
+C. The actual same-platform final48 compile report from the pinned portable
+   runner, plus all48 source/setup/log/output records and its fresh audit.
+   Require identical source manifest, compiler/runtime/base lock,48 successful
+   rows, fresh2205 standard-three audit, public-only inputs and no extra Arctan
+   override for production Linux. The Windows result is not substituted for
+   a Linux run on this captured core. Copy only48 primary outputs as inputs;
+   preserve all three original output layers and all original evidence.
+D. The exact captured/restored base: full lock and ordered roots, actual
+   compiler/runtime/stdlib identity, source inventory and restoration receipt.
+   Every shard and final48 report must bind this SAME base-lock digest. Old
+   Linux pilot b95... or a Windows base is not accepted just because source
+   names and Lean versions look similar. Verify the complete base before and
+   after the assembly, plus frozen tools and original source inventories.
+E. The frozen499+2+1 source manifests/draft hashes and a new execution manifest
+   explicitly containing their concatenated topological order and fresh audit
+   source hash. No candidate root, tube, matrix bound or endpoint identity is
+   accepted as a free new hypothesis.
+
+The current one-shard projection_merge_review_v2/ledger.json is PILOT only,
+with different old revision/plan/base. It is useful for reading its schema,
+never eligible as input to this full checker. A's projection/transport/merger
+implementation is a separately reviewed new batch; its hashes must be frozen
+and bound before the assembly checker can depend on it. It is not silently
+added to the already published ProductionPipeline package.
+
+3. One immutable public-input index; conservative recursive subsets
+
+Build one canonical name-to-record index containing:
+- core87 primaries (the optional generic audit88 is not a theorem dependency);
+- the11,750 actual shard primaries and their checked direct import metadata;
+-48 actual final48 primaries and parsed source header metadata;
+- each new assembly primary only after its own real successful compilation.
+Each row binds primary hash/bytes, unique physical origin, source hash,
+original compile-evidence identity, and direct project imports. Duplicate or
+case-fold duplicate module names, shadowing, cycles, missing dependencies,
+non-topological forward imports, mismatched source/report import lists, or
+an extra file in the public input tree are fatal. Do not merge same-name rows
+merely because one value happens to match: explicitly prove the expected
+single core reuse map and reject all other duplicates.
+
+For source m, compute C(m), the transitive closure of ALL direct project
+header edges. Include private/meta edges as a conservative overapproximation;
+do not prune based on declaration reachability or predict Lean's private/
+exported lattice. Validate actual new source headers with Lean --deps-json
+after all250 preconditions pass, including module flag, import order/flags and
+both implicit Init entries. Do not override the source's imports in setup.
+Existing dependency metadata must come from the complete pinned reports and
+source bindings; an arbitrary caller-provided graph is not sufficient.
+
+For every n in C(m), --setup.importArts maps n to [[exactPrimaryPath],[]].
+Every selected file is hash-checked before and after the call. The setup is
+validated for exact name/key/path arrays and recorded by hash. Sources and
+temporary/full outputs are in separate directories outside import paths.
+No project .olean.private/.olean.server/.ir path appears in importArts.
+
+All roots containing SolitonClassification, including the original generic
+root and the merged public directory, are excluded from LEAN_PATH. External
+roots are the pinned complete Mathlib/dependency/stdlib roots only, verified
+to contain no project namespace. The source working directory contains only
+Lean source files, and no empty search-path entry is allowed. Thus omitting
+a required project module produces a missing-import failure, not silent
+fallback to an untracked private or previously built module.
+
+This subset mechanism does not change dependency semantics. Actual Lean4.33.1
+source, Lean/Environment.lean importModulesCore around2107--2250, passes the
+same arts map to every recursive import; loadData/loadIR use its exact module
+entry if present, otherwise filesystem lookup. It recursively reads imports
+from the actual loaded module data. Supplying a primary-only map entry does
+not itself import that module, and extra unused entries do not alter headers.
+The proposed all-header closure safely overapproximates which entries Lean
+will request. No project fallback is exposed if the graph is incomplete.
+Lean/Setup.lean ImportArtifacts.oleanParts around95 confirms that a single
+primary array entry exposes no private/server layer. These are source-based
+design conclusions; reduced setups have not yet been run on the full graph.
+
+4. Size and I/O strategy, with honest estimate scope
+
+There is no actual complete250 manifest set yet. For an explicitly labelled
+DESIGN estimate only, the census renames the checked RP0000 47-module header
+template across250 keys and combines it with the actual499+2+1 source graph.
+Production must discard that predicted graph and use all250 actual reports.
+The estimate for503 future calls is:
+  all-available project entries repeated: 6,104,911
+  conservative transitive subset entries:   173,316 (2.84% of the former)
+  maximum individual subset:                12,135
+  ordinary seam example:                        32
+  first binary join example:                   180
+  final positive root:                       6,085
+  FullCandidate:                            12,134
+The final audit/root calls still legitimately need roughly12k inputs. The
+benefit is avoiding their repetition in hundreds of small seams/joins. These
+are graph entry counts, not measured JSON bytes, RAM, wall time or Lean success.
+
+The full index and input records are stored ONCE. Each module row stores its
+closure name list (or canonical-index IDs), closure digest, setup hash, source/
+parsed-header/log hashes and its own three output hashes, rather than a copy
+of all12k input hashes. Each closure digest resolves back to the immutable
+global index and selected previously checked outputs. Record actual setup
+byte totals once generated. Hash complete public inputs/base at phase start
+and finish; verify selected input bytes and all setup/source/output identities
+around each call. This avoids rehashing the full6GB base500 times while retaining
+the whole-base before/after invariant. No filesystem deduplication or deletion
+of original proof archives is part of this optimization.
+
+5. Actual elaboration and the eight supplied identities
+
+Start only in a nonexistent output directory, no reuse/resume in version1.
+Compile the499 in exactly their frozen manifest order, then positive/negative
+endpoint links, then FullCandidate. For each source: actual parser header check,
+exact public setup, owned Lean child, explicit limits, stdout/stderr log,
+EXIT0/no errors or warnings, required source audit marker, hash rechecks, then
+promotion of all three generated olean layers to an evidence directory. Only
+the primary is made available to later imports. Temporary automatic IR is
+never an input and must not be described as bound unless separately inventoried.
+On failure retain actual evidence and stop; never fill a hole with a stub.
+
+FullCandidate's existing source supplies, in order:
+  FullGridP.certificate, FullGridM.certificate;
+  FullGridP.state_start, FullGridP.matrix_start;
+  FullGridM.state_start, FullGridM.matrix_start;
+  FullGridPActual.terminal_state, FullGridPActual.terminal_matrix;
+  FullGridMActual.terminal_state, FullGridMActual.terminal_matrix.
+The two objects have genuine +1/-1,4000-step block types. Start identities are
+proved from the actual first nodes. The two endpoint links contain6+36 exact
+kernel comparisons per sign, then identify actual state/operator values and
+invoke the previously proved flow bounds. These are nominal4000h endpoints,
+not the extended horizon endpoint with zero terminal reset. Lean must check
+the precise identities and types at composition; no external numeric equality
+or heuristic tolerance replaces them.
+
+6. Fresh final audit and result scope
+
+A fresh module imports FullCandidate using the same public-only mechanism.
+It rechecks the exact hypothesis-free type
+  exists c X Y, CandidateFinalAssembly.GeometricConclusion c X Y
+by an explicit alias proof using FullCandidate.exists_closed_rotating_elastic_flow.
+It runs collectAxioms for that theorem and recursively for every imported
+Rotating or ClosedSimilarity declaration, normalizing privateToUserName,
+allowing only propext/Classical.choice/Quot.sound. It reports actual counts;
+do not invent a full-project count in advance from the old2205 supplement audit.
+It also checks the two actual block certificates and named eight identities.
+The original validated numeric proof/audit evidence remains essential when
+consuming module-system public exports; export metadata alone is not advertised
+as independently checking all omitted private proof bodies.
+
+Only after all503 real calls and final complete source/input/base/tool checks
+may a new report claim full_path_instances_checked=true and this concrete
+candidate geometry/PDE theorem compiled. No such report exists now. Success
+would establish one nonconstant rotating closed unit-speed profile with the
+specified total curvature and its actual pure-normal free elastic evolution.
+It would not prove minimal period, embeddedness, complete classification,
+migration, general length growth or resolution of all paper open problems.
+
+7. Minimum implementation/validation plan after review
+
+First implement a strict read-only execution-plan validator and closure-index
+builder with rejection fixtures for pilot/missing/repeated/foreign-base jobs,
+wrong metadata rebinding, same-name collisions, wrong artifact hashes, cycles,
+omitted transitive dependency and attempted private fallback. No full-grid Lean
+invocation until genuine full250 evidence exists. Then implement the separately
+named compiler, preserving all frozen helpers/sources; any smaller standalone
+setup experiment requires separate authorization and cannot be called a full
+assembly test. Final source/runner publication and Linux scheduling remain
+owned by the parent. This document authorizes neither compilation nor upload.

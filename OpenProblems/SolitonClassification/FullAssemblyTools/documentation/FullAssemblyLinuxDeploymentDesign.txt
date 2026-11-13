@@ -1,0 +1,305 @@
+FUTURE LINUX FULL ASSEMBLY: CONCRETE DEPLOYMENT DESIGN
+13 November 2026. Design only; no new workflow, Lean call or publication.
+
+This is the deployment layer for already reviewed D509 input validation and
+A0E2 assembly compilation. It does not change their sources, frozen proofs,
+captured core, production plan, projector, transport or merger. Full250 input
+and actual publication completion remain gates, not values inferred from a
+plan or a successful four-shard pilot.
+
+1. OBJECTIVE AND IMMUTABLE IDENTITIES
+
+The intended chain is:
+  250 genuine complete original proof archives + actual durable records
+  -> per-job validated compact public projections
+  -> externally pinned full ledger and verified merged primary tree
+  -> exact Linux core + actual already-checked Linux48 evidence
+  -> 502 unchanged assembly/application modules + one fresh final audit.
+
+Use exactly these mathematical identities:
+  source: cff971bcac7ac2d83aba04596ce09e44fda1ac29
+  production plan:
+    A62EF654EC4F2FD01D55B6DAE19C28483DBA137C424C3068A372C514B89559C1
+  complete base lock:
+    DCF9B162C42C30F387803FC9F395FCB1183F0E8179F5B46004782BA4BBF1F10D
+  core inventory:
+    2C252CF849E22E027CA2630B836E5227B8FF8390CF45F36A6B467DB64580C924
+  FinalSources manifest:
+    51E1ABE4B94640773E1FE66F93CFC1AD58A57FAFBD050A260EBA53DA0F61FD72
+  actual Linux48 report:
+    23E73CCBAC0D8D374FF23634EB67967AC41AE3F8BC5594E24E3F53FB3B26D9AF
+
+The actual Linux compiler identity in that report is Lean 4.33.1,
+x86_64-unknown-linux-gnu, commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6,
+binary SHA E8BAAA71855A616DC351028F3AD2200051B0671F423A1696A100E809302D5550.
+No Windows olean or same-version-but-different Linux library root is accepted.
+A byte-only projection operation can preserve Linux artifacts on any host,
+but the original compiler/report identity must remain this exact Linux one.
+The deployment described here performs all new staging/assembly on Linux.
+
+Frozen tools to reuse, with no edits:
+  projector B206B8A43A3E1B9A47A31AB33B038CA2AC351A461B810D9265F183019C56708D
+  compact transport 784BF78A8CF0D0BE458553F4ED82EB9B096D36681FCDA2622E152FD92F5ADF34
+  merger B0508CB0168B01077F2D90BC341DAECA756CB6C3B43AEC3C7EBBF2013C5F5625
+  validator D50998D092942C3CB60D24632D446D9E4D4108269BC6BC1A35B3C7FC505CB0E4
+  compiler A0E2B19E60EBEFDF1B35AC162DF0A5A7F9B67188B4EB26D604D0664A1186456A
+The complete helper closures, including sibling performance/reference.py,
+must be packaged and inventoried with them. Do not silently add tools or
+sources to the existing frozen ProductionPipeline/ModuleProduction packages.
+
+2. TWO DIFFERENT STORAGE ROLES
+
+A. Original proof preservation. Each complete original tar.xz includes its
+source, all generated proof layers, compiler evidence and endpoint attachment.
+Its exact byte/hash identity must have a real published Release asset and an
+externally pinned publisher durable record. Keep the original archives and
+publication evidence; never replace them with compact exports. A Release is
+the intended long-lived store, but do not promise permanent immutability or
+assume an immutable flag not actually observed. On retrieval, recheck current
+release/tag/asset identity and stream the complete bytes against the pin.
+
+B. Compact staging. A public transport is a reproducible temporary cache:
+47 exact primary oleans per job plus the full retained metadata needed to
+link those exports to the checked original archive. It is not the original
+private-proof archive and does not itself rerun Lean. Actions artifacts may
+retain these transports for a stated temporary period such as 30 days. If
+they expire, recreate them from the same durable originals/records; never
+invent missing receipts or substitute another job's files. Root-owned
+publication of compact caches is not required for mathematical provenance.
+
+Preserve the actual Linux48 evidence independently as well. Its existing
+artifact is id14007325855 from run43354529340, full ZIP size56200489 and SHA
+4664358FBE4B3A93EDD5462626B85BA189BD0E43276A0345FB03CE1893EB1378;
+its saved extraction is56062523 bytes. Before ephemeral expiry, retain these
+exact bytes in a controlled evidence archive or separately verified durable
+store. D509/A0E2 pin the exact23E73 report: recompiling48 and generating a new
+report is not a drop-in replacement. Keep source, setup, parsed-header logs,
+ordinary logs, all three checked output layers, public_inputs and report.
+Their old absolute setup paths are checked as archived provenance by D509,
+not followed on the new runner. Do not edit them to localize paths.
+
+3. AFTER REMAINING246 SUCCESS: REQUIRED REAL INPUTS
+
+The four existing successful jobs and remaining246 must form exactly the
+canonical250 set: positive starts0,32,...,3968 followed by the same negative
+starts, each count32. For every job collect actual successful run/head/job
+and original artifact provenance, full ZIP/archive hashes and byte sizes,
+complete compiler manifest/report/logs, exact input/output-node attachments,
+public-only consumer evidence where required, and an actual durable Release
+record for the full original archive. First-four publication alone is not
+this full set. Root owns publication and confirms actual records separately.
+
+Generate projection receipts only from those real complete originals using
+the frozen projector's project mode and --require-durable. Pass the exact
+production plan/hash, source revision, key, archive hash, base lock hash,
+durable record path/hash, and a new output directory. It validates the full
+original archive before selecting public exports. Keep the raw source archive
+in place. Its private/server layers remain in the durable original even
+though they are not exposed to subsequent importArts.
+
+Then run frozen transport pack with the receipt's actual external digest,
+the same durable/archive/base/plan identities and --require-durable. Record
+its actual transport SHA/bytes and receipt/public/metadata sizes. A bounded
+worker can handle jobs sequentially or in a deliberately small batch. It
+does not need to restore the6GB core because these tools do no Lean import;
+they still validate the reported base identity and actual archive contents.
+Use fresh per-job directories and retain originals/evidence. Do not collect
+all250 expanded private bundles on the later assembly runner.
+
+Freeze a complete ledger only after all250 genuine rows exist. The fields
+must be those required by merger.validate_ledger, including each original
+archive, receipt, durable-record and transport SHA; exact input/output node
+hashes; actual per-job sizes; and frozen helper maps. No partial ledger is
+upgraded by setting mode=full. Both exact coverage and aggregate budgets
+must pass. Any cap failure requires investigation and a separately reviewed
+new version; no silent cap weakening in this deployment.
+
+Avoid a ledger self-commit cycle. One concrete arrangement is to publish an
+immutable evidence bundle containing the actual250 durable records and tool
+provenance at commit P_records first; use that already-known provenance
+commit in ledger.publication_revision. Publish the later ledger and execution
+request at Q, with an external SHA for the ledger. Record their actual Q
+separately. Do not claim a ledger containing its own commit SHA was included
+at that same SHA. Per-asset publisher revisions remain in each real record.
+
+4. FULL MERGE, THEN A SEPARATE COMPILE REQUEST
+
+Retrieve all compact transports with externally pinned whole-transport hashes
+and byte counts. Cross-run artifact downloads require the explicit producing
+run/artifact identity and Actions read authentication; verify the actual run
+and archive rather than accepting a matching filename. Signed redirect
+requests must strip API credentials. Raw compact tar paths must go through
+the frozen bounded unpacker, not extractall. Retain all input transports.
+
+Run frozen merger in mode=full with pinned ledger/plan/base-lock digests and
+sourcecff, a fresh archive-root/output pair, and an explicit disk reserve.
+It sequentially validates/unpacks each transport, requires durable records,
+rejects duplicate/case-fold module names and core shadows, and copies only
+primaries to public/. It preserves metadata under evidence/{key}/ and emits
+a pinned merge receipt. Expected numeric primary count is250*47=11750.
+The merged status remains inputs_prepared: no seam proof or actual Lean
+import is claimed by merge.
+
+Freeze the real merge receipt SHA only after its exact file set and all
+transport inputs have been rechecked. This actual receipt and the full ledger
+now permit preparing the final compile request. The request pins both,
+23E73 Linux48 report, exact source packages/census, A0E2/D509/helper package,
+and restored base. Request/workflow Q is separate from the already-published
+tool P. No request may contain placeholders represented as completed inputs.
+
+5. EXACT CORE RESTORATION AND IMPORT ISOLATION
+
+The core archive is1303430664 bytes, SHA
+01110125281C6F4E7EA42061ADF5637A6331B521CA434E846B832F1B2C7DBC8C,
+with payload6035488572 bytes. Use the actual verified core Release record
+when available, or the still-valid exact original transfer archive identity;
+do not assume the attempted recovery succeeded without its observed record.
+Install the pinned Linux toolchain; determine its absolute lean executable
+from the pinned project/toolchain context, never a global default/stable.
+Run the frozen core restore with the archive SHA and mathematical revision.
+Require its checked full-base/stdlib flags and base-lockDCF9 identity.
+The captured root already includes Arctan; no cache download, Mathlib rebuild,
+or extra Arctan override is allowed in the full Linux assembly.
+
+Use the newly restored ordered base_args with paths for this runner. The
+base-lock and compiler/runtime identities, not incidental absolute paths,
+must equal the actual Linux reports. Run the existing core import audit if
+the deployment requires the same restoration milestone; preserve its logs.
+No core or previously validated proof artifact is edited or recompiled to
+make a mismatched imported file appear compatible.
+
+D509 is the mandatory first production gate of A0E2. It verifies full250
+ledger/merge evidence, the actual48 outputs/source/setup/logs/audit marker,
+all three original dependency-layer identities, the exact502 source census,
+and the old/new plan binding. The old499-source manifest binds plan0151212B...
+and production binds A62EF654...; preserve the frozen PlanRevisionBinding
+proving unchanged numeric fields/checkpoint bytes rather than editing the
+old manifest. Core87 + shard11750 + supplement48 gives11885 initial primaries.
+
+Only after this gate may the compiler copy these primaries into its new
+isolated public_inputs and run502 unchanged sources in their frozen order:
+499 grid modules, two endpoint links, then FullCandidate. For each source,
+the conservative transitive header closure is mapped through explicit
+primary-only importArts. No project root, temporary/checked output or source
+directory is exposed via LEAN_PATH. The complete external Mathlib/dependency/
+stdlib roots remain pinned and project-free. No private/server/IR fallback
+or source-header override is accepted. Original full-layer evidence is
+retained even though public exports are the selected imports.
+
+The additional fresh audit checks an actual hypothesis-free existential
+alias from FullCandidate, both concrete4000-step certificates and all eight
+exact supplied identities. It computes the real standard-three axiom count;
+2205 is only the prior conditional-supplement count, not the expected final
+count. A0E2 reruns D509 into a distinct validation_after directory, requires
+the same input index/plan, and rechecks produced source/setup/log/three-layer
+outputs/public pool plus complete base/tools. No frozen-source edits, stubs,
+supplied arbitrary graphs or resume mode are available.
+
+6. ACTUAL MEASUREMENTS AND EXPLICIT RESOURCE GATES
+
+Evidence read for this design is in work/first_production_v3_publication:
+first_three_downloads/{RP0000,RP3968,RM0000}, fourth_download/RM3968 and
+final48_download/final48. The measured shard figures are:
+
+key      archiveB  unpackedB  public-primaryB  sum47LeanWall(s)
+RP0000  25183056   156421991       2164904         840.111
+RP3968  25403856   157506476       2126576         944.724
+RM0000  25218772   156395326       2165944         922.441
+RM3968  25449496   157457265       2125320        1031.612
+
+The physical public consumers took1.767,2.269,2.169,2.470 seconds respectively,
+with no project private inputs. Their input byte totals around7.5MB include
+core primaries as well as each job, and are not per-job projection sizes.
+Their4096MB setting is a memory limit; reports explicitly have no measured
+peak-memory value. The actual Linux48's48 Lean wall times sum111.229 seconds,
+fresh audit1.668 seconds, and all49 three-layer outputs total16986640 bytes.
+These do not include every hashing/I/O/workflow overhead.
+
+The earlier Linux32 projection measured2164904 public bytes and573558 metadata
+bytes. That particular receipt binds old b95.../8b1e... source/plan and must
+NOT enter the new full ledger; it is a sizing diagnostic only. The actual
+one-projection pack/unpack/merge/38-rejection review took16.744 seconds as a
+whole local suite, not a measured full250 Linux merge. The observed exact
+core restoration took198.713 seconds; its original packing took2979.359
+seconds. Reuse the existing core archive, do not budget for repacking it.
+
+No result above measures502 assembly modules, a12k-module import, full250
+projection throughput, peak RAM or total deployment runtime. Do not multiply
+a tiny consumer time or one leaf time to assert full assembly will finish
+in a particular number of minutes. The existing compiler defaults are per
+module --seconds600 and --memory-mb4096, both limits, not forecasts. A full
+failure requires retained evidence and fresh reviewed execution; the frozen
+compiler has no resume. The final workflow's total wall cap should be chosen
+only after full input validation/resource measurement and an explicit owner
+budget decision, not smuggled in as a performance claim.
+
+Disk planning uses actual manifests at each phase:
+- Projection worker: downloaded original compressed archive(s), at most one
+ 512MiB full-validation scratch, actual compact/output/evidence totals and
+ an explicit reserve. Keep original remote assets and local inputs intact.
+- Frozen full merger limits: each public<=4MiB, metadata<=8MiB,
+ receipt<=1MiB, transport<=16MiB; global public<=1GiB, metadata<=256MiB,
+ receipts<=16MiB. It checks actual free space for aggregate totals plus one
+16MiB scratch and the configured reserve (default2GiB). These are hard caps,
+not predicted actual usage. Metadata aggregate can bind before per-job caps.
+- Assembly runner: retain core compressed+restored bytes, Linux48 ZIP/full
+ evidence, compact transports, merged primaries/evidence, the compiler's
+ second public-input copy, validation/setup/log/index files, new three-layer
+ outputs and an explicit free reserve. Count simultaneous copies; public
+ only does not mean only one public copy on disk. Measure each incoming
+ archive/member total and df before the next stage. Do not stage250 expanded
+ original private bundles here. Do not delete originals to fit an estimate.
+
+A new orchestration preflight may impose a conservative output reserve, but
+must label it policy rather than measured assembly output size. Stop before
+compilation if the actual ledger totals exceed frozen budgets or capacity.
+Record real per-phase wall/bytes and, if an external monitor is deployed,
+actual peak RAM; never fill missing measurements from a memory-limit flag.
+
+7. WHAT CAN BE PREPARED NOW / WHAT MUST WAIT
+
+Can prepare without repeating proofs or using fake250 inputs:
+- An immutable standalone deployment-tool/source package with A0E2/D509 and
+ their frozen helpers, the499+2+1 source manifests/census, explicit roles and
+ all source hashes; preserve existing published package inventories.
+- A parameterized orchestration design, strict download/evidence contracts,
+ disk formula, exact ledger schema and negative structural tests clearly
+ labelled synthetic. Do not render a live full workflow with placeholder
+ receipt hashes or bypass the full gate.
+- Durable preservation of the already checked actual Linux48 evidence and
+ immutable source/plan packages before temporary artifact expiry.
+- After actual first-four durable records exist, make their genuine
+ require-durable projections/transports as reusable full-plan inputs and
+ collect real Linux staging costs. A pilot merge remains pilot, never full.
+
+Must wait for actual remaining246 completion and publishing:
+- The complete set of250 real original archives, live/captured origin
+ evidence and externally pinned actual durable records.
+- All250 true projection/transport receipt and byte/hash rows, the canonical
+ full ledger with its external pin, and a real full merged receipt.
+- The complete D509 validation result and actual resource totals for those
+ inputs; then concrete final execution request/workflow review.
+- All502 actual Lean successes, a real fresh final alias/standard3 audit and
+ whole-base/input/output postchecks. None may be replaced by predicted
+ headers, numerical JSON, a successful smaller example, or uncompiled text.
+
+8. FINAL OUTPUT AND SCOPE
+
+Retain the actual execution request/tool inventory, original input and source
+pins, both D509 validations, run manifest, per-module source/header/setup/log
+records, all new three-layer outputs, final audit, and observed resource/failure
+data. Archive complete new assembly evidence before making public-only
+derivatives; keep original numeric archives and Linux48 evidence separately.
+Temporary Actions retention must be described as temporary. Any later
+durable evidence publication requires its own concrete reviewed request.
+
+Only actual successful A0E2 completion may claim this specific candidate's
+full-path instance and resulting closed nonconstant rotating profile/pure
+normal free-elastic evolution are kernel checked. It does not enumerate all
+periodic profiles, prove complete classification, settle migration or general
+length growth, or solve all open questions in the paper. The projects for
+distinct open questions remain independent.
+
+This document is the only new artifact made for this deployment task.
+No full assembly, projection generation, new compilation, GitHub operation
+or frozen-file mutation was performed to write it.

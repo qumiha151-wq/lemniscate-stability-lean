@@ -1,0 +1,29 @@
+{
+  "schema": "rotating.endpoint-links-source.v1",
+  "assembly_manifest_sha256": "93675bac7479a6fdcde5c247ef21fa568f4971c5c114078a7fb5f4c976e5c492",
+  "generator_sha256": "380d83accf74edd507968f5cd34421a671c25fc2fb9b1f8b7aa80d3c50abd38a",
+  "modules": [
+    {
+      "name": "SolitonClassification.Rotating.FullGridPActual",
+      "source": "SolitonClassification/Rotating/FullGridPActual.lean",
+      "sha256": "87825f685a9f6122b03391e1496dc3a9efc2dda20628b6b9e9ecad25edab066e",
+      "imports": [
+        "SolitonClassification.Rotating.FullGridP",
+        "SolitonClassification.Rotating.Endpoint4000Data",
+        "SolitonClassification.Rotating.FullPathBlockEndpoints"
+      ]
+    },
+    {
+      "name": "SolitonClassification.Rotating.FullGridMActual",
+      "source": "SolitonClassification/Rotating/FullGridMActual.lean",
+      "sha256": "c123f07ec8186e6a711f250d385b91c9086edf3fef76b53ba48344a139c90bb8",
+      "imports": [
+        "SolitonClassification.Rotating.FullGridM",
+        "SolitonClassification.Rotating.Endpoint4000Data",
+        "SolitonClassification.Rotating.FullPathBlockEndpoints"
+      ]
+    }
+  ],
+  "kernel_checked": false,
+  "full_certificate_proved": false
+}

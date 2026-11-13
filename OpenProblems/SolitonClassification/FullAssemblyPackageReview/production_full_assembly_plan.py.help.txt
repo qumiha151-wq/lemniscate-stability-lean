@@ -1,0 +1,41 @@
+usage: production_full_assembly_plan.py [-h] --ledger LEDGER --merged MERGED
+                                        --pipeline-package PIPELINE_PACKAGE
+                                        --core-project CORE_PROJECT
+                                        --final-package FINAL_PACKAGE
+                                        --final-output FINAL_OUTPUT
+                                        --assembly-root ASSEMBLY_ROOT
+                                        --endpoint-root ENDPOINT_ROOT
+                                        --candidate-source CANDIDATE_SOURCE
+                                        --census CENSUS --base-lock BASE_LOCK
+                                        --base-args BASE_ARGS --output OUTPUT
+                                        --ledger-sha256 LEDGER_SHA256
+                                        --merge-receipt-sha256
+                                        MERGE_RECEIPT_SHA256
+                                        --final-report-sha256
+                                        FINAL_REPORT_SHA256 --base-lock-sha256
+                                        BASE_LOCK_SHA256
+
+Read-only full-assembly input validation and recursive public closure index.
+No Lean elaboration or full-grid stub is produced. The production CLI accepts
+only externally pinned complete250 inputs and the actual same-base Linux48.
+Pure graph helpers also support explicitly synthetic and tiny local tests.
+
+options:
+  -h, --help            show this help message and exit
+  --ledger LEDGER
+  --merged MERGED
+  --pipeline-package PIPELINE_PACKAGE
+  --core-project CORE_PROJECT
+  --final-package FINAL_PACKAGE
+  --final-output FINAL_OUTPUT
+  --assembly-root ASSEMBLY_ROOT
+  --endpoint-root ENDPOINT_ROOT
+  --candidate-source CANDIDATE_SOURCE
+  --census CENSUS
+  --base-lock BASE_LOCK
+  --base-args BASE_ARGS
+  --output OUTPUT
+  --ledger-sha256 LEDGER_SHA256
+  --merge-receipt-sha256 MERGE_RECEIPT_SHA256
+  --final-report-sha256 FINAL_REPORT_SHA256
+  --base-lock-sha256 BASE_LOCK_SHA256

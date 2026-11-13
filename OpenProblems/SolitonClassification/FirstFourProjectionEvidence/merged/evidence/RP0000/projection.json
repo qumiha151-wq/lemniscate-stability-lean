@@ -1,0 +1,500 @@
+{
+  "actual_lean_import_checked": false,
+  "archive_output_node_sha256": "b5e1017bb95e5cbfe1a868ff1a98305edcc5b56a1600b5874a077ff9a964a12c",
+  "base_lock_sha256": "dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d",
+  "candidate_hash": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+  "candidate_id": "nonzero_rotation_minus56_over57",
+  "checked_constant": "SolitonClassification.Rotating.RP0000Join1_0.certificate",
+  "compile_report_sha256": "74db310f8f3063efdb99a8bf216de3a4e08b1c2a26389930460c6abf001a9377",
+  "complete_250_archives_checked": false,
+  "complete_original_archive_validated": true,
+  "count": 32,
+  "durable_binding": {
+    "asset_id": 742245972,
+    "kind": "pinned_publisher_release_record",
+    "meaning": "Externally pinned publisher evidence; no network validation by this projection.",
+    "record_sha256": "92ae696c5c11fc8097253534778747500a775e534522d61e86c40b6a14e4e910",
+    "release_id": 443812088,
+    "remote_storage_checked_here": false,
+    "repository": "qumiha151-wq/lemniscate-stability-lean"
+  },
+  "external_library_snapshot_checked": false,
+  "files": {
+    "metadata/compile_report.json": {
+      "bytes": 521308,
+      "sha256": "74db310f8f3063efdb99a8bf216de3a4e08b1c2a26389930460c6abf001a9377"
+    },
+    "metadata/durable_record.json": {
+      "bytes": 2213,
+      "sha256": "92ae696c5c11fc8097253534778747500a775e534522d61e86c40b6a14e4e910"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Audit.log": {
+      "bytes": 184,
+      "sha256": "586bc1c3523aebea315590d35f3d166fb49084551c189915435a9baf2517a0f9"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B00Block.log": {
+      "bytes": 66,
+      "sha256": "3eb2f51e5364c6d211780409e4ae9ad79cce78a07c5e4db2793e8d2a447aee8e"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B00Nodes.log": {
+      "bytes": 65,
+      "sha256": "a528654d3d12564b7908cc59e6c83698a4c4917d54b8e787d3c60c244b8e9250"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B01Block.log": {
+      "bytes": 66,
+      "sha256": "8850f6468ea55847c3bc9daa8be5331647ab2823cac75cffa5f75aba5cc9f740"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B01Nodes.log": {
+      "bytes": 65,
+      "sha256": "63f3b899f6007b1191190d5e2195a74f56051e7ea4adc2b0cd105f0d25fbe29a"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B02Block.log": {
+      "bytes": 66,
+      "sha256": "8850f6468ea55847c3bc9daa8be5331647ab2823cac75cffa5f75aba5cc9f740"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B02Nodes.log": {
+      "bytes": 65,
+      "sha256": "63f3b899f6007b1191190d5e2195a74f56051e7ea4adc2b0cd105f0d25fbe29a"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B03Block.log": {
+      "bytes": 66,
+      "sha256": "8850f6468ea55847c3bc9daa8be5331647ab2823cac75cffa5f75aba5cc9f740"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000B03Nodes.log": {
+      "bytes": 65,
+      "sha256": "63f3b899f6007b1191190d5e2195a74f56051e7ea4adc2b0cd105f0d25fbe29a"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Join0_0.log": {
+      "bytes": 66,
+      "sha256": "b3dcdc94990a91f638bed951bf3afc0acdbe8388fb8f0b66d725f85b9c52fea4"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Join0_1.log": {
+      "bytes": 66,
+      "sha256": "47741b5b2800a4045830ece5bfab31673076e98fdeaf436051ed327f42b832e4"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Join1_0.log": {
+      "bytes": 66,
+      "sha256": "5bb6202fc8ed4f341959644a84246b315b565cfccde246f221df67b8b3484e93"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0000.log": {
+      "bytes": 312,
+      "sha256": "b275c6ca088f8085d891135f4d66908e04a0b7ac2aca1da912985be359576437"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0001.log": {
+      "bytes": 312,
+      "sha256": "a691503692a5d76968b841558cda83e2f1a46b29ca93a0b2d34eac9ea64e49e3"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0002.log": {
+      "bytes": 312,
+      "sha256": "956105b4b00d745b5180d9b284270a28c021b0d19c703f165b11e5b0f0888e2d"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0003.log": {
+      "bytes": 312,
+      "sha256": "07c839787bf335c4adef26f035fd21a30ddabb01a7762356eeaf5fb4005d717c"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0004.log": {
+      "bytes": 312,
+      "sha256": "8ffdc8ddaf912b3349721594a612bf4fb037986de19a92702253e7494fab7cfb"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0005.log": {
+      "bytes": 312,
+      "sha256": "b71cee6b761256098d413616369f3374e2f102b2fbbc53e6e4600603989dd7bb"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0006.log": {
+      "bytes": 312,
+      "sha256": "37bf5fdb9b12e6c40eee584a1c56a90dde3508bd8c538ad91914ea51e8c5a97c"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0007.log": {
+      "bytes": 312,
+      "sha256": "4fa353e576885f13c1a2dc114486704c1237094a8d2eb27e2c4ebb8b962059bd"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0008.log": {
+      "bytes": 312,
+      "sha256": "58e71127a117ba2340eac23c371217170d4433f0393f583543a3bfbbbdeb620a"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0009.log": {
+      "bytes": 312,
+      "sha256": "f760935867bb311ec7f9083f9c7296baabd8e43883e5a7df6c0c2afc2f402353"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0010.log": {
+      "bytes": 312,
+      "sha256": "a4b986772a4e9bbb85b14a217d8582d78f4f8b71c22ae9be1f800f700bfcb4f7"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0011.log": {
+      "bytes": 312,
+      "sha256": "b5a66e014fdcc3199abee6dc17b789eee64df702be5cc12284197dccd2e41e89"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0012.log": {
+      "bytes": 312,
+      "sha256": "a104890f8dac625b51f5066a415de9ae45500c753a8b81ad5247370e840a2040"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0013.log": {
+      "bytes": 312,
+      "sha256": "1333953b34610ea76fefe0415c681704cd18d2f49a5deca498cc024400b8226b"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0014.log": {
+      "bytes": 312,
+      "sha256": "b6ce2d3fa322994e66ae152fe1cb4c249d9969e7e2577ebcab1358d236cf99e5"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0015.log": {
+      "bytes": 312,
+      "sha256": "9b01ece766b7bfb5a06421eed30ae7218dc72ab6a204e1bd7a97090438da96ce"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0016.log": {
+      "bytes": 312,
+      "sha256": "fa2264ce4d664427f59f97112b4a550ceb70eefa365ddf4825c6df91c77d58ae"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0017.log": {
+      "bytes": 312,
+      "sha256": "f1ae8dac8bfaa79f07a64ce7b28593833fadaf4c82f5a647daf749da49fc1833"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0018.log": {
+      "bytes": 312,
+      "sha256": "9db23b28e47039c5dd4ab3c86f7301818024f842f86db0d3b1eefb8e920757c8"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0019.log": {
+      "bytes": 312,
+      "sha256": "809e0cfe04cf2bef4f4063269a1bab8cdb9a3b00c4c265f28c0302aabed7dbd9"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0020.log": {
+      "bytes": 312,
+      "sha256": "67dcf682e0a44e3def2f6a45637affe35e46eeb87e0f0678648583b94e4afbe7"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0021.log": {
+      "bytes": 312,
+      "sha256": "7aec581c739baf88b18f542601514880ec36aadae1c403a56a56451a6e8ef88e"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0022.log": {
+      "bytes": 312,
+      "sha256": "24bc35f7e356f6421629998bddde0e39158ef15a6269a033b37afe226ec27083"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0023.log": {
+      "bytes": 312,
+      "sha256": "5426a91edfe90d6176b24e4f059f5d156fb2c6db6a8c06be7aef4e2e6c90bbb6"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0024.log": {
+      "bytes": 312,
+      "sha256": "5f24f9537c6968cff15dcc5926f183ae6116b13bfe95f30edd64c49635544b02"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0025.log": {
+      "bytes": 312,
+      "sha256": "505b9633029ea991fc590ecb71f2eb095eb6260d0a8621f280d2d8bf49749801"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0026.log": {
+      "bytes": 312,
+      "sha256": "960c8239e215bd94a8a94ab82384afdb30d24d7590a741f54dac856c5984f191"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0027.log": {
+      "bytes": 312,
+      "sha256": "3ce28ddc7166372b74607adcb79f1b16e8e78efcbb100d846232c0fc8a2ee7a9"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0028.log": {
+      "bytes": 312,
+      "sha256": "b504e3d3baf9802e86f22eb22005864abbc0642d0c7db08dfc8a2eae503c5043"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0029.log": {
+      "bytes": 312,
+      "sha256": "36822c138c32bd6635c1a8261ce44830bcd931777d37f53a14ac54e2c2ae665b"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0030.log": {
+      "bytes": 312,
+      "sha256": "11795f2288a01eb28f8714bbeb173f394329073aea8da641b004eeb3df6f0986"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000L0031.log": {
+      "bytes": 312,
+      "sha256": "ce44a0a32149501864d3e3a271131f4a567c00cd1f442f7c92772d7e38e9c6f3"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Seam0_0.log": {
+      "bytes": 65,
+      "sha256": "6bf0d08bc766819b090c52835222b93acece7b32b8ee8696539daf37869eabb8"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Seam0_1.log": {
+      "bytes": 65,
+      "sha256": "a76ac7c67542781034c7dbd25479fc44d2c02f3fa80b14353c51bc725aeb1291"
+    },
+    "metadata/logs/SolitonClassification_Rotating_RP0000Seam1_0.log": {
+      "bytes": 65,
+      "sha256": "a76ac7c67542781034c7dbd25479fc44d2c02f3fa80b14353c51bc725aeb1291"
+    },
+    "metadata/manifest.json": {
+      "bytes": 37778,
+      "sha256": "89ffdcec79cfda8614975618d8804d9fdb46c3ab73253bc937c1f57448bfc91b"
+    },
+    "metadata/output_node.json": {
+      "bytes": 3407,
+      "sha256": "b5e1017bb95e5cbfe1a868ff1a98305edcc5b56a1600b5874a077ff9a964a12c"
+    },
+    "public/SolitonClassification/Rotating/RP0000Audit.olean": {
+      "bytes": 1568,
+      "sha256": "29352ca2757b0ad31afd20ccef6b3721a9224d5147bdbfd61a94486775ed904b"
+    },
+    "public/SolitonClassification/Rotating/RP0000B00Block.olean": {
+      "bytes": 47472,
+      "sha256": "6956e11cdbcf2a3485a6206145676696c1454ee15c9a6980f014dc3a6d292dcf"
+    },
+    "public/SolitonClassification/Rotating/RP0000B00Nodes.olean": {
+      "bytes": 294320,
+      "sha256": "3136f2eb506d21e943f4465157259ae16658952786daa497564a94d88c07b17c"
+    },
+    "public/SolitonClassification/Rotating/RP0000B01Block.olean": {
+      "bytes": 47632,
+      "sha256": "9659879047b06dcd25029d3b58347c6bf6f1bd3c06cf06f7f9b2eac6aa0812c2"
+    },
+    "public/SolitonClassification/Rotating/RP0000B01Nodes.olean": {
+      "bytes": 240320,
+      "sha256": "c88cbd6d57df974cc360397d13f0edb833e47416ccf64bba281614af53b47a77"
+    },
+    "public/SolitonClassification/Rotating/RP0000B02Block.olean": {
+      "bytes": 47632,
+      "sha256": "75174386950c47b6d72fcc6f08085f8b47996a315aabac9039b158e13b9887ca"
+    },
+    "public/SolitonClassification/Rotating/RP0000B02Nodes.olean": {
+      "bytes": 240912,
+      "sha256": "03883590c06e8e278ba05c0bfb372901f9a3592efdbd4bc9b38d249a159f3063"
+    },
+    "public/SolitonClassification/Rotating/RP0000B03Block.olean": {
+      "bytes": 47632,
+      "sha256": "ac7a2990023610c60199149566f4983351023e1d1f5027b15fbf9d87aa0d12a8"
+    },
+    "public/SolitonClassification/Rotating/RP0000B03Nodes.olean": {
+      "bytes": 241624,
+      "sha256": "7a402d63e85d903185939c0ff734f73446ef826f740d620d8f035bc526d8817d"
+    },
+    "public/SolitonClassification/Rotating/RP0000Join0_0.olean": {
+      "bytes": 17064,
+      "sha256": "97a650ecbbfca3c8e4750bbb367a005c7d89ee4c5a29f155212a03568a862b98"
+    },
+    "public/SolitonClassification/Rotating/RP0000Join0_1.olean": {
+      "bytes": 17064,
+      "sha256": "20e0316cccc6f7046c19afe079c61334a82457ccceb343335a0df42631968632"
+    },
+    "public/SolitonClassification/Rotating/RP0000Join1_0.olean": {
+      "bytes": 17200,
+      "sha256": "bbc8382e853381aa07e8eba50f478d9bb9540f21cd4d33f179c82dfa4a26ebee"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0000.olean": {
+      "bytes": 27472,
+      "sha256": "7b7d43fbd872ef72c1e4975cea023db78cb38cc4bf0335fbab47cfb591562a43"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0001.olean": {
+      "bytes": 27472,
+      "sha256": "e5a3f1b95e50b08b9141e6952b340174da26b17491dc451fb2086b9dab83778e"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0002.olean": {
+      "bytes": 27488,
+      "sha256": "669531e9ba1bd9ec129668bf9b99aa2e070d218eae5398ca0dc49eaa93ce49bf"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0003.olean": {
+      "bytes": 27488,
+      "sha256": "0821092ff5ce20c3786c0e554587b41ab45a00cdb76503b35b6aff4338be3c5e"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0004.olean": {
+      "bytes": 27512,
+      "sha256": "a2baae18ec3cb24c7cac1792b325a4b8d096c7b9961d8170011463198fb6ed60"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0005.olean": {
+      "bytes": 27352,
+      "sha256": "e050c9efd6464662bcf27da0b32715d1929e60c2a34c144bb12648a0dc8f8e87"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0006.olean": {
+      "bytes": 27376,
+      "sha256": "3ce4a55627de64d09b9c2e7090fcfbfc4ea490e0d5178204f0420b11f2cbe13f"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0007.olean": {
+      "bytes": 27352,
+      "sha256": "b1de2a48103ecd29d3d068e97a9bf7dda6304c3a8dcdce4c8c628734b58f52e6"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0008.olean": {
+      "bytes": 27448,
+      "sha256": "53f970954a51dbd042f11d6023e06313a0f521a13b150c1fe113044bdbca87b1"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0009.olean": {
+      "bytes": 27448,
+      "sha256": "1f7928d43790105452903a96ef6f86ab07ef5572465a4fc2678aef33518e72aa"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0010.olean": {
+      "bytes": 27488,
+      "sha256": "3175cb2dfee5eff863090eb72d3caf36cd36207ca144408d3fe3e911ac15aec0"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0011.olean": {
+      "bytes": 27488,
+      "sha256": "0ae196ae3510ec0fef64eb4f55fdb7690af01def01292d0e29aac59cb1e6b178"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0012.olean": {
+      "bytes": 27488,
+      "sha256": "18626c61f31d64fcb0fad80f512ce81bd74128ee0f407dbaff55b549fb054dc2"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0013.olean": {
+      "bytes": 27352,
+      "sha256": "cb2e623a48cffa98dca3b2ba4f48b226013ea5e84dfb757477be24ae8651282a"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0014.olean": {
+      "bytes": 27352,
+      "sha256": "822929d0d8d48df2db0927e9b5f4bddf00c3614fd62994cbfc7b1471009f9024"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0015.olean": {
+      "bytes": 27352,
+      "sha256": "664ba3a5ce5db11c0c0fa2d1afe0873aa433bcb1113401165ed3684791e89cd8"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0016.olean": {
+      "bytes": 27448,
+      "sha256": "21708a7d9cd946c771363343bb26e6c9ebb939f185a3531d3f48f2c97623b0b5"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0017.olean": {
+      "bytes": 27448,
+      "sha256": "4158c62b542134529e103fe50640af4f8adb3e8e8b609566d119c56735b7a1b5"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0018.olean": {
+      "bytes": 27488,
+      "sha256": "d7d800a37dc445261667867ce519ad278ba8dad97737e62b0e1ab12132e51c4b"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0019.olean": {
+      "bytes": 27488,
+      "sha256": "d738050640903edc626c2ccc244d5895dd49c0da0b111b0da2dded6be3153125"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0020.olean": {
+      "bytes": 27488,
+      "sha256": "d0b1f418bab418c85f3b9f53b725a2673d9040e82836f0d27df574cae3450ed0"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0021.olean": {
+      "bytes": 27352,
+      "sha256": "1e6db2c355cc5e0ae1389d487cd790ac15c0b67520eb224ee7954c1f6c4c1232"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0022.olean": {
+      "bytes": 27352,
+      "sha256": "002df98936d9b67f564638fff861a3bfd001db0632e76eb7ea0ace9190d96e02"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0023.olean": {
+      "bytes": 27352,
+      "sha256": "2ce6ceb120aa8da4b83aa209adf17a32f22e7457a99e72558c177cbd182eb3a2"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0024.olean": {
+      "bytes": 27448,
+      "sha256": "218218f41f7b8403bf702790b87fd453fbd207f73acba0cc41924b54c8ebb84a"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0025.olean": {
+      "bytes": 27448,
+      "sha256": "f8e451d14f36b5a9c807ccdb06c2db171aa331d63dbdc3c4af019a11d475acfe"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0026.olean": {
+      "bytes": 27488,
+      "sha256": "cae265c113c1e4ba9a6451df0aaef6d109b97f07b2332d6ed2874db835d434af"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0027.olean": {
+      "bytes": 27488,
+      "sha256": "24267b489a1eb0f5aaf06376edaa522e079e1e31ba9f5b48c9ec4d30e833b709"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0028.olean": {
+      "bytes": 27488,
+      "sha256": "aef6b63bf690c0ca38aa36b981baf9ca5967d4542cab607a48113f81c20d922d"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0029.olean": {
+      "bytes": 27352,
+      "sha256": "ea40766ad8a8f66e6b94eba7e13c8ab9f237ad3614b8e61a5890cae6b0fe018d"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0030.olean": {
+      "bytes": 27352,
+      "sha256": "2ad7334e1761bc540f82bfcaa4bdfb4be7b40a8d543dbcb942da09b8794c5075"
+    },
+    "public/SolitonClassification/Rotating/RP0000L0031.olean": {
+      "bytes": 27352,
+      "sha256": "0973d5c2e2299605af7ade9c580a01a1c28fe39f8f73b646fc110126ea6f63ca"
+    },
+    "public/SolitonClassification/Rotating/RP0000Seam0_0.olean": {
+      "bytes": 8976,
+      "sha256": "4f53c637384b38475703b574720d568de822ca94b28dc89f4f223aa46db8aee2"
+    },
+    "public/SolitonClassification/Rotating/RP0000Seam0_1.olean": {
+      "bytes": 8864,
+      "sha256": "b894b5315e28b14cf1dbbb03a82997fd3bfec15cf8a0bdca0bdcaef39877b6a5"
+    },
+    "public/SolitonClassification/Rotating/RP0000Seam1_0.olean": {
+      "bytes": 8864,
+      "sha256": "46a858f210dedd1508af780a4731f7c0b9e441afd562d87b616c37eb6cc1dabe"
+    }
+  },
+  "full_archive_bytes": 25183056,
+  "full_archive_sha256": "4f6e00f119c104550034d0cd46db34c0bba14ab3840e20364e469fb6de857f95",
+  "full_certificate_proved": false,
+  "helper_sha256": {
+    "plan_production_grid.py": "61ea4ae11174cffa51dd5b4fc3c1caba05838b54b05d14c4793f4846ca864cca",
+    "production_artifact.py": "ddb448165391a04ab1ffcd9e4b572f9945f29fab5e1fa6ec981adad4b56323b5",
+    "production_compile_shard.py": "f0abd2db3d6b8db32707d33e8ebb8a6aaee7da0c6f2332c9c4da8e931c64310b",
+    "production_public_projection.py": "b206b8a43a3e1b9a47a31ab33b038ca2ac351a461b810d9265f183019c56708d",
+    "propose_grid42x22.py": "dcd5024d5d182763cf91ca552080065dbe7dab6cec18bb1f49f7b07a5911c183",
+    "reference.py": "e586dcd92c56567232ce7751765eec5a55377d1e7f6398291606d674aa5568b4",
+    "stage_public_archives.py": "44f7407c525d4882b2efde128eed23477e06d5e94dbef06673743476e6d4cbb9"
+  },
+  "input_node_sha256": null,
+  "key": "RP0000",
+  "manifest_sha256": "89ffdcec79cfda8614975618d8804d9fdb46c3ab73253bc937c1f57448bfc91b",
+  "mesh": "1000000000000000000000000000000000000000000000000000000000000",
+  "metadata_bytes": 575791,
+  "modules": [
+    "SolitonClassification.Rotating.RP0000B00Nodes",
+    "SolitonClassification.Rotating.RP0000L0000",
+    "SolitonClassification.Rotating.RP0000L0001",
+    "SolitonClassification.Rotating.RP0000L0002",
+    "SolitonClassification.Rotating.RP0000L0003",
+    "SolitonClassification.Rotating.RP0000L0004",
+    "SolitonClassification.Rotating.RP0000L0005",
+    "SolitonClassification.Rotating.RP0000L0006",
+    "SolitonClassification.Rotating.RP0000L0007",
+    "SolitonClassification.Rotating.RP0000B00Block",
+    "SolitonClassification.Rotating.RP0000B01Nodes",
+    "SolitonClassification.Rotating.RP0000L0008",
+    "SolitonClassification.Rotating.RP0000L0009",
+    "SolitonClassification.Rotating.RP0000L0010",
+    "SolitonClassification.Rotating.RP0000L0011",
+    "SolitonClassification.Rotating.RP0000L0012",
+    "SolitonClassification.Rotating.RP0000L0013",
+    "SolitonClassification.Rotating.RP0000L0014",
+    "SolitonClassification.Rotating.RP0000L0015",
+    "SolitonClassification.Rotating.RP0000B01Block",
+    "SolitonClassification.Rotating.RP0000B02Nodes",
+    "SolitonClassification.Rotating.RP0000L0016",
+    "SolitonClassification.Rotating.RP0000L0017",
+    "SolitonClassification.Rotating.RP0000L0018",
+    "SolitonClassification.Rotating.RP0000L0019",
+    "SolitonClassification.Rotating.RP0000L0020",
+    "SolitonClassification.Rotating.RP0000L0021",
+    "SolitonClassification.Rotating.RP0000L0022",
+    "SolitonClassification.Rotating.RP0000L0023",
+    "SolitonClassification.Rotating.RP0000B02Block",
+    "SolitonClassification.Rotating.RP0000B03Nodes",
+    "SolitonClassification.Rotating.RP0000L0024",
+    "SolitonClassification.Rotating.RP0000L0025",
+    "SolitonClassification.Rotating.RP0000L0026",
+    "SolitonClassification.Rotating.RP0000L0027",
+    "SolitonClassification.Rotating.RP0000L0028",
+    "SolitonClassification.Rotating.RP0000L0029",
+    "SolitonClassification.Rotating.RP0000L0030",
+    "SolitonClassification.Rotating.RP0000L0031",
+    "SolitonClassification.Rotating.RP0000B03Block",
+    "SolitonClassification.Rotating.RP0000Seam0_0",
+    "SolitonClassification.Rotating.RP0000Join0_0",
+    "SolitonClassification.Rotating.RP0000Seam0_1",
+    "SolitonClassification.Rotating.RP0000Join0_1",
+    "SolitonClassification.Rotating.RP0000Seam1_0",
+    "SolitonClassification.Rotating.RP0000Join1_0",
+    "SolitonClassification.Rotating.RP0000Audit"
+  ],
+  "orders": {
+    "matrix": 22,
+    "state": 42
+  },
+  "original_archive_retained_in_place": true,
+  "plan_output_node_sha256": "0d5967b778a33b341831c2d98e29f3554bdcbc85e15f0585adaf0a7648fbce88",
+  "plan_sha256": "a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1",
+  "public_bytes": 2164904,
+  "revision": "cff971bcac7ac2d83aba04596ce09e44fda1ac29",
+  "root_module": "SolitonClassification.Rotating.RP0000Join1_0",
+  "schema": "rotating.public-projection.v1",
+  "sign": 1,
+  "start": 0,
+  "status": "projected",
+  "step": {
+    "den": "20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "num": "156080360716790281849844889560549805394762194677867378746575322740205093349685521380557013"
+  }
+}

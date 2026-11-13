@@ -1,0 +1,53 @@
+Independent read-only review: actual first-four durable projection exercise
+2026-11-13. Reviewer: audit_full_escape. No source edits or CLI replays.
+
+Reviewed orchestration source run_first_four_durable_projection_v1.py:
+63B13A9DE2B2EA81A23A67ACB1F6596CE97EDBD8925630822E718D871DDC7B71.
+Reviewed FirstFourDurableProjectionPlan.txt:
+2A98D9017622EF80C2E849E06AC0424D98885809BA96EABC184EB4EAFC6CBE63.
+Observed terminal author report first_four_durable_projection_v1/report.json:
+FC407D79793F58507AFEA955BF1872AE32545E7F5DA48AA8585A34457DB84FAE.
+
+I read the complete source and plan. No mathematical/provenance scope gap
+was found in this four-slice staging composition. The frozen B206 projector,
+784 transport and B050 merger and complete helper closure are pinned. The
+unchanged A62 plan, DCF base lock, all four actual original tar archives,
+actual nonfixture durable records and independently replayed publication
+review are hashed before work and rehashed after it. The publication commit
+is recorded as root-provided provenance; the script explicitly does not
+claim to re-query or independently verify that remote commit here.
+
+For each of the four canonical keys, the source actually invokes project
+with --require-durable, a separate verify, pack, and fresh-directory unpack.
+It compares complete file inventories after unpack and derives each receipt
+and compact archive hash from actual output bytes. The inputs are the real
+first-four original archives and records, not synthetic full250 stubs. The
+full original archive is revalidated by the frozen projector, while only
+public layers and metadata enter the compact result; originals are retained.
+
+The ledger preserves sign/start/count and both checkpoint hashes from the
+fixed plan. Its four slices are explicitly disjoint and discontinuous; mode
+is pilot. It binds all four actual record hashes, which is stronger than
+pilot mode alone. After the merger, the script checks every listed output
+file, all four embedded durable records and their exact release id, and
+requires 188 primary modules with the full250/import/library/seam/proof flags
+all false. No operation compiles or imports Linux oleans on this Windows
+host; no actual flow/grid theorem is inferred from byte staging.
+
+Every CLI receives an argv list, fresh paths, explicit size limits and a
+180-second subprocess timeout. Nonzero exit stops the composition, retaining
+logs and failure evidence. The source does not overwrite an existing exercise
+directory, change a frozen helper, delete an original, or issue a network call.
+I checked the terminal report's indices0..16 and all17 recorded returncodes0.
+The report records109.129 seconds, four actual jobs and188 merged primaries,
+zero new Lean/network/GitHub calls and all250_checked=false. I did not rerun
+those commands or independently reproduce their timings.
+
+One evidence-integrity refinement was sent to the author: each command's
+stdout/stderr hash is taken when it finishes, but the orchestration does not
+rehash all earlier logs/argv files before its final report. The author agreed
+to run a separate terminal postcheck over all command and output evidence,
+without modifying or rerunning the source above. That later evidence is not
+silently included in this review; its result should be bound separately.
+This does not change the byte/provenance composition reviewed here, and no
+cross-platform import, full250 coverage or new theorem is claimed.

@@ -1,0 +1,57 @@
+{
+  "schema": "rotating.full-assembly-compiler-tiny-test.v1",
+  "status": "passed",
+  "compiler_sha256": "a0e2b19e60ebefdf1b35ac162df0a5a7f9b67188b4eb26d604d0664a1186456a",
+  "fixture_sha256": "80e1362e8dd4ead3b389f40dbf7ac890d6343802bd99291054a8836a2f08b609",
+  "validator_sha256": "d50998d092942c3cb60d24632d446d9e4d4108269bc6bc1a35b3c7fc505cb0e4",
+  "original_actual_tiny_report_sha256": "5f46f37581aac06e69de04d6f7943fd4d37ef6648583df8b3ddc171b72d89cc7",
+  "positive_sequence_report_sha256": "4311419df3491c693abd54a82a5b3e569d89cda9002afe585f1f3ab2129962fe",
+  "actual_successful_Lean_calls": 5,
+  "actual_expected_failing_Lean_calls": 1,
+  "actual_fresh_audit_count": 8,
+  "recursive_project_map_counts": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "rejections": [
+    {
+      "name": "changed_actual_source",
+      "rejected": true,
+      "reason": "Frozen source changed before copy"
+    },
+    {
+      "name": "source_manifest_header_mismatch",
+      "rejected": true,
+      "reason": "Copied source header differs"
+    },
+    {
+      "name": "actual_forall_alias",
+      "rejected": true,
+      "reason": "Lean did not pass: ClosureFixture.BadBinderAudit"
+    },
+    {
+      "name": "private_sidecar_in_public_pool",
+      "rejected": true,
+      "reason": "Extra/missing public project artifact or private sidecar"
+    },
+    {
+      "name": "incomplete_recursive_setup",
+      "rejected": true,
+      "reason": "Setup changed/overrides source imports/private map"
+    },
+    {
+      "name": "source_import_override",
+      "rejected": true,
+      "reason": "Setup changed/overrides source imports/private map"
+    }
+  ],
+  "standard_library_before_after_checked": true,
+  "actual_full250_validation": false,
+  "actual_fullgrid_Lean_calls": 0,
+  "full_certificate_proved": false,
+  "production_audit_text_checked_as_text_only": true,
+  "production_audit_text_sha256": "fda8e7e63042d4b29bd496b51346ab7408ba2d4e86a2c2c995996fee851c27b3"
+}
