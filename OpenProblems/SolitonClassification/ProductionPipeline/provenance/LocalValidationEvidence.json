@@ -1,0 +1,44 @@
+{
+  "schema": "rotating.pipeline-local-evidence-reference.v1",
+  "runner_sha256": "14c9360c15517658200649cafff904948184ac4b23194ab60aac15926dba8dd5",
+  "referenced_evidence": {
+    "fixture_report": {
+      "sha256": "357b6f887d584c631a9354c7968b3bb13df09205b5cf045e78089228c2faec72",
+      "bytes": 5744
+    },
+    "full48_compile_report": {
+      "sha256": "bd2b2f8ace0fa21a7c8e5935e673080ce9e2c54eaee64f9e69bd2ace73e9d24e",
+      "bytes": 1219163
+    },
+    "postcheck_evidence": {
+      "sha256": "850b07bd29b69dd788bf30b40db155007d67e7bdc188a3c0dfcfbff0e56913c4",
+      "bytes": 75047
+    },
+    "status": {
+      "sha256": "509726a3bd3caa31f49781e23b442f18b4b293cd155780ce8ffd890a16edbc6a",
+      "bytes": 5399
+    }
+  },
+  "actual_local_results": {
+    "platform": "Windows",
+    "final48_compiled": 48,
+    "fresh_audit_declarations": 2205,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fixture_modules_compiled": 3,
+    "rejection_fixtures_passed": 10,
+    "new_output_layers_bound": [
+      ".olean",
+      ".olean.private",
+      ".olean.server"
+    ],
+    "temporary_generated_IR_promoted": false
+  },
+  "full_numeric_grid_instantiated": false,
+  "linux_final48_executed": false,
+  "full_candidate_draft_compiled": false,
+  "full_certificate_proved": false
+}

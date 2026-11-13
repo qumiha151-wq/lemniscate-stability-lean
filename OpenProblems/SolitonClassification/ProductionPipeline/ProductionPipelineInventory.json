@@ -1,0 +1,1693 @@
+{
+  "schema": "rotating.production-pipeline-source.v1",
+  "source_only": true,
+  "source_revision": "cff971bcac7ac2d83aba04596ce09e44fda1ac29",
+  "source_tree": "4b6b13d019143260585f2eee8e6fbb07e3249033",
+  "tool_package_revision": null,
+  "core_inventory_sha256": "2c252cf849e22e027ca2630b836e5227b8ff8390cf45f36a6b467db64580c924",
+  "transport_inventory_sha256": "046b1fa6b7ce9fd52713c94e9913720760831dd84e55484a639a4782bdb08f32",
+  "final_sources_manifest_sha256": "51e1abe4b94640773e1fe66f93cfc1ad58a57fafbd050a260eba53da0f61fd72",
+  "full_certificate_proved": false,
+  "files": {
+    ".gitattributes": {
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8,
+      "role": "exact_byte_checkout",
+      "origin": "new_package_metadata"
+    },
+    "Scope.txt": {
+      "sha256": "c92bc8067f189402ea03a373e453fe246e4277ae99e9e017a8d62aff52334f99",
+      "bytes": 2843,
+      "role": "scope_and_future_execution_contract",
+      "origin": "new_package_metadata"
+    },
+    "future/uncompiled/FullCandidate.lean": {
+      "sha256": "697b53e7bd0546a26c2dc10769a9b93c5d5082a386644d6f9ac908d53f28bb70",
+      "bytes": 2037,
+      "role": "UNCOMPILED_future_application",
+      "origin": "isolated_root_draft_not_part_of_final48"
+    },
+    "future/uncompiled/STATUS.txt": {
+      "sha256": "a1d3ef69fbf3cbc9e88707a11defe2c42038a55200a060f406287958a9f5a87f",
+      "bytes": 1172,
+      "role": "UNCOMPILED_scope",
+      "origin": "isolated_root_draft_scope"
+    },
+    "inputs/CandidateInitial.original.lean": {
+      "sha256": "faea992ad43d36ee9a6656fa6a4c5981dd3d5d45679dd58afc9fb10cef2b95f6",
+      "bytes": 4622,
+      "role": "canonical_candidate_hash",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "inputs/shooting_certificate.json": {
+      "sha256": "7f227259292b5e4795f6df4e2f5f4e907bdc360a973915fee2e0bf3015ed3486",
+      "bytes": 8205,
+      "role": "exact_candidate_seed",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "inputs/templates/Block16Leaf08Matrix.lean": {
+      "sha256": "e91aa87d6b69219c834f1e87f24ac178b627f51d61befe122ee2d4ee5fa09f6e",
+      "bytes": 66792,
+      "role": "frozen_numeric_template",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "inputs/templates/Block16Leaf08State.lean": {
+      "sha256": "ae34925a5de78a1f4499c23abacc847d5b2add1796bb23a01c44c656df9a314b",
+      "bytes": 30403,
+      "role": "frozen_numeric_template",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "performance/reference.py": {
+      "sha256": "e586dcd92c56567232ce7751765eec5a55377d1e7f6398291606d674aa5568b4",
+      "bytes": 1945,
+      "role": "untrusted_integer_arithmetic",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "plan/PlanRevisionBinding.json": {
+      "sha256": "45b572f5ceacdb2eddef198677ad08d1e47e57b88080dd2c97099c0244b26ad9",
+      "bytes": 37137,
+      "role": "exact_metadata_only_rebinding",
+      "origin": "new_package_metadata"
+    },
+    "plan/checkpoints/m_0032.json": {
+      "sha256": "b4047fd88c498463a092a7ee6e4ab0e876a360f3eaca30bd78ec63cbb774142e",
+      "bytes": 3499,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0064.json": {
+      "sha256": "72eeb8b4affd803f1767370b1c42a9aaa00296f29d66b5b9dfe3340f146e5afb",
+      "bytes": 3515,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0096.json": {
+      "sha256": "0455b1dcfbb947c3c6961bf828f20e8ef9ec759e7ab2dfcf9d8489393a8d471f",
+      "bytes": 3513,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0128.json": {
+      "sha256": "6e194b304c66717339a339801022b1d57f7d543f9fb4750f9e49a9f7da0106fd",
+      "bytes": 3509,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0160.json": {
+      "sha256": "4294c81568b91c3b565032f83ae58693aebe95c3d5f2ea469df14951c9ccbaa3",
+      "bytes": 3509,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0192.json": {
+      "sha256": "d02882ea920523f3380a6abc985fbad4cb1f6278bdfe3fcd2438a7cb6470d496",
+      "bytes": 3522,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0224.json": {
+      "sha256": "fa22c866c41d68b069f8635caa8c0b852a177b3e751018a0fc12b4628c5dfbfc",
+      "bytes": 3515,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0256.json": {
+      "sha256": "4ff5811c916dda0a552fba97df9338d72811f9fa1e1afeca52077c2340e7de80",
+      "bytes": 3530,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0288.json": {
+      "sha256": "6c1f3769ff85f0fc3ea9defa646a4da2e999115aa75c3ef5edd1e6d99ea8e7ef",
+      "bytes": 3535,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0320.json": {
+      "sha256": "61cf5cc1dfe05efa4361e04dc53e00aa9c20fdfd48be2a171ff73371384cc38b",
+      "bytes": 3526,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0352.json": {
+      "sha256": "eac7d68add1b798170c29169d928b40c92b7026edc95204b01044499da4c9de6",
+      "bytes": 3531,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0384.json": {
+      "sha256": "2a3e0bd2af48959027d5d78e172e7ee3d285c5b2b0e12b5558414f79ce796ab9",
+      "bytes": 3529,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0416.json": {
+      "sha256": "f8137f5084a90d2178c15c557bfcf79397950d715396bd07eb2bc01f6a224c66",
+      "bytes": 3527,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0448.json": {
+      "sha256": "5c3fe612eab73d78eb2a53bf554b14c60d835a60f353b07f2e756dd1db514965",
+      "bytes": 3539,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0480.json": {
+      "sha256": "f344071efac21ba27ff16b46b9f9f324f0dc178d0f80c2bc7d2c520df99e4a02",
+      "bytes": 3532,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0512.json": {
+      "sha256": "5686c7d9caa8238a7b9ed81ff83927347e09f72e52c7a0150f4da2ba26b455f4",
+      "bytes": 3530,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0544.json": {
+      "sha256": "356224541e71ec38db0d80acb3026071c9081d6f94eb7872b420967af6612728",
+      "bytes": 3531,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0576.json": {
+      "sha256": "4b99895ff48a2ffbfe4db9b573c6d12da27e6d3900cb97d9293cedfa38a13783",
+      "bytes": 3532,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0608.json": {
+      "sha256": "b6f6fd81f3c2df100c046abf18e02cdfdc7ca0cf41a0bcb525ad536bfc226bc2",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0640.json": {
+      "sha256": "72de92c63e40180ade2b8fa4acb7ea3be69b7527ce01865d3a62c2a0df394b14",
+      "bytes": 3545,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0672.json": {
+      "sha256": "ecdbed21be052d48ff6cb520c5fd0eec055439e7deb07aadfd160a0110697420",
+      "bytes": 3540,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0704.json": {
+      "sha256": "5f5817549d1cb49c6185e4f41c9705f8ee115f8b98942aac2cac034eea21a74e",
+      "bytes": 3530,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0736.json": {
+      "sha256": "d17681394fca6949856c714961f79ff757890813c9d1c41600e3ca6c11d1ec2d",
+      "bytes": 3538,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0768.json": {
+      "sha256": "e5a876541c1f4a818bc40067461b6d2172b8c93d88c766955344b7c1f59223b4",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0800.json": {
+      "sha256": "cd0597152628384e5798180904384166c6416823eaf88e2ebecfa32b0f4c3ee8",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0832.json": {
+      "sha256": "63325d36f95f5022b5edec80f87763d88aea96488ad6f31745b016571213d73a",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0864.json": {
+      "sha256": "93dced9fed3a12f37527c539b250e6df7df9fc5f742d8718a062191323f00c84",
+      "bytes": 3543,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0896.json": {
+      "sha256": "13fe5572fd1fd1665df64c2f5216cca08159878751225dc5d96feb55add203e1",
+      "bytes": 3538,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0928.json": {
+      "sha256": "510b9b1b8bdd9f4bd14787f604e2db39da4abf7cecfb5187774c2fa7e7aec3df",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0960.json": {
+      "sha256": "87efcd1cce4309b26936ba95ba656babda999e03064ac734575b8259e5f8e8c2",
+      "bytes": 3548,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_0992.json": {
+      "sha256": "e348d0b1053f5a88f32c9a3f4e410cb9daf0a8aa4ec646a9241a11a2b0eeb0c2",
+      "bytes": 3545,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1024.json": {
+      "sha256": "2238c6116ea7c9aba702a6d7117927b4849c7b00b1c52775378ba4bcaae4e965",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1056.json": {
+      "sha256": "f8c7a34d3e11c9a7f0c5d03fa9db7cafe5dd66306a5e3eeb8f56421071ddd3d1",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1088.json": {
+      "sha256": "dd8b630179c5d404cb4fa31962f676503190af4cbdf8f9b58d629c559884303b",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1120.json": {
+      "sha256": "b692bdf3df553c8e683a29721c57e414fa0a031b41072632f51320537c36ccd7",
+      "bytes": 3543,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1152.json": {
+      "sha256": "6b3bca26bcb0bf665485915009f6d9f8c88c82885eba29927f21f5c9788dd69f",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1184.json": {
+      "sha256": "c68971af54626c9bee1b430badf93d0eecd4626e9f0987bf15cd723e8b386eff",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1216.json": {
+      "sha256": "21daf18b053a07a4d5118b46bf08933ff1ab2d4664d60ac9afa39799ba4bda0c",
+      "bytes": 3541,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1248.json": {
+      "sha256": "e0d28c67f8f9bee1d762f14422fdca7ea4b92391bfd657d9693fa36710f602bb",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1280.json": {
+      "sha256": "c2164ed47c0063f9dde4a07d92e0dc7605d2a50625390d25346afdf0f496f4c7",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1312.json": {
+      "sha256": "6d6a8ec83c776a84160f31755cf9e19e6b6d29fc19c5d4ebfe9e26afd8461e9e",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1344.json": {
+      "sha256": "c6401eb3fd68b285ce231c3eb971b588230dba54e0b00fc44d752d5ebb214b93",
+      "bytes": 3535,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1376.json": {
+      "sha256": "21a85f03d5e3a5b043fb7c79fcee910d5d660f7f632cf760362e0085c8229e97",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1408.json": {
+      "sha256": "27075ed7f1b8467fc736e122d5e501a47d7d4f41b08b208f6d15f7e826fadfd4",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1440.json": {
+      "sha256": "79414ee4b56c92fbe14c2935a1bb496249fd452505d217fe57cd686336cf6748",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1472.json": {
+      "sha256": "3b658896f84c32bc5510409c788d8bc04ba8f743ccf9956ca994b663357bc00d",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1504.json": {
+      "sha256": "f0ca8d406308b682b41d2a8355d65e06f459535e9af8edc2ce2c2355ccc6e6c4",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1536.json": {
+      "sha256": "b5220122baf05aa66383ed10d6d2d98c08b4c0fd84ef129d7b0493a05628e82b",
+      "bytes": 3559,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1568.json": {
+      "sha256": "e11f5744a4f32a94e98405e825057769ddd0ebf6ef7fb9963f3d8c8eea7a1b9b",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1600.json": {
+      "sha256": "7c7f9ce662e15034edcf2c2afa053db5fcbae4e30ac91d5fbbab0e369f8c83d1",
+      "bytes": 3554,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1632.json": {
+      "sha256": "de62c5a117b238c309b8954886dcfa8ab2977693fd9160a7d2f935148a0b0e37",
+      "bytes": 3547,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1664.json": {
+      "sha256": "f27fe7896f6edeed977eb2119084217e574e9187257c14235d348fe28364fa9d",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1696.json": {
+      "sha256": "ce8b03e844a32497a72abd13212a72535871379a8d23078fa9fe460351ecdf6f",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1728.json": {
+      "sha256": "9769b78376078605a623dcb86013a23def8cd7c57673c98e99aef220c50df2ab",
+      "bytes": 3571,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1760.json": {
+      "sha256": "13bbef0b96a5bdf98c46acb939f0c39bd09e339598ce5e9dd3cfb5870157f5bf",
+      "bytes": 3567,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1792.json": {
+      "sha256": "5960bea0b6907ccdfa7b7c62ca279f317fc1c8cef0ac1bb370a993d8da6eb1b5",
+      "bytes": 3566,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1824.json": {
+      "sha256": "2321230893b9572e6f346a6d6cf1d9697ef8a71e34aae75715a86af97c1548b6",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1856.json": {
+      "sha256": "3f6c5d4b69bfd56563c1c8a6c913f842efd68c8bc6a2e0ad351e78c58b31941f",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1888.json": {
+      "sha256": "433dad4547317124837cc3556b3b6b87f447dab542048db3e9ce12ce221f25a6",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1920.json": {
+      "sha256": "e33370f4889cccb60f7f0aa2c68b68235b3d4cfa79e99e2bdc2950cc1e37ed2a",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1952.json": {
+      "sha256": "c26f2d0813396976bdd047e28230a99d289d24130b9489da461f7ff73b23bc72",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_1984.json": {
+      "sha256": "dd9bcf546361932b4631b7c7df95d70202c43636c63a444bd5f520983d2dc724",
+      "bytes": 3555,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2016.json": {
+      "sha256": "e10d4be7ce5e366f480ac5f1d69aa8ac1b1e02cc16a13a03c598bd7d6a4409ff",
+      "bytes": 3545,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2048.json": {
+      "sha256": "5ef61ddf45c0a32a339e0a6ae683d5d4e5b8d1d8b9e36a9452461767915d2a2b",
+      "bytes": 3555,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2080.json": {
+      "sha256": "c2de835922fc46f1b725421d26205b1cbdcd1864063bb1a1667a0794a2fea5fa",
+      "bytes": 3551,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2112.json": {
+      "sha256": "cfcd9b792363a92aee02afda6eda9168a4573ba10d1edf870d706415db69dc9a",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2144.json": {
+      "sha256": "4b7afdad5676dcca3e49be2185d42e3d5babe9b012270a8c02f42077e40bdf82",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2176.json": {
+      "sha256": "a030dd191f1825c7b75de5769d39337ebe1f9bdd6a7d11bef8fb0451cacb177c",
+      "bytes": 3566,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2208.json": {
+      "sha256": "2d84de11babe02a0174e8463607f7adb7db0c819da0723aa0988d938e4af3692",
+      "bytes": 3565,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2240.json": {
+      "sha256": "42fe6839b8074cf3ea7b0ebe5c2fc0cd08f7485b3d1784138764192546dd4448",
+      "bytes": 3563,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2272.json": {
+      "sha256": "680f3a5190b1da583df24dd2091d9e5e7a56a3bc781f725a81da7a60fabd0915",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2304.json": {
+      "sha256": "d0de4a883f2d9961a6c401a29e380b4a4988bb01c088288591e6cd6a79854c1d",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2336.json": {
+      "sha256": "a3e8fc4fa99395062ecf4d345ea95ce8ed2a8633e1b07667ed6cdf414e62fe89",
+      "bytes": 3547,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2368.json": {
+      "sha256": "38e6b1ee8702c84b649c75911a8f23e7e5949fa5e659ba716bed4a53891c131f",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2400.json": {
+      "sha256": "187b406869cd62752b55a524a359b620e9ae1dc68fc24006e1492eb27d2b98cd",
+      "bytes": 3569,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2432.json": {
+      "sha256": "8db20c9110d787001dd87f4c12bad63f7b408efaecde63a28f16885be264acdd",
+      "bytes": 3564,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2464.json": {
+      "sha256": "45d1efeb9cb4a41aac6777cd6a75fed631a5e0b5c7e14b29c3c6d5d31adb2ac9",
+      "bytes": 3554,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2496.json": {
+      "sha256": "b905a9aa5656e3824bfffb25b23040ef4e4aa277f7bfe03638d16e48b010e1e1",
+      "bytes": 3574,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2528.json": {
+      "sha256": "8141d0331568520bd874616ae8aea3f326cbff302a51573ec013bfc172a09d15",
+      "bytes": 3559,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2560.json": {
+      "sha256": "0e07cde1adb585f0a40e98d62b8ea92a3004f218a5b6ce10463a70cfa6adc9b8",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2592.json": {
+      "sha256": "a1c8626a5f16591a50da936824152319f69c0a685878405407ba4541ccf59385",
+      "bytes": 3540,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2624.json": {
+      "sha256": "390da68169025c1b9c888eca48e70293aec5a0acbc66ec53efd6794f9a2d7997",
+      "bytes": 3565,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2656.json": {
+      "sha256": "db0ceb0ea3f8388242a17f45f38a5ca5f1a82159cf2a1fd35c69fd93cb43e1e1",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2688.json": {
+      "sha256": "1329ec88fbac992c2ea7b9aa9267fa55675b04d4750d5f1da3ad273fd57042a3",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2720.json": {
+      "sha256": "cdc99e28213a204339c6d587822a6d0b3f3bddbb4099a8ea0be634ce3e9aba4c",
+      "bytes": 3566,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2752.json": {
+      "sha256": "afbf2cf8cb340d558a154658bc38e6bd25d99c141089810e252f55addc13c989",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2784.json": {
+      "sha256": "d3020a7501637af4e5e47bf33ca155de5e82dbe7f579b4d95c19eebc343b897e",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2816.json": {
+      "sha256": "a38cbdda8592aeccdf2c83bdb9e2cd38056ae3f2cf821bb36a14d9fd0bf05733",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2848.json": {
+      "sha256": "b220cb26e98cbe3582e0633ab2daee33eb850fa9751c5eec47e7f1af9137b379",
+      "bytes": 3546,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2880.json": {
+      "sha256": "a8911be8334dac1bf92c32e858e82d25737882fc5f7c3b624ab8289e52d477ae",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2912.json": {
+      "sha256": "13e34d9c8389d7ca209c1017667a09d4982d1a3f3c43bf52f06a0e3d7a3b4c87",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2944.json": {
+      "sha256": "a52f6d4ba6db52bf33ffdef12b77f2178a4ce57b9dc935eb0824d360c2258534",
+      "bytes": 3555,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_2976.json": {
+      "sha256": "dd77d7d6387b7bbea34ec99dc8ed724e06073b9de5aa02b465e8e1e4b27b9953",
+      "bytes": 3539,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3008.json": {
+      "sha256": "f28c49a78788a9dfb487e96d5fb0799c939df88efaec2e706d7338d8238628c6",
+      "bytes": 3537,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3040.json": {
+      "sha256": "4bda17af30e15950dcc1a0bc18b270f4b492fa9672b20587850565af1b382899",
+      "bytes": 3547,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3072.json": {
+      "sha256": "94baf9ee3d2734233c805e37c04103e3343f1cd3fdc0140a4eb4515e68baeebf",
+      "bytes": 3563,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3104.json": {
+      "sha256": "5f67e572cafc639b72bfc457b8b86969cb0264f352643715e8629ab55d18197e",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3136.json": {
+      "sha256": "6b6570b208fd33fd1654e133a10265a00b9b123ebdbc2846a158a23db1bb8d22",
+      "bytes": 3554,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3168.json": {
+      "sha256": "7b173d43d236641c35e2c484d3e98035498ceaf35d035dcf1a198aa3fd2d4aff",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3200.json": {
+      "sha256": "c6404b9924f8c5c1f7b0d4d7814c18d59da0f0a79f8f37ed4e9fc66b00fdf92f",
+      "bytes": 3551,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3232.json": {
+      "sha256": "30358204a0009df06c6acca6d0d32b471935e8715a8f7bdd725482a27bbbc2aa",
+      "bytes": 3563,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3264.json": {
+      "sha256": "1f27de781c4cb4dcca5ea4bfd2624cb309ed24def698f319b175256627f9ceac",
+      "bytes": 3569,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3296.json": {
+      "sha256": "ecaa0449174f7e3fe384e5106edf7cb2eabe2d4d3ed47f84b3827a0e442a6c7c",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3328.json": {
+      "sha256": "9d04a20b97fe8e3aa7f7932cc0fdbf3134e8b5c54d006442b949fd8b758bac92",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3360.json": {
+      "sha256": "417d96a4fd521ffd0ede93636798a6037d4cb7e850e3cbcf2297bfa03e669d20",
+      "bytes": 3555,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3392.json": {
+      "sha256": "1fc33bf6b23a6bb8a40f1962ce5baa427a263f316b40f18841c52a64c3d56e89",
+      "bytes": 3565,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3424.json": {
+      "sha256": "5ca6f329f8321b118e0c9e12dc642388e59e88f27645dc762cd16b6fa26cef0a",
+      "bytes": 3570,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3456.json": {
+      "sha256": "1aadcdfdb4365a9cb8959674de6c85e404c6c4d7d9c102644df959f62acc8b88",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3488.json": {
+      "sha256": "6bfcaef5a9adf52d948b0701ff76ab4d5bfea8355a1176f59d3d6d658f72432c",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3520.json": {
+      "sha256": "a3eb5beebd09419d723d8a864f6b88903194ee3fdb9f4564157031652351ac1b",
+      "bytes": 3569,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3552.json": {
+      "sha256": "e5d75e8fe7e789eb9aed3ee7cf0d29e1cc7021bcbbbded108cca42deab5ccc61",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3584.json": {
+      "sha256": "a80f84a5d592ebab933820a645a42c21146c4a00fa67083c2c0968c3cc8a3c15",
+      "bytes": 3573,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3616.json": {
+      "sha256": "ea0fc69df09d33042fc76942cfa73111ed052898b9595524df0331486e5046d9",
+      "bytes": 3573,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3648.json": {
+      "sha256": "d3118bd38c21a8834d0cc0ac7e9141167a8a01f8575a8066d149c9b75aaa7f22",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3680.json": {
+      "sha256": "8aa6f00c30758dccbf7f0f2a27c1de9148f7f207ba43a9e7849aa9a2f0340e9d",
+      "bytes": 3573,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3712.json": {
+      "sha256": "880c3d88db323a7fe0acb2553de619d0e34a265d1f998e537f58922014eec5ce",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3744.json": {
+      "sha256": "1fd31671bc38e659f7bbd21750ca171af4de0e8e956219109d1fcbf4a6809bf3",
+      "bytes": 3574,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3776.json": {
+      "sha256": "3c24f0fd8a5a8a0caf830b3b8db3063ad9ec23173b3e406c43d95832618a31cc",
+      "bytes": 3570,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3808.json": {
+      "sha256": "22d0b0ff9b8aed68be7599f9ed7bb54db80ca9d6be831b0f949ce5406b5f08c2",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3840.json": {
+      "sha256": "735aa5acc4777148bddd2ea83278e76e202c6f2e485867b9501166911d50a699",
+      "bytes": 3570,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3872.json": {
+      "sha256": "f8f5421b6cdefa1683ce41c79556490a28bf2cdd57b95329e28010d26927b85b",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3904.json": {
+      "sha256": "b58715707677bda8e8aed66d4d5f48ae60c6469aff7b667fba03f848cbad967b",
+      "bytes": 3576,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3936.json": {
+      "sha256": "5669a8a3220518af139771bfc3907061c86b7fd3c4ef9779037bcc0d0bf141c7",
+      "bytes": 3577,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_3968.json": {
+      "sha256": "8aa8273879d4297bf06be6a9043904c03043b7021d3c8dad169749ed17fe4bcc",
+      "bytes": 3570,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/m_4000.json": {
+      "sha256": "21611611027a48fde9e98c23e2eefa0b9aedcaaa2ca63f23f21d006679c52937",
+      "bytes": 3574,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0032.json": {
+      "sha256": "0d5967b778a33b341831c2d98e29f3554bdcbc85e15f0585adaf0a7648fbce88",
+      "bytes": 3497,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0064.json": {
+      "sha256": "a7f25865c9e422e33a41beaacfbd47f937bc38fee7a1e0774c112fa7f0106b83",
+      "bytes": 3514,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0096.json": {
+      "sha256": "6b23f23fef970cb464ac950e79a973bad1ad8d06c94158d3bbfb56386bf590ab",
+      "bytes": 3517,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0128.json": {
+      "sha256": "fe321ad0b3cf50189ff07ee448a7a68551eb8c0bbb7402ce12a899baff7819cf",
+      "bytes": 3511,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0160.json": {
+      "sha256": "055002ca581e6779ea84880129dcc215a4fa405f30be9592115954e52cd47d87",
+      "bytes": 3511,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0192.json": {
+      "sha256": "281fcb85ff5bc717d1d4b45b038a7fae31697cf4fcbd07618ca2c42083f014a4",
+      "bytes": 3518,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0224.json": {
+      "sha256": "21bb5eaa290a4e9eb6210985533205809b830f4300350964afd3272a1b00287f",
+      "bytes": 3509,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0256.json": {
+      "sha256": "0aabf35b7d0e1d6deae06b3ad1262eb273ba40f630e725d16f4cc1fe42467fbf",
+      "bytes": 3528,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0288.json": {
+      "sha256": "f995a161a41daa98db4c5cda6c22862a68d86bb49f3bca2dd9375988aeb50fdb",
+      "bytes": 3528,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0320.json": {
+      "sha256": "d80aa18a2a9369eaefa538dc97b1ca7add09eeeef3919bde6bf38148298be8dd",
+      "bytes": 3519,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0352.json": {
+      "sha256": "fa6731c1793970e5f47f901d2dc73a375e329d38b523acd520958422e1aa67a2",
+      "bytes": 3523,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0384.json": {
+      "sha256": "f42f4937a88511cf0b8cb521906425e9fa9ebcaf71deaad18f1342fcbe68486e",
+      "bytes": 3527,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0416.json": {
+      "sha256": "9b39dfcf18fd65a5d6f4fac71ddaccb80cdb5582f1be83e1d3f27264fb977300",
+      "bytes": 3530,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0448.json": {
+      "sha256": "f3d77077af1a927d2d369aad03c1c81eb068635a4e91cef8fb551f8b0a9e3db3",
+      "bytes": 3539,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0480.json": {
+      "sha256": "d7f00a3111d70147375cad53b520c951ade4950678d80ba33a4d85858aa45ce5",
+      "bytes": 3535,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0512.json": {
+      "sha256": "53f8dfd8957267539ddf693f5f277a400d1c6c434e71a17f1e2639474360c998",
+      "bytes": 3522,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0544.json": {
+      "sha256": "15a9a20976eacc831a11bb0793267705f0587c5b562deb4bc8bacce69cc91afd",
+      "bytes": 3531,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0576.json": {
+      "sha256": "e0bc371675af0237dad5efd0cc6fdb6ec599dfae2079191c55732f780f15309a",
+      "bytes": 3535,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0608.json": {
+      "sha256": "4406679c20bf2199c8158b85997146771225a46d48302b820b373478014a5130",
+      "bytes": 3532,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0640.json": {
+      "sha256": "807cbf261a30b8790d836828a42e4bc8e031ee532b99c9248b8d298adf9f5dc6",
+      "bytes": 3538,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0672.json": {
+      "sha256": "8b8b53cf03bbfb3557e187dddbdba6400a0ecea5788ff9c715273e2ee2c05874",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0704.json": {
+      "sha256": "dac397b080cd4caf37a60463d6c53fd23e3f70e6cb7ec53d3eab4ce82805411e",
+      "bytes": 3522,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0736.json": {
+      "sha256": "d1dde39f075815e44816941a6ae922b644f40a7a6313aed26f3774ec6bdad382",
+      "bytes": 3537,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0768.json": {
+      "sha256": "87ed18a9441b980b5092feec10f9c4da6867db4e92a70bbb32637daaf8a69353",
+      "bytes": 3535,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0800.json": {
+      "sha256": "e298386bed1c8b14cebb6686b033061eb055e63edeef9c3862d130055ec1b489",
+      "bytes": 3542,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0832.json": {
+      "sha256": "95a84d4186c12fd1c547e3439a617239830a5396c8a88544d5dc4ba3521bf285",
+      "bytes": 3543,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0864.json": {
+      "sha256": "d91adfe4f704c0e150249a1ff9cc2395c4c5c9dda557a634c423e8e585eff8b0",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0896.json": {
+      "sha256": "e9b42dafbc899e456b3145bcd14a570a6d5025bb1f6db1ffeb2f94e39d28aab5",
+      "bytes": 3539,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0928.json": {
+      "sha256": "e947c2a60db10dda159dbd521779f7944fe7d20d32bdb5d80d0678d2d2489b26",
+      "bytes": 3542,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0960.json": {
+      "sha256": "e38aa86cbeedaabc0a8d5b80510e32c29f7a5c6bc7cdec180ebb24706899a7e0",
+      "bytes": 3548,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_0992.json": {
+      "sha256": "7203d697a89425ece55b42103b848fc17a558167bfc96c7890aad646e6865938",
+      "bytes": 3542,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1024.json": {
+      "sha256": "19d3d34e8bfc546d8bdf365d259314686acb19c7bc533c46ab9b33545d906c22",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1056.json": {
+      "sha256": "18fed9284855ec8f8285c4c8e468ab5fd5c5a1f357da4eb94355ce937b454041",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1088.json": {
+      "sha256": "be51a08f9176dbe06b80c9326bbf3d93312563f83c56cdadad1be7168aa2f546",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1120.json": {
+      "sha256": "e40757016da251b28a4d34e79a144c3bd11bf72dcc3434f3ef4111fa7c0fd9a5",
+      "bytes": 3548,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1152.json": {
+      "sha256": "6c17e6e5c7875a085b96876d50c151ca585a4ac86e7b5ebfbd98fa7d5f73f645",
+      "bytes": 3551,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1184.json": {
+      "sha256": "f0c1da05cb52e7e03fea0c49b139c4b5da3b0d42667bc74ebc615ceaf82f9c4a",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1216.json": {
+      "sha256": "3e10240b98df255f53a2ec648576767ea86b7f11f794ddf33e5ea592cb20642e",
+      "bytes": 3542,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1248.json": {
+      "sha256": "b23bba63ab8323609a830c349b2487b6c04166a391c23222504d6e0052e1069a",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1280.json": {
+      "sha256": "ca3b6c16799b6ec6f4081c6aefd2f61735635c5a4607d327bbc2466aa6e4d684",
+      "bytes": 3563,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1312.json": {
+      "sha256": "d050858a9e9c7ef905381847bf1f2d798b31c3041133edab1374183901f5d58a",
+      "bytes": 3555,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1344.json": {
+      "sha256": "566a6cb5b40c027ce89605e6a32fc747c5d4ccdc8ffe4375db710e5566d4f56d",
+      "bytes": 3535,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1376.json": {
+      "sha256": "2e5c073df53dc06a4387e8a0b95ceb48173ac9e549c75805251e110682c7eb5c",
+      "bytes": 3554,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1408.json": {
+      "sha256": "14a2c2a486363c3e30ab7b2a277c2c693e5b53e20bbc542701e990d46b35ab77",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1440.json": {
+      "sha256": "d90fbc21a56f8f38f5635339b704eb24f250f7ae2f52e7a1098ec23f90f1aa58",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1472.json": {
+      "sha256": "24abdec91a3c5361de1b9329b2ad94038babe95a3829aae750e674b3ddc52bb6",
+      "bytes": 3545,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1504.json": {
+      "sha256": "5636208c5d55e89be8d3a712ff9a1f7a403933a157dce4a9a109ba40ce8396c2",
+      "bytes": 3559,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1536.json": {
+      "sha256": "d88df84f20a588d1d2880acdc293145928489d6c474b4cbf74c430f5effbe285",
+      "bytes": 3564,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1568.json": {
+      "sha256": "fee4f91660867f26321b141fb41c7c7eb9b230e7ab2cc3c937a129d0a72f5a53",
+      "bytes": 3566,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1600.json": {
+      "sha256": "560cc36b085c82dae6e10d02db1147228d5cb46252e6edd1ca16744450f8c56a",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1632.json": {
+      "sha256": "0a93cb62003abb53ea1c9af958d065377bb9d18e2ddd11c9fd0ee5eb4c9ae122",
+      "bytes": 3537,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1664.json": {
+      "sha256": "0c35120c20ea6a0480936112dbccba02fa74ecc6aefb8fcec8112718f9d30da0",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1696.json": {
+      "sha256": "1677590adf9fb1a732abe70d50e7060d7946498ada629db3a3ae1e8efdf3694a",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1728.json": {
+      "sha256": "1f725e08af4fca93912e59e2cf5c3117fa0ca7ec6293e320857f44c90d6fa1ff",
+      "bytes": 3568,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1760.json": {
+      "sha256": "9a6e90a70a1f0ab3511cc2851a8768102f24c601a9476a329405c04608e6aa9c",
+      "bytes": 3566,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1792.json": {
+      "sha256": "c3a278e69d1f93ea40a7da868efc038d8441b149757b796704a6d0b66fc23fb2",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1824.json": {
+      "sha256": "0d06765e77d28a22e49eb643ee7c161688c5d19f8980a24b0694b763a209515d",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1856.json": {
+      "sha256": "76eef09a7392f3d8f13b259e72a3f3731c09392766de9b8f99506798b44a2e0e",
+      "bytes": 3539,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1888.json": {
+      "sha256": "ca20754f0a97cb8f333b70cb4d1fea820fd4e0f77a3c30866d5fe986d77c70c2",
+      "bytes": 3554,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1920.json": {
+      "sha256": "dded83baf59e2bc34f868dabfaa8006c4a36a043ea070c35cc573dcbae24ad2e",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1952.json": {
+      "sha256": "f59c6cf70bc486f8252569820b96cb03ee9c1ee810e09371d55b0e4fbd70c950",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_1984.json": {
+      "sha256": "9e9ee3e9ae06e51f66ec9eabdf83a6b3c01b3d378d5d920d4aaca48e24e56d9e",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2016.json": {
+      "sha256": "ce869a6121c6cb62b9d06f05b037bb7fc0edc703d4fc06f5ee6807639cccb5fa",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2048.json": {
+      "sha256": "cd4a5e0728f0e5982e6bc972d3dcc2512b58f311ccd34f15c89457e131dc8879",
+      "bytes": 3567,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2080.json": {
+      "sha256": "2edc6993f47701835eabff0f56bcc34586bff31a7319b172f0366c67bceb23e4",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2112.json": {
+      "sha256": "eb925e6037890dd7ac0a9b88d02b78b149663e72bb8d5c8cd0b159483baf1683",
+      "bytes": 3540,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2144.json": {
+      "sha256": "bfeefd988bc8e274822d5c918ba7faa70586e50c758703c891d0821d107678c5",
+      "bytes": 3536,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2176.json": {
+      "sha256": "2a3f1f2bb6aea13a6669c7fbb396765bc0a372340e119d1af1d744a6373496a8",
+      "bytes": 3538,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2208.json": {
+      "sha256": "5e5bff5c15d1712b21f158de929ab9ec6c8f8ce4a6685c2b3df9f6179775ba0b",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2240.json": {
+      "sha256": "8c5df9c0c28e5ec7d1bf6899fead589f21c4c1bf0abd26fd7ab056d0c15601ae",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2272.json": {
+      "sha256": "b2876e529887ccbd105f2ebf0db68ad809544a1a5a1b87b3e08d73311c9dffe1",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2304.json": {
+      "sha256": "3443cc97911172f61d7891e3d59ff313294302d8a4889f0a283b5eef42f5504e",
+      "bytes": 3545,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2336.json": {
+      "sha256": "4787c7760bf07ae9e0875299c719db51693ba34fe648e6acb0fdbab152ccc412",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2368.json": {
+      "sha256": "a5ca76470a56ddf95fd70ac0eededb8c979c6b1ba8621c8731949b7a778c889a",
+      "bytes": 3564,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2400.json": {
+      "sha256": "7eaf9f3a28d7a73eee5cc1876d8133f702df03dfb4a6daca9d97ef7a7a53c5cc",
+      "bytes": 3563,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2432.json": {
+      "sha256": "37201284c775a26d461125f9f1a34210c8d8e6e23fcfbaac7ec043aa4d499a50",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2464.json": {
+      "sha256": "983617772c294d2e03e882fdb7e840038a61a127ef7c7a267312a56eddfe90b3",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2496.json": {
+      "sha256": "17d99f37bebc3c0d54f7bcc19cabee909c5470a45b6e0f18cc6ae1409a882e2a",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2528.json": {
+      "sha256": "e0b84b007e78e29e87c13827403e1260ad9f4cc3517f1d14ee9757f42315c0ba",
+      "bytes": 3566,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2560.json": {
+      "sha256": "bdcf882cdbfb180057efbc8d4f48f30bf2dd73f50c1bee7c5b6fa4c961caac50",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2592.json": {
+      "sha256": "5d489fd206ad53a395c2ee78488503b867e998bf941509212b91bb09ec74ea86",
+      "bytes": 3548,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2624.json": {
+      "sha256": "69b2f9aecad1157d78aff7184faa4ecb1c6b470a06e81d52d5e2246d7e7b6e09",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2656.json": {
+      "sha256": "af832cc41c35651adefddceef6bfa97fb76453a9427a11c2eed436e7b00f15c4",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2688.json": {
+      "sha256": "52ae6cecaa08be85a746a553cf748ff9ce587e9e9bae14f1daef3c269868730f",
+      "bytes": 3539,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2720.json": {
+      "sha256": "cc297c9f5d3b442efa7cf9fa4bf4eff68fe83d5cff516e297674bc0b9624b6f4",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2752.json": {
+      "sha256": "672b7c4f1995b644c0d1f090001d5aa2a37dd4b711a2a3903118e90776631970",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2784.json": {
+      "sha256": "b7bfca0e7af2f7eb1a02b14bb0e0d6e1c0956eb92562df610a5dacab556b3040",
+      "bytes": 3550,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2816.json": {
+      "sha256": "8b081ca4fc98dbad453452f6eb103a1e8c9401b67e318f736d822201994862f5",
+      "bytes": 3548,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2848.json": {
+      "sha256": "941ad080bca2970578f594801628461d1642f2546205721f76dc80d4b8346f73",
+      "bytes": 3551,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2880.json": {
+      "sha256": "4d73f0466ac731fec718a59bb41e262b430d685ffcac1e456c6e90ec9851e7a4",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2912.json": {
+      "sha256": "b200e779859e2b00cf16a19dc2b432d9a65dfaf630c25141b4e379b5d5457316",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2944.json": {
+      "sha256": "d76b01e695d2eeecb6f3741a02ed76b248b31827beb8aca61e2bd8646737ae40",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_2976.json": {
+      "sha256": "d8ce03f80df7022a2ac77b4264f30336338a6d5f9d6861a263accb158eb8952c",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3008.json": {
+      "sha256": "be75d4b056e68e258774d4b3b4f778105040d6da228d42462ddd1df00396d10a",
+      "bytes": 3540,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3040.json": {
+      "sha256": "34cbc5c535ca6e2ec7428d7a0eeecfc98db142a642854f8d407202ade888fed4",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3072.json": {
+      "sha256": "b774d099c7a7029cddca502a6ae3b93f84844e8737ed89b42b4bc275a68837f5",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3104.json": {
+      "sha256": "487036813cc29d39d3e569c4fe53f9a03d35c17d3fcec0bfe8391e66a1875be9",
+      "bytes": 3551,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3136.json": {
+      "sha256": "25eed820d0efa055b84c8c0a246c436ea09eceba67206983c07772b038e1a00c",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3168.json": {
+      "sha256": "6e0ae156466573a35d4d8cabab328e8eb96dc697b1544ae35b6f2c77f553e14e",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3200.json": {
+      "sha256": "0265c7d9fed55b5f7eb68b4672661e9625c2ccd9d9f2fd7090e5eb697327f9d8",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3232.json": {
+      "sha256": "938f254f8b923192a17fb262b68ec053c51b198c9e0601cb6b621f45d031636c",
+      "bytes": 3560,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3264.json": {
+      "sha256": "6caff9db52ba11fcd45c165a9e1dd8e6da8900d117cb75d7cec9af67cf51b5e4",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3296.json": {
+      "sha256": "c97b7627a9ae3cfb9eb648e8d580564059a2b889bab9c249b7fc77306d9eaca4",
+      "bytes": 3557,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3328.json": {
+      "sha256": "747ad1e2d613cbf6fc24408f5c4c088b0c039b3fd20b71f3dc74ae55de0ac3c2",
+      "bytes": 3567,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3360.json": {
+      "sha256": "ee0be08d74b7eb3d570465adc908b65e24a007feb67f6bea120a7830bb57ad14",
+      "bytes": 3544,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3392.json": {
+      "sha256": "0aaca3e1862db3c5ed283c7268f777905f7837ec4f3b1f213c85d7acb57585a3",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3424.json": {
+      "sha256": "c36fc8a7be04d6ad8478061347e1ab31b957dfe50f298c2efb65b654c2144a1f",
+      "bytes": 3555,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3456.json": {
+      "sha256": "ed0e9525106268477c67960ee6e43453ded878a9150abced018a229b2026d0af",
+      "bytes": 3553,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3488.json": {
+      "sha256": "09404858f65552800724c54390fa00f708da99ec99411bd2be821a7566ff27fb",
+      "bytes": 3570,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3520.json": {
+      "sha256": "1cba9b73f40726b238e07d88affc0745019b81690619d03a804a9a5983c78c04",
+      "bytes": 3562,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3552.json": {
+      "sha256": "e723006e513ad6a0cf13a018d75aff9d65abc4651ba13b77ddd009e199ab01f3",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3584.json": {
+      "sha256": "6e4f53bf0b328b63b99db35ddc60b92faded2ee2c636b30e2b17ca2eb39eca2e",
+      "bytes": 3565,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3616.json": {
+      "sha256": "7da66481618be4eafd7162002bf1c0c66aace19d7358e3a41ff4ffaee9a84da3",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3648.json": {
+      "sha256": "64cdc965f2d0dfea20f53b61773b8c24b5d085a9595c84efe99053d3bde9e4f3",
+      "bytes": 3569,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3680.json": {
+      "sha256": "feba071e5012466d428adc49fdb03b23ac0cdbad85eddc5d46d831d61a3e3d07",
+      "bytes": 3565,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3712.json": {
+      "sha256": "a58a3e02c9d07b52a80988484fc9eecda2462dc8aed4d183906e8b8cda6bf275",
+      "bytes": 3549,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3744.json": {
+      "sha256": "0f44e67de0a30b7b91662da1861559e3bf72284f981902727a99e0049e963423",
+      "bytes": 3559,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3776.json": {
+      "sha256": "13338c1d8589cd1e6b510ef26a4d17f0154ce458b8c55b68b53e39a98836a81d",
+      "bytes": 3552,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3808.json": {
+      "sha256": "bcd67ba57f6a87e926f877549e22ab745b17c2feaeb71049f20f0623ba5f3d83",
+      "bytes": 3568,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3840.json": {
+      "sha256": "4392a7f3337373f2132155c38089d00dd5318e0e2e60944df8d39def7877f852",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3872.json": {
+      "sha256": "0e680f4d5bb727fcc2ae9ce471c557a0c1b8056fac6fe1a7161539f0c6b1ddb5",
+      "bytes": 3545,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3904.json": {
+      "sha256": "0b808f3f1017e1a5a57dba4a9c70699be62e47fc4dc38e6067e3466ace379751",
+      "bytes": 3561,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3936.json": {
+      "sha256": "c1131463b456c93852cbcba5b1b0e3c6a6913cf1909c507fb2feea8a11408adf",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_3968.json": {
+      "sha256": "dea02edae12c79245f68fc45a4a38d10bb00d28091af860d2e549fda91d9f2ae",
+      "bytes": 3556,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/checkpoints/p_4000.json": {
+      "sha256": "268735d8eb2610c273ad257b2e53731bda63f30b3a3b30303e7dabf05ffb695e",
+      "bytes": 3558,
+      "role": "untrusted_proposed_checkpoint",
+      "origin": "original_worktree_plan_exact_bytes"
+    },
+    "plan/matrix.json": {
+      "sha256": "b6d8e004779d5192a0d5213a9873c6cdf45d9507946cd53b60bc07afc1dc9d36",
+      "bytes": 116407,
+      "role": "revision_bound_untrusted_plan",
+      "origin": "new_package_metadata"
+    },
+    "plan/plan.json": {
+      "sha256": "a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1",
+      "bytes": 118437,
+      "role": "revision_bound_untrusted_plan",
+      "origin": "new_package_metadata"
+    },
+    "provenance/FinalSourcesManifest.json": {
+      "sha256": "51e1abe4b94640773e1fe66f93cfc1ad58a57fafbd050a260eba53da0f61fd72",
+      "bytes": 109084,
+      "role": "source_binding",
+      "origin": "unchanged_original_inventory_or_plan"
+    },
+    "provenance/LocalValidationEvidence.json": {
+      "sha256": "c9cda26d861d33cf8b5caa1c22faa8d3ec98683aa62951069c19a3eeedb310a4",
+      "bytes": 1315,
+      "role": "evidence_hashes_and_scope",
+      "origin": "new_package_metadata"
+    },
+    "provenance/ModuleProductionSourceInventory.json": {
+      "sha256": "2c252cf849e22e027ca2630b836e5227b8ff8390cf45f36a6b467db64580c924",
+      "bytes": 65241,
+      "role": "source_binding",
+      "origin": "unchanged_original_inventory_or_plan"
+    },
+    "provenance/OriginalWorktreePlan.json": {
+      "sha256": "0151212bd25d256d328fb52e4db5fb953722c9faf870b31526e91b82e23a60bf",
+      "bytes": 116231,
+      "role": "source_binding",
+      "origin": "unchanged_original_inventory_or_plan"
+    },
+    "provenance/ProductionToolsInventory.json": {
+      "sha256": "046b1fa6b7ce9fd52713c94e9913720760831dd84e55484a639a4782bdb08f32",
+      "bytes": 2352,
+      "role": "source_binding",
+      "origin": "unchanged_original_inventory_or_plan"
+    },
+    "tools/generate_production_shard.py": {
+      "sha256": "2d530034695382ac892768595c3ee8b1106372ed3e1ac2a4bb492e1017adf34b",
+      "bytes": 20559,
+      "role": "frozen_runtime_tool",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/plan_production_grid.py": {
+      "sha256": "61ea4ae11174cffa51dd5b4fc3c1caba05838b54b05d14c4793f4846ca864cca",
+      "bytes": 11722,
+      "role": "frozen_runtime_tool",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/prepare_production_pipeline.py": {
+      "sha256": "87e7a587aeeb6b9451c74ec3206968060f373aa8f195ac0f7b5e58b332fd988a",
+      "bytes": 11089,
+      "role": "package_prepare_or_verify",
+      "origin": "new_package_tool"
+    },
+    "tools/production_artifact.py": {
+      "sha256": "ddb448165391a04ab1ffcd9e4b572f9945f29fab5e1fa6ec981adad4b56323b5",
+      "bytes": 14088,
+      "role": "frozen_runtime_tool",
+      "origin": "ProductionTools@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/production_compile_final_supplement.py": {
+      "sha256": "14c9360c15517658200649cafff904948184ac4b23194ab60aac15926dba8dd5",
+      "bytes": 21773,
+      "role": "frozen_runtime_tool",
+      "origin": "frozen_independent_runner"
+    },
+    "tools/production_compile_shard.py": {
+      "sha256": "f0abd2db3d6b8db32707d33e8ebb8a6aaee7da0c6f2332c9c4da8e931c64310b",
+      "bytes": 25493,
+      "role": "frozen_runtime_tool",
+      "origin": "ProductionTools@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/production_core_artifact.py": {
+      "sha256": "1ead0d5ced187dbf2d9847f7b08ea7f7a1e8931fe88ce8461c284fa277c73ea6",
+      "bytes": 27521,
+      "role": "frozen_runtime_tool",
+      "origin": "ProductionTools@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/production_core_import_check.py": {
+      "sha256": "a2ef4c45982e90a9e33dc83c0acda51fa10cba08d1b4096adea904776ecc78fa",
+      "bytes": 12806,
+      "role": "frozen_runtime_tool",
+      "origin": "ProductionTools@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/production_environment.py": {
+      "sha256": "e51d7452662a39353a774242c60873ca5099deaad75db04c7ae083b68a7b74ac",
+      "bytes": 9910,
+      "role": "frozen_runtime_tool",
+      "origin": "ProductionTools@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/production_job.py": {
+      "sha256": "16cf9443c13cb4f7213003cc9dc4a5cb7ac7a248b937210dd9721ed622438103",
+      "bytes": 12695,
+      "role": "frozen_runtime_tool",
+      "origin": "frozen_independent_runner"
+    },
+    "tools/production_public_consumer.py": {
+      "sha256": "9c26fa9a6285c26e44f461b2ca8d38b90cdd30579743ac2e504e4c19dd36f38d",
+      "bytes": 13602,
+      "role": "frozen_runtime_tool",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/propose_grid42x22.py": {
+      "sha256": "dcd5024d5d182763cf91ca552080065dbe7dab6cec18bb1f49f7b07a5911c183",
+      "bytes": 6084,
+      "role": "frozen_runtime_tool",
+      "origin": "ModuleProduction@cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+    },
+    "tools/verify_production_pipeline.py": {
+      "sha256": "1787d96c83e97a12233d3c5bfa35c4b9a8788ee9213bc61a608c06c452d3a63a",
+      "bytes": 13786,
+      "role": "package_prepare_or_verify",
+      "origin": "new_package_tool"
+    }
+  }
+}
