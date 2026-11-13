@@ -1,0 +1,84 @@
+First four genuine shards plus Linux final48: workflow design only
+13 November 2026
+
+Revision v2 preserves the rejected v1 draft separately. The initial shell step
+sets WORK from RUNNER_TEMP via GITHUB_ENV. The jobs.env dictionary never uses
+the runner expression context, which is not legal there. A structural guard
+rejects that v1 regression. Final48 summary checks bind the base/manifest and
+verify all48 row exits plus the fresh audit, preserving full-path=false.
+
+No final workflow is generated or installed until the original core transfer
+has actually restored and passed the fresh private audit/Arctan import. No
+numeric generation or Lean execution belongs to this design task.
+
+Source core: cff971bcac7ac2d83aba04596ce09e44fda1ac29.
+Core workflow run: 43345535919. The actual attempt, artifact ID, archive/base
+digests and compressed/expanded sizes must be read from successful evidence.
+Independent published tool package: ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9.
+Its inventory is 598bee6a58a1d0531944f229fd1a7a1c6522f2bfcb06e61a96ee7cc5e7ff4b57.
+Production plan: a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1.
+Final48: unchanged manifest 51e1abe4b94640773e1fe66f93cfc1ad58a57fafbd050a260eba53da0f61fd72.
+
+One matrix has five entries: RP0000, RP3968, RM0000, RM3968, final48.
+max-parallel=4 limits the entire matrix (not separate groups of four plus one).
+fail-fast=false retains independent successful shards if another fails.
+Shard job limit120min; final48 limit90min. Each fresh Lean call600s/-M4096;
+public consumer120s/-M4096. These are limits, not measured time or RSS claims.
+The eventual new workflow supports workflow_dispatch and a research-branch
+push trigger scoped only to its own new workflow filename. It adds no trigger
+for existing package paths and does not edit any old workflow. Publishing and
+triggering this later file belong to the root agent after review.
+
+Each fresh Ubuntu24.04 job:
+1. Check out core revision to core-source and tool revision to tool-source.
+   Require exact checked-out HEADs. Core project lives under
+   core-source/OpenProblems/SolitonClassification/ModuleProduction.
+   Tools and FinalSources live under
+   tool-source/OpenProblems/SolitonClassification/{ProductionPipeline,FinalSources}.
+2. Verify the independent package and core inventory. Install only the pinned
+   Lean toolchain, no Lake build, Mathlib cache or GitHub dependency cache.
+   Assert core project's .lake does not exist before and after work.
+3. Verify current GitHub API run/artifact metadata: exact source revision and
+   run43345535919, successful completed run, one intended nonexpired artifact.
+   Cross-run download-artifact@v4 uses explicit artifact-id, repository, run-id
+   and github-token with contents:read/actions:read. Name and artifact-ids are
+   not supplied together. Downloaded archive digest is independently checked
+   by the unchanged restore tool; the platform's warning policy is insufficient.
+4. Disk preflight uses actual observed ZIP, compressed archive and payload
+   sizes, plus an explicit reserve and 2GiB headroom. Reserve defaults8GiB for
+   shard generation/build/archive/consumer and2GiB for final48. This is a
+   conservative policy reserve, not a measured footprint. Check free space
+   again after download and restore, record all values, and stop if insufficient.
+5. Restore into new runner-temp paths. Match receipt schema/status/revision,
+   archive/base/source hashes and both whole-base verification flags. Run the
+   frozen real core import checker on this job's restored roots, including
+   generic1704/private331 audit and upstream Arctan. No source rebuild/cache.
+6. Four shard entries: actual production_job prepare then compile-pack with
+   the pinned250-job plan and current restored base. Fresh outputs, no resume.
+   Feed the complete checked generated bundle to production_public_consumer.
+   Do not substitute a projected/public-only metadata directory for that input.
+   Independently assert actual job and consumer reports checked.
+7. final48 entry: run the frozen portable supplement runner on FinalSources,
+   with no setup-extra or Arctan override. Require48+fresh2205 results, all
+   conditional. The numeric shard outputs are not imported by this test.
+8. Reverify packages, source HEADs and no .lake. Retain original source/log/
+   all-three-olean-layer bundles, complete shard tar.xz, actual public consumer
+   evidence, final48 outputs/evidence, restore/import evidence and input pins.
+   GitHub artifacts retain30days as an interim transfer mechanism. No permanent
+   preservation claim. Existing core workflow/package paths are untouched.
+
+Four successful shard archives remain genuine usable members of the eventual
+250-job production set; all other246 shards and global seams/assembly remain
+unproved. Successful final48 remains a conditional theorem. FullCandidate is
+neither imported nor claimed compiled here.
+
+Generator input evidence must include the actually downloaded core pack index,
+restore receipt, restored import report and GitHub run/artifact API metadata.
+It refuses absent/pending/failure evidence and inconsistent identities. The
+output is a new review directory, never .github/workflows. Root alone reviews,
+publishes and triggers the later workflow. Tool/source revisions stay separate.
+
+Primary documentation checked13November2026:
+https://raw.githubusercontent.com/actions/download-artifact/v4/action.yml
+https://github.com/actions/download-artifact#download-artifacts-from-other-workflow-runs-or-repositories
+https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstrategymax-parallel

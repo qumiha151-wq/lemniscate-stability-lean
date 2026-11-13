@@ -1,0 +1,336 @@
+"name": "Rotating first four exact-core shards and final48"
+"on":
+  "workflow_dispatch": {}
+  "push":
+    "branches":
+      - "research/remaining-open-problems"
+    "paths":
+      - ".github/workflows/rotating-first-production.yml"
+"permissions":
+  "contents": "read"
+  "actions": "read"
+"concurrency":
+  "group": "rotating-first-production-${{ github.ref }}"
+  "cancel-in-progress": false
+"jobs":
+  "checked":
+    "name": "${{ matrix.key }} on one exact restored core"
+    "runs-on": "ubuntu-24.04"
+    "timeout-minutes": "${{ matrix.timeout }}"
+    "strategy":
+      "fail-fast": false
+      "max-parallel": 4
+      "matrix":
+        "include":
+          -
+            "kind": "shard"
+            "key": "RP0000"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RP3968"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM0000"
+            "timeout": 120
+          -
+            "kind": "shard"
+            "key": "RM3968"
+            "timeout": 120
+          -
+            "kind": "final48"
+            "key": "final48"
+            "timeout": 90
+    "defaults":
+      "run":
+        "shell": "bash"
+    "env":
+      "PYTHONDONTWRITEBYTECODE": "1"
+      "CORE_REVISION": "cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+      "TOOL_REVISION": "ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9"
+      "CORE_SHA": "01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c"
+      "LOCK_SHA": "dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d"
+      "PIPELINE_SHA": "598bee6a58a1d0531944f229fd1a7a1c6522f2bfcb06e61a96ee7cc5e7ff4b57"
+      "PLAN_SHA": "a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1"
+      "KIND": "${{ matrix.kind }}"
+      "KEY": "${{ matrix.key }}"
+      "CORE_PROJECT": "${{ github.workspace }}/core-source/OpenProblems/SolitonClassification/ModuleProduction"
+      "PACKAGE": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/ProductionPipeline"
+      "TOOLS": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/ProductionPipeline/tools"
+      "FINAL_SOURCES": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/FinalSources"
+      "PINS": "{\"schema\":\"rotating.first-production-workflow-pins.v1\",\"repository\":\"qumiha151-wq/lemniscate-stability-lean\",\"core_run_id\":43345535919,\"core_run_attempt\":1,\"core_source_revision\":\"cff971bcac7ac2d83aba04596ce09e44fda1ac29\",\"tool_package_revision\":\"ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9\",\"tool_inventory_sha256\":\"598bee6a58a1d0531944f229fd1a7a1c6522f2bfcb06e61a96ee7cc5e7ff4b57\",\"core_inventory_sha256\":\"2c252cf849e22e027ca2630b836e5227b8ff8390cf45f36a6b467db64580c924\",\"plan_sha256\":\"a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1\",\"final_manifest_sha256\":\"51e1abe4b94640773e1fe66f93cfc1ad58a57fafbd050a260eba53da0f61fd72\",\"core_artifact_id\":14003699438,\"core_artifact_name\":\"rotating-core-full-43345535919-1\",\"core_archive_sha256\":\"01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c\",\"core_base_lock_sha256\":\"dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d\",\"core_archive_bytes\":1303430664,\"core_payload_bytes\":6035488572,\"core_artifact_zip_bytes\":1303431717,\"headroom_bytes\":2147483648,\"shard_reserve_bytes\":8589934592,\"final48_reserve_bytes\":2147483648,\"max_parallel\":4,\"retention_days\":30,\"full_certificate_proved\":false}"
+    "steps":
+      -
+        "name": "Set the isolated output path using the runner shell environment"
+        "run": |
+          printf 'WORK=%s/rotating-first-production\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "cff971bcac7ac2d83aba04596ce09e44fda1ac29"
+          "path": "core-source"
+          "persist-credentials": false
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9"
+          "path": "tool-source"
+          "persist-credentials": false
+      -
+        "name": "Bind exact source and tool revisions; verify unchanged packages"
+        "run": |
+          set -euo pipefail
+          test "$(git -C "$GITHUB_WORKSPACE/core-source" rev-parse HEAD)" = "$CORE_REVISION"
+          test "$(git -C "$GITHUB_WORKSPACE/tool-source" rev-parse HEAD)" = "$TOOL_REVISION"
+          mkdir -p "$WORK/evidence"
+          python3 -B "$TOOLS/verify_production_pipeline.py" --package "$PACKAGE" --inventory-sha256 "$PIPELINE_SHA" --core-project "$CORE_PROJECT"
+      -
+        "uses": "leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee"
+        "with":
+          "lake-package-directory": "core-source/OpenProblems/SolitonClassification/ModuleProduction"
+          "build": "false"
+          "test": "false"
+          "lint": "false"
+          "use-mathlib-cache": "false"
+          "use-github-cache": "false"
+      -
+        "name": "Assert no fallback Lake tree; record installed Lean"
+        "run": |
+          set -euo pipefail
+          test ! -e "$CORE_PROJECT/.lake"
+          ulimit -c 0
+          lean --version | tee "$WORK/evidence/installed-lean.txt"
+      -
+        "name": "Check the successful original run and exact unexpired artifact"
+        "run": |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          p=json.loads(os.environ['PINS'])
+          token=os.environ['GH_TOKEN']
+          def get(suffix):
+              request=urllib.request.Request('https://api.github.com/repos/'+p['repository']+suffix,
+                  headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json',
+                           'X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(request,timeout=60) as response: return json.load(response)
+          run=get('/actions/runs/'+str(p['core_run_id']))
+          artifact=get('/actions/artifacts/'+str(p['core_artifact_id']))
+          assert run['id']==p['core_run_id'] and run['head_sha']==p['core_source_revision']
+          assert run['status']=='completed' and run['conclusion']=='success'
+          assert run['run_attempt']==p['core_run_attempt'] and run['repository']['full_name']==p['repository']
+          assert artifact['id']==p['core_artifact_id'] and artifact['name']==p['core_artifact_name']
+          assert artifact['expired'] is False and artifact['workflow_run']['id']==p['core_run_id']
+          assert artifact['workflow_run']['head_sha']==p['core_source_revision']
+          assert artifact['size_in_bytes']==p['core_artifact_zip_bytes']
+          out=Path(os.environ['WORK'])/'evidence';out.mkdir(parents=True,exist_ok=True)
+          for name,value in [('github-core-run.json',run),('github-core-artifact.json',artifact),('pins.json',p)]:
+              (out/name).write_text(json.dumps(value,indent=2)+'\n')
+          PY
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "name": "Check actual-size disk budget before download"
+        "run": |
+          python3 - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);stage=os.environ['DISK_STAGE'];work=Path(os.environ['WORK'])
+          reserve=p['final48_reserve_bytes'] if os.environ['KIND']=='final48' else p['shard_reserve_bytes']
+          required=reserve+p['headroom_bytes']
+          if stage in ('before_download','after_download'): required+=p['core_payload_bytes']
+          if stage=='before_download': required+=p['core_archive_bytes']+p['core_artifact_zip_bytes']
+          free=shutil.disk_usage(work).free
+          row={'stage':stage,'actual_free_bytes':free,'required_free_bytes':required,
+               'reserve_bytes':reserve,'reserve_is_policy_not_measurement':True,
+               'core_archive_bytes':p['core_archive_bytes'],'core_payload_bytes':p['core_payload_bytes'],
+               'core_artifact_zip_bytes':p['core_artifact_zip_bytes'],'sufficient':free>=required}
+          (work/'evidence'/('disk-'+stage+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+          assert free>=required, 'Insufficient disk space for exact retained-core test'
+          PY
+        "env":
+          "DISK_STAGE": "before_download"
+      -
+        "uses": "actions/download-artifact@v4"
+        "with":
+          "artifact-ids": "14003699438"
+          "repository": "qumiha151-wq/lemniscate-stability-lean"
+          "run-id": "43345535919"
+          "github-token": "${{ github.token }}"
+          "merge-multiple": true
+          "path": "${{ env.WORK }}/download"
+      -
+        "name": "Verify downloaded archive/index identities and actual sizes"
+        "run": |
+          python3 - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);d=Path(os.environ['WORK'])/'download'
+          assert {f.name for f in d.iterdir()}=={'core.tar.xz','core.tar.xz.index.json'}
+          archive=d/'core.tar.xz';index=json.loads((d/'core.tar.xz.index.json').read_bytes())
+          assert archive.stat().st_size==p['core_archive_bytes']
+          assert index['schema']=='rotating.production-core-pack.v1' and index['status']=='checked'
+          assert index['revision']==p['core_source_revision']
+          assert index['archive_sha256']==p['core_archive_sha256'] and index['base_lock_sha256']==p['core_base_lock_sha256']
+          assert index['payload_bytes']==p['core_payload_bytes'] and index['archive_bytes']==p['core_archive_bytes']
+          assert index['source_inventory_sha256']==p['core_inventory_sha256']
+          h=hashlib.sha256()
+          with archive.open('rb') as stream:
+              for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
+          assert h.hexdigest()==p['core_archive_sha256']
+          PY
+      -
+        "name": "Check remaining disk before restoration"
+        "run": |
+          python3 - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);stage=os.environ['DISK_STAGE'];work=Path(os.environ['WORK'])
+          reserve=p['final48_reserve_bytes'] if os.environ['KIND']=='final48' else p['shard_reserve_bytes']
+          required=reserve+p['headroom_bytes']
+          if stage in ('before_download','after_download'): required+=p['core_payload_bytes']
+          if stage=='before_download': required+=p['core_archive_bytes']+p['core_artifact_zip_bytes']
+          free=shutil.disk_usage(work).free
+          row={'stage':stage,'actual_free_bytes':free,'required_free_bytes':required,
+               'reserve_bytes':reserve,'reserve_is_policy_not_measurement':True,
+               'core_archive_bytes':p['core_archive_bytes'],'core_payload_bytes':p['core_payload_bytes'],
+               'core_artifact_zip_bytes':p['core_artifact_zip_bytes'],'sufficient':free>=required}
+          (work/'evidence'/('disk-'+stage+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+          assert free>=required, 'Insufficient disk space for exact retained-core test'
+          PY
+        "env":
+          "DISK_STAGE": "after_download"
+      -
+        "name": "Restore the exact captured core into new paths"
+        "run": |
+          python3 -B "$TOOLS/production_core_artifact.py" restore --archive "$WORK/download/core.tar.xz" --output "$WORK/restored" --sha256 "$CORE_SHA" --revision "$CORE_REVISION" --lean lean
+      -
+        "name": "Match this job restoration receipt to all pinned identities"
+        "run": |
+          python3 - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);r=Path(os.environ['WORK'])/'restored'
+          receipt=json.loads((r/'restore_receipt.json').read_bytes())
+          assert receipt['schema']=='rotating.production-core-restore.v1' and receipt['status']=='checked'
+          assert receipt['revision']==p['core_source_revision'] and receipt['archive_sha256']==p['core_archive_sha256']
+          assert receipt['base_lock_sha256']==p['core_base_lock_sha256']
+          assert receipt['source_inventory_sha256']==p['core_inventory_sha256']
+          assert receipt['stdlib_before_after_checked'] is True and receipt['complete_restored_base_twice_checked'] is True
+          assert hashlib.sha256((r/'base_lock.json').read_bytes()).hexdigest()==p['core_base_lock_sha256']
+          assert hashlib.sha256((r/'base_args.json').read_bytes()).hexdigest()==receipt['restored_base_args_sha256']
+          PY
+      -
+        "name": "Fresh private audit and Arctan import from the restored core"
+        "run": |
+          python3 -B "$TOOLS/production_core_import_check.py" --restored "$WORK/restored" --project "$CORE_PROJECT" --output "$WORK/core_import" --revision "$CORE_REVISION" --archive-sha256 "$CORE_SHA" --base-lock-sha256 "$LOCK_SHA" --memory-mb 4096 --seconds 600
+      -
+        "name": "Check reserved space before compilation"
+        "run": |
+          python3 - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          p=json.loads(os.environ['PINS']);stage=os.environ['DISK_STAGE'];work=Path(os.environ['WORK'])
+          reserve=p['final48_reserve_bytes'] if os.environ['KIND']=='final48' else p['shard_reserve_bytes']
+          required=reserve+p['headroom_bytes']
+          if stage in ('before_download','after_download'): required+=p['core_payload_bytes']
+          if stage=='before_download': required+=p['core_archive_bytes']+p['core_artifact_zip_bytes']
+          free=shutil.disk_usage(work).free
+          row={'stage':stage,'actual_free_bytes':free,'required_free_bytes':required,
+               'reserve_bytes':reserve,'reserve_is_policy_not_measurement':True,
+               'core_archive_bytes':p['core_archive_bytes'],'core_payload_bytes':p['core_payload_bytes'],
+               'core_artifact_zip_bytes':p['core_artifact_zip_bytes'],'sufficient':free>=required}
+          (work/'evidence'/('disk-'+stage+'.json')).write_text(json.dumps(row,indent=2)+'\n')
+          assert free>=required, 'Insufficient disk space for exact retained-core test'
+          PY
+        "env":
+          "DISK_STAGE": "after_restore"
+      -
+        "name": "Generate exact shard sources from the pinned untrusted plan"
+        "run": |
+          python3 -B "$TOOLS/production_job.py" prepare --plan "$PACKAGE/plan/plan.json" --plan-sha256 "$PLAN_SHA" --revision "$CORE_REVISION" --key "$KEY" --seed "$PACKAGE/inputs/shooting_certificate.json" --candidate-source "$PACKAGE/inputs/CandidateInitial.original.lean" --template-root "$PACKAGE/inputs/templates" --output "$WORK/job"
+        "if": "matrix.kind == 'shard'"
+      -
+        "name": "Actually compile all 47 modules and pack the complete checked shard"
+        "run": |
+          python3 -B "$TOOLS/production_job.py" compile-pack --plan "$PACKAGE/plan/plan.json" --plan-sha256 "$PLAN_SHA" --revision "$CORE_REVISION" --key "$KEY" --seed "$PACKAGE/inputs/shooting_certificate.json" --candidate-source "$PACKAGE/inputs/CandidateInitial.original.lean" --template-root "$PACKAGE/inputs/templates" --output "$WORK/job" --base-lock "$WORK/restored/base_lock.json" --base-lock-sha256 "$LOCK_SHA" --base-args "$WORK/restored/base_args.json" --seconds 600 --memory-mb 4096
+        "if": "matrix.kind == 'shard'"
+      -
+        "name": "Actually import the validated complete bundle using public project inputs only"
+        "run": |
+          python3 -B "$TOOLS/production_public_consumer.py" --manifest "$WORK/job/generated/manifest.json" --base-args "$WORK/restored/base_args.json" --output "$WORK/public_consumer" --seconds 120 --memory-mb 4096
+        "if": "matrix.kind == 'shard'"
+      -
+        "name": "Actually compile final48 and fresh conditional2205 audit on Linux"
+        "run": |
+          python3 -B "$TOOLS/production_compile_final_supplement.py" --supplement-manifest "$FINAL_SOURCES/FinalSourcesManifest.json" --core-inventory "$CORE_PROJECT/ModuleProductionSourceInventory.json" --base-lock "$WORK/restored/base_lock.json" --base-args "$WORK/restored/base_args.json" --expected-base-lock-sha256 "$LOCK_SHA" --output "$WORK/final48" --seconds 600 --memory-mb 4096
+        "if": "matrix.kind == 'final48'"
+      -
+        "name": "Check actual completion and retain the conditional scope"
+        "run": |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          w=Path(os.environ['WORK']);p=json.loads(os.environ['PINS'])
+          if os.environ['KIND']=='shard':
+              job=json.loads((w/'job/checked_job.json').read_bytes())
+              report=json.loads((w/'job/generated/compile_report.json').read_bytes())
+              consumer=json.loads((w/'public_consumer/public_consumer_report.json').read_bytes())
+              assert job['kernel_checked'] is True and job['key']==os.environ['KEY']
+              assert job['revision']==p['core_source_revision'] and job['plan_sha256']==p['plan_sha256']
+              assert job['base_lock_sha256']==p['core_base_lock_sha256']
+              assert report['status']=='checked' and report['shard_kernel_checked'] is True
+              assert consumer['status']=='checked' and consumer['exit_code']==0 and consumer['public_only_consumer_checked'] is True
+          else:
+              report=json.loads((w/'final48/compile_report.json').read_bytes())
+              assert report['status']=='checked' and report['supplementary_modules_checked']==48
+              assert report['conditional_geometry_audit_count']==2205 and report['full_certificate_proved'] is False
+              assert report['base_lock_sha256']==p['core_base_lock_sha256']
+              assert report['supplement_manifest_sha256']==p['final_manifest_sha256']
+              assert report['core_inventory_sha256']==p['core_inventory_sha256']
+              assert report['full_path_instances_checked'] is False
+              assert report['fresh_public_only_audit_checked'] is True and report['private_project_input_files']==0
+              assert report['extra_external_setup_modules']==[]
+              rows=report['modules']
+              assert len(rows)==48 and len({r['name'] for r in rows})==48
+              assert all(r['exit_code']==0 and r['termination']=='completed' for r in rows)
+              audit=report['fresh_audit']
+              assert audit['name']=='SolitonClassification.Rotating.FinalSupplementFreshAudit'
+              assert audit['exit_code']==0 and audit['termination']=='completed'
+          summary={'schema':'rotating.first-production-job.v1','kind':os.environ['KIND'],'key':os.environ['KEY'],
+                   'status':'checked','source_revision':p['core_source_revision'],
+                   'tool_package_revision':p['tool_package_revision'],'core_archive_sha256':p['core_archive_sha256'],
+                   'core_base_lock_sha256':p['core_base_lock_sha256'],'plan_sha256':p['plan_sha256'],
+                   'full_certificate_proved':False,'retention_days':30,'permanent_archive_claim':False}
+          (w/'evidence/job-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+          PY
+      -
+        "name": "Recheck all pinned source bytes and absence of fallback cache"
+        "run": |
+          set -euo pipefail
+          python3 -B "$TOOLS/verify_production_pipeline.py" --package "$PACKAGE" --inventory-sha256 "$PIPELINE_SHA" --core-project "$CORE_PROJECT"
+          test ! -e "$CORE_PROJECT/.lake"
+          test "$(git -C "$GITHUB_WORKSPACE/core-source" rev-parse HEAD)" = "$CORE_REVISION"
+          test "$(git -C "$GITHUB_WORKSPACE/tool-source" rev-parse HEAD)" = "$TOOL_REVISION"
+      -
+        "name": "Retain full original bundles and evidence for 30 days"
+        "if": "always()"
+        "uses": "actions/upload-artifact@v4"
+        "with":
+          "name": "rotating-first4-${{ matrix.key }}-${{ github.run_id }}-${{ github.run_attempt }}"
+          "path": |
+            ${{ env.WORK }}/evidence
+            ${{ env.WORK }}/restored/restore_receipt.json
+            ${{ env.WORK }}/restored/base_args.json
+            ${{ env.WORK }}/restored/base_lock.json
+            ${{ env.WORK }}/restored/core-metadata.json
+            ${{ env.WORK }}/download/core.tar.xz.index.json
+            ${{ env.WORK }}/core_import
+            ${{ env.WORK }}/job/generated
+            ${{ env.WORK }}/job/*.json
+            ${{ env.WORK }}/job/*.tar.xz
+            ${{ env.WORK }}/public_consumer
+            ${{ env.WORK }}/final48
+          "if-no-files-found": "warn"
+          "compression-level": 0
+          "retention-days": 30
