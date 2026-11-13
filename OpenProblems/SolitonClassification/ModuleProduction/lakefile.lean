@@ -9,4 +9,4 @@ require mathlib from git
 
 @[default_target]
 lean_lib SolitonClassification where
-  globs := #[.andSubmodules `SolitonClassification]
+  globs := #[.submodules `SolitonClassification]
