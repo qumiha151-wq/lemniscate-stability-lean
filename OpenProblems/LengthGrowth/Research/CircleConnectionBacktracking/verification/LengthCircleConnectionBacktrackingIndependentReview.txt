@@ -1,0 +1,39 @@
+INDEPENDENT ANALYTIC REVIEW OF CIRCLE-CONNECTION BACKTRACKING
+13 November 2026. Reviewer: finish_odd_rigidity.
+
+Reviewed in full: LengthCircleConnectionBacktracking.txt. This review is
+read-only with respect to that note and its Lean module. It is an analytic
+review; the Lean module was not recompiled or independently inspected here.
+
+The hypotheses C1 U,p,q, the two actual Frenet support equations, and the
+specified two endpoint limits suffice for every analytic conclusion in
+Sections 1 and 2. No elastic force equation or zero-alignment hypothesis
+is needed. In particular, w'=2q and (Uw+2p)'=U'w hold with the displayed
+signs. The latter quantity decreases from 1 to -1 between the ends, so
+U' cannot be everywhere nonnegative.
+
+The distinction between the two-ended improper integral and an absolutely
+convergent integral is correct. Continuity and finite endpoint limits
+give a bounded w, but do not by themselves give integrable |U'|. When the
+negative variation N is finite, the finite-interval identity P-N=Delta U
+does imply that P=N+2 is finite and legitimizes the two nonnegative defect
+integrals used in the equality argument.
+
+The endpoint bounds 0<=a<=1<=b<infinity and the strict inequality b>a are
+valid. A constant w would give q=0, then p constant, contrary to its two
+end states. The finite-interval estimate has the correct direction:
+  integral v*w >= a*Delta U-(b-a)*N_AB.
+Exhausting R yields N>=2(1+a)/(b-a), including the case N=infinity.
+
+The strictness argument is also valid. Equality would force w=b on an
+open interval where v<0. There q=0, p'=0 and 1+Up=0; b>=1 ensures p is
+nonzero, so U is constant on that interval, contradicting v<0. Thus
+N>2(1+a)/(b-a)>=2/b. The last scalar comparison is equivalent to
+a*(b+1)>=0. This proves strictness for the weaker radius bound as well.
+
+No mathematical gap was found. The note correctly limits the Lean claim
+to the differential identities, endpoint limits and existence of a point
+with negative curvature derivative. Its quantitative integral argument
+is explicitly presented as an analytic derivation. Nothing here proves
+nonexistence of a connection, a fixed radius cap, or the original general
+quarter-power length-growth statement.

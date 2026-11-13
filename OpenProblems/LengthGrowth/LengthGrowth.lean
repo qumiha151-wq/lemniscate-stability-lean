@@ -3,6 +3,7 @@ import LengthGrowth.CurveFromPosition
 import LengthGrowth.ScalarDissipation
 import LengthGrowth.ElasticStress
 import LengthGrowth.AbsoluteCurvatureCoercivity
+import LengthGrowth.CircleConnectionBacktracking
 
 /-!
 Length-growth question: STATIC GEOMETRIC COERCIVITY AND PARTIAL DYNAMICS.
@@ -34,4 +35,9 @@ contradiction are derived from the periodic curve and Frenet equations.
 The final theorems assume no coercivity or stress bound.
 A uniform bound on total absolute curvature along arbitrary flows is still
 missing. These static estimates do not resolve general quarter-power growth.
+
+`CircleConnection.SupportProfile.not_monotone_curvature` rules out globally
+nondecreasing curvature in a profile joining the two oriented unit-circle
+states. It uses only the Frenet support equations and endpoint limits.
+It does not assert existence of such a profile or a general growth bound.
 -/

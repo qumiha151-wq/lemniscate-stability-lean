@@ -1,0 +1,35 @@
+Independent semantic review: CircleConnectionBacktracking.lean
+Reviewer: finish_curve_input. Date: 2026-11-13.
+
+Source reviewed in full:
+outputs/open-problems/LengthGrowth/LengthGrowth/CircleConnectionBacktracking.lean
+SHA256 672908A1D09C1E8695B846A734A69DC78D7BA9E179EB75D082D413762524CE25
+
+No semantic gap found. This is a source review; I did not rerun Lean.
+The previously reported successful build is the author's/root's evidence.
+
+1. SupportProfile assumes the actual derivatives U'=v, p'=-Uq,
+   q'=1+Up on all of R. It assumes neither the elastic support equation
+   for v' nor a sign/alignment condition at any zero of U.
+
+2. radiusSq=p^2+q^2 has derivative 2q. Consequently
+      balance=U(p^2+q^2)+2p,   balance'=v(p^2+q^2).
+   The product cancellations in the source are exactly these identities.
+
+3. If v is everywhere nonnegative, balance is monotone. Coordinate
+   limits (-1,1,0) at -infinity and (1,-1,0) at +infinity give balance
+   limits +1 and -1. The source obtains 1<=balance(0)<=-1 directly from
+   monotonicity and the two limits. It never integrates on an infinite
+   interval, so no decay, tail-integrability, finite-energy, or bounded
+   variation hypothesis has been silently introduced.
+
+4. The conclusion exists s, v(s)<0 is exactly a point of strictly
+   decreasing actual curvature. The final not_monotone_curvature theorem
+   uses the nonnegative derivative of a monotone differentiable function
+   and identifies that derivative with v using U_deriv. Continuity of v
+   is not needed for the stated result.
+
+5. This is a necessary condition for a hypothetical connection. It does
+   not establish a connection, determine the angular-velocity sign, or
+   imply a length-growth estimate. Its namespace/imports keep the Length
+   problem independent of other open-problem projects.
