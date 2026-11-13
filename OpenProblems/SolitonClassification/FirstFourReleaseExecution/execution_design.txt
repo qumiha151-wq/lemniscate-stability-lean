@@ -1,0 +1,77 @@
+First four checked shard archives: concrete deployment design, 2026-11-13
+
+Scope is exactly RP0000, RP3968, RM0000, RM3968, in the canonical full-plan
+order. This is a partial original-data release, not a full trajectory or final
+classification certificate. The original proof source is cff971bc..., plan is
+the unchanged A62EF654... full250 plan, original successful workflow is
+43354529340 at cef10f7e..., and the exact common base is dcf9b162....
+
+New local generator, separate from frozen publishers/tools, will require a
+real 40-hex published tool revision P, the intended repository package path,
+an existing local package with an externally pinned SourceInventory SHA, and
+a fresh output directory. No default or placeholder P will be accepted by
+the command. Generation performs no network or GitHub mutation. It writes a
+concrete v2 envelope, externally pinned workflow Q and preparation report.
+P and Q are separate, avoiding a commit/request self-hash cycle. Q's runtime
+checkout is exact github.sha; P is a separate exact tool checkout. The tool
+package must preserve the frozen publisher/helper bytes and include a copy
+of the unchanged plan tree or use the separately pinned ec3547c9 checkout.
+The latter is preferred: no new plan is manufactured for publication.
+
+The reviewed provenance pins are the four successful original Actions ZIP
+IDs, byte lengths and SHA256 values, plus their four contained full tar.xz
+byte lengths and SHA256 values. The generator verifies these against saved
+run/artifact metadata and the existing local actual validation summaries.
+The v2 request reuses the fixed helper hashes and requests exactly four
+canonical source jobs; test_fixture is false. A unique fixed tag names this
+partial first-four release; a pre-existing tag/release causes failure.
+
+One Linux job has contents:write and actions:read, a fixed concurrency group
+without cancellation, and a first-attempt guard. It validates exact P Git
+checkout, package inventory, request SHA, frozen helpers, source/plan/base
+identities and live successful origin run/artifact identities before work.
+An actual disk check reserves the four ZIPs, four raw archives, one bounded
+512MiB preflight scratch, and 2GiB headroom. There is no Lean rebuild here.
+
+Download each original Actions ZIP through the exact artifact-ID API, using
+the token only on api.github.com. Handle its one approved HTTPS signed-host
+redirect without forwarding authentication. Hash the entire downloaded ZIP
+against its precise expected size/SHA; preserve the ZIP locally. Scan ZIP
+member metadata for unsafe/duplicate/casefold paths, links/special entries,
+size/member limits, and locate exactly the canonical job/<archive> member.
+Extract only that member into a fresh archive root as KEY.tar.xz, with its
+own complete size/SHA check. This avoids expanding unrelated build copies.
+Do not persist signed URLs or tokens. All download operations are read-only.
+
+Invoke frozen v2 prepare/publish once with the pinned envelope, unchanged
+plan and the four original tar.xz files. Its actual full archive preflight
+checks source/private/proof bytes and plan/checkpoint bindings. It verifies
+origins, creates one fresh draft, uploads four distinct assets, performs
+complete draft downloads and exact prefix-set checks, publishes only after
+all four pass, then performs complete published downloads and stable full
+set/tag checks. The new URL helper handles observed untagged draft URLs;
+published URLs must have the exact final tag. No retry, replacement, delete,
+tag move or automatic recovery is allowed.
+
+Postcheck requires exactly four standard durable records accepted by frozen
+p.durable_record, remote_verified and not fixture, exact original archive
+hashes, IDs/names, base/plan/source, publisher P and workflow Q. It validates
+the external summary's four record hashes, seven actual write operations
+(one tag, one draft, four uploads, one publication), full download results,
+and false full_certificate_proved. Failure retains all journal/request and
+preflight evidence without emitting a publication-success claim.
+
+Always upload the request, package/plan binding receipt, original API JSON
+evidence, ZIP/archive download receipts, complete publication journal,
+preflight and final durable records/summary. Do not re-upload original ZIPs
+or raw archives as evidence; their originals remain in the source Actions
+artifacts and the published release assets once publication succeeds.
+Thirty-day Actions evidence is explicitly not a permanent proof archive.
+
+Local tests will render only in memory with explicit synthetic P, validate
+all embedded Python ASTs and workflow contexts, and reject altered pins,
+wrong source/plan/helper, unsafe package paths, missing/duplicate jobs and
+bad runtime summary/ZIP identities. Actual local four ZIP member selection
+may be checked against already downloaded originals without recomputing
+Lean. These tests will not call GitHub or produce an actual release/request
+with an invented P. Root owns the future real package P and execution Q.

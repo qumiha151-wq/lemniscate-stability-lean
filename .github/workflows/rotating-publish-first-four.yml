@@ -1,0 +1,219 @@
+"name": "Publish first four checked rotating-profile shard archives"
+"on":
+  "workflow_dispatch": {}
+  "push":
+    "branches":
+      - "research/remaining-open-problems"
+    "paths":
+      - ".github/workflows/rotating-publish-first-four.yml"
+"permissions":
+  "contents": "write"
+  "actions": "read"
+"concurrency":
+  "group": "rotating-original-shard-publisher"
+  "cancel-in-progress": false
+"jobs":
+  "publish":
+    "runs-on": "ubuntu-24.04"
+    "timeout-minutes": 60
+    "defaults":
+      "run":
+        "shell": "bash"
+    "env":
+      "PYTHONDONTWRITEBYTECODE": "1"
+      "TOOL_REVISION": "eab61f0d4210d8e05d27a8b5a55f2bf3df34140f"
+      "PACKAGE_SHA": "5f41beeb146219268f552449db11282e82958494eb4f1f147be15082a36c096d"
+      "REQUEST_SHA": "43825fd353fc7fe02c244b30393f4f4221e9d18799950bc73c72adcc4c1b7cef"
+      "PLAN_REVISION": "ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9"
+      "PLAN_INVENTORY": "598bee6a58a1d0531944f229fd1a7a1c6522f2bfcb06e61a96ee7cc5e7ff4b57"
+      "PLAN_SHA": "a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1"
+      "BASE_SHA": "dcf9b162c42c30f387803fc9f395fcb1183f0e8179f5b46004782ba4bbf1f10d"
+      "PACKAGE": "${{ github.workspace }}/tool-source/OpenProblems/SolitonClassification/ShardReleaseToolsV2"
+      "PLAN_PACKAGE": "${{ github.workspace }}/plan-source/OpenProblems/SolitonClassification/ProductionPipeline"
+      "REQUEST": "${{ github.workspace }}/request-source/OpenProblems/SolitonClassification/FirstFourReleaseExecution/request.json"
+    "steps":
+      -
+        "name": "Set isolated publication paths"
+        "run": |
+          printf 'WORK=%s/rotating-first-four-release\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "eab61f0d4210d8e05d27a8b5a55f2bf3df34140f"
+          "path": "tool-source"
+          "persist-credentials": false
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9"
+          "path": "plan-source"
+          "persist-credentials": false
+      -
+        "uses": "actions/checkout@v4"
+        "with":
+          "ref": "${{ github.sha }}"
+          "path": "request-source"
+          "persist-credentials": false
+      -
+        "name": "Verify pinned tools, unchanged full plan, request and live origins"
+        "run": |
+          python3 -B - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,subprocess,sys
+          package=Path(os.environ['PACKAGE']);request=Path(os.environ['REQUEST']);plan_package=Path(os.environ['PLAN_PACKAGE'])
+          assert os.environ['GITHUB_RUN_ATTEMPT']=='1', 'No automatic publisher rerun'
+          def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+          def git(path):return subprocess.check_output(['git','-C',str(path),'rev-parse','HEAD'],text=True).strip()
+          assert git(package)==os.environ['TOOL_REVISION'] and git(plan_package)==os.environ['PLAN_REVISION']
+          assert sha(package/'SourceInventory.json')==os.environ['PACKAGE_SHA']
+          inventory=json.loads((package/'SourceInventory.json').read_bytes())
+          actual=set()
+          for path in package.rglob('*'):
+              assert not path.is_symlink() and not (hasattr(path,'is_junction') and path.is_junction())
+              if path.is_file():actual.add(path.relative_to(package).as_posix())
+          assert actual==set(inventory['files'])|{'SourceInventory.json'}
+          for name,wanted in inventory['files'].items():
+              f=package/name;assert f.stat().st_size==wanted['bytes'] and sha(f)==wanted['sha256']
+          assert sha(request)==os.environ['REQUEST_SHA']
+          subprocess.run([sys.executable,'-B',str(plan_package/'tools/verify_production_pipeline.py'),
+              '--package',str(plan_package),'--inventory-sha256',os.environ['PLAN_INVENTORY']],check=True)
+          sys.path.insert(0,str(package/'tools'))
+          import production_shard_release_publisher_v2 as v
+          env=v.core.strict_json(request.read_bytes());q=env['original_request']
+          _,plan,_=v.p.bound_plan(plan_package/'plan/plan.json',os.environ['PLAN_SHA'],q['source_revision'],'RP0000')
+          v.validate_envelope(env,plan)
+          assert q['publisher_revision']==os.environ['TOOL_REVISION'] and q['plan_sha256']==os.environ['PLAN_SHA']
+          assert q['base_lock_sha256']==os.environ['BASE_SHA']
+          identity=v.w.actions_context(q,os.environ,v.checked_tool_revision())
+          work=Path(os.environ['WORK']);work.mkdir()
+          (work/'evidence').mkdir()
+          (work/'evidence/approved_envelope.json').write_bytes(request.read_bytes())
+          (work/'evidence/publisher_identity.json').write_text(json.dumps(identity,indent=2)+'\n')
+          (work/'evidence/package_inventory.json').write_bytes((package/'SourceInventory.json').read_bytes())
+          (work/'evidence/plan.json').write_bytes((plan_package/'plan/plan.json').read_bytes())
+          reader=v.w.ReleaseHTTP(v.w.Journal(work/'origin_journal'),token=os.environ['GH_TOKEN'])
+          for job in q['jobs']:reader.verify_origin(job)
+          PY
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "name": "Download and hash all four original ZIPs and full archive members"
+        "run": |
+          python3 -B - <<'PY'
+          from pathlib import Path,PurePosixPath
+          from urllib.error import HTTPError
+          from urllib.parse import urlsplit
+          import hashlib,json,os,shutil,stat,sys,time,zipfile
+          sys.path.insert(0,str(Path(os.environ['PACKAGE'])/'tools'))
+          import production_shard_release_publisher_v2 as v
+          work=Path(os.environ['WORK']);q=json.loads(Path(os.environ['REQUEST']).read_bytes())['original_request']
+          assert q['scope']=='partial' and [j['key'] for j in q['jobs']]==['RP0000','RP3968','RM0000','RM3968']
+          required=sum(j['archive_bytes']+j['origin_artifact_zip_bytes'] for j in q['jobs'])+512*1024**2+2*1024**3
+          free=shutil.disk_usage(work).free
+          (work/'evidence/disk.json').write_text(json.dumps({'actual_free_bytes':free,'required_free_bytes':required})+'\n')
+          assert free>=required
+          zips=work/'zips';zips.mkdir();archives=work/'archives';archives.mkdir()
+          client=v.w.ReleaseHTTP(v.w.Journal(work/'download_journal'),token=os.environ['GH_TOKEN'])
+          receipts=[]
+          for job in q['jobs']:
+              client.verify_origin(job)
+              endpoint='https://api.github.com/repos/'+v.r.REPO+'/actions/artifacts/'+str(job['origin_artifact_id'])+'/zip'
+              try:response=client.open(endpoint,'application/vnd.github+json')
+              except HTTPError as error:
+                  assert error.code==302,'Unexpected Actions ZIP response'
+                  location=error.headers.get('Location','');error.close();u=urlsplit(location)
+                  assert u.scheme=='https' and u.port in (None,443) and not u.username and not u.password and not u.fragment
+                  assert u.hostname and (u.hostname.endswith('.blob.core.windows.net') or u.hostname=='productionresultssa0.blob.core.windows.net'
+                      or u.hostname.endswith('.actions.githubusercontent.com')),'Unexpected Actions ZIP redirect host'
+                  response=client.open(location,'application/octet-stream',authenticated=False)
+              target=zips/(job['key']+'.zip');h=hashlib.sha256();count=0;deadline=time.monotonic()+1200
+              with response,target.open('xb') as out:
+                  assert response.status==200
+                  while True:
+                      assert time.monotonic()<deadline
+                      block=response.read(min(1024**2,job['origin_artifact_zip_bytes']-count+1))
+                      if not block:break
+                      count+=len(block);assert count<=job['origin_artifact_zip_bytes'];h.update(block);out.write(block)
+              assert count==job['origin_artifact_zip_bytes'] and h.hexdigest()==job['origin_artifact_zip_sha256']
+              key=job['key'];member='job/rotating-'+q['source_revision']+'-'+key[1].lower()+'-'+key[2:]+'-0032.tar.xz'
+              destination=archives/job['archive'];seen=set();expanded=0
+              with zipfile.ZipFile(target) as z:
+                  infos=z.infolist();assert len(infos)<=5000
+                  for info in infos:
+                      raw=info.filename;canonical=raw.rstrip('/');path=PurePosixPath(raw)
+                      assert canonical and path.as_posix()==canonical and not path.is_absolute()
+                      assert '..' not in path.parts and '\\' not in canonical and ':' not in canonical
+                      assert canonical.casefold() not in seen;seen.add(canonical.casefold())
+                      mode=stat.S_IFMT(info.external_attr>>16);assert mode in (0,stat.S_IFREG,stat.S_IFDIR)
+                      assert info.file_size>=0;expanded+=info.file_size;assert expanded<=512*1024**2
+                  info=z.getinfo(member);assert not info.is_dir() and info.file_size==job['archive_bytes']
+                  h=hashlib.sha256();n=0
+                  with z.open(info) as source,destination.open('xb') as out:
+                      while block:=source.read(1024**2):
+                          n+=len(block);assert n<=job['archive_bytes'];h.update(block);out.write(block)
+                  assert n==job['archive_bytes'] and h.hexdigest()==job['archive_sha256']
+              client.verify_origin(job)
+              receipts.append({'key':key,'artifact_id':job['origin_artifact_id'],'zip_bytes':count,
+                  'zip_sha256':job['origin_artifact_zip_sha256'],'member':member,'archive_bytes':n,
+                  'archive_sha256':h.hexdigest(),'actual_network_download':True,'new_Lean_calls':0})
+              (work/'evidence'/(key+'_download.json')).write_text(json.dumps(receipts[-1],indent=2)+'\n')
+          assert client.writes==0
+          (work/'evidence/downloads.json').write_text(json.dumps(receipts,indent=2)+'\n')
+          PY
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "name": "Preflight and publish four original archives with full draft and published downloads"
+        "run": |
+          python3 -B "$PACKAGE/tools/production_shard_release_publisher_v2.py" --request "$REQUEST" --request-sha256 "$REQUEST_SHA" --plan "$PLAN_PACKAGE/plan/plan.json" --plan-sha256 "$PLAN_SHA" --archive-root "$WORK/archives" --output "$WORK/publication" --execute
+        "env":
+          "GH_TOKEN": "${{ github.token }}"
+      -
+        "name": "Validate all four durable records and exact limited scope"
+        "run": |
+          python3 -B - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,sys
+          sys.path.insert(0,str(Path(os.environ['PACKAGE'])/'tools'))
+          import production_shard_release_publisher_v2 as v
+          work=Path(os.environ['WORK']);request=Path(os.environ['REQUEST'])
+          assert v.c.digest(request)==os.environ['REQUEST_SHA']
+          q=json.loads(request.read_bytes())['original_request'];pub=work/'publication';journal=pub/'journal'
+          s=json.loads((journal/'summary.json').read_bytes())
+          assert s['schema']=='rotating.shard-release-summary.v1' and s['status']=='remote_verified' and s['test_fixture'] is False
+          assert s['scope']=='partial' and s['source_revision']==q['source_revision'] and s['tag']==q['tag']
+          assert s['plan_sha256']==q['plan_sha256'] and s['base_lock_sha256']==q['base_lock_sha256']
+          assert s['request_sha256']==os.environ['REQUEST_SHA'] and s['actual_http_writes']==7
+          assert s['remote_durability_verified'] is True and s['full_certificate_proved'] is False
+          assert s['publisher']['revision']==q['publisher_revision'] and s['publisher']['script_sha256']==v.c.digest(v.__file__)
+          assert s['publisher']['actions']['workflow_revision']==os.environ['GITHUB_SHA']
+          assert s['publisher']['actions']['run_id']==int(os.environ['GITHUB_RUN_ID'])
+          assert [x['key'] for x in s['records']]==[j['key'] for j in q['jobs']]
+          assert {p.name for p in (journal/'records').iterdir()}=={j['key']+'.json' for j in q['jobs']}
+          for job,item in zip(q['jobs'],s['records']):
+              raw=(journal/'records'/(job['key']+'.json')).read_bytes();record=json.loads(raw)
+              assert len(raw)==item['record_bytes'] and hashlib.sha256(raw).hexdigest()==item['record_sha256']
+              v.p.durable_record(raw,item['record_sha256'],q['source_revision'],job['archive_sha256'],job['archive_bytes'])
+              assert record['key']==job['key'] and record['plan_sha256']==q['plan_sha256']
+              assert record['base_lock_sha256']==q['base_lock_sha256'] and record['release']['id']==s['release_id']
+              assert record['asset']['id']==item['asset_id'] and record['asset']['name']==job['asset_name']
+              assert record['publisher']==s['publisher']
+              assert item['archive_sha256']==job['archive_sha256'] and item['archive_bytes']==job['archive_bytes']
+              assert v.c.digest(work/'archives'/job['archive'])==job['archive_sha256']
+          assert v.checked_tool_revision()==q['publisher_revision']
+          print(json.dumps({'status':'four_remote_records_verified','records':4,'actual_http_writes':7,'full_certificate_proved':False}))
+          PY
+      -
+        "name": "Retain requests, original identities and complete journals even on failure"
+        "if": "always()"
+        "uses": "actions/upload-artifact@v4"
+        "with":
+          "name": "rotating-first-four-publication-${{ github.run_id }}-${{ github.run_attempt }}"
+          "path": |
+            ${{ env.WORK }}/evidence
+            ${{ env.WORK }}/origin_journal
+            ${{ env.WORK }}/download_journal
+            ${{ env.WORK }}/publication
+          "if-no-files-found": "warn"
+          "retention-days": 30
+          "compression-level": 1

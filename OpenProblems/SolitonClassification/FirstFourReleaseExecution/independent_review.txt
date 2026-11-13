@@ -1,0 +1,155 @@
+INDEPENDENT REVIEW: CONCRETE FIRST-FOUR ORIGINAL SHARD PUBLICATION
+13 November 2026. Reviewer: finish_curve_input.
+
+Pinned reviewed inputs:
+pipeline/prepare_first_four_shard_release.py
+  1E95BDE993952EA14290308322E83692D00BDF27AED7A22BA2E1E36E040F77EB
+work/first_four_shard_release_execution_review_v1/request.json
+  43825FD353FC7FE02C244B30393F4F4221E9D18799950BC73C72ADCC4C1B7CEF
+rotating-publish-first-four.yml
+  61B4C13C87345EA89BA6662A679811A4B1F36F958D67163E0C9F8142C8150A82
+ShardReleaseToolsV2 SourceInventory.json
+  5F41BEEB146219268F552449DB11282E82958494EB4F1F147BE15082A36C096D
+first_four_release_generator_review_v1/report.json
+  9F45B7CE8055011B849881869ADD69294DF31B5969B77927A5B01CCF7A293BD9
+
+Conclusion: no blocking implementation or deployment-identity issue found.
+This review does not execute the workflow, download from GitHub, publish a
+release, or claim four actual durable records now exist. Reviewed sources
+and remote state were not modified. The frozen CBA63 publisher and AAA1 URL
+protocol were separately reviewed in ShardReleasePublisherV2IndependentReview.
+
+1. DISTINCT SOURCE, PRODUCTION ORIGIN, TOOL P, PLAN P, AND WORKFLOW Q
+
+The request correctly separates mathematical source
+cff971bcac7ac2d83aba04596ce09e44fda1ac29 from the actual production run head
+cef10f7ef398d1526c03c66f5ef84a71e697b3cb, run 43354529340. The saved origin
+report must be successful, completed, repository-correct and attempt one.
+All four explicit artifact ids, complete ZIP sizes/digests, archive member
+sizes/digests and local prior download receipts are checked by the generator.
+No origin source SHA is incorrectly substituted for the mathematical one.
+
+The tool checkout is exact P=eab61f0d4210d8e05d27a8b5a55f2bf3df34140f.
+The complete original production-plan package is independently checked out
+at ec3547c9456f47b5bf7c8b9d07ff07bf56ff24d9, with inventory 598BEE6A...FF4B57
+and plan A62EF654EC4F2FD01D55B6DAE19C28483DBA137C424C3068A372C514B89559C1.
+The request checkout uses actual workflow github.sha, Q. The fixed envelope
+hash, actual checkout checks and actions_context bind these separate roles
+without a self-referential request commit. The exact base remains
+DCF9B162C42C30F387803FC9F395FCB1183F0E8179F5B46004782BA4BBF1F10D.
+
+The envelope scope is partial, production mode, original-data, and only
+RP0000, RP3968, RM0000, RM3968 in canonical plan order. Their full archive
+bytes/hashes match the previously checked real archives:
+  RP0000 25183056 4f6e00f119c104550034d0cd46db34c0bba14ab3840e20364e469fb6de857f95
+  RP3968 25403856 7cd4bec36e73cccc81d633951c4b2de5481edeb95d664401e99db32573103882
+  RM0000 25218772 7b2a5adba142023ee60bdaa1bd2242f309b500e24bed7847371e69c062adcb8a
+  RM3968 25449496 2eb9ba93bf4c73bd42534ab0e141dc4c59c0a068c5059c05916ba169685822b1
+
+2. PACKAGE, ORIGINAL ZIP DOWNLOAD, AND EXTRACTION
+
+Preflight verifies the exact publisher-package file set, size/hash of every
+file, and absence of links/junctions. It then runs the frozen full production
+package verifier against its external inventory pin. Imports occur after
+these package checks; PYTHONDONTWRITEBYTECODE=1 and -B prevent cache files
+from changing exact inventories. The full plan is checked again by bound_plan
+and the V2 envelope validator. The actual publisher later rechecks inputs,
+helpers, plan and complete original archives before/after publication.
+
+Downloads use the exact API repository and artifact ids. Each artifact's live
+run/head/status/size/digest is checked before download and again afterwards.
+A direct 200 is accepted; a 302 is followed only to HTTPS, approved blob or
+Actions content hosts, with no credentials/userinfo/fragment and a standard
+TLS port. The token is explicitly removed from the signed-location request.
+The inherited opener forbids automatic redirect following, so a further
+redirect is not silently followed. Signed URL/token values are not written
+to evidence. The metadata requests still authenticate to the fixed API.
+
+The complete ZIP is streamed with a total deadline and an exact byte count
+and SHA256 check before ZipFile reads it. Every central-directory entry is
+checked for canonical relative POSIX naming, no traversal/backslash/colon,
+case-fold uniqueness, permitted regular/directory type, and aggregate size.
+Only the exact job/rotating-cff...-{p|m}-{start}-0032.tar.xz member is opened;
+there is no extractall and no arbitrary archive path is materialized. Its
+bytes and hash are checked independently. Both local ZIPs and original tar
+members are retained through the run. No original archive is replaced by a
+compact public projection in this publication.
+
+I independently inspected all four actual local ZIP central directories:
+each has 419 entries; summed file_size values are respectively 221670890,
+223037507, 221681225 and 223044126 bytes. They satisfy the explicit 5000-entry
+and 512MiB caps. This was a read-only directory inspection, not a repeat of
+their full archive preflight. The runtime disk gate computes exactly
+3675449544 bytes from all actual ZIP/archive sizes plus stated scratch/reserve
+and compares this with measured current free space. It makes no assumption
+that the runner has a particular advertised disk capacity.
+
+3. EXECUTION, POSTCHECK, AND EVIDENCE
+
+The workflow has a dedicated publication concurrency group, no cancellation
+of an in-progress run, and an attempt-one guard. WORK is set by shell from
+RUNNER_TEMP before use; no invalid runner context is used in jobs.env.
+All three checkouts disable persisted credentials. Explicit GH_TOKEN is
+provided only to the live-origin verification, ZIP download and publisher
+steps, where it is needed; the final record checker does not receive it.
+These first two Python paths call read-only methods, although the job token
+necessarily has the publication permission for the later executor.
+
+The frozen V2 execution receives the exact envelope/plan hashes and paths
+to the just-hashed four original archives. It performs actual complete
+archive preflight, creates a fresh tag/draft, uploads four originals, verifies
+each by a full draft download, publishes once, then verifies all four again
+by full published downloads. No numerical generation or Lean execution is
+part of this workflow. The successful path has seven writes (tag, draft,
+four assets, one publish) and eight full asset downloads. The eight-download
+count is enforced by the frozen publisher's success control flow, not a
+separate summary counter invented by the workflow.
+
+The postcheck requires seven writes, partial scope, exact source/base/plan/
+request/tool/workflow identities, four ordered records and no extra record
+files. Every record is byte/hash bound to its summary and passed through the
+normal durable-record validator; key/release/asset/name/archive identities
+and publisher provenance are cross-checked. Local original archive hashes
+and actual tool revision are rechecked. full_certificate_proved must remain
+false. Successful publication is not inter-shard assembly or classification.
+
+The always() artifact step retains approved-request/identity/plan/download
+receipts, origin and download journals, and the complete publication output
+including preflight/journal/records, for 30 days. It does not upload the
+redundant local ZIP and archive directories. This does not delete them in
+the run or remove the independently retained original Actions/local sources;
+on publication success the durable Release assets are the intended original
+archive copies. A failure must still be handled before ephemeral Actions
+retention expires. Always-upload is best effort, not a guarantee against
+loss of the whole runner, and no permanent evidence-storage claim follows.
+
+The reviewed no-retry/no-overwrite and external-concurrency limitations of
+V2 remain. A failed partial upload or ambiguous publication leaves remote
+state for a separately reviewed recovery. The 60-minute job timeout and
+stream deadlines are explicit limits, not measured proof of upload time.
+
+4. ACTUAL INDEPENDENT CHECKS AND REMAINING LIVE STEP
+
+I read the entire generator, concrete YAML/envelope/preparation report and
+runtime fixture source/report. All displayed hashes matched. I separately
+ran a local check with EXIT 0: the exact publisher package file set/hash/size
+(30 listed files plus inventory, 31 total), complete envelope equality after
+reconstruction from the fixed four rows/plan, byte-for-byte YAML regeneration
+in memory, saved origin/download-receipt input hashes, check_evidence, all
+three embedded Python ASTs, and the exact runtime disk calculation. It
+performed zero network calls and zero archive preflight or Lean operations.
+The larger reported remote publication file count concerns the commit/package
+publication operation, not this single SourceInventory's local file count.
+
+The author's report contains a positive four-tiny-ZIP runtime fixture and
+26 rejection cases, including traversal, duplicate names, links, wrong ZIP
+or member hashes, foreign redirect and rerun-before-I/O. Its fake client
+asserts credential stripping at the redirect. I read these tests but did
+not rerun them. They are explicitly synthetic, zero-network and do not
+certify a real upload or large-stream timing. I did not independently repeat
+the remote P/tree publication check reported by root.
+
+Actual success must still be observed in the GitHub run, followed by root's
+independent checks of its complete journal and four final durable records.
+This report authorizes no additional action and claims no remote publication
+has occurred during the review.
