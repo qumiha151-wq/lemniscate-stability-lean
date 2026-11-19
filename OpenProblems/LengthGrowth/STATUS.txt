@@ -160,3 +160,18 @@ for every point of the curve. RecordWindowInterior controls the energy ratio
 and the length in terminal energy units throughout each window. The open
 step is to prove that a single free elastic flow cannot realize this regime,
 or to construct one that does.
+
+
+Forward rescaling of a high record window
+
+For each actual normal flow with unbounded E(t)L(t), and each threshold
+K >= E(0)L(0)+2, exists_rescaled_record_window produces a forward normal
+flow b obtained by dilating the original position by r=E(t) and starting
+at an earlier time s. On the finite interval [0,T], T=r^4(t-s), the terminal
+energy is 1 and the terminal length is e=E(t)L(t)>=K. The duration is at least
+e exp(-8/(e-1)), and the total dissipation is at most exp(2/(e-1))-1.
+Throughout the interval, energy lies between 1 and exp(2/(e-1)), and length
+lies between exp(-2/(e-1)) sqrt(e^2-e) and e. There is a time when the sixth
+power of the ratio of absolute curvature to energy is bounded everywhere by
+33554432/(e(e-1)). The unrestricted growth question still requires deciding
+whether the assumed unbounded product can occur on a single flow.

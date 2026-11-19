@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.RescaledRecordWindow
 import LengthGrowth.ActualFlow.RecordCurvature
 import LengthGrowth.ActualFlow.RecordWindowInterior
 import LengthGrowth.ActualFlow.GrowthEquivalence
