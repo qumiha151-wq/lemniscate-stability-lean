@@ -1,3 +1,5 @@
+import LengthGrowth.ActualFlow.RecordCurvature
+import LengthGrowth.ActualFlow.RecordWindowInterior
 import LengthGrowth.ActualFlow.GrowthEquivalence
 import LengthGrowth.ActualFlow.RelativeEnergy
 import LengthGrowth.ActualFlow.ProductWindow

@@ -143,3 +143,20 @@ only at positive time. The unrestricted quarter-power growth question is
 still unresolved. The project now contains 48 mathematical leaves, its
 entry point and the unchanged recursive audit. See GrowthEquivalenceScope.txt
 and GrowthEquivalenceEvidence for exact assumptions, source pins and checks.
+
+
+Finite windows and curvature on a potential exceptional flow
+
+Write e(t)=E(t)L(t). If e is unbounded, every K >= e(0)+2 admits a record
+time t of height r=e(t)>=K and a time x in [0,t] such that
+
+  e(x) >= sqrt(r^2-r),
+  D(x)/E(x)^5 <= 2/(r*(r-1)),
+  (abs(k(x,u))/E(x))^6 <= 33554432/(r*(r-1)) for every material point u.
+
+RecordCurvature.exists_flat_slice_of_unbounded selects a minimum of D/E^5
+on the finite window with integral E^4 equal to r. The same time x works
+for every point of the curve. RecordWindowInterior controls the energy ratio
+and the length in terminal energy units throughout each window. The open
+step is to prove that a single free elastic flow cannot realize this regime,
+or to construct one that does.
