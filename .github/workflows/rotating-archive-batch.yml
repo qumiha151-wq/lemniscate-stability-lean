@@ -1,0 +1,75 @@
+name: Archive checked rotating-profile shards
+on:
+  workflow_call:
+    inputs:
+      batch: {required: true, type: string}
+      digest: {required: true, type: string}
+jobs:
+  archive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 8f1ae193e7691bfaaad7f289a49373bc7c839774
+          path: tools
+          persist-credentials: false
+          sparse-checkout: OpenProblems/SolitonClassification/ShardReleaseToolsV3/Package
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: inputs
+          persist-credentials: false
+          sparse-checkout: |
+            OpenProblems/SolitonClassification/OriginalArchives246
+            OpenProblems/SolitonClassification/ProductionPipeline/plan
+      - name: Confirm remaining GitHub API allowance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, time, urllib.request
+          req = urllib.request.Request("https://api.github.com/rate_limit",
+              headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"], "User-Agent": "original-archive-publisher"})
+          for attempt in range(2):
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  quota = json.load(response)["resources"]["core"]
+              if quota["remaining"] >= 400:
+                  break
+              if attempt:
+                  raise SystemExit("GitHub API allowance is insufficient for one batch")
+              delay = max(1, quota["reset"] - int(time.time()) + 12)
+              if delay > 3675:
+                  raise SystemExit("Unexpected API reset interval")
+              print(f"Waiting {delay} seconds for the repository allowance to reset", flush=True)
+              time.sleep(delay)
+          PY
+      - name: Validate original bundles and preserve the checked archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BATCH: ${{ inputs.batch }}
+          REQUEST_SHA: ${{ inputs.digest }}
+        run: |
+          set -euo pipefail
+          [[ "$BATCH" =~ ^0[1-8]$ ]]
+          pkg="$GITHUB_WORKSPACE/tools/OpenProblems/SolitonClassification/ShardReleaseToolsV3/Package"
+          python3 -I -S -B "$pkg/launcher/launch.py" --execute \
+            --package-root "$pkg" --manifest-sha256 e829412c3bd9fea644288cc7e30cdbf36ca0b6e1503dd797ae8b57c297f4b5f5 --expected-tools-revision 8f1ae193e7691bfaaad7f289a49373bc7c839774 \
+            --input-checkout "$GITHUB_WORKSPACE/inputs" \
+            --request "OpenProblems/SolitonClassification/OriginalArchives246/requests/batch$BATCH.json" --request-sha256 "$REQUEST_SHA" \
+            --catalog OpenProblems/SolitonClassification/OriginalArchives246/catalog.json --catalog-sha256 647a4e70ebf7b8a5c6d0436bf097e2edbb9678d750feeb0101480fbe24d427ad \
+            --plan OpenProblems/SolitonClassification/ProductionPipeline/plan/plan.json --plan-sha256 a62ef654ec4f2fd01d55b6dae19c28483dba137c424c3068a372c514b89559c1 \
+            --output "$RUNNER_TEMP/archive-result"
+      - name: Save verification receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rotating-archives-batch${{ inputs.batch }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/archive-result/compact_evidence/
+            ${{ runner.temp }}/archive-result/*.json
+          if-no-files-found: warn
+          retention-days: 30

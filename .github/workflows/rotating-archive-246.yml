@@ -1,0 +1,59 @@
+name: Preserve 246 checked rotating-profile archives
+on:
+  push:
+    branches: [research/remaining-open-problems]
+    paths: [.github/workflows/rotating-archive-246.yml]
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: rotating-original-shard-publisher
+  cancel-in-progress: false
+jobs:
+  batch01:
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '01'
+      digest: '7ad7c023e8aaedef5878f2d8309295df3bfb28302850c239b0865e12070d6cde'
+  batch02:
+    needs: batch01
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '02'
+      digest: '3f47d2d452800877dcccb548337b3747d285e999ba75ade58d6a644a9a9bf579'
+  batch03:
+    needs: batch02
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '03'
+      digest: 'bfea0fea6de890be95a151f852712097717bea2b99376bffce797a19adf28ce4'
+  batch04:
+    needs: batch03
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '04'
+      digest: 'e1e5c25c41b4905a4bd5829da61694fbcea75b590bf4278d81fae9ebb7ea8fa0'
+  batch05:
+    needs: batch04
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '05'
+      digest: '9a48e2d12a96f64feb2dc59254ee5762f51405ce11148846142de57e417555ac'
+  batch06:
+    needs: batch05
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '06'
+      digest: '906b9c886672bfe54730c8922b31fe896a0989dc6770759ef1d545401fe2b7df'
+  batch07:
+    needs: batch06
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '07'
+      digest: 'abfaa94c0f2e2f3bc8d214607a13324467fcc4a7615fd73a52ee1cc930d71397'
+  batch08:
+    needs: batch07
+    uses: ./.github/workflows/rotating-archive-batch.yml
+    with:
+      batch: '08'
+      digest: '4ac483ebb2cdaf3704d7383d76b9b83175f7ef638226e1f071bb96f9db797a8b'
