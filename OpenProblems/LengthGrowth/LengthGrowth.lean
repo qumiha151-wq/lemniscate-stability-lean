@@ -1,3 +1,6 @@
+import LengthGrowth.ActualFlow.AmbientMaterial
+import LengthGrowth.ActualFlow.PhysicalTimeAverage
+import LengthGrowth.ActualFlow.AmbientCoercivity
 import LengthGrowth.ActualFlow.RescaledRecordWindow
 import LengthGrowth.ActualFlow.RecordCurvature
 import LengthGrowth.ActualFlow.RecordWindowInterior

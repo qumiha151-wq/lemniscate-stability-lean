@@ -175,3 +175,24 @@ lies between exp(-2/(e-1)) sqrt(e^2-e) and e. There is a time when the sixth
 power of the ratio of absolute curvature to energy is bounded everywhere by
 33554432/(e(e-1)). The unrestricted growth question still requires deciding
 whether the assumed unbounded product can occur on a single flow.
+
+
+Ambient energy concentration
+
+A single forward normal flow obeys the quarter-power length bound if and
+only if there are constants R>0 and theta>0 such that at every time t some
+closed planar disk of radius R/E(t) contains at least theta E(t) bending
+energy. The disk may move with the flow. Its energy is the integral over
+all visits of the actual curve to the disk, with multiplicity. The proof
+uses the two coordinate projections of a bounded arctangent potential and
+the periodic derivative of curvature times its arclength derivative.
+The remaining open step is to establish this concentration on every orbit
+or find an orbit that loses it. See quarter_length_iff_ambient_concentration.
+
+
+quarter_length_iff_material_disk_energy states the disk condition using the
+original position, speed and curvature. If the quarter bound fails, for
+every positive epsilon there are arbitrarily late horizons t on which the
+physical-time average of D/E^5 is smaller than epsilon. On suitable such
+horizons every continuous weight between zero and one supported on times
+with E*L below a fixed threshold also has arbitrarily small average.
