@@ -1,3 +1,6 @@
+import LengthGrowth.OscillatorPeriodNumerator
+import LengthGrowth.ActualFlow.StrictHalfTransfer
+import LengthGrowth.ActualFlow.AffineForceCompatibility
 import LengthGrowth.ActualFlow.CubicMomentDecay
 import LengthGrowth.ActualFlow.CubicHalfThreshold
 import LengthGrowth.ActualFlow.JellyfishGrowth
@@ -110,4 +113,11 @@ For the actual closed flow, a signed cubic curvature ratio with liminf above
 one half gives quarter-power length growth. When the ratio stays at least
 one on a tail, the curvature oscillation tends to zero. See
 Research/CurvatureMomentFormalization.txt and Research/HalfThreshold.md.
+-/
+
+/-!
+The analytic oscillator period numerator, the critical affine-force
+rigidity theorem and the conditional static-gap-to-flow transfer are
+included above. Research/CurvatureMomentGap contains proofs and the
+boundaries of the formal verification.
 -/

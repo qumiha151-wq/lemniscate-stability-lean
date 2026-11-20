@@ -1,3 +1,32 @@
+Strict signed cubic threshold and rigidity for the centered cubic moment
+
+Write U=EL. On a slice normalized to length one, use curvature K,
+b=int K^2, c=int K^3 and S=int K=2 pi n. Set G=|c|/b^(3/2) and
+J=|2c-bS|/b^(3/2).
+
+There is a universal constant 0<g*<1/2 such that liminf G>g* implies
+L(t)=O(t^(1/4)) and E(t)=O(t^(-1/4)). Every turning-zero flow satisfies
+liminf G<=g*. An explicit admissible constant g*=1/2-epsilon is given in
+Research/CurvatureMomentGap/FiniteWindowThreshold.md. The proof in
+Research/CurvatureMomentGap/StrictHalfThreshold.md gives the oscillator
+integral estimate and the static concentration argument.
+
+For each fixed nonzero turning number n, some delta_n>0 suffices for
+liminf J>1-delta_n to force smooth circular convergence of the
+length-normalized flow. Every closed flow satisfies liminf J<=1.
+Equality holds exactly for convergence to the round circle with the
+corresponding covering number. The proof derives a bound on U from the
+moment condition. See Research/CurvatureMomentGap/CriticalMomentRigidity.md.
+
+The Lean files verify analytic bounds for the oscillator period numerator,
+the dynamical transfer under an explicitly stated static gap, and the
+rigidity of a smooth affine-force equality trajectory. The manuscripts
+supply a translation-invariant compactness proof and an independent
+explicit finite-interval estimate for the static gap, compactness on
+finite flow intervals, and the deductions using circle stability.
+Research/CurvatureMomentGap/Verification.json records the combined check.
+The length-growth problem for general immersed curves remains open.
+
 Signed curvature moments and quarter-power growth
 
 For arclength ds, signed curvature k, length L and bending energy

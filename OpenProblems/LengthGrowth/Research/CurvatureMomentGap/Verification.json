@@ -1,0 +1,99 @@
+{
+  "lean": "4.33.1",
+  "baseline_commit": "8298fd864396f4340d91b454538b87853c3f3fc4",
+  "baseline_git_blobs": {
+    "LengthGrowth.lean": {
+      "blob_sha": "d5c393d0422e277df6810366182f97acb6b43146",
+      "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/8298fd86/OpenProblems/LengthGrowth/LengthGrowth.lean"
+    },
+    "LengthGrowth/AxiomAudit.lean": {
+      "blob_sha": "dc977ae5afc6284518db5ce6dbe724cc18d0561f",
+      "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/8298fd86/OpenProblems/LengthGrowth/LengthGrowth/AxiomAudit.lean"
+    },
+    "STATUS.txt": {
+      "blob_sha": "b31b9d5d9ad6e938b8a40e095c7bdbe45626f1ed",
+      "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/8298fd86/OpenProblems/LengthGrowth/STATUS.txt"
+    }
+  },
+  "scope": "All six new modules, the accumulated package root, and the original project axiom audit were recompiled. Earlier dependencies and mathlib used the pinned artifacts from the baseline. The manuscripts prove centered-moment compactness and the universal static gap, including one explicit threshold from finite-interval estimates.",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit": "Length-growth audit passed: 1201 declarations; standard axioms only.",
+  "modules": [
+    {
+      "module": "LengthGrowth.ActualFlow.AffineForceCompatibility",
+      "file": "LengthGrowth/ActualFlow/AffineForceCompatibility.lean",
+      "source_sha256": "db26ee22684ef21af476bf477cd483db10a1860c359a61741973a32e6ad0ab21",
+      "object_sha256": "5358fd6e56c20f8406e3b534b1ab0b8b5bf03eeed76a0be041120ea3765b3b3f",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.AffineForce.spatial_first_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ActualFlow.AffineForce.constant_of_compat_polynomial' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.AffineForce.spatially_constant_on_time_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.AffineForce.spatially_constant_of_affine_force_evolution' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorMeanBounds",
+      "file": "LengthGrowth/OscillatorMeanBounds.lean",
+      "source_sha256": "0ee25eb2b26ab6a20d5db67e08b8c44366b7512fc67c3ea27a9aafc657626407",
+      "object_sha256": "b8e91e861aa1edcef7e7588fdf4c678cd24f27f6c56cbbe28c70f5171da51264",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorScalarIntegral",
+      "file": "LengthGrowth/OscillatorScalarIntegral.lean",
+      "source_sha256": "255ea5ad258a06622de0e62190ba5a208e66e8a6666fb399ba4414be5934271b",
+      "object_sha256": "0fc10b9d6991f2cc32f77c1f6065eae2d7b2ae376ac94004f68db3af2284b40d",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorMean",
+      "file": "LengthGrowth/OscillatorMean.lean",
+      "source_sha256": "cc10ad1dda271f30a6b3bf66c5c21726439ee3329e7cdfebc4dedba669bffba6",
+      "object_sha256": "3b70b5c40c8cd98cec39668881f069417f0bf09889005196547be40a8db32a52",
+      "exit_code": 0,
+      "stdout": "OSCILLATOR_MEAN_AUDIT: analytic bounds, quadrature, half-angle substitution, uniform positive integral.",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorPeriodNumerator",
+      "file": "LengthGrowth/OscillatorPeriodNumerator.lean",
+      "source_sha256": "396b40b4b68213c7d9d8bc1fd377991a2e88e3c0041b34adbe6a81194dfc913e",
+      "object_sha256": "1d0738935a7e7aacc1ff3e36cb65544fb8376ffa84e8893229ce846241cd5506",
+      "exit_code": 0,
+      "stdout": "OSCILLATOR_PERIOD_AUDIT: original full-angle period numerator for all admissible turning data.",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.StrictHalfTransfer",
+      "file": "LengthGrowth/ActualFlow/StrictHalfTransfer.lean",
+      "source_sha256": "5a99c196343fc97c815f077c57efb4b7106dd336d3e0f35a45ff028a698a1d14",
+      "object_sha256": "72f4544c22b88211034724a9b8643e006df018578caf8c9154f7770bd104932a",
+      "exit_code": 0,
+      "stdout": "STRICT_HALF_TRANSFER actual FEF: quarter length and energy, zero-turn liminf, uniform threshold.",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth",
+      "file": "LengthGrowth.lean",
+      "source_sha256": "a0f8b57b31fe2ac98889e27236d78ac5879951e3c7497f8dcc70a91680b2eb4b",
+      "object_sha256": "152d854d68200f7ad4d478ff83bcd544a8d410d9b6ad6d7435186488e0856cdc",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "file": "LengthGrowth/AxiomAudit.lean",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "object_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit_code": 0,
+      "stdout": "Length-growth audit passed: 1201 declarations; standard axioms only.",
+      "stderr": ""
+    }
+  ]
+}

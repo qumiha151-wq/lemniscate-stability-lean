@@ -1,3 +1,4 @@
+import SolitonClassification.CubicGap
 import SolitonClassification.Rotating.PrimitiveSupportPeriod
 import SolitonClassification.Rotating.FloquetPencil
 import SolitonClassification.Rotating.Balanced8FreshAudit
