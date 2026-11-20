@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.PointStress
 import LengthGrowth.ActualFlow.SpatialLocalization
 import LengthGrowth.ActualFlow.MaterialWeightedRate
 import LengthGrowth.ActualFlow.ForceAngularSpeed
