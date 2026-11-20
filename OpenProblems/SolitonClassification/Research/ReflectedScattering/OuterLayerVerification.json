@@ -1,0 +1,93 @@
+{
+  "lean": "4.33.1",
+  "baseline_project_declarations": 21044,
+  "baseline_manifest_sha256": "c3feecfba8ca3d86648dfa557f9f85501573038119867dac0f3bc86753f7a75a",
+  "audited_declarations": 21151,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formal_scope": [
+    "For a frozen ODE solution the corrected impact has pointwise error coefficient below 0.77, improving to 0.37 when the absolute transverse frame coordinate is at most 0.121. The corrected outgoing stress has coefficient below 1.66. Both bounded correctors have absolute value at most 0.472.",
+    "The moving outer oscillator has the exact corrected impact and amplitude derivative formulas, with uniform O(delta / A^2) and O(delta / A^(3/2)) bounds on bounded normalized positions.",
+    "Every physical solution of the support ODE supplies the required rescaled fields, changes of independent variable, oscillator rates and moving-frame components.",
+    "A descending corrected outer amplitude controls the integrated transverse drift on the full interval under the explicit speed and amplitude comparison hypotheses."
+  ],
+  "computations": [
+    {
+      "module": "SolitonClassification.FrozenStressBounds",
+      "source_sha256": "221f884d509664d33f352f769af1df608da85ca4a53882a1f9124b2910269708",
+      "setup_sha256": "4fdf6303e03b02061421ea181efc25b1d70519e5e4410f504d37f35e0211a8fc",
+      "additional_object_inputs": {},
+      "exit_code": 0,
+      "object_sha256": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.OuterStress",
+      "source_sha256": "1f849375445c2ed714412d004bbc1075dd29fbb9d0f94ad43d67faf918f9d339",
+      "setup_sha256": "5cfc8f86231d0d52c280f7af69ef859a01bb0f2c00684dc634cd42d6dce20619",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab"
+      },
+      "exit_code": 0,
+      "object_sha256": "eeefd258a2fb01e3c0b2296069d3f476f461baddc92fe1a93bc206a3de354081",
+      "stdout": "'ClosedSimilarity.OuterStress.uniform_rates' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.OuterStressOrbit",
+      "source_sha256": "34cb83cf1ccf37a3312e754e93810e80ce5074566341de882f6c83688c56be13",
+      "setup_sha256": "c998e7af38fb9c0aac51becccba5acc62a3674db6eb406ae6d5e7297a5927cff",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+        "SolitonClassification.OuterStress": "eeefd258a2fb01e3c0b2296069d3f476f461baddc92fe1a93bc206a3de354081"
+      },
+      "exit_code": 0,
+      "object_sha256": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee",
+      "stdout": "'ClosedSimilarity.OuterStress.Data.uniform_physical_rates' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.OuterDescent",
+      "source_sha256": "87e91a3f6d43c8c535b8b54b405f44324710f028c15deeff80aa1ec6ecaeaf8f",
+      "setup_sha256": "56df90e634d8b442e28ea41ad1502caad76803f8703c427c04abc483494bdf6a",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+        "SolitonClassification.OuterStress": "eeefd258a2fb01e3c0b2296069d3f476f461baddc92fe1a93bc206a3de354081",
+        "SolitonClassification.OuterStressOrbit": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee"
+      },
+      "exit_code": 0,
+      "object_sha256": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c",
+      "stdout": "'ClosedSimilarity.OuterStress.impact_on_descent' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.OuterStress.transverse_error_above_layer' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "f9132c3560edb83cc6a7a4c2f37c48325e99499a5aaf38032d7418d599e7720f",
+      "setup_sha256": "429fa2e51d7a8424d9e9ad3c09dae2f2687f5b3c53a5eb2e4199369c43f71250",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+        "SolitonClassification.OuterStress": "eeefd258a2fb01e3c0b2296069d3f476f461baddc92fe1a93bc206a3de354081",
+        "SolitonClassification.OuterStressOrbit": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee",
+        "SolitonClassification.OuterDescent": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c"
+      },
+      "exit_code": 0,
+      "object_sha256": "56cda2fccddc3cac6fe7e0f4cd9abb18802fc601a67817f134fca3b310083109",
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "e52ae03c0cf38ea5d295731391f03137a8f118347e2dcd6eb72360819da6a46c",
+      "setup_sha256": "271cc6d55a372e18df72ed0a7dd18c78756c92ffe21f32c4d9a78ef3d62150e1",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+        "SolitonClassification.OuterStress": "eeefd258a2fb01e3c0b2296069d3f476f461baddc92fe1a93bc206a3de354081",
+        "SolitonClassification.OuterStressOrbit": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee",
+        "SolitonClassification.OuterDescent": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c",
+        "SolitonClassification": "56cda2fccddc3cac6fe7e0f4cd9abb18802fc601a67817f134fca3b310083109"
+      },
+      "exit_code": 0,
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "stdout": "SolitonClassification audit passed: 21151 declarations; standard axioms only.\n"
+    }
+  ]
+}

@@ -1,3 +1,6 @@
+import SolitonClassification.FrozenStressBounds
+import SolitonClassification.OuterStressOrbit
+import SolitonClassification.OuterDescent
 import SolitonClassification.FrozenStressOrbit
 import SolitonClassification.FrozenStressTail
 import SolitonClassification.RectangleCrossing
