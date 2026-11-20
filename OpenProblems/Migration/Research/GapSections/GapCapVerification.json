@@ -1,0 +1,423 @@
+{
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "base_declarations": 639,
+  "audit_declarations": 644,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit_log": "Migration audit passed: 644 declarations; standard axioms only.",
+  "base_verification_sha256": "f27f8fb4c9b12dfc6bbb13f7a2e9827b4f7ad615e31742fe7e6fdaf096a82d4c",
+  "fresh_project_modules": 58,
+  "fresh_compilations": [
+    {
+      "module": "Migration",
+      "source_sha256": "ef752bd08d4c472047141b825971cd9e0baa4e081604d6644dbf2b9bf788b584",
+      "olean_sha256": "4451c56db1c869e5b74ef3c8c14b9797650ce6e8517875778ba2b4cf5c8d4b51",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.ActualCutoffTransit",
+      "source_sha256": "55d45405245a9c99ef45d5edcb43dfc8966691ae9f27df1901a8ca6545216b25",
+      "olean_sha256": "299d922cdc2f4fd4e0639bf42096af5f2fa431936b75c7575ce23370791fb62f",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AdjointHalfspace",
+      "source_sha256": "6b6de3ba14f22728b0c4d848f4c6746b75cdd0cf87413e1de323f53a0ef9f98c",
+      "olean_sha256": "10bba27082e06608e7c57e1183e92ebd58ef9bd41d55e716a14b8cdca4da3896",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 644 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.BendingDissipation",
+      "source_sha256": "38ef4094f4bedc57ed40b0ea77872b4033e60d81408b05ddf3c7afec48d9650f",
+      "olean_sha256": "a091e3ec62c81712cfd0fc617f4a9ff8028fda3446b32661c6d05b1e2bdb137c",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.BendingVariation",
+      "source_sha256": "7bd12edcc8bda153f6936175922ad23a30064f16abe3008f4011fdd3f2ad51e1",
+      "olean_sha256": "b4d6e0a5a792b0b9b505718b2dd688e6ef5e6c7ba1326a4c2ab1125d2fb02e73",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.CenterInterior",
+      "source_sha256": "6255375562a4e6b61299f3e8a7ade9e0a30bcca1d476e6c34433ff9e801ca968",
+      "olean_sha256": "c9a84a72ee39e0f5d72ae1989761bf3326389df8b8f6756af6a1175a0d75b2b3",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.Criterion",
+      "source_sha256": "563622e738f6e2aa2e1e66549d9aeb1c2ae9776ebaedc4996d296ee541c79eb7",
+      "olean_sha256": "7821771e5c97b1b23d9ac89abc8509c7ff3aa8bfbf53bd77163d3b02cef069b2",
+      "exit": 0,
+      "log": "'FreeElasticFlow.oneSidedProfile_migrates' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FreeElasticFlow.migration_forces_negative_profile' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FreeElasticFlow.migration_forces_negative_attained_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FreeElasticFlow.boundedProfile_migration_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.CurveKinematics",
+      "source_sha256": "5149eadeaf7855adf9e00da66a63c988ecab54eb5cc59d988f1e1d82ee961912",
+      "olean_sha256": "6ae37c43195fbeaa78b1dbda949cb9aa7bd438c9ae49ecc9be8c7e1d26caba52",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.DilationDefect",
+      "source_sha256": "f7d207f16169f2931b285956feb8d10f8220f330a8352c47057a6ff6bb9b5f20",
+      "olean_sha256": "0af2bfc5140dc453b91f95518d26cbf942dfbe237b3f7de3c52b556b1d5814b2",
+      "exit": 0,
+      "log": "Dilation defect audit passed for 77 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.DirectionalWidth",
+      "source_sha256": "44e5e86acd1d6eb15f3c976ce553ce202e4827b379818ea45e532de1f60bb93c",
+      "olean_sha256": "a389f47afec25b8b446d6a38374c6292632b8d3e10ccf6a51643d9de3da97712",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.directional_width_range' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.DiskDissipation",
+      "source_sha256": "09fd72a92e2248768b151dd556aeea7e1e98602e0b354f1390f60d6cef720322",
+      "olean_sha256": "899b0f2199138c3e196c2164da835c74b3616e505f1d64bab3a46ea29eacba89",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.containing_disk_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.escapes_all_fixed_radii' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.EndpointMass",
+      "source_sha256": "5145029e036a33bb51a078ef0604e4c34e572274e9541123098dc9aa168a24bb",
+      "olean_sha256": "c4b7ac246fea9663374b2fa91f6394985c747dd0eaff0adc4cf418f0cf07a3b0",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.EnergyTransit",
+      "source_sha256": "55a425d58878141a6f4f41c676e3195f9535428acb3fd83f1f568f38628357eb",
+      "olean_sha256": "186bb6fbd06387997a96e507072fa8f0913b7b58f806b56b9f0d66b3f0d80ec6",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.EscapingHulls",
+      "source_sha256": "d557719ba080d555caa22b0c20d400c62232cc883f6d9f58956b0cda08259c82",
+      "olean_sha256": "21f98e8c6ca6b7d7a28a2cd24f0fa9b4a6aa04ef246407b62c549dd67486066f",
+      "exit": 0,
+      "log": "'MigrationGeometry.SimilarityHull.separated_of_similarity_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.SimilarityHull.center_mem_direct_hull' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.not_separated_of_common_hull' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.SimilarityHull.separated_of_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.eventually_separated_multipliers' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.SimilarityHull.eventually_separated_all_angles' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ExpanderCenterHull",
+      "source_sha256": "6f1a91bfd61986e3f28934175e8ef561baf35545c1ca77881f9256ae7db9140f",
+      "olean_sha256": "6cca7d4d58315d257e36639013e318db3843f6e0975d887b37bfd117f7ce109d",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.ExplicitCutoff",
+      "source_sha256": "6a671dc62fa8240b53186c451a0af9a1e9b31fb59d298869c439f292848bc447",
+      "olean_sha256": "57e41424866d3316faf126e53cf4a296e4e28e89b7e428ec5e7e9c5b71af9b3f",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.FiniteRotation",
+      "source_sha256": "be05423178920d5c3a1eb08ec22d0a8e7c71e3a810c949cc78849adf38275420",
+      "olean_sha256": "fca4fd23fffec8f01c4e7bde27ac51711acc684532d9cd08d9c7586d68e93e99",
+      "exit": 0,
+      "log": "'MigrationGeometry.FiniteRotation.mean_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.FiniteRotation.center_mem_slice_hull' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.FiniteRotation.slice_mean_eq_center' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.FiniteRotation.no_separated_slices' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ForceIdentities",
+      "source_sha256": "e387b0f0c7a87b976e4555349fa6df0115aebe1dc2aaafe9c924888d8162af7e",
+      "olean_sha256": "ae7f4122cf67b2cbac35039f50f35252ecba78924ac5e500ef82f4a4214405a8",
+      "exit": 0,
+      "log": "Force identities audit passed for 50 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.ForwardHalfplaneCost",
+      "source_sha256": "15deedb5024ed2f803da24761361d7ccbd11d6dec5b1dc039c9e9ef8394eeba9",
+      "olean_sha256": "50970e3587f760e3c870a7e577f4699fed5a36342d9e89bf204fa028db6bd958",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.ForwardShortCore",
+      "source_sha256": "862ac9fefdb3914cd5937316b73c7c6b6bf9aafd609b4daf2fd7ed770213ef6a",
+      "olean_sha256": "9d29c2c172fbec7c4175611ea44007be7be9ec06e6396025feaa27a8b95fa1df",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.forward_common_disk_of_energy_drop' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.forward_universal_short_time_disk' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.GapCapSweep",
+      "source_sha256": "1475806e979f7997ae070490813f782e3d1c249b7bdc443f7923065a6b33dad6",
+      "olean_sha256": "ae7493607fdbeb552394ec077fe5820a906dc64abf1b8f36b062e2375d4b73df",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.HalfplaneCost",
+      "source_sha256": "8bb96ed35258b5faa19bc4084f2c973eb85cd7f5f0291132cc234fe5e422bc4d",
+      "olean_sha256": "80fc5d1fce2b82ac4deb20bb83cf4bcf5682bd22d6af2ef8902acb728f82d08e",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.InitialDirectionalWidth",
+      "source_sha256": "d656aa29f5b4d31552d9859194c3d29c59fc968fc97c27922be84df73a438e32",
+      "olean_sha256": "e21665848665e8e82dbfdcfbaa272b9b56a6f2de76bedbe395dff7d382f45351",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.forward_initial_directional_width' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LocalizedFirstVariation",
+      "source_sha256": "ce50ac99b03c36ad3e7896a55bcf3f494722e11c5b906cfe969a710387e61448",
+      "olean_sha256": "daded69dc8d98261d2a043645f476b1b214e514308050fadf6adde9193bb5043",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.LocalizedLengthCost",
+      "source_sha256": "82b9ff9e01131829cf78f6df46f010919b4b90c8890e9ae294c70eae3a0d5472",
+      "olean_sha256": "9b92d1885bc680516751b87e39402de707ae4a27c0bf5635065cf4330bd56c3e",
+      "exit": 0,
+      "log": "Localized length cost passed standard axiom audit.\n"
+    },
+    {
+      "module": "Migration.LocalizedRateBound",
+      "source_sha256": "2492faf0517e1e198b705515e2287b4b8c0a6b002a272484a575efefdcf36603",
+      "olean_sha256": "af24769cc205613c1b82ad029701a5ed55b4e72c0ee98ac8a19eb72427cf005c",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.MaximumAreaCenter",
+      "source_sha256": "d45e97cba602a86365a8e7b002b25128f4d82e67d0dc81fa58c8803cd9a2b9e1",
+      "olean_sha256": "6ee7e8dab1bb3034579c13389e97e7159380049287dee45fe821364f7a2e78e6",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.exists_center_of_uniform_width' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundCentroid",
+      "source_sha256": "9ae0a522258a6b8ca5bfd4427f8111fd6e197bc56cb70f30e7c96e3d3a81e42c",
+      "olean_sha256": "be248d30fc26e6a9712cfd0f519ecc6907077f3ae36bfd1bb0fe729bf4297777",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.centroidHeight_hasDerivAt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.centroid_displacement_of_force_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundConvexDisk",
+      "source_sha256": "2e7806fc062e9cfd3e49462035fc9254920c6f58492039da12b32d03326819aa",
+      "olean_sha256": "738c110ef21f71b8b1ab881828bb43ecb972836489919c29265c0184a2d3a97f",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.closedBall_subset_convexHull_of_directional_margin' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundCore",
+      "source_sha256": "a639fe71d8f546ec2fec9440a6730bb8cc458ee9fc7a23ac6fdce295beb3b1e3",
+      "olean_sha256": "e7f9b518db69d6b9497b3b20f4d1ed12539703f2b1b5f5ca94eb309af81a3703",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.fixed_initial_centroid_support' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundDirections",
+      "source_sha256": "8abe079aab18b1181e221eaac44e49e2327e23353395484c46c75b4f03ccc56b",
+      "olean_sha256": "9347b78325ca1ee95e15e842d9a67027a3dd5607fc4b62e0b5b06b6aa00a754d",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.near_round_hits_negative_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundDisk",
+      "source_sha256": "aef192d73b8e8dad8fb3437bcc6ebee9721a2f19f9f503bc2c82c404c341b282",
+      "olean_sha256": "ab41efa9325c87b1582338f94a6d75f920ff76be6c0a3b442711148514919f6d",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.fixed_centroid_ball_subset_convexHull' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.fixed_physical_ball_all_times' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundDrift",
+      "source_sha256": "d8c5e538ed2311159e0089b974e9c9d47e4fa8973d1f74870561dcc66b2ef2ae",
+      "olean_sha256": "3947f8aa9d3cc4afdd650e3164b121689d9f2e4a2558f6d983b4d6bba8aecdfb",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.centroidRate_near_round' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundEnergy",
+      "source_sha256": "b19a80a97342d2a0e4bc36815ec23e0bb76e140771588cf7cda05624934214dd",
+      "olean_sha256": "ab728ec6ba27a548a7cdc2816c197f8f476fb3851f5cf1136802dc28020eda34",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.oscillation_energy_identity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.bending_le_near_round_virial' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundSupport",
+      "source_sha256": "c7af6ad026bde67804b4aba34d5fcd9c674135329b818d80d1f5cc21b99d3204",
+      "olean_sha256": "b595bc0c59427d4439949e014b2876e4dff28f8cf10f61c79bc9e24396df76d3",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.height_normal_defect' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.radial_support_from_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NearRoundVirial",
+      "source_sha256": "5761f0259d9948ef8f2a8d7f70a5da46ee18325fd53cf8703583302424f086b8",
+      "olean_sha256": "9345c8c39708bb6dba7f81a5eb497a81560561b9ace1fe02976c281e80494b77",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.map_arclengthCentroid' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.signed_normal_support_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.material_virial' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NormalGram",
+      "source_sha256": "2734b0130b18edd34880c32bd423d89539f1bcbdc1a112f8cdc317e8a9fec712",
+      "olean_sha256": "5f37f1e2438f3d5b9f181fde49d8afed3f2e76fb8581f37db637cc01bfd92fd1",
+      "exit": 0,
+      "log": "Normal Gram audit passed for 10 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.NormalRegression",
+      "source_sha256": "435096e494a1af850d5bb2193e9157606790a9aa964ec4b0a6e93b7acaea1740",
+      "olean_sha256": "c932328ab1b9f03bb882497e472c7cb275cb852920cbf081ccb50a6b8d8b44ca",
+      "exit": 0,
+      "log": "Normal regression audit passed for 23 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.NormalSupportPositive",
+      "source_sha256": "eedf10626181f3cef7547600791496d0d3f603ef8e0136325a313ac56c191134",
+      "olean_sha256": "8f236f545a17185c69f85866a30c67f364383f71b0066749b1bf31bd1e226120",
+      "exit": 0,
+      "log": "Normal support positivity audit passed for 27 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.ProjectedAdjoint",
+      "source_sha256": "ab6afd0f25591efe7c3b53556bd46a363896bcda4730969cdfe4d9406e961d08",
+      "olean_sha256": "dd8c58859542dbae656c5d9fcc7c98a17464229b51fb7b3cf1206c965b824f82",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.RecurringMigration",
+      "source_sha256": "e1c4e57f7de5dc2997a651b92ed7873159fa6ecaadbccbc639b73c34d3151e73",
+      "olean_sha256": "9d8428e006b7cae6d46105b6f34868e7acfb44c35578cefe6f4a820509f6f100",
+      "exit": 0,
+      "log": "'MigrationGeometry.SimilarityHull.iterated_discrete_similarity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.SimilarityHull.exists_return_phase' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.late_separation_of_exterior_phase' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.SimilarityHull.discrete_migration_equivalences' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.RoundPartitionCost",
+      "source_sha256": "d6421b316a939822eddcb100223c848aa0ede350d05b39368a8c2ff860cea63e",
+      "olean_sha256": "39b3b57d22972edad34849877ce33d3ee1dbe635e4994893d4ec77596b9a7abe",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.round_partition_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SelfSimilarEscape",
+      "source_sha256": "1ae071d839a3c5a7631f5d9232aec28089b5c5f4afb2c7994b39e513a323faa5",
+      "olean_sha256": "06f9fe46209211c77d12ec4b32dccd7f18f583f56a5e57fbbaa2c0b554f5193d",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.actual_self_similar_migration_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.actual_initial_self_similar_migration_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SeparatedEndpointEnergy",
+      "source_sha256": "5591819ba8684ad383d01272b59401cb63553c4681a72b92e4e6ab7286da7dcf",
+      "olean_sha256": "b20ce40b43d737fbd1957e5dc2ba3dfeea17249230ed80a57693efc4b216c251",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.SeparatedHeight",
+      "source_sha256": "6a1aac31282620deeed753a39217c446f46338e9cfe11fc64c01539c34df0437",
+      "olean_sha256": "c6cfa0eb47b91c3b724e86d3aa12dafd78138d956bdc7cf7062f885a67bf886f",
+      "exit": 0,
+      "log": "'MigrationGeometry.Adjoint.ClosedExpander.separated_height_weighted' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Adjoint.ClosedExpander.separated_height_lt_eighth' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Adjoint.ClosedExpander.separated_slices_dilation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Adjoint.ClosedExpander.separated_slices_elapsed' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SimilarityClock",
+      "source_sha256": "c8276030908b601d378eebf2e0e190407e6cf66e5b088a411e890a4ee88285dc",
+      "olean_sha256": "d8ca5f7bc2dd1856a1ad1c5fe905579559bb1e5b723594298324eca1bc195c7d",
+      "exit": 0,
+      "log": "'MigrationGeometry.SimilarityClock.Rates.solution' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SimilarityFlow",
+      "source_sha256": "d14efd8212019fbb60dd3fc385781a44688e782feff1ada86571f0d9885f2961",
+      "olean_sha256": "7486adf451171a925637e0e355fc3a1ecac0d8308edb0dc7af8ab1e2d666a5dc",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.physical_similarity_migration_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.physical_initial_similarity_migration_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SimilarityHull",
+      "source_sha256": "2dfe45e0047ca37bfdda124590536caa6b825752ac0843507d51b1703d6b4233",
+      "olean_sha256": "e8c75a958985e27b65a6e67e1138eb9a18a172d19767ad53b8b978d3cbd0b6e1",
+      "exit": 0,
+      "log": "'MigrationGeometry.SimilarityHull.compact_convexHull' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.separated_iff_unit_height' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.sim_add' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.center_mem_sim_hull' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.separated_initial_log_slice_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.SimilarityHull.separated_log_slices_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.SimilarityHull.separated_log_slices_after_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.StressAngle",
+      "source_sha256": "0c3462e34c37457ff39f3806124ebd531b70d15af653df92b760088f7b63e1de",
+      "olean_sha256": "c1041b6f9c0b4dcf5dc788e157869d4f852aefa57f81391d6c80704ce07c82e4",
+      "exit": 0,
+      "log": "'MigrationGeometry.StressAngle.weighted_force_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.StripCurvature",
+      "source_sha256": "5e8594e6e525fd2a635cfff07147185a475235b8d6688e014a2a3ab4882af46f",
+      "olean_sha256": "d0368a1c77dd83aa8e0670ac6d933a7b1d35537ab5db89394937dd7428201085",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.StripMass",
+      "source_sha256": "7e6a7346d7af2ae7ba5c440d26e6e085680156f92711d6b89a906c9d31e02dfa",
+      "olean_sha256": "d767ddfbf954ef14c2780d079a70f05b7851e316e048459f4290fa606a2ee5fc",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.SupportRecession",
+      "source_sha256": "bfa8bed9013158cfa9446f8926544ce9945abcb73357602ace76b7ff255b7e44",
+      "olean_sha256": "cd6f75eddec01d3fc349984d7b2f3c27946c7257109ff38e814087f2a869e332",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.support_recession_cost' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.scaled_support_recession_cost' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SupportVirial",
+      "source_sha256": "071052a22ea31e6e90cdb6eb8bf911ce0b82e06b68b284bb7d6c66af72b49564",
+      "olean_sha256": "678d64879930e0346619a918d414d1faa30d8baa0a016aebd47d6f5f274c27a2",
+      "exit": 0,
+      "log": "Support virial audit passed for 58 declarations; standard axioms only.\n"
+    },
+    {
+      "module": "Migration.TangentExcursion",
+      "source_sha256": "84c1c321539ddd9636930bfe37af78380518685b8dc477c66fb7c52ad3072ce2",
+      "olean_sha256": "38feba8dd6e0ebf21b573420fa6d2a62adc143bae88e587e4896b44360aecfd3",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.TranslatorCaps",
+      "source_sha256": "f527f2bf2357f801af90218a11a36031b7f4c89a6557fc3cd67f2b081ec2c3c0",
+      "olean_sha256": "e3e7324edb56849c4cee143b1dfa5109cbef9e787fceb2d2ed3ab992b7ef81e3",
+      "exit": 0,
+      "log": "TRANSLATOR_CAP_AUDIT actual stress chord, arc energy, cap dissipation, true FEF rate, and finite-time cost\n"
+    },
+    {
+      "module": "Migration.TwoEndpointCost",
+      "source_sha256": "643deb62c223147f6b259a2b4ad610d06ec03c6fc2568e805440284b685cb263",
+      "olean_sha256": "2b9d63192c3b8bb77979d6800b0cfb1bd82ef7db296a1b8e4a070c2e36a0354e",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.UniversalShortCore",
+      "source_sha256": "62ac4e16f74aec18e870d9a1853f0b3250c2ba98f7dd7239a52a53814329109d",
+      "olean_sha256": "cce37e8af583326535ba2d0e0b9d40fa6a43392aa2e41b33f9fd9779adfd68eb",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.common_disk_of_energy_drop' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.universal_short_time_disk' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    }
+  ],
+  "source_note_sha256": "fb45f2b0463c6dc5b48ddd16abcde2414f03971d12b99f17bc5a9c1c8cfae6e4"
+}
