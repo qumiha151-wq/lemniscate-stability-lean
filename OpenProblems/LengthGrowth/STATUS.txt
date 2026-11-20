@@ -1,3 +1,19 @@
+RadiusGrowth.lean proves the sharp unconditional inequality
+limsup R(t)^4/t >= 2 for the smallest enclosing disk radius of a
+closed normal free elastic flow. The disk center is free on each
+slice. Expanding circles attain 2.
+RMSPowerGrowth.lean proves that any forward normal free elastic flow
+with sqrt(t) E(t) <= r L(t) on a positive-time tail has
+L(t) = O(t^a) and E(t) = O(t^(a-1/2)), where
+a = r sqrt(1+r^2)-r^2 lies strictly between zero and one half.
+At r = 1/sqrt(8), quarter_length_of_rms_sqrt_eight gives the
+fourth-root upper bound on the entire time interval.
+Research/RMSTypeI/RMSCurvatureAndGrowth.md also gives an analytic proof
+of smooth convergence of the length-normalized curves to a possibly
+multiply covered circle under this critical tail hypothesis.
+The unrestricted fourth-root upper length bound remains open.
+
+
 Theorem turning_excursions_at_high_records in TurningQuarterFlow.lean
 proves a necessary condition for failure of the exact fourth-root upper
 length bound on a single closed normal free elastic flow. At arbitrarily
