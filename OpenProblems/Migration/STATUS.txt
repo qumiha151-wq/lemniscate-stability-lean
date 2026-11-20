@@ -89,3 +89,24 @@ whole_halfplane_energy_scale and forward_halfplane_energy_scale prove
 under the same geometric separation and regularity as their respective
 width estimates. Research/StripCurvatureEnergy.txt contains the argument.
 The existence of an unrestricted migration remains open.
+
+20 November 2026. The projected-adjoint development raises the integrated
+audit to 444 declarations. Its true closed, unit-speed, pure
+homothetic expander coordinates satisfy F = -rate*(position dot N). Let R
+bound the distance of every curve point to the actual expansion center.
+Theorem center_mem_interior_convexHull places the center in the ordinary
+interior of the convex hull whenever rate*R^4 <= 2. The theorem
+no_homothetic_halfplane_migration excludes two separated images under
+arbitrary positive dilations about this center followed by a common
+translation. The bound includes equality. It does not decide the case
+of unrestricted radius or general solutions.
+
+Research/MigrationProjectedAdjointHull.txt also proves optimality of the
+radius for universally pointwise radial multipliers. The exact rational
+jet check excludes nonzero everywhere nonnegative adjoint densities for
+polynomial weights of degree at most five. A separate Arb countertest
+shows that affine radial weights can fail along a previously certified
+asymmetric closed expander whose center is inside its hull. The optimality
+and countertests have the handwritten and interval-arithmetic status
+described in those files. The independent Lean project imports no other
+open-problem project.

@@ -1,0 +1,55 @@
+An affine radial adjoint weight can fail on a genuine closed expander
+20 November 2026
+
+The normalized closed asymmetric expander previously certified in the
+CentroidEscape project has the origin in the interior of its convex hull.
+This follows already from the checked shoots and their reflection; the
+quantitative verification is in CentroidCandidateSupportExclusion.txt.
+Here that real solution tests the proposed hull proof itself.
+
+Write U=L*1, V=L*(|x|^2/2) for the two densities computed in
+MigrationProjectedAdjointHull.txt. On the certified expander there is NO
+pair (A,B) other than (0,0) for which AU+BV is everywhere nonnegative.
+Thus the affine radial certificate can fail even when the weight can
+depend on the entire chosen closed orbit. The example is a countertest to
+that certificate. The actual expander has no complete migration.
+
+The validated initial parameters (a,k0,L) of the arclength half-orbit lie
+within sup distance 10^-28 of the exact rational CandidateEndpointChecks
+center. At its starting seam x=(a,0), T=(0,1), k=k0 and k'=0. Thus in
+the intrinsic support system (k,v,p,q) the initial box centered at
+(k0,0,-a,0) encloses the actual initial state. Half-period L>17/4.
+
+At the three times 0, 17/4 and 1, denote the two-component values (U,V)
+by A0, A1 and A2. Interval arithmetic gives the strict oriented bounds
+
+  det(A0,A1)>25,   det(A1,A2)>21,   det(A2,A0)>3.
+
+For example, A0 is within 10^-26 of (-2.104635423947336540992998613,
+0.72320142201018033869046233), and A1 is near (-3.01056,-11.21264).
+For the precise outward intervals use migration_adjoint_closed_orbit.json.
+
+The identity det(A1,A2) A0 + det(A2,A0) A1 + det(A0,A1) A2=0 and the
+three strictly positive determinants place 0 inside their triangle.
+Consequently every nonzero linear functional takes both signs at these
+times. In particular no nonzero A,B give an everywhere nonnegative
+density. This uses the exact closed solution selected by the earlier
+root theorem. It does not promote a finite approximate shooting root to
+an actual trajectory.
+
+Numerical validation. The reproducible Arb script
+migration_adjoint_closed_orbit.py independently propagates the enlarged
+initial box for (k,v,p,q) using the normalized polynomial support system.
+Each step has h=1/128. A tube enlarged by one in every component satisfies
+z0+[0,h]F(tube) strictly inside tube, component by component; the usual
+first-exit argument keeps the solution inside for that step. The script
+evaluates Taylor coefficients through order 21 from the current enclosed
+initial state. The order-22 coefficient is bounded on the entire Picard
+tube by formal ODE-series recurrence, and supplies the Taylor remainder.
+Horner evaluation advances the box at 180-bit Arb precision. The strict
+determinant signs hold by many decimal places. This independent interval
+calculation and the proof above are not part of the Lean kernel audit.
+
+To replay, install python-flint and pass the path to the pinned
+CentroidEscape/CandidateEndpointChecks.lean as the sole command-line
+argument to migration_adjoint_closed_orbit.py. The SHA-256 is checked.

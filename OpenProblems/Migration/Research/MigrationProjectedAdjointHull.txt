@@ -1,0 +1,135 @@
+Projected stress, positive adjoint weights, and the expansion center
+20 November 2026
+
+Consider a smooth unit-speed periodic planar curve x, tangent T=x', normal
+N=JT, curvature k, and the pure homothetic free-elastic-flow equation
+
+  F=k''+k^3/2=-lambda (x.N),      lambda>0.
+
+Here the origin is the actual expansion center. Write R=max |x| and
+K=conv(x). If lambda R^4 <= 2, then 0 is in the interior of K. All positively
+dilated copies of such a profile therefore have a common point in their
+convex hulls. They cannot realize complete migration across a line.
+
+This includes equality in the radial bound and imposes no curvature-sign,
+symmetry, turning-number, embeddedness, or closeness hypothesis. It is
+a sufficient condition for a pure homothetic profile. No conclusion for
+unrestricted R or general time-dependent flows is asserted.
+
+1. A one-dimensional adjoint equation
+
+Rescale x by lambda^(1/4) and arclength by the same factor, so lambda=1.
+Put p=x.N, q=x.T, v=k'. The actual profile system reads
+
+  k'=v,  v'=-k^3/2-p,  p'=-kq,  q'=1+kp.
+
+For the stress Q=k^2 T/2+k'N one has Q'=F N=-pN=-x+qT and
+Q=x'''+(3/2)k^2x'. For each fixed direction e, h=x.e thus solves
+
+  Lh=h''''+((3/2)k^2 h')'-q h'+h=0.
+
+Repeated integration by parts around a full period implies the vector
+identity int (L*phi) x ds=0 for every smooth periodic scalar weight, where
+
+  L*phi=phi''''+((3/2)k^2 phi')'+(q phi)'+phi.
+
+An everywhere nonnegative adjoint density, with positive integral, puts
+the center in the convex hull. To get interior, suppose x.e>=0 for some
+unit e. Then (L*phi)(x.e)=0 everywhere. The support of positive density
+contains an open arc, on which the image must lie on the line x.e=0.
+The unit-speed image is straight there, so k=v=p=0 there. The support
+system with this initial jet has the unique solution k=v=p=0,
+q(s)=q(s0)+(s-s0) for all s. This contradicts periodicity. A separating
+or supporting line through 0 therefore cannot exist.
+
+2. Explicit positive density and its radius threshold
+
+Use s0=|x|^2/2, so s0'=q. With A0=(3/2)k^2 one gets
+
+  s0'''+A0 s0'=v p+(1/2)k^2 q,
+  (v p+(1/2)k^2 q)'=(1/2)k^2-p^2.
+
+Consequently
+
+  L*1=2+kp,
+  L*s0=(1/2)k^2+2q^2+(1/2)kp |x|^2.
+
+Set a=R^2/2 and phi=a+s0. Its density rho can be written
+
+  rho=(1/2)[k+p(a+s0)]^2+
+       R^2+2q^2-(1/2)p^2(a+s0)^2.
+
+Here p^2<=R^2 and a+s0<=R^2. Hence
+
+  rho >= (1/2)[k+p(a+s0)]^2 + 2q^2 + R^2(1-R^4/2).
+
+Under R^4<=2 this is nonnegative. Moreover int rho ds=int phi ds>0
+because L 1=1 and R>0 on a regular closed curve. The interior assertion
+follows. Dilation back gives lambda R^4<=2 as stated.
+
+3. The radius criterion is optimal for local radial multipliers
+
+A radial weight has phi=f(s0), f of class C4. At a jet (k,v,p,q), the
+only term of L*f(s0) depending on the independent curvature derivative v
+is 4 f''(s0) q p v. Indeed the fourth-derivative chain rule gives the
+term 4f'' s0' s0''' with s0'''=v p-k^2 q, and the terms multiplying
+f' combine to k^2/2+q^2-p^2 after including (A0 phi')'+q phi'.
+Every quadruple is a legitimate local initial condition of the smooth
+profile ODE, with x=pN+qT and x'=T after integrating the Frenet equation.
+For any prescribed 0<|x|<R one may take pq nonzero and v of either sign
+and arbitrarily large magnitude. Thus pointwise nonnegativity on all
+such jets forces f''=0 and f(s0)=A+B s0.
+
+At q=0,p=r the density becomes
+
+  2A + (B/2)k^2 + kr(A+Br^2/2).
+
+A nonzero affine radial weight with this expression nonnegative for all
+k and 0<r<R requires B>0 and A>0. Indeed B<0 fails at large k, and
+B=0 forces A=0 by varying k. A=0 fails the quadratic discriminant for
+r>0. Minimizing over k gives
+
+  4AB >= r^2(A+Br^2/2)^2 >= 2AB r^4.
+
+Letting r approach R gives R^4<=2. The previous construction attains it.
+This sharpness refers to uniform positivity of a local radial certificate
+on arbitrary admissible jets. It says nothing about which of those jets
+belong to a closed orbit or about optimality of the geometric hull theorem.
+
+4. Finite exact obstruction to unrestricted low-degree jet weights
+
+The accompanying script migration_adjoint_weight_probe.py differentiates
+polynomials using the displayed normalized ODE and checks the two formulas
+of Section 2 over the rational numbers. It also produces a finite positive
+rational convex combination of local jets on which L*phi has mean zero,
+simultaneously for every invariant jet polynomial phi of total degree at
+most five. Reflection changes signs of (k,v,p) and orientation reversal
+changes signs of (k,p,q). Under reversal the odd spatial derivatives and
+q switch signs together, so L* commutes with both actions. If a general
+polynomial of the same degree had nonnegative and nonzero L*phi, its
+group average would be invariant, nonnegative and nonzero: at a jet of
+strict positivity its average includes that positive summand.
+
+The degree-five invariant weight space has dimension 30. The certificate
+has 31 atoms, and the exact matrix of adjoint monomials at these atoms
+has full row rank 30. Indeed the 31-by-31 matrix obtained by appending the
+constant-one row is invertible, as the script verifies. A nonnegative
+density whose positive weighted mean on these atoms is zero must vanish
+at all 31. Full row rank forces every invariant weight coefficient to be
+zero. Thus even nonnegative, nonzero polynomial densities are ruled out.
+A numerical LP only selects the support. The script independently solves
+and verifies the entire moment system using exact rational arithmetic,
+checking strict positivity and total mass one. The full record is
+migration_adjoint_weight_probe.json.
+An equivalent check reads the rational atoms directly and evaluates each
+adjoint monomial on them. For the general geometric problem one could
+still use positivity only along closed orbits, a higher-degree or
+nonpolynomial weight, or a weight with nonlocal dependence.
+
+Source context. Miura and Wheeler ask for complete half-plane migration
+of an actual closed flow in Section 1.2 of arXiv:2404.12619v3,
+https://arxiv.org/html/2404.12619v3 . Andrews and Wheeler use the pure
+expander equation in Section 1 of arXiv:2601.21227v1,
+https://arxiv.org/html/2601.21227v1 . Sections 1 and 2 have companion Lean proofs in the independent Migration
+project. The radial optimality proof and the finite jet obstruction are
+respectively handwritten and rational-arithmetic checks.
