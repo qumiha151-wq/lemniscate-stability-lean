@@ -7,7 +7,8 @@ run_cmd do
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`ClosedSimilarity).isPrefixOf name || (`SolitonClassification.Rotating).isPrefixOf name ||
-        (`SolitonClassification.Reflected).isPrefixOf name then
+        (`SolitonClassification.Reflected).isPrefixOf name ||
+        (`SolitonClassification.ReturnScales).isPrefixOf name then
       let axioms ← collectAxioms name
       for axiomName in axioms do
         unless allowed.contains axiomName do

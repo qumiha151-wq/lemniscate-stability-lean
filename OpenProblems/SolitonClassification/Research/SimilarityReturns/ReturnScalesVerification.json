@@ -1,0 +1,46 @@
+{
+  "lean": "4.33.1",
+  "baseline_project_declarations": 20912,
+  "baseline_manifest_sha256": "9ccf01202831e26537172f016af734bc436cc0af83d9d61980914ed8940f6aab",
+  "audited_declarations": 20920,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formal_scope": [
+    "The time shifts realized along an entire continuous path by a compact spatial group form a closed additive subgroup of the real line.",
+    "That subgroup is cyclic or the whole line. Two incommensurate shifts guarantee a spatial multiplier for every shift.",
+    "An injective energy on the physical half-line with two multiplicative return laws forces their time maps to commute."
+  ],
+  "analytical_scope": [
+    "Backward and forward uniqueness of smooth immersed free elastic flows and the extension of any matching pair to the entire time orbit.",
+    "The common spatial and temporal centres, the identification of log return factors with positive group elements and the geometric fourth-root length bounds.",
+    "Recovery of a single angular coefficient modulo rotational symmetries and treatment of multiply covered circles.",
+    "The positive-time analytic continuation of a matching arclength arc, and use of constant covering multiplicity to recover a return of the complete immersions.",
+    "A similarity equation with fixed coefficients on one positive-time arc, or at arclength labels with a finite accumulation point, determines a continuously self-similar geometric flow."
+  ],
+  "compilations": [
+    {
+      "module": "SolitonClassification.ReturnScales",
+      "source_sha256": "415f04646987a261ad7222eb053b667268f3e6070ad1aecc0c2f5e4297d6fc3b",
+      "object_sha256": "07f731f02ef24811c05ac326465412070ba993c5c7142e011e7db132a397f746",
+      "exit_code": 0,
+      "stdout": "'SolitonClassification.ReturnScales.shifts_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SolitonClassification.ReturnScales.shifts_top_or_cyclic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SolitonClassification.ReturnScales.all_shifts_of_incommensurate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SolitonClassification.ReturnScales.energy_forces_commuting_clocks' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "d4a11b53b23bf46ece4bce24869d178fa078b9665a52bbe90f32b0036a2f7366",
+      "object_sha256": "63ad0c0823cb85759c9dbd4b48ee527290a7b15bf22d647e381dcb4b5d3220c8",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "e52ae03c0cf38ea5d295731391f03137a8f118347e2dcd6eb72360819da6a46c",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit_code": 0,
+      "stdout": "SolitonClassification audit passed: 20920 declarations; standard axioms only."
+    }
+  ]
+}
