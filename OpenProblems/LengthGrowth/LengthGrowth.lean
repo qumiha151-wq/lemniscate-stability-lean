@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.ForceAngularSpeed
 import LengthGrowth.ActualFlow.RecurringLength
 import LengthGrowth.ActualFlow.FrequencyBackward
 import LengthGrowth.ActualFlow.RMSPowerGrowth

@@ -1,3 +1,6 @@
+Force dissipation on actual material slices and forward record windows
+ForceAngularSpeed checks the period-independent pointwise estimate for the derivative of the actual elastic force. ForcePersistence checks the weighted finite-interval budget and positive-time product-record window from the stated force-rate inequalities. The force evolution and its rate estimate, the infinite-tail integrability and the uniform control of material positions and tangents are mathematical proofs in Research/ForcePersistence/ForceDissipationPersistence.md. General length growth remains open.
+
 Physical similarity returns and exact covering multiplicity
 The RecurringLength module checks two-sided fourth-power length bounds on the full tail for a positive continuous length with an exact discrete parabolic rescaling. FrequencyBackward checks persistence of positivity from initial time to terminal time under its two scalar frequency inequalities. Research/ExactRecurrence gives the mathematical geometric uniqueness, covering-multiplicity and physical similarity arguments. The fourth-root growth question remains open for general flows without an exact similarity return.
 
