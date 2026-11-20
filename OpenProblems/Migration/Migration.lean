@@ -1,3 +1,9 @@
+import Migration.SimilarityHull
+import Migration.SimilarityClock
+import Migration.EscapingHulls
+import Migration.SimilarityFlow
+import Migration.DiskDissipation
+import Migration.SelfSimilarEscape
 import Migration.StressAngle
 import Migration.SeparatedHeight
 import Migration.ForwardShortCore

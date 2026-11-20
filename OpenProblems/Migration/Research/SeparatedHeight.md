@@ -82,3 +82,5 @@ The centre-in-hull test with (5) is equivalent to the absence of strict two-slic
 ## Verification scope
 
 The independent Migration project proves the strict weighted inequality (2), its directional one-eighth consequence, the two-slice dilation bound, and the elapsed-time bound under the fourth-power evolution law. The nearest-point passage to convex-hull distance and the rotating-centre formulae (5) and (6) are proved in this note. The module and full-project audit record the precise Lean hypotheses and the checked declarations. [Lean module](../Migration/SeparatedHeight.lean) · [Local verification record](SeparatedHeightVerification.json)
+
+The equivalence in the last paragraph now has a Lean proof for actual similarity slices, including their physical times and arbitrary surjective changes of parameter. At every sufficiently large dilation, the initial slice is strictly separated from the later one for every rotation. [Geometric and physical statements](SimilarityMigration.md) | [Integrated verification](SimilarityVerification.json)
