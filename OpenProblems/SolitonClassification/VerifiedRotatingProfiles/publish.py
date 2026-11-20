@@ -43,8 +43,9 @@ def api(path, missing=False):
 
 
 def download(path, destination):
+    headers = ['-H', 'Accept: application/octet-stream'] if path.startswith('releases/assets/') else []
     with destination.open('wb') as out:
-        gh('api', '--allow-escape-sequences', '-H', 'Accept: application/octet-stream', API + path, output=out)
+        gh('api', '--allow-escape-sequences', *headers, API + path, output=out)
 
 
 def origins():
