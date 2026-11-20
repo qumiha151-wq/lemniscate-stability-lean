@@ -44,6 +44,10 @@ extracted assembly directory; its sibling fullmerge/ledger.json is used.
 and public_inputs. --restored selects the core restoration directory with
 base_args.json and base_lock.json. --sources selects the packaged sources.
 Use --out for a new directory. These arguments are accepted by pitch_suffix.py.
+If the original assembled runner or its complete public_inputs tree has
+been preserved, --public-pool points to that tree instead of --parts and
+--final48. This directly verifies the saved primaries without downloading
+or unpacking the nine batches.
 Verified results are saved to verified.json with per-module source hashes,
 relocated setups, compiler output, objects and the final audit in suffix/.
 

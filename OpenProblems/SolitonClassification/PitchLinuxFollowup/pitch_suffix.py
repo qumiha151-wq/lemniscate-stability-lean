@@ -58,7 +58,7 @@ def public_source(src):
     return ('module\n\n'+''.join('public import '+n+'\n' for n in imports)+
             '\n@[expose] public section\n'+''.join(lines[len(imports):])),imports
 
-def relocate_index(assembly, final48, parts, pool):
+def relocate_index(assembly, final48, parts, pool, existing_pool=None):
     """Use the verified compact shards and actual Q2 outputs, ignoring all archival absolute paths."""
     outer=read(assembly/'assembly_report.json')
     seqfile=assembly/'compiled/compile_report.json'
@@ -85,22 +85,24 @@ def relocate_index(assembly, final48, parts, pool):
     paths={}
     shard_names={n for n in initial if origins[n]=='checked_shard'}
     require(len(shard_names)==11750 and len(initial)==11885,'Unexpected Q2 initial graph')
-    for n in sorted(set(initial)-shard_names):
-        require(origins[n] in ('captured_core','actual_Linux48'),'Unknown input origin')
-        p=final48/'public_inputs'/rel(n)
+    # A preserved in-place runner can provide its full original public pool
+    # directly. The standard Actions artifact instead requires relocation.
+    for n in sorted(set(initial) if existing_pool else set(initial)-shard_names):
+        p=(existing_pool if existing_pool else final48/'public_inputs')/rel(n)
         check(p,expected[n])
         paths[n]=p
-    ledger=read(assembly.parent/'fullmerge/ledger.json')
-    require(digest(assembly.parent/'fullmerge/ledger.json')==manifest['ledger_sha256']
-            and ledger['mode']=='full' and len(ledger['jobs'])==250,'Wrong original shard ledger')
-    transports={p.name:p for p in parts.glob('batch??/*.public.tar.xz')}
-    require(len(transports)==250 and sum(1 for _ in parts.glob('batch??/*.public.tar.xz'))==250,
-            'Missing or duplicate batch transport artifacts')
-    for job in ledger['jobs']:
-        key=job['key']
-        require(re.fullmatch(r'R[PM]\d{4}',key),'Invalid shard key')
-        path=transports[key+'.public.tar.xz']
-        unpack_transport(path,key,job['transport_sha256'],initial,paths,pool)
+    if existing_pool is None:
+        ledger=read(assembly.parent/'fullmerge/ledger.json')
+        require(digest(assembly.parent/'fullmerge/ledger.json')==manifest['ledger_sha256']
+                and ledger['mode']=='full' and len(ledger['jobs'])==250,'Wrong original shard ledger')
+        transports={p.name:p for p in parts.glob('batch??/*.public.tar.xz')}
+        require(len(transports)==250 and sum(1 for _ in parts.glob('batch??/*.public.tar.xz'))==250,
+                'Missing or duplicate batch transport artifacts')
+        for job in ledger['jobs']:
+            key=job['key']
+            require(re.fullmatch(r'R[PM]\d{4}',key),'Invalid shard key')
+            path=transports[key+'.public.tar.xz']
+            unpack_transport(path,key,job['transport_sha256'],initial,paths,pool)
     require(shard_names.issubset(paths),'Incomplete shard public objects')
     for row in seq['modules']:
         n=row['name']
@@ -161,12 +163,13 @@ def compile_suffix(sources, paths, graph, lean, external, output, input_hashes, 
         checked_source.write_bytes(baseline.encode('utf-8'))
         graph[name]=[d for d in imports if d.startswith(PREFIX)]
         needed=set()
-        def visit(n):
-            if n in needed: return
+        pending=list(graph[name])
+        while pending:
+            n=pending.pop()
+            if n in needed: continue
             require(n in paths and n in graph,'Missing transitive proof '+n)
             needed.add(n)
-            for d in graph[n]: visit(d)
-        for dep in graph[name]: visit(dep)
+            pending.extend(graph[n])
         configured={n:[[str(paths[n].resolve())],[]] for n in sorted(needed)}
         configured.update(extra_arts or {})
         setup=output/(name+'.setup.json')
@@ -197,14 +200,19 @@ def compile_suffix(sources, paths, graph, lean, external, output, input_hashes, 
 
 def main():
     ap=argparse.ArgumentParser()
-    for key in ['assembly','final48','parts','restored','sources','out']:
+    for key in ['assembly','restored','sources','out']:
         ap.add_argument('--'+key,type=Path,required=True)
+    for key in ['final48','parts','public-pool']:
+        ap.add_argument('--'+key,type=Path)
     a=ap.parse_args()
     require(not a.out.exists(),'Choose an unused output directory')
-    require(digest(a.final48/'compile_report.json')==FINAL48 and digest(a.restored/'base_lock.json')==BASE,
-            'Original Linux base or final48 differs')
+    require(digest(a.restored/'base_lock.json')==BASE,'Original Linux base differs')
+    if a.public_pool is None:
+        require(a.final48 is not None and a.parts is not None,
+                'Provide --parts and --final48, or a retained --public-pool')
+        require(digest(a.final48/'compile_report.json')==FINAL48,'Original Linux48 differs')
     a.out.mkdir(parents=True)
-    paths,graph,evidence=relocate_index(a.assembly,a.final48,a.parts,a.out/'shard_public')
+    paths,graph,evidence=relocate_index(a.assembly,a.final48,a.parts,a.out/'shard_public',a.public_pool)
     loc=read(a.restored/'base_args.json')
     require(loc[0]=='--lean' and len(loc)%2==0,'Unexpected restored Lean paths')
     lean=Path(loc[1])

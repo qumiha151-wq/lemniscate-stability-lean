@@ -12,7 +12,7 @@
         "public_project_dependencies": 2,
         "setup_sha256": "fe45653024f6b224ba17e6e744ec10914e754be2aba8528a0a88ab7b3238c2a1",
         "source_sha256": "5dc682442386a921635747c38c6724b651e3332bc3693660c6adf68800345b1a",
-        "wall_seconds": 15.437999999965541
+        "wall_seconds": 16.108999999938533
       },
       {
         "exit": 0,
@@ -21,9 +21,9 @@
         "object_sha256": "1fc8bd7943fa309b6ddf49c37edc7c7bc3d9cf55faa827cf271a071883aefd17",
         "public_header_source_sha256": "76e15d322f6e26565264917034e7520abf37a9a6b30ac4a2d90ef5bea1b1b143",
         "public_project_dependencies": 86,
-        "setup_sha256": "515dd02e9f84a7ba9dc40edd1e364a4d83a3cd7cb1337b3dfcfd44e261015c3c",
+        "setup_sha256": "3304de3e51ca46bbfb6271ec57f75b1ee82af57b7b9bed800012fed43a7896a6",
         "source_sha256": "a17dbe31f858315721a8c4cfb2a2772822cc9ad7374aa62cabc44dbad80689b3",
-        "wall_seconds": 18.155999999959022
+        "wall_seconds": 17.484000000054948
       },
       {
         "exit": 0,
@@ -32,9 +32,9 @@
         "object_sha256": "199c3c9299babab373a3ba066a37f6f0818f6322f488c99b1ec7f24f8af4fa0f",
         "public_header_source_sha256": "6b18025a7aefe183f87ce482aada778780600e8a509d5448e7fa00d411c50479",
         "public_project_dependencies": 131,
-        "setup_sha256": "a23fec73874ba788ab722edb9d7037a79f0cffa9398c8265ccb4abe3fe2170d9",
+        "setup_sha256": "d6d1fed3a8fad732b3e4c0cbcb84bf8c84eeb32f84d1db0408b6e00dd5563d5f",
         "source_sha256": "60a64cb4cff6a3d8a98cb27e019565c8d19b00d39fb38047b458307975d7b834",
-        "wall_seconds": 14.609000000054948
+        "wall_seconds": 14.358999999938533
       }
     ],
     "scope": "pilot_ten_binders",
@@ -46,6 +46,12 @@
     "SolitonClassification.CandidatePitchBranch": "Candidate actual pitch branch audited for 1519 declarations.\n",
     "SolitonClassification.PitchContinuation": "Pitch continuation audit passed for 12 declarations.\n",
     "SolitonClassification.Rotating.FullPitchAccumulation": "Dense actual-pitch theorem passed the standard three-axiom audit.\nPITCH_PILOT_WITH_BLOCK_INPUTS\n"
+  },
+  "negative_controls": {
+    "no_spurious_object": true,
+    "rejected_lean_exit": 1,
+    "ten_real_grid_premises_rejected_by_global_Lean_gate": true,
+    "wrong_real_transport_digest_rejected": true
   },
   "original_four_transports": 188,
   "original_full_run_altered": false,
