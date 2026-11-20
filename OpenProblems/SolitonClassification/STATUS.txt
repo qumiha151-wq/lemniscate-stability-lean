@@ -1,3 +1,6 @@
+The two frozen endpoint trajectories have opposite raw impact signs for every |s| >= 20. For each prescribed t >= 20 an intermediate seam curvature gives simultaneous zero transverse stress at -t and t. One fixed curvature gives a complete frozen orbit whose unnormalized transverse stress tends to zero at both ends. Every sufficiently high common section realizes all impacts in [-0.002,0.52]. The kernel checks all 1280 cells and the full chain to the genuine frozen ODE. See Research/ReflectedScattering/FiniteFrozenEndpoints.md.
+SolitonClassification audit passed: 21767 declarations; standard axioms only.
+
 The actual four-component support ODE has a unique global trajectory for every initial state and constant driving rate. Finite-time evaluation depends jointly continuously on time, driving rate and initial state. The frozen seam is realized for every curvature, its raw impact is reflection-even, the moving outer oscillator has a nonsingular phase, and explicit finite outgoing enclosures give sign bounds on both complete tails. All seam curvatures reach unbounded radial stress, with uniform entry on compact continuous families. See Research/ReflectedScattering/GlobalSupportExistence.md.
 SolitonClassification audit passed: 21258 declarations; standard axioms only.
 

@@ -1,3 +1,7 @@
+import SolitonClassification.FrozenCertifiedScattering
+import SolitonClassification.ContinuousPhysicalRadius
+import SolitonClassification.CentreShotWinding
+import SolitonClassification.SeamRadiusExistence
 import SolitonClassification.FrozenKernelEndpoints
 import SolitonClassification.FrozenSeamReflection
 import SolitonClassification.SupportFlowContinuity

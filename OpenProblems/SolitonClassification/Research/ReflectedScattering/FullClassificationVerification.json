@@ -1,0 +1,1770 @@
+{
+  "baseline": 21258,
+  "audited_declarations": 21767,
+  "source_replay_commit": "cbcb4f081ca39b8537473956e61afa4a46624e96",
+  "base_root_verification_sha256": "b647e9ffe959fdb2513da6cf15719c731c8c244ff66c08fab1f7bc501eac2919",
+  "row_count": 1280,
+  "verified_frozen_theorems": [
+    "negative_end_to_end",
+    "positive_end_to_end",
+    "realized_seams_on_both_tails",
+    "exists_transverse_zero_pair",
+    "exists_symmetric_zero_scattering",
+    "all_high_sections_cover_impact_interval"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "modules": [
+    {
+      "module": "SolitonClassification.PhysicalSeamScale",
+      "source": "5a3b2d986ebe4a21a5b8b87e53793e5acd7239dc88ce6f51cd2e1fd1f8441363",
+      "object": "491c22a49497631f2d9f723f1a21d6123429cb3b0f753eb51c234090f0f83a3e"
+    },
+    {
+      "module": "SolitonClassification.PrescribedIncomingRadius",
+      "source": "d0d33368af1eeb3e24b16877a10d00a67a896db91358d704f73093d878d49910",
+      "object": "e09a970907676880d774214b0e20986c5b2292fbff530ec0d1ffbd5c63380967"
+    },
+    {
+      "module": "SolitonClassification.SeamRadiusExistence",
+      "source": "7057dbdef7794fbf4610d66452e12beb68dcaf14ec1277edd34f03785f6d490d",
+      "object": "af20738a8f6f66c1c19c93d8b741a4120148b12dcd7d348515066504cf013d81"
+    },
+    {
+      "module": "SolitonClassification.SeamRadiusLipschitz",
+      "source": "868285e0bf2efbaa9c780ba2bec5f5fef481c3f682b32fc0e20e49f1cefb802b",
+      "object": "9cb1faa20604209177768aa29c8c017d587d1a307527e17e5ba14986aa0ac129"
+    },
+    {
+      "module": "SolitonClassification.ContinuousPhysicalRadius",
+      "source": "1116e196d76c21df1e28a326bc7a36c2827ed061feb9fa9273015509412c5d74",
+      "object": "b43936b2297625b16a52d65cb6dde35758309509284b7e4cac4595521d38501f"
+    },
+    {
+      "module": "SolitonClassification.CentreShotWinding",
+      "source": "248b670722c40872c938ce0d514a4b96e30dfa20fff9caf56ce9dcdf407a689b",
+      "object": "18257cab07ef6938a38215a672781b305892911b5276f94f6bc6cf6ffa7ad1fc"
+    },
+    {
+      "module": "SolitonClassification.FrozenSeamSection",
+      "source": "d366340622f45975c27fe8a4e2aa9c8321f3253a671c0551edf5a06afcdc80ad",
+      "object": "75b8c7f9cfe8378a922fc462d122a192bb58f58c8027b2a2e7ac856eaae5968d"
+    },
+    {
+      "module": "SolitonClassification.FrozenSectionMap",
+      "source": "3908ad4f2c5c42d9f6b4857c07872c9240515bc801129af8992ef420a8af08d3",
+      "object": "bff8dd228a2c34f1b654b8afb3748fb0287d199fc8281d069441493abd50d455"
+    },
+    {
+      "module": "SolitonClassification.FrozenActualSection",
+      "source": "c6cdd05ee63200284b0eb3301506a1f69be75f02fab07c020f94704a2ef36dfc",
+      "object": "f9ec69ddc32e0ecf4bc7a4eba3743f15b547f290372247425d3ee5bee305fef1"
+    },
+    {
+      "module": "SolitonClassification.ContinuousScattering",
+      "source": "500f348615fc07a28ba51efe393406d6eb96c104a748472122ed2a9064b584c8",
+      "object": "6754da0b850c21bd14302745435130a023ad7059693ef438d297ba60722cdf4d"
+    },
+    {
+      "module": "SolitonClassification.FrozenIntegerPolynomial",
+      "source": "ba65ac671c27d06d5b2e00310cabcc28e44e50a96141479ec32eb0f86bb8d6bb",
+      "object": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d"
+    },
+    {
+      "module": "SolitonClassification.FrozenPackedPolynomial",
+      "source": "7817c560507e091aa07581e3b73c98c8c02d593b1ca2d07ee789604379ef5fbf",
+      "object": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb"
+    },
+    {
+      "module": "SolitonClassification.FrozenPolynomialBounds",
+      "source": "4967d65d7094f0fbf94fba9a36ce0bbf32fa73bc6f1c7e5bd023bcacc3df0db3",
+      "object": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c"
+    },
+    {
+      "module": "SolitonClassification.FrozenEndpointError",
+      "source": "3ec6ed3af5fd392d1c671275292e62d85cbc2c612273ecb109fd6d374871bac0",
+      "object": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba"
+    },
+    {
+      "module": "SolitonClassification.FrozenEndpointSigns",
+      "source": "7fb7cc4dd6dcc45ac3949c940b1f0d254bae84837405bfd0fe6532cbbb81c794",
+      "object": "dd6cf00b08794a6e0564801180c782c5440e65ab46de2b90f7aadd35997f83b6"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicRow",
+      "source": "ffffa5da691295728885521c49ea36a43fd55cf066bf2124db6a75ce992f95ed",
+      "object": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2"
+    },
+    {
+      "module": "SolitonClassification.FrozenPackedRow",
+      "source": "8cdfd2f36a05c813f5af4a2cdcebeba8ce5513d4520e94222ca55a8a290368fb",
+      "object": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109"
+    },
+    {
+      "module": "SolitonClassification.FrozenRowInput",
+      "source": "eef3945a2121ce83cf42bd08470738bb63db29db74aaa7cb37e59fa697da9541",
+      "object": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49"
+    },
+    {
+      "module": "SolitonClassification.FrozenWitness",
+      "source": "fe1281b497a7e06bef69c496e264b2da61f160796c6e90546370388f9cdce6a6",
+      "object": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicChain",
+      "source": "3ed8bc868ab4c9c1734166aec8385693fae5e31fb3bd271a5fedc788c71a8da3",
+      "object": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d"
+    },
+    {
+      "module": "SolitonClassification.FrozenChainCertificate",
+      "source": "085c1b34c4de83822d92cdd70e1307620253e8f43a5163e8b85b4c196f4cef93",
+      "object": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324"
+    },
+    {
+      "module": "SolitonClassification.FrozenEndpointDecode",
+      "source": "c80a039ab0c771da68fc566b4ee3057295368b67d47d4a12d186d330b4c6ce6a",
+      "object": "1a7f8567b6f54eab0d749363df62e6b3ce82e1d1a7616d0519fd4109d18c8b80"
+    },
+    {
+      "module": "SolitonClassification.FrozenEndpointConsequences",
+      "source": "ee7a3ef13037188880b69e3e5772aa90b4b9a697910d959d2ad6467580f5330d",
+      "object": "b410d454e8f134697a564b014813d0fd94e40c4786c4b85c5baae1bca220a364"
+    },
+    {
+      "module": "SolitonClassification.FrozenShootingConsequences",
+      "source": "834980be63a8c885002c093c6352c254640e568cd170f0ec5d162f5725820f85",
+      "object": "b866343807399ce543337cd86d04d0d5579e72c40ae556e722e7ffc6ad6d50e5"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative00",
+      "source": "7656ad44183c6e0aee10120732f4783459631f302acf1a742ee73e012d29b2c8",
+      "object": "545a47e246274083e19bfb3588d2a497bd72f1f6f96102009efdce360b01988d",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 80.701,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_0_16' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative01",
+      "source": "84723fcc86551c0cfb20cd300b3bdc0744e327155ec2543b8076f145fd3be3d6",
+      "object": "1b177432b6c5b43ca96bb39e6066c42e68e9f7e0c2cdd427472b66a82b8b3daa",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 82.319,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_16_32' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative02",
+      "source": "dfe6c9ff3423a3cf905feceec5c6a8d28609b263a47d7f485cb99f45c5ba9fb5",
+      "object": "185954dcb62e15ac490f81459ab9a08035c3f61984bc3b9c555236efbdd077a7",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 96.164,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_32_48' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative03",
+      "source": "22b0702bb4e21d3667cef21c3021720559eaeb926beab22f2c664ae36843da07",
+      "object": "3a524d933e9d7391b278874329085d6b44387367dbbe0b7cd334b85bfbc0d242",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 98.078,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_48_64' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative04",
+      "source": "094e83946ddc701f57df630ebabbb65e37f11b6a92e24d33a8cda89cf9acde28",
+      "object": "67ca4caad0f44a77fbf2a3df8d8d3196cbeec9e9d3b19af4a19aaf861f87ffce",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 78.966,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_64_80' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative05",
+      "source": "2e171dbc2df5e128b907e24aff9cfb8b1306ba811a8a67119d92bef2737ff2e6",
+      "object": "9af2aac2170f0d109fa6af7f7bb650784c87401c7ba6a15dc531c7561630aef0",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 79.617,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_80_96' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative06",
+      "source": "4184180117b66c68d7d75cdddcb0d7b9d5643ebd63b9da76da24ac79fa1cc4ba",
+      "object": "2f114826b83860ec6795bad21fc519fd736ab0a095b46c09e2fab75eaef6d146",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 75.343,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_96_112' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative07",
+      "source": "7376b14f8e60e942a6ca41f62d377bc928046f690d7b569baab2819ffc158024",
+      "object": "453bbfe0a524d9ad32945f80855eb8ab0123cc39586f8f4ba9e2f4ef09b19844",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 76.007,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_112_128' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative08",
+      "source": "dc914c3e7e3c07666e558ccdf549fea681308f5524a0e1fbd7410782318b7b0e",
+      "object": "ef72f07715de1663ddd4979f55455c7dc888284854cd29c2f260ad271475aaaa",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 78.354,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_128_144' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative09",
+      "source": "02c1466861c11fce06c196bd221f2754dc2b1339449a89bd9d701e21ad5bf26f",
+      "object": "2c4aa90db49d6fab2908631270e9a6717b9b327b4604a87264464b6553c0974c",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 77.859,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_144_160' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative10",
+      "source": "4b306774b6c1c3e9df11837df272f257ff63e4bb8c2523542820ee8c14da26d0",
+      "object": "0ec0f572c919d2187f1cfc82b166a3d8aa09548a80c2106d455ecd06769a3445",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 85.196,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_160_176' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative11",
+      "source": "4ffea4c0fc2d1db3f2350df6cdf8a6b7ad484065184025a95cd55f10f76c322d",
+      "object": "57ba962132c10d890d13e2fecc226e14450775882d6cdd4ff8a532b0787e2efb",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 85.742,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_176_192' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative12",
+      "source": "2c205f6bf9bcefc434a508702ab2c6d903803b8ccfec5535ed12b68063c2ca0b",
+      "object": "24cfbf73299e6a7b68f45a409d275829fc816038eb8fe6a9a5e3bceff67c1f0c",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 87.88,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_192_208' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative13",
+      "source": "69b6f736cb5430bdd1ad8a6de61dde6ca51ba632481859057e1f6e1be306eb05",
+      "object": "719e326840c75df76b91b03b41762d9a17cc2fc3f72a92636d999ae60f88fa4d",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 88.655,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_208_224' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative14",
+      "source": "2d53deb4fda8cb978c637422ac83fcd9d96c3d606fdcb38e1d06d85a58db86e0",
+      "object": "1182d0ed15f6d43c2db42c7543a5f20722bb6198438f9a054ad55f4f78cb4be4",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 93.29,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_224_240' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative15",
+      "source": "9e93afa21b64f167c5850776568efc80d4679dfc1294f36f0804a0a2183ed290",
+      "object": "4eba93dcb310087e14c4673338746b48cac0a65fd9bfdf90d6c8386ba428fb8a",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 94.27,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_240_256' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative16",
+      "source": "2075f11efe5f4df442ce068d489acf05e469b606a2a8c119de1bbaa5f08495cf",
+      "object": "74e23aa49faa8c75b5d910c6e7ee8af4f379d7e79632ae5c59bbb6420fea0edb",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 95.683,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_256_272' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative17",
+      "source": "83ece62cdfd73c19171f5e84242b53f56073ef8e79a779e8f8bf3b3ff10dbb6c",
+      "object": "58c014c65ace392b3965f456ddc16cf638017555dc4c29954962830872c3a749",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 93.524,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_272_288' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative18",
+      "source": "8654a294d44f0cd5770a9a2331da77731bdae34e68a55b7f0995be6a376c1004",
+      "object": "7213c65298597bb56162c0d4c3c52354df40b597078ee6705adb354923f29af2",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 83.683,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_288_304' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative19",
+      "source": "ffb4ca2ca934336bb5943bdfc1f0e531fe99cb60683774593a3fb4b114d631d7",
+      "object": "f44f60c24bfc8aa5615b0c5112ed9bddb94ce50c5e026d03ede329cf25426249",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 85.82,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_304_320' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative20",
+      "source": "b66125a93866a5b703b8d690d4cf229534841218f10a6b9c9abec47617f985d6",
+      "object": "70a50ce50364a48463e111d024fecae2b95dc4d6c334b3ce04ade25693b86fea",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 84.207,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_320_336' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative21",
+      "source": "7bff7fc1343250af0bfeee1085d02e035825657b8943998eef9e9a7975cc899c",
+      "object": "a7d01e87c834db92cfb7641bc24398de378867afcfdd7d0907ef3a66dcd9bf97",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 85.536,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_336_352' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative22",
+      "source": "30837af5840202482ad0c627bf88f38e852caa7c271feffe842f7ce8642d1e8b",
+      "object": "f91345998d32c6ba340f843635db4dd3e1373891f9993e6aade58399bbe370e3",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 89.361,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_352_368' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative23",
+      "source": "4703ac587ed403c118ff3b030e77f21fe801a9fc79c1c7f9f04d4c60944529b8",
+      "object": "71563610e38b6831fe44bfb401d0531f58be6593730d8137f588570655633ff9",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 90.689,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_368_384' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative24",
+      "source": "88f726ffbeb7e22bebf6d2ebc0dab4b1c31be188622f79d6f93815afdc239e18",
+      "object": "00c236e59ba5558a8069f0af25a3eb5c84bd5899213d0f8761044a50056f79c7",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 92.298,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_384_400' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative25",
+      "source": "a3eac3a4ab9cdaef3ad9f2a82eb7a0e33125f979de70ea1fcb0c0e64255f82fd",
+      "object": "d60f563186c37952ffa52319d5591c2886b7006a853921e16e4324f4df07b648",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 92.713,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_400_416' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative26",
+      "source": "c33e3e1cd14ce98e79086dc1b89a6ab193d04e6abcc5f0b6176723955e8dde1d",
+      "object": "2caa17d14f31bf999d4041cd9218ecf04eafc0094b2b904541998000b1d06c9d",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 100.453,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_416_432' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative27",
+      "source": "a83df0607ef5e4a2f130f2b4f432ea39e3324c56f4fedf55ad81f110536ab01b",
+      "object": "559928bc9efc7a575bbf80ebffd3d7f85ff2d026800406006daf8144bbee9fd9",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 103.51,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_432_448' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative28",
+      "source": "4bed4767070be8d5d651e1ef7ce5f2158c834b27bbcd7093196b0bf0dc7e03f6",
+      "object": "f265060e59f6a3c2a5d72e6b0034071be8a52cdb12ea59427084645c6da2ecd5",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 101.911,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_448_464' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative29",
+      "source": "aa7191bdab2d08300b567cd9fecdb2ad01a855333a2b15f7b168bc92c388cce2",
+      "object": "23b7eb8d181626e6c169f16e2f18dd3a25ed45e6a56d15897c2f52d46a8ca2b8",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 103.151,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_464_480' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative30",
+      "source": "3b03f90fca857ddfa11db3d0e3baa673a6a1b2bedb499c149fcdb34ac4a18d36",
+      "object": "b7d148940d7791ce9b01bb2eb4dfee26c4790ebb5ff50a16bac56f7095403403",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 70.032,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_480_496' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative31",
+      "source": "4a4e8d375da0b34f5e1d32f23a8ee2dd1d8c8a40a6cf0d4e66a994cf5349f25c",
+      "object": "4a18e540bc6329fe7a8fcae2b62ca4e95ecbc2d2f17214b1aa8ef19b3cd8a7b7",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 77.031,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_496_512' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative32",
+      "source": "6f86835b8d353ca21ef6cc6fb55d406fb05388875f2cf8d036ab265aa780f230",
+      "object": "44ed3ce9b3277e5b92730ca88600e9314dd8f2a54449e8f428ed216cd030bf3f",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 76.599,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_512_528' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative33",
+      "source": "3f94c3763814592b8a298dd6d7e28188f61c1fc3f66affad9b9f3f24d68da92b",
+      "object": "16aca1eaa37d03e50b48b9ec1f236ca351cfdb05a611005a2a35340c54bfdecc",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 74.758,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_528_544' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative34",
+      "source": "1e078abba27bf2cc5cc17da8da5317c07b35a83ae9a3e6c08cb5bbe85af2114d",
+      "object": "dc8eb40844ee7e61db6a5ca4c050eab45f31c737afbd9e47f2f473847a36326d",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 80.593,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_544_560' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative35",
+      "source": "802890c90615f43e50e58da73a71fc6d133356a6693b6f52ea5bc160bcbfae79",
+      "object": "0767f6ff226e21ca06030834b1148ad0d050b78bb10b158659ed2718d7271ea8",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 84.252,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_560_576' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative36",
+      "source": "d970e4aa87c16adecf18a6a01b3f259cd104174d8e2c31dfdb834f778a6b21eb",
+      "object": "cf7968da32f607c9addc6edbadcc031623691c4ee31330b4afaa131e07f20a6b",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 85.404,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_576_592' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative37",
+      "source": "60341a2e508b13483d96376664308f99e1eb89bc48fbb1b61596010a8c83b47b",
+      "object": "7a7f20da09a01f6b109e5aad2faeb8ecc584f2ce30e1a65be2e4305906c1a55b",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 83.726,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_592_608' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative38",
+      "source": "5ccac62837fa4817ebd75134c55e6843dd6fbd38902358069712388935c7439f",
+      "object": "b63f494e3d7349e2bdd76e708b6b904740bf04c3d100cd5f0fa63bd0002c4ebb",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 74.573,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_608_624' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicNegative39",
+      "source": "5a585b21c5bdb5c1a1aaa8f08ec66f6633bfe62be67b1d40ae41c09f2561384b",
+      "object": "819c3fed1950a8d27d3251736419db282ef230da7c03982aaf28a0ff62379931",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 79.679,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.negative_transport_624_640' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive00",
+      "source": "35d2a174439e2ecd011ad3cfdf2cc07f2d0239cd6e1293a968dc2a3e0b245835",
+      "object": "16bb4316a4d5e816577e1ac6fb2812a7cfce16ccb858bfa0e123e58af68f84d3",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 76.748,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_0_16' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive01",
+      "source": "0e7f47dfdc54f256faa32d7046e52af96105f6e8c24bf0c8ecf01099ea8742da",
+      "object": "f367bb683f575e0d075018ab23427cdfd0766282484f39c0cdbaf45d049eff36",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 74.856,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_16_32' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive02",
+      "source": "5308e472ce321d819708bda476c8d7f81742cff1725287fad935b8080befe34b",
+      "object": "64edec03f2997a694d71a93fc1df993deb709a5272dc1c1201f20492e94a01d8",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 61.465,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_32_48' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive03",
+      "source": "b4e38d2e5f037a4a2ff2372ea855a1834416418645396530724a3ddfd56502bd",
+      "object": "6cfab64d41da27109fa456caa9edf7370f19d725976cceb62535389bdedf05fd",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 79.598,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_48_64' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive04",
+      "source": "96737046e0c5951a67930f3e1108550a1a61ed042dba0115a676df84c532effe",
+      "object": "5c30a2bafc1effbf4c229f7262da6885c57469c36897ac75ed5b99bf3af2de3e",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 80.357,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_64_80' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive05",
+      "source": "b347efd7b6dd81da6b603b888f18f55e09d91e8694925f215fd1335cea8392a1",
+      "object": "20ab8e67a96fae429efcec73797783d2e220e97ff0c1ea5d2bdbb9971ede2c70",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 81.265,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_80_96' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive06",
+      "source": "df971cf493b73504fd2f7d8761a2d5f9ccc3fd0d700d410139a2e951fbdd2bfe",
+      "object": "4f79a703737a089a8a197210bbf6d495cfdd7b9f548724ac84c542b536d399a4",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 78.046,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_96_112' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive07",
+      "source": "01982586c12019bbbad24fe013a172e77cd2d93ef6f65dc66e56e186f6270513",
+      "object": "2872f6ee8465395c8521b317aaeabe812f1d56afaee2564d15f3a6f8385f4349",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 77.938,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_112_128' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive08",
+      "source": "bf6b4aef43a639f564694666a4a6544f227eff81c4b2321e0ebf77a419197aac",
+      "object": "b7a700ef7ac5d9244d224ed79dd9598e0838c48b59f6280342a5fac8c75998dc",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 79.079,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_128_144' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive09",
+      "source": "19400698cdb1b43f2dea533825892f16e9b0c496ee6cac1085aa0495c659157c",
+      "object": "3fdd278387b365c756b01a1b1098e277ea4b45b939e11692e0723cd666fe8102",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 80.105,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_144_160' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive10",
+      "source": "c88832a82367eca361b41ae59057e51e1bfe9834cd26a3c7275361accc0a5d54",
+      "object": "05beb3a8d6cec82c488fb0d7e452d0572971b374fae26d65dfc2938bfb87f57a",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 76.271,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_160_176' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive11",
+      "source": "e71e8d2776dba3cb3ec903a41f90294fcc1701f754738362d22d4173d7dac56a",
+      "object": "099af120a1053d29d48559db7404d8bac1360f72d50da67a423579512cda3360",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 74.159,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_176_192' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive12",
+      "source": "f0e1ec5cdae2260f693d302af48850a0fcf4c2096d821b8f4db7ba1619984849",
+      "object": "f169ce996eab8db8e2a95166803d0e181cba23957a1949a1ca497eb96ce2a65d",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 74.668,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_192_208' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive13",
+      "source": "546673a01b694143fc64ee99e4185b36e95418a7830a49b41c145c73d2f4a4cc",
+      "object": "7acd7c9330e1d44bd454b90b731f1bf2783e6bece8ce6d22e8c47f68f5b9a65c",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 75.653,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_208_224' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive14",
+      "source": "b30b26011c2f7316398dbede216d12be67dd61495a8688e7c7652135a1717563",
+      "object": "bad91b434d99adeea2bcbc0daf28af302b6db1ce46133e215e4c3a9b61f4e6e7",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 66.624,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_224_240' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive15",
+      "source": "1e391ab8ad4ab7365af3b8082b2d06244293ac8134da7f258abd62153fe1affd",
+      "object": "1e00f770de992b5e30efa2bac647ea9458abcb43ee4e7e336e97c5989385e55f",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 71.439,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_240_256' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive16",
+      "source": "1529d59d9d8736815d7acd347c7de1875fd8807cc90e3a15ebc07d0448cf108a",
+      "object": "fb2f50057fb0dd5382e3d48823f21d8bffadb97cd5e55fd87b4afa931b14e2d2",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 75.165,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_256_272' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive17",
+      "source": "40458d9cd7ce6599403646ca8dfa2bb18b3c916a6245020e6b8d2b2fa3874ede",
+      "object": "a88595f97a5d0429a789bc4ecc3ea281f14c4b6a6a057fc8c34bed6536f54727",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 74.804,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_272_288' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive18",
+      "source": "b47b39dd6222041eaaa2e0fab5c33fbf483ffd7354db3a162f2031ccd7ec3697",
+      "object": "4c460707e5de0ae95bfe5b896c080cc3c5b820a4f2f4c9a83cabdc06531a7653",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 70.882,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_288_304' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive19",
+      "source": "d2961865e6f155f5e88a57a3be9d062aa1d374c03b365ac0bcaff29030122c92",
+      "object": "8b03dc37b5f5ae3425d82dee27ba7f6d632cd469cd56904077f900fa0ad31019",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 72.174,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_304_320' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive20",
+      "source": "cbf2574c3e100eef0b729eed005a9272676f6c0ba3d8187d20a5a81d3ba05041",
+      "object": "5bb4ce454d355811b2e901ccbc1fa6078494bbd0d8b4001253f312ee40716439",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 73.061,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_320_336' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive21",
+      "source": "ef4fe3eee0ee9fa599b7d46b3daed94d44c5f77cc0f7abde3c1c888412574a40",
+      "object": "cddd8b38df7f6a4edc58c6e3f453944215d1e1eb1ca37ef4fb55be81d9b60306",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 72.241,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_336_352' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive22",
+      "source": "8aa6f2db13e8aca2b42e738c8284a3190151a9bd0f778f42c141bcabd7d10333",
+      "object": "abb361b1c89fca18b2229070b8f044b79fe6867e3f1f22cfb3e5f4084b55a52b",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 69.668,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_352_368' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive23",
+      "source": "50e110925f03ce2d61da8b80ae744a672a4e6b43771ccdb1713a310eba7c2004",
+      "object": "a266ef9aca0361a2a4833637a862b01179fef03b9636308d4c0927f3e2a365ee",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 77.473,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_368_384' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive24",
+      "source": "4c633baa0a15b39842ec0afe7c8fd6b2617963e921f7400426065b9cb9326010",
+      "object": "a9099a8380e7c8e93a408d05305ac430d85d8a90481a2a47daa2dcb62dc5ef92",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 76.205,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_384_400' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive25",
+      "source": "645177fba057e7f86b59db0bae67810c7cf01106f6bdb23c8759045d9a92f00a",
+      "object": "4043cf653633d1cba03a86be9467d536f88fb50e34ed9cb13a7d61401b25c32b",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 77.119,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_400_416' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive26",
+      "source": "3171a4a7cfd1d3466cf55e720483e5df5be3b2ba192db265d1606fc92f7aa6db",
+      "object": "659fb07dc800a9ca57bb01529fda131c34274e8b2dab26f9de1f31c873c2a8a8",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 69.032,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_416_432' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive27",
+      "source": "acf33656aba8d2e7e0bafd474d1d52ed0f531617d04adf17cf31c05b82a7bc7b",
+      "object": "598a7cbc096a04694408e3cc60a47c0cdd93d520bd3c22c67419384d6d1e84f2",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 77.133,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_432_448' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive28",
+      "source": "390ac3ec944d6513fe7dcc842f018a4684cac776f092988d2184783c64160ddd",
+      "object": "da182571c048b94d1852be24ad4b79c751c2254ccfa848393d9866961b6e8fa5",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 90.327,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_448_464' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive29",
+      "source": "517a177abd72054030618f54698e62597ecf9395d97c52a3bbaff6474d678d29",
+      "object": "82d397aeabfd77dde6a5a01e3674e71a6a3ef69d1058e24191ac7d2329318ae0",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 91.677,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_464_480' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive30",
+      "source": "fe61dc437f4cfac6160e4046965a6020b1f494a82c8acdaa72f01227e374746c",
+      "object": "0502e3fc278fc0273ee26cb49fd82bbe0048b3d61b2bf6e98c31a9f13528158d",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 93.445,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_480_496' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive31",
+      "source": "05de2c558cb54126ccc10e53ba0341a512de3b30e0c311d28133b972a5a7ae8a",
+      "object": "0b957acdba41c9c9d062230684c799c7d07b3f866aca1caf3e069225c6fd6d13",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 72.244,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_496_512' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive32",
+      "source": "ce661bcd533ae2e43e926a3054c054edd603e40108a620f4bf78af12eafeeb39",
+      "object": "5c36097163567db19c8941225e54572c8cae2a61c4f361c285b211b8a791ff52",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 72.098,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_512_528' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive33",
+      "source": "24999be1c4c67015d00b2ef35233cbf63b9d80ee37b45be351fd5f4d72fc5a88",
+      "object": "bb8e824b4f2ea3e2f8b3c957dcdfad7b7867f75b764ebc6eaf44fa3bf17ebfe0",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 72.757,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_528_544' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive34",
+      "source": "a28a120360314a33e63bbbbfacd0728353078e88401aee0cb234aa25f29e0533",
+      "object": "ea639a6d2a26bfa73d14216053376457b7bcf8f318ec4a3ac777d76cab7ee65b",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 71.975,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_544_560' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive35",
+      "source": "e6418e832b02b5f93f67e5b40bedd06e417c552522bdd9d446e793c37736955d",
+      "object": "924fc6e554faf97fc453904fd572493831e0ffa99e5aa636233d5ffab5895f81",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 65.166,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_560_576' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive36",
+      "source": "6d28f7731fb5cae5b4b1add8e3c659513ca52da17b1ee1299b250dc56ac15b50",
+      "object": "c90c817b37de3b05b0a6a21967bc5ecbf3861f150a856ee315055a2c1a26507f",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 76.048,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_576_592' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive37",
+      "source": "bf6a029dfef0580716b04726f2284c51b3a59e0d44a97331322b80602e58caa5",
+      "object": "7debaadf722a98f7b05363d53efef16d2ac86c2e6c3da8a5340f00c79ba9d0ac",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 81.125,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_592_608' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive38",
+      "source": "19cf55470f1800ae14f9f455b0fc61b10c1f586287ee56bbe0ae2bd422ba500f",
+      "object": "e41a8173576edeb535754ad77ac42d95e71315c7975f7f8168a8b91b5fa29e85",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 79.279,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_608_624' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenDyadicPositive39",
+      "source": "ac3bcbb88d622cc6552c46246d388aed1f0ff89b776aaa4ef8ea6fd298a08211",
+      "object": "ce614be8e515989ebc8fe03364edb1b13dafd3bf4ec90fbc8907347ac12f2efe",
+      "inputs": {
+        "FrozenChainCertificate": "683de8a3ab6124a5a46ac492546d7464ede7e5154155e847e174557a7346a324",
+        "FrozenDyadicChain": "d81c069a8bbaeee8856eaf2166a5ccae7c22ce9f69011c33db48b4354d8edd8d",
+        "FrozenDyadicRow": "f9d6afc966090c6f4ef1cc35e861c79f1f3c593acbae564df3b1017bd3c4afd2",
+        "FrozenEndpointError": "a89ac4312f551b7fbf6740d4af69d51baa5ca033e5f02a264f89867b00bccfba",
+        "FrozenIntegerPolynomial": "b014833dae3dc80d2d743799e202b1140883f990bc88c9fff7b5b7862757067d",
+        "FrozenPackedPolynomial": "d8ae50ff195f2da0dcb6c1f1b46d9efdc1391cedcc2c83c0c8f3a2f96c4b04eb",
+        "FrozenPackedRow": "99e2bcd693b4fcbcc8d900277fb2f4cd16be9a89ba4d20758347b63054fda109",
+        "FrozenPolynomialBounds": "49638583549f3bb77339638e22134e399237bbfa4b8e36f5bc9c62c03d5db18c",
+        "FrozenRowInput": "d9ee0dbfe5ec0a49244a99675a13a49acfbdd3892d9b7cecde62c4d29bcf4c49",
+        "FrozenWitness": "eab61fb785a3bfb0bd6c6f42f67f2b6439bc5f65946c8a9431fb6ab0156d8740"
+      },
+      "seconds": 85.332,
+      "kernel_decide": true,
+      "printed_axioms": "'ClosedSimilarity.FrozenStress.Endpoint.positive_transport_624_640' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenKernelEndpoints",
+      "source": "8deea03a6705e3775ce14a867e52b9771d0b3a90a5749a4bd0068a402187582b",
+      "object": "b015f2e9c6fc3cc6ba151851374afcafeec0aedede40a95b5b8e69e00771e7df",
+      "seconds": 27.018,
+      "printed": "'ClosedSimilarity.FrozenStress.Endpoint.negative_end_to_end' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.FrozenStress.Endpoint.positive_end_to_end' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.FrozenStress.Endpoint.realized_seams_on_both_tails' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.FrozenStress.Endpoint.exists_transverse_zero_pair' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FrozenCertifiedScattering",
+      "source": "8f8e1d4c6958458d1c4113e2e0e2a41f36ed2364349f4fe5842f97361f930053",
+      "object": "e1688228ff882e9c5e08b391460e928a6661081703569fce31a0e7cca2b86634",
+      "seconds": 25.467,
+      "printed": "'ClosedSimilarity.FrozenStress.Endpoint.exists_symmetric_zero_scattering' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.FrozenStress.Endpoint.all_high_sections_cover_impact_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source": "4441948d9a93a602c52352a5e76cd449f93af62d4c05294a2cf45f48ccba70f4",
+      "object": "4a63a87f86b5fe618a48bb234ead39822b3d80cbaf3e6d0a949ddac47816290d",
+      "seconds": 25.56,
+      "printed": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source": "e52ae03c0cf38ea5d295731391f03137a8f118347e2dcd6eb72360819da6a46c",
+      "object": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "seconds": 26.941,
+      "printed": "SolitonClassification audit passed: 21767 declarations; standard axioms only.\n"
+    }
+  ]
+}
