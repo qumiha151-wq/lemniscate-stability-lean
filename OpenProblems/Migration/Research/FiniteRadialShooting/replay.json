@@ -1,0 +1,40 @@
+{
+  "precision": 144,
+  "integrator_order": 3,
+  "nominal_signed_step": "\u00b11/64",
+  "original_boxes_verified": 320,
+  "interval_subboxes": 320,
+  "fully_covered_product_boxes": 256,
+  "outward_curvature_boxes": [
+    {
+      "center": [
+        "1/8",
+        "-1/2",
+        "-2",
+        "0"
+      ],
+      "radius": "1/128",
+      "signed_step_indices": [
+        -128,
+        48
+      ],
+      "step_denominator": 64,
+      "strict_det_margin": "1/1024"
+    },
+    {
+      "center": [
+        "1/8",
+        "-1/2",
+        "2",
+        "-2"
+      ],
+      "radius": "1/128",
+      "signed_step_indices": [
+        128,
+        -32
+      ],
+      "step_denominator": 64,
+      "strict_det_margin": "1/1024"
+    }
+  ]
+}

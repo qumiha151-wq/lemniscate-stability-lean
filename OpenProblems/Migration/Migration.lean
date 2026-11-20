@@ -1,3 +1,4 @@
+import Migration.RecurringMigration
 import Migration.SimilarityHull
 import Migration.SimilarityClock
 import Migration.EscapingHulls
