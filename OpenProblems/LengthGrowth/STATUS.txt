@@ -1,3 +1,45 @@
+Signed curvature moments and quarter-power growth
+
+For arclength ds, signed curvature k, length L and bending energy
+E=(1/2) int k^2 ds, write G=sqrt(L) |int k^3 ds|/(2E)^(3/2).
+
+The Lean theorem in CubicHalfThreshold.lean gives the fourth-root length
+upper bound when liminf G>1/2. The proof obtains a bound on the actual
+energy-length product from the signed total curvature and the finite initial
+time interval. Every failure of fourth-root growth would force arbitrarily
+late, arbitrarily high records of E L with G below 1/2 plus any prescribed
+positive error.
+
+When G>=1 at all sufficiently late times, CubicMomentGrowth.lean proves
+that E L decreases on that tail. CubicMomentDissipation.lean gives an
+exact identity for curvature oscillation and its dissipation, and
+CubicMomentDecay.lean proves exponential decay in the clock int L^(-4) dt
+and convergence of curvature oscillation to zero in physical time. The
+turning integral is nonzero. In particular these conclusions hold when
+the curvature on each late slice is bounded below by minus one half its
+root-mean-square value or bounded above by plus one half that value.
+The bounds apply to immersions, including self-intersecting curves.
+
+The smooth circular limit and its coefficient 32 pi^4 n^4 in L(t)^4/t
+use the published circle stability theorem. Research/LengthCurvatureSkewness.md
+also gives analytic estimates at and below the half threshold and a
+turning-number-dependent gap below the circular threshold. The scope of
+the Lean calculations is recorded in Research/CurvatureMomentFormalization.txt,
+Research/HalfThreshold.md and Research/CurvatureMomentVerification.json.
+
+For an embedded convex time interval, monotonicity of area times squared
+bending energy also excludes nonround curves returning to a similar shape.
+SignedAreaVariation.lean proves the signed Green-area variation directly
+from the position equation. ConvexAreaEnergy.lean keeps Gage's geometric
+inequality and the turning-angle identity as explicit inputs. The full
+analytic argument is in Research/ConvexFreeElasticFlow.tex.
+
+The unrestricted upper growth rate remains open. The moment condition
+can fail on immersed curves with opposite signs of curvature on
+different arcs.
+
+Earlier results and verification history
+
 LENGTH GROWTH: COMPLETE STATIC COERCIVITY, PARTIAL DYNAMICS
 13 November 2026
 

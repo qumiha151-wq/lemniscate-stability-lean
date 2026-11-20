@@ -1,3 +1,5 @@
+import LengthGrowth.ActualFlow.CubicMomentDecay
+import LengthGrowth.ActualFlow.CubicHalfThreshold
 import LengthGrowth.ActualFlow.JellyfishGrowth
 import LengthGrowth.ActualFlow.GrowthEnvelope
 import LengthGrowth.ActualFlow.SharpCircle
@@ -101,4 +103,11 @@ RelativeEnergy gives exact Z=log E(s)-log E(t), E(s)/E(t)=exp Z,
 U exp(-4Z)<=E(t)^4(t-s)<=U, and normalized energy loss exp Z-1 on 0<=s<=t.
 This is exact window accounting, not an ancient-window or clock-inverse
 construction. See GrowthEquivalenceScope.txt. General growth remains open.
+-/
+
+/-!
+For the actual closed flow, a signed cubic curvature ratio with liminf above
+one half gives quarter-power length growth. When the ratio stays at least
+one on a tail, the curvature oscillation tends to zero. See
+Research/CurvatureMomentFormalization.txt and Research/HalfThreshold.md.
 -/

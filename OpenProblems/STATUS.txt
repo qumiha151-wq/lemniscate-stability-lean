@@ -10,14 +10,20 @@ x-coordinate tends to positive infinity. The complete numerical and analytic
 certificate, including the final existence theorem, passed Lean in run
 43214648337. See CentroidEscape/FullVerification.txt.
 
-LengthGrowth proves a sharp universal lower growth coefficient. For each
-smooth closed immersed forward normal flow, limsup L(t)^4/t >= 32*pi^4.
-A once-covered circle attains equality. SharpVirial.lean gives the
-instantaneous inequalities E L >= 2*pi^2 and D L^3 >= 4*pi^2 E^2.
-GrowthEnvelope.lean integrates them in physical time. An eventual
-fourth-root upper bound for every such flow remains open. For one given
-flow the bound is equivalent to positive lower time density of containment
-in moving strips of half-width R/E(t). The direction can vary with time.
+LengthGrowth proves the universal sharp lower coefficient
+limsup L(t)^4/t >= 32*pi^4. The once-covered expanding circle attains
+equality. The fourth-root upper bound for unrestricted data remains open.
+For a given flow let G=sqrt(L)*|int k^3 ds|/(int k^2 ds)^(3/2).
+If liminf G>1/2, both the quarter-power length and energy bounds hold.
+If G>=1 eventually, the normalized curvature oscillation tends to zero.
+The proof, quantitative bounds and the distinction between checked Lean
+statements and applications of the circle-stability theorems are in
+LengthGrowth/Research/CurvatureMomentFormalization.txt and
+LengthGrowth/Research/LengthCurvatureSkewness.md. This includes every
+flow whose signed curvature eventually has one sign on each time slice.
+At fixed turning number one the Andrews--Wheeler jellyfish have unbounded
+asymptotic coefficients as their symmetry order increases, while every
+individual curve in that family has exact fourth-root growth.
 
 Migration proves a necessary energy cost for the whole curve to move
 between opposite open half-planes in time T. In particular,
@@ -28,15 +34,17 @@ class. Novaga's preprint arXiv:2611.07242 excludes migration when the
 initial L times the integral of squared curvature is at most 4*pi^2+8/3.
 The unrestricted question remains open.
 
-SolitonClassification proves that every noncircular closed expander of
-turning number m, dilation rate a and rotation rate b satisfies
-E L > 2*pi^2*m^2 + 8*(b/a)^2. The two signed 4000-step paths for a
-specific rotating solution passed their individual shard checks. Run
-44650976356 checks their assembly into the concrete existence theorem.
-CandidatePitchBranch.lean deduces a dense set of positive rotation
-parameters from the same five shooting estimates used for that solution.
-The complete classification remains open. Andrews and Wheeler's preprint
-arXiv:2601.21227 constructs infinitely many distinct homothetic expanders.
+SolitonClassification now provides a closed noncircular free elastic
+flow with genuine rotation and a dense set of positive pitches of closed
+profiles in a nonempty interval. The no-hypothesis Linux results are in
+runs 44650976356 and 44657378217. VerifiedRotatingProfiles/README.md
+links to the source packages, audits and a permanent GitHub release.
+The complete classification remains open. The local classification near
+the particular rotating orbit combines rigorous enclosures with a
+hyperbolicity argument; see RotatingCertificate/LocalClassification
+in that project for its mathematical and formal verification scopes.
+Andrews and Wheeler's preprint arXiv:2601.21227 constructs infinitely
+many purely homothetic expanders.
 
 OpenTranslators treats an additional question about complete open curves.
 Its nonstraight translator has unbounded curvature.

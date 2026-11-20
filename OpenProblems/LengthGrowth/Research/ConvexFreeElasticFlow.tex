@@ -1,0 +1,168 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\ds}{\,ds}
+\newcommand{\NN}{\mathbb R^2}
+\begin{document}
+\begin{center}
+{\Large Circular asymptotics of eventually convex planar free elastic flows}
+\end{center}
+\begin{abstract}
+For a smooth free elastic flow of closed plane curves, the product of
+enclosed area and squared bending energy decreases strictly at each
+embedded convex time slice unless that slice is round. This classifies
+convex similarity solutions and gives smooth convergence, after length
+normalization, for every flow which is embedded and convex for all
+sufficiently large times. The proof combines Gage's inequality with an
+exact dissipation identity and the circle stability theorem of Miura and
+Wheeler.
+\end{abstract}
+
+\section{Area and bending energy}
+Orient an embedded convex time slice counterclockwise, and let \(s\) be
+arclength, \(k\geq 0\) its curvature and \(N\) its inward unit normal.
+The free elastic flow has normal velocity \(-F N\), where
+\[
+ F=k_{ss}+\tfrac12 k^3,\qquad E=\tfrac12\int k^2\ds .
+\]
+Write \(A\) for the enclosed area, \(L\) for the length,
+\(B=\int k^2\ds=2E\), \(C=\int k^3\ds\), \(D=\int F^2\ds\), and
+\(Q=AE^2\). We integrate around the entire closed curve. At a convex
+slice \(C>0\) since \(\int k\ds=2\pi\). The area variation and the
+gradient-flow identity give
+\[
+ A'=\int F\ds=C/2,\qquad E'=-D.
+\]
+These calculations are independent of tangential velocity.
+
+\begin{theorem}\label{mon}
+At every embedded convex time slice \(Q'\leq0\), with equality precisely
+on circles. On every time interval of embedded convexity, set
+\(\tau=\log(A/A_*)\) with \(A_*>0\) fixed. Then
+\begin{equation}\label{factor}
+ -\frac{d\log Q}{d\tau}=
+ \frac{AB}{\pi L}\ \frac{2\pi C}{B^2}\ \frac{4LD}{C^2}-1 .
+\end{equation}
+Each of the three factors is at least one.
+\end{theorem}
+\begin{proof}
+The first variations give the left side as \(4AD/(EC)-1\), which is
+the right side of \eqref{factor}. Gage's inequality \(AB\geq\pi L\)
+holds for closed \(C^2\) convex boundaries \cite{gage}. Cauchy--Schwarz
+applied to \(k^{1/2}\) and \(k^{3/2}\) gives \(B^2\leq2\pi C\);
+applied to \(1\) and \(F\), it gives \(C^2\leq4LD\).
+If equality holds in \eqref{factor} in the sense that \(Q'=0\), then
+\(k^{3/2}=\lambda k^{1/2}\) for some constant \(\lambda>0\).
+The continuous function \(k\) takes its values in \(\{0,\lambda\}\).
+Connectedness and total curvature \(2\pi\) give \(k\equiv\lambda\).
+The three factors equal one on a circle.
+\end{proof}
+
+\begin{corollary}\label{breath}
+If two time slices of a free elastic flow are related by a Euclidean
+similarity and every intermediate slice is an embedded convex curve,
+the flow on that interval is a family of concentric expanding circles.
+In particular, every embedded convex similarity solution is round.
+\end{corollary}
+\begin{proof}
+The similarity invariance of \(Q\) gives equal endpoint values.
+Theorem~\ref{mon} forces every intermediate slice to be round.
+For circles of center \(c(t)\), radius \(r(t)\) and outward unit normal
+\(n\), the normal equation reads
+\(\langle c'(t),n\rangle+r'(t)=1/(2r(t)^3)\) in every direction \(n\).
+Comparing opposite directions gives \(c'=0\), then
+\((r^4)'=2\). In particular all time slices have a common point in their
+convex hulls. The same conclusion holds for covers of such a boundary,
+by working on the curve traced once.
+\end{proof}
+
+\section{Convergence from eventual convexity}
+\begin{theorem}\label{conv}
+Let \(\gamma\) be a smooth closed planar free elastic flow. Suppose there
+is a time \(t_0\) such that every slice at \(t\geq t_0\) is an embedded
+convex curve. Then \(\gamma(\cdot,t)/L(t)\) converges smoothly up to
+reparametrization to the circle of radius \(1/(2\pi)\) centered at the
+origin. Furthermore
+\[
+ \lim_{t\to\infty}\frac{L(t)^4}{t}=32\pi^4,\qquad
+ \lim_{t\to\infty}t^{1/4}E(t)=\frac{\pi}{2^{1/4}} .
+\]
+\end{theorem}
+\begin{proof}
+Gage's inequality and the isoperimetric inequality \(L^2\geq4\pi A\)
+imply
+\[
+ \pi^3\leq Q(t)\leq Q(t_0),\qquad
+ LB\leq\frac{4Q(t_0)}{\pi},\qquad
+ C\geq\frac{B^2}{2\pi}\geq\frac{\pi L^2}{2A^2}
+      \geq\frac{2\pi^2}{A}.
+\]
+Thus \((A^2)'=AC\geq2\pi^2\), and
+\(\tau=\log(A/A(t_0))\) increases to infinity.
+The nonnegative expression in \eqref{factor} has finite integral in
+\(\tau\), bounded by \(\log(Q(t_0)/\pi^3)\).
+Choose \(\tau_j\to\infty\) so the expression tends to zero.
+Each of its three factors then tends to one.
+
+Rescale each selected slice to length one and use unit-speed coordinates
+on \(\mathbb R/\mathbb Z\). The three factors are scale invariant. The
+rescaled \(B_j\) equals the original \(L B\), hence stays bounded.
+The second and third factors in turn bound the rescaled \(C_j\) and
+\(D_j\). Thus \(\|k_j\|_2\) and \(\|F_j\|_2\) are uniformly bounded.
+To pass to a compact limit, put \(X_j=\|k_j''\|_2\).
+Integration by parts gives \(\|k_j'\|_2^2\leq \|k_j\|_2 X_j\).
+Some point of the unit period satisfies \(k_j^2\leq \|k_j\|_2^2\);
+integrating \((k_j^2)'=2k_j k_j'\) from that point gives
+\[
+ \|k_j\|_\infty^2\leq \|k_j\|_2^2+2\|k_j\|_2\|k_j'\|_2
+ \leq c(1+\sqrt{X_j}).
+\]
+The equation \(k_j''=F_j-k_j^3/2\) now yields
+\[
+ X_j\leq \|F_j\|_2+\tfrac12\|k_j\|_\infty^2\|k_j\|_2
+ \leq c'(1+\sqrt{X_j}).
+\]
+This bounds \(X_j\). The resulting uniform \(H^2\) bound gives a
+subsequence converging in \(C^1\) to a nonnegative periodic function
+\(k_*\) of integral \(2\pi\). Passing to the limit in the second factor
+gives \(2\pi\int k_*^3=(\int k_*^2)^2\). As in Theorem~\ref{mon}, equality
+forces \(k_*\equiv 2\pi\).
+
+At the corresponding original times \(t_j\) we therefore have
+\[
+ L(t_j)^3\int_{\gamma(t_j)} k_s^2\ds
+   =\int_0^1 |k_j'|^2\,ds \longrightarrow 0 .
+\]
+Restart the flow at one of these times below the turning-number-one
+threshold in \cite[Theorem 1.2]{mw}. That theorem gives the stated smooth
+convergence, including the center of the normalized limit.
+The length variation is \(L'=\int kF\ds=-\int k_s^2\ds+\tfrac12\int
+k^4\ds\). Smooth convergence in length-one variables yields
+\(L^3L'\to(2\pi)^4/2\) and \(LE\to2\pi^2\).
+Integrating \((L^4)'=4L^3L'\) proves the two limits.
+\end{proof}
+
+For any fixed initial slice, its image lies in the convex hull of every
+sufficiently late slice under the hypotheses of Theorem~\ref{conv}.
+Indeed the normalized limit circle has support \(1/(2\pi)\) in every
+direction. Uniform convergence therefore puts the disk of radius
+\(L(t)/(4\pi)\) about the origin in the unscaled convex hull for all
+sufficiently large \(t\). This conclusion leaves possible crossings
+between earlier slices open. Eventual convexity is a hypothesis on the
+trajectory. The unrestricted immersed flow in Section 1.2 of \cite{mw}
+can have inflections and self-intersections.
+
+\begin{thebibliography}{9}
+\bibitem{gage} M. E. Gage,
+An isoperimetric inequality with applications to curve shortening,
+\emph{Duke Math. J.} 50 (1983), 1225--1229.
+\href{https://doi.org/10.1215/S0012-7094-83-05052-4}{doi:10.1215/S0012-7094-83-05052-4}.
+\bibitem{mw} T. Miura and G. Wheeler,
+The free elastic flow for closed planar curves,
+\emph{J. Funct. Anal.} 289 (2025), article 111030.
+\href{https://arxiv.org/html/2404.12619v3}{arXiv:2404.12619v3}.
+\end{thebibliography}
+\end{document}

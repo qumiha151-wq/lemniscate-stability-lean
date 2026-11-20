@@ -1,0 +1,98 @@
+Convex and signed three-moment estimates for planar free elastic flow
+
+Proof locations are relative to the independent LengthGrowth Lean project.
+The first six files use Lean 4.33.1 and the project's pinned mathlib. The upper
+bound for length is for the entire forward trajectory and allows an
+initial-data-dependent prefactor. The corresponding energy estimate is
+E(t) <= B/(1+t)^(1/4). Hypotheses imposed only for t>T allow an arbitrary
+smooth prefix [0,T].
+
+LengthGrowth/ActualFlow/EventualCurvatureSign.lean
+  signedCurvature_hasDerivAt_zero and signedCurvature_eq_initial derive
+  conservation of the actual signed curvature integral from the smooth
+  immersion. The argument works for a regular homotopy. The final theorem
+  quarter_bounds_of_eventual_spatial_curvature_sign applies the proved
+  length-growth equivalence to an actual normal free elastic flow whose
+  signed curvature is spatially nonnegative or nonpositive at each
+  sufficiently late time. It uses compactness on the finite prefix and
+  takes neither a turning number nor an absolute-curvature bound as input.
+
+LengthGrowth/ActualFlow/SignedAreaVariation.lean
+  materialSignedArea is the signed Green integral of x dy in the actual
+  material parameter. integral_force_eq_half_cubic derives the spatial
+  periodic cancellation; signedArea_hasDerivAt_normal proves A'=C/2
+  for the actual position equation, where C is the integral of k^3.
+  It covers arbitrary smooth immersed slices.
+
+LengthGrowth/ActualFlow/ConvexAreaEnergy.lean
+  curvature_cubic_moment proves (int k^2)^2 <= (int k)(int k^3) for
+  nonnegative curvature. cubic_sq_le_four_length_dissipation proves
+  C^2 <= 4 L D for either curvature sign. All integrals use the material
+  speed. areaEnergy_hasDerivAt derives the exact product derivative.
+  areaEnergy_antitoneOn_of_gage obtains monotonicity under explicit
+  hypotheses of nonnegative curvature, initial signed total curvature
+  2 pi, and the geometric Gage inequality pi L <= 2 A E at late slices.
+  The geometric derivations of Gage's inequality, of the total turning
+  2 pi of a positively oriented convex boundary and of the identification
+  of the signed Green area with enclosed area are external inputs to
+  the application in the manuscript.
+
+LengthGrowth/ActualFlow/CubicMomentGrowth.lean
+  CubicMomentDominates means (2 E)^3 <= L C^2. OneSidedHalfRMS uses the
+  actual R=sqrt(2 E/L) and permits k >= -R/2 everywhere or k <= R/2
+  everywhere on a slice. cubicMomentDominates_of_oneSidedHalfRMS derives
+  the moment inequality by integrating a nonnegative polynomial.
+  normalizedProduct_deriv_nonpos_of_cubicMoment and
+  normalizedProduct_antitoneOn_of_eventual_cubicMoment give the derivative
+  test and tail monotonicity of E L. quarter_bounds_of_eventual_cubicMoment
+  and quarter_bounds_of_eventual_oneSidedHalfRMS give the length and energy
+  estimates. These results use the universal Cauchy--Schwarz bound C^2<=4LD.
+  No Gage inequality, turning-number assumption or convexity premise
+  enters any of their proofs.
+
+LengthGrowth/ActualFlow/CubicMomentDissipation.lean
+  curvatureOscillation_eq_integral identifies K = L int (k-kbar)^2 ds
+  with 2 E L minus squared conserved total signed curvature. The
+  curvatureOscillation_exact_squares identity rewrites the derivative
+  deficit as the sum of an actual squared force residual, a scalar square
+  and a multiple of the cubic-moment excess. On slices satisfying the
+  signed moment condition it gives 8 L^2 K' <= -(2 E)^2 K.
+
+LengthGrowth/ActualFlow/CubicMomentDecay.lean
+  curvatureOscillation_le_exp_integral integrates that differential
+  inequality with the exact factor exp[-int (2E)^2/(8L^2) dt].
+  curvatureOscillation_le_exp_rescaled_time gives exp[-int L^(-4) dt/8].
+  oscillationDecayRate_integral_lower compares the exponent to a positive
+  multiple of log(1+t). The final theorem
+  curvatureOscillation_tendsto_zero_of_eventual_cubicMoment proves
+  K(t) -> 0 from the eventual signed moment condition. Its length bound
+  is derived in CubicMomentGrowth.lean. Standard library limits and
+  the integrating factor give convergence in actual physical time.
+  signedCurvature_sq_ge_one_of_eventual_cubicMoment excludes zero signed
+  total curvature from this class using the project's elementary lower
+  bound on total absolute curvature.
+
+The eventual-convexity circular convergence and the limiting coefficients
+in convex_free_elastic_flow.tex are analytic results. Its compactness
+and restart argument uses the published stability theorem of Miura and
+Wheeler. For the more general signed-moment class, the formal limit
+K(t) -> 0 supplies the small-curvature-oscillation hypothesis of
+Andrews and Wheeler (arXiv:2509.11129, Theorem 1). Smooth shape
+convergence still uses that external stability theorem.
+
+LengthGrowth/ActualFlow/CubicHalfThreshold.lean
+  centered_cubic_deficit and normalized_cubic_deficit_bound prove the
+  force-variance inequality in material and length-one variables.
+  quarter_bounds_of_liminf_cubic_gt_half obtains both quarter-power
+  estimates when the extended-real liminf of the absolute signed cubic
+  ratio exceeds one half. exists_late_high_record_below_cubic_half_add
+  gives the restriction on arbitrarily late records when quarter-power
+  growth fails. See HalfThreshold.md for the exact barrier. The bounds
+  at and below the half threshold and the circularity gap in the research
+  manuscript are analytic results.
+
+To reproduce the aggregate check with the project toolchain and its
+pinned dependencies, run lake build LengthGrowth LengthGrowth.AxiomAudit
+in the LengthGrowth project. The package root imports all seven new
+modules. CurvatureMomentVerification.json gives the source hashes and
+the axiom audit from the combined build.

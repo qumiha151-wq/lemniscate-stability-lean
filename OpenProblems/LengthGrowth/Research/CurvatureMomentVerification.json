@@ -1,0 +1,94 @@
+{
+  "lean": "4.33.1",
+  "scope": "Seven new sources, package root and project axiom audit recompiled. Unchanged imported modules and mathlib were loaded from pinned build artifacts.",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "unchanged_package_audit_source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+  "audit": "Length-growth audit passed: 1144 declarations; standard axioms only.",
+  "modules": [
+    {
+      "module": "LengthGrowth.ActualFlow.EventualCurvatureSign",
+      "file": "LengthGrowth/ActualFlow/EventualCurvatureSign.lean",
+      "source_sha256": "5772f796d94bebc405908b3f21831bed72357a88cea601ba6f624ee0707c920d",
+      "object_sha256": "6e7199491bf30a653af202e1e84dbea0e4f2527b8a74fbaa6a77dda3acd2875e",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.ForwardImmersion.quarter_bounds_of_eventual_spatial_curvature_sign' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.SignedAreaVariation",
+      "file": "LengthGrowth/ActualFlow/SignedAreaVariation.lean",
+      "source_sha256": "b98b551712d3d2ad71c44a524af3b2c4fba92ea0257dc35d4c694dbcaeb33561",
+      "object_sha256": "3e26291da32dcc6b8a83e6996cab676221080d44e16cf15e7c9050e3938b3e12",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.ForwardImmersion.signedArea_hasDerivAt_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ConvexAreaEnergy",
+      "file": "LengthGrowth/ActualFlow/ConvexAreaEnergy.lean",
+      "source_sha256": "aba4004b9e4d8f46bc979bbccf1d1a4b6e92ba118d6408fa9a8c392f709e6520",
+      "object_sha256": "47440063168fbe32f2a5a5ee64cd6e5a10559c40a48059ba916addd33e02fccf",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.ForwardImmersion.areaEnergy_antitoneOn_of_gage' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CubicMomentGrowth",
+      "file": "LengthGrowth/ActualFlow/CubicMomentGrowth.lean",
+      "source_sha256": "36ab67235af670626e533b4e161d7b93007e99d6a6edf9c8f32c41e4a4339d72",
+      "object_sha256": "4cfb1729daaf4b28180f46756ed3bd4bf5ac22298e80ea6a750596fbfade3db7",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.ForwardImmersion.normalizedProduct_antitoneOn_of_eventual_cubicMoment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_bounds_of_eventual_oneSidedHalfRMS' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CubicMomentDissipation",
+      "file": "LengthGrowth/ActualFlow/CubicMomentDissipation.lean",
+      "source_sha256": "a049fc137caf6a794aa45d326d09a4fa39798e4f3b8140a1f5bea1a1aade97ef",
+      "object_sha256": "a441e6004022c26e57cfa4d9fb98a07eb3a271584da9f1d733b640e34924c764",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.ForwardImmersion.curvatureOscillation_exact_squares' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.curvatureOscillation_deriv_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CubicMomentDecay",
+      "file": "LengthGrowth/ActualFlow/CubicMomentDecay.lean",
+      "source_sha256": "114b1469145e25d288985906414b6b84999fec16145e6347b21b6ba090d4ca84",
+      "object_sha256": "1a21fe8cb41d6c310823ab7f87dfbd353342e8e7c137b43e3d8d516dec970a28",
+      "exit_code": 0,
+      "stdout": "'LengthGrowth.ActualFlow.ForwardImmersion.curvatureOscillation_le_exp_integral' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.curvatureOscillation_le_exp_rescaled_time' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.curvatureOscillation_tendsto_zero_of_eventual_cubicMoment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.signedCurvature_sq_ge_one_of_eventual_cubicMoment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CubicHalfThreshold",
+      "file": "LengthGrowth/ActualFlow/CubicHalfThreshold.lean",
+      "source_sha256": "db9ae697d423681f02fe1531e56c86535f151ff9b1eba1cd3a9dcd197ae13776",
+      "object_sha256": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+      "exit_code": 0,
+      "stdout": "CUBIC_HALF_THRESHOLD_AUDIT seven public results with standard axioms",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth",
+      "file": "LengthGrowth.lean",
+      "source_sha256": "a8ec940f99ef807a04e2dbe7cc791529ed8c476365a780a31b83f34b60611e50",
+      "object_sha256": "55cb924d6dffa247a6958fccb75b088a03b4149a5d6508f188d86498fcceed0c",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "file": "LengthGrowth/AxiomAudit.lean",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "object_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit_code": 0,
+      "stdout": "Length-growth audit passed: 1144 declarations; standard axioms only.",
+      "stderr": ""
+    }
+  ]
+}
