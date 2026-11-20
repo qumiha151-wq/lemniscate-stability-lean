@@ -10,26 +10,33 @@ x-coordinate tends to positive infinity. The complete numerical and analytic
 certificate, including the final existence theorem, passed Lean in run
 43214648337. See CentroidEscape/FullVerification.txt.
 
-LengthGrowth proves that, for a given forward classical normal flow, the
-quarter-power length upper bound is equivalent to uniform boundedness of
-E(t)L(t). For every sufficiently high threshold, an unbounded product
-would yield a rescaled flow with unit terminal energy. At one time in its
-finite record window the normalized curvature is simultaneously small at
-every point. See LengthGrowth/LengthGrowth/ActualFlow/RescaledRecordWindow.lean.
-The general bound and the existence of a counterexample remain open.
+LengthGrowth proves a sharp universal lower growth coefficient. For each
+smooth closed immersed forward normal flow, limsup L(t)^4/t >= 32*pi^4.
+A once-covered circle attains equality. SharpVirial.lean gives the
+instantaneous inequalities E L >= 2*pi^2 and D L^3 >= 4*pi^2 E^2.
+GrowthEnvelope.lean integrates them in physical time. An eventual
+fourth-root upper bound for every such flow remains open. For one given
+flow the bound is equivalent to positive lower time density of containment
+in moving strips of half-width R/E(t). The direction can vary with time.
 
-Migration concerns movement of the entire curve between opposite open
-half-planes. The unrestricted question remains open. Novaga's preprint
-arXiv:2611.07242 proves non-migration when the initial value of
-L times the integral of squared curvature is at most 4 pi^2 + 8/3.
+Migration proves a necessary energy cost for the whole curve to move
+between opposite open half-planes in time T. In particular,
+T E(0)^3 (E(0)-E(T)) >= 16/(pi+2)^2. For a pure homothetic expander
+of rate a and centered radius R with a R^4 <= 2, its expansion center
+lies in the interior of its convex hull, excluding migration for this
+class. Novaga's preprint arXiv:2611.07242 excludes migration when the
+initial L times the integral of squared curvature is at most 4*pi^2+8/3.
+The unrestricted question remains open.
 
-SolitonClassification proves rigidity for several subclasses and supplies
-an ODE reconstruction. The two signed 4,000-step paths of a proposed
-rotating solution have passed their individual shard checks. Constructing
-the full Lean certificate also requires verifying the seams and both
-endpoint maps. The complete classification remains open. Andrews and
-Wheeler's preprint arXiv:2601.21227 constructs infinitely many distinct
-homothetic expanders.
+SolitonClassification proves that every noncircular closed expander of
+turning number m, dilation rate a and rotation rate b satisfies
+E L > 2*pi^2*m^2 + 8*(b/a)^2. The two signed 4000-step paths for a
+specific rotating solution passed their individual shard checks. Run
+44650976356 checks their assembly into the concrete existence theorem.
+CandidatePitchBranch.lean deduces a dense set of positive rotation
+parameters from the same five shooting estimates used for that solution.
+The complete classification remains open. Andrews and Wheeler's preprint
+arXiv:2601.21227 constructs infinitely many distinct homothetic expanders.
 
 OpenTranslators treats an additional question about complete open curves.
 Its nonstraight translator has unbounded curvature.

@@ -210,3 +210,26 @@ The set of such times on each finite horizon is compact. A mean value
 argument for the unit tangent and the stress bound give the explicit
 finite-horizon strip_time_energy_budget. Establishing the frequency for
 arbitrary forward flows remains open.
+
+
+Sharp lower coefficient for growth
+
+Every forward classical normal free elastic flow of a closed immersed curve
+satisfies limsup L(t)^4/t >= 32*pi^4. For each positive b below that
+constant, sharp_length_fourth_limsup_lower produces arbitrarily late times
+with L(t)^4/t > b, for arbitrary smooth immersed initial curves.
+The once-covered expanding circle attains equality.
+Its actual position, curvature, normal velocity and limiting length
+coefficient are checked in SharpCircle.lean.
+
+The proof uses the sharp periodic Poincare inequality for both the unit
+tangent and the position relative to its arclength centroid. It gives
+E L >= 2*pi^2 and D L^3 >= 4*pi^2 E^2 for each actual time slice.
+An eventual upper length coefficient A forces every lower coefficient
+below 32*pi^4/A^3 and every energy-length upper coefficient above
+A^4/(16*pi^2). See LengthGrowth/ActualFlow/GrowthEnvelope.lean.
+
+Research/LengthSharpConstantGap.md derives a gap above the optimal growth
+coefficient by applying two existing geometric theorems to the estimates
+above. The last step of that argument uses the convergence theorem cited
+in the note. The general fourth-root upper bound remains open.

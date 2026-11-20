@@ -1,3 +1,5 @@
+import LengthGrowth.ActualFlow.GrowthEnvelope
+import LengthGrowth.ActualFlow.SharpCircle
 import LengthGrowth.ActualFlow.StripCoercivity
 import LengthGrowth.ActualFlow.AmbientMaterial
 import LengthGrowth.ActualFlow.PhysicalTimeAverage
