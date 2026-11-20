@@ -1,0 +1,44 @@
+{
+  "lean": "4.33.1",
+  "baseline_commit": "13d2e19ace73134160225e23724a50b427992b16",
+  "baseline_project_declarations": 20897,
+  "audited_declarations": 20912,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formal_scope": [
+    "Exact radius potential derivative and period integral from the support ODE",
+    "Critical radius lower bound and equality classification for all support data",
+    "Corrected squared radius derivative at arbitrary rotation coefficient"
+  ],
+  "analytical_scope": [
+    "Uniform strict radius gap at all pitches, windings and periods",
+    "An arbitrary centred radius cap bounds the pitch of noncircular closed profiles",
+    "Primitive-period resonance and finite Fourier reduction"
+  ],
+  "compilations": [
+    {
+      "module": "SolitonClassification.RadiusPotential",
+      "source_sha256": "5f3479d0bbe65323275af1f28187fe5a271394096966ff9ed3155447eea85c31",
+      "object_sha256": "930b9632a5b9c7ba45b75debde1c57d85ccf644f513c5def220f9164ca6b4099",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.PeriodicSupportProfile.correctedRadius_hasDerivAt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.PeriodicSupportProfile.integral_radiusDefect' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.PeriodicSupportProfile.one_le_twice_radius_fourth' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.PeriodicSupportProfile.centered_circle_at_critical_radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "0736cf7f4920b0315bb496c290275d371a87522a9b0e482c4916b36ffc0db366",
+      "object_sha256": "38ea1cd83abd6f59ae787def413128783974be7878bfb435ff80d025a5f19afb",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "a9f51730453d2a1a636dd19b54053056eea9148df594bc7b2abfac58c31a603b",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit_code": 0,
+      "stdout": "SolitonClassification audit passed: 20912 declarations; standard axioms only."
+    }
+  ]
+}

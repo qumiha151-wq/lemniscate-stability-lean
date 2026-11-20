@@ -1,3 +1,4 @@
+import SolitonClassification.RadiusPotential
 import SolitonClassification.ScalarObservation
 import SolitonClassification.TangentLawGeometry
 import SolitonClassification.AngularForceElimination
