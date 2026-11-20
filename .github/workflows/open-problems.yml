@@ -18,7 +18,7 @@ jobs:
   verify:
     name: Verify ${{ matrix.project }}
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ matrix.project == 'SolitonClassification' && 120 || 35 }}
+    timeout-minutes: ${{ matrix.project == 'SolitonClassification' && 180 || 35 }}
     strategy:
       fail-fast: false
       matrix:
@@ -28,11 +28,22 @@ jobs:
       - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
         with:
           lake-package-directory: OpenProblems/${{ matrix.project }}
-          build: 'true'
+          build: ${{ matrix.project == 'SolitonClassification' && 'false' || 'true' }}
           test: 'false'
           lint: 'false'
           use-mathlib-cache: 'true'
           use-github-cache: 'false'
+      - name: Check the two frozen trajectories in bounded batches
+        if: matrix.project == 'SolitonClassification'
+        working-directory: OpenProblems/SolitonClassification
+        env:
+          LEAN_NUM_THREADS: '1'
+        run: |
+          set -euo pipefail
+          for chunk in $(seq -w 0 39); do
+            lake build "SolitonClassification.FrozenDyadicNegative${chunk}" "SolitonClassification.FrozenDyadicPositive${chunk}"
+          done
+          lake build
       - name: Enforced project axiom audit
         working-directory: OpenProblems/${{ matrix.project }}
         run: lake env lean ${{ matrix.project }}/AxiomAudit.lean

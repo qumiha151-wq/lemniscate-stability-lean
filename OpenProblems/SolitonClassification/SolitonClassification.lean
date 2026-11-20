@@ -1,3 +1,4 @@
+import SolitonClassification.FrozenKernelEndpoints
 import SolitonClassification.FrozenSeamReflection
 import SolitonClassification.SupportFlowContinuity
 import SolitonClassification.OuterPhase
