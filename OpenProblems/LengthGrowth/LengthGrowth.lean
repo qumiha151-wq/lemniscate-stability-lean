@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.StripCoercivity
 import LengthGrowth.ActualFlow.AmbientMaterial
 import LengthGrowth.ActualFlow.PhysicalTimeAverage
 import LengthGrowth.ActualFlow.AmbientCoercivity

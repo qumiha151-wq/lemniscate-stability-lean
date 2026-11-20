@@ -196,3 +196,17 @@ every positive epsilon there are arbitrarily late horizons t on which the
 physical-time average of D/E^5 is smaller than epsilon. On suitable such
 horizons every continuous weight between zero and one supported on times
 with E*L below a fixed threshold also has arbitrarily small average.
+
+
+Moving strips and elapsed physical time
+
+quarter_length_iff_strip_frequency proves the following equivalence for one
+actual smooth forward normal free elastic flow. Its length is O(t^(1/4)) if
+and only if there exist positive R and eta such that for every sufficiently
+large T the set of times in [0,T] at which the whole image fits in some
+strip of half-width R/E(t) has Lebesgue measure at least eta T. A strip may
+be infinitely long, and its center and direction can change at each time.
+The set of such times on each finite horizon is compact. A mean value
+argument for the unit tangent and the stress bound give the explicit
+finite-horizon strip_time_energy_budget. Establishing the frequency for
+arbitrary forward flows remains open.
