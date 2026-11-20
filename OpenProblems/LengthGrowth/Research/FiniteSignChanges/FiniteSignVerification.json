@@ -1,0 +1,113 @@
+{
+  "lean_version": "4.33.1",
+  "real_flow_theorem": "LengthGrowth.ActualFlow.ForwardImmersion.log_quarter_and_decay_of_finite_sign",
+  "prior_project_entry_sha256": "c680f1557efebb481010d68c3a8b0e8dc7ecc23953b6a0bedf86e84a910d3f7a",
+  "audit": "Length-growth audit passed: 1552 declarations; standard axioms only.",
+  "compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignGrowth",
+      "source_sha256": "ed26b42d3a8bb83639cae0d6591aa05a270d429689f201f4a197e34f89024e05",
+      "olean_sha256": "9758917079daeb145966083096a53ff28e228d6f6d3d8a325550c431b2effa1b",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.nodal_log_energy_barrier' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignTime",
+      "source_sha256": "06a333ff5da8ad34709cdbd9dd364228fe7a3fd5adb660560dea6f9f5677383d",
+      "olean_sha256": "180d433278aa4ab1139137e7a0eb28d8764f8c4dc6a4a72e90b5e8609fa11cbf",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.nodal_log_quarter_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignSlice",
+      "source_sha256": "70db6d38974d0912df874f7a174d1981613a545e0f4f19dee30e215ab4e8765f",
+      "olean_sha256": "79d63f9fe7ee5d2b99978be2efdfe066000429f151fcf9bbe80f8dec740d0a0b",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.nodalSliceBound_of_deficit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.nodal_energy_tendsto_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignFlow",
+      "source_sha256": "bb61c390ae44aa57da834dbc2831a766107305f91c6791a0c1e13eb97a6897d8",
+      "olean_sha256": "a0fe915ec662ce549e382611e3dc09609509b3c68943ce3ef66a0f2165016120",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.log_quarter_and_energy_decay_of_nodal_deficit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignPartition",
+      "source_sha256": "042a51b0f98d6ab9dbc6af508001e8b65b0f16cb56d94b7fca8043f60f870f03",
+      "olean_sha256": "3f574c95b386e94f9e956f1068084ad73adf2160fc69de2555ca1e9331e3b952",
+      "exit": 0,
+      "log": "'LengthGrowth.FiniteSign.Pieces.cubic_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignWindow",
+      "source_sha256": "eadbda1f2c0b8847dc13e782da50e00eb5fb9938370964562c95bf93ae60c3f4",
+      "olean_sha256": "8cc5661423eba39d9c65ba27e4d189c678a6cedae817fb11fd56e3fa2c78a0b2",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.FiniteSignWindow.energy_amplitude_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignWindow.forced_window_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignWindow.cubic_integral_gt' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignGeneralWindow",
+      "source_sha256": "25d1e4c10408ca36da3279e54972a704e48ff0d4d2684de97bf26a88380020c6",
+      "olean_sha256": "0378f48a6eba4ba98248bd0169f8b3e2df21c4a4282e66585b18b243d24c5067",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.FiniteSignGeneralWindow.energy_amplitude_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignGeneralWindow.forced_window_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignGeneralWindow.cubic_integral_gt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignScale",
+      "source_sha256": "7df24cc60f433e4f09fc8e57a95362e72d35d72bdf748aba81da631814269f25",
+      "olean_sha256": "d66228d0661a71ded41ef008d1ca76f1e7dac961cac34ee19b63fa184b10a3ae",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.FiniteSignWindow.scaled_force_integral' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignWindow.scale_pieces' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignCharge",
+      "source_sha256": "73b7be2af0fcce6b86b83107a6d26dd2be8cbffbd905b3495d128611222a8ad8",
+      "olean_sha256": "cd7bea252870679d820921fd16438a05a7e28509224f2bbbedfed73871ffbfce",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.FiniteSignWindow.charge' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignBudget",
+      "source_sha256": "3785b10af09ebea6b43176af45bcd43bd87c7ae882b213ca2334d9baf5bfda51",
+      "olean_sha256": "6c3549360110bc3906e4dfed603eaa725f60dcefce8eb8e28f402ec253b80ef5",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.FiniteSignWindow.amplitude_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignMaterial",
+      "source_sha256": "5bcff3e67396843305ac7b5a2042cbedec3fb6cd13edf62263b9ba3743d13e62",
+      "olean_sha256": "6c415da264f16aa4c483bd407296fd635297c1b51e1a2e0f82dc8e824ba4a9f8",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.log_quarter_and_decay_of_scalar_finite_sign' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignIntegrals",
+      "source_sha256": "576ea7abb5711c88e0b97027ba1cebda915d42e6ecc42b43ff07b47a37a40bf9",
+      "olean_sha256": "e1cb7eb8d4ed02c56d764ed85e68924b532abd5b09b5d617625f687f2d9c423d",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.FiniteSignIntegrals.cubic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignIntegrals.integral_abs_unit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.FiniteSignIntegrals.periodic_window' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FiniteSignTheorem",
+      "source_sha256": "babd3414663e5380396a302bdc898cb90cc1c9960be21a0474d97c60f2a144ea",
+      "olean_sha256": "99dfd9f5499189dadcf528dce68597f92194ea4698c87c06502f9d40ab5c586e",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.finiteSignScalarEstimate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.log_quarter_and_decay_of_finite_sign' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "f9d6d8b7c82df0862f399fc5720921c952ef33994f840380263314c6f091e173",
+      "olean_sha256": "e6a15fbd1a1e538e86b24cf17b878cf8317a059a91d3b472808f84624646f324",
+      "log": "",
+      "exit": 0
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "log": "Length-growth audit passed: 1552 declarations; standard axioms only.\n",
+      "exit": 0
+    }
+  ]
+}
