@@ -1,3 +1,4 @@
+import SolitonClassification.FirstZeroTurnExpander
 import SolitonClassification.SingleValuedForce
 import SolitonClassification.CubicSupportRigidity
 import SolitonClassification.ReflectedPoleAlgebra
