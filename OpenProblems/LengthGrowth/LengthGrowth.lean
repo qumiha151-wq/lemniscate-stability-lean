@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.MaterialWeightedRate
 import LengthGrowth.ActualFlow.ForceAngularSpeed
 import LengthGrowth.ActualFlow.RecurringLength
 import LengthGrowth.ActualFlow.FrequencyBackward
