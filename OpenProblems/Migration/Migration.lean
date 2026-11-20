@@ -1,3 +1,4 @@
+import Migration.SeparatedHeight
 import Migration.ForwardShortCore
 import Migration.RoundPartitionCost
 import Migration.NearRoundDisk
@@ -44,3 +45,5 @@ See `Research/FixedCore/FixedCoreFormalization.md` for the statements and bounds
 
 /-! The uniform short-time disk for arbitrary initial shapes and turning numbers is
 proved in `Migration.ForwardShortCore`. See `Research/FixedCore/UniversalShortTimeDisk.md`. -/
+
+/-! The centre-to-hull distance for a strictly separated pure expansion is less than one eighth of its perimeter. The directional integral, expansion-factor and elapsed-time bounds are proved in Migration.SeparatedHeight. See Research/SeparatedHeight.md for their geometric formulation and for the centre and angular-rate formula for rotating profiles. -/
