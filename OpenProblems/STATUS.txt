@@ -1,4 +1,40 @@
-Status at 13 November 2026
+Status at 20 November 2026
+
+Miura and Wheeler, section 1.2, asks about closed immersed planar curves.
+The repository root contains the earlier lemniscate stability project.
+The other questions have independent Lake projects under this directory.
+
+CentroidEscape answers the existence question affirmatively. There is a
+smooth closed immersed normal free elastic flow whose arclength centroid's
+x-coordinate tends to positive infinity. The complete numerical and analytic
+certificate, including the final existence theorem, passed Lean in run
+43214648337. See CentroidEscape/FullVerification.txt.
+
+LengthGrowth proves that, for a given forward classical normal flow, the
+quarter-power length upper bound is equivalent to uniform boundedness of
+E(t)L(t). For every sufficiently high threshold, an unbounded product
+would yield a rescaled flow with unit terminal energy. At one time in its
+finite record window the normalized curvature is simultaneously small at
+every point. See LengthGrowth/LengthGrowth/ActualFlow/RescaledRecordWindow.lean.
+The general bound and the existence of a counterexample remain open.
+
+Migration concerns movement of the entire curve between opposite open
+half-planes. The unrestricted question remains open. Novaga's preprint
+arXiv:2611.07242 proves non-migration when the initial value of
+L times the integral of squared curvature is at most 4 pi^2 + 8/3.
+
+SolitonClassification proves rigidity for several subclasses and supplies
+an ODE reconstruction. The two signed 4,000-step paths of a proposed
+rotating solution have passed their individual shard checks. Constructing
+the full Lean certificate also requires verifying the seams and both
+endpoint maps. The complete classification remains open. Andrews and
+Wheeler's preprint arXiv:2601.21227 constructs infinitely many distinct
+homothetic expanders.
+
+OpenTranslators treats an additional question about complete open curves.
+Its nonstraight translator has unbounded curvature.
+
+Historical project notes from 13 November 2026 follow.
 
 These independent projects include a complete new centroid solution and partial results for the
 remaining questions in Miura--Wheeler arXiv:2404.12619v3.

@@ -1,0 +1,63 @@
+Multiplicity and the time needed to migrate out of a strip
+20 November 2026
+
+Let W be the initial directional width of a smooth closed free elastic
+flow. Write E for its initial half-integral of squared curvature. Suppose
+its signed turning number n is nonzero and put N=2|n|. Define
+
+  I=int_0^(pi/2) sqrt(sin v) dv,
+  a=E W/N,    z=2 I^2/a,    P(v)=v/2-sin(pi*v)/(2*pi),   b=P(z).
+
+If a later slice is fully across the initial lower support in time T, then
+
+           T/W^4 >= b^2 / [ a (pi sqrt(b)+sqrt(2a))^2 ].        (1)
+
+For any sequence of such flows with E W/|n| bounded above, (1)
+gives a positive uniform lower bound on T/W^4 even when |n| tends
+to infinity. Thus arbitrarily many tightly folded half-turns in the strip
+cannot achieve migration in vanishing width-scale time within this regime.
+
+Proof. Use the N disjoint half-turn intervals from the angle-lift argument
+in MigrationTwoEndpointEnergyBarrier.txt. Each interval has a single sign
+of vertical velocity in arclength. For the j-th interval let its endpoint
+height difference in absolute value be d_j. Then 0<d_j<=W, and the
+weighted curvature Cauchy--Schwarz estimate on that very interval gives
+
+  4 I^2/d_j <= int_{j-th interval} k^2 ds .
+
+Sum over all intervals. The harmonic-arithmetic mean inequality yields
+
+  sum 1/d_j <= E/(2I^2),    average(d_j)/W >= 2I^2 N/(EW) = z.
+
+In particular z is in (0,1]. At initial time let p(s)=sin(pi*s/2)^2
+on [0,1], extended as 0 and 1 on the outer half-lines. The positive-side
+cutoff is phi(h)=p((h-min h)/W). On each half-turn the monotone height
+traverses a vertical interval of length d_j. Since |h_s|<=1 and phi>=0,
+
+  int_{j-th interval} phi(h) ds >= int_{j-th interval} phi(h) |h_s| ds
+      >= int_0^d_j p(v/W) dv = W P(d_j/W).
+
+The last inequality follows by translating the entire vertical interval
+down until its lower endpoint coincides with min h and using monotonicity
+of p. It requires no division by h_s at a horizontal tangent. The
+primitive P of p is increasing and convex on [0,1], so Jensen's inequality
+now gives for the actual initial cutoff mass
+
+                   M(0) >= N W P(z) = N W b.                   (2)
+
+The opposite endpoint mass for this same cutoff vanishes at complete
+migration. Repeat the one-side argument (2) in the companion note to get
+
+  T(E-E(T)) >= M(0)^2 / [ sqrt(2E)+(pi/W)sqrt(M(0)) ]^2.
+
+The right side is increasing in M(0), since its square root for positive
+M is 1/[sqrt(2E)/M+(pi/W)/sqrt(M)]. Substitute (2), then E=N a/W,
+and finally E-E(T)<=E. This proves (1).
+
+For a<=A, one has b>=P(2I^2/A)>0 and b<=P(1)=1/2. Replacing the
+numerator in (1) with P(2I^2/A)^2 and the denominator with
+A(pi/sqrt(2)+sqrt(2A))^2 gives the claimed positive uniform constant.
+The proof works for any smooth closed immersion and uses only its
+nonzero rotation degree and a bound on bending energy per half-turn
+in strip units. It includes highly oscillatory curvature derivatives.
+Times on or above the lower-bound scale remain available for migration.

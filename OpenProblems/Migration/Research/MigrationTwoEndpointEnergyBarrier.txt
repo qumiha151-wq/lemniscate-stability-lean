@@ -1,0 +1,157 @@
+Two endpoint costs for complete half-plane migration of a closed free elastic flow
+20 November 2026
+
+Consider a smooth closed regular planar free elastic flow on [0,T].
+Use arclength ds on each slice and the convention
+
+     gamma_t=-F N,    F=k_ss+k^3/2,    E(t)=(1/2) int k^2 ds.
+
+Then (ds)_t=kF ds and E'=-int F^2 ds in the normal material gauge.
+A moving tangential parametrization can be changed to this gauge on the
+compact time interval. All hypotheses and conclusions below concern images
+and geometric integrals.
+
+Write h=e dot gamma for one fixed unit direction and W(t)=max h-min h.
+Miura and Wheeler ask whether there is an actual closed flow for which
+max h(T)<min h(0). Equivalently a common separating line can be placed in
+the strict gap. Set E0=E(0), ET=E(T), W0=W(0), WT=W(T).
+
+THEOREM. A necessary condition for this strict separation is
+
+    T (E0-ET) >= B(W0,E0) + B(WT,E0),
+
+    B(W,E) = W^3 / (pi+sqrt(2 E W))^2.                        (1)
+
+Each term is paid by energy dissipation in a different physical half-plane.
+There is no curvature or derivative supremum in (1). It applies after
+restarting at any two times by replacing T with the time difference.
+
+Proof of the localized length estimate
+
+Take the nondecreasing C1 function p on the whole real line given by
+
+    p(z)=0                    if z<=0,
+         sin(pi*z/2)^2        if 0<=z<=1,
+         1                    if z>=1.
+
+We have 0<=p<=1, and |p'|<=pi*sqrt(p), including the two joining points.
+Put a=min h(0), b=max h(T). Strict separation means b<a. The two spatial
+weights along the trajectory are
+
+    phi_+(h)=p((h-a)/W0),     phi_-(h)=p((b-h)/WT).
+
+Both widths are positive. A zero projection width would make the whole
+closed regular immersion a curve in a line, contradicting Rolle's theorem
+for the remaining coordinate. The regions where the weights or their
+derivatives are nonzero lie in h>a and h<b respectively. Call these regions
+H+ and H-. Write M_i(t)=int phi_i(h) ds and D_i=int_{H_i} F^2 ds.
+The sets H_i are fixed physical half-planes. Their preimages on the
+material circle may vary.
+
+For either weight of width W, differentiate the weighted length without
+differentiating an indicator function. The weight is C1, and compactness and
+smoothness justify differentiation under the material integral. This gives
+
+  M' = int [k phi(h)-phi'(h)(N dot e)] F ds,
+  |M'| <= sqrt(D_i) ( sqrt(2 E0) + (pi/W) sqrt(M) ).          (2)
+
+Indeed the spatial L2 norm of k phi is at most sqrt(2 E(t)) because
+phi<=1. The norm of phi'(h)(N dot e) is at most (pi/W)sqrt(M).
+Use the triangle inequality, Cauchy--Schwarz and E(t)<=E0.
+The derivative itself uses the actual dissipation density on H_i.
+
+Define J_W(v)=int_0^v dm/(sqrt(2E0)+(pi/W)sqrt(max(m,0))).
+It is C1, with positive derivative everywhere since E0>0. Equation (2)
+implies |(J_W(M))'|<=sqrt(D_i). Integrate in time and apply Cauchy--Schwarz.
+If one endpoint mass is zero and the other is M*, then
+
+  T int_0^T D_i dt >= J_W(M*)^2.
+
+The density D_i is measurable as a parameter integral of a bounded measurable
+function on this compact slab. Signed or time-reversed FEF is unnecessary
+when estimating the change from zero to M*.
+
+At time zero the positive mass satisfies M_+(0)>=W0. Indeed take arclength
+on the initial parameter circle and choose a maximum at s=0. The height is
+1-Lipschitz in arclength. Its range W0 is at most L(0)/2. The two arcs of
+length W0 to the left and right of this maximum are therefore disjoint except
+possibly at their endpoints. At distance r in [0,W0] from the maximum the
+weight is at least cos(pi*r/(2W0))^2. Both integrals add up to W0.
+At time T we have M_+(T)=0. Apply the same argument to -h at time T to get
+M_-(T)>=WT, and observe M_-(0)=0. Since the integrand defining J_W is
+nonincreasing for v>=0,
+
+    J_W(W) >= W / (sqrt(2E0)+pi/sqrt(W)).
+
+Apply this once to each weight and sum. The disjointness of the open
+half-planes gives D_+ + D_- <= int F^2 ds at each time. Integrating the
+energy identity proves (1).
+
+Curvature energy required in a strip
+
+For the following direct lower bound define the dimensionless constant
+
+     I = int_0^(pi/2) sqrt(sin v) dv,       c = 2 I^2.
+
+Every C2 closed regular immersion satisfies E W >= c on every axis.
+Choose horizontal/vertical coordinates so the height has the chosen
+vertical direction. At a horizontal-coordinate extremum the unit tangent
+is vertical. Reverse the vertical axis if needed so that Ty=1 there.
+The component (u,v) of {Ty>0} around that point is proper since int Ty ds=0.
+It can be lifted as a finite arclength interval. At its endpoints Ty=0.
+There is a continuous differentiable angle on the lift with theta in (0,pi)
+inside and theta equal to 0 or pi at each endpoint. One can obtain its
+endpoint regularity by lifting the smooth tangent through the unit circle.
+At the chosen point theta=pi/2, and |theta_s|=|k|. On each of the two
+legs, the total variation of an antiderivative of sqrt(sin theta) is at
+least I. Consequently
+
+     2 I <= int_u^v |k| sqrt(Ty) ds,
+     4 I^2 <= (int_u^v k^2 ds)(int_u^v Ty ds) <= 2 E W.       (3)
+
+This argument also handles zero turning number. An elementary lower bound
+on I is 1 since sqrt(sin theta)>=sin theta on the integration interval.
+
+For nonzero signed turning number n, the stronger bound E W>=4 |n| I^2
+holds. Reverse parametrization when needed to have degree |n|. Start the
+angle lift at theta(0)=0 and write theta(L)=2 pi |n|. For j=1,...,2|n|,
+choose the first hit b_j of j*pi, and the last hit a_j of (j-1)*pi
+before b_j. Then a_j>=b_{j-1} (b_0=0), and each open interval (a_j,b_j)
+has strictly one sign of Ty. The angle traverses a full half turn there.
+Using |Ty| instead of Ty in (3) charges at least 4I^2/W in squared
+curvature on each interval. Sum over the disjoint intervals and divide by 2.
+
+These factors have a useful geometric interpretation. Equality in the
+Cauchy--Schwarz estimate on a single monotone half-turn would require
+|k|=C sqrt(|sin theta|). On its open arc k^2=C^2 |sin theta| gives
+2 k_s=C^2 sign(sin theta) cos theta. Differentiating once more gives
+k_ss=-k^3/2. Thus the equality arc has zero interior elastic force. Large
+forces arising at joins or from oscillatory derivatives need a separate
+time- and space-integrated dissipation budget.
+
+Consequences for short-time multiscale configurations
+
+Define f(x)=x^3/(pi+sqrt(2x))^2 for x>0. The square root of f is
+x/(pi/sqrt(x)+sqrt(2)), which increases strictly. Multiplying (1) by
+E0^3 and applying (3) at each endpoint yields
+
+     T E0^3 (E0-ET) >= f(c) + f(c E0/ET) >= 2 f(c).           (4)
+
+One can use c=4|n| I^2 on a nonzero-turning-number evolution since the
+turning number persists along a smooth family of immersions. The weaker
+fixed constant c=2 works for all curves and yields 2 f(2)=16/(pi+2)^2.
+This supplies a positive energy-scale lower bound for T E0^4 as well.
+For a sequence with bounded E0 W0, T/W0^4 cannot tend to zero in a
+sequence of complete migrations. This follows directly by dividing (4)
+by (E0 W0)^4 and using E0-ET<=E0. Spatial derivatives of the curvature
+may be arbitrarily large in this statement. None of the estimates
+eliminates evolution over times above the lower bound.
+
+The primary literature supplies a different sufficient condition for
+nonmigration, namely Novaga's initial normalized-energy bound
+L int k^2 ds <= 4 pi^2+8/3. His preprint dated 4 November 2026 is at
+https://arxiv.org/abs/2611.07242. The original question concerns whole
+closed curves in Miura and Wheeler, Section 1.2, DOI
+10.1016/j.jfa.2025.111030. The two-endpoint calculation above is a
+handwritten derivation for the current research. The long-time unrestricted
+question and a full Lean implementation of this derivation remain open.

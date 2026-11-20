@@ -1,3 +1,5 @@
+import Migration.TwoEndpointCost
+import Migration.EndpointMass
 import Migration.DilationDefect
 import Migration.Criterion
 
@@ -11,8 +13,10 @@ free-elastic-flow expander with that profile.
 
 The actual-coordinate geometry modules also derive the normal-distance
 regression center, positive energy/support integrals, force balance and
-the exact dilation-defect decomposition. They do not establish a dynamic
-nonmigration theorem or a migrating trajectory.
+the exact dilation-defect decomposition. On an actual normal free elastic
+flow the cutoff modules bound the time and dissipation needed to change
+two height-weighted lengths. Closedness supplies a lower bound for each
+weighted length from two sampled heights on a slice.
 
 Run this independent project from its own directory:
   lake +leanprover/lean4:v4.33.1 update
