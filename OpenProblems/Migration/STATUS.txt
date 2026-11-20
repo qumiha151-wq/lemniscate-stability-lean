@@ -58,3 +58,22 @@ a multiplicity refinement. The explicit cutoff application, conversion of
 total integrated dissipation to endpoint energy drop, and the angle-lift
 width and multiplicity arguments are handwritten in these notes. The
 existence or exclusion of unrestricted whole-half-plane migration remains open.
+
+20 November 2026. The subsequent integrated audit checks 344 declarations.
+The clipped sine cutoff, endpoint mass estimates, and energy-drop identity
+now have Lean proofs. Write W(t) for the vertical span of the image and E(t)
+for one half of the actual arclength integral of squared curvature. Under
+strict separation across a common horizontal line, set
+
+  C(W,E) = W^3/(pi+sqrt(2*E*W))^2.
+
+Theorems whole_halfplane_energy_cost and forward_halfplane_energy_cost give
+
+  C(W(0),E(0)) + C(W(T),E(0)) <= T*(E(0)-E(T)).
+
+The first theorem assumes smooth immersed normal free elastic flow on an
+open time set containing the slab. The forward theorem assumes smooth
+immersed normal flow at positive times, joint position continuity up to
+initial time and right continuity of bending energy there. The constants
+come from actual endpoint images and the initial energy. Existence or
+exclusion of migration at unrestricted times remains open.

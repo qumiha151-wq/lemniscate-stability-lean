@@ -1,3 +1,4 @@
+import Migration.ForwardHalfplaneCost
 import Migration.TwoEndpointCost
 import Migration.EndpointMass
 import Migration.DilationDefect
@@ -16,7 +17,7 @@ regression center, positive energy/support integrals, force balance and
 the exact dilation-defect decomposition. On an actual normal free elastic
 flow the cutoff modules bound the time and dissipation needed to change
 two height-weighted lengths. Closedness supplies a lower bound for each
-weighted length from two sampled heights on a slice.
+weighted length from two sampled heights on a slice. The explicit clipped sine cutoff and the bending dissipation identity give a necessary inequality for the widths and actual energies of two strictly separated endpoint curves. The forward-time theorem includes initial data by right continuity.
 
 Run this independent project from its own directory:
   lake +leanprover/lean4:v4.33.1 update
