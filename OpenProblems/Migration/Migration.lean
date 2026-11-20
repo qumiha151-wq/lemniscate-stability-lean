@@ -1,3 +1,4 @@
+import Migration.NearRoundDisk
 import Migration.TranslatorCaps
 import Migration.FiniteRotation
 import Migration.CenterInterior
@@ -35,3 +36,6 @@ Run this independent project from its own directory:
 
 This project does not import the stability or length-growth projects.
 -/
+
+/-! The physical near-round fixed disk is proved in `Migration.NearRoundDisk`.
+See `Research/FixedCore/FixedCoreFormalization.md` for the statements and bounds. -/
