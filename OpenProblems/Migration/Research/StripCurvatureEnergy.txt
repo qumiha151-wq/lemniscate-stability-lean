@@ -1,0 +1,57 @@
+Uniform bending energy in a strip and the time cost of migration
+20 November 2026
+
+Fix a smooth regular closed immersed plane curve gamma, and choose coordinates
+so that the strip is horizontal. Write (X,Y) for the unit tangent, k for signed
+curvature, ds for arclength, W for the vertical span, and E = (1/2) int k^2 ds.
+
+Rolle's theorem for the vertical position supplies a point j with Y(j)=0.
+Rolle's theorem for horizontal position on the full period starting at j
+supplies an interior p with X(p)=0. Thus Y(p) is either 1 or -1. Let sigma
+denote that sign. Take the last zero a of Y before p and the first zero b
+after p in this period. Both exist by compactness. By continuity, sigma Y is
+nonnegative on [a,b]. At a and b the horizontal tangent component has
+absolute value 1. Hence the total variation of X on each of [a,p] and [p,b]
+is at least 1. The Frenet identity dX/ds=-kY gives
+
+  2 <= int_a^b |k| |Y| ds.
+
+Cauchy-Schwarz bounds the square of the last integral by
+
+  (int_a^b k^2 ds) (int_a^b Y^2 ds)
+    <= (2E) int_a^b sigma Y ds
+    = (2E) sigma (height(b)-height(a))
+    <= 2E W.
+
+The full bending integral over the shifted material period equals the one
+over the defining period by periodicity. Thus E W >= 2, for every turning
+number and every smooth regular material parametrization.
+
+Now consider an actual normal free elastic flow over [0,T] whose entire
+initial image lies above a line and whose entire final image lies below it.
+Let E0 and ET be the endpoint energies, W0 and WT the vertical spans. Write
+
+  C(W,E) = W^3/(pi+sqrt(2EW))^2.
+
+The previously verified two-endpoint bound reads
+
+  C(W0,E0) + C(WT,E0) <= T(E0-ET).
+
+The static bound gives E0 W0 >= 2 and ET WT >= 2. The energy is
+nonincreasing, so E0 WT >= 2 as well. For x=E0 W >= 2 one has
+sqrt(2x) <= x, and
+
+  2/(pi+2) <= x/(pi+sqrt(2x)).
+
+Squaring and multiplying by x yields E0^3 C(W,E0) >= 8/(pi+2)^2.
+Adding this inequality at both endpoints gives
+
+  T E0^3 (E0-ET) >= 16/(pi+2)^2.
+
+The forward-time version requires smooth regular normal free elastic flow
+only at positive times, plus joint continuity of position and right
+continuity of bending energy at initial time. Continuity of the extrema
+of a continuous family over the compact parameter interval gives continuity
+of W. Passing to the right limit proves E0 W0 >= 2 under these assumptions.
+The lower bound concerns the cost of a crossing. Whether a crossing can
+ever be realized at unrestricted times remains open.
