@@ -1,3 +1,5 @@
+import SolitonClassification.TangentLawGeometry
+import SolitonClassification.AngularForceElimination
 import SolitonClassification.FirstZeroTurnExpander
 import SolitonClassification.SingleValuedForce
 import SolitonClassification.CubicSupportRigidity
