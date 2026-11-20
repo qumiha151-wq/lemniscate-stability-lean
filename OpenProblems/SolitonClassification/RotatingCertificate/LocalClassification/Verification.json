@@ -1,0 +1,29 @@
+{
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "project": "SolitonClassification",
+  "modules": {
+    "PrimitiveSupportPeriod": {
+      "source_sha256": "7543123421407e4fa3b3eeeab46ae3b82345c6e0e78cdb782f942681d71b1b37",
+      "object_sha256": "e36cec6a3c4618357d230ddc20a3dc05e61402f088cb9ea010360c8195a55314",
+      "stdout": "PRIMITIVE_SUPPORT_PERIOD_AUDIT 18 declarations with standard axioms",
+      "exit_code": 0
+    },
+    "FloquetPencil": {
+      "source_sha256": "5393f5bca8d8e7487beef1107b7a61460458bc9528eca0cd109bd008554d015f",
+      "object_sha256": "b419fb627ac764f4466c7878c1dcada068d2ee01638aa5e29651ae6cb3c0339e",
+      "stdout": "FLOQUET_PENCIL_AUDIT 16 declarations with standard axioms",
+      "exit_code": 0
+    }
+  },
+  "inputs_already_in_repository": {
+    "RotatingCertificate/classification_odd_branch_interval/shooting_certificate.json": "7f227259292b5e4795f6df4e2f5f4e907bdc360a973915fee2e0bf3015ed3486",
+    "RotatingCertificate/classification_odd_branch_interval/metric_plus_o60_n4000.json": "6cb0b6eeca760093d1ec42c27296d5913fb41d398ed12c08d5b18b6637cc2075",
+    "RotatingCertificate/classification_odd_branch_interval/metric_minus_o60_n4000.json": "32d7f521fb7d9d077eb414d78102b6daf7c898fb6c9f12188b2b3f8a27c8a3af",
+    "RotatingCertificate/classification_odd_branch_interval/AnalyticCertificate.txt": "0be3f8801ba24781ae8cf697454596a1aed4ad398849fc504e23c12bfdee3192",
+    "RotatingCertificate/classification_odd_branch_interval/validated_metric_shoot.py": "f9d9c04b663e7ee1f3eeeb3bff2b7c7203b16b399329e6c387726a7e027b8049",
+    "Pitch/PitchAccumulation.txt": "c7c42c835c87cea507d4536847f38fe90eca5fd7c5544b5a227fd2d124d379ef",
+    "Pitch/EnergyCappedPitchSpectrum.txt": "cae3b0d1d0fed0b6a04a5ba4ae1a89bf575fb958ae085cf5f1e28bbe4d8dd56d"
+  },
+  "numerics": "Floquet signs use exact rational intervals. Primitive period uses 4000 replayed positive-time state nodes and 375 prime tests.",
+  "mathematical_scope": "Local exhaustiveness follows by hyperbolic Poincare isolation. The full conditional-to-geometric assembly is a computer-assisted mathematical argument."
+}

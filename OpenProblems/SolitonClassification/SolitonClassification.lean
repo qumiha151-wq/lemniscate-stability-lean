@@ -1,3 +1,5 @@
+import SolitonClassification.Rotating.PrimitiveSupportPeriod
+import SolitonClassification.Rotating.FloquetPencil
 import SolitonClassification.Rotating.Balanced8FreshAudit
 import SolitonClassification.Rotating.Block8FreshAudit
 import SolitonClassification.Rotating.CandidateFinalAssembly
@@ -42,8 +44,9 @@ import SolitonClassification.CandidatePitchBranch
 Closed self-similar solution classification: partial classification.
 The verified module derives actual unit-speed, signed-curvature, support,
 soliton, and closure identities from the support-coordinate ODE.
-It permits a nonzero rotation coefficient. No periodic-orbit existence or
-complete classification theorem is asserted.
+It permits a nonzero rotation coefficient. The separate verified Linux certificate
+proves the existence of closed rotating flows at a dense set of positive pitches.
+The exhaustive global classification remains open.
 OneSignCurvature additionally proves that actual periodic similarity ODE
 profiles with one-sign curvature are centered circles. Nonconstant profiles
 must have both positive and negative excursions larger than half their RMS
