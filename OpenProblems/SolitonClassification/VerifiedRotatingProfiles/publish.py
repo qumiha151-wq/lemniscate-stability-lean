@@ -44,7 +44,7 @@ def api(path, missing=False):
 
 def download(path, destination):
     with destination.open('wb') as out:
-        gh('api', '-H', 'Accept: application/octet-stream', API + path, output=out)
+        gh('api', '--allow-escape-sequences', '-H', 'Accept: application/octet-stream', API + path, output=out)
 
 
 def origins():
@@ -82,7 +82,7 @@ def checked_origin(row, runs, previous):
     if previous:
         return
     require(not meta['expired'], 'Original artifact has expired')
-    log = gh('api', API + 'actions/jobs/' + str(job['id']) + '/logs').decode('utf-8-sig')
+    log = gh('api', '--allow-escape-sequences', API + 'actions/jobs/' + str(job['id']) + '/logs').decode('utf-8-sig')
     require(row['sha256'] in log and
             any('successfully finalized' in line and ('Artifact ID ' + str(meta['id'])) in line
                 for line in log.splitlines()), 'Producer log does not bind the uploaded artifact')

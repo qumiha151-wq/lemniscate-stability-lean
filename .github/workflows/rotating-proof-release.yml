@@ -2,7 +2,9 @@ name: Preserve verified rotating-profile proofs
 on:
   push:
     branches: [research/remaining-open-problems]
-    paths: [OpenProblems/SolitonClassification/VerifiedRotatingProfiles/origins.json]
+    paths:
+      - OpenProblems/SolitonClassification/VerifiedRotatingProfiles/origins.json
+      - OpenProblems/SolitonClassification/VerifiedRotatingProfiles/publish.py
   workflow_dispatch:
 permissions:
   contents: write
