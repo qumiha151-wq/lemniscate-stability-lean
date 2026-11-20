@@ -1,0 +1,99 @@
+name: Check dense rotating pitches from the completed candidate
+on:
+  workflow_dispatch:
+    inputs:
+      q2_run_id:
+        description: Completed full-candidate run ID containing the successful kernel report
+        required: true
+        type: string
+  push:
+    branches: [research/remaining-open-problems]
+    paths: [OpenProblems/SolitonClassification/PitchLinuxFollowup/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  SC: OpenProblems/SolitonClassification
+  PYTHONDONTWRITEBYTECODE: '1'
+jobs:
+  after-full-candidate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            OpenProblems/SolitonClassification/PitchLinuxFollowup
+            OpenProblems/SolitonClassification/FullAssemblyTools
+            OpenProblems/SolitonClassification/ModuleProduction
+      - id: q2
+        name: Select the completed Q2 job
+        env:
+          GH_TOKEN: ${{ github.token }}
+          Q2_REQUEST: ${{ inputs.q2_run_id }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re, subprocess
+          rid=os.environ.get('Q2_REQUEST','')
+          if not rid:
+              rid=str(json.loads((pathlib.Path(os.environ['SC'])/'PitchLinuxFollowup/request.json').read_bytes())['q2_run_id'])
+          if not re.fullmatch(r'[1-9][0-9]+',rid):
+              raise ValueError('Invalid Q2 run ID')
+          run=json.loads(subprocess.check_output(['gh','api',f"/repos/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{rid}"]))
+          if (run['head_repository']['full_name']!=os.environ['GITHUB_REPOSITORY'] or
+              run['path']!='.github/workflows/rotating-full-candidate.yml' or
+              run['head_branch']!='research/remaining-open-problems' or run['status']!='completed'):
+              raise ValueError('Expected a completed full-candidate run on the research branch')
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out:
+              print('run_id='+rid,file=out)
+              print('attempt='+str(run['run_attempt']),file=out)
+          pathlib.Path(os.environ['RUNNER_TEMP'],'original_run.json').write_text(json.dumps(run,indent=2))
+          PY
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee
+        with:
+          lake-package-directory: OpenProblems/SolitonClassification/ModuleProduction
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'false'
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.q2.outputs.run_id }}
+          name: rotating-full-candidate-${{ steps.q2.outputs.run_id }}-${{ steps.q2.outputs.attempt }}
+          path: ${{ runner.temp }}/original
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.q2.outputs.run_id }}
+          pattern: batch*
+          merge-multiple: false
+          path: ${{ runner.temp }}/parts
+      - name: Restore exact Linux Lean libraries and original 48 public modules
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 -B "$SC/FullAssemblyTools/tools/verify_full_assembly_tools_package.py" --package "$SC/FullAssemblyTools" --inventory-sha256 e7502fbabbbf9116c1c03c783e8b07f5cbac04009356c9e5266f524895097d24 --report "$RUNNER_TEMP/assembly-tools-check.json"
+          gh api -H 'Accept: application/octet-stream' "/repos/$GITHUB_REPOSITORY/releases/assets/742149339" > "$RUNNER_TEMP/core.tar.xz"
+          lean_bin="$(cd "$SC/ModuleProduction" && elan which lean)"
+          python3 -B "$SC/FullAssemblyTools/tools/production_core_artifact.py" restore --archive "$RUNNER_TEMP/core.tar.xz" --output "$RUNNER_TEMP/restored" --sha256 01110125281c6f4e7ea42061adf5637a6331b521ca434e846b832f1b2c7dbc8c --revision cff971bcac7ac2d83aba04596ce09e44fda1ac29 --lean "$lean_bin"
+          gh api "/repos/$GITHUB_REPOSITORY/actions/artifacts/14007325855/zip" > "$RUNNER_TEMP/final48.zip"
+          echo "4664358fbe4b3a93edd5462626b85ba189bd0e43276a0345fb03ce1893eb1378  $RUNNER_TEMP/final48.zip" | sha256sum -c -
+          unzip -oq "$RUNNER_TEMP/final48.zip" 'final48/public_inputs/*' 'final48/compile_report.json' -d "$RUNNER_TEMP/original48"
+      - name: Compile the two pitch modules and final zero-premise application
+        run: |
+          set -euo pipefail
+          python3 -B "$SC/PitchLinuxFollowup/pitch_suffix.py" --assembly "$RUNNER_TEMP/original/assembly" --parts "$RUNNER_TEMP/parts" --restored "$RUNNER_TEMP/restored" --final48 "$RUNNER_TEMP/original48/final48" --sources "$SC/PitchLinuxFollowup/sources" --out "$RUNNER_TEMP/pitch"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dense-rotating-pitches-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/original_run.json
+            ${{ runner.temp }}/pitch/verified.json
+            ${{ runner.temp }}/pitch/suffix
+          retention-days: 30
