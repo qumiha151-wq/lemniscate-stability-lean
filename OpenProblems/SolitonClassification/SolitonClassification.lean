@@ -1,3 +1,9 @@
+import SolitonClassification.FrozenSeamReflection
+import SolitonClassification.SupportFlowContinuity
+import SolitonClassification.OuterPhase
+import SolitonClassification.FrozenTailSigns
+import SolitonClassification.MarkerCount
+import SolitonClassification.FrozenUniformEscape
 import SolitonClassification.FrozenStressBounds
 import SolitonClassification.OuterStressOrbit
 import SolitonClassification.OuterDescent

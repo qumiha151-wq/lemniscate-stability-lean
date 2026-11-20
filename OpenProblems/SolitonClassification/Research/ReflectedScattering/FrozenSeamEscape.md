@@ -1,0 +1,11 @@
+# Every frozen seam reaches the outgoing sections
+
+Let \(k'=v,\ v'=-k^3/2-p,\ p'=-kq,\ q'=kp,\ p^2+q^2=1\) on the real line. For a symmetric seam, \(k(0)=c,\ v(0)=q(0)=0,\ p(0)=1\), with arbitrary \(c\in\mathbb R\). Put \(H=k^2q/2+vp,\ B=k^2p/2-vq,\ A^2=H^2+B^2=k^4/4+v^2\). Then \(-H(t)\to+\infty\) as \(t\to+\infty\). On a final half-line the corrected height \(\widehat h=-H-\chi/\sqrt A\) crosses every subsequent level exactly once, with slope at least \(1/4\).
+
+Indeed \(H'=-p^2,\ B'=pq\). Suppose \(0\le-H\le M\) on the positive half-line. For \(A\ge12\), the frozen corrector bounds give \(|\widehat h+H|\le1\) and \(\widehat h'\ge1/4\). If \(|B(s)|>12+4(M+4)\), then \(|B'|\le1\) gives \(A\ge|B|\ge12\) on the next \(4(M+4)\) units of time. The corrected height increases by at least \(M+4\) there while staying in \([-1,M+1]\), a contradiction. Thus \(B,A,k,v\) are all bounded on the positive half-line.
+
+A convergent differentiable real function with uniformly Lipschitz derivative on a half-line has derivative tending to zero. To see this, approximate its derivative at \(t\) by the secant over \([t,t+d]\). The mean value theorem and the Lipschitz bound \(C\) give error at most \(Cd\). First take \(t\to\infty\) with \(d>0\) fixed, then let \(d\downarrow0\).
+
+Apply this fact to the decreasing and bounded \(H\). The derivative of \(H'=-p^2\) is bounded since \(p,q,k\) are bounded, so \(p\to0\). Apply it again to \(p\), since \(p'=-kq\) and \(p''=-vq-k^2p\) are bounded. Thus \(kq\to0\). The identity \(H=k(kq)/2+vp\) now gives \(H\to0\). A decreasing function with \(H(0)=0\) and this limit is identically zero on the positive half-line, contradicting \(H'(0)=-1\). Therefore \(-H\to+\infty\). Since \(A\ge|H|\), the same corrector bounds prove eventual strict increase and divergence of \(\widehat h\), giving the claimed unique transverse crossings.
+
+For a compact family with continuous finite-time dependence, the open sets \(\{c:-H_c(t)>R\}\) increase with \(t\) and cover the parameter set. Compactness gives one time after which the entire family has passed the raw level \(R\), in particular for \(c\in[-1/4,1]\). The escape theorem applies to each global solution of the four stated ODEs. Existence, uniqueness and parameter dependence of those solutions are distinct assertions.
