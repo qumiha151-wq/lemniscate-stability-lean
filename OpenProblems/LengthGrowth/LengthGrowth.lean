@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.TurningCompactFlow
 import LengthGrowth.ActualFlow.CriticalOsgoodFlow
 import LengthGrowth.ActualFlow.CriticalDensityIndexFlow
 import LengthGrowth.ActualFlow.FiniteSignTheorem

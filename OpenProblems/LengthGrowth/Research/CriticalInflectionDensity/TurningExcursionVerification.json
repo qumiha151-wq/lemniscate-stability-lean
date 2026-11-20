@@ -1,0 +1,196 @@
+{
+  "lean": "4.33.1",
+  "baseline_commit": "0e9ed28f1a63485c4bb8f4dd9ed0194bf61e292c",
+  "baseline_project_declarations": 1629,
+  "audited_declarations": 1681,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "independent_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.SmallTurnArcs",
+      "source_sha256": "92f03cdafd62b0db0ef188b926f3e794749943994c536a031eff20ec1c9f3763",
+      "setup_sha256": "9a7acb0ab61d739f54776884b19d432187387d90a055df05032b80fbbe10df22",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "be92d7ad6ae767269b9b8b69f6f2f0e28abb6cff310c6bd2456d196862804776",
+      "log": "'LengthGrowth.ActualFlow.MacroscopicTurning.small_turn_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ActualFlow.MacroscopicTurning.small_turn_cubic_of_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.StrongArcCover",
+      "source_sha256": "b4df33d130b9fada308e668e61ee12dbd5b19726606815f865a2ba00d2d7946a",
+      "setup_sha256": "bfd01e6fd017c036b01cce67fa5e577b4d021952c24da35f74c0d2442a444e96",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "726b868eb236d24a02cfc8454e2417d7875a8fdc909a30ef1a4bc0b8aca50864",
+      "log": "'LengthGrowth.ActualFlow.MacroscopicTurning.finite_lobe_cover' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningFamily",
+      "source_sha256": "571c619d0b7191ad5d0d293eb83439eef1032a8fe786a7097e9b5d8669238789",
+      "setup_sha256": "2b84850daac0f77cbd7cdc4be54055d9ad122c4c5c7e68be4e1c5f8edbc342ea",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "f10d194ba5cf952a8c5a119e702c7e3fb9404a058b99ca5c804f528d26d7790f",
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningSlice",
+      "source_sha256": "8587f510e879a44db453b4340ea50135731d98d62d588576236b691756aebbf7",
+      "setup_sha256": "ee780852414a8bf69c9127287aa926a4b7e93635a70f0d6aa0748068396f79f7",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "5955390ecf5642b0f7f467ab747ab7139af8f723e869141ab931b657f13329e4",
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.turning_slice_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MacroscopicTurningRecords",
+      "source_sha256": "29953822300e1c1ed7778f359f2e566afd89db745907c8791e99742400ef7fd6",
+      "setup_sha256": "2a3b141302565f4f5d94d9bbb1bfd369828283f1de7e3b469769ec26acbd4641",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "891392c08f0b32573fe9acfad62264d5ea818edc6673d7f2824b23c5a05581e3",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.dissipation_at_product_record' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_bound_of_small_macroscopic_count' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.StrongArcIntegrals",
+      "source_sha256": "4b03a290846a8f6831e002097642c50a9b155cc91fd1d8029db40b9eda615a8e",
+      "setup_sha256": "bf6b76a4ff8e616dd59b1a6b481db84cb28d9f1100bcabd3bcf2888622854f0f",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.StrongArcCover": "726b868eb236d24a02cfc8454e2417d7875a8fdc909a30ef1a4bc0b8aca50864"
+      },
+      "exit": 0,
+      "olean_sha256": "0602200b7409153f8d6eb2615cba8e06ee95cd73d42b3f19dcdbe1f742bc0124",
+      "log": "'LengthGrowth.ActualFlow.MacroscopicTurning.sum_lobe_integrals_eq' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningPacking",
+      "source_sha256": "ed14d9813bafe8c022a09a7cf811da962ddda9e3e122cdc518c5ed7aa479d7fc",
+      "setup_sha256": "736e8535d3b56da806ec42e3993af5fc5a670ed471578457d81215d80c96e4b5",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.StrongArcCover": "726b868eb236d24a02cfc8454e2417d7875a8fdc909a30ef1a4bc0b8aca50864"
+      },
+      "exit": 0,
+      "olean_sha256": "c65f1e589dfae88cf55f01f43ab436360cbaf5302fabaeb69df0f8d3ae88e355",
+      "log": "'LengthGrowth.ActualFlow.MacroscopicTurning.pack_quarter_turn_sign' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.MacroscopicTurning.pack_quarter_turn_lobes' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningExcursions",
+      "source_sha256": "88e1ea94a7226cc495df23dfed885f0ed4f4b6ae733cca2a0b3f51b2208bad60",
+      "setup_sha256": "ca414c02ded1002a075a7089c7e45ae1372a466e5656043b34b740f63595c91a",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.TurningFamily": "f10d194ba5cf952a8c5a119e702c7e3fb9404a058b99ca5c804f528d26d7790f",
+        "LengthGrowth.ActualFlow.TurningSlice": "5955390ecf5642b0f7f467ab747ab7139af8f723e869141ab931b657f13329e4"
+      },
+      "exit": 0,
+      "olean_sha256": "97eee6444b33f8e334efca605ecb60d2917cc5fb90eac5398004cb10cd18f8e9",
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.turning_excursions_transfer' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.StrongArcEnergy",
+      "source_sha256": "0b9df9cf219fe9bb191ec505881ebac73a39cecf67ab5382a6760a99abf280d8",
+      "setup_sha256": "571337bd597095a98e7803cc054d45f1069639801067926a4c34f4a04ce269ee",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.SmallTurnArcs": "be92d7ad6ae767269b9b8b69f6f2f0e28abb6cff310c6bd2456d196862804776",
+        "LengthGrowth.ActualFlow.StrongArcIntegrals": "0602200b7409153f8d6eb2615cba8e06ee95cd73d42b3f19dcdbe1f742bc0124"
+      },
+      "exit": 0,
+      "olean_sha256": "51541fb3eea04f9e9eb70e20de0e8dfd55398b38a6cbf837a1eefb397a08e03f",
+      "log": "'LengthGrowth.ActualFlow.MacroscopicTurning.large_lobe_energy' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.StrongArcScalar",
+      "source_sha256": "3ef00845a15c265d77e67d6ad691560a3b965edb6a948a96f398eeb7a8262e5f",
+      "setup_sha256": "802e7c558ac93c5d4ad67376fe0f448579ac43f7a295d1739cfee2a41530d1c4",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.StrongArcEnergy": "51541fb3eea04f9e9eb70e20de0e8dfd55398b38a6cbf837a1eefb397a08e03f",
+        "LengthGrowth.ActualFlow.TurningFamily": "f10d194ba5cf952a8c5a119e702c7e3fb9404a058b99ca5c804f528d26d7790f",
+        "LengthGrowth.ActualFlow.TurningPacking": "c65f1e589dfae88cf55f01f43ab436360cbaf5302fabaeb69df0f8d3ae88e355"
+      },
+      "exit": 0,
+      "olean_sha256": "f72f5e80d5280539965c36c75a6f8eb16af541bb8b43d6c61c254b99ff5e4fd0",
+      "log": "'LengthGrowth.ActualFlow.MacroscopicTurning.scalar_excursions_of_low_force' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningMaterial",
+      "source_sha256": "1dd8b564690f30310fb4a89c37496d72407bbc30f84befa5bf570f0fc7bd6e6f",
+      "setup_sha256": "eda658283582d59faf2f7309f9ee35c5cd22716e13135f79134f664a82255e47",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.StrongArcScalar": "f72f5e80d5280539965c36c75a6f8eb16af541bb8b43d6c61c254b99ff5e4fd0",
+        "LengthGrowth.ActualFlow.TurningExcursions": "97eee6444b33f8e334efca605ecb60d2917cc5fb90eac5398004cb10cd18f8e9"
+      },
+      "exit": 0,
+      "olean_sha256": "91bdffd7ee6a2f96daf8ab54009ad8191dca3172a96ddad95c7e96473d14182c",
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.has_turning_excursions_of_low_dissipation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningQuarterFlow",
+      "source_sha256": "369ea0bb76a1ae350db72306da467e0ae27296d0235d6cd0aad039964c7358c6",
+      "setup_sha256": "ccac13897e5a2af898afdb4170eca26bed66dd2dd4aac3a844b3bdbc11a92ccd",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.MacroscopicTurningRecords": "891392c08f0b32573fe9acfad62264d5ea818edc6673d7f2824b23c5a05581e3",
+        "LengthGrowth.ActualFlow.TurningMaterial": "91bdffd7ee6a2f96daf8ab54009ad8191dca3172a96ddad95c7e96473d14182c"
+      },
+      "exit": 0,
+      "olean_sha256": "b0b3f4df2c6bc80533798ae808b31534085142e48c3f42b9bb976e66c88179f7",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.turning_excursions_at_high_records' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_turning_excursion_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MacroscopicTangentChord",
+      "source_sha256": "e021a5bf2cb18c5c619b570264f5b0963e3b9c5daa6b5d9138fd26fc911f80d2",
+      "setup_sha256": "2b640e9cc17c510867ae79defe115029137d84cc71e3ac2964742d223c009148",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "6c92ef682ca41097df7f61c96fe12bfb530d575eb111d3e8b2354c78cf4752c6",
+      "log": "'LengthGrowth.ClosedFrenetCurve.tangent_chord_of_net_turn' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ClosedFrenetCurve.packing_le_inverse_modulus' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentModulus",
+      "source_sha256": "b4247e6fa5aa23853c2c054d5f789e67de141f7c6707d3fa01e2697ee835e242",
+      "setup_sha256": "da2484056db91b4fc4fddb4dfb4748fb949fcdf08ef902b43b56a303b2a61796",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.MacroscopicTangentChord": "6c92ef682ca41097df7f61c96fe12bfb530d575eb111d3e8b2354c78cf4752c6",
+        "LengthGrowth.ActualFlow.TurningExcursions": "97eee6444b33f8e334efca605ecb60d2917cc5fb90eac5398004cb10cd18f8e9"
+      },
+      "exit": 0,
+      "olean_sha256": "3e54180f2c1b89aef1d4cc845d7c6429ec42bcf5699f9a9daee74c5c8e1106bf",
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.turning_count_of_modulus' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TurningCompactFlow",
+      "source_sha256": "0b99ee12c36eade9e451bb444b113464ec5ce4296af743eee12d1dfe0be9a84e",
+      "setup_sha256": "848cf9b8df0b22900ccadc018307ac6f4cc66363702d3433142b22e93136ac6e",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.TangentModulus": "3e54180f2c1b89aef1d4cc845d7c6429ec42bcf5699f9a9daee74c5c8e1106bf",
+        "LengthGrowth.ActualFlow.TurningQuarterFlow": "b0b3f4df2c6bc80533798ae808b31534085142e48c3f42b9bb976e66c88179f7"
+      },
+      "exit": 0,
+      "olean_sha256": "c3fe7cb22cedfd97177e1bb0bb98712a82cd8466e9085e94cea483a2fe4d99e4",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.no_tangent_modulus_at_high_records' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_tangent_modulus' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "19e007566f5146ab97b22eb63b69fc7170c24d8a5a01131f92029eeedf9f74a4",
+      "setup_sha256": "a78fed9c2a66d670daf4a47ddc7c20470f2e73c69e0d3ecb7b246706f31b8393",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.TurningCompactFlow": "c3fe7cb22cedfd97177e1bb0bb98712a82cd8466e9085e94cea483a2fe4d99e4"
+      },
+      "exit": 0,
+      "olean_sha256": "6014b3bc23a662913c8f2e6608f61958f6e2b62b4240af67442b7451d2bf7c4f",
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "setup_sha256": "7c6406a158eec681af457d8093b2e91be62855e0533bde756965cc5c9ab2927b",
+      "dependencies": {
+        "LengthGrowth": "6014b3bc23a662913c8f2e6608f61958f6e2b62b4240af67442b7451d2bf7c4f"
+      },
+      "exit": 0,
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "log": "Length-growth audit passed: 1681 declarations; standard axioms only.\n"
+    }
+  ]
+}
