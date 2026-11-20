@@ -82,3 +82,12 @@ The uniform endpoint displacement follows by the triangle inequality with the in
 ## Verification scope
 
 Lean verifies (1) from the actual position-defined normal elastic equation in any smooth material parametrization on an open time interval. The derivative in (1) is the derivative of the integral defining \(Q_a\). Its proof differentiates the position-dependent weight and the measure, computes both components of the spatial velocity derivative and integrates a periodic flux. Lean also verifies the lower bound \(ma^2e^{a(h(u)-m)}\le Q_a\) for every material label at each regular slice. The use of the energy identity and the stress theorem to estimate \(B\), the integration of (1) and the choice of \(a\) in (3) give the written proof of the stated infinite-time asymptotics. [Material differential inequality and point detection](../../LengthGrowth/ActualFlow/MaterialWeightedRate.lean) · [Material first variation](../../LengthGrowth/ActualFlow/WeightedEnergyVariation.lean) · [Weighted spatial estimate](../../LengthGrowth/ActualFlow/WeightedForceRate.lean) · [Geometric point detection](../../LengthGrowth/ActualFlow/ExponentialPosition.lean)
+
+### Complete formal theorem
+
+The independent Lean proof now includes the time integration and the infinite-time limit. For every smooth global regular closed material immersion satisfying \(X_t=-FN\) on positive times and for every fixed \(O\in\mathbb C\), the theorem \(\texttt{ForwardImmersion.fixedOriginRadius_localization}\) proves
+\[
+  \lim_{t\to\infty}\frac{\max_{u\in[0,P]}|X(t,u)-O|}
+                         {t^{1/3}\sqrt{\log(2+t)}}=0 .
+\]
+Here \(P\) is the actual material period. The formal proof uses the continuous clock density \((2^{24}ED)^{1/3}\), which dominates the squared maximum curvature. Its primitive from time one is \(o(t^{2/3})\) by the finite physical energy loss. The logarithm of the actual material moment has a differential upper bound and gives a common estimate for every material label and \(0<a\le1\). For each fixed \(K\ge1\) the formal optimization takes \(a=K\sqrt{\log t}/t^{1/3}\), then lets \(K\) be arbitrarily large. Compactness of one actual material period identifies the maximum in the displayed formula. [Complete physical theorem](../../LengthGrowth/ActualFlow/SpatialLocalization.lean) · [Dissipation clock](../../LengthGrowth/ActualFlow/LocalizationClock.lean) · [Finite-time bound](../../LengthGrowth/ActualFlow/LocalizationEnvelope.lean) · [Endpoint optimization](../../LengthGrowth/ActualFlow/LocalizationOptimization.lean)
