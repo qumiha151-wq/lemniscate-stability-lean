@@ -1,0 +1,26 @@
+{
+  "lean": "4.33.1",
+  "compilations": [
+    {
+      "module": "SolitonClassification.ScalarObservation",
+      "source_sha256": "298a802391f502f400bd93edba72edefcfc04b194ce391d2f01af4aa604a2502",
+      "object_sha256": "86ff9fa65e4a22ed666eeef5ca96e447f7140ec8b88568bbfda505934e0f5cc3",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.ClosedUnitFrenetCurve.height_curvature_identity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ClosedUnitFrenetCurve.squared_distance_curvature_identity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "03e47571743ea882949d0a6fe4208c6793e0ee9ca2bb186484480c200d9f8afb",
+      "object_sha256": "030e1b1889d41ff1c240ab26f9c289dc00fea4206fe5fb155d9233248e9f7448",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "a9f51730453d2a1a636dd19b54053056eea9148df594bc7b2abfac58c31a603b",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit_code": 0,
+      "stdout": "SolitonClassification audit passed: 20897 declarations; standard axioms only."
+    }
+  ]
+}
