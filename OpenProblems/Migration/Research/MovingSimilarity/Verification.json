@@ -1,0 +1,49 @@
+{
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "baseline_declarations": 561,
+  "baseline_modules_verified": 49,
+  "baseline_verification_sha256": "812ad1550239c3abfc0efeaa10564ee044c8839f01f7f9cdc77b3d8b48d00e25",
+  "audited_declarations": 564,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_builds": [
+    {
+      "module": "Migration.StressAngle",
+      "source_sha256": "0c3462e34c37457ff39f3806124ebd531b70d15af653df92b760088f7b63e1de",
+      "olean_sha256": "c1041b6f9c0b4dcf5dc788e157869d4f852aefa57f81391d6c80704ce07c82e4",
+      "exit": 0,
+      "log": "'MigrationGeometry.StressAngle.weighted_force_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "1d3c0b0da42198ee92ce2a8ce2379f580249316c1d58a12c01c5219f80980f6b",
+      "olean_sha256": "d4cabb75b6274b839c24c280bbe1b93ccde3eec306bf7412809b27b22907c755",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 564 declarations; standard axioms only.\n"
+    }
+  ],
+  "rational_checker_sha256": "50e966d6e8dbaf367df239ee947ed4a9521f5683ae21d34406791d73ccb41260",
+  "rational_checker_exit": 0,
+  "rational_checker_output": [
+    "P 0.001998003992015968",
+    "Q 0.0016652800887409873",
+    "normal_center 1.9791732419067767 -0.00108044939483526",
+    "tangent_center 1.000448894125343 5.395536536485901",
+    "pitch -0.0013551622875921645",
+    "full_center 1.9864847229065052 0.0002557891745436556",
+    "normal_height -0.0007130431059946094",
+    "full_height 0.0006110197996562505"
+  ],
+  "note": "Rational comparisons are exact. Decimal output is illustrative. The regularized coordinate turning identity is kernel checked. The moving-frame support and curvature-lobe estimates are analytic arguments in the accompanying note."
+}
