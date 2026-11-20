@@ -1,0 +1,45 @@
+{
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "sources": {
+    "SolitonClassification/RotationPitch.lean": "7d792e0541dd92fbd34388d7f149290ef78d2e86b07a03a7e19fd01fa6d2bc35",
+    "SolitonClassification/PitchContinuation.lean": "5dc682442386a921635747c38c6724b651e3332bc3693660c6adf68800345b1a",
+    "SolitonClassification/CandidatePitchBranch.lean": "a17dbe31f858315721a8c4cfb2a2772822cc9ad7374aa62cabc44dbad80689b3",
+    "SolitonClassification.lean": "91c60b32b4d6493d3f310e0d6a83368eaa0ada0b22b97364c002dbd8b1b22bdb",
+    "SolitonClassification/AxiomAudit.lean": "5dcd7bf2f1cd6b80c44583b5fa964401d0bb1b21bb7e2d59cee5521d49b549e8"
+  },
+  "scope": "Candidate dense-pitch geometric theorem under the same five actual enclosures as the single-root assembly. Full concrete grid instantiation remains unverified.",
+  "leaf_exit": 0,
+  "leaf_stdout": "Candidate actual pitch branch audited for 1717 declarations.\n",
+  "project_checks": {
+    "SolitonClassification": {
+      "exit": 0,
+      "out": "",
+      "err": ""
+    },
+    "SolitonClassification.AxiomAudit": {
+      "exit": 0,
+      "out": "SolitonClassification audit passed: 9080 declarations; standard axioms only.\n",
+      "err": ""
+    }
+  },
+  "ten_binder_application_test": {
+    "future_source": "212adf5865dcd506c75f276b148e06bc7eab9f2601e22e7251b5884097e0ce49",
+    "full_candidate_template": "697b53e7bd0546a26c2dc10769a9b93c5d5082a386644d6f9ac908d53f28bb70",
+    "checked_input_symbols": [
+      "FullGridP.certificate",
+      "FullGridM.certificate",
+      "FullGridP.state_start",
+      "FullGridP.matrix_start",
+      "FullGridM.state_start",
+      "FullGridM.matrix_start",
+      "FullGridPActual.terminal_state",
+      "FullGridPActual.terminal_matrix",
+      "FullGridMActual.terminal_state",
+      "FullGridMActual.terminal_matrix"
+    ],
+    "scope": "Concrete Linux grid modules are not inputs to this local ten-binder test.",
+    "returncode": 0,
+    "stdout": "Dense actual-pitch theorem passed the standard three-axiom audit.\n",
+    "stderr": ""
+  }
+}

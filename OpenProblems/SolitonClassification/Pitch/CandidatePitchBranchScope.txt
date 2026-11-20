@@ -1,0 +1,46 @@
+Actual candidate pitch branch and its two verification levels
+
+CandidatePitchBranch.actual_closed_pitch_dense_of_remaining_enclosures uses
+exactly the five analytic/numerical inputs in CandidateFinalAssembly:
+
+  (i, ii) ActualFlowMatrixBounds at the full positive and negative horizons;
+  (iii) the true center shooting-value enclosure of radius 10^-27;
+  (iv) the true center derivative enclosure of radius 10^-5;
+  (v) the preconditioned center residual bound of radius 10^-30.
+
+Those assumptions imply that some open interval (lo,hi) lies in positive
+pitches and every subinterval contains an actual nonconstant
+IsClosedRotatingProfile with pitch in that subinterval. Its closing period
+is the denominator of the rational angle times twice the actual half length.
+The direct input contains no periodic orbit, rational angle, phase-function
+monotonicity or prescribed center array declared to be the true derivative.
+
+The Lean proof recovers the true flow derivative bound and its variation,
+uses the rational preconditioner norm <=82 and its fifth diagonal entry
+<-10, extends actual roots along the shifted angle residual w.r.t. t,
+and propagates equality of the four physical support coordinates and the
+exact angle difference via the existing ODE theory. It also proves the
+resulting genuine curve is nonconstant using the existing actual support
+rigidity theorem. Its radius-10^-24 budget and slope sign are those of the
+Lean candidate assembly. This is a checked implication. Discharging the
+full concrete numerical inputs is still a separate verification task.
+
+The independently reviewed smaller-box human+Arb proof in
+RotatingCertificate and the rational postcheck in PitchAccumulation.txt
+give the explicit pitch interval b0 +/- 5*10^-34. They use different
+numeric tolerances and must not be silently substituted for the five
+Lean premises. The proof of the true ODE tube and its variational bounds
+in that part is the archived real-analysis-plus-Arb certificate.
+
+Geometric interpretation on the continued branch (human argument).
+At irrational angular holonomy H/(2*pi), the image closure of the
+infinite reconstructed profile is the entire closed annulus r_min<=|x|<=r_max.
+Indeed beta(s+nP)=Rot(nH) beta(s) at each point of the support block.
+Its rotational orbit is dense on the circle through that point; the
+continuous radius on the connected compact block assumes all intermediate
+values. No block point leaves the annulus. Its two radii are distinct:
+if the radius were constant then q=(|beta|^2/2)'=0 everywhere, forcing
+constant curvature. Thus these profiles interpolate between rational
+closed members as local analytic ODE curves but their images have annular
+closures. This statement concerns this specific support branch; other
+solutions at an identical pitch are unrestricted.

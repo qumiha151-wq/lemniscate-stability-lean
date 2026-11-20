@@ -20,6 +20,9 @@ period. Applying it near b=0.0096866 uses the concrete human+Arb shooting
 certificate and its tube bounds. The resulting branch contains a dense
 set of realized positive pitches in an explicit interval. Its complete
 concrete 8000-step Lean specialization is still outstanding.
+CandidatePitchBranch derives this density for the actual positive-pitch
+closed geometric profiles from the same two full flow/matrix bounds and
+three center enclosures used by the single-root geometric assembly.
 CircleLinearization proves no purely imaginary circular eigenvalue for any
 rotation parameter. NoClosedTranslators excludes closed pure translators,
 including the stationary case, from actual position/Frenet identities.

@@ -36,6 +36,7 @@ import SolitonClassification.OneSignCurvature
 import SolitonClassification.SolitonDilation
 import SolitonClassification.RotationPitch
 import SolitonClassification.PitchContinuation
+import SolitonClassification.CandidatePitchBranch
 
 /-!
 Closed self-similar solution classification: partial classification.
