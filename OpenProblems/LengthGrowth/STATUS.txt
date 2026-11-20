@@ -233,3 +233,14 @@ Research/LengthSharpConstantGap.md derives a gap above the optimal growth
 coefficient by applying two existing geometric theorems to the estimates
 above. The last step of that argument uses the convergence theorem cited
 in the note. The general fourth-root upper bound remains open.
+
+
+Dependence of the coefficient on the initial curve
+
+The one-turn Andrews--Wheeler reflected-arc expanders have asymptotic
+length coefficients C_m growing as an explicit positive multiple of
+sqrt(m), where m is the symmetry order. This precludes a bound depending
+only on turning number even at fixed initial length. The arc construction
+is taken from their preprint. JellyfishGrowth.lean verifies the subsequent
+limit calculation from its two derivatives and seam condition. See
+Research/JellyfishLengthCoefficient.md for the statement and proof.

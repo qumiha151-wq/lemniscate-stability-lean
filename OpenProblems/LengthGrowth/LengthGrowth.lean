@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.JellyfishGrowth
 import LengthGrowth.ActualFlow.GrowthEnvelope
 import LengthGrowth.ActualFlow.SharpCircle
 import LengthGrowth.ActualFlow.StripCoercivity
