@@ -1,0 +1,50 @@
+SolitonClassification.Rotating.FullGridP.certificate :
+  SolitonClassification.Rotating.PolynomialPointGridBlock 1 (↑SolitonClassification.Rotating.Candidate.step)
+    (1 / 10 ^ 55) (1 / 10 ^ 55) 4000
+'SolitonClassification.Rotating.FullGridP.certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolitonClassification.Rotating.FullGridM.certificate :
+  SolitonClassification.Rotating.PolynomialPointGridBlock (-1) (↑SolitonClassification.Rotating.Candidate.step)
+    (1 / 10 ^ 55) (1 / 10 ^ 55) 4000
+'SolitonClassification.Rotating.FullGridM.certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolitonClassification.Rotating.FullGridP.state_start :
+  SolitonClassification.Rotating.FullGridP.certificate.state 0 = SolitonClassification.Rotating.Candidate.initial
+'SolitonClassification.Rotating.FullGridP.state_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolitonClassification.Rotating.FullGridP.matrix_start :
+  SolitonClassification.Rotating.FullGridP.certificate.matrix 0 = 1
+'SolitonClassification.Rotating.FullGridP.matrix_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolitonClassification.Rotating.FullGridM.state_start :
+  SolitonClassification.Rotating.FullGridM.certificate.state 0 = SolitonClassification.Rotating.Candidate.initial
+'SolitonClassification.Rotating.FullGridM.state_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolitonClassification.Rotating.FullGridM.matrix_start :
+  SolitonClassification.Rotating.FullGridM.certificate.matrix 0 = 1
+'SolitonClassification.Rotating.FullGridM.matrix_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolitonClassification.Rotating.FullGridPActual.terminal_state :
+  SolitonClassification.Rotating.FullGridP.certificate.state 4000 =
+    SolitonClassification.Rotating.Endpoint4000Data.plusState
+'SolitonClassification.Rotating.FullGridPActual.terminal_state' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SolitonClassification.Rotating.FullGridPActual.terminal_matrix :
+  SolitonClassification.Rotating.FullGridP.certificate.matrix 4000 =
+    SolitonClassification.Rotating.Endpoint4000Data.plusOperator
+'SolitonClassification.Rotating.FullGridPActual.terminal_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SolitonClassification.Rotating.FullGridMActual.terminal_state :
+  SolitonClassification.Rotating.FullGridM.certificate.state 4000 =
+    SolitonClassification.Rotating.Endpoint4000Data.minusState
+'SolitonClassification.Rotating.FullGridMActual.terminal_state' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SolitonClassification.Rotating.FullGridMActual.terminal_matrix :
+  SolitonClassification.Rotating.FullGridM.certificate.matrix 4000 =
+    SolitonClassification.Rotating.Endpoint4000Data.minusOperator
+'SolitonClassification.Rotating.FullGridMActual.terminal_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SolitonClassification.Rotating.FullAssemblyFreshAudit.result :
+  ∃ c X Y, SolitonClassification.Rotating.CandidateFinalAssembly.GeometricConclusion c X Y
+'SolitonClassification.Rotating.FullAssemblyFreshAudit.result' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+FULL_ASSEMBLY_ACTUAL_STANDARD3 105287

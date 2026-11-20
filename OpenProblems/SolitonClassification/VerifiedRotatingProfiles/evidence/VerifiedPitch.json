@@ -1,0 +1,75 @@
+{
+  "exit_zero_modules": 3,
+  "final_guard_rejects_forall_and_universe_parameters": true,
+  "final_log": [
+    "Dense actual-pitch theorem passed the standard three-axiom audit.",
+    "PITCH_ZERO_HYPOTHESES_STANDARD_THREE"
+  ],
+  "origin": {
+    "artifact_id": 14593523428,
+    "artifact_name": "dense-rotating-pitches-44657378217-1",
+    "asset_name": "rotating-dense-pitches.zip",
+    "bytes": 590516,
+    "expires_at": "2026-12-20T02:02:13Z",
+    "head_sha": "29f21f92fb7de5016447adf3b4cf7d8d144c4ad1",
+    "job_id": 136026841955,
+    "job_name": "after-full-candidate",
+    "run_attempt": 1,
+    "run_id": 44657378217,
+    "sha256": "be7770634899e69c0914b205efcabd121a4f4cd17a018f1d104ab95eeffd2628",
+    "workflow": ".github/workflows/rotating-pitch-after-full.yml"
+  },
+  "schema": "rotating.pitch-artifact-readback.v1",
+  "suffix": {
+    "concrete_full_pitch_checked": true,
+    "modules": [
+      {
+        "exit": 0,
+        "log_sha256": "a2ea3abb903964e7676b8eb417c96f7b8e7888b86c0dc177e597691377de0e75",
+        "module": "SolitonClassification.PitchContinuation",
+        "object_sha256": "35f330f04f6351fcf61e150a6fad9b07556177c476be3cc4def85f9897e47e63",
+        "public_header_source_sha256": "f07475f4962b6c8573aff6ccb83ea4ddea0fbb4d465d7190103e06f3e21c3225",
+        "public_project_dependencies": 2,
+        "setup_sha256": "54b8d9e5ad4f7619fa3285646c83a4a6780d7370c251158f37aba31cccbfdbdb",
+        "source_sha256": "5dc682442386a921635747c38c6724b651e3332bc3693660c6adf68800345b1a",
+        "wall_seconds": 2.6584170050000466
+      },
+      {
+        "exit": 0,
+        "log_sha256": "a28da5aeee2d4bf819d43db599ea4c3a6aa156165752fe896bbf45d15c812e3a",
+        "module": "SolitonClassification.CandidatePitchBranch",
+        "object_sha256": "1fc8bd7943fa309b6ddf49c37edc7c7bc3d9cf55faa827cf271a071883aefd17",
+        "public_header_source_sha256": "76e15d322f6e26565264917034e7520abf37a9a6b30ac4a2d90ef5bea1b1b143",
+        "public_project_dependencies": 86,
+        "setup_sha256": "5a92fd2a78a2ba386407f9581e651107d5345c99ff9d5eb9c84e22919e3042f0",
+        "source_sha256": "a17dbe31f858315721a8c4cfb2a2772822cc9ad7374aa62cabc44dbad80689b3",
+        "wall_seconds": 3.14050062299998
+      },
+      {
+        "exit": 0,
+        "log_sha256": "6c1ad986ba5199b9c86a3b20725e901fa37bc847230b52b57186ea86616c54a8",
+        "module": "SolitonClassification.Rotating.FullPitchAccumulation",
+        "object_sha256": "4d66ccebaa8f199d7b865891b288f3cf4f60e0b5c982c5772f36292a896bdb57",
+        "public_header_source_sha256": "9cd697ff517cfcea4973035a5ba296368302098ed93b03557d666aad4520415c",
+        "public_project_dependencies": 12137,
+        "setup_sha256": "e2571b0ce2626e95671a9314262dc5b1856988052b2465a226b07eaaf2dfa926",
+        "source_sha256": "212adf5865dcd506c75f276b148e06bc7eab9f2601e22e7251b5884097e0ce49",
+        "wall_seconds": 1.8695167910000237
+      }
+    ],
+    "scope": "post_successful_q2_linux",
+    "status": "checked"
+  },
+  "upstream_head": "cd7886d892d37b1b8a02d8b896afe553cd0a917c",
+  "upstream_run_id": 44650976356,
+  "verified": {
+    "full_classification_claimed": false,
+    "q2_kernel_calls_repeated": 0,
+    "q2_report_sha256": "164f20d75044b41291a7da5f58e57d10f88b119f5dcd1dc7b4094f3787cc79c8",
+    "standard_axioms_only": true,
+    "status": "checked",
+    "suffix_modules": 3,
+    "theorem": "SolitonClassification.Rotating.FullPitchAccumulation.exists_dense_positive_closed_rotating_pitches"
+  },
+  "verified_zip_members": 27
+}
