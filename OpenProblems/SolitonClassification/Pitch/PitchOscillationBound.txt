@@ -1,0 +1,63 @@
+Rotation rate and the curvature variance of a closed similarity profile
+
+Fix a smooth closed unit-speed immersion beta of period L>0, with the
+similarity center at the origin, T=beta', N=JT, p=beta.N and q=beta.T.
+Take F=k''+k^3/2=-a p-b q, consistent with the support ODE in the project.
+The same proof needs only a period of k,v,p,q. Positive dilation a>0 is
+automatic by the established dilation identity for positive periods.
+Write w=b/a, H=int k, E=(int k^2)/2 and rho=|beta|^2/2=(p^2+q^2)/2.
+
+For every nonconstant-curvature profile and any real h,
+
+          16 w^2 < L int (k-h)^2 ds.                               (1)
+
+Taking h=H/L minimizes the right side. For a geometrically closed profile
+H=2 pi m, so EL > 2 pi^2 m^2 + 8 w^2. The estimate also holds on
+support periods carrying noninteger tangent
+holonomy. Its proof does not require a shooting section or a curvature sign.
+
+Proof. The support equations give p'=-kq, q'=1+kp, rho'=q. The rotation
+stress S=vq-k^2 p/2-k has derivative Fq. For every c,h the derivative of
+
+        S + a [p(rho-c) + h(rho-c)^2/2]
+
+is -b q^2 - a(k-h)(rho-c)q. Integrating the periodic primitive gives
+
+        w Q = -int (k-h)(rho-c) q,       Q=int q^2.                 (2)
+
+If Q=0, continuity and periodicity give q identically zero. Then p'=0,
+and q'=1+kp=0 implies p is a nonzero constant and k=-1/p is constant.
+For an actual closed planar curve this is the centered multiply covered
+circle. Thus Q>0 under the stated hypothesis. A centered circle has
+q identically zero and admits arbitrary b as a tangential reparametrization.
+
+Choose c midway between the minimum and maximum of rho on one period.
+To travel from minimum to maximum and back costs at least twice their
+difference in total variation. Hence 4 sup|rho-c| <= int |q| <= sqrt(LQ).
+Cauchy--Schwarz in (2) now gives 16 w^2 Q^2 <= L int(k-h)^2 Q^2.
+Cancellation gives its weak version. Equality in the total-variation
+Cauchy--Schwarz estimate would
+require |q| constant. A continuous nonzero q of constant absolute value on
+a connected period cannot have integral zero; here int q=0 because rho
+is periodic. Thus that estimate is strict whenever Q>0. Also int(k-h)^2
+is positive for a nonconstant continuous k. Together these prove (1),
+including w=0.
+
+An additional necessary condition by radial level. Analyticity follows
+from the polynomial support ODE. Nonconstant rho has finitely many critical
+points on a period. For each regular radial level r let
+
+        A(r) = sum over rho(s)=r of sign(q(s)) k(s),
+
+counting each preimage on the parameter circle once. Changing variables on
+the finitely many monotone arcs gives int A(r)dr=int kq ds=0 (by p'=-kq)
+and int r A(r)dr=-wQ (by (2) with c=h=0). For w>0 there are regular
+levels r1<r2 with A(r1)>0>A(r2). Indeed, if every positive level lay above
+every negative level, select a separating value t and integrate
+(r-t)A(r)>=0. Both signs must occur, and the strict moment is negative.
+For w<0 all signs reverse. In particular k cannot be a single-valued
+function of rho on a genuinely rotating profile. Equal numbers of ascending
+and descending crossings of each regular level would then give A=0.
+
+These necessary conditions leave open which noncircular rotating
+closed profiles exist.

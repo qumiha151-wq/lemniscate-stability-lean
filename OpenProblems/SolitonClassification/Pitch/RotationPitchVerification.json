@@ -1,0 +1,23 @@
+{
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "sources": {
+    "SolitonClassification/RotationPitch.lean": "7d792e0541dd92fbd34388d7f149290ef78d2e86b07a03a7e19fd01fa6d2bc35",
+    "SolitonClassification.lean": "07ff9b336c8c7a2868013ff1633e7ffd0841b3b3540b6d1f8788832129624502",
+    "SolitonClassification/AxiomAudit.lean": "5dcd7bf2f1cd6b80c44583b5fa964401d0bb1b21bb7e2d59cee5521d49b549e8"
+  },
+  "leaf_exit": 0,
+  "leaf_stdout": "Rotation-pitch audit passed for 115 declarations.\n",
+  "checks": {
+    "SolitonClassification": {
+      "exit": 0,
+      "out": "",
+      "err": ""
+    },
+    "SolitonClassification.AxiomAudit": {
+      "exit": 0,
+      "out": "SolitonClassification audit passed: 9044 declarations; standard axioms only.\n",
+      "err": ""
+    }
+  },
+  "scope": "Kernel-checked rotation inequality on actual periodic support profiles. The radial-level and energy-capped analytic notes also contain human arguments."
+}

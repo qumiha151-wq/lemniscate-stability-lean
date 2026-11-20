@@ -1,0 +1,154 @@
+Finite-interval structure of the rotation spectrum at fixed energy bound
+
+Human proof. The estimate for a single orbit is in PitchOscillationBound.
+The structural result here uses real analytic geometry and is a separate
+claim. No isolation, generic transversality or exact list of pitches is
+assumed.
+
+Normalize an expanding soliton by spatial dilation so that a=1, keeping
+w=b/a fixed, and translate its similarity center to the origin. Let S_K
+denote the set of nonzero w for which there exists a closed noncircular
+expander with E L <= K. Here L is a full geometric period, E=1/2 int k^2
+on that same period, and curves may be immersed or multiply covered.
+
+Theorem. For fixed finite K, the spectrum including homothetic noncircular
+profiles is a finite union of compact intervals and points. Hence S_K is
+relatively closed away from zero and is a finite union of points and
+intervals, possibly with an endpoint at zero removed.
+If it is infinite, some open interval of pitches is realized by a family
+of actual closed profiles varying locally real analytically in w (with
+fixed turning number). Thus over all energy levels either the pitch set is
+countable or it contains an interval realized by such a family. This
+alternative does not decide which case occurs.
+
+1. Compactness of the shooting parameters within their flow domain
+
+Let D=int F^2, F=k''+k^3/2. The existing periodic support identities give
+D=E and int kF=L, so Cauchy--Schwarz gives E>=L/sqrt(2). Consequently
+L^2 <= sqrt(2)K. The closed-curve stress coercivity estimate gives
+
+       M^6 <= 2^24 E D = 2^24 E^2,   M=max|k|.
+
+This is the static pointwise inequality in StressCoercivity, with the
+same energy convention. Since E<=(L/2)M^2, it gives E<=128^3 L^3.
+Thus L is bounded away from zero through E>=L/sqrt(2), and E<=K/L,
+M and D are bounded above. The signed curvature has a critical point,
+so |v|=|k'|<=int|k''|<=sqrt(LD)+(L/2) M^3. The pitch inequality gives
+|w|<=sqrt(K/8) because 16w^2<=2EL. All bounds depend only on K.
+
+Bound the initial position and its support coordinates. Set C=(I+wJ)beta(0),
+J being positive quarter-turn. If C is nonzero take e=C/|C|. At an extremum
+of the periodic scalar projection beta.e, N=+e or -e. Since |N'|<=M, over
+a following arc of length d=min(L/2,1/(2 max(1,M))) the absolute value of
+N.e is at least 1/2. Hence int(C.N)^2 >= d|C|^2/4. But
+F=-N.(I+wJ)beta with |beta(s)-beta(0)|<=L, so
+
+       ||C.N||_2 <= sqrt(D) + sqrt(1+w^2) L^(3/2).
+
+The bound on d away from zero proves |C| and |beta(0)| uniformly bounded.
+It also trivially covers C=0. Since all points are within L of beta(0),
+p,q are uniformly bounded over the entire full period. The closed position
+was essential when choosing a normal parallel to e.
+
+Let z=(k(0),v(0),p(0),q(0)). The finite coordinates (z,w,L) are bounded.
+Let U be the open set of triples with L>0 for which the polynomial support
+system exists on [0,L]. The closure of these candidate triples is compact
+INSIDE U. Indeed, for any convergent parameter sequence use u=s/L on [0,1].
+The uniformly bounded trajectories and their bounded right-hand sides are
+equicontinuous. Arzela--Ascoli supplies a uniformly convergent subsequence,
+and its integral equation passes to the limit. Uniqueness identifies the
+limiting trajectory as the solution at the limiting parameters, and its
+bounded endpoint permits continuation beyond the limiting L. The previous
+positive lower bound prevents L=0 in the closure.
+
+The condition of being noncircular also survives the limit, even at w=0.
+For a normalized circle the two equilibria are independent of w, with
+k=c=+/-2^(1/4), v=q=0, p=-1/c. At either equilibrium its Jacobian A
+has characteristic polynomial
+
+       y^4+(5/2)c^2 y^2-(w/c)y+4.
+
+It has no purely imaginary root. For w!=0 the imaginary part forces y=0;
+for w=0 the quadratic in the squared frequency has discriminant -7/2.
+Thus exp(L A)-I is invertible for every L>0 by spectral mapping. The
+analytic implicit function theorem applied to Phi_L(z,w)-z at this
+equilibrium gives a unique local solution z for each nearby pair (w,L).
+The same constant equilibrium is already that solution for all (w,L).
+A sequence of non-equilibrium recurrence points cannot approach it.
+Periodicity, integer angle holonomy (passing to a constant m subsequence),
+and the energy bound all survive the limit. The family allowing w=0 is
+therefore compact in U, whereas imposing w!=0 only removes a closed slice.
+
+2. Finite-dimensional real analytic geometry
+
+On U the endpoint map z -> Phi_L(z,w), integrated angle H=int k and
+B=int k^2 jointly depend real analytically on z,w,L, by adjoining H'=k
+and B'=k^2 to the polynomial field. For each integer m the set
+
+       Phi_L(z,w)=z,     H=2 pi m,     LB<=2K,
+                        |f_w(z)|^2>0
+
+is semianalytic in U. Here f_w(z) is the support-system vector field.
+Its equilibria are exactly the centered circle data; with non-equilibrium
+and positive period, constant k is impossible (the periodic support
+constant-curvature theorem). Every point of this set reconstructs a closed
+unit-speed profile, since the supports recur and integer angle holonomy
+returns the frame. Conversely every sought full period gives such a point.
+Only finitely many m occur since (2 pi m)^2<=2EL<=2K.
+
+By step 1 their union is compact in U. A relatively compact semianalytic
+subset has finitely many connected components. Each component is compact.
+Project each continuously to the w-axis. Its image is compact and connected
+and hence a point or a closed interval. Removing w=0 proves the stated
+claim about the genuinely rotating spectrum.
+To see analytic families when the projection has interior, use the
+locally finite semianalytic stratification compatible with these sets and
+with the constant rank of the w projection. On the compact closure only
+finitely many local strata are needed; the strata can be taken connected.
+If every stratum has rank zero there are only finitely many image values.
+Otherwise a rank-one stratum gives a local real analytic section by the
+analytic submersion theorem. The reconstructed support curve and frame,
+parametrized by the fixed u in [0,1], vary real analytically. Finally take
+integer K tending to infinity to obtain the all-energy alternative.
+
+If nonzero pitches approach zero while EL stays bounded, a subsequence
+of the shooting parameters converges to an actual noncircular homothetic
+closed profile. At this limiting point, the real analytic curve selection
+lemma for the semianalytic set cut out by w!=0 gives an analytic arc of
+such exact recurrences ending there. The analytic parameter on this arc
+can have high-order contact with the plane w=0. No span or invertibility of
+a specific shooting Jacobian follows from curve selection.
+
+At every nonempty fixed cap the strict pitch inequality and compactness
+give a uniform gap
+
+       EL - 2 pi^2 m^2 - 8 w^2 >= d_K > 0
+
+over all its noncircular solutions. Indeed the left side is the continuous
+quantity EL-H^2/2-8w^2 on a compact set and is everywhere positive.
+For any fixed turning m, *without* an energy cap, this also implies
+EL >= 2 pi^2 m^2 + d_m with some d_m>0. Set K=2 pi^2 m^2+1. If the set
+under that cap is empty take d_m=1; otherwise take d_m=min(1,d_K).
+The constants from compactness are qualitative. When a prescribed
+nonzero pitch is realized, the least EL among its closed realizations is
+attained, by restricting to the cap of any one realization.
+
+References for the analytic geometry: E. Bierstone and P. D. Milman,
+Semianalytic and subanalytic sets, Publ. Math. IHES 67 (1988), 5-42,
+Corollary 2.7 and Lemma 3.4 (the latter used locally on the graph).
+https://www.numdam.org/articles/10.1007/BF02699126/
+https://www.numdam.org/item/PMIHES_1988__67__5_0.pdf
+
+3. Distinction from the Jellyfish shooting arcs
+
+The free elastic flow construction in
+https://arxiv.org/html/2601.21227v1
+uses a family of homothetic blocks (w=0). Varying the block parameter
+changes the angle at the seam. A rational angle in units of pi closes the
+reflected blocks after finitely many repeats. Rational angles are dense
+where that angle has nonzero derivative. This shows why analyticity of a
+one-block shooting map alone does not imply discreteness of primitive
+block data satisfying some rational closure. It gives no interval of
+nonzero rotation pitches. Nor does density in block parameters imply
+density of *full* closed curves at bounded EL, since increasing the
+denominator can increase the required period and energy.
