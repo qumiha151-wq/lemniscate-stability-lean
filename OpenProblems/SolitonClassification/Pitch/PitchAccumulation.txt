@@ -1,0 +1,98 @@
+Non-isolation of genuinely rotating closed expander pitches
+
+Theorem. There is an explicit open interval of strictly positive pitches w
+in which a countable dense set of distinct w is realized by noncircular
+closed free-elastic expanders. The previously certified positive pitch is
+a two-sided accumulation point. With w normalized by a=1, use the exact
+decimal b0 in the existing shooting certificate. One such interval is
+
+                 (b0-5*10^-34, b0+5*10^-34).
+
+The assertion concerns the global spectrum over all periods and energies.
+On this particular branch every fixed EL cap admits only finitely many
+closed pitches, even at the shortest possible geometric period. An interval
+consisting entirely of closed pitches remains a separate possibility.
+
+Certificate dependency and convention. Use AnalyticCertificate.txt and
+shooting_certificate.json in RotatingCertificate/classification_odd_branch_interval.
+The proof below requires the human+Arb certified actual ODE tube, derivative
+and residual bounds on the radius-r cube, with r=10^-32. Its 4000 forward
+and 4000 backward steps were rerun in RootFullReplay. The numerical suffix
+check in check_pitch_accumulation.py verifies rational consequences of those
+archived bounds. A complete corresponding Lean assembly of the concrete
+8000-step hypotheses is a separate task. Differentiability alone at an
+approximate trajectory would be insufficient here.
+
+Let c=(k0,p0,ell,alpha,b). In the fixed phase gauge, F(c) has four physical
+support recurrences between -ell and +ell, followed by H(c)+112*pi/57,
+where H is the actual integrated turning over that block. The rational
+inverse preconditioner B is invertible. With e=(0,0,0,0,1), the existing
+certificate proves for T(x)=x-BF(x) throughout the closed infinity cube
+of center c0 and radius r
+
+         Lip(T) <= q < 2*10^-7,     |T(c0)-c0|_inf < 3*10^-40.
+         ||B||_inf < 82,            (Be)_5 = -10.555605451421052.
+
+Each t with |t|<=5*10^-35 defines T_t=T+tBe. It has the same Lipschitz
+constant, and its distance from c0 on the cube is at most
+3*10^-40+qr+82|t|<r. Banach's theorem produces a unique c(t) on that cube.
+Invertibility of B gives F(c(t))=te. Thus each c(t) gives a genuine
+periodic support orbit with angle H(t)=-112*pi/57+t. The tube and the
+initial bounds v'(0)<-200 and b>0.009 apply to every such c(t).
+
+Subtracting two fixed-point equations for s<t yields
+
+  ||c(t)-c(s)-(t-s)Be||_inf <= q ||c(t)-c(s)||_inf,
+  ||c(t)-c(s)||_inf <= ||Be||_inf (t-s)/(1-q).
+
+In particular the last coordinate b(t) is continuous and
+
+    |(b(t)-b(s))/(t-s) - (Be)_5| <= 82q/(1-q).
+
+Every secant slope lies strictly between -10.556 and -10.555. Hence b is
+a bi-Lipschitz homeomorphism to its image. The center root satisfies
+|b(0)-b0|<=3*10^-40/(1-q), and the endpoints of the t interval are
+separated from b(0) by at least 10.555*5*10^-35 in opposite directions.
+These two inequalities ensure that the claimed explicit interval lies
+strictly inside the pitch image.
+
+The subset of t for which H(t)/(2*pi) is rational is countable and dense.
+An angle H/(2*pi)=u/v in lowest terms yields a closed reconstructed
+profile after v identical blocks because the support and tangent frame
+then both recur. The bi-Lipschitz homeomorphism transports rational
+holonomy to a countable dense subset of the pitch image. In particular
+H(0)/(2*pi)=-56/57, so the original actual rotating root is a two-sided
+accumulation point of realized distinct pitches. The slope bound also
+implies plane rotations, parameter phase shifts and spatial dilations
+cannot identify different pitches on the branch; reflection reverses
+the sign, and all pitches considered here are positive.
+
+For this particular branch, rational holonomy is necessary as well.
+The nonconstant continuous support vector has a nonzero smallest positive
+period Pmin: its full period subgroup is closed, is not all of R, and
+contains the block period. A geometric period of the unit-speed closed
+reconstruction is a support period. If the block period and full period
+are n Pmin and d Pmin, then periodic curvature gives
+Hblock=(n/d) Hfull with Hfull in 2*pi*Z. Hence an irrational-holonomy
+member of this branch cannot close after a different full period. This
+does not exclude other closed branches at its pitch.
+
+There is an explicit lower bound on the intrinsic energy cost of rational
+approximation, without assuming the block itself is primitive. In the old
+outer tube, |k|<=8.5, |v|<=36, |p|,|q|<=8.5 and |b|<=.02. Hence
+|v''|=|-(3/2)k^2 v-p'-bq'|<=1.5*(8.5)^2*36+(8.5)^2+.02*(1+(8.5)^2)<4000.
+Since v'(0)<-200, on 0<s<=1/40 one has v'(s)<-100 and v(s)<v(0).
+Thus every primitive support period Pmin is greater than 1/40. If
+Hblock/(2*pi)=u/v in lowest terms and a geometric period is L=d Pmin,
+the relation d u/v = n m with m the integer geometric turning and n
+the block's number of primitive support periods implies v divides d.
+Therefore every geometric closing length satisfies L>v/40. For a=1 the
+periodic dilation and force identities give E>=L/sqrt(2) and hence
+
+                   EL > v^2/(1600 sqrt(2)).
+
+At a fixed EL cap this bounds v. The bounded block angle then permits
+only finitely many numerators u. The strict pitch slope assigns at most
+one pitch to each such pair. In particular any sequence of distinct
+angles on this branch approaching the certified rational angle must have
+denominators tending to infinity and EL tending to infinity.

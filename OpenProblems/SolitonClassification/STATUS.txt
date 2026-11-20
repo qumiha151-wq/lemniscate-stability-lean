@@ -14,6 +14,12 @@ RotationPitch proves that a nonconstant periodic support orbit satisfies
 16(b/a)^2 < L int(k-h)^2 for every real h. At a closed period of turning
 number m this gives EL > 2 pi^2 m^2 + 8(b/a)^2. Both the sign a>0 and
 strict positivity of int q^2 follow from the actual support equations.
+PitchContinuation kernel-checks uniform shooting continuation, signed
+pitch secants, rational-holonomy density and closure at the denominator
+period. Applying it near b=0.0096866 uses the concrete human+Arb shooting
+certificate and its tube bounds. The resulting branch contains a dense
+set of realized positive pitches in an explicit interval. Its complete
+concrete 8000-step Lean specialization is still outstanding.
 CircleLinearization proves no purely imaginary circular eigenvalue for any
 rotation parameter. NoClosedTranslators excludes closed pure translators,
 including the stationary case, from actual position/Frenet identities.

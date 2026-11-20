@@ -1,0 +1,24 @@
+{
+  "scope": "Generic continuation and rational closure kernel checked. Concrete application uses the archived 8000-step human+Arb proof. Complete 8000-step Lean specialization outstanding.",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "sources": {
+    "SolitonClassification/RotationPitch.lean": "7d792e0541dd92fbd34388d7f149290ef78d2e86b07a03a7e19fd01fa6d2bc35",
+    "SolitonClassification/PitchContinuation.lean": "5dc682442386a921635747c38c6724b651e3332bc3693660c6adf68800345b1a",
+    "SolitonClassification.lean": "3a1367ee48a6b315c8949b7838af961945420f54b825f79d45ca3f488a98aede",
+    "SolitonClassification/AxiomAudit.lean": "5dcd7bf2f1cd6b80c44583b5fa964401d0bb1b21bb7e2d59cee5521d49b549e8"
+  },
+  "leaf_exit": 0,
+  "leaf_stdout": "Pitch continuation audit passed for 29 declarations.\n",
+  "checks": {
+    "SolitonClassification": {
+      "exit": 0,
+      "out": "",
+      "err": ""
+    },
+    "SolitonClassification.AxiomAudit": {
+      "exit": 0,
+      "out": "SolitonClassification audit passed: 9065 declarations; standard axioms only.\n",
+      "err": ""
+    }
+  }
+}
