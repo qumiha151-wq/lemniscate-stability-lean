@@ -1,0 +1,123 @@
+{
+  "lean": "4.33.1",
+  "baseline_project_declarations": 20920,
+  "baseline_manifest_sha256": "cbae6a512837ec7a7b5f001b59f5f89c5c85ce03c60e83585703bdabab9791eb",
+  "audited_declarations": 21044,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formal_scope": [
+    "Radial and transverse stress derivatives for the frozen polynomial ODE, including its amplitude derivative away from zero.",
+    "Both normalized averaging identities reconstructed from actual frozen ODE data.",
+    "An integrated scalar transverse-drift bound under the stated radial speed and pointwise error bounds, with strict numerical sign margins.",
+    "Planar rectangle crossing and unbounded matching markers from the formal continuous input maps.",
+    "The physical support ODE implies the positive inner clock, all five moving-radius rates and equivalence of both seam conditions."
+  ],
+  "validated_numerics": {
+    "method": "Arb interval Taylor integration, 512 bits, degree 38, 2048 equal steps",
+    "script_sha256": "d9845dd7238c34b5870a8f39d3da0cf214cd6dc43ab3672bd76ebeee1d9fc543",
+    "evidence": {
+      "negative_seam.json": "676d4a66480222ef466d73dbcff12a4f96ff3d11bcd5dbb944f273c170384df9",
+      "positive_seam.json": "c6d4568e5441fcd1872e0476b38231939f676d122ae5dd16d2091489ab9345da"
+    }
+  },
+  "analytic_scope": [
+    "Fixed-time and transition-layer averaging of actual high-marker centre shots.",
+    "Full tail bounds for the frozen seams and certified numerical endpoint values.",
+    "The matching of physical and frozen sections, the construction of the actual infinite family, primitive asymptotics and the shape count."
+  ],
+  "computations": [
+    {
+      "module": "SolitonClassification.FrozenStress",
+      "source_sha256": "cde51dbac273aa124764008ad8c39a99db3552320a9d461ef2c24118661f017b",
+      "setup_sha256": "76192dafb4991c70295f120bb6a6aed97eaf2e83c7828241319b1d850a9370e7",
+      "additional_object_inputs": {},
+      "object_sha256": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.FrozenStressOrbit",
+      "source_sha256": "d4be3d34b33ed341324eb8d0eacade5d17a1c264feccbe12e63ba876f3273646",
+      "setup_sha256": "1de3a4fe2e807540ac0ea40e2e0f2d3920f7471834bad5a5ce96098cd235b41b",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStress": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957"
+      },
+      "object_sha256": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.FrozenStressTail",
+      "source_sha256": "8e0b6801fd26f17868e60323b06f428f5a25d5c84991664b7aa9a37c33b5a447",
+      "setup_sha256": "869e55b3ada95a3ec1ec7f70021f160a66be5e08c1a71b5a13c589bcc2251ce2",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStress": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47"
+      },
+      "object_sha256": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.RectangleCrossing",
+      "source_sha256": "7411f962c509c4b9ad32f921f90aafe4cf3dd99f8e3c358acd4b41332bde3700",
+      "setup_sha256": "7ce67a1fe3a41ab9b75943d16cc2704bacd6c29d24480804badc9cfed8207e35",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStress": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+        "SolitonClassification.FrozenStressTail": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5"
+      },
+      "object_sha256": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75",
+      "exit_code": 0,
+      "stdout": "'SolitonClassification.Reflected.Rectangle.zero_in_square' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SolitonClassification.Reflected.Rectangle.unbounded_matching_markers' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.RadialLayer",
+      "source_sha256": "7dfeff6562f66ad1ed4b2a5d358fff318c75c31792ae5b4e1c3f95a322fd4a4b",
+      "setup_sha256": "3d6dd2d5c0d9116fe2d906c364d80afc2bfd4a1fb7d34e814b8075296cd34af6",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStress": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+        "SolitonClassification.FrozenStressTail": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5",
+        "SolitonClassification.RectangleCrossing": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75"
+      },
+      "object_sha256": "15e4807bbfcc9ad68016ef159ce2ab54c9b6ca2e84ce320bc12fe5cecb619935",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.ReflectedArc.RadialLayer.physical_rates' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "46dd3fee893dec43b4ff08dccc22e4cb6c1684ae86a7d2ae1e62330f6ae9c798",
+      "setup_sha256": "3afb8745af5cc1030d1de6ca104aa85f6c928f0454ab0c085db0c6c7f705b3ed",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStress": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+        "SolitonClassification.FrozenStressTail": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5",
+        "SolitonClassification.RectangleCrossing": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75",
+        "SolitonClassification.RadialLayer": "15e4807bbfcc9ad68016ef159ce2ab54c9b6ca2e84ce320bc12fe5cecb619935"
+      },
+      "object_sha256": "6c267f5d7e9b45c9da4010f065f445e07d354b5e56a7611247ae1300b586f14d",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "e52ae03c0cf38ea5d295731391f03137a8f118347e2dcd6eb72360819da6a46c",
+      "setup_sha256": "f6d31d9f91537299aded5c53d896eeb8d935e2f0e2f3813eeaa1526f684c55aa",
+      "additional_object_inputs": {
+        "SolitonClassification.FrozenStress": "1626cf77410a7690e29e01dd569bab4b3a0e24f630f4601c2534d3699e6c3957",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+        "SolitonClassification.FrozenStressTail": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5",
+        "SolitonClassification.RectangleCrossing": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75",
+        "SolitonClassification.RadialLayer": "15e4807bbfcc9ad68016ef159ce2ab54c9b6ca2e84ce320bc12fe5cecb619935",
+        "SolitonClassification": "6c267f5d7e9b45c9da4010f065f445e07d354b5e56a7611247ae1300b586f14d"
+      },
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit_code": 0,
+      "stdout": "SolitonClassification audit passed: 21044 declarations; standard axioms only.\n"
+    }
+  ]
+}

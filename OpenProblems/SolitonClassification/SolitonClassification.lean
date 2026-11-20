@@ -1,3 +1,7 @@
+import SolitonClassification.FrozenStressOrbit
+import SolitonClassification.FrozenStressTail
+import SolitonClassification.RectangleCrossing
+import SolitonClassification.RadialLayer
 import SolitonClassification.ReturnScales
 import SolitonClassification.RadiusPotential
 import SolitonClassification.ScalarObservation
