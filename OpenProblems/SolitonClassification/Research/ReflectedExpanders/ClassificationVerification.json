@@ -1,0 +1,69 @@
+{
+  "lean": "4.33.1",
+  "verified": [
+    {
+      "module": "SolitonClassification.SingleValuedForce",
+      "source_sha256": "b783b16a52a9725bcd58394ff53de332a2b96db9caf8529b2a7a49de8b0b1aee",
+      "object_sha256": "c2d22fbb0101cbffa47b09149672ccf7bd96e2cc5421f73c471dd04ada5a1db5",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.CubicSupportRigidity",
+      "source_sha256": "1d858aa4272e495d5cf03a560d9d78b532b9ce4c91a6634dc9394699993c8e5f",
+      "object_sha256": "efa70920abd1104d5e28e0c20d8c40d0951914b87302cb1325ca1796339fd0c6",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.ReflectedPoleAlgebra",
+      "source_sha256": "a1a222d43c2be7597671318b5bd74087d84ef838f2c48b14a898d6523fa9b300",
+      "object_sha256": "f8e1b688b4fa7a06a3e6800ee62ce4cbc36f526f9d93b6f3d3e35e251cabd4a5",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.ReflectedPoleAlgebra.scalar_elimination' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.derivative_order_coefficient' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.residue_squares' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.linearized_pole' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.first_three_vanish' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.rational_resonances' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.fractional_coefficient_vanish' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.weak_residue_impossible' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ReflectedPoleAlgebra.defect_leading' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ReflectedPureNormal",
+      "source_sha256": "d4a64cd74920a361e5ed4f82d605a5d2a3f4d03a9d69ff3d9c5406000cc5253c",
+      "object_sha256": "be41225dcfc2b28fd58dfe72507ef35f060f8b75f280cc2e35e95196de505eba",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.ReflectedArc.reflected_shooting_exists_pure_normal_evolution' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ReflectedPhysicalMarker",
+      "source_sha256": "16cf3edd9bc559a0ed451c35750d924f15578397e862edb9046835487623805e",
+      "object_sha256": "e03e1717fc20f3663b9788d9bac0c7b3a3d69e6e6a4da5aaf5424b9894844728",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.CubicSupportClassification",
+      "source_sha256": "4591cd876ce342512c921806d28e0c191d76689a691c125d3d4c956ba755c834",
+      "object_sha256": "4138f99e4180518de24eab065b3b8f70b17c67d83fe4ee967bc8afaf8e67ff36",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.PeriodicSupportProfile.cubic_support_canonical_state' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ClosedUnitFrenetCurve.cubic_force_selects_bernoulli' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ClosedUnitFrenetCurve.cubic_force_excludes_rotation_and_selects_bernoulli' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.BernoulliCartesian",
+      "source_sha256": "b293b36228d3796c88b06d641beb47137b11829f6020479d69cf6bef7b307f42",
+      "object_sha256": "3887b50aae756f4fdc6b1840efa6ea00a6949e360318507bee497b3a4a4573fa",
+      "exit_code": 0,
+      "stdout": "'ClosedSimilarity.ClosedUnitFrenetCurve.cubic_force_bernoulli_cartesian' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "c1755bbe802c92c8d73a1c9d5a8bbfa0265e2be755dbeda86de2b2af21cbd4be",
+      "object_sha256": "2ed67d26ff38e02db91da1d53d4ae05bec11d8e4335c5a153b6a7165e49b258f",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "5dcd7bf2f1cd6b80c44583b5fa964401d0bb1b21bb7e2d59cee5521d49b549e8",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit_code": 0,
+      "stdout": "SolitonClassification audit passed: 9315 declarations; standard axioms only."
+    }
+  ],
+  "scope": "The global complex-analytic, branching and function-field arguments are mathematical proofs in the accompanying papers. Lean checks the finite pole algebra, continuous force obstruction, cubic stiffness, quarter-to-pure-normal evolution, and the marker on the actual physical trajectory."
+}
