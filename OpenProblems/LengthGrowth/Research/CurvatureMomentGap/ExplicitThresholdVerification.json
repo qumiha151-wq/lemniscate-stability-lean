@@ -1,0 +1,284 @@
+{
+  "baseline": {
+    "repository": "qumiha151-wq/lemniscate-stability-lean",
+    "ref": "e69bde935f6f2166315a7da4ed31b23d6c2703f8",
+    "files": {
+      "LengthGrowth.lean": {
+        "blob_sha": "780e88227e2a4851f971e448d0a80681aff05e47",
+        "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/e69bde935f6f2166315a7da4ed31b23d6c2703f8/OpenProblems/LengthGrowth/LengthGrowth.lean"
+      },
+      "LengthGrowth/AxiomAudit.lean": {
+        "blob_sha": "dc977ae5afc6284518db5ce6dbe724cc18d0561f",
+        "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/e69bde935f6f2166315a7da4ed31b23d6c2703f8/OpenProblems/LengthGrowth/LengthGrowth/AxiomAudit.lean"
+      },
+      "STATUS.txt": {
+        "blob_sha": "7e4779868385935c9408312a06c665cc22c2b972",
+        "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/e69bde935f6f2166315a7da4ed31b23d6c2703f8/OpenProblems/LengthGrowth/STATUS.txt"
+      },
+      "LengthGrowth/OscillatorPeriodNumerator.lean": {
+        "blob_sha": "2c185bfb2e530e665ff16044603b67de0ce4f85a",
+        "url": "https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/e69bde935f6f2166315a7da4ed31b23d6c2703f8/OpenProblems/LengthGrowth/LengthGrowth/OscillatorPeriodNumerator.lean"
+      }
+    }
+  },
+  "lean_version": "4.33.1",
+  "package": "LengthGrowth",
+  "scope": "All new or changed Lean modules, the accumulated project root and its original namespace-wide axiom audit were rebuilt. Unchanged baseline dependencies and mathlib were loaded from pinned local artifacts.",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audited_declarations": 1455,
+  "linked_modules": [
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalRMSAdapter",
+      "source_sha256": "7b27aa68cbc897d9737030748efb0f3ac8a464d969132dd39d034bf679f65fa6",
+      "object_sha256": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf",
+      "input_objects": {},
+      "exit_code": 0,
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.scaledArclengthCurvature_force' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.PeriodicRegularPosition.scaledArclengthCurvature_moment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.strictHalfSliceGap_of_scalar' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalRMSWindow",
+      "source_sha256": "bcd2a0dccf308a01ab3daf864bac486cb229496b9e7205c76d0fca97c95f395b",
+      "object_sha256": "c81ea3cdd037fc5a1b106aebacc7a0cd0b58d92114bc88d36366ddd71209447a",
+      "input_objects": {
+        "LengthGrowth.ActualFlow.CriticalRMSAdapter": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf",
+        "LengthGrowth.PeriodicWindowGap": "b9c6d93324f05355cf8469f444a87656a9d43e3c8f645bdb2f3382fbf296558b"
+      },
+      "exit_code": 0,
+      "log": "'LengthGrowth.ActualFlow.strictHalfSliceGap_of_oscillatorWindowComparison' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ExplicitCubicThreshold",
+      "source_sha256": "99849ea469fd20135a645753d923de40d8d6ebfac0fc2175f5a254ef65932e12",
+      "object_sha256": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+      "input_objects": {
+        "LengthGrowth.ActualFlow.CriticalRMSAdapter": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf",
+        "LengthGrowth.ActualFlow.CriticalRMSWindow": "c81ea3cdd037fc5a1b106aebacc7a0cd0b58d92114bc88d36366ddd71209447a",
+        "LengthGrowth.ExplicitWindow": "3cfbcb5e74a2333436e6cc73a6c92a22787b37e2df84f3f088d7ec862e149dae",
+        "LengthGrowth.OscillatorClock": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+        "LengthGrowth.OscillatorExistence": "b6dd8321b7642231cd089251cf25561c6f01b70f6a30d7c232dfe705dd92c04b",
+        "LengthGrowth.OscillatorMeanFloor": "fcf07cb91636968e4f19f532586b6e1224c1c595896c1e1d6eedc66dfb13df96",
+        "LengthGrowth.OscillatorOrbitBounds": "efb86c916308343904902ec8e1666a3a61de8872fb8c72632467570c47a66a32",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorSmooth": "8a083c8e77d4291711aa04c6717eced7339424bb32f27e681a1e7ef9c85f8586",
+        "LengthGrowth.OscillatorStability": "a7a82aa47432407afca92b8e98959195872c58e9285114fe0ae2670c4dbbfe3e",
+        "LengthGrowth.OscillatorTime": "856790ec74739eb103e4d7f4cee3e14f6f65e77d779f313ad84133b0e70cdcbe",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+        "LengthGrowth.OscillatorUnitInterval": "16ff0bbbdc5370eba97a789962a26820fe5bbe5a2925b09eaee2c94bfe7a53c8",
+        "LengthGrowth.OscillatorWindowMean": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357",
+        "LengthGrowth.PeriodicWindowGap": "b9c6d93324f05355cf8469f444a87656a9d43e3c8f645bdb2f3382fbf296558b"
+      },
+      "exit_code": 0,
+      "log": "Explicit cubic threshold and consequences: six public theorems; standard axioms only."
+    },
+    {
+      "module": "LengthGrowth.ExplicitWindow",
+      "source_sha256": "a40fd73c4bb08ff14b4e1e4b6a7c1a64bdf2e4a295c184861f448b4514b693f0",
+      "object_sha256": "3cfbcb5e74a2333436e6cc73a6c92a22787b37e2df84f3f088d7ec862e149dae",
+      "input_objects": {
+        "LengthGrowth.OscillatorOrbitBounds": "efb86c916308343904902ec8e1666a3a61de8872fb8c72632467570c47a66a32",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorStability": "a7a82aa47432407afca92b8e98959195872c58e9285114fe0ae2670c4dbbfe3e",
+        "LengthGrowth.OscillatorUnitInterval": "16ff0bbbdc5370eba97a789962a26820fe5bbe5a2925b09eaee2c94bfe7a53c8",
+        "LengthGrowth.PeriodicWindowGap": "b9c6d93324f05355cf8469f444a87656a9d43e3c8f645bdb2f3382fbf296558b"
+      },
+      "exit_code": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorClock",
+      "source_sha256": "c8f5cf4190518b1029f1e09af5d6dd4fde71da65ac234858a70cd84a644aa937",
+      "object_sha256": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+      "input_objects": {
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180"
+      },
+      "exit_code": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorExistence",
+      "source_sha256": "15db778d937a5116a6282e0435f182f736cd70998c88811d11a47931af4ddf25",
+      "object_sha256": "b6dd8321b7642231cd089251cf25561c6f01b70f6a30d7c232dfe705dd92c04b",
+      "input_objects": {
+        "LengthGrowth.OscillatorClock": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorTime": "856790ec74739eb103e4d7f4cee3e14f6f65e77d779f313ad84133b0e70cdcbe",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+        "LengthGrowth.OscillatorWindowMean": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357"
+      },
+      "exit_code": 0,
+      "log": "OSCILLATOR_EXISTENCE_AUDIT: global actual C2 solution for arbitrary prescribed position and velocity."
+    },
+    {
+      "module": "LengthGrowth.OscillatorMeanFloor",
+      "source_sha256": "725a6a5d81cff36d3552d912d81a711391c0d99709bf5309de53a008ffa43336",
+      "object_sha256": "fcf07cb91636968e4f19f532586b6e1224c1c595896c1e1d6eedc66dfb13df96",
+      "input_objects": {
+        "LengthGrowth.OscillatorClock": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorTime": "856790ec74739eb103e4d7f4cee3e14f6f65e77d779f313ad84133b0e70cdcbe",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+        "LengthGrowth.OscillatorWindowMean": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357"
+      },
+      "exit_code": 0,
+      "log": "OSCILLATOR_FLOOR_AUDIT: explicit positive mean floor and finite-window lower bound for actual C2 solutions."
+    },
+    {
+      "module": "LengthGrowth.OscillatorOrbitBounds",
+      "source_sha256": "3cdb73de97397c20dad1631a425e56f3472f788679daf32e06b9d88432eebd4c",
+      "object_sha256": "efb86c916308343904902ec8e1666a3a61de8872fb8c72632467570c47a66a32",
+      "input_objects": {
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152"
+      },
+      "exit_code": 0,
+      "log": "'LengthGrowth.OscillatorLocal.oscillatorEnergy_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.OscillatorLocal.oscillator_orbit_data' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.OscillatorPeriodNumerator",
+      "source_sha256": "b4fe596105a09636e5bbe3f2eb564260ef03dd47c7b52bfdad4e7f8953ad0d68",
+      "object_sha256": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+      "input_objects": {},
+      "exit_code": 0,
+      "log": "OSCILLATOR_PERIOD_AUDIT: original full-angle period numerator for all admissible turning data."
+    },
+    {
+      "module": "LengthGrowth.OscillatorPhase",
+      "source_sha256": "a049cba7e1bef81f3493a748d163ff1f9827beed42033cb2420a6abfd4a92eb9",
+      "object_sha256": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+      "input_objects": {
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180"
+      },
+      "exit_code": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorSmooth",
+      "source_sha256": "1a4d54953077df5a6bc5761587145b2ca7280ad1facedf2340dc0b9d9d13e79f",
+      "object_sha256": "8a083c8e77d4291711aa04c6717eced7339424bb32f27e681a1e7ef9c85f8586",
+      "input_objects": {},
+      "exit_code": 0,
+      "log": "'LengthGrowth.OscillatorSmooth.smooth_of_c2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.OscillatorSmooth.translate_solution' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.OscillatorSmooth.exists_smooth_at' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.OscillatorStability",
+      "source_sha256": "cbfb48f1f744d091b65c253721275737b4ba89566628e2b22934eb0bcad8703f",
+      "object_sha256": "a7a82aa47432407afca92b8e98959195872c58e9285114fe0ae2670c4dbbfe3e",
+      "input_objects": {},
+      "exit_code": 0,
+      "log": "'LengthGrowth.QuarticStability.comparison' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.QuarticStability.window_bound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.OscillatorTime",
+      "source_sha256": "68774e9633d3c6d8bfe4002e5f48cb7e72f65082b262812fc63878161b05bd4e",
+      "object_sha256": "856790ec74739eb103e4d7f4cee3e14f6f65e77d779f313ad84133b0e70cdcbe",
+      "input_objects": {
+        "LengthGrowth.OscillatorClock": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+        "LengthGrowth.OscillatorWindowMean": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357"
+      },
+      "exit_code": 0,
+      "log": "OSCILLATOR_TIME_AUDIT: actual global C2 orbits, attained turning points, time periods, period-mean ratios and finite-window errors."
+    },
+    {
+      "module": "LengthGrowth.OscillatorTurning",
+      "source_sha256": "e1cce309c6133176731505572503c87eb201ee65b5718cd35579f42e5ac54541",
+      "object_sha256": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+      "input_objects": {
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152"
+      },
+      "exit_code": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.OscillatorUnitInterval",
+      "source_sha256": "f0c3358e62c9803f309f812d2dea7d325ffa2cc2e2f2a089a33e74ac39c630cf",
+      "object_sha256": "16ff0bbbdc5370eba97a789962a26820fe5bbe5a2925b09eaee2c94bfe7a53c8",
+      "input_objects": {
+        "LengthGrowth.OscillatorOrbitBounds": "efb86c916308343904902ec8e1666a3a61de8872fb8c72632467570c47a66a32",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152"
+      },
+      "exit_code": 0,
+      "log": "'LengthGrowth.OscillatorLocal.unit_interval_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.OscillatorLocal.exact_orbit_from_unit_interval' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.OscillatorWindowMean",
+      "source_sha256": "eeffd102d2e721f3034093e77c07350859ff622352290321609b5b8d7f0fb309",
+      "object_sha256": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357",
+      "input_objects": {},
+      "exit_code": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.PeriodicWindowGap",
+      "source_sha256": "f4020aee11a7c03d6292bfb8cbdeab046480c915ae8154e192351134a9a9e3b0",
+      "object_sha256": "b9c6d93324f05355cf8469f444a87656a9d43e3c8f645bdb2f3382fbf296558b",
+      "input_objects": {},
+      "exit_code": 0,
+      "log": "PERIODIC_WINDOW_GAP: exact periodic averaging, Jensen, bad origins, residual square, signed static gap."
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "c680f1557efebb481010d68c3a8b0e8dc7ecc23953b6a0bedf86e84a910d3f7a",
+      "object_sha256": "ac1ba95350fdda0fa1ec156b25e1196e738c76205fb428b481a1f3663a42b87b",
+      "input_objects": {
+        "LengthGrowth.ActualFlow.CriticalRMSAdapter": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf",
+        "LengthGrowth.ActualFlow.CriticalRMSWindow": "c81ea3cdd037fc5a1b106aebacc7a0cd0b58d92114bc88d36366ddd71209447a",
+        "LengthGrowth.ActualFlow.ExplicitCubicThreshold": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+        "LengthGrowth.ExplicitWindow": "3cfbcb5e74a2333436e6cc73a6c92a22787b37e2df84f3f088d7ec862e149dae",
+        "LengthGrowth.OscillatorClock": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+        "LengthGrowth.OscillatorExistence": "b6dd8321b7642231cd089251cf25561c6f01b70f6a30d7c232dfe705dd92c04b",
+        "LengthGrowth.OscillatorMeanFloor": "fcf07cb91636968e4f19f532586b6e1224c1c595896c1e1d6eedc66dfb13df96",
+        "LengthGrowth.OscillatorOrbitBounds": "efb86c916308343904902ec8e1666a3a61de8872fb8c72632467570c47a66a32",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorSmooth": "8a083c8e77d4291711aa04c6717eced7339424bb32f27e681a1e7ef9c85f8586",
+        "LengthGrowth.OscillatorStability": "a7a82aa47432407afca92b8e98959195872c58e9285114fe0ae2670c4dbbfe3e",
+        "LengthGrowth.OscillatorTime": "856790ec74739eb103e4d7f4cee3e14f6f65e77d779f313ad84133b0e70cdcbe",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+        "LengthGrowth.OscillatorUnitInterval": "16ff0bbbdc5370eba97a789962a26820fe5bbe5a2925b09eaee2c94bfe7a53c8",
+        "LengthGrowth.OscillatorWindowMean": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357",
+        "LengthGrowth.PeriodicWindowGap": "b9c6d93324f05355cf8469f444a87656a9d43e3c8f645bdb2f3382fbf296558b"
+      },
+      "exit_code": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "object_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "input_objects": {
+        "LengthGrowth": "ac1ba95350fdda0fa1ec156b25e1196e738c76205fb428b481a1f3663a42b87b",
+        "LengthGrowth.ActualFlow.CriticalRMSAdapter": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf",
+        "LengthGrowth.ActualFlow.CriticalRMSWindow": "c81ea3cdd037fc5a1b106aebacc7a0cd0b58d92114bc88d36366ddd71209447a",
+        "LengthGrowth.ActualFlow.ExplicitCubicThreshold": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+        "LengthGrowth.ExplicitWindow": "3cfbcb5e74a2333436e6cc73a6c92a22787b37e2df84f3f088d7ec862e149dae",
+        "LengthGrowth.OscillatorClock": "de3a48af8af591556f4da9e1814a3e051f1162819216a674c04e4a0b29fac0f6",
+        "LengthGrowth.OscillatorExistence": "b6dd8321b7642231cd089251cf25561c6f01b70f6a30d7c232dfe705dd92c04b",
+        "LengthGrowth.OscillatorMeanFloor": "fcf07cb91636968e4f19f532586b6e1224c1c595896c1e1d6eedc66dfb13df96",
+        "LengthGrowth.OscillatorOrbitBounds": "efb86c916308343904902ec8e1666a3a61de8872fb8c72632467570c47a66a32",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.OscillatorPhase": "6f8fe6f4b4c7bfa82da37eec2a24c660ac68188d8271aee76c9b13943dc6043b",
+        "LengthGrowth.OscillatorSmooth": "8a083c8e77d4291711aa04c6717eced7339424bb32f27e681a1e7ef9c85f8586",
+        "LengthGrowth.OscillatorStability": "a7a82aa47432407afca92b8e98959195872c58e9285114fe0ae2670c4dbbfe3e",
+        "LengthGrowth.OscillatorTime": "856790ec74739eb103e4d7f4cee3e14f6f65e77d779f313ad84133b0e70cdcbe",
+        "LengthGrowth.OscillatorTurning": "dd761c045e36a5290fd27aff8e31599a8a94219292e7923c2b4d411a93eb1180",
+        "LengthGrowth.OscillatorUnitInterval": "16ff0bbbdc5370eba97a789962a26820fe5bbe5a2925b09eaee2c94bfe7a53c8",
+        "LengthGrowth.OscillatorWindowMean": "2fa6d6d9868ea091ec9f0c44eee4c7aa69847bf05d5ae8c5efc9373a4837c357",
+        "LengthGrowth.PeriodicWindowGap": "b9c6d93324f05355cf8469f444a87656a9d43e3c8f645bdb2f3382fbf296558b"
+      },
+      "exit_code": 0,
+      "log": "Length-growth audit passed: 1455 declarations; standard axioms only."
+    }
+  ]
+}

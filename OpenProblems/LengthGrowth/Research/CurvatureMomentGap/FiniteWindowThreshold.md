@@ -128,7 +128,22 @@ to \(\langle B_T\rangle\). Combining the three bounds gives
 the hypothesis. This proves the static estimate with the value displayed
 above and, by the length-growth argument, the stated choice of \(g_*\).
 
-The estimates and averaging argument in this note are mathematical
-proofs. The project's oscillator modules verify the angular-integral
-inequalities. Its dynamic-transfer module takes the static estimate as a
-hypothesis and verifies the implications for the geometric flow.
+## Lean verification
+
+The finite-window argument, the explicit value of \(g_*\), the spatial
+estimate for every periodic regular material position, and the flow
+consequences have been verified in Lean. For the comparison of a forced
+trajectory \(u\) with the exact trajectory \(z\), the formal proof uses
+the relative energy
+
+$$
+ D=\tfrac12 h^2+d^2\big((d+2z)^2/8+z^2/4+1/2\big),\qquad
+ d=u-z,\quad h=u'-z'.
+$$
+
+If \(|z'|\le V_0\), differentiation gives
+\(D'\le(3+2V_0)D+w^2/2\), and \(d^2\le2D\).
+An integrating factor gives the stated window comparison with the same
+constants. Both trajectories may be based at any point of the period.
+[Final flow theorems](../../LengthGrowth/ActualFlow/ExplicitCubicThreshold.lean) ·
+[Verification record](ExplicitThresholdVerification.md)

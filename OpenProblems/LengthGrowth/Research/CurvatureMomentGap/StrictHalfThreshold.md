@@ -4,7 +4,7 @@ For a smooth closed immersed planar free elastic flow, put \(E=\frac12\int k^2ds
 \[
  G=\sqrt L\,|\int k^3ds|/(\int k^2ds)^{3/2}.
 \]
-There exists a universal \(g_*<1/2\), with \(g_*>0\), such that \(\liminf_{t\to\infty}G(t)>g_*\) implies \(L(t)=O(t^{1/4})\) and \(E(t)=O(t^{-1/4})\). Every flow of turning number zero satisfies \(\liminf_{t\to\infty}G(t)\le g_*\), without an assumed energy cap. The compactness proof below gives existence. A separate finite-interval proof gives an explicit admissible value \(g_*=1/2-\epsilon\), with \(\epsilon>0\) specified there. [Explicit finite-interval estimate](FiniteWindowThreshold.md)
+There exists a universal \(g_*<1/2\), with \(g_*>0\), such that \(\liminf_{t\to\infty}G(t)>g_*\) implies \(L(t)=O(t^{1/4})\) and \(E(t)=O(t^{-1/4})\). Every flow of turning number zero satisfies \(\liminf_{t\to\infty}G(t)\le g_*\), without an assumed energy cap. The compactness proof below gives existence. The separate finite-window proof and its consequences for the flow have also been checked in Lean. [Formal verification](ExplicitThresholdVerification.md) A separate finite-interval proof gives an explicit admissible value \(g_*=1/2-\epsilon\), with \(\epsilon>0\) specified there. [Explicit finite-interval estimate](FiniteWindowThreshold.md)
 
 ## The static estimate
 

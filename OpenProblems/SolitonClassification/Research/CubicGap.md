@@ -124,7 +124,9 @@ The Lean module `SolitonClassification.CubicGap` covers the exact square,
 the weak and strict inequalities for all periods, rigidity under an affine
 force law, and the equality characterization. The explicit uniform margin
 under an energy cap is a human proof. The fixed-turning conclusion also
-uses the human static compactness argument in the linked note. The
-finite-energy estimate uses the independently
+uses the periodic scalar estimate in the linked note. The independent
+LengthGrowth project verifies that scalar estimate by the finite-window
+argument. Its application to these support data is the mathematical
+deduction above. The finite-energy estimate uses the independently
 verified theorem `PeriodicSupportProfile.rotation_pitch_sq_lt` from
 `SolitonClassification.RotationPitch`.

@@ -62,7 +62,7 @@ private theorem split_radicals {c x y : ℝ} (hc : 0≤c) (hcu : c≤1/2)
   dsimp only [P,M] at u2 v2
   linear_combination -y*V*u2+y*U*v2
 
-private theorem low_pair {c r y : ℝ} (hc : 0<c) (hcu : c≤1/2) (hr : 0<r)
+theorem low_pair {c r y : ℝ} (hc : 0<c) (hcu : c≤1/2) (hr : 0<r)
     (turn : 2*c*r^2 = 1+c-2*c^3) :
     rawTerm c r (r*y)+rawTerm c r (-(r*y)) =
       (c/r)*weight c y*factor c y := by
@@ -92,7 +92,7 @@ private theorem low_pair {c r y : ℝ} (hc : 0<c) (hcu : c≤1/2) (hr : 0<r)
   rw [qneg,show q c y+4*(c/r)*(-y)=q c y-4*(c/r)*y by ring,← sub_eq_add_neg]
   exact split_radicals hc.le hcu ht
 
-private theorem high_pair {c r y : ℝ} (hc : 1/2≤c) (hy : 0≤y) (hy' : y≤r)
+theorem high_pair {c r y : ℝ} (hc : 1/2≤c) (hy : 0≤y) (hy' : y≤r)
     (hd : 0<orbitOffset c r) : 0≤rawTerm c r y+rawTerm c r (-y) := by
   let A := √((2*c+y)^2+orbitOffset c r)
   let B := √((2*c-y)^2+orbitOffset c r)

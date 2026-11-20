@@ -18,9 +18,11 @@ There is an explicit universal g_*<1/2 such that eventual G>g_* gives
 both quarter-power bounds. Every turning-zero flow has liminf G<=g_*.
 The finite-window mathematical proof specifies the constant in
 LengthGrowth/Research/CurvatureMomentGap/FiniteWindowThreshold.md.
-The Lean modules verify the full angular-integral positivity, the
-affine-force rigidity, and the dynamic consequences of the static
-estimate. The full static estimate is currently proved in the manuscript.
+The complete finite-window proof now passes Lean, including the static
+estimate for arbitrary regular periodic positions. The final flow theorem
+requires only the geometric flow hypotheses and its stated moment
+condition. A separate theorem covers all flows of turning number zero.
+See LengthGrowth/Research/CurvatureMomentGap/ExplicitThresholdVerification.md.
 For each fixed nonzero turning number there is also a gap below one
 in liminf of the centered moment J outside the round circle basin.
 Over all flows liminf J<=1, with equality precisely for smooth

@@ -27,7 +27,9 @@ The theorem `LengthGrowth.OscillatorMean.period_numerator_pos_of_equal_potential
 depends only on the standard axioms `propext`, `Classical.choice` and
 `Quot.sound`.
 
-Identification of the period integral with the time average of a solution
-of the second-order oscillator equation uses the energy quadrature in the
-accompanying mathematical proof. The subsequent compactness argument for a
-universal threshold below one half is also given there as a human proof.
+The continuation constructs the orbit from its prescribed initial position
+and velocity, integrates the actual angular clock, proves the period and
+its time mean, and gives a uniform lower bound on finite time windows.
+The explicit-threshold theorem uses these results in the finite-window
+argument. The alternative compactness argument is given in the
+mathematical manuscript. [Integrated verification](ExplicitThresholdVerification.md)

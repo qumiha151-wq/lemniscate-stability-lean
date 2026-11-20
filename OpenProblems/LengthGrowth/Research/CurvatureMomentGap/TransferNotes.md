@@ -7,7 +7,7 @@ $$
  |S|/\sqrt b\le\epsilon,\quad L^4(LD-EV)\le\epsilon b^3
  \quad\Longrightarrow\quad G\le1/2-\epsilon .
 $$
-This is the material-coordinate consequence of the spatial estimate in the strict-threshold manuscript. In RMS arclength, $s_0=S/\sqrt b$, $|h|=G$ and $e=L^4(LD-EV)/b^3$. The compactness argument and positive-mean oscillator proof that produce a universal spatial gap are in the manuscript. No spatial estimate or threshold is declared as a Lean axiom.
+This is the material-coordinate consequence of the spatial estimate in the strict-threshold manuscript. In RMS arclength, $s_0=S/\sqrt b$, $|h|=G$ and $e=L^4(LD-EV)/b^3$. The finite-window proof now supplies this spatial estimate for the explicit constant in Lean. The final flow theorems apply the transfer to that proved estimate. [Final flow theorems](../../LengthGrowth/ActualFlow/ExplicitCubicThreshold.lean)
 
 For $g=1/2-\epsilon$, Lean checks the following implications.
 
