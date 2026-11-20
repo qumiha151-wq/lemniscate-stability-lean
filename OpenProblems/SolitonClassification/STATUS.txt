@@ -1,3 +1,6 @@
+InfinitelyManyExpanders.lean proves that infinitely many smooth closed zero-turn expanders are pairwise inequivalent under plane similarities, changes of parameter and repeated traversals. For some c>0, LinearExpanderCount.lean verifies at least floor(cB) inequivalent geometric shapes with positive normalized centre slope at most B for all sufficiently large B. See Research/ReflectedScattering/PhysicalSeamMatching.md and MatchingVerification.json for the geometric proof and audit.
+SolitonClassification audit passed: 22153 declarations; standard axioms only.
+
 The two frozen endpoint trajectories have opposite raw impact signs for every |s| >= 20. For each prescribed t >= 20 an intermediate seam curvature gives simultaneous zero transverse stress at -t and t. One fixed curvature gives a complete frozen orbit whose unnormalized transverse stress tends to zero at both ends. Every sufficiently high common section realizes all impacts in [-0.002,0.52]. The kernel checks all 1280 cells and the full chain to the genuine frozen ODE. See Research/ReflectedScattering/FiniteFrozenEndpoints.md.
 SolitonClassification audit passed: 21767 declarations; standard axioms only.
 

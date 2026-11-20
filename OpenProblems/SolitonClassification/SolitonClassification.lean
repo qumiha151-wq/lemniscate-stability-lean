@@ -1,3 +1,5 @@
+import SolitonClassification.LinearExpanderCount
+import SolitonClassification.InfinitelyManyExpanders
 import SolitonClassification.FrozenCertifiedScattering
 import SolitonClassification.ContinuousPhysicalRadius
 import SolitonClassification.CentreShotWinding
