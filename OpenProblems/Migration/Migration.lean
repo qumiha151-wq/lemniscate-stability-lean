@@ -1,3 +1,5 @@
+import Migration.ForwardShortCore
+import Migration.RoundPartitionCost
 import Migration.NearRoundDisk
 import Migration.TranslatorCaps
 import Migration.FiniteRotation
@@ -39,3 +41,6 @@ This project does not import the stability or length-growth projects.
 
 /-! The physical near-round fixed disk is proved in `Migration.NearRoundDisk`.
 See `Research/FixedCore/FixedCoreFormalization.md` for the statements and bounds. -/
+
+/-! The uniform short-time disk for arbitrary initial shapes and turning numbers is
+proved in `Migration.ForwardShortCore`. See `Research/FixedCore/UniversalShortTimeDisk.md`. -/
