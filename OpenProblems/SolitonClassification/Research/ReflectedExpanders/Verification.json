@@ -1,0 +1,61 @@
+{
+  "lean": "4.33.1",
+  "modules": [
+    {
+      "module": "SolitonClassification.ReflectedArc",
+      "source_sha256": "bbf36fe2f5888cf8bc9dbdb95a55fd84605cac6e7e730032f7fd5b962c326e41",
+      "object_sha256": "11656057fcbcffaa2aaaf4532f526f55a8cd176b8e3bde8d99a42b8afbab5c30",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.ReflectedGeometry",
+      "source_sha256": "f426ffc32b437c29ce439533e267a4ed6b3c3af3ec618c265cffcd9f3a1ac832",
+      "object_sha256": "c3992b33e5ed8f2fa34af7d979e31f115ef72e3be0efc7f54d2460a2d73e3582",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.ReflectedMarker",
+      "source_sha256": "6cd8e0236cfe3549e5c19d4979ca40e22fbb902d5d65945c440225549effa7c3",
+      "object_sha256": "f30f5034baa235e4f738df841d2db16546baf2c1277a5522a900ebbfb0b5b830",
+      "exit_code": 0,
+      "stdout": "REFLECTED_MARKER: primitive support period and actual Cartesian centre-crossing derivative magnitude.\n"
+    },
+    {
+      "module": "SolitonClassification.ReflectedShooting",
+      "source_sha256": "f301b2313e4c2e3a33894882bae56b59264f6ce57ef98e04b54005e353328c62",
+      "object_sha256": "39b775f452dbfc593fbea02d1d3afcf5857a148c72570b849f50ed5ffadb561d",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.ReflectedEvolution",
+      "source_sha256": "6f0a0b618732fec1b3028cc9db890e14003309f5b7d05fd8a83ac75f18b06042",
+      "object_sha256": "aa43c070eb32d7c9fbd110ea86eedbdc7669d5691a49004edda464e7b68cacef",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "d88f859441ba27fba066b1dc9a3582800ea9ef86f40582c642a1a92e29de0844",
+      "object_sha256": "a521196a6238c9576876918c96055f4fd7faeafa0b18719c8ca6b6f194afb7d7",
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "5dcd7bf2f1cd6b80c44583b5fa964401d0bb1b21bb7e2d59cee5521d49b549e8",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit_code": 0,
+      "stdout": "SolitonClassification audit passed: 9261 declarations; standard axioms only."
+    }
+  ],
+  "numerical_scope": "Twelve true shooting zeros are certified by the separate Arb replay. The Lean geometric theorems take shooting endpoint equalities as hypotheses.",
+  "certificate_files": {
+    "ReflectedExpanders.md": "347e627d8d94829b4d172b7b37d57ad1a6e31832f84514b3f90c9aa521d5b2e7",
+    "certify.py": "12351b80a5fb642e7a1ff011c89bcf86923d97de6942f5dc2a8cc997ab1920a2",
+    "certificates.json": "06c71f1cc6e3e86ceb08b141401da1e715ff31e5c7496688c585c7da3977fe7e",
+    "replay.py": "c7fa64824769c81f5fdc0084325d742be395a6faa0cb953e36c689f5406ac205"
+  }
+}
