@@ -1,0 +1,54 @@
+{
+  "lean": "4.33.1",
+  "baseline_project_declarations": 1707,
+  "previous_release_manifest_sha256": "e358a8c216bc64bbb7381a32c35ac15b20ec978e5f76ce2bf97cc24a30fd702f",
+  "audited_declarations": 1717,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "independent_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.RecurringLength",
+      "source_sha256": "e473b98f1654e5b41eaa46c8e29079c93aa0d61c00c5a045904ab2f40b69019f",
+      "setup_sha256": "88988f15815144e1bc44fb1659f39b5b016a5110c7b5a835b3949c381c3f6c97",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "a92cf00c8f2378d9f38e4ad31459263039184e16849b72a1b2a61c07fe8f3364",
+      "log": "'LengthGrowth.ActualFlow.recurring_length_fourth_power_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.FrequencyBackward",
+      "source_sha256": "83de846778fa70aabe90e1a1aaab270d8dfc5c5934260b514231342aa250ac89",
+      "setup_sha256": "861cf4cfa55405c15f068909a4046254426f4a8c4c33d51c2920e13107b3e951",
+      "dependencies": {},
+      "exit": 0,
+      "olean_sha256": "c7e2bfeddf226e15e429190643aee5688ab125b76089952419e8050d23e2f764",
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "68edcb4f8499212e5304002e46049a63ec8595f855bd59269f5c1641f5916330",
+      "setup_sha256": "cd1c0830fdc711a4e7bcb9db13cae770e2dcb16aada83fb95ac45d145dac7025",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.RecurringLength": "a92cf00c8f2378d9f38e4ad31459263039184e16849b72a1b2a61c07fe8f3364",
+        "LengthGrowth.ActualFlow.FrequencyBackward": "c7e2bfeddf226e15e429190643aee5688ab125b76089952419e8050d23e2f764"
+      },
+      "exit": 0,
+      "olean_sha256": "304bc5f9dd7c27b70b215a29fd66d9adf9a6b917f5e66e150dcf695f342bde50",
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "setup_sha256": "7226f489779adda6be0fe2687e02ce816d95d38228da90ea5954d0f0a98c73d3",
+      "dependencies": {
+        "LengthGrowth": "304bc5f9dd7c27b70b215a29fd66d9adf9a6b917f5e66e150dcf695f342bde50"
+      },
+      "exit": 0,
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "log": "Length-growth audit passed: 1717 declarations; standard axioms only.\n"
+    }
+  ]
+}
