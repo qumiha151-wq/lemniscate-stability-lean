@@ -1,0 +1,163 @@
+{
+  "lean": "4.33.1",
+  "baseline_commit": "7d7aa780",
+  "baseline_project_entry_sha256": "f9d6d8b7c82df0862f399fc5720921c952ef33994f840380263314c6f091e173",
+  "baseline_status_sha256": "ef97b60d7603278529e07f1a00ff50af60709f2ecb5870ba33ca15c86622127f",
+  "audited_declarations": 1607,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "independent_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityPieces",
+      "source_sha256": "7ced0f84c341947597894c5f862aa9e2c64ca7f99eb265ab63f7729206a33883",
+      "olean_sha256": "f7056a746bc99d4ee78579ed8b2e6e6485cd66c1e0c51d7ddf66af7e1e1dd10a",
+      "dependencies": {},
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityEstimates",
+      "source_sha256": "ac1d2683ff808d1099d1b87572bd09faa1e5c8939e1c7567de549ea4b2628f45",
+      "olean_sha256": "8e7112e96cf3981337f9d0700d6fc9f2f3f895b19baa68bcf764f5c7e179656e",
+      "dependencies": {},
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.CriticalDensity.amplitude_from_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityRate",
+      "source_sha256": "06925b8b08ce1324020f95c59b849ec8d20973e9c762e8b9e70fcb791144896f",
+      "olean_sha256": "e3ebb8a6b74d5e2136f05f0049f8961273c8fd8f599a71087bd8faa1ee191890",
+      "dependencies": {},
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityTent",
+      "source_sha256": "a7edeaa81489d4ea455ca9bcce59e4420fd2b06221e5b69d1ff5ae9379bc2d78",
+      "olean_sha256": "f8e11fbe96c9036223972a1d4bbd1f33d571e6900036bfb79b4fd2d3078c27e4",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityPieces": "f7056a746bc99d4ee78579ed8b2e6e6485cd66c1e0c51d7ddf66af7e1e1dd10a"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.CriticalDensity.Pieces.tent_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityWindow",
+      "source_sha256": "56739b255db737278d82c62518ec42d69da3183033419e74aea494791aff97b2",
+      "olean_sha256": "2ef1cd06e18902ad9e566617aa589553399ece99f2564743a6cbc4f900277225",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityPieces": "f7056a746bc99d4ee78579ed8b2e6e6485cd66c1e0c51d7ddf66af7e1e1dd10a"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.CriticalDensity.charge' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityTime",
+      "source_sha256": "f0dbe0a7bf6a952f181cc95a7a270bfde7ab22e2e0fa15e1d44d7d79709a8fff",
+      "olean_sha256": "3a62497aa5befcf9a1a535afc190514e80a512b3e8eef944feb8beeb90b03949",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityRate": "e3ebb8a6b74d5e2136f05f0049f8961273c8fd8f599a71087bd8faa1ee191890"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.length_energy_of_power_deficit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityScalar",
+      "source_sha256": "dc4ba65f3f30a4e51e262de1c32baf91216676848d5fa1f97e1ae1a19ed545d2",
+      "olean_sha256": "229845ed61f26968068c5a8f03bf8298bae908a3cd26b876890b6b1e8dfb9d69",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityWindow": "2ef1cd06e18902ad9e566617aa589553399ece99f2564743a6cbc4f900277225",
+        "LengthGrowth.ActualFlow.CriticalDensityTent": "f8e11fbe96c9036223972a1d4bbd1f33d571e6900036bfb79b4fd2d3078c27e4",
+        "LengthGrowth.ActualFlow.CriticalDensityEstimates": "8e7112e96cf3981337f9d0700d6fc9f2f3f895b19baa68bcf764f5c7e179656e"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.CriticalDensity.scalar_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensitySubpower",
+      "source_sha256": "48acb221f55b082be0d2ed8e3545b79f4fa6b545e6b0454750c79869aec5f0fa",
+      "olean_sha256": "92c2ad405c6f088caf736b2598153ff8a4408039e528a28efc44423ede9519d3",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityTime": "3a62497aa5befcf9a1a535afc190514e80a512b3e8eef944feb8beeb90b03949"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.high_slice_log_envelope' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.length_energy_of_subpower_deficit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.arbitrarily_late_stress_deficit_of_superquarter' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityCountRate",
+      "source_sha256": "e5333b7281f4a93040a2777d1bc6c255fa3afc4b0517359ece2cabef92305ad5",
+      "olean_sha256": "b1c606b88b8e5c1afed0803b6d4f0217a96bee9133e50e67c4ac26551572425b",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityTime": "3a62497aa5befcf9a1a535afc190514e80a512b3e8eef944feb8beeb90b03949"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.length_energy_of_subcritical_count' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityMaterial",
+      "source_sha256": "c3dc71f7f146589324647335654f98f3f51f351b078cb8eb027ffe783b142adc",
+      "olean_sha256": "2ef26f43e65c27bdd0bb5222cc2d24bc637ee6b3fe57d8a7b3d4e1282190e603",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityScalar": "229845ed61f26968068c5a8f03bf8298bae908a3cd26b876890b6b1e8dfb9d69"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.criticalDensity_dissipation_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityIndex",
+      "source_sha256": "8b20d005edf600fdb99353f868503db27510afbf59f3442fb45ecfe977721a5d",
+      "olean_sha256": "0e749aa536bb2bd59904e2b1c1d013c9c30fcd40e8382e1e57ada9f06fa972bd",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityMaterial": "2ef26f43e65c27bdd0bb5222cc2d24bc637ee6b3fe57d8a7b3d4e1282190e603"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.criticalDensityIndex_spec' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityFlow",
+      "source_sha256": "4390f4337ba0cb620439707a13814e6e54bbdcca6be22606babc8bc546b857ef",
+      "olean_sha256": "348f5eda5ad528ae74c8177e62cf01dba7b181e45e0a8e8d90ddc39055e40303",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityCountRate": "b1c606b88b8e5c1afed0803b6d4f0217a96bee9133e50e67c4ac26551572425b",
+        "LengthGrowth.ActualFlow.CriticalDensityMaterial": "2ef26f43e65c27bdd0bb5222cc2d24bc637ee6b3fe57d8a7b3d4e1282190e603"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.log_power_length_of_half_rms_pieces' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.log_quarter_of_bounded_half_rms_pieces' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.CriticalDensityIndexFlow",
+      "source_sha256": "d9eff643ce77b112e0a3c695a260055eb36c5b47a2545d5864b8fbdfd7856429",
+      "olean_sha256": "86b8f8e7785afc4751b7cecec6922319399e6feaf2fd722b3998f2421931f4de",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityFlow": "348f5eda5ad528ae74c8177e62cf01dba7b181e45e0a8e8d90ddc39055e40303",
+        "LengthGrowth.ActualFlow.CriticalDensityIndex": "0e749aa536bb2bd59904e2b1c1d013c9c30fcd40e8382e1e57ada9f06fa972bd",
+        "LengthGrowth.ActualFlow.CriticalDensitySubpower": "92c2ad405c6f088caf736b2598153ff8a4408039e528a28efc44423ede9519d3"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.length_energy_of_half_rms_index_little_o' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.arbitrarily_late_half_rms_index_of_superquarter' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.exists_half_rms_index_sequence_of_superquarter' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "0c5c3ad0980c768565696a9d7abf08d7ac687532202186674bbfc4ec7af81f67",
+      "olean_sha256": "b084ba9ff4e27c03f749a1475828e828d1fb810fa2425496ea8fc1b682ef6b5c",
+      "dependencies": {
+        "LengthGrowth.ActualFlow.CriticalDensityIndexFlow": "86b8f8e7785afc4751b7cecec6922319399e6feaf2fd722b3998f2421931f4de"
+      },
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "dependencies": {
+        "LengthGrowth": "b084ba9ff4e27c03f749a1475828e828d1fb810fa2425496ea8fc1b682ef6b5c"
+      },
+      "exit": 0,
+      "log": "Length-growth audit passed: 1607 declarations; standard axioms only.\n"
+    }
+  ]
+}

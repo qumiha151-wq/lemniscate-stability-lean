@@ -1,3 +1,14 @@
+On a closed curve normalized to unit RMS curvature, let P=sqrt(2EL).
+If n intervals suffice to separate the excursions above +1/2 from
+those below -1/2, the RMS elastic force is at least 1/2-C*n^(3/2)/P.
+For the true normal flow, n=O((EL)^sigma), sigma<1/3, on late high-product
+slices implies E(t)->0 and L(t)=O(t^(1/4)*(1+log(1+t))^(1/(1-3*sigma))).
+Failure of a t^(1/4+epsilon) bound forces at least c_epsilon*(EL)^(1/3)
+half-RMS reversals on slices at arbitrarily late times and high products.
+The CriticalDensity modules prove these statements for actual immersions.
+Research/CriticalInflectionDensity gives analytic proofs of matching
+closed-curve examples and two criteria based on the turning of curvature arcs.
+
 An eventually uniform bound on the number of curvature sign changes implies
 L(t)=O(t^(1/4)*(1+log(1+t))) and E(t)->0 for a smooth forward normal flow.
 FiniteSignTheorem.lean proves the scalar inequality and its implication
