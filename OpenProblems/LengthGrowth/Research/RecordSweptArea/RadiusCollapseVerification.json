@@ -1,0 +1,56 @@
+{
+  "previous_declarations": 2825,
+  "audited_declarations": 2827,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "previous_root_sha256": "1576fcf7d032aae25a7c5032118f46d810ff613bad55b26bf49c5cad21e09c21",
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.RadiusMomentClock",
+      "source_sha256": "b502bdcd57578010d8e726e814f75f8fde315baf993eca689113c09fac4e7e26",
+      "olean_sha256": "f429663913996c1c25761103a0a09b1c34dc41883579b7c2798cd1b6bb9e2904",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.localizationClock_cubic_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.LocalizationClock": "cc7fe4e8edf91bb05a0e914b4a02c5e23d5a67703367dcbf8376cdad92e5b24f"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.RadiusMomentEnvelope",
+      "source_sha256": "008a7d289ef879e0c90131ee85d70d93ac8e987d92ad87bee11dd4cc8d52c4f8",
+      "olean_sha256": "828f0e839f60cf633c40dc6c74616fc16c53d6d477e64e84d785ac6d41cae82c",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.radius_prefix_clock_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.SpatialLocalization": "ca7145fd343126f938ca6fb9a8e28558954e8c5c3a7d8bab57ccdf8562e218a5",
+        "LengthGrowth.ActualFlow.RadiusMomentClock": "f429663913996c1c25761103a0a09b1c34dc41883579b7c2798cd1b6bb9e2904"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "10482a373e61f3e0b84f970127b971826ad9921aef44a8f7e7dcab5d03752eb6",
+      "olean_sha256": "eb2bfa2acc5b50431c4cf596ba9256a8215e696469f575dda60c7a4c44ecd4d4",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2827 declarations; standard axioms only.\n"
+    }
+  ],
+  "formal_scope": [
+    "Cubic Hardy estimate for the physical localization clock from the normal flow and its energy loss.",
+    "Optimized finite-horizon radius bound for every earlier complete image in terms of the actual clock."
+  ],
+  "written_scope": [
+    "Unconditional sixth radius moment and mixed energy-radius time integral.",
+    "Positive-plateau length and whole-trace collapse in weighted logarithmic time.",
+    "Weakly exceptional dyadic running records, normalized-image collapse and conditional energy decay."
+  ]
+}
