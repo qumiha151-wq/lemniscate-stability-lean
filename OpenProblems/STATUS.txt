@@ -12,6 +12,9 @@ https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/1cafe70178989939a
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/0fd4b7a5088f516db0e6a423945ad08f69acb796/OpenProblems/LengthGrowth/LengthGrowth/ActualFlow/MulticoverWinding.lean
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/82c7521d3957a1e2fefb7d079bb873e72b029e45/OpenProblems/LengthGrowth/LengthGrowth/ActualFlow/MulticoverSharpLength.lean
 
+弯曲亏损的不变范围。设 n 为带符号转数，K=L∫k²ds−(2πn)²。对每个非零 n，若 K(0)≤(12π/5)|n|+9/25，则这条流始终留在该范围，且 K(t) 按显式幂率趋于零。反过来，存在同一个常数 C>0，使得对每个整数 n（包括零）及每个指定的 H≥C(1+|n|)，都有光滑闭浸入从 K(0)=H 出发，并在所有充分小的正时间满足 K(t)>H。因此仅用亏损定义的普适不变阈值，在大转数下的最优增长阶为 |n|。每个高度可以使用不同的初始曲线。已知一转的非圆自相似流保持固定亏损，始终位于上述近圆范围之外。是否有同一条流穿越无界的亏损高度，仍须研究该流的长期演化。
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/61608c2f719a929d54a80802acf46e4b6cb4fdc7/OpenProblems/LengthGrowth/LengthGrowth/ActualFlow/MulticoverOptimalOrder.lean
+
 整条闭曲线迁移：若初始 L∫k²ds≤5π²，则所有向前时刻的凸包都包含同一闭圆盘。圆心为初始弧长质心，半径为 401π/(500E(0))，其中 E=∫k²ds/2。因此若两个时刻的整条曲线能被一直线严格分开，初始 L∫k²ds 必须大于 5π²。对转数绝对值 m≥2 的流，若初始 L∫k²ds−(2πm)²≤π²/4，则所有时刻的凸包也包含一个共同圆盘。这个条件允许初始弯曲乘积随 m 增大而任意大。超出上述条件后是否存在整曲线迁移仍开放。Novaga 的公开预印本处理了初始上界 4π²+8/3。
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/825d320be3f90826ee090847116e249d9924a21c/OpenProblems/Migration/Migration/VirialForwardDisk.lean
 https://arxiv.org/abs/2611.07242
