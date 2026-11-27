@@ -1,0 +1,62 @@
+{
+  "previous_declarations": 56965,
+  "audited_declarations": 57277,
+  "modules": {
+    "IntegerTurningPeriod": {
+      "module": "SolitonClassification.Rotating.IntegerTurningPeriod",
+      "source_sha256": "a14b6c131f2f1c6e379bd568d759843a619974f559b9457583c91d0f36042692",
+      "olean_sha256": "b7d76774b7953911cd0d044a95fee3664fa2543a9f8348eaa550cf5993e46914",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.WindingOneImmersion.period_lattice' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SolitonClassification.Rotating.IntegerTarget.WindingOneImmersion.least_positive_period' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    "ResetAllInversesMinus": {
+      "source": "31822db955f9885d26b347ac47e0243af909c48d0c8914edd13de585afefe1ec",
+      "olean": "2dc5c564f106b740f642fc10ba7510fee4bcce48fa5a2ceb9cbb6d6b9a110ad9",
+      "direct_imports": {
+        "SolitonClassification.Rotating.ResetGridMinus": "14c630ba05e6903fa76f05c1492c3322f0c11fb3c6e88d17d2b0be2e65eafa62"
+      },
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.DyadicReset.AllInversesMinus.every_node' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    "ResetAllInversesPlus": {
+      "source": "2b9921a1f57217dca7a2a5ee13649856372235f36a043812c923b26254501622",
+      "olean": "6b2c1f1c02bc538707a0f3fc7c6ea02a5e82f874c7a6ab6573326729f12f41b0",
+      "direct_imports": {
+        "SolitonClassification.Rotating.ResetGridPlus": "b3b788730f4eca4aff90e9e56c154ab63ccd504a89e5ec1026b9d56865f59d16"
+      },
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.DyadicReset.AllInversesPlus.every_node' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    "ResetOnlyCells": {
+      "source": "a36d2a6401630b4f8f0de66ca1b25c5ec557fc6cb49f5d773ace9274d664064b",
+      "olean": "3c4218294146bdc3b665fb97c7293f2ff75614497dbe0e12037126f9f2529b65",
+      "direct_imports": {
+        "SolitonClassification.Rotating.ResetGridClosure": "f0799ad433c9017a24517c04fb501842ec7b62e764739e60946e53dedb043ece",
+        "SolitonClassification.Rotating.ResetAllInversesMinus": "2dc5c564f106b740f642fc10ba7510fee4bcce48fa5a2ceb9cbb6d6b9a110ad9",
+        "SolitonClassification.Rotating.ResetAllInversesPlus": "6b2c1f1c02bc538707a0f3fc7c6ea02a5e82f874c7a6ab6573326729f12f41b0"
+      },
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.immersion_from_polynomial_cells' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    "ResetPrimitiveCells": {
+      "source": "5814591c7b988b2f3eb429642b1d44c6908e3234055d4bd0842d3d7c720e20c3",
+      "olean": "900057bca45cd3170b6bc73a9cf5ad57f904a5950346bfb895d376fb6b0ef1de",
+      "direct_imports": {
+        "SolitonClassification.Rotating.ResetOnlyCells": "3c4218294146bdc3b665fb97c7293f2ff75614497dbe0e12037126f9f2529b65",
+        "SolitonClassification.Rotating.IntegerTurningPeriod": "b7d76774b7953911cd0d044a95fee3664fa2543a9f8348eaa550cf5993e46914"
+      },
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.primitive_immersion_from_polynomial_cells' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    "SolitonClassification": {
+      "source_sha256": "7011b6dc77ad33b67c47199ced81216c347fa57c91fd9d675ed69690ed41fcde",
+      "olean_sha256": "e8d6e8dca67ef62eacc3402664192a0a94b02fd26a9a2036bf9dafa8633271c6",
+      "log": ""
+    },
+    "SolitonClassification.AxiomAudit": {
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "olean_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 57277 declarations; standard axioms only.\n"
+    }
+  }
+}
