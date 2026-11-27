@@ -1,3 +1,4 @@
+import SolitonClassification.RationalCurvatureCircle
 import SolitonClassification.ForceWindingZeroTurn
 import SolitonClassification.ForceWindingExample
 import SolitonClassification.HolonomicCircle

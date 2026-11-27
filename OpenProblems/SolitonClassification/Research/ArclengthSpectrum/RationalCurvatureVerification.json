@@ -1,0 +1,176 @@
+{
+  "audited_declarations": 142054,
+  "previous_declarations": 141871,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "SolitonClassification.RationalLocalJet",
+      "source_sha256": "913823f29b58e4804d84ed4f987916cdb606625d5e000ec44f2e1c73483148ed",
+      "object_sha256": "32978493aec91da059d8ff97b730bfcc3394ef00294782c2e377b3859421c115",
+      "imports_sha256": {
+        "Mathlib.Analysis.Meromorphic.Order": "3263e00308db197866be132fcd7b55c49721c7c9e15614e31fa3f9b79c698a9b",
+        "Mathlib.Analysis.Complex.Basic": "0bf6347c2d1b295f8746dce5ad1a6b90629987116dc2d76dbc3374571ea1daea",
+        "Mathlib.Analysis.Complex.Trigonometric": "f6a43547933247f1b9b1f51e608ff3c2e5a43b4232a7086d9592bcaeb7816fe3",
+        "Mathlib.Tactic.FunProp": "1b57198ec41c72cdc596f343b4b8f28335d0bc15ed2317bfdb90d2e09948bba9",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalIndicialJet",
+      "source_sha256": "be3d65798959b9af9990944e03e9e8b5e65c563f9fa564ea1e91e6f28fec9b6d",
+      "object_sha256": "11516f13f1ce0daa85f899db740adcd1f6ebc5e910fedcd1298a834431919e9d",
+      "imports_sha256": {
+        "SolitonClassification.RationalLocalJet": "32978493aec91da059d8ff97b730bfcc3394ef00294782c2e377b3859421c115"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalPoleCoefficient",
+      "source_sha256": "f307a8b9dc68f301f3e1ab274fb4e3cd4f3c3def9620de791d385f8622c35a94",
+      "object_sha256": "9243610e8310cd4d87368defea8d45d2ce546209f318ae4cda86a9109550556c",
+      "imports_sha256": {
+        "SolitonClassification.RationalIndicialJet": "11516f13f1ce0daa85f899db740adcd1f6ebc5e910fedcd1298a834431919e9d",
+        "Mathlib.Analysis.Analytic.Polynomial": "61ce221877df836b612ff037fc445066774b2c18602ba31ba4a432e664292e53",
+        "Mathlib.Algebra.Polynomial.FieldDivision": "c131b1470b01d770bde4a7f8e6b0e41d0a9723de5599f393af8c0144787353c5",
+        "Mathlib.Algebra.Polynomial.Derivative": "01641c9d4e998aa05033d0c9b760ba2045b5ba276371c22aa1e29f794666c596"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalOriginVariation",
+      "source_sha256": "bff3dd4f2825773ac7e5d6901cbb146a70f121be415c9fb12b5b4605fc4bf79c",
+      "object_sha256": "45c8d913ccab7f9957aa189c0d36c69eae62ebaec841f215ae9d288098be01f6",
+      "imports_sha256": {
+        "SolitonClassification.RationalIndicialJet": "11516f13f1ce0daa85f899db740adcd1f6ebc5e910fedcd1298a834431919e9d"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalOriginRigidity",
+      "source_sha256": "f43cd8099c0be1d67e9116f71f8a621b2ad6b2c7733b2eb47855ff7d715c608b",
+      "object_sha256": "19402a88e2d181a1d44f29340625a5b79dd64f6451c581fb5605bbfbba95b239",
+      "imports_sha256": {
+        "SolitonClassification.RationalOriginVariation": "45c8d913ccab7f9957aa189c0d36c69eae62ebaec841f215ae9d288098be01f6",
+        "SolitonClassification.RationalPoleCoefficient": "9243610e8310cd4d87368defea8d45d2ce546209f318ae4cda86a9109550556c",
+        "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalInfinityDegree",
+      "source_sha256": "e39bf42d7c4691ea33246364221b54b323cfc9b28e33ca34af71886ccf550e71",
+      "object_sha256": "97224910ffd3d8c0b63e2ba5061648cb49c89cce1a52e291fe8330ee36116037",
+      "imports_sha256": {
+        "SolitonClassification.RationalPoleCoefficient": "9243610e8310cd4d87368defea8d45d2ce546209f318ae4cda86a9109550556c",
+        "Mathlib.Algebra.Polynomial.Reverse": "12e6cdedf250f6da73fdc700cb636afd12d82380b66bf283970dfc0ee841e101"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalReduction",
+      "source_sha256": "c25be6dc7ad2f11b2e8927d0a6f58d315c24a19deb34ce8b3bab600ec3d7a2ef",
+      "object_sha256": "5e004b3d97065a8ea0d8eca4b09852eba41cc93471e7434c3e55c3adaf15831d",
+      "imports_sha256": {
+        "SolitonClassification.RationalPoleCoefficient": "9243610e8310cd4d87368defea8d45d2ce546209f318ae4cda86a9109550556c",
+        "Mathlib.RingTheory.EuclideanDomain": "c1f8239bb37bfe6c36e8a6f9ae428042459c570f024b7416cceaaf73fa1575e7"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalProfileField",
+      "source_sha256": "e5f31612262d5700f50f82d3c407e9cbd134d165fecdd4bd8d8fd85db7be24e9",
+      "object_sha256": "0bd0832b7627672bdeb811c60fbaa0a1a2da516a7423491eb287cda5e02f5d65",
+      "imports_sha256": {
+        "SolitonClassification.RationalPoleCoefficient": "9243610e8310cd4d87368defea8d45d2ce546209f318ae4cda86a9109550556c",
+        "Mathlib.Analysis.Calculus.Deriv.Polynomial": "6eacc7d42e79a0878bf92ae38782cea88ec0cefb633fe02801858d401dca56a0"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalProfileCircle",
+      "source_sha256": "b143f842f200ee25d60352292c91782e9c01fba324c5ce732c7d0bc8fb6a1d7f",
+      "object_sha256": "64b51b9d775d2866a33ebc17c9c38e41757f4c40327606b0516207842ad72693",
+      "imports_sha256": {
+        "SolitonClassification.RationalProfileField": "0bd0832b7627672bdeb811c60fbaa0a1a2da516a7423491eb287cda5e02f5d65",
+        "Mathlib.Analysis.Complex.RealDeriv": "ad4dec54954622c3a8717a273a05fb0743eb22c6218263472b14098293a38fc2",
+        "Mathlib.Analysis.SpecialFunctions.ExpDeriv": "b3e1d9d203a964bd38a8a701a8f5eb1adf07d828294c80e572f673b68255ec3d",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse": "1b46045c19c5f7bcf686a59f4dde8538cedb5c0e6c5ad183bc3235f060a562ac",
+        "Mathlib.Order.Interval.Set.Infinite": "7ae3f4d8c56e7b6c3cf6841f1849e929413781cfbd6e3cb992d28e0cf36361f7",
+        "Mathlib.Algebra.Polynomial.Roots": "488f2e1dde52dd2f618b922e7b22efa6c6dce9f9791985a3a616eac422ac60f8"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalProfileBridge",
+      "source_sha256": "de7305a5d54946a8e75e88494f82ecb2ffae8d37ed51e469c7ff113664f2003a",
+      "object_sha256": "8663e083f1673bc13b7aff5837d5ad5b8d45817a042e5c6dd4ee20415fe45ce5",
+      "imports_sha256": {
+        "SolitonClassification.RationalProfileCircle": "64b51b9d775d2866a33ebc17c9c38e41757f4c40327606b0516207842ad72693",
+        "SolitonClassification.ScalarReconstructionNecessity": "43a0a3d87acb41156a57bb0cd591be82dd9ce6d234b34a5f86e1f649d44894ea"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalPoleMean",
+      "source_sha256": "0b88a2d29491fc43074d8653f2df31cc768d3fabdb0b6cb049aa52aceeb6246e",
+      "object_sha256": "a357b56e1f5627ab4d14c353be02a9b442cac1cc8d84f9b94eb42d1529d49f41",
+      "imports_sha256": {
+        "Mathlib.Analysis.SpecialFunctions.Complex.Arg": "706dc313a481f81ec4bc3b0e0429c56ad989e699dbd00968a28573c6b9b7b7f2",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic": "974625ece8b0dfdf12caa97aeec1b9d3b9d63a00aecde6a59fe83e958a94f86b"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalPoleSum",
+      "source_sha256": "0ae9e765778629a96d7b7ea750862fbb95e24232fbd7ab64a78a1c07a084dab7",
+      "object_sha256": "82f1a7d3bd4b4390103a85ebe3adf75774ef60c03983e5a737e6b7af25d8293b",
+      "imports_sha256": {
+        "Mathlib.LinearAlgebra.Lagrange": "2993db31676a2a6c53f8723f5df3e9c08a7ec7543a5b0a000ef0e3d33756d22f",
+        "Mathlib.Analysis.Complex.Basic": "0bf6347c2d1b295f8746dce5ad1a6b90629987116dc2d76dbc3374571ea1daea",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalRealOrigin",
+      "source_sha256": "ecdc07ab0c0f09bfb71f44fbceb097235e9bb9055380a561e62bef1391ddd3b9",
+      "object_sha256": "6707e8800f12ea4d5863de7e7885851d63da9946393f9828bb959323632f40f6",
+      "imports_sha256": {
+        "SolitonClassification.RationalPoleMean": "a357b56e1f5627ab4d14c353be02a9b442cac1cc8d84f9b94eb42d1529d49f41",
+        "SolitonClassification.RationalPoleSum": "82f1a7d3bd4b4390103a85ebe3adf75774ef60c03983e5a737e6b7af25d8293b",
+        "Mathlib.Algebra.Polynomial.Splits": "2bc0f155210438b1b836ab83861a0533ab923d1a9ed2616976515e92184fb1ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalCircleReality",
+      "source_sha256": "932ebbf98578c4d160e8fb4b792d8528eee0bc795ffed82d6911c56de4642b9c",
+      "object_sha256": "c8393da2fe6319f6785476263c8e02937d45bf36faa880a91f3649623b812eb3",
+      "imports_sha256": {
+        "SolitonClassification.RationalRealOrigin": "6707e8800f12ea4d5863de7e7885851d63da9946393f9828bb959323632f40f6",
+        "Mathlib.Analysis.Complex.Liouville": "55756b8dfa5650c4d2144e824f80354f1951666837e71367738e7508d06143e0",
+        "Mathlib.Analysis.Calculus.Deriv.Polynomial": "6eacc7d42e79a0878bf92ae38782cea88ec0cefb633fe02801858d401dca56a0",
+        "Mathlib.FieldTheory.IsAlgClosed.Basic": "62e148b44c90ced5771c2f2a2179a0d55e04a7fa7ce29189bee6378fd53bde4b",
+        "Mathlib.Topology.Algebra.Polynomial": "a6e70312753b9b0f1e0a0335d6adcea85a3037541e891ef32cb03fd114e4140d"
+      }
+    },
+    {
+      "module": "SolitonClassification.RationalCurvatureCircle",
+      "source_sha256": "3973c4ab795d59b17e35a3edb6487c2ecb327f9a77bde0d8a5003e686efa8ae4",
+      "object_sha256": "065b9f21da81b39aa12841699ef62386143733c516f6ef60be037e89129c800c",
+      "imports_sha256": {
+        "SolitonClassification.RationalProfileBridge": "8663e083f1673bc13b7aff5837d5ad5b8d45817a042e5c6dd4ee20415fe45ce5",
+        "SolitonClassification.RationalCircleReality": "c8393da2fe6319f6785476263c8e02937d45bf36faa880a91f3649623b812eb3",
+        "SolitonClassification.RationalInfinityDegree": "97224910ffd3d8c0b63e2ba5061648cb49c89cce1a52e291fe8330ee36116037",
+        "SolitonClassification.RationalOriginRigidity": "19402a88e2d181a1d44f29340625a5b79dd64f6451c581fb5605bbfbba95b239",
+        "SolitonClassification.RationalReduction": "5e004b3d97065a8ea0d8eca4b09852eba41cc93471e7434c3e55c3adaf15831d",
+        "SolitonClassification.TrigCurvatureCircle": "80e273992a2c879470eb3f4f47a5a51c7a52bcb0a220daf28ecc5bd62764b420"
+      }
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "ffc403821f37e2f9c51fd2d10784d6c66ffa8cfb108ca5860a9f00f1bf1ab021",
+      "object_sha256": "b0cbaa25a0efa6f1fe6a11b8923497aaa515e98bda881e0a8fc021a9b596027c",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 142054 declarations; standard axioms only.\n"
+    }
+  ]
+}
