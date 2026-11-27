@@ -1,0 +1,216 @@
+{
+  "lean": "4.33.1",
+  "baseline_declarations": 1865,
+  "audited_declarations": 1913,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "prior_manifest_sha256": "8ae8ba2b1d2bcf0ac109533ca8297fb3eac28f7dc75a2692c9b19fcc3983c4fd",
+  "baseline_root_sha256": "fb4c5bd6086f7bdfa58067f71fa073e8948c5dd1ccda884e1e41a495f480deeb",
+  "independent_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.ForceRateSpatial",
+      "source_sha256": "4db75035af9c35e9b59492b853306812e45af8d0af76a2d96713036b551c7a48",
+      "olean_sha256": "61c9d7b9fe97b8ea5f491f5490399b15c703b2b4e2268b8c5c94fcda1a0f3bb8",
+      "setup_sha256": "e7eb3072972c3bf40b270f47a691af241c580744704f7b699db86aa2aef5b02d",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.MaterialWeightedRate": "4295b8676e3691dac203c95ef3152315c8975ebc94daf8e35c565ed2a10e29ce"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.force_rate_spatial' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ForceRateSlope",
+      "source_sha256": "e3046499be782d40cd2e872e4ef0208cf531c48d198784c15b6aef5c7efc01be",
+      "olean_sha256": "9964109184240a1da673fe3208c7bb426b3c60598a9bde5dcb34b4937f191284",
+      "setup_sha256": "fff034b91fc0471e5eb65fd9116bc1418bc532a43e30a62de80e6fd089d39196",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ArclengthCoercivity": "e1c4fc1908c57ec96b2b4fc97ede03c7e3b7b8ed3e0819d9003463de20d1b9b6"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.curvature_gradient_and_fourth_rate_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.PeriodicRegularPosition.arclength_curvature_slope' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.curvature_gradient_and_fourth_rate_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ForceMaterialEquation",
+      "source_sha256": "f78059fae668b247569f6b29ece42791660bc507eb29a24c56fb26c6e16e44bb",
+      "olean_sha256": "66efd4c67829941a250479bf2917ee4aecd53f54d58f71f5c153776f1e4ae999",
+      "setup_sha256": "6fa940901da8034b30e6e8e0be09d611185a47ed3d77f55e5c74f53cc38aa9e2",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.MaterialTurnFlux": "839798cf77cb7aa0e3fd48edaf528831650a40948ca97be2c25697b8477a956e",
+        "LengthGrowth.ActualFlow.ForcePersistence": "56127a4c696f1e4380740cba0ad133a2b067a167f036b6983b119aef0ecebce8"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.SmoothPeriodicImmersion.elastic_force_material_rate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ForceDissipationVariation",
+      "source_sha256": "5299e341b8e5d9ff133157edcf274de6b04ede89e2c4552b6dfc80887b569152",
+      "olean_sha256": "598e453fef374e26d44995efd57186b124df115694afeb8eb8e25317ccfe699a",
+      "setup_sha256": "cd35de4e716a80f44e310ca78d82c4d41743b5eceefaddcf063feba15318955d",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ForceMaterialEquation": "66efd4c67829941a250479bf2917ee4aecd53f54d58f71f5c153776f1e4ae999"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.SmoothPeriodicImmersion.force_dissipation_variation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ActualForceDissipation",
+      "source_sha256": "17a9c017c955df255ae9ca9b30ce872ca63417f95e634a7222eaf0d00071bb83",
+      "olean_sha256": "849855f00d6233a821bc7685c3c56ffe8225b9c1108d52ea896d730b124679cc",
+      "setup_sha256": "7a23828cef7e2fbdbd04586359edd0bd5ab3999731ee2d6d389125c78be4f84b",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ForceDissipationVariation": "598e453fef374e26d44995efd57186b124df115694afeb8eb8e25317ccfe699a",
+        "LengthGrowth.ActualFlow.ForceRateSpatial": "61c9d7b9fe97b8ea5f491f5490399b15c703b2b4e2268b8c5c94fcda1a0f3bb8",
+        "LengthGrowth.ActualFlow.ForceRateSlope": "9964109184240a1da673fe3208c7bb426b3c60598a9bde5dcb34b4937f191284"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.actual_force_dissipation_rate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.small_dissipation_rate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ForceTailBudget",
+      "source_sha256": "f645ee7000e941553ab63a95f33001f5f71f30fc33adc99ae2ce606e9aacb585",
+      "olean_sha256": "71a1c043a19d7ac227ddddb73e1e290efe52b76fe298bdc8f20abbed5f4c29c7",
+      "setup_sha256": "fbaa302913404b8a74ccb82078d0fba8d168e1ef133cb7f2cc80764c2862f2e7",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ForceAngularSpeed": "87a6dabff1c4378f90793a37574862d3fdb32814a720afd0d33ad8f5f183af8b",
+        "Mathlib.MeasureTheory.Integral.IntegralEqImproper": "b3cad0b1b37db87472b00e8f89af4f9ae3d909ea5b5805fbac809f3b957d3ac3"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.force_dissipation_tail_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.force_weighted_tail_integrable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.force_dissipation_tail_integrable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.RecordForceWindow",
+      "source_sha256": "11fc8a83719c3dacb0a623ab5779adbe95ceca60380197f2bef8d196c6809185",
+      "olean_sha256": "c250986f49bc59d8b3961ef00641ad528baf37f3cce2dcb8865c3149ab7b1254",
+      "setup_sha256": "18c99aeac197f64d03fb65364e9df23f6f92fea1587c8ba73688ebfe25078a69",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ActualForceDissipation": "849855f00d6233a821bc7685c3c56ffe8225b9c1108d52ea896d730b124679cc",
+        "LengthGrowth.ActualFlow.ForwardRescaling": "dc96fa7b11badabbcfce53786a3ae0a19e331781a1104e744c0565dd9f77e918"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.actual_record_force_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.InflectionSupportDuration",
+      "source_sha256": "23441b81e1c99905f2347e85312bc3fd909be4a6f4eb7c60a9cb1f2b72273950",
+      "olean_sha256": "4ad1211be9cf401cfc93b58c84d44fe2d56e7c431184bb43e40ea1fad9641930",
+      "setup_sha256": "5ae1798c105c4c4f30620583220793a0daf201a093c73938658374f1f0e3430c",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ExactInflectionGrowth": "9614887884990a7a10993510be54126ec86d68bd69ebe273878d6376fb473c6b"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_finite_weak_inflection_duration' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.weak_inflection_duration_eq_top_of_no_quarter_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.AngularSpeedTail",
+      "source_sha256": "8b0b363cbe78cf2941c54b0d30695760b9d2070983641608e1b9891ba5bf110d",
+      "olean_sha256": "1ded31df2ba922662004fdc7b4c02940aadad9f6e1b58c71c70ef16b261caf46",
+      "setup_sha256": "d9e6e91667d7156c26bafd5777c27b0d51d8771eb7d12aaec4adab58e3442e2c",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ActualForceDissipation": "849855f00d6233a821bc7685c3c56ffe8225b9c1108d52ea896d730b124679cc",
+        "LengthGrowth.ActualFlow.ForceTailBudget": "71a1c043a19d7ac227ddddb73e1e290efe52b76fe298bdc8f20abbed5f4c29c7",
+        "LengthGrowth.ActualFlow.ExactInflectionGrowth": "9614887884990a7a10993510be54126ec86d68bd69ebe273878d6376fb473c6b"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.material_angular_tail_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.physical_inflection_four_thirds_integrable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ActualInflectionDuration",
+      "source_sha256": "23e53b15296635e3f5ea3e6ab15a2e3008828cb50863994015ed2a91edee089c",
+      "olean_sha256": "747701ca593f55614f1b0c0fefaecd0f90c21c278a0dd292ea3b272dbc88303f",
+      "setup_sha256": "6f723fd5fdf8281eddc835b768ae7458e45c7dba99f5d064539cf07cd7db75b0",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.AngularSpeedTail": "1ded31df2ba922662004fdc7b4c02940aadad9f6e1b58c71c70ef16b261caf46",
+        "LengthGrowth.ActualFlow.InflectionSupportDuration": "4ad1211be9cf401cfc93b58c84d44fe2d56e7c431184bb43e40ea1fad9641930"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_finite_outward_duration' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.no_quarter_length_requires_infinite_outward_duration' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.high_outward_rate_integrable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "04cd4a39d840fc35e70b9652ccc61ee1b0fc5ba22b410a4bd56438ef0bb57049",
+      "olean_sha256": "e652a210d55ca3b52b190e159a59bed833a1ffec5895d26862ab550efd5a752b",
+      "setup_sha256": "b6aea94591f564a94cbe54eac448802dbcd56c78a0cf593e2758913837433e14",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ActualInflectionDuration": "747701ca593f55614f1b0c0fefaecd0f90c21c278a0dd292ea3b272dbc88303f",
+        "LengthGrowth.ActualFlow.RecordForceWindow": "c250986f49bc59d8b3961ef00641ad528baf37f3cce2dcb8865c3149ab7b1254",
+        "LengthGrowth.ActualFlow.LemniscateAngularClock": "0c12feb388a74b04984e6ad1577d27d43b75392d4f2919f197f782db17b31515",
+        "LengthGrowth.ActualFlow.CompactInflectionRate": "c7349d8ed0d0eeffdf15294050fdc5259338dc97e6ee729e22ad8c864a621a55",
+        "LengthGrowth.ActualFlow.PhysicalInflectionRate": "035212bf88e669e8d0c0e7ee984d0dca85fd9a9fc7841eeebd573de8feb71de6",
+        "LengthGrowth.ActualFlow.ContinuousInflectionMajorant": "04b366532a16d3f8aedbf60ebdbf4877794938da59d27bc472b5703bc268f674",
+        "LengthGrowth.ActualFlow.ExactInflectionGrowth": "9614887884990a7a10993510be54126ec86d68bd69ebe273878d6376fb473c6b",
+        "LengthGrowth.ActualFlow.MaterialTurnFlux": "839798cf77cb7aa0e3fd48edaf528831650a40948ca97be2c25697b8477a956e",
+        "LengthGrowth.ActualFlow.InflectionEndpointMass": "ba9c9589d34a183d90c00a097eb39b7f572c37b6e532433bed71093363308b45",
+        "LengthGrowth.ActualFlow.TurningEnvelope": "3e7642ce7d704761d5314add434124019934a133ded4d6b91a58898741d4313b",
+        "LengthGrowth.ActualFlow.CyclicTurnVariation": "97ddc4eae684f29197dfb78045e79dbf55491cf2c0adf4082a37bda4c567921d",
+        "LengthGrowth.ActualFlow.CyclicTurnEnvelope": "f0456b38dd4ad9b92c78b78601f9f9e6e2906dc4cb2dbd6e04d4936fc1e82a2a",
+        "LengthGrowth.ActualFlow.MaterialTurnPrimitives": "bc11cc300c13e57a4695b5505afdc45f7008bbecdc19bb9eeeb646b7b97c63ea",
+        "LengthGrowth.ActualFlow.MaterialTurnContinuity": "9eb4a1f0ca90d8263a6c9c095d8cdce8a49040f269a25018e10b90f749146b94",
+        "LengthGrowth.ActualFlow.InitialTurnBound": "64c3419b45b6f432921e93f2f1574b87639d5637b8022f15c7614f3c09ca9352",
+        "LengthGrowth.ActualFlow.TurningLabels": "172e75d44abf4e6edf943ecd419865ba0d6d31d9b939676a2f58f972e774efc6",
+        "LengthGrowth.ActualFlow.InflectionRootSigns": "a55147f34810c1fa346b5d003b19156a73102bb819d9467913d427a6c1a7a0ae",
+        "LengthGrowth.ActualFlow.IntegrableTurningBudget": "586ef1d92f0c7b86644b25abbebd3f96e2c00257d65297ded0f393054b6d4f7c",
+        "LengthGrowth.ActualFlow.InflectionVelocitySeparation": "6a7f1425a64c6ad788a6c0795b793e1a8d7775b95524cebae2848a08948723a2",
+        "LengthGrowth.ActualFlow.InflectionQuarterFlow": "3b751df1a55230ab6ffa97a3a13653ca5a330681f03b095b65904622b4630f59",
+        "LengthGrowth.ActualFlow.IntegrableInflectionGrowth": "d8e5fd6d83e3a22eea3e5d6599e95ad234c1be0df8385ab6fd8a989302d41e20",
+        "LengthGrowth.ActualFlow.PointStress": "88d84d323337a68058b10e8ba828322afc39009d7589a3cc6343c803c532b55b",
+        "LengthGrowth.ActualFlow.SpatialLocalization": "ca7145fd343126f938ca6fb9a8e28558954e8c5c3a7d8bab57ccdf8562e218a5",
+        "LengthGrowth.ActualFlow.MaterialWeightedRate": "4295b8676e3691dac203c95ef3152315c8975ebc94daf8e35c565ed2a10e29ce",
+        "LengthGrowth.ActualFlow.ForceAngularSpeed": "87a6dabff1c4378f90793a37574862d3fdb32814a720afd0d33ad8f5f183af8b",
+        "LengthGrowth.ActualFlow.RecurringLength": "a92cf00c8f2378d9f38e4ad31459263039184e16849b72a1b2a61c07fe8f3364",
+        "LengthGrowth.ActualFlow.FrequencyBackward": "c7e2bfeddf226e15e429190643aee5688ab125b76089952419e8050d23e2f764",
+        "LengthGrowth.ActualFlow.RMSPowerGrowth": "0dababcbc14ace33b67746a9514b86ede883d26aaa7d16d9bbac1deed2aa11b4",
+        "LengthGrowth.ActualFlow.RadiusGrowth": "ffefbe519535e22f9daa1784839410f61cd587c9f8cf91665b3f626505687543",
+        "LengthGrowth.ActualFlow.TurningCompactFlow": "c3fe7cb22cedfd97177e1bb0bb98712a82cd8466e9085e94cea483a2fe4d99e4",
+        "LengthGrowth.ActualFlow.CriticalOsgoodFlow": "070c31a67a9dde2e0469c071b0565e2ce5b0eb0092606166e0a5c109267594bd",
+        "LengthGrowth.ActualFlow.CriticalDensityIndexFlow": "86b8f8e7785afc4751b7cecec6922319399e6feaf2fd722b3998f2421931f4de",
+        "LengthGrowth.ActualFlow.FiniteSignTheorem": "99dfd9f5499189dadcf528dce68597f92194ea4698c87c06502f9d40ab5c586e",
+        "LengthGrowth.ActualFlow.ExplicitCubicThreshold": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.ActualFlow.StrictHalfTransfer": "72f4544c22b88211034724a9b8643e006df018578caf8c9154f7770bd104932a",
+        "LengthGrowth.ActualFlow.AffineForceCompatibility": "5358fd6e56c20f8406e3b534b1ab0b8b5bf03eeed76a0be041120ea3765b3b3f",
+        "LengthGrowth.ActualFlow.CubicMomentDecay": "1a21fe8cb41d6c310823ab7f87dfbd353342e8e7c137b43e3d8d516dec970a28",
+        "LengthGrowth.ActualFlow.CubicHalfThreshold": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+        "LengthGrowth.ActualFlow.JellyfishGrowth": "bf003d9f5ba772db775a9602b45dbcef08847800d30452ef12b185899bb87cf4",
+        "LengthGrowth.ActualFlow.GrowthEnvelope": "0123a061e03d3cef1a68bce6add2615276412401d2c13d940b2f6a57e1444d97",
+        "LengthGrowth.ActualFlow.SharpCircle": "0bf57f78fa014028e1988e658d4857e03b72feb7d4916ed653632fe5718bcec4",
+        "LengthGrowth.ActualFlow.StripCoercivity": "3affe416fafecf814f9645365d01e79ab3dba448a25183c28e23159489ba9bbb",
+        "LengthGrowth.ActualFlow.AmbientMaterial": "5e50b998b3bf45716d65566b35cb55e6cc873941b7a92cdf1d79b02da136d926",
+        "LengthGrowth.ActualFlow.PhysicalTimeAverage": "d16772df203c3868ba5132ddcd7621f57e8a391200d086726653df5bf6e4c7aa",
+        "LengthGrowth.ActualFlow.AmbientCoercivity": "c191329677a8f0c0f270d87a1c8fe5dc976bfd6019c40180ed8033ba72c31840",
+        "LengthGrowth.ActualFlow.RescaledRecordWindow": "34b6ebcdb603ba01e9d1255f767a1e1622712b3e00ee9815f114d22d17665691",
+        "LengthGrowth.ActualFlow.RecordCurvature": "2aa72289d54f231c8f452ef1c11aaf88f1b8261f3662e6b973ac4d07e6f4674c",
+        "LengthGrowth.ActualFlow.RecordWindowInterior": "b4f90e655d2e43177862616c533a7b7dd40ff654352481f9df71264e918c7293",
+        "LengthGrowth.ActualFlow.GrowthEquivalence": "0c2f6dd131fcdfa4f0cb7689e8f645f82e6c87881ea9add55b5e870b22f1afb9",
+        "LengthGrowth.ActualFlow.RelativeEnergy": "cba3bbab47cb3b84534ccf900f01e5da76545813cfc7b739c98388c21e78e3ae",
+        "LengthGrowth.ActualFlow.ProductWindow": "739c016413d4ac6605359f03861e8f5e9b2f0a283f81484ad5d3f146a1873868",
+        "LengthGrowth.ActualFlow.ConditionalQuarterGrowth": "40fa661d4a0e36811e7d8269d907c61bf54cd81005b37322ce8458bd738b6568",
+        "LengthGrowth.ActualFlow.ArclengthCoercivity": "e1c4fc1908c57ec96b2b4fc97ede03c7e3b7b8ed3e0819d9003463de20d1b9b6",
+        "LengthGrowth.ActualFlow.NormalizedProduct": "a0fe258ab6e145cff4b8ce8b57ad4b95ec21487219de8a81570a83a21adb13d1",
+        "LengthGrowth.ActualFlow.ForwardDissipation": "dab140f69ef50279e603610edac13a4f839950acf19e04d6a133336292ead275",
+        "LengthGrowth.SubsqrtGrowth": "52124fec25795f5e9934db43666b9928788251fedf57b1171c3e439ac3c1717d",
+        "LengthGrowth.CurveFromPosition": "aea049ecd40db4c91c815944ed274c6ddcad2e0f58378535c36142f0b6437e8b",
+        "LengthGrowth.ScalarDissipation": "65165cf0be21b14cd0fbbc08c4d66cfda2a9b836fcb5ca9be924f4cdeec215ce",
+        "LengthGrowth.ElasticStress": "132c110da9017ff3bfe06849bcfff3395060465dc39d5f2a1d53d2bb8e0c1e1e",
+        "LengthGrowth.AbsoluteCurvatureCoercivity": "f28c92da3addc7457f35cf4f7cc66d4e70180034bebbe333f0e4f980ca279f86",
+        "LengthGrowth.CircleConnectionBacktracking": "3b4a8fe42ab64969e792da67f81081a1eeb0314e47dbf1b04b73123b7a0f44d1"
+      },
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "setup_sha256": "57fb578cf406ab0c57bc03e88dc1386489a9fa664b6d315ebdff589b22feb638",
+      "direct_import_sha256": {
+        "LengthGrowth": "e652a210d55ca3b52b190e159a59bed833a1ffec5895d26862ab550efd5a752b",
+        "Lean.Util.CollectAxioms": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d"
+      },
+      "exit": 0,
+      "log": "Length-growth audit passed: 1913 declarations; standard axioms only."
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+任意光滑闭流的拐点角速度和长度
+令 P 为拐点处切线向外转动的最大速度差。每条光滑闭流在任意正时间之后都有 P 的 4/3 次方可积。若在某个正时间之后、某个阈值 δ>0 下，0<P<δ 的时刻总长度有限，则这条流满足四次根长度上界。对任意固定阈值，P≥δ 的时刻对总向外转动的贡献有限。耗散演化、记录时刻的前向控制及上述结论均已通过 Lean。一般问题仍开放。
+
+Outward turning on every smooth closed flow
+The actual inflection rate belongs to L^(4/3) on every positive time tail. Finite time spent at weak positive rates below any one positive threshold suffices for fourth-root length growth. The force estimate and forward window at a product record follow directly from the normal flow equation. The project audit covers 1913 declarations. See Research/ForcePersistence/ForceDissipationPersistence.md.
+
 伯努利双纽线在相对能量时间下的材料切向运动
 将时间改为弯曲能量下降的对数，并以纯法向速度跟踪曲线上的各点。对论文中的双纽线膨胀解，在每个时刻减去任意共同角速度后，全曲线上角速度绝对值的最大值至少为 3/2，取零补偿时恰为 3/2。这条流的长度与弯曲能量之积保持常数。Lean 已核验尖锐常数、实际切向以及纯法向角速度公式。关于固定材料参数不存在一致收敛的长时时序，文稿给出显式证明。一般流的长度上界仍开放。本独立项目已审计 1865 个声明，仅用标准公理。
 
