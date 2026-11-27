@@ -1,3 +1,7 @@
+沿同一条实际闭流，把应力大小按照相邻的二倍尺度分带。若弯曲能量趋于正数，则任取正的起始时刻，任意小的应力尺度中都有一列应力带，其四次方力积分的上极限至少是极限能量的十五分之一。Lean 已验证尺度通量系数的导数、带实际弧长权重的空间分部积分、不含力导数的逐点上界和二倍尺度求和。时间通量及两个极限的交换论证见书面证明。独立长度项目审核 2102 个声明，仅标准公理。
+
+The force concentration bound on every time tail has a written proof for the evolving physical flow. The spatial integration by parts on a genuine immersion, scale coefficient derivatives, pointwise estimates, and the discrete limiting transfer with constant 15 are formalized. See Research/SaturationGeometry/DyadicForceFlux.md.
+
 连续的增长纪录与不同应力尺度上的拐点
 任给纪录数、正的能量损耗上限和起始等待时间，存在初始能量为一、转数为一的闭流，在该时间之后严格穿过所指定数量的连续整数 √(EL) 水平，累计耗能低于上限。该族的初始乘积随构造增大。另一个精确恒等式将各应力尺度的光滑量与正斜率曲率零点数联系起来。相应的对数熵在正能量极限下必发散，但其正向增速不能在一般增长纪录上由恒定倍数的耗散控制。这三项为书面证明，长度问题的普遍上界仍待解决。
 
