@@ -1,0 +1,69 @@
+{
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "verified_dependency_reference_commit": "21a24606376a895d66f037691f0649e212474af4",
+  "upstream_stability_source_tree": "d503ebe7f684de66d863b219f9a5825cc8a6cd42",
+  "verified_stability_source_object_pairs": 598,
+  "verified_migration_source_object_pairs": 6,
+  "comparison": "Source Git blob IDs were checked against the research branch, and all dependency artifact SHA-256 hashes against the respective build ledgers.",
+  "proof_execution": "Six bridge modules were elaborated with the two pinned project dependency sets. Lake independently elaborated and translated the build configuration.",
+  "build_dependencies": [
+    {
+      "name": "migration_reduction",
+      "path": ".."
+    },
+    {
+      "name": "lemniscate_stability",
+      "path": "../../.."
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "BernoulliBridge.BernoulliGraphHeight",
+      "source_sha256": "2f7b53de8596bcf93b2020bbbb6e2cbc11256b97cbc79cdca3cfe4bd25b160f4",
+      "olean_sha256": "d7f7dfc806e3132757ce2d916b988c55dd2b94fbb3623bf8905362d24d3c41d6",
+      "exit": 0,
+      "diagnostics": ""
+    },
+    {
+      "module": "BernoulliBridge.BernoulliAllTimeGraph",
+      "source_sha256": "5c9c95b4d758f3cc9d08f2e407b48f1f5395b02cd5e49c27b0ce3b4ec4493f23",
+      "olean_sha256": "ced45ea69b17bac06abf4ca39f9fbb5e6d2234217ef6cd78094cf26907b09cc3",
+      "exit": 0,
+      "diagnostics": ""
+    },
+    {
+      "module": "BernoulliBridge.BernoulliGraphDisk",
+      "source_sha256": "35a8889011cc7a50ce028b6425b1e8b009d20b2659cda5fa278f7abbd160789e",
+      "olean_sha256": "eb5a4aeda87bb18e170be4d8a1e9de53db4d2d17f31fd584483456d002df082e",
+      "exit": 0,
+      "diagnostics": "'Lemniscate.bernoulli_oriented_graph_disk' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "BernoulliBridge.BernoulliNonmigration",
+      "source_sha256": "1bd7f3e95eb62802ffdbfc6ba093f223cf1dddd4ad75b0696c229d33745da1ac",
+      "olean_sha256": "0c3dbd17c10979fa02d1f4b250ef6a543af9e4db44b4cb606bf914ce95e823a8",
+      "exit": 0,
+      "diagnostics": "'Lemniscate.bernoulli_nonmigration_from_initial_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "BernoulliBridge.AxiomAudit",
+      "source_sha256": "b2dfc07b3c7d7a8921139afff9512425efef7bb8cc4b9cac742766770791e986",
+      "olean_sha256": "9746cb461eaf8ac33b338e150049a3dcfd951d03d1c43e97fdee51d896b2a037",
+      "exit": 0,
+      "diagnostics": "Bernoulli migration bridge verified 6 theorems with standard axioms only."
+    },
+    {
+      "module": "BernoulliBridge",
+      "source_sha256": "8f679b923d5a8d11856d324e83766552751ce7b35d440b09fe55e5abc16e7e5d",
+      "olean_sha256": "ba2be16057c096edcf108d60f9f8404696f2c0c4c69d10e6a0f066aea120f53f",
+      "exit": 0,
+      "diagnostics": ""
+    }
+  ]
+}
