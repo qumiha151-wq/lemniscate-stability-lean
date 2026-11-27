@@ -1,0 +1,71 @@
+{
+  "base_declarations": 768,
+  "audit_declarations": 859,
+  "audit_log": "Migration audit passed: 859 declarations; standard axioms only.",
+  "verified_baseline_source_object_pairs": 70,
+  "fresh_compilations": [
+    {
+      "module": "Migration.RotatingSupportBalance",
+      "source_sha256": "6830f16bb95ac5ab31e9e78b0b5ad3797564f8a6f5882b4125fa0fda1e486af9",
+      "olean_sha256": "6d938ace3a628bde08693958dd86c276e1af770a72919b835c96b8ba2d037815",
+      "exit": 0,
+      "log": "'MigrationGeometry.Rotating.UnitLoop.balances' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.PolarOscillation",
+      "source_sha256": "e200a80d22aa0d704ad95102f304ba7a61987736f0ee191d182592e04e71782a",
+      "olean_sha256": "4c6f9a3146402d7f8a5c463e607616bb91f9b2603c582d68a68addc26a5a8ae5",
+      "exit": 0,
+      "log": "'MigrationGeometry.Rotating.UnitLoop.polar_mass_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.RotatingHull",
+      "source_sha256": "f41bd1503c013d79de602ac8a26910912e90ba33b7f674b4bb9b272d70ca6d94",
+      "olean_sha256": "6b6c6d4b89929a1f1aaa95799d0e4034de2091af5b8e7da3791c33cf647dabf0",
+      "exit": 0,
+      "log": "'MigrationGeometry.Rotating.UnitLoop.center_mem_hull_of_pitch' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Rotating.UnitLoop.no_migration_of_pitch' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.NormTransport",
+      "source_sha256": "a01d4ec30ce303ef21fd77bda737ba4523a907bcb645d0ce6d6687d58b5b34d7",
+      "olean_sha256": "009a2f2c3951448b0771b8138a01bb24a873a7d99d91747874393eb3d9770e27",
+      "exit": 0,
+      "log": "'MigrationGeometry.Rotating.UnitLoop.moved_support_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.Rotating.UnitLoop.moved_radius_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.RotatingHullDisk",
+      "source_sha256": "f8269cfee5473aa7a05be1ad4f900a1081ef1b5ceca7a56fa1d087b9674b419e",
+      "olean_sha256": "ab3008d28e2c7017142832bbb6a5240ff15d6fcfe0e0aa08a86476574cbe4bb3",
+      "exit": 0,
+      "log": "'MigrationGeometry.Rotating.UnitLoop.disk_mem_hull_of_pitch' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.RotatingRadius",
+      "source_sha256": "3b73a3920c20835813921bb9efc23fd53a1442f095b23de9bf77f9931faafebe",
+      "olean_sha256": "6d9b569dd3ccb273730c471bd8a3293b6f8939a887a118fec902f41588c14398",
+      "exit": 0,
+      "log": "'MigrationGeometry.Rotating.UnitLoop.exterior_tangential_fraction' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Rotating.UnitLoop.center_mem_hull_of_small_radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Rotating.UnitLoop.center_mem_hull_of_coupled_radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "597dfcc2f744fc2fcbbfb9e5334e75c1ce169c31ae24d291d5a9fc40b1843985",
+      "olean_sha256": "f43a0d5d3506a7eec45f87a0b1345ce20e3b0e98266d00942437094cc180a69c",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 859 declarations; standard axioms only.\n"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+}

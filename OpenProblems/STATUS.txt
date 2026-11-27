@@ -5,8 +5,8 @@ Results checked through 27 November 2026
 仓库根目录是此前的伯努利双扭线稳定性证明。
 CentroidEscape 已证明存在一条光滑闭合曲线，其按弧长计算的质心逃向无穷远。
 SolitonClassification 已给出无穷多个互不等价的零转数闭合膨胀子。Lean 已完整证明，对任意自然数 N，存在一条零转数闭合膨胀曲线，按最短周期走一圈时至少有 N 个不同的普通横截自交点。每个点恰经过两次，两条切线方向不同。另有一条边旋转边膨胀的闭曲线，绕中心一周，图像没有非平凡的平面对称性。对全程留在它附近指定区域内的解，已有局部分类。该局部类别的所有闭曲线绕中心的绕数都非零，因此它们在任意两个时刻的凸包都包含同一个中心。解的存在性和分类使用区间运算与数学证明，Lean 核验了其中的矩阵谱区间。全部自相似解的分类仍开放。
-LengthGrowth 已证明，对每条光滑闭流，拐点处切线向外转动的最大速度差 P 在任意正时间之后都有 P 的 4/3 次方可积。若某个正阈值 δ 下满足 0<P<δ 的时刻在某个尾部总长度有限，则该流满足四次根长度上界。另已证明任意光滑闭流的最小包围条带宽度都趋于无穷，且其曲率和曲率的一阶弧长导数一致趋零。任意单条流是否都满足四次根上界仍开放。
-Migration 已排除若干类曲线的整体迁移。若闭合纯膨胀曲线的膨胀中心位于凸包外，其最大半径与从中心所见的张角必须满足严格的下界，已通过 Lean 核验。对任意闭流和任意正则化参数，投影高度的两时刻公式及整体跨线所需的力积分下界也已通过 Lean。一般情形下能否整条越过一条直线仍开放。
+LengthGrowth 已证明，对每条光滑闭流，拐点处切线向外转动的最大速度差 P 在任意正时间之后都有 P 的 4/3 次方可积。若某个正阈值 δ 下满足 0<P<δ 的时刻在某个尾部总长度有限，则该流满足四次根长度上界。另已证明任意光滑闭流的最小包围条带宽度都趋于无穷，且其曲率和曲率的一阶弧长导数一致趋零。长度变化的锐不等式等号也已由 Lean 完整刻画，恰好是单次绕行的圆。任意单条流是否都满足四次根上界仍开放。
+Migration 已排除若干类曲线的整体迁移。若闭合纯膨胀曲线的膨胀中心位于凸包外，其最大半径与从中心所见的张角必须满足严格的下界，已通过 Lean 核验。对任意闭流和任意正则化参数，投影高度的两时刻公式及整体跨线所需的力积分下界也已通过 Lean。对边旋转边膨胀的闭曲线，现有显式的旋转速率和半径条件保证相似中心位于凸包内，更强的条件保证凸包包含整个给定圆盘。这些结论均已通过 Lean 验证。一般情形下能否整条越过一条直线仍开放。
 OpenTranslators 已构造一个完备的非直线平移解，曲率无界，回答引言中的开曲线问题。
 
 Each question has its own Lean project. The original lemniscate stability
@@ -44,6 +44,8 @@ For every smooth closed flow the minimum containing strip width tends to infinit
 
 On each positive time tail the true outward angular rate at inflections belongs to L^(4/3). A finite total duration of weak positive rates below a single fixed threshold suffices for fourth-root growth of that flow. See LengthGrowth/Research/ForcePersistence/ForceDissipationPersistence.md.
 
+The sharp equality case for length production is precisely a circle traversed once, with the material parametrization included. See LengthGrowth/LengthGrowth/ActualFlow/PhysicalEqualityCircle.lean.
+
 LengthGrowth gives a sharp lower growth estimate and conditional upper
 bounds. The normalized pure expanders show why any general fourth-root
 upper coefficient cannot depend on initial length and turning number
@@ -56,6 +58,7 @@ on the two signed inflection sets is integrable on a tail, the length is
 O((1+t)^(1/4)). See LengthGrowth/LengthGrowth/ActualFlow/ExactInflectionGrowth.lean.
 
 For every direction and positive smoothing parameter the projected-height evolution, its exact two-time integral and a force lower bound for separation of entire images are verified in Migration/Research/ProjectedHeight/ClosedProjectedHeight.md.
+A rotating closed expander has its centre in its convex hull when 4|b| >= pi R^2 sqrt(2a), where b is relative rotation, a is the dilation coefficient, and R bounds the radius about the centre. Independent small-radius tests, an explicit disk bound and the time-slice obstruction are verified in Migration/Research/RotatingAperture/RotatingAperture.md.
 Migration gives geometric obstructions to whole-curve migration.
 The existence of a flow whose whole image passes from one open half-plane
 to the opposite one remains open. See Migration/STATUS.txt.
