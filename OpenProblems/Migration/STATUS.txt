@@ -1,3 +1,6 @@
+In the original material coordinates, every entirely separated pair of time slices costs at least 8/(3 E_i^2) per endpoint, uniformly in the positive smoothing parameter, in addition to the gap terms; the larger of this cost and the respective absolute oriented area can be used. The arclength inverse, transported angle at the support point and one-period integral are derived from the actual closed curve. See Research/AngularValidation/TrueEndpointTransit.md. Unrestricted whole-curve migration remains open.
+Migration audit passed: 1196 declarations; standard axioms only.
+
 Each endpoint of whole-curve migration pays the larger of its absolute oriented area and the smoothing parameter times its squared directional width, in addition to the height-gap costs. Lean proves this two-time force bound directly in the original material coordinates, including the energy-only cost 4 delta/E^2 at each endpoint. For an arclength-parameterized endpoint its unregularized absolute height moment is at least 2W/E - 4/(3E^2). The transition to arbitrary material coordinates for that last bound is a written argument. See Research/AngularValidation/EndpointWidthTransit.md. Unrestricted whole-curve migration remains open.
 Migration audit passed: 1121 declarations; standard axioms only.
 
