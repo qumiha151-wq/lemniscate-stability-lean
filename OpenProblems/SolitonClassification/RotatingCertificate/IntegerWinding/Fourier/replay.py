@@ -17,6 +17,10 @@ def main():
         cap=cap_check(path,report)
         assert cap["unique_critical_cell"]==49217
         print("Unique outer cap, angular separation in turns > 1/200")
+        from annuli import check_annuli
+        annuli=check_annuli(path,report)
+        assert annuli["inner_critical_cell"]==49
+        print("Inner and outer radial-band apertures in revolutions:",annuli)
         from crossings import count
         for mesh,num in ((32768,42),(49152,45)):
             result=count(path,mesh)
