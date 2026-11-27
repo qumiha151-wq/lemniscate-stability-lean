@@ -1,3 +1,7 @@
+import SolitonClassification.Rotating.ResetOriginPlus
+import SolitonClassification.Rotating.ResetOriginMinus
+import SolitonClassification.Rotating.ResetShootingFamily
+import SolitonClassification.Rotating.ResetShortTail
 import SolitonClassification.Rotating.ResetFourActual
 import SolitonClassification.Rotating.OuterArmActualPeriod
 import SolitonClassification.Rotating.MaskedResetDigits
