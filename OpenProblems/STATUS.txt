@@ -1,5 +1,15 @@
 Results checked through 27 November 2026
 
+闭合自相似曲线、长度增长、整条曲线迁移这三个一般问题仍未解决。已完成的质心逃逸证明位于 CentroidEscape，引言中的完备非直线平移解位于 OpenTranslators。
+
+本轮结果（2026年11月27日）
+
+• SolitonClassification：Lean 已验证从射击初值出发的正、负两个方向各连续16段，并验证了任意有限段的误差传递定理。若两条真实轨道满足指定的端点和导数误差，Lean 可推出一个切线角恰减 2π、曲率变号的光滑闭合旋转膨胀解。完整的8000段数值条件仍在核验。见 SolitonClassification/RotatingCertificate/IntegerWinding/Closure/ExactAngleClosure.md。
+• LengthGrowth：Lean 已证明，若某一条流违反四次根上界，它必须在同一个任意晚且任意高的能量长度乘积纪录上同时具有很大的正、负曲率。两侧幅度阈值可任取低于 (√17−1)/4 的均方根比例。另有单条实际流的弛豫时间后应力尺度估计，详见 LengthGrowth/Research/SaturationGeometry/TailStressTransfer.md（书面证明）。
+• Migration：对一族薄的闭合膨胀解，真实演化在膨胀为三倍的时间内具有可定量证明的扰动放大。这是书面谱稳定性分析，尚未得到整条曲线跨过直线的实例。见 Migration/Research/ExteriorOptimalFit/ThinExpanderInstability.md。
+
+The general classification, fourth-root length bound and migration questions remain open. For the rotating seed, both signed 16-cell prefixes and the implication from the two arms' endpoint enclosures to a signed-turning-minus-one smooth closed immersion have passed Lean's kernel. LengthGrowth proves a necessary two-sided signed-curvature excursion at the same arbitrarily high late record. The single-flow stress-scale transfer bound and the spectral instability of thin expanders are written results.
+
 中文索引（各问题可独立验证）
 
 仓库根目录是此前的伯努利双扭线稳定性证明。
