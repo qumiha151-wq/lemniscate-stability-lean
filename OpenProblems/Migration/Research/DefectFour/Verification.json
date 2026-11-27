@@ -1,0 +1,32 @@
+{
+  "base_declarations": 1210,
+  "audit_declarations": 1213,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "Migration.DefectFourHull",
+      "source_sha256": "d5885e640c9eb47b68d353e06687906e39afac5e869ee768f59c9da84f6fbff5",
+      "olean_sha256": "dbdd15fb219ed5a941f45d230404a19e7711af641f4be958476bc70425df4bbe",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.DefectFour.margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.Flow.DefectFour.earlier_centroid_disk' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "6e8003e0e995ee8074f7245216d1f6b5c670e1046ee93b246fa9b348ef149ecb",
+      "olean_sha256": "e731832682b0d26ed84650c790c5a67c33dc12bf1baee08d8c70471d5e8b64d7",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 1213 declarations; standard axioms only."
+    }
+  ]
+}

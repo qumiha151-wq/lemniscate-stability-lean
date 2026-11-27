@@ -1,0 +1,46 @@
+{
+  "base_declarations": 2102,
+  "audit_declarations": 2128,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.DefectFourBins",
+      "source_sha256": "a8e97583232be237f4ef6a7997f6ac0b1ee554d70c72ccd914c2465bb727f535",
+      "olean_sha256": "5209acaeb8ba9c8957388b21543365d40bbd0a040a602589327229a64d741c37",
+      "exit": 0,
+      "log": "'LengthGrowth.DefectFour.verified_bins' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectFourBarrier",
+      "source_sha256": "4c90a87a9446f2a00e4e5a175d0aa7b3b1e52c552b64e405670b0dd4d4a8c144",
+      "olean_sha256": "aceb36000e4fbbdb8a14dd5e7b9848ba8b9b4745d8a295bd2fdae41f4327eaea",
+      "exit": 0,
+      "log": "'LengthGrowth.DefectFour.spectral_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectFourInvariant",
+      "source_sha256": "8eb0295d864ba3d01f101d3a2e059177fe7fe74386fb6b82198ff371d2124d32",
+      "olean_sha256": "f8aa2a247e3f6bd93e01201f04e9a9abcb4c1c09dd4419bcdc1da9ddf6a73b30",
+      "exit": 0,
+      "log": "'LengthGrowth.DefectFour.signed_evolution_coercive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_defect_four_boundary' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "d1e47bbbf3d90a0f5ad852f6e1c986353deda5367ce1e54ac173d90773f53302",
+      "olean_sha256": "7e34f61ec5fccb35a6425af4fa2eb56652a2c8424c494c03fda04bb20698ac18",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2128 declarations; standard axioms only."
+    }
+  ]
+}

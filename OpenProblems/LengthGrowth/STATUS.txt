@@ -1,3 +1,6 @@
+初始弯曲乘积至多 4π²+4 的定量耗散、长度界和闭合相似解刚性见 Research/DefectFour/DefectFour.md。Lean 已核验完整有理区间估计、带符号的耗散不等式、向前不变性原理以及由边界导数条件推出真实流长度界。
+Length-growth audit passed: 2128 declarations; standard axioms only.
+
 沿同一条实际闭流，把应力大小按照相邻的二倍尺度分带。若弯曲能量趋于正数，则任取正的起始时刻，任意小的应力尺度中都有一列应力带，其四次方力积分的上极限至少是极限能量的十五分之一。Lean 已验证尺度通量系数的导数、带实际弧长权重的空间分部积分、不含力导数的逐点上界和二倍尺度求和。时间通量及两个极限的交换论证见书面证明。独立长度项目审核 2102 个声明，仅标准公理。
 
 The force concentration bound on every time tail has a written proof for the evolving physical flow. The spatial integration by parts on a genuine immersion, scale coefficient derivatives, pointwise estimates, and the discrete limiting transfer with constant 15 are formalized. See Research/SaturationGeometry/DyadicForceFlux.md.

@@ -1,3 +1,6 @@
+初始弯曲乘积至多 4π²+4 时，后续曲线的凸包包含以任一较早时刻的弧长质心为中心的圆盘。书面推导见 Research/DefectFour/FixedDisk.md。该独立 Lean 项目已验证角度自举、支撑与质心移动常数，以及由此推出的圆盘包含关系。
+Migration audit passed: 1213 declarations; standard axioms only.
+
 For every fixed direction of a genuine closed flow, including degenerate directions, the integrated regularized force has a right limit at smoothing zero with a linear error bound. This zero-smoothing action pays both gap terms and at least 8/(3E^2) per endpoint. A written instantaneous formula at every time and direction has absolutely summable simple and cubic turning-point contributions. The Frenet third derivative and the two scalar coefficients and vanishing force and its first derivative at accumulating tangencies are checked in Lean. See Research/AngularValidation/SingularEndpointAction.md. General migration remains open.
 Migration audit passed: 1210 declarations; standard axioms only.
 
