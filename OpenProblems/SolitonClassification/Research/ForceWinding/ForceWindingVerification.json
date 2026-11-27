@@ -1,0 +1,125 @@
+{
+  "audited_declarations": 141871,
+  "previous_declarations": 141818,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "SolitonClassification.ForceWindingArgument",
+      "source_sha256": "4c537e87f88376d3b2fb93bd942a52a2df960f456048d56668248fd987da7128",
+      "object_sha256": "d3b3f41b1474833df03a1bfaabaf504b5d27f85c6eb93bc32f99c182a09be38b",
+      "imports_sha256": {
+        "Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv": "e00dc0eeb2dd62833b3c7010a30ffcc46f09f4d8eb792ca92ea021bf21e1f205",
+        "Mathlib.Analysis.Complex.RealDeriv": "ad4dec54954622c3a8717a273a05fb0743eb22c6218263472b14098293a38fc2",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus": "da8ef4c75b31e2d29e090171623eefe2b110a8c894e66257f2121982495869c0",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.argumentD' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingStress",
+      "source_sha256": "e52631134ae99d036bb871c39ef8985ff72442be2dfe57d68e724685214188f2",
+      "object_sha256": "f8a736ad3055b82f968fc4fde7dfc89e0bd533ff1733d6c9e7eff8331e633c7a",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingArgument": "d3b3f41b1474833df03a1bfaabaf504b5d27f85c6eb93bc32f99c182a09be38b"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.positive_lobe' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingPhase",
+      "source_sha256": "4573a037e26cad67fbfb8a50a892f1be18513b75d55f98e9f856cb2394d60d67",
+      "object_sha256": "4518884cae7a2f6082562b0a9d11b5486b178510ffc3d40dcb78df7e6750ceff",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingArgument": "d3b3f41b1474833df03a1bfaabaf504b5d27f85c6eb93bc32f99c182a09be38b",
+        "Mathlib.Analysis.SpecialFunctions.Log.Deriv": "ffb13dcfe9b5ccbe18a49ee4096bee5d8ebf4f830ee4c7959be2c7c1eb4414c1"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.turn_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingTurn",
+      "source_sha256": "12128da8cd681389a88b3f2199ee9bcd9b2f354a5b358c8ed1240ed813d27830",
+      "object_sha256": "cf47268e99da35a05dde3508b59cde3f62b4f9fdf2805ddc74049f3c0cd2cd49",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingPhase": "4518884cae7a2f6082562b0a9d11b5486b178510ffc3d40dcb78df7e6750ceff",
+        "Mathlib.Analysis.Calculus.Deriv.MeanValue": "00f6384bbac8151062ff23dbda101f48abf1885bc68533120d7587b57763e3a8",
+        "Mathlib.Analysis.Calculus.LocalExtr.Basic": "92fcd6d39810c2b56670bb7bdd16b88be561da48c6b6eb6bae954e7c82af3277"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.zero_turn_rotating_changes_sign' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingTrace",
+      "source_sha256": "83070d03c9c1b0564e58ce7a66cf4fca681c4f3ee6b7391ccdcefe7ee7a42afb",
+      "object_sha256": "f94e3a55c0bef066eab354f1245d10a97800f8493a7f208a0e89ffdcf1ad234b",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingPhase": "4518884cae7a2f6082562b0a9d11b5486b178510ffc3d40dcb78df7e6750ceff",
+        "SolitonClassification.SupportODE": "98f8dfaacb76c2d6fe86e958a42f7c7fc38819073d2e9b579bba1754d3642612",
+        "Mathlib.Analysis.SpecialFunctions.Complex.Circle": "2280f33f00a9bbe8ba3761de0b8aefffa5d77d2a96641830993a415ddf9dfb2f"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.duplicate_phase' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingInjective",
+      "source_sha256": "721a4291c1e7d78e35c6bd5ec8a6cbdd5489bbf1499dc65ca03ab57b6bc5099e",
+      "object_sha256": "54d774c4cc6572ecbe33f4e6420900b4bfec99eb6467f5cfb6c3c1fc53a20680",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingTrace": "f94e3a55c0bef066eab354f1245d10a97800f8493a7f208a0e89ffdcf1ad234b",
+        "SolitonClassification.ForceWindingTurn": "cf47268e99da35a05dde3508b59cde3f62b4f9fdf2805ddc74049f3c0cd2cd49"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.one_turn_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingPhysical",
+      "source_sha256": "d742bffc239520b6b6df8685a7f86ff8f5baf54d67d6cbe9b23ec9f35f8a8972",
+      "object_sha256": "6b073cf5e9456fb3f2e246f56f51786cd5ff5bba64a90a173ea1759900b792da",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingInjective": "54d774c4cc6572ecbe33f4e6420900b4bfec99eb6467f5cfb6c3c1fc53a20680"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.physical_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingExample",
+      "source_sha256": "f163283c61a4095d0a52c1c1169036e1aaa1e2e3fb8f5c951ea8c79b1e685bcb",
+      "object_sha256": "78c7d9ed6a3bc865a8ae66d904842bbdcb5ee56a16ac75ddc8a9a75b9d452a39",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingPhysical": "6b073cf5e9456fb3f2e246f56f51786cd5ff5bba64a90a173ea1759900b792da",
+        "SolitonClassification.Rotating.IntegerFinalDoublePoints": "f8c79daee401bf8e43b13fac7d12be614fdb11c8f09cb028f47c42f644b9bc54"
+      },
+      "log": "'SolitonClassification.Rotating.IntegerTarget.Physical.exists_rotating_crossings_and_signed_force' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingRegularized",
+      "source_sha256": "edfe24aa0b9d6e974f22f8980d1e5a2cbd580878eea7f844deaf628f60874c46",
+      "object_sha256": "502269ccfcd3715bcb94b3f49126a8305490c1b5b2ea829732f9e54d2f0c7656",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingStress": "f8a736ad3055b82f968fc4fde7dfc89e0bd533ff1733d6c9e7eff8331e633c7a",
+        "Mathlib.Analysis.Calculus.Deriv.MeanValue": "00f6384bbac8151062ff23dbda101f48abf1885bc68533120d7587b57763e3a8"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.zero_at_regular' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceWindingZeroTurn",
+      "source_sha256": "74441c4cc9fd5eb89d919953353f3fbd455fedcf2009c46c9bb0c548670a8e52",
+      "object_sha256": "bd309cca4b13ce06629c69a936a4f040d10dc6985273ad713673965f86c2de96",
+      "imports_sha256": {
+        "SolitonClassification.ForceWindingRegularized": "502269ccfcd3715bcb94b3f49126a8305490c1b5b2ea829732f9e54d2f0c7656"
+      },
+      "log": "'ClosedSimilarity.ForceWinding.zero_turn_curve_force_signs' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "f5d143c7de1ed5749be5ff75449fc6c501b6bbfb2af6ba2d49035540efda796a",
+      "object_sha256": "887b5028a2f1bc2cc8d398260d2073062d2e2eb689d1f74c0ca88288bbb2c3bb",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 141871 declarations; standard axioms only.\n"
+    }
+  ]
+}
