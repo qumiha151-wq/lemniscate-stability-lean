@@ -1,3 +1,7 @@
+import LengthGrowth.ActualFlow.CompactInflectionRate
+import LengthGrowth.ActualFlow.PhysicalInflectionRate
+import LengthGrowth.ActualFlow.ContinuousInflectionMajorant
+import LengthGrowth.ActualFlow.ExactInflectionGrowth
 import LengthGrowth.ActualFlow.MaterialTurnFlux
 import LengthGrowth.ActualFlow.InflectionEndpointMass
 import LengthGrowth.ActualFlow.TurningEnvelope

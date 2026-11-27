@@ -5,7 +5,7 @@ Results checked through 27 November 2026
 仓库根目录是此前的伯努利双扭线稳定性证明。
 CentroidEscape 已证明存在一条光滑闭合曲线，其按弧长计算的质心逃向无穷远。
 SolitonClassification 已给出无穷多个互不等价的零转数闭合膨胀子。全部自相似解的分类仍开放。
-LengthGrowth 给出若干保证四次根增长上界的条件。任意单条流是否都满足该上界仍开放。
+LengthGrowth 已证明，拐点处切线向外转动的速度差若在长期内可积，则长度至多按四次根增长。任意单条流是否都满足四次根上界仍开放。
 Migration 已排除若干类曲线的整体迁移。一般情形下能否整条越过一条直线仍开放。
 OpenTranslators 已构造一个完备的非直线平移解，曲率无界，回答引言中的开曲线问题。
 
@@ -37,9 +37,10 @@ upper coefficient cannot depend on initial length and turning number
 alone. Individual fourth-root upper growth for every closed initial
 curve remains open. See LengthGrowth/Research/ExpanderLength/.
 The integral criterion in LengthGrowth/Research/OneSidedTurning/ controls
-length on a single flow by the outward angular speeds at its inflections.
-The checked theorem applies when their pairwise difference has a continuous
-integrable upper bound on a tail.
+length on a single flow by its outward angular speeds at inflections.
+If the positive difference between the largest and smallest force derivatives
+on the two signed inflection sets is integrable on a tail, the length is
+O((1+t)^(1/4)). See LengthGrowth/LengthGrowth/ActualFlow/ExactInflectionGrowth.lean.
 
 Migration gives geometric obstructions to whole-curve migration.
 The existence of a flow whose whole image passes from one open half-plane
