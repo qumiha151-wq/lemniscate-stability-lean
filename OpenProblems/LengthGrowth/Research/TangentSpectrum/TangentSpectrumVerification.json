@@ -1,0 +1,278 @@
+{
+  "baseline_declarations": 2216,
+  "audited_declarations": 2295,
+  "baseline_root_sha256": "3f6f73d22985afda75f89282b586bea110de1b2e8ac0bb0c794caa8581980d45",
+  "baseline_manifest_sha256": "c165b7ad76cb51e54452c55e480dacbb349b72755967bfad447ab056447260f5",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.TangentMomentInequality",
+      "source_sha256": "fcb7437967492c1e184c73d76cc5491a5a69d6612653e4fa86da622ad5e25593",
+      "setup_sha256": "106e52033f51a81b06104ae22a8eedf3ff8bee98a30378e604a488e769413dab",
+      "direct_imports_sha256": {
+        "Mathlib.Analysis.Fourier.AddCircle": "88471b5074c6f8b2811a33989404d173eeae76cd5f8cc5e32b3aaccfe2f2c733",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a",
+        "Mathlib.Tactic.FieldSimp": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+        "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Real": "db2ea8233d5b8ea5d867e6047f110262136eb422264207004b7738579ffc839a"
+      },
+      "olean_sha256": "ec0930d292a61f44c8e0fe4603800b397a6d3ad0cefbd22f277788b0f8202f7d",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.moment_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentAnnulus",
+      "source_sha256": "ca349263e7f81e70782e89a2aa42f627488dd054ca89e8024710a14984f195b6",
+      "setup_sha256": "0ffb06ce32390add4a5592253a44218d8019c631b221dcf3058874c7c8d4f68f",
+      "direct_imports_sha256": {
+        "Mathlib.Analysis.SpecialFunctions.Pow.Real": "db2ea8233d5b8ea5d867e6047f110262136eb422264207004b7738579ffc839a",
+        "Mathlib.Topology.Algebra.InfiniteSum.Order": "583334edc755061d0e31480bc55d6a90957117a2e4627feeee409120ad6816ca",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+        "Mathlib.Tactic.FieldSimp": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+      },
+      "olean_sha256": "33e7d02fc7eb55acfda31ebe01600e280a8164d968092a666335e0ccb6acb5d2",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.band_escape' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentFourierMoment",
+      "source_sha256": "5ff5f29cf4a289f3c32934c4f300ae14b575f66a7b498cb7f4f569e4e881fc17",
+      "setup_sha256": "8a4ece44d2364f81b607d19596348ab4d2d485f7f5631f42156464abb05d561f",
+      "direct_imports_sha256": {
+        "Mathlib.Analysis.Fourier.AddCircle": "88471b5074c6f8b2811a33989404d173eeae76cd5f8cc5e32b3aaccfe2f2c733",
+        "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+        "Mathlib.Tactic.FieldSimp": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+      },
+      "olean_sha256": "8130517ca4383f9e70259c83da4375aa085d42c830085810987e8a50d324423f",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.fourier_energy_moments' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentSignedMoment",
+      "source_sha256": "f3b31ea3dcaa21b8dc7bd539b13e4ad371489bb1e9530ed1c9c5055bce2d2316",
+      "setup_sha256": "bd0d86e99946aeae01ce978a04ba469ab97f98635bbec413a4cab04b9e107c9f",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentFourierMoment": "8130517ca4383f9e70259c83da4375aa085d42c830085810987e8a50d324423f"
+      },
+      "olean_sha256": "0cffc82cf48ca3fd142ae7b80e00a3725723b0cd6ab3af864fd4ea839e5b0d6b",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.signed_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "built_with_setup_sha256": "8b575429c4c63735845f7e22fdad42a05dd69994332c819db84eda360d8ef56a"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentFourthMoment",
+      "source_sha256": "0246730e0666df4cbabda93c0c49008295587adf35b33470f8ced5bccace3607",
+      "setup_sha256": "97296d72e0bbc61c70d8ce7eee5681e280696ffa23f8365001465f01b33c81c5",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentFourierMoment": "8130517ca4383f9e70259c83da4375aa085d42c830085810987e8a50d324423f",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic": "00d51c7b2f5392cacd9197f4ca8cec897f12085b4570dc1126ee77aeb5480cee",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a"
+      },
+      "olean_sha256": "0b44055f946a359ccc17848d1622019192450557880993e679ce3120753fb528",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.second_tangent_estimate' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "built_with_setup_sha256": "5dcb86a74c38309dac0e9e2587525b59bca49013d09cbad86f5016c68b8c2ce0"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentFrenetSpectrum",
+      "source_sha256": "c9e7129baf7f778e7034cc85042ac0a73961afe9e362cadd700c1f65608391f6",
+      "setup_sha256": "96fd11bfc61d778793dcf77ec912efea1c83ea7e5982036c19f921693137a736",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentSignedMoment": "0cffc82cf48ca3fd142ae7b80e00a3725723b0cd6ab3af864fd4ea839e5b0d6b",
+        "LengthGrowth.ActualFlow.TangentFourthMoment": "0b44055f946a359ccc17848d1622019192450557880993e679ce3120753fb528",
+        "LengthGrowth.ElasticStress": "132c110da9017ff3bfe06849bcfff3395060465dc39d5f2a1d53d2bb8e0c1e1e"
+      },
+      "olean_sha256": "18fe6930b2f50f9b0b684792e3b19eca066d3da78c33355e52e1b28bcaca3542",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.unitT_spectral' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "built_with_setup_sha256": "7e1669b37652edde5ad65eb1b6f317b9e0c5322dc859bb06d33064bd3b95c27d"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentSideBand",
+      "source_sha256": "b7e32a32bf9cd6d20946830e0c366bafa6486d99686d998abf41c72618de1dc7",
+      "setup_sha256": "91d2e24c965d0a77920552366c3a8a207e8531ee70d21ed09ef96614808bf794",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentAnnulus": "33e7d02fc7eb55acfda31ebe01600e280a8164d968092a666335e0ccb6acb5d2",
+        "LengthGrowth.ActualFlow.TangentMomentInequality": "ec0930d292a61f44c8e0fe4603800b397a6d3ad0cefbd22f277788b0f8202f7d"
+      },
+      "olean_sha256": "048c4cfebb80e538b4d814aeea18ab4bc8644ae66d2ede0dccbd5c12ab20e7a6",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.side_band' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "built_with_setup_sha256": "cfc4e9038db946c409ba7903efcaf81f6a3d9db45929bf7c38a347d7d5c9238f"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentFlowRecord",
+      "source_sha256": "e009df6533008db10449d577d65168abdaa63ae82d0e2daacb7b87ba4b1577c7",
+      "setup_sha256": "856f4afdfcfe85530507438c07f7703c8e73ffde3f3be1911059017c8407a65b",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentFrenetSpectrum": "18fe6930b2f50f9b0b684792e3b19eca066d3da78c33355e52e1b28bcaca3542",
+        "LengthGrowth.ActualFlow.CriticalRMSAdapter": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf",
+        "LengthGrowth.ActualFlow.MacroscopicTurningRecords": "891392c08f0b32573fe9acfad62264d5ea818edc6673d7f2824b23c5a05581e3",
+        "LengthGrowth.ActualFlow.EventualCurvatureSign": "6e7199491bf30a653af202e1e84dbea0e4f2527b8a74fbaa6a77dda3acd2875e"
+      },
+      "olean_sha256": "0388583e140c9c445f7f24248719470ce3f49962141513b3d0c1f004618772a5",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.signed_fourier_at_record' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "built_with_setup_sha256": "726d5d085c75109a44c7ad4d1f7e067d55b097c617eb8a4c6b1c6e247d70df91"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentTail",
+      "source_sha256": "f6b4978c784773d291d5c4def2ad983c828626863190d6a374aaaecf4b73f903",
+      "setup_sha256": "613f1acfb6ebdaa6c5d2268e167a7c552c6d8360ded0c2d96190c285daad2aa6",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentSideBand": "048c4cfebb80e538b4d814aeea18ab4bc8644ae66d2ede0dccbd5c12ab20e7a6",
+        "LengthGrowth.ActualFlow.TangentFourierMoment": "8130517ca4383f9e70259c83da4375aa085d42c830085810987e8a50d324423f"
+      },
+      "olean_sha256": "a81efb30858bf1bb7b3bd63c5829a4a061bb1de19bc1bba1889d00e1031ec489",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.tail_escape' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "built_with_setup_sha256": "43838e71b5f9dbaf0a452e0d99180d8d46eeb9830828db96f7464d40f28a3e4d"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentQuarterGrowth",
+      "source_sha256": "4760b43b81214be46fc15a9e28adad1235b4ccd6648c93ceadc730c060ccc116",
+      "setup_sha256": "dafcb04afaf94c758abbf016d0ca21b852a91f522664d81b51901641be4cae52",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentTail": "a81efb30858bf1bb7b3bd63c5829a4a061bb1de19bc1bba1889d00e1031ec489",
+        "LengthGrowth.ActualFlow.TangentFlowRecord": "0388583e140c9c445f7f24248719470ce3f49962141513b3d0c1f004618772a5"
+      },
+      "olean_sha256": "bdcc486a6ac99b095afcd58299e9ac199c4d96c8e7a6e4dec692d7065c93fe93",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.two_tangent_tails_escape_of_failure' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_growth_of_one_small_tangent_tail' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "built_with_setup_sha256": "b1e956d8e9867481719ccbdbb0006cfa31fe4b0db78a68f9ed0eedf7f0f87407"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentUpperTail",
+      "source_sha256": "a7d8425867a919e13e2ca76059d6e85a0d1611d2bed6d0618d4d01856096b9d3",
+      "setup_sha256": "736bed3a6458b262b30a1831e790d77de410b0a2dfa66902745f249af63bf136",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentFlowRecord": "0388583e140c9c445f7f24248719470ce3f49962141513b3d0c1f004618772a5",
+        "LengthGrowth.ActualFlow.TangentTail": "a81efb30858bf1bb7b3bd63c5829a4a061bb1de19bc1bba1889d00e1031ec489"
+      },
+      "olean_sha256": "b80c2d4ad7ecf1f04d54ece04d1008c39a550a0352be5ffb11ea75b4fc2aa26b",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.one_tail_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "built_with_setup_sha256": "007a0ed3de271454d523730ca9502cd881c76af3166141f3a445fa69de5e1d19"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentTailEquivalence",
+      "source_sha256": "a1a891f916492a929bb2522dc15a9457948015ee3bc03daee7d4d1c90bba0d9c",
+      "setup_sha256": "7c3a4c539aed6f777e0c9fe46b402e31c4356cb13dc491ef2a9c8ab86c95e74f",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentQuarterGrowth": "bdcc486a6ac99b095afcd58299e9ac199c4d96c8e7a6e4dec692d7065c93fe93",
+        "LengthGrowth.ActualFlow.TangentUpperTail": "b80c2d4ad7ecf1f04d54ece04d1008c39a550a0352be5ffb11ea75b4fc2aa26b"
+      },
+      "olean_sha256": "cf6e5bd340eff47eb9cd5a7b4a11df9641b5e683c1b7b92dcec34628c0176e18",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.tangent_tail_characterization' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "built_with_setup_sha256": "e88068038b2dc3400d405c409b923a03543fc57b18ee48e431400786cd86a122"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "189db0301d51bd5a180b7aad3caed08365351fb16b9e3d1f22cff5c25aa06260",
+      "setup_sha256": "ca3a69c0ed7404da58bd609d1612166c21c489c55de5e698b7637e7b80f2d9f3",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentTailEquivalence": "cf6e5bd340eff47eb9cd5a7b4a11df9641b5e683c1b7b92dcec34628c0176e18",
+        "LengthGrowth.ActualFlow.DefectSharpLengthLimit": "406e3c3a3dea4814c57efa18066788c80f36a252dc1066f3471f5ed7a2826659",
+        "LengthGrowth.ActualFlow.DefectAttraction": "d745b35960ab1e00abb3c5275e6ac70ecc757949f67a953248157373e53372a4",
+        "LengthGrowth.ActualFlow.DefectExplicitLength": "97e4a38588e8497f24c3aecbba8784e9ff18f62afdbb81f4281e89bafbda1cfb",
+        "LengthGrowth.ActualFlow.DefectCenteredCurvature": "1d390b92a6dfdc64d8d1b9e7df190e64f958faa849ab04746178b23740a50560",
+        "LengthGrowth.ActualFlow.DefectFourInvariant": "f8aa2a247e3f6bd93e01201f04e9a9abcb4c1c09dd4419bcdc1da9ddf6a73b30",
+        "LengthGrowth.ActualFlow.PhysicalAnnularFlux": "e6769ff3d2ee9aebae2076cdab1a02f1ad79e21fd16bef0480616624f2aad60f",
+        "LengthGrowth.ActualFlow.HighRecordExcursions": "1d05c240cb8c3adf79ae072536fbae4df3a0fea0ad514f862a1decbc6df1cbaa",
+        "LengthGrowth.ActualFlow.NodalRecords": "e2814ee8c6612e32d3a5782a9400f607bb2c6b068bb74c67851100161641cb1a",
+        "LengthGrowth.ActualFlow.NodalSquare": "d714977fb0a3375161ff6fbd0768592b1444e2a12d3b9ecf383c39417dbeb6d9",
+        "LengthGrowth.ActualFlow.StressBandMass": "dae1242caf7026198f2952cf01480dc3b5c5112ac55d1aea22232c3ce9e24418",
+        "LengthGrowth.ActualFlow.PhysicalEqualityCircle": "15825872eb39540ff4282ec3dfa594bf682f8a5983d425f641ff155ff4c85707",
+        "LengthGrowth.ActualFlow.ExpandingPhysicalWidth": "2cff30baaffa7fa37bfec33e2ea9334d16d7c2221554ace852855b38934f854c",
+        "LengthGrowth.ActualFlow.SaturationRadius": "9c6e35643d4188817e9d39a79c0f5769f2a4034a577b1599f21a16fc242eefca",
+        "LengthGrowth.ActualFlow.ActualInflectionDuration": "747701ca593f55614f1b0c0fefaecd0f90c21c278a0dd292ea3b272dbc88303f",
+        "LengthGrowth.ActualFlow.RecordForceWindow": "c250986f49bc59d8b3961ef00641ad528baf37f3cce2dcb8865c3149ab7b1254",
+        "LengthGrowth.ActualFlow.LemniscateAngularClock": "0c12feb388a74b04984e6ad1577d27d43b75392d4f2919f197f782db17b31515",
+        "LengthGrowth.ActualFlow.CompactInflectionRate": "c7349d8ed0d0eeffdf15294050fdc5259338dc97e6ee729e22ad8c864a621a55",
+        "LengthGrowth.ActualFlow.PhysicalInflectionRate": "035212bf88e669e8d0c0e7ee984d0dca85fd9a9fc7841eeebd573de8feb71de6",
+        "LengthGrowth.ActualFlow.ContinuousInflectionMajorant": "04b366532a16d3f8aedbf60ebdbf4877794938da59d27bc472b5703bc268f674",
+        "LengthGrowth.ActualFlow.ExactInflectionGrowth": "9614887884990a7a10993510be54126ec86d68bd69ebe273878d6376fb473c6b",
+        "LengthGrowth.ActualFlow.MaterialTurnFlux": "839798cf77cb7aa0e3fd48edaf528831650a40948ca97be2c25697b8477a956e",
+        "LengthGrowth.ActualFlow.InflectionEndpointMass": "ba9c9589d34a183d90c00a097eb39b7f572c37b6e532433bed71093363308b45",
+        "LengthGrowth.ActualFlow.TurningEnvelope": "3e7642ce7d704761d5314add434124019934a133ded4d6b91a58898741d4313b",
+        "LengthGrowth.ActualFlow.CyclicTurnVariation": "97ddc4eae684f29197dfb78045e79dbf55491cf2c0adf4082a37bda4c567921d",
+        "LengthGrowth.ActualFlow.CyclicTurnEnvelope": "f0456b38dd4ad9b92c78b78601f9f9e6e2906dc4cb2dbd6e04d4936fc1e82a2a",
+        "LengthGrowth.ActualFlow.MaterialTurnPrimitives": "bc11cc300c13e57a4695b5505afdc45f7008bbecdc19bb9eeeb646b7b97c63ea",
+        "LengthGrowth.ActualFlow.MaterialTurnContinuity": "9eb4a1f0ca90d8263a6c9c095d8cdce8a49040f269a25018e10b90f749146b94",
+        "LengthGrowth.ActualFlow.InitialTurnBound": "64c3419b45b6f432921e93f2f1574b87639d5637b8022f15c7614f3c09ca9352",
+        "LengthGrowth.ActualFlow.TurningLabels": "172e75d44abf4e6edf943ecd419865ba0d6d31d9b939676a2f58f972e774efc6",
+        "LengthGrowth.ActualFlow.InflectionRootSigns": "a55147f34810c1fa346b5d003b19156a73102bb819d9467913d427a6c1a7a0ae",
+        "LengthGrowth.ActualFlow.IntegrableTurningBudget": "586ef1d92f0c7b86644b25abbebd3f96e2c00257d65297ded0f393054b6d4f7c",
+        "LengthGrowth.ActualFlow.InflectionVelocitySeparation": "6a7f1425a64c6ad788a6c0795b793e1a8d7775b95524cebae2848a08948723a2",
+        "LengthGrowth.ActualFlow.InflectionQuarterFlow": "3b751df1a55230ab6ffa97a3a13653ca5a330681f03b095b65904622b4630f59",
+        "LengthGrowth.ActualFlow.IntegrableInflectionGrowth": "d8e5fd6d83e3a22eea3e5d6599e95ad234c1be0df8385ab6fd8a989302d41e20",
+        "LengthGrowth.ActualFlow.PointStress": "88d84d323337a68058b10e8ba828322afc39009d7589a3cc6343c803c532b55b",
+        "LengthGrowth.ActualFlow.SpatialLocalization": "ca7145fd343126f938ca6fb9a8e28558954e8c5c3a7d8bab57ccdf8562e218a5",
+        "LengthGrowth.ActualFlow.MaterialWeightedRate": "4295b8676e3691dac203c95ef3152315c8975ebc94daf8e35c565ed2a10e29ce",
+        "LengthGrowth.ActualFlow.ForceAngularSpeed": "87a6dabff1c4378f90793a37574862d3fdb32814a720afd0d33ad8f5f183af8b",
+        "LengthGrowth.ActualFlow.RecurringLength": "a92cf00c8f2378d9f38e4ad31459263039184e16849b72a1b2a61c07fe8f3364",
+        "LengthGrowth.ActualFlow.FrequencyBackward": "c7e2bfeddf226e15e429190643aee5688ab125b76089952419e8050d23e2f764",
+        "LengthGrowth.ActualFlow.RMSPowerGrowth": "0dababcbc14ace33b67746a9514b86ede883d26aaa7d16d9bbac1deed2aa11b4",
+        "LengthGrowth.ActualFlow.RadiusGrowth": "ffefbe519535e22f9daa1784839410f61cd587c9f8cf91665b3f626505687543",
+        "LengthGrowth.ActualFlow.TurningCompactFlow": "c3fe7cb22cedfd97177e1bb0bb98712a82cd8466e9085e94cea483a2fe4d99e4",
+        "LengthGrowth.ActualFlow.CriticalOsgoodFlow": "070c31a67a9dde2e0469c071b0565e2ce5b0eb0092606166e0a5c109267594bd",
+        "LengthGrowth.ActualFlow.CriticalDensityIndexFlow": "86b8f8e7785afc4751b7cecec6922319399e6feaf2fd722b3998f2421931f4de",
+        "LengthGrowth.ActualFlow.FiniteSignTheorem": "99dfd9f5499189dadcf528dce68597f92194ea4698c87c06502f9d40ab5c586e",
+        "LengthGrowth.ActualFlow.ExplicitCubicThreshold": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.ActualFlow.StrictHalfTransfer": "72f4544c22b88211034724a9b8643e006df018578caf8c9154f7770bd104932a",
+        "LengthGrowth.ActualFlow.AffineForceCompatibility": "5358fd6e56c20f8406e3b534b1ab0b8b5bf03eeed76a0be041120ea3765b3b3f",
+        "LengthGrowth.ActualFlow.CubicMomentDecay": "1a21fe8cb41d6c310823ab7f87dfbd353342e8e7c137b43e3d8d516dec970a28",
+        "LengthGrowth.ActualFlow.CubicHalfThreshold": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+        "LengthGrowth.ActualFlow.JellyfishGrowth": "bf003d9f5ba772db775a9602b45dbcef08847800d30452ef12b185899bb87cf4",
+        "LengthGrowth.ActualFlow.GrowthEnvelope": "0123a061e03d3cef1a68bce6add2615276412401d2c13d940b2f6a57e1444d97",
+        "LengthGrowth.ActualFlow.SharpCircle": "0bf57f78fa014028e1988e658d4857e03b72feb7d4916ed653632fe5718bcec4",
+        "LengthGrowth.ActualFlow.StripCoercivity": "3affe416fafecf814f9645365d01e79ab3dba448a25183c28e23159489ba9bbb",
+        "LengthGrowth.ActualFlow.AmbientMaterial": "5e50b998b3bf45716d65566b35cb55e6cc873941b7a92cdf1d79b02da136d926",
+        "LengthGrowth.ActualFlow.PhysicalTimeAverage": "d16772df203c3868ba5132ddcd7621f57e8a391200d086726653df5bf6e4c7aa",
+        "LengthGrowth.ActualFlow.AmbientCoercivity": "c191329677a8f0c0f270d87a1c8fe5dc976bfd6019c40180ed8033ba72c31840",
+        "LengthGrowth.ActualFlow.RescaledRecordWindow": "34b6ebcdb603ba01e9d1255f767a1e1622712b3e00ee9815f114d22d17665691",
+        "LengthGrowth.ActualFlow.RecordCurvature": "2aa72289d54f231c8f452ef1c11aaf88f1b8261f3662e6b973ac4d07e6f4674c",
+        "LengthGrowth.ActualFlow.RecordWindowInterior": "b4f90e655d2e43177862616c533a7b7dd40ff654352481f9df71264e918c7293",
+        "LengthGrowth.ActualFlow.GrowthEquivalence": "0c2f6dd131fcdfa4f0cb7689e8f645f82e6c87881ea9add55b5e870b22f1afb9",
+        "LengthGrowth.ActualFlow.RelativeEnergy": "cba3bbab47cb3b84534ccf900f01e5da76545813cfc7b739c98388c21e78e3ae",
+        "LengthGrowth.ActualFlow.ProductWindow": "739c016413d4ac6605359f03861e8f5e9b2f0a283f81484ad5d3f146a1873868",
+        "LengthGrowth.ActualFlow.ConditionalQuarterGrowth": "40fa661d4a0e36811e7d8269d907c61bf54cd81005b37322ce8458bd738b6568",
+        "LengthGrowth.ActualFlow.ArclengthCoercivity": "e1c4fc1908c57ec96b2b4fc97ede03c7e3b7b8ed3e0819d9003463de20d1b9b6",
+        "LengthGrowth.ActualFlow.NormalizedProduct": "a0fe258ab6e145cff4b8ce8b57ad4b95ec21487219de8a81570a83a21adb13d1",
+        "LengthGrowth.ActualFlow.ForwardDissipation": "dab140f69ef50279e603610edac13a4f839950acf19e04d6a133336292ead275",
+        "LengthGrowth.SubsqrtGrowth": "52124fec25795f5e9934db43666b9928788251fedf57b1171c3e439ac3c1717d",
+        "LengthGrowth.CurveFromPosition": "aea049ecd40db4c91c815944ed274c6ddcad2e0f58378535c36142f0b6437e8b",
+        "LengthGrowth.ScalarDissipation": "65165cf0be21b14cd0fbbc08c4d66cfda2a9b836fcb5ca9be924f4cdeec215ce",
+        "LengthGrowth.ElasticStress": "132c110da9017ff3bfe06849bcfff3395060465dc39d5f2a1d53d2bb8e0c1e1e",
+        "LengthGrowth.AbsoluteCurvatureCoercivity": "f28c92da3addc7457f35cf4f7cc66d4e70180034bebbe333f0e4f980ca279f86",
+        "LengthGrowth.CircleConnectionBacktracking": "3b4a8fe42ab64969e792da67f81081a1eeb0314e47dbf1b04b73123b7a0f44d1"
+      },
+      "olean_sha256": "f7d281f2cf00352aa91115b5ca9841fc08de87563d0b4b742ced3593bad3234f",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "setup_sha256": "38e472796cfce9f4b573ca0ea20ccef73eccae1bc8bb77b21ac8f9676efd2f1b",
+      "direct_imports_sha256": {
+        "LengthGrowth": "f7d281f2cf00352aa91115b5ca9841fc08de87563d0b4b742ced3593bad3234f",
+        "Lean.Util.CollectAxioms": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d"
+      },
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2295 declarations; standard axioms only.\n"
+    }
+  ]
+}

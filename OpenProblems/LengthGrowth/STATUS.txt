@@ -1,3 +1,8 @@
+单条流的切向量傅里叶尾与长度增长
+对于任意光滑闭合平面自由弹性流，若四次根长度上界失败，则从任意晚的时间起，对任意指定的角频率门槛和任意高的能量长度积，均有一个超过该积的正时间记录。该记录的归一化弧长单位切向量在正、负两侧超过门槛的 H^(1/4) 平方尾质量分别至少为 3/2048。于是只要一侧尾质量在某个固定频率门槛后最终一致小于此数，即推出真实流的四次根长度上界。容许选取的一侧随时间变化。一般流是否满足这种条件仍开放。项目已审计 2295 个声明。
+
+For a smooth forward closed planar free elastic flow violating quarter-power length growth, a single arbitrarily late energy-length product record above any given product threshold must have at least 3/2048 of squared homogeneous H^(1/4) tangent mass above each prescribed angular frequency cutoff, on both Hardy projections simultaneously. Smallness of just one side suffices for quarter growth, even when the selected side varies with time. The full flow implication uses physical Frenet derivatives, Parseval and conservation of signed turning. Whether all flows satisfy the required compactness remains open. See Research/TangentSpectrum/CriticalOneSidedCompactness.md.
+
 从真实流的初始条件 L(0)∫k²ds≤4π²+36 出发，长度的精确首项 L(t)^4/t→2(2π)^4 已由 Lean 端到端核验。证明直接控制物理长度的导数和任意两个时刻间的长度变化。见 Research/BendingSublevel/QuantitativeCircularization.md。
 Length-growth audit passed: 2216 declarations; standard axioms only.
 
