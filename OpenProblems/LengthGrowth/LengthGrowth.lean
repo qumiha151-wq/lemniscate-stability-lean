@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.MulticoverOptimalOrder
 import LengthGrowth.ActualFlow.MulticoverSharpLength
 import LengthGrowth.ActualFlow.MulticoverWinding
 import LengthGrowth.ActualFlow.TangentIncrementCriterion
