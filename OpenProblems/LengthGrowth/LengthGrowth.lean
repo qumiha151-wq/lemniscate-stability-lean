@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.LemniscateAngularClock
 import LengthGrowth.ActualFlow.CompactInflectionRate
 import LengthGrowth.ActualFlow.PhysicalInflectionRate
 import LengthGrowth.ActualFlow.ContinuousInflectionMajorant

@@ -1,3 +1,9 @@
+伯努利双纽线在相对能量时间下的材料切向运动
+将时间改为弯曲能量下降的对数，并以纯法向速度跟踪曲线上的各点。对论文中的双纽线膨胀解，在每个时刻减去任意共同角速度后，全曲线上角速度绝对值的最大值至少为 3/2，取零补偿时恰为 3/2。这条流的长度与弯曲能量之积保持常数。Lean 已核验尖锐常数、实际切向以及纯法向角速度公式。关于固定材料参数不存在一致收敛的长时时序，文稿给出显式证明。一般流的长度上界仍开放。本独立项目已审计 1865 个声明，仅用标准公理。
+
+Material tangent motion on the Bernoulli expander
+In the clock given by the logarithmic loss of bending energy, the sharp uniform angular velocity of the pure-normal material tangents is 3/2 at every time, even after optimizing over a common rigid rotation. The energy-length product stays constant. Lean verifies the actual tangent, material rate and minimax constant. The note derives the label dynamics and the failure of uniform convergence along every sequence of unbounded times with fixed material labels. The general fourth-root length problem remains open. See Research/MaterialAngularClock/BernoulliMaterialTangents.md. The project audit covers 1865 declarations using only the standard axioms.
+
 One-sided angular motion at inflections
 The exact physical rate P is the positive part of the largest pairwise outward force-derivative difference among all curvature zeros with the indicated curvature-gradient signs. It is zero when there is no eligible pair. The Lean theorem proves that its integrability on one time tail implies fourth-root length growth for that solution. The verification includes the compact maximization, upper semicontinuity, continuous integrable majorization, the turning-flux identity and the high-record contradiction. Estimate (1) with its sharp initial variation constant, the resistance estimates (3)–(4), and the examples have written proofs in this note. The unrestricted fourth-root problem remains open. See Research/OneSidedTurning/OneSidedTurning.md.
 
