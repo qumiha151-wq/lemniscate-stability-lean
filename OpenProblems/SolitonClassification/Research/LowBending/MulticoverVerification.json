@@ -1,0 +1,78 @@
+{
+  "previous_declarations": 141737,
+  "audited_declarations": 141785,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "SolitonClassification.MulticoverIntegral",
+      "source_sha256": "1bcae15f2a50fe278eb8e82b73d2d8181dc3d6f8a48bf289483f7f6a0166a432",
+      "object_sha256": "42c7ea79089e424bee2f4e7883dcaf3a12da3b2b754f3374b2d729f2bb5ab47e",
+      "imports_sha256": {
+        "SolitonClassification.LowBendingArclength": "d9214d64bc82ea2241541b18f94f8a66beaf0af248faa6ee1b708deae9dd7458",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic": "974625ece8b0dfdf12caa97aeec1b9d3b9d63a00aecde6a59fe83e958a94f86b",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts": "4441c909b1e93e45b81f5a225242b9aa905060444af2e024e0a0db5564058730",
+        "Mathlib.Topology.ContinuousMap.Algebra": "f1a01da8eaf3f0fa67e1e73d6cbc78dd71b5ce58160d3922676315e7719854d3"
+      }
+    },
+    {
+      "module": "SolitonClassification.MulticoverPeriodic",
+      "source_sha256": "df0e08ec9c6d10ed77ee4caa99b3dd3a0629f8d4fa441dbaf764857b65152b33",
+      "object_sha256": "0d4e56a519937bbdd39be995942ba5f953d2ab801f4f4753ae5b4deceb8e20a7",
+      "imports_sha256": {
+        "SolitonClassification.MulticoverIntegral": "42c7ea79089e424bee2f4e7883dcaf3a12da3b2b754f3374b2d729f2bb5ab47e"
+      }
+    },
+    {
+      "module": "SolitonClassification.MulticoverRecord",
+      "source_sha256": "b2bb9d861cc701c2925649838cdb7dfd988ca0949ff3444f423cb32a977e1cf3",
+      "object_sha256": "7237c95525047d649af43fea60c0af050d990628aeee92a60ccd81becca7f3e3",
+      "imports_sha256": {
+        "SolitonClassification.MulticoverPeriodic": "0d4e56a519937bbdd39be995942ba5f953d2ab801f4f4753ae5b4deceb8e20a7"
+      }
+    },
+    {
+      "module": "SolitonClassification.MulticoverSigned",
+      "source_sha256": "eff603f20c8bcedc74a2c0f5d786ca28347568838744e9db309db597f5459872",
+      "object_sha256": "e75ef9256ad15a6a6152c59e033d3c03ab3092b7ccf67c25693e02ed60d99ffe",
+      "imports_sha256": {
+        "SolitonClassification.MulticoverRecord": "7237c95525047d649af43fea60c0af050d990628aeee92a60ccd81becca7f3e3",
+        "Mathlib.Analysis.Calculus.Deriv.Shift": "44cf4e413c6c59caccae9d64a53f0365808e676b8dd0de96e2fe2f917cdc1c59",
+        "Mathlib.Analysis.Calculus.ContDiff.Deriv": "c9e52cbc977a45d5e46b442415fd68aa4aade8ca5d9eb955b7dbc966264185a3"
+      }
+    },
+    {
+      "module": "SolitonClassification.MulticoverSlice",
+      "source_sha256": "451e6b82d580711070fa74d250737f5878a7f54fb6cd4abfa83ac807c5082162",
+      "object_sha256": "9bb4227202e411c9a40cc6f9e5e2075d92b8b7a1d5a62368dc579254577f1974",
+      "imports_sha256": {
+        "SolitonClassification.MulticoverSigned": "e75ef9256ad15a6a6152c59e033d3c03ab3092b7ccf67c25693e02ed60d99ffe",
+        "SolitonClassification.LowBendingArclength": "d9214d64bc82ea2241541b18f94f8a66beaf0af248faa6ee1b708deae9dd7458"
+      }
+    },
+    {
+      "module": "SolitonClassification.MulticoverCircles",
+      "source_sha256": "700e4c19fef93d3b05a9449a7cc153bbd4320f51cfa26db0daf5b77a72caad05",
+      "object_sha256": "974cb662d8583b159126479ef4a9de3c2d178b5b82e865afc6da4cc5ccb549ec",
+      "imports_sha256": {
+        "SolitonClassification.LowBendingCircles": "74b97e479bb3bf4a17502c410589e7a80d5ac83c0ed939e60922986fca119d54",
+        "SolitonClassification.MulticoverSlice": "9bb4227202e411c9a40cc6f9e5e2075d92b8b7a1d5a62368dc579254577f1974"
+      }
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "8040d324d6bbe697b779115705170ecd9f52943d20b89e2507d47208579eacaa",
+      "object_sha256": "60adc63fb89fc9f86b6bd5b135efc69c561f1f5395bd99f214d9a3113b188176",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 141785 declarations; standard axioms only.\n"
+    }
+  ]
+}
