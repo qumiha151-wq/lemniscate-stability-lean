@@ -1,3 +1,6 @@
+Each endpoint of whole-curve migration pays the larger of its absolute oriented area and the smoothing parameter times its squared directional width, in addition to the height-gap costs. Lean proves this two-time force bound directly in the original material coordinates, including the energy-only cost 4 delta/E^2 at each endpoint. For an arclength-parameterized endpoint its unregularized absolute height moment is at least 2W/E - 4/(3E^2). The transition to arbitrary material coordinates for that last bound is a written argument. See Research/AngularValidation/EndpointWidthTransit.md. Unrestricted whole-curve migration remains open.
+Migration audit passed: 1121 declarations; standard axioms only.
+
 The exact equiarclength angle equation reconstructs a regular curve with the intrinsic negative elastic force as physical normal velocity. Lean checks closure-displacement conservation, reconstruction and a finite-grid sufficient test for separation of entire curves. For a specific nonround closed example its five initial velocity harmonics are checked. Research/AngularValidation/AngularValidation.md gives the Fourier estimates and their scope. Whole-curve migration remains open.
 Migration audit passed: 1115 declarations; standard axioms only.
 
