@@ -13,6 +13,8 @@ Each individual band has finite action. For example, \(\nu_j(T)\to0\) suffices f
 
 The Lean project checks the [scale coefficient differentiation and local quadratic bounds](../../LengthGrowth/ActualFlow/StressScaleCurrent.lean), the [periodic integration by parts in the physical material parameter](../../LengthGrowth/ActualFlow/PhysicalAnnularFlux.lean), and the [two-sided band sum and its limit with constant 15](../../LengthGrowth/ActualFlow/StressAnnularTransfer.lean). The evolution of the corrected length and the passage between the time and scale limits in the argument below are written proofs.
 
+At a simple creation or annihilation of two inflections, the raw fourth-power band action diverges already in a small fixed spacetime neighborhood. The signed scale current instead has a finite atom of magnitude exactly \(2\pi\). [Local event measure and its normalization](CurvatureBirthFlux.md)
+
 ## An exact current in the regularization parameter
 
 Put \(R=(r^2+a^4)^{1/2}\), \(Q=k^2F_{ss}-2kpF_s\), and

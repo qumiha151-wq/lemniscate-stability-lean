@@ -4,11 +4,11 @@ Results checked through 27 November 2026
 
 本轮结果（2026年11月27日）
 
-• SolitonClassification：Lean 已验证从射击初值出发的正、负两个方向各连续16段，并验证了任意有限段的误差传递定理。若两条真实轨道满足指定的端点和导数误差，Lean 可推出一个切线角恰减 2π、曲率变号的光滑闭合旋转膨胀解。完整的8000段数值条件仍在核验。见 SolitonClassification/RotatingCertificate/IntegerWinding/Closure/ExactAngleClosure.md。
-• LengthGrowth：Lean 已证明，若某一条流违反四次根上界，它必须在同一个任意晚且任意高的能量长度乘积纪录上同时具有很大的正、负曲率。两侧幅度阈值可任取低于 (√17−1)/4 的均方根比例。另有单条实际流的弛豫时间后应力尺度估计，详见 LengthGrowth/Research/SaturationGeometry/TailStressTransfer.md（书面证明）。
+• SolitonClassification：对于一条切线角恰减 2π、曲率变号的闭合旋转膨胀曲线，Lean 已把所有解析与几何条件化为两张各4000段的有限整数表及指定首末行。两张表上全部8002个网格点的矩阵核验和四个首末行的相等性均已在本地通过。连接网格点的8000段轨道仍在逐段核验。见 SolitonClassification/RotatingCertificate/IntegerWinding/Closure/TwoVerifiedTapes.md。
+• LengthGrowth：Lean 已证明，若某一条流违反四次根上界，它必须在同一个任意晚且任意高的能量长度乘积纪录上同时具有很大的正、负曲率。两侧幅度阈值可任取低于 (√17−1)/4 的均方根比例。另有单条实际流的弛豫时间后应力尺度估计，详见 LengthGrowth/Research/SaturationGeometry/TailStressTransfer.md（书面证明）。 若一条流的弯曲能量趋于正数，则在每个时间尾段上都有越来越小的应力带承载至少固定量的四次方力作用。尺度系数、真实曲线上的空间分部积分和常数15的求和界均已由 Lean 核验。书面证明也给出一对拐点的简单产生或消失在有符号通量中的精确贡献 ±2π。见 LengthGrowth/Research/SaturationGeometry/DyadicForceFlux.md。
 • Migration：对一族薄的闭合膨胀解，真实演化在膨胀为三倍的时间内具有可定量证明的扰动放大。这是书面谱稳定性分析，尚未得到整条曲线跨过直线的实例。见 Migration/Research/ExteriorOptimalFit/ThinExpanderInstability.md。
 
-The general classification, fourth-root length bound and migration questions remain open. For the rotating seed, both signed 16-cell prefixes and the implication from the two arms' endpoint enclosures to a signed-turning-minus-one smooth closed immersion have passed Lean's kernel. LengthGrowth proves a necessary two-sided signed-curvature excursion at the same arbitrarily high late record. The single-flow stress-scale transfer bound and the spectral instability of thin expanders are written results.
+The three general questions remain open. The rotating seed has a full analytic and geometric reduction to two finite integer tapes. All 8002 node matrices and the four concrete endpoint identifications have passed local Lean checks. Individual polynomial cell checks continue. The length project also verifies the genuine spatial integration by parts and the discrete band estimate with coefficient 15. A simple inflection-pair birth or death carries a signed atom of mass ±2π by the written local spacetime argument.
 
 中文索引（各问题可独立验证）
 
