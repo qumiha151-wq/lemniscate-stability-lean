@@ -4,6 +4,8 @@ There is a smooth noncircular closed expander of the planar free elastic flow wi
 
 The proof combines real ball arithmetic and analytic ODE estimates. Lean verifies the six determinant signs and the existence of three real roots for every pair of matrices in the stated rational endpoint boxes. The Arb computations and the written argument establish that the true orbit and its derivatives satisfy the bounds, and establish the winding and the geometric conclusions. A floating-point continuation identified the candidate. The existence proof uses the frozen decimal centre independently of the path of continuation. [Lean theorem](../../SolitonClassification/Rotating/IntegerWindingPencil.lean) · [Project audit](IntegerWindingVerification.json)
 
+A subsequent Lean audit verifies the true degree-60 step on the entire candidate node box, the two first signed endpoints of the full shooting cube, and a least-period test for actual periodic supports. [Verified steps and scope](IntegerWindingStepVerification.md)
+
 ## The equation and exact shooting map
 
 Normalize dilation to one and centre at zero. Write \(T'=kN, N=JT, p=X\cdot N, q=X\cdot T, u=k'/8\). For pitch \(b\), position is reconstructed as \(X=qT+pN\), and its derivative is \(T\). The augmented field in the order \(x=(k,u,p,q,b,\theta)\) is

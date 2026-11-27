@@ -4,7 +4,7 @@
 
 两项结果合起来说明，即使限定总转角为零，膨胀曲线的图像也有无穷多种同胚类型。每条最小周期曲线的分支点总数有限，每个普通横截二重点都恰有四条局部分支，而这族曲线的分支点数无统一上界。分支点数在同胚下不变。确定光滑同痕分类还需要进一步论证。
 
-普通横截二重点数可以任意大的定理现已通过完整 Lean 核验，包括每点的精确原像数、两条切线的非零行列式和曲线的最短周期。主定理为 SolitonClassification/PrimitiveOrdinaryCrossings.lean。一般自交数上界及平面图像同胚类型的推论有书面证明。完整自相似解分类仍然开放。项目已核验 22709 个声明，仅用三个标准公理。
+普通横截二重点数可以任意大的定理现已通过完整 Lean 核验，包括每点的精确原像数、两条切线的非零行列式和曲线的最短周期。主定理为 SolitonClassification/PrimitiveOrdinaryCrossings.lean。一般自交数上界及平面图像同胚类型的推论有书面证明。完整自相似解分类仍然开放。项目已核验 22985 个声明，仅用三个标准公理。
 
 Self-intersections of closed similarity expanders
 
@@ -12,7 +12,7 @@ For normalized dilation coefficient one and least positive arclength period L, t
 
 The plane images thus have infinitely many homeomorphism types at turning number zero. Every primitive image has finitely many branch points. Each ordinary transverse double point has topological valence four, and the family has unboundedly many such points. Branch-point count is preserved by homeomorphisms. A smooth-isotopy classification would require additional arguments.
 
-Lean proves the unrestricted existence theorem for arbitrarily many ordinary transverse double points on primitive closed zero-turn homothetic expanders. The result includes the least positive position period, a distinct set of physical points, exact preimage multiplicity, and transversality of the two Cartesian velocities. See SolitonClassification/PrimitiveOrdinaryCrossings.lean. The global upper bound for arbitrary similarity expanders and the conclusion about homeomorphism types have written proofs. Complete classification of closed similarity profiles remains open. The project audit covers 22709 declarations using only the three standard axioms.
+Lean proves the unrestricted existence theorem for arbitrarily many ordinary transverse double points on primitive closed zero-turn homothetic expanders. The result includes the least positive position period, a distinct set of physical points, exact preimage multiplicity, and transversality of the two Cartesian velocities. See SolitonClassification/PrimitiveOrdinaryCrossings.lean. The global upper bound for arbitrary similarity expanders and the conclusion about homeomorphism types have written proofs. Complete classification of closed similarity profiles remains open. The project audit covers 22985 declarations using only the three standard axioms.
 
 For sufficiently large normalized centre slope b, the force at two simple inflections is respectively below -sqrt(b)/1200 and above sqrt(b)/1200. Closed zero-turn profiles realize arbitrarily large gaps at the same signed curvature. See Research/ReflectedScattering/ForceAtInflections.md.
 In every positive period, high-marker profiles realize a linearly growing number of distinct physical force magnitudes at zero curvature. Any fixed finite number of curvature-only functions fails to approximate this family to any fixed absolute tolerance. See SolitonClassification/FiniteForceLaw.lean.
@@ -421,3 +421,7 @@ Current independent integrated audit:9027 declarations; standard three axioms on
 区间运算和收缩证明给出一条真正旋转的闭合自由弹性流膨胀解。按适当方向遍历，曲线绕相似中心的指数为一，图像没有非平凡的欧氏对称。在完整支撑轨道始终位于指定小管内、旋转系数足够接近的解中，它是绝对绕心指数一的唯一形状。Lean 独立核验端点矩阵有理区间蕴含的六个行列式符号和三个实特征根；存在性、全轨道绕数与局部分类采用严格区间运算配合书面证明。完整分类仍然开放。
 
 A genuinely rotating closed expander has absolute centre winding one and trivial Euclidean symmetry group. It is the unique shape of absolute centre winding one at nearby pitches whose complete support orbit stays in the specified tube. The root and winding have an interval ODE and contraction certificate. Lean verifies the finite Floquet pencil bounds for every matrix pair in the stated boxes. See RotatingCertificate/IntegerWinding/IntegerRotatingWinding.md.
+
+绕心指数一的旋转剖面已有独立 Lean 单步核验。对于覆盖两个已归档网格参数范围的整盒，每个初态的真实方程、双向六十阶 Taylor 余项及其统一上界都已证明。原五参数闭立方内全部实参数在首个正步和负步的六坐标误差小于 1.097×10⁻³⁰。另已核验适用于实际四维周期剖面的最短周期下界与条件性素数抽检准则。完整八千步传递、变分矩阵和闭合根仍由区间运算配合书面证明给出。见 RotatingCertificate/IntegerWinding/IntegerWindingStepVerification.md。
+
+The independent Lean audit now includes both signed true Taylor steps on the winding-one node box, the varying first endpoints of its full shooting cube, a four-dimensional period bound and a finite least-period criterion. The full grid and shooting root retain their interval and analytic proof.

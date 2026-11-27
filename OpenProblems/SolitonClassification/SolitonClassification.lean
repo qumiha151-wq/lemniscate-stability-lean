@@ -1,3 +1,5 @@
+import SolitonClassification.Rotating.IntegerWindingFirstBox
+import SolitonClassification.Rotating.IntegerOrbitPeriod
 import SolitonClassification.Rotating.IntegerWindingPencil
 import SolitonClassification.PrimitiveOrdinaryCrossings
 import SolitonClassification.PrimitiveLengthFromCrossings
