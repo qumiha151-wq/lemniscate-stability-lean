@@ -4,20 +4,20 @@ noncomputable section
 open MeasureTheory Set Function
 namespace LengthGrowth.Multicover
 
-private theorem numerical_impossible {A V P : ℝ} (big : 7/4≤A) (cap : V≤6/5) (six : 6≤P)
-    (estimate : A^2≤V/P+V*Real.sqrt ((A^2+4*A+1)/2)) : False := by
-  let K := (A^2+4*A+1)/2
+private theorem numerical_impossible {A V P : ℝ} (big : 87/50≤A) (cap : V≤6/5) (six : 6≤P)
+    (estimate : A^2≤V/P+V*Real.sqrt ((A^2+4*A+1)/2+1/200)) : False := by
+  let K := (A^2+4*A+1)/2+1/200
   have kp : 0≤K := by dsimp [K]; nlinarith only [big,sq_nonneg A]
   have m : V/P≤1/5 := (div_le_iff₀ (by linarith)).mpr (by linarith)
   have h := mul_le_mul_of_nonneg_right cap (Real.sqrt_nonneg K)
   change A^2≤V/P+V*Real.sqrt K at estimate
   have first : 5*A^2-1≤6*Real.sqrt K := by linarith
-  have a2 : (7/4:ℝ)^2≤A^2 := pow_le_pow_left₀ (by norm_num) big 2
+  have a2 : (87/50:ℝ)^2≤A^2 := pow_le_pow_left₀ (by norm_num) big 2
   have z := pow_le_pow_left₀ (by nlinarith only [a2] : 0≤5*A^2-1) first 2
-  let x:=A-7/4
+  let x:=A-87/50
   have pos : 0≤x := sub_nonneg.mpr big
-  have poly : 0<25*A^4-28*A^2-72*A-17 := by
-    rw [show 25*A^4-28*A^2-72*A-17=25*x^4+175*x^3+(3451/8)*x^2+(5855/16)*x+1465/256 by dsimp[x];ring]
+  have poly : 0<25*A^4-28*A^2-72*A-859/50 := by
+    rw [show 25*A^4-28*A^2-72*A-859/50=25*x^4+174*x^3+(21307/50)*x^2+(446703/1250)*x+481561/250000 by dsimp[x];ring]
     positivity
   rw [mul_pow,Real.sq_sqrt kp] at z
   dsimp [K] at z
@@ -25,10 +25,10 @@ private theorem numerical_impossible {A V P : ℝ} (big : 7/4≤A) (cap : V≤6/
 
 def normalizedForce (u u₂ : Fn) : Fn := u₂+(1/2:ℝ) • (u^3)
 
-theorem strict_record (P : ℝ) (six : 6≤P) (u u₁ u₂ : Fn) (pu : Periodic u P) (pu₁ : Periodic u₁ P)
+theorem coercive_record (P : ℝ) (six : 6≤P) (u u₁ u₂ : Fn) (pu : Periodic u P) (pu₁ : Periodic u₁ P)
     (du : ∀t,HasDerivAt u (u₁ t) t) (du₁ : ∀t,HasDerivAt u₁ (u₂ t) t)
     (unit : mass P (u^2)=P) (posV : 0<mass P ((u-1)^2)) (cap : mass P ((u-1)^2)≤6/5) :
-    (1/2:ℝ)*mass P (u*normalizedForce u u₂)<mass P ((normalizedForce u u₂)^2) := by
+    (1/2:ℝ)*mass P (u*normalizedForce u u₂)+mass P ((u-1)^2)/1000<mass P ((normalizedForce u u₂)^2) := by
   by_contra! record
   let v : Fn := u-1
   let f := normalizedForce u u₂
@@ -53,18 +53,18 @@ theorem strict_record (P : ℝ) (six : 6≤P) (u u₁ u₂ : Fn) (pu : Periodic 
       nlinarith only [mul_nonneg (by linarith only [(abs_le.mp bound).1] : 0≤v t+A) (sq_nonneg (v t))])
     rw [map_smul,smul_eq_mul] at mono
     exact mono
-  change mass P (f^2)≤(1/2:ℝ)*mass P (u*f) at record
-  have resid : mass P (r^2)≤(4*A-7)*V := by dsimp only [V] at *; linarith only [identity,record,cub]
+  change mass P (f^2)≤(1/2:ℝ)*mass P (u*f)+V/1000 at record
+  have resid : mass P (r^2)≤(4*A-7+2/125)*V := by dsimp only [V] at *; linarith only [identity,record,cub]
   have rv := mass_sq_nonneg P hp.le r
-  have big : 7/4≤A := by
+  have big : 87/50≤A := by
     by_contra! small
-    have bad := mul_neg_of_neg_of_pos (by linarith : 4*A-7<0) posV
+    have bad := mul_neg_of_neg_of_pos (by linarith : 4*A-7+2/125<0) posV
     exact (not_lt_of_ge (rv.trans resid)) bad
   have nv : 0≤norm2 P v := Real.sqrt_nonneg _
-  have nr : norm2 P r≤(2*A-3)*norm2 P v := by
+  have nr : norm2 P r≤(2*A-3+1/50)*norm2 P v := by
     apply le_of_sq_le_sq _ (mul_nonneg (by linarith) nv)
     rw [mul_pow,norm_sq P hp.le r,norm_sq P hp.le v]
-    exact resid.trans (mul_le_mul_of_nonneg_right (by nlinarith only [sq_nonneg (A-2)]) posV.le)
+    exact resid.trans (mul_le_mul_of_nonneg_right (by nlinarith only [big,sq_nonneg (A-2)]) posV.le)
   let q : Fn := (2:ℝ) • v^3+(6:ℝ) • v^2+(5:ℝ) • v
   have nq : norm2 P q≤(2*A^2+6*A+5)*norm2 P v := by
     apply norm_pointwise P hp.le (by positivity)
@@ -81,7 +81,7 @@ theorem strict_record (P : ℝ) (six : 6≤P) (u u₁ u₂ : Fn) (pu : Periodic 
   have sub : (4:ℝ) • u₂=r-q := by ext t; simp [r,q,f,v,normalizedForce,smul_eq_mul];ring
   have mulnorm := norm_sub P hp.le r q
   rw [←sub,norm_smul P hp.le (by norm_num)] at mulnorm
-  let K := (A^2+4*A+1)/2
+  let K := (A^2+4*A+1)/2+1/200
   have d2 : norm2 P u₂ ≤ K*norm2 P v := by dsimp [K]; linarith only [mulnorm,nr,nq]
   have kp : 0≤K := by dsimp [K];positivity
   have pv : Periodic v P := fun t=>by simp [v,pu t]
@@ -99,6 +99,12 @@ theorem strict_record (P : ℝ) (six : 6≤P) (u u₁ u₂ : Fn) (pu : Periodic 
   have vv : norm2 P v*(Real.sqrt K*norm2 P v)=V*Real.sqrt K := by
     rw [show norm2 P v*(Real.sqrt K*norm2 P v)=(norm2 P v)^2*Real.sqrt K by ring,norm_sq P hp.le]
   exact left.trans_le (e.trans (add_le_add_right (bound.trans_eq vv) _))
+
+theorem strict_record (P : ℝ) (six : 6≤P) (u u₁ u₂ : Fn) (pu : Periodic u P) (pu₁ : Periodic u₁ P)
+    (du : ∀t,HasDerivAt u (u₁ t) t) (du₁ : ∀t,HasDerivAt u₁ (u₂ t) t)
+    (unit : mass P (u^2)=P) (posV : 0<mass P ((u-1)^2)) (cap : mass P ((u-1)^2)≤6/5) :
+    (1/2:ℝ)*mass P (u*normalizedForce u u₂)<mass P ((normalizedForce u u₂)^2) := by
+  linarith only [coercive_record P six u u₁ u₂ pu pu₁ du du₁ unit posV cap,posV]
 
 end LengthGrowth.Multicover
 #print axioms LengthGrowth.Multicover.strict_record
