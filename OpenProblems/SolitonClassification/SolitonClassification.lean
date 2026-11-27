@@ -1,3 +1,4 @@
+import SolitonClassification.Rotating.ResetFourActual
 import SolitonClassification.Rotating.OuterArmActualPeriod
 import SolitonClassification.Rotating.MaskedResetDigits
 import SolitonClassification.Rotating.WindingMiddleReset
