@@ -1,3 +1,4 @@
+import Migration.OrientedAreaTransit
 import Migration.RotatingRadius
 import Migration.ProjectedHeightTransit
 import Migration.PhysicalViewingAngle
