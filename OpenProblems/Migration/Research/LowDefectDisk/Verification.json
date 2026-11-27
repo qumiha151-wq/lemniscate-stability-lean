@@ -1,0 +1,43 @@
+{
+  "previous_audit": 1213,
+  "current_audit": 1252,
+  "compilations": [
+    {
+      "module": "Migration.LowDefectModes",
+      "source_sha256": "aa2f1c50522f9820ba3c834a972eb36c6b1012d6740ebcb774470a72a53f22f4",
+      "olean_sha256": "722e5a3a5f236b42ff37f5b090a681e0224ddd5943af3daefab1f2cc716a5b2a",
+      "log": "'MigrationGeometry.Flow.LowDefect.mass_bootstrap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.Flow.LowDefect.normal_weight' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.Flow.LowDefect.physical_margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectPhysicalDisk",
+      "source_sha256": "827a1389f7e395c47b5236259cb1950a9488aedc2849eda5ceddeb7c63c45d60",
+      "olean_sha256": "5bc919edc5b2c0c51430f9b7c8450da1d0a730e026acef4bfc42d0f89865f5da",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.earlier_ball_of_spatial_flux_moments' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectVirial",
+      "source_sha256": "20ead47fd0dcbf9c72b10bf9ab7b98e94f1137050d3a8069198438880e9d7644",
+      "olean_sha256": "844d584aa72803f6c79434cedb5838cb63526b279c3ac0c23ea64e05660eb8ae",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.centered_support_wirtinger' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectDiskComparison",
+      "source_sha256": "d8a6b06099fc2230646bc21c6b6bbe53d8229c92596657defbea90e559b2f425",
+      "olean_sha256": "be8991ab5b04e0cab71170f704578faf49ac69d07856cd9c7ecf453d2fe6af26",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.physical_disk_of_fourier_estimates' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "b5d42c7cbbb3210c1563cc12875e517e2f2db1bd8dbd54e226e1ec75c63829be",
+      "olean_sha256": "cdd59c29636c07e0185fa01e40282542ee11d1235b4cef8f327273c9b9a8b02b",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1252 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "Physical moment comparison, material arclength virial, scalar mode bounds and the time-integrated common disk. Derivation of the two snapshot Fourier estimates from arbitrary actual tangents is a written proof."
+}
