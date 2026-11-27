@@ -1,0 +1,98 @@
+{
+  "previous_declarations": 2318,
+  "audited_declarations": 2360,
+  "previous_root_sha256": "693a347c99a3bb46d55a0f563c1a48bf73f0772052d38dcfbd2881831b4d6726",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverIntegral",
+      "source_sha256": "73690298880983f2605ffa40ff5b37c1d2c7249709024960a6876eeb610948d6",
+      "olean_sha256": "6a1d9ad7de482b4feaf837092c9bd5af1ffb4f38b08d831dbc994af1ebc710eb",
+      "log": "",
+      "direct_imports_sha256": {
+        "LengthGrowth.IntervalL2": "a849041c73cdef365c354be8933139badc63b69f775cd6506d6bf787288a33d7",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic": "974625ece8b0dfdf12caa97aeec1b9d3b9d63a00aecde6a59fe83e958a94f86b",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts": "4441c909b1e93e45b81f5a225242b9aa905060444af2e024e0a0db5564058730",
+        "Mathlib.Topology.ContinuousMap.Algebra": "f1a01da8eaf3f0fa67e1e73d6cbc78dd71b5ce58160d3922676315e7719854d3"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverPeriodic",
+      "source_sha256": "1f137c960821ff39a68f9aa409077c90b99632b6904436f21f077a5b364cbb29",
+      "olean_sha256": "dddb369db12187729767ef87d263b81b2567422ac97714dca7176fbd46d498e5",
+      "log": "",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MulticoverIntegral": "6a1d9ad7de482b4feaf837092c9bd5af1ffb4f38b08d831dbc994af1ebc710eb"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverRecord",
+      "source_sha256": "690ad50366e1c9489d5b2e57fd0d265953484d5e1767a5522a6760fba39f31f3",
+      "olean_sha256": "f3129fa1ded70a5a6873a4f2fc3be96f432637501267cb87d8bc584537211266",
+      "log": "'LengthGrowth.Multicover.strict_record' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MulticoverPeriodic": "dddb369db12187729767ef87d263b81b2567422ac97714dca7176fbd46d498e5"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverSigned",
+      "source_sha256": "9760ce048384d3facdc427047fb3eeceab2ae871adec8a9daec21a1f9e2d17b7",
+      "olean_sha256": "86b5513ead882cb80b0237e7afbda5a94e3c003c2274cb4da4797f51ec124355",
+      "log": "'LengthGrowth.Multicover.strict_for_rms' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MulticoverRecord": "f3129fa1ded70a5a6873a4f2fc3be96f432637501267cb87d8bc584537211266",
+        "Mathlib.Analysis.Calculus.Deriv.Shift": "44cf4e413c6c59caccae9d64a53f0365808e676b8dd0de96e2fe2f917cdc1c59",
+        "Mathlib.Analysis.Calculus.ContDiff.Deriv": "c9e52cbc977a45d5e46b442415fd68aa4aade8ca5d9eb955b7dbc966264185a3"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverSlice",
+      "source_sha256": "c7d5c7e3fc657cce7c67a2025ccd9b1a6f510e349410b73a247870d2c75e98ad",
+      "olean_sha256": "6c4e8cccc63a32a9af40b438531f99f30e12079b97a333cd52d31c9dc2fd8ea0",
+      "log": "'LengthGrowth.ActualFlow.PeriodicRegularPosition.multicover_slice' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MulticoverSigned": "86b5513ead882cb80b0237e7afbda5a94e3c003c2274cb4da4797f51ec124355",
+        "LengthGrowth.ActualFlow.CriticalRMSAdapter": "7efb5ac0df144c703c02c4341bde83b4a471076fd067b1f90b3929389f03decf"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverFlow",
+      "source_sha256": "f1e22e8a10f2d5ee3597fc5e25ad2a9898a47a7bbca82b6f0f5686ebfc61bfa1",
+      "olean_sha256": "2d2c9f93844c5bfcc2df2437a7f3993fa851e4ab5d9cc1d6cd66daef6630d134",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.multicover_product_antitone' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.multicover_explicit_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MulticoverSlice": "6c4e8cccc63a32a9af40b438531f99f30e12079b97a333cd52d31c9dc2fd8ea0",
+        "LengthGrowth.ActualFlow.DefectFlowSublevel": "55bb01ea4f762dd2aa05eb00e3a8c0220ade5c293f46f6c47568528050e41852",
+        "LengthGrowth.ActualFlow.CubicHalfThreshold": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+        "LengthGrowth.ActualFlow.EventualCurvatureSign": "6e7199491bf30a653af202e1e84dbea0e4f2527b8a74fbaa6a77dda3acd2875e"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.MulticoverWinding",
+      "source_sha256": "f0a852e74c2baa5b7c467d06275a213e82d92a91e7fd8f53278a5c64d17cf542",
+      "olean_sha256": "41b5835a01d6ec1a2640e5bc99a460a85eb3d57c47375940e843b9823958c469",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.multicover_winding_sublevel' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MulticoverFlow": "2d2c9f93844c5bfcc2df2437a7f3993fa851e4ab5d9cc1d6cd66daef6630d134"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "cb0c3b20e6bf0bc2942bcd915cc72ba0795e836bf50f44e6c6703ec8282b9209",
+      "olean_sha256": "707ab8ae7838c6c3d9e026a39d0c2147de2c1da04bd763d7e17b97c284b7945d",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2360 declarations; standard axioms only.\n"
+    }
+  ]
+}
