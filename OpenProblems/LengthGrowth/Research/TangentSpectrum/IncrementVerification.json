@@ -1,0 +1,79 @@
+{
+  "previous_declarations": 2295,
+  "audited_declarations": 2318,
+  "previous_root_sha256": "189db0301d51bd5a180b7aad3caed08365351fb16b9e3d1f22cff5c25aa06260",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.TangentShift",
+      "source_sha256": "930ba5af0768168834afd3b37404eb0e0b65bce9edba79f086a8e96045f60773",
+      "olean_sha256": "5aa6ce2379ab3d613c451e841a9417663682c47cd6e2dc23626655b96e4b899a",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.increment_parseval' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentFourierMoment": "8130517ca4383f9e70259c83da4375aa085d42c830085810987e8a50d324423f",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic": "974625ece8b0dfdf12caa97aeec1b9d3b9d63a00aecde6a59fe83e958a94f86b"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentStructureEstimate",
+      "source_sha256": "0b8180cfb0abfbb30fe92375c3b2e79dc10d3be8178b77aaff5a258d046960cd",
+      "olean_sha256": "fdf8589e59047459052a8618c66d68e87bb9982a500ede55768a74923732f979",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.increment_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentShift": "5aa6ce2379ab3d613c451e841a9417663682c47cd6e2dc23626655b96e4b899a"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentFourthIncrement",
+      "source_sha256": "9107d55796f4b697d81eb2f51cb06dc383c1ada313287e14d0cb0b2f6f36d8e0",
+      "olean_sha256": "050750b3727f2e00c068f6f274f0ca7c7fd4ff36d9f2309b7160ae2f9a666fb6",
+      "exit": 0,
+      "log": "'LengthGrowth.TangentSpectrum.increment_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentStructureEstimate": "fdf8589e59047459052a8618c66d68e87bb9982a500ede55768a74923732f979",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds": "db312b8cac9b48885647c21b94e69583768e64f92a43a0532758c23ffa1e010d"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentPhysicalIncrement",
+      "source_sha256": "8fe0e0553bcd33649fe1eaffc864c8b519b7d729b1047b92d6ffa0c967a405d5",
+      "olean_sha256": "cf1c5ee986640815d29692220b4dbd4aae792cfc6ec5c169915327d6b71d1ded",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.small_lags_at_high_records' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentFourthIncrement": "050750b3727f2e00c068f6f274f0ca7c7fd4ff36d9f2309b7160ae2f9a666fb6",
+        "LengthGrowth.ActualFlow.TangentTailEquivalence": "cf6e5bd340eff47eb9cd5a7b4a11df9641b5e683c1b7b92dcec34628c0176e18"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.TangentIncrementCriterion",
+      "source_sha256": "9091618654d96e2ce92a0c1ac57654aa797b0d389e694fbe741e3d23caa637e3",
+      "olean_sha256": "ed9e4b9a033d72667e799894a70bec8fce4716f8e6950bb4f95c511eef57252b",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_iff_vanishing_tangent_increments' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.TangentPhysicalIncrement": "cf1c5ee986640815d29692220b4dbd4aae792cfc6ec5c169915327d6b71d1ded"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "693a347c99a3bb46d55a0f563c1a48bf73f0772052d38dcfbd2881831b4d6726",
+      "olean_sha256": "6a372fc43e3b1bdec27d7239054c71e13613176bf0b60d6c3d9106c34cd939cb",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2318 declarations; standard axioms only.\n"
+    }
+  ]
+}

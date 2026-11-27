@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.TangentIncrementCriterion
 import LengthGrowth.ActualFlow.TangentTailEquivalence
 import LengthGrowth.ActualFlow.DefectSharpLengthLimit
 import LengthGrowth.ActualFlow.DefectAttraction
