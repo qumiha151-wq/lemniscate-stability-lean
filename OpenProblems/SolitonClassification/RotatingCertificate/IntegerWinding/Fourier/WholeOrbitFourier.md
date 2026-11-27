@@ -23,3 +23,5 @@ Every node enclosure excludes zero in every coordinate. For each coordinate and 
 The fixed integer Fourier data were obtained by numerical fitting, then checked independently of that fit. The proof uses exact integer arithmetic, interval evaluation, and the prior analytic shooting certificate. These global counts have not been independently replayed in the Lean kernel. They classify the features of this particular primitive orbit.
 
 The same certified whole-period enclosure gives exactly two ordinary transverse double points. [Complete self-intersection count](DoublePoints.md)
+
+For every sufficiently large turning number there is a genuinely rotating primitive closed expander with quadratically many ordinary transverse double points. [Family theorem](RotatingDoublePointFamilies.md)

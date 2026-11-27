@@ -13,6 +13,10 @@ def main():
         path=Path(folder)/"reference.json"
         path.write_bytes((json.dumps(data,separators=(",",":"))+"\n").encode())
         report=checks(path,here.parent/"center.json")
+        from caps import cap_check
+        cap=cap_check(path,report)
+        assert cap["unique_critical_cell"]==49217
+        print("Unique outer cap, angular separation in turns > 1/200")
         from crossings import count
         for mesh,num in ((32768,42),(49152,45)):
             result=count(path,mesh)
