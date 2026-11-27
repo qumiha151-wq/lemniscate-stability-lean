@@ -1,0 +1,46 @@
+{
+  "base_declarations": 2211,
+  "audit_declarations": 2216,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.DefectLengthSpeed",
+      "source_sha256": "bb1425686f3fb06e8323c63f5eed471520e72c0b99c56b30437f7fe220442a6b",
+      "olean_sha256": "d4c86c38801a45df146b2bf104f86098458aad9a1f3e2c740e78071e328c219a",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.physical_speed_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectLengthWindow",
+      "source_sha256": "3b11e97aa49542b18f3bdf2648f10301136f2fd335053685074b215eb6e43e4a",
+      "olean_sha256": "2d81f185f8503cb9808bbcfe77aa52d547035435ed377bfba9e03f47582e97e3",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.length_fourth_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectSharpLengthLimit",
+      "source_sha256": "0297b01cdc2bf90ec3517d0811e100b957d518768d341f38796bae6f7a44dbd4",
+      "olean_sha256": "406e3c3a3dea4814c57efa18066788c80f36a252dc1066f3471f5ed7a2826659",
+      "exit": 0,
+      "log": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n'LengthGrowth.ActualFlow.ForwardImmersion.sharp_length_fourth_limit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "3f6f73d22985afda75f89282b586bea110de1b2e8ac0bb0c794caa8581980d45",
+      "olean_sha256": "549e78e85c47620311c742e4ed6f377c6e55d2ca718846aeb247c476a72e8ab7",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2216 declarations; standard axioms only."
+    }
+  ]
+}

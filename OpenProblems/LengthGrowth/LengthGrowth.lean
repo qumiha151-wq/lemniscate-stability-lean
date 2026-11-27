@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.DefectSharpLengthLimit
 import LengthGrowth.ActualFlow.DefectAttraction
 import LengthGrowth.ActualFlow.DefectExplicitLength
 import LengthGrowth.ActualFlow.DefectCenteredCurvature

@@ -1,3 +1,5 @@
+长度的精确首项已完成端到端形式化：初始弯曲乘积至多 4π²+36 的每条真实流均满足 L(t)^4/t→32π⁴，与膨胀圆的常数相同。定理见 LengthGrowth/LengthGrowth/ActualFlow/DefectSharpLengthLimit.lean。
+
 在初始弯曲乘积不超过 4π²+36 时，归一化弯曲亏损趋于零已有端到端 Lean 证明。借助已有小振荡定理，书面证明给出 L(t)^4/t→2(2π)^4；这一范围内，物理平面中的任意给定紧集最终都被凸包含住。两个问题分列在 LengthGrowth 与 Migration。
 
 分类方程的初始弯曲乘积阈值 4π²+36 已在独立的 SolitonClassification 项目端到端形式化。结论给出实际坐标中的单覆盖圆参数式。LengthGrowth 对相同阈值的四次根上界另有独立验证。
