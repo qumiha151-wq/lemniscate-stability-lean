@@ -1,3 +1,9 @@
+只在创造增长纪录时计入拐点预算
+对每条给定的闭合自由弹性流和任意固定正时间 T，Lean 验证了等价判据。长度具有四次根上界，当且仅当存在阈值 H，使能量与长度的乘积超过 H 并继续创造新高时，拐点斜率所对应的实际有向积分上界具有有限的时间预算。恒定的乘积不会使用这份预算。曲率零点处的斜率求和识别另见书面证明。独立长度项目审核了 2053 个声明，使用标准公理。
+
+The increasing-record nodal budget
+For every fixed positive starting time the per-flow fourth-root bound is equivalent to finiteness of the nodal allowance above some threshold on increasing running records. Lean uses the one-dimensional change-of-variables formula on the time set where the energy-length product is monotone. The equivalence does not yet prove that every trajectory has such a finite budget. See Research/SaturationGeometry/NodalRecordEquivalence.md.
+
 拐点处曲率斜率与四次根增长
 对真实闭流的每个正时刻，Lean 验证了能量与长度乘积的增长公式，其中有向曲率矩提供正项，三项非负亏损从中扣除。另一项上界直接使用曲率零点附近的平滑化积分。任一上界在正时间尾部可积，即可推出四次根长度与能量估计。将有向积分识别为所有拐点处曲率斜率绝对值之和，以及只计增长纪录时段的判据，另有书面证明。独立长度项目审核了 2046 个声明，使用标准公理。
 
