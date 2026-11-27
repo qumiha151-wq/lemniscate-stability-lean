@@ -1,0 +1,136 @@
+import SolitonClassification.Rotating.ResetNodeMinus00
+import SolitonClassification.Rotating.ResetNodeMinus01
+import SolitonClassification.Rotating.ResetNodeMinus02
+import SolitonClassification.Rotating.ResetNodeMinus03
+import SolitonClassification.Rotating.ResetNodeMinus04
+import SolitonClassification.Rotating.ResetNodeMinus05
+import SolitonClassification.Rotating.ResetNodeMinus06
+import SolitonClassification.Rotating.ResetNodeMinus07
+import SolitonClassification.Rotating.ResetNodeMinus08
+import SolitonClassification.Rotating.ResetNodeMinus09
+import SolitonClassification.Rotating.ResetNodeMinus10
+import SolitonClassification.Rotating.ResetNodeMinus11
+import SolitonClassification.Rotating.ResetNodeMinus12
+import SolitonClassification.Rotating.ResetNodeMinus13
+import SolitonClassification.Rotating.ResetNodeMinus14
+import SolitonClassification.Rotating.ResetNodeMinus15
+import SolitonClassification.Rotating.ResetNodeMinus16
+import SolitonClassification.Rotating.ResetNodeMinus17
+import SolitonClassification.Rotating.ResetNodeMinus18
+import SolitonClassification.Rotating.ResetNodeMinus19
+import SolitonClassification.Rotating.ResetNodeMinus20
+import SolitonClassification.Rotating.ResetNodeMinus21
+import SolitonClassification.Rotating.ResetNodeMinus22
+import SolitonClassification.Rotating.ResetNodeMinus23
+import SolitonClassification.Rotating.ResetNodeMinus24
+import SolitonClassification.Rotating.ResetNodeMinus25
+import SolitonClassification.Rotating.ResetNodeMinus26
+import SolitonClassification.Rotating.ResetNodeMinus27
+import SolitonClassification.Rotating.ResetNodeMinus28
+import SolitonClassification.Rotating.ResetNodeMinus29
+import SolitonClassification.Rotating.ResetNodeMinus30
+import SolitonClassification.Rotating.ResetNodeMinus31
+import SolitonClassification.Rotating.ResetNodeMinus32
+import SolitonClassification.Rotating.ResetNodeMinus33
+import SolitonClassification.Rotating.ResetNodeMinus34
+import SolitonClassification.Rotating.ResetNodeMinus35
+import SolitonClassification.Rotating.ResetNodeMinus36
+import SolitonClassification.Rotating.ResetNodeMinus37
+import SolitonClassification.Rotating.ResetNodeMinus38
+import SolitonClassification.Rotating.ResetNodeMinus39
+import SolitonClassification.Rotating.ResetNodeMinus40
+import SolitonClassification.Rotating.ResetNodeMinus41
+import SolitonClassification.Rotating.ResetNodeMinus42
+import SolitonClassification.Rotating.ResetNodeMinus43
+import SolitonClassification.Rotating.ResetNodeMinus44
+import SolitonClassification.Rotating.ResetNodeMinus45
+import SolitonClassification.Rotating.ResetNodeMinus46
+import SolitonClassification.Rotating.ResetNodeMinus47
+import SolitonClassification.Rotating.ResetNodeMinus48
+import SolitonClassification.Rotating.ResetNodeMinus49
+import SolitonClassification.Rotating.ResetNodeMinus50
+import SolitonClassification.Rotating.ResetNodeMinus51
+import SolitonClassification.Rotating.ResetNodeMinus52
+import SolitonClassification.Rotating.ResetNodeMinus53
+import SolitonClassification.Rotating.ResetNodeMinus54
+import SolitonClassification.Rotating.ResetNodeMinus55
+import SolitonClassification.Rotating.ResetNodeMinus56
+import SolitonClassification.Rotating.ResetNodeMinus57
+import SolitonClassification.Rotating.ResetNodeMinus58
+import SolitonClassification.Rotating.ResetNodeMinus59
+import SolitonClassification.Rotating.ResetNodeMinus60
+import SolitonClassification.Rotating.ResetNodeMinus61
+import SolitonClassification.Rotating.ResetNodeMinus62
+namespace SolitonClassification.Rotating.DyadicReset.GridMinus
+noncomputable section
+set_option Elab.async false
+set_option maxRecDepth 200000
+set_option maxHeartbeats 10000000
+def chunk : ℕ→Array Node
+  | 0=>NodeMinus00.nodes
+  | 1=>NodeMinus01.nodes
+  | 2=>NodeMinus02.nodes
+  | 3=>NodeMinus03.nodes
+  | 4=>NodeMinus04.nodes
+  | 5=>NodeMinus05.nodes
+  | 6=>NodeMinus06.nodes
+  | 7=>NodeMinus07.nodes
+  | 8=>NodeMinus08.nodes
+  | 9=>NodeMinus09.nodes
+  | 10=>NodeMinus10.nodes
+  | 11=>NodeMinus11.nodes
+  | 12=>NodeMinus12.nodes
+  | 13=>NodeMinus13.nodes
+  | 14=>NodeMinus14.nodes
+  | 15=>NodeMinus15.nodes
+  | 16=>NodeMinus16.nodes
+  | 17=>NodeMinus17.nodes
+  | 18=>NodeMinus18.nodes
+  | 19=>NodeMinus19.nodes
+  | 20=>NodeMinus20.nodes
+  | 21=>NodeMinus21.nodes
+  | 22=>NodeMinus22.nodes
+  | 23=>NodeMinus23.nodes
+  | 24=>NodeMinus24.nodes
+  | 25=>NodeMinus25.nodes
+  | 26=>NodeMinus26.nodes
+  | 27=>NodeMinus27.nodes
+  | 28=>NodeMinus28.nodes
+  | 29=>NodeMinus29.nodes
+  | 30=>NodeMinus30.nodes
+  | 31=>NodeMinus31.nodes
+  | 32=>NodeMinus32.nodes
+  | 33=>NodeMinus33.nodes
+  | 34=>NodeMinus34.nodes
+  | 35=>NodeMinus35.nodes
+  | 36=>NodeMinus36.nodes
+  | 37=>NodeMinus37.nodes
+  | 38=>NodeMinus38.nodes
+  | 39=>NodeMinus39.nodes
+  | 40=>NodeMinus40.nodes
+  | 41=>NodeMinus41.nodes
+  | 42=>NodeMinus42.nodes
+  | 43=>NodeMinus43.nodes
+  | 44=>NodeMinus44.nodes
+  | 45=>NodeMinus45.nodes
+  | 46=>NodeMinus46.nodes
+  | 47=>NodeMinus47.nodes
+  | 48=>NodeMinus48.nodes
+  | 49=>NodeMinus49.nodes
+  | 50=>NodeMinus50.nodes
+  | 51=>NodeMinus51.nodes
+  | 52=>NodeMinus52.nodes
+  | 53=>NodeMinus53.nodes
+  | 54=>NodeMinus54.nodes
+  | 55=>NodeMinus55.nodes
+  | 56=>NodeMinus56.nodes
+  | 57=>NodeMinus57.nodes
+  | 58=>NodeMinus58.nodes
+  | 59=>NodeMinus59.nodes
+  | 60=>NodeMinus60.nodes
+  | 61=>NodeMinus61.nodes
+  | 62=>NodeMinus62.nodes
+  | _=>#[]
+def atNode (i : ℕ) : Node := ((chunk (i/64))[i%64]?).getD #[]
+end
+end SolitonClassification.Rotating.DyadicReset.GridMinus

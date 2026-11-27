@@ -1,3 +1,5 @@
+All 8002 concrete point-matrix bounds in the two signed winding-one grids and all four initial and terminal row equalities now pass the independent project audit (56965 declarations, standard axioms only). The trajectory checks between the nodes are ongoing. See RotatingCertificate/IntegerWinding/DyadicReset/CompletePointGrids.md.
+
 在一个支持周期的径向层恰有两臂、相位差达到 1/200 圈且满足横截条件时，Lean 验证分母为 d 的旋转闭合轨道在完整半开物理周期内至少有 d⌊d/200⌋ 个不同的普通双点。每一点恰有两个参数原像，真实速度不平行。
 Lean checks a set of d floor(d/200) distinct, exactly twofold transverse image points on the half-open arclength period for a differentiable profile with coprime holonomy and a two-arm radial shell satisfying the phase-width and transversality hypotheses. See RotatingCertificate/IntegerWinding/ArmMultiplicity/OuterArmMultiplicity.md.
 SolitonClassification audit: 25213 declarations, standard axioms only.
