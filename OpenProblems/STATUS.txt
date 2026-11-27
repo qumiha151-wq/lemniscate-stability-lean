@@ -237,6 +237,12 @@ Migration/: scalar one-sided homothetic migration criterion. No existence
   components; zero defect is equivalent to the actual dilation-profile
   equation. No integral identities are assumed. These are spatial results;
   the dynamic migration/nonmigration problem remains unresolved.
+  For every finite Bernoulli cover and every 0 < r < sqrt(2)/4, a small
+  intrinsic initial curvature-profile deviation guarantees a fixed center p.
+  Every smooth physical solution from that initial curve has the closed disk
+  of radius r*(a^4+30*t)^(1/4) about p in its convex hull for all t >= 0.
+  Here a is initial length divided by reference cover length. Any two slices
+  share a positive disk. See Migration/BernoulliBridge/Verification.json.
 SolitonClassification/: independent support-function ODE and actual geometric
   reconstruction. The reviewed analytic note reduces all noncircular similarity
   motions to fixed-center spiral expanders, but does not classify their profiles.
