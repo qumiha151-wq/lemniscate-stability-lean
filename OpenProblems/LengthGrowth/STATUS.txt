@@ -1,3 +1,6 @@
+在初始弯曲乘积不超过 4π²+36 时，真实单条流的归一化弯曲亏损保持非负并趋于零。Lean 已核验实际弧长下的定量耗散和从初始几何到极限零的结论。结合已有小振荡定理可推出长度的精确首项，见 Research/BendingSublevel/QuantitativeCircularization.md。
+Length-growth audit passed: 2211 declarations; standard axioms only.
+
 初始乘积 U(0)=L(0)∫k²ds≤4π²+36 时，单条真实自由弹性流的归一化弯曲乘积不增。Lean 已从实际曲线、闭合性与演化方程推到显式界 L(t)≤max{2L(0),(4U(0)²t)^(1/4)}，包括阈值等号。见 Research/BendingSublevel/DefectThirtySix.md。
 Length-growth audit passed: 2179 declarations; standard axioms only.
 

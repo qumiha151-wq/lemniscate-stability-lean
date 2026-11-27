@@ -1,0 +1,53 @@
+{
+  "base_declarations": 2179,
+  "audit_declarations": 2211,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.DefectQuantitative",
+      "source_sha256": "f632da0fcc6de3a389df819a9f0ee793b02ac78a76efc7ba3b79a59d69f20640",
+      "olean_sha256": "142c1e437f3cb3c506453db98cc053f52281710a64c412611724768bb2e4dec8",
+      "exit": 0,
+      "log": "'LengthGrowth.BendingSublevel.quadratic_rate' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectNormalizedRate",
+      "source_sha256": "9047f71765b461188c28bad9099c4431a15fdf094d1f5ed650e584368a09076a",
+      "olean_sha256": "2ac72681121019bb5705707bd8fc527b9db45019531d84cd19b1ff10cf9f2bcd",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.normalized_positive_turn_quadratic' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectPhysicalRate",
+      "source_sha256": "aff0b76ef9451ad1b1809fd55df9372c62e9ea478c13e9fe950167233b28106d",
+      "olean_sha256": "d7d52141976d112e9c41cc74d3fc3f1bdc4a25cfb2aae0b0f49d5d7f9f01226b",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.quantitative_bending_gap' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectAttraction",
+      "source_sha256": "6465c85460de34c8148e7ac8b96bcf0d47ff9ca45d92c8202257f1b7c830dbd4",
+      "olean_sha256": "d745b35960ab1e00abb3c5275e6ac70ecc757949f67a953248157373e53372a4",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.bending_defect_tendsto_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "b3d85a16a730a9a6e6855549adade3cfe7e39c7e931b110fec4c239e62bcccd4",
+      "olean_sha256": "a427de27c8e739f096c19d680dce1870b2c6c03faeff210d8e8f4e93a51f1c17",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2211 declarations; standard axioms only."
+    }
+  ]
+}
