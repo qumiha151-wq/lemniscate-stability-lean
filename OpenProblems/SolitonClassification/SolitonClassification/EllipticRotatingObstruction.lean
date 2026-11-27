@@ -1,4 +1,4 @@
-import SolitonClassification.MeromorphicClosedProfile
+import SolitonClassification.CountableCurvatureClassification
 import SolitonClassification.Rotating.IntegerFinalDoublePoints
 
 noncomputable section
@@ -74,6 +74,23 @@ theorem exists_nonelliptic_two_crossing_solution :
   obtain ⟨P,hP⟩:=exists_primitive_two_double_point_evolution
   exact ⟨P,hP,genuinely_rotating_curvature_not_elliptic hP.evolution⟩
 
+/-- Even excising a closed countable family of nonreal arclengths cannot give
+the rotating example a single-valued meromorphic continuation. -/
+theorem genuinely_rotating_curvature_no_countable_trace {P : Seed} (ev : PrimitiveEvolution P) :
+    ¬CountableExceptionalTrace P.I.k := by
+  intro traceH
+  obtain ⟨p,hk⟩:=(frenetSeed P).exists_centered_profile_with_curvature 1 P.b 0 0 (seed_shape P)
+  have tr : CountableExceptionalTrace p.k := hk ▸ traceH
+  have m:=(countable_exceptional_trace_iff_global p (frenetSeed P).period_pos).mp tr
+  rw [hk] at m
+  exact genuinely_rotating_curvature_not_meromorphic ev m
+
+theorem exists_two_crossing_solution_no_countable_trace :
+    ∃P : Seed, DoublePointEvolution P ∧ ¬CountableExceptionalTrace P.I.k := by
+  obtain ⟨P,hP⟩:=exists_primitive_two_double_point_evolution
+  exact ⟨P,hP,genuinely_rotating_curvature_no_countable_trace hP.evolution⟩
+
 end SolitonClassification.Rotating.IntegerTarget.Physical
 #print axioms SolitonClassification.Rotating.IntegerTarget.Physical.exists_nonelliptic_two_crossing_solution
+#print axioms SolitonClassification.Rotating.IntegerTarget.Physical.exists_two_crossing_solution_no_countable_trace
 
