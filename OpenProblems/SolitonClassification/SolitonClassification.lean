@@ -1,3 +1,5 @@
+import SolitonClassification.Rotating.MaskedResetDigits
+import SolitonClassification.Rotating.WindingMiddleReset
 import SolitonClassification.Rotating.IntegerWindingFirstBox
 import SolitonClassification.Rotating.IntegerOrbitPeriod
 import SolitonClassification.Rotating.IntegerWindingPencil

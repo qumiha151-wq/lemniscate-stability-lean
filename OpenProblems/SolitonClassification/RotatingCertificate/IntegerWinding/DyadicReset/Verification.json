@@ -1,0 +1,47 @@
+{
+  "prior_count": 22985,
+  "audit_count": 23165,
+  "compilations": [
+    {
+      "module": "SolitonClassification.Rotating.DyadicResetDigits",
+      "source_sha256": "cf3a063b9b5552376aae55179d479536e85c681108363d5425b15b4838e8a428",
+      "olean_sha256": "cdf1698cd02f5eba3014a38dc046b05cf116036d1605d27e8bce5f0435480368",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.DyadicReset.packed_l1' depends on axioms: [propext, Quot.sound]\n'SolitonClassification.Rotating.DyadicReset.pack_times' depends on axioms: [propext]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.MaskedResetDigits",
+      "source_sha256": "e5732efa9b87ecf2373b1660e66b52f667c5af1bd251a9461c70a3112576adec",
+      "olean_sha256": "e4fec411ae7035c04508391d36c86209bd92b01877b90ade686909bec0977c09",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.DyadicReset.mask_l1' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.WindingMiddleReset",
+      "source_sha256": "1c199b82d88a7f1cd265a4f6474124d2a70caa57c68f5f88b16faa384beb3b0d",
+      "olean_sha256": "e4234a069704ceaabde9d86880ff100ab24bb68224e7bad1aeedf55dd34bc540",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.DyadicReset.Middle.all_residuals' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "5bf78e9873b61ee631b82c2729eb4fd21aa5313611edafaad810abbb0eeef2dc",
+      "olean_sha256": "6fad732c7464d1fe8257891c4fb7aae1cde13588c260056c599f193efe2a812c",
+      "log": "",
+      "exit": 0
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "olean_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 23165 declarations; standard axioms only.\n",
+      "exit": 0
+    }
+  ],
+  "uncompressed_tape_sha256": {
+    "plus4000.jsonl": "e2bd31bea9164341649fff8b88ac9b8f015e11cc3ef82917068bae3c3b5c2ad1",
+    "minus4000.jsonl": "e05f2c7e7e4ea007e1bfd06cd46587db1209ba56b2eab4e944791fe66bd2c33f"
+  },
+  "seed_sha256": "a9a7437981ea8251a0050e32260c727c5637d6c69621ba08d234983cdc03a98b",
+  "scope": "Both complete state and variational reset tapes and their node tests use exact external integer arithmetic. Lean verifies the general signed-base polynomial encoding and the concrete midpoint cell from index 2000 to 2001 of the positive tape. A full ODE-shooting Lean proof is pending."
+}
