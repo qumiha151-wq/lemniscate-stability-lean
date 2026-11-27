@@ -1,0 +1,45 @@
+{
+  "previous_declarations": 2810,
+  "audited_declarations": 2815,
+  "previous_root_sha256": "6a845fde9c0bb2a91fa1c8958a1867d5d7ad938602d586039ade88241dd08d09",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.RecordDissipationSpike",
+      "source_sha256": "0a47e40e72d04530f417d9515cb8c67f1a9ae8ce6e705b9bdf300b98e4934cc5",
+      "olean_sha256": "1f35af8fb25f528d9d4501ff54979ce6417d4eb34fff4ac1adcf365f7910839b",
+      "log": "'LengthGrowth.Multicover.Trigonometric.prescribed_trigonometric_force_fraction' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.sweptArea_record_log_energy_slope' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.RecordSweptAreaDuration": "3c7dd367f823fde7a54e0a47655983e7ba0d4c0eb93a857f8f45cfa994888838",
+        "LengthGrowth.ActualFlow.TrigonometricPhysicalRate": "292137a89e6d3cbbaa5560ebca5969f67c0db01eb4321c88367f1977fba5f96e"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.RecordEnergyWindow",
+      "source_sha256": "d89810cea443cea9dd2119ae404e7fb8f280d8fd6c3abda29f8d91fb8ebc0fc2",
+      "olean_sha256": "c1e04de1ceddf3b9c2e52139ddbbe790a1a03ae10c029ed3b384791e3b3ae560",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.regularly_varying_short_window' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.RecordDissipationSpike": "1f35af8fb25f528d9d4501ff54979ce6417d4eb34fff4ac1adcf365f7910839b"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "642ca795b06c13329e6e2e220d3bfa6e3bb7e421f07b5caf916317b670a59e72",
+      "olean_sha256": "cd4eb4111e86903465c1be37e07063462407c858b7dc2a5ec27b5d436869dec6",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2815 declarations; standard axioms only.\n"
+    }
+  ]
+}

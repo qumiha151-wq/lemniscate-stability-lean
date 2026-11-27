@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.RecordEnergyWindow
 import LengthGrowth.ActualFlow.RecordCommutatorWord
 import LengthGrowth.ActualFlow.RecordSweptAreaDuration
 import LengthGrowth.ActualFlow.MulticoverOptimalOrder
