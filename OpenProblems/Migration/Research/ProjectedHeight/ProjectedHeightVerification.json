@@ -1,0 +1,43 @@
+{
+  "base_declarations": 746,
+  "audit_declarations": 768,
+  "audit_log": "Migration audit passed: 768 declarations; standard axioms only.",
+  "verified_baseline_source_object_pairs": 68,
+  "fresh_compilations": [
+    {
+      "module": "Migration.ProjectedHeightEvolution",
+      "source_sha256": "638269fd308647768b4c701676f4b45c8429a79bf38d9a02a21f9bc3481e88d7",
+      "olean_sha256": "e3f72e9fe5c9df1aa7639b02d9bbf39ffec4f5c59f10267224c1ebd745d89433",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.projectedHeight_evolution' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ProjectedHeightTransit",
+      "source_sha256": "26c1ee9b9b57333a7a666a92c1fcdaf3f9eab29fb06e2a202ba1313dbcd72f8a",
+      "olean_sha256": "e73dc3ae41feeb09ea54ef58460ffd3590c863db00dfbcf809af9f3dfcb826b4",
+      "exit": 0,
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.projectedHeight_separation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "d24e0bb3dd4797d4854426baa0a57c544f36097f9e1603b5a1834924aec62727",
+      "olean_sha256": "683edb153511a2a3ee8896f2e3082d48c6495e36bf51cef17d928f7bad7133ab",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 768 declarations; standard axioms only.\n"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+}
