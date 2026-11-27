@@ -24,8 +24,13 @@ structure CentreChart (H E b₀ : ℝ) where
       0<(eps b:ℝ) ∧ ReflectedArc.RadialLayer.eps (solution 1 ![0,(b:ℝ),0,0]) s=eps b ∧
       height x= -H ∧ sectionImpact x=transverse b ∧ hasAngle x (angle b)
 
-theorem CentreChart.closes {H E b₀ : ℝ} (c : CentreChart H E b₀) (w : WindingChart H E) :
-    ∀ B ≥ b₀, ∃ b ≥ B, ∃ L > (0:ℝ), Nonempty (ZeroTurnExpander L b) := by
+/-- The winding argument produces matching chart parameters above every
+prescribed centre marker. Both chart coordinates and the winding index refer
+to this same match. -/
+theorem CentreChart.arbitrarily_large_matches {H E b₀ : ℝ}
+    (c : CentreChart H E b₀) (w : WindingChart H E) (B : ℝ) (hB : b₀≤B) :
+    ∃ b : Ici b₀, B≤(b:ℝ) ∧ ∃ z : ChartDomain E, ∃ n : ℕ,
+      z.2=c.eps b ∧ c.angle b=w.angle z+n*(2*Real.pi) ∧ c.transverse b=w.transverse z := by
   let i (b : ℝ) : Ici b₀ := ⟨max b₀ b,show b₀ ≤ max b₀ b from le_max_left b₀ b⟩
   have ci : Continuous i := (continuous_const.max continuous_id).subtype_mk _
   let y := projIcc (-1/4:ℝ) 1 (by norm_num)
@@ -56,16 +61,19 @@ theorem CentreChart.closes {H E b₀ : ℝ} (c : CentreChart H E b₀) (w : Wind
       have pos : y 1 = rightCurvature := Subtype.ext (by simp [y,rightCurvature])
       change _ < w.transverse (y 1,_)
       rw [pos]; linarith)
-  intro B hB
   obtain ⟨b,bb,k,_,n,angle,hit⟩ := cycle B hB
-  let q := i b
-  let z := j (b,k)
+  exact ⟨i b,bb.trans (le_max_right _ _),j (b,k),n,rfl,angle,hit⟩
+
+theorem CentreChart.closes {H E b₀ : ℝ} (c : CentreChart H E b₀) (w : WindingChart H E) :
+    ∀ B ≥ b₀, ∃ b ≥ B, ∃ L > (0:ℝ), Nonempty (ZeroTurnExpander L b) := by
+  intro B hB
+  obtain ⟨q,hq,z,n,eps,angle,hit⟩ := c.arbitrarily_large_matches w B hB
   obtain ⟨hs,xr,xb,xa,ep,ex,hx,ix,θx⟩ := c.physical q
-  obtain ⟨Y,t,ht,v0,q0,yr,yb,ya,ey,hy,iy,θy⟩ := w.physical z ep
+  obtain ⟨Y,t,ht,v0,q0,yr,yb,ya,ey,hy,iy,θy⟩ := w.physical z (eps ▸ ep)
   let x := centreSlice q (c.time q)
   let f := solution 1 Y t
   have hscale : scale x = scale f := by
-    have e : 1/(scale x)^4 = 1/(scale f)^4 := ex.trans ey.symm
+    have e : 1/(scale x)^4 = 1/(scale f)^4 := ex.trans ((congrArg Subtype.val eps.symm).trans ey.symm)
     rw [one_div,one_div,inv_inj] at e
     have sx : 0 < scale x := Real.rpow_pos_of_pos xr.1 _
     have sy : 0 < scale f := Real.rpow_pos_of_pos yr.1 _
@@ -73,8 +81,7 @@ theorem CentreChart.closes {H E b₀ : ℝ} (c : CentreChart H E b₀) (w : Wind
   obtain ⟨U,w'⟩ := equal_phase θx θy n angle
   have closed := exact_physical_matching (b:=(q:ℝ)) hs ht v0 q0 xr yr xb yb xa ya
     hscale U w' (ix.trans (hit.trans iy.symm)) (hx.trans hy.symm)
-  refine ⟨q,?_,4*(c.time q-t),by linarith,closed⟩
-  exact bb.trans (le_max_right _ _)
+  exact ⟨q,hq,4*(c.time q-t),by linarith,closed⟩
 
 end ClosedSimilarity.GlobalSupport.MovingSeam
 #print axioms ClosedSimilarity.GlobalSupport.MovingSeam.CentreChart.closes

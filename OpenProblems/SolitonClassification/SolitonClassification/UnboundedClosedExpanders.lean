@@ -8,19 +8,33 @@ namespace ClosedSimilarity.GlobalSupport.MovingSeam
 open Set Filter MeasureTheory OuterStress ReflectedArc
 open scoped Topology
 
-/-- A common physical section with a continuous centre chart on a full tail
-    of markers and a uniform linear lower bound on its real angle lift. -/
-theorem exists_physical_shooting_charts :
-    ∃ H E B : ℝ, 32≤B ∧ ∃ _w : WindingChart H E, ∃ c : CentreChart H E B,
-      ∀ b : Ici B, (b:ℝ)/8 ≤ c.angle b := by
-  obtain ⟨Hc,charts⟩ := exists_winding_chart
+/-- The first physical crossing retained by the centre chart. Time is
+recorded in both physical arclength and the outer slow variable. -/
+structure CentreChart.FirstIncoming {H E B : ℝ} (c : CentreChart H E B) where
+  slow : Ici B → ℝ
+  arclength : ∀ b : Ici B, c.time b = slow b/Real.sqrt (b:ℝ)⁻¹
+  time_bounds : ∀ b, 1 < slow b ∧ slow b ≤ 10000
+  earlier : ∀ b : Ici B, ∀ t∈Ico (1:ℝ) (slow b), H < -height (centreAt b t)
+  segment : ∀ b : Ici B, ∀ t∈Icc (1:ℝ) (slow b), regular (centreAt b t) ∧
+    1 ≤ innerRoot (centreAt b t) ∧ 1/12000000 ≤ along (centreAt b t) ∧
+    (1/scale (centreAt b t)^4)^3 ≤ 1200^4*((b:ℝ)⁻¹)^2
+  crossing : ∀ b : Ici B, -height (centreAt b (slow b))=H
+
+/-- The section height may exceed any prescribed threshold. Both the first
+centre crossing and the physical duration of the remaining seam arc are
+recorded on the same pair of charts used for the winding match. -/
+theorem exists_physical_shooting_charts_with_geometry (requested : ℝ) :
+    ∃ H E B : ℝ, requested≤H ∧ 32≤B ∧ ∃ w : WindingChart H E, ∃ c : CentreChart H E B,
+      (∀ b : Ici B, (b:ℝ)/8 ≤ c.angle b) ∧ Nonempty w.Flight ∧ Nonempty c.FirstIncoming := by
+  obtain ⟨Hc,charts⟩ := exists_winding_chart_with_flight
   obtain ⟨K,kp,Hs,hs,select⟩ := physical_centre_selector
-  let H := max (max Hs Hc) (1000*K)
-  have h1 : Hs≤H := (le_max_left ..).trans (le_max_left ..)
-  have h2 : Hc≤H := (le_max_right ..).trans (le_max_left ..)
+  let H := max (max (max Hs Hc) (1000*K)) requested
+  have h1 : Hs≤H := (le_max_left ..).trans ((le_max_left ..).trans (le_max_left ..))
+  have h2 : Hc≤H := (le_max_right ..).trans ((le_max_left ..).trans (le_max_left ..))
   have Hpos : 0<H := by linarith
-  have KH : K/H≤0.001 := (div_le_iff₀ Hpos).mpr (by linarith [show 1000*K≤H from le_max_right ..])
-  obtain ⟨E,ep,⟨w⟩⟩ := charts H h2
+  have KH : K/H≤0.001 := (div_le_iff₀ Hpos).mpr (by
+    linarith [show 1000*K≤H from (le_max_right ..).trans (le_max_left ..)])
+  obtain ⟨E,ep,w,flight⟩ := charts H h2
   have limit : Tendsto (fun b : ℝ => 1200^4*(b⁻¹)^2) atTop (𝓝 0) := by
     simpa using (tendsto_inv_atTop_zero.pow 2).const_mul (1200^4:ℝ)
   obtain ⟨N,ncap⟩ := eventually_atTop.mp (limit.eventually_lt_const (by positivity : (0:ℝ)<E^3))
@@ -87,7 +101,20 @@ theorem exists_physical_shooting_charts :
       have ps : 0<s b := div_pos (lt_trans zero_lt_one (info b).2.1.1) (Real.sqrt_pos.mpr (inv_pos.mpr (bpos b)))
       exact ⟨ps,rg b,(info b).2.2.2.1,le_trans (by norm_num) (atCross b).2.2.1,
         one_div_pos.mpr (pow_pos (sp b) _),rfl,by simpa only [s, centreSlice, centreAt, neg_neg] using congrArg Neg.neg (info b).2.2.1,rfl,a.1.symm,a.2.symm⟩ }
-  exact ⟨H,E,B,(le_max_left ..).trans lower,w,ch,fun b => (phase b).1⟩
+  refine ⟨H,E,B,le_max_right ..,(le_max_left ..).trans lower,w,ch,fun b => (phase b).1,
+    flight,⟨⟨τ,fun _ => rfl,?_,?_,?_,?_⟩⟩⟩
+  · exact fun b => ⟨(info b).2.1.1,(info b).2.1.2.le.trans (info b).1⟩
+  · exact fun b => (info b).2.2.2.2.2.2.2
+  · exact fun b t ht => (info b).2.2.2.2.2.1 t ⟨ht.1,ht.2.trans (info b).2.1.2.le⟩
+  · exact fun b => (info b).2.2.1
+
+/-- A common physical section with a continuous centre chart on a full tail
+    of markers and a uniform linear lower bound on its real angle lift. -/
+theorem exists_physical_shooting_charts :
+    ∃ H E B : ℝ, 32≤B ∧ ∃ _w : WindingChart H E, ∃ c : CentreChart H E B,
+      ∀ b : Ici B, (b:ℝ)/8 ≤ c.angle b := by
+  obtain ⟨H,E,B,_,b32,w,c,lo,_,_⟩ := exists_physical_shooting_charts_with_geometry 0
+  exact ⟨H,E,B,b32,w,c,lo⟩
 
 /-- Arbitrarily large curvature slopes occur on actual, smooth, closed
     coefficient-one homothetic expanders of turning number zero. -/

@@ -1,3 +1,5 @@
+import SolitonClassification.PrimitiveOrdinaryCrossings
+import SolitonClassification.PrimitiveLengthFromCrossings
 import SolitonClassification.GraphProfileEquation
 import SolitonClassification.FourthOrderDisconjugacy
 import SolitonClassification.FourthOrderZeroCount

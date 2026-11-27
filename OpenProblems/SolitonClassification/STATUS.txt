@@ -4,7 +4,7 @@
 
 两项结果合起来说明，即使限定总转角为零，膨胀曲线的图像也有无穷多种同胚类型。每条最小周期曲线的分支点总数有限，每个普通横截二重点都恰有四条局部分支，而这族曲线的分支点数无统一上界。分支点数在同胚下不变。确定光滑同痕分类还需要进一步论证。
 
-两个全局结论均有书面证明。Lean 已验证实际图方程、给定系数界下显式短区间的零点数上界、物理尺度与中心方程的关系、真实中心振子的应力变分及奇偶差别，以及对称轴横截如何给出两个相交的参数。对于远离应力零点并满足文中界的区间，Lean 也验证了应力方向的变化量上界。完整自相似解分类仍然开放。独立项目已审计 22410 个声明，仅使用标准公理。详见 Research/CrossingComplexity/CrossingComplexity.md 和 Research/CrossingComplexity/PrimitiveZeroTurnCrossings.md。
+普通横截二重点数可以任意大的定理现已通过完整 Lean 核验，包括每点的精确原像数、两条切线的非零行列式和曲线的最短周期。主定理为 SolitonClassification/PrimitiveOrdinaryCrossings.lean。一般自交数上界及平面图像同胚类型的推论有书面证明。完整自相似解分类仍然开放。项目已核验 22699 个声明，仅用三个标准公理。
 
 Self-intersections of closed similarity expanders
 
@@ -12,7 +12,7 @@ For normalized dilation coefficient one and least positive arclength period L, t
 
 The plane images thus have infinitely many homeomorphism types at turning number zero. Every primitive image has finitely many branch points. Each ordinary transverse double point has topological valence four, and the family has unboundedly many such points. Branch-point count is preserved by homeomorphisms. A smooth-isotopy classification would require additional arguments.
 
-Written proofs of both global conclusions appear in Research/CrossingComplexity/. Lean verifies the graph equation and local zero bound at the explicit chart size, the physical rescaling and alternating stress variation of the centre oscillator, and the reflected transverse-pair criterion. It also bounds the change of stress direction on intervals satisfying the stated estimates away from vanishing stress. Complete classification of closed similarity profiles remains open. The project audit covers 22410 declarations and allows only the standard axioms.
+Lean proves the unrestricted existence theorem for arbitrarily many ordinary transverse double points on primitive closed zero-turn homothetic expanders. The result includes the least positive position period, a distinct set of physical points, exact preimage multiplicity, and transversality of the two Cartesian velocities. See SolitonClassification/PrimitiveOrdinaryCrossings.lean. The global upper bound for arbitrary similarity expanders and the conclusion about homeomorphism types have written proofs. Complete classification of closed similarity profiles remains open. The project audit covers 22699 declarations using only the three standard axioms.
 
 For sufficiently large normalized centre slope b, the force at two simple inflections is respectively below -sqrt(b)/1200 and above sqrt(b)/1200. Closed zero-turn profiles realize arbitrarily large gaps at the same signed curvature. See Research/ReflectedScattering/ForceAtInflections.md.
 In every positive period, high-marker profiles realize a linearly growing number of distinct physical force magnitudes at zero curvature. Any fixed finite number of curvature-only functions fails to approximate this family to any fixed absolute tolerance. See SolitonClassification/FiniteForceLaw.lean.
@@ -415,3 +415,5 @@ segments do not instantiate the final five full-candidate certificates.
 The overall goal remains ACTIVE; the general problems above remain open.
 
 Current independent integrated audit:9027 declarations; standard three axioms only.
+
+在归一化最短周期或能量与长度之积有固定上界时，闭合自相似曲线的平面像只有有限多种拓扑环境同痕类型。适用于任意旋转系数，允许相切和多重点。显式计数的书面证明见 Research/CrossingComplexity/CappedPlaneTypes.md。

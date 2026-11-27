@@ -78,3 +78,13 @@ Each ordered pair of intersecting chart interiors or assigned endpoints therefor
 Lean verifies the fourth-order graph equation along an actual normalized support profile at every point with nonvertical tangent. For two graph functions the difference satisfies the derivative-chain hypothesis used in the local argument. The real-variable modules prove that four ordered, distinct zeros on a sufficiently short closed interval force the difference to vanish throughout that interval. They include variable coefficients, an explicit contraction estimate at the stated chart size, and finiteness and cardinality at most three for the zero set of a nonidentical difference under the displayed derivative bounds. [Graph equation](../../SolitonClassification/GraphProfileEquation.lean) · [Fourth-order disconjugacy](../../SolitonClassification/FourthOrderDisconjugacy.lean) · [Finite zero sets](../../SolitonClassification/FourthOrderZeroCount.lean) · [Quantitative chart theorem](../../SolitonClassification/QuantitativeCrossingChart.lean)
 
 The estimates for the four partial derivatives of the graph equation, the choice of a common chart axis, the primitive-period coincidence argument, and the assembly into the global ordered-pair bound are written proofs in this note. [Project verification](CrossingVerification.json)
+
+## Lower bounds for primitive length from a crossing count
+
+Each of \(N\) distinct multiple points contributes at least two ordered pairs of different labels. With the normalization above, the polynomial upper bound therefore implies
+\[
+ L \ge \frac{(2N/3)^{1/6}}{256}-\frac23.
+\]
+Indeed, \(1+2^{24}L(1+L)^2\le 256^3(L+2/3)^3\). For every positive \(N\) the chart-pair count also gives the strictly positive bound \(L>u/(1+u^{1/3})^2\), where \(u=(\sqrt{1+8N/3}-1)/(2\cdot 2^{24})\). For a physical dilation coefficient \(a>0\), replace \(L\) by \(a^{1/4}\ell\), where \(\ell\) is the physical least arclength period. The Lean module checks these deductions from the two numerical counting inequalities. The global geometric upper bound has the written proof above. [Inverse counting inequalities](../../SolitonClassification/PrimitiveLengthFromCrossings.lean)
+
+At bounded normalized length or energy product this bound also gives a finite upper bound on the number of topological ambient isotopy types of the plane image. [Plane image types under a cap](CappedPlaneTypes.md)
