@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.PhysicalEqualityCircle
 import LengthGrowth.ActualFlow.ExpandingPhysicalWidth
 import LengthGrowth.ActualFlow.SaturationRadius
 import LengthGrowth.ActualFlow.ActualInflectionDuration

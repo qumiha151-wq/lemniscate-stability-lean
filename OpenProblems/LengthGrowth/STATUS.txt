@@ -1,3 +1,9 @@
+长度增长率的锐等号与接近等号时的曲线形状
+Lean 已证明，在任意真实闭流的正时刻，增长率恰取上界 η=1/2−π²/(EL) 当且仅当 EL=2π²。此时的曲线为一次遍历的圆，原始物质标签在一个周期内互不重合。一般曲线的质心半径平方振荡也由同一个亏损控制。独立项目共审计 1991 个声明，仅使用标准公理。
+
+Equality in the sharp growth bound
+At every positive time on a smooth closed free elastic flow, equality in the sharp rate bound is equivalent to the minimum energy–length product. Lean checks the signed arclength formula for the circle and injectivity of the original material labels on one half-open period. The annulus estimate quantifies radial oscillation for general slices. Further analytic proofs on high products, integrated RMS-time deficits, and finite-clock growth are in Research/SaturationGeometry. Those three extensions have not been verified in Lean. Unrestricted fourth-root length growth remains open.
+
 物理尺度下的曲线宽度和长度增长
 每条光滑闭流的曲率及曲率的一阶弧长导数都在整条曲线上一致趋于零。给定任意固定宽度，充分晚时任何方向的这种条带都装不下曲线。更强地，对每个 A>0，每个充分晚的 [s,2s] 都含某个时刻 u，使半宽为 A u^(1/6) 的条带无论如何放置都装不下整条曲线。对于 U=EL，增长率 η=L U′/E³ 满足 η≤1/2−π²/U，单圈达到等号。这些结论、最小外接圆下界以及它们所用的实际耗散估计已通过 Lean。一般的四次根长度上界仍开放。
 
