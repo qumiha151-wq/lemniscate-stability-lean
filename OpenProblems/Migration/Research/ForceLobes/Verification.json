@@ -1,0 +1,49 @@
+{
+  "previous_audit": 1755,
+  "current_audit": 1775,
+  "compilations": [
+    {
+      "module": "Migration.ForceLobeJet",
+      "source_sha256": "d8e8464daab51ba4bc993cb830eeb4db288ff4692827df377856870a1bd23212",
+      "olean_sha256": "4d2b1fd23396525d30f708eee85ee34c863f33e13e56cb970aaca1b7b4c6975b",
+      "log": "'MigrationGeometry.Rotating.UnitLoop.force_pair_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ForceLobeCover",
+      "source_sha256": "35c89308d5306281f7e874273c68d34e536ad8498c109a240acc4584799b405a",
+      "olean_sha256": "e0660d14d634fd87eb022736e2bbba8ec3354bd72c08024bcf1238ff0b432849",
+      "log": "'MigrationGeometry.Rotating.UnitLoop.centered_disk_of_signed_force_cover' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ForceLobeTurn",
+      "source_sha256": "c9357eceb6a84232c3ec1150f1acd99c420099a52e2e6f40c5cab330b8d79742",
+      "olean_sha256": "55e81ee4a9b119d95c2c5b8320a892d695ea631708aa9188047ac41cc5b90467",
+      "log": "'MigrationGeometry.Rotating.UnitLoop.centered_disk_of_one_force_arc' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ForceLobeSamples",
+      "source_sha256": "c2c470746246bb2d001409483b43405e261effbec5485a2a56323348f88f80ef",
+      "olean_sha256": "46a729bdeb185ea9acf307841c7c7380b419b1041dda1f7e00d5e128e4723ebb",
+      "log": "'MigrationGeometry.Rotating.UnitLoop.signed_cover_of_few_force_changes' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.ForceLobeMigration",
+      "source_sha256": "4e6ac7651fa6b3ad6b5d38c16107bb0b783cdb3be343ac7e9e3d4ce90857f845",
+      "olean_sha256": "ecac35f32a6be69f08fe313c65fe3e79adbcab1e549e987c183fd93e85373ad0",
+      "log": "'MigrationGeometry.Rotating.UnitLoop.no_migration_of_few_force_changes' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Rotating.UnitLoop.no_migration_of_one_force_arc' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "8f8db09c49ce2bd893b4b1f99561eb141a2af3d5df93c9ee076e6ecbb63f79f8",
+      "olean_sha256": "90bba8a35ebd0607cc3440117d036edaa2efe4a37ed5eb9670d8bf39f89f5a8d",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1775 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "The independent Migration project verifies the physical force companion, the relative signed normal disk, the unit-speed tangent lift, the full-turn arc test, the ordered alternating-sign obstruction, and all-time nonseparation for both classes. The exact degree and polar-extrema formulae are analytic arguments. The two separately replayed orbit applications rely on the validated integer-node and uniform Fourier bounds for the primitive rotating profile."
+}
