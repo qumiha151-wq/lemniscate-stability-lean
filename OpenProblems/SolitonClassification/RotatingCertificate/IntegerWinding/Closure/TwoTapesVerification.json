@@ -1,0 +1,56 @@
+{
+  "prior": 25149,
+  "total": 25213,
+  "proofs": [
+    {
+      "module": "SolitonClassification.Rotating.IntegerJointTime",
+      "source_sha256": "c797528e299dad12786b78d7cfb48fb8daef7330f4d790bba4d0088143c07478",
+      "olean_sha256": "6eff98656dd4e55dfa043f4f76865723cdeeaaf30331127d2d01971b37f6f651",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.joint_of_space' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerMovingEndpoint",
+      "source_sha256": "454cd09e25f763cba2e9a13e9df253148823295455327dced98eefe261aec39b",
+      "olean_sha256": "562d074a087834b585f68d17764b2a6ba07e983c6db30111331bcceeaf0e4df7",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.move_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerArmCertificate",
+      "source_sha256": "263bbc7a0192cdd1b43fb556e1b2176076c7ebaa7c32ae75b11abd0829e65796",
+      "olean_sha256": "5037217c1e0c26274efba9f7d4e24aec64ecb7af1eca16387f5db0378088d892",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.arm_from_tape' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerTerminalRows",
+      "source_sha256": "f1c8f66da90e1f6c655b86bcbb3178902625613e92aef69a17434980512112bf",
+      "olean_sha256": "b8bfbab0934345d48a75cadd38d55ebb3f912ab69ef7c357bc733f5460367437",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.plus_numbers' depends on axioms: [propext, Classical.choice, Quot.sound]\n'SolitonClassification.Rotating.IntegerTarget.minus_numbers' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerTwoArmImmersion",
+      "source_sha256": "52fbdfa4abc071433c7b3892dde86b8241a881528b6bfb8ae09ac196ee06f089",
+      "olean_sha256": "33567f6b88c5a2e0a4726b4347081287021d3e10fb78df834574b697eebd17fd",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.IntegerTarget.closed_immersion_of_certified_tapes' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "542075ba78246585dfab080d2fdc6f84a964de5c0e7deb4940ae1d4462b41a2c",
+      "olean_sha256": "66b5cb220c5099568f4f24de47b3a413eaeab0c43768c5ec2c9b67f2eb4e69ca",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "olean_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "exit": 0,
+      "log": "SolitonClassification audit passed: 25213 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "All analytic hypotheses for this one candidate follow from the two finite polynomial tapes with their stated initial and terminal integer rows. The complete numerical replay and the unrestricted classification remain outstanding."
+}
