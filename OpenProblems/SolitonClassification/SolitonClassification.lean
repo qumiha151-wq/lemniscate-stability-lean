@@ -1,3 +1,4 @@
+import SolitonClassification.Rotating.IntegerWindingPencil
 import SolitonClassification.PrimitiveOrdinaryCrossings
 import SolitonClassification.PrimitiveLengthFromCrossings
 import SolitonClassification.GraphProfileEquation

@@ -1,0 +1,44 @@
+{
+  "status": "All three disjoint transverse Floquet intervals passed",
+  "compare": "det(M_plus-lambda*M_minus)",
+  "inputs": {
+    "center.json": "a9a7437981ea8251a0050e32260c727c5637d6c69621ba08d234983cdc03a98b",
+    "plus.json": "41e729bc61a5626bf53fba0371870db4be55700a8fe89931b7451ac5226546ba",
+    "minus.json": "db795817b6ae11863a7d9e08074fa9d3b370c2c3364726158529a773976785bf",
+    "trajectory.py": "41b08561307c85970fc9d18aa5934df329d99bcdeb68a8f75b044d5a7d94e572",
+    "verify.py": "ef9751cc8b20ef30fec89b997ff9a8d8a3e6046c3521f5cee4a0e033519870f6"
+  },
+  "root_sha256": "009f9b90ec8db4a4755c1f8cda9403e9a76cfe64c53495b6156a2f1a10ccb03e",
+  "maximum_root_displacement": "[+/- 4.16e-36]",
+  "inflations": [
+    "[+/- 2.18e-14]",
+    "[+/- 2.18e-14]"
+  ],
+  "signs": {
+    "-1000": {
+      "sign": 1,
+      "determinant": "[1.732732876e+11 +/- 69.7]"
+    },
+    "-700": {
+      "sign": -1,
+      "determinant": "[-4.40365314e+10 +/- 18.0]"
+    },
+    "-.001": {
+      "sign": -1,
+      "determinant": "[-2.0442024079 +/- 7.04e-11]"
+    },
+    "-.0001": {
+      "sign": 1,
+      "determinant": "[0.6959277082 +/- 7.81e-11]"
+    },
+    "3": {
+      "sign": -1,
+      "determinant": "[-3366.565751 +/- 2.82e-7]"
+    },
+    "5": {
+      "sign": 1,
+      "determinant": "[22055.11992 +/- 2.14e-6]"
+    }
+  },
+  "exact_neutral_multiplier": 1
+}
