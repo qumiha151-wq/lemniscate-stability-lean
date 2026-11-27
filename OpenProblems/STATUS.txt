@@ -2,15 +2,18 @@
 
 已解决：存在弧长质心趋于无穷远的光滑闭合自由弹性流。Lean 构造的例子满足实际演化方程，其质心的横坐标趋于正无穷。证明位于 CentroidEscape。双扭线稳定性见仓库原有项目。
 
-闭合自相似解分类：已验证一个转数为 −1、基本弧长周期在 (60,62) 的非圆闭合解。膨胀系数归一为 1 时，旋转系数在 (0.10,0.11)。在演化的每个时刻，曲线恰有两个横截自交点。一个基本周期内，每个自交点恰有两个原像。曲率取两种符号，每个向前时刻的凸包都包含以同一个中心为圆心的圆盘。L∫k²ds≤4π²+36 的闭合自相似解已全部分类为单覆盖圆。任意初始弯曲能量下的完整分类仍开放。
+闭合自相似解分类：已验证一个转数为 −1、基本弧长周期在 (60,62) 的非圆闭合解。膨胀系数归一为 1 时，旋转系数在 (0.10,0.11)。在演化的每个时刻，曲线恰有两个横截自交点。一个基本周期内，每个自交点恰有两个原像。曲率取两种符号，每个向前时刻的凸包都包含以同一个中心为圆心的圆盘。L∫k²ds≤4π²+36 的闭合自相似解已全部分类为单覆盖圆。对任意非零转数 n，若 √(L∫k²ds)≤2π|n|+3/5，则已证明曲线恰为绕行 |n| 圈的圆，允许任意平移、旋转和伸缩生成元。任意初始弯曲能量下的完整分类仍开放。
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/f02643bb80225d16e0f01b58ce61eced99c40abe/OpenProblems/SolitonClassification/SolitonClassification/Rotating/IntegerFinalDoublePoints.lean
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/589f80cf7e76d04355ec890155e4341eb7bf9d7d/OpenProblems/SolitonClassification/SolitonClassification/MulticoverCircles.lean
 
-长度增长：在初始 L∫k²ds≤4π²+36 时，已证明 L(t)⁴/t→32π⁴。对一般流，令 T_t(u) 为按一圈长度归一化的单位切向量。四次根上界等价于 h→0⁺ 时 sup_t ∫₀¹|T_t(u+h)−T_t(u)|⁴du/h→0。所有光滑闭流是否均满足该判据仍开放。
+长度增长：在初始 L∫k²ds≤4π²+36 时，已证明 L(t)⁴/t→32π⁴。对一般流，令 T_t(u) 为按一圈长度归一化的单位切向量。四次根上界等价于 h→0⁺ 时 sup_t ∫₀¹|T_t(u+h)−T_t(u)|⁴du/h→0。对任意非零转数 n，同一初值范围 √(L(0)∫k(0)²ds)≤2π|n|+3/5 保证弯曲乘积随时间单调不增，且长度满足四次根上界。所有光滑闭流是否均满足该判据仍开放。
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/1cafe70178989939a302b5a5bcb46772258f4d5c/OpenProblems/LengthGrowth/LengthGrowth/ActualFlow/TangentIncrementCriterion.lean
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/0fd4b7a5088f516db0e6a423945ad08f69acb796/OpenProblems/LengthGrowth/LengthGrowth/ActualFlow/MulticoverWinding.lean
 
-整条闭曲线迁移：若初始 L∫k²ds≤5π²，则所有向前时刻的凸包都包含同一闭圆盘。圆心为初始弧长质心，半径为 401π/(500E(0))，其中 E=∫k²ds/2。因此若两个时刻的整条曲线能被一直线严格分开，初始 L∫k²ds 必须大于 5π²。更高弯曲能量下是否存在这种流仍开放。Novaga 的公开预印本处理了初始上界 4π²+8/3。
+整条闭曲线迁移：若初始 L∫k²ds≤5π²，则所有向前时刻的凸包都包含同一闭圆盘。圆心为初始弧长质心，半径为 401π/(500E(0))，其中 E=∫k²ds/2。因此若两个时刻的整条曲线能被一直线严格分开，初始 L∫k²ds 必须大于 5π²。对转数绝对值 m≥2 的流，若初始 L∫k²ds−(2πm)²≤π²/4，则所有时刻的凸包也包含一个共同圆盘。这个条件允许初始弯曲乘积随 m 增大而任意大。超出上述条件后是否存在整曲线迁移仍开放。Novaga 的公开预印本处理了初始上界 4π²+8/3。
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/825d320be3f90826ee090847116e249d9924a21c/OpenProblems/Migration/Migration/VirialForwardDisk.lean
 https://arxiv.org/abs/2611.07242
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/7d6708a6c5049e456ef3157babde329c13042ba7/OpenProblems/Migration/Migration/MultiDiskFluxClassical.lean
 
 引言另提到的非直线平移解已在 OpenTranslators 中单独验证。原文 https://arxiv.org/html/2404.12619v3#S1.SS2 。Andrews 与 Wheeler 已在公开预印本中构造无穷多个几何不同的纯伸缩膨胀子：https://arxiv.org/abs/2601.21227 。
 
