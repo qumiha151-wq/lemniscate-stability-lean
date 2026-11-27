@@ -8,7 +8,8 @@ run_cmd do
   for (name, _) in (← getEnv).constants do
     if (`ClosedSimilarity).isPrefixOf name || (`SolitonClassification.Rotating).isPrefixOf name ||
         (`SolitonClassification.Reflected).isPrefixOf name ||
-        (`SolitonClassification.ReturnScales).isPrefixOf name then
+        (`SolitonClassification.ReturnScales).isPrefixOf name ||
+        (`SolitonClassification.CrossingMultiplicity).isPrefixOf name then
       let axioms ← collectAxioms name
       for axiomName in axioms do
         unless allowed.contains axiomName do

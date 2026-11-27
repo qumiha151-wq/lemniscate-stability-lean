@@ -1,0 +1,298 @@
+{
+  "lean": "4.33.1",
+  "baseline_declarations": 22264,
+  "audited_declarations": 22410,
+  "baseline_root_sha256": "30e192ae3275d0b198c98da8811c56e09626f0d4c4a1a27c5ab7e8811109d516",
+  "prior_release_manifest_sha256": "3d91d5413c6f85313581f2ec2b90a69b16fb6b720d03f73051b2a1e7e0316c7f",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "additional_audit_namespaces": [
+    "SolitonClassification.CrossingMultiplicity"
+  ],
+  "independent_compilations": [
+    {
+      "module": "SolitonClassification.GraphProfileEquation",
+      "source_sha256": "3b361a722ce99db8666164cd480c9f93bc4ccc062e5d9f34b95c8237879428ff",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.OneSignCurvature": "7282cca49a4e0965513059c0efb94273b9876671b66b9a0c22e083c8609e689a",
+        "SolitonClassification.SupportODE": "98f8dfaacb76c2d6fe86e958a42f7c7fc38819073d2e9b579bba1754d3642612"
+      },
+      "exit": 0,
+      "olean_sha256": "efe2037fcb614faa3b2a93728b3e0d620ee1106c3565effe819358f50cfebea3",
+      "setup_sha256": "7ad8797b73a73684f62cf021cd1b5b907cedb8850b511558a0f8bdc064adb603",
+      "log": "'ClosedSimilarity.GraphProfile.graph_jet_derivatives' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FourthOrderDisconjugacy",
+      "source_sha256": "5da6546e0604e6b965057ed8f9b45168db44f089ff47aa0a2d5b0df72c3aa391",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "Mathlib.Analysis.Calculus.Deriv.MeanValue": "00f6384bbac8151062ff23dbda101f48abf1885bc68533120d7587b57763e3a8",
+        "Mathlib.Topology.Order.Compact": "7143ccb53c52e1d325f4a44f0faf3a15230681a4cd7192a58a2ac9a9d23a2ee3",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+        "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a"
+      },
+      "exit": 0,
+      "olean_sha256": "2498f2bf6f441e5adb84646957c48da51d5c385afaf178e7bb66ecdcdbbea278",
+      "setup_sha256": "5d3d56e1a60384d5ae329ce0946e14e7edef27211fef64ff30dc33363e358d11",
+      "log": "'SolitonClassification.CrossingMultiplicity.eq_zero_of_four_zeros' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SolitonClassification.CrossingMultiplicity.linear_ode_eq_zero_of_four_zeros' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FourthOrderZeroCount",
+      "source_sha256": "780053fd36cc3d8c1aa04f154080907b9e138e2a48b9288d5699d97de0c91282",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.FourthOrderDisconjugacy": "2498f2bf6f441e5adb84646957c48da51d5c385afaf178e7bb66ecdcdbbea278",
+        "Mathlib.Data.Finset.Sort": "986baabdae62034e85011aa69e51798b7cd3c93cdf7600e2a7b5794ccd898d1a",
+        "Mathlib.Data.Set.Card": "fa69ba37577ba9197cd899395df18b220341c6706ef3b67b5959ebcc695250e0"
+      },
+      "exit": 0,
+      "olean_sha256": "dc6afd2796a64569125b097818baed7fb602f0c17d79ec8b763a1382048188e4",
+      "setup_sha256": "f22ecfc66e4e0686d54967b4bcec86b596e731328b9382ae0fdae43248430774",
+      "log": "'SolitonClassification.CrossingMultiplicity.finite_zero_set_of_not_four_zeros' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.QuantitativeCrossingChart",
+      "source_sha256": "1ff09900e24bad108bed7fd6d74964b09cba0a87645ca07f3fd4d7addceb9711",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.FourthOrderZeroCount": "dc6afd2796a64569125b097818baed7fb602f0c17d79ec8b763a1382048188e4",
+        "Mathlib.Tactic.GCongr": "50e9b88eddc4fe6df36ea981a93cc9164daf90eb12a412047dec8f7b4ed815ab",
+        "Mathlib.Tactic.FieldSimp": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+        "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843"
+      },
+      "exit": 0,
+      "olean_sha256": "f1ddff0acef63a3df2988b463a4942a657efe4da38245179df13cb6749369d41",
+      "setup_sha256": "b5bbc34eebe18c7aca9d5918e280afbd79218c4491851d39528f2103875657ba",
+      "log": "'SolitonClassification.CrossingMultiplicity.explicit_chart_short' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'SolitonClassification.CrossingMultiplicity.finite_three_on_explicit_chart' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.CrossingParity",
+      "source_sha256": "5319785c75852eeefc228fef56f0ca1e8eb3a80ee7ce40814e63f8e65a6c92e9",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus": "da8ef4c75b31e2d29e090171623eefe2b110a8c894e66257f2121982495869c0",
+        "Mathlib.MeasureTheory.Integral.DominatedConvergence": "bc2ae74dc87df3f34a4fb382b8233c8e8e267013da7126941acf3bcd659277e3",
+        "Mathlib.Analysis.Calculus.Deriv.Mul": "ee707cc1a05260adce06fba4f48243b69600b8bd2d6008b42aefdf5281b72d30",
+        "Mathlib.Analysis.Calculus.Deriv.Pow": "444bf5335090f1b9711726211ecf70dca0c40cec55793beea874f3f2a4ae7339",
+        "Mathlib.Analysis.Calculus.Deriv.Slope": "4f88cec28e8c9d982de0e2666930736ded9d16d0509ab194c6fdda7e92ce35fa",
+        "Mathlib.Tactic.FunProp": "1b57198ec41c72cdc596f343b4b8f28335d0bc15ed2317bfdb90d2e09948bba9",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+      },
+      "exit": 0,
+      "olean_sha256": "89a8376a2e174e74756fe815aff647632f2e427c32d585e2de3c189fc9d20c14",
+      "setup_sha256": "4d257a4b57f8e68059925565dc7d9e6f91dd1ccd945f52655ce38f9fe9f6ea8d",
+      "log": "'ClosedSimilarity.CrossingParity.stress_first_variation' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CrossingParity.integral_horizontalRate_of_zeros' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.CrossingParity.horizontalRate_parity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CrossingParity.stress_derivative_parity' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ReflectedCrossings",
+      "source_sha256": "4ca9a3d2c7ecc90f961ebe030005aee9b5d0986c641ccbd057acb295e868feaa",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.ReflectedArc": "11656057fcbcffaa2aaaf4532f526f55a8cd176b8e3bde8d99a42b8afbab5c30",
+        "Mathlib.Analysis.ODE.ExistUnique": "a331f36896f0e9f5a588b6698e851e6e4677b1716291a3f8aaa3a4f9d6b1900c",
+        "Mathlib.Analysis.Calculus.ContDiff.RCLike": "aa713eb571ace3efb1dd18b77cc8e0f9cba4ac455f819fcffbabcb3279afe553",
+        "Mathlib.Topology.Connected.Clopen": "96cbb36c48e2d255b09883e44cb0806529dd9e26b8d4db642abdfce002e04914"
+      },
+      "exit": 0,
+      "olean_sha256": "a935af617056c80ebca675a7e305cdb98e5edc11c722220fac956c91b6cdffa8",
+      "setup_sha256": "a3419f37e875c4cdecbc22af49b22115f2eb74dbcc1cba0553a18b9d485a8aa6",
+      "log": "'ClosedSimilarity.ReflectedCrossings.transverse_crossing_in_every_period' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.CrossingTangencies",
+      "source_sha256": "a26890a9ab6d1bb8596ac86787b93a397dd90e2f8885efc972e7c01bc69fdf19",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.GraphProfileEquation": "efe2037fcb614faa3b2a93728b3e0d620ee1106c3565effe819358f50cfebea3"
+      },
+      "exit": 0,
+      "olean_sha256": "14b24e70c8b4a14302fe73834b2025f3fe682e35ec6a7294097669482d9c86d9",
+      "setup_sha256": "2e3d79421ac6a4f7ded7d0f338b240c9bb46d8681c919c84ac0a7281d6a6d122",
+      "log": "'ClosedSimilarity.CrossingTangencies.distinct_stress_excludes_simultaneous_tangency' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.CrossingStressResponse",
+      "source_sha256": "f09d50bf7d65a57d83d43e5394ee333277b1047eec4174b45511378f3411c7a5",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.SupportFlowContinuity": "a55fcc43625c42326590a62d569ccceac2935a23bc944d7382fbdf1154764aa3",
+        "Mathlib.MeasureTheory.Integral.DominatedConvergence": "bc2ae74dc87df3f34a4fb382b8233c8e8e267013da7126941acf3bcd659277e3",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus": "da8ef4c75b31e2d29e090171623eefe2b110a8c894e66257f2121982495869c0",
+        "Mathlib.Analysis.Calculus.Deriv.Slope": "4f88cec28e8c9d982de0e2666930736ded9d16d0509ab194c6fdda7e92ce35fa"
+      },
+      "exit": 0,
+      "olean_sha256": "96aa9eff645eb441d2b156e64c7b101075202b89e8774aabcdd6c7fd290c4d89",
+      "setup_sha256": "5d3051b800f10b89d54709f6b9be03cf33438b10d9b5e5df244fcd77b30575eb",
+      "log": "'ClosedSimilarity.CrossingResponse.stressX_response' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CrossingResponse.frozen_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PhysicalCrossingResponse",
+      "source_sha256": "e1405e8f0e0ff03ccacd00f36ca25968d26840ab32116bb4f3d8c07bc0fc54d2",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.CrossingStressResponse": "96aa9eff645eb441d2b156e64c7b101075202b89e8774aabcdd6c7fd290c4d89",
+        "SolitonClassification.CrossingParity": "89a8376a2e174e74756fe815aff647632f2e427c32d585e2de3c189fc9d20c14",
+        "SolitonClassification.PhysicalSeamScale": "491c22a49497631f2d9f723f1a21d6123429cb3b0f753eb51c234090f0f83a3e",
+        "SolitonClassification.StrongCentreMarker": "2c0b503bda81f42ba54bd55f92da144d494c9f07b3a43aa1a13123f1b809a09e"
+      },
+      "exit": 0,
+      "olean_sha256": "156473b3c8751acbd6acdb77512286efe97740b6bca3c4aeaefd34fe621a2bdb",
+      "setup_sha256": "7bbe682840f15b892f434583cfa8a3bd81f1cf8e4dca0272bee954259c286408",
+      "log": "'ClosedSimilarity.CrossingResponse.frozen_eq_oscillator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CrossingResponse.physical_fast_support' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CrossingResponse.actual_response_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CrossingResponse.joint_response_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.CentreOscillatorParity",
+      "source_sha256": "5670915c9e610da4e9ec9acefbe02a3ed8cb57a3913d405c06e1502589d5511f",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.CrossingParity": "89a8376a2e174e74756fe815aff647632f2e427c32d585e2de3c189fc9d20c14",
+        "SolitonClassification.SupportFlowContinuity": "a55fcc43625c42326590a62d569ccceac2935a23bc944d7382fbdf1154764aa3"
+      },
+      "exit": 0,
+      "olean_sha256": "05dd13c3cd172aca27fdcfad69ba15539623093557b7d8d184cd7a5ab95897d8",
+      "setup_sha256": "5ce7d421a32c06ed5d5de14251966b834ac7237aa5009798f27f2d6305c5dd13",
+      "log": "'ClosedSimilarity.CentreOscillator.support_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CentreOscillator.positive_half_period' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.CentreOscillator.true_horizontal_variations' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.OuterStressDirection",
+      "source_sha256": "e5e26f5815452be261a8deb9cbeabd9fb00e7986685b2a1ed46612615874c3bc",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.OuterStressOrbit": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv": "f873c4d301d0e7d160de9405b772d468093b94d31db0e8e300bce62b7e9a57a5"
+      },
+      "exit": 0,
+      "olean_sha256": "cd7aa420e6771d35b341f35ff4d14648ceb6d42ebcf0762efaa795d75bd2c7df",
+      "setup_sha256": "fca75201754245e9f16152f654a22724d9aa7a4b60455e1d58b88d48c45f1249",
+      "log": "'ClosedSimilarity.OuterStress.Direction.horizontal_change_on_outer_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "bbf00027020bf83d5d38fd97ee0979be7f49fc02dd1a93efc3f1792f17172e56",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification.GraphProfileEquation": "efe2037fcb614faa3b2a93728b3e0d620ee1106c3565effe819358f50cfebea3",
+        "SolitonClassification.FourthOrderDisconjugacy": "2498f2bf6f441e5adb84646957c48da51d5c385afaf178e7bb66ecdcdbbea278",
+        "SolitonClassification.FourthOrderZeroCount": "dc6afd2796a64569125b097818baed7fb602f0c17d79ec8b763a1382048188e4",
+        "SolitonClassification.QuantitativeCrossingChart": "f1ddff0acef63a3df2988b463a4942a657efe4da38245179df13cb6749369d41",
+        "SolitonClassification.CrossingParity": "89a8376a2e174e74756fe815aff647632f2e427c32d585e2de3c189fc9d20c14",
+        "SolitonClassification.ReflectedCrossings": "a935af617056c80ebca675a7e305cdb98e5edc11c722220fac956c91b6cdffa8",
+        "SolitonClassification.CrossingTangencies": "14b24e70c8b4a14302fe73834b2025f3fe682e35ec6a7294097669482d9c86d9",
+        "SolitonClassification.CrossingStressResponse": "96aa9eff645eb441d2b156e64c7b101075202b89e8774aabcdd6c7fd290c4d89",
+        "SolitonClassification.PhysicalCrossingResponse": "156473b3c8751acbd6acdb77512286efe97740b6bca3c4aeaefd34fe621a2bdb",
+        "SolitonClassification.CentreOscillatorParity": "05dd13c3cd172aca27fdcfad69ba15539623093557b7d8d184cd7a5ab95897d8",
+        "SolitonClassification.OuterStressDirection": "cd7aa420e6771d35b341f35ff4d14648ceb6d42ebcf0762efaa795d75bd2c7df",
+        "SolitonClassification.ForceAtInflections": "8d0b11a270b1b8bba82d7ff35843b136ea1187514677f74d1f828524aba89238",
+        "SolitonClassification.TwelveLocalCycleTests": "3354645d6311bcb6fa04a25d211c1254406af5f42233d1271090018b500b963c",
+        "SolitonClassification.ForwardTrapRigidity": "7341efaf7a30581089618755238c778e299b588373768a1613993aa5c79c9a98",
+        "SolitonClassification.PitchResidence": "8c4c5206155818a4306309b1e1dae4b0c1053da6f61ac322a7ea6aea04c94576",
+        "SolitonClassification.FiniteForceLaw": "097c84437ae74408c1a810ba1cafa38cba598aff9fdbba934f65706d11da5c9d",
+        "SolitonClassification.PrimitiveInflections": "62560924218b7cd8c2c69c7a0a92bce9f9828ab22be580b0e7943cc1f1e68e93",
+        "SolitonClassification.QuarterOddRigidity": "a0daefa1fd4e300caf08af397c47bca1ea440912894e02841f5f33b56ae23c0d",
+        "SolitonClassification.QuarterRankIntervals": "65e1d255291466236a8765dd3206e0ac10efce6f07056d819f3a1c7c324e069b",
+        "SolitonClassification.LinearExpanderCount": "d3c5e7b8e697035569801e3e93b15ef71ef1313168bfbd80a3ac870d5826b328",
+        "SolitonClassification.InfinitelyManyExpanders": "812b691209d51c0ebfaabc052dedad0b8b914285c3b5ed9151b7f53b38b8e20d",
+        "SolitonClassification.FrozenCertifiedScattering": "e1688228ff882e9c5e08b391460e928a6661081703569fce31a0e7cca2b86634",
+        "SolitonClassification.ContinuousPhysicalRadius": "b43936b2297625b16a52d65cb6dde35758309509284b7e4cac4595521d38501f",
+        "SolitonClassification.CentreShotWinding": "18257cab07ef6938a38215a672781b305892911b5276f94f6bc6cf6ffa7ad1fc",
+        "SolitonClassification.SeamRadiusExistence": "af20738a8f6f66c1c19c93d8b741a4120148b12dcd7d348515066504cf013d81",
+        "SolitonClassification.FrozenKernelEndpoints": "b015f2e9c6fc3cc6ba151851374afcafeec0aedede40a95b5b8e69e00771e7df",
+        "SolitonClassification.FrozenSeamReflection": "7516120b787ed7d2622dcd8ea4477e1d52282e1f4f09a13e87991f35716a6c5e",
+        "SolitonClassification.SupportFlowContinuity": "a55fcc43625c42326590a62d569ccceac2935a23bc944d7382fbdf1154764aa3",
+        "SolitonClassification.OuterPhase": "2a3ed1d4307cab3944d66dfa1dd8352d8e1d4863ff60e04f7d100a87fae0b67d",
+        "SolitonClassification.FrozenTailSigns": "f900e786ca98e7571dfe397fe8be2743bfc295e4f24e83f6164fa3f9bd360c06",
+        "SolitonClassification.MarkerCount": "89dbc43183ae11b3a4a15ff269b5cefe78148aad2e124b7d06b9e6cfe230eccd",
+        "SolitonClassification.FrozenUniformEscape": "34bc1409f596cd3967630f7ad81af39004ed2ead5ffdc8f3248b51d4882f1265",
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+        "SolitonClassification.OuterStressOrbit": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee",
+        "SolitonClassification.OuterDescent": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+        "SolitonClassification.FrozenStressTail": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5",
+        "SolitonClassification.RectangleCrossing": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75",
+        "SolitonClassification.RadialLayer": "15e4807bbfcc9ad68016ef159ce2ab54c9b6ca2e84ce320bc12fe5cecb619935",
+        "SolitonClassification.ReturnScales": "07f731f02ef24811c05ac326465412070ba993c5c7142e011e7db132a397f746",
+        "SolitonClassification.RadiusPotential": "930b9632a5b9c7ba45b75debde1c57d85ccf644f513c5def220f9164ca6b4099",
+        "SolitonClassification.ScalarObservation": "86ff9fa65e4a22ed666eeef5ca96e447f7140ec8b88568bbfda505934e0f5cc3",
+        "SolitonClassification.TangentLawGeometry": "c52bc688c0611bdd1389fa2160585bbd795c482040440c93041a5c60efdd7158",
+        "SolitonClassification.AngularForceElimination": "0a609ed48ae9a8fd31dce49ae18751057301dcff275ba200710237be09b2a0cd",
+        "SolitonClassification.FirstZeroTurnExpander": "070ff0be926877f6f82025828b6436a283f69fd5de4a4e646b37005242e0c4aa",
+        "SolitonClassification.SingleValuedForce": "c2d22fbb0101cbffa47b09149672ccf7bd96e2cc5421f73c471dd04ada5a1db5",
+        "SolitonClassification.CubicSupportRigidity": "efa70920abd1104d5e28e0c20d8c40d0951914b87302cb1325ca1796339fd0c6",
+        "SolitonClassification.ReflectedPoleAlgebra": "f8e1b688b4fa7a06a3e6800ee62ce4cbc36f526f9d93b6f3d3e35e251cabd4a5",
+        "SolitonClassification.ReflectedPureNormal": "be41225dcfc2b28fd58dfe72507ef35f060f8b75f280cc2e35e95196de505eba",
+        "SolitonClassification.ReflectedPhysicalMarker": "e03e1717fc20f3663b9788d9bac0c7b3a3d69e6e6a4da5aaf5424b9894844728",
+        "SolitonClassification.CubicSupportClassification": "4138f99e4180518de24eab065b3b8f70b17c67d83fe4ee967bc8afaf8e67ff36",
+        "SolitonClassification.BernoulliCartesian": "3887b50aae756f4fdc6b1840efa6ea00a6949e360318507bee497b3a4a4573fa",
+        "SolitonClassification.ReflectedMarker": "f30f5034baa235e4f738df841d2db16546baf2c1277a5522a900ebbfb0b5b830",
+        "SolitonClassification.ReflectedShooting": "39b775f452dbfc593fbea02d1d3afcf5857a148c72570b849f50ed5ffadb561d",
+        "SolitonClassification.ReflectedEvolution": "aa43c070eb32d7c9fbd110ea86eedbdc7669d5691a49004edda464e7b68cacef",
+        "SolitonClassification.CubicGap": "ef93553fc71363b6b2d27240e69be3de690c2024d615da984b9dae9e74341e02",
+        "SolitonClassification.Rotating.PrimitiveSupportPeriod": "e36cec6a3c4618357d230ddc20a3dc05e61402f088cb9ea010360c8195a55314",
+        "SolitonClassification.Rotating.FloquetPencil": "b419fb627ac764f4466c7878c1dcada068d2ee01638aa5e29651ae6cb3c0339e",
+        "SolitonClassification.Rotating.Balanced8FreshAudit": "ebd5c02cf5ceb53ecbebd14f1a69d70082179f572c98ead682b9dc4551b7a2bf",
+        "SolitonClassification.Rotating.Block8FreshAudit": "8a2ad67b831551130f1b4061582d35af14ff7d8d12819ed965ffabede279c469",
+        "SolitonClassification.Rotating.CandidateFinalAssembly": "ef29762da5726ccb2771a3edd3864a1d692b657e99792fded2dc9336d746ff23",
+        "SolitonClassification.Rotating.Grid42P00Actual": "8ac432b2663b7f9332e2821c1853e4a8c28e03645ebb17ac01ab21cb22e4ee1f",
+        "SolitonClassification.Rotating.CandidateShootingEndpointComparison": "e879b541d223ad9946a478f1cfea37b8227ed02d33edea553189bd16d713bb80",
+        "SolitonClassification.Rotating.CandidateBootstrapBudget": "5c6b70c7f4a512af7979bd69bfa260407383cdb6b91870ab2d4ad873f2368614",
+        "SolitonClassification.Rotating.PointMatrixGridBudget": "a50a01043e483b60ea5dc293df81e35d8b474f59dd1f53fa0d064a7b3d78dd8c",
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": "416ff7c03911567f0439af588494dedc61967b95c09cff18712a44990423ba32",
+        "SolitonClassification.Rotating.RotatingNormalEvolution": "1d0881d2c83c37d53664da6b506f1bdbafb5b0e76db46b955786517be64b31d1",
+        "SolitonClassification.Rotating.FirstTrueMatrix22": "a9885de63d26050728dc1ccb74fed3c3172da230976c74cb7d9b64bcc3a37e63",
+        "SolitonClassification.Rotating.TwoSegmentActual": "25b588ed50bc600f6af5218e0da50c17bf49c51e9d8249add274848e1dfa7ea4",
+        "SolitonClassification.Rotating.CandidateInputs": "8bbcb9bf849e26109b83f28ff1457c02175bb891de8c6c4c334adc0a6cc6ef75",
+        "SolitonClassification.Rotating.CandidatePreconditioner": "47c2e75894dfa0b8c8175ce995d47e9f469b38c73334050fe31dd7241858f929",
+        "SolitonClassification.Rotating.RotatingGridHorizonAudit": "22ba4aa69e50a282580bb17e13535f7078c413d6161b93f63b217282f8305477",
+        "SolitonClassification.Rotating.UniversalReducedVariation": "6e21c7d08e2682fd09f49ebc06c857fea2b9e643516813d956790f877ea74bc2",
+        "SolitonClassification.Rotating.RotatingClosedProfileAudit": "b30468024b787c4988657f25bd3d6368da1768f9404c8a601098e69598ca9a40",
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix": "73612f265019fc52c7288cf58a194730d1555e1185725c4dd20b945c21dc0c84",
+        "SolitonClassification.Rotating.VariationStructure": "5abb2fe7a6fe4c6e4470f7b6f9970edbfa2d57f69e1732cdf3dc15d22ea2bb2e",
+        "SolitonClassification.Rotating.UniversalVariationOrder22": "4252914db2c2c3672cd65683f048e3f7e430d2738ebd75fdc78e221c5bb2c836",
+        "SolitonClassification.Rotating.FlowMetricDeviationAudit": "7adc33eb443e7a5779a15415b220a2864e524169869556d66668b496d4599ec5",
+        "SolitonClassification.Rotating.UniversalTrueStateTail": "c35a44d171308d126bdca0a4122341322f6401ab77386ac1c671c1537379b814",
+        "SolitonClassification.Rotating.LocalKernelAudit": "a4b727048e8ac817e9714294f9389ab95991c62316350207f145c4c0f314e2c8",
+        "SolitonClassification.Rotating.FlowMetricAudit": "7ab58dd412bdc6057382b3c0d569237218f6b6fa12036c19dcf596c1f91abb14",
+        "SolitonClassification.Rotating.FlowInverseAudit": "ae0741908e293eedee705faaaa4fc825e82458d4bbdb818a3146546dfb465605",
+        "SolitonClassification.ScalarReflection": "167849e25f7567a575d78b193b9222de2005ae7050539ddfcaeae539891e83bb",
+        "SolitonClassification.Rotating.ActualFlowAudit": "c8940a34be6499f42b9be22dcbe062114876e978359440de4119b226616a8840",
+        "SolitonClassification.Rotating.CoreAudit": "ddc3205ab94bd4229a73e6b7494d6e2012e0d5a04eaeaf1056f27ccf3f8efe05",
+        "SolitonClassification.ScalarParameterUniqueness": "dfe11afc51a703b8a6553452b32472271fcc322435a02f5b0571a4918ff5fb21",
+        "SolitonClassification.CircleLinearization": "a4bfdf5e891734c2eac305acb79ad7f509d107f2d0f31fcb85635743162eb96d",
+        "SolitonClassification.NoClosedTranslators": "d912506d1b8399acfb66f0db7fd95ee5949a3345fb49baec3801920296f0a2b9",
+        "SolitonClassification.ScalarReconstructionCurve": "24ce13e0041a1b8e6c80a04d4a4562d86e512c778a48d20fbbd8a0b030ba58c3",
+        "SolitonClassification.ScalarReconstructionEquivalence": "a2c0a3cfc88d7cb9d6bec3c761b0841833341ffcdf09eb149c7f4f292caedf51",
+        "SolitonClassification.OddLocalRigidity": "3cc195735ea1ac1157467dcc6dfc3b03db2965590a0590e80d0a650f0379d5bc",
+        "SolitonClassification.SupportODE": "98f8dfaacb76c2d6fe86e958a42f7c7fc38819073d2e9b579bba1754d3642612",
+        "SolitonClassification.OneSignCurvature": "7282cca49a4e0965513059c0efb94273b9876671b66b9a0c22e083c8609e689a",
+        "SolitonClassification.SolitonDilation": "e3c5164cc045338393b398fd3ae2f68bf8f89c6f9ca88c5f44d185dfb15ec04e",
+        "SolitonClassification.RotationPitch": "8320209c17e4a0dda4f2f4b1e945d7072fdcd4f9b4a3085c94bf2a1b63aba653",
+        "SolitonClassification.PitchContinuation": "d891fc79ee340d00a474bef47ab58480bdc6571e8a9f25fbe183cb646a272bd5",
+        "SolitonClassification.CandidatePitchBranch": "e86dc693eeabbb88e7be49fd83a80e4f5c5981c2729e1895a9ce54d0d47d07e8"
+      },
+      "exit": 0,
+      "olean_sha256": "f97406dbb342de822b02b9517e089e97f2b08c80f6d7e63f05e0c4cb15848874",
+      "setup_sha256": "132291395bd41a2a6b2fd73889015e8b71451118c690860b0b4e6d4b40aa1a15",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "lean_binary_sha256": "af49bacfabaa1fea71332ca0feae0fa1a60912219d5902291adc79f905bffb8d",
+      "direct_import_sha256": {
+        "SolitonClassification": "f97406dbb342de822b02b9517e089e97f2b08c80f6d7e63f05e0c4cb15848874",
+        "Lean.Util.CollectAxioms": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d"
+      },
+      "exit": 0,
+      "olean_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "setup_sha256": "9f6097c781e59f1729461f1cc405e3f7184c853a9dea92ade4ec47037403cfbe",
+      "log": "SolitonClassification audit passed: 22410 declarations; standard axioms only.\n"
+    }
+  ]
+}
