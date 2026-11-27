@@ -21,6 +21,14 @@ def main():
         annuli=check_annuli(path,report)
         assert annuli["inner_critical_cell"]==49
         print("Inner and outer radial-band apertures in revolutions:",annuli)
+        from density_geometry import check_density
+        from density_upper import check_density_upper
+        lower=check_density(path,report)
+        upper=check_density_upper(path,report)
+        assert lower["distinct_critical_radii"]==72
+        assert lower["variation_lower_numerator"] >= 1009779369 and lower["variation_lower_denominator"]==10**8
+        assert upper["strict_density_upper"]==14
+        print("Whole-image crossing-density enclosure:",lower,upper)
         from crossings import count
         for mesh,num in ((32768,42),(49152,45)):
             result=count(path,mesh)

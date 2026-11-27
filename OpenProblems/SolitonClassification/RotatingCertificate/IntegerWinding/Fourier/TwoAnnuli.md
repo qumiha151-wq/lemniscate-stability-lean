@@ -37,3 +37,5 @@ Thus each cap contributes \(d(\lceil dH\rceil-1)\). As \(h=m/d\) tends to \(-1\)
                  \left\lfloor 8(n+1)/1000\right\rfloor\right).
 \]
 These results use the written holonomy and analytic branch arguments and the interval data. An end-to-end Lean verification of this family is still outstanding.
+
+Over the whole primitive curve the number of distinct ordinary transverse double points has a quadratic asymptotic with coefficient strictly between 10.09 and 14. [Global counting theorem](OrdinaryCrossingAsymptotic.md)
