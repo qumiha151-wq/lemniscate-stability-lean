@@ -1,0 +1,46 @@
+{
+  "base_declarations": 2128,
+  "audit_declarations": 2145,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.DefectSharpInterpolation",
+      "source_sha256": "f0966144e94c165a5246f191ae81944d81fc8cdc95ff42c05cfd6f2eede73327",
+      "olean_sha256": "c1af8cb1d10b23ae931179d85d538e6ea6fb7dd456cffeb82fdd4e3e04cbdaa1",
+      "exit": 0,
+      "log": "'LengthGrowth.BendingSublevel.fourth_moment_of_zero_endpoints' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectThirtySix",
+      "source_sha256": "ed3996d506223d8f3c3957b4056ed183bf5aef3659ef5a061a87a86f397f0a20",
+      "olean_sha256": "e166d711ea354072f72681a689c5ddb589c64674fa0ade388b92999ba0e3184f",
+      "exit": 0,
+      "log": "'LengthGrowth.BendingSublevel.incompatible_nondecreasing_slice' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_bending_sublevel_boundary' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectCenteredCurvature",
+      "source_sha256": "8877c58f3fe4738b1235ce8c42bf9dbfaa8b01b5779f0a16cf0ad24e449a8b46",
+      "olean_sha256": "1d390b92a6dfdc64d8d1b9e7df190e64f958faa849ab04746178b23740a50560",
+      "exit": 0,
+      "log": "'LengthGrowth.BendingSublevel.centered_moments' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.BendingSublevel.positive_gradient_of_variance' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "d654d086ee1b7196e9c5b28ad7999abcf93a1bb5e1e2d37d62b2839717dbe5a6",
+      "olean_sha256": "09ec93e6265a09885886d7e7cb89941c710442397f091f49dd761009ccc03308",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2145 declarations; standard axioms only."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Rigidity of closed similarity profiles with low bending product
+
+Let \(X\) be a smooth regular closed planar curve whose free elastic flow consists of similarities of \(X\), up to reparametrization. If its length and squared-curvature integral satisfy \(L\int k^2\,ds\le4\pi^2+36\), its image is a circle covered once. This includes similarity motions combining dilation, rotation and translation. The quantity \(U=L\int k^2\,ds\) is unchanged under all those operations. Along the flow it is constant. The strict decrease theorem for noncircular slices therefore forces \(k\) to be constant. The turning estimate in the same proof forces the absolute turning number to be one. A regular closed planar constant-curvature curve with that turning number traces a circle once. Conversely an expanding circle is an exact solution.
+
+The strict decrease theorem, including its hypotheses and the boundary of its Lean verification, is in the [independent length project](../../../LengthGrowth/Research/BendingSublevel/DefectThirtySix.md). The unrestricted classification, which also includes profiles above this threshold, is a separate question.

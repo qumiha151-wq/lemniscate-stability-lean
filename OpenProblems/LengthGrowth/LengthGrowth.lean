@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.DefectCenteredCurvature
 import LengthGrowth.ActualFlow.DefectFourInvariant
 import LengthGrowth.ActualFlow.PhysicalAnnularFlux
 import LengthGrowth.ActualFlow.HighRecordExcursions
