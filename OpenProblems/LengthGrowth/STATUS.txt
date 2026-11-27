@@ -1,3 +1,9 @@
+严格上升纪录上的拐点费用可在单条流上发散
+存在转数为零的光滑闭曲线，其能量长度乘积严格上升到有限极限，同时正的拐点项在所有充分晚的时刻按正系数除以时间衰减，故在纪录上的积分发散。对每个 d≥3，可以让极限为一次伯努利双纽线乘积的 d² 倍，而每个实际时间切片都有单访点。另给出约束弹性曲线开始自由流时乘积二阶导数的精确公式。这三项为书面证明。任意单流的四次根长度上界仍待解决。
+
+Divergence of positive nodal charge on increasing records
+One primitive turning-zero free elastic flow can have a strictly increasing bounded product and divergent positive nodal charge on every record tail below its limit. Primitive examples can approach arbitrarily large finite limiting products. The new acceleration formula applies to a free flow started from any closed length-constrained elastica. See Research/SaturationGeometry/IncreasingLemniscateRecords.md, PrimitiveLargeRecords.md and ElasticaRecordAcceleration.md in that directory. The three results are written proofs.
+
 只在创造增长纪录时计入拐点预算
 对每条给定的闭合自由弹性流和任意固定正时间 T，Lean 验证了等价判据。长度具有四次根上界，当且仅当存在阈值 H，使能量与长度的乘积超过 H 并继续创造新高时，拐点斜率所对应的实际有向积分上界具有有限的时间预算。恒定的乘积不会使用这份预算。曲率零点处的斜率求和识别另见书面证明。独立长度项目审核了 2053 个声明，使用标准公理。
 
