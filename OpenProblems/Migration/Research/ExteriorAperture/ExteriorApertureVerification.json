@@ -1,0 +1,43 @@
+{
+  "base_declarations": 739,
+  "audit_declarations": 746,
+  "audit_log": "Migration audit passed: 746 declarations; standard axioms only.",
+  "verified_baseline_source_object_pairs": 66,
+  "fresh_compilations": [
+    {
+      "module": "Migration.ExteriorAperture",
+      "source_sha256": "7becadb271a9697704ff06c226d5963bc04a7e7cd30654630f4da0afe3a67e81",
+      "olean_sha256": "25e9e2c27e135cdf5165fa187e9146ce9e9d02a8401364b2b057a1d12a014dbd",
+      "exit": 0,
+      "log": "'MigrationGeometry.Adjoint.Frame.sector_integral' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.Adjoint.ClosedExpander.radius_sector_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.PhysicalViewingAngle",
+      "source_sha256": "9751eff8d85a7508c69b48c80b6ca1e503f8e888e5d8e3c28c7f8d1921ab40d0",
+      "olean_sha256": "0fbb78e306af780e4f7cac83bb098af2120a39dcd19e6bd5ba5cbd4be3d1d7bc",
+      "exit": 0,
+      "log": "'MigrationGeometry.Adjoint.ClosedExpander.external_viewing_angle_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "686c10a3f84d7c904dbe1b74604402aaa46bbc79b6187883458d7b246306c598",
+      "olean_sha256": "02b446c08cd8b481cd36aea368de5c56556654c4e83c4ecbe0428ce5af2de539",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 746 declarations; standard axioms only.\n"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+}

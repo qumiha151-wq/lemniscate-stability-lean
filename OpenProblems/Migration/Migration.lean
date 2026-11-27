@@ -1,3 +1,4 @@
+import Migration.PhysicalViewingAngle
 import Migration.UniformHullGap
 import Migration.BernoulliPerturbation
 import Migration.GapCapSweep
