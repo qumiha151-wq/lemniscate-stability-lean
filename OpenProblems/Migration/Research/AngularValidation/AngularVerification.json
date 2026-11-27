@@ -1,0 +1,135 @@
+{
+  "audit_declarations": 1115,
+  "base_declarations": 865,
+  "audit_log": "Migration audit passed: 1115 declarations; standard axioms only.",
+  "verified_baseline_source_object_pairs": 77,
+  "fresh_compilations": [
+    {
+      "module": "Migration.AngularReconstruction",
+      "source_sha256": "b19d42075c6d7b552f38884d0c95c87833026dd233e872cce48e1c7e16360205",
+      "olean_sha256": "3c69f5312ecaf4fee5eeb9211987802e9443d6dd498773ed4899a0b24e1920a0",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.Chart.position_time' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Chart.periodShift_constant' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Chart.mean_normal_velocity_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularElasticFlow",
+      "source_sha256": "be6df577cd3100a4c8a7c097e0ac98634d889a8c556059181f9c5b70e4db676a",
+      "olean_sha256": "0b774f617f28120818bc25fa01ad3d20dd0f6cf2c55815f9dda4950519fefa09",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.Chart.planePosition_space' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Chart.planePosition_force' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Chart.planePosition_time' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Chart.planePosition_physical_time' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularMeshSeparation",
+      "source_sha256": "4c80726a77ddef775aada2cb412e5d5076928e57db38bfc5513e021ab64c8da9",
+      "olean_sha256": "ee36ea723337bc72d1b708ea28742317c9d224a16265681f4e04f3a0b0aa8e68",
+      "exit": 0,
+      "log": "Try this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n'MigrationGeometry.AngularGauge.mesh_separates' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularWienerBound",
+      "source_sha256": "f9c1fc84ea7d0c519898e2d0754d64a87e205a3e89cef0d2203d28f92a3d8eaa",
+      "olean_sha256": "278c436d574f2f793b4944cfd9caf04054e32af336b11ecaaefb120d423c399b",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.angular_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.slab_barrier' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularSpectralExample",
+      "source_sha256": "1bbc7d659786a04a4ce059927c3ac1b2bb4390cdf6687b52bd6f9a8dce6c56e7",
+      "olean_sha256": "4e4d261695538fff749892d1df716a9634170afed8c444c9138ae489dd813b5f",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.Example.gauge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Example.closed_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.Example.smoothing_mode' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularFirstVelocity",
+      "source_sha256": "8fd8b7c2d9137019ae114198774208a0dfadd435b4bae114441128ee53b30d98",
+      "olean_sha256": "37abe0ee9fcce67b61dc3dbf391657791584408b4db6436fc4e1e860cb84b3ea",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.Example.firstVelocity_modes' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularFourierResidual",
+      "source_sha256": "01e05f8c3fedc71ee53dd3a710f3ebe242cb9bb1b0ddbf3e0a7281ec34e8d71f",
+      "olean_sha256": "6caaa3638f01e9b68d275525462af0dc1783935516d01ce0037da26abae010d6",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.FourierExample.residual_certificate' depends on axioms: [propext]\n'MigrationGeometry.AngularGauge.FourierExample.derivative_certificate' depends on axioms: [propext]\n"
+    },
+    {
+      "module": "Migration.AngularSlabConstants",
+      "source_sha256": "3975f81070243c407884eb6b7c0b334f0ba26a42cad99616e09b6b295bc5a669",
+      "olean_sha256": "de28aa69d76a04ca79c1977530cb002b7d7d31ca600ead23fc1ff1138aadff9d",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.FourierExample.numerical_barrier' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.AngularGauge.FourierExample.numerical_slab' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularFourierSemantics",
+      "source_sha256": "081b03cf65425102e3ed900a9d0d1fc8a5193818bc19c93c944f160dc6a248a5",
+      "olean_sha256": "194e5170240cef02bbe6669d660a7339eff6ddd05389b8a85bfda17bcf9de016",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.FourierExample.times_value' depends on axioms: [propext, Quot.sound]\n'MigrationGeometry.AngularGauge.FourierExample.certified_coefficient_barrier' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularMeanDrift",
+      "source_sha256": "f4071e9734f1887b1bcae76e4cb2eefa63a7a8217791e543c9ead9dc0601dc0e",
+      "olean_sha256": "1a3f3c695b4b812033ade8df6099abd93e656c5704b67d9a878b346684d1bed7",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.Chart.projectedMean_hasDerivAt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.AngularGauge.Chart.meanHeightSpeed_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularGauge.propagate_mean_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularMigrationTest",
+      "source_sha256": "e2a44941014cb42db014d3037099bc2abaaf11ad3d4a6b9fe3813ebc57f81248",
+      "olean_sha256": "6abedaf7c205b7a7823637029fb2e1e1cb7e5e15cdc498f4e6dc26564693fc2f",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.Chart.separated_ranges_of_mesh' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularModeEnvelope",
+      "source_sha256": "05c5b48aebbfec882a90f873d5ebaa5360085a74331bae68542a9db7317acc8f",
+      "olean_sha256": "6dd4cb929eedb18f50e9d400e22893a4061585ac3cb52973b0f65e7de23a6382",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularGauge.mode_solution' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.AngularExcursionBarrier",
+      "source_sha256": "594744026d8ff479d577bdc2bcbfeb8fe0823e2b8af797fae9b9173846053abd",
+      "olean_sha256": "e43a28fbc8183e456e3fddea4294a7d4bbf626773c9da2005728ecf9f04bbe05",
+      "exit": 0,
+      "log": "'MigrationGeometry.AngularExcursion.closed_projected_cost' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularExcursion.weighted_excursion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.AngularExcursion.semicircle' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "530f3f38ce88dac6a34e6c14199635d56b8d310fbed1be0c54ec5081059a80a2",
+      "olean_sha256": "4e5c04e99c8fddde6e1199145f6797d2361c3964bb083fcaf3fddfd26268e25c",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 1115 declarations; standard axioms only.\n"
+    }
+  ],
+  "spectral_replay": {
+    "time_slab": "1/1000000",
+    "angle_X_radius": "7/100000000",
+    "nonzero_residual_coefficients": 170,
+    "maximal_spatial_mode": 50,
+    "maximal_time_degree": 5,
+    "residual_times_1e9_upper": 47091,
+    "lipschitz_times_1e6_upper": 8432071,
+    "barrier_times_1e12_upper": 67489,
+    "initial_velocity_nonzero_modes": [
+      -10,
+      -8,
+      -6,
+      -4,
+      -2,
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  }
+}
