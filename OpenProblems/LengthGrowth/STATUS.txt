@@ -1,3 +1,9 @@
+真实闭流上的总应力质量
+令 S=(k²/2)T+k_s N，M=∫|S|ds。对每个真实闭流的任一时刻，Lean 已验证 4 max(0,M−3E)³ ≤ 27 L²D，其中 D=∫F²ds。更强的全曲线估计将右侧写为 27 L(∫|F|ds)²。本项可用于同时控制所有应力尺度的抽样质量。独立长度项目审核了 2012 个声明，使用标准公理。
+
+Total stress mass on physical closed curves
+The full arclength integral of the elastic stress magnitude satisfies the displayed cubic estimate, including on the initial slice. The same cubic bound holds simultaneously for the sum of the squared curvature scales times the arclengths of any finite family of disjoint measurable sampling bands whose stress magnitudes exceed the respective squared scales. A positive regularization and periodic integration by parts give the force-integral estimate. The unconditional fourth-root upper bound on length remains open.
+
 长度增长率的锐等号与接近等号时的曲线形状
 Lean 已证明，在任意真实闭流的正时刻，增长率恰取上界 η=1/2−π²/(EL) 当且仅当 EL=2π²。此时的曲线为一次遍历的圆，原始物质标签在一个周期内互不重合。一般曲线的质心半径平方振荡也由同一个亏损控制。独立项目共审计 1991 个声明，仅使用标准公理。
 
