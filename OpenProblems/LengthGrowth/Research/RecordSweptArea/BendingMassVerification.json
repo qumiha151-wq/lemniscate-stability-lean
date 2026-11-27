@@ -1,0 +1,56 @@
+{
+  "previous_declarations": 2815,
+  "audited_declarations": 2825,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "previous_root_sha256": "642ca795b06c13329e6e2e220d3bfa6e3bb7e421f07b5caf916317b670a59e72",
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.BendingCutoffFlux",
+      "source_sha256": "f11ab85268b747e292cb88d51b674d3c85f6aad811b717418600ccad136ad10a",
+      "olean_sha256": "1823d148f87f9f6011d2976080d4aceb79e67c6d1435c3bbf3ff7337b9897710",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.SmoothPeriodicImmersion.projectedBendingMass_material' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.SmoothPeriodicImmersion.projectedBendingMass_flux' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.MaterialTurnFlux": "839798cf77cb7aa0e3fd48edaf528831650a40948ca97be2c25697b8477a956e"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ProjectedDilation",
+      "source_sha256": "8b1b9c7acacde84d787872498e74bcd30a5cb2ad845ad13414990140dff48868",
+      "olean_sha256": "9b4d60f9bf47e08401301d8f2a70a860bd60483ed01c18331b55adf38b0c4b7d",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.projected_dilation_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.WeightedForceRate": "ca756a64aaebc6d298766290b70cf45c989b38d22437416bd13ab814ebe6d85c"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "1576fcf7d032aae25a7c5032118f46d810ff613bad55b26bf49c5cad21e09c21",
+      "olean_sha256": "e62d88e943b656d54dba7e1db1f691d70ea291cd6dc7ad38b677dff85db442ba",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2825 declarations; standard axioms only.\n"
+    }
+  ],
+  "formal_scope": [
+    "Weighted bending-energy derivative and exact projected cutoff flux on an actual smooth material free elastic flow.",
+    "Projected first variation for a smooth ambient test profile on any closed Frenet slice."
+  ],
+  "written_scope": [
+    "Truncated dilation bound and localized bending energy at records.",
+    "Unconditional uniform decay of the absolute bending energy in fixed-radius moving disks.",
+    "Dissipation-weighted fourth-moment criterion for energy decay.",
+    "The all-time exponent 1/15 and upper-envelope exponent 1/17 on a positive plateau."
+  ]
+}
