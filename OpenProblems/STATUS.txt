@@ -3,7 +3,8 @@
 已解决：存在弧长质心趋于无穷远的光滑闭合自由弹性流。Lean 构造的例子满足实际演化方程，其质心的横坐标趋于正无穷。证明位于 CentroidEscape。双扭线稳定性见仓库原有项目。
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/5c8c62f47fe6d97b40324bce2c98b2ab5247d1a5/OpenProblems/CentroidEscape/VerifiedCertificate/9ef471f7e818029931ad20abaa1119a08819b718/assembly/sources/CentroidEscape/FullCandidate_v1_41fda1193ab84b01_Certificate.lean
 
-闭合自相似解分类：已验证一个转数为 −1、基本弧长周期在 (60,62) 的非圆闭合解。膨胀系数归一为 1 时，旋转系数在 (0.10,0.11)。在演化的每个时刻，曲线恰有两个横截自交点。一个基本周期内，每个自交点恰有两个原像。曲率取两种符号，每个向前时刻的凸包都包含以同一个中心为圆心的圆盘。L∫k²ds≤4π²+36 的闭合自相似解已全部分类为单覆盖圆。对任意非零转数 n，若 √(L∫k²ds)≤2π|n|+3/5，则已证明曲线恰为绕行 |n| 圈的圆，允许任意平移、旋转和伸缩生成元。另已证明，无论弯曲能量大小，只要弧长曲率是有限傅里叶和，或满足一条系数为多项式的非零线性常微分方程，闭合自相似轮廓都必为圆，允许多重覆盖。还验证了弧长曲率为单一实频率复指数的有理函数时，闭合自相似曲线也只能是多重覆盖圆；频率、分子与分母的次数均不限。若实际弧长曲率可延拓为椭圆函数（包含任意次数、周期格），则已验证原曲线必是圆或伯努利双扭线，允许多重覆盖；双扭线分支的旋转系数为零。仓库构造的旋转膨胀解已证明不属于这个函数类。一般的闭合自相似解完整分类仍开放。
+闭合自相似解分类：已验证一个转数为 −1、基本弧长周期在 (60,62) 的非圆闭合解。膨胀系数归一为 1 时，旋转系数在 (0.10,0.11)。在演化的每个时刻，曲线恰有两个横截自交点。一个基本周期内，每个自交点恰有两个原像。曲率取两种符号，每个向前时刻的凸包都包含以同一个中心为圆心的圆盘。L∫k²ds≤4π²+36 的闭合自相似解已全部分类为单覆盖圆。对任意非零转数 n，若 √(L∫k²ds)≤2π|n|+3/5，则已证明曲线恰为绕行 |n| 圈的圆，允许任意平移、旋转和伸缩生成元。另已证明，无论弯曲能量大小，只要弧长曲率是有限傅里叶和，或满足一条系数为多项式的非零线性常微分方程，闭合自相似轮廓都必为圆，允许多重覆盖。还验证了弧长曲率为单一实频率复指数的有理函数时，闭合自相似曲线也只能是多重覆盖圆；频率、分子与分母的次数均不限。若实际弧长曲率可延拓为椭圆函数（包含任意次数、周期格），则已验证原曲线必是圆或伯努利双扭线，允许多重覆盖；双扭线分支的旋转系数为零。仓库构造的旋转膨胀解已证明不属于这个函数类。此结论已推广到所有在整个复弧长平面上有单值亚纯延拓的曲率，允许任意增长和任意多个极点。证明从非实极点的奇反射推出虚周期。反之，两类曲率都具备这种延拓；该旋转例子已严格排除在外。一般的闭合自相似解完整分类仍开放。
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/c0f32c929f04d8bcc0f3b661c8ac4b4f630223a0/OpenProblems/SolitonClassification/Research/MeromorphicCurvature/MeromorphicArclength.md
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/af7a9421f86d61ade327011a555426cd8d8f32d8/OpenProblems/SolitonClassification/Research/EllipticCurvature/EllipticArclength.md
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/b45a0ecfe0d416df1d4e141c08aa2a2eb4b42714/OpenProblems/SolitonClassification/SolitonClassification/RationalCurvatureCircle.lean
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/31cf80adf80a7244a2456f18e5fcbb59e47d7aa3/OpenProblems/SolitonClassification/SolitonClassification/HolonomicCircle.lean
@@ -33,6 +34,12 @@ https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/47cd63bf3464bd798
 
 高弯曲乘积纪录附近的耗能。若按当前均方曲率尺度归一化后，实际曲线强逼近已构造的显式三角曲线族，则耗散在这些纪录附近必须足够大。量化耗散估计已由 Lean 验证；强逼近下的短时间能量下降结论另附书面证明。
 https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/95d1417bd69707ae93aeac984d7fa4788612837b/OpenProblems/LengthGrowth/Research/RecordSweptArea/RecordEnergyBursts.md
+
+长度问题方面，若极限弯曲能量为正，乘积纪录上的弯曲能量必须在按总长度缩放的图像中集中。长期结论附书面证明，其加权弯曲能量通量和局部膨胀恒等式已通过 Lean。
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/2d2035ef9763e9db7ef595ff592b03b3d5e8b65e/OpenProblems/LengthGrowth/Research/RecordSweptArea/BendingMassAtRecords.md
+
+整条曲线迁移方面，不限制初始总能量时，已给出共同圆盘能够维持的局部时间下界；随初始时刻趋于无穷，还得到越来越长的共同圆盘时间窗。材料点位移一致为 o(√t) 的证明依赖书面抛物估计。已核验的几何和位移恒等式，以及各项证明范围见 Migration 项目说明。一般两个任意时刻能否由直线严格分开仍开放。
+https://github.com/qumiha151-wq/lemniscate-stability-lean/blob/294fb47c5f5218eca96a44f090902bec1e9ac36a/OpenProblems/Migration/STATUS.txt
 
 历次进展
 
