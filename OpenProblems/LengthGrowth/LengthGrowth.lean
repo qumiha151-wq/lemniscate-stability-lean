@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.NodalSquare
 import LengthGrowth.ActualFlow.StressBandMass
 import LengthGrowth.ActualFlow.PhysicalEqualityCircle
 import LengthGrowth.ActualFlow.ExpandingPhysicalWidth

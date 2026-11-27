@@ -1,3 +1,9 @@
+拐点处曲率斜率与四次根增长
+对真实闭流的每个正时刻，Lean 验证了能量与长度乘积的增长公式，其中有向曲率矩提供正项，三项非负亏损从中扣除。另一项上界直接使用曲率零点附近的平滑化积分。任一上界在正时间尾部可积，即可推出四次根长度与能量估计。将有向积分识别为所有拐点处曲率斜率绝对值之和，以及只计增长纪录时段的判据，另有书面证明。独立长度项目审核了 2046 个声明，使用标准公理。
+
+Curvature slopes at inflections and the fourth-root bound
+The intrinsic upper rate takes the infimum over positive smoothing scales of the actual regularized nodal mass bound. Its finite integral on a tail implies the original fourth-root length and energy estimates for a single flow. The written argument identifies the limiting true inflection slope sum and gives an exact growth formula. See Research/SaturationGeometry/NodalSlopeBudget.md. The bound for unrestricted trajectories remains open.
+
 真实闭流上的总应力质量
 令 S=(k²/2)T+k_s N，M=∫|S|ds。对每个真实闭流的任一时刻，Lean 已验证 4 max(0,M−3E)³ ≤ 27 L²D，其中 D=∫F²ds。更强的全曲线估计将右侧写为 27 L(∫|F|ds)²。本项可用于同时控制所有应力尺度的抽样质量。独立长度项目审核了 2012 个声明，使用标准公理。
 
