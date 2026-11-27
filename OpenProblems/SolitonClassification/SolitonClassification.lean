@@ -1,3 +1,6 @@
+import SolitonClassification.PrimitiveInflections
+import SolitonClassification.QuarterOddRigidity
+import SolitonClassification.QuarterRankIntervals
 import SolitonClassification.LinearExpanderCount
 import SolitonClassification.InfinitelyManyExpanders
 import SolitonClassification.FrozenCertifiedScattering
