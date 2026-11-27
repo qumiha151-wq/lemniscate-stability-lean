@@ -1,3 +1,5 @@
+对于初始弯曲乘积至多 4π²+36 的实际闭合自相似曲线，独立分类项目已证明其参数式是恰好绕行一次的圆，允许任意相似中心、膨胀和旋转。弯曲乘积之外没有附加形状或初始曲率符号假设。审核通过 57426 个声明，仅使用 Lean 标准公理。见 Research/LowBending/SimilarityRigidity.md。
+
 Both full point grids now supply their inverse bound at every index in Lean. For the one-turn candidate only the finite signed polynomial tests remain. Its claimed length is proved to be the shortest positive position period, under those tests. Independent audit: 57277 declarations, standard axioms only. See RotatingCertificate/IntegerWinding/DyadicReset/OnlyPolynomialCells.md.
 
 All 8002 concrete point-matrix bounds in the two signed winding-one grids and all four initial and terminal row equalities now pass the independent project audit (56965 declarations, standard axioms only). The trajectory checks between the nodes are ongoing. See RotatingCertificate/IntegerWinding/DyadicReset/CompletePointGrids.md.

@@ -1,3 +1,4 @@
+import SolitonClassification.LowBendingCircles
 import SolitonClassification.Rotating.ResetPrimitiveCells
 import SolitonClassification.Rotating.ResetGridClosure
 import SolitonClassification.Rotating.IntegerTwoArmImmersion
