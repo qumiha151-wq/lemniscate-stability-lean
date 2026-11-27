@@ -1,0 +1,136 @@
+{
+  "baseline_declarations": 2053,
+  "aggregate_declarations": 2066,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "independent_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.CurvatureMomentCone",
+      "source_sha256": "51be84d85b1dadfee86f063f3c1c9e6cc813f98ee726fd229314b3c2b1f7dcb6",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.CubicHalfThreshold": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+        "Mathlib.Algebra.QuadraticDiscriminant": "3bd9c251d1afa9052ea1a11793e08f51e30e1fe1839a203d81418be9108f050e"
+      },
+      "setup_sha256": "04e97289fe5c76904ff037c0ae36adfba51b59c40aeabb5fc4fd2bec220f5406",
+      "olean_sha256": "ba78cbd6f6714c17d4d0eea0a7d1f202932cf733509c859c868cc03e5f61cb33",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.curvature_support_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.ActualFlow.signed_excursion_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.PhysicalCurvatureExcursion",
+      "source_sha256": "76d702bf7e3d966623e15eea03e86bcd035c08b36099bdc519886b5dd6ba4d0c",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.CurvatureMomentCone": "ba78cbd6f6714c17d4d0eea0a7d1f202932cf733509c859c868cc03e5f61cb33"
+      },
+      "setup_sha256": "b2a2f13e4a5899b115d3a6e188cfa1974d4b1136479f71c667e7ca03a894e639",
+      "olean_sha256": "537955f2274234f822a125de2eff2ac357228cb4f23b99f4845996d3b49d038a",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.actual_signed_excursion_constraint' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.HighRecordExcursions",
+      "source_sha256": "5925cabd39a05bbc1c1c2e9e15d5ac4a2e834dae16547baaa0e8d5aa2fc0a9ea",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.PhysicalCurvatureExcursion": "537955f2274234f822a125de2eff2ac357228cb4f23b99f4845996d3b49d038a"
+      },
+      "setup_sha256": "c17f04f1d7bbb18eb0d67fb4c76caa270d043670ecd33ceb5f60d027a6838c7a",
+      "olean_sha256": "1d05c240cb8c3adf79ae072536fbae4df3a0fea0ad514f862a1decbc6df1cbaa",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.high_record_both_curvature_excursions' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_high_record_excursion_cap' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "86fff5ccc92ead2511e13676f480dd6901e866166d1df0ec2dbb038b5a444ab7",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.HighRecordExcursions": "1d05c240cb8c3adf79ae072536fbae4df3a0fea0ad514f862a1decbc6df1cbaa",
+        "LengthGrowth.ActualFlow.NodalRecords": "e2814ee8c6612e32d3a5782a9400f607bb2c6b068bb74c67851100161641cb1a",
+        "LengthGrowth.ActualFlow.NodalSquare": "d714977fb0a3375161ff6fbd0768592b1444e2a12d3b9ecf383c39417dbeb6d9",
+        "LengthGrowth.ActualFlow.StressBandMass": "dae1242caf7026198f2952cf01480dc3b5c5112ac55d1aea22232c3ce9e24418",
+        "LengthGrowth.ActualFlow.PhysicalEqualityCircle": "15825872eb39540ff4282ec3dfa594bf682f8a5983d425f641ff155ff4c85707",
+        "LengthGrowth.ActualFlow.ExpandingPhysicalWidth": "2cff30baaffa7fa37bfec33e2ea9334d16d7c2221554ace852855b38934f854c",
+        "LengthGrowth.ActualFlow.SaturationRadius": "9c6e35643d4188817e9d39a79c0f5769f2a4034a577b1599f21a16fc242eefca",
+        "LengthGrowth.ActualFlow.ActualInflectionDuration": "747701ca593f55614f1b0c0fefaecd0f90c21c278a0dd292ea3b272dbc88303f",
+        "LengthGrowth.ActualFlow.RecordForceWindow": "c250986f49bc59d8b3961ef00641ad528baf37f3cce2dcb8865c3149ab7b1254",
+        "LengthGrowth.ActualFlow.LemniscateAngularClock": "0c12feb388a74b04984e6ad1577d27d43b75392d4f2919f197f782db17b31515",
+        "LengthGrowth.ActualFlow.CompactInflectionRate": "c7349d8ed0d0eeffdf15294050fdc5259338dc97e6ee729e22ad8c864a621a55",
+        "LengthGrowth.ActualFlow.PhysicalInflectionRate": "035212bf88e669e8d0c0e7ee984d0dca85fd9a9fc7841eeebd573de8feb71de6",
+        "LengthGrowth.ActualFlow.ContinuousInflectionMajorant": "04b366532a16d3f8aedbf60ebdbf4877794938da59d27bc472b5703bc268f674",
+        "LengthGrowth.ActualFlow.ExactInflectionGrowth": "9614887884990a7a10993510be54126ec86d68bd69ebe273878d6376fb473c6b",
+        "LengthGrowth.ActualFlow.MaterialTurnFlux": "839798cf77cb7aa0e3fd48edaf528831650a40948ca97be2c25697b8477a956e",
+        "LengthGrowth.ActualFlow.InflectionEndpointMass": "ba9c9589d34a183d90c00a097eb39b7f572c37b6e532433bed71093363308b45",
+        "LengthGrowth.ActualFlow.TurningEnvelope": "3e7642ce7d704761d5314add434124019934a133ded4d6b91a58898741d4313b",
+        "LengthGrowth.ActualFlow.CyclicTurnVariation": "97ddc4eae684f29197dfb78045e79dbf55491cf2c0adf4082a37bda4c567921d",
+        "LengthGrowth.ActualFlow.CyclicTurnEnvelope": "f0456b38dd4ad9b92c78b78601f9f9e6e2906dc4cb2dbd6e04d4936fc1e82a2a",
+        "LengthGrowth.ActualFlow.MaterialTurnPrimitives": "bc11cc300c13e57a4695b5505afdc45f7008bbecdc19bb9eeeb646b7b97c63ea",
+        "LengthGrowth.ActualFlow.MaterialTurnContinuity": "9eb4a1f0ca90d8263a6c9c095d8cdce8a49040f269a25018e10b90f749146b94",
+        "LengthGrowth.ActualFlow.InitialTurnBound": "64c3419b45b6f432921e93f2f1574b87639d5637b8022f15c7614f3c09ca9352",
+        "LengthGrowth.ActualFlow.TurningLabels": "172e75d44abf4e6edf943ecd419865ba0d6d31d9b939676a2f58f972e774efc6",
+        "LengthGrowth.ActualFlow.InflectionRootSigns": "a55147f34810c1fa346b5d003b19156a73102bb819d9467913d427a6c1a7a0ae",
+        "LengthGrowth.ActualFlow.IntegrableTurningBudget": "586ef1d92f0c7b86644b25abbebd3f96e2c00257d65297ded0f393054b6d4f7c",
+        "LengthGrowth.ActualFlow.InflectionVelocitySeparation": "6a7f1425a64c6ad788a6c0795b793e1a8d7775b95524cebae2848a08948723a2",
+        "LengthGrowth.ActualFlow.InflectionQuarterFlow": "3b751df1a55230ab6ffa97a3a13653ca5a330681f03b095b65904622b4630f59",
+        "LengthGrowth.ActualFlow.IntegrableInflectionGrowth": "d8e5fd6d83e3a22eea3e5d6599e95ad234c1be0df8385ab6fd8a989302d41e20",
+        "LengthGrowth.ActualFlow.PointStress": "88d84d323337a68058b10e8ba828322afc39009d7589a3cc6343c803c532b55b",
+        "LengthGrowth.ActualFlow.SpatialLocalization": "ca7145fd343126f938ca6fb9a8e28558954e8c5c3a7d8bab57ccdf8562e218a5",
+        "LengthGrowth.ActualFlow.MaterialWeightedRate": "4295b8676e3691dac203c95ef3152315c8975ebc94daf8e35c565ed2a10e29ce",
+        "LengthGrowth.ActualFlow.ForceAngularSpeed": "87a6dabff1c4378f90793a37574862d3fdb32814a720afd0d33ad8f5f183af8b",
+        "LengthGrowth.ActualFlow.RecurringLength": "a92cf00c8f2378d9f38e4ad31459263039184e16849b72a1b2a61c07fe8f3364",
+        "LengthGrowth.ActualFlow.FrequencyBackward": "c7e2bfeddf226e15e429190643aee5688ab125b76089952419e8050d23e2f764",
+        "LengthGrowth.ActualFlow.RMSPowerGrowth": "0dababcbc14ace33b67746a9514b86ede883d26aaa7d16d9bbac1deed2aa11b4",
+        "LengthGrowth.ActualFlow.RadiusGrowth": "ffefbe519535e22f9daa1784839410f61cd587c9f8cf91665b3f626505687543",
+        "LengthGrowth.ActualFlow.TurningCompactFlow": "c3fe7cb22cedfd97177e1bb0bb98712a82cd8466e9085e94cea483a2fe4d99e4",
+        "LengthGrowth.ActualFlow.CriticalOsgoodFlow": "070c31a67a9dde2e0469c071b0565e2ce5b0eb0092606166e0a5c109267594bd",
+        "LengthGrowth.ActualFlow.CriticalDensityIndexFlow": "86b8f8e7785afc4751b7cecec6922319399e6feaf2fd722b3998f2421931f4de",
+        "LengthGrowth.ActualFlow.FiniteSignTheorem": "99dfd9f5499189dadcf528dce68597f92194ea4698c87c06502f9d40ab5c586e",
+        "LengthGrowth.ActualFlow.ExplicitCubicThreshold": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.ActualFlow.StrictHalfTransfer": "72f4544c22b88211034724a9b8643e006df018578caf8c9154f7770bd104932a",
+        "LengthGrowth.ActualFlow.AffineForceCompatibility": "5358fd6e56c20f8406e3b534b1ab0b8b5bf03eeed76a0be041120ea3765b3b3f",
+        "LengthGrowth.ActualFlow.CubicMomentDecay": "1a21fe8cb41d6c310823ab7f87dfbd353342e8e7c137b43e3d8d516dec970a28",
+        "LengthGrowth.ActualFlow.CubicHalfThreshold": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+        "LengthGrowth.ActualFlow.JellyfishGrowth": "bf003d9f5ba772db775a9602b45dbcef08847800d30452ef12b185899bb87cf4",
+        "LengthGrowth.ActualFlow.GrowthEnvelope": "0123a061e03d3cef1a68bce6add2615276412401d2c13d940b2f6a57e1444d97",
+        "LengthGrowth.ActualFlow.SharpCircle": "0bf57f78fa014028e1988e658d4857e03b72feb7d4916ed653632fe5718bcec4",
+        "LengthGrowth.ActualFlow.StripCoercivity": "3affe416fafecf814f9645365d01e79ab3dba448a25183c28e23159489ba9bbb",
+        "LengthGrowth.ActualFlow.AmbientMaterial": "5e50b998b3bf45716d65566b35cb55e6cc873941b7a92cdf1d79b02da136d926",
+        "LengthGrowth.ActualFlow.PhysicalTimeAverage": "d16772df203c3868ba5132ddcd7621f57e8a391200d086726653df5bf6e4c7aa",
+        "LengthGrowth.ActualFlow.AmbientCoercivity": "c191329677a8f0c0f270d87a1c8fe5dc976bfd6019c40180ed8033ba72c31840",
+        "LengthGrowth.ActualFlow.RescaledRecordWindow": "34b6ebcdb603ba01e9d1255f767a1e1622712b3e00ee9815f114d22d17665691",
+        "LengthGrowth.ActualFlow.RecordCurvature": "2aa72289d54f231c8f452ef1c11aaf88f1b8261f3662e6b973ac4d07e6f4674c",
+        "LengthGrowth.ActualFlow.RecordWindowInterior": "b4f90e655d2e43177862616c533a7b7dd40ff654352481f9df71264e918c7293",
+        "LengthGrowth.ActualFlow.GrowthEquivalence": "0c2f6dd131fcdfa4f0cb7689e8f645f82e6c87881ea9add55b5e870b22f1afb9",
+        "LengthGrowth.ActualFlow.RelativeEnergy": "cba3bbab47cb3b84534ccf900f01e5da76545813cfc7b739c98388c21e78e3ae",
+        "LengthGrowth.ActualFlow.ProductWindow": "739c016413d4ac6605359f03861e8f5e9b2f0a283f81484ad5d3f146a1873868",
+        "LengthGrowth.ActualFlow.ConditionalQuarterGrowth": "40fa661d4a0e36811e7d8269d907c61bf54cd81005b37322ce8458bd738b6568",
+        "LengthGrowth.ActualFlow.ArclengthCoercivity": "e1c4fc1908c57ec96b2b4fc97ede03c7e3b7b8ed3e0819d9003463de20d1b9b6",
+        "LengthGrowth.ActualFlow.NormalizedProduct": "a0fe258ab6e145cff4b8ce8b57ad4b95ec21487219de8a81570a83a21adb13d1",
+        "LengthGrowth.ActualFlow.ForwardDissipation": "dab140f69ef50279e603610edac13a4f839950acf19e04d6a133336292ead275",
+        "LengthGrowth.SubsqrtGrowth": "52124fec25795f5e9934db43666b9928788251fedf57b1171c3e439ac3c1717d",
+        "LengthGrowth.CurveFromPosition": "aea049ecd40db4c91c815944ed274c6ddcad2e0f58378535c36142f0b6437e8b",
+        "LengthGrowth.ScalarDissipation": "65165cf0be21b14cd0fbbc08c4d66cfda2a9b836fcb5ca9be924f4cdeec215ce",
+        "LengthGrowth.ElasticStress": "132c110da9017ff3bfe06849bcfff3395060465dc39d5f2a1d53d2bb8e0c1e1e",
+        "LengthGrowth.AbsoluteCurvatureCoercivity": "f28c92da3addc7457f35cf4f7cc66d4e70180034bebbe333f0e4f980ca279f86",
+        "LengthGrowth.CircleConnectionBacktracking": "3b4a8fe42ab64969e792da67f81081a1eeb0314e47dbf1b04b73123b7a0f44d1"
+      },
+      "setup_sha256": "c973c70858a53dc1d2c2742d1abe954aaba0dee346677a5ec37a06ff09d7d787",
+      "olean_sha256": "69c8e40fcf3991c8b53497bc11e66def0d313d1ff1800e741030e8e6b8f7a4ff",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "direct_import_sha256": {
+        "LengthGrowth": "69c8e40fcf3991c8b53497bc11e66def0d313d1ff1800e741030e8e6b8f7a4ff",
+        "Lean.Util.CollectAxioms": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d"
+      },
+      "setup_sha256": "77a34975b5be2d706b7842433a4c353bcfbc1404669043949828b19ed4544c5c",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2066 declarations; standard axioms only."
+    }
+  ]
+}

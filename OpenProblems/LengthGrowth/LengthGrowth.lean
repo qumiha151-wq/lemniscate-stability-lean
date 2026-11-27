@@ -1,3 +1,4 @@
+import LengthGrowth.ActualFlow.HighRecordExcursions
 import LengthGrowth.ActualFlow.NodalRecords
 import LengthGrowth.ActualFlow.NodalSquare
 import LengthGrowth.ActualFlow.StressBandMass
