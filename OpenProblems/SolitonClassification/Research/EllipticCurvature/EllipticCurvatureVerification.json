@@ -1,0 +1,235 @@
+{
+  "audited_declarations": 142305,
+  "previous_declarations": 142054,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "SolitonClassification.MeromorphicOrdinaryPole",
+      "source_sha256": "dc8f40e969e188a0f3dc5596e9c499726dc1a5131b47500b080c1c628b245b36",
+      "object_sha256": "4b5e2d4196f81026067156cfdd23e5b33f28588d0f9091337db11e4d0b2f42a3",
+      "imports_sha256": {
+        "SolitonClassification.RationalLocalJet": "32978493aec91da059d8ff97b730bfcc3394ef00294782c2e377b3859421c115"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicTaylorApprox",
+      "source_sha256": "3acbfbb6b7a0b42447598cb07bc925825ebd24ffbd111884d964a7a82ac91b84",
+      "object_sha256": "f77724b25ed313924d046b413bda520df3b86f0f2dbe251ef2f04ccdd61ebdf2",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicOrdinaryPole": "4b5e2d4196f81026067156cfdd23e5b33f28588d0f9091337db11e4d0b2f42a3",
+        "Mathlib.Analysis.Analytic.Polynomial": "61ce221877df836b612ff037fc445066774b2c18602ba31ba4a432e664292e53",
+        "Mathlib.Analysis.Calculus.Deriv.Polynomial": "6eacc7d42e79a0878bf92ae38782cea88ec0cefb633fe02801858d401dca56a0",
+        "Mathlib.Algebra.Polynomial.FieldDivision": "c131b1470b01d770bde4a7f8e6b0e41d0a9723de5599f393af8c0144787353c5"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicTaylorExtraction",
+      "source_sha256": "4336098a496bb7bacae64b17299127c25b09535c00e77d2b905f0cf598d0b4ec",
+      "object_sha256": "357389e912b3bb240f3e8e624c8725ef1f081419a19364f09d65c4223ec6c350",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicTaylorApprox": "f77724b25ed313924d046b413bda520df3b86f0f2dbe251ef2f04ccdd61ebdf2",
+        "Mathlib.Algebra.Polynomial.Div": "d05760eee9b74ff9dd437e83b4a1205fe37060b89287eb470bc428ec680436ad"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicPolePolynomial",
+      "source_sha256": "8ca232dc1b4f5e67b4ba212928eb780f0186dc8bcfbdc67c742835ba308246f9",
+      "object_sha256": "bc7c5bd1f4282586935aa28036b70bd15a3bab99de7d2bec0a049597eef4601a",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicTaylorExtraction": "357389e912b3bb240f3e8e624c8725ef1f081419a19364f09d65c4223ec6c350"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicPoleCoefficients",
+      "source_sha256": "f5175f84951cee0475e1f3d292f2e44c259f8223209ed927ec06d177d39bdb4d",
+      "object_sha256": "d497f56df764a5bf3a0c01b76cf656f3742b59a6ff0bf0dadd0f25fc270dde7c",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicPolePolynomial": "bc7c5bd1f4282586935aa28036b70bd15a3bab99de7d2bec0a049597eef4601a"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicPoleResonance",
+      "source_sha256": "e451adfd545b135982fd2387ddb8abe8c1bc66049004ee9bbdb8c073ed806155",
+      "object_sha256": "d7ce8dd076cd9da7c5df35b06cd09fb2bb437788e894b5cac8d344ad54bd545d",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicPoleCoefficients": "d497f56df764a5bf3a0c01b76cf656f3742b59a6ff0bf0dadd0f25fc270dde7c"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicPoleExtension",
+      "source_sha256": "6220ea90d7b29d453018132ff0b098d638287191af55783141a5a82b7349885b",
+      "object_sha256": "463281f40b3c1a1c61a1c102e17f4c280c8c971379620ef8fa080c405e450219",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicPoleResonance": "d7ce8dd076cd9da7c5df35b06cd09fb2bb437788e894b5cac8d344ad54bd545d"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliArcClock",
+      "source_sha256": "0cf9341905145d36c0178e30904b7a5c14940ad326d72c3e339dd55cd89cf0f9",
+      "object_sha256": "ac6b0f6dff94c4e041ef605d202ac4700f42391b8f03f7e611d0b54f64027b57",
+      "imports_sha256": {
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv": "f873c4d301d0e7d160de9405b772d468093b94d31db0e8e300bce62b7e9a57a5",
+        "Mathlib.Analysis.Calculus.Deriv.Inverse": "79e91a213e0e1b59499be7391b082c2826782298bda72aa393c730ab30e5550f",
+        "Mathlib.Analysis.Calculus.Deriv.MeanValue": "00f6384bbac8151062ff23dbda101f48abf1885bc68533120d7587b57763e3a8",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus": "da8ef4c75b31e2d29e090171623eefe2b110a8c894e66257f2121982495869c0",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic": "974625ece8b0dfdf12caa97aeec1b9d3b9d63a00aecde6a59fe83e958a94f86b",
+        "Mathlib.Analysis.SpecialFunctions.Sqrt": "e92f0fcd284199729e59612543b16abd6f0dbf1c2b7bbfa4d07c2cc32d490ddf",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliArcModel",
+      "source_sha256": "5e75d70ca5c2e5691193252a93418b4ad85298a614f077e60dd9487e831b6fb8",
+      "object_sha256": "a68d3a2b6d75166e57a4ca89702e3309419853bff4477182058158d9853d8fe8",
+      "imports_sha256": {
+        "SolitonClassification.BernoulliArcClock": "ac6b0f6dff94c4e041ef605d202ac4700f42391b8f03f7e611d0b54f64027b57",
+        "Mathlib.Analysis.Complex.RealDeriv": "ad4dec54954622c3a8717a273a05fb0743eb22c6218263472b14098293a38fc2",
+        "Mathlib.Analysis.Complex.Trigonometric": "f6a43547933247f1b9b1f51e608ff3c2e5a43b4232a7086d9592bcaeb7816fe3",
+        "Mathlib.Tactic.LinearCombination": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliOscillator",
+      "source_sha256": "217b80defe027f5b5ad8bf8690791e3b1bfd52c4067ca8a7a60eed5dc77c2966",
+      "object_sha256": "ea91de181c2c2a8e2400afec5b30c11917fe8f29f84c5d1d20207cb6deab14e5",
+      "imports_sha256": {
+        "SolitonClassification.TangentLawGeometry": "c52bc688c0611bdd1389fa2160585bbd795c482040440c93041a5c60efdd7158",
+        "Mathlib.Analysis.ODE.ExistUnique": "a331f36896f0e9f5a588b6698e851e6e4677b1716291a3f8aaa3a4f9d6b1900c",
+        "Mathlib.Topology.Connected.Clopen": "96cbb36c48e2d255b09883e44cb0806529dd9e26b8d4db642abdfce002e04914",
+        "Mathlib.Analysis.Calculus.Deriv.Slope": "4f88cec28e8c9d982de0e2666930736ded9d16d0509ab194c6fdda7e92ce35fa"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliArcMatch",
+      "source_sha256": "e206d33a7f4ac18d1222ad92226512fbcbe65768a4d3d89ec2586f87d3660714",
+      "object_sha256": "af7cde170d7fbf7a42e1d053d1d1269847e7ee094bd325f7fd1c48e7454108bf",
+      "imports_sha256": {
+        "SolitonClassification.BernoulliArcModel": "a68d3a2b6d75166e57a4ca89702e3309419853bff4477182058158d9853d8fe8",
+        "SolitonClassification.BernoulliOscillator": "ea91de181c2c2a8e2400afec5b30c11917fe8f29f84c5d1d20207cb6deab14e5"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliScaleLaw",
+      "source_sha256": "df5f7ee568f10d35a78822984e7150929a016854f5f86ac638fa7bc285d6c2ad",
+      "object_sha256": "de181243212a9eb2a7aed9b32011a24c3b97a8f427cceabe963219203db1d9f1",
+      "imports_sha256": {
+        "SolitonClassification.BernoulliOscillator": "ea91de181c2c2a8e2400afec5b30c11917fe8f29f84c5d1d20207cb6deab14e5",
+        "Mathlib.Analysis.Calculus.Deriv.Inverse": "79e91a213e0e1b59499be7391b082c2826782298bda72aa393c730ab30e5550f"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliFrenetMatch",
+      "source_sha256": "657477e1f603bdc16196a84128be3d762c1d8ef0e0c0a01dcff794a03e2b79af",
+      "object_sha256": "39640dc5e29eb0c0c101ce21199213316afbcb83b9e9836ad2dd837733d2aa1b",
+      "imports_sha256": {
+        "SolitonClassification.BernoulliArcMatch": "af7cde170d7fbf7a42e1d053d1d1269847e7ee094bd325f7fd1c48e7454108bf"
+      }
+    },
+    {
+      "module": "SolitonClassification.BernoulliPhysicalCover",
+      "source_sha256": "b1ea672d33c6328906ee7df217bc3b010306d517e3cf25195e0a93e94a810c83",
+      "object_sha256": "5b9b63722405954dfaa32360919037bfbf8f92ad76aafd8ca72fca2c29c71485",
+      "imports_sha256": {
+        "SolitonClassification.BernoulliFrenetMatch": "39640dc5e29eb0c0c101ce21199213316afbcb83b9e9836ad2dd837733d2aa1b",
+        "SolitonClassification.BernoulliScaleLaw": "de181243212a9eb2a7aed9b32011a24c3b97a8f427cceabe963219203db1d9f1",
+        "SolitonClassification.LowBendingCircles": "74b97e479bb3bf4a17502c410589e7a80d5ac83c0ed939e60922986fca119d54"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticPeriodPlane",
+      "source_sha256": "9fe672409d0878dd6b4ee03a48d2f12d44b798fc32b38f5837f0a94416dd7e17",
+      "object_sha256": "f1788a4db3d7e9f03fb5cf9fbf0970f885382d5a109492a836229a927f132744",
+      "imports_sha256": {
+        "Mathlib.Analysis.Complex.Liouville": "55756b8dfa5650c4d2144e824f80354f1951666837e71367738e7508d06143e0",
+        "Mathlib.Algebra.Ring.Periodic": "f2da89193f406257ad02c2e1d3ffe306a87a8973d8ecf037bb178de4b0c8f3d8"
+      }
+    },
+    {
+      "module": "SolitonClassification.MeromorphicIdentityPlane",
+      "source_sha256": "510dcd6d2ddfa1e922b2555b0cb85b29eda7368e2c1fedf879793420881fe0c8",
+      "object_sha256": "54e58c630eed67ac4f9e445a80aadf13b08280a220acc97c74b079100dbe1307",
+      "imports_sha256": {
+        "Mathlib.Analysis.Meromorphic.IsolatedZeros": "3cfb6cd69f3f2cf19f5dcabaa3358476831b45d259226f94c36648e051605779",
+        "Mathlib.Analysis.Complex.Basic": "0bf6347c2d1b295f8746dce5ad1a6b90629987116dc2d76dbc3374571ea1daea",
+        "Mathlib.Topology.Connected.Clopen": "96cbb36c48e2d255b09883e44cb0806529dd9e26b8d4db642abdfce002e04914"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticDefect",
+      "source_sha256": "fa84d52096fbcf1de513250042d64daecf4573d0a273814425daec797e8bd23c",
+      "object_sha256": "2a85cf836829e5f28e91cffac604cf256452e9d5a32e2d18448e031d33967ff6",
+      "imports_sha256": {
+        "SolitonClassification.EllipticPeriodPlane": "f1788a4db3d7e9f03fb5cf9fbf0970f885382d5a109492a836229a927f132744",
+        "Mathlib.Analysis.Meromorphic.Basic": "cc3d0fb79f2207df8e47deb98b05b85b60ad164db98dafadda3e57e21c12e6a0",
+        "Mathlib.Analysis.Calculus.Deriv.Shift": "44cf4e413c6c59caccae9d64a53f0365808e676b8dd0de96e2fe2f917cdc1c59"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticContinuation",
+      "source_sha256": "35140bdf7de258f860e7fc2d38df790a60585728a86507ccabd2c82e697b34a8",
+      "object_sha256": "46a87c1bb4c29b611f33c347134a3270220b2071458059ce27510770e124305d",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicIdentityPlane": "54e58c630eed67ac4f9e445a80aadf13b08280a220acc97c74b079100dbe1307",
+        "Mathlib.Analysis.Meromorphic.NormalForm": "00445bf1809a523615ab4cb017e9527e529bdafed22d3cc198e5fbd9a7b4264e",
+        "Mathlib.Analysis.Complex.RealDeriv": "ad4dec54954622c3a8717a273a05fb0743eb22c6218263472b14098293a38fc2",
+        "Mathlib.Algebra.Ring.Periodic": "f2da89193f406257ad02c2e1d3ffe306a87a8973d8ecf037bb178de4b0c8f3d8"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticScalarEquation",
+      "source_sha256": "a0f51afb488edbe40ca423665c8cc75c64200bee464704fcdd198f1cc8de4467",
+      "object_sha256": "0e8131604180cc31e947e547febc69d61808c93819c471ffb04456bdf79c7880",
+      "imports_sha256": {
+        "SolitonClassification.EllipticContinuation": "46a87c1bb4c29b611f33c347134a3270220b2071458059ce27510770e124305d",
+        "SolitonClassification.MeromorphicOrdinaryPole": "4b5e2d4196f81026067156cfdd23e5b33f28588d0f9091337db11e4d0b2f42a3",
+        "SolitonClassification.ScalarReconstructionNecessity": "43a0a3d87acb41156a57bb0cd591be82dd9ce6d234b34a5f86e1f649d44894ea"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticNormalization",
+      "source_sha256": "339f9c8f82e2de2eda5e2426e0f8898f2c7dccfed4aab8e3d48ad66d3457da32",
+      "object_sha256": "37d7fd24b1febffa20fe84cf849148386d4322bd07aacc3e5a6f8eccb55d46f9",
+      "imports_sha256": {
+        "SolitonClassification.EllipticContinuation": "46a87c1bb4c29b611f33c347134a3270220b2071458059ce27510770e124305d"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticArclengthClassification",
+      "source_sha256": "54bdddad7e9db13df70750650c06718081f75582e892a5b3dc7d58d4e40558a4",
+      "object_sha256": "de8dd0ad02389fdc3622a14e4cf27821ad76911ba7684dacbab262d307a6377d",
+      "imports_sha256": {
+        "SolitonClassification.EllipticDefect": "2a85cf836829e5f28e91cffac604cf256452e9d5a32e2d18448e031d33967ff6",
+        "SolitonClassification.EllipticScalarEquation": "0e8131604180cc31e947e547febc69d61808c93819c471ffb04456bdf79c7880",
+        "SolitonClassification.EllipticNormalization": "37d7fd24b1febffa20fe84cf849148386d4322bd07aacc3e5a6f8eccb55d46f9",
+        "SolitonClassification.MeromorphicPoleExtension": "463281f40b3c1a1c61a1c102e17f4c280c8c971379620ef8fa080c405e450219",
+        "SolitonClassification.BernoulliPhysicalCover": "5b9b63722405954dfaa32360919037bfbf8f92ad76aafd8ca72fca2c29c71485"
+      }
+    },
+    {
+      "module": "SolitonClassification.EllipticRotatingObstruction",
+      "source_sha256": "11a4ef1e7f55b87d45236d3e98d6f5892fd6f4c259a31169acbd7dd0ef1ecaf0",
+      "object_sha256": "993ee4c31bc755443f43ea5cb45427a37a787d96c863cec87e5498eef2b6e7de",
+      "imports_sha256": {
+        "SolitonClassification.EllipticArclengthClassification": "de8dd0ad02389fdc3622a14e4cf27821ad76911ba7684dacbab262d307a6377d",
+        "SolitonClassification.Rotating.IntegerFinalDoublePoints": "f8c79daee401bf8e43b13fac7d12be614fdb11c8f09cb028f47c42f644b9bc54"
+      }
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "13e2e4e5308b88b13f72b9b4d579eef62561c08426768795b099e4d342f6e889",
+      "object_sha256": "a82510dcc6c3b99cdc2bed03ea5f07c927f4fd9d07f6447ea6dd102db101e679",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 142305 declarations; standard axioms only.\n"
+    }
+  ]
+}
