@@ -1,0 +1,17 @@
+# A direct exclusion of long periodic returns
+
+Let a smooth family of three-dimensional section maps preserve a fourth coordinate \(\omega\). At a base point suppose the derivative in the three section coordinates has distinct real eigenvalues \(a,1,u\) with \(|a|<1<|u|\). In a sufficiently small neighborhood of the base point, every finite orbit of a single member of the family that stays inside the neighborhood consists entirely of fixed points. The neighborhood is independent of the period and of the parameter in that neighborhood.
+
+Use eigencoordinates and the maximum norm. For a finite orbit let \(v_i=x_{i+1}-x_i\) and \(m_i=\|v_i\|_\infty\), with indices read cyclically. Strict differentiability at the base point gives
+\[
+ \|v_{i+1}-\operatorname{diag}(a,1,u)v_i\|_\infty\le\varepsilon m_i
+\]
+once the orbit is restricted to a sufficiently small neighborhood. The full derivative in the parameter contributes zero because consecutive points have the same parameter. Choose \(\varepsilon>0\) with \(|a|+2\varepsilon<1\) and \(1+2\varepsilon<|u|\).
+
+If the unstable coordinate has positive maximal magnitude \(m_i\), then at the next index its magnitude is at least \((|u|-\varepsilon)m_i\), and each of the other magnitudes is at most \((1+\varepsilon)m_i\). Such dominance repeats forward with strict growth, impossible on a finite cycle. Suppose the stable coordinate is maximal at the next index with positive magnitude. Its new magnitude is at most \((|a|+\varepsilon)m_i\), so \(m_i>m_{i+1}\). If the neutral coordinate were maximal at index \(i\), its magnitude at the next index would be at least \((1-\varepsilon)m_i\), contradicting stable dominance there. Since unstable dominance is already excluded, the stable coordinate is maximal at index \(i\). Repeating backwards contradicts finiteness.
+
+Every nonzero difference is therefore dominated by its neutral coordinate. The sign of that coordinate persists across iterations because its error is at most \(\varepsilon m_i<m_i\). A nonzero difference would make the neutral positions strictly monotone around the cycle. Thus every difference vanishes. The proof uses no inverse map and requires no invariant centre manifold.
+
+For the twelve reflected elastic expanders, the return following the four quarter arcs has an invariant pitch. Its fixed-pitch section derivative has the neutral multiplier \(1\) and a reciprocal pair with sum \(\sigma^2-2\), where \(\sigma\) is the half-return trace. Each of the twelve validated quarter boxes has \(|\sigma|>2\). The two members of the pair are positive and lie on opposite sides of one. The direct finite-cycle result therefore extends exclusion of nonzero pitch for nearby fixed points of the marked return to every period of a support trajectory contained in the tube. The marked return can represent several primitive revolutions. The periodicity argument applies unchanged to this iterate.
+
+The Lean statements explicitly require a strictly differentiable section map in eigencoordinates, the identities for its derivative, and the appropriate box enclosure for the quarter-flow data. The preceding [interval certificate and dynamical construction](RotationRigidity.md) supply the geometric application in the written proof. [Finite-cycle argument](../../SolitonClassification/PeriodicConeRigidity.lean) · [Strictly differentiable section maps](../../SolitonClassification/LocalSpectralRigidity.lean) · [Twelve-box application and reversible residual](../../SolitonClassification/TwelveLocalCycleTests.lean)

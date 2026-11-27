@@ -4,15 +4,14 @@ noncomputable section
 open Set
 namespace ClosedSimilarity.OuterStress.Data
 
-/-- A fixed slow-time displacement along the stress direction for every true
-    high-slope centre shot. The bounded oscillator primitive U w supplies a
-    lower mean for U²/2 without any prior averaging hypothesis. -/
-theorem centre_alignment {δ : ℝ} (z : Data δ) (hd : 0<δ) (small : δ≤1/32)
+/-- On the first half unit of slow time, the oscillator correction to the
+    stress-direction displacement gives a monotone quantity. -/
+theorem centre_alignment_monotone {δ : ℝ} (z : Data δ) (hd : 0<δ) (small : δ≤1/32)
     (hk : z.K 0=0) (hv : z.V 0=1) (hp : z.p 0=0) (hq : z.q 0=0) :
-    1/288 ≤ z.along (1/2) := by
+    MonotoneOn (fun x => 18*z.along x+δ*(z.shape x*z.slope x)-x/4)
+      (Icc 0 (1/2)) := by
   let seg := Icc (0:ℝ) (1/2)
   have zero : (0:ℝ) ∈ seg := ⟨le_rfl,by norm_num⟩
-  have last : (1/2:ℝ) ∈ seg := ⟨by norm_num,le_rfl⟩
   have short (x : ℝ) (hx : x∈seg) :
       1/2 ≤ z.amplitude x ∧ z.p x^2+z.q x^2≤(1/2:ℝ)^2 := by
     obtain ⟨pq,amp⟩ := z.centre_bounds hd hk hv hp hq hx.1
@@ -88,17 +87,30 @@ theorem centre_alignment {δ : ℝ} (z : Data δ) (hd : 0<δ) (small : δ≤1/32
     refine ⟨_,?_,fd⟩
     have uu : u^2≤u := by nlinarith [mul_nonneg u0 (sub_nonneg.mpr u1)]
     nlinarith only [amin,vmin,uu,mul_le_mul_of_nonneg_left vmax (sq_nonneg u)]
-  have mono : MonotoneOn F seg := by
-    apply monotoneOn_of_deriv_nonneg (convex_Icc _ _)
-      (fun x hx => (der x hx).choose_spec.2.continuousAt.continuousWithinAt)
-      (fun x hx => (der x (interior_subset hx)).choose_spec.2.differentiableAt.differentiableWithinAt)
-    intro x hx
-    obtain ⟨d,hd',h⟩ := der x (interior_subset hx)
-    rw [h.deriv]; exact hd'
-  have comp := mono zero last (by norm_num)
+  change MonotoneOn F seg
+  apply monotoneOn_of_deriv_nonneg (convex_Icc _ _)
+    (fun x hx => (der x hx).choose_spec.2.continuousAt.continuousWithinAt)
+    (fun x hx => (der x (interior_subset hx)).choose_spec.2.differentiableAt.differentiableWithinAt)
+  intro x hx
+  obtain ⟨d,hd',h⟩ := der x (interior_subset hx)
+  rw [h.deriv]; exact hd'
+
+/-- A fixed slow-time displacement along the stress direction for every true
+    high-slope centre shot. The bounded oscillator primitive U w supplies a
+    lower mean for U²/2 without any prior averaging hypothesis. -/
+theorem centre_alignment {δ : ℝ} (z : Data δ) (hd : 0<δ) (small : δ≤1/32)
+    (hk : z.K 0=0) (hv : z.V 0=1) (hp : z.p 0=0) (hq : z.q 0=0) :
+    1/288 ≤ z.along (1/2) := by
+  let F := fun x => 18*z.along x+δ*(z.shape x*z.slope x)-x/4
+  have mono := z.centre_alignment_monotone hd small hk hv hp hq
+  have zero : (0:ℝ) ∈ Icc (0:ℝ) (1/2) := ⟨le_rfl,by norm_num⟩
+  have last : (1/2:ℝ) ∈ Icc (0:ℝ) (1/2) := ⟨by norm_num,le_rfl⟩
+  have comp : F 0 ≤ F (1/2) := mono zero last (by norm_num)
   have initial : F 0 = 0 := by simp [F,along,radial,shape,hk,hv,hp,hq]
   rw [initial] at comp
-  have osc := (z.normalized_rates (1/2) (ap _ last) hd).oscillator
+  have ap : 0<z.amplitude (1/2) := by
+    nlinarith [(z.centre_bounds hd hk hv hp hq last.1).2]
+  have osc := (z.normalized_rates (1/2) ap hd).oscillator
   have U : |z.shape (1/2)|≤2 := le_of_sq_le_sq
     (by rw [sq_abs]; nlinarith [sq_nonneg (z.slope (1/2)),sq_nonneg ((z.shape (1/2))^2/2-1)]) (by norm_num)
   have w : |z.slope (1/2)|≤1 := le_of_sq_le_sq
@@ -109,4 +121,5 @@ theorem centre_alignment {δ : ℝ} (z : Data δ) (hd : 0<δ) (small : δ≤1/32
   nlinarith only [mul_le_mul_of_nonneg_left uv hd.le,comp,small]
 
 end ClosedSimilarity.OuterStress.Data
+#print axioms ClosedSimilarity.OuterStress.Data.centre_alignment_monotone
 #print axioms ClosedSimilarity.OuterStress.Data.centre_alignment

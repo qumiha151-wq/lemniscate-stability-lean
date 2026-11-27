@@ -1,3 +1,62 @@
+Results checked through 27 November 2026
+
+中文索引（各问题可独立验证）
+
+仓库根目录是此前的伯努利双扭线稳定性证明。
+CentroidEscape 已证明存在一条光滑闭合曲线，其按弧长计算的质心逃向无穷远。
+SolitonClassification 已给出无穷多个互不等价的零转数闭合膨胀子。全部自相似解的分类仍开放。
+LengthGrowth 给出若干保证四次根增长上界的条件。任意单条流是否都满足该上界仍开放。
+Migration 已排除若干类曲线的整体迁移。一般情形下能否整条越过一条直线仍开放。
+OpenTranslators 已构造一个完备的非直线平移解，曲率无界，回答引言中的开曲线问题。
+
+Each question has its own Lean project. The original lemniscate stability
+development is at the repository root. Progress.tex records the earlier
+working note of 11 November.
+
+CentroidEscape resolves the existence question in section 1.2(1). A smooth
+closed free elastic flow has arclength centroid tending to infinity.
+The complete proof passed all 77 jobs in run 43214648337.
+https://github.com/qumiha151-wq/lemniscate-stability-lean/actions/runs/43214648337
+
+SolitonClassification proves infinitely many pairwise inequivalent smooth
+closed homothetic expanders with turning number zero. For all large B at
+least floor(c B) distinct shapes have a normalized positive centre
+curvature derivative at most B, for a fixed c > 0. Reparametrizations,
+similarities and repeated traversals are included in the comparison.
+Their numbers of simple inflections in a primitive traversal are unbounded.
+See SolitonClassification/SolitonClassification/LinearExpanderCount.lean
+and SolitonClassification/SolitonClassification/PrimitiveInflections.lean.
+A classification covering every closed self-similar profile remains open.
+Andrews and Wheeler also construct infinitely many geometrically distinct
+homothetic expanders in their preprint Jellyfish exist.
+https://arxiv.org/abs/2601.21227
+
+LengthGrowth gives a sharp lower growth estimate and conditional upper
+bounds. The normalized pure expanders show why any general fourth-root
+upper coefficient cannot depend on initial length and turning number
+alone. Individual fourth-root upper growth for every closed initial
+curve remains open. See LengthGrowth/Research/ExpanderLength/.
+The integral criterion in LengthGrowth/Research/OneSidedTurning/ controls
+length on a single flow by the outward angular speeds at its inflections.
+The checked theorem applies when their pairwise difference has a continuous
+integrable upper bound on a tail.
+
+Migration gives geometric obstructions to whole-curve migration.
+The existence of a flow whose whole image passes from one open half-plane
+to the opposite one remains open. See Migration/STATUS.txt.
+For closed pure expanders with dilation coefficient lambda and radius R
+about their centre, a universal delta > 0 permits lambda R^4 <= 2+delta
+while guaranteeing a common centred disk in the convex hulls of any two
+positive dilations. See Migration/Migration/UniformHullGap.lean.
+Novaga's preprint proves non-migration for initial data satisfying
+L times the integral of squared curvature at most 4 pi^2 + 8/3.
+https://arxiv.org/abs/2611.07242
+
+OpenTranslators gives an eternal nonstraight complete immersed translating
+flow on the line. Its curvature is unbounded. See OpenTranslators/STATUS.txt.
+
+Earlier verification history follows.
+
 Status at 20 November 2026
 
 Miura and Wheeler, section 1.2, asks about closed immersed planar curves.

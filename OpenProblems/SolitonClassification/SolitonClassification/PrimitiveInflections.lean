@@ -5,13 +5,12 @@ noncomputable section
 namespace ClosedSimilarity.ReflectedArc.ZeroTurnExpander
 open GlobalSupport OuterStress MeasureTheory Set
 
-/-- The initial part of the centre orbit crosses all phase levels before
-    its lift reaches b/4608. The interval is shorter than any full period. -/
-theorem many_simple_inflections {L b : ℝ} (P : ZeroTurnExpander L b) (large : 32≤b)
-    {d : ℝ} (dp : 0<d) (px : Function.Periodic P.X d) (py : Function.Periodic P.Y d) :
+/-- The initial centre orbit has at least ⌊b/(4608π)⌋ distinct simple
+    curvature zeros at positive times at most √b/576. -/
+theorem many_early_simple_inflections {L b : ℝ} (P : ZeroTurnExpander L b) (large : 32≤b) :
     let N := ⌊b/(4608*Real.pi)⌋₊
     ∃ v : Fin N → ℝ, Function.Injective v ∧
-      ∀ i, v i∈Ioo 0 d ∧ P.k (v i)=0 ∧ deriv P.k (v i)≠0 := by
+      ∀ i, 0<v i ∧ v i≤Real.sqrt b/576 ∧ P.k (v i)=0 ∧ deriv P.k (v i)≠0 := by
   have bp : 0<b := by linarith
   let δ := b⁻¹
   let z := centreData b bp
@@ -99,7 +98,7 @@ theorem many_simple_inflections {L b : ℝ} (P : ZeroTurnExpander L b) (large : 
     have canon : z.shape (t i)=0 := (div_eq_zero_iff.mp point.1).resolve_right (by positivity)
     have zeroK : z.K (t i)=0 := (div_eq_zero_iff.mp canon).resolve_right rp.ne'
     rw [K] at zeroK
-    refine ⟨⟨div_pos shift fp,bound.trans_lt (P.lower_bound_for_each_period large dp px py)⟩,
+    refine ⟨div_pos shift fp,bound,
       (mul_eq_zero.mp zeroK).resolve_left fp.ne',?_⟩
     intro null
     have v0 : z.V (t i)=0 := by rw [V,null,mul_zero]
@@ -107,7 +106,20 @@ theorem many_simple_inflections {L b : ℝ} (P : ZeroTurnExpander L b) (large : 
     simp only [Angle.cs,Data.slope,v0,zero_div] at c0
     exact (pow_ne_zero _ (by norm_num : (-1:ℝ)≠0)) c0.symm
 
+/-- The initial part of the centre orbit crosses all phase levels before
+    its lift reaches b/4608. The interval is shorter than any full period. -/
+theorem many_simple_inflections {L b : ℝ} (P : ZeroTurnExpander L b) (large : 32≤b)
+    {d : ℝ} (dp : 0<d) (px : Function.Periodic P.X d) (py : Function.Periodic P.Y d) :
+    let N := ⌊b/(4608*Real.pi)⌋₊
+    ∃ v : Fin N → ℝ, Function.Injective v ∧
+      ∀ i, v i∈Ioo 0 d ∧ P.k (v i)=0 ∧ deriv P.k (v i)≠0 := by
+  obtain ⟨v, inj, early⟩ := P.many_early_simple_inflections large
+  refine ⟨v, inj, fun i => ?_⟩
+  obtain ⟨pos, bound, zero, simple⟩ := early i
+  exact ⟨⟨pos, bound.trans_lt (P.lower_bound_for_each_period large dp px py)⟩, zero, simple⟩
+
 end ClosedSimilarity.ReflectedArc.ZeroTurnExpander
+#print axioms ClosedSimilarity.ReflectedArc.ZeroTurnExpander.many_early_simple_inflections
 #print axioms ClosedSimilarity.ReflectedArc.ZeroTurnExpander.many_simple_inflections
 
 namespace ClosedSimilarity.GlobalSupport.MovingSeam

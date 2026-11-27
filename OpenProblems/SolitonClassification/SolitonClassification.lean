@@ -1,3 +1,8 @@
+import SolitonClassification.ForceAtInflections
+import SolitonClassification.TwelveLocalCycleTests
+import SolitonClassification.ForwardTrapRigidity
+import SolitonClassification.PitchResidence
+import SolitonClassification.FiniteForceLaw
 import SolitonClassification.PrimitiveInflections
 import SolitonClassification.QuarterOddRigidity
 import SolitonClassification.QuarterRankIntervals

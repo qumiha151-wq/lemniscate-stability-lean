@@ -1,0 +1,356 @@
+{
+  "baseline_commit": "672af1357800da878fa9583d1cd5f580730b5e38",
+  "baseline_declarations": 22225,
+  "root_declarations": 22264,
+  "computations": [
+    {
+      "module": "SolitonClassification.CentreShotAlignment",
+      "source": "b64e264ae41eb6a72a43c5578e9253fcc2b856d432903767117bcb6ec39f2ad6",
+      "inputs": {
+        "SolitonClassification.CentreShotWinding": "18257cab07ef6938a38215a672781b305892911b5276f94f6bc6cf6ffa7ad1fc"
+      },
+      "object": "424de86a28a521b1c159593157e7eb942ca7bee4ea8fb83c475babf6e0501c44",
+      "stdout": "'ClosedSimilarity.OuterStress.Data.centre_alignment_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.OuterStress.Data.centre_alignment' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.CentreShotEntry",
+      "source": "c8cf10328681dfeb7ba27b866ef1f1f6a869a39387d4140c99a931c8276e9c3b",
+      "inputs": {
+        "SolitonClassification.CentreShotAlignment": "424de86a28a521b1c159593157e7eb942ca7bee4ea8fb83c475babf6e0501c44"
+      },
+      "object": "b9dfc91f2ccd7e0b3fa776fc514febbab2afadae556d594ce11ba0bc1e235b22",
+      "stdout": "'ClosedSimilarity.OuterStress.Data.centre_entry' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ClosedSimilarity.GlobalSupport.physical_centre_entry' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.OuterDescentBudget",
+      "source": "6745d4fa6ba0a04b7b2447aba2215bfa0de90c58082b5addb1527205330e5224",
+      "inputs": {
+        "SolitonClassification.CentreShotEntry": "b9dfc91f2ccd7e0b3fa776fc514febbab2afadae556d594ce11ba0bc1e235b22",
+        "SolitonClassification.OuterDescent": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c"
+      },
+      "object": "b9413f385f18c0a5356a1defd704c89b853362c28795d71f91f938fa5cdcfd4c",
+      "stdout": "'ClosedSimilarity.OuterStress.critical_descent' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.OuterRadiusBarrier",
+      "source": "8feeec572bb8c1322f740f214aea8059fd043d491bbca274ecd768d60f8efc4c",
+      "inputs": {
+        "SolitonClassification.CentreShotEntry": "b9dfc91f2ccd7e0b3fa776fc514febbab2afadae556d594ce11ba0bc1e235b22",
+        "SolitonClassification.OuterDescent": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c"
+      },
+      "object": "02c93e8ad6938bdeaea52759d84a6de16d70be1ee184de2f6ae69189dd34bb69",
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.CentreCriticalLayer",
+      "source": "c9a4b3d6ceaaa375489d6afa2c32320e0046f55ae5064fadc7fcf0c1cbfdcf59",
+      "inputs": {
+        "SolitonClassification.OuterDescentBudget": "b9413f385f18c0a5356a1defd704c89b853362c28795d71f91f938fa5cdcfd4c",
+        "SolitonClassification.OuterRadiusBarrier": "02c93e8ad6938bdeaea52759d84a6de16d70be1ee184de2f6ae69189dd34bb69"
+      },
+      "object": "9f4be7fd254fb2cc02a8a5ec3e88be3d9a7ee0298a8aa83f45540a0f4bdfe8e5",
+      "stdout": "'ClosedSimilarity.GlobalSupport.physical_critical_entry' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.CentreExpanderRadius",
+      "source": "bdaaf0a7b0a6fb3e4bcf68d6b226e8c0f9b5cb972d636b63e850a7d2b9fa4b96",
+      "inputs": {
+        "SolitonClassification.StrongCentreMarker": "2c0b503bda81f42ba54bd55f92da144d494c9f07b3a43aa1a13123f1b809a09e",
+        "SolitonClassification.CentreShotAlignment": "424de86a28a521b1c159593157e7eb942ca7bee4ea8fb83c475babf6e0501c44"
+      },
+      "object": "5b82b5de8ae6e6a63ba5fb4626666624fd7364d6b881c7069c91171458abdd3b",
+      "stdout": "'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.reaches_large_radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.lower_bound_for_each_period' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PhysicalIncomingCrossing",
+      "source": "df02851cc5c43a45e0c28d1a037a00fc86d98572f5336e95c66ddc9efa0f9248",
+      "inputs": {
+        "SolitonClassification.CentreCriticalLayer": "9f4be7fd254fb2cc02a8a5ec3e88be3d9a7ee0298a8aa83f45540a0f4bdfe8e5",
+        "SolitonClassification.OuterIncomingSection": "7a043cce9b0945099f3ff51600d565f97a923fb370cd4a97343eb6007fa9bbf5"
+      },
+      "object": "0f629ecdfb917bae78f7241a03a126289d10ed4e7f9aa463104a46722562f2d3",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.physical_centre_incoming_crossing' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PhysicalCentreSelector",
+      "source": "2a4a4c3e498ba180bdf2e7ac623506a3105624579a976c97e006387e20457678",
+      "inputs": {
+        "SolitonClassification.PhysicalIncomingCrossing": "0f629ecdfb917bae78f7241a03a126289d10ed4e7f9aa463104a46722562f2d3",
+        "SolitonClassification.CentreIncomingTransverse": "b15a64e968205579b802d312d0afbffea4959d9ed0b42926b899edbca3bd8218",
+        "SolitonClassification.FirstTransverseCrossing": "294e493de03de0b8907e7ae75b69f1e44175fc5745ce6bb8dfa70d7e51e2b700"
+      },
+      "object": "d4c61041a402e87aa32e36908df39ce2b77e674013aee7e485385c0ad08ba258",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.physical_centre_selector' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PhysicalIncomingWinding",
+      "source": "d56bcd4784041dc6ae4f9ba4f3f415efc26c32af9404572d8f472fda3b557404",
+      "inputs": {
+        "SolitonClassification.PhysicalIncomingCrossing": "0f629ecdfb917bae78f7241a03a126289d10ed4e7f9aa463104a46722562f2d3"
+      },
+      "object": "61388564daad36bc710b8639fc51977b8a99f4e1874ce1f12bc76b4d4dcd5fcb",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.winding_on_physical_strip' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.UnboundedClosedExpanders",
+      "source": "2595967df356db9b81f3e831f2546838b7350c56041f04077556f4be34523fb9",
+      "inputs": {
+        "SolitonClassification.MatchCertifiedSeam": "a075239397778142de9d3c309af574b8ba7ee6e8d8228221ba912f899c9d2452",
+        "SolitonClassification.PhysicalCentreSelector": "d4c61041a402e87aa32e36908df39ce2b77e674013aee7e485385c0ad08ba258",
+        "SolitonClassification.PhysicalIncomingWinding": "61388564daad36bc710b8639fc51977b8a99f4e1874ce1f12bc76b4d4dcd5fcb",
+        "SolitonClassification.CentrePhaseContinuity": "88637d6a88ce7b7f8d51de91e1d2378e08b181b766101b9aa488e2188392805f"
+      },
+      "object": "846fa28facb2ce7e4c0c02e4af72887392d6aa1db62992009ebdb43b6b12cb77",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.unbounded_closed_zero_turn_expanders' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.InfinitelyManyExpanders",
+      "source": "8f40f5a136cc5f7ddaad067a4cc6d1c61214430d4b39931489d96effa3733339",
+      "inputs": {
+        "SolitonClassification.DistinctExpanderFamily": "e7c5b8d9c2f7cfeddaa9af65834fd3578697783df0968c86c8cd5287ca6f40d8",
+        "SolitonClassification.UnboundedClosedExpanders": "846fa28facb2ce7e4c0c02e4af72887392d6aa1db62992009ebdb43b6b12cb77"
+      },
+      "object": "812b691209d51c0ebfaabc052dedad0b8b914285c3b5ed9151b7f53b38b8e20d",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.infinitely_many_inequivalent_zero_turn_expanders' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PhysicalMarkerCounts",
+      "source": "26a8e7f5fcf807b827ffba778b1c3ad6c14cdf33e99f099e7ba9791c180f34c2",
+      "inputs": {
+        "SolitonClassification.UnboundedClosedExpanders": "846fa28facb2ce7e4c0c02e4af72887392d6aa1db62992009ebdb43b6b12cb77",
+        "SolitonClassification.MarkerCount": "89dbc43183ae11b3a4a15ff269b5cefe78148aad2e124b7d06b9e6cfe230eccd"
+      },
+      "object": "13400ee7c635a46610132367024af124e69dff2fd41ff82f13cedb5776a793dc",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.CentreChart.linearly_many_matches' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.GlobalSupport.MovingSeam.exists_linearly_many_physical_matches' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.LinearExpanderCount",
+      "source": "45461e8dec61c8b2fa9b01768d327bfc75a2463ee25a996626f4e78ffa1c2924",
+      "inputs": {
+        "SolitonClassification.PhysicalMarkerCounts": "13400ee7c635a46610132367024af124e69dff2fd41ff82f13cedb5776a793dc",
+        "SolitonClassification.PhysicalMatchedMarker": "4a6bc1f143a6579350958faf626b8aaf2f98aede8e6f5da353b7ae2c68c714f0",
+        "SolitonClassification.StrongCentreMarker": "2c0b503bda81f42ba54bd55f92da144d494c9f07b3a43aa1a13123f1b809a09e"
+      },
+      "object": "d3c5e7b8e697035569801e3e93b15ef71ef1313168bfbd80a3ac870d5826b328",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.linear_count_inequivalent_zero_turn_expanders' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.GlobalSupport.MovingSeam.positive_lower_density_of_geometric_markers' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PrimitiveInflections",
+      "source": "e3083225cb9eca6c586bd2cf20200978b4bfbd3b61c24bc2be180cbdcace51d0",
+      "inputs": {
+        "SolitonClassification.CentreExpanderRadius": "5b82b5de8ae6e6a63ba5fb4626666624fd7364d6b881c7069c91171458abdd3b",
+        "SolitonClassification.UnboundedClosedExpanders": "846fa28facb2ce7e4c0c02e4af72887392d6aa1db62992009ebdb43b6b12cb77"
+      },
+      "object": "62560924218b7cd8c2c69c7a0a92bce9f9828ab22be580b0e7943cc1f1e68e93",
+      "stdout": "'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.many_early_simple_inflections' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.many_simple_inflections' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.GlobalSupport.MovingSeam.unbounded_primitive_inflection_counts' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForceAtInflections",
+      "source": "67d12c8840c57da0d2b4b933079b08872dd964bb4ab5cea0f2ab2460cd708402",
+      "inputs": {
+        "SolitonClassification.PrimitiveInflections": "62560924218b7cd8c2c69c7a0a92bce9f9828ab22be580b0e7943cc1f1e68e93",
+        "SolitonClassification.CentreCriticalLayer": "9f4be7fd254fb2cc02a8a5ec3e88be3d9a7ee0298a8aa83f45540a0f4bdfe8e5"
+      },
+      "object": "8d0b11a270b1b8bba82d7ff35843b136ea1187514677f74d1f828524aba89238",
+      "stdout": "'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.opposite_force_at_inflections' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.GlobalSupport.MovingSeam.unbounded_error_for_every_curvature_law' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PeriodicConeRigidity",
+      "source": "fff15b1834a07ffa5f16eeb0ca3eac5e6b67aeb8a73294368725d50e65649266",
+      "inputs": {
+        "SolitonClassification.OddLocalRigidity": "3cc195735ea1ac1157467dcc6dfc3b03db2965590a0590e80d0a650f0379d5bc"
+      },
+      "object": "d40fb33bfff15a522b2978c6cc34e98f326dabb1ab4d83dd465e437e39b815dc",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.finite_cycles_fixed' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.LocalSpectralRigidity",
+      "source": "3a3b9ab52b43e940e24ad38c7361a8e5d8929210b828f089e7ba195f85bc3e5c",
+      "inputs": {
+        "SolitonClassification.PeriodicConeRigidity": "d40fb33bfff15a522b2978c6cc34e98f326dabb1ab4d83dd465e437e39b815dc"
+      },
+      "object": "ab3f9616daa8102a3fce689b285713878d5203c7b41a4e4b5c3989e230a34469",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.local_periodic_points_are_fixed' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.TwelveLocalCycleTests",
+      "source": "730b028a7ea22dc2c78ae0b71816c913e4cf2ae9998a6af989cb744ae2a40aa0",
+      "inputs": {
+        "SolitonClassification.LocalSpectralRigidity": "ab3f9616daa8102a3fce689b285713878d5203c7b41a4e4b5c3989e230a34469",
+        "SolitonClassification.QuarterRankIntervals": "65e1d255291466236a8765dd3206e0ac10efce6f07056d819f3a1c7c324e069b"
+      },
+      "object": "3354645d6311bcb6fa04a25d211c1254406af5f42233d1271090018b500b963c",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.twelve_local_cycle_test' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForwardConeEscape",
+      "source": "6b025711e3a573d869d16ed8c8728e9284085d244073069f8d6df478cdac9422",
+      "inputs": {
+        "SolitonClassification.PeriodicConeRigidity": "d40fb33bfff15a522b2978c6cc34e98f326dabb1ab4d83dd465e437e39b815dc"
+      },
+      "object": "e9b4394d2bd4c4d8889d75845277a4af335cde2a19063d2d4e1ea0ab5dd2fc6c",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.bounded_orbits_have_small_steps' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.ForwardTrapRigidity",
+      "source": "1eba69fe470e6f9a0294546776745025906d7fdf8acba5b435231ddfd890b6d6",
+      "inputs": {
+        "SolitonClassification.ForwardConeEscape": "e9b4394d2bd4c4d8889d75845277a4af335cde2a19063d2d4e1ea0ab5dd2fc6c",
+        "SolitonClassification.TwelveLocalCycleTests": "3354645d6311bcb6fa04a25d211c1254406af5f42233d1271090018b500b963c"
+      },
+      "object": "7341efaf7a30581089618755238c778e299b588373768a1613993aa5c79c9a98",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.local_compact_trap_has_fixed_point' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.RotatingBifurcation.Cone.twelve_box_forward_escape' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FinitePassage",
+      "source": "9f8f35baaa521ed71ebc022d1f99a5fc477922f7409f8af93f709c98b136b316",
+      "inputs": {
+        "SolitonClassification.PeriodicConeRigidity": "d40fb33bfff15a522b2978c6cc34e98f326dabb1ab4d83dd465e437e39b815dc"
+      },
+      "object": "a2c51e0e4efedc2f27148f31693762ecd649c4a0650365d354220b6af5e32911",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.finite_passage_variation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.PitchResidence",
+      "source": "0714bd992d48d0692e187a0e4fe92df2c9205018a461c35d858f0e9dcdaf0f27",
+      "inputs": {
+        "SolitonClassification.FinitePassage": "a2c51e0e4efedc2f27148f31693762ecd649c4a0650365d354220b6af5e32911",
+        "SolitonClassification.TwelveLocalCycleTests": "3354645d6311bcb6fa04a25d211c1254406af5f42233d1271090018b500b963c"
+      },
+      "object": "8c4c5206155818a4306309b1e1dae4b0c1053da6f61ac322a7ea6aea04c94576",
+      "stdout": "'ClosedSimilarity.RotatingBifurcation.Cone.pitch_cost_of_reversible_residual' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.RotatingBifurcation.Cone.local_pitch_residence_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.InflectionForceBranches",
+      "source": "710d96dfa12352f7ae9f891170d58b96548473a3d3851923dc0843f6a848ff73",
+      "inputs": {
+        "SolitonClassification.PrimitiveInflections": "62560924218b7cd8c2c69c7a0a92bce9f9828ab22be580b0e7943cc1f1e68e93",
+        "SolitonClassification.CentreShotAlignment": "424de86a28a521b1c159593157e7eb942ca7bee4ea8fb83c475babf6e0501c44"
+      },
+      "object": "c191bf05bcc25f0d793ec74858c8fa82497af740252115562be8514a8bd4f7b0",
+      "stdout": "'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.force_gap_on_initial_zeros' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.many_distinct_inflection_forces' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'ClosedSimilarity.GlobalSupport.MovingSeam.escapes_every_finite_force_law' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.SeparatedEarlyInflections",
+      "source": "c93972fba7f9f7d3be378e0d0f6822d2da7b2ac8e2767d2277e4f1679faaba0d",
+      "inputs": {
+        "SolitonClassification.PrimitiveInflections": "62560924218b7cd8c2c69c7a0a92bce9f9828ab22be580b0e7943cc1f1e68e93"
+      },
+      "object": "365eab8fcadd528a074f48d1b86acea1356cae67ee14bdbce5d2a04c7b913896",
+      "stdout": "'ClosedSimilarity.ReflectedArc.ZeroTurnExpander.separated_early_simple_inflections' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.FiniteForceLaw",
+      "source": "5a30a12360f3b2e7034a0cebba27c7d621b2b96d3ea6c9d056756ea7a38a33ff",
+      "inputs": {
+        "SolitonClassification.InflectionForceBranches": "c191bf05bcc25f0d793ec74858c8fa82497af740252115562be8514a8bd4f7b0",
+        "SolitonClassification.SeparatedEarlyInflections": "365eab8fcadd528a074f48d1b86acea1356cae67ee14bdbce5d2a04c7b913896"
+      },
+      "object": "097c84437ae74408c1a810ba1cafa38cba598aff9fdbba934f65706d11da5c9d",
+      "stdout": "'ClosedSimilarity.GlobalSupport.MovingSeam.unbounded_error_for_finite_force_laws' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source": "30e192ae3275d0b198c98da8811c56e09626f0d4c4a1a27c5ab7e8811109d516",
+      "inputs": {
+        "SolitonClassification.ForceAtInflections": "8d0b11a270b1b8bba82d7ff35843b136ea1187514677f74d1f828524aba89238",
+        "SolitonClassification.TwelveLocalCycleTests": "3354645d6311bcb6fa04a25d211c1254406af5f42233d1271090018b500b963c",
+        "SolitonClassification.ForwardTrapRigidity": "7341efaf7a30581089618755238c778e299b588373768a1613993aa5c79c9a98",
+        "SolitonClassification.PitchResidence": "8c4c5206155818a4306309b1e1dae4b0c1053da6f61ac322a7ea6aea04c94576",
+        "SolitonClassification.FiniteForceLaw": "097c84437ae74408c1a810ba1cafa38cba598aff9fdbba934f65706d11da5c9d",
+        "SolitonClassification.PrimitiveInflections": "62560924218b7cd8c2c69c7a0a92bce9f9828ab22be580b0e7943cc1f1e68e93",
+        "SolitonClassification.QuarterOddRigidity": "a0daefa1fd4e300caf08af397c47bca1ea440912894e02841f5f33b56ae23c0d",
+        "SolitonClassification.QuarterRankIntervals": "65e1d255291466236a8765dd3206e0ac10efce6f07056d819f3a1c7c324e069b",
+        "SolitonClassification.LinearExpanderCount": "d3c5e7b8e697035569801e3e93b15ef71ef1313168bfbd80a3ac870d5826b328",
+        "SolitonClassification.InfinitelyManyExpanders": "812b691209d51c0ebfaabc052dedad0b8b914285c3b5ed9151b7f53b38b8e20d",
+        "SolitonClassification.FrozenCertifiedScattering": "e1688228ff882e9c5e08b391460e928a6661081703569fce31a0e7cca2b86634",
+        "SolitonClassification.ContinuousPhysicalRadius": "b43936b2297625b16a52d65cb6dde35758309509284b7e4cac4595521d38501f",
+        "SolitonClassification.CentreShotWinding": "18257cab07ef6938a38215a672781b305892911b5276f94f6bc6cf6ffa7ad1fc",
+        "SolitonClassification.SeamRadiusExistence": "af20738a8f6f66c1c19c93d8b741a4120148b12dcd7d348515066504cf013d81",
+        "SolitonClassification.FrozenKernelEndpoints": "b015f2e9c6fc3cc6ba151851374afcafeec0aedede40a95b5b8e69e00771e7df",
+        "SolitonClassification.FrozenSeamReflection": "7516120b787ed7d2622dcd8ea4477e1d52282e1f4f09a13e87991f35716a6c5e",
+        "SolitonClassification.SupportFlowContinuity": "a55fcc43625c42326590a62d569ccceac2935a23bc944d7382fbdf1154764aa3",
+        "SolitonClassification.OuterPhase": "2a3ed1d4307cab3944d66dfa1dd8352d8e1d4863ff60e04f7d100a87fae0b67d",
+        "SolitonClassification.FrozenTailSigns": "f900e786ca98e7571dfe397fe8be2743bfc295e4f24e83f6164fa3f9bd360c06",
+        "SolitonClassification.MarkerCount": "89dbc43183ae11b3a4a15ff269b5cefe78148aad2e124b7d06b9e6cfe230eccd",
+        "SolitonClassification.FrozenUniformEscape": "34bc1409f596cd3967630f7ad81af39004ed2ead5ffdc8f3248b51d4882f1265",
+        "SolitonClassification.FrozenStressBounds": "137c16cff2c9a08473dd734fb03ae0550a7f155a4068ef88da38828ff2d79bab",
+        "SolitonClassification.OuterStressOrbit": "1f3917b0fb6d8c5d20ad86bf2083b58a44cb68fdbd0b7be8a6ee04300ae03cee",
+        "SolitonClassification.OuterDescent": "e1d8d418d75138f89fcb144b40f5b4958660415268e25b82b9c4ca869bb39f1c",
+        "SolitonClassification.FrozenStressOrbit": "6554728750c75905f78eeb846af20ed7f2748aae9d269af18719626cf1346e47",
+        "SolitonClassification.FrozenStressTail": "7fd725f8c8c3086839addf96bebb0ffb78add868487133b5abb8609e156e43a5",
+        "SolitonClassification.RectangleCrossing": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75",
+        "SolitonClassification.RadialLayer": "15e4807bbfcc9ad68016ef159ce2ab54c9b6ca2e84ce320bc12fe5cecb619935",
+        "SolitonClassification.ReturnScales": "07f731f02ef24811c05ac326465412070ba993c5c7142e011e7db132a397f746",
+        "SolitonClassification.RadiusPotential": "930b9632a5b9c7ba45b75debde1c57d85ccf644f513c5def220f9164ca6b4099",
+        "SolitonClassification.ScalarObservation": "86ff9fa65e4a22ed666eeef5ca96e447f7140ec8b88568bbfda505934e0f5cc3",
+        "SolitonClassification.TangentLawGeometry": "c52bc688c0611bdd1389fa2160585bbd795c482040440c93041a5c60efdd7158",
+        "SolitonClassification.AngularForceElimination": "0a609ed48ae9a8fd31dce49ae18751057301dcff275ba200710237be09b2a0cd",
+        "SolitonClassification.FirstZeroTurnExpander": "070ff0be926877f6f82025828b6436a283f69fd5de4a4e646b37005242e0c4aa",
+        "SolitonClassification.SingleValuedForce": "c2d22fbb0101cbffa47b09149672ccf7bd96e2cc5421f73c471dd04ada5a1db5",
+        "SolitonClassification.CubicSupportRigidity": "efa70920abd1104d5e28e0c20d8c40d0951914b87302cb1325ca1796339fd0c6",
+        "SolitonClassification.ReflectedPoleAlgebra": "f8e1b688b4fa7a06a3e6800ee62ce4cbc36f526f9d93b6f3d3e35e251cabd4a5",
+        "SolitonClassification.ReflectedPureNormal": "be41225dcfc2b28fd58dfe72507ef35f060f8b75f280cc2e35e95196de505eba",
+        "SolitonClassification.ReflectedPhysicalMarker": "e03e1717fc20f3663b9788d9bac0c7b3a3d69e6e6a4da5aaf5424b9894844728",
+        "SolitonClassification.CubicSupportClassification": "4138f99e4180518de24eab065b3b8f70b17c67d83fe4ee967bc8afaf8e67ff36",
+        "SolitonClassification.BernoulliCartesian": "3887b50aae756f4fdc6b1840efa6ea00a6949e360318507bee497b3a4a4573fa",
+        "SolitonClassification.ReflectedMarker": "f30f5034baa235e4f738df841d2db16546baf2c1277a5522a900ebbfb0b5b830",
+        "SolitonClassification.ReflectedShooting": "39b775f452dbfc593fbea02d1d3afcf5857a148c72570b849f50ed5ffadb561d",
+        "SolitonClassification.ReflectedEvolution": "aa43c070eb32d7c9fbd110ea86eedbdc7669d5691a49004edda464e7b68cacef",
+        "SolitonClassification.CubicGap": "ef93553fc71363b6b2d27240e69be3de690c2024d615da984b9dae9e74341e02",
+        "SolitonClassification.Rotating.PrimitiveSupportPeriod": "e36cec6a3c4618357d230ddc20a3dc05e61402f088cb9ea010360c8195a55314",
+        "SolitonClassification.Rotating.FloquetPencil": "b419fb627ac764f4466c7878c1dcada068d2ee01638aa5e29651ae6cb3c0339e",
+        "SolitonClassification.Rotating.Balanced8FreshAudit": "ebd5c02cf5ceb53ecbebd14f1a69d70082179f572c98ead682b9dc4551b7a2bf",
+        "SolitonClassification.Rotating.Block8FreshAudit": "8a2ad67b831551130f1b4061582d35af14ff7d8d12819ed965ffabede279c469",
+        "SolitonClassification.Rotating.CandidateFinalAssembly": "ef29762da5726ccb2771a3edd3864a1d692b657e99792fded2dc9336d746ff23",
+        "SolitonClassification.Rotating.Grid42P00Actual": "8ac432b2663b7f9332e2821c1853e4a8c28e03645ebb17ac01ab21cb22e4ee1f",
+        "SolitonClassification.Rotating.CandidateShootingEndpointComparison": "e879b541d223ad9946a478f1cfea37b8227ed02d33edea553189bd16d713bb80",
+        "SolitonClassification.Rotating.CandidateBootstrapBudget": "5c6b70c7f4a512af7979bd69bfa260407383cdb6b91870ab2d4ad873f2368614",
+        "SolitonClassification.Rotating.PointMatrixGridBudget": "a50a01043e483b60ea5dc293df81e35d8b474f59dd1f53fa0d064a7b3d78dd8c",
+        "SolitonClassification.Rotating.ExtendedPolynomialGridEndpoints42": "416ff7c03911567f0439af588494dedc61967b95c09cff18712a44990423ba32",
+        "SolitonClassification.Rotating.RotatingNormalEvolution": "1d0881d2c83c37d53664da6b506f1bdbafb5b0e76db46b955786517be64b31d1",
+        "SolitonClassification.Rotating.FirstTrueMatrix22": "a9885de63d26050728dc1ccb74fed3c3172da230976c74cb7d9b64bcc3a37e63",
+        "SolitonClassification.Rotating.TwoSegmentActual": "25b588ed50bc600f6af5218e0da50c17bf49c51e9d8249add274848e1dfa7ea4",
+        "SolitonClassification.Rotating.CandidateInputs": "8bbcb9bf849e26109b83f28ff1457c02175bb891de8c6c4c334adc0a6cc6ef75",
+        "SolitonClassification.Rotating.CandidatePreconditioner": "47c2e75894dfa0b8c8175ce995d47e9f469b38c73334050fe31dd7241858f929",
+        "SolitonClassification.Rotating.RotatingGridHorizonAudit": "22ba4aa69e50a282580bb17e13535f7078c413d6161b93f63b217282f8305477",
+        "SolitonClassification.Rotating.UniversalReducedVariation": "6e21c7d08e2682fd09f49ebc06c857fea2b9e643516813d956790f877ea74bc2",
+        "SolitonClassification.Rotating.RotatingClosedProfileAudit": "b30468024b787c4988657f25bd3d6368da1768f9404c8a601098e69598ca9a40",
+        "SolitonClassification.Rotating.ReferencePolynomialMatrix": "73612f265019fc52c7288cf58a194730d1555e1185725c4dd20b945c21dc0c84",
+        "SolitonClassification.Rotating.VariationStructure": "5abb2fe7a6fe4c6e4470f7b6f9970edbfa2d57f69e1732cdf3dc15d22ea2bb2e",
+        "SolitonClassification.Rotating.UniversalVariationOrder22": "4252914db2c2c3672cd65683f048e3f7e430d2738ebd75fdc78e221c5bb2c836",
+        "SolitonClassification.Rotating.FlowMetricDeviationAudit": "7adc33eb443e7a5779a15415b220a2864e524169869556d66668b496d4599ec5",
+        "SolitonClassification.Rotating.UniversalTrueStateTail": "c35a44d171308d126bdca0a4122341322f6401ab77386ac1c671c1537379b814",
+        "SolitonClassification.Rotating.LocalKernelAudit": "a4b727048e8ac817e9714294f9389ab95991c62316350207f145c4c0f314e2c8",
+        "SolitonClassification.Rotating.FlowMetricAudit": "7ab58dd412bdc6057382b3c0d569237218f6b6fa12036c19dcf596c1f91abb14",
+        "SolitonClassification.Rotating.FlowInverseAudit": "ae0741908e293eedee705faaaa4fc825e82458d4bbdb818a3146546dfb465605",
+        "SolitonClassification.ScalarReflection": "167849e25f7567a575d78b193b9222de2005ae7050539ddfcaeae539891e83bb",
+        "SolitonClassification.Rotating.ActualFlowAudit": "c8940a34be6499f42b9be22dcbe062114876e978359440de4119b226616a8840",
+        "SolitonClassification.Rotating.CoreAudit": "ddc3205ab94bd4229a73e6b7494d6e2012e0d5a04eaeaf1056f27ccf3f8efe05",
+        "SolitonClassification.ScalarParameterUniqueness": "dfe11afc51a703b8a6553452b32472271fcc322435a02f5b0571a4918ff5fb21",
+        "SolitonClassification.CircleLinearization": "a4bfdf5e891734c2eac305acb79ad7f509d107f2d0f31fcb85635743162eb96d",
+        "SolitonClassification.NoClosedTranslators": "d912506d1b8399acfb66f0db7fd95ee5949a3345fb49baec3801920296f0a2b9",
+        "SolitonClassification.ScalarReconstructionCurve": "24ce13e0041a1b8e6c80a04d4a4562d86e512c778a48d20fbbd8a0b030ba58c3",
+        "SolitonClassification.ScalarReconstructionEquivalence": "a2c0a3cfc88d7cb9d6bec3c761b0841833341ffcdf09eb149c7f4f292caedf51",
+        "SolitonClassification.OddLocalRigidity": "3cc195735ea1ac1157467dcc6dfc3b03db2965590a0590e80d0a650f0379d5bc",
+        "SolitonClassification.SupportODE": "98f8dfaacb76c2d6fe86e958a42f7c7fc38819073d2e9b579bba1754d3642612",
+        "SolitonClassification.OneSignCurvature": "7282cca49a4e0965513059c0efb94273b9876671b66b9a0c22e083c8609e689a",
+        "SolitonClassification.SolitonDilation": "e3c5164cc045338393b398fd3ae2f68bf8f89c6f9ca88c5f44d185dfb15ec04e",
+        "SolitonClassification.RotationPitch": "8320209c17e4a0dda4f2f4b1e945d7072fdcd4f9b4a3085c94bf2a1b63aba653",
+        "SolitonClassification.PitchContinuation": "d891fc79ee340d00a474bef47ab58480bdc6571e8a9f25fbe183cb646a272bd5",
+        "SolitonClassification.CandidatePitchBranch": "e86dc693eeabbb88e7be49fd83a80e4f5c5981c2729e1895a9ce54d0d47d07e8"
+      },
+      "object": "7d9074b68d4dcc4434bea8505054b29f9717f31fcc77fb3ac6eebe83f818de27",
+      "stdout": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source": "e52ae03c0cf38ea5d295731391f03137a8f118347e2dcd6eb72360819da6a46c",
+      "inputs": {
+        "SolitonClassification": "7d9074b68d4dcc4434bea8505054b29f9717f31fcc77fb3ac6eebe83f818de27"
+      },
+      "object": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "stdout": "SolitonClassification audit passed: 22264 declarations; standard axioms only.\n"
+    }
+  ]
+}
