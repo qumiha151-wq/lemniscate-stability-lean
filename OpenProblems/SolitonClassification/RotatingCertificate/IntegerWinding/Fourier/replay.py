@@ -13,6 +13,12 @@ def main():
         path=Path(folder)/"reference.json"
         path.write_bytes((json.dumps(data,separators=(",",":"))+"\n").encode())
         report=checks(path,here.parent/"center.json")
+        from crossings import count
+        for mesh,num in ((32768,42),(49152,45)):
+            result=count(path,mesh)
+            assert result["eligible_pairs"]==num and result["clusters"]==2
+            assert len(result["roots"])==2 and result["failures"]==[]
+            print(mesh,"two transverse ordinary double points")
     expected=json.loads((here/"shape_report.json").read_bytes())
     assert all(report[k]==expected[k] for k in ("packet_sha256","center_sha256","grid_size","transfer_radius","residual_bound","crossing_cells","counts"))
     print(report["counts"])
