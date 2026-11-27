@@ -1,0 +1,43 @@
+{
+  "previous_audit": 1745,
+  "current_audit": 1752,
+  "compilations": [
+    {
+      "module": "Migration.IntrinsicBendingWidth",
+      "source_sha256": "455392804c724b4b539adbb5512f0a911417e53662071152ff3b0224415ea050",
+      "olean_sha256": "2d52f5c0101445abe971a8dffe6e726d37579103e5de7fe41410766f4dbfa5a8",
+      "log": "'MigrationGeometry.Flow.PeriodicRegularPosition.width_of_local_bending' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.IntrinsicBendingDisk",
+      "source_sha256": "22c53f569ec0234eb17ed82615e215e3d72c5b34c43c9b8ee83ec4b4aa3505fc",
+      "olean_sha256": "e54902ed125d5e66c9093bb596ad0179069570af923d7f297022b2d48ba77fec",
+      "log": "'MigrationGeometry.Flow.PeriodicRegularPosition.disk_of_intrinsic_scale' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.IntrinsicBendingCurvature",
+      "source_sha256": "8c078b96f557614b7ffb3762ff2934460aaaab9aa25f45b7760918b1a530d28c",
+      "olean_sha256": "6ef5675c82b22d269ab199f2ef8a9f345adbc0d3a18b5b83f6fc066f5898493a",
+      "log": "'MigrationGeometry.Flow.PeriodicRegularPosition.disk_of_curvature_and_displacement' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.IntrinsicBendingPast",
+      "source_sha256": "446dbea9402490da69ccfcd9ba27e96cb6f8267f7ed165356ebd349ba76948e5",
+      "olean_sha256": "00714b16f5e3746096764bf13617d0b5aff6dc3851b711ba0154869d5a31a9ac",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.prior_energy_cost_of_dissipation_floor' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "f9b7d6d93cb40a24c9bd2861f2541bce642d7c2d02d56847ce93a481bf63fd9a",
+      "olean_sha256": "5a8b1455778754017ce7226e5e2a5b26e7d417a96ac8744952c5956d27c937f6",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1752 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "The Migration project verifies the intrinsic-width estimate from arclength curvature, the directed-displacement common disk, the supremum-curvature specialization and the physical backwards energy integration. Localized parabolic persistence, the full curvature-based time window, its dissipation floor and the late-time disk growth are written analytic proofs."
+}
