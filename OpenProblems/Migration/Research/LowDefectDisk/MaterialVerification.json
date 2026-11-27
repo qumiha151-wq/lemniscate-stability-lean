@@ -1,0 +1,61 @@
+{
+  "previous_audit": 1252,
+  "current_audit": 1326,
+  "compilations": [
+    {
+      "module": "Migration.LowDefectTangentMoments",
+      "source_sha256": "7e7f4b8759461162c189f6458bd0e204e18394b18a9bd894b39767da604ebac1",
+      "olean_sha256": "5766be85620bb4bf3cd072fead720c92c33266603b5e6c8071361812e756aea0",
+      "log": "'MigrationGeometry.Flow.LowDefect.Tangent.tangent_data' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectModeSums",
+      "source_sha256": "e57f449e758edcddfa01af1fba7ae3eff0603acbb378f42b19a436b064862ac3",
+      "olean_sha256": "be47f38ba5c54110786eec4ef248576ab33e1201a6c60c6be95f671cb1194281",
+      "log": "'MigrationGeometry.Flow.LowDefect.leakage_from_moments' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectMaterialModes",
+      "source_sha256": "7a994e8e8579d2e6c1c020afc32fb545149324657a95dfb08c7b10af39ae9200",
+      "olean_sha256": "1bf849a3cc67cda3063e8798305a1c7daecf9dd3aba03cb42a732df4e1439582",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.material_tangent_fourier_data' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectUnitCorrelation",
+      "source_sha256": "501401701798ed7018e16205831d0ced7582c37eed9d1b7d893ce5a99cf2bda1",
+      "olean_sha256": "c84d7080f5a7de977593f054380529ab114c89f37476049e30eaeccd4d99d49f",
+      "log": "'MigrationGeometry.Flow.LowDefect.Tangent.unit_correlation' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectSecondHarmonic",
+      "source_sha256": "d3bf8aebfa022ba124b76261a17bc08caf3a85aae758144cb88a89f76b31b69c",
+      "olean_sha256": "553a7afa28b8400bb26a3d58fdca64cf243ce9abfcccffe12825c4e5a537c856",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.material_second_harmonic_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectNormalCorrection",
+      "source_sha256": "b39826fbbeaaf9912584db73b7cd3614759d9fba1f3711a941b09d7de4942f28",
+      "olean_sha256": "aeb83e3ac3292d8264cc0f7853b8322a51f7306a6c3c82c3f4e00f401090fc4c",
+      "log": "'MigrationGeometry.Flow.LowDefect.Tangent.normal_correction_moment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectMaterialCorrection",
+      "source_sha256": "1f196689f08962c34f00d074e13cbc2f7e182a86d301a00eb21e868cae7bbcd4",
+      "olean_sha256": "7729b54b9f4068cda4f9c87d73f7fe540eb13f26ed672104debf60dd2ce75adc",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.material_normal_correction' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "3ee3c6ed013def74af508a39896fc2cee42eec0d80d2844c8cbf277bd2b7a3ea",
+      "olean_sha256": "ffe7812c857dfe629372e25190a338af6fbc91ec6670cebf159048e87822aa9a",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1326 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "The three spectral moments, second harmonic suppression and normalized normal-position correction are proved for the true arclength tangent of a material curve. The spatial supremum Fourier tail and full initial-data-to-disk implication are separate obligations."
+}

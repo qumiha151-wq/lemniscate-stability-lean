@@ -1,3 +1,4 @@
+import Migration.LowDefectMaterialCorrection
 import Migration.LowDefectDiskComparison
 import Migration.DefectFourHull
 import Migration.CubicTangencyFlux
