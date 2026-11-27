@@ -4,9 +4,9 @@ Results checked through 27 November 2026
 
 仓库根目录是此前的伯努利双扭线稳定性证明。
 CentroidEscape 已证明存在一条光滑闭合曲线，其按弧长计算的质心逃向无穷远。
-SolitonClassification 已给出无穷多个互不等价的零转数闭合膨胀子。Lean 已完整证明，对任意自然数 N，存在一条零转数闭合膨胀曲线，按最短周期走一圈时至少有 N 个不同的普通横截自交点。每个点恰经过两次，两条切线方向不同。另有一条边旋转边膨胀的闭曲线，绕中心一周，图像没有非平凡的平面对称性。对全程留在它附近指定区域内的解，已有局部分类。该局部类别的所有闭曲线绕中心的绕数都非零，因此它们在任意两个时刻的凸包都包含同一个中心。解的存在性和分类使用区间运算与数学证明，Lean 已核验矩阵谱区间、真实轨迹的局部泰勒余项和从整个候选参数盒前进与后退的第一步。最短周期的判定也已在给定网格误差界的条件下通过 Lean。完整轨迹的闭合仍依赖区间计算与书面证明。另有全周期有理傅里叶证书，结合已验证的轨道误差，数清该旋转剖面最短一圈的全部 72 个简单拐点、74 个非退化曲率极值与 72 个非退化半径极值。这个全周期计数使用精确整数、区间计算和书面证明。全部自相似解的分类仍开放。
-LengthGrowth 已证明，对每条光滑闭流，拐点处切线向外转动的最大速度差 P 在任意正时间之后都有 P 的 4/3 次方可积。若某个正阈值 δ 下满足 0<P<δ 的时刻在某个尾部总长度有限，则该流满足四次根长度上界。另已证明任意光滑闭流的最小包围条带宽度都趋于无穷，且其曲率和曲率的一阶弧长导数一致趋零。长度变化的锐不等式等号也已由 Lean 完整刻画，恰好是单次绕行的圆。进一步的书面证明给出了每个 1/4<p<1/2 的幂律情形下能量系数的严格下界。例如，若长度渐近于 ℓ t^(1/3)，则能量乘以 t^(1/6) 的下极限严格高于 ℓ/√3，并有统一的比例差距。这项渐近结论尚未在 Lean 中验证。新的长时间窗定理表明，在初始均方根曲率归一化后，若时间跨度趋于无穷，且它与相对能量损失之积有界，则整段时间的相对长度变化趋零。这一极限定理是书面证明。对真实曲线的应力总量与互不相交应力带的估计另已通过 Lean。任意单条流是否都满足四次根上界仍开放。
-Migration 已排除若干类曲线的整体迁移。若闭合纯膨胀曲线的膨胀中心位于凸包外，其最大半径与从中心所见的张角必须满足严格的下界，已通过 Lean 核验。对任意闭流和任意正则化参数，投影高度的两时刻公式及整体跨线所需的力积分下界也已通过 Lean。对边旋转边膨胀的闭曲线，现有显式的旋转速率和半径条件保证相似中心位于凸包内，更强的条件保证凸包包含整个给定圆盘。这些结论均已通过 Lean 验证。对任意真正跨线的闭流，实际力积分下界还能加上两个端点各自的有向面积绝对值，已通过 Lean。由切线角重建真实曲线、跨时刻保持闭合、从带误差的有限采样推出整条曲线严格越线的充分条件，均已通过 Lean。非圆闭合短时样例的傅里叶残差也已作内核检查。一般情形下能否整条越过一条直线仍开放。
+SolitonClassification 已给出无穷多个互不等价的零转数闭合膨胀子。Lean 已完整证明，对任意自然数 N，存在一条零转数闭合膨胀曲线，按最短周期走一圈时至少有 N 个不同的普通横截自交点。每个点恰经过两次，两条切线方向不同。另有一条边旋转边膨胀的闭曲线，绕中心一周，图像没有非平凡的平面对称性。对全程留在它附近指定区域内的解，已有局部分类。该局部类别的所有闭曲线绕中心的绕数都非零，因此它们在任意两个时刻的凸包都包含同一个中心。解的存在性和分类使用区间运算与数学证明，Lean 已核验矩阵谱区间、真实轨迹的局部泰勒余项和从整个候选参数盒前进与后退的第一步。最短周期的判定也已在给定网格误差界的条件下通过 Lean。完整轨迹的闭合仍依赖区间计算与书面证明。另有全周期有理傅里叶证书，结合已验证的轨道误差，数清该旋转剖面最短一圈的全部 72 个简单拐点、74 个非退化曲率极值与 72 个非退化半径极值。这个全周期计数使用精确整数、区间计算和书面证明。这条绕中心一周的旋转曲线有且仅有两个自交点，每处恰有两支横截相交。对每个充分大的转数 n，还得到了一条原始旋转膨胀曲线；仅在两个指定半径区域内，普通横截自交点的个数除以 (n+1)² 就趋于 0.1535760618（保留十位小数）。这两项计数用到了区间计算和书面论证，完整的 Lean 验证尚未完成。全部自相似解的分类仍开放。
+LengthGrowth 已证明，对每条光滑闭流，拐点处切线向外转动的最大速度差 P 在任意正时间之后都有 P 的 4/3 次方可积。若某个正阈值 δ 下满足 0<P<δ 的时刻在某个尾部总长度有限，则该流满足四次根长度上界。另已证明任意光滑闭流的最小包围条带宽度都趋于无穷，且其曲率和曲率的一阶弧长导数一致趋零。长度变化的锐不等式等号也已由 Lean 完整刻画，恰好是单次绕行的圆。进一步的书面证明给出了每个 1/4<p<1/2 的幂律情形下能量系数的严格下界。例如，若长度渐近于 ℓ t^(1/3)，则能量乘以 t^(1/6) 的下极限严格高于 ℓ/√3，并有统一的比例差距。这项渐近结论尚未在 Lean 中验证。新的长时间窗定理表明，在初始均方根曲率归一化后，若时间跨度趋于无穷，且它与相对能量损失之积有界，则整段时间的相对长度变化趋零。这一极限定理是书面证明。对真实曲线的应力总量与互不相交应力带的估计另已通过 Lean。Lean 还验证了一个充要条件，只须在能量与长度的乘积超过给定阈值并刷新纪录的时刻，检验一个由曲率和法向力算出的量是否可积。该条件对所有闭流是否成立，尚未证明。任意单条流是否都满足四次根上界仍开放。
+Migration 已排除若干类曲线的整体迁移。若闭合纯膨胀曲线的膨胀中心位于凸包外，其最大半径与从中心所见的张角必须满足严格的下界，已通过 Lean 核验。对任意闭流和任意正则化参数，投影高度的两时刻公式及整体跨线所需的力积分下界也已通过 Lean。对边旋转边膨胀的闭曲线，现有显式的旋转速率和半径条件保证相似中心位于凸包内，更强的条件保证凸包包含整个给定圆盘。这些结论均已通过 Lean 验证。对任意真正跨线的闭流，实际力积分下界还能加上两个端点各自的有向面积绝对值，已通过 Lean。由切线角重建真实曲线、跨时刻保持闭合、从带误差的有限采样推出整条曲线严格越线的充分条件，均已通过 Lean。非圆闭合短时样例的傅里叶残差也已作内核检查。若两时刻整条曲线位于直线两侧，每个端点都要付出至少 8/(3E²) 的力积分代价，其中 E 为该端点的弯曲能量。Lean 已验证保留正则化参数的双端点不等式。一般情形下能否整条越过一条直线仍开放。
 OpenTranslators 已构造一个完备的非直线平移解，曲率无界，回答引言中的开曲线问题。
 
 Each question has its own Lean project. The original lemniscate stability
@@ -35,6 +35,7 @@ points in a least positive position period, including exact preimage
 multiplicity. The general geometric upper bound and topological corollary
 have written proofs. See SolitonClassification/SolitonClassification/PrimitiveOrdinaryCrossings.lean.
 A rigorous interval certificate and analytic argument give a rotating closed expander of absolute centre winding one with trivial Euclidean symmetry. They classify orbits confined for their entire trajectory to its local tube, allowing unrestricted return length. Lean verifies the endpoint-matrix interval sign and root claims, the local Taylor remainder for the actual ODE, and the first forward and backward step on the entire candidate box. It also verifies primitivity from true nodal enclosure and displacement hypotheses. The full grid and closing argument still use interval arithmetic and a written proof. See SolitonClassification/RotatingCertificate/IntegerWinding/IntegerRotatingWinding.md.
+The primitive winding-one rotating curve has exactly two ordinary transverse double points. For every sufficiently large turning number n, on a primitive rotating expander the number of ordinary transverse double points in two specified radial bands divided by (n+1)^2 tends to 0.1535760618 (rounded). The global base orbit and the family count use analytic proofs and interval arithmetic. See SolitonClassification/RotatingCertificate/IntegerWinding/Fourier/TwoAnnuli.md and DoublePoints.md in the same directory.
 A classification covering every closed self-similar profile remains open.
 Andrews and Wheeler also construct infinitely many geometrically distinct
 homothetic expanders in their preprint Jellyfish exist.
@@ -48,6 +49,8 @@ The sharp equality case for length production is precisely a circle traversed on
 
 A separate written result excludes simultaneous leading laws L(t) ~ ell t^(1/3) and E(t) ~ (ell/sqrt(3)) t^(-1/6). For each prescribed length exponent 1/4 < p < 1/2, the energy has a strict gap above the minimum allowed by the scalar energy and length inequalities. See LengthGrowth/Research/SaturationGeometry/PowerLawEnergyGap.md and UniformMacroscopicDeficit.md in the same directory. The concentration and limiting arguments have no Lean verification.
 
+Lean also verifies an exact equivalence between fourth-root growth and a finite curvature-force integral restricted to times when the energy-length product is increasing at high records. The unrestricted integrability step is open. See LengthGrowth/Research/SaturationGeometry/NodalRecordEquivalence.md.
+
 LengthGrowth gives a sharp lower growth estimate and conditional upper
 bounds. The normalized pure expanders show why any general fourth-root
 upper coefficient cannot depend on initial length and turning number
@@ -59,6 +62,7 @@ If the positive difference between the largest and smallest force derivatives
 on the two signed inflection sets is integrable on a tail, the length is
 O((1+t)^(1/4)). See LengthGrowth/LengthGrowth/ActualFlow/ExactInflectionGrowth.lean.
 
+The two-time migration force bound also includes at each endpoint the larger of the absolute oriented area and 8/(3E^2), with bending energy E at that endpoint. The actual positive-regularization inequality is verified in Migration/Research/AngularValidation/TrueEndpointTransit.md.
 For every direction and positive smoothing parameter the projected-height evolution, its exact two-time integral and a force lower bound for separation of entire images are verified in Migration/Research/ProjectedHeight/ClosedProjectedHeight.md.
 A rotating closed expander has its centre in its convex hull when 4|b| >= pi R^2 sqrt(2a), where b is relative rotation, a is the dilation coefficient, and R bounds the radius about the centre. Independent small-radius tests, an explicit disk bound and the time-slice obstruction are verified in Migration/Research/RotatingAperture/RotatingAperture.md.
 For every complete separation the time-integrated force bound includes the absolute oriented areas at both endpoint times. The theorem for actual smooth closed flows is verified in Migration/Migration/OrientedAreaTransit.lean.
