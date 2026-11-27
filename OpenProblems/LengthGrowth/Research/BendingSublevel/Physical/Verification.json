@@ -1,0 +1,74 @@
+{
+  "base_declarations": 2145,
+  "audit_declarations": 2179,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.DefectPhysicalMoments",
+      "source_sha256": "8458b218ca6ae98665c44fcef893afe987c2d2c3de24089b0084ab97476504c2",
+      "olean_sha256": "f0c45f611c04b796db3fcb026724795a19dfcfdb1339895c4d71a0d26e7626a5",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.bending_moment_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectOneTurn",
+      "source_sha256": "856dd86f62a46c253f055ecb5cd9b5bd552260ddac1b430a423e9c8b078901f7",
+      "olean_sha256": "6f5d231d0eb81c0bf653e659869468253948b3dd78f27bf969dabb15a64dc5b4",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.bending_one_turn_strict' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectReflection",
+      "source_sha256": "fce85d75676c42fab1790f7e5f2a25835ad8a4b4f24af8ec7d3ddae5f4a41b82",
+      "olean_sha256": "10e220ccabcf2475c8cdd05f47fc3aac2ddaf45cf9743b254f8d774cceb7b4a8",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.bending_negative_turn_strict' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectHalfAngle",
+      "source_sha256": "15e085c3ad9860fa2cadee1cdb787fef0f49d8ea80420e3a7d03b949f25f2f95",
+      "olean_sha256": "0ba3c96ed5cb0f153c318e37bd370c4bb91421a962584433ff3048213fb4c99a",
+      "exit": 0,
+      "log": "'LengthGrowth.BendingSublevel.spinor_variance' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectTurningGap",
+      "source_sha256": "0f3f848f16c5103bdc35a5aa6fae063b640b66d621b03fd9fa344350a0bd7b88",
+      "olean_sha256": "70af3d651233f1ea090228b2c46f95a0e5bb982a03043be729368edc0f9870ac",
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.low_product_turning' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectFlowSublevel",
+      "source_sha256": "45d19ff6805253012a20e79505b3351182a63fcc5efafd15765ad39839324bea",
+      "olean_sha256": "55bb01ea4f762dd2aa05eb00e3a8c0220ade5c293f46f6c47568528050e41852",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.quarter_length_of_initial_bending_sublevel' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.DefectExplicitLength",
+      "source_sha256": "bdfe025a5e1bc9c05bcc5a7b3bb9952b393ce5ff72512cfe277dabd82546b7b2",
+      "olean_sha256": "97e4a38588e8497f24c3aecbba8784e9ff18f62afdbb81f4281e89bafbda1cfb",
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.bending_explicit_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "2b73a2cdd59d7ea08286a8d03e1a40355b1208fecf64db5d54055deb4c41ad1e",
+      "olean_sha256": "46936433142fd40bbbaa8fb01af65ee7ca3827321b67091996a2952f859e78a2",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2179 declarations; standard axioms only."
+    }
+  ]
+}
