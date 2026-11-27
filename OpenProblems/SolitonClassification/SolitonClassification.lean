@@ -1,3 +1,4 @@
+import SolitonClassification.RamifiedIsolatedOrdinaryEnd
 import SolitonClassification.EllipticRotatingObstruction
 import SolitonClassification.RationalCurvatureCircle
 import SolitonClassification.ForceWindingZeroTurn

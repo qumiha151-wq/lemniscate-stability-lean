@@ -1,0 +1,269 @@
+{
+  "audited_declarations": 142708,
+  "previous_declarations": 142455,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formal_scope": "Finite cyclic power covers of one puncture, including meromorphic ordinary charts and the complete base residual and local pole alternatives.",
+  "written_scope": "Global single-valued continuation from topological finite-monodromy orbits along paths away from a closed locally finite set.",
+  "records": [
+    {
+      "module": "SolitonClassification.RamifiedPowerDescent",
+      "source_sha256": "9114821813a6f054bc0a7c740d0b16429c5b2566ffcc6787542ca14bae85aa2e",
+      "object_sha256": "2cd1fcb55c0e2ec264091fe519625aaa8905fddfa447dfb78f3a6254dd1a0e8e",
+      "imports_sha256": {
+        "Mathlib.Analysis.Complex.RemovableSingularity": "49e0e6027e6c84197a6283269fb8c22350c582bbe5c279e98d7a654165965efc",
+        "Mathlib.Analysis.Meromorphic.Basic": "cc3d0fb79f2207df8e47deb98b05b85b60ad164db98dafadda3e57e21c12e6a0",
+        "Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic": "2fc1b559f5ee47675c7373a24c6bc97837d06eee76e6de604ff45550bb37ef2a",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Complex": "d01f9f398ae608de4537a80e0872e75bea8f3c484b2d1aac16dedf148bdded6e",
+        "Mathlib.Algebra.Polynomial.Roots": "488f2e1dde52dd2f618b922e7b22efa6c6dce9f9791985a3a616eac422ac60f8"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedLiftDisk",
+      "source_sha256": "2658c5bc2c0a544a99c958e82f0b3ebbe9912f201cbb214bb5ad32415d069fbe",
+      "object_sha256": "51530cf8ef4512b2caa1b1e48ac6af024226d1ad74a6dc199eff1dd03915f1e6",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedPowerDescent": "2cd1fcb55c0e2ec264091fe519625aaa8905fddfa447dfb78f3a6254dd1a0e8e",
+        "SolitonClassification.MeromorphicOrdinaryPole": "4b5e2d4196f81026067156cfdd23e5b33f28588d0f9091337db11e4d0b2f42a3",
+        "Mathlib.Analysis.SpecialFunctions.Complex.Analytic": "dee8f4624f7b924caed1bc7c44ad92744af9630bb73adf180a7e1f5469e591b8"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedPuncturedIdentity",
+      "source_sha256": "811de7e0ca8d47cb3fbf742130a4d4341fa88b6b2a3af642e10b7853bda9e0a6",
+      "object_sha256": "4235b9e4ab88a58af189d401c3fd97bf88ad31377aa2ebd1205033be328510ea",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicOrdinaryPole": "4b5e2d4196f81026067156cfdd23e5b33f28588d0f9091337db11e4d0b2f42a3",
+        "Mathlib.Analysis.Meromorphic.NormalForm": "00445bf1809a523615ab4cb017e9527e529bdafed22d3cc198e5fbd9a7b4264e",
+        "Mathlib.Analysis.Normed.Module.Connected": "62c945784c35428843496b31c46c147070f84472c4dd21f5b5acca8b83d45d21",
+        "Mathlib.LinearAlgebra.Complex.FiniteDimensional": "a62a81620d56cc6c006865270c8cbdb9ae15caf952ebcee35c79222685453e31"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedMirrorDisk",
+      "source_sha256": "591199623095ba352e39093e74369e3703edd4a2f72edb21eb61b214ee629e22",
+      "object_sha256": "f17c5f6f63375347530faf71516345db721671b2ea675acb1221a62bfdccd431",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedLiftDisk": "51530cf8ef4512b2caa1b1e48ac6af024226d1ad74a6dc199eff1dd03915f1e6",
+        "SolitonClassification.RamifiedPuncturedIdentity": "4235b9e4ab88a58af189d401c3fd97bf88ad31377aa2ebd1205033be328510ea"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedLocalMirror",
+      "source_sha256": "810ace4447ff817be39ee14eeadbb34b6353a350c949b1eebe29de089f6fe688",
+      "object_sha256": "a0f9086f8ea1c275e742e388d4e4e0cd676cf29e6d5b71b531d20bcff62d353c",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicPoleParity": "999e6c18be0f5edf29e538513b260ec523d532af099b6ede2b5651f0b7e38610",
+        "SolitonClassification.MeromorphicPoleIndicial": "192e9ad44b3dae0e8849547da7055e2c12776b6885ef665420aecfda3153787a",
+        "SolitonClassification.RamifiedPuncturedIdentity": "4235b9e4ab88a58af189d401c3fd97bf88ad31377aa2ebd1205033be328510ea"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedPoleFilling",
+      "source_sha256": "9657a6efaef48c0ce190cea7597704405ab3a3479f424a002348791c43b0104d",
+      "object_sha256": "eed7165e257c97402b30276d24451f5588020c951850ef82300358dd80f658eb",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedMirrorDisk": "f17c5f6f63375347530faf71516345db721671b2ea675acb1221a62bfdccd431",
+        "SolitonClassification.RamifiedLocalMirror": "a0f9086f8ea1c275e742e388d4e4e0cd676cf29e6d5b71b531d20bcff62d353c"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedDiskAlgebra",
+      "source_sha256": "037ead02bcb8bbac67b867b98e5e2a316bed13e3f6132ba195a3f92121ebd599",
+      "object_sha256": "f78fd8169d8c1ee44c00cc3865ae48a3fa5c62de5a3f780970f6babb3eeffbc8",
+      "imports_sha256": {
+        "Mathlib.Analysis.Complex.Basic": "0bf6347c2d1b295f8746dce5ad1a6b90629987116dc2d76dbc3374571ea1daea",
+        "Mathlib.Analysis.Real.Sqrt": "2fe25b99eee8ed6abe2c640c973778ef93990f04977c75895426fabe4f34cf2f",
+        "Mathlib.Tactic.LinearCombination": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+        "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a",
+        "Mathlib.Tactic.GCongr": "50e9b88eddc4fe6df36ea981a93cc9164daf90eb12a412047dec8f7b4ed815ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedDiskEstimate",
+      "source_sha256": "3c14620947b9f41e52623ec0e71a317470f386b3363535d8c7ac164b613efe21",
+      "object_sha256": "2fb1935776108078ba5d58c05a9144ff921895b09283957de932cec2106d9304",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedDiskAlgebra": "f78fd8169d8c1ee44c00cc3865ae48a3fa5c62de5a3f780970f6babb3eeffbc8",
+        "SolitonClassification.MeromorphicOrdinaryPole": "4b5e2d4196f81026067156cfdd23e5b33f28588d0f9091337db11e4d0b2f42a3",
+        "Mathlib.Analysis.Complex.Liouville": "55756b8dfa5650c4d2144e824f80354f1951666837e71367738e7508d06143e0"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedBoundedFill",
+      "source_sha256": "6c8e0a586db007af28765bae87001ac3464b74dfecfccc2dec6291f182a59f98",
+      "object_sha256": "e9e782d4a3f411b3fde2ac028db7e83921331b2c62fb22f09f499a17e99ec6b6",
+      "imports_sha256": {
+        "SolitonClassification.RationalLocalJet": "32978493aec91da059d8ff97b730bfcc3394ef00294782c2e377b3859421c115",
+        "Mathlib.Analysis.Complex.RemovableSingularity": "49e0e6027e6c84197a6283269fb8c22350c582bbe5c279e98d7a654165965efc"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedBoundedStress",
+      "source_sha256": "a669fd1d5707abf2cf997cb20def4786a515064d270a5a274d54fb1b1de6747f",
+      "object_sha256": "a47a0d1524f144ae22c861e0e53ed12080d01efc1f2be718be6881ec230870af",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedBoundedFill": "e9e782d4a3f411b3fde2ac028db7e83921331b2c62fb22f09f499a17e99ec6b6"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedBoundedDeck",
+      "source_sha256": "e0d0f759210f68433f13bea664d858602e2bec7bbfc3f1233a32caf41a87d3e0",
+      "object_sha256": "e640b10fdf48f373889cf160061f69b8113f1fcf6b4c6de19b567c6ff1492654",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedBoundedStress": "a47a0d1524f144ae22c861e0e53ed12080d01efc1f2be718be6881ec230870af",
+        "Mathlib.Analysis.ODE.ExistUnique": "a331f36896f0e9f5a588b6698e851e6e4677b1716291a3f8aaa3a4f9d6b1900c",
+        "Mathlib.Analysis.Complex.RealDeriv": "ad4dec54954622c3a8717a273a05fb0743eb22c6218263472b14098293a38fc2"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedBoundedCurvature",
+      "source_sha256": "f4986a3a60cca87ea9e68294249ce72744a506268b94c185e12a13774efcfd0e",
+      "object_sha256": "6fe7be908efa4cb9fe186f2d1f4e34d02539245c57b1af397010349e0479dfa5",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedBoundedDeck": "e640b10fdf48f373889cf160061f69b8113f1fcf6b4c6de19b567c6ff1492654"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedDeckDescent",
+      "source_sha256": "127d1cdefb520cca9c5f7d28e0ec7d2953a91c79d17ed09e47c2cc4e617ef0fd",
+      "object_sha256": "820d8d7c61e698baa7ddbea5fcada3e7e57029cdd11917efdb546ec4066e64d6",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedPowerDescent": "2cd1fcb55c0e2ec264091fe519625aaa8905fddfa447dfb78f3a6254dd1a0e8e"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedFinitePrincipal",
+      "source_sha256": "118400a087c4ea422fc4eb4eaeda5d711736ca3238b89b75d4012de0577a3b2a",
+      "object_sha256": "467c5f9ec0b853fc7629de6c816d0b33357a196d60cb6f799d3cfe8d44594a88",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedDiskEstimate": "2fb1935776108078ba5d58c05a9144ff921895b09283957de932cec2106d9304",
+        "SolitonClassification.RamifiedBoundedCurvature": "6fe7be908efa4cb9fe186f2d1f4e34d02539245c57b1af397010349e0479dfa5",
+        "SolitonClassification.RamifiedLiftDisk": "51530cf8ef4512b2caa1b1e48ac6af024226d1ad74a6dc199eff1dd03915f1e6",
+        "SolitonClassification.RamifiedDeckDescent": "820d8d7c61e698baa7ddbea5fcada3e7e57029cdd11917efdb546ec4066e64d6"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedDerivative",
+      "source_sha256": "64a1483f7c65e3acd8b7a9319d12648dbd04cd8241d5617cc37829c0d0b34c85",
+      "object_sha256": "fa7207f94926e5623102e38e59dbdef1fc80587df2b3b4de30b5766330d67a8e",
+      "imports_sha256": {
+        "SolitonClassification.MeromorphicDifferenceJet": "b7418f7b4e7eb8a9c30b726ce5fa28125774cfc0a4fc197a71b3a916510954d5",
+        "Mathlib.Analysis.Calculus.Deriv.CompMul": "14a9b36f392b3ad0b86908384f83beda782aa9ef65692d24763d5addefa38078"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedBranchResidual",
+      "source_sha256": "decd60e98f5e4f3a1e181642987fa2b8a365d973d02fc79aa998551754718048",
+      "object_sha256": "11488a5cf06df3bf4b886af36c74fb08232da8f9dbc4cd3e0350a48e05f64442",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedDerivative": "fa7207f94926e5623102e38e59dbdef1fc80587df2b3b4de30b5766330d67a8e"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedRegularStress",
+      "source_sha256": "a22af5b1f7423e6152a6bed9b20dd5b1746e0e48542cf6c3783c4eabadd4fc94",
+      "object_sha256": "13284190c878fee566c10a2d55fb458d50b9adca51a706ef285bb4b1afaa2d23",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedBranchResidual": "11488a5cf06df3bf4b886af36c74fb08232da8f9dbc4cd3e0350a48e05f64442",
+        "SolitonClassification.RamifiedBoundedCurvature": "6fe7be908efa4cb9fe186f2d1f4e34d02539245c57b1af397010349e0479dfa5"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedPoleBalance",
+      "source_sha256": "b5f05e62ed85e47c2ab997646ffe0ca3aa15140476683b55660982a94126cb28",
+      "object_sha256": "dc0babf41c8b0373c957bfd142e3f46df3bb72087369f10ff03428d60cb64026",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedDerivative": "fa7207f94926e5623102e38e59dbdef1fc80587df2b3b4de30b5766330d67a8e"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedIndicial",
+      "source_sha256": "3ad6d4e88051f63fa3377409f7819a5d379239bad39ac27711fa7f249a5236f3",
+      "object_sha256": "faf3101890aabe8bbe45dcd79d106afce34aadc7e0485a262a23fc3e703c53a4",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedDerivative": "fa7207f94926e5623102e38e59dbdef1fc80587df2b3b4de30b5766330d67a8e",
+        "Mathlib.Data.Rat.Lemmas": "82efb0a31713cec6f12f29d755386d05901126319704a54bbd80333726e2e2bd"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedPoleDeck",
+      "source_sha256": "794fdfb8e4705398034c3e40e067a61ef5106797c1b9445820a1564b0adc51e1",
+      "object_sha256": "596e483292490d745a4a39bc28df1eef045d09f3296c3f4127f293e8b201336d",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedPoleBalance": "dc0babf41c8b0373c957bfd142e3f46df3bb72087369f10ff03428d60cb64026",
+        "SolitonClassification.RamifiedIndicial": "faf3101890aabe8bbe45dcd79d106afce34aadc7e0485a262a23fc3e703c53a4"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedPhysicalPole",
+      "source_sha256": "3359995769aaab8d7d34847324e56863848133fbcdd52eba3f157345600cb066",
+      "object_sha256": "e150766015f9b860c885e6b6dc873bd83b856384a60f924f4cc0cad871c30318",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedBranchResidual": "11488a5cf06df3bf4b886af36c74fb08232da8f9dbc4cd3e0350a48e05f64442",
+        "SolitonClassification.RamifiedPoleDeck": "596e483292490d745a4a39bc28df1eef045d09f3296c3f4127f293e8b201336d"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedScalarContinuation",
+      "source_sha256": "60697a1a9bdd799d76d156b14c4b4f2d8b27635ed12468713b928969092335e1",
+      "object_sha256": "2ede375131a01fccb56af2e7944ab407aaf8e546e9dd5ed83638ad4294d85643",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedRegularStress": "13284190c878fee566c10a2d55fb458d50b9adca51a706ef285bb4b1afaa2d23",
+        "SolitonClassification.RamifiedPhysicalPole": "e150766015f9b860c885e6b6dc873bd83b856384a60f924f4cc0cad871c30318"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedIsolatedContinuation",
+      "source_sha256": "a07ffc9f03335c26c2575b13f1fe20b0f9e445036e3b7271038dfcde2c8dacfd",
+      "object_sha256": "6e93280f8c322e20fe2a5145a55afff7a258dfed01c3089fefda67a6bf51ea49",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedPoleFilling": "eed7165e257c97402b30276d24451f5588020c951850ef82300358dd80f658eb",
+        "SolitonClassification.RamifiedFinitePrincipal": "467c5f9ec0b853fc7629de6c816d0b33357a196d60cb6f799d3cfe8d44594a88",
+        "SolitonClassification.RamifiedScalarContinuation": "2ede375131a01fccb56af2e7944ab407aaf8e546e9dd5ed83638ad4294d85643"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedBaseResidual",
+      "source_sha256": "ae88592e0332d0cf03c5fd49a66d8f76077d2bdd93a26ae771c701c31d5e883b",
+      "object_sha256": "79f211b7ee435c16a93aad0841e8387fcdf9948f42011e073fa75217751a6980",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedFinitePrincipal": "467c5f9ec0b853fc7629de6c816d0b33357a196d60cb6f799d3cfe8d44594a88",
+        "SolitonClassification.RamifiedScalarContinuation": "2ede375131a01fccb56af2e7944ab407aaf8e546e9dd5ed83638ad4294d85643"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedOrdinaryEnd",
+      "source_sha256": "3b8236dfaa4f0c352f00432d9dd2899eb836389aef2e62b883d7b245622d2ad6",
+      "object_sha256": "703545ec8fcf643dcbb2373c369b17958a13fcee34c9e965907b11a194ba1ddf",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedBaseResidual": "79f211b7ee435c16a93aad0841e8387fcdf9948f42011e073fa75217751a6980",
+        "SolitonClassification.MeromorphicPoleExtension": "463281f40b3c1a1c61a1c102e17f4c280c8c971379620ef8fa080c405e450219"
+      }
+    },
+    {
+      "module": "SolitonClassification.RamifiedIsolatedOrdinaryEnd",
+      "source_sha256": "b50ef4d80d894d80630a79d6bdbc343f5ee64cca01febb55f6988994cfe4cc2c",
+      "object_sha256": "337ec6cb721a7dea37dc4e8f87dab5839598e5205845262a3276c1fba86385d5",
+      "imports_sha256": {
+        "SolitonClassification.RamifiedIsolatedContinuation": "6e93280f8c322e20fe2a5145a55afff7a258dfed01c3089fefda67a6bf51ea49",
+        "SolitonClassification.RamifiedOrdinaryEnd": "703545ec8fcf643dcbb2373c369b17958a13fcee34c9e965907b11a194ba1ddf"
+      }
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "6a5ae1ffe7551b33fb11c9b4e5e551b5c357bb4c323da50bfc5d0f1229518e97",
+      "object_sha256": "eb2e5584573ee2f457a42549459a327ec0bde682da21c501086fe387c200879a",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 142708 declarations; standard axioms only.\n"
+    }
+  ]
+}
