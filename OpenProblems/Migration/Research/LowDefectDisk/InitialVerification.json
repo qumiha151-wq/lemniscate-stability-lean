@@ -1,0 +1,73 @@
+{
+  "previous_audit": 1371,
+  "current_audit": 1536,
+  "compilations": [
+    {
+      "module": "Migration.SublevelArclength",
+      "source_sha256": "ed7a8d8d96ccd64c33baa826bd0340a1b8695444a00584a60a06d346ee9ea462",
+      "olean_sha256": "187247eec8a4a8ec3cbd1514684eb039564104a7a2075ccd000148539ad6a3d2",
+      "log": ""
+    },
+    {
+      "module": "Migration.SublevelMoments",
+      "source_sha256": "020ad32c580865deb2d16590e6c1f5fe07b719449135d201db5269badc37bcb1",
+      "olean_sha256": "3a044f90e188cdce0eff6f658e83374aa28b3baafb3f812df3095eb9985ec545",
+      "log": ""
+    },
+    {
+      "module": "Migration.SublevelSpatialRate",
+      "source_sha256": "cef58e800f609e6874100d8a9e41c69a7c376324bce86759ff0280a3a9b9cfb0",
+      "olean_sha256": "a22b1210b75263382244bc31f9f37282e0032d2fd8fdab1d7774607bf3139f5f",
+      "log": ""
+    },
+    {
+      "module": "Migration.SublevelMaterialCurve",
+      "source_sha256": "c534897675246ca6f9e97d642b8f1b04d95c7335f1782d0b7e112ad46d56fa50",
+      "olean_sha256": "ed0e50e73d9fdf269aa4dcab25542b9e07735108c90b8018e1a6d4bb80f2ba95",
+      "log": "'MigrationGeometry.Flow.PeriodicRegularPosition.bendingCurve_lengthRate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelMaterialInvariant",
+      "source_sha256": "d0f649d1a8223eba6285d18d1bc1ce9ff1ada6d9e1ece7024f47a21409771a02",
+      "olean_sha256": "04e457e01e45c3d0594a7125c81d7a94898927294a9e66e4b3cfa32c51ddbbe4",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.bending_sublevel_from_initial' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelInitialDisk",
+      "source_sha256": "075f4b50e1d03d515baf3a8709e533153f89ab7b15b97fa5d9a6a6d3e3ea2dd9",
+      "olean_sha256": "a9d2a94bd0c2cf9b1a04cea0d8087c505db3cf9302d627d9a8129a076f2777b3",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.common_disk_from_positive_initial_data' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelReflection",
+      "source_sha256": "2e856328bf405ab10692849c9dce64cb9d2371a1d55837efc57e1d7685b65010",
+      "olean_sha256": "70f9749b79c8e00c3a9ff489f8ba58a130140f2adfd871f946951e525af7d3fc",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.reflected_flow' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelPhysicalDisk",
+      "source_sha256": "358d3abccbdcbd140c8c8101a69424139dd8c8f79a4d2b1e20ca693eb853912a",
+      "olean_sha256": "c6988f26c7fc020870d29ad323cc3c4a410402a0822ba046909124f94592ee7a",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.fixed_centroid_in_future_hull' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelFixedRadius",
+      "source_sha256": "40e428b781a59b2239a134b076c5fd1223ffad11721c70b745089b4293c5d46d",
+      "olean_sha256": "99ba17e7ca64081e1616b3e8361b54afb620d0f580a034febbefe9dc749eaf5f",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.later_hulls_share_initial_disk' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "9400973f3f86248c097f87d18a38c1301bf7aa87c0bda75a2ac0f581690c6d78",
+      "olean_sha256": "050b33c96fff3f08bd038dcc5e89591cea8beabaaca69172ae6e22c934458d73",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1536 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "For either orientation, the sole initial cap 2EL <= 4 pi^2 + 11/2 gives a physical disk of fixed positive radius in all later hulls on the smooth interval. The root includes all spatial and time arguments independently of other open-problem projects."
+}

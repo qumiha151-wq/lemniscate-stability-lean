@@ -1,0 +1,43 @@
+{
+  "previous_audit": 1536,
+  "current_audit": 1541,
+  "compilations": [
+    {
+      "module": "Migration.SublevelForwardLimit",
+      "source_sha256": "595d0fd5dca4428d5de7110314f7b7907beb47b06b86908e978cbcf33da11f66",
+      "olean_sha256": "587e4499864c9188d6695359373ce31db93fdc649a6b999066ea03b47662259f",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.forward_persistent_disk' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelForwardHull",
+      "source_sha256": "59bba39bc8da4ad471776d0a14c80d62c5d41084aaeb594c17931955cba40655",
+      "olean_sha256": "ea7ceb4fe6bfcce24e20717022261fa6a476c653b7aa55f39d152a6621aba3cf",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.forward_all_hulls_common_disk' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelForwardGeometry",
+      "source_sha256": "6edba1028ba89a3bff921528edadc0daad936a3e2c0e3f575c55b2d3e41f0ebe",
+      "olean_sha256": "724933baf00cc9475a449395ce26234f0dc14232273a13eeff2a82e61a3a6ef6",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.classical_forward_initial_disk' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.SublevelMigrationFloor",
+      "source_sha256": "dce134bc603521089caf2e9d1e904b7261a05543139923d7337f5a4985d85b96",
+      "olean_sha256": "df887446f1ef8b94dbe23de6c772cc7fff971897859b5ec47d0f33c8f8fbd029",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.migration_requires_initial_bending' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "1c501151ed88e7c061b02787c365a5850b8067ecb185ba8ebe0c5dee538b3706",
+      "olean_sha256": "1697f58f15c3af32e60d557a59e79b9d32349753d00b9b85a4cb1b1776f58c18",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1541 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "An initially immersed curve with classical one-sided position, speed and curvature traces and initial 2EL <= 4 pi^2 + 11/2 has the same explicit positive disk in every hull for t >= 0. The normal evolution is only used at positive times."
+}

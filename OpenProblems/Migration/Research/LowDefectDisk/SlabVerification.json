@@ -1,0 +1,73 @@
+{
+  "previous_audit": 1326,
+  "current_audit": 1371,
+  "compilations": [
+    {
+      "module": "Migration.LowDefectInverseWeights",
+      "source_sha256": "8facaec60f51951a3bf9fe8f9b822f530ab33c0a73982b9e330a0ffa72368a96",
+      "olean_sha256": "58c89ecefdd960383ac0fa10baa107b7c770b0665f4caf28c0f115ccbc1ab516",
+      "log": "'MigrationGeometry.Flow.LowDefect.inverseWeight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectPositionTail",
+      "source_sha256": "2693a980d24bd237c7803b16a1455687fd977028c2ad4bffe9d4df6ca9431995",
+      "olean_sha256": "7b4b040893f0933a26cd915495d7bec7f45c5f443bbf5ae674d348e4a8865cb4",
+      "log": "'MigrationGeometry.Flow.LowDefect.Tangent.far_position_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectPositionSeries",
+      "source_sha256": "9e80ed42754f2a33c4c5ee91d126e017fb4cea50fe8b962d8c4d6af6556bbfa0",
+      "olean_sha256": "aad02c0224ca0ff1f50c1ce97fdbb2e8c6b87ddee36861e9a2cd2d91d981d86e",
+      "log": "'MigrationGeometry.Flow.LowDefect.Tangent.position_harmonic_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectHarmonicSupport",
+      "source_sha256": "a5f80f8988b267694111ff125291a6b781261cf16bddb0a59fef5d674ba2a41e",
+      "olean_sha256": "a2bfec7b5b8e9f7e294a0aa675707620119b2252be0eac018c4f110c27855d26",
+      "log": "'MigrationGeometry.Flow.LowDefect.Tangent.harmonic_support' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectMaterialSupport",
+      "source_sha256": "cb5536c11f03adece641fa5e195a4b1756265760e9349facb71e6796f151c5a3",
+      "olean_sha256": "40f30b8b9b4b241bb5f4dda1cd5f0e8742da5b57104309833f8cd545f272c77c",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.material_normalized_support' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectFluxNorm",
+      "source_sha256": "a68d968ed3a0f031d3c23f1ef68170f31a6a9d4d1576b9116af99fd4ea664a2e",
+      "olean_sha256": "6df5f053c6f4a00e55383c1506d8167f74e9fe9bff568f5795a6358fa9a31f7e",
+      "log": "'MigrationGeometry.Flow.LowDefect.flux_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectMaterialFlux",
+      "source_sha256": "04db0434fb6de8fc449d8e379cfe811b701b1ece4410cf6143cd1ef68a9c9133",
+      "olean_sha256": "35c6c534f68fd59b84085b0d1b242a61741e05922354a5e40a50105cb7d83aba",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.actual_directional_flux_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectPhysicalSupport",
+      "source_sha256": "d9c64bb14cbec7d7e2167163afb0ab8d4197e102a4b7e9917d77bd0531097f1a",
+      "olean_sha256": "ebd4f7d1e24664842268abadce8835bb31f3ab123d38f23c56b0777a87df9e6a",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.actual_directional_support' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.LowDefectMaterialSlab",
+      "source_sha256": "06db276d3eb560715316e7e8d90137c308f310d532b64ea5c453d096921a96ad",
+      "olean_sha256": "6df21bf9b15b1114b57e329526b8cbd1111b0674da7c9858f668cac76c1cdfdf",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.common_disk_on_low_bending_slab' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "d51162124697f68b1b630ec3ccecdf1ba06b9e19477fc85033e5c1fa38b50be1",
+      "olean_sha256": "536d7d16ff724a6db562644967e0aa0582170d6051b44c9ee0761169443c7c65",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1371 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "From a true normal flow in the positive one-turn low bending sublevel on a closed time interval, the common physical disk follows directly. All Fourier series, spatial flux and support bounds and time evolution are derived. Initial-time propagation of the sublevel is separate."
+}

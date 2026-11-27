@@ -1,3 +1,6 @@
+import Migration.SublevelMigrationFloor
+import Migration.SublevelFixedRadius
+import Migration.LowDefectMaterialSlab
 import Migration.LowDefectMaterialCorrection
 import Migration.LowDefectDiskComparison
 import Migration.DefectFourHull
