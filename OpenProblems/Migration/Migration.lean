@@ -1,3 +1,4 @@
+import Migration.MultiDiskFluxClassical
 import Migration.VirialForwardDisk
 import Migration.SublevelMigrationFloor
 import Migration.SublevelFixedRadius
