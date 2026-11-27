@@ -1,0 +1,54 @@
+{
+  "previous_declarations": 2749,
+  "audited_declarations": 2763,
+  "previous_root_sha256": "59778996db479c5e1e2225e88805764bb84607601cbd55c0c5e610e82ba12d0a",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.RecordSweptArea",
+      "source_sha256": "ce7a5f0bdd52559dc983c411466c97f9c69f7f80cf29a4342c0292da7cc9498a",
+      "olean_sha256": "20ac9454668aae9bebbb38ad33dd85892c49ae24346677200c2a39836a3a34b4",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.sweptArea_at_product_record' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.SharpVirial": "a91b49b0a7d2de2d16907f0c69a2d514cd8261588605fec77837e3ed614a9ac0",
+        "LengthGrowth.ActualFlow.CriticalDensityTime": "3a62497aa5befcf9a1a535afc190514e80a512b3e8eef944feb8beeb90b03949"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.RecordSweptAreaLimit",
+      "source_sha256": "9425e74d7e53f38625afe2f4e074eebe96382bbbab2c10ccfa42355071fd4301",
+      "olean_sha256": "d4de594671f81a1e87b09df8871a05f9ef5eb97c1ddb40e753d7bdc7afc84e2f",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.totalSweptArea_vanishes_at_escaping_records' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.RecordSweptArea": "20ac9454668aae9bebbb38ad33dd85892c49ae24346677200c2a39836a3a34b4"
+      }
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.RecordSweptAreaDuration",
+      "source_sha256": "5cd2bedae205b227e1c2d553d6aa5d8fed929461b88416dbe249d0621cb547cf",
+      "olean_sha256": "3c7dd367f823fde7a54e0a47655983e7ba0d4c0eb93a857f8f45cfa994888838",
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.sweptArea_record_rms_duration' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.RecordSweptAreaLimit": "d4de594671f81a1e87b09df8871a05f9ef5eb97c1ddb40e753d7bdc7afc84e2f"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "4328721d318075aa5dcf13eeffd023c058f86e94b20a22e7c8a05a4074ca65c0",
+      "olean_sha256": "abf857584cdbd8a391dbb70e6a950e46f3525f6c199a3020cb7ff6772c902ec3",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2763 declarations; standard axioms only.\n"
+    }
+  ]
+}
