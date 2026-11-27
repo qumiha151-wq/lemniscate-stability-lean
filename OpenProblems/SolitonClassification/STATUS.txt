@@ -1,3 +1,7 @@
+在一个支持周期的径向层恰有两臂、相位差达到 1/200 圈且满足横截条件时，Lean 验证分母为 d 的旋转闭合轨道在完整半开物理周期内至少有 d⌊d/200⌋ 个不同的普通双点。每一点恰有两个参数原像，真实速度不平行。
+Lean checks a set of d floor(d/200) distinct, exactly twofold transverse image points on the half-open arclength period for a differentiable profile with coprime holonomy and a two-arm radial shell satisfying the phase-width and transversality hypotheses. See RotatingCertificate/IntegerWinding/ArmMultiplicity/OuterArmMultiplicity.md.
+SolitonClassification audit: 23219 declarations, standard axioms only.
+
 闭合自相似膨胀曲线的自交数
 
 将膨胀系数归一化为一，L 取最小正弧长周期。闭合曲线上位置相同而参数不同的有序参数对至多有 3[1+2^24 L(1+L)^2]^2 个，计入相切自交。另一个定理证明，已构造的零总转角纯膨胀曲线族中，单次最小周期上的普通横截二重点数可以任意大。每个这样的点恰有两个原像。

@@ -1,0 +1,40 @@
+# Ordinary crossings on rotated copies of a support block
+
+Let a unit-speed planar profile $X:\mathbb R\to\mathbb C$ obey $X(s+L)=e^{2\pi i m/d}X(s)$ with $\gcd(m,d)=1$ and $d\ge1$. All preimages below count labels on $[0,dL)$, so the periodic endpoint occurs only once. A double point is ordinary if it has exactly two such labels and the determinant of their velocities is nonzero.
+
+## A finite set of distinct ordinary image points
+
+Take a radial shell in which each retained radius has exactly two labels on $[0,L)$, on a left and a right arm. Parameterize the radius levels by $x\in(0,1]$ with positive radius injective in $x$. Assume the right position is obtained from the left by a rotation of $\delta(x)$ turns, with $\delta$ continuous on $[0,1]$, $\delta(0)=0$ and $\delta(1)\ge1/200$. Assume the two vectors $\overline{X}X'$ at the selected labels have nonzero determinant when expressed in their own radial frames. Opposite signs of their real parts and a common strict sign of their imaginary parts suffice. The graph at the common tip $x=0$ may be tangent.
+
+There are then at least $d\lfloor d/200\rfloor$ distinct ordinary double points of the full profile. For each $j=1,\ldots,\lfloor d/200\rfloor$, continuity gives a positive level with $\delta=j/d$. Choose one per $j$. Distinct $j$ give distinct levels and hence distinct radii. On each chosen radius the $d$ rotated copies of the right point form a free orbit because the radius is positive. The corresponding left labels occur with indices shifted by $j$ modulo $d$. The two base labels are different; the shell exhaustion excludes further base labels; a fixed base label cannot occur with two rotation indices at the same nonzero point. At a meeting point $P$, multiplication of both velocities by $\overline P$ changes their determinant by the strictly positive factor $|P|^2$ and yields exactly the two base radial-frame vectors. These are transverse crossings.
+
+[OuterArmMultiplicity.lean](../../../SolitonClassification/Rotating/OuterArmMultiplicity.lean) constructs the finite set of complex points, verifies its cardinality, and proves the two-preimage and transverse-velocity assertions separately at every point. [OuterArmActualPeriod.lean](../../../SolitonClassification/Rotating/OuterArmActualPeriod.lean) transports all labels and both true derivatives to the half-open physical arclength interval $[0,dL)$. The transport uses bijectivity of multiplication by the coprime residue modulo $d$, and the bijection $(i,u)\mapsto iL+u$ from $d$ half-open blocks. A signed numerator may be replaced by its residue modulo $d$. The geometric shell and its phase width are hypotheses of these general Lean theorems.
+
+Near a strict, nondegenerate, unique extremum of the radius, an isolated shell consists of just its two adjacent branches. At that extremum the angular derivative of a unit-speed curve avoiding the origin is $\pm1/|X|$ in radians per unit arclength. It therefore has the same strict sign on both branches in a sufficiently small shell. Radial derivatives have opposite signs, giving the transverse-velocity condition. A numerical claim about a prescribed width such as $1/200$ additionally requires enclosures for the whole relevant annulus and its phase lift.
+
+## The count on the full analytic branch
+
+For an analytic local family of immersed unit-speed support blocks bounded away from zero with $n$ nondegenerate radial critical points, there is also a uniform quadratic upper bound for the total number of transverse image points of its primitive rational profiles. Below, all conclusions on the analytic family are written proofs. Compactify the parameter range inside a slightly larger interval where the family is jointly analytic, rescaling block time to a fixed compact interval. This is possible for the analytic periodic orbit and shooting family because its true return time varies analytically. Coordinate changes, restricted analytic functions and bounded trigonometric functions here are definable in the o-minimal real field with restricted analytic functions. In particular the transverse solution set
+\[
+ X_h(u)=e^{2\pi i\alpha}X_h(v),\qquad \det(X_h'(u),e^{2\pi i\alpha}X_h'(v))\ne0
+\]
+has a finite uniform bound on the number of pairs $(u,v)$ per $(h,\alpha)$. Each pair is locally isolated by the inverse function theorem, and definable zero-dimensional fibres have uniformly bounded cardinality by cell decomposition. This gives $O(d^2)$ for any selection of transverse crossing images, including points of multiplicity exceeding two. [Restricted analytic structures](https://www.math.ens.psl.eu/~zchatzid/papiers/o-min-21/DMM.pdf) · [Cell decomposition](https://www.cambridge.org/core/books/tame-topology-and-ominimal-structures/cell-decomposition/04F570063CE5D7F34AE6152836529552)
+
+There is a more precise coefficient for the number of **unordered transverse parameter pairs**. Choose the start of the block at a radial extremum continued from the base orbit. Denote its $n$ open radial monotonicity arcs by $I_i$. On the common open range of radii of $I_i$ and $I_j$, let $\Delta_{ij}(r,h)$ be the difference of their lifted angles in turns. Put
+\[
+ A(h)=\sum_{i<j}\operatorname{Var}_r \Delta_{ij}(r,h).
+\]
+An empty radius overlap contributes zero. At an interior common radius with nonzero radial derivatives, $\Delta_{ij}'\ne0$ is exactly transversality after the two radial frames coincide. Subdivide at zeros of the derivative, including endpoints of any constant pieces. There are uniformly finitely many subdivisions by cell decomposition: the radial inverses are definable and the angle lift may be chosen definable after splitting the compact analytic position family into finitely many local phase charts. Equivalently the global lift on the compact block is jointly analytic, obtained by integrating $\operatorname{Im}(X'/X)/(2\pi)$ locally and continuing with a fixed analytic initial angle. On each strictly monotone piece with nonzero derivative, the number of levels in $d^{-1}\mathbb Z$ differs from $d$ times its variation by at most two. Each such level contributes exactly $d$ unordered parameter pairs, since the arms have distinct indices $i<j$ and the rotated partner is uniquely determined by the first rotation. No arm can give an interior self-pair with itself at distinct parameters because the radius is strictly monotone there. A prescribed critical radius has at most $2n$ labels in the original half-open block, and each such label in one copy can only match each other label in one rotation. Critical radii therefore contribute at most $O(d)$ pairs in all. Thus the total transverse pair count is
+\[
+                 d^2A(h)+O(d)
+\]
+uniformly near the base. This asymptotic counts all pairs at higher-multiplicity image points.
+
+If $h\to h_*$, then $A(h)\to A(h_*)$. To see this, remove a small fixed radius neighbourhood of each base critical value. On the complement, inverse branches and their angle derivatives converge uniformly, and overlap endpoints there can be dealt with by finite subdivision. On the removed set, a branch derivative in $r$ is bounded by a constant times $1+\sum_e|r-r_e(h)|^{-1/2}$ over its two moving endpoints; Taylor expansion at each nondegenerate extremum and a uniform positive radial derivative away from the ends give this bound. Its integral on all removed intervals is uniformly $O(\sqrt\epsilon)$ for radius-neighbourhood size $\epsilon$. This also covers coincidences of different critical values. Letting $\epsilon$ decrease proves continuity.
+
+Finally,
+\[
+ A(h)\le (n-1)\frac1{2\pi}\int_0^L\left|\operatorname{Im}\frac{X'}X\right|ds
+       \le\frac{(n-1)L}{2\pi\min|X|}.
+\]
+For $n=72$, $L<61$, $\min|X|>0.15$, this gives $A(h)<4600$. Thus all transverse image points together number at most $4600d^2+O(d)$ under these bounds. In a family satisfying the two-arm hypotheses, the ordinary image count is consequently of order $d^2$. This does not identify the precise leading coefficient for image points of multiplicity exactly two.

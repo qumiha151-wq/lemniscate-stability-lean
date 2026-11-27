@@ -1,0 +1,35 @@
+{
+  "prior_count": 23165,
+  "audit_count": 23219,
+  "compilations": [
+    {
+      "module": "SolitonClassification.Rotating.OuterArmMultiplicity",
+      "source_sha256": "6b28f58f2bcbef8c5a1f1c05a58e8b00ef6eb0bffb20091e3b37e4386b597889",
+      "olean_sha256": "090facfd39c85f72591676d32a3b20e2969f3d8a7e6ba701b997b3f909f5148f",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.ArmCount.Arms.many_ordinary' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification.Rotating.OuterArmActualPeriod",
+      "source_sha256": "511255279b466c34c5f8182081b442459de2a3a3dfdff6f76594eaf1f1d24c04",
+      "olean_sha256": "3042c3ea1a69314e781acbc1463c150e78c87f6afbe462b6629490cc779ab004",
+      "exit": 0,
+      "log": "'SolitonClassification.Rotating.ArmCount.many_ordinary_on_period' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "9600329087002015bcf5f20d662a1c30337f2a15424fd2756a2cd83b0938d675",
+      "olean_sha256": "743e761990be85e24bf9460f8db9bafb57e51ff1fd3c52d5df02de1066a1d449",
+      "log": "",
+      "exit": 0
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "olean_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 23219 declarations; standard axioms only.\n",
+      "exit": 0
+    }
+  ],
+  "scope": "The half-open material-period count is conditional on the geometric two-arm shell and its measured phase gap. Both parameter preimages, exclusion of any third preimage, and nonparallel actual derivatives are verified by Lean."
+}
