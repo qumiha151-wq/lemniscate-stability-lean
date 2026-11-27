@@ -1,0 +1,109 @@
+{
+  "audited_declarations": 141818,
+  "previous_declarations": 141785,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "SolitonClassification.TrigRationalChart",
+      "source_sha256": "e47b41e64ce58086781b6e5f3dd68be33be29059181645f1727c85d39c8affe2",
+      "object_sha256": "4275d4cd6d6207835a74093658239a7614af87fb7586a5efcb1140d7879dc361",
+      "imports_sha256": {
+        "SolitonClassification.ScalarReconstructionNecessity": "43a0a3d87acb41156a57bb0cd591be82dd9ce6d234b34a5f86e1f649d44894ea",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv": "a1761539adb8192fde0b02edb316fa673e64b5fd4d0b8cf9054bee9ffb1b1951",
+        "Mathlib.Analysis.Calculus.Deriv.Polynomial": "6eacc7d42e79a0878bf92ae38782cea88ec0cefb633fe02801858d401dca56a0",
+        "Mathlib.Algebra.Polynomial.SpecificDegree": "4e8e70ff35104c482420e93bc210006ba5197d50c3a92be67ba4af8876818d6c",
+        "Mathlib.Analysis.Polynomial.Basic": "a4da715b505563910516dc785b65359ee8b528c0b5a304baed77380e8b5790a0"
+      }
+    },
+    {
+      "module": "SolitonClassification.TrigSolitonCancellation",
+      "source_sha256": "7be3cd6301f79dcc7c47798bd5cd063affd86889272bc6292faa67fccbba35f7",
+      "object_sha256": "4de38b90f97e3749295ea9cbefca91aef83cf670aa9e12c10fe7375be8ca2b9d",
+      "imports_sha256": {
+        "SolitonClassification.TrigRationalChart": "4275d4cd6d6207835a74093658239a7614af87fb7586a5efcb1140d7879dc361"
+      }
+    },
+    {
+      "module": "SolitonClassification.TrigFourierCharts",
+      "source_sha256": "21dd9a8d2d06df68382c9215a353c3cab28599cc985acd28f6c139c4b7b798ef",
+      "object_sha256": "1f858129480123b91bb680f7d3318514932c252e617a0e831bd60adffe8007d4",
+      "imports_sha256": {
+        "SolitonClassification.TrigRationalChart": "4275d4cd6d6207835a74093658239a7614af87fb7586a5efcb1140d7879dc361"
+      }
+    },
+    {
+      "module": "SolitonClassification.TrigCurvatureCircle",
+      "source_sha256": "fa2e1acf5d84ce20a659cfa6145e3a19ffddfaf6db7201077c18441d200db378",
+      "object_sha256": "80e273992a2c879470eb3f4f47a5a51c7a52bcb0a220daf28ecc5bd62764b420",
+      "imports_sha256": {
+        "SolitonClassification.TrigSolitonCancellation": "4de38b90f97e3749295ea9cbefca91aef83cf670aa9e12c10fe7375be8ca2b9d",
+        "SolitonClassification.TrigFourierCharts": "1f858129480123b91bb680f7d3318514932c252e617a0e831bd60adffe8007d4",
+        "SolitonClassification.LowBendingCircles": "74b97e479bb3bf4a17502c410589e7a80d5ac83c0ed939e60922986fca119d54",
+        "SolitonClassification.TangentLawGeometry": "c52bc688c0611bdd1389fa2160585bbd795c482040440c93041a5c60efdd7158"
+      }
+    },
+    {
+      "module": "SolitonClassification.HolonomicFreeze",
+      "source_sha256": "f8c2ae5bbd195d6a8ffd866f8a24232c6e076e0a83a70d8e0466c9e68624ae4d",
+      "object_sha256": "e892df441932fc39a2c4ff5bb80ff10d76372e48f90d154c70997314f3e1854d",
+      "imports_sha256": {
+        "Mathlib.Algebra.Polynomial.Roots": "488f2e1dde52dd2f618b922e7b22efa6c6dce9f9791985a3a616eac422ac60f8",
+        "Mathlib.Analysis.Fourier.AddCircle": "88471b5074c6f8b2811a33989404d173eeae76cd5f8cc5e32b3aaccfe2f2c733",
+        "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+      }
+    },
+    {
+      "module": "SolitonClassification.HolonomicSpectrum",
+      "source_sha256": "e8b66f8ed173d4da53e7bde1030c3d6dcfaf2ad8802f54163dffffc23a70938f",
+      "object_sha256": "9d0e7348c94c13b9e674a7a15127a40acdc72c388947f829e999aa3e7582672f",
+      "imports_sha256": {
+        "SolitonClassification.HolonomicFreeze": "e892df441932fc39a2c4ff5bb80ff10d76372e48f90d154c70997314f3e1854d"
+      }
+    },
+    {
+      "module": "SolitonClassification.HolonomicExpansion",
+      "source_sha256": "bd2295bf260fe990efb13e79a79f5e48e3f0b959d759ad7ac5f52f0865ce5d24",
+      "object_sha256": "aaf8898955d82b8d3a96073f8f2ad326a010be4f445a1678e8a7c69b6a1b645b",
+      "imports_sha256": {
+        "SolitonClassification.HolonomicSpectrum": "9d0e7348c94c13b9e674a7a15127a40acdc72c388947f829e999aa3e7582672f",
+        "Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas": "83bd3d60296cc0a0a7fe8ad50ddd20cf195d0f88ede1218123cf11d220e00191"
+      }
+    },
+    {
+      "module": "SolitonClassification.HolonomicRegularity",
+      "source_sha256": "718301cdc1c8ce8644d493a16e033ca29e37bf68043a9152072f47b4e811f3db",
+      "object_sha256": "09f24b46c3e69a18cd947262c04f411be12e548c57893a12150d489be829ee61",
+      "imports_sha256": {
+        "SolitonClassification.NoClosedTranslators": "d912506d1b8399acfb66f0db7fd95ee5949a3345fb49baec3801920296f0a2b9",
+        "Mathlib.Analysis.Calculus.ContDiff.Deriv": "c9e52cbc977a45d5e46b442415fd68aa4aade8ca5d9eb955b7dbc966264185a3"
+      }
+    },
+    {
+      "module": "SolitonClassification.HolonomicCircle",
+      "source_sha256": "b9a3e59e01e8bc64950b3a911a557129e0a48f2c3cb6ac36c4880cdb9621f64c",
+      "object_sha256": "2e6560442f8e8e2cf9e5d8dee640cbe9b8abda16af6685165016a4e24e9c9877",
+      "imports_sha256": {
+        "SolitonClassification.HolonomicExpansion": "aaf8898955d82b8d3a96073f8f2ad326a010be4f445a1678e8a7c69b6a1b645b",
+        "SolitonClassification.HolonomicRegularity": "09f24b46c3e69a18cd947262c04f411be12e548c57893a12150d489be829ee61",
+        "SolitonClassification.TrigCurvatureCircle": "80e273992a2c879470eb3f4f47a5a51c7a52bcb0a220daf28ecc5bd62764b420"
+      }
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "c4da509a467ee5049967c8f5413a9b6f7c665d1aada87a95a5eac9760fb002e8",
+      "object_sha256": "bb78d23f52b7379a99b6862ef0af4a16ac7c88a55d6ffc8b9dd2622cd2cfe8e6",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 141818 declarations; standard axioms only.\n"
+    }
+  ]
+}
