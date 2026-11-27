@@ -1,75 +1,16 @@
-import SolitonClassification.EllipticContinuation
-import SolitonClassification.MeromorphicOrdinaryPole
-import SolitonClassification.ScalarReconstructionNecessity
+import SolitonClassification.MeromorphicScalarEquation
 
 noncomputable section
-open Complex Filter Set
+open Filter
 open scoped Topology
-set_option backward.isDefEq.respectTransparency false
 namespace ClosedSimilarity.MeromorphicCurvature
 
-private def elasticForce (k : ℂ → ℂ) (z : ℂ) := deriv (deriv k) z + (k z)^3/2
-
-private theorem analytic_force {k : ℂ → ℂ} {z : ℂ} (an : AnalyticAt ℂ k z) :
-    AnalyticAt ℂ (elasticForce k) z :=
-  an.deriv.deriv.add ((an.pow 3).div analyticAt_const (by norm_num))
-
-private theorem force_prime {k : ℂ → ℂ} {z : ℂ} (an : AnalyticAt ℂ k z) :
-    deriv (elasticForce k) z=deriv (deriv (deriv k)) z+3*k z^2*deriv k z/2 := by
-  exact ((an.deriv.deriv.differentiableAt.hasDerivAt.add
-    ((an.differentiableAt.hasDerivAt.pow 3).div_const 2)).congr_deriv (by push_cast;ring)).deriv
-
-private theorem force_second {k : ℂ → ℂ} {z : ℂ} (an : AnalyticAt ℂ k z) :
-    deriv (deriv (elasticForce k)) z=deriv (deriv (deriv (deriv k))) z+
-      (6*k z*(deriv k z)^2+3*k z^2*deriv (deriv k) z)/2 := by
-  have germ : deriv (elasticForce k) =ᶠ[𝓝 z]
-      (fun w=>deriv (deriv (deriv k)) w+3*k w^2*deriv k w/2) :=
-    an.eventually_analyticAt.mono (fun _ h=>force_prime h)
-  rw [germ.deriv_eq]
-  apply HasDerivAt.deriv
-  apply (an.deriv.deriv.deriv.differentiableAt.hasDerivAt.add
-    ((((an.differentiableAt.hasDerivAt.pow 2).const_mul 3).mul
-      an.deriv.differentiableAt.hasDerivAt).div_const 2)).congr_deriv
-  push_cast
-  simp only [Pi.pow_apply]
-  ring
-
-/-- A meromorphic continuation of the physical scalar equation satisfies the
-ordinary complex residual in every punctured neighborhood of the plane. -/
+/-- Elliptic continuations satisfy the physical fourth-order equation as
+a special case of the meromorphic continuation theorem. -/
 theorem residual_germ_of_extension {a b L : ℝ} (p : PeriodicSupportProfile a b L)
     (e : EllipticExtension p.k) (z : ℂ) :
-    ordinaryResidual a b e.extension =ᶠ[𝓝[≠] z] fun _=>0 := by
-  let k := e.extension
-  have ha (t : ℝ) : AnalyticAt ℂ k (t:ℂ) := e.analytic_real t
-  have h₁ := restriction_derivative ha e.restrict_real
-  have h₂ := restriction_derivative (fun t=>(ha t).deriv) h₁
-  have hf (t : ℝ) : elasticForce k (t:ℂ)=(ScalarReconstruction.force p.k t:ℂ) := by
-    unfold elasticForce ScalarReconstruction.force
-    rw [h₂,show k (t:ℂ)=(p.k t:ℂ) from e.restrict_real t]
-    push_cast
-    rfl
-  have aF (t : ℝ) := analytic_force (ha t)
-  have hf₁ := restriction_derivative aF hf
-  have hf₂ := restriction_derivative (fun t=>(aF t).deriv) hf₁
-  apply real_axis_meromorphic_identity _ _ z
-  · intro x
-    have m : Meromorphic k := fun u=>(e.normal u).meromorphicAt
-    change MeromorphicAt (ordinaryResidual _ _ k) x
-    unfold ordinaryResidual ordinaryQuadratic ordinaryQuartic
-    fun_prop (disch := assumption)
-  · intro s
-    have eq := ScalarReconstruction.scalarEquation_of_periodicSupportProfile p s
-    dsimp only [ScalarReconstruction.numerator,ScalarReconstruction.supportDerivative] at eq
-    have ce : k (s:ℂ)*deriv (deriv (elasticForce k)) (s:ℂ)-
-      deriv k (s:ℂ)*(deriv (elasticForce k) (s:ℂ)+(b:ℂ)) =
-      (k (s:ℂ))^2*((a:ℂ)-k (s:ℂ)*elasticForce k (s:ℂ)) := by
-      rw [hf₂,hf₁,hf,h₁,show k (s:ℂ)=(p.k s:ℂ) from e.restrict_real s]
-      exact_mod_cast eq
-    rw [force_second (ha s),force_prime (ha s)] at ce
-    unfold elasticForce at ce
-    change ordinaryResidual _ _ k (s:ℂ)=0
-    unfold ordinaryResidual ordinaryQuadratic ordinaryQuartic
-    linear_combination 2*ce
+    ordinaryResidual a b e.extension =ᶠ[𝓝[≠] z] fun _=>0 :=
+  residual_germ_of_meromorphic_trace p (fun x=>(e.normal x).meromorphicAt)
+    e.analytic_real e.restrict_real z
 
 end ClosedSimilarity.MeromorphicCurvature
-

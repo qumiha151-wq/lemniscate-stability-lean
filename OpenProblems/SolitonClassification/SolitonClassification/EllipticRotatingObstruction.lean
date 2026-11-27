@@ -1,4 +1,4 @@
-import SolitonClassification.EllipticArclengthClassification
+import SolitonClassification.MeromorphicClosedProfile
 import SolitonClassification.Rotating.IntegerFinalDoublePoints
 
 noncomputable section
@@ -37,28 +37,35 @@ private def frenetSeed (P : Seed) : ClosedUnitFrenetCurve := by
     periodic_tx:=fun s=>by simp only [J.turning,Real.cos_sub_two_pi],
     periodic_ty:=fun s=>by simp only [J.turning,Real.sin_sub_two_pi] }
 
-theorem genuinely_rotating_curvature_not_elliptic {P : Seed} (ev : PrimitiveEvolution P) :
-    IsEmpty (EllipticExtension P.I.k) := by
-  constructor
+private theorem seed_shape (P : Seed) (s : ℝ) :
+    (frenetSeed P).positionForce s= -(1:ℝ)*(frenetSeed P).normalSupport s-P.b*(frenetSeed P).tangentSupport s+
+      0*(frenetSeed P).ty s-0*(frenetSeed P).tx s := by
+  rw [(frenetSeed P).positionForce_eq]
+  have eq := P.I.soliton s
+  rw [(P.I.tangentX s).deriv,(P.I.tangentY s).deriv] at eq
+  change deriv (deriv P.I.k) s+P.I.k s^3/2=_
+  dsimp only [frenetSeed,ClosedUnitFrenetCurve.normalSupport,ClosedUnitFrenetCurve.tangentSupport]
+  linarith only [eq]
+
+theorem genuinely_rotating_curvature_not_meromorphic {P : Seed} (ev : PrimitiveEvolution P) :
+    ¬GlobalMeromorphicTrace P.I.k := by
   intro e
   let c:=frenetSeed P
-  have shape (s : ℝ) : c.positionForce s= -(1:ℝ)*c.normalSupport s-P.b*c.tangentSupport s+
-      0*c.ty s-0*c.tx s := by
-    rw [c.positionForce_eq]
-    have eq := P.I.soliton s
-    rw [(P.I.tangentX s).deriv,(P.I.tangentY s).deriv] at eq
-    change deriv (deriv P.I.k) s+P.I.k s^3/2=_
-    dsimp only [c,frenetSeed,ClosedUnitFrenetCurve.normalSupport,ClosedUnitFrenetCurve.tangentSupport]
-    linarith only [eq]
-  obtain ⟨v,hv,hper⟩:=e.transverse
-  obtain cir|ber := c.elliptic_curvature_circle_or_bernoulli 1 P.b 0 0 shape e.extension
-    (fun x=>(e.normal x).meromorphicAt) e.analytic_real e.restrict_real v hv
-    (fun _=>Filter.Eventually.of_forall hper)
+  obtain cir|ber := c.meromorphic_curvature_circle_or_bernoulli 1 P.b 0 0 (seed_shape P) e
   · obtain ⟨K,_,_,_,_,hk,_⟩ := cir
     obtain ⟨s,sn⟩ := ev.negative_curvature
     have eq : P.I.k s=P.I.k 0 := (hk s).trans (hk 0).symm
     linarith only [eq,sn,ev.positive_curvature]
   · linarith only [ber.1,ev.rotation_range.1]
+
+theorem genuinely_rotating_curvature_not_elliptic {P : Seed} (ev : PrimitiveEvolution P) :
+    IsEmpty (EllipticExtension P.I.k) := ⟨fun e=>genuinely_rotating_curvature_not_meromorphic ev
+      ⟨e.extension,fun x=>(e.normal x).meromorphicAt,e.analytic_real,e.restrict_real⟩⟩
+
+theorem exists_nonmeromorphic_two_crossing_solution :
+    ∃P : Seed, DoublePointEvolution P ∧ ¬GlobalMeromorphicTrace P.I.k := by
+  obtain ⟨P,hP⟩:=exists_primitive_two_double_point_evolution
+  exact ⟨P,hP,genuinely_rotating_curvature_not_meromorphic hP.evolution⟩
 
 /-- In particular, the two-crossing closed solution is a genuine example
 outside the elliptic-curvature classification. -/
