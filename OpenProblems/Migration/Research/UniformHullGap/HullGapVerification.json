@@ -1,0 +1,85 @@
+{
+  "base_declarations": 677,
+  "audit_declarations": 739,
+  "audit_log": "Migration audit passed: 739 declarations; standard axioms only.",
+  "verified_baseline_source_object_pairs": 58,
+  "fresh_compilations": [
+    {
+      "module": "Migration.HullCriticalWindow",
+      "source_sha256": "cb8fa42c000494667ced5cfc2e2afcefce129306c4678c586e9da7aeca76d0b2",
+      "olean_sha256": "50ec3cfc63de28698d6167fdf9a881bac024b43f29dc85384ea8c29ad9a46a60",
+      "exit": 0,
+      "log": "'MigrationGeometry.HullGap.critical_window_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.HullStressWindow",
+      "source_sha256": "3527d7ca29ae3a7c19b0840a5405d95fb10d7b781f30976b89b8148c989b5662",
+      "olean_sha256": "e673eed3dda48b1e34657cb92b9c2d3fba9a0e7ba5dae04e47fdad7b115058a4",
+      "exit": 0,
+      "log": "'MigrationGeometry.Adjoint.Frame.stressSize_disk_two' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.HullTrajectoryCompactness",
+      "source_sha256": "b38d411e345c220d741899775d4038b0eeb2d1caf8e9696dd9e4b4e8c9c9240b",
+      "olean_sha256": "778451581f3422c30afda7a535bf0af83c46acce4113bbec66962fa33a656f46",
+      "exit": 0,
+      "log": "'MigrationGeometry.HullGap.compact_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.HullCompactGap",
+      "source_sha256": "614ce82e215fbc6157c916da314935fb00d3c69e16acd8633042b00660cb95aa",
+      "olean_sha256": "fbfe5afc89d842ea6cd3929ae6e48c652af527f71f5a43023896ab36050522aa",
+      "exit": 0,
+      "log": "'MigrationGeometry.HullGap.no_near_critical_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.HullFrameWindow",
+      "source_sha256": "81076d806f911c7ccfec55eb45411205897ea28c4fedf8cfab1cf6026cc6f9b5",
+      "olean_sha256": "6bac1399afec9b2b128f6fb6d6640842d27c6d05dacc7b1a411f5182904ae802",
+      "exit": 0,
+      "log": "'MigrationGeometry.HullGap.uniform_frame_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.HullFrameScaling",
+      "source_sha256": "e5d1f90220572e03642476d81ac93b0826b635c75b094ae338b6bbd3f5eb5513",
+      "olean_sha256": "7ccbbf79146e7bd80b2d0eec54df9709624dc33ba885b10664b7f3b04e48b32b",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.HullGapGeometry",
+      "source_sha256": "951aa1a9c43aa8edd394061bc9483b135a4d4663ad52944b528b31b9c82b5ed8",
+      "olean_sha256": "a7acf5e94949979ec6a8f58c1ee2d4fd0086baeee46ebd42210ae78f3c612441",
+      "exit": 0,
+      "log": "'MigrationGeometry.HullGap.expander_hull_disk_of_margin' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.UniformHullGap",
+      "source_sha256": "837cc78b081e8b1a132a7509389568f668ffbe6c7888634a7188652b39eb048c",
+      "olean_sha256": "1ded238b2850b4bd1c316b9b6b00f7a7dda66c4b8bc83ef03ceb26b623a0e3c7",
+      "exit": 0,
+      "log": "'MigrationGeometry.HullGap.uniform_expander_hull_disk' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.HullGap.no_migration_with_radius_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "36c78a29333836015327f06c50e5ba9eef713b002552f46edc2bb2b00a13e869",
+      "olean_sha256": "33ed6d07e99009248261794d5d2d21ff41a75b01f9c9e1444246b0fe5f01c04c",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "exit": 0,
+      "log": "Migration audit passed: 739 declarations; standard axioms only.\n"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+}
