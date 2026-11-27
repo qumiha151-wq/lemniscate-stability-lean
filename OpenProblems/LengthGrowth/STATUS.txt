@@ -1,3 +1,9 @@
+物理尺度下的曲线宽度和长度增长
+每条光滑闭流的曲率及曲率的一阶弧长导数都在整条曲线上一致趋于零。给定任意固定宽度，充分晚时任何方向的这种条带都装不下曲线。更强地，对每个 A>0，每个充分晚的 [s,2s] 都含某个时刻 u，使半宽为 A u^(1/6) 的条带无论如何放置都装不下整条曲线。对于 U=EL，增长率 η=L U′/E³ 满足 η≤1/2−π²/U，单圈达到等号。这些结论、最小外接圆下界以及它们所用的实际耗散估计已通过 Lean。一般的四次根长度上界仍开放。
+
+Physical width and energy-length growth
+Every smooth closed flow has uniformly vanishing curvature and curvature gradient in the original scale. Its minimum containing width tends to infinity and exceeds every prescribed multiple of time^(1/6) somewhere in each sufficiently late doubling interval. The instantaneous product-growth bound has sharp deficit π²/U over all curves, and a high growth rate forces a large enclosing radius. The independent project audit covers 1978 declarations using standard axioms. See Research/PhysicalWidth/WidthAndGrowth.md.
+
 任意光滑闭流的拐点角速度和长度
 令 P 为拐点处切线向外转动的最大速度差。每条光滑闭流在任意正时间之后都有 P 的 4/3 次方可积。若在某个正时间之后、某个阈值 δ>0 下，0<P<δ 的时刻总长度有限，则这条流满足四次根长度上界。对任意固定阈值，P≥δ 的时刻对总向外转动的贡献有限。耗散演化、记录时刻的前向控制及上述结论均已通过 Lean。一般问题仍开放。
 

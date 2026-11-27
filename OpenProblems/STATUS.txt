@@ -5,7 +5,7 @@ Results checked through 27 November 2026
 仓库根目录是此前的伯努利双扭线稳定性证明。
 CentroidEscape 已证明存在一条光滑闭合曲线，其按弧长计算的质心逃向无穷远。
 SolitonClassification 已给出无穷多个互不等价的零转数闭合膨胀子。Lean 已完整证明，对任意自然数 N，存在一条零转数闭合膨胀曲线，按最短周期走一圈时至少有 N 个不同的普通横截自交点。每个点恰经过两次，两条切线方向不同。全部自相似解的分类仍开放。
-LengthGrowth 已证明，对每条光滑闭流，拐点处切线向外转动的最大速度差 P 在任意正时间之后都有 P 的 4/3 次方可积。若某个正阈值 δ 下满足 0<P<δ 的时刻在某个尾部总长度有限，则该流满足四次根长度上界。任意单条流是否都满足四次根上界仍开放。
+LengthGrowth 已证明，对每条光滑闭流，拐点处切线向外转动的最大速度差 P 在任意正时间之后都有 P 的 4/3 次方可积。若某个正阈值 δ 下满足 0<P<δ 的时刻在某个尾部总长度有限，则该流满足四次根长度上界。另已证明任意光滑闭流的最小包围条带宽度都趋于无穷，且其曲率和曲率的一阶弧长导数一致趋零。任意单条流是否都满足四次根上界仍开放。
 Migration 已排除若干类曲线的整体迁移。若闭合纯膨胀曲线的膨胀中心位于凸包外，其最大半径与从中心所见的张角必须满足严格的下界，已通过 Lean 核验。一般情形下能否整条越过一条直线仍开放。
 OpenTranslators 已构造一个完备的非直线平移解，曲率无界，回答引言中的开曲线问题。
 
@@ -38,6 +38,8 @@ A classification covering every closed self-similar profile remains open.
 Andrews and Wheeler also construct infinitely many geometrically distinct
 homothetic expanders in their preprint Jellyfish exist.
 https://arxiv.org/abs/2601.21227
+
+For every smooth closed flow the minimum containing strip width tends to infinity, with super-sixth-root width at some time in every sufficiently late doubling interval. The physical curvature and its arclength derivative vanish uniformly. See LengthGrowth/Research/PhysicalWidth/WidthAndGrowth.md.
 
 On each positive time tail the true outward angular rate at inflections belongs to L^(4/3). A finite total duration of weak positive rates below a single fixed threshold suffices for fourth-root growth of that flow. See LengthGrowth/Research/ForcePersistence/ForceDissipationPersistence.md.
 

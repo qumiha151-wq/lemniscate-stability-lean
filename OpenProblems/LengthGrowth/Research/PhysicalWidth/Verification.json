@@ -1,0 +1,160 @@
+{
+  "lean": "4.33.1",
+  "previous_declarations": 1913,
+  "audited_declarations": 1978,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "prior_manifest_sha256": "04d300d636210d45d333ddb56ac46923ddd4dd24c79f23ecd9b963dba77a62a6",
+  "baseline_root_sha256": "04cd4a39d840fc35e70b9652ccc61ee1b0fc5ba22b410a4bd56438ef0bb57049",
+  "independent_compilations": [
+    {
+      "module": "LengthGrowth.ActualFlow.UniformStraightening",
+      "source_sha256": "a3c06fc51ef9b50b4ab31f67c2611723e879a471fd30c7b41f3ed8220a3c5f4c",
+      "olean_sha256": "4a808e9d493a16e2645a1463922c3418caedca38368c8c557f7a27fc50b8e259",
+      "setup_sha256": "b778c88d5666089e215e55d06f828efaffa37cf42d891b440496a5da94afa775",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.AngularSpeedTail": "1ded31df2ba922662004fdc7b4c02940aadad9f6e1b58c71c70ef16b261caf46",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Continuity": "82482b15aaf9d05cfc7cbb55bb954c4871a2fa28f5092453988253c25f4e6afa"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.actual_dissipation_tendsto_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.uniform_curvature_and_gradient_decay' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.ExpandingPhysicalWidth",
+      "source_sha256": "903c1a1f04386f3be6c07800e59dfa7e54229c58a446f855622ddb9a4d83422e",
+      "olean_sha256": "2cff30baaffa7fa37bfec33e2ea9334d16d7c2221554ace852855b38934f854c",
+      "setup_sha256": "abe670fb410c1e0e80f2109842d9559c4f0f8a7bb5b0cc1bcbc2748b4acb9ab9",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.UniformStraightening": "4a808e9d493a16e2645a1463922c3418caedca38368c8c557f7a27fc50b8e259",
+        "LengthGrowth.ActualFlow.StripCoercivity": "3affe416fafecf814f9645365d01e79ab3dba448a25183c28e23159489ba9bbb"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.eventually_outgrows_all_fixed_width_strips' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.exists_wide_slice_of_energy_drop' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.dyadic_width_exceeds_sixth_root' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.SaturationSupport",
+      "source_sha256": "192e93c06d8c20c2a03855a1cd162d69145075dcbed168fd48f2ca70430eb8a6",
+      "olean_sha256": "c4d3c91d5fd9ace258740c16f4052fcb7bb644867a34afdf983f989d748eb294",
+      "setup_sha256": "7d6c70c1a5b4e4608f811c1b8339fc3933ac9d9b262bad6211464f606ca2506c",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.EnclosingDisk": "34550db38a62bd2a069f1f765a2f09282360616ca71ff831def3c1f27dda0b97"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ClosedFrenetCurve.growthResidual_similarity_virial' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ClosedFrenetCurve.growthResidual_sharp_cost' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.PhysicalSaturationGap",
+      "source_sha256": "1782021c2199e91c7a1eeb3c0774fa2ee8f5f7bcd6ccb096f51c469fd12b1efd",
+      "olean_sha256": "c3a9d30f802e9cd0de4c8015e7336b02324c27b0fb4a6fb4768ba953d6ff7e77",
+      "setup_sha256": "8f726061ad58c64e4c7d80554a802a417ed6a10bc96299d5f35a802d793554d5",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.SaturationSupport": "c4d3c91d5fd9ace258740c16f4052fcb7bb644867a34afdf983f989d748eb294",
+        "LengthGrowth.ActualFlow.NormalizedProduct": "a0fe258ab6e145cff4b8ce8b57ad4b95ec21487219de8a81570a83a21adb13d1"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.productGrowthFraction_residual' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.productGrowthFraction_optimal_moment' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.productGrowthFraction_le_pi_gap' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth.ActualFlow.SaturationRadius",
+      "source_sha256": "49c967a3d9f1046c483ac6da497dc7439a683f8873ea6810cffa0ff85cf21fba",
+      "olean_sha256": "9c6e35643d4188817e9d39a79c0f5769f2a4034a577b1599f21a16fc242eefca",
+      "setup_sha256": "08bb9b9bb6651a185b139e12704b489063173f6129d52c8aa576c3963da8b22c",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.PhysicalSaturationGap": "c3a9d30f802e9cd0de4c8015e7336b02324c27b0fb4a6fb4768ba953d6ff7e77",
+        "LengthGrowth.ActualFlow.RadiusGrowth": "ffefbe519535e22f9daa1784839410f61cd587c9f8cf91665b3f626505687543",
+        "LengthGrowth.ActualFlow.SharpCircle": "0bf57f78fa014028e1988e658d4857e03b72feb7d4916ed653632fe5718bcec4"
+      },
+      "exit": 0,
+      "log": "'LengthGrowth.ActualFlow.ForwardImmersion.productGrowthFraction_circumradius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.ForwardImmersion.productGrowthFraction_nonpos_of_radius' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'LengthGrowth.ActualFlow.SharpCircle.productGrowthFraction_pi_gap_equality' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "1e7e5dd59e6d9c6d4d146233e8c9140744b842a06622d9e3d538ca3cdce0ad8f",
+      "olean_sha256": "3f02e3e52af81e2c4b478c27a0377937ece267db7cac41a17fb86f733fdf364a",
+      "setup_sha256": "d2c1c4c0b85bfd8968bc39b0ec0782259d94f0f9d738772ab2fb5d78ae1e085e",
+      "direct_import_sha256": {
+        "LengthGrowth.ActualFlow.ExpandingPhysicalWidth": "2cff30baaffa7fa37bfec33e2ea9334d16d7c2221554ace852855b38934f854c",
+        "LengthGrowth.ActualFlow.SaturationRadius": "9c6e35643d4188817e9d39a79c0f5769f2a4034a577b1599f21a16fc242eefca",
+        "LengthGrowth.ActualFlow.ActualInflectionDuration": "747701ca593f55614f1b0c0fefaecd0f90c21c278a0dd292ea3b272dbc88303f",
+        "LengthGrowth.ActualFlow.RecordForceWindow": "c250986f49bc59d8b3961ef00641ad528baf37f3cce2dcb8865c3149ab7b1254",
+        "LengthGrowth.ActualFlow.LemniscateAngularClock": "0c12feb388a74b04984e6ad1577d27d43b75392d4f2919f197f782db17b31515",
+        "LengthGrowth.ActualFlow.CompactInflectionRate": "c7349d8ed0d0eeffdf15294050fdc5259338dc97e6ee729e22ad8c864a621a55",
+        "LengthGrowth.ActualFlow.PhysicalInflectionRate": "035212bf88e669e8d0c0e7ee984d0dca85fd9a9fc7841eeebd573de8feb71de6",
+        "LengthGrowth.ActualFlow.ContinuousInflectionMajorant": "04b366532a16d3f8aedbf60ebdbf4877794938da59d27bc472b5703bc268f674",
+        "LengthGrowth.ActualFlow.ExactInflectionGrowth": "9614887884990a7a10993510be54126ec86d68bd69ebe273878d6376fb473c6b",
+        "LengthGrowth.ActualFlow.MaterialTurnFlux": "839798cf77cb7aa0e3fd48edaf528831650a40948ca97be2c25697b8477a956e",
+        "LengthGrowth.ActualFlow.InflectionEndpointMass": "ba9c9589d34a183d90c00a097eb39b7f572c37b6e532433bed71093363308b45",
+        "LengthGrowth.ActualFlow.TurningEnvelope": "3e7642ce7d704761d5314add434124019934a133ded4d6b91a58898741d4313b",
+        "LengthGrowth.ActualFlow.CyclicTurnVariation": "97ddc4eae684f29197dfb78045e79dbf55491cf2c0adf4082a37bda4c567921d",
+        "LengthGrowth.ActualFlow.CyclicTurnEnvelope": "f0456b38dd4ad9b92c78b78601f9f9e6e2906dc4cb2dbd6e04d4936fc1e82a2a",
+        "LengthGrowth.ActualFlow.MaterialTurnPrimitives": "bc11cc300c13e57a4695b5505afdc45f7008bbecdc19bb9eeeb646b7b97c63ea",
+        "LengthGrowth.ActualFlow.MaterialTurnContinuity": "9eb4a1f0ca90d8263a6c9c095d8cdce8a49040f269a25018e10b90f749146b94",
+        "LengthGrowth.ActualFlow.InitialTurnBound": "64c3419b45b6f432921e93f2f1574b87639d5637b8022f15c7614f3c09ca9352",
+        "LengthGrowth.ActualFlow.TurningLabels": "172e75d44abf4e6edf943ecd419865ba0d6d31d9b939676a2f58f972e774efc6",
+        "LengthGrowth.ActualFlow.InflectionRootSigns": "a55147f34810c1fa346b5d003b19156a73102bb819d9467913d427a6c1a7a0ae",
+        "LengthGrowth.ActualFlow.IntegrableTurningBudget": "586ef1d92f0c7b86644b25abbebd3f96e2c00257d65297ded0f393054b6d4f7c",
+        "LengthGrowth.ActualFlow.InflectionVelocitySeparation": "6a7f1425a64c6ad788a6c0795b793e1a8d7775b95524cebae2848a08948723a2",
+        "LengthGrowth.ActualFlow.InflectionQuarterFlow": "3b751df1a55230ab6ffa97a3a13653ca5a330681f03b095b65904622b4630f59",
+        "LengthGrowth.ActualFlow.IntegrableInflectionGrowth": "d8e5fd6d83e3a22eea3e5d6599e95ad234c1be0df8385ab6fd8a989302d41e20",
+        "LengthGrowth.ActualFlow.PointStress": "88d84d323337a68058b10e8ba828322afc39009d7589a3cc6343c803c532b55b",
+        "LengthGrowth.ActualFlow.SpatialLocalization": "ca7145fd343126f938ca6fb9a8e28558954e8c5c3a7d8bab57ccdf8562e218a5",
+        "LengthGrowth.ActualFlow.MaterialWeightedRate": "4295b8676e3691dac203c95ef3152315c8975ebc94daf8e35c565ed2a10e29ce",
+        "LengthGrowth.ActualFlow.ForceAngularSpeed": "87a6dabff1c4378f90793a37574862d3fdb32814a720afd0d33ad8f5f183af8b",
+        "LengthGrowth.ActualFlow.RecurringLength": "a92cf00c8f2378d9f38e4ad31459263039184e16849b72a1b2a61c07fe8f3364",
+        "LengthGrowth.ActualFlow.FrequencyBackward": "c7e2bfeddf226e15e429190643aee5688ab125b76089952419e8050d23e2f764",
+        "LengthGrowth.ActualFlow.RMSPowerGrowth": "0dababcbc14ace33b67746a9514b86ede883d26aaa7d16d9bbac1deed2aa11b4",
+        "LengthGrowth.ActualFlow.RadiusGrowth": "ffefbe519535e22f9daa1784839410f61cd587c9f8cf91665b3f626505687543",
+        "LengthGrowth.ActualFlow.TurningCompactFlow": "c3fe7cb22cedfd97177e1bb0bb98712a82cd8466e9085e94cea483a2fe4d99e4",
+        "LengthGrowth.ActualFlow.CriticalOsgoodFlow": "070c31a67a9dde2e0469c071b0565e2ce5b0eb0092606166e0a5c109267594bd",
+        "LengthGrowth.ActualFlow.CriticalDensityIndexFlow": "86b8f8e7785afc4751b7cecec6922319399e6feaf2fd722b3998f2421931f4de",
+        "LengthGrowth.ActualFlow.FiniteSignTheorem": "99dfd9f5499189dadcf528dce68597f92194ea4698c87c06502f9d40ab5c586e",
+        "LengthGrowth.ActualFlow.ExplicitCubicThreshold": "496103f7cc6b4d15844e923dc492b9d8d4f9e5f5d220deb5a3196032d63300ad",
+        "LengthGrowth.OscillatorPeriodNumerator": "6a06c66c927bfc8f174944681de20eb4f2532ef61297c4448e3af88804628152",
+        "LengthGrowth.ActualFlow.StrictHalfTransfer": "72f4544c22b88211034724a9b8643e006df018578caf8c9154f7770bd104932a",
+        "LengthGrowth.ActualFlow.AffineForceCompatibility": "5358fd6e56c20f8406e3b534b1ab0b8b5bf03eeed76a0be041120ea3765b3b3f",
+        "LengthGrowth.ActualFlow.CubicMomentDecay": "1a21fe8cb41d6c310823ab7f87dfbd353342e8e7c137b43e3d8d516dec970a28",
+        "LengthGrowth.ActualFlow.CubicHalfThreshold": "81286ba29207e0c5c1a43176701a2b98ff9560f54e83e1f75106fc2fb3eb23eb",
+        "LengthGrowth.ActualFlow.JellyfishGrowth": "bf003d9f5ba772db775a9602b45dbcef08847800d30452ef12b185899bb87cf4",
+        "LengthGrowth.ActualFlow.GrowthEnvelope": "0123a061e03d3cef1a68bce6add2615276412401d2c13d940b2f6a57e1444d97",
+        "LengthGrowth.ActualFlow.SharpCircle": "0bf57f78fa014028e1988e658d4857e03b72feb7d4916ed653632fe5718bcec4",
+        "LengthGrowth.ActualFlow.StripCoercivity": "3affe416fafecf814f9645365d01e79ab3dba448a25183c28e23159489ba9bbb",
+        "LengthGrowth.ActualFlow.AmbientMaterial": "5e50b998b3bf45716d65566b35cb55e6cc873941b7a92cdf1d79b02da136d926",
+        "LengthGrowth.ActualFlow.PhysicalTimeAverage": "d16772df203c3868ba5132ddcd7621f57e8a391200d086726653df5bf6e4c7aa",
+        "LengthGrowth.ActualFlow.AmbientCoercivity": "c191329677a8f0c0f270d87a1c8fe5dc976bfd6019c40180ed8033ba72c31840",
+        "LengthGrowth.ActualFlow.RescaledRecordWindow": "34b6ebcdb603ba01e9d1255f767a1e1622712b3e00ee9815f114d22d17665691",
+        "LengthGrowth.ActualFlow.RecordCurvature": "2aa72289d54f231c8f452ef1c11aaf88f1b8261f3662e6b973ac4d07e6f4674c",
+        "LengthGrowth.ActualFlow.RecordWindowInterior": "b4f90e655d2e43177862616c533a7b7dd40ff654352481f9df71264e918c7293",
+        "LengthGrowth.ActualFlow.GrowthEquivalence": "0c2f6dd131fcdfa4f0cb7689e8f645f82e6c87881ea9add55b5e870b22f1afb9",
+        "LengthGrowth.ActualFlow.RelativeEnergy": "cba3bbab47cb3b84534ccf900f01e5da76545813cfc7b739c98388c21e78e3ae",
+        "LengthGrowth.ActualFlow.ProductWindow": "739c016413d4ac6605359f03861e8f5e9b2f0a283f81484ad5d3f146a1873868",
+        "LengthGrowth.ActualFlow.ConditionalQuarterGrowth": "40fa661d4a0e36811e7d8269d907c61bf54cd81005b37322ce8458bd738b6568",
+        "LengthGrowth.ActualFlow.ArclengthCoercivity": "e1c4fc1908c57ec96b2b4fc97ede03c7e3b7b8ed3e0819d9003463de20d1b9b6",
+        "LengthGrowth.ActualFlow.NormalizedProduct": "a0fe258ab6e145cff4b8ce8b57ad4b95ec21487219de8a81570a83a21adb13d1",
+        "LengthGrowth.ActualFlow.ForwardDissipation": "dab140f69ef50279e603610edac13a4f839950acf19e04d6a133336292ead275",
+        "LengthGrowth.SubsqrtGrowth": "52124fec25795f5e9934db43666b9928788251fedf57b1171c3e439ac3c1717d",
+        "LengthGrowth.CurveFromPosition": "aea049ecd40db4c91c815944ed274c6ddcad2e0f58378535c36142f0b6437e8b",
+        "LengthGrowth.ScalarDissipation": "65165cf0be21b14cd0fbbc08c4d66cfda2a9b836fcb5ca9be924f4cdeec215ce",
+        "LengthGrowth.ElasticStress": "132c110da9017ff3bfe06849bcfff3395060465dc39d5f2a1d53d2bb8e0c1e1e",
+        "LengthGrowth.AbsoluteCurvatureCoercivity": "f28c92da3addc7457f35cf4f7cc66d4e70180034bebbe333f0e4f980ca279f86",
+        "LengthGrowth.CircleConnectionBacktracking": "3b4a8fe42ab64969e792da67f81081a1eeb0314e47dbf1b04b73123b7a0f44d1"
+      },
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "setup_sha256": "fd6b291bc32c282f625f2289da1b8af03dba5ca77a3e968200be8da72d92688c",
+      "direct_import_sha256": {
+        "LengthGrowth": "3f02e3e52af81e2c4b478c27a0377937ece267db7cac41a17fb86f733fdf364a",
+        "Lean.Util.CollectAxioms": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d"
+      },
+      "exit": 0,
+      "log": "Length-growth audit passed: 1978 declarations; standard axioms only."
+    }
+  ]
+}
