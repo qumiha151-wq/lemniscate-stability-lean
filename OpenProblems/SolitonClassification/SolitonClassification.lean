@@ -1,3 +1,4 @@
+import SolitonClassification.Rotating.IntegerFinalDoublePoints
 import SolitonClassification.Rotating.ResetFinalPrimitive
 import SolitonClassification.Rotating.ResetFinalImmersion
 import SolitonClassification.Rotating.IntegerBackwardShooting

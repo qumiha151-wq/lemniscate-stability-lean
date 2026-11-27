@@ -1,0 +1,990 @@
+{
+  "previous_declarations": 137742,
+  "audited_declarations": 141737,
+  "records": [
+    {
+      "module": "SolitonClassification.Rotating.IntegerAngleEnclosure",
+      "source_sha256": "0f13778ec2e20e77d2abe277c6cdc98bba0ada17d4bdf39158c99da15e7fc5d2",
+      "object_sha256": "d084072718a0c71b27c28caf4b5300e7bc927f271634490b32b336c96eceb955",
+      "direct_imports": {
+        "SolitonClassification.Rotating.ResetHullFrames": "388ea6cb0004214de1ffbc9b8ed765f2aba3b09f2ae495548756d6912635edfe"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerCrossingSamples",
+      "source_sha256": "64f699a4793d632cd1c9acee5f84cf4be2df2bf3aaabb43cc1303c24ccb8acf9",
+      "object_sha256": "49b90b32649fea7cfebd9c32251eedbb15dbf09b91a81a543e7bd20ac33c4517",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerAngleEnclosure": "d084072718a0c71b27c28caf4b5300e7bc927f271634490b32b336c96eceb955",
+        "SolitonClassification.Rotating.ResetCompletePlus": "91185bb10cbb7c88a624bc686ebf572cd3c5bfbcfc23f946884c8c91045f4e9f",
+        "SolitonClassification.Rotating.IntegerTerminalRows": "b8bfbab0934345d48a75cadd38d55ebb3f912ab69ef7c357bc733f5460367437"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerCrossingPositions",
+      "source_sha256": "b7d99bb872f21b89b854c161aa667c77ebb669857114a9ce51095fdbdac744cb",
+      "object_sha256": "465ab87433d45c7de7504b7e477b56ee701c4aae9efdf84b56dc09130b46906c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerCrossingSamples": "49b90b32649fea7cfebd9c32251eedbb15dbf09b91a81a543e7bd20ac33c4517",
+        "SolitonClassification.Rotating.ResetHullSamples": "17f1a3474d4a650766c2d322ad522804912712f464a821f522c59480e0d64f35"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerCrossingArcs",
+      "source_sha256": "1482619af080e5f79f5703256b4ed5617682d25c0bfd4de765584fe94f134af2",
+      "object_sha256": "9fc76f3aaff3d610498461b1f0e5904d9e5f024e6599857c016c9b15e0809496",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerCrossingPositions": "465ab87433d45c7de7504b7e477b56ee701c4aae9efdf84b56dc09130b46906c"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerRetainedPhysicalTrace",
+      "source_sha256": "8b3a97c7385c00b894e660c9654c380f9d78158cdcffa3038ae7191a609830e0",
+      "object_sha256": "9f24f7d212bd145de2cb0b43fbf730b7e05950afd7f25a4a0fa1f03596bebd5f",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerFinalPhysicalEvolution": "2642ee66ff46a310ccf62c0adee0d890af72dc90844c07bd05e6c3952109c917",
+        "SolitonClassification.Rotating.IntegerCrossingArcs": "9fc76f3aaff3d610498461b1f0e5904d9e5f024e6599857c016c9b15e0809496"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerCrossingFaces",
+      "source_sha256": "601bf0acbc705c33a4dead52fdcdedb3a54cf149bde9aedeb55e134bb4d44655",
+      "object_sha256": "4ea3ee0b2a9d5c77147af4223065dc0da3c40b93e10a799d84335509fd9ee6f2",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerCrossingArcs": "9fc76f3aaff3d610498461b1f0e5904d9e5f024e6599857c016c9b15e0809496"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerChartIntersection",
+      "source_sha256": "2f60b3aca59b2001fd3eceacbdff3fadbbfaf818be5564da63b3f965772a0d7f",
+      "object_sha256": "7ff21fdacf419679b87b330bf353c093f2002734a0f757e4743ac5c67bc5a1b1",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerCrossingFaces": "4ea3ee0b2a9d5c77147af4223065dc0da3c40b93e10a799d84335509fd9ee6f2",
+        "SolitonClassification.RectangleCrossing": "d7461adf4cfb4b9831ef9d91ed2e755578f3c24ab271942b8f44558fb10fda75"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalReferences",
+      "source_sha256": "6f80f06303bcac1fed2ceb1406c33e2b2c5a387038eb6e235db6b77091478ae3",
+      "object_sha256": "248cbcc5a60b0be75007118f6340f6461dd18c803cce2888679c8f1f062c76be",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerChartIntersection": "7ff21fdacf419679b87b330bf353c093f2002734a0f757e4743ac5c67bc5a1b1"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedger",
+      "source_sha256": "05fd53afb436cdb9750f6b1bf035b927d3a5ebd63bdf74b2976a5e2f2d535d69",
+      "object_sha256": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalReferences": "248cbcc5a60b0be75007118f6340f6461dd18c803cce2888679c8f1f062c76be"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalCrossingGeometry",
+      "source_sha256": "bbc850f8dac5dd7f195058783edb0ef7c4147a7a7eaa90bb8ebf1c03219d8700",
+      "object_sha256": "4f2bc1c3ab7f544754c686f1f54e78f82a82328d530624e7898f207426bc9834",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerClosedImmersion": "8274ce40721f27d850b288bcded1eee48cae416923073b3bf51656bfa735c83a"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalGridGeometry",
+      "source_sha256": "23fd09eaab66b407578f7b04ed97d7186a70965d3567543844458de9eae1c159",
+      "object_sha256": "ffb6ca612540a75958d7a3400fc7f3b78b5b4bbefd8ef43aaebf109c4a39790e",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalCrossingGeometry": "4f2bc1c3ab7f544754c686f1f54e78f82a82328d530624e7898f207426bc9834"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalArcBounds",
+      "source_sha256": "cbe9dd804da3d62395b7ebd56d64e02485f902db7c28eed5ddacdc67eb108ead",
+      "object_sha256": "d4a2ddb3cceb473a49ddeb93f846073185e1a6a066710cf31702cb74d5921ed5",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab",
+        "SolitonClassification.Rotating.IntegerGlobalGridGeometry": "ffb6ca612540a75958d7a3400fc7f3b78b5b4bbefd8ef43aaebf109c4a39790e"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalSeparation",
+      "source_sha256": "27e6e5f60671c7e9889cb13d50180d515be7cec09ed51c944765fce706ce2fd7",
+      "object_sha256": "383c04c4f363fb05e9bd03eaee46d28c692d9f34dd6428eb6ba2f3d5b4028056",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalCrossingGeometry": "4f2bc1c3ab7f544754c686f1f54e78f82a82328d530624e7898f207426bc9834"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalChordRule",
+      "source_sha256": "1d9e802470437955191a4bbedc24dd872b49678811ea50f973c007c52a5eba5a",
+      "object_sha256": "383024ab2c4eac531d718176cb96b98b7a1c7f4bb2fd9f73a7644c22ae1b7a01",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalArcBounds": "d4a2ddb3cceb473a49ddeb93f846073185e1a6a066710cf31702cb74d5921ed5",
+        "SolitonClassification.Rotating.IntegerGlobalSeparation": "383c04c4f363fb05e9bd03eaee46d28c692d9f34dd6428eb6ba2f3d5b4028056"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerChartUniqueness",
+      "source_sha256": "72f02a2d25a48cf776e0c02f516be46308c97ed7b092860619366d9ad7797d89",
+      "object_sha256": "26105fbd2989e88955ad7787f215a9d220124c25c848c2f176c92260ee2d422e",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerChartIntersection": "7ff21fdacf419679b87b330bf353c093f2002734a0f757e4743ac5c67bc5a1b1"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerCrossingTransverse",
+      "source_sha256": "694579df37fa9e205625f48ce672808aa3f9b0b49961036daefeaf34b7a2db72",
+      "object_sha256": "72195501af959fffe19c7e35cb80f0fdb8efb8b0973e9b96a78df1f156cfca1b",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerCrossingFaces": "4ea3ee0b2a9d5c77147af4223065dc0da3c40b93e10a799d84335509fd9ee6f2"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerUniqueTransverseCharts",
+      "source_sha256": "2a808489bc1dcae2099f9f66f5a4ddb4ab1a2427af28cddf21dd58bf596ec69a",
+      "object_sha256": "a1e7a49cfc48345787fffe7863402b832ec4b3d85357445894c997a2cdb3d30a",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerChartUniqueness": "26105fbd2989e88955ad7787f215a9d220124c25c848c2f176c92260ee2d422e",
+        "SolitonClassification.Rotating.IntegerCrossingTransverse": "72195501af959fffe19c7e35cb80f0fdb8efb8b0973e9b96a78df1f156cfca1b"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalChartLabels",
+      "source_sha256": "8acb1792e95f2e508d7daa65bb52c6ab471cce4dd0518892de06f830fa06f359",
+      "object_sha256": "6152613f0b1e041fca6971a88738571d9dcf30be47d23b93dd4e45d8307eb4ea",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab",
+        "SolitonClassification.Rotating.IntegerUniqueTransverseCharts": "a1e7a49cfc48345787fffe7863402b832ec4b3d85357445894c997a2cdb3d30a"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalPairExclusion",
+      "source_sha256": "4058b89f1de9b4f040463de14506931e9ad3c69b334c0589958609bd960a6305",
+      "object_sha256": "0e799ca111d31d616a093c79ee025366caeb55eb9f3dc5957f33ada1d1660b94",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalChordRule": "383024ab2c4eac531d718176cb96b98b7a1c7f4bb2fd9f73a7644c22ae1b7a01",
+        "SolitonClassification.Rotating.IntegerGlobalChartLabels": "6152613f0b1e041fca6971a88738571d9dcf30be47d23b93dd4e45d8307eb4ea"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeChecks",
+      "source_sha256": "383e62746733204c80444b7d25d20666fc40692b5df3f01c25f6171910aa00db",
+      "object_sha256": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalReferences": "248cbcc5a60b0be75007118f6340f6461dd18c803cce2888679c8f1f062c76be",
+        "SolitonClassification.Rotating.ResetGridMinus": "14c630ba05e6903fa76f05c1492c3322f0c11fb3c6e88d17d2b0be2e65eafa62",
+        "SolitonClassification.Rotating.ResetGridPlus": "b3b788730f4eca4aff90e9e56c154ab63ccd504a89e5ec1026b9d56865f59d16",
+        "SolitonClassification.Rotating.IntegerTerminalRows": "b8bfbab0934345d48a75cadd38d55ebb3f912ab69ef7c357bc733f5460367437"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock00",
+      "source_sha256": "6912e1747ab49912b1a2470866044303e68ff49ba50b372992fd964c33641d53",
+      "object_sha256": "d56330efeab621134d213ec15df1eef83d0ae45ff02723a3dbe0ca2c7ab799dd",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock01",
+      "source_sha256": "232d636823280584fc0d996ecfbbc00fe7dc169281170847398707de3598bc1d",
+      "object_sha256": "273d6b628605271ad0847922650060b463b1d999b55d70f1468b77937182b839",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock02",
+      "source_sha256": "b32be41c14a104af67057777ca77164595f6dd16d2f04d4014bbd276a81cdd4a",
+      "object_sha256": "59a267b46940fbfcdc89091d3c6bfb7c529c5bf291596f3bf67e9a7e637f684b",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock03",
+      "source_sha256": "ede91cb4e0a254855fee73df216c70710f007db53d4e25b0e87c3b59a4dd73d8",
+      "object_sha256": "028d3f575b8cfe33f98aba394dcf21d24994f1895e10f2cad62f4c5b13a82cb4",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock04",
+      "source_sha256": "0b8abac5ffc0bb5e657f331f4b003b8d6425f8375b358bde0677444c193cc2a6",
+      "object_sha256": "aadfd7c8bba3dd8fcb2b04ea4e21b4f395843a454a7286fa2d3009a67498efc1",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock05",
+      "source_sha256": "02bc00002c9f0f87d6742df593cee319d6f5a6daed291abae2bd3abd74dcba4a",
+      "object_sha256": "13549dd85ce2b1e5d6961212a1ea700ef4dbe8470081652ca897515ede52d755",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock06",
+      "source_sha256": "9879b08f0254f2a993e62d85d23e9566eaa14b93f41db11c7b42cacd333f2bdb",
+      "object_sha256": "c21318f88e01bd335db2def55c47900048a331298480687498f8e23500b7cbc8",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock07",
+      "source_sha256": "b214d267cf6b806b74f09e7bea5cf058c26ebf41c721937d80c5500f0f5320e5",
+      "object_sha256": "1e2a019ac4d2c7486b6002cdf4fb1341ae389a4297282c0728aab0054df032c2",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock08",
+      "source_sha256": "4b26d2b505271cfe32bbaa14232ab98d86a21684558d5d6c2e3c69a1e9562000",
+      "object_sha256": "9a6b20ae9b57e5c8b49f8e36090603f6b41684069d9d9dd99c8882251dae5ed8",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock09",
+      "source_sha256": "9f464e26f17aed1ea70bbee8d36a035eaec9a93736ce87ce39b075183907670e",
+      "object_sha256": "db1b2d441f059e86be6b2796a5f2a4a0d86b7981a6029fdb37cd61cd91f8da05",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock10",
+      "source_sha256": "abb5be89ae28f2aae9cc2fbb3bde77366cf2457ecb8157317deb58bec35a7df9",
+      "object_sha256": "ae078d070b30fc5403c3297d4db7ab786db0b6f72829be36882dfaa3f89656f4",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock11",
+      "source_sha256": "3f52de9dd530d149d05e7c20cb0fef39bd123d78236b7cb3008b1594cd8dc381",
+      "object_sha256": "748c63aa0582d2d63c743e96081a903995ecfcd5e47ff987afa496a66a6b6594",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock12",
+      "source_sha256": "8f8acf8c372f3d47ca4a23113ba69554ccba0ee2cff87cbef700d9326efc9a9f",
+      "object_sha256": "04d61d888067fb2fca68f428a044a3d09e70fe117665ea19d9a4c507b9afd305",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock13",
+      "source_sha256": "b6117ea04559c4a56b1acbe27b6ecdffc80c2b182bbeeb17e48fef59fd14eae1",
+      "object_sha256": "94844382cc810a58a09fe8547f05354e6c2190c0fbe529cd077225a4159b7d0e",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock14",
+      "source_sha256": "f5c9fc99d8a23b129e127cc3e9f56e6c3370fe30e0a9478a95cd0e421483cb95",
+      "object_sha256": "52a3f81895aab63d878ee2fb671a50d2167f057ee0ac6e1b8f766de3319353e2",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock15",
+      "source_sha256": "f61abf0f7adb35b4445f19759c8ee47a9da9284e3b362c649ec98264c9f1eed9",
+      "object_sha256": "5e5b96b1bd4b4d459caad1104f26ed9c9c2d8ec8f0df513698b804dd69ad5d8c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock16",
+      "source_sha256": "d3177d01862eddc3a50d5b69674bebaebceeb8f8d1281fd93a6c0aac819de219",
+      "object_sha256": "7b176141c612328937ea7ffd6fac1dd2c236a2170d8c27f5d5cdf4d31e6d6721",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeBlock17",
+      "source_sha256": "c1129c66ed918c9bab80940aaa5fad88405e606c206e0b3a4ca511fedb8bf043",
+      "object_sha256": "1c7b76815c06907d4ddc8bbc8827a4fe4eb75068f7c38dcd9c92059b4d079f3c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeAngle",
+      "source_sha256": "b15ddd362c0dba0ee3940b052a80faf4e8ec5bb3770c232b326bb2b7a0f3bc03",
+      "object_sha256": "7d149207e3d25a8b0bb245b8b6c21a44adb67fe6c9fd1971f2f0aaa64bda9e29",
+      "direct_imports": {
+        "SolitonClassification.Rotating.ResetHullFrames": "388ea6cb0004214de1ffbc9b8ed765f2aba3b09f2ae495548756d6912635edfe"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeArithmetic",
+      "source_sha256": "f253de10b93d3c081f35785b474a3cf6803f37c3b7ca23639e17cb1da89908b1",
+      "object_sha256": "7e6a6bd032a9505442b125245b8efaaaaf73c4a8efbca655959f638a202f3507",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeChecks": "b47dae65dd3de2cf56d52906c3e811c82efcd76777b88f9258e0b2924717d5f9",
+        "SolitonClassification.Rotating.IntegerGlobalNodeAngle": "7d149207e3d25a8b0bb245b8b6c21a44adb67fe6c9fd1971f2f0aaa64bda9e29"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodePositions",
+      "source_sha256": "baf36ad946143bca95c6878d587164236a4adf4be555aa7db6dc09582a4a3764",
+      "object_sha256": "79b89f483fb12d8e5cb049d458cc2823cbd5ff94ceed55b96cbf27eadb8f625c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeArithmetic": "7e6a6bd032a9505442b125245b8efaaaaf73c4a8efbca655959f638a202f3507",
+        "SolitonClassification.Rotating.ResetHullSamples": "17f1a3474d4a650766c2d322ad522804912712f464a821f522c59480e0d64f35",
+        "SolitonClassification.Rotating.ResetCompletePlus": "91185bb10cbb7c88a624bc686ebf572cd3c5bfbcfc23f946884c8c91045f4e9f",
+        "SolitonClassification.Rotating.ResetCompleteMinus": "6a85035d5311808d189c4958c7040164a98133b6603e8a9c0bb37aae6c4e4b5b"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalNodeTable",
+      "source_sha256": "ac0bc039f66ab810e5a28c857751d01f75c6b8865046383e1240203620037006",
+      "object_sha256": "610de6d1f108111dd2767d61508ce1728dc4656e17a271850b156dc3b64aafcd",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock00": "d56330efeab621134d213ec15df1eef83d0ae45ff02723a3dbe0ca2c7ab799dd",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock01": "273d6b628605271ad0847922650060b463b1d999b55d70f1468b77937182b839",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock02": "59a267b46940fbfcdc89091d3c6bfb7c529c5bf291596f3bf67e9a7e637f684b",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock03": "028d3f575b8cfe33f98aba394dcf21d24994f1895e10f2cad62f4c5b13a82cb4",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock04": "aadfd7c8bba3dd8fcb2b04ea4e21b4f395843a454a7286fa2d3009a67498efc1",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock05": "13549dd85ce2b1e5d6961212a1ea700ef4dbe8470081652ca897515ede52d755",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock06": "c21318f88e01bd335db2def55c47900048a331298480687498f8e23500b7cbc8",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock07": "1e2a019ac4d2c7486b6002cdf4fb1341ae389a4297282c0728aab0054df032c2",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock08": "9a6b20ae9b57e5c8b49f8e36090603f6b41684069d9d9dd99c8882251dae5ed8",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock09": "db1b2d441f059e86be6b2796a5f2a4a0d86b7981a6029fdb37cd61cd91f8da05",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock10": "ae078d070b30fc5403c3297d4db7ab786db0b6f72829be36882dfaa3f89656f4",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock11": "748c63aa0582d2d63c743e96081a903995ecfcd5e47ff987afa496a66a6b6594",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock12": "04d61d888067fb2fca68f428a044a3d09e70fe117665ea19d9a4c507b9afd305",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock13": "94844382cc810a58a09fe8547f05354e6c2190c0fbe529cd077225a4159b7d0e",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock14": "52a3f81895aab63d878ee2fb671a50d2167f057ee0ac6e1b8f766de3319353e2",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock15": "5e5b96b1bd4b4d459caad1104f26ed9c9c2d8ec8f0df513698b804dd69ad5d8c",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock16": "7b176141c612328937ea7ffd6fac1dd2c236a2170d8c27f5d5cdf4d31e6d6721",
+        "SolitonClassification.Rotating.IntegerGlobalNodeBlock17": "1c7b76815c06907d4ddc8bbc8827a4fe4eb75068f7c38dcd9c92059b4d079f3c",
+        "SolitonClassification.Rotating.IntegerGlobalNodePositions": "79b89f483fb12d8e5cb049d458cc2823cbd5ff94ceed55b96cbf27eadb8f625c"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalPhysicalBounds",
+      "source_sha256": "7cf26b17ff17de66b101054ff78ba14569faeba452666b3f0af0930bd0d45fd0",
+      "object_sha256": "7c753af553573885b488a84d85d88786d3ee0a52f2ca4c3ce40b064e1c5fc366",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalNodeTable": "610de6d1f108111dd2767d61508ce1728dc4656e17a271850b156dc3b64aafcd",
+        "SolitonClassification.Rotating.IntegerGlobalArcBounds": "d4a2ddb3cceb473a49ddeb93f846073185e1a6a066710cf31702cb74d5921ed5",
+        "SolitonClassification.Rotating.IntegerTwoArmImmersion": "33567f6b88c5a2e0a4726b4347081287021d3e10fb78df834574b697eebd17fd"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerPhysicalDoublePoints",
+      "source_sha256": "e382167b2d7aad0ce8c9f6e76f86250bdd5a2d85cfe4862f996445382b3361db",
+      "object_sha256": "06a6fa6103089914d08369d64f83dc438df1bbf11c383f4cf934658c24323f75",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalChartLabels": "6152613f0b1e041fca6971a88738571d9dcf30be47d23b93dd4e45d8307eb4ea",
+        "SolitonClassification.Rotating.IntegerPhysicalHull": "5fa566ba80785110b0c042ebee37813b5d16b4e465a5d30be35403679520c666"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerPhysicalCrossingTheorem",
+      "source_sha256": "3cb5df4bdbf08da73a07305c2b80b065b8b850a3cb40f3f8482a7da7c3e90f38",
+      "object_sha256": "e8275ef28656692aae7b62629ff3652fb6375c520cff600f4416e5b1d0ca2ab7",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerRetainedPhysicalTrace": "9f24f7d212bd145de2cb0b43fbf730b7e05950afd7f25a4a0fa1f03596bebd5f",
+        "SolitonClassification.Rotating.IntegerGlobalPairExclusion": "0e799ca111d31d616a093c79ee025366caeb55eb9f3dc5957f33ada1d1660b94",
+        "SolitonClassification.Rotating.IntegerGlobalPhysicalBounds": "7c753af553573885b488a84d85d88786d3ee0a52f2ca4c3ce40b064e1c5fc366",
+        "SolitonClassification.Rotating.IntegerPhysicalDoublePoints": "06a6fa6103089914d08369d64f83dc438df1bbf11c383f4cf934658c24323f75"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart00",
+      "source_sha256": "6de6c2d7c99525db5fa221a00a2d5862fde0431c32ad2300040beef8594a28d9",
+      "object_sha256": "045b885b05d6e66bf20effdbfb7ade75f66eaa5571e4d238eac418e6a2381dd6",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart01",
+      "source_sha256": "89ceb5c3e24c3809e08334c87e9c2c6d608090ba84f6017b7863b370e59cc423",
+      "object_sha256": "1e7098b42478f85dc4b95df68de48e032455ae7e1ad90ceaebb79d0b3b37a720",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart02",
+      "source_sha256": "7194807e0be0fa9599f95c4671647f77784ef7123a300164a7ce285fddf8501e",
+      "object_sha256": "5d189d3da64dc004646a8909edef0a26f86930bd160533f87861d4342cf8b031",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart03",
+      "source_sha256": "7639bb7d013b24c3d9047221be819f563b152c268261b2b79ba0c4f4e1895079",
+      "object_sha256": "d6df04e59ee2b6a0d816d2948eee8ccb0446c7d7066efd2ce3c20077695120b3",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart04",
+      "source_sha256": "7ae2b10696230cef6a9dde09a642a6400e1694eb9fa1090c0ec495868536cedf",
+      "object_sha256": "bbe6d665e45502a53fe96a109b32d4233b062fdfaecff91497d0b14e05f5e6e6",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart05",
+      "source_sha256": "6fb1598e4dbb207c95602c18c5782182d28740e4c6734a46b685c7f7c5d44805",
+      "object_sha256": "1afd50f63797d015e5a78277522e357f3515b99baaf52ba74c98fce04af3cbd9",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart06",
+      "source_sha256": "94bceba24617cb30367a98433eca8d88e1687968d6c259f39ab04226e1f91f2d",
+      "object_sha256": "7c0fc4bdf9e201d7dae1babcba4f33e9a4214a26f72f4e5b2de34e958a597ec9",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart07",
+      "source_sha256": "c15cb8a805d4a65b5c230bc0ac9ce8130770469ab0c3fb830651f7a20e2acaeb",
+      "object_sha256": "5ed005fd56fbc57306ad64fcb4cec5805ae25d6e555f192985275845aeef4070",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart08",
+      "source_sha256": "57b2fde0b26a1d13379c85f56c6284ed16b4a307ebb607c622011af400d0a367",
+      "object_sha256": "2f84e1862842283e3e94476c5f9b1066cdda4c762c200898107f0a6f02293bd0",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart09",
+      "source_sha256": "6f5494b8f8b546efaa65bc5ec506197877d7590bc48958077e1be4d3b0f4cfd2",
+      "object_sha256": "27271c3bef3d1719dc1110fcb1139b19abaaa72901c0d33430a010359a55644f",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart10",
+      "source_sha256": "0404e6149f758094aac2f088b23b89376ac51aa3e1f6895208b5a4a9899c0405",
+      "object_sha256": "db7db4ae6c664367eb95d3915eb3a0d5ed13c36eeab5dbd1ace39a37caf3a1df",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart11",
+      "source_sha256": "19f3e61769c2d09ea471a42b579b89e361148e254eeb8354677841b43869970c",
+      "object_sha256": "5aa1d333b7da8614dff42a3f0f9af6a6c01b4c158abf5c63e57fd0c7dcd96e99",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart12",
+      "source_sha256": "42cd87107d146624c8003a4ce641c86ae73b06c65602c511864433002c4585b8",
+      "object_sha256": "b5a51eb2b4a3a5b6fb4a8732dd08343e346237cb6374f7d1eedc26fe3104c785",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart13",
+      "source_sha256": "433f7d93354d9e2cbbd63ae9ec30e8c1a9b47b387cdff4b677b5125fb5dafe75",
+      "object_sha256": "2ff37255b11270d3e774dd71220e70d5647719c2e7fc554e06ebcf0cb5311329",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart14",
+      "source_sha256": "5f1eefaac123ed466e9bfdb37c42dcb863b8d6008c49cd721f76ed5687742389",
+      "object_sha256": "20444e77c271d2b0a214fd8a78d0c92e762222e989e12b1bbce9383bb76d7695",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart15",
+      "source_sha256": "745ca600270a9eec98dee283e1ec4d28091173f21b2e724bdfe773dcf2ee9ed5",
+      "object_sha256": "e3177967dc2514e10be44ffe855e58990d353b718cafe821a059a0e7c4ea2d27",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart16",
+      "source_sha256": "c5ea669f9f64fc6e33aab8ba38b591e3ceb3593a8138a8eeb63698c60a560fd5",
+      "object_sha256": "4ba3cd400310cf09f1252b7d2dcfe31bd79ccfddb068eac8913c055d68022e49",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart17",
+      "source_sha256": "91ffff3f8dfd811da88411e130b22a15759fc1a3f88e4f5ac04eaa742d4098f5",
+      "object_sha256": "5bc48ec5127c37aa286dff82ee28d2b8a2ba177b06d375ef95da311bed19820e",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart18",
+      "source_sha256": "b9b522a6c1b7194724395734698100c3316d032e6843723e824c2a4b79cf1464",
+      "object_sha256": "58c2ca9d2e9c50884ae552d6b154c6b960884b25a6edc9b57e367896ad537985",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart19",
+      "source_sha256": "62b40d9a53b4eb9a529163cb433918c228eab1b22dd905c4517d8e98dbe33f1d",
+      "object_sha256": "83c742ee3099c02144fa5d85ac8c9799e3ba920644bd51ce94e087810b862bad",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart20",
+      "source_sha256": "a2e9173dfd51c77e196f531b1f63454ae0848576527459a00837458974234e71",
+      "object_sha256": "81ced85aede7c685b4001be1d2cd35fe41eb5a7b9dfc78dc1ed62f852a3842fa",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart21",
+      "source_sha256": "2b1120161dbaf9586bc5e0fb811500306e288a8bfbc014233102ac6168c275e9",
+      "object_sha256": "f8c2b08c625557657db320a7f0e9de7843c13234ac486e814c63e3f0bc368a86",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart22",
+      "source_sha256": "a7cd314cdb21f6477e700a5af86e5893d074ed8e54da1bb32ec234ab050da5df",
+      "object_sha256": "4854b2262a767aed5d374123500abe1b437008383d494c6b4a991bd081c12ee7",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart23",
+      "source_sha256": "414dec433fedc7fa3bc049ddbaa4702cf6b2f6be59d9741e7e85470584027131",
+      "object_sha256": "8ca4af40fbb5874ee1eb57aa6d6fce5d0d923ca1011c1a239929f0c74df9ddbb",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart24",
+      "source_sha256": "771b5e41c0f4d738044547f5ac7084b87ebd1a0186a09efc48ab82490d6ae270",
+      "object_sha256": "19fb544e203db338f6ec57dab078bb0797b7078c600ac5a205ef5aa252d666df",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart25",
+      "source_sha256": "65a8c5170494309b1b121bcaec014af2b5961d4b3fb8d612fef548cf0abe9225",
+      "object_sha256": "cc320f045bfc3a358506559fa53ac7606f48fe7c4bf95126ff0c43239f5725ee",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart26",
+      "source_sha256": "5ec74c76c6c9ee3dc58cd0364867e90442149f3869b1e0cac5b1dd6198d41f31",
+      "object_sha256": "9b722a3d20ea5dbd91d67033f5d104ab24072b6160ae31b2d17fb9f1937bac41",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart27",
+      "source_sha256": "0585232492db9375e84889f2978e116b84b42b69c43567613b38bb686f0163b9",
+      "object_sha256": "38102defdd511027d568200cae93256f46a01127e75fc142b50852337459fef8",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart28",
+      "source_sha256": "f46f54481f47aecb98d9972a49dbb5e1b8c7c49022ccda4eee31374c237ae6e2",
+      "object_sha256": "2e127301c11e14649fca9f901e9160c405462636fda69e28785eb24b6a802039",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart29",
+      "source_sha256": "76cb12651986d1923eec3e93601454f38abf08fcd128d648657aae4756bc8231",
+      "object_sha256": "5b51229a87323e3eda81fc30a52af967422792b1101ee4b4379e231afc2f4b4e",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart30",
+      "source_sha256": "951d3c23c139e6e2ab164b129c09df522d271f424efb61133adb0e4c98bd62c0",
+      "object_sha256": "26e59da716ea7367f614630de931ab032ceca7a4fb33d99b4dadd69a4140b7fb",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart31",
+      "source_sha256": "a2a5f03503187248b6d3b6937950999cbc3a47fe19680af4cc2279e249ceceb0",
+      "object_sha256": "4f7fefc94019089cef4e98a8cfaa3db6091674575e17e2d53c9c3230bc32328c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart32",
+      "source_sha256": "3d13c724f1b503f4f91f4f38a9b5c7ddafffac46f9a44c938713ef65d8f6f797",
+      "object_sha256": "b887524d4fc928b1a57d264465d5711e57e19676f1882f312b6452f987e64e90",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart33",
+      "source_sha256": "e46ff3b4f6307a8faa31ebcad4b932167a45529e71d0a0c59770f4c50147cfe7",
+      "object_sha256": "273290db782ba90ad063fbbb54434f7ba93cf34f3989d80f6c7f28135589c109",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart34",
+      "source_sha256": "737f3e74fd75c662713230b4570ffe3dbb81e2e013dfcd796f332e79e23c8fc3",
+      "object_sha256": "111acb34ea467c465188e872bc52b54017b915b55ab602ddae2a04a737b6e321",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart35",
+      "source_sha256": "362a9c258015ff77c5f829e38322e6980d9da210511f9666b9eedab15df668fd",
+      "object_sha256": "6e4b2e571cd22ae64c57b7fbb16473a9de3f83e24f8c9a54ace2bcb43d609d70",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart36",
+      "source_sha256": "bb82ffb84adcac385cd1753231ecc250131979121b81962c2dbb46dfd4c8a2ac",
+      "object_sha256": "70629ae1702dca58cc908a6f560c4d889ccfe91dff22174138d91105b83696a5",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart37",
+      "source_sha256": "1c03ed970bc4d61ccc69122ec04234e55119cfe1202214d70cf7129e1e52eaed",
+      "object_sha256": "ba49b9459e4638e40425a27c47639c47fc7adb37753276c2373a07378143dbf4",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart38",
+      "source_sha256": "31b077813bc4a43ff99827cde44c40a245d1a47659d313434f03868a6761f248",
+      "object_sha256": "9d0ee165867bf64ac284ceacd70a09b84efdb99efbe0933ecc23ab1716acfab0",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart39",
+      "source_sha256": "72687be920ca15644f69bf3d99c9a8b68c85388b6983b89634810eaaa227a29d",
+      "object_sha256": "656fcf4ad5d5a935ff8cd8b3a052ddbed1cb02faed934a8bd12a24864cb975e9",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart40",
+      "source_sha256": "8687950646688f4cd92753b72a78f6120a4fcc581cb6ce07c9b7fecc3dceffdf",
+      "object_sha256": "6c99ddc1af8970880683a22164cee0362869d2732f9ed58e0d314f2e209d158e",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart41",
+      "source_sha256": "c310459528a3aead29d9791ea55a03ea3802fa5addafba17a7f1dbc57d2bf8f8",
+      "object_sha256": "db6f051da4aeacde709445012c83b94aafe7a3cfc174c6f9de32262adaaa49ff",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart42",
+      "source_sha256": "d51defa0bf4bc7a40c4bf002628f0c0d5a3a990e3ee4416f95f23a3afbac1336",
+      "object_sha256": "c34a8b178aad8425820ff22e93f8c03f23a977eb3ee3fb678e443ac9ba59dd65",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart43",
+      "source_sha256": "077820ca03f25895e3598627303e5d41f69aa06588ccf9db3e9f016cf1f24a1b",
+      "object_sha256": "bbb5f3f19c2a90a50072ba9c86986ee8ae08ea2fd40ffa7378c94d7bef9c9f46",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart44",
+      "source_sha256": "3a5988623f95eab0dc3f6bc457f1d109339efa5959b50b12b153f88aca728b29",
+      "object_sha256": "825eac13c45ea7ba6f7e6f3a2abd164f5c86d6fa8d004cb6777cba8dc5fd58e9",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart45",
+      "source_sha256": "b288e4256bdc2203a27404840da95e4d51e9577ba9df04ee97dd63a79ffd1a6c",
+      "object_sha256": "0e4fbb6eec87b3739cbaea5da02526cae800d596b7b7902b23edc26a19499413",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart46",
+      "source_sha256": "800f631c587223bcfa08bec9300c47118f8ab7139620d1d1dad9d4af2ee56219",
+      "object_sha256": "f5737c446f3a46f5e4fa7fdcbd85472f69bbf893200a83f92e9f5f0a91cdc2d2",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart47",
+      "source_sha256": "21bac8cdf006744daef2263db99407cbde03e643730812416580331af5de5375",
+      "object_sha256": "e52c518f7d0b2655c2aaad05a3c128f2881dd7c1c18f7f74bca83478033bd551",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart48",
+      "source_sha256": "906a8979f2a0b158efd6fde499dbd76cff40cb1d8108b33d8edc4e5c4aac301a",
+      "object_sha256": "fb51350bf1a0026f5786816115e45d214c217c9145c6ffe818fbe7d8298a541c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart49",
+      "source_sha256": "2779ac4fe054b95f20aa1546cebfbb6ddfb91ee48dc2af88d5b94ace30a3d2b5",
+      "object_sha256": "dc366c68941d1a28a57ec0aa91acb9f215cbf1ff702d9d08a9d1dce8307a6f35",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart50",
+      "source_sha256": "08e002ad2648d4dd2668181c80b5f84304b346faadd087e0fdb16f51dfc0c023",
+      "object_sha256": "530f3f8ac8b82d31cc6f0fff21dd672153bed606ccde369412093ed5f511f308",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart51",
+      "source_sha256": "89185dd3c57490ebb2fc9e12ef226971907bc5ac8c51f8f938d9a6352511b603",
+      "object_sha256": "5657ad614ae8978e28a4fea5de22762e7d8fcc09b4cb6f7d45413fb4f13960b3",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart52",
+      "source_sha256": "8ccd4d0afaf373540ec929915a5c158d54d911a3c71faa6084674e25cb325a5c",
+      "object_sha256": "d65ea38f97755940ed94808694c9a9bbeeef90e1a087140f08f0309f97ea0163",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart53",
+      "source_sha256": "617c09a6178c41b990c3bbf8554086dd5c4f940131128f8e0fbce4828e61fa10",
+      "object_sha256": "3eb16f51f98ac2f019a12eca88252d0dca43fba68bf6e0f679b2ecadced71dfe",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart54",
+      "source_sha256": "8258250567d384884657da1e3c6da6eef60c0843ea2122354fc42338d0048f58",
+      "object_sha256": "823593cf489c0bd95849a2a93abb72d0abfac9bb8ebe99498d703f7a362dab47",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart55",
+      "source_sha256": "bbfc9ce19cb801a01ef6441bdef76e6f76a089e8f52471b1186ab9369110d7fe",
+      "object_sha256": "c9deb1eff0ba7d1a64b8dcab8ef3309b19baf9a34ce9205f319a6b3b91aa397c",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart56",
+      "source_sha256": "753c441431cac230e3ab6910f488c84df93372e841b4ee4efa7a9a36f710fe2d",
+      "object_sha256": "385f7929c60794c7597821d0c31894a060357d9f180db7564e2c2443600e3985",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart57",
+      "source_sha256": "2559fed1456e019b14f2c070539cb1a28b954cafa3397bee77ab085d00853058",
+      "object_sha256": "f155a7b20787fa946698e48997ced61e13c806ca47903e2ba9467e34e92abc53",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart58",
+      "source_sha256": "c67c3a702ca058d31add4c4db0bf79466a8185a40afae75d97da2810c1b7a946",
+      "object_sha256": "b2d07aa2ec3e028f100e602dca9ae7e1c646e91e26b6960453c25616067ccef1",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart59",
+      "source_sha256": "786e99a9517a297817f98bc0b48e48d2a798c992002bc37a333b7654f003b54c",
+      "object_sha256": "ed759030e4833375e505bd54d22a4c639d0df5df6182d7714972161e5d0686ed",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalLedgerPart60",
+      "source_sha256": "2b6ed440a220f90f83ef04cb35de107c3430dde10229676b5551ba1826260a7d",
+      "object_sha256": "ebec63661b707d1936fef651aef299d27b5f168454e40ae2c8b3364575e33ffa",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerGlobalSubdivision",
+      "source_sha256": "183e92eca3d7369c9de12941e36ca54fa1874d63bbef699e72f215a093ac80e9",
+      "object_sha256": "596dd5291909a458155398a84cc3cda7cd9849a77967e587d8bdf54319b34a24",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerGlobalLedger": "0bd14d01db1425864e53e70bb8ae455073213dfcb8744bd6466750a547df75ab",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart00": "045b885b05d6e66bf20effdbfb7ade75f66eaa5571e4d238eac418e6a2381dd6",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart01": "1e7098b42478f85dc4b95df68de48e032455ae7e1ad90ceaebb79d0b3b37a720",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart02": "5d189d3da64dc004646a8909edef0a26f86930bd160533f87861d4342cf8b031",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart03": "d6df04e59ee2b6a0d816d2948eee8ccb0446c7d7066efd2ce3c20077695120b3",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart04": "bbe6d665e45502a53fe96a109b32d4233b062fdfaecff91497d0b14e05f5e6e6",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart05": "1afd50f63797d015e5a78277522e357f3515b99baaf52ba74c98fce04af3cbd9",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart06": "7c0fc4bdf9e201d7dae1babcba4f33e9a4214a26f72f4e5b2de34e958a597ec9",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart07": "5ed005fd56fbc57306ad64fcb4cec5805ae25d6e555f192985275845aeef4070",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart08": "2f84e1862842283e3e94476c5f9b1066cdda4c762c200898107f0a6f02293bd0",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart09": "27271c3bef3d1719dc1110fcb1139b19abaaa72901c0d33430a010359a55644f",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart10": "db7db4ae6c664367eb95d3915eb3a0d5ed13c36eeab5dbd1ace39a37caf3a1df",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart11": "5aa1d333b7da8614dff42a3f0f9af6a6c01b4c158abf5c63e57fd0c7dcd96e99",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart12": "b5a51eb2b4a3a5b6fb4a8732dd08343e346237cb6374f7d1eedc26fe3104c785",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart13": "2ff37255b11270d3e774dd71220e70d5647719c2e7fc554e06ebcf0cb5311329",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart14": "20444e77c271d2b0a214fd8a78d0c92e762222e989e12b1bbce9383bb76d7695",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart15": "e3177967dc2514e10be44ffe855e58990d353b718cafe821a059a0e7c4ea2d27",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart16": "4ba3cd400310cf09f1252b7d2dcfe31bd79ccfddb068eac8913c055d68022e49",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart17": "5bc48ec5127c37aa286dff82ee28d2b8a2ba177b06d375ef95da311bed19820e",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart18": "58c2ca9d2e9c50884ae552d6b154c6b960884b25a6edc9b57e367896ad537985",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart19": "83c742ee3099c02144fa5d85ac8c9799e3ba920644bd51ce94e087810b862bad",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart20": "81ced85aede7c685b4001be1d2cd35fe41eb5a7b9dfc78dc1ed62f852a3842fa",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart21": "f8c2b08c625557657db320a7f0e9de7843c13234ac486e814c63e3f0bc368a86",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart22": "4854b2262a767aed5d374123500abe1b437008383d494c6b4a991bd081c12ee7",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart23": "8ca4af40fbb5874ee1eb57aa6d6fce5d0d923ca1011c1a239929f0c74df9ddbb",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart24": "19fb544e203db338f6ec57dab078bb0797b7078c600ac5a205ef5aa252d666df",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart25": "cc320f045bfc3a358506559fa53ac7606f48fe7c4bf95126ff0c43239f5725ee",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart26": "9b722a3d20ea5dbd91d67033f5d104ab24072b6160ae31b2d17fb9f1937bac41",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart27": "38102defdd511027d568200cae93256f46a01127e75fc142b50852337459fef8",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart28": "2e127301c11e14649fca9f901e9160c405462636fda69e28785eb24b6a802039",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart29": "5b51229a87323e3eda81fc30a52af967422792b1101ee4b4379e231afc2f4b4e",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart30": "26e59da716ea7367f614630de931ab032ceca7a4fb33d99b4dadd69a4140b7fb",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart31": "4f7fefc94019089cef4e98a8cfaa3db6091674575e17e2d53c9c3230bc32328c",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart32": "b887524d4fc928b1a57d264465d5711e57e19676f1882f312b6452f987e64e90",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart33": "273290db782ba90ad063fbbb54434f7ba93cf34f3989d80f6c7f28135589c109",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart34": "111acb34ea467c465188e872bc52b54017b915b55ab602ddae2a04a737b6e321",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart35": "6e4b2e571cd22ae64c57b7fbb16473a9de3f83e24f8c9a54ace2bcb43d609d70",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart36": "70629ae1702dca58cc908a6f560c4d889ccfe91dff22174138d91105b83696a5",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart37": "ba49b9459e4638e40425a27c47639c47fc7adb37753276c2373a07378143dbf4",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart38": "9d0ee165867bf64ac284ceacd70a09b84efdb99efbe0933ecc23ab1716acfab0",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart39": "656fcf4ad5d5a935ff8cd8b3a052ddbed1cb02faed934a8bd12a24864cb975e9",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart40": "6c99ddc1af8970880683a22164cee0362869d2732f9ed58e0d314f2e209d158e",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart41": "db6f051da4aeacde709445012c83b94aafe7a3cfc174c6f9de32262adaaa49ff",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart42": "c34a8b178aad8425820ff22e93f8c03f23a977eb3ee3fb678e443ac9ba59dd65",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart43": "bbb5f3f19c2a90a50072ba9c86986ee8ae08ea2fd40ffa7378c94d7bef9c9f46",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart44": "825eac13c45ea7ba6f7e6f3a2abd164f5c86d6fa8d004cb6777cba8dc5fd58e9",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart45": "0e4fbb6eec87b3739cbaea5da02526cae800d596b7b7902b23edc26a19499413",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart46": "f5737c446f3a46f5e4fa7fdcbd85472f69bbf893200a83f92e9f5f0a91cdc2d2",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart47": "e52c518f7d0b2655c2aaad05a3c128f2881dd7c1c18f7f74bca83478033bd551",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart48": "fb51350bf1a0026f5786816115e45d214c217c9145c6ffe818fbe7d8298a541c",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart49": "dc366c68941d1a28a57ec0aa91acb9f215cbf1ff702d9d08a9d1dce8307a6f35",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart50": "530f3f8ac8b82d31cc6f0fff21dd672153bed606ccde369412093ed5f511f308",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart51": "5657ad614ae8978e28a4fea5de22762e7d8fcc09b4cb6f7d45413fb4f13960b3",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart52": "d65ea38f97755940ed94808694c9a9bbeeef90e1a087140f08f0309f97ea0163",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart53": "3eb16f51f98ac2f019a12eca88252d0dca43fba68bf6e0f679b2ecadced71dfe",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart54": "823593cf489c0bd95849a2a93abb72d0abfac9bb8ebe99498d703f7a362dab47",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart55": "c9deb1eff0ba7d1a64b8dcab8ef3309b19baf9a34ce9205f319a6b3b91aa397c",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart56": "385f7929c60794c7597821d0c31894a060357d9f180db7564e2c2443600e3985",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart57": "f155a7b20787fa946698e48997ced61e13c806ca47903e2ba9467e34e92abc53",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart58": "b2d07aa2ec3e028f100e602dca9ae7e1c646e91e26b6960453c25616067ccef1",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart59": "ed759030e4833375e505bd54d22a4c639d0df5df6182d7714972161e5d0686ed",
+        "SolitonClassification.Rotating.IntegerGlobalLedgerPart60": "ebec63661b707d1936fef651aef299d27b5f168454e40ae2c8b3364575e33ffa"
+      }
+    },
+    {
+      "module": "SolitonClassification.Rotating.IntegerFinalDoublePoints",
+      "source_sha256": "9150a7f4b9891ce0dd1f95f23d3c85c30ae2038b5e7222352d2c6e826aac2c5d",
+      "object_sha256": "f8c79daee401bf8e43b13fac7d12be614fdb11c8f09cb028f47c42f644b9bc54",
+      "direct_imports": {
+        "SolitonClassification.Rotating.IntegerPhysicalCrossingTheorem": "e8275ef28656692aae7b62629ff3652fb6375c520cff600f4416e5b1d0ca2ab7",
+        "SolitonClassification.Rotating.IntegerGlobalSubdivision": "596dd5291909a458155398a84cc3cda7cd9849a77967e587d8bdf54319b34a24"
+      }
+    },
+    {
+      "module": "SolitonClassification",
+      "source_sha256": "b84b84c4d7ca27cfcb8a1eba255c7f41fbaa4932f4f576238e597232ff9ba1bf",
+      "object_sha256": "7715a36fa413a863c3b0e1fa0244ba6f016ca681cb0b74ee838d8f55ac0445d2",
+      "log": ""
+    },
+    {
+      "module": "SolitonClassification.AxiomAudit",
+      "source_sha256": "f4c533ee1495b57e52fa71baacab06c3e4038c862eea93543cd97ca977191c75",
+      "object_sha256": "469749b2d686eabfb927a554fefe3aa79cbf8315a5346baa41cdf9f54772cf98",
+      "log": "SolitonClassification audit passed: 141737 declarations; standard axioms only.\n"
+    }
+  ],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

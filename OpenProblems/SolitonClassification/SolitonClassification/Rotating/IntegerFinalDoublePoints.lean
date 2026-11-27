@@ -1,0 +1,11 @@
+import SolitonClassification.Rotating.IntegerPhysicalCrossingTheorem
+import SolitonClassification.Rotating.IntegerGlobalSubdivision
+
+namespace SolitonClassification.Rotating.IntegerTarget.Physical
+open GlobalCount
+
+theorem exists_primitive_two_double_point_evolution : ∃P : Seed, DoublePointEvolution P :=
+  two_double_points_of_verified_subdivision fullLedger fullLedger_valid
+
+end SolitonClassification.Rotating.IntegerTarget.Physical
+#print axioms SolitonClassification.Rotating.IntegerTarget.Physical.exists_primitive_two_double_point_evolution
