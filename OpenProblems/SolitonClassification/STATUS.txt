@@ -1,6 +1,6 @@
 在一个支持周期的径向层恰有两臂、相位差达到 1/200 圈且满足横截条件时，Lean 验证分母为 d 的旋转闭合轨道在完整半开物理周期内至少有 d⌊d/200⌋ 个不同的普通双点。每一点恰有两个参数原像，真实速度不平行。
 Lean checks a set of d floor(d/200) distinct, exactly twofold transverse image points on the half-open arclength period for a differentiable profile with coprime holonomy and a two-arm radial shell satisfying the phase-width and transversality hypotheses. See RotatingCertificate/IntegerWinding/ArmMultiplicity/OuterArmMultiplicity.md.
-SolitonClassification audit: 24985 declarations, standard axioms only.
+SolitonClassification audit: 25149 declarations, standard axioms only.
 
 闭合自相似膨胀曲线的自交数
 
@@ -435,3 +435,5 @@ An independent pair of continuous dyadic polynomial reference paths now covers a
 The winding-one tape now has four genuine, adjacent, kernel-verified intervals, from node 1999 through node 2003. On each whole interval Lean connects the coefficient certificates to the original nonlinear equation and its true linearized equation, constructs actual solutions, and passes each previous terminal value to the next interval. The respective uniform bounds in the weighted state/matrix norm are 2, 8, 26 and 80 times 10^(-64). The full orbit from the shooting centre still uses exact integer calculations and written shadowing. See RotatingCertificate/IntegerWinding/DyadicReset/FourCells.md.
 
 Lean proves arbitrary-length nonlinear and variational transport in moving coordinates with separate 4000-step budgets for centre and cube, initial-state Frechet differentiation, and a variable-time tail. The exact published shooting centre is now instantiated through sixteen consecutive positive and sixteen consecutive negative cells. Full shooting and geometric identification still require completion and attachment of all 8000 finite cell certificates. See RotatingCertificate/IntegerWinding/DyadicReset/GlobalTransport.md.
+
+From the two signed physical endpoint enclosures, Lean proves the existence of a smooth closed unit-speed rotating immersion with curvature of both signs and exact signed angle increment minus two pi. The finite rational contraction, physical derivative assembly, seam and intrinsic equations are audited. These enclosures still require all numerical tape inputs and variable-time attachment. See RotatingCertificate/IntegerWinding/Closure/ExactAngleClosure.md.

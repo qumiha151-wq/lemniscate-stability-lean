@@ -1,3 +1,4 @@
+import SolitonClassification.Rotating.IntegerFamilyIdentification
 import SolitonClassification.Rotating.ResetOriginPlus
 import SolitonClassification.Rotating.ResetOriginMinus
 import SolitonClassification.Rotating.ResetShootingFamily
