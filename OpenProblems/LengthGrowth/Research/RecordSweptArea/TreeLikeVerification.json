@@ -1,0 +1,35 @@
+{
+  "previous_declarations": 2763,
+  "audited_declarations": 2810,
+  "previous_root_sha256": "4328721d318075aa5dcf13eeffd023c058f86e94b20a22e7c8a05a4074ca65c0",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "records": [
+    {
+      "module": "LengthGrowth.ActualFlow.RecordCommutatorWord",
+      "source_sha256": "4faa6bfb991695febb9b06c9d0e8b32d011a0b57796d000bd13122c668ab6bc2",
+      "olean_sha256": "a6e27c4b2abf0bfba457c9f78a5a042f53af2a4d7fca4808b2e61e3efeef22e2",
+      "log": "'LengthGrowth.RecordCommutator.commutator_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]\n'LengthGrowth.RecordCommutator.step_derivatives' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "direct_imports_sha256": {
+        "LengthGrowth.ActualFlow.RecordSweptAreaDuration": "3c7dd367f823fde7a54e0a47655983e7ba0d4c0eb93a857f8f45cfa994888838"
+      }
+    },
+    {
+      "module": "LengthGrowth",
+      "source_sha256": "6a845fde9c0bb2a91fa1c8958a1867d5d7ad938602d586039ade88241dd08d09",
+      "olean_sha256": "5309d5346c365bcbed1a35df7866c3fd97b6c5d5fcea84ca860f87794bf4cce7",
+      "exit": 0,
+      "log": ""
+    },
+    {
+      "module": "LengthGrowth.AxiomAudit",
+      "source_sha256": "627ca3bc18b8c8ea6f89f4e94df187816515a52acb21e1a4db30498d9c0aef36",
+      "olean_sha256": "00c0dfdbda64b7a6d254e0fb7f084c960b19fe9c677c091cb3383997c65d70ce",
+      "exit": 0,
+      "log": "Length-growth audit passed: 2810 declarations; standard axioms only.\n"
+    }
+  ]
+}
