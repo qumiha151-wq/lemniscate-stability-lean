@@ -1,0 +1,73 @@
+{
+  "previous_audit": 1541,
+  "current_audit": 1622,
+  "compilations": [
+    {
+      "module": "Migration.VirialModeConstants",
+      "source_sha256": "6073f29e24fb5edecd95518637f69faf762959af31e8504b03ceb74b1c536b9c",
+      "olean_sha256": "716b0b1b4e4121f64766ec3f15d117f7c7a8ab83610eb01a628fae34c3cc7627",
+      "log": "'MigrationGeometry.Flow.LowDefect.quarter_mass_bootstrap' depends on axioms: [propext, Classical.choice, Quot.sound]\n'MigrationGeometry.Flow.LowDefect.quarter_physical_margins' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialPhysicalModes",
+      "source_sha256": "291d76aae7be1255282d989ab0fc9f0ffb94cba131efad21c25a5d0a064e0563",
+      "olean_sha256": "16a57c98f6fe5eb071d574339791a65317c08005b4c15798299dc0d348befd48",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.quarter_directional_flux_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MigrationGeometry.Flow.SmoothPeriodicImmersion.quarter_directional_support' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialFourierCorrelation",
+      "source_sha256": "06b085715d4544fe09a1dfe7e2fd9e08f7f42a0df6e8218361077551ab76eef2",
+      "olean_sha256": "b3a2146f18b1406ca2599214548bda1016d72e264a7e0cfae0da8b58ae055041",
+      "log": "'MigrationGeometry.Flow.LowDefect.Correlation.cubic_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialSliceIdentity",
+      "source_sha256": "f7072fbcb062177f17f22c1426fd6a59f80b97c7148bef9583c70daab9ea5b67",
+      "olean_sha256": "5ee78ccc9fad9d942fd9a1c37a4b4458f5555bf8e83f8f654631d0ebfd9dd039",
+      "log": "'MigrationGeometry.Flow.LowDefect.Correlation.slice_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialMaterialCubic",
+      "source_sha256": "3223fe02cf0058083e0ed2746ebbe342e9a4cce5bd633abc8803c7a721c8d179",
+      "olean_sha256": "aa52ce43429f987e84cc822c054c03df33eeb6885216ce13d3bc6bc93661a517",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.quarter_support_flux_mean' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialForceProduct",
+      "source_sha256": "ffdb5772304894325722c825b6c0195bf5af295c6214ff9bc3a86ce7dbcc8bf9",
+      "olean_sha256": "06961aac556accc8810a53a451488f055839cf83555895334d451324668cd0cc",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.centroidRate_virial_product' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialPhysicalCorrelation",
+      "source_sha256": "cd1b28e62a09161c0f897f7682ba0ffceba2c1743523caba441c06a96a967d3e",
+      "olean_sha256": "7d7976ddf0b993b42a1d96a3bcbbe04273181fe73c1f070f0386f31f1ac2e2da",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.quarter_physical_correlation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialDriftSlab",
+      "source_sha256": "a541f8a77a6ae47288c867ba5ec6053a8544fc741da996362e1afc058bef2b9a",
+      "olean_sha256": "7446211bc620d48adc41fdafbcb999dbc110ca48f82c1ddb21dc886554222214",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.virial_common_disk_on_slab' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration.VirialForwardDisk",
+      "source_sha256": "2706baaabde4df8a4a64bbd8b624cd2811f5a65447e937cf55428bd1e9fecbff",
+      "olean_sha256": "6c3444cc697d892c78a95209f578e38e57f31b46b389c6d0a9f091f5b035e2d7",
+      "log": "'MigrationGeometry.Flow.SmoothPeriodicImmersion.virial_migration_requires_initial_bending' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+    },
+    {
+      "module": "Migration",
+      "source_sha256": "1c83a9158a66a3a683f131e3c2bf4c0a8a75921f0bfdc67a40f08024ecd0987a",
+      "olean_sha256": "f98ed2ef26156189a5052bc123a16a38d428498dd2237c7b51d5968410ba0a2b",
+      "log": ""
+    },
+    {
+      "module": "Migration.AxiomAudit",
+      "source_sha256": "946f6d0cec7bddd27fdef96e131c5aaf1e10284f3fbe2a130140a79e06c2f4c6",
+      "olean_sha256": "3e65fc8a3614b3e53ed9ab556723c9455b7b52b10e4af1f2424ef34f5d1b708f",
+      "log": "Migration audit passed: 1622 declarations; standard axioms only.\n"
+    }
+  ],
+  "scope": "For an actual classical closed free elastic flow on positive time with one-sided regular initial data, separation by a straight line implies initial bending product greater than five pi squared. The common disk at or below that threshold has radius 401/500 of the initial energy radius."
+}
